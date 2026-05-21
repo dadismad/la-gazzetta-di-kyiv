@@ -1,0 +1,11 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gazzetta di Kyiv — Narrative Monitor</title>
+<style>body{font-family:Arial,sans-serif;background:#0b1020;color:#e7ecff;margin:24px}h1{margin:0 0 8px}.muted{color:#a9b3d6}table{width:100%;border-collapse:collapse;margin-top:16px}th,td{border-bottom:1px solid #24305d;padding:8px;text-align:left}a{color:#8ec5ff}</style>
+</head><body>
+<h1>Gazzetta di Kyiv</h1>
+<div class="muted">Continuous source intelligence registry and ingestion status.</div>
+<p id="updated"></p>
+<table id="tbl"><thead><tr><th>Source</th><th>Platform</th><th>Score</th><th>Accessibility</th><th>Description</th></tr></thead><tbody></tbody></table>
+<script>
+fetch('../data/source_registry_ranked.json').then(r=>r.json()).then(d=>{document.getElementById('updated').textContent='Updated: '+d.generated_at;const tb=document.querySelector('#tbl tbody');d.sources.slice(0,30).forEach(s=>{const tr=document.createElement('tr');tr.innerHTML=`<td><a href="${s.url}" target="_blank">${s.name}</a></td><td>${s.platform}</td><td>${s.score}</td><td>${s.access}</td><td>${s.description||''}</td>`;tb.appendChild(tr);});}).catch(e=>{document.getElementById('updated').textContent='Data load error: '+e});
+</script>
+</body></html>

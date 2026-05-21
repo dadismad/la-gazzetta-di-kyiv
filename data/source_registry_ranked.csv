@@ -1,0 +1,27 @@
+platform,source_id,name,url,popularity,engagement,score,access,description
+rss,reuters_world,Reuters World,https://feeds.reuters.com/Reuters/worldNews,98,0,98.0,public_rss,Major publication feed; engagement inferred downstream from item velocity & cross-source pickup.
+rss,ft_world,Financial Times World,https://www.ft.com/world?format=rss,95,0,95.0,public_rss,Major publication feed; engagement inferred downstream from item velocity & cross-source pickup.
+rss,bloomberg_markets,Bloomberg Markets,https://feeds.bloomberg.com/markets/news.rss,93,0,93.0,public_rss,Major publication feed; engagement inferred downstream from item velocity & cross-source pickup.
+rss,economist_intl,The Economist International,https://www.economist.com/international/rss.xml,90,0,90.0,public_rss,Major publication feed; engagement inferred downstream from item velocity & cross-source pickup.
+rss,wsj_world,WSJ World,https://feeds.a.dj.com/rss/RSSWorldNews.xml,89,0,89.0,public_rss,Major publication feed; engagement inferred downstream from item velocity & cross-source pickup.
+rss,guardian_world,The Guardian World,https://www.theguardian.com/world/rss,88,0,88.0,public_rss,Major publication feed; engagement inferred downstream from item velocity & cross-source pickup.
+rss,hn_front,Hacker News Frontpage,https://hnrss.org/frontpage,86,0,86.0,public_rss,Major publication feed; engagement inferred downstream from item velocity & cross-source pickup.
+rss,politico,Politico,https://www.politico.com/rss/politicopicks.xml,84,0,84.0,public_rss,Major publication feed; engagement inferred downstream from item velocity & cross-source pickup.
+reddit,reddit_worldnews,r/worldnews,https://www.reddit.com/r/worldnews/new.json?limit=100,47339652,0.0,70.0,public_json,"High-signal subreddit: A place for major news from around the world, excluding US-internal news."
+reddit,reddit_technology,r/technology,https://www.reddit.com/r/technology/new.json?limit=100,20297332,0.0,30.01,public_json,High-signal subreddit: Subreddit dedicated to the news and discussions about the creation and use of technology and its surrounding issues.
+reddit,reddit_europe,r/europe,https://www.reddit.com/r/europe/new.json?limit=100,11592772,0.0,17.14,public_json,"High-signal subreddit: Europe: 50 (+6) countries, 230 languages, 746M people… 1 subreddit."
+reddit,reddit_CryptoCurrency,r/CryptoCurrency,https://www.reddit.com/r/CryptoCurrency/new.json?limit=100,10093138,0.0,14.92,public_json,"High-signal subreddit: The leading community for cryptocurrency news, discussion, and analysis."
+reddit,reddit_stocks,r/stocks,https://www.reddit.com/r/stocks/new.json?limit=100,9240867,0.0,13.66,public_json,"High-signal subreddit: The most serious place on Reddit for Stock related discussions!  Don't hesitate to tell us about a ticker we should know about, market news, or financial education.
+
+Check out our "
+reddit,reddit_economics,r/economics,https://www.reddit.com/r/economics/new.json?limit=100,5715508,0.0,8.45,public_json,"High-signal subreddit: Reddit's largest economics community. Serving as a central forum for users to read, discuss, and learn more about topics related to the economic discipline. We have written rules t"
+reddit,reddit_investing,r/investing,https://www.reddit.com/r/investing/new.json?limit=100,3368092,0.0,4.98,public_json,High-signal subreddit: 
+reddit,reddit_finance,r/finance,https://www.reddit.com/r/finance/new.json?limit=100,2111973,0.0,3.12,public_json,"High-signal subreddit: Welcome to r/Finance!
+
+No Personal Finance, Homework, Personal blogs, or Career-related posts. 
+
+All questions go in Monday Morning catch-all threads."
+reddit,reddit_artificial,r/artificial,https://www.reddit.com/r/artificial/new.json?limit=100,1275754,0.0,1.89,public_json,High-signal subreddit: Reddit’s home for Artificial Intelligence (AI)
+reddit,reddit_ukraine,r/ukraine,https://www.reddit.com/r/ukraine/new.json?limit=100,943869,0.0,1.4,public_json,"High-signal subreddit: HERE УКРАЇНА TAKES CENTER STAGE — The purpose of r/Ukraine is to amplify Ukrainian voices. We are at war, so content is tightly moderated to keep our community safe. Share and disc"
+reddit,reddit_geopolitics,r/geopolitics,https://www.reddit.com/r/geopolitics/new.json?limit=100,772034,0.0,1.14,public_json,"High-signal subreddit: Geopolitics is focused on the relationship between politics and territory. Through geopolitics we attempt to analyze and predict the actions and decisions of nations, or other form"
+reddit,reddit_energy,r/energy,https://www.reddit.com/r/energy/new.json?limit=100,281884,0.0,0.42,public_json,High-signal subreddit: 
