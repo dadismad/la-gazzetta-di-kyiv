@@ -17,7 +17,15 @@ function sentenceFor(topic){
 }
 
 function contextFor(topic, review){
-  return review || 'Cross-market headlines are clustering around this theme, increasing the chance of spillover moves.';
+  const t = normTopic(topic);
+  const map = {
+    ai: 'Spending momentum and valuation sensitivity are now moving together, so policy headlines and earnings guidance can quickly shift sentiment.',
+    oil: 'Supply uncertainty is interacting with fragile inventories, making energy headlines capable of moving inflation expectations fast.',
+    inflation: 'Recent data and central-bank messaging are not fully aligned, so markets can reprice abruptly after each macro release.',
+    rates: 'Bond volatility is feeding directly into equity positioning, especially in duration-sensitive sectors.',
+    election: 'Policy-path uncertainty is lifting headline risk and can amplify short-term rotation between sectors.',
+  };
+  return map[t] || 'Cross-market headlines are clustering around this theme, increasing the chance of spillover moves.';
 }
 
 function actionFor(topic){
