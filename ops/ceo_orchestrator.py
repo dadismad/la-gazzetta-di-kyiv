@@ -96,6 +96,7 @@ def main():
 
     checks = {
         "design_compare": run("python3 ops/design_compare.py"),
+        "pages_watchdog": run("python3 ops/pages_watchdog.py"),
         "pipeline_audit_file": {"ok": (DATA / "pipeline_audit.json").exists()},
         "narratives_file": {"ok": (DATA / "narratives.json").exists()},
         "site_index": {"ok": (ROOT / "site/index.html").exists()},
@@ -103,6 +104,7 @@ def main():
 
     score = 0
     score += 30 if checks["design_compare"].get("ok") else 0
+    score += 20 if checks["pages_watchdog"].get("ok") else 0
     score += 20 if checks["pipeline_audit_file"]["ok"] else 0
     score += 20 if checks["narratives_file"]["ok"] else 0
     score += 20 if checks["site_index"]["ok"] else 0

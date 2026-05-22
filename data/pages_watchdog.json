@@ -1,19 +1,38 @@
 {
-  "generated_at": "2026-05-22T20:29:17.887757+00:00",
+  "generated_at": "2026-05-22T20:35:43.222616+00:00",
   "healthy": true,
-  "checks": [
-    {
-      "url": "https://pureciclismo.github.io/gazzetta-di-kyiv/",
-      "ok": true,
-      "code": 200,
-      "bad_404": false
-    },
-    {
-      "url": "https://pureciclismo.github.io/gazzetta-di-kyiv/data/narratives.json",
-      "ok": true,
-      "code": 200,
-      "bad_404": false
-    }
-  ],
+  "primary_healthy": true,
+  "mirror_healthy": true,
+  "recommended_url": "https://pureciclismo.github.io/gazzetta-di-kyiv/",
+  "checks": {
+    "primary": [
+      {
+        "url": "https://pureciclismo.github.io/gazzetta-di-kyiv/",
+        "ok": true,
+        "code": 200,
+        "bad_404": false
+      },
+      {
+        "url": "https://pureciclismo.github.io/gazzetta-di-kyiv/data/narratives.json",
+        "ok": true,
+        "code": 200,
+        "bad_404": false
+      }
+    ],
+    "mirrors": [
+      {
+        "url": "https://rawcdn.githack.com/pureciclismo/gazzetta-di-kyiv/main/site/index.html",
+        "ok": true,
+        "code": 200,
+        "bad_404": false
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/gh/pureciclismo/gazzetta-di-kyiv@main/site/index.html",
+        "ok": true,
+        "code": 200,
+        "bad_404": false
+      }
+    ]
+  },
   "actions": []
 }

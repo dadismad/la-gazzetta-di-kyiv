@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-22T20:23:57.543159+00:00",
+  "generated_at": "2026-05-22T20:35:42.444503+00:00",
   "ceo_program": "active",
-  "overall_health_score": 90,
+  "overall_health_score": 110,
   "summary": {
     "groups": 5,
     "best_practice_signals": [
@@ -17,6 +17,12 @@
       "ok": true,
       "code": 0,
       "out": "{\n  \"ok\": true,\n  \"score\": 87.5,\n  \"checks\": {\n    \"dark_background\": true,\n    \"two_column_layout\": true,\n    \"serif_headlines\": true,\n    \"kicker_labels\": true,\n    \"top_narratives_section\": true,\n    \"narrative_focus_sidebar\": true,\n    \"context_action_lines\": false,\n    \"no_quant_terms_in_html\": true\n  },\n  \"gaps\": []\n}\n",
+      "err": ""
+    },
+    "pages_watchdog": {
+      "ok": true,
+      "code": 0,
+      "out": "{\"ok\": true, \"healthy\": true, \"recommended_url\": \"https://pureciclismo.github.io/gazzetta-di-kyiv/\", \"file\": \"/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv/data/pages_watchdog.json\"}\n",
       "err": ""
     },
     "pipeline_audit_file": {
