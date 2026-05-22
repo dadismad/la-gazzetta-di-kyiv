@@ -1,8 +1,6 @@
 {
   "generated_at": "2026-05-22T22:16:56.457908+00:00",
-  "state": "running",
-  "blocked_reasons": [],
-  "external_checks": {
+  "checks": {
     "home": {
       "ok": true,
       "status": 200,
@@ -16,18 +14,5 @@
       "body": "{\n  \"generated_at\": \"2026-05-22T21:00:56.960732+00:00\",\n  \"recent_items_24h\": 381,\n  \"top_narratives\": [\n    {\n      \"topic\": \"ai\",\n      \"mentions_24h\": 93\n    },\n    {\n      \"topic\": \"eu\",\n      \"mentions_24h\": 21\n    },\n    {\n      \"topic\": \"inflation\",\n      \"mentions_24h\": 9\n    },\n    {\n      \"topic\": \"rates\",\n      \"mentions_24h\": 7\n    },\n    {\n      \"topic\": \"russia\",\n      \"mentions_24h\": 5\n    },\n    {\n      \"topic\": \"election\",\n      \"mentions_24h\": 5\n    },\n    {\n      \"topic\": \"oil"
     }
   },
-  "qa": [
-    {
-      "cmd": "python3 ops/ui_contract_check.py",
-      "code": 0
-    },
-    {
-      "cmd": "python3 ops/brandbook_enforcer.py",
-      "code": 0
-    },
-    {
-      "cmd": "python3 ops/claims_container_guard.py",
-      "code": 0
-    }
-  ]
+  "passed": true
 }

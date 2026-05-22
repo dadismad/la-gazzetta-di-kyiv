@@ -1,0 +1,20 @@
+[
+  {
+    "owner": "CEO",
+    "priority": "P2",
+    "task": "Restore live endpoint + re-verify external URLs",
+    "eta": "monitoring"
+  },
+  {
+    "owner": "DataOps",
+    "priority": "P1",
+    "task": "Maintain narrative freshness and non-empty claims container",
+    "eta": "today"
+  },
+  {
+    "owner": "DesignOps",
+    "priority": "P1",
+    "task": "Maintain brandbook/UI contract compliance",
+    "eta": "today"
+  }
+]
