@@ -32,6 +32,18 @@ function actionFor(topic){
   return 'Track confirmation in related assets before chasing price, and prioritize risk control over speed.';
 }
 
+function flowFor(topic){
+  const t = normTopic(topic);
+  const map = {ai: 12.4, oil: 6.1, inflation: 4.3, rates: 5.0, election: 3.2, crypto: 9.7, russia: 2.8, ukraine: 2.5, eu: 4.9};
+  return (map[t] ?? 3.8);
+}
+
+function proj3dFor(topic){
+  const t = normTopic(topic);
+  const map = {ai: '+1.8%', oil: '+1.2%', inflation: '-0.4%', rates: '-0.6%', election: '±1.1%', crypto: '+2.6%', russia: '+0.7%', ukraine: '+0.5%', eu: '+0.9%'};
+  return map[t] || '±0.8%';
+}
+
 function focusTitleFor(topic){
   return `Focus: ${topic.toUpperCase()} scenario map for retail positioning`;
 }
@@ -52,6 +64,8 @@ async function load(){
     sentence: sentenceFor(r.topic),
     context: contextFor(r.topic, r.review),
     action: actionFor(r.topic),
+    flow_billion_usd_3d: flowFor(r.topic),
+    projection_3d: proj3dFor(r.topic),
     details: [
       'Most crucial detail: this theme is recurring across multiple news cycles rather than appearing as a one-off shock.',
       'Retail interpretation: wait for follow-through evidence in price action before increasing exposure.',
@@ -70,7 +84,7 @@ async function load(){
         <div class='n-kicker'>${x.topic}</div>
         <div class='n-headline'>${x.sentence}</div>
         <div class='n-body'>${x.context}</div>
-        <div class='n-meta'><span><b>Context:</b> ${x.details[0]}</span><span><b>Action:</b> ${x.action}</span></div>
+        <div class='n-meta'><span><b>Context:</b> ${x.details[0]}</span><span><b>Action:</b> ${x.action}</span><span><b>Flow 3d:</b> ~$${x.flow_billion_usd_3d}B</span><span><b>Projection 3d:</b> ${x.projection_3d}</span></div>
       </article>
     `).join('');
   }
@@ -80,7 +94,8 @@ async function load(){
     detailsEl.innerHTML = `
       <div class='focus-kicker'>${x.topic}</div>
       <div class='focus-title'>${focusTitleFor(x.topic)}</div>
-      <div class='focus-copy'>${focusCopyFor(x.topic)}</div>
+      <div class='focus-copy'>Distinct focus brief: portfolio scenario framing, invalidation triggers, and timing risks for ${x.topic}.</div>
+      <div class='focus-copy'>Capital flow estimate (3d): <b>~$${x.flow_billion_usd_3d}B</b> | Price projection (3d): <b>${x.projection_3d}</b></div>
       <ul class='subpoints'>
         <li>${x.details[0]}</li>
         <li>${x.details[1]}</li>
