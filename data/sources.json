@@ -1,28 +1,45 @@
 {
+  "updated_at": "2026-05-22T15:19:07.502671+00:00",
   "sources": [
     {
-      "id": "reddit_geopolitics_new",
-      "platform": "reddit",
-      "url": "https://www.reddit.com/r/geopolitics/new.json?limit=50",
-      "mode": "json",
+      "id": "bloomberg_markets",
+      "type": "rss",
       "enabled": true,
-      "category": "politics_geopolitics"
+      "category": "markets",
+      "url": "https://feeds.bloomberg.com/markets/news.rss",
+      "platform": "rss",
+      "last_validation_status": 200,
+      "last_validated_at": "2026-05-22T15:18:54.336231+00:00"
     },
     {
-      "id": "reddit_economics_new",
-      "platform": "reddit",
-      "url": "https://www.reddit.com/r/Economics/new.json?limit=50",
-      "mode": "json",
+      "id": "ft_world",
+      "type": "rss",
       "enabled": true,
-      "category": "macro_econ"
+      "category": "macro",
+      "url": "https://www.ft.com/world?format=rss",
+      "platform": "rss",
+      "last_validation_status": 200,
+      "last_validated_at": "2026-05-22T15:18:54.973009+00:00"
     },
     {
-      "id": "youtube_custom_1",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=REPLACE_WITH_VALID_CHANNEL_ID",
-      "mode": "rss",
-      "enabled": false,
-      "category": "markets"
+      "id": "guardian_world",
+      "type": "rss",
+      "enabled": true,
+      "category": "geopolitics",
+      "url": "https://www.theguardian.com/world/rss",
+      "platform": "rss",
+      "last_validation_status": 200,
+      "last_validated_at": "2026-05-22T15:18:55.170225+00:00"
+    },
+    {
+      "id": "hn_front",
+      "type": "rss",
+      "enabled": true,
+      "category": "tech",
+      "url": "https://hnrss.org/frontpage",
+      "platform": "rss",
+      "last_validation_status": 200,
+      "last_validated_at": "2026-05-22T15:18:59.821848+00:00"
     },
     {
       "id": "hn_frontpage",
@@ -30,7 +47,81 @@
       "url": "https://hnrss.org/frontpage",
       "mode": "rss",
       "enabled": true,
-      "category": "tech_product"
+      "category": "tech_product",
+      "last_validation_status": 200,
+      "last_validated_at": "2026-05-22T15:19:01.452516+00:00"
+    },
+    {
+      "id": "reddit_economics",
+      "type": "reddit_json",
+      "enabled": true,
+      "category": "macro",
+      "url": "https://www.reddit.com/r/economics/new.json?limit=100",
+      "platform": "reddit",
+      "last_validation_status": 200,
+      "last_validated_at": "2026-05-22T15:19:02.531101+00:00"
+    },
+    {
+      "id": "reddit_economics_new",
+      "platform": "reddit",
+      "url": "https://www.reddit.com/r/Economics/new.json?limit=50",
+      "mode": "json",
+      "enabled": true,
+      "category": "macro_econ",
+      "last_validation_status": 200,
+      "last_validated_at": "2026-05-22T15:19:03.477525+00:00"
+    },
+    {
+      "id": "reddit_geopolitics_new",
+      "platform": "reddit",
+      "url": "https://www.reddit.com/r/geopolitics/new.json?limit=50",
+      "mode": "json",
+      "enabled": true,
+      "category": "politics_geopolitics",
+      "last_validation_status": 200,
+      "last_validated_at": "2026-05-22T15:19:04.492793+00:00"
+    },
+    {
+      "id": "reddit_stocks",
+      "type": "reddit_json",
+      "enabled": true,
+      "category": "markets",
+      "url": "https://www.reddit.com/r/stocks/new.json?limit=100",
+      "platform": "reddit",
+      "last_validation_status": 200,
+      "last_validated_at": "2026-05-22T15:19:05.783769+00:00"
+    },
+    {
+      "id": "reddit_worldnews",
+      "type": "reddit_json",
+      "enabled": true,
+      "category": "geopolitics",
+      "url": "https://www.reddit.com/r/worldnews/new.json?limit=100",
+      "platform": "reddit",
+      "last_validation_status": 200,
+      "last_validated_at": "2026-05-22T15:19:07.261727+00:00"
+    },
+    {
+      "id": "reuters_world",
+      "type": "rss",
+      "enabled": true,
+      "category": "geopolitics",
+      "url": "https://feeds.reuters.com/Reuters/worldNews",
+      "platform": "rss",
+      "last_validation_status": "error",
+      "last_validation_error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "last_validated_at": "2026-05-22T15:19:07.279332+00:00"
+    },
+    {
+      "id": "youtube_custom_1",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=REPLACE_WITH_VALID_CHANNEL_ID",
+      "mode": "rss",
+      "enabled": false,
+      "category": "markets",
+      "last_validation_status": "error",
+      "last_validation_error": "HTTP Error 404: Not Found",
+      "last_validated_at": "2026-05-22T15:19:07.496530+00:00"
     }
   ]
 }
