@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-05-22T22:04:16.317597+00:00",
+  "ok": true,
+  "steps": [
+    {
+      "cmd": "python3 ops/representation_curator.py",
+      "code": 0,
+      "out": "{\"ok\": true, \"out\": \"/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv/data/narratives_curated.json\", \"count\": 12}\n",
+      "err": ""
+    },
+    {
+      "cmd": "python3 ops/brandbook_enforcer.py",
+      "code": 0,
+      "out": "{\"generated_at\": \"2026-05-22T22:04:16.292564+00:00\", \"ok\": true, \"issues\": []}\n",
+      "err": ""
+    },
+    {
+      "cmd": "python3 ops/ui_contract_check.py",
+      "code": 0,
+      "out": "{\"generated_at\": \"2026-05-22T22:04:16.315009+00:00\", \"ok\": true, \"issues\": []}\n",
+      "err": ""
+    }
+  ]
+}
