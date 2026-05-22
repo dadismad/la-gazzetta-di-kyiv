@@ -22,6 +22,33 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run quality gates
+        run: |
+          python3 ops/ui_contract_check.py
+          python3 ops/brandbook_enforcer.py
+          python3 ops/claims_container_guard.py
+      - name: Enforce CEO hard gate
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, sys
+          root = pathlib.Path('.')
+          ceo = json.loads((root/'data'/'ceo_status.json').read_text())
+          canary = json.loads((root/'data'/'deploy_canary_report.json').read_text())
+          state = ceo.get('state', 'unknown')
+          passed = bool(canary.get('passed', False))
+          blocked = ceo.get('blocked_reasons', [])
+          if state == 'blocked' or not passed:
+              print('CEO HARD GATE FAILED')
+              print('state=', state)
+              print('canary_passed=', passed)
+              print('blocked_reasons=', blocked)
+              sys.exit(1)
+          print('CEO HARD GATE PASSED')
+          PY
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
