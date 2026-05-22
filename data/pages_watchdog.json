@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-05-22T20:29:17.887757+00:00",
+  "healthy": true,
+  "checks": [
+    {
+      "url": "https://pureciclismo.github.io/gazzetta-di-kyiv/",
+      "ok": true,
+      "code": 200,
+      "bad_404": false
+    },
+    {
+      "url": "https://pureciclismo.github.io/gazzetta-di-kyiv/data/narratives.json",
+      "ok": true,
+      "code": 200,
+      "bad_404": false
+    }
+  ],
+  "actions": []
+}
