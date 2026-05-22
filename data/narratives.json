@@ -1,29 +1,33 @@
 {
-  "generated_at": "2026-05-22T15:19:19.416387+00:00",
-  "recent_items_24h": 214,
+  "generated_at": "2026-05-22T17:01:53.714821+00:00",
+  "recent_items_24h": 273,
   "top_narratives": [
     {
       "topic": "ai",
-      "mentions_24h": 55
+      "mentions_24h": 68
     },
     {
       "topic": "eu",
-      "mentions_24h": 10
+      "mentions_24h": 14
+    },
+    {
+      "topic": "inflation",
+      "mentions_24h": 7
+    },
+    {
+      "topic": "rates",
+      "mentions_24h": 5
     },
     {
       "topic": "election",
       "mentions_24h": 5
     },
     {
-      "topic": "russia",
-      "mentions_24h": 4
-    },
-    {
-      "topic": "inflation",
-      "mentions_24h": 4
-    },
-    {
       "topic": "oil",
+      "mentions_24h": 4
+    },
+    {
+      "topic": "russia",
       "mentions_24h": 3
     },
     {
@@ -35,28 +39,46 @@
       "mentions_24h": 2
     },
     {
-      "topic": "rates",
+      "topic": "drone",
       "mentions_24h": 2
     },
     {
-      "topic": "drone",
+      "topic": "nato",
+      "mentions_24h": 2
+    },
+    {
+      "topic": "ukraine",
       "mentions_24h": 1
     }
   ],
   "narrative_reviews": [
     {
       "topic": "ai",
-      "mentions_24h": 55,
+      "mentions_24h": 68,
       "intensity_score": 100,
       "momentum": "high",
       "review": "Signal strength 100/100 with high momentum. Regime bias appears risk-on. Interpretation: short-term desks should treat this narrative as position-relevant and timing-sensitive; cross-check with rates, energy, and policy headlines for confirmation before sizing."
     },
     {
       "topic": "eu",
-      "mentions_24h": 10,
-      "intensity_score": 42.0,
+      "mentions_24h": 14,
+      "intensity_score": 58.8,
       "momentum": "medium",
-      "review": "Signal strength 42.0/100 with medium momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
+      "review": "Signal strength 58.8/100 with medium momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
+    },
+    {
+      "topic": "inflation",
+      "mentions_24h": 7,
+      "intensity_score": 29.4,
+      "momentum": "medium",
+      "review": "Signal strength 29.4/100 with medium momentum. Regime bias appears risk-off. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
+    },
+    {
+      "topic": "rates",
+      "mentions_24h": 5,
+      "intensity_score": 21.0,
+      "momentum": "low",
+      "review": "Signal strength 21.0/100 with low momentum. Regime bias appears risk-off. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
     },
     {
       "topic": "election",
@@ -66,25 +88,18 @@
       "review": "Signal strength 21.0/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
     },
     {
-      "topic": "russia",
-      "mentions_24h": 4,
-      "intensity_score": 16.8,
-      "momentum": "low",
-      "review": "Signal strength 16.8/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
-    },
-    {
-      "topic": "inflation",
+      "topic": "oil",
       "mentions_24h": 4,
       "intensity_score": 16.8,
       "momentum": "low",
       "review": "Signal strength 16.8/100 with low momentum. Regime bias appears risk-off. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
     },
     {
-      "topic": "oil",
+      "topic": "russia",
       "mentions_24h": 3,
       "intensity_score": 12.6,
       "momentum": "low",
-      "review": "Signal strength 12.6/100 with low momentum. Regime bias appears risk-off. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
+      "review": "Signal strength 12.6/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
     },
     {
       "topic": "china",
@@ -101,14 +116,21 @@
       "review": "Signal strength 8.4/100 with low momentum. Regime bias appears risk-off. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
     },
     {
-      "topic": "rates",
+      "topic": "drone",
       "mentions_24h": 2,
       "intensity_score": 8.4,
       "momentum": "low",
-      "review": "Signal strength 8.4/100 with low momentum. Regime bias appears risk-off. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
+      "review": "Signal strength 8.4/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
     },
     {
-      "topic": "drone",
+      "topic": "nato",
+      "mentions_24h": 2,
+      "intensity_score": 8.4,
+      "momentum": "low",
+      "review": "Signal strength 8.4/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
+    },
+    {
+      "topic": "ukraine",
       "mentions_24h": 1,
       "intensity_score": 4.2,
       "momentum": "low",
