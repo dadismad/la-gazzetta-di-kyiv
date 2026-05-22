@@ -32,6 +32,14 @@ function actionFor(topic){
   return 'Track confirmation in related assets before chasing price, and prioritize risk control over speed.';
 }
 
+function focusTitleFor(topic){
+  return `Focus: ${topic.toUpperCase()} scenario map for retail positioning`;
+}
+
+function focusCopyFor(topic){
+  return 'This panel summarizes what can invalidate the narrative, what confirms continuation, and what specific headline classes deserve immediate attention.';
+}
+
 async function load(){
   const n = await fetch('./data/narratives.json').then(r=>r.json()).catch(()=>({}));
   const reviews = (n.narrative_reviews||[]).slice(0,10);
@@ -71,8 +79,8 @@ async function load(){
     const x = (window.__narr||[])[i]; if(!x || !detailsEl) return;
     detailsEl.innerHTML = `
       <div class='focus-kicker'>${x.topic}</div>
-      <div class='focus-title'>${x.sentence}</div>
-      <div class='focus-copy'>${x.context}</div>
+      <div class='focus-title'>${focusTitleFor(x.topic)}</div>
+      <div class='focus-copy'>${focusCopyFor(x.topic)}</div>
       <ul class='subpoints'>
         <li>${x.details[0]}</li>
         <li>${x.details[1]}</li>

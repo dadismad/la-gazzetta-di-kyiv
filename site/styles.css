@@ -30,12 +30,17 @@ h2{margin:0;font-size:15px;letter-spacing:.22em;color:#d08f67;text-transform:upp
 
 :root{--base:#F7FAFF;--primary:#3E6FAE;--anchor:#10233F;--accent:#6BB6FF;}
 body.news-body{background:var(--base)!important;color:var(--anchor)!important;}
+.dark-news,.topbar.dark,.panel.dark{background:var(--base)!important;color:var(--anchor)!important}
 .topbar{padding:10px 14px!important;}
 .brand{font-weight:300!important;letter-spacing:.12em;font-size:16px!important;color:var(--anchor)!important;}
 h1,h2,h3{font-weight:300!important;color:var(--anchor)!important;}
 .grid-focus{grid-template-columns:62fr 38fr!important;gap:12px!important;}
 .n-card{padding:10px 10px!important;margin:0!important;border:1px solid #d8e4f7!important;background:#ffffff!important;}
-.n-head{font-size:18px!important;line-height:1.25!important;}
-.n-sub{font-size:11px!important;line-height:1.35!important;color:#2a446f!important;}
 .panel{padding:12px!important;background:#ffffff!important;border:1px solid #d8e4f7!important;}
 a{color:var(--primary)!important;} a:hover{color:var(--accent)!important;}
+
+/* hard cap typography */
+.brand,.n-headline,.n-body,.focus-title,.focus-copy,.n-kicker,.focus-kicker,.n-meta,.muted,.subpoints,nav a,h2{font-size:14px!important;line-height:1.35!important}
+.n-headline,.focus-title{font-weight:400!important}
+.n-body,.focus-copy,.subpoints,.n-meta{color:#2a446f!important}
+.topbar{border-bottom:1px solid #d8e4f7!important}
