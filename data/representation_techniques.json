@@ -1,0 +1,138 @@
+{
+  "generated_at": "2026-05-22T15:05:58.220462+00:00",
+  "sources_scanned": [
+    "https://www.nngroup.com/feed/rss/",
+    "https://www.smashingmagazine.com/feed/",
+    "https://uxdesign.cc/feed",
+    "https://alistapart.com/main/feed/"
+  ],
+  "articles_matched": 12,
+  "techniques": [
+    {
+      "technique": "confidence_bands",
+      "evidence_count": 5,
+      "adoption_priority": "medium",
+      "implementation_note": "Display confidence range around narrative intensity score.",
+      "examples": [
+        {
+          "title": "Design Dialects: Breaking the Rules, Not the System",
+          "link": "https://alistapart.com/article/design-dialects-breaking-the-rules-not-the-system/",
+          "source": "a_list_apart"
+        },
+        {
+          "title": "Humility: An Essential Value",
+          "link": "https://alistapart.com/article/humility-an-essential-value/",
+          "source": "a_list_apart"
+        },
+        {
+          "title": "How to Sell UX Research with Two Simple Questions",
+          "link": "https://alistapart.com/article/how-to-sell-ux-research/",
+          "source": "a_list_apart"
+        }
+      ]
+    },
+    {
+      "technique": "narrative_cards",
+      "evidence_count": 4,
+      "adoption_priority": "medium",
+      "implementation_note": "Use card stacks for each storyline with source snippets.",
+      "examples": [
+        {
+          "title": "To Ignite a Personalization Practice, Run this Prepersonalization Workshop",
+          "link": "https://alistapart.com/article/prepersonalization-workshop/",
+          "source": "a_list_apart"
+        },
+        {
+          "title": "Personalization Pyramid: A Framework for Designing with User Data",
+          "link": "https://alistapart.com/article/personalization-pyramid/",
+          "source": "a_list_apart"
+        },
+        {
+          "title": "How to Sell UX Research with Two Simple Questions",
+          "link": "https://alistapart.com/article/how-to-sell-ux-research/",
+          "source": "a_list_apart"
+        }
+      ]
+    },
+    {
+      "technique": "color_semantics",
+      "evidence_count": 3,
+      "adoption_priority": "medium",
+      "implementation_note": "Use semantic color mapping for risk-on/risk-off conditions.",
+      "examples": [
+        {
+          "title": "Design for Amiability: Lessons from Vienna",
+          "link": "https://alistapart.com/article/design-for-amiability-lessons-from-vienna/",
+          "source": "a_list_apart"
+        },
+        {
+          "title": "To Ignite a Personalization Practice, Run this Prepersonalization Workshop",
+          "link": "https://alistapart.com/article/prepersonalization-workshop/",
+          "source": "a_list_apart"
+        },
+        {
+          "title": "Humility: An Essential Value",
+          "link": "https://alistapart.com/article/humility-an-essential-value/",
+          "source": "a_list_apart"
+        }
+      ]
+    },
+    {
+      "technique": "small_multiples",
+      "evidence_count": 2,
+      "adoption_priority": "low",
+      "implementation_note": "Show side-by-side regime slices for time or region comparisons.",
+      "examples": [
+        {
+          "title": "Humility: An Essential Value",
+          "link": "https://alistapart.com/article/humility-an-essential-value/",
+          "source": "a_list_apart"
+        },
+        {
+          "title": "Personalization Pyramid: A Framework for Designing with User Data",
+          "link": "https://alistapart.com/article/personalization-pyramid/",
+          "source": "a_list_apart"
+        }
+      ]
+    },
+    {
+      "technique": "scrollytelling",
+      "evidence_count": 1,
+      "adoption_priority": "low",
+      "implementation_note": "Use scroll-linked narrative transitions from macro to micro evidence.",
+      "examples": [
+        {
+          "title": "User Research Is Storytelling",
+          "link": "https://alistapart.com/article/user-research-is-storytelling/",
+          "source": "a_list_apart"
+        }
+      ]
+    },
+    {
+      "technique": "progressive_disclosure",
+      "evidence_count": 1,
+      "adoption_priority": "low",
+      "implementation_note": "Default concise view, click to expand analytical depth.",
+      "examples": [
+        {
+          "title": "Voice Content and Usability",
+          "link": "https://alistapart.com/article/voice-content-and-usability/",
+          "source": "a_list_apart"
+        }
+      ]
+    },
+    {
+      "technique": "mobile_first_summaries",
+      "evidence_count": 1,
+      "adoption_priority": "low",
+      "implementation_note": "Expose concise hook lines first for mobile readers.",
+      "examples": [
+        {
+          "title": "Mobile-First CSS: Is It Time for a Rethink?",
+          "link": "https://alistapart.com/article/mobile-first-css-is-it-time-for-a-rethink/",
+          "source": "a_list_apart"
+        }
+      ]
+    }
+  ]
+}

@@ -61,7 +61,14 @@ for n in narratives:
     mentions = n['mentions_24h']
     intensity = round(min(100, mentions * 4.2), 1)
     momentum = 'high' if mentions >= 15 else ('medium' if mentions >= 6 else 'low')
-    review = f"Intensity {intensity}/100; momentum {momentum}; tactical relevance {'high' if topic in ['rates','inflation','oil','gas','ukraine','china','sanctions'] else 'medium'}."
+    bias = 'risk-on' if topic in ['ai','crypto','technology'] else ('risk-off' if topic in ['war','sanctions','inflation','rates','oil','gas'] else 'mixed')
+    review = (
+        f"Signal strength {intensity}/100 with {momentum} momentum. "
+        f"Regime bias appears {bias}. "
+        f"Interpretation: short-term desks should treat this narrative as "
+        f"{'position-relevant and timing-sensitive' if intensity >= 60 else 'context-relevant with selective execution'}; "
+        f"cross-check with rates, energy, and policy headlines for confirmation before sizing."
+    )
     narrative_reviews.append({
         'topic': topic,
         'mentions_24h': mentions,
@@ -88,6 +95,19 @@ with open(os.path.join(OUT_DATA,'source_registry_ranked.csv'),'w',newline='') as
     w=csv.DictWriter(f, fieldnames=['platform','source_id','name','url','popularity','engagement','score','access','description'])
     w.writeheader(); w.writerows(registry.get('sources',[]))
 
+# load representation techniques snapshot
+repr_path = os.path.join(OUT_DATA,'representation_techniques.json')
+if not os.path.exists(repr_path):
+    src_repr = '/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv/data/representation_techniques.json'
+    if os.path.exists(src_repr):
+        pass
+repr_data = {'techniques': []}
+try:
+    with open('/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv/data/representation_techniques.json','r') as rf:
+        repr_data = json.load(rf)
+except Exception:
+    repr_data = {'techniques': []}
+
 # render index
 html = f'''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gazzetta di Kyiv — Narrative Monitor</title>
 <style>body{{font-family:Arial,sans-serif;background:#0b1020;color:#e7ecff;margin:24px}}h1{{margin:0 0 8px}}.muted{{color:#a9b3d6}}table{{width:100%;border-collapse:collapse;margin-top:16px}}th,td{{border-bottom:1px solid #24305d;padding:8px;text-align:left}}a{{color:#8ec5ff}}</style></head><body>
@@ -97,10 +117,14 @@ html = f'''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport
 <table><thead><tr><th>Narrative</th><th>Mentions(24h)</th><th>Intensity</th><th>Momentum</th><th>Analytical review</th></tr></thead><tbody>
 {''.join([f"<tr><td>{n['topic']}</td><td>{n['mentions_24h']}</td><td>{n['intensity_score']}</td><td>{n['momentum']}</td><td>{n['review']}</td></tr>" for n in narrative_reviews]) or '<tr><td colspan="5">No data yet</td></tr>'}
 </tbody></table>
+<h2>Written Narrative Reviews</h2>
+{''.join([f"<article style='margin:14px 0;padding:10px 12px;background:#121a33;border-radius:10px'><h3 style='margin:0 0 6px'>{n['topic'].upper()}</h3><p style='margin:0 0 4px;color:#c7d4ff'>Mentions: {n['mentions_24h']} | Intensity: {n['intensity_score']} | Momentum: {n['momentum']}</p><p style='margin:0'>{n['review']}</p></article>" for n in narrative_reviews]) or '<p>No written reviews yet.</p>'}
 <h2>Top Sources</h2>
 <table><thead><tr><th>Source</th><th>Platform</th><th>Score</th><th>Access</th><th>Description</th></tr></thead><tbody>
 {''.join([f"<tr><td><a target='_blank' href='{s['url']}'>{s['name']}</a></td><td>{s['platform']}</td><td>{s['score']}</td><td>{s['access']}</td><td>{(s.get('description') or '')}</td></tr>" for s in sorted(registry.get('sources',[]), key=lambda x:(x.get('access',''), -(float(x.get('score',0) or 0))))[:60]])}
 </tbody></table>
+<h2>Representation Techniques Research</h2>
+{''.join([f"<div style='margin:10px 0;padding:8px 10px;background:#11172c;border-radius:8px'><b>{t['technique']}</b> — evidence {t['evidence_count']}, priority {t['adoption_priority']}<br>{t['implementation_note']}</div>" for t in repr_data.get('techniques',[])[:10]]) or '<p>No techniques available yet.</p>'}
 </body></html>'''
 
 with open(os.path.join(OUT_SITE,'index.html'),'w') as f:
