@@ -1,0 +1,36 @@
+{
+  "sources": [
+    {
+      "id": "reddit_geopolitics_new",
+      "platform": "reddit",
+      "url": "https://www.reddit.com/r/geopolitics/new.json?limit=50",
+      "mode": "json",
+      "enabled": true,
+      "category": "politics_geopolitics"
+    },
+    {
+      "id": "reddit_economics_new",
+      "platform": "reddit",
+      "url": "https://www.reddit.com/r/Economics/new.json?limit=50",
+      "mode": "json",
+      "enabled": true,
+      "category": "macro_econ"
+    },
+    {
+      "id": "youtube_custom_1",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=REPLACE_WITH_VALID_CHANNEL_ID",
+      "mode": "rss",
+      "enabled": false,
+      "category": "markets"
+    },
+    {
+      "id": "hn_frontpage",
+      "platform": "hackernews",
+      "url": "https://hnrss.org/frontpage",
+      "mode": "rss",
+      "enabled": true,
+      "category": "tech_product"
+    }
+  ]
+}

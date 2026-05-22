@@ -55,10 +55,26 @@ if os.path.exists(events_db):
 
 narratives = [{'topic':k,'mentions_24h':v} for k,v in counts.most_common(15)]
 
+narrative_reviews = []
+for n in narratives:
+    topic = n['topic']
+    mentions = n['mentions_24h']
+    intensity = round(min(100, mentions * 4.2), 1)
+    momentum = 'high' if mentions >= 15 else ('medium' if mentions >= 6 else 'low')
+    review = f"Intensity {intensity}/100; momentum {momentum}; tactical relevance {'high' if topic in ['rates','inflation','oil','gas','ukraine','china','sanctions'] else 'medium'}."
+    narrative_reviews.append({
+        'topic': topic,
+        'mentions_24h': mentions,
+        'intensity_score': intensity,
+        'momentum': momentum,
+        'review': review,
+    })
+
 summary = {
     'generated_at': datetime.now(timezone.utc).isoformat(),
     'recent_items_24h': recent_items,
     'top_narratives': narratives,
+    'narrative_reviews': narrative_reviews,
 }
 
 with open(os.path.join(OUT_DATA,'narratives.json'),'w') as f:
@@ -78,10 +94,12 @@ html = f'''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport
 <h1>Gazzetta di Kyiv</h1><div class="muted">Continuous source intelligence + narrative interpretation.</div>
 <p>Updated: {summary['generated_at']}</p>
 <h2>Top Narratives (24h)</h2>
-<ul>{''.join([f"<li><b>{n['topic']}</b>: {n['mentions_24h']} mentions</li>" for n in narratives]) or '<li>No data yet</li>'}</ul>
+<table><thead><tr><th>Narrative</th><th>Mentions(24h)</th><th>Intensity</th><th>Momentum</th><th>Analytical review</th></tr></thead><tbody>
+{''.join([f"<tr><td>{n['topic']}</td><td>{n['mentions_24h']}</td><td>{n['intensity_score']}</td><td>{n['momentum']}</td><td>{n['review']}</td></tr>" for n in narrative_reviews]) or '<tr><td colspan="5">No data yet</td></tr>'}
+</tbody></table>
 <h2>Top Sources</h2>
 <table><thead><tr><th>Source</th><th>Platform</th><th>Score</th><th>Access</th><th>Description</th></tr></thead><tbody>
-{''.join([f"<tr><td><a target='_blank' href='{s['url']}'>{s['name']}</a></td><td>{s['platform']}</td><td>{s['score']}</td><td>{s['access']}</td><td>{(s.get('description') or '')}</td></tr>" for s in registry.get('sources',[])[:40]])}
+{''.join([f"<tr><td><a target='_blank' href='{s['url']}'>{s['name']}</a></td><td>{s['platform']}</td><td>{s['score']}</td><td>{s['access']}</td><td>{(s.get('description') or '')}</td></tr>" for s in sorted(registry.get('sources',[]), key=lambda x:(x.get('access',''), -(float(x.get('score',0) or 0))))[:60]])}
 </tbody></table>
 </body></html>'''
 
