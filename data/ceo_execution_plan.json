@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-05-22T19:53:30.592180+00:00",
+  "author": "CEO Orchestrator",
+  "objective": "Lock retail-first homepage and enforce autonomous reliability",
+  "phases": [
+    {
+      "id": "P1",
+      "name": "Contract Lock",
+      "actions": [
+        "Add homepage retail contract guard in build pipeline",
+        "Fail build if quant terms appear on homepage",
+        "Keep technical output on /data page only"
+      ],
+      "owner": "publishing",
+      "eta": "today"
+    },
+    {
+      "id": "P2",
+      "name": "Reliability Hardening",
+      "actions": [
+        "Run overseers after publish",
+        "Write executive snapshot on each cycle",
+        "Block deploy on degraded publishing/design checks"
+      ],
+      "owner": "reliability",
+      "eta": "today"
+    },
+    {
+      "id": "P3",
+      "name": "Governance Cadence",
+      "actions": [
+        "Maintain twice-daily CEO and overseer runs",
+        "Track blockers with root-cause + fix-plan fields",
+        "Auto-create new overseer for new unmanaged task types"
+      ],
+      "owner": "governance",
+      "eta": "ongoing"
+    }
+  ],
+  "next_3_priorities": [
+    "Patch scripts/build_site.py guardrails",
+    "Patch ops/gazzetta_phase2_publish.py to run guards pre-push",
+    "Commit and verify live homepage remains retail narrative"
+  ],
+  "health_score": 90
+}

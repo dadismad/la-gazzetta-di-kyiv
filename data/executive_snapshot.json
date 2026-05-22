@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T19:50:34.491077+00:00",
+  "generated_at": "2026-05-22T19:54:04.025022+00:00",
   "completed": [
     "overseer_ingestion.py",
     "overseer_analysis.py",
@@ -10,21 +10,45 @@
     "overseer_growth.py",
     "ceo_orchestrator.py"
   ],
-  "in_progress": [],
-  "blocked": [
+  "in_progress": [
     {
       "owner": "publishing",
-      "action": "validate workflow + redeploy + smoke check",
-      "eta": "next run < 8h",
-      "status": "blocked"
+      "action": "maintain homepage retail quality and deploy continuity",
+      "eta": "ongoing",
+      "status": "in_progress"
+    },
+    {
+      "owner": "analysis",
+      "action": "refresh narratives and audit artifacts",
+      "eta": "<8h",
+      "status": "in_progress"
+    },
+    {
+      "owner": "governance",
+      "action": "monitor compliance and add group for truly new tasks",
+      "eta": "daily",
+      "status": "in_progress"
     }
   ],
+  "blocked": [],
   "next_3_priorities": [
     {
       "owner": "publishing",
-      "action": "validate workflow + redeploy + smoke check",
-      "eta": "next run < 8h",
-      "status": "blocked"
+      "action": "maintain homepage retail quality and deploy continuity",
+      "eta": "ongoing",
+      "status": "in_progress"
+    },
+    {
+      "owner": "analysis",
+      "action": "refresh narratives and audit artifacts",
+      "eta": "<8h",
+      "status": "in_progress"
+    },
+    {
+      "owner": "governance",
+      "action": "monitor compliance and add group for truly new tasks",
+      "eta": "daily",
+      "status": "in_progress"
     }
   ]
 }

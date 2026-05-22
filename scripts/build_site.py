@@ -108,8 +108,8 @@ try:
 except Exception:
     repr_data = {'techniques': []}
 
-# render index
-html = f'''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gazzetta di Kyiv — Narrative Monitor</title>
+# render technical data page (secondary page), never overwrite retail homepage index
+html = f'''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gazzetta di Kyiv — Data Desk</title>
 <style>body{{font-family:Arial,sans-serif;background:#0b1020;color:#e7ecff;margin:24px}}h1{{margin:0 0 8px}}.muted{{color:#a9b3d6}}table{{width:100%;border-collapse:collapse;margin-top:16px}}th,td{{border-bottom:1px solid #24305d;padding:8px;text-align:left}}a{{color:#8ec5ff}}</style></head><body>
 <h1>Gazzetta di Kyiv</h1><div class="muted">Continuous source intelligence + narrative interpretation.</div>
 <p>Updated: {summary['generated_at']}</p>
@@ -127,7 +127,15 @@ html = f'''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport
 {''.join([f"<div style='margin:10px 0;padding:8px 10px;background:#11172c;border-radius:8px'><b>{t['technique']}</b> — evidence {t['evidence_count']}, priority {t['adoption_priority']}<br>{t['implementation_note']}</div>" for t in repr_data.get('techniques',[])[:10]]) or '<p>No techniques available yet.</p>'}
 </body></html>'''
 
-with open(os.path.join(OUT_SITE,'index.html'),'w') as f:
+with open(os.path.join(OUT_SITE,'data.html'),'w') as f:
     f.write(html)
+
+# homepage contract guard: retail-friendly front page only (no quant jargon)
+index_path = os.path.join(OUT_SITE, 'index.html')
+if os.path.exists(index_path):
+    index_txt = open(index_path, 'r', encoding='utf-8', errors='ignore').read().lower()
+    banned = ['intensity', 'momentum', 'signal strength', 'confidence_bands', 'yield']
+    if any(b in index_txt for b in banned):
+        raise RuntimeError('Homepage contract violation: quant/technical terms detected on retail homepage index.html')
 
 print(json.dumps({'ok':True,'narratives':len(narratives),'recent_items_24h':recent_items}))

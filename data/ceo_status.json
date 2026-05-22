@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T19:50:34.517319+00:00",
+  "generated_at": "2026-05-22T19:54:04.051406+00:00",
   "ceo_program": "active",
   "overall_health_score": 90,
   "summary": {
@@ -16,7 +16,7 @@
     "design_compare": {
       "ok": true,
       "code": 0,
-      "out": "{\n  \"ok\": true,\n  \"score\": 62.5,\n  \"checks\": {\n    \"dark_background\": true,\n    \"two_column_layout\": true,\n    \"serif_headlines\": true,\n    \"kicker_labels\": true,\n    \"top_narratives_section\": true,\n    \"narrative_focus_sidebar\": false,\n    \"context_action_lines\": false,\n    \"no_quant_terms_in_html\": false\n  },\n  \"gaps\": [\n    \"Remove quant/technical labels from homepage copy.\"\n  ]\n}\n",
+      "out": "{\n  \"ok\": true,\n  \"score\": 87.5,\n  \"checks\": {\n    \"dark_background\": true,\n    \"two_column_layout\": true,\n    \"serif_headlines\": true,\n    \"kicker_labels\": true,\n    \"top_narratives_section\": true,\n    \"narrative_focus_sidebar\": true,\n    \"context_action_lines\": false,\n    \"no_quant_terms_in_html\": true\n  },\n  \"gaps\": []\n}\n",
       "err": ""
     },
     "pipeline_audit_file": {
