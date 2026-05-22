@@ -13,6 +13,7 @@ OUT_SITE = os.path.join(REPO, 'site')
 
 os.makedirs(OUT_DATA, exist_ok=True)
 os.makedirs(OUT_SITE, exist_ok=True)
+os.makedirs(os.path.join(OUT_SITE, 'data'), exist_ok=True)
 
 registry_json = os.path.join(BASE, 'source_registry_ranked.json')
 events_db = os.path.join(BASE, 'events.db')
@@ -86,8 +87,12 @@ summary = {
 
 with open(os.path.join(OUT_DATA,'narratives.json'),'w') as f:
     json.dump(summary,f,indent=2)
+with open(os.path.join(OUT_SITE,'data','narratives.json'),'w') as f:
+    json.dump(summary,f,indent=2)
 
 with open(os.path.join(OUT_DATA,'source_registry_ranked.json'),'w') as f:
+    json.dump(registry,f,indent=2)
+with open(os.path.join(OUT_SITE,'data','source_registry_ranked.json'),'w') as f:
     json.dump(registry,f,indent=2)
 
 # csv refresh
@@ -107,6 +112,8 @@ try:
         repr_data = json.load(rf)
 except Exception:
     repr_data = {'techniques': []}
+with open(os.path.join(OUT_SITE,'data','representation_techniques.json'),'w') as f:
+    json.dump(repr_data,f,indent=2)
 
 # render technical data page (secondary page), never overwrite retail homepage index
 html = f'''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gazzetta di Kyiv — Data Desk</title>
