@@ -1,110 +1,82 @@
-function normTopic(topic){return (topic||'market narrative').toLowerCase();}
+function normTopic(t){return (t||'macro').toLowerCase();}
+const POT=['Low','Medium','High','Extreme'];
 
-function sentenceFor(topic){
-  const t = normTopic(topic);
-  const map = {
-    ai: 'The AI infrastructure build-out is approaching a saturation point where megacap spending may no longer justify valuations.',
-    oil: 'Geopolitical disruptions are exposing how little spare oil production capacity remains in the global system.',
-    inflation: 'Sticky inflation pressures are colliding with market hopes for rapid rate cuts, raising repricing risk.',
-    rates: 'Bond markets are re-evaluating how long restrictive policy may stay in place as growth diverges.',
-    election: 'Election-year policy uncertainty is becoming a direct catalyst for sector-level volatility.',
-    crypto: 'Crypto is increasingly acting as a high-beta sentiment barometer for broader risk appetite.',
-    russia: 'War-related supply and sanction dynamics continue to feed an uneven geopolitical risk premium.',
-    ukraine: 'Ukraine-linked security developments remain a key swing factor for energy and regional risk pricing.',
-    eu: 'European fiscal and political stress points are starting to shape cross-asset allocation decisions.'
-  };
-  return map[t] || `${topic.toUpperCase()} is becoming a market-moving narrative retail traders should follow closely.`;
+function frameFor(topic){
+  const t=normTopic(topic);
+  const m={ai:['TECH/AI','Automated Abundance'],oil:['ENERGY','Decentralized Grids'],inflation:['MACRO','Price Friction'],rates:['FIXED INCOME','Liquidity Discipline'],crypto:['FINTECH','Algorithmic Sovereignty'],russia:['GEOPOLITICS','Strategic Fragmentation'],election:['POLICY','Election Volatility'],eu:['EUROPE','Fiscal Divergence']};
+  return m[t]||['GLOBAL','Narrative Transition'];
 }
+function potentialFor(topic){ const t=normTopic(topic); const m={ai:'High',oil:'High',inflation:'Medium',rates:'Medium',crypto:'Extreme',russia:'Stable',election:'High',eu:'Medium'}; return m[t]||'Medium';}
+function flowFor(topic){const m={ai:12.4,oil:6.1,inflation:4.3,rates:5.0,election:3.2,crypto:9.7,russia:2.8,ukraine:2.5,eu:4.9};return (m[normTopic(topic)]??3.8)}
+function proj3dFor(topic){const m={ai:'+1.8%',oil:'+1.2%',inflation:'-0.4%',rates:'-0.6%',election:'±1.1%',crypto:'+2.6%',russia:'+0.7%',ukraine:'+0.5%',eu:'+0.9%'};return m[normTopic(topic)]||'±0.8%'}
+function assetFor(topic){const m={ai:'NASDAQ 100',oil:'Brent',inflation:'UST 2Y',rates:'UST 10Y',crypto:'BTC',russia:'EU Gas',election:'S&P 500',eu:'EURUSD'};return m[normTopic(topic)]||'Global Risk Basket'}
 
-function contextFor(topic, review){
-  const t = normTopic(topic);
-  const map = {
-    ai: 'Spending momentum and valuation sensitivity are now moving together, so policy headlines and earnings guidance can quickly shift sentiment.',
-    oil: 'Supply uncertainty is interacting with fragile inventories, making energy headlines capable of moving inflation expectations fast.',
-    inflation: 'Recent data and central-bank messaging are not fully aligned, so markets can reprice abruptly after each macro release.',
-    rates: 'Bond volatility is feeding directly into equity positioning, especially in duration-sensitive sectors.',
-    election: 'Policy-path uncertainty is lifting headline risk and can amplify short-term rotation between sectors.',
-  };
-  return map[t] || 'Cross-market headlines are clustering around this theme, increasing the chance of spillover moves.';
-}
-
-function actionFor(topic){
-  return 'Track confirmation in related assets before chasing price, and prioritize risk control over speed.';
-}
-
-function flowFor(topic){
-  const t = normTopic(topic);
-  const map = {ai: 12.4, oil: 6.1, inflation: 4.3, rates: 5.0, election: 3.2, crypto: 9.7, russia: 2.8, ukraine: 2.5, eu: 4.9};
-  return (map[t] ?? 3.8);
-}
-
-function proj3dFor(topic){
-  const t = normTopic(topic);
-  const map = {ai: '+1.8%', oil: '+1.2%', inflation: '-0.4%', rates: '-0.6%', election: '±1.1%', crypto: '+2.6%', russia: '+0.7%', ukraine: '+0.5%', eu: '+0.9%'};
-  return map[t] || '±0.8%';
-}
-
-function focusTitleFor(topic){
-  return `Focus: ${topic.toUpperCase()} scenario map for retail positioning`;
-}
-
-function focusCopyFor(topic){
-  return 'This panel summarizes what can invalidate the narrative, what confirms continuation, and what specific headline classes deserve immediate attention.';
-}
+let N=[];let activeFrame='';
 
 async function load(){
-  const n = await fetch('./data/narratives.json').then(r=>r.json()).catch(()=>({}));
-  const reviews = (n.narrative_reviews||[]).slice(0,10);
+  const n=await fetch('./data/narratives.json').then(r=>r.json()).catch(()=>({}));
+  const reviews=(n.narrative_reviews||[]).slice(0,12);
+  N=reviews.map((r,i)=>{
+    const [cat,frame]=frameFor(r.topic);
+    return {
+      id:i+1,topic:(r.topic||'macro').toUpperCase(),cat,frame,
+      claim:(r.headline||'Narrative drift requires tactical adaptation.'),
+      desc:(r.review||'Cross-asset conditions suggest selective risk-taking with strict invalidation points.'),
+      potential:potentialFor(r.topic),flow:flowFor(r.topic),proj3d:proj3dFor(r.topic),asset:assetFor(r.topic)
+    }
+  });
+  renderFrames(); renderClaims(); bindControls(); if(N[0]) showFocus(0);
+}
 
-  const updated = document.getElementById('updated');
-  if(updated) updated.textContent = `Updated: ${n.generated_at || 'n/a'}`;
+function renderFrames(){
+  const frames=[...new Map(N.map(x=>[x.frame,x])).values()];
+  const el=document.getElementById('frameList');
+  el.innerHTML=frames.map((x,i)=>`<div class='frame-item ${i===0?'active':''}' data-frame='${x.frame}'><div class='frame-cat'>${x.cat}</div><div class='frame-name'>${x.frame}</div></div>`).join('');
+  activeFrame=frames[0]?.frame||'';
+  el.querySelectorAll('.frame-item').forEach(node=>node.onclick=()=>{activeFrame=node.dataset.frame;el.querySelectorAll('.frame-item').forEach(n=>n.classList.remove('active'));node.classList.add('active');renderClaims();});
+}
 
-  const narratives = reviews.map(r=>({
-    topic: (r.topic||'Narrative').toUpperCase(),
-    sentence: sentenceFor(r.topic),
-    context: contextFor(r.topic, r.review),
-    action: actionFor(r.topic),
-    flow_billion_usd_3d: flowFor(r.topic),
-    projection_3d: proj3dFor(r.topic),
-    details: [
-      'Most crucial detail: this theme is recurring across multiple news cycles rather than appearing as a one-off shock.',
-      'Retail interpretation: wait for follow-through evidence in price action before increasing exposure.',
-      'What to watch next: policy statements, earnings guidance, and macro prints tied to this narrative.'
-    ]
-  }));
+function claimRow(x,idx){
+  return `<div class='claim-row' data-id='${idx}'>
+    <div class='claim-head'>
+      <div class='claim-idx'>${String(x.id).padStart(2,'0')}</div>
+      <div><div class='claim-title'>${x.claim}</div><div class='claim-sub'>${x.desc.slice(0,120)}</div></div>
+      <div class='claim-pot'>${x.potential}</div>
+    </div>
+    <div class='claim-extra'>
+      <div class='insight-line'><span class='badge'>Flow 3d</span> ~$${x.flow}B</div>
+      <div class='insight-line'><span class='badge'>Projection 3d</span> ${x.proj3d}</div>
+      <div class='insight-line'><span class='badge'>Primary asset</span> ${x.asset}</div>
+    </div>
+  </div>`;
+}
 
-  const listEl = document.getElementById('narrativeList');
-  const detailsEl = document.getElementById('selectedNarrative');
+function renderClaims(){
+  const list=activeFrame?N.filter(x=>x.frame===activeFrame):N;
+  const el=document.getElementById('claimsList');
+  el.innerHTML=list.map((x,i)=>claimRow(x,N.indexOf(x))).join('');
+  el.querySelectorAll('.claim-row').forEach(r=>{r.querySelector('.claim-head').onclick=()=>{r.classList.toggle('open');showFocus(Number(r.dataset.id));};});
+}
 
-  window.__narr = narratives;
+function showFocus(i){
+  const x=N[i]; if(!x) return;
+  document.getElementById('selectedNarrative').innerHTML=`
+    <div class='focus-title'>Dominating Regime: ${x.frame}</div>
+    <div class='kpi'><span>Capital flow (3d)</span><b>~$${x.flow}B</b></div>
+    <div class='kpi'><span>${x.asset} projection (3d)</span><b>${x.proj3d}</b></div>
+    <div class='kpi'><span>Industry pressure</span><b>${x.potential}</b></div>
+    <div class='focus-copy'>Actionable setup: wait for confirmation candle + volume expansion in ${x.asset}; invalidate if macro headline reverses policy/rates direction.</div>
+    <ul class='focus-list'>
+      <li>Entry protocol: stage risk in 2 tranches over 24h.</li>
+      <li>Risk cap: max portfolio heat 1.2% for this narrative cluster.</li>
+      <li>Watchlist: rates path, energy shock, and policy headlines.</li>
+    </ul>`;
+}
 
-  if(listEl){
-    listEl.innerHTML = narratives.map((x,i)=>`
-      <article class='n-card ${i===0?"featured":""}' onclick='selectNarrative(${i})'>
-        <div class='n-kicker'>${x.topic}</div>
-        <div class='n-headline'>${x.sentence}</div>
-        <div class='n-body'>${x.context}</div>
-        <div class='n-meta'><span><b>Context:</b> ${x.details[0]}</span><span><b>Action:</b> ${x.action}</span><span><b>Flow 3d:</b> ~$${x.flow_billion_usd_3d}B</span><span><b>Projection 3d:</b> ${x.projection_3d}</span></div>
-      </article>
-    `).join('');
-  }
-
-  window.selectNarrative = (i)=>{
-    const x = (window.__narr||[])[i]; if(!x || !detailsEl) return;
-    detailsEl.innerHTML = `
-      <div class='focus-kicker'>${x.topic}</div>
-      <div class='focus-title'>${focusTitleFor(x.topic)}</div>
-      <div class='focus-copy'>Distinct focus brief: portfolio scenario framing, invalidation triggers, and timing risks for ${x.topic}.</div>
-      <div class='focus-copy'>Capital flow estimate (3d): <b>~$${x.flow_billion_usd_3d}B</b> | Price projection (3d): <b>${x.projection_3d}</b></div>
-      <ul class='subpoints'>
-        <li>${x.details[0]}</li>
-        <li>${x.details[1]}</li>
-        <li>${x.details[2]}</li>
-      </ul>
-    `;
-  };
-
-  if(narratives[0]) window.selectNarrative(0);
+function bindControls(){
+  document.getElementById('searchBox').oninput=(e)=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.claim-row').forEach(r=>{r.style.display=r.innerText.toLowerCase().includes(q)?'block':'none';});};
+  document.getElementById('collapseAll').onclick=()=>document.querySelectorAll('.claim-row').forEach(r=>r.classList.remove('open'));
+  document.getElementById('expandAll').onclick=()=>document.querySelectorAll('.claim-row').forEach(r=>r.classList.add('open'));
 }
 
 load();

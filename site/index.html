@@ -3,32 +3,35 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Gazzetta di Kyiv — Home</title>
+  <title>Gazzetta di Kyiv — Narrative Command</title>
   <link rel="stylesheet" href="./styles.css"/>
 </head>
-<body class="news-body dark-news">
-  <header class="topbar dark">
-    <div class="brand">GAZZETTA DI KYIV</div>
-    <nav>
-      <a class="active" href="./index.html">Home</a>
-      <a href="./data.html">Data Desk</a>
-      <a href="./contacts.html">Contacts</a>
-      <a href="./cooperation.html">Cooperation</a>
-      <a href="./privacy.html">Privacy</a>
-    </nav>
+<body class="news-body live-light">
+  <header class="topbar">
+    <div class="brand">Gathering Economic Claims</div>
+    <div class="top-tools">
+      <input id="searchBox" placeholder="Search industries..."/>
+      <button id="collapseAll" title="Collapse all">–</button>
+      <button id="expandAll" title="Expand all">☰</button>
+    </div>
   </header>
 
-  <main class="grid-focus">
-    <section class="narratives-wrap" id="narrativesPanel">
-      <div class="section-line">
-        <h2>Top Narratives</h2>
-        <div id="updated" class="muted"></div>
-      </div>
-      <div id="narrativeList"></div>
+  <main class="tri-grid">
+    <section class="frames-col">
+      <div class="col-title">Narrative Frames</div>
+      <div id="frameList"></div>
     </section>
 
-    <aside class="panel dark" id="detailsPanel">
-      <h2>Narrative Focus</h2>
+    <section class="claims-col">
+      <div class="claims-head">
+        <span class="col-title">Active Economic Claims</span>
+        <span class="muted">Sorted by potential</span>
+      </div>
+      <div id="claimsList"></div>
+    </section>
+
+    <aside class="focus-col" id="detailsPanel">
+      <div class="col-title">Economic Regime Overlap</div>
       <div id="selectedNarrative"></div>
     </aside>
   </main>
