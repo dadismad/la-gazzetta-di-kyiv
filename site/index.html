@@ -6,9 +6,9 @@
   <title>Gazzetta di Kyiv — Home</title>
   <link rel="stylesheet" href="./styles.css"/>
 </head>
-<body class="news-body">
-  <header class="topbar">
-    <div class="brand">GAZZETTA DI KYIV <span>narrative desk</span></div>
+<body class="news-body dark-news">
+  <header class="topbar dark">
+    <div class="brand">ECONOMIC NARRATIVE ENGINE <span>Gazzetta di Kyiv</span></div>
     <nav>
       <a href="./index.html">Home</a>
       <a href="./data.html">Data Desk</a>
@@ -18,25 +18,17 @@
     </nav>
   </header>
 
-  <main class="grid3">
-    <section class="panel" id="regimesPanel">
-      <h2>Dominating Regimes</h2>
-      <div id="regimes"></div>
-    </section>
-
-    <section class="panel" id="narrativesPanel">
+  <main class="grid-focus">
+    <section class="panel dark" id="narrativesPanel">
       <div class="panel-head">
-        <h2>Front Page Narratives</h2>
+        <h2>Top Narratives</h2>
         <div id="updated" class="muted"></div>
-      </div>
-      <div class="n-head muted">
-        <span>Type</span><span>Narrative / Claim</span><span>Signal</span><span>Yield</span>
       </div>
       <div id="narrativeList"></div>
     </section>
 
-    <aside class="panel" id="analysisPanel">
-      <h2>Analysis</h2>
+    <aside class="panel dark" id="detailsPanel">
+      <h2>Narrative Focus</h2>
       <div id="selectedNarrative"></div>
     </aside>
   </main>
