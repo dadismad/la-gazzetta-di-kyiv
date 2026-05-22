@@ -1,0 +1,16 @@
+{
+  "group": "ingestion",
+  "generated_at": "2026-05-22T19:46:43.752892+00:00",
+  "state": "running",
+  "score": 100,
+  "checks": {
+    "events_ndjson_exists": true,
+    "events_db_exists": true,
+    "sources_exists": true,
+    "events_fresh_6h": true
+  },
+  "blockers": [],
+  "root_cause_hypothesis": "",
+  "fix_plan": "run collector + validate sources schema",
+  "eta": "next run < 8h"
+}

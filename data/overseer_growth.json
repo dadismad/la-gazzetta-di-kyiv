@@ -1,0 +1,15 @@
+{
+  "group": "growth",
+  "generated_at": "2026-05-22T19:46:43.906541+00:00",
+  "state": "running",
+  "score": 100.0,
+  "checks": {
+    "contacts_page": true,
+    "cooperation_page": true,
+    "privacy_page": true
+  },
+  "blockers": [],
+  "root_cause_hypothesis": "missing trust/conversion pages",
+  "fix_plan": "restore static growth pages and links",
+  "eta": "next run < 24h"
+}

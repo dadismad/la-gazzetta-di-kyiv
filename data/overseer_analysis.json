@@ -1,0 +1,16 @@
+{
+  "group": "analysis",
+  "generated_at": "2026-05-22T19:46:43.774727+00:00",
+  "state": "running",
+  "score": 100,
+  "checks": {
+    "narratives.json": true,
+    "pipeline_audit.json": true,
+    "representation_techniques.json": true,
+    "fresh_24h": true
+  },
+  "blockers": [],
+  "root_cause_hypothesis": "build_site or audit script not executed",
+  "fix_plan": "run phase2 publish and rebuild artifacts",
+  "eta": "next run < 8h"
+}

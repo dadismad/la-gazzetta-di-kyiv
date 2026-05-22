@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-05-22T19:46:43.953676+00:00",
+  "completed": [
+    "overseer_ingestion.py",
+    "overseer_analysis.py",
+    "overseer_publishing.py",
+    "overseer_governance.py",
+    "overseer_design.py",
+    "overseer_reliability.py",
+    "overseer_growth.py",
+    "ceo_orchestrator.py"
+  ],
+  "in_progress": [],
+  "blocked": [
+    {
+      "owner": "publishing",
+      "action": "validate workflow + redeploy + smoke check",
+      "eta": "next run < 8h",
+      "status": "blocked"
+    }
+  ],
+  "next_3_priorities": [
+    {
+      "owner": "publishing",
+      "action": "validate workflow + redeploy + smoke check",
+      "eta": "next run < 8h",
+      "status": "blocked"
+    }
+  ]
+}

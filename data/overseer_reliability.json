@@ -1,0 +1,17 @@
+{
+  "group": "reliability",
+  "generated_at": "2026-05-22T19:46:43.886413+00:00",
+  "state": "running",
+  "score": 100.0,
+  "checks": {
+    "overseer_ingestion.json": true,
+    "overseer_analysis.json": true,
+    "overseer_publishing.json": true,
+    "overseer_governance.json": true,
+    "overseer_design.json": true
+  },
+  "blockers": [],
+  "root_cause_hypothesis": "oversight chain incomplete",
+  "fix_plan": "execute missing overseers and refresh status",
+  "eta": "next run < 8h"
+}

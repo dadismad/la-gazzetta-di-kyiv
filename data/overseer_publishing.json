@@ -1,0 +1,17 @@
+{
+  "group": "publishing",
+  "generated_at": "2026-05-22T19:46:43.796664+00:00",
+  "state": "degraded",
+  "score": 68,
+  "checks": {
+    "workflow_exists": true,
+    "site_index_exists": true,
+    "retail_home_guard": false
+  },
+  "blockers": [
+    "publish pipeline risk"
+  ],
+  "root_cause_hypothesis": "workflow drift or homepage regression",
+  "fix_plan": "validate workflow + redeploy + smoke check",
+  "eta": "next run < 8h"
+}
