@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import subprocess, json, datetime, pathlib
 ROOT=pathlib.Path('/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv')
-steps=['python3 ops/representation_curator.py','python3 ops/brandbook_enforcer.py','python3 ops/ui_contract_check.py']
+steps=['python3 ops/representation_curator.py','python3 ops/brandbook_enforcer.py','python3 ops/ui_contract_check.py','python3 ops/claims_container_guard.py']
 res=[]
 ok=True
 for s in steps:

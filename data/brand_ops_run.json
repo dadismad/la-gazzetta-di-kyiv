@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T22:04:16.317597+00:00",
+  "generated_at": "2026-05-22T22:09:36.149701+00:00",
   "ok": true,
   "steps": [
     {
@@ -11,13 +11,19 @@
     {
       "cmd": "python3 ops/brandbook_enforcer.py",
       "code": 0,
-      "out": "{\"generated_at\": \"2026-05-22T22:04:16.292564+00:00\", \"ok\": true, \"issues\": []}\n",
+      "out": "{\"generated_at\": \"2026-05-22T22:09:36.104564+00:00\", \"ok\": true, \"issues\": []}\n",
       "err": ""
     },
     {
       "cmd": "python3 ops/ui_contract_check.py",
       "code": 0,
-      "out": "{\"generated_at\": \"2026-05-22T22:04:16.315009+00:00\", \"ok\": true, \"issues\": []}\n",
+      "out": "{\"generated_at\": \"2026-05-22T22:09:36.125925+00:00\", \"ok\": true, \"issues\": []}\n",
+      "err": ""
+    },
+    {
+      "cmd": "python3 ops/claims_container_guard.py",
+      "code": 0,
+      "out": "{\"generated_at\": \"2026-05-22T22:09:36.147459+00:00\", \"ok\": true, \"narrative_reviews_count\": 12, \"issues\": []}\n",
       "err": ""
     }
   ]

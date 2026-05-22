@@ -6,6 +6,20 @@ function frameFor(topic){
   const m={ai:['TECH/AI','Automated Abundance'],oil:['ENERGY','Decentralized Grids'],inflation:['MACRO','Price Friction'],rates:['FIXED INCOME','Liquidity Discipline'],crypto:['FINTECH','Algorithmic Sovereignty'],russia:['GEOPOLITICS','Strategic Fragmentation'],election:['POLICY','Election Volatility'],eu:['EUROPE','Fiscal Divergence']};
   return m[t]||['GLOBAL','Narrative Transition'];
 }
+function frameInsight(frame){
+  const m={
+    'Automated Abundance':'AI capex and productivity narratives driving growth-vs-valuation tension.',
+    'Decentralized Grids':'Energy supply shocks interacting with inflation expectations and transport costs.',
+    'Price Friction':'Sticky price dynamics reshaping consumer demand and central-bank signaling.',
+    'Liquidity Discipline':'Rates and funding conditions driving cross-asset repositioning pressure.',
+    'Algorithmic Sovereignty':'Crypto/beta sentiment leading risk-on and liquidity rotation cues.',
+    'Strategic Fragmentation':'Geopolitical disruptions repricing trade routes, sanctions, and commodity risk.',
+    'Election Volatility':'Policy uncertainty altering sector dispersion and options-implied risk.',
+    'Fiscal Divergence':'European fiscal stress affecting sovereign spreads and FX flows.',
+    'Narrative Transition':'Mixed macro regime with rotating leadership across assets.'
+  };
+  return m[frame] || m['Narrative Transition'];
+}
 function potentialFor(topic){ const t=normTopic(topic); const m={ai:'High',oil:'High',inflation:'Medium',rates:'Medium',crypto:'Extreme',russia:'Stable',election:'High',eu:'Medium'}; return m[t]||'Medium';}
 function flowFor(topic){const m={ai:12.4,oil:6.1,inflation:4.3,rates:5.0,election:3.2,crypto:9.7,russia:2.8,ukraine:2.5,eu:4.9};return (m[normTopic(topic)]??3.8)}
 function proj3dFor(topic){const m={ai:'+1.8%',oil:'+1.2%',inflation:'-0.4%',rates:'-0.6%',election:'±1.1%',crypto:'+2.6%',russia:'+0.7%',ukraine:'+0.5%',eu:'+0.9%'};return m[normTopic(topic)]||'±0.8%'}
@@ -31,7 +45,7 @@ async function load(){
 function renderFrames(){
   const frames=[...new Map(N.map(x=>[x.frame,x])).values()];
   const el=document.getElementById('frameList');
-  el.innerHTML=frames.map((x,i)=>`<div class='frame-item ${i===0?'active':''}' data-frame='${x.frame}'><div class='frame-cat'>${x.cat}</div><div class='frame-name'>${x.frame}</div></div>`).join('');
+  el.innerHTML=frames.map((x,i)=>`<div class='frame-item ${i===0?'active':''}' data-frame='${x.frame}'><div class='frame-cat'>${x.cat}</div><div class='frame-name'>${x.frame}</div><div class='frame-note'>${frameInsight(x.frame)}</div></div>`).join('');
   activeFrame=frames[0]?.frame||'';
   el.querySelectorAll('.frame-item').forEach(node=>node.onclick=()=>{activeFrame=node.dataset.frame;el.querySelectorAll('.frame-item').forEach(n=>n.classList.remove('active'));node.classList.add('active');renderClaims();});
 }
@@ -52,9 +66,10 @@ function claimRow(x,idx){
 }
 
 function renderClaims(){
-  const list=activeFrame?N.filter(x=>x.frame===activeFrame):N;
+  let list=activeFrame?N.filter(x=>x.frame===activeFrame):N;
+  if(!list.length) list=N.slice(0,8);
   const el=document.getElementById('claimsList');
-  el.innerHTML=list.map((x,i)=>claimRow(x,N.indexOf(x))).join('');
+  el.innerHTML=list.length ? list.map((x,i)=>claimRow(x,N.indexOf(x))).join('') : `<div class='claim-empty'>No active claims yet. Pipeline is refreshing; showing latest macro frames shortly.</div>`;
   el.querySelectorAll('.claim-row').forEach(r=>{r.querySelector('.claim-head').onclick=()=>{r.classList.toggle('open');showFocus(Number(r.dataset.id));};});
 }
 
