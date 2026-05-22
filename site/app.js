@@ -25,7 +25,7 @@ function actionFor(topic){
 }
 
 async function load(){
-  const n = await fetch('../data/narratives.json').then(r=>r.json()).catch(()=>({}));
+  const n = await fetch('./data/narratives.json').then(r=>r.json()).catch(()=>({}));
   const reviews = (n.narrative_reviews||[]).slice(0,10);
 
   const updated = document.getElementById('updated');
