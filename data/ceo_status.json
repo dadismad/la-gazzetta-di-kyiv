@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-05-22T19:43:05.526459+00:00",
+  "ceo_program": "active",
+  "overall_health_score": 90,
+  "summary": {
+    "groups": 5,
+    "best_practice_signals": [
+      "Clear ownership by process group",
+      "Scheduled oversight with fixed cadences",
+      "Objective health checks + machine-readable outputs",
+      "Separation of concerns: ingestion / analysis / publishing / governance",
+      "Closed-loop improvement recommendations"
+    ]
+  },
+  "checks": {
+    "design_compare": {
+      "ok": true,
+      "code": 0,
+      "out": "{\n  \"ok\": true,\n  \"score\": 62.5,\n  \"checks\": {\n    \"dark_background\": true,\n    \"two_column_layout\": true,\n    \"serif_headlines\": true,\n    \"kicker_labels\": true,\n    \"top_narratives_section\": true,\n    \"narrative_focus_sidebar\": false,\n    \"context_action_lines\": false,\n    \"no_quant_terms_in_html\": false\n  },\n  \"gaps\": [\n    \"Remove quant/technical labels from homepage copy.\"\n  ]\n}\n",
+      "err": ""
+    },
+    "pipeline_audit_file": {
+      "ok": true
+    },
+    "narratives_file": {
+      "ok": true
+    },
+    "site_index": {
+      "ok": true
+    }
+  },
+  "recommendations": [
+    "For new tasks outside known groups, create a new group-level overseer script before execution."
+  ],
+  "progress_view": {
+    "states": [
+      "running",
+      "partially_covered",
+      "needs_improvement"
+    ],
+    "problem_policy": "identify -> classify -> assign overseer -> verify twice/day"
+  }
+}
