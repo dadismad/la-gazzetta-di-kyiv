@@ -18,65 +18,30 @@ Redesign the site into a **bright, premium, light-themed, sophisticated-cyberpun
      - vertical rhythm for sections
      - card proportion and spacing scale
    - Target **info-to-emptiness ratio ≈ 1:3** (content occupies ~25%, whitespace ~75%).
-   - Keep the page breathable and high-end editorial.
 
 3. **Containers and components**
    - Containers should be **frameless** (no hard borders).
    - Use soft elevation, gradients, and subtle shadows.
    - Rounded corners medium-large.
-   - Data cards should read as floating modules.
 
-4. **Typography and hierarchy**
-   - Elegant modern serif for headlines, clean sans-serif for body/data.
-   - Distinct hierarchy for:
-     - Narrative title
-     - Numeric signal line
-     - Dense analytical review
-   - Improve line-length for long narrative reviews (optimal reading width).
-
-5. **Pages to create**
-   - Home page (narratives + source intelligence + methodology summary)
+4. **Pages to create**
+   - Home page
    - Contacts page
-   - Cooperation page (partnership / institutional collaboration)
+   - Cooperation page
    - Privacy Policy page
 
-6. **Data integration requirements**
-   - Continue loading from:
-     - `data/narratives.json`
-     - `data/source_registry_ranked.json`
-     - `data/representation_techniques.json`
-   - Do not break existing automation pipeline.
+5. **Data integration**
+   - `data/narratives.json`
+   - `data/source_registry_ranked.json`
+   - `data/representation_techniques.json`
 
-7. **Narrative review visibility (critical)**
-   - Written narrative reviews must be prominently visible on the home page.
-   - Each narrative block must include:
-     - mentions (24h)
-     - intensity score
-     - momentum
-     - dense text interpretation
-   - Make these readable and impossible to miss.
-
-8. **Performance and maintainability**
-   - Use semantic HTML/CSS and lightweight JS.
-   - Keep dependencies minimal.
-   - Keep build simple (static site output).
+6. **Critical visibility**
+   - Written narrative reviews must be prominent and central.
 
 ## Deliverables
-- Updated `site/index.html` with new bright visual system.
-- Additional pages:
-  - `site/contacts.html`
-  - `site/cooperation.html`
-  - `site/privacy.html`
-- Shared style file:
-  - `site/styles.css`
-- If needed, small JS helper file:
-  - `site/app.js`
-- Update nav links across all pages.
-- Keep content and data fields aligned with current JSON schema.
-
-## Acceptance criteria
-- Visual style: bright, premium, light blue + golden sophisticated cyberpunk.
-- Frameless containers, soft depth, strong readability.
-- Narrative written reviews clearly visible and central to UX.
-- Golden-ratio inspired structure evident in grid/spacing.
-- Site remains auto-refresh compatible with existing cron/GitHub pipeline.
+- `site/index.html`
+- `site/contacts.html`
+- `site/cooperation.html`
+- `site/privacy.html`
+- `site/styles.css`
+- optional `site/app.js`
