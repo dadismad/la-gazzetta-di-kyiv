@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-22T15:19:07.502671+00:00",
+  "updated_at": "2026-05-22T17:17:11.576589+00:00",
   "sources": [
     {
       "id": "bloomberg_markets",
@@ -9,7 +9,7 @@
       "url": "https://feeds.bloomberg.com/markets/news.rss",
       "platform": "rss",
       "last_validation_status": 200,
-      "last_validated_at": "2026-05-22T15:18:54.336231+00:00"
+      "last_validated_at": "2026-05-22T17:17:03.981411+00:00"
     },
     {
       "id": "ft_world",
@@ -19,7 +19,7 @@
       "url": "https://www.ft.com/world?format=rss",
       "platform": "rss",
       "last_validation_status": 200,
-      "last_validated_at": "2026-05-22T15:18:54.973009+00:00"
+      "last_validated_at": "2026-05-22T17:17:04.609503+00:00"
     },
     {
       "id": "guardian_world",
@@ -29,7 +29,7 @@
       "url": "https://www.theguardian.com/world/rss",
       "platform": "rss",
       "last_validation_status": 200,
-      "last_validated_at": "2026-05-22T15:18:55.170225+00:00"
+      "last_validated_at": "2026-05-22T17:17:04.858838+00:00"
     },
     {
       "id": "hn_front",
@@ -39,7 +39,7 @@
       "url": "https://hnrss.org/frontpage",
       "platform": "rss",
       "last_validation_status": 200,
-      "last_validated_at": "2026-05-22T15:18:59.821848+00:00"
+      "last_validated_at": "2026-05-22T17:17:05.473926+00:00"
     },
     {
       "id": "hn_frontpage",
@@ -49,7 +49,7 @@
       "enabled": true,
       "category": "tech_product",
       "last_validation_status": 200,
-      "last_validated_at": "2026-05-22T15:19:01.452516+00:00"
+      "last_validated_at": "2026-05-22T17:17:06.097011+00:00"
     },
     {
       "id": "reddit_economics",
@@ -59,7 +59,7 @@
       "url": "https://www.reddit.com/r/economics/new.json?limit=100",
       "platform": "reddit",
       "last_validation_status": 200,
-      "last_validated_at": "2026-05-22T15:19:02.531101+00:00"
+      "last_validated_at": "2026-05-22T17:17:07.024923+00:00"
     },
     {
       "id": "reddit_economics_new",
@@ -69,7 +69,7 @@
       "enabled": true,
       "category": "macro_econ",
       "last_validation_status": 200,
-      "last_validated_at": "2026-05-22T15:19:03.477525+00:00"
+      "last_validated_at": "2026-05-22T17:17:07.795195+00:00"
     },
     {
       "id": "reddit_geopolitics_new",
@@ -79,7 +79,7 @@
       "enabled": true,
       "category": "politics_geopolitics",
       "last_validation_status": 200,
-      "last_validated_at": "2026-05-22T15:19:04.492793+00:00"
+      "last_validated_at": "2026-05-22T17:17:08.603501+00:00"
     },
     {
       "id": "reddit_stocks",
@@ -89,7 +89,7 @@
       "url": "https://www.reddit.com/r/stocks/new.json?limit=100",
       "platform": "reddit",
       "last_validation_status": 200,
-      "last_validated_at": "2026-05-22T15:19:05.783769+00:00"
+      "last_validated_at": "2026-05-22T17:17:10.092304+00:00"
     },
     {
       "id": "reddit_worldnews",
@@ -99,7 +99,7 @@
       "url": "https://www.reddit.com/r/worldnews/new.json?limit=100",
       "platform": "reddit",
       "last_validation_status": 200,
-      "last_validated_at": "2026-05-22T15:19:07.261727+00:00"
+      "last_validated_at": "2026-05-22T17:17:11.369210+00:00"
     },
     {
       "id": "reuters_world",
@@ -110,7 +110,7 @@
       "platform": "rss",
       "last_validation_status": "error",
       "last_validation_error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
-      "last_validated_at": "2026-05-22T15:19:07.279332+00:00"
+      "last_validated_at": "2026-05-22T17:17:11.402531+00:00"
     },
     {
       "id": "youtube_custom_1",
@@ -121,7 +121,7 @@
       "category": "markets",
       "last_validation_status": "error",
       "last_validation_error": "HTTP Error 404: Not Found",
-      "last_validated_at": "2026-05-22T15:19:07.496530+00:00"
+      "last_validated_at": "2026-05-22T17:17:11.570817+00:00"
     }
   ]
 }
