@@ -50,7 +50,7 @@ async function load(){
 
   if(listEl){
     listEl.innerHTML = narratives.map((x,i)=>`
-      <article class='n-card' onclick='selectNarrative(${i})'>
+      <article class='n-card ${i===0?"featured":""}' onclick='selectNarrative(${i})'>
         <div class='n-kicker'>${x.topic}</div>
         <div class='n-headline'>${x.sentence}</div>
         <div class='n-body'>${x.context}</div>
