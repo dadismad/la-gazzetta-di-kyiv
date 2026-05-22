@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-05-22T20:48:39.734503+00:00",
+  "actions": [
+    "Apply compact typography and container scale reductions",
+    "Enforce 62/38 divine-ratio-like layout split",
+    "Apply 4-color metallic-blue light palette",
+    "Enforce uniqueness tags in context/action to avoid repetition"
+  ],
+  "quality_gates": [
+    "retail narrative readability",
+    "no quant jargon on homepage",
+    "duplicate phrasing minimized"
+  ]
+}

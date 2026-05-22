@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-05-22T20:48:39.734503+00:00",
+  "competitors": {
+    "ft": {
+      "ok": false,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "bloomberg": {
+      "ok": false,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "reuters": {
+      "ok": false,
+      "error": "HTTP Error 401: HTTP Forbidden"
+    },
+    "economist": {
+      "ok": false,
+      "error": "HTTP Error 403: Forbidden"
+    }
+  },
+  "checks": {
+    "css_exists": true,
+    "js_exists": true,
+    "light_theme_target": false,
+    "metallic_blue_target": false
+  }
+}
