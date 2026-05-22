@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-05-22T14:55:16.734366+00:00",
+  "status": "ok",
+  "total_events": 177,
+  "last_collected_at": "2026-05-22T14:31:13.769460+00:00",
+  "by_platform": [
+    {
+      "platform": "hackernews",
+      "count": 51
+    },
+    {
+      "platform": "reddit",
+      "count": 126
+    }
+  ],
+  "recommended_upgrades": [
+    "Add source-level decay weighting for stale feeds",
+    "Add language detection and dedup by semantic similarity",
+    "Add rolling z-score for narrative spikes (24h vs 7d baseline)",
+    "Add confidence calibration from cross-source confirmation"
+  ]
+}
