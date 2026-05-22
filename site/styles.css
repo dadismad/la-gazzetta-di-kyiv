@@ -1,6 +1,6 @@
-:root{--bg:#f6f8fb;--ink:#10233F;--blue:#3E6FAE;--accent:#6BB6FF;--green:#0f2a1c}
+:root{--bg:#F7FAFF;--ink:#10233F;--blue:#3E6FAE;--accent:#6BB6FF;--green:#0f2a1c}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:10px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:10px!important}
 .topbar{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-bottom:1px solid #bcd0ea}
 .brand{font-family:Georgia,serif;font-size:10px;color:#0a1a33}
 .top-tools{display:flex;gap:6px;align-items:center}
