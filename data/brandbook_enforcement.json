@@ -1,5 +1,22 @@
 {
-  "generated_at": "2026-05-23T13:50:41.072265+00:00",
+  "generated_at": "2026-05-23T13:52:43.704907+00:00",
   "ok": true,
-  "issues": []
+  "issues": [],
+  "checks": {
+    "palette_tokens": {
+      "#F7FAFF": true,
+      "#3E6FAE": true,
+      "#10233F": true,
+      "#6BB6FF": true
+    },
+    "compact_typography": true,
+    "flow 3d": true,
+    "projection 3d": true,
+    "invalidation": true,
+    "narrative_count": 13,
+    "duplicate_headlines": 0,
+    "items_missing_required_fields": 0,
+    "generic_phrase_hits": 0,
+    "focus_panel_present": true
+  }
 }
