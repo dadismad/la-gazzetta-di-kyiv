@@ -3,6 +3,7 @@ import subprocess, json, datetime, pathlib
 ROOT=pathlib.Path('/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv')
 steps=[
  'python3 ops/representation_curator.py',
+ 'python3 ops/channel_bundle_builder.py',
  'python3 ops/newsletter_builder.py',
  'python3 ops/brandbook_enforcer.py',
  'python3 ops/ui_contract_check.py',
