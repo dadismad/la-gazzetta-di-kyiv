@@ -1,6 +1,6 @@
 # Grand Operating Map
 
-Generated: 2026-05-23T12:46:39.644805+00:00
+Generated: 2026-05-23T12:46:49.703600+00:00
 
 ## Data Plane
 - social-umbrella-collector | 15m | DataOps | ingestion
