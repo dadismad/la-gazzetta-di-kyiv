@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-05-23T12:40:56.242936+00:00",
+  "ok": true,
+  "steps": [
+    {
+      "cmd": "python3 ops/representation_curator.py",
+      "code": 0,
+      "out": "{\"ok\": true, \"out\": \"/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv/data/narratives_curated.json\", \"count\": 13}\n",
+      "err": ""
+    },
+    {
+      "cmd": "python3 ops/newsletter_builder.py",
+      "code": 0,
+      "out": "{\"ok\": true, \"out\": \"/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv/data/newsletter_bundle.json\"}\n",
+      "err": ""
+    },
+    {
+      "cmd": "python3 ops/brandbook_enforcer.py",
+      "code": 0,
+      "out": "{\"generated_at\": \"2026-05-23T12:40:55.489286+00:00\", \"ok\": true, \"issues\": []}\n",
+      "err": ""
+    },
+    {
+      "cmd": "python3 ops/ui_contract_check.py",
+      "code": 0,
+      "out": "{\"generated_at\": \"2026-05-23T12:40:55.511484+00:00\", \"ok\": true, \"issues\": []}\n",
+      "err": ""
+    },
+    {
+      "cmd": "python3 ops/claims_container_guard.py",
+      "code": 0,
+      "out": "{\"generated_at\": \"2026-05-23T12:40:55.534094+00:00\", \"ok\": true, \"narrative_reviews_count\": 13, \"issues\": []}\n",
+      "err": ""
+    },
+    {
+      "cmd": "python3 ops/ceo_upgrade_executor.py",
+      "code": 0,
+      "out": "{\"ok\": true, \"blocked\": []}\n",
+      "err": ""
+    }
+  ]
+}
