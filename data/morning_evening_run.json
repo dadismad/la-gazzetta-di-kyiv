@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-23T17:29:14.776936+00:00",
+  "generated_at": "2026-05-23T20:32:14.664758+00:00",
   "ok": true,
   "steps": [
     {
@@ -29,13 +29,13 @@
     {
       "cmd": "python3 ops/ui_contract_check.py",
       "code": 0,
-      "out": "{\"generated_at\": \"2026-05-23T17:29:14.121787+00:00\", \"ok\": true, \"issues\": []}\n",
+      "out": "{\"generated_at\": \"2026-05-23T20:32:14.037277+00:00\", \"ok\": true, \"issues\": []}\n",
       "err": ""
     },
     {
       "cmd": "python3 ops/claims_container_guard.py",
       "code": 0,
-      "out": "{\"generated_at\": \"2026-05-23T17:29:14.143589+00:00\", \"ok\": true, \"narrative_reviews_count\": 13, \"issues\": []}\n",
+      "out": "{\"generated_at\": \"2026-05-23T20:32:14.059639+00:00\", \"ok\": true, \"narrative_reviews_count\": 13, \"issues\": []}\n",
       "err": ""
     },
     {

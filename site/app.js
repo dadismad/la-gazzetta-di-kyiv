@@ -28,15 +28,20 @@ function assetFor(topic){const m={ai:'NASDAQ 100',oil:'Brent',inflation:'UST 2Y'
 let N=[];let activeFrame='';
 
 async function load(){
+  const bundle=await fetch('./data/channel_content_bundle.json').then(r=>r.json()).catch(()=>({}));
+  const websiteItems=((bundle.channels||{}).website_frontpage||[]);
   const n=await fetch('./data/narratives.json').then(r=>r.json()).catch(()=>({}));
-  const reviews=(n.narrative_reviews||[]).slice(0,12);
+  const reviews=(websiteItems.length?websiteItems:(n.narrative_reviews||[])).slice(0,12);
   N=reviews.map((r,i)=>{
     const [cat,frame]=frameFor(r.topic);
     return {
       id:i+1,topic:(r.topic||'macro').toUpperCase(),cat,frame,
-      claim:(r.headline||`${(r.topic||'Macro').toUpperCase()} narrative: positioning pressure building across linked assets.`),
-      desc:(r.review||'Cross-asset conditions suggest selective risk-taking with strict invalidation points.'),
-      potential:potentialFor(r.topic),flow:flowFor(r.topic),proj3d:proj3dFor(r.topic),asset:assetFor(r.topic)
+      claim:(r.narrative_claim||r.headline||`${(r.topic||'Macro').toUpperCase()} narrative: positioning pressure building across linked assets.`),
+      desc:(r.narrative_description||r.review||'Cross-asset conditions suggest selective risk-taking with strict invalidation points.'),
+      controversial:(r.controversial_angle||'Consensus may be underpricing second-order effects.'),
+      actionNow:(r.action_now||'Scale risk in only after confirmation and keep strict invalidation.'),
+      confidence:(r.confidence_label||'medium'),
+      potential:potentialFor(r.topic),flow:(r.capital_flow_3d_usd_bn??flowFor(r.topic)),proj3d:(r.projection_3d_pct||r.projection_3d||proj3dFor(r.topic)),asset:assetFor(r.topic)
     }
   });
   renderFrames(); renderClaims(); bindControls(); if(N[0]) showFocus(0);
@@ -60,6 +65,7 @@ function claimRow(x,idx){
     <div class='claim-extra'>
       <div class='insight-line'><span class='badge'>Flow 3d</span> ~$${x.flow}B</div>
       <div class='insight-line'><span class='badge'>Projection 3d</span> ${x.proj3d}</div>
+      <div class='insight-line'><span class='badge'>Confidence</span> ${x.confidence}</div>
       <div class='insight-line'><span class='badge'>Primary asset</span> ${x.asset}</div>
     </div>
   </div>`;
@@ -81,7 +87,8 @@ function showFocus(i){
     <div class='kpi'><span>Capital flow (3d)</span><b>~$${x.flow}B</b></div>
     <div class='kpi'><span>${x.asset} projection (3d)</span><b>${x.proj3d}</b></div>
     <div class='kpi'><span>Industry pressure</span><b>${x.potential}</b></div>
-    <div class='focus-copy'>Actionable setup: wait for confirmation candle + volume expansion in ${x.asset}; invalidate if macro headline reverses policy/rates direction.</div>
+    <div class='focus-copy'><b>Controversial perspective:</b> ${x.controversial}</div>
+    <div class='focus-copy'><b>Action now:</b> ${x.actionNow}</div>
     <ul class='focus-list'>
       <li>Entry protocol: stage risk in 2 tranches over 24h.</li>
       <li>Risk cap: max portfolio heat 1.2% for this narrative cluster.</li>
