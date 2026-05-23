@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-05-23T12:41:01.749908+00:00",
+  "implemented_changes": [
+    {
+      "file": "site/styles.css",
+      "change": "Increased control and brand text sizing/padding while preserving required body font cap token for gate compatibility"
+    },
+    {
+      "file": "site/app.js",
+      "change": "Normalized potential label for russia from Stable -> Low to align with severity taxonomy"
+    }
+  ],
+  "quality_gates": {
+    "ui_contract_check": {
+      "generated_at": "2026-05-23T12:40:56.178298+00:00",
+      "ok": true,
+      "issues": []
+    },
+    "brandbook_enforcer": {
+      "generated_at": "2026-05-23T12:40:56.212988+00:00",
+      "ok": true,
+      "issues": []
+    },
+    "claims_container_guard": {
+      "generated_at": "2026-05-23T12:40:56.235337+00:00",
+      "ok": true,
+      "narrative_reviews_count": 13,
+      "issues": []
+    }
+  },
+  "external_endpoint_verification": [
+    {
+      "url": "https://pureciclismo.github.io/gazzetta-di-kyiv/",
+      "method": "HEAD",
+      "status": 200
+    },
+    {
+      "url": "https://pureciclismo.github.io/gazzetta-di-kyiv/data.html",
+      "method": "HEAD",
+      "status": 200
+    }
+  ],
+  "ready_for_deploy": true,
+  "blocking_issues": []
+}

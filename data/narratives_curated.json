@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T22:09:36.081997+00:00",
+  "generated_at": "2026-05-23T12:40:55.444189+00:00",
   "narratives": [
     {
       "topic": "ai",
@@ -12,7 +12,7 @@
     {
       "topic": "eu",
       "headline": "EU narrative requires tactical attention.",
-      "review": "Signal strength 88.2/100 with high momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as position-relevant and timing-sensitive; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "review": "Signal strength 96.6/100 with high momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as position-relevant and timing-sensitive; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
       "actionable": "For EU: define entry trigger, invalidation level, and 72h monitoring checklist.",
       "flow_3d_billion_usd": null,
       "projection_3d_pct": null
@@ -34,18 +34,18 @@
       "projection_3d_pct": null
     },
     {
-      "topic": "russia",
-      "headline": "RUSSIA narrative requires tactical attention.",
-      "review": "Signal strength 21.0/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
-      "actionable": "For RUSSIA: define entry trigger, invalidation level, and 72h monitoring checklist.",
+      "topic": "election",
+      "headline": "ELECTION narrative requires tactical attention.",
+      "review": "Signal strength 29.4/100 with medium momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "actionable": "For ELECTION: define entry trigger, invalidation level, and 72h monitoring checklist.",
       "flow_3d_billion_usd": null,
       "projection_3d_pct": null
     },
     {
-      "topic": "election",
-      "headline": "ELECTION narrative requires tactical attention.",
+      "topic": "russia",
+      "headline": "RUSSIA narrative requires tactical attention.",
       "review": "Signal strength 21.0/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
-      "actionable": "For ELECTION: define entry trigger, invalidation level, and 72h monitoring checklist.",
+      "actionable": "For RUSSIA: define entry trigger, invalidation level, and 72h monitoring checklist.",
       "flow_3d_billion_usd": null,
       "projection_3d_pct": null
     },
@@ -60,8 +60,16 @@
     {
       "topic": "china",
       "headline": "CHINA narrative requires tactical attention.",
-      "review": "Signal strength 12.6/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "review": "Signal strength 16.8/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
       "actionable": "For CHINA: define entry trigger, invalidation level, and 72h monitoring checklist.",
+      "flow_3d_billion_usd": null,
+      "projection_3d_pct": null
+    },
+    {
+      "topic": "drone",
+      "headline": "DRONE narrative requires tactical attention.",
+      "review": "Signal strength 12.6/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "actionable": "For DRONE: define entry trigger, invalidation level, and 72h monitoring checklist.",
       "flow_3d_billion_usd": null,
       "projection_3d_pct": null
     },
@@ -74,10 +82,10 @@
       "projection_3d_pct": null
     },
     {
-      "topic": "drone",
-      "headline": "DRONE narrative requires tactical attention.",
-      "review": "Signal strength 8.4/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
-      "actionable": "For DRONE: define entry trigger, invalidation level, and 72h monitoring checklist.",
+      "topic": "crypto",
+      "headline": "CRYPTO narrative requires tactical attention.",
+      "review": "Signal strength 12.6/100 with low momentum. Regime bias appears risk-on. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "actionable": "For CRYPTO: define entry trigger, invalidation level, and 72h monitoring checklist.",
       "flow_3d_billion_usd": null,
       "projection_3d_pct": null
     },
@@ -90,10 +98,10 @@
       "projection_3d_pct": null
     },
     {
-      "topic": "crypto",
-      "headline": "CRYPTO narrative requires tactical attention.",
-      "review": "Signal strength 4.2/100 with low momentum. Regime bias appears risk-on. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
-      "actionable": "For CRYPTO: define entry trigger, invalidation level, and 72h monitoring checklist.",
+      "topic": "gas",
+      "headline": "GAS narrative requires tactical attention.",
+      "review": "Signal strength 4.2/100 with low momentum. Regime bias appears risk-off. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "actionable": "For GAS: define entry trigger, invalidation level, and 72h monitoring checklist.",
       "flow_3d_billion_usd": null,
       "projection_3d_pct": null
     }

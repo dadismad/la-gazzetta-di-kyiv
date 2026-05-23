@@ -1,0 +1,88 @@
+{
+  "generated_at": "2026-05-23T12:41:01.749908+00:00",
+  "scope": [
+    "site/index.html",
+    "site/styles.css",
+    "site/app.js"
+  ],
+  "dimensions": {
+    "visual_hierarchy": {
+      "score": 7.6,
+      "findings": [
+        "Three-panel layout supports scanability",
+        "Frame/claim/focus headings are clear",
+        "Focus panel has stronger visual contrast than claims panel"
+      ]
+    },
+    "readability": {
+      "score": 6.8,
+      "findings": [
+        "Global font cap constrains body readability",
+        "Input/button typography improved via local sizing",
+        "Line-height present for denser content blocks"
+      ]
+    },
+    "contrast": {
+      "score": 8.1,
+      "findings": [
+        "Brand palette tokens compliant",
+        "Dark focus panel with light text passes practical readability",
+        "Muted meta text in claims is borderline but acceptable"
+      ]
+    },
+    "typography_compactness": {
+      "score": 7.1,
+      "findings": [
+        "Compact newsroom style preserved",
+        "Headers and controls now better differentiated",
+        "Needs next-step adaptive type scale by viewport"
+      ]
+    },
+    "palette_compliance": {
+      "score": 9.4,
+      "findings": [
+        "All mandatory tokens present: #F7FAFF #3E6FAE #10233F #6BB6FF"
+      ]
+    },
+    "container_logic": {
+      "score": 8.0,
+      "findings": [
+        "Left=frame taxonomy, center=claims feed, right=action focus",
+        "No structural bleed between columns"
+      ]
+    },
+    "non_duplication_between_panels": {
+      "score": 8.3,
+      "findings": [
+        "Focus panel provides action protocol vs claim summaries",
+        "No exact claim-text replay pattern detected"
+      ]
+    },
+    "actionable_narrative_quality_retail": {
+      "score": 8.2,
+      "findings": [
+        "Includes entry protocol, invalidation and risk cap",
+        "Could further simplify jargon for novice users"
+      ]
+    }
+  },
+  "financial_ux_benchmark": {
+    "conventions_compared": [
+      "Bloomberg/FT-style dense list + right rail context",
+      "TradingView-like compact scan lanes",
+      "WSJ-style typography separation for headline vs metadata"
+    ],
+    "gaps": [
+      "No sticky context on scroll",
+      "No confidence/recency badge system",
+      "No explicit source timestamp beside each claim"
+    ],
+    "strengths": [
+      "Fast triage layout",
+      "Action-oriented right rail",
+      "Data-driven claim expansion"
+    ]
+  },
+  "overall_score": 7.9,
+  "status": "improved_with_followup_backlog"
+}

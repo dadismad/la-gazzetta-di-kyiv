@@ -20,7 +20,7 @@ function frameInsight(frame){
   };
   return m[frame] || m['Narrative Transition'];
 }
-function potentialFor(topic){ const t=normTopic(topic); const m={ai:'High',oil:'High',inflation:'Medium',rates:'Medium',crypto:'Extreme',russia:'Stable',election:'High',eu:'Medium'}; return m[t]||'Medium';}
+function potentialFor(topic){ const t=normTopic(topic); const m={ai:'High',oil:'High',inflation:'Medium',rates:'Medium',crypto:'Extreme',russia:'Low',election:'High',eu:'Medium'}; return m[t]||'Medium';}
 function flowFor(topic){const m={ai:12.4,oil:6.1,inflation:4.3,rates:5.0,election:3.2,crypto:9.7,russia:2.8,ukraine:2.5,eu:4.9};return (m[normTopic(topic)]??3.8)}
 function proj3dFor(topic){const m={ai:'+1.8%',oil:'+1.2%',inflation:'-0.4%',rates:'-0.6%',election:'±1.1%',crypto:'+2.6%',russia:'+0.7%',ukraine:'+0.5%',eu:'+0.9%'};return m[normTopic(topic)]||'±0.8%'}
 function assetFor(topic){const m={ai:'NASDAQ 100',oil:'Brent',inflation:'UST 2Y',rates:'UST 10Y',crypto:'BTC',russia:'EU Gas',election:'S&P 500',eu:'EURUSD'};return m[normTopic(topic)]||'Global Risk Basket'}

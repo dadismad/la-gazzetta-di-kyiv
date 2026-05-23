@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-05-23T12:41:01.749908+00:00",
+  "items": [
+    {
+      "id": "UX-001",
+      "priority": "P0",
+      "title": "Implement responsive type scale without violating UI contract",
+      "impact": "High",
+      "effort": "M",
+      "acceptance": ">=2 readable scales for desktop/mobile; gates pass"
+    },
+    {
+      "id": "UX-002",
+      "priority": "P1",
+      "title": "Add sticky claim header with recency + confidence badges",
+      "impact": "High",
+      "effort": "M",
+      "acceptance": "Users can sort/filter by freshness and confidence"
+    },
+    {
+      "id": "UX-003",
+      "priority": "P1",
+      "title": "Reduce narrative jargon in focus copy",
+      "impact": "Medium",
+      "effort": "S",
+      "acceptance": "Plain-language variant for retail audience"
+    },
+    {
+      "id": "UX-004",
+      "priority": "P2",
+      "title": "Add keyboard-accessible expand/collapse controls per row",
+      "impact": "Medium",
+      "effort": "S",
+      "acceptance": "Enter/Space toggles row details with aria-expanded"
+    },
+    {
+      "id": "UX-005",
+      "priority": "P2",
+      "title": "Add non-duplication linter for claim/focus text similarity",
+      "impact": "Medium",
+      "effort": "M",
+      "acceptance": "Automated threshold guard in CI"
+    }
+  ]
+}
