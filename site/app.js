@@ -34,7 +34,7 @@ async function load(){
     const [cat,frame]=frameFor(r.topic);
     return {
       id:i+1,topic:(r.topic||'macro').toUpperCase(),cat,frame,
-      claim:(r.headline||'Narrative drift requires tactical adaptation.'),
+      claim:(r.headline||`${(r.topic||'Macro').toUpperCase()} narrative: positioning pressure building across linked assets.`),
       desc:(r.review||'Cross-asset conditions suggest selective risk-taking with strict invalidation points.'),
       potential:potentialFor(r.topic),flow:flowFor(r.topic),proj3d:proj3dFor(r.topic),asset:assetFor(r.topic)
     }
@@ -46,7 +46,7 @@ function renderFrames(){
   const frames=[...new Map(N.map(x=>[x.frame,x])).values()];
   const el=document.getElementById('frameList');
   el.innerHTML=frames.map((x,i)=>`<div class='frame-item ${i===0?'active':''}' data-frame='${x.frame}'><div class='frame-cat'>${x.cat}</div><div class='frame-name'>${x.frame}</div><div class='frame-note'>${frameInsight(x.frame)}</div></div>`).join('');
-  activeFrame=frames[0]?.frame||'';
+  activeFrame='';
   el.querySelectorAll('.frame-item').forEach(node=>node.onclick=()=>{activeFrame=node.dataset.frame;el.querySelectorAll('.frame-item').forEach(n=>n.classList.remove('active'));node.classList.add('active');renderClaims();});
 }
 
@@ -68,6 +68,7 @@ function claimRow(x,idx){
 function renderClaims(){
   let list=activeFrame?N.filter(x=>x.frame===activeFrame):N;
   if(!list.length) list=N.slice(0,8);
+  list = list.sort((a,b)=>b.flow-a.flow);
   const el=document.getElementById('claimsList');
   el.innerHTML=list.length ? list.map((x,i)=>claimRow(x,N.indexOf(x))).join('') : `<div class='claim-empty'>No active claims yet. Pipeline is refreshing; showing latest macro frames shortly.</div>`;
   el.querySelectorAll('.claim-row').forEach(r=>{r.querySelector('.claim-head').onclick=()=>{r.classList.toggle('open');showFocus(Number(r.dataset.id));};});
