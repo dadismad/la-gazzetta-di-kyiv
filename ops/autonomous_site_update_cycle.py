@@ -5,7 +5,7 @@ ENV=pathlib.Path('/Users/alexstocchi/.hermes/.env')
 
 def sh(cmd):
     p=subprocess.run(cmd,shell=True,cwd=ROOT,capture_output=True,text=True)
-    return {'cmd':cmd,'code':p.returncode,'out':p.stdout[-1200:],'err':p.stderr[-1200:]}
+    return {'code':p.returncode,'out':p.stdout[-1200:],'err':p.stderr[-1200:]}
 
 def token():
     for l in ENV.read_text().splitlines():
