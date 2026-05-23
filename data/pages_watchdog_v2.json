@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-23T13:40:43.181267+00:00",
+  "generated_at": "2026-05-23T13:46:22.129898+00:00",
   "status": "healthy",
   "checks": {
     "main": {
@@ -15,15 +15,14 @@
       "size": 5681
     },
     "backup": {
-      "ok": false,
-      "status": 0,
-      "error": "HTTP Error 403: Forbidden",
+      "ok": true,
+      "status": 200,
       "sig404": false,
-      "size": 0
+      "size": 1219
     }
   },
   "fail_streak": 0,
   "redeployed": false,
   "canonical_url": "https://pureciclismo.github.io/gazzetta-di-kyiv/",
-  "fallback_url": "https://rawcdn.githack.com/pureciclismo/gazzetta-di-kyiv/main/site/index.html"
+  "fallback_url": "https://pureciclismo.github.io/gazzetta-di-kyiv/"
 }

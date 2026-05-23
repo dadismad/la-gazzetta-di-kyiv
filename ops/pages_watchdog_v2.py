@@ -8,7 +8,7 @@ OUT=D/'pages_watchdog_v2.json'
 URLS={
  'main':'https://pureciclismo.github.io/gazzetta-di-kyiv/',
  'data':'https://pureciclismo.github.io/gazzetta-di-kyiv/data/narratives.json',
- 'backup':'https://rawcdn.githack.com/pureciclismo/gazzetta-di-kyiv/main/site/index.html'
+ 'backup':'https://pureciclismo.github.io/gazzetta-di-kyiv/'  # safe fallback: canonical HTML endpoint
 }
 
 def fetch(u):
