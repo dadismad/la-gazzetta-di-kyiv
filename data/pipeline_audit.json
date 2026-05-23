@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-05-22T21:00:55.490407+00:00",
+  "generated_at": "2026-05-23T05:00:38.841230+00:00",
   "status": "ok",
-  "total_events": 482,
-  "last_collected_at": "2026-05-22T21:00:49.551997+00:00",
+  "total_events": 577,
+  "last_collected_at": "2026-05-23T04:59:08.484436+00:00",
   "by_platform": [
     {
       "platform": "hackernews",
-      "count": 91
+      "count": 112
     },
     {
       "platform": "reddit",
-      "count": 142
+      "count": 152
     },
     {
       "platform": "rss",
-      "count": 249
+      "count": 313
     }
   ],
   "recommended_upgrades": [

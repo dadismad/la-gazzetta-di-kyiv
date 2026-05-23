@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T20:48:39.734503+00:00",
+  "generated_at": "2026-05-23T02:15:57.553836+00:00",
   "competitors": {
     "ft": {
       "ok": false,
@@ -21,7 +21,7 @@
   "checks": {
     "css_exists": true,
     "js_exists": true,
-    "light_theme_target": false,
-    "metallic_blue_target": false
+    "light_theme_target": true,
+    "metallic_blue_target": true
   }
 }

@@ -1,33 +1,49 @@
 {
-  "generated_at": "2026-05-22T22:16:56.457908+00:00",
-  "state": "running",
-  "blocked_reasons": [],
-  "external_checks": {
-    "home": {
+  "generated_at": "2026-05-23T05:00:12.154165+00:00",
+  "ceo_program": "active",
+  "overall_health_score": 110,
+  "summary": {
+    "groups": 5,
+    "best_practice_signals": [
+      "Clear ownership by process group",
+      "Scheduled oversight with fixed cadences",
+      "Objective health checks + machine-readable outputs",
+      "Separation of concerns: ingestion / analysis / publishing / governance",
+      "Closed-loop improvement recommendations"
+    ]
+  },
+  "checks": {
+    "design_compare": {
       "ok": true,
-      "status": 200,
-      "size": 1219,
-      "body": "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\"/>\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"/>\n  <title>Gazzetta di Kyiv \u2014 Narrative Command</title>\n  <link rel=\"stylesheet\" href=\"./styles.css\"/>\n</head>\n<body class=\"news-body live-light\">\n  <header class=\"topbar\">\n    <div class=\"brand\">Gathering Economic Claims</div>\n    <div class=\"top-tools\">\n      <input id=\"searchBox\" placeholder=\"Search industries...\"/>\n      <button id=\"collapseAll\" title=\"Collapse all\">\u2013<"
+      "code": 0,
+      "out": "{\n  \"ok\": true,\n  \"score\": 25.0,\n  \"checks\": {\n    \"dark_background\": false,\n    \"two_column_layout\": false,\n    \"serif_headlines\": true,\n    \"kicker_labels\": false,\n    \"top_narratives_section\": false,\n    \"narrative_focus_sidebar\": false,\n    \"context_action_lines\": false,\n    \"no_quant_terms_in_html\": true\n  },\n  \"gaps\": [\n    \"Main layout should be ~70/30 split with fixed editorial sidebar.\"\n  ]\n}\n",
+      "err": ""
     },
-    "narratives": {
+    "pages_watchdog": {
       "ok": true,
-      "status": 200,
-      "size": 5681,
-      "body": "{\n  \"generated_at\": \"2026-05-22T21:00:56.960732+00:00\",\n  \"recent_items_24h\": 381,\n  \"top_narratives\": [\n    {\n      \"topic\": \"ai\",\n      \"mentions_24h\": 93\n    },\n    {\n      \"topic\": \"eu\",\n      \"mentions_24h\": 21\n    },\n    {\n      \"topic\": \"inflation\",\n      \"mentions_24h\": 9\n    },\n    {\n      \"topic\": \"rates\",\n      \"mentions_24h\": 7\n    },\n    {\n      \"topic\": \"russia\",\n      \"mentions_24h\": 5\n    },\n    {\n      \"topic\": \"election\",\n      \"mentions_24h\": 5\n    },\n    {\n      \"topic\": \"oil"
+      "code": 0,
+      "out": "{\"ok\": true, \"healthy\": true, \"recommended_url\": \"https://pureciclismo.github.io/gazzetta-di-kyiv/\", \"file\": \"/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv/data/pages_watchdog.json\"}\n",
+      "err": ""
+    },
+    "pipeline_audit_file": {
+      "ok": true
+    },
+    "narratives_file": {
+      "ok": true
+    },
+    "site_index": {
+      "ok": true
     }
   },
-  "qa": [
-    {
-      "cmd": "python3 ops/ui_contract_check.py",
-      "code": 0
-    },
-    {
-      "cmd": "python3 ops/brandbook_enforcer.py",
-      "code": 0
-    },
-    {
-      "cmd": "python3 ops/claims_container_guard.py",
-      "code": 0
-    }
-  ]
+  "recommendations": [
+    "For new tasks outside known groups, create a new group-level overseer script before execution."
+  ],
+  "progress_view": {
+    "states": [
+      "running",
+      "partially_covered",
+      "needs_improvement"
+    ],
+    "problem_policy": "identify -> classify -> assign overseer -> verify twice/day"
+  }
 }
