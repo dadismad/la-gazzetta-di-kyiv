@@ -1,24 +1,30 @@
 {
-  "generated_at": "2026-05-23T13:46:22.129898+00:00",
+  "generated_at": "2026-05-23T13:50:41.749955+00:00",
   "status": "healthy",
   "checks": {
     "main": {
       "ok": true,
       "status": 200,
       "sig404": false,
-      "size": 1219
+      "size": 1219,
+      "content_type": "text/html; charset=utf-8",
+      "render_ok": true
     },
     "data": {
       "ok": true,
       "status": 200,
       "sig404": false,
-      "size": 5681
+      "size": 5681,
+      "content_type": "application/json; charset=utf-8",
+      "render_ok": true
     },
     "backup": {
       "ok": true,
       "status": 200,
       "sig404": false,
-      "size": 1219
+      "size": 1219,
+      "content_type": "text/html; charset=utf-8",
+      "render_ok": true
     }
   },
   "fail_streak": 0,

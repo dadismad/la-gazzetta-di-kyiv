@@ -11,16 +11,24 @@ URLS={
  'backup':'https://pureciclismo.github.io/gazzetta-di-kyiv/'  # safe fallback: canonical HTML endpoint
 }
 
-def fetch(u):
+def fetch(u, require_renderable=False):
     try:
         with urllib.request.urlopen(u, timeout=20) as r:
+            ctype = (r.headers.get('Content-Type') or '').lower()
             b=r.read().decode('utf-8','ignore')
             sig = "There isn't a GitHub Pages site here" in b
-            return {'ok':200<=r.status<300 and not sig,'status':r.status,'sig404':sig,'size':len(b)}
+            render_ok = True
+            if require_renderable:
+                render_ok = ('text/html' in ctype) and ('<script src="./app.js"></script>' in b or '<main class="tri-grid">' in b)
+            return {'ok':200<=r.status<300 and not sig and render_ok,'status':r.status,'sig404':sig,'size':len(b),'content_type':ctype,'render_ok':render_ok}
     except Exception as e:
-        return {'ok':False,'status':0,'error':str(e),'sig404':False,'size':0}
+        return {'ok':False,'status':0,'error':str(e),'sig404':False,'size':0,'content_type':'','render_ok':False}
 
-checks={k:fetch(v) for k,v in URLS.items()}
+checks={
+ 'main':fetch(URLS['main'], require_renderable=True),
+ 'data':fetch(URLS['data']),
+ 'backup':fetch(URLS['backup'], require_renderable=True)
+}
 now=datetime.datetime.now(datetime.timezone.utc).isoformat()
 state={'fail_streak':0,'last_redeploy_at':None}
 if STATE.exists():
