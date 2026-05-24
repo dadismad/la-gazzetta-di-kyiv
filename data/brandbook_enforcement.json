@@ -1,10 +1,7 @@
 {
-  "generated_at": "2026-05-24T23:41:47.076797+00:00",
-  "ok": false,
-  "issues": [
-    "missing 3-day flow metric",
-    "missing 3-day projection metric"
-  ],
+  "generated_at": "2026-05-24T23:42:09.442495+00:00",
+  "ok": true,
+  "issues": [],
   "checks": {
     "palette_tokens": {
       "#F7FAFF": true,
@@ -13,8 +10,8 @@
       "#6BB6FF": true
     },
     "compact_typography": true,
-    "flow 3d": false,
-    "projection 3d": false,
+    "flow 3d": true,
+    "projection 3d": true,
     "invalidation": true,
     "narrative_count": 13,
     "duplicate_headlines": 0,

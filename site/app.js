@@ -63,6 +63,8 @@ function rowForSetup(s, i){
     </div>
     <div class='claim-extra'>
       <div class='insight-line'><span class='badge'>Horizon</span> ${s.horizon}</div>
+      <div class='insight-line'><span class='badge'>Flow 3d</span> n/a</div>
+      <div class='insight-line'><span class='badge'>Projection 3d</span> n/a</div>
       <div class='insight-line'><span class='badge'>Prob.</span> Base ${s.probability_base}% / Bull ${s.probability_bull}% / Bear ${s.probability_bear}% (Σ ${sum})</div>
       <div class='insight-line'><span class='badge'>Invalidation</span> ${(s.invalidation_triggers||[]).join(' · ')}</div>
       <div class='insight-line'><span class='badge'>Retail</span> ${(s.retail_execution||[]).join(' · ')}</div>
