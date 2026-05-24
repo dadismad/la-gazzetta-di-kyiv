@@ -1,6 +1,8 @@
 {
-  "generated_at": "2026-05-23T20:36:47.424667+00:00",
-  "ok": true,
+  "generated_at": "2026-05-24T23:36:18.371083+00:00",
+  "ok": false,
   "narrative_reviews_count": 13,
-  "issues": []
+  "issues": [
+    "missing empty-state fallback in claims container"
+  ]
 }

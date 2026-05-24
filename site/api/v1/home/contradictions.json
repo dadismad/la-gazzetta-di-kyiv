@@ -1,0 +1,103 @@
+{
+  "generated_at": "2026-05-24T23:36:18.328592+00:00",
+  "data_freshness_seconds": 86400,
+  "source_count": 20,
+  "items": [
+    {
+      "contradiction_id": "cx_001",
+      "claim_a": "ai is fully priced",
+      "claim_b": "ai still accelerating in headline share",
+      "contradiction_score": 0.52,
+      "urgency": "medium",
+      "invalidation_window": "24-72h"
+    },
+    {
+      "contradiction_id": "cx_002",
+      "claim_a": "eu is fully priced",
+      "claim_b": "eu still accelerating in headline share",
+      "contradiction_score": 0.54,
+      "urgency": "medium",
+      "invalidation_window": "24-72h"
+    },
+    {
+      "contradiction_id": "cx_003",
+      "claim_a": "china is fully priced",
+      "claim_b": "china still accelerating in headline share",
+      "contradiction_score": 0.56,
+      "urgency": "medium",
+      "invalidation_window": "24-72h"
+    },
+    {
+      "contradiction_id": "cx_004",
+      "claim_a": "election is fully priced",
+      "claim_b": "election still accelerating in headline share",
+      "contradiction_score": 0.58,
+      "urgency": "medium",
+      "invalidation_window": "24-72h"
+    },
+    {
+      "contradiction_id": "cx_005",
+      "claim_a": "gas is fully priced",
+      "claim_b": "gas still accelerating in headline share",
+      "contradiction_score": 0.6,
+      "urgency": "medium",
+      "invalidation_window": "24-72h"
+    },
+    {
+      "contradiction_id": "cx_006",
+      "claim_a": "oil is fully priced",
+      "claim_b": "oil still accelerating in headline share",
+      "contradiction_score": 0.62,
+      "urgency": "medium",
+      "invalidation_window": "24-72h"
+    },
+    {
+      "contradiction_id": "cx_007",
+      "claim_a": "inflation is fully priced",
+      "claim_b": "inflation still accelerating in headline share",
+      "contradiction_score": 0.64,
+      "urgency": "low",
+      "invalidation_window": "24-72h"
+    },
+    {
+      "contradiction_id": "cx_008",
+      "claim_a": "rates is fully priced",
+      "claim_b": "rates still accelerating in headline share",
+      "contradiction_score": 0.66,
+      "urgency": "low",
+      "invalidation_window": "24-72h"
+    },
+    {
+      "contradiction_id": "cx_009",
+      "claim_a": "russia is fully priced",
+      "claim_b": "russia still accelerating in headline share",
+      "contradiction_score": 0.68,
+      "urgency": "low",
+      "invalidation_window": "24-72h"
+    },
+    {
+      "contradiction_id": "cx_010",
+      "claim_a": "crypto is fully priced",
+      "claim_b": "crypto still accelerating in headline share",
+      "contradiction_score": 0.7,
+      "urgency": "low",
+      "invalidation_window": "24-72h"
+    },
+    {
+      "contradiction_id": "cx_011",
+      "claim_a": "drone is fully priced",
+      "claim_b": "drone still accelerating in headline share",
+      "contradiction_score": 0.72,
+      "urgency": "low",
+      "invalidation_window": "24-72h"
+    },
+    {
+      "contradiction_id": "cx_012",
+      "claim_a": "nato is fully priced",
+      "claim_b": "nato still accelerating in headline share",
+      "contradiction_score": 0.74,
+      "urgency": "low",
+      "invalidation_window": "24-72h"
+    }
+  ]
+}

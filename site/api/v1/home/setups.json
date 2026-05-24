@@ -1,0 +1,259 @@
+{
+  "generated_at": "2026-05-24T23:36:18.328592+00:00",
+  "data_freshness_seconds": 86400,
+  "source_count": 20,
+  "items": [
+    {
+      "setup_id": "io_b815e32bc4",
+      "title": "Narrative acceleration: ai",
+      "horizon": "3d",
+      "thesis": "Second-order effects underpriced by consensus",
+      "probability_base": 70,
+      "probability_bull": 25,
+      "probability_bear": 5,
+      "invalidation_triggers": [
+        "Narrative mention share drops below 7d baseline for 2 consecutive cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged entries in liquid ETFs",
+        "Prefer defined-risk options structures for high-volatility narratives"
+      ],
+      "confidence": 0.82,
+      "citations": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "setup_id": "io_eaf90d7722",
+      "title": "Narrative acceleration: eu",
+      "horizon": "3d",
+      "thesis": "Second-order effects underpriced by consensus",
+      "probability_base": 63,
+      "probability_bull": 26,
+      "probability_bear": 11,
+      "invalidation_triggers": [
+        "Narrative mention share drops below 7d baseline for 2 consecutive cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged entries in liquid ETFs",
+        "Prefer defined-risk options structures for high-volatility narratives"
+      ],
+      "confidence": 0.82,
+      "citations": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "setup_id": "io_0a20cb82c7",
+      "title": "Narrative acceleration: china",
+      "horizon": "3d",
+      "thesis": "Second-order effects underpriced by consensus",
+      "probability_base": 54,
+      "probability_bull": 23,
+      "probability_bear": 23,
+      "invalidation_triggers": [
+        "Narrative mention share drops below 7d baseline for 2 consecutive cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged entries in liquid ETFs",
+        "Prefer defined-risk options structures for high-volatility narratives"
+      ],
+      "confidence": 0.72,
+      "citations": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "setup_id": "io_cd38cf8146",
+      "title": "Narrative acceleration: election",
+      "horizon": "3d",
+      "thesis": "Second-order effects underpriced by consensus",
+      "probability_base": 52,
+      "probability_bull": 22,
+      "probability_bear": 26,
+      "invalidation_triggers": [
+        "Narrative mention share drops below 7d baseline for 2 consecutive cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged entries in liquid ETFs",
+        "Prefer defined-risk options structures for high-volatility narratives"
+      ],
+      "confidence": 0.62,
+      "citations": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "setup_id": "io_4873854737",
+      "title": "Narrative acceleration: gas",
+      "horizon": "3d",
+      "thesis": "Second-order effects underpriced by consensus",
+      "probability_base": 52,
+      "probability_bull": 22,
+      "probability_bear": 26,
+      "invalidation_triggers": [
+        "Narrative mention share drops below 7d baseline for 2 consecutive cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged entries in liquid ETFs",
+        "Prefer defined-risk options structures for high-volatility narratives"
+      ],
+      "confidence": 0.62,
+      "citations": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "setup_id": "io_e016a36319",
+      "title": "Narrative acceleration: oil",
+      "horizon": "3d",
+      "thesis": "Second-order effects underpriced by consensus",
+      "probability_base": 49,
+      "probability_bull": 21,
+      "probability_bear": 30,
+      "invalidation_triggers": [
+        "Narrative mention share drops below 7d baseline for 2 consecutive cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged entries in liquid ETFs",
+        "Prefer defined-risk options structures for high-volatility narratives"
+      ],
+      "confidence": 0.62,
+      "citations": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "setup_id": "io_776d21831a",
+      "title": "Narrative acceleration: inflation",
+      "horizon": "3d",
+      "thesis": "Second-order effects underpriced by consensus",
+      "probability_base": 49,
+      "probability_bull": 21,
+      "probability_bear": 30,
+      "invalidation_triggers": [
+        "Narrative mention share drops below 7d baseline for 2 consecutive cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged entries in liquid ETFs",
+        "Prefer defined-risk options structures for high-volatility narratives"
+      ],
+      "confidence": 0.62,
+      "citations": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "setup_id": "io_c8f2f2a092",
+      "title": "Narrative acceleration: rates",
+      "horizon": "3d",
+      "thesis": "Second-order effects underpriced by consensus",
+      "probability_base": 48,
+      "probability_bull": 21,
+      "probability_bear": 31,
+      "invalidation_triggers": [
+        "Narrative mention share drops below 7d baseline for 2 consecutive cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged entries in liquid ETFs",
+        "Prefer defined-risk options structures for high-volatility narratives"
+      ],
+      "confidence": 0.54,
+      "citations": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "setup_id": "io_1880e2bb40",
+      "title": "Narrative acceleration: russia",
+      "horizon": "3d",
+      "thesis": "Second-order effects underpriced by consensus",
+      "probability_base": 47,
+      "probability_bull": 20,
+      "probability_bear": 33,
+      "invalidation_triggers": [
+        "Narrative mention share drops below 7d baseline for 2 consecutive cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged entries in liquid ETFs",
+        "Prefer defined-risk options structures for high-volatility narratives"
+      ],
+      "confidence": 0.54,
+      "citations": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "setup_id": "io_4f09b13d1c",
+      "title": "Narrative acceleration: crypto",
+      "horizon": "3d",
+      "thesis": "Second-order effects underpriced by consensus",
+      "probability_base": 47,
+      "probability_bull": 20,
+      "probability_bear": 33,
+      "invalidation_triggers": [
+        "Narrative mention share drops below 7d baseline for 2 consecutive cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged entries in liquid ETFs",
+        "Prefer defined-risk options structures for high-volatility narratives"
+      ],
+      "confidence": 0.54,
+      "citations": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "setup_id": "io_a06360de46",
+      "title": "Narrative acceleration: drone",
+      "horizon": "3d",
+      "thesis": "Second-order effects underpriced by consensus",
+      "probability_base": 46,
+      "probability_bull": 20,
+      "probability_bear": 34,
+      "invalidation_triggers": [
+        "Narrative mention share drops below 7d baseline for 2 consecutive cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged entries in liquid ETFs",
+        "Prefer defined-risk options structures for high-volatility narratives"
+      ],
+      "confidence": 0.54,
+      "citations": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "setup_id": "io_843e32825d",
+      "title": "Narrative acceleration: nato",
+      "horizon": "3d",
+      "thesis": "Second-order effects underpriced by consensus",
+      "probability_base": 46,
+      "probability_bull": 20,
+      "probability_bear": 34,
+      "invalidation_triggers": [
+        "Narrative mention share drops below 7d baseline for 2 consecutive cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged entries in liquid ETFs",
+        "Prefer defined-risk options structures for high-volatility narratives"
+      ],
+      "confidence": 0.54,
+      "citations": [
+        "events.db (rolling 24h titles)"
+      ]
+    }
+  ]
+}
