@@ -81,7 +81,7 @@ function renderClaims(frameIdx=0){
   const rail = STATE.contradictions.slice(0,3).map(c=>`${c.claim_a} vs ${c.claim_b} (${c.urgency})`).join(' | ');
   const list = el('claimsList');
   list.innerHTML = `${rail ? `<div class='claim-empty'><b>Contradictions:</b> ${rail}</div>`:''}` +
-    (setups.map(rowForSetup).join('') || `<div class='claim-empty'>No setup data yet.</div>`);
+    (setups.map(rowForSetup).join('') || `<div class='claim-empty'>No active claims yet.</div>`);
 
   list.querySelectorAll('.claim-row').forEach(r=>{
     r.querySelector('.claim-head').onclick=()=>r.classList.toggle('open');
