@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import re, json, pathlib, datetime
-ROOT=pathlib.Path('/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv')
+ROOT=pathlib.Path(__file__).resolve().parents[1]
 css=(ROOT/'site/styles.css').read_text(errors='ignore')
 js=(ROOT/'site/app.js').read_text(errors='ignore')
 issues=[]

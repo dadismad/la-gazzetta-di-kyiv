@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import json, pathlib, datetime, re
-ROOT=pathlib.Path('/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv')
+ROOT=pathlib.Path(__file__).resolve().parents[1]
 SITE=ROOT/'site'; DATA=ROOT/'data'; DATA.mkdir(exist_ok=True)
 css=(SITE/'styles.css').read_text(errors='ignore')
 js=(SITE/'app.js').read_text(errors='ignore')
