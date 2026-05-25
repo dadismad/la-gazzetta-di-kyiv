@@ -25,6 +25,41 @@ with open(registry_json, 'r') as f:
 
 since = datetime.now(timezone.utc) - timedelta(hours=24)
 keywords = ['ukraine','russia','nato','eu','inflation','rates','oil','gas','ai','china','sanctions','ceasefire','drone','crypto','election']
+NARRATIVE_SEMANTICS = {
+    'ai': {
+        'actors': ['Sam Altman', 'Jensen Huang', 'Microsoft', 'NVIDIA'],
+        'svo': 'US hyperscalers increase AI capex and pull forward semiconductor demand',
+        'claim': 'AI infrastructure spending is extending equity momentum while concentrating liquidity risk',
+        'contradiction': 'Consensus says AI upside is fully priced, while compute bottlenecks imply further repricing',
+        'manipulation': 'Headline selection bias toward product launches can hide margin and power-constraint risks',
+        'transmission': 'Capex headlines -> growth expectations -> equity leadership -> duration sensitivity and USD spillovers',
+        'repricing': 'NQ +1.5% to +4.0% if breadth holds; SOXX outperforms; USD bid on volatility shocks',
+        'invalidation': 'Mega-cap guidance cuts or AI capex deferrals across two reporting cycles'
+    },
+    'oil': {
+        'actors': ['OPEC+', 'Saudi Aramco', 'IEA', 'US shale producers'],
+        'svo': 'Producers manage supply while conflict headlines alter shipping and insurance costs',
+        'claim': 'Energy risk premium remains underpriced when geopolitical supply corridors are unstable',
+        'contradiction': 'Spot calm suggests normalization, but tanker risk and inventory drawdowns suggest fragility',
+        'manipulation': 'Short-term price relief can be over-amplified while logistics stress is under-reported',
+        'transmission': 'Energy headlines -> inflation expectations -> rates volatility -> equity and FX rotation',
+        'repricing': 'Brent +2% to +6% in shock windows; airlines/transport underperform; gold supported',
+        'invalidation': 'Verified de-escalation with sustained inventory rebuild and freight normalization'
+    }
+}
+
+def semantic_for_topic(topic: str):
+    default = {
+        'actors': ['European Commission', 'Federal Reserve', 'Global macro funds', 'Major corporates'],
+        'svo': f'{topic.upper()} headlines change policy expectations and reprice cross-asset risk',
+        'claim': f'{topic.upper()} narrative intensity is shifting positioning behaviour across markets',
+        'contradiction': f'{topic.upper()} appears priced in, yet second-order effects remain underweighted',
+        'manipulation': 'Framing distortion and omission risk can exaggerate certainty in fast headlines',
+        'transmission': 'Headline flow -> liquidity regime -> positioning -> cross-asset repricing',
+        'repricing': 'Risk assets +1% to +3% in risk-on continuation; defensive assets bid on volatility spikes',
+        'invalidation': 'Narrative share falls below 7-day baseline for two consecutive cycles'
+    }
+    return NARRATIVE_SEMANTICS.get(topic, default)
 counts = Counter()
 recent_items = 0
 
@@ -76,6 +111,7 @@ for n in narratives:
         'intensity_score': intensity,
         'momentum': momentum,
         'review': review,
+        'semantics': semantic_for_topic(topic),
     })
 
 generated_at = datetime.now(timezone.utc).isoformat()
@@ -313,8 +349,8 @@ html = f'''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport
 <h1>Gazzetta di Kyiv</h1><div class="muted">Continuous source intelligence + narrative interpretation.</div>
 <p>Updated: {summary['generated_at']}</p>
 <h2>Top Narratives (24h)</h2>
-<table><thead><tr><th>Narrative</th><th>Mentions(24h)</th><th>Intensity</th><th>Momentum</th><th>Analytical review</th></tr></thead><tbody>
-{''.join([f"<tr><td>{n['topic']}</td><td>{n['mentions_24h']}</td><td>{n['intensity_score']}</td><td>{n['momentum']}</td><td>{n['review']}</td></tr>" for n in narrative_reviews]) or '<tr><td colspan="5">No data yet</td></tr>'}
+<table><thead><tr><th>Narrative</th><th>Actors</th><th>Proposition (SVO)</th><th>Claim/Thesis</th><th>Contradiction</th><th>Manipulation risk</th><th>Transmission</th><th>Repricing</th><th>Invalidation</th><th>Mentions(24h)</th><th>Intensity</th><th>Momentum</th></tr></thead><tbody>
+{''.join([f"<tr><td>{n['topic']}</td><td>{', '.join(n['semantics']['actors'])}</td><td>{n['semantics']['svo']}</td><td>{n['semantics']['claim']}</td><td>{n['semantics']['contradiction']}</td><td>{n['semantics']['manipulation']}</td><td>{n['semantics']['transmission']}</td><td>{n['semantics']['repricing']}</td><td>{n['semantics']['invalidation']}</td><td>{n['mentions_24h']}</td><td>{n['intensity_score']}</td><td>{n['momentum']}</td></tr>" for n in narrative_reviews]) or '<tr><td colspan="12">No data yet</td></tr>'}
 </tbody></table>
 <h2>Written Narrative Reviews</h2>
 {''.join([f"<article style='margin:14px 0;padding:10px 12px;background:#121a33;border-radius:10px'><h3 style='margin:0 0 6px'>{n['topic'].upper()}</h3><p style='margin:0 0 4px;color:#c7d4ff'>Mentions: {n['mentions_24h']} | Intensity: {n['intensity_score']} | Momentum: {n['momentum']}</p><p style='margin:0'>{n['review']}</p></article>" for n in narrative_reviews]) or '<p>No written reviews yet.</p>'}

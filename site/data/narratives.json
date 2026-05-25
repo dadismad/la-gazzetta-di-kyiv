@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-25T00:01:30.571813+00:00",
+  "generated_at": "2026-05-25T22:02:49.423212+00:00",
   "recent_items_24h": 594,
   "top_narratives": [
     {
@@ -61,91 +61,286 @@
       "mentions_24h": 127,
       "intensity_score": 100,
       "momentum": "high",
-      "review": "Signal strength 100/100 with high momentum. Regime bias appears risk-on. Interpretation: short-term desks should treat this narrative as position-relevant and timing-sensitive; cross-check with rates, energy, and policy headlines for confirmation before sizing."
+      "review": "Signal strength 100/100 with high momentum. Regime bias appears risk-on. Interpretation: short-term desks should treat this narrative as position-relevant and timing-sensitive; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "Sam Altman",
+          "Jensen Huang",
+          "Microsoft",
+          "NVIDIA"
+        ],
+        "svo": "US hyperscalers increase AI capex and pull forward semiconductor demand",
+        "claim": "AI infrastructure spending is extending equity momentum while concentrating liquidity risk",
+        "contradiction": "Consensus says AI upside is fully priced, while compute bottlenecks imply further repricing",
+        "manipulation": "Headline selection bias toward product launches can hide margin and power-constraint risks",
+        "transmission": "Capex headlines -> growth expectations -> equity leadership -> duration sensitivity and USD spillovers",
+        "repricing": "NQ +1.5% to +4.0% if breadth holds; SOXX outperforms; USD bid on volatility shocks",
+        "invalidation": "Mega-cap guidance cuts or AI capex deferrals across two reporting cycles"
+      }
     },
     {
       "topic": "eu",
       "mentions_24h": 23,
       "intensity_score": 96.6,
       "momentum": "high",
-      "review": "Signal strength 96.6/100 with high momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as position-relevant and timing-sensitive; cross-check with rates, energy, and policy headlines for confirmation before sizing."
+      "review": "Signal strength 96.6/100 with high momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as position-relevant and timing-sensitive; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "European Commission",
+          "Federal Reserve",
+          "Global macro funds",
+          "Major corporates"
+        ],
+        "svo": "EU headlines change policy expectations and reprice cross-asset risk",
+        "claim": "EU narrative intensity is shifting positioning behaviour across markets",
+        "contradiction": "EU appears priced in, yet second-order effects remain underweighted",
+        "manipulation": "Framing distortion and omission risk can exaggerate certainty in fast headlines",
+        "transmission": "Headline flow -> liquidity regime -> positioning -> cross-asset repricing",
+        "repricing": "Risk assets +1% to +3% in risk-on continuation; defensive assets bid on volatility spikes",
+        "invalidation": "Narrative share falls below 7-day baseline for two consecutive cycles"
+      }
     },
     {
       "topic": "china",
       "mentions_24h": 12,
       "intensity_score": 50.4,
       "momentum": "medium",
-      "review": "Signal strength 50.4/100 with medium momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
+      "review": "Signal strength 50.4/100 with medium momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "European Commission",
+          "Federal Reserve",
+          "Global macro funds",
+          "Major corporates"
+        ],
+        "svo": "CHINA headlines change policy expectations and reprice cross-asset risk",
+        "claim": "CHINA narrative intensity is shifting positioning behaviour across markets",
+        "contradiction": "CHINA appears priced in, yet second-order effects remain underweighted",
+        "manipulation": "Framing distortion and omission risk can exaggerate certainty in fast headlines",
+        "transmission": "Headline flow -> liquidity regime -> positioning -> cross-asset repricing",
+        "repricing": "Risk assets +1% to +3% in risk-on continuation; defensive assets bid on volatility spikes",
+        "invalidation": "Narrative share falls below 7-day baseline for two consecutive cycles"
+      }
     },
     {
       "topic": "election",
       "mentions_24h": 9,
       "intensity_score": 37.8,
       "momentum": "medium",
-      "review": "Signal strength 37.8/100 with medium momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
+      "review": "Signal strength 37.8/100 with medium momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "European Commission",
+          "Federal Reserve",
+          "Global macro funds",
+          "Major corporates"
+        ],
+        "svo": "ELECTION headlines change policy expectations and reprice cross-asset risk",
+        "claim": "ELECTION narrative intensity is shifting positioning behaviour across markets",
+        "contradiction": "ELECTION appears priced in, yet second-order effects remain underweighted",
+        "manipulation": "Framing distortion and omission risk can exaggerate certainty in fast headlines",
+        "transmission": "Headline flow -> liquidity regime -> positioning -> cross-asset repricing",
+        "repricing": "Risk assets +1% to +3% in risk-on continuation; defensive assets bid on volatility spikes",
+        "invalidation": "Narrative share falls below 7-day baseline for two consecutive cycles"
+      }
     },
     {
       "topic": "gas",
       "mentions_24h": 9,
       "intensity_score": 37.8,
       "momentum": "medium",
-      "review": "Signal strength 37.8/100 with medium momentum. Regime bias appears risk-off. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
+      "review": "Signal strength 37.8/100 with medium momentum. Regime bias appears risk-off. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "European Commission",
+          "Federal Reserve",
+          "Global macro funds",
+          "Major corporates"
+        ],
+        "svo": "GAS headlines change policy expectations and reprice cross-asset risk",
+        "claim": "GAS narrative intensity is shifting positioning behaviour across markets",
+        "contradiction": "GAS appears priced in, yet second-order effects remain underweighted",
+        "manipulation": "Framing distortion and omission risk can exaggerate certainty in fast headlines",
+        "transmission": "Headline flow -> liquidity regime -> positioning -> cross-asset repricing",
+        "repricing": "Risk assets +1% to +3% in risk-on continuation; defensive assets bid on volatility spikes",
+        "invalidation": "Narrative share falls below 7-day baseline for two consecutive cycles"
+      }
     },
     {
       "topic": "oil",
       "mentions_24h": 6,
       "intensity_score": 25.2,
       "momentum": "medium",
-      "review": "Signal strength 25.2/100 with medium momentum. Regime bias appears risk-off. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
+      "review": "Signal strength 25.2/100 with medium momentum. Regime bias appears risk-off. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "OPEC+",
+          "Saudi Aramco",
+          "IEA",
+          "US shale producers"
+        ],
+        "svo": "Producers manage supply while conflict headlines alter shipping and insurance costs",
+        "claim": "Energy risk premium remains underpriced when geopolitical supply corridors are unstable",
+        "contradiction": "Spot calm suggests normalization, but tanker risk and inventory drawdowns suggest fragility",
+        "manipulation": "Short-term price relief can be over-amplified while logistics stress is under-reported",
+        "transmission": "Energy headlines -> inflation expectations -> rates volatility -> equity and FX rotation",
+        "repricing": "Brent +2% to +6% in shock windows; airlines/transport underperform; gold supported",
+        "invalidation": "Verified de-escalation with sustained inventory rebuild and freight normalization"
+      }
     },
     {
       "topic": "inflation",
       "mentions_24h": 6,
       "intensity_score": 25.2,
       "momentum": "medium",
-      "review": "Signal strength 25.2/100 with medium momentum. Regime bias appears risk-off. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
+      "review": "Signal strength 25.2/100 with medium momentum. Regime bias appears risk-off. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "European Commission",
+          "Federal Reserve",
+          "Global macro funds",
+          "Major corporates"
+        ],
+        "svo": "INFLATION headlines change policy expectations and reprice cross-asset risk",
+        "claim": "INFLATION narrative intensity is shifting positioning behaviour across markets",
+        "contradiction": "INFLATION appears priced in, yet second-order effects remain underweighted",
+        "manipulation": "Framing distortion and omission risk can exaggerate certainty in fast headlines",
+        "transmission": "Headline flow -> liquidity regime -> positioning -> cross-asset repricing",
+        "repricing": "Risk assets +1% to +3% in risk-on continuation; defensive assets bid on volatility spikes",
+        "invalidation": "Narrative share falls below 7-day baseline for two consecutive cycles"
+      }
     },
     {
       "topic": "rates",
       "mentions_24h": 4,
       "intensity_score": 16.8,
       "momentum": "low",
-      "review": "Signal strength 16.8/100 with low momentum. Regime bias appears risk-off. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
+      "review": "Signal strength 16.8/100 with low momentum. Regime bias appears risk-off. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "European Commission",
+          "Federal Reserve",
+          "Global macro funds",
+          "Major corporates"
+        ],
+        "svo": "RATES headlines change policy expectations and reprice cross-asset risk",
+        "claim": "RATES narrative intensity is shifting positioning behaviour across markets",
+        "contradiction": "RATES appears priced in, yet second-order effects remain underweighted",
+        "manipulation": "Framing distortion and omission risk can exaggerate certainty in fast headlines",
+        "transmission": "Headline flow -> liquidity regime -> positioning -> cross-asset repricing",
+        "repricing": "Risk assets +1% to +3% in risk-on continuation; defensive assets bid on volatility spikes",
+        "invalidation": "Narrative share falls below 7-day baseline for two consecutive cycles"
+      }
     },
     {
       "topic": "russia",
       "mentions_24h": 3,
       "intensity_score": 12.6,
       "momentum": "low",
-      "review": "Signal strength 12.6/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
+      "review": "Signal strength 12.6/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "European Commission",
+          "Federal Reserve",
+          "Global macro funds",
+          "Major corporates"
+        ],
+        "svo": "RUSSIA headlines change policy expectations and reprice cross-asset risk",
+        "claim": "RUSSIA narrative intensity is shifting positioning behaviour across markets",
+        "contradiction": "RUSSIA appears priced in, yet second-order effects remain underweighted",
+        "manipulation": "Framing distortion and omission risk can exaggerate certainty in fast headlines",
+        "transmission": "Headline flow -> liquidity regime -> positioning -> cross-asset repricing",
+        "repricing": "Risk assets +1% to +3% in risk-on continuation; defensive assets bid on volatility spikes",
+        "invalidation": "Narrative share falls below 7-day baseline for two consecutive cycles"
+      }
     },
     {
       "topic": "crypto",
       "mentions_24h": 3,
       "intensity_score": 12.6,
       "momentum": "low",
-      "review": "Signal strength 12.6/100 with low momentum. Regime bias appears risk-on. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
+      "review": "Signal strength 12.6/100 with low momentum. Regime bias appears risk-on. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "European Commission",
+          "Federal Reserve",
+          "Global macro funds",
+          "Major corporates"
+        ],
+        "svo": "CRYPTO headlines change policy expectations and reprice cross-asset risk",
+        "claim": "CRYPTO narrative intensity is shifting positioning behaviour across markets",
+        "contradiction": "CRYPTO appears priced in, yet second-order effects remain underweighted",
+        "manipulation": "Framing distortion and omission risk can exaggerate certainty in fast headlines",
+        "transmission": "Headline flow -> liquidity regime -> positioning -> cross-asset repricing",
+        "repricing": "Risk assets +1% to +3% in risk-on continuation; defensive assets bid on volatility spikes",
+        "invalidation": "Narrative share falls below 7-day baseline for two consecutive cycles"
+      }
     },
     {
       "topic": "drone",
       "mentions_24h": 2,
       "intensity_score": 8.4,
       "momentum": "low",
-      "review": "Signal strength 8.4/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
+      "review": "Signal strength 8.4/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "European Commission",
+          "Federal Reserve",
+          "Global macro funds",
+          "Major corporates"
+        ],
+        "svo": "DRONE headlines change policy expectations and reprice cross-asset risk",
+        "claim": "DRONE narrative intensity is shifting positioning behaviour across markets",
+        "contradiction": "DRONE appears priced in, yet second-order effects remain underweighted",
+        "manipulation": "Framing distortion and omission risk can exaggerate certainty in fast headlines",
+        "transmission": "Headline flow -> liquidity regime -> positioning -> cross-asset repricing",
+        "repricing": "Risk assets +1% to +3% in risk-on continuation; defensive assets bid on volatility spikes",
+        "invalidation": "Narrative share falls below 7-day baseline for two consecutive cycles"
+      }
     },
     {
       "topic": "nato",
       "mentions_24h": 2,
       "intensity_score": 8.4,
       "momentum": "low",
-      "review": "Signal strength 8.4/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
+      "review": "Signal strength 8.4/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "European Commission",
+          "Federal Reserve",
+          "Global macro funds",
+          "Major corporates"
+        ],
+        "svo": "NATO headlines change policy expectations and reprice cross-asset risk",
+        "claim": "NATO narrative intensity is shifting positioning behaviour across markets",
+        "contradiction": "NATO appears priced in, yet second-order effects remain underweighted",
+        "manipulation": "Framing distortion and omission risk can exaggerate certainty in fast headlines",
+        "transmission": "Headline flow -> liquidity regime -> positioning -> cross-asset repricing",
+        "repricing": "Risk assets +1% to +3% in risk-on continuation; defensive assets bid on volatility spikes",
+        "invalidation": "Narrative share falls below 7-day baseline for two consecutive cycles"
+      }
     },
     {
       "topic": "ceasefire",
       "mentions_24h": 2,
       "intensity_score": 8.4,
       "momentum": "low",
-      "review": "Signal strength 8.4/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing."
+      "review": "Signal strength 8.4/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "European Commission",
+          "Federal Reserve",
+          "Global macro funds",
+          "Major corporates"
+        ],
+        "svo": "CEASEFIRE headlines change policy expectations and reprice cross-asset risk",
+        "claim": "CEASEFIRE narrative intensity is shifting positioning behaviour across markets",
+        "contradiction": "CEASEFIRE appears priced in, yet second-order effects remain underweighted",
+        "manipulation": "Framing distortion and omission risk can exaggerate certainty in fast headlines",
+        "transmission": "Headline flow -> liquidity regime -> positioning -> cross-asset repricing",
+        "repricing": "Risk assets +1% to +3% in risk-on continuation; defensive assets bid on volatility spikes",
+        "invalidation": "Narrative share falls below 7-day baseline for two consecutive cycles"
+      }
     }
   ]
 }
