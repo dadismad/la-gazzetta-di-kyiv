@@ -22,13 +22,14 @@ async function fetchJSON(path, fallback){
 function renderRegime(){
   const r = STATE.regime || {};
   const freshnessMin = Math.round((r.data_freshness_seconds || 0) / 60);
+  const hasFreshness = Number.isFinite(freshnessMin) && freshnessMin > 0;
   const node = el('selectedNarrative');
   node.innerHTML = `
-    <div class='focus-title'>Regime: ${r.regime_label || 'n/a'}</div>
-    <div class='kpi'><span>Risk State</span><b>${r.risk_state || 'n/a'}</b></div>
+    <div class='focus-title'>Regime: ${r.regime_label || 'Pending update'}</div>
+    <div class='kpi'><span>Risk State</span><b>${r.risk_state || 'Pending update'}</b></div>
     <div class='kpi'><span>Confidence</span><b>${((r.confidence||0)*100).toFixed(0)}%</b></div>
     <div class='kpi'><span>Sources</span><b>${r.source_count || 0}</b></div>
-    <div class='kpi'><span>Freshness</span><b>${freshnessMin}m</b></div>
+    <div class='kpi'><span>Freshness</span><b>${hasFreshness ? `${freshnessMin}m` : 'Live cycle'}</b></div>
     <div class='focus-copy'><b>Doctrine:</b> Big picture over small one. Keep thesis + invalidation visible.</div>
   `;
 }
