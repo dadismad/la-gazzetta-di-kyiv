@@ -49,6 +49,22 @@ jobs:
               sys.exit(1)
           print('CEO HARD GATE PASSED')
           PY
+      - name: Stamp build metadata into frontend
+        run: |
+          COMMIT=$(git rev-parse --short HEAD)
+          BUILD_TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          python3 - <<'PY'
+          from pathlib import Path
+          import os
+          p = Path('site/app.js')
+          s = p.read_text()
+          s = s.replace('__BUILD_COMMIT__', os.environ.get('COMMIT','unknown'))
+          s = s.replace('__BUILD_TIME__', os.environ.get('BUILD_TIME','unknown'))
+          p.write_text(s)
+          PY
+        env:
+          COMMIT: ${{ github.sha }}
+          BUILD_TIME: ${{ github.run_id }}
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -56,3 +72,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Production smoke check
+        run: python3 ops/production_smoke_check.py

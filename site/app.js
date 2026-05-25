@@ -1,5 +1,10 @@
 function el(id){ return document.getElementById(id); }
 
+const BUILD_META = {
+  commit: '__BUILD_COMMIT__',
+  generatedAt: '__BUILD_TIME__'
+};
+
 let STATE = {
   regime: null,
   setups: [],
@@ -117,12 +122,19 @@ function renderClaims(frameIdx=0){
 function bindControls(){
   el('searchBox').oninput = (e)=>{
     const q=(e.target.value||'').toLowerCase();
-    document.querySelectorAll('.claim-row').forEach(r=>{
+    document.querySelectorAll('.story-card').forEach(r=>{
       r.style.display = r.innerText.toLowerCase().includes(q) ? 'block' : 'none';
     });
   };
-  el('collapseAll').onclick=()=>document.querySelectorAll('.claim-row').forEach(r=>r.classList.remove('open'));
-  el('expandAll').onclick=()=>document.querySelectorAll('.claim-row').forEach(r=>r.classList.add('open'));
+  el('collapseAll').onclick=()=>document.querySelectorAll('.story-card').forEach(r=>{ r.style.display='block'; });
+  el('expandAll').onclick=()=>document.querySelectorAll('.story-card').forEach(r=>{ r.style.display='block'; });
+}
+
+function renderBuildMeta(){
+  const commitNode = el('buildCommit');
+  const timeNode = el('buildTime');
+  if(commitNode) commitNode.textContent = BUILD_META.commit;
+  if(timeNode) timeNode.textContent = BUILD_META.generatedAt;
 }
 
 async function boot(){
@@ -140,6 +152,7 @@ async function boot(){
   STATE.contradictions = contradictions.items || [];
   STATE.aftershocks = aftershocks.items || [];
 
+  renderBuildMeta();
   renderRegime();
   renderFrames();
   renderClaims(0);
