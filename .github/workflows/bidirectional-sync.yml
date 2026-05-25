@@ -32,10 +32,24 @@ jobs:
 
       - name: Merge peer updates into this repo
         env:
-          PEER_URL: https://github.com/pureciclismo/gazzetta-di-kyiv.git
           TARGET_BRANCH: ${{ github.event.repository.default_branch }}
         run: |
           set -euo pipefail
+
+          case "$GITHUB_REPOSITORY" in
+            "dadismad/la-gazzetta-di-kyiv")
+              PEER_REPO="pureciclismo/gazzetta-di-kyiv"
+              ;;
+            "pureciclismo/gazzetta-di-kyiv")
+              PEER_REPO="dadismad/la-gazzetta-di-kyiv"
+              ;;
+            *)
+              echo "Unsupported repository: $GITHUB_REPOSITORY"
+              exit 1
+              ;;
+          esac
+
+          PEER_URL="https://github.com/${PEER_REPO}.git"
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -48,7 +62,6 @@ jobs:
 
           git fetch origin "$TARGET_BRANCH"
           git checkout "$TARGET_BRANCH"
-
           git fetch peer "$PEER_BRANCH"
 
           TARGET_SHA=$(git rev-parse "origin/$TARGET_BRANCH")
