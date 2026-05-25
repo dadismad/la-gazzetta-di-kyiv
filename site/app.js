@@ -86,22 +86,31 @@ function rowForSetup(s, i){
   </div>`;
 }
 
+function narrativeHeadline(rawTitle, i){
+  const base = (rawTitle || '').replace(/^narrative\s+acceleration:\s*/i,'').trim();
+  if(!base) return `${String(i+1).padStart(2,'0')}. Market narrative in transition`;
+  const cap = base.toUpperCase()==='AI' ? 'AI' : `${base.charAt(0).toUpperCase()}${base.slice(1)}`;
+  return `${String(i+1).padStart(2,'0')}. ${cap} narrative momentum is repricing risk`;
+}
+
 function storyCardForSetup(s, i){
-  const title = s.title || `Story ${i+1}`;
-  const dev = s.thesis || 'Development pending from incoming narrative flow.';
+  const title = narrativeHeadline(s.title, i);
+  const dev = s.thesis || 'Story development is building, but breadth confirmation is still incomplete.';
   const confidence = Math.round((s.confidence||0)*100);
   const pb = s.probability_bull ?? 0;
   const pbase = s.probability_base ?? 0;
   const pbr = s.probability_bear ?? 0;
-  const dir = pb >= pbr ? 'appreciation bias' : 'depreciation bias';
-  const projection = pb >= pbr ? '+1.2% to +3.8%' : '-1.2% to -3.8%';
   const inv = (s.invalidation_triggers||[])[0] || 'Narrative momentum reversal';
+
+  const direction = pb >= pbr ? 'upside continuation' : 'downside repricing';
+  const projection = pb >= pbr ? '+1.2% to +3.8%' : '-1.2% to -3.8%';
+
   return `
   <article class='story-card'>
-    <div class='story-title'>${String(i+1).padStart(2,'0')}. ${title}</div>
-    <div class='story-dev'><b>Development:</b> ${dev}</div>
-    <div class='story-imp'><b>Implications:</b> liquidity + risk appetite transmission with confidence ${confidence}%, base ${pbase}%, bull ${pb}%, bear ${pbr}%.</div>
-    <div class='story-fx'><b>Forecast:</b> ${dir}, projected repricing ${projection}. <b>Invalidation:</b> ${inv}.</div>
+    <div class='story-title'>${title}</div>
+    <div class='story-dev'>${dev}</div>
+    <div class='story-imp'>Transmission is moving through liquidity and risk appetite into cross-asset positioning. Model confidence is <b>${confidence}%</b> (base <b>${pbase}%</b>, upside <b>${pb}%</b>, downside <b>${pbr}%</b>).</div>
+    <div class='story-fx'><b>Bet path (24–72h):</b> ${direction}, expected repricing <b>${projection}</b>. <b>Invalidation:</b> ${inv}.</div>
   </article>`;
 }
 
@@ -113,7 +122,13 @@ function renderClaims(frameIdx=0){
     if(!setups.length) setups = STATE.setups;
   }
 
-  const rail = STATE.contradictions.slice(0,3).map(c=>`${c.claim_a} vs ${c.claim_b} (${c.urgency})`).join(' | ');
+  const railItems = STATE.contradictions.slice(0,3).map(c=>{
+    const a = c.claim_a || 'Claim A';
+    const b = c.claim_b || 'Claim B';
+    const u = c.urgency || 'medium';
+    return `${a} is challenged by ${b} (${u} urgency)`;
+  });
+  const rail = railItems.join(' • ');
   const list = el('claimsList');
   list.innerHTML = `${rail ? `<div class='claim-empty'><b>Stories conflict monitor:</b> ${rail}</div>`:''}` +
     (setups.map(storyCardForSetup).join('') || `<div class='claim-empty'>No active claims yet.</div>`);
