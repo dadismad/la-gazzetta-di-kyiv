@@ -12,8 +12,8 @@ INDEX_CHECKS = {
 }
 
 APPJS_CHECKS = {
-    "story_labels": r"Development:",
-    "forecast_label": r"Forecast:",
+    "actors_label": r"Actors:",
+    "repricing_label": r"Repricing thesis",
     "story_card_renderer": r"storyCardForSetup",
 }
 

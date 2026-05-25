@@ -33,8 +33,48 @@ NARRATIVE_SEMANTICS = {
         'contradiction': 'Consensus says AI upside is fully priced, while compute bottlenecks imply further repricing',
         'manipulation': 'Headline selection bias toward product launches can hide margin and power-constraint risks',
         'transmission': 'Capex headlines -> growth expectations -> equity leadership -> duration sensitivity and USD spillovers',
-        'repricing': 'NQ +1.5% to +4.0% if breadth holds; SOXX outperforms; USD bid on volatility shocks',
+        'repricing': 'NQ +1.5% to +4.0%; SOXX leads if breadth holds',
         'invalidation': 'Mega-cap guidance cuts or AI capex deferrals across two reporting cycles'
+    },
+    'eu': {
+        'actors': ['European Commission', 'ECB', 'Germany', 'France'],
+        'svo': 'EU institutions tighten industrial and fiscal responses to external shocks',
+        'claim': 'Policy fragmentation risk inside Europe is underpriced in cross-asset correlation',
+        'contradiction': 'Headline calm implies cohesion, but fiscal-energy divergence suggests rising dispersion',
+        'manipulation': 'National headlines can downplay cross-border policy conflict and timeline slippage',
+        'transmission': 'Policy signal -> sovereign spread expectations -> EUR risk premium -> equity factor rotation',
+        'repricing': 'SX5E dispersion +2% to +5%; EURUSD two-way with downside skew on policy conflict',
+        'invalidation': 'Coordinated fiscal package and stable energy forwards over multiple sessions'
+    },
+    'china': {
+        'actors': ['Xi Jinping', 'PBoC', 'State Council', 'MOFCOM'],
+        'svo': 'Chinese policymakers recalibrate stimulus while trade constraints reshape export channels',
+        'claim': 'China macro impulse uncertainty is mispriced in cyclicals and commodity beta',
+        'contradiction': 'Stimulus headlines suggest reflation, while private-demand weakness limits follow-through',
+        'manipulation': 'Policy headlines may overstate immediacy while underreporting implementation lag',
+        'transmission': 'Policy tone -> EM growth expectations -> commodity demand assumptions -> FX beta',
+        'repricing': 'Copper/EM equities ±3% range; AUDCNH sensitivity rises in policy windows',
+        'invalidation': 'Sustained PMIs and credit impulse confirmation across two data cycles'
+    },
+    'election': {
+        'actors': ['White House', 'US Congress', 'European Parliament', 'party leaderships'],
+        'svo': 'Election narratives alter fiscal and regulatory expectations across regions',
+        'claim': 'Political transition risk is feeding risk premia faster than consensus models imply',
+        'contradiction': 'Poll stability implies low risk, while policy path asymmetry keeps tail risk elevated',
+        'manipulation': 'Campaign framing can amplify certainty and suppress policy implementation constraints',
+        'transmission': 'Political probability shifts -> fiscal path repricing -> rates vol -> sector leadership changes',
+        'repricing': 'Rates vol +10% to +25%; policy-sensitive sectors swing 2% to 6%',
+        'invalidation': 'Cross-party convergence on fiscal and trade policy trajectories'
+    },
+    'gas': {
+        'actors': ['Gazprom', 'QatarEnergy', 'European utilities', 'energy ministers'],
+        'svo': 'Gas supply narratives influence European cost structures and inflation expectations',
+        'claim': 'Gas transport and storage risk remains underweighted in equity and FX pricing',
+        'contradiction': 'Inventory comfort implies stability, while routing fragility preserves upside price risk',
+        'manipulation': 'Spot-price focus can obscure forward-curve stress and storage quality differences',
+        'transmission': 'Gas headlines -> inflation expectations -> real rates path -> equity margin assumptions',
+        'repricing': 'EU utilities/chemicals dispersion +3% to +8%; EUR volatility firm on supply shocks',
+        'invalidation': 'Storage trajectory beats seasonal path with stable LNG arrivals'
     },
     'oil': {
         'actors': ['OPEC+', 'Saudi Aramco', 'IEA', 'US shale producers'],
@@ -45,6 +85,56 @@ NARRATIVE_SEMANTICS = {
         'transmission': 'Energy headlines -> inflation expectations -> rates volatility -> equity and FX rotation',
         'repricing': 'Brent +2% to +6% in shock windows; airlines/transport underperform; gold supported',
         'invalidation': 'Verified de-escalation with sustained inventory rebuild and freight normalization'
+    },
+    'inflation': {
+        'actors': ['Federal Reserve', 'ECB', 'BLS', 'Eurostat'],
+        'svo': 'Inflation prints reset central-bank reaction functions and real-yield expectations',
+        'claim': 'Disinflation confidence is fragile and vulnerable to energy and wage second-round effects',
+        'contradiction': 'Core moderation implies easing path, while services stickiness delays policy pivot',
+        'manipulation': 'Single-print framing can hide composition effects and revision risk',
+        'transmission': 'Inflation surprise -> terminal-rate repricing -> duration and growth-beta reset',
+        'repricing': 'UST 2Y/10Y move 8-18bp window; growth-value rotation 2% to 5%',
+        'invalidation': 'Sequential core cooling plus easing wage indicators across releases'
+    },
+    'rates': {
+        'actors': ['Federal Reserve', 'ECB', 'UST market', 'Bund market'],
+        'svo': 'Rate expectations re-anchor portfolio duration and equity valuation assumptions',
+        'claim': 'Rates volatility remains a primary transmission channel for cross-asset repricing',
+        'contradiction': 'Soft-landing consensus implies lower vol, while policy ambiguity keeps vol supply constrained',
+        'manipulation': 'Forward-guidance headlines may overstate certainty around reaction functions',
+        'transmission': 'Rates path -> discount-rate reset -> equity multiple compression/expansion -> FX carry shifts',
+        'repricing': 'MOVE regime upshift; duration-sensitive equities ±3% to 7%',
+        'invalidation': 'Consistent central-bank signaling and realized inflation convergence'
+    },
+    'russia': {
+        'actors': ['Kremlin', 'Russian MoD', 'EU Council', 'NATO'],
+        'svo': 'Conflict escalation narratives affect sanctions expectations and defense-energy pricing',
+        'claim': 'Geopolitical escalation risk is repeatedly under-discounted in European risk assets',
+        'contradiction': 'Frontline stalemate implies contained risk, while sanctions and logistics dynamics keep spillovers alive',
+        'manipulation': 'War coverage can prioritize tactical headlines over supply-chain strategic impact',
+        'transmission': 'Conflict headline -> sanctions premium -> energy/defense repricing -> regional risk premium',
+        'repricing': 'European defensives and defense names +2% to +6%; cyclical beta under pressure',
+        'invalidation': 'Verified durable de-escalation and sanctions path relaxation'
+    },
+    'nato': {
+        'actors': ['NATO', 'US DoD', 'European defense ministries', 'Ukrainian command'],
+        'svo': 'Alliance posture updates alter procurement, fiscal defense burdens, and risk perception',
+        'claim': 'Defense-cycle extension has longer earnings visibility than consensus assumes',
+        'contradiction': 'Budget fatigue narrative implies slowdown, while procurement pipelines suggest persistence',
+        'manipulation': 'Announcement headlines may overstate immediate capacity without delivery timelines',
+        'transmission': 'Posture shifts -> procurement cycle -> industrial order books -> fiscal mix expectations',
+        'repricing': 'Defense complex outperformance +3% to +9%; sovereign spread sensitivity rises',
+        'invalidation': 'Procurement delays and coalition budget retrenchment'
+    },
+    'crypto': {
+        'actors': ['SEC', 'Major exchanges', 'ETF issuers', 'Institutional allocators'],
+        'svo': 'Regulatory and liquidity signals drive crypto beta and risk appetite spillovers',
+        'claim': 'Crypto risk-on reflex can front-run broader liquidity shifts but remains shock-sensitive',
+        'contradiction': 'ETF inflow narrative implies stability, while leverage concentration increases fragility',
+        'manipulation': 'Flow headlines can omit concentration and liquidation cascade risk',
+        'transmission': 'Crypto flows -> risk sentiment -> high-beta equity participation -> vol spillovers',
+        'repricing': 'BTC/ETH ±4% to ±12% windows; high-beta tech correlation episodically rises',
+        'invalidation': 'Sustained deleveraging with stable spot participation and lower funding stress'
     }
 }
 
