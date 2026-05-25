@@ -33,10 +33,24 @@
     <div class="brand">Gazzetta di Kyiv</div>
     <div class="top-tools">
       <input id="searchBox" placeholder="Search narratives, claims, assets..." aria-label="Search narratives"/>
+      <a class="cta-btn" href="https://t.me/LaGazzettadiKyiv" target="_blank" rel="noopener">Get Daily Signal</a>
       <button id="collapseAll" title="Collapse all">–</button>
       <button id="expandAll" title="Expand all">☰</button>
     </div>
   </header>
+
+  <section class="hero-strip" aria-label="Product overview">
+    <div>
+      <h1>See narratives before they reprice assets.</h1>
+      <p>Real-time geopolitical and macro intelligence with clear thesis, confidence, and invalidation for fast decision-makers.</p>
+    </div>
+    <div class="hero-metrics">
+      <span class="hero-chip"><b id="heroSources">0</b> sources tracked</span>
+      <span class="hero-chip">Regime: <b id="heroRegime">Pending</b></span>
+      <span class="hero-chip">Updated: <b id="heroFreshness">Live cycle</b></span>
+      <a class="hero-link" href="./data.html">Methodology & Data Desk →</a>
+    </div>
+  </section>
 
   <main class="tri-grid">
     <section class="frames-col">
@@ -46,8 +60,8 @@
 
     <section class="claims-col">
       <div class="claims-head">
-        <span class="col-title">Active Economic Claims</span>
-        <span class="muted">Sorted by potential</span>
+        <span class="col-title">Stories in Play</span>
+        <span class="muted">Development, implications, forecasts</span>
       </div>
       <div id="claimsList"></div>
     </section>

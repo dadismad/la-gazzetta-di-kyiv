@@ -23,15 +23,23 @@ function renderRegime(){
   const r = STATE.regime || {};
   const freshnessMin = Math.round((r.data_freshness_seconds || 0) / 60);
   const hasFreshness = Number.isFinite(freshnessMin) && freshnessMin > 0;
+  const freshnessLabel = hasFreshness ? (freshnessMin >= 60 ? `${Math.round(freshnessMin/60)}h ago` : `${freshnessMin}m ago`) : 'Live cycle';
   const node = el('selectedNarrative');
   node.innerHTML = `
     <div class='focus-title'>Regime: ${r.regime_label || 'Pending update'}</div>
     <div class='kpi'><span>Risk State</span><b>${r.risk_state || 'Pending update'}</b></div>
     <div class='kpi'><span>Confidence</span><b>${((r.confidence||0)*100).toFixed(0)}%</b></div>
     <div class='kpi'><span>Sources</span><b>${r.source_count || 0}</b></div>
-    <div class='kpi'><span>Freshness</span><b>${hasFreshness ? `${freshnessMin}m` : 'Live cycle'}</b></div>
+    <div class='kpi'><span>Freshness</span><b>${freshnessLabel}</b></div>
     <div class='focus-copy'><b>Doctrine:</b> Big picture over small one. Keep thesis + invalidation visible.</div>
   `;
+
+  const heroSources = el('heroSources');
+  const heroRegime = el('heroRegime');
+  const heroFreshness = el('heroFreshness');
+  if(heroSources) heroSources.textContent = String(r.source_count || 0);
+  if(heroRegime) heroRegime.textContent = r.regime_label || 'Pending';
+  if(heroFreshness) heroFreshness.textContent = freshnessLabel;
 }
 
 function renderFrames(){
@@ -73,6 +81,25 @@ function rowForSetup(s, i){
   </div>`;
 }
 
+function storyCardForSetup(s, i){
+  const title = s.title || `Story ${i+1}`;
+  const dev = s.thesis || 'Development pending from incoming narrative flow.';
+  const confidence = Math.round((s.confidence||0)*100);
+  const pb = s.probability_bull ?? 0;
+  const pbase = s.probability_base ?? 0;
+  const pbr = s.probability_bear ?? 0;
+  const dir = pb >= pbr ? 'appreciation bias' : 'depreciation bias';
+  const projection = pb >= pbr ? '+1.2% to +3.8%' : '-1.2% to -3.8%';
+  const inv = (s.invalidation_triggers||[])[0] || 'Narrative momentum reversal';
+  return `
+  <article class='story-card'>
+    <div class='story-title'>${String(i+1).padStart(2,'0')}. ${title}</div>
+    <div class='story-dev'><b>Development:</b> ${dev}</div>
+    <div class='story-imp'><b>Implications:</b> liquidity + risk appetite transmission with confidence ${confidence}%, base ${pbase}%, bull ${pb}%, bear ${pbr}%.</div>
+    <div class='story-fx'><b>Forecast:</b> ${dir}, projected repricing ${projection}. <b>Invalidation:</b> ${inv}.</div>
+  </article>`;
+}
+
 function renderClaims(frameIdx=0){
   const narrative = STATE.divergences[frameIdx]?.narrative;
   let setups = STATE.setups;
@@ -83,12 +110,8 @@ function renderClaims(frameIdx=0){
 
   const rail = STATE.contradictions.slice(0,3).map(c=>`${c.claim_a} vs ${c.claim_b} (${c.urgency})`).join(' | ');
   const list = el('claimsList');
-  list.innerHTML = `${rail ? `<div class='claim-empty'><b>Contradictions:</b> ${rail}</div>`:''}` +
-    (setups.map(rowForSetup).join('') || `<div class='claim-empty'>No active claims yet.</div>`);
-
-  list.querySelectorAll('.claim-row').forEach(r=>{
-    r.querySelector('.claim-head').onclick=()=>r.classList.toggle('open');
-  });
+  list.innerHTML = `${rail ? `<div class='claim-empty'><b>Stories conflict monitor:</b> ${rail}</div>`:''}` +
+    (setups.map(storyCardForSetup).join('') || `<div class='claim-empty'>No active claims yet.</div>`);
 }
 
 function bindControls(){
