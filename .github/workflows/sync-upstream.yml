@@ -53,13 +53,13 @@ jobs:
             exit 0
           fi
 
-          # Safety: only fast-forward/mirror when target is behind upstream.
-          if git merge-base --is-ancestor "origin/$TARGET_BRANCH" "upstream/$UPSTREAM_BRANCH"; then
-            git reset --hard "upstream/$UPSTREAM_BRANCH"
-            git push origin "HEAD:$TARGET_BRANCH"
-            echo "Sync complete."
-          else
-            echo "Target has commits not in upstream; refusing to overwrite."
-            echo "Resolve divergence manually or switch to force-mirror policy."
-            exit 1
+          # If target already contains upstream, nothing to do.
+          if git merge-base --is-ancestor "upstream/$UPSTREAM_BRANCH" "origin/$TARGET_BRANCH"; then
+            echo "Target already contains upstream commits."
+            exit 0
           fi
+
+          # Merge upstream into target (fast-forward when possible; merge commit when needed).
+          git merge --no-edit "upstream/$UPSTREAM_BRANCH"
+          git push origin "HEAD:$TARGET_BRANCH"
+          echo "Sync complete."
