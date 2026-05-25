@@ -5,7 +5,7 @@ let STATE = {
   setups: [],
   divergences: [],
   contradictions: [],
-  aftershocks: []
+  narrativeReviews: []
 };
 
 async function fetchJSON(path, fallback){
@@ -19,108 +19,93 @@ async function fetchJSON(path, fallback){
   }
 }
 
-function renderRegime(){
-  const r = STATE.regime || {};
-  const freshnessMin = Math.round((r.data_freshness_seconds || 0) / 60);
-  const hasFreshness = Number.isFinite(freshnessMin) && freshnessMin > 0;
-  const node = el('selectedNarrative');
-  node.innerHTML = `
-    <div class='focus-title'>Regime: ${r.regime_label || 'Pending update'}</div>
-    <div class='kpi'><span>Risk State</span><b>${r.risk_state || 'Pending update'}</b></div>
-    <div class='kpi'><span>Confidence</span><b>${((r.confidence||0)*100).toFixed(0)}%</b></div>
-    <div class='kpi'><span>Sources</span><b>${r.source_count || 0}</b></div>
-    <div class='kpi'><span>Freshness</span><b>${hasFreshness ? `${freshnessMin}m` : 'Live cycle'}</b></div>
-    <div class='focus-copy'><b>Doctrine:</b> Big picture over small one. Keep thesis + invalidation visible.</div>
-  `;
+function capitalize(str){
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-function renderFrames(){
-  const frames = STATE.divergences;
-  const target = el('frameList');
-  target.innerHTML = frames.map((d,i)=>`
-    <div class='frame-item ${i===0?'active':''}' data-idx='${i}'>
-      <div class='frame-cat'>Belief vs Reality</div>
-      <div class='frame-name'>${(d.narrative||'macro').toUpperCase()}</div>
-      <div class='frame-note'>Divergence score: ${d.divergence_score ?? 'n/a'}</div>
-    </div>
-  `).join('') || `<div class='claim-empty'>No divergence data yet.</div>`;
+function renderNarratives(){
+  const reviews = STATE.narrativeReviews;
+  const setups = STATE.setups;
+  const target = el('narrativesList');
 
-  target.querySelectorAll('.frame-item').forEach(n=>{
-    n.onclick=()=>{
-      target.querySelectorAll('.frame-item').forEach(x=>x.classList.remove('active'));
-      n.classList.add('active');
-      renderClaims(Number(n.dataset.idx));
-    };
-  });
+  if(!reviews.length && !setups.length){
+    target.innerHTML = '<p style="color:var(--ink-muted)">No narrative data available yet.</p>';
+    return;
+  }
+
+  const items = reviews.slice(0, 6);
+  target.innerHTML = items.map((item, i) => {
+    const setup = setups.find(s => s.title && s.title.toLowerCase().includes(item.topic));
+    const thesis = setup ? setup.thesis : 'Second-order effects underpriced by consensus';
+    const horizon = setup ? setup.horizon : '3d';
+    const confidence = setup ? Math.round(setup.confidence * 100) + '%' : 'n/a';
+
+    return `<article class="narrative-card">
+      <div class="card-category">${capitalize(item.topic)}</div>
+      <h3 class="card-headline">${item.review.split('.')[0]}.</h3>
+      <p class="card-body">${thesis}. Mentions: ${item.mentions_24h} in 24h. Intensity: ${item.intensity_score}/100. Momentum: ${item.momentum}.</p>
+      <div class="card-meta">
+        <span><span class="meta-label">Context:</span><span class="meta-value">Intensity ${item.intensity_score}/100, ${item.momentum} momentum.</span></span>
+        <span><span class="meta-label">Action:</span><span class="meta-value">Monitor ${item.topic} with ${horizon} horizon.</span></span>
+      </div>
+    </article>`;
+  }).join('');
 }
 
-function rowForSetup(s, i){
-  const sum = (s.probability_base||0)+(s.probability_bull||0)+(s.probability_bear||0);
-  return `<div class='claim-row' data-id='${i}'>
-    <div class='claim-head'>
-      <div class='claim-idx'>${String(i+1).padStart(2,'0')}</div>
-      <div><div class='claim-title'>${s.title}</div><div class='claim-sub'>${s.thesis}</div></div>
-      <div class='claim-pot'>${Math.round((s.confidence||0)*100)}%</div>
-    </div>
-    <div class='claim-extra'>
-      <div class='insight-line'><span class='badge'>Horizon</span> ${s.horizon}</div>
-      <div class='insight-line'><span class='badge'>Flow 3d</span> n/a</div>
-      <div class='insight-line'><span class='badge'>Projection 3d</span> n/a</div>
-      <div class='insight-line'><span class='badge'>Prob.</span> Base ${s.probability_base}% / Bull ${s.probability_bull}% / Bear ${s.probability_bear}% (Σ ${sum})</div>
-      <div class='insight-line'><span class='badge'>Invalidation</span> ${(s.invalidation_triggers||[]).join(' · ')}</div>
-      <div class='insight-line'><span class='badge'>Retail</span> ${(s.retail_execution||[]).join(' · ')}</div>
-    </div>
+function renderSidebar(){
+  const reviews = STATE.narrativeReviews;
+  const regime = STATE.regime || {};
+  const topNarrative = reviews[0] || {};
+  const setups = STATE.setups;
+  const divergences = STATE.divergences;
+
+  // Narrative Focus panel
+  const focusTarget = el('narrativeFocus');
+  const topSetup = setups[0];
+  focusTarget.innerHTML = `<div class="sidebar-section">
+    <div class="sidebar-title">Narrative Focus</div>
+    <div class="sidebar-category">${capitalize(topNarrative.topic || 'Macro')}</div>
+    <h3 class="sidebar-headline">${topNarrative.review ? topNarrative.review.split('.')[0] + '.' : 'Pending update.'}</h3>
+    <p class="sidebar-body">${topNarrative.review || 'Awaiting narrative data cycle.'}</p>
+  </div>`;
+
+  // Crucial Details panel
+  const detailsTarget = el('crucialDetails');
+  const topItems = divergences.slice(0, 4);
+  detailsTarget.innerHTML = `<div class="sidebar-section">
+    <div class="sidebar-title">Crucial Details</div>
+    <ul class="detail-list">
+      ${topItems.map(d => `<li>${capitalize(d.narrative)}: Market believes "${d.market_belief}" but ${d.observed_reality.toLowerCase()}. Divergence: ${d.divergence_score}.</li>`).join('')}
+      <li>Regime: ${regime.regime_label || 'Pending'}. Risk state: ${regime.risk_state || 'n/a'}. Confidence: ${Math.round((regime.confidence || 0) * 100)}%.</li>
+    </ul>
+  </div>`;
+
+  // What to Watch Next panel
+  const watchTarget = el('watchNext');
+  const watchItems = reviews.slice(1, 5);
+  watchTarget.innerHTML = `<div class="sidebar-section">
+    <div class="sidebar-title">What to Watch Next</div>
+    <ul class="watch-list">
+      ${watchItems.map(w => `<li>${capitalize(w.topic)}: ${w.mentions_24h} mentions, ${w.momentum} momentum. Monitor for position-relevant shifts.</li>`).join('')}
+    </ul>
   </div>`;
 }
 
-function renderClaims(frameIdx=0){
-  const narrative = STATE.divergences[frameIdx]?.narrative;
-  let setups = STATE.setups;
-  if(narrative){
-    setups = setups.filter(s => (s.title||'').toLowerCase().includes((narrative||'').toLowerCase()));
-    if(!setups.length) setups = STATE.setups;
-  }
-
-  const rail = STATE.contradictions.slice(0,3).map(c=>`${c.claim_a} vs ${c.claim_b} (${c.urgency})`).join(' | ');
-  const list = el('claimsList');
-  list.innerHTML = `${rail ? `<div class='claim-empty'><b>Contradictions:</b> ${rail}</div>`:''}` +
-    (setups.map(rowForSetup).join('') || `<div class='claim-empty'>No active claims yet.</div>`);
-
-  list.querySelectorAll('.claim-row').forEach(r=>{
-    r.querySelector('.claim-head').onclick=()=>r.classList.toggle('open');
-  });
-}
-
-function bindControls(){
-  el('searchBox').oninput = (e)=>{
-    const q=(e.target.value||'').toLowerCase();
-    document.querySelectorAll('.claim-row').forEach(r=>{
-      r.style.display = r.innerText.toLowerCase().includes(q) ? 'block' : 'none';
-    });
-  };
-  el('collapseAll').onclick=()=>document.querySelectorAll('.claim-row').forEach(r=>r.classList.remove('open'));
-  el('expandAll').onclick=()=>document.querySelectorAll('.claim-row').forEach(r=>r.classList.add('open'));
-}
-
 async function boot(){
-  const [regime, setups, divergences, contradictions, aftershocks] = await Promise.all([
+  const [regime, setups, divergences, narratives] = await Promise.all([
     fetchJSON('./api/v1/home/regime.json', {}),
     fetchJSON('./api/v1/home/setups.json', {items:[]}),
     fetchJSON('./api/v1/home/divergences.json', {items:[]}),
-    fetchJSON('./api/v1/home/contradictions.json', {items:[]}),
-    fetchJSON('./api/v1/home/aftershocks.json', {items:[]})
+    fetchJSON('./data/narratives.json', {narrative_reviews:[]})
   ]);
 
   STATE.regime = regime;
   STATE.setups = setups.items || [];
   STATE.divergences = divergences.items || [];
-  STATE.contradictions = contradictions.items || [];
-  STATE.aftershocks = aftershocks.items || [];
+  STATE.narrativeReviews = narratives.narrative_reviews || [];
 
-  renderRegime();
-  renderFrames();
-  renderClaims(0);
-  bindControls();
+  renderNarratives();
+  renderSidebar();
 }
 
 boot();
