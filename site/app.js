@@ -95,6 +95,27 @@ function extractActors(text=''){
   return uniq.slice(0,4);
 }
 
+const NARRATIVE_ACTOR_MAP = {
+  ai: ['Sam Altman','Jensen Huang','Microsoft','NVIDIA'],
+  eu: ['European Commission','ECB','Germany','France'],
+  china: ['Xi Jinping','PBoC','State Council','MOFCOM'],
+  election: ['White House','US Congress','European Parliament','party leaderships'],
+  gas: ['Gazprom','QatarEnergy','European utilities','energy ministers'],
+  oil: ['OPEC+','Saudi Aramco','US shale producers','IEA'],
+  inflation: ['Federal Reserve','ECB','BLS','Eurostat'],
+  rates: ['Federal Reserve','ECB','UST market','Bund market'],
+  russia: ['Kremlin','Russian MoD','EU Council','NATO'],
+  nato: ['NATO','US DoD','European defense ministries','Ukrainian command']
+};
+
+function actorsForNarrative(title='', thesis=''){
+  const key = (title || '').toLowerCase().replace(/^narrative\s+acceleration:\s*/,'').trim();
+  const mapped = NARRATIVE_ACTOR_MAP[key] || [];
+  const extracted = extractActors(`${title} ${thesis}`).filter(x => !['Narrative','Second','Risk','Story'].includes(x));
+  const all = [...new Set([...mapped, ...extracted])];
+  return all.slice(0,4);
+}
+
 function narrativeHeadline(rawTitle, i){
   const base = (rawTitle || '').replace(/^narrative\s+acceleration:\s*/i,'').trim();
   if(!base) return `${String(i+1).padStart(2,'0')}. Risk narrative shifts and repricing pressure builds`;
@@ -113,7 +134,7 @@ function storyCardForSetup(s, i){
 
   const direction = pb >= pbr ? 'upside continuation' : 'downside repricing';
   const projection = pb >= pbr ? '+1.2% to +3.8%' : '-1.2% to -3.8%';
-  const actors = extractActors(`${s.title||''} ${s.thesis||''}`).join(', ') || 'EU desks, US macro funds, policy institutions';
+  const actors = actorsForNarrative(s.title||'', s.thesis||'').join(', ') || 'European Commission, Federal Reserve, major macro funds';
 
   return `
   <article class='story-card'>
