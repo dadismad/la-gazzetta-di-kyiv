@@ -1,0 +1,65 @@
+name: Sync from upstream (pureciclismo/gazzetta-di-kyiv)
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout target repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sync default branch from upstream
+        env:
+          UPSTREAM_URL: https://github.com/pureciclismo/gazzetta-di-kyiv.git
+          TARGET_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          UPSTREAM_BRANCH=$(git ls-remote --symref "$UPSTREAM_URL" HEAD | awk '/^ref:/ {sub("refs/heads/", "", $2); print $2}')
+
+          if [ -z "$UPSTREAM_BRANCH" ]; then
+            echo "Could not detect upstream default branch."
+            exit 1
+          fi
+
+          git remote remove upstream 2>/dev/null || true
+          git remote add upstream "$UPSTREAM_URL"
+
+          git fetch origin "$TARGET_BRANCH"
+          git checkout "$TARGET_BRANCH"
+
+          git fetch upstream "$UPSTREAM_BRANCH"
+
+          TARGET_SHA=$(git rev-parse "origin/$TARGET_BRANCH")
+          UPSTREAM_SHA=$(git rev-parse "upstream/$UPSTREAM_BRANCH")
+
+          echo "Target   ($TARGET_BRANCH): $TARGET_SHA"
+          echo "Upstream ($UPSTREAM_BRANCH): $UPSTREAM_SHA"
+
+          if [ "$TARGET_SHA" = "$UPSTREAM_SHA" ]; then
+            echo "Already up to date."
+            exit 0
+          fi
+
+          # Safety: only fast-forward/mirror when target is behind upstream.
+          if git merge-base --is-ancestor "origin/$TARGET_BRANCH" "upstream/$UPSTREAM_BRANCH"; then
+            git reset --hard "upstream/$UPSTREAM_BRANCH"
+            git push origin "HEAD:$TARGET_BRANCH"
+            echo "Sync complete."
+          else
+            echo "Target has commits not in upstream; refusing to overwrite."
+            echo "Resolve divergence manually or switch to force-mirror policy."
+            exit 1
+          fi
