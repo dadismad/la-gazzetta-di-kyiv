@@ -1,0 +1,128 @@
+{
+  "generated_at": "2026-05-23T21:30:02.100536+00:00",
+  "state": "degraded",
+  "threshold": 85,
+  "weighted_score": 85.0,
+  "visibility_fail": true,
+  "live_checks": {
+    "https://pureciclismo.github.io/gazzetta-di-kyiv/": {
+      "ok": true,
+      "status": 200,
+      "size": 1219
+    },
+    "https://pureciclismo.github.io/gazzetta-di-kyiv/app.js": {
+      "ok": true,
+      "status": 200,
+      "size": 6276
+    },
+    "https://pureciclismo.github.io/gazzetta-di-kyiv/data/narratives.json": {
+      "ok": true,
+      "status": 200,
+      "size": 5681,
+      "generated_at": "2026-05-22T21:00:56.960732+00:00"
+    },
+    "https://pureciclismo.github.io/gazzetta-di-kyiv/data/channel_content_bundle.json": {
+      "ok": false,
+      "error": "HTTP Error 404: Not Found"
+    }
+  },
+  "workflows": [
+    {
+      "name": "ceo_control_loop",
+      "reliability": 95,
+      "freshness": 90,
+      "visibility": 90,
+      "content_quality": 85,
+      "governance": 95,
+      "score": 91.0
+    },
+    {
+      "name": "pages_watchdog_v2",
+      "reliability": 95,
+      "freshness": 95,
+      "visibility": 95,
+      "content_quality": 80,
+      "governance": 90,
+      "score": 91.0
+    },
+    {
+      "name": "morning_evening_newsroom",
+      "reliability": 90,
+      "freshness": 80,
+      "visibility": 40,
+      "content_quality": 85,
+      "governance": 90,
+      "score": 77.0
+    },
+    {
+      "name": "editorial_strategy",
+      "reliability": 90,
+      "freshness": 82,
+      "visibility": 40,
+      "content_quality": 88,
+      "governance": 92,
+      "score": 78.4
+    }
+  ],
+  "active_jobs": [
+    {
+      "name": "gazzetta-sources-daily-update",
+      "enabled": false,
+      "state": "paused",
+      "last_status": "ok",
+      "next_run_at": "2026-05-24T06:00:00+03:00"
+    },
+    {
+      "name": "gazzetta-pipeline-audit-daily",
+      "enabled": false,
+      "state": "paused",
+      "last_status": "ok",
+      "next_run_at": "2026-05-24T06:30:00+03:00"
+    },
+    {
+      "name": "gazzetta-brandbook-and-representation-ops",
+      "enabled": false,
+      "state": "paused",
+      "last_status": "ok",
+      "next_run_at": "2026-05-24T09:00:00+03:00"
+    },
+    {
+      "name": "gazzetta-ceo-upgrade-control-loop",
+      "enabled": true,
+      "state": "scheduled",
+      "last_status": "ok",
+      "next_run_at": "2026-05-24T01:23:08.514763+03:00"
+    },
+    {
+      "name": "gazzetta-morning-evening-newsroom-cycle",
+      "enabled": false,
+      "state": "paused",
+      "last_status": "ok",
+      "next_run_at": "2026-05-24T06:30:00+03:00"
+    },
+    {
+      "name": "gazzetta-pages-watchdog-v2-every-10m",
+      "enabled": true,
+      "state": "scheduled",
+      "last_status": "ok",
+      "next_run_at": "2026-05-24T00:30:00+03:00"
+    },
+    {
+      "name": "gazzetta-autonomous-site-update-cycle",
+      "enabled": true,
+      "state": "scheduled",
+      "last_status": null,
+      "next_run_at": "2026-05-24T03:36:58.031512+03:00"
+    },
+    {
+      "name": "gazzetta-master-audit-immediate",
+      "enabled": false,
+      "state": "paused",
+      "last_status": null,
+      "next_run_at": "2026-05-24T00:27:36.558340+03:00"
+    }
+  ],
+  "reasons": [
+    "channel_content_bundle endpoint returns 404 on live website"
+  ]
+}

@@ -8,7 +8,7 @@ from collections import Counter
 from datetime import datetime, timezone, timedelta
 
 BASE = os.path.expanduser('~/.hermes/data/social_umbrella')
-REPO = '/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv'
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DATA = os.path.join(REPO, 'data')
 OUT_SITE = os.path.join(REPO, 'site')
 
@@ -271,7 +271,7 @@ with open(os.path.join(OUT_DATA,'source_registry_ranked.csv'),'w',newline='') as
 
 repr_data = {'techniques': []}
 try:
-    with open('/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv/data/representation_techniques.json','r') as rf:
+    with open(os.path.join(REPO, 'data', 'representation_techniques.json'),'r') as rf:
         repr_data = json.load(rf)
 except Exception:
     repr_data = {'techniques': []}

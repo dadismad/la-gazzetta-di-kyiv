@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import json, pathlib, datetime, urllib.request, subprocess
-ROOT=pathlib.Path('/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv')
+ROOT=pathlib.Path(__file__).resolve().parents[1]
 D=ROOT/'data'; D.mkdir(exist_ok=True)
 STATE=D/'pages_watchdog_state.json'
 OUT=D/'pages_watchdog_v2.json'

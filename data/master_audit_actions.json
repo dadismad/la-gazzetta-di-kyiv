@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-05-23T21:30:02.100536+00:00",
+  "state": "degraded",
+  "priorities": [
+    {
+      "priority": "P0",
+      "owner": "PublishingOps",
+      "action": "Fix live /data/channel_content_bundle.json publication path and verify 200",
+      "deadline": "within 2h"
+    },
+    {
+      "priority": "P1",
+      "owner": "Editorial",
+      "action": "Re-run morning/evening and validate channel bundle freshness consistency",
+      "deadline": "within 6h"
+    },
+    {
+      "priority": "P2",
+      "owner": "DataOps",
+      "action": "Improve cadence observability and auto-remediation metrics",
+      "deadline": "within 24h"
+    }
+  ],
+  "job_controls": {
+    "kept_active": [
+      "gazzetta-autonomous-site-update-cycle",
+      "gazzetta-ceo-upgrade-control-loop",
+      "gazzetta-pages-watchdog-v2-every-10m"
+    ],
+    "paused": [
+      "gazzetta-sources-daily-update",
+      "gazzetta-pipeline-audit-daily",
+      "gazzetta-brandbook-and-representation-ops",
+      "gazzetta-morning-evening-newsroom-cycle",
+      "gazzetta-master-audit-immediate"
+    ]
+  }
+}
