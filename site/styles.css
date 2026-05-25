@@ -1,6 +1,6 @@
 :root{--bg:#F7FAFF;--ink:#10233F;--blue:#3E6FAE;--accent:#6BB6FF;--green:#0f2a1c}
 *{box-sizing:border-box}
-body{margin:0;background:#F7FAFF;color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:10px!important;line-height:1.45}
+body{margin:0;background:#F7FAFF;color:var(--ink);font-family:Inter,"Segoe UI",system-ui,sans-serif;font-size:10px!important;line-height:1.45;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 .topbar{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid #bcd0ea}
 .brand{font-family:Georgia,serif;font-size:14px;color:#0a1a33}
 .top-tools{display:flex;gap:8px;align-items:center}
@@ -35,7 +35,7 @@ button{font-size:12px;padding:5px 9px;border:1px solid #9db7db;background:#fff;c
 :root{--base:#F7FAFF;--primary:#3E6FAE;--anchor:#10233F;--accent:#6BB6FF;}
 body.news-body{background:var(--base)!important;color:var(--anchor)!important;}
 .topbar{padding:10px 14px!important;}
-.brand{font-weight:300!important;letter-spacing:.12em;font-size:16px!important;color:var(--anchor)!important;}
+.brand{font-weight:400!important;letter-spacing:.08em;font-size:16px!important;color:var(--anchor)!important;}
 h1,h2,h3{font-weight:300!important;color:var(--anchor)!important;}
 .grid-focus{grid-template-columns:62fr 38fr!important;gap:12px!important;}
 .n-card{padding:10px 10px!important;margin:0!important;border:1px solid #d8e4f7!important;background:#ffffff!important;}
