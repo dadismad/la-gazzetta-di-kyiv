@@ -109,6 +109,23 @@ Continuity rules:
 - preserve chronology, causality, and narrative continuity
 - no disconnected one-off article generation
 
+## Captivating Storytelling Methodology (Investment-Decision Oriented)
+Adopt a story system inspired by elite research/editorial patterns (Bridgewater-style regime framing, institutional IR-style numeric clarity, and high-retention narrative packaging).
+
+Every core story artifact (site + Telegram) must follow this sequence:
+1. Hook (1 sentence): what changed now and why it matters for 24-72h.
+2. Evidence Stack (3-5 hard facts): numbers, entities, timestamps, geography, policy context.
+3. Transmission Chain (cause -> effect): first-order macro impact, second-order spillovers.
+4. Repricing Map (winners/losers): asset, direction, expected % range.
+5. Decision Snippet: bias, probability, horizon, invalidation trigger.
+6. Continuity Link: explicit connection to the last 2h / 24h / 3d progression.
+
+Formatting constraints:
+- concise, cinematic, intelligence-desk tone
+- no filler, no abstract one-word summaries
+- each story must read as a mini-brief with actionable implication
+- separate observed fact from projected path
+
 ## Telegram Doctrine
 Channel output is high-signal derivative media intelligence.
 

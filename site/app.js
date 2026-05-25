@@ -86,11 +86,20 @@ function rowForSetup(s, i){
   </div>`;
 }
 
+function titleCase(s){ return (s||'').split(' ').map(w=>w?`${w[0].toUpperCase()}${w.slice(1)}`:'').join(' '); }
+
+function extractActors(text=''){
+  const candidates = (text.match(/\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,2}|AI|EU|US|NATO|China|Russia|Fed|ECB|OPEC|Ukraine)\b/g) || [])
+    .filter(x => x.length > 1);
+  const uniq = [...new Set(candidates)];
+  return uniq.slice(0,4);
+}
+
 function narrativeHeadline(rawTitle, i){
   const base = (rawTitle || '').replace(/^narrative\s+acceleration:\s*/i,'').trim();
-  if(!base) return `${String(i+1).padStart(2,'0')}. Market narrative in transition`;
-  const cap = base.toUpperCase()==='AI' ? 'AI' : `${base.charAt(0).toUpperCase()}${base.slice(1)}`;
-  return `${String(i+1).padStart(2,'0')}. ${cap} narrative momentum is repricing risk`;
+  if(!base) return `${String(i+1).padStart(2,'0')}. Risk narrative shifts and repricing pressure builds`;
+  const cap = base.toUpperCase()==='AI' ? 'AI' : titleCase(base);
+  return `${String(i+1).padStart(2,'0')}. ${cap}: claim intensity rises, repricing risk follows`;
 }
 
 function storyCardForSetup(s, i){
@@ -104,13 +113,15 @@ function storyCardForSetup(s, i){
 
   const direction = pb >= pbr ? 'upside continuation' : 'downside repricing';
   const projection = pb >= pbr ? '+1.2% to +3.8%' : '-1.2% to -3.8%';
+  const actors = extractActors(`${s.title||''} ${s.thesis||''}`).join(', ') || 'EU desks, US macro funds, policy institutions';
 
   return `
   <article class='story-card'>
     <div class='story-title'>${title}</div>
-    <div class='story-dev'>${dev}</div>
-    <div class='story-imp'>Transmission is moving through liquidity and risk appetite into cross-asset positioning. Model confidence is <b>${confidence}%</b> (base <b>${pbase}%</b>, upside <b>${pb}%</b>, downside <b>${pbr}%</b>).</div>
-    <div class='story-fx'><b>Bet path (24–72h):</b> ${direction}, expected repricing <b>${projection}</b>. <b>Invalidation:</b> ${inv}.</div>
+    <div class='story-dev'><b>Actors:</b> ${actors}</div>
+    <div class='story-dev'><b>Core claim:</b> ${dev}</div>
+    <div class='story-imp'><b>Transmission:</b> Liquidity and risk appetite are carrying this claim into cross-asset positioning. Model confidence is <b>${confidence}%</b> (base <b>${pbase}%</b>, upside <b>${pb}%</b>, downside <b>${pbr}%</b>).</div>
+    <div class='story-fx'><b>Repricing thesis (24–72h):</b> ${direction}, expected repricing <b>${projection}</b>. <b>Invalidation:</b> ${inv}.</div>
   </article>`;
 }
 
