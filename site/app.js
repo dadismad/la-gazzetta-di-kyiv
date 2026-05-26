@@ -48,13 +48,25 @@ function renderRegime(){
   if(heroFreshness) heroFreshness.textContent = freshnessLabel;
 }
 
+function humanNarrativeLabel(raw=''){
+  const k = String(raw||'').toLowerCase();
+  if(k.includes('oil')) return 'Energy cost shock and producer power game';
+  if(k.includes('gas')) return 'Gas security stress between policy and winter demand';
+  if(k.includes('ai')) return 'AI capex race vs monetization reality';
+  if(k.includes('rates')) return 'Rate path uncertainty and valuation pressure';
+  if(k.includes('inflation')) return 'Sticky inflation narrative versus policy credibility';
+  if(k.includes('china')) return 'China growth confidence versus structural drag';
+  if(k.includes('eu')) return 'EU strategic autonomy versus fiscal constraints';
+  return titleCase(raw || 'Global macro narrative rebalancing');
+}
+
 function renderFrames(){
   const frames = STATE.divergences;
   const target = el('frameList');
   target.innerHTML = frames.map((d,i)=>`
     <div class='frame-item ${i===0?'active':''}' data-idx='${i}'>
-      <div class='frame-cat'>Belief vs Reality</div>
-      <div class='frame-name'>${(d.narrative||'macro').toUpperCase()}</div>
+      <div class='frame-cat'>Prevailing paradigm</div>
+      <div class='frame-name'>${humanNarrativeLabel(d.narrative||'macro')}</div>
       <div class='frame-note'>Divergence score: ${d.divergence_score ?? 'n/a'}</div>
     </div>
   `).join('') || `<div class='claim-empty'>No divergence data yet.</div>`;

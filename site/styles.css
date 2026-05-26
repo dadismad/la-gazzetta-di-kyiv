@@ -17,8 +17,8 @@ button{font-size:12px;padding:5px 9px;border:1px solid #9db7db;background:#fff;c
 .tri-grid{display:grid;grid-template-columns:21fr 56fr 23fr;min-height:calc(100vh - 96px);position:relative}
 .build-strip{grid-column:1 / -1;display:flex;gap:10px;padding:5px 10px;border-bottom:1px solid #c7d8ef;background:#f2f7ff;color:#214a7a;font-size:9px;letter-spacing:.04em}
 .col-title{text-transform:uppercase;letter-spacing:.16em;font-size:9px;color:#244776;padding:6px 8px;border-bottom:1px solid #c7d8ef}
-.frames-col,.claims-col,.focus-col{min-height:100%;border-right:1px solid #c7d8ef}
-.focus-col{border-right:none;background:linear-gradient(180deg,#0f2a1c,#123823);color:#e8f2ec}
+.frames-col,.claims-col,.focus-col{min-height:100%;border-right:none}
+.focus-col{border-right:none;background:linear-gradient(180deg,#12283a,#17354d);color:#e8f2ec}
 #frameList .frame-item{padding:8px;border-bottom:1px solid #d8e5f4;cursor:pointer}
 #frameList .frame-item.active{background:#10311f;color:#e9f5ee}
 #frameList .frame-cat{font-size:8px;opacity:.8;text-transform:uppercase}
