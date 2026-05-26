@@ -5,7 +5,7 @@ import base64, json, os, urllib.parse, urllib.request
 
 TOKEN_URL='https://www.reddit.com/api/v1/access_token'
 POST_URL='https://oauth.reddit.com/api/submit'
-PAYLOAD='data/reddit_post_payload.md'
+PAYLOAD=os.getenv('REDDIT_POST_PAYLOAD','data/reddit_post_payload.md')
 LOCK='data/.last_reddit_payload_hash'
 
 def env(k:str)->str:
