@@ -166,10 +166,17 @@ function storyCardForSetup(s, i){
     <div class='story-title'>${title}</div>
     <div class='story-dev'><b>Actors:</b> ${actors}</div>
     <div class='story-dev'><b>Core claim:</b> ${dev}</div>
+    <div class='story-kpis'>
+      <span class='kchip'>Confidence ${confidence}%</span>
+      <span class='kchip'>Bull ${pb}%</span>
+      <span class='kchip'>Bear ${pbr}%</span>
+      <span class='kchip'>Horizon ${(s.horizon || '24–72h')}</span>
+    </div>
     <div class='story-imp'><b>Implications:</b> If this claim persists, positioning pressure should transmit into ${instrument} and adjacent macro proxies inside 24–72h. Confidence <b>${confidence}%</b> (base <b>${pbase}%</b>, upside <b>${pb}%</b>, downside <b>${pbr}%</b>).</div>
     <div class='story-fx'><b>Bet snippet (24–72h):</b> <b>Instrument:</b> ${instrument}; <b>Direction:</b> ${direction}; <b>Probability:</b> ${Math.max(pb,pbr)}%; <b>Projection:</b> ${projection}; <b>Invalidation:</b> ${inv}</div>
     <div class='story-detail'><b>Contradiction map:</b> ${contradictionLine}</div>
     <div class='story-detail'><b>Media manipulation lens:</b> Watch selective framing that amplifies first-order headlines while hiding second-order cross-asset spillovers.</div>
+    <div class='story-detail'><b>What would prove us wrong first:</b> ${inv}</div>
     <div class='story-detail'><b>Full-intel links:</b> ${renderCitations(s.citations || [])}</div>
   </article>`;
 }
