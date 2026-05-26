@@ -38,21 +38,10 @@ for p in [
 # 6) build site + narratives
 sh([sys.executable, builder])
 
-# 3) git push
-token = ''
-if os.path.exists(envfile):
-    with open(envfile) as f:
-        for line in f:
-            if line.startswith('GITHUB_TOKEN='):
-                token = line.strip().split('=',1)[1]
-                break
-if not token:
-    raise SystemExit('Missing GITHUB_TOKEN in ~/.hermes/.env')
-
-remote = f'https://x-access-token:{token}@github.com/pureciclismo/gazzetta-di-kyiv.git'
-
+# 3) git publish via configured origin remote
+# Uses existing git credential helper / gh auth rather than embedding tokens.
 sh(['git','add','data','site'], cwd=repo)
 subprocess.run(['git','commit','-m','chore: scheduled refresh data+site'], cwd=repo, capture_output=True, text=True)
-sh(['git','pull','--rebase',remote,'main'], cwd=repo)
-sh(['git','push',remote,'main'], cwd=repo)
-print('OK: published refresh to GitHub')
+sh(['git','pull','--rebase','origin','main'], cwd=repo)
+sh(['git','push','origin','main'], cwd=repo)
+print('OK: published refresh to GitHub via origin')

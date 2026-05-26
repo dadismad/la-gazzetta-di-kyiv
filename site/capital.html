@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Where Capital Goes — Gazzetta di Kyiv</title><link rel="stylesheet" href="./styles.css"/></head>
+<body class="news-body"><header class="topbar"><div class="brand">Gazzetta di Kyiv</div><div class="top-tools"><a class="cta-btn" href="./index.html">Back to Home</a></div></header>
+<section class="hero-strip"><div><h1>Where Capital Goes</h1><p>Sector leadership and beneficiary shifts from Phase 2 scoring.</p></div></section>
+<main style="padding:12px"><div id="meta" class="claim-empty"></div><div id="rows"></div></main>
+<script>
+async function boot(){
+ const r=await fetch('./data/phase4_sector_history.json',{cache:'no-store'}); const d=await r.json();
+ document.getElementById('meta').textContent='Updated: '+(d.generated_at||'n/a')+' | Sectors: '+((d.rows||[]).length);
+ document.getElementById('rows').innerHTML=(d.rows||[]).map((x,i)=>`<div class='story-card'><div class='story-title'>${String(i+1).padStart(2,'0')}. ${x.sector}</div><div class='story-dev'>Coverage: ${x.count} signals</div><div class='story-kpis'><span class='kchip'>Avg beneficiary ${x.avg_beneficiary}</span><span class='kchip'>Avg flow ${x.avg_flow}</span></div></div>`).join('');
+}
+boot();
+</script></body></html>
