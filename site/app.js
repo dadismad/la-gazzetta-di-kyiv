@@ -123,6 +123,27 @@ function narrativeHeadline(rawTitle, i){
   return `${String(i+1).padStart(2,'0')}. ${cap}: claim intensity rises, repricing risk follows`;
 }
 
+function instrumentForNarrative(title=''){
+  const key = (title || '').toLowerCase();
+  if(key.includes('oil')) return 'Brent crude futures';
+  if(key.includes('gas')) return 'EU natural gas (TTF)';
+  if(key.includes('rates') || key.includes('inflation')) return 'US 2Y Treasury yield';
+  if(key.includes('crypto')) return 'BTC/USD';
+  if(key.includes('ai')) return 'NASDAQ-100';
+  if(key.includes('china')) return 'CSI 300';
+  if(key.includes('eu')) return 'EUR/USD';
+  return 'Global risk basket';
+}
+
+function renderCitations(citations=[]){
+  if(!citations.length) return 'No direct links available in current cycle';
+  return citations.map((c, idx)=>{
+    const safe = String(c || '').trim();
+    if(/^https?:\/\//i.test(safe)) return `<a href='${safe}' target='_blank' rel='noopener'>source ${idx+1}</a>`;
+    return `<span>${safe}</span>`;
+  }).join(' · ');
+}
+
 function storyCardForSetup(s, i){
   const title = narrativeHeadline(s.title, i);
   const dev = s.thesis || 'Story development is building, but breadth confirmation is still incomplete.';
@@ -131,18 +152,25 @@ function storyCardForSetup(s, i){
   const pbase = s.probability_base ?? 0;
   const pbr = s.probability_bear ?? 0;
   const inv = (s.invalidation_triggers||[])[0] || 'Narrative momentum reversal';
-
-  const direction = pb >= pbr ? 'upside continuation' : 'downside repricing';
+  const direction = pb >= pbr ? 'long risk' : 'defensive / short beta';
   const projection = pb >= pbr ? '+1.2% to +3.8%' : '-1.2% to -3.8%';
   const actors = actorsForNarrative(s.title||'', s.thesis||'').join(', ') || 'European Commission, Federal Reserve, major macro funds';
+  const instrument = instrumentForNarrative(s.title || '');
+  const contradiction = STATE.contradictions[0];
+  const contradictionLine = contradiction
+    ? `${contradiction.claim_a || 'Consensus claim'} ↔ ${contradiction.claim_b || 'Emerging counter-claim'}`
+    : 'No hard contradiction mapped in this cycle.';
 
   return `
   <article class='story-card'>
     <div class='story-title'>${title}</div>
     <div class='story-dev'><b>Actors:</b> ${actors}</div>
     <div class='story-dev'><b>Core claim:</b> ${dev}</div>
-    <div class='story-imp'><b>Transmission:</b> Liquidity and risk appetite are carrying this claim into cross-asset positioning. Model confidence is <b>${confidence}%</b> (base <b>${pbase}%</b>, upside <b>${pb}%</b>, downside <b>${pbr}%</b>).</div>
-    <div class='story-fx'><b>Repricing thesis (24–72h):</b> ${direction}, expected repricing <b>${projection}</b>. <b>Invalidation:</b> ${inv}.</div>
+    <div class='story-imp'><b>Implications:</b> If this claim persists, positioning pressure should transmit into ${instrument} and adjacent macro proxies inside 24–72h. Confidence <b>${confidence}%</b> (base <b>${pbase}%</b>, upside <b>${pb}%</b>, downside <b>${pbr}%</b>).</div>
+    <div class='story-fx'><b>Bet snippet (24–72h):</b> <b>Instrument:</b> ${instrument}; <b>Direction:</b> ${direction}; <b>Probability:</b> ${Math.max(pb,pbr)}%; <b>Projection:</b> ${projection}; <b>Invalidation:</b> ${inv}</div>
+    <div class='story-detail'><b>Contradiction map:</b> ${contradictionLine}</div>
+    <div class='story-detail'><b>Media manipulation lens:</b> Watch selective framing that amplifies first-order headlines while hiding second-order cross-asset spillovers.</div>
+    <div class='story-detail'><b>Full-intel links:</b> ${renderCitations(s.citations || [])}</div>
   </article>`;
 }
 
@@ -166,6 +194,12 @@ function renderClaims(frameIdx=0){
     (setups.map(storyCardForSetup).join('') || `<div class='claim-empty'>No active claims yet.</div>`);
 }
 
+function setExpanded(expanded){
+  document.querySelectorAll('.story-card').forEach(card=>{
+    card.classList.toggle('expanded', expanded);
+  });
+}
+
 function bindControls(){
   el('searchBox').oninput = (e)=>{
     const q=(e.target.value||'').toLowerCase();
@@ -173,8 +207,8 @@ function bindControls(){
       r.style.display = r.innerText.toLowerCase().includes(q) ? 'block' : 'none';
     });
   };
-  el('collapseAll').onclick=()=>document.querySelectorAll('.story-card').forEach(r=>{ r.style.display='block'; });
-  el('expandAll').onclick=()=>document.querySelectorAll('.story-card').forEach(r=>{ r.style.display='block'; });
+  el('collapseAll').onclick=()=>setExpanded(false);
+  el('expandAll').onclick=()=>setExpanded(true);
 }
 
 function renderBuildMeta(){
