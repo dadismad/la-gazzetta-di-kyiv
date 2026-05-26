@@ -10,7 +10,8 @@ let STATE = {
   setups: [],
   divergences: [],
   contradictions: [],
-  aftershocks: []
+  aftershocks: [],
+  phase2: { top: [] }
 };
 
 async function fetchJSON(path, fallback){
@@ -225,13 +226,20 @@ function renderBuildMeta(){
   if(timeNode) timeNode.textContent = BUILD_META.generatedAt;
 }
 
+function renderCapitalLeader(){
+  const node = el('heroCapitalLeader');
+  const top = (STATE.phase2 && STATE.phase2.top && STATE.phase2.top[0]) ? STATE.phase2.top[0] : null;
+  if(node) node.textContent = top ? `${top.sector} (${top.beneficiary_score})` : 'Pending';
+}
+
 async function boot(){
-  const [regime, setups, divergences, contradictions, aftershocks] = await Promise.all([
+  const [regime, setups, divergences, contradictions, aftershocks, phase2] = await Promise.all([
     fetchJSON('./api/v1/home/regime.json', {}),
     fetchJSON('./api/v1/home/setups.json', {items:[]}),
     fetchJSON('./api/v1/home/divergences.json', {items:[]}),
     fetchJSON('./api/v1/home/contradictions.json', {items:[]}),
-    fetchJSON('./api/v1/home/aftershocks.json', {items:[]})
+    fetchJSON('./api/v1/home/aftershocks.json', {items:[]}),
+    fetchJSON('./data/phase2_scores.json', {top:[]})
   ]);
 
   STATE.regime = regime;
@@ -239,9 +247,11 @@ async function boot(){
   STATE.divergences = divergences.items || [];
   STATE.contradictions = contradictions.items || [];
   STATE.aftershocks = aftershocks.items || [];
+  STATE.phase2 = phase2 || {top:[]};
 
   renderBuildMeta();
   renderRegime();
+  renderCapitalLeader();
   renderFrames();
   renderClaims(0);
   bindControls();
