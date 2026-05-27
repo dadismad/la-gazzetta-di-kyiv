@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-05-27T22:15:31.090628+00:00",
+  "ok": true,
+  "reason": "quality gate passed",
+  "checked_setups": 12,
+  "thresholds": {
+    "min_setups": 3,
+    "min_confidence": 0.45,
+    "min_invalidations": 2,
+    "min_actors": 1,
+    "min_source_count": 4,
+    "min_evidence_titles": 2
+  },
+  "findings": []
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-27T22:10:14.718804+00:00",
+  "generated_at": "2026-05-27T22:15:31.069190+00:00",
   "setups": [
     {
       "setup_id": "n21_geopolitics",
@@ -95,9 +95,9 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
+        "Google Engineer Charged With Insider Trading on Polymarket",
         "Stock Rally Falters on Conflicting US-Iran Signals: Markets Wrap",
-        "Traders See Conflicting Iran Signals on US-Iran Deal",
-        "Peru Extends Halt on Anchovy Fishing as El Niño Threat Looms"
+        "Traders See Conflicting Iran Signals on US-Iran Deal"
       ]
     },
     {
@@ -180,9 +180,9 @@
         "defend fiscal revenues",
         "manage supply optics"
       ],
-      "probability_base": 56,
-      "probability_bull": 18,
-      "probability_bear": 26,
+      "probability_base": 58,
+      "probability_bull": 17,
+      "probability_bear": 25,
       "invalidation_triggers": [
         "Mention-share drops below 7d baseline for two cycles",
         "Cross-source confirmation weakens materially"
@@ -196,9 +196,9 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
+        "Oil Steadies After Slump as Deal to End Iran War Remains Elusive",
         "Oil Falls as Traders Weigh Signs of Iran Peace Deal Progress",
-        "U.S. oil falls below $90 on report Iran agreement would restore Hormuz traffic in one month",
-        "Oil Prices Fall Sharply As Traders Eye Progress In U.S.-Iran Talks"
+        "U.S. oil falls below $90 on report Iran agreement would restore Hormuz traffic in one month"
       ]
     },
     {
@@ -483,7 +483,7 @@
     }
   ],
   "regime": {
-    "generated_at": "2026-05-27T22:10:14.718580+00:00",
+    "generated_at": "2026-05-27T22:15:31.068895+00:00",
     "data_freshness_seconds": 3600,
     "source_count": 8,
     "regime_label": "Narrative Repricing Risk",
