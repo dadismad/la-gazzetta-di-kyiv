@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SocialDistributionLogEntry",
+  "type": "object",
+  "required": [
+    "narrative_id",
+    "narrative_stage",
+    "platform",
+    "post_type",
+    "published_at",
+    "hook",
+    "dominant_consensus",
+    "hidden_contradiction",
+    "strategic_implication",
+    "market_asset_implication",
+    "human_detail_id",
+    "human_detail_source_url",
+    "cta_phrase",
+    "website_url",
+    "actors",
+    "sectors",
+    "evidence_urls",
+    "continuity_link",
+    "metrics"
+  ],
+  "properties": {
+    "narrative_id": {"type": "string"},
+    "narrative_stage": {"type": "string", "enum": ["spark", "validate", "deepen", "update"]},
+    "platform": {"type": "string", "enum": ["x", "telegram", "reddit"]},
+    "post_type": {"type": "string"},
+    "published_at": {"type": "string", "format": "date-time"},
+    "hook": {"type": "string"},
+    "dominant_consensus": {"type": "string"},
+    "hidden_contradiction": {"type": "string"},
+    "strategic_implication": {"type": "string"},
+    "market_asset_implication": {"type": "string"},
+    "human_detail_id": {"type": "string"},
+    "human_detail_source_url": {"type": "string", "format": "uri"},
+    "cta_phrase": {"type": "string"},
+    "website_url": {"type": "string", "format": "uri"},
+    "actors": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "sectors": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "evidence_urls": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "continuity_link": {"type": "string"},
+    "framing_pattern": {"type": "string"},
+    "metrics": {
+      "type": "object",
+      "required": ["impressions", "engagements", "ctr"],
+      "properties": {
+        "impressions": {"type": "integer", "minimum": 0},
+        "engagements": {"type": "integer", "minimum": 0},
+        "ctr": {"type": "number", "minimum": 0}
+      }
+    }
+  },
+  "additionalProperties": false
+}
