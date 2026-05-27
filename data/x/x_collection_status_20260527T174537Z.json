@@ -1,0 +1,15 @@
+{
+  "ts": "20260527T174537Z",
+  "app": "GazzettadiKyivX",
+  "handle": "GazzettadiKyiv",
+  "collection": {
+    "user_lookup_rc": 1,
+    "user_lookup": {
+      "account_id": 2059686578948042754,
+      "title": "CreditsDepleted",
+      "detail": "Your enrolled account [2059686578948042754] does not have any credits to fulfill this request.",
+      "type": "https://api.twitter.com/2/problems/credits"
+    }
+  },
+  "state": "blocked_credits"
+}
