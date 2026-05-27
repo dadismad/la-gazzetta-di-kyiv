@@ -3,48 +3,61 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Gazzetta di Kyiv — Narrative Intelligence Terminal</title>
-  <meta name="description" content="Curated narrative intelligence terminal: macro regime, contradictions, contagion, and retail positioning signals."/>
+  <title>La Gazzetta di Kyiv — Newspaper</title>
+  <meta name="description" content="A newspaper covering macro, politics, and geopolitics, interpreted through a narrative intelligence lens."/>
   <link rel="stylesheet" href="./styles.css"/>
 </head>
-<body class="news-body live-light">
-  <header class="topbar">
-    <div class="brand">Gazzetta di Kyiv · Narrative Intelligence Terminal</div>
-    <div class="top-tools">
-      <a class="cta-btn" href="https://t.me/LaGazzettadiKyiv" target="_blank" rel="noopener">Telegram Feed</a>
-      <a class="cta-btn" href="https://www.reddit.com/r/LaGazzettadiKyiv/" target="_blank" rel="noopener">Reddit Intelligence Hub</a>
-      <a class="cta-btn" href="./ops.html">Ops Dashboard</a>
-    </div>
+<body>
+  <header class="masthead">
+    <div class="edition">European Edition</div>
+    <h1>La Gazzetta di Kyiv</h1>
+    <p class="tagline">A newspaper for macro, politics, and geopolitics — with a narrative intelligence lens.</p>
   </header>
 
-  <section class="hero-strip">
-    <div>
-      <h1>Institutional interpretation for retail and semi-professional operators.</h1>
-      <p>We map actors, incentives, contradictions, cross-asset transmission, and invalidation triggers—so decisions are thesis-led, not headline-led.</p>
-    </div>
-    <div class="hero-metrics">
-      <span class="hero-chip">Regime: <b id="heroRegime">Loading…</b></span>
-      <span class="hero-chip">Confidence: <b id="heroConfidence">-</b></span>
-      <span class="hero-chip">Sources: <b id="heroSources">-</b></span>
-      <span class="hero-chip">Updated: <b id="heroUpdated">-</b></span>
-    </div>
-  </section>
+  <nav class="topnav">
+    <a href="#top-stories">Top Stories</a>
+    <a href="#macro">Macro</a>
+    <a href="#politics">Politics</a>
+    <a href="#geopolitics">Geopolitics</a>
+    <a href="#ni-column">Narrative Intelligence Column</a>
+  </nav>
 
-  <main class="terminal-grid">
-    <section class="panel"><h2>Dominant Narratives</h2><div id="dominantNarratives"></div></section>
-    <section class="panel"><h2>Narrative Velocity</h2><div id="narrativeVelocity"></div></section>
-    <section class="panel"><h2>Narrative Contradictions</h2><div id="contradictionMap"></div></section>
+  <main class="layout">
+    <section id="top-stories" class="panel lead">
+      <h2>Top Stories</h2>
+      <article class="lead-story" id="leadStory">Loading lead story…</article>
+      <div class="story-grid" id="topStoryGrid"></div>
+    </section>
 
-    <section class="panel"><h2>High Conviction Setups</h2><div id="convictionSetups"></div></section>
-    <section class="panel"><h2>Macro Regime Dashboard</h2><div id="regimeDashboard"></div></section>
-    <section class="panel"><h2>Geopolitical Flashpoints</h2><div id="geopoliticalFlashpoints"></div></section>
+    <section id="macro" class="panel">
+      <h2>Macro</h2>
+      <div id="macroStories" class="story-list"></div>
+    </section>
 
-    <section class="panel"><h2>Prestige-Sport Intelligence</h2><div id="prestigeSport"></div></section>
-    <section class="panel"><h2>Volatility Watch</h2><div id="volatilityWatch"></div></section>
-    <section class="panel"><h2>Cross-Asset Contagion</h2><div id="crossAssetContagion"></div></section>
+    <section id="politics" class="panel">
+      <h2>Politics</h2>
+      <div id="politicsStories" class="story-list"></div>
+    </section>
 
-    <section class="panel panel-wide"><h2>Retail Positioning Signals</h2><div id="retailSignals"></div></section>
+    <section id="geopolitics" class="panel">
+      <h2>Geopolitics</h2>
+      <div id="geopoliticsStories" class="story-list"></div>
+    </section>
+
+    <aside id="ni-column" class="panel ni-column">
+      <h2>Narrative Intelligence Column</h2>
+      <p class="subhead">One focused interpretation block for decision-makers.</p>
+      <div id="niColumnCard">Loading column…</div>
+    </aside>
   </main>
+
+  <footer class="footer">
+    <a href="./ops.html">Ops Dashboard</a>
+    <span>·</span>
+    <a href="https://t.me/LaGazzettadiKyiv" target="_blank" rel="noopener">Telegram</a>
+    <span>·</span>
+    <a href="https://www.reddit.com/r/LaGazzettadiKyiv/" target="_blank" rel="noopener">Reddit</a>
+  </footer>
 
   <script src="./app.js"></script>
 </body>
