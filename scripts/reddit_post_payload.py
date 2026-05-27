@@ -28,6 +28,7 @@ lines.append(f'**Regime:** {best.get("regime","mixed")} | **Lead sector:** {best
 lines.append(f'**Actors in play:** {actors}')
 lines.append('')
 lines.append(f'**Claim:** attention is converting into incremental allocation toward {best.get("sector","lead sectors")}, with spillover into related risk assets.')
+lines.append('**Contradiction:** price optimism is rising faster than fundamental clarity; if narrative velocity stalls, positioning can unwind quickly.')
 lines.append(f'**24–72h path ({prob}%):** {inst} -> {dirn}.')
 lines.append(f'**Invalidation:** {inv}')
 lines.append('')
