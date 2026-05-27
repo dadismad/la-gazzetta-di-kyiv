@@ -6,15 +6,21 @@ from urllib.request import urlopen, Request
 URL = "https://pureciclismo.github.io/gazzetta-di-kyiv/"
 
 INDEX_CHECKS = {
+    "brand_title": r"La Gazzetta di Kyiv",
     "stories_heading": r"Stories in Play",
-    "build_strip": r"Build:\s*<b id=\"buildCommit\"",
-    "cta": r"Get Daily Signal",
+    "stories_container": r"id=\"stories-in-play\"",
+    "lead_story_mount": r"id=\"leadStory\"",
+    "focus_influence_mount": r"id=\"focusInfluence\"",
+    "appjs_script_tag": r"<script\s+src=\"\./app\.js\"",
 }
 
 APPJS_CHECKS = {
-    "actors_label": r"Actors:",
-    "repricing_label": r"Repricing thesis",
-    "story_card_renderer": r"storyCardForSetup",
+    "boot_function": r"async\s+function\s+boot\s*\(",
+    "story_body_renderer": r"function\s+storyBody\s*\(",
+    "setups_feed": r"\./api/v1/home/setups\.json",
+    "narratives_feed": r"\./data/narratives\.json",
+    "focus_stakes_block": r"focusStakes",
+    "focus_bet_block": r"focusBet",
 }
 
 
