@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-05-27T22:03:16.707512+00:00",
-  "items": [
+  "setups": [
     {
       "setup_id": "n2_geopolitics",
       "title": "Narrative acceleration: geopolitics",
@@ -85,5 +85,37 @@
         "data/normalized/events_latest.json"
       ]
     }
-  ]
+  ],
+  "contradictions": [
+    {
+      "narrative": "geopolitics",
+      "claim_a": "geopolitics is fully priced",
+      "claim_b": "geopolitics transmission effects remain underpriced",
+      "urgency": "high",
+      "invalidation_window": "24-72h"
+    },
+    {
+      "narrative": "markets",
+      "claim_a": "markets is fully priced",
+      "claim_b": "markets transmission effects remain underpriced",
+      "urgency": "high",
+      "invalidation_window": "24-72h"
+    },
+    {
+      "narrative": "macro",
+      "claim_a": "macro is fully priced",
+      "claim_b": "macro transmission effects remain underpriced",
+      "urgency": "high",
+      "invalidation_window": "24-72h"
+    }
+  ],
+  "regime": {
+    "generated_at": "2026-05-27T22:03:16.707306+00:00",
+    "data_freshness_seconds": 3600,
+    "source_count": 8,
+    "regime_label": "Narrative Repricing Risk",
+    "risk_state": "mixed",
+    "confidence": 0.72
+  },
+  "source_events": 200
 }

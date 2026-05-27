@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd /Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv
+# Run expanded multi-source pipeline first (collection -> analysis -> payloads -> audit)
+./scripts/run_pipeline_v2.sh
+
+# Keep backward compatibility with existing NLP/post scripts
+cp data/publish/reddit_latest.md data/reddit_post_payload.md
+
+# Legacy fallback pipeline remains as secondary path
 python3 scripts/devvit_only_pipeline.py
 for i in 1 2 3; do
   python3 scripts/reddit_post_nlp_audit.py

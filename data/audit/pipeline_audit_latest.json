@@ -1,0 +1,56 @@
+{
+  "generated_at": "2026-05-27T22:04:18.066555+00:00",
+  "status": "ok",
+  "artifact_checks": [
+    {
+      "key": "normalized_events",
+      "path": "data/normalized/events_latest.json",
+      "exists": true,
+      "age_seconds": 61
+    },
+    {
+      "key": "processed_intelligence",
+      "path": "data/processed/narrative_intelligence_latest.json",
+      "exists": true,
+      "age_seconds": 61
+    },
+    {
+      "key": "site_regime",
+      "path": "site/api/v1/home/regime.json",
+      "exists": true,
+      "age_seconds": 61
+    },
+    {
+      "key": "site_setups",
+      "path": "site/api/v1/home/setups.json",
+      "exists": true,
+      "age_seconds": 61
+    },
+    {
+      "key": "site_contradictions",
+      "path": "site/api/v1/home/contradictions.json",
+      "exists": true,
+      "age_seconds": 61
+    },
+    {
+      "key": "telegram_payload",
+      "path": "data/publish/telegram_latest.md",
+      "exists": true,
+      "age_seconds": 61
+    },
+    {
+      "key": "reddit_payload",
+      "path": "data/publish/reddit_latest.md",
+      "exists": true,
+      "age_seconds": 61
+    }
+  ],
+  "findings": [],
+  "summary": {
+    "total_findings": 0,
+    "blockers": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  }
+}
