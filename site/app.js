@@ -10,79 +10,168 @@ async function getJSON(path, fallback){
 
 function cleanTitle(t=''){ return String(t).replace('Narrative acceleration: ','').trim(); }
 function short(s='', n=180){ const v=String(s||'').trim(); return v.length>n?`${v.slice(0,n-1)}…`:v; }
-
-function storyItem(title, body){
-  return `<div class="item"><h4>${title}</h4><p>${body}</p></div>`;
+function ensureSentence(value=''){
+  const t = String(value || '').trim();
+  if(!t) return '';
+  return /[.!?]$/.test(t) ? t : `${t}.`;
 }
 
-function leadTemplate(s, regime){
+function topicFromTitle(title=''){
+  return cleanTitle(title).toLowerCase();
+}
+
+function confidenceLabel(conf=0){
+  if(conf >= 0.75) return 'High';
+  if(conf >= 0.6) return 'Medium';
+  if(conf >= 0.45) return 'Measured';
+  return 'Low';
+}
+
+function storyBody(s, narrative, {headingTag='h3', compact=false} = {}){
   const title = cleanTitle(s?.title || 'Narrative Repricing Risk Is Back');
-  const thesis = s?.thesis || 'Narrative momentum is moving faster than consensus positioning, especially where policy confidence is thin.';
-  const trigger = (s?.invalidation_triggers || [])[0] || 'Watch for a confidence break in policy guidance over the next 24–72h.';
-  const retail = (s?.retail_execution || []).slice(0,2).join(' · ') || 'Use staged entries; avoid one-way concentration.';
+  const thesis = ensureSentence(s?.thesis || narrative?.semantics?.claim || 'Narrative momentum is moving faster than consensus positioning.');
+  const contradiction = ensureSentence(narrative?.semantics?.contradiction || (s?.invalidation_triggers || [])[0] || 'Consensus stability hides second-order pressure points.');
+  const strategy = ensureSentence(narrative?.semantics?.transmission || 'Transmission runs through policy expectations, rates sensitivity, and cross-asset positioning.');
+  const positioningRaw = (s?.retail_execution || [])[0] || narrative?.semantics?.repricing || 'Prefer defined-risk structures with staged entry.';
+  const positioning = ensureSentence(positioningRaw);
+  const limits = compact
+    ? {thesis:150, contradiction:130, strategy:150, positioning:120}
+    : {thesis:220, contradiction:200, strategy:200, positioning:160};
   return `
-    <h3>${title}</h3>
-    <p><b>What happened:</b> ${short(thesis, 230)}</p>
-    <p><b>Why a normal reader should care:</b> this changes expected risk in portfolios exposed to rates, growth multiples, and energy-sensitive sectors.</p>
-    <p><b>24–72h lens:</b> ${trigger}</p>
-    <p><b>Practical positioning:</b> ${retail}</p>
-    <p><b>Regime context:</b> ${regime.regime_label || 'Pending'} (${Math.round((regime.confidence||0)*100)}% confidence)</p>`;
+    <${headingTag}>${title}</${headingTag}>
+    <p class="story-thesis">${short(thesis, limits.thesis)}</p>
+    <p class="story-contradiction">${short(contradiction, limits.contradiction)}</p>
+    <p class="story-strategy">${short(strategy, limits.strategy)}</p>
+    <p class="story-positioning">${short(positioning, limits.positioning)}</p>
+  `;
 }
 
 async function boot(){
   const setups = await getJSON('./api/v1/home/setups.json',{items:[]});
-  const contradictions = await getJSON('./api/v1/home/contradictions.json',{items:[]});
-  const regime = await getJSON('./api/v1/home/regime.json',{});
+  const narratives = await getJSON('./data/narratives.json',{narrative_reviews:[]});
 
   const items = (setups.items || []).slice(0,9);
   const lead = items[0] || null;
+  const narrativeMap = {};
+  (narratives.narrative_reviews || []).forEach((review)=>{ narrativeMap[review.topic] = review; });
 
-  if(byId('leadStory')) byId('leadStory').innerHTML = leadTemplate(lead, regime);
-
-  if(byId('topStoryGrid')){
-    byId('topStoryGrid').innerHTML = items.slice(1,4).map(s=>`
-      <article class="story-card">
-        <h4>${cleanTitle(s.title)}</h4>
-        <p><b>Human view:</b> ${short(s.thesis,115)}</p>
-        <p><b>Action cue:</b> ${short(((s.retail_execution||[])[0]||'Reduce noise, wait for confirmation.'),95)}</p>
-      </article>`).join('') || '<p>No additional briefs yet.</p>';
+  if(byId('leadStory')){
+    const narrative = narrativeMap[topicFromTitle(lead?.title)];
+    byId('leadStory').innerHTML = lead ? storyBody(lead, narrative, {headingTag:'h3'}) : '<p>Intelligence update pending.</p>';
   }
 
-  if(byId('macroStories')){
-    const macro = items.slice(0,3).map(s=>storyItem(
-      cleanTitle(s.title),
-      `<b>Signal:</b> ${short(s.thesis,110)} <br><b>Transmission:</b> ${short(((s.invalidation_triggers||[])[0]||'Policy confidence shifts pricing.'),85)} <br><b>Retail action:</b> ${short(((s.retail_execution||[])[0]||'Use staged entries and risk limits.'),85)}`
-    )).join('');
-    byId('macroStories').innerHTML = macro || '<p>No macro stories yet.</p>';
+  if(byId('storyStack')){
+    byId('storyStack').innerHTML = items.slice(1,5).map(s=>{
+      const narrative = narrativeMap[topicFromTitle(s?.title)];
+      return `<article class="story story-card">${storyBody(s, narrative, {headingTag:'h4', compact:true})}</article>`;
+    }).join('') || '<p>No additional stories yet.</p>';
   }
 
-  if(byId('politicsStories')){
-    const pol = (contradictions.items||[]).slice(0,3).map(c=>storyItem(
-      c.claim_a || 'Policy narrative conflict',
-      `<b>Incentive conflict:</b> ${short(c.claim_b||'Competing legitimacy and budget constraints.',120)} <br><b>Why readers care:</b> policy contradictions often reprice risk before official guidance updates.`
-    )).join('');
-    byId('politicsStories').innerHTML = pol || '<p>No politics stories yet.</p>';
+  const primaryReview = (narratives.narrative_reviews || [])[0];
+  const primaryTopic = primaryReview?.topic || topicFromTitle(lead?.title);
+  const defaultActors = ['Sovereign funds','Strategic alliances','Major banks','Defense ministries'];
+  const influenceActors = (primaryReview?.semantics?.actors || []).slice(0,6);
+  const actors = influenceActors.length ? influenceActors : defaultActors;
+
+  if(byId('focusInfluence')){
+    const influence = `
+      <p>${short(ensureSentence(primaryReview?.semantics?.svo || primaryReview?.review || 'Key actors are repositioning around shifting incentives.'), 190)}</p>
+      <ul class="focus-actors">${actors.map(a=>`<li>${a}</li>`).join('')}</ul>
+      <p>${short(ensureSentence(primaryReview?.semantics?.claim || 'Coalition behaviour and capital discipline set the tempo.'), 170)}</p>
+    `;
+    byId('focusInfluence').innerHTML = influence;
   }
 
-  if(byId('geopoliticsStories')){
-    const geo = items.slice(3,6).map(s=>storyItem(
-      cleanTitle(s.title),
-      `<b>Flashpoint:</b> ${short(s.thesis,95)} <br><b>Spillover:</b> ${short(((s.invalidation_triggers||[])[0]||'Energy, FX and volatility channels respond first.'),95)} <br><b>Watch:</b> 24–72h transmission into oil, DXY, and equity vol.`
-    )).join('');
-    byId('geopoliticsStories').innerHTML = geo || '<p>No geopolitics stories yet.</p>';
+  if(byId('focusStakes')){
+    const stakesMap = {
+      ai: {
+        sectors: 'Semiconductors, hyperscale capex, cloud infrastructure',
+        assets: 'NQ, SOXX, mega-cap duration',
+        volatility: 'Growth beta volatility skews higher',
+        supply: 'Compute and power supply chains under strain',
+        flows: 'US mega-cap and thematic inflows'
+      },
+      eu: {
+        sectors: 'European industrials, utilities, banks',
+        assets: 'EUR, sovereign spreads, regional dispersion',
+        volatility: 'Rates vol on policy divergence',
+        supply: 'Energy routing and fiscal coordination',
+        flows: 'Rotation into hedged regional exposure'
+      },
+      china: {
+        sectors: 'Cyclicals, commodities, EM industrials',
+        assets: 'CNH, EM FX, industrial metals',
+        volatility: 'Macro beta volatility in Asia',
+        supply: 'Export routing and supply resilience',
+        flows: 'Selective EM risk appetite'
+      },
+      oil: {
+        sectors: 'Energy, transport, industrial inputs',
+        assets: 'Brent, XLE, inflation breakevens',
+        volatility: 'Energy vol transmits into rates',
+        supply: 'Shipping and corridor insurance costs',
+        flows: 'Defensive rotation and commodity hedges'
+      },
+      gas: {
+        sectors: 'Utilities, chemicals, European industrials',
+        assets: 'TTF, EUR, regional equity dispersion',
+        volatility: 'Energy vol lifts rates uncertainty',
+        supply: 'LNG flow stability and storage quality',
+        flows: 'Risk-off hedging into defensives'
+      },
+      default: {
+        sectors: 'Policy-sensitive cyclicals and defensives',
+        assets: 'Rates, FX, global equity beta',
+        volatility: 'Volatility clusters around policy events',
+        supply: 'Strategic supply chains and logistics',
+        flows: 'Risk-sensitive capital rotation'
+      }
+    };
+    const stakes = stakesMap[primaryTopic] || stakesMap.default;
+    const stakesHtml = `
+      <ul class="focus-list">
+        <li><strong>Sectors exposed:</strong> ${stakes.sectors}</li>
+        <li><strong>Asset sensitivity:</strong> ${stakes.assets}</li>
+        <li><strong>Volatility:</strong> ${stakes.volatility}</li>
+        <li><strong>Supply chain:</strong> ${stakes.supply}</li>
+        <li><strong>Capital flows:</strong> ${stakes.flows}</li>
+      </ul>
+    `;
+    byId('focusStakes').innerHTML = stakesHtml;
   }
 
-  if(byId('niColumnCard')){
-    const c = (contradictions.items||[])[0];
-    byId('niColumnCard').innerHTML = c ? `
-      <article class="ni-card">
-        <h3>${c.claim_a}</h3>
-        <p><b>Consensus:</b> ${c.claim_b}</p>
-        <p><b>Contradiction:</b> ${short(c.why_it_matters || 'Incentive mismatch between policy signaling and market positioning increases repricing risk.',170)}</p>
-        <p><b>Invalidation:</b> if cross-source confirmation weakens for two consecutive cycles, reduce conviction and cut risk.</p>
-        <p><b>24–72h positioning:</b> prioritize defined-risk structures; avoid over-concentrated directional bets into event windows.</p>
-        <span class="badge">Actors</span><span class="badge">Incentives</span><span class="badge">Contradictions</span><span class="badge">Inval. first</span>
-      </article>` : '<p>Column pending latest contradiction map.</p>';
+  if(byId('focusBet')){
+    const betMap = {
+      ai: {ticker:'NVDA', range:'+8–12%'},
+      eu: {ticker:'EZU', range:'±3–5%'},
+      china: {ticker:'FXI', range:'±4–7%'},
+      election: {ticker:'XLF', range:'±2–4%'},
+      gas: {ticker:'UNG', range:'+6–10%'},
+      oil: {ticker:'XLE', range:'+4–8%'},
+      inflation: {ticker:'TIP', range:'±2–4%'},
+      rates: {ticker:'TLT', range:'±3–6%'},
+      russia: {ticker:'RSX', range:'±5–9%'},
+      crypto: {ticker:'BTC', range:'±6–12%'},
+      drone: {ticker:'ITA', range:'±3–6%'},
+      nato: {ticker:'ITA', range:'±3–6%'},
+      default: {ticker:'SPY', range:'±2–4%'}
+    };
+    const betItems = items.slice(0,3);
+    const betHtml = betItems.map((s)=>{
+      const topic = topicFromTitle(s?.title);
+      const bet = betMap[topic] || betMap.default;
+      const probability = Math.round(s?.probability_base ?? 50);
+      const confidence = confidenceLabel(s?.confidence || 0.5);
+      return `
+        <div class="bet-item">
+          <div class="bet-ticker">${bet.ticker}</div>
+          <div class="bet-meta">Probability: ${probability}%</div>
+          <div class="bet-meta">Projected repricing: ${bet.range}</div>
+          <div class="bet-meta">Confidence: ${confidence}</div>
+        </div>
+      `;
+    }).join('');
+    byId('focusBet').innerHTML = betHtml || '<p>Positioning watchlist pending.</p>';
   }
 }
 
