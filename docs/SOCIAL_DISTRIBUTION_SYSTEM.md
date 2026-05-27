@@ -71,7 +71,7 @@ Rules:
 6) CTA
 
 Guardrails:
-- Max 275 characters for single-post automation.
+- Max 275 characters for single-post automation (safety margin under 280).
 - Evidence link in a reply or follow-up post.
 - No near-duplicate of last 3 posts.
 

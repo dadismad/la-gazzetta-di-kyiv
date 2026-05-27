@@ -11,4 +11,4 @@ Maintain a reusable, verified set of human-detail facts for social posts. Each e
 ## Ledger table
 | id | subject | verified_detail | source_url | verified_at | relevance_to_narrative | usage_notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| HD-0001 |  |  |  |  |  |  |
+| HD-TEMPLATE | REPLACE_WITH_SUBJECT | REPLACE_WITH_VERIFIED_DETAIL | REPLACE_WITH_SOURCE_URL | YYYY-MM-DD | REPLACE_WITH_CONTEXT | TEMPLATE ONLY — do not publish |
