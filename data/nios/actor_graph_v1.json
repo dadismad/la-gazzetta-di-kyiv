@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-05-27T00:00:00Z",
+  "nodes": [
+    {"id": "fed", "type": "institution", "name": "Federal Reserve"},
+    {"id": "ecb", "type": "institution", "name": "European Central Bank"},
+    {"id": "opec", "type": "consortium", "name": "OPEC+"},
+    {"id": "eu_commission", "type": "institution", "name": "European Commission"},
+    {"id": "us_treasury", "type": "institution", "name": "U.S. Treasury"},
+    {"id": "mega_cap_ai", "type": "corporate_cluster", "name": "US Mega-Cap AI Cluster"}
+  ],
+  "edges": [
+    {"from": "fed", "to": "us_treasury", "relation": "policy_signal", "incentive": "anchor inflation expectations"},
+    {"from": "ecb", "to": "eu_commission", "relation": "policy_constraint", "incentive": "preserve financial stability"},
+    {"from": "opec", "to": "eu_commission", "relation": "energy_price_transmission", "incentive": "maximize producer revenue"},
+    {"from": "mega_cap_ai", "to": "fed", "relation": "valuation_feedback", "incentive": "sustain capex narrative momentum"}
+  ]
+}

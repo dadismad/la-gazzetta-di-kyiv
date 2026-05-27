@@ -3,82 +3,47 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Gazzetta di Kyiv — Narrative Intelligence Newspaper</title>
-  <meta name="description" content="European narrative-intelligence newspaper on geopolitics, AI convergence, energy transition, and cross-asset market implications."/>
-  <meta name="robots" content="index,follow,max-image-preview:large"/>
-  <meta name="theme-color" content="#10233F"/>
-  <link rel="canonical" href="https://pureciclismo.github.io/gazzetta-di-kyiv/"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Gazzetta di Kyiv — Narrative Intelligence Newspaper"/>
-  <meta property="og:description" content="Strategic narrative intelligence across geopolitics, technology convergence, and cross-asset market psychology."/>
-  <meta property="og:url" content="https://pureciclismo.github.io/gazzetta-di-kyiv/"/>
-  <meta property="og:site_name" content="Gazzetta di Kyiv"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Gazzetta di Kyiv — Narrative Intelligence Newspaper"/>
-  <meta name="twitter:description" content="High-signal geopolitical and market narrative intelligence for decision-focused readers."/>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "NewsMediaOrganization",
-    "name": "Gazzetta di Kyiv",
-    "url": "https://pureciclismo.github.io/gazzetta-di-kyiv/",
-    "description": "European narrative-intelligence newspaper focused on strategic transformation and cross-asset implications.",
-    "sameAs": ["https://t.me/LaGazzettadiKyiv"]
-  }
-  </script>
+  <title>Gazzetta di Kyiv — Narrative Intelligence Terminal</title>
+  <meta name="description" content="Curated narrative intelligence terminal: macro regime, contradictions, contagion, and retail positioning signals."/>
   <link rel="stylesheet" href="./styles.css"/>
 </head>
 <body class="news-body live-light">
   <header class="topbar">
-    <div class="brand">Gazzetta di Kyiv</div>
+    <div class="brand">Gazzetta di Kyiv · Narrative Intelligence Terminal</div>
     <div class="top-tools">
-      <input id="searchBox" placeholder="Search narratives, claims, assets..." aria-label="Search narratives"/>
-      <a class="cta-btn" href="https://t.me/LaGazzettadiKyiv" target="_blank" rel="noopener">Get Daily Signal</a>
-      <button id="collapseAll" title="Collapse all">–</button>
-      <button id="expandAll" title="Expand all">☰</button>
+      <a class="cta-btn" href="https://t.me/LaGazzettadiKyiv" target="_blank" rel="noopener">Telegram Feed</a>
+      <a class="cta-btn" href="https://www.reddit.com/r/LaGazzettadiKyiv/" target="_blank" rel="noopener">Reddit Intelligence Hub</a>
+      <a class="cta-btn" href="./ops.html">Ops Dashboard</a>
     </div>
   </header>
 
-  <section class="hero-strip" aria-label="Product overview">
+  <section class="hero-strip">
     <div>
-      <h1>See narratives before they reprice assets.</h1>
-      <p>Real-time geopolitical and macro intelligence with clear thesis, confidence, and invalidation for fast decision-makers.</p>
+      <h1>Institutional interpretation for retail and semi-professional operators.</h1>
+      <p>We map actors, incentives, contradictions, cross-asset transmission, and invalidation triggers—so decisions are thesis-led, not headline-led.</p>
     </div>
     <div class="hero-metrics">
-      <span class="hero-chip"><b id="heroSources">0</b> sources tracked</span>
-      <span class="hero-chip">Regime: <b id="heroRegime">Pending</b></span>
-      <span class="hero-chip">Updated: <b id="heroFreshness">Live cycle</b></span>
-      <span class="hero-chip">Capital leader: <b id="heroCapitalLeader">Pending</b></span>
-      <a class="hero-link" href="./data.html">Methodology & Data Desk →</a>
-      <a class="hero-link" href="./capital.html">Where Capital Goes →</a>
-      <a class="hero-link" href="./research.html">Research Desk →</a>
-      <a class="hero-link" href="https://www.reddit.com/r/LaGazzettadiKyiv/" target="_blank" rel="noopener">Reddit Hub →</a>
-      <a class="hero-link" href="https://t.me/LaGazzettadiKyiv" target="_blank" rel="noopener">Telegram Channel →</a>
+      <span class="hero-chip">Regime: <b id="heroRegime">Loading…</b></span>
+      <span class="hero-chip">Confidence: <b id="heroConfidence">-</b></span>
+      <span class="hero-chip">Sources: <b id="heroSources">-</b></span>
+      <span class="hero-chip">Updated: <b id="heroUpdated">-</b></span>
     </div>
   </section>
 
-  <main class="tri-grid">
-    <section class="build-strip" aria-label="Deployment metadata">
-      <span>Build: <b id="buildCommit">pending</b></span>
-      <span>Generated: <b id="buildTime">pending</b></span>
-    </section>
-    <section class="frames-col">
-      <div class="col-title">Prevailing Narratives</div>
-      <div id="frameList"></div>
-    </section>
+  <main class="terminal-grid">
+    <section class="panel"><h2>Dominant Narratives</h2><div id="dominantNarratives"></div></section>
+    <section class="panel"><h2>Narrative Velocity</h2><div id="narrativeVelocity"></div></section>
+    <section class="panel"><h2>Narrative Contradictions</h2><div id="contradictionMap"></div></section>
 
-    <section class="claims-col">
-      <div class="claims-head">
-        <span class="col-title">Stories in Play</span>
-        <span class="muted">Development, implications, forecasts</span>
-      </div>
-      <div id="claimsList"></div>
-    </section>
+    <section class="panel"><h2>High Conviction Setups</h2><div id="convictionSetups"></div></section>
+    <section class="panel"><h2>Macro Regime Dashboard</h2><div id="regimeDashboard"></div></section>
+    <section class="panel"><h2>Geopolitical Flashpoints</h2><div id="geopoliticalFlashpoints"></div></section>
 
-    <aside class="focus-col" id="detailsPanel">
-      <div class="col-title">Capital Implications & Pricing Paths</div>
-      <div id="selectedNarrative"></div>
-    </aside>
+    <section class="panel"><h2>Prestige-Sport Intelligence</h2><div id="prestigeSport"></div></section>
+    <section class="panel"><h2>Volatility Watch</h2><div id="volatilityWatch"></div></section>
+    <section class="panel"><h2>Cross-Asset Contagion</h2><div id="crossAssetContagion"></div></section>
+
+    <section class="panel panel-wide"><h2>Retail Positioning Signals</h2><div id="retailSignals"></div></section>
   </main>
 
   <script src="./app.js"></script>

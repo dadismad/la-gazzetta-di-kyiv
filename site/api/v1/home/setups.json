@@ -7,17 +7,17 @@
       "setup_id": "io_b815e32bc4",
       "title": "Narrative acceleration: ai",
       "horizon": "3d",
-      "thesis": "Second-order effects underpriced by consensus",
+      "thesis": "AI capex narrative remains dominant, but concentration risk can trigger abrupt factor reversals if guidance softens.",
       "probability_base": 70,
       "probability_bull": 25,
       "probability_bear": 5,
       "invalidation_triggers": [
-        "Narrative mention share drops below 7d baseline for 2 consecutive cycles",
-        "Cross-source confirmation weakens materially"
+        "Two sequential capex guidance downgrades from top hyperscalers",
+        "Semiconductor backlog contraction with margin compression"
       ],
       "retail_execution": [
-        "Use staged entries in liquid ETFs",
-        "Prefer defined-risk options structures for high-volatility narratives"
+        "Barbell: quality mega-cap ETF + defined-risk downside hedge",
+        "Avoid over-concentrated single-name exposure into earnings clusters"
       ],
       "confidence": 0.82,
       "citations": [
@@ -28,17 +28,17 @@
       "setup_id": "io_eaf90d7722",
       "title": "Narrative acceleration: eu",
       "horizon": "3d",
-      "thesis": "Second-order effects underpriced by consensus",
+      "thesis": "EU policy cohesion is overstated; fiscal-energy divergence can drive cross-country equity and FX dispersion.",
       "probability_base": 63,
       "probability_bull": 26,
       "probability_bear": 11,
       "invalidation_triggers": [
-        "Narrative mention share drops below 7d baseline for 2 consecutive cycles",
-        "Cross-source confirmation weakens materially"
+        "Coordinated fiscal package with stable forward energy curve",
+        "Spread compression sustained across peripheral sovereigns"
       ],
       "retail_execution": [
-        "Use staged entries in liquid ETFs",
-        "Prefer defined-risk options structures for high-volatility narratives"
+        "Favor selective country/sector ETFs over broad regional beta",
+        "Keep EUR exposure hedged during policy event windows"
       ],
       "confidence": 0.82,
       "citations": [
@@ -49,17 +49,17 @@
       "setup_id": "io_0a20cb82c7",
       "title": "Narrative acceleration: china",
       "horizon": "3d",
-      "thesis": "Second-order effects underpriced by consensus",
+      "thesis": "China stimulus signaling improves sentiment, but weak private demand still caps cyclical follow-through.",
       "probability_base": 54,
       "probability_bull": 23,
       "probability_bear": 23,
       "invalidation_triggers": [
-        "Narrative mention share drops below 7d baseline for 2 consecutive cycles",
-        "Cross-source confirmation weakens materially"
+        "PMI + credit impulse confirm broad domestic demand recovery",
+        "Property stress indicators stabilize across releases"
       ],
       "retail_execution": [
-        "Use staged entries in liquid ETFs",
-        "Prefer defined-risk options structures for high-volatility narratives"
+        "Trade cyclicals tactically, not structurally",
+        "Watch EM/commodity proxies for confirmation before sizing up"
       ],
       "confidence": 0.72,
       "citations": [
@@ -112,17 +112,17 @@
       "setup_id": "io_e016a36319",
       "title": "Narrative acceleration: oil",
       "horizon": "3d",
-      "thesis": "Second-order effects underpriced by consensus",
+      "thesis": "Energy corridor fragility keeps upside oil risk underpriced versus consensus disinflation narratives.",
       "probability_base": 49,
       "probability_bull": 21,
       "probability_bear": 30,
       "invalidation_triggers": [
-        "Narrative mention share drops below 7d baseline for 2 consecutive cycles",
-        "Cross-source confirmation weakens materially"
+        "Sustained shipping normalization + inventory rebuild for 2 cycles",
+        "Verified geopolitical de-escalation across key routes"
       ],
       "retail_execution": [
-        "Use staged entries in liquid ETFs",
-        "Prefer defined-risk options structures for high-volatility narratives"
+        "Pair energy exposure with transport/consumer hedge",
+        "Use staged entries; avoid chasing single headline spikes"
       ],
       "confidence": 0.62,
       "citations": [
@@ -133,17 +133,17 @@
       "setup_id": "io_776d21831a",
       "title": "Narrative acceleration: inflation",
       "horizon": "3d",
-      "thesis": "Second-order effects underpriced by consensus",
+      "thesis": "Disinflation narrative is vulnerable to energy and services stickiness; terminal-rate certainty is overestimated.",
       "probability_base": 49,
       "probability_bull": 21,
       "probability_bear": 30,
       "invalidation_triggers": [
-        "Narrative mention share drops below 7d baseline for 2 consecutive cycles",
-        "Cross-source confirmation weakens materially"
+        "Core/services inflation cools sequentially for 3 prints",
+        "Wage growth decelerates without growth shock"
       ],
       "retail_execution": [
-        "Use staged entries in liquid ETFs",
-        "Prefer defined-risk options structures for high-volatility narratives"
+        "Blend inflation-sensitive and quality defensives",
+        "Avoid one-sided rate-cut consensus positioning"
       ],
       "confidence": 0.62,
       "citations": [
@@ -154,17 +154,17 @@
       "setup_id": "io_c8f2f2a092",
       "title": "Narrative acceleration: rates",
       "horizon": "3d",
-      "thesis": "Second-order effects underpriced by consensus",
+      "thesis": "Rates-path ambiguity remains the main transmission channel for equity multiple repricing.",
       "probability_base": 48,
       "probability_bull": 21,
       "probability_bear": 31,
       "invalidation_triggers": [
-        "Narrative mention share drops below 7d baseline for 2 consecutive cycles",
-        "Cross-source confirmation weakens materially"
+        "Consistent policy communication + soft inflation sequence",
+        "MOVE volatility regime downshift over multiple sessions"
       ],
       "retail_execution": [
-        "Use staged entries in liquid ETFs",
-        "Prefer defined-risk options structures for high-volatility narratives"
+        "Prioritize defined-risk options around macro prints",
+        "Reduce duration-sensitive concentration ahead of policy events"
       ],
       "confidence": 0.54,
       "citations": [

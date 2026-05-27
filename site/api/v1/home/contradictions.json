@@ -5,24 +5,24 @@
   "items": [
     {
       "contradiction_id": "cx_001",
-      "claim_a": "ai is fully priced",
-      "claim_b": "ai still accelerating in headline share",
+      "claim_a": "AI upside is priced and stable",
+      "claim_b": "AI concentration leaves downside gap risk if guidance wobbles",
       "contradiction_score": 0.52,
       "urgency": "medium",
       "invalidation_window": "24-72h"
     },
     {
       "contradiction_id": "cx_002",
-      "claim_a": "eu is fully priced",
-      "claim_b": "eu still accelerating in headline share",
+      "claim_a": "EU policy is coherent",
+      "claim_b": "Fiscal and energy divergence can widen regional dispersion",
       "contradiction_score": 0.54,
       "urgency": "medium",
       "invalidation_window": "24-72h"
     },
     {
       "contradiction_id": "cx_003",
-      "claim_a": "china is fully priced",
-      "claim_b": "china still accelerating in headline share",
+      "claim_a": "Stimulus guarantees reflation",
+      "claim_b": "Private-demand weakness can mute transmission to real activity",
       "contradiction_score": 0.56,
       "urgency": "medium",
       "invalidation_window": "24-72h"
@@ -45,24 +45,24 @@
     },
     {
       "contradiction_id": "cx_006",
-      "claim_a": "oil is fully priced",
-      "claim_b": "oil still accelerating in headline share",
+      "claim_a": "Oil shocks are transitory",
+      "claim_b": "Shipping and corridor fragility preserve upside energy risk premium",
       "contradiction_score": 0.62,
       "urgency": "medium",
       "invalidation_window": "24-72h"
     },
     {
       "contradiction_id": "cx_007",
-      "claim_a": "inflation is fully priced",
-      "claim_b": "inflation still accelerating in headline share",
+      "claim_a": "Disinflation is secured",
+      "claim_b": "Services/wage stickiness can delay policy easing",
       "contradiction_score": 0.64,
       "urgency": "low",
       "invalidation_window": "24-72h"
     },
     {
       "contradiction_id": "cx_008",
-      "claim_a": "rates is fully priced",
-      "claim_b": "rates still accelerating in headline share",
+      "claim_a": "Rate cuts are a clear one-way path",
+      "claim_b": "Policy ambiguity keeps duration volatility structurally elevated",
       "contradiction_score": 0.66,
       "urgency": "low",
       "invalidation_window": "24-72h"
