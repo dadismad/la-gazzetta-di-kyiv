@@ -9,8 +9,9 @@ cd /Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv
 ## Stages
 1. `collect_multisource.py`
 2. `analyze_narratives_v2.py`
-3. `prepare_publish_payloads_v2.py`
-4. `pipeline_audit.py`
+3. `publish_quality_gate_v21.py` (hard stop if confidence/invalidation quality fails)
+4. `prepare_publish_payloads_v2.py`
+5. `pipeline_audit.py`
 
 ## Key outputs
 - Canonical events: `data/normalized/events_latest.json`

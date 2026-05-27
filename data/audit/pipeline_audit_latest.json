@@ -1,48 +1,48 @@
 {
-  "generated_at": "2026-05-27T22:04:18.066555+00:00",
+  "generated_at": "2026-05-27T22:10:14.783587+00:00",
   "status": "ok",
   "artifact_checks": [
     {
       "key": "normalized_events",
       "path": "data/normalized/events_latest.json",
       "exists": true,
-      "age_seconds": 61
+      "age_seconds": 0
     },
     {
       "key": "processed_intelligence",
       "path": "data/processed/narrative_intelligence_latest.json",
       "exists": true,
-      "age_seconds": 61
+      "age_seconds": 0
     },
     {
       "key": "site_regime",
       "path": "site/api/v1/home/regime.json",
       "exists": true,
-      "age_seconds": 61
+      "age_seconds": 0
     },
     {
       "key": "site_setups",
       "path": "site/api/v1/home/setups.json",
       "exists": true,
-      "age_seconds": 61
+      "age_seconds": 0
     },
     {
       "key": "site_contradictions",
       "path": "site/api/v1/home/contradictions.json",
       "exists": true,
-      "age_seconds": 61
+      "age_seconds": 0
     },
     {
       "key": "telegram_payload",
       "path": "data/publish/telegram_latest.md",
       "exists": true,
-      "age_seconds": 61
+      "age_seconds": 0
     },
     {
       "key": "reddit_payload",
       "path": "data/publish/reddit_latest.md",
       "exists": true,
-      "age_seconds": 61
+      "age_seconds": 0
     }
   ],
   "findings": [],

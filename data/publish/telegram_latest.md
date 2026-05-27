@@ -1,5 +1,5 @@
-Risk Regime: Narrative Repricing Risk (mixed)
-• Narrative acceleration: geopolitics | base 75%
-• Claim: second-order effects are underpriced by consensus
+Risk Regime: Narrative Repricing Risk (selective risk-off)
+• Narrative acceleration: geopolitics | base 80%
+• Claim: geopolitics narrative is sensitive to negotiation headlines and repricing whipsaws
 • Invalidation: Mention-share drops below 7d baseline for two cycles
-Updated: 2026-05-27T22:03:16.734319+00:00
+Updated: 2026-05-27T22:10:14.762907+00:00

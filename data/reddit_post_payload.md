@@ -1,11 +1,11 @@
 ## La Gazzetta di Kyiv — Capital Flow Brief
 
-**Regime:** mixed | **Lead sector:** Energy & Grid
+**Regime:** mixed | **Lead sector:** Broad Risk Basket
 **Actors in play:** Retail flow, Narrative amplifiers
 
-**Claim:** attention is converting into incremental allocation toward Energy & Grid, with spillover into related risk assets.
+**Claim:** attention is converting into incremental allocation toward Broad Risk Basket, with spillover into related risk assets.
 **Contradiction:** price optimism is rising faster than fundamental clarity; if narrative velocity stalls, positioning can unwind quickly.
-**24–72h path (72%):** NASDAQ-100 proxy -> two-way / fade spikes.
+**24–72h path (75%):** NASDAQ-100 proxy -> two-way / fade spikes.
 **Invalidation:** Engagement decay >50% vs first 12h baseline
 
 Evidence:
