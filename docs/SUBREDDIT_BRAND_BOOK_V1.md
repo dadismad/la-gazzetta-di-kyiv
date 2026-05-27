@@ -9,13 +9,31 @@ A narrative-intelligence subreddit translating information warfare + macro/polit
 - falsifiable
 - non-hype
 
-## Post structure standard
+## Post structure standard (short-form brief)
 1. Hook (one line)
 2. Actors in play
 3. Core claim
 4. Contradiction map
 5. 24–72h path (probability + invalidation)
 6. Evidence links
+7. Verified human detail (ledger ID + source URL)
+8. Discussion prompt
+9. Website CTA
+
+## Narrative Lab format (long-form)
+1. Context
+2. Dominant narrative
+3. Contradiction
+4. Second-order implications
+5. Strategic interpretation (24–72h + invalidation)
+6. Verified human detail (ledger ID + source URL)
+7. Discussion prompt
+8. Website CTA
+
+Guardrails:
+- Target 180–260 words.
+- Evidence links required.
+- Maintain concise, analytical, falsifiable tone.
 
 ## Visual system (Devvit app)
 - Primary bg: deep navy (#0b1b2b)
