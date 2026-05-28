@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-27T22:16:16.812177+00:00",
+  "generated_at": "2026-05-28T07:00:24.684461+00:00",
   "items": [
     {
       "narrative": "geopolitics",
@@ -30,17 +30,17 @@
       "invalidation_window": "24-72h"
     },
     {
-      "narrative": "china",
-      "claim_a": "china is fully priced",
-      "claim_b": "china transmission effects remain underpriced",
+      "narrative": "oil",
+      "claim_a": "oil is fully priced",
+      "claim_b": "oil transmission effects remain underpriced",
       "urgency": "high",
       "invalidation_window": "24-72h"
     },
     {
-      "narrative": "oil",
-      "claim_a": "oil is fully priced",
-      "claim_b": "oil transmission effects remain underpriced",
-      "urgency": "medium",
+      "narrative": "china",
+      "claim_a": "china is fully priced",
+      "claim_b": "china transmission effects remain underpriced",
+      "urgency": "high",
       "invalidation_window": "24-72h"
     },
     {
@@ -58,9 +58,9 @@
       "invalidation_window": "24-72h"
     },
     {
-      "narrative": "rates",
-      "claim_a": "rates is fully priced",
-      "claim_b": "rates transmission effects remain underpriced",
+      "narrative": "gas",
+      "claim_a": "gas is fully priced",
+      "claim_b": "gas transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     },
@@ -72,9 +72,9 @@
       "invalidation_window": "24-72h"
     },
     {
-      "narrative": "gas",
-      "claim_a": "gas is fully priced",
-      "claim_b": "gas transmission effects remain underpriced",
+      "narrative": "rates",
+      "claim_a": "rates is fully priced",
+      "claim_b": "rates transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     },

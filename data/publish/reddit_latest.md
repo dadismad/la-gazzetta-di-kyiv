@@ -1,7 +1,7 @@
 ## La Gazzetta di Kyiv — Narrative Intelligence Brief
 
 **Regime:** Narrative Repricing Risk (selective risk-off)
-**Claim:** geopolitics narrative is sensitive to negotiation headlines and repricing whipsaws.
+**Claim:** geopolitics second-order effects remain underpriced by consensus.
 **Actors:** Kremlin/Russia
 **24–72h path:** base 80% / bull 8% / bear 12%.
 **Invalidation:** Mention-share drops below 7d baseline for two cycles
