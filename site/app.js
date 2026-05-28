@@ -46,31 +46,58 @@ function storyBody(s, narrative, {headingTag='h3', compact=false} = {}){
   `;
 }
 
-async function boot(){
-  const setups = await getJSON('./api/v1/home/setups.json',{items:[]});
-  const narratives = await getJSON('./data/narratives.json',{narrative_reviews:[]});
+function cardBody(card, {headingTag='h3'} = {}){
+  const title = short(card?.title || 'Story in Play', 90);
+  const body = short(ensureSentence(card?.body || 'Update pending.'), 360);
+  return `
+    <${headingTag}>${title}</${headingTag}>
+    <p class="story-thesis">${body}</p>
+  `;
+}
 
-  const items = (setups.items || []).slice(0,9);
+async function boot(){
+  const [setups, narratives, curated] = await Promise.all([
+    getJSON('./api/v1/home/setups.json',{items:[]}),
+    getJSON('./data/narratives.json',{narrative_reviews:[]}),
+    getJSON('./data/stories_in_play.json', null)
+  ]);
+
+  const curatedCards = (curated?.version_a?.cards || []).slice(0,6);
+  const usingCurated = curatedCards.length >= 6;
+
+  const items = usingCurated ? curatedCards : (setups.items || []).slice(0,9);
   const lead = items[0] || null;
   const narrativeMap = {};
   (narratives.narrative_reviews || []).forEach((review)=>{ narrativeMap[review.topic] = review; });
 
   if(byId('leadStory')){
-    const narrative = narrativeMap[topicFromTitle(lead?.title)];
-    byId('leadStory').innerHTML = lead ? storyBody(lead, narrative, {headingTag:'h3'}) : '<p>Intelligence update pending.</p>';
+    if(usingCurated){
+      byId('leadStory').innerHTML = lead ? cardBody(lead, {headingTag:'h3'}) : '<p>Intelligence update pending.</p>';
+    } else {
+      const narrative = narrativeMap[topicFromTitle(lead?.title)];
+      byId('leadStory').innerHTML = lead ? storyBody(lead, narrative, {headingTag:'h3'}) : '<p>Intelligence update pending.</p>';
+    }
   }
 
   if(byId('storyStack')){
-    byId('storyStack').innerHTML = items.slice(1,5).map(s=>{
-      const narrative = narrativeMap[topicFromTitle(s?.title)];
-      return `<article class="story story-card">${storyBody(s, narrative, {headingTag:'h4', compact:true})}</article>`;
-    }).join('') || '<p>No additional stories yet.</p>';
+    if(usingCurated){
+      byId('storyStack').innerHTML = items.slice(1,6).map((card)=>{
+        return `<article class="story story-card">${cardBody(card, {headingTag:'h4'})}</article>`;
+      }).join('') || '<p>No additional stories yet.</p>';
+    } else {
+      byId('storyStack').innerHTML = items.slice(1,6).map(s=>{
+        const narrative = narrativeMap[topicFromTitle(s?.title)];
+        return `<article class="story story-card">${storyBody(s, narrative, {headingTag:'h4', compact:true})}</article>`;
+      }).join('') || '<p>No additional stories yet.</p>';
+    }
   }
 
   const primaryReview = (narratives.narrative_reviews || [])[0];
   const primaryTopic = primaryReview?.topic || topicFromTitle(lead?.title);
   const defaultActors = ['Sovereign funds','Strategic alliances','Major banks','Defense ministries'];
-  const influenceActors = (primaryReview?.semantics?.actors || []).slice(0,6);
+  const influenceActors = usingCurated
+    ? (lead?.actors || [])
+    : (primaryReview?.semantics?.actors || []).slice(0,6);
   const actors = influenceActors.length ? influenceActors : defaultActors;
 
   if(byId('focusInfluence')){

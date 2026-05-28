@@ -381,6 +381,14 @@ with open(os.path.join(OUT_DATA,'narratives.json'),'w') as f:
 with open(os.path.join(OUT_SITE,'data','narratives.json'),'w') as f:
     json.dump(summary,f,indent=2)
 
+# Stories in Play editorial package (if present in data/, publish through to site/data/)
+stories_in_play_path = os.path.join(OUT_DATA, 'stories_in_play.json')
+if os.path.exists(stories_in_play_path):
+    with open(stories_in_play_path, 'r', encoding='utf-8') as sf:
+        stories_payload = json.load(sf)
+    with open(os.path.join(OUT_SITE, 'data', 'stories_in_play.json'), 'w', encoding='utf-8') as sf:
+        json.dump(stories_payload, sf, indent=2)
+
 with open(os.path.join(OUT_DATA,'intelligence_objects.json'),'w') as f:
     json.dump({'generated_at': generated_at, 'items': intelligence_objects},f,indent=2)
 with open(os.path.join(OUT_SITE,'data','intelligence_objects.json'),'w') as f:

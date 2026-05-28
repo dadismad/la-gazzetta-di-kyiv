@@ -1,0 +1,100 @@
+{
+  "generated_at": "2026-05-28T09:05:00Z",
+  "module": "stories_in_play",
+  "style": "Bloomberg-lean, dry, concrete, mildly sarcastic",
+  "editorial_control_prompt": "Write Stories in Play for Gazzetta di Kyiv. Voice: Bloomberg-grade, compact, factual, market-first, mild sarcasm only when it clarifies incentives. Constraints: exactly 6 stories; each must include concrete event in last 24-72h, named actors, cause->effect transmission, contradiction sentence. Card format: title <=9 words and body exactly 2 sentences, 45-70 words. Must name at least one concrete channel (oil, yields, USD, semis, autos, LNG, shipping, insurance, volatility). Ban vague filler words and process narration. Final audit: could a PM act on this in 20 seconds? If no, rewrite.",
+  "version_a": {
+    "name": "production-default",
+    "cards": [
+      {
+        "rank": 1,
+        "priority": "critical",
+        "title": "Ceasefire Theater, Oil Reality",
+        "body": "Washington and Tehran are still talking peace while fresh strikes put war premium back into crude and shipping insurance. Oil is repricing geopolitics faster than diplomats can rephrase it; if Hormuz risk stays live, airlines, import-heavy Europe, and inflation doves all pay the bill.",
+        "actors": ["US administration", "Iran", "Gulf shipping insurers", "OPEC producers"],
+        "asset_tags": ["oil", "shipping", "inflation", "rates", "airlines"],
+        "confidence": "high"
+      },
+      {
+        "rank": 2,
+        "priority": "high",
+        "title": "The Fed's Favorite Word Is Not Yet",
+        "body": "Fed messaging remains inflation-first, labor-second, with energy volatility threatening to leak back into headline prints. That keeps real yields sticky, supports the dollar, and leaves duration-heavy equities trading on hope dressed up as discipline.",
+        "actors": ["Federal Reserve", "US Treasury market", "USD holders"],
+        "asset_tags": ["ust_yields", "usd", "growth_equities", "policy_rate_path"],
+        "confidence": "high"
+      },
+      {
+        "rank": 3,
+        "priority": "high",
+        "title": "AI Rally, Bigger Positioning Risk",
+        "body": "Global capital is still crowding the semis-hyperscaler complex because AI capex remains the cleanest boardroom growth story. Everyone asks for diversification and then owns the same names; one weak print can be called rotation in public and forced de-risking in private.",
+        "actors": ["US hyperscalers", "semiconductor leaders", "global growth managers"],
+        "asset_tags": ["semiconductors", "megacap_tech", "equity_breadth", "volatility"],
+        "confidence": "medium_high"
+      },
+      {
+        "rank": 4,
+        "priority": "high",
+        "title": "China EV Exports Meet Tariff Wall",
+        "body": "China's EV export machine keeps accelerating as the US and Europe shift from complaints to market-access defense. Consumers want cheaper cars, governments want domestic winners, and legacy automakers want time, so autos, batteries, and metals now trade policy as much as demand.",
+        "actors": ["Chinese EV makers", "EU regulators", "US trade authorities", "legacy OEMs"],
+        "asset_tags": ["autos", "batteries", "industrial_metals", "trade_policy"],
+        "confidence": "medium_high"
+      },
+      {
+        "rank": 5,
+        "priority": "elevated",
+        "title": "LNG Is Geopolitics in Utility Clothing",
+        "body": "Long-duration LNG agreements are being signed as strategic insurance rather than short-cycle commodity bets. Net-zero speeches remain fully funded, but money keeps choosing molecules, terminals, and offtake security, meaning energy security still prices above climate purity.",
+        "actors": ["Germany", "Canada", "LNG exporters", "industrial buyers"],
+        "asset_tags": ["lng", "energy_infrastructure", "industrial_competitiveness"],
+        "confidence": "medium"
+      },
+      {
+        "rank": 6,
+        "priority": "elevated",
+        "title": "Prediction Markets Meet Enforcement",
+        "body": "Insider-data allegations tied to event-betting profits push prediction markets from novelty status to enforcement radar. The crowd is wise until someone in the crowd is sitting on privileged information, and then liquidity, trust, and valuation all get repriced at once.",
+        "actors": ["US regulators", "platform operators", "market makers"],
+        "asset_tags": ["prediction_markets", "regulatory_risk", "platform_valuation"],
+        "confidence": "medium"
+      }
+    ]
+  },
+  "version_b": {
+    "name": "institutional-terminal",
+    "cards": [
+      {
+        "rank": 1,
+        "title": "Middle East Risk Premium Re-enters Crude",
+        "body": "Recent US-Iran strikes reinserted geopolitical premium into oil and maritime insurance despite ongoing diplomatic framing. If corridor risk in Hormuz persists, energy-linked inflation expectations should stay firm and pressure transport margins, import balances, and near-term easing assumptions."
+      },
+      {
+        "rank": 2,
+        "title": "Policy Path Still Inflation-Constrained",
+        "body": "Fed communication continues to prioritize inflation control over labor softness, keeping the cut cycle conditional rather than scheduled. The practical effect is support for real yields and the dollar, with valuation pressure concentrated in duration-heavy equity segments most exposed to discount-rate sensitivity."
+      },
+      {
+        "rank": 3,
+        "title": "AI Leadership Remains Concentrated",
+        "body": "AI capex visibility still channels global equity flows toward a narrow semiconductor-hyperscaler complex. Positioning concentration is now the key risk variable: a modest guidance disappointment can propagate quickly through index leadership, breadth deterioration, and volatility repricing across correlated growth exposures."
+      },
+      {
+        "rank": 4,
+        "title": "China EV Momentum Faces Policy Friction",
+        "body": "China's EV export acceleration is colliding with active US and EU market-access defenses, moving the sector from cost competition to policy competition. Autos, battery supply chains, and related metals should therefore be priced with higher regulatory volatility and less confidence in stable margin trajectories."
+      },
+      {
+        "rank": 5,
+        "title": "LNG Contracts Signal Bloc Formation",
+        "body": "Long-horizon LNG agreements continue to function as geopolitical insurance and industrial cost hedging, not merely commodity-cycle trades. Capital allocation into terminals, shipping, and contracted offtake indicates energy-security priorities remain structurally dominant even as public policy narratives emphasize decarbonization pathways."
+      },
+      {
+        "rank": 6,
+        "title": "Event Markets Reprice Compliance Risk",
+        "body": "Insider-information allegations in prediction markets increase the probability of tighter enforcement, disclosures, and platform controls. That shifts valuation toward compliance durability and market-integrity quality, while weaker operators face elevated liquidity risk, participation degradation, and faster confidence drawdowns."
+      }
+    ]
+  }
+}
