@@ -17,6 +17,13 @@ function confidenceLabel(conf=0){
   return 'Low';
 }
 
+function confidenceRetailTag(conf='medium'){
+  const v = String(conf).toLowerCase();
+  if(v.includes('high')) return 'Stronger setup';
+  if(v.includes('low')) return 'Higher risk';
+  return 'Balanced risk';
+}
+
 function cardStoryMarkup(card, {lead=false} = {}){
   const title = short(card?.title || 'Story in Play', 96);
   const summary = ensureSentence(card?.summary || card?.body || 'Update pending.');
@@ -28,22 +35,21 @@ function cardStoryMarkup(card, {lead=false} = {}){
   const confidence = card?.confidence || confidenceLabel(0.58);
 
   return `
-    <article class="story story-card ${lead ? 'story-lead' : ''}" data-expandable="true">
+    <article class="story story-card ${lead ? 'story-lead' : ''}" data-expandable="true" tabindex="0" role="button" aria-expanded="false" aria-label="${title}. Click to expand details.">
       <div class="story-core">
         <h3>${title}</h3>
-        <p class="story-thesis">${short(summary, lead ? 260 : 180)}</p>
-        <p class="story-contradiction"><strong>Contradiction:</strong> ${short(contradiction, lead ? 220 : 150)}</p>
-        <button class="story-expand-btn" type="button" aria-expanded="false">Expand story</button>
+        <p class="story-thesis">${short(summary, lead ? 220 : 150)}</p>
+        <p class="story-contradiction"><strong>Contradiction:</strong> ${short(contradiction, lead ? 185 : 130)}</p>
       </div>
       <div class="story-details" hidden>
-        <p class="story-strategy"><strong>Transmission:</strong> ${short(strategy, 220)}</p>
-        ${actors.length ? `<p class="story-meta"><strong>Actors:</strong> ${actors.join(', ')}</p>` : ''}
-        ${map.length ? `<p class="story-meta"><strong>Market map:</strong> ${map.join(' · ')}</p>` : ''}
+        <p class="story-strategy"><strong>How it moves markets:</strong> ${short(strategy, 220)}</p>
+        ${actors.length ? `<p class="story-meta"><strong>Main actors:</strong> ${actors.join(', ')}</p>` : ''}
+        ${map.length ? `<p class="story-meta"><strong>Likely market path:</strong> ${map.join(' · ')}</p>` : ''}
         <div class="story-playbook">
-          <p><strong>Playbook entry:</strong> ${ensureSentence(playbook.entry || 'Wait for confirmation move in primary asset and vol companion.')}</p>
-          <p><strong>Invalidation:</strong> ${ensureSentence(playbook.invalidation || 'Narrative fails if policy and price stop reinforcing each other.')}</p>
-          <p><strong>Next 24h watch:</strong> ${ensureSentence(playbook.next_24h || 'Watch policy headlines, liquidity conditions, and cross-asset follow-through.')}</p>
-          <p class="story-confidence"><strong>Conviction:</strong> ${String(confidence).replace('_',' ')}</p>
+          <p><strong>Retail entry idea:</strong> ${ensureSentence(playbook.entry || 'Wait for confirmation move in primary asset and vol companion.')}</p>
+          <p><strong>Stop / invalidation:</strong> ${ensureSentence(playbook.invalidation || 'Narrative fails if policy and price stop reinforcing each other.')}</p>
+          <p><strong>What to watch next 24h:</strong> ${ensureSentence(playbook.next_24h || 'Watch policy headlines, liquidity conditions, and cross-asset follow-through.')}</p>
+          <p class="story-confidence"><strong>Risk level:</strong> ${confidenceRetailTag(confidence)}</p>
         </div>
       </div>
     </article>
@@ -53,17 +59,17 @@ function cardStoryMarkup(card, {lead=false} = {}){
 function profileFromCard(card){
   const tags = card?.asset_tags || [];
   const profiles = {
-    oil: {ticker:'BZ=F', name:'Brent Crude', trigger:'Any Strait of Hormuz disruption headline', horizon:'24-72h', thesis:'Conflict headlines can quickly reprice fuel costs and inflation expectations.'},
-    shipping: {ticker:'BDRY', name:'Dry Bulk Shipping', trigger:'Freight insurance or routing stress', horizon:'2-5d', thesis:'Logistics friction lifts transport costs before policy reacts.'},
-    ust_yields: {ticker:'TLT', name:'US Duration', trigger:'Fed tone hardens or CPI surprises', horizon:'1-2w', thesis:'High rates keep pressure on leveraged balance sheets and growth multiples.'},
-    usd: {ticker:'DXY', name:'US Dollar Index', trigger:'Risk-off + delayed cuts', horizon:'1-2w', thesis:'Dollar strength tightens global financing conditions.'},
-    semiconductors: {ticker:'SOXX', name:'Semiconductors', trigger:'AI capex guidance revisions', horizon:'1-2w', thesis:'Crowded AI leadership can amplify both upside and drawdowns.'},
-    megacap_tech: {ticker:'QQQ', name:'Nasdaq 100', trigger:'Mega-cap earnings miss', horizon:'24-72h', thesis:'Concentrated index leadership means one miss can hit the whole tape.'},
-    autos: {ticker:'CARZ', name:'Global Autos', trigger:'Tariff/probe announcements', horizon:'1-3w', thesis:'Auto margins now move with politics, not only demand.'},
-    batteries: {ticker:'LIT', name:'Battery Supply Chain', trigger:'Trade restrictions on EV inputs', horizon:'1-3w', thesis:'Policy shocks can rewire battery winners fast.'},
-    lng: {ticker:'UNG', name:'US Natural Gas', trigger:'New long-term LNG offtake deals', horizon:'1-4w', thesis:'Energy security contracts keep gas infrastructure bid.'},
-    prediction_markets: {ticker:'COIN', name:'Platform Risk Proxy', trigger:'Regulatory enforcement headlines', horizon:'24-72h', thesis:'Compliance shocks can instantly reprice platform risk.'},
-    default: {ticker:'SPY', name:'S&P 500', trigger:'Macro contradiction resolves', horizon:'1-2w', thesis:'Index level follows whether risk premium rises or fades.'}
+    oil: {ticker:'BZ=F', name:'Brent Crude', if_right:'Oil likely rises', if_wrong:'Oil cools fast', trigger:'New Hormuz risk headline', horizon:'24-72h'},
+    shipping: {ticker:'BDRY', name:'Shipping Costs', if_right:'Freight rates rise', if_wrong:'Freight stress fades', trigger:'Insurance/routing stress', horizon:'2-5 days'},
+    ust_yields: {ticker:'TLT', name:'US Bonds (TLT)', if_right:'TLT weak if yields rise', if_wrong:'TLT rebounds', trigger:'Hawkish Fed signal', horizon:'1-2 weeks'},
+    usd: {ticker:'DXY', name:'US Dollar', if_right:'Dollar strengthens', if_wrong:'Dollar softens', trigger:'Risk-off and delayed cuts', horizon:'1-2 weeks'},
+    semiconductors: {ticker:'SOXX', name:'Semis ETF', if_right:'Leadership extends', if_wrong:'Fast pullback risk', trigger:'AI guidance upgrades/downgrades', horizon:'1-2 weeks'},
+    megacap_tech: {ticker:'QQQ', name:'Nasdaq 100', if_right:'Trend continues', if_wrong:'Crowded unwind', trigger:'Mega-cap earnings signal', horizon:'24-72h'},
+    autos: {ticker:'CARZ', name:'Global Autos', if_right:'Winners by policy', if_wrong:'Tariff relief squeeze', trigger:'Tariff/probe announcement', horizon:'1-3 weeks'},
+    batteries: {ticker:'LIT', name:'Battery Supply Chain', if_right:'Policy winners outperform', if_wrong:'Input prices normalize', trigger:'EV trade restrictions', horizon:'1-3 weeks'},
+    lng: {ticker:'UNG', name:'US Nat Gas', if_right:'Gas pricing firm', if_wrong:'Demand cool-off', trigger:'New LNG contract news', horizon:'1-4 weeks'},
+    prediction_markets: {ticker:'COIN', name:'Platform Risk Proxy', if_right:'Risk premium expands', if_wrong:'Regulatory clarity relief', trigger:'Enforcement headlines', horizon:'24-72h'},
+    default: {ticker:'SPY', name:'S&P 500', if_right:'Risk premium rises/falls with narrative', if_wrong:'Mean reversion', trigger:'Macro contradiction resolves', horizon:'1-2 weeks'}
   };
   const key = tags.find((t)=>profiles[t]) || 'default';
   return profiles[key] || profiles.default;
@@ -72,37 +78,51 @@ function profileFromCard(card){
 function renderBetContainer(items){
   const target = byId('focusBet');
   if(!target) return;
-  const picks = items.slice(0,4);
+  const picks = items.slice(0,5);
   if(!picks.length){
     target.innerHTML = '<p>Positioning watchlist pending.</p>';
     return;
   }
+
   target.innerHTML = picks.map((card, idx)=>{
     const p = profileFromCard(card);
-    const conviction = card?.confidence ? String(card.confidence).replace('_',' ') : confidenceLabel(0.55);
+    const confidence = card?.confidence ? String(card.confidence).replace('_',' ') : 'medium';
     return `
       <article class="bet-item">
-        <div class="bet-top"><span class="bet-rank">#${idx+1}</span><span class="bet-ticker">${p.ticker}</span></div>
+        <div class="bet-top"><span class="bet-rank">Idea ${idx+1}</span><span class="bet-ticker">${p.ticker}</span></div>
         <div class="bet-name">${p.name}</div>
-        <div class="bet-hook">${short(card?.title || 'Story', 70)}</div>
+        <div class="bet-hook">${short(card?.title || 'Story', 72)}</div>
+        <div class="bet-meta"><strong>If this story is right:</strong> ${p.if_right}</div>
+        <div class="bet-meta"><strong>If this story is wrong:</strong> ${p.if_wrong}</div>
         <div class="bet-meta"><strong>Trigger:</strong> ${p.trigger}</div>
-        <div class="bet-meta"><strong>Horizon:</strong> ${p.horizon} · <strong>Conviction:</strong> ${conviction}</div>
-        <div class="bet-thesis">${p.thesis}</div>
+        <div class="bet-meta"><strong>Time window:</strong> ${p.horizon} · <strong>Risk:</strong> ${confidenceRetailTag(confidence)}</div>
       </article>
     `;
   }).join('');
 }
 
+function setStoryExpanded(card, expanded){
+  const details = card?.querySelector('.story-details');
+  if(!details) return;
+  card.setAttribute('aria-expanded', String(expanded));
+  card.classList.toggle('is-expanded', expanded);
+  details.hidden = !expanded;
+}
+
 function wireExpandableStories(){
-  document.querySelectorAll('.story-expand-btn').forEach((btn)=>{
-    btn.addEventListener('click', ()=>{
-      const card = btn.closest('[data-expandable="true"]');
-      const details = card?.querySelector('.story-details');
-      if(!details) return;
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!expanded));
-      btn.textContent = expanded ? 'Expand story' : 'Collapse story';
-      details.hidden = expanded;
+  const cards = [...document.querySelectorAll('[data-expandable="true"]')];
+  cards.forEach((card)=>{
+    const toggle = ()=>{
+      const expanded = card.getAttribute('aria-expanded') === 'true';
+      setStoryExpanded(card, !expanded);
+    };
+
+    card.addEventListener('click', ()=>toggle());
+    card.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        toggle();
+      }
     });
   });
 }
@@ -111,8 +131,8 @@ function renderFocus(items){
   const lead = items[0] || {};
   if(byId('focusInfluence')){
     byId('focusInfluence').innerHTML = `
-      <p>${short(ensureSentence(lead?.summary || lead?.body || 'Power actors are forcing repricing faster than public messaging admits.'), 180)}</p>
-      <p>${short(ensureSentence(lead?.contradiction || 'Watch who decides, who pays, and who quietly benefits.'), 170)}</p>
+      <p>${short(ensureSentence(lead?.summary || lead?.body || 'Power actors are forcing repricing faster than public messaging admits.'), 170)}</p>
+      <p>${short(ensureSentence(lead?.contradiction || 'Watch who decides, who pays, and who quietly benefits.'), 150)}</p>
     `;
   }
   if(byId('focusStakes')){
@@ -124,10 +144,10 @@ function renderFocus(items){
 
 async function boot(){
   const curated = await getJSON('./data/stories_in_play.json', null);
-  const cards = (curated?.main?.cards || curated?.version_b?.cards || []).slice(0,6);
+  const cards = (curated?.main?.cards || curated?.version_b?.cards || []).slice(0,10);
 
   const lead = cards[0] || null;
-  const stack = cards.slice(1,6);
+  const stack = cards.slice(1,10);
 
   if(byId('leadStory')){
     byId('leadStory').innerHTML = lead ? cardStoryMarkup(lead, {lead:true}) : '<p>Intelligence update pending.</p>';
