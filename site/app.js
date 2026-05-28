@@ -41,7 +41,7 @@ function cardStoryMarkup(card, {lead=false} = {}){
         <p class="story-thesis">${short(summary, lead ? 220 : 150)}</p>
         <p class="story-contradiction"><strong>Contradiction:</strong> ${short(contradiction, lead ? 185 : 130)}</p>
       </div>
-      <div class="story-details" hidden>
+      <div class="story-details">
         <p class="story-strategy"><strong>How it moves markets:</strong> ${short(strategy, 220)}</p>
         ${actors.length ? `<p class="story-meta"><strong>Main actors:</strong> ${actors.join(', ')}</p>` : ''}
         ${map.length ? `<p class="story-meta"><strong>Likely market path:</strong> ${map.join(' · ')}</p>` : ''}
@@ -106,7 +106,6 @@ function setStoryExpanded(card, expanded){
   if(!details) return;
   card.setAttribute('aria-expanded', String(expanded));
   card.classList.toggle('is-expanded', expanded);
-  details.hidden = !expanded;
 }
 
 function wireExpandableStories(){
@@ -114,7 +113,12 @@ function wireExpandableStories(){
   cards.forEach((card)=>{
     const toggle = ()=>{
       const expanded = card.getAttribute('aria-expanded') === 'true';
-      setStoryExpanded(card, !expanded);
+      if(expanded){
+        setStoryExpanded(card, false);
+        return;
+      }
+      cards.forEach((other)=>{ if(other !== card) setStoryExpanded(other, false); });
+      setStoryExpanded(card, true);
     };
 
     card.addEventListener('click', ()=>toggle());
