@@ -55,6 +55,14 @@ function cardBody(card, {headingTag='h3'} = {}){
   `;
 }
 
+function setActiveToggle(version){
+  const a = byId('toggleVersionA');
+  const b = byId('toggleVersionB');
+  if(!a || !b) return;
+  a.classList.toggle('active', version === 'version_a');
+  b.classList.toggle('active', version === 'version_b');
+}
+
 async function boot(){
   const [setups, narratives, curated] = await Promise.all([
     getJSON('./api/v1/home/setups.json',{items:[]}),
@@ -62,40 +70,75 @@ async function boot(){
     getJSON('./data/stories_in_play.json', null)
   ]);
 
-  const curatedCards = (curated?.version_a?.cards || []).slice(0,6);
-  const usingCurated = curatedCards.length >= 6;
+  const curatedA = (curated?.version_a?.cards || []).slice(0,6);
+  const curatedB = (curated?.version_b?.cards || []).slice(0,6);
+  const fallbackItems = (setups.items || []).slice(0,9);
+  const hasCurated = curatedA.length >= 6;
+  let currentVersion = 'version_a';
 
-  const items = usingCurated ? curatedCards : (setups.items || []).slice(0,9);
-  const lead = items[0] || null;
   const narrativeMap = {};
   (narratives.narrative_reviews || []).forEach((review)=>{ narrativeMap[review.topic] = review; });
 
-  if(byId('leadStory')){
-    if(usingCurated){
-      byId('leadStory').innerHTML = lead ? cardBody(lead, {headingTag:'h3'}) : '<p>Intelligence update pending.</p>';
-    } else {
-      const narrative = narrativeMap[topicFromTitle(lead?.title)];
-      byId('leadStory').innerHTML = lead ? storyBody(lead, narrative, {headingTag:'h3'}) : '<p>Intelligence update pending.</p>';
-    }
-  }
+  const getItemsForVersion = (version) => {
+    if(!hasCurated) return fallbackItems;
+    if(version === 'version_b' && curatedB.length >= 6) return curatedB;
+    return curatedA;
+  };
 
-  if(byId('storyStack')){
-    if(usingCurated){
-      byId('storyStack').innerHTML = items.slice(1,6).map((card)=>{
-        return `<article class="story story-card">${cardBody(card, {headingTag:'h4'})}</article>`;
-      }).join('') || '<p>No additional stories yet.</p>';
-    } else {
-      byId('storyStack').innerHTML = items.slice(1,6).map(s=>{
-        const narrative = narrativeMap[topicFromTitle(s?.title)];
-        return `<article class="story story-card">${storyBody(s, narrative, {headingTag:'h4', compact:true})}</article>`;
-      }).join('') || '<p>No additional stories yet.</p>';
+  const renderStories = (version) => {
+    const items = getItemsForVersion(version);
+    const usingCurated = hasCurated;
+    const lead = items[0] || null;
+
+    if(byId('leadStory')){
+      if(usingCurated){
+        byId('leadStory').innerHTML = lead ? cardBody(lead, {headingTag:'h3'}) : '<p>Intelligence update pending.</p>';
+      } else {
+        const narrative = narrativeMap[topicFromTitle(lead?.title)];
+        byId('leadStory').innerHTML = lead ? storyBody(lead, narrative, {headingTag:'h3'}) : '<p>Intelligence update pending.</p>';
+      }
     }
+
+    if(byId('storyStack')){
+      if(usingCurated){
+        byId('storyStack').innerHTML = items.slice(1,6).map((card)=>{
+          return `<article class="story story-card">${cardBody(card, {headingTag:'h4'})}</article>`;
+        }).join('') || '<p>No additional stories yet.</p>';
+      } else {
+        byId('storyStack').innerHTML = items.slice(1,6).map(s=>{
+          const narrative = narrativeMap[topicFromTitle(s?.title)];
+          return `<article class="story story-card">${storyBody(s, narrative, {headingTag:'h4', compact:true})}</article>`;
+        }).join('') || '<p>No additional stories yet.</p>';
+      }
+    }
+
+    setActiveToggle(version);
+    return { items, lead, usingCurated };
+  };
+
+  const firstRender = renderStories(currentVersion);
+  const lead = firstRender.lead;
+  const items = firstRender.items;
+
+  const toggleA = byId('toggleVersionA');
+  const toggleB = byId('toggleVersionB');
+  if(toggleA){
+    toggleA.addEventListener('click', () => {
+      currentVersion = 'version_a';
+      renderStories(currentVersion);
+    });
+  }
+  if(toggleB){
+    toggleB.addEventListener('click', () => {
+      currentVersion = 'version_b';
+      renderStories(currentVersion);
+    });
   }
 
   const primaryReview = (narratives.narrative_reviews || [])[0];
   const primaryTopic = primaryReview?.topic || topicFromTitle(lead?.title);
   const defaultActors = ['Sovereign funds','Strategic alliances','Major banks','Defense ministries'];
-  const influenceActors = usingCurated
+  const influenceActors = firstRender.usingCurated
     ? (lead?.actors || [])
     : (primaryReview?.semantics?.actors || []).slice(0,6);
   const actors = influenceActors.length ? influenceActors : defaultActors;

@@ -1,32 +1,41 @@
-:root{--bg:#f4f1e9;--ink:#1b1a18;--muted:#5f5a52;--line:#d6cec2;--accent:#7a1f1f;--serif:"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;--sans:"Helvetica Neue",Arial,sans-serif}
+:root{--bg:#f4f1e9;--ink:#1b1a18;--muted:#5f5a52;--line:#d6cec2;--accent:#7a1f1f;--gold-tint:#b79b5b;--sky-blue:#8ab9e8;--serif:"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;--sans:"Helvetica Neue",Arial,sans-serif}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);letter-spacing:.01em}
+body{margin:0;background:linear-gradient(180deg,#f6f3ec 0%,#f2ede3 100%);color:var(--ink);font-family:var(--serif);letter-spacing:.01em}
 a{color:inherit}
-.masthead{padding:32px 16px 18px;border-bottom:1px solid var(--line);text-align:center;background:#fbfaf6}
-.masthead h1{margin:0;font-size:46px;line-height:1.1;font-weight:600;letter-spacing:.02em}
+.masthead{padding:32px 16px 18px;border-bottom:1px solid var(--line);text-align:center;background:linear-gradient(180deg,#fbfaf6 0%,#f7f3ea 100%);position:relative}
+.masthead::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,transparent 0%, var(--sky-blue) 20%, var(--gold-tint) 50%, var(--sky-blue) 80%, transparent 100%);opacity:.55}
+.masthead h1{margin:0;font-size:46px;line-height:1.1;font-weight:600;letter-spacing:.02em;text-shadow:0 0 0.5px var(--gold-tint)}
 .statement{margin:14px auto 4px;max-width:720px;color:var(--muted);font-size:17px;line-height:1.5;font-style:italic}
-.topnav{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;padding:12px 16px;border-bottom:1px solid var(--line);background:#fff;font-family:var(--sans);text-transform:uppercase;letter-spacing:.14em;font-size:12px}
+.topnav{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;padding:12px 16px;border-bottom:1px solid var(--line);background:linear-gradient(90deg, rgba(138,185,232,.12) 0%, #fff 18%, #fff 82%, rgba(138,185,232,.12) 100%);font-family:var(--sans);text-transform:uppercase;letter-spacing:.14em;font-size:12px}
 .topnav a{text-decoration:none;color:var(--ink)}
 .nav-anchors{position:relative;height:0}
 .anchor-target{display:block;height:0;position:relative;top:-80px}
-.layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px;padding:24px 18px 40px;max-width:1200px;margin:0 auto}
+.layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px;padding:24px 18px 40px;max-width:1200px;margin:0 auto;position:relative}
+.layout::before,.layout::after{content:"";position:fixed;top:0;bottom:0;width:10px;pointer-events:none;opacity:.38;z-index:0}
+.layout::before{left:0;background:linear-gradient(180deg,rgba(138,185,232,.3),rgba(138,185,232,.05),rgba(138,185,232,.3))}
+.layout::after{right:0;background:linear-gradient(180deg,rgba(138,185,232,.3),rgba(138,185,232,.05),rgba(138,185,232,.3))}
 .panel{background:transparent}
 .stories h2,.focus h2{margin:0 0 14px;font-family:var(--sans);text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:var(--muted)}
+.stories-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}
+.stories-head h2{margin:0}
+.stories-toggle{display:flex;gap:6px}
+.toggle-btn{font-family:var(--sans);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:5px 8px;border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:999px;cursor:pointer}
+.toggle-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
 .story{border-top:1px solid var(--line);padding:16px 0}
 .story-lead h3{margin:0 0 10px;font-size:30px;line-height:1.2}
 .story h4{margin:0 0 8px;font-size:20px;line-height:1.3}
-.story p{margin:6px 0;font-size:15px;line-height:1.5;color:var(--ink)}
+.story p{margin:6px 0;font-size:15px;line-height:1.5;color:var(--ink);text-shadow:0 0 0.35px var(--gold-tint)}
 .story-contradiction{font-style:italic;color:var(--muted)}
 .story-strategy{color:#2c2a27}
 .story-positioning{font-family:var(--sans);font-size:13px;letter-spacing:.02em;color:var(--muted)}
 .story-stack .story{padding:14px 0}
-.focus{background:#fbfaf6;border:1px solid var(--line);padding:18px;border-radius:6px}
+.focus{background:linear-gradient(180deg,#fbfaf6 0%, #f7f1e8 100%);border:1px solid var(--line);padding:18px;border-radius:6px;box-shadow:0 2px 10px rgba(138,185,232,.08)}
 .focus-block{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}
 .focus-block:first-of-type{border-top:none;padding-top:0;margin-top:0}
 .focus-block h3{margin:0 0 8px;font-family:var(--sans);text-transform:uppercase;letter-spacing:.12em;font-size:11px;color:var(--muted)}
 .focus-body{font-size:14px;line-height:1.45;color:var(--ink)}
 .focus-actors{list-style:none;padding:0;margin:8px 0 10px;display:flex;flex-wrap:wrap;gap:6px}
-.focus-actors li{border:1px solid var(--line);padding:4px 8px;font-family:var(--sans);font-size:11px;background:#fff}
+.focus-actors li{border:1px solid var(--line);padding:4px 8px;font-family:var(--sans);font-size:11px;background:linear-gradient(180deg,#fff 0%, #fcfaf5 100%)}
 .focus-list{margin:8px 0 0;padding:0;list-style:none}
 .focus-list li{margin:6px 0;color:var(--muted);font-size:13px}
 .focus-list strong{font-family:var(--sans);font-weight:600;color:var(--ink)}
@@ -34,7 +43,7 @@ a{color:inherit}
 .bet-item:first-of-type{border-top:none;padding-top:0}
 .bet-ticker{font-size:16px;font-weight:600;font-family:var(--serif)}
 .bet-meta{font-family:var(--sans);font-size:12px;color:var(--muted);margin-top:2px}
-.footer{display:flex;justify-content:center;gap:8px;padding:18px;border-top:1px solid var(--line);background:#fff;font-size:13px;font-family:var(--sans)}
+.footer{display:flex;justify-content:center;gap:8px;padding:18px;border-top:1px solid var(--line);background:linear-gradient(90deg, rgba(138,185,232,.12) 0%, #fff 18%, #fff 82%, rgba(138,185,232,.12) 100%);font-size:13px;font-family:var(--sans)}
 .footer a{text-decoration:none;color:var(--ink)}
 @media (max-width:980px){.layout{grid-template-columns:1fr}.focus{margin-top:18px}}
-@media (max-width:760px){.masthead h1{font-size:36px}.statement{font-size:16px}.story-lead h3{font-size:26px}.topnav{gap:12px}}
+@media (max-width:760px){.masthead h1{font-size:36px}.statement{font-size:16px}.story-lead h3{font-size:26px}.topnav{gap:12px}.stories-head{align-items:flex-start;flex-direction:column}}
