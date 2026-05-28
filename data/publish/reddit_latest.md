@@ -17,6 +17,6 @@ Evidence links:
 - Setups API: https://pureciclismo.github.io/gazzetta-di-kyiv/api/v1/home/setups.json
 - Contradictions API: https://pureciclismo.github.io/gazzetta-di-kyiv/api/v1/home/contradictions.json
 
-Detailed positioning framework: https://pureciclismo.github.io/gazzetta-di-kyiv/
+Full narrative dossier and data links: https://pureciclismo.github.io/gazzetta-di-kyiv/
 
 READY_FOR_DEVVIT_POST
