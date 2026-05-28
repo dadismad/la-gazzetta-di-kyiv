@@ -110,6 +110,7 @@ function setStoryExpanded(card, expanded){
 
 function wireExpandableStories(){
   const cards = [...document.querySelectorAll('[data-expandable="true"]')];
+  const isMobile = window.matchMedia('(max-width: 760px)').matches;
   cards.forEach((card)=>{
     const toggle = ()=>{
       const expanded = card.getAttribute('aria-expanded') === 'true';
@@ -119,6 +120,11 @@ function wireExpandableStories(){
       }
       cards.forEach((other)=>{ if(other !== card) setStoryExpanded(other, false); });
       setStoryExpanded(card, true);
+      if(isMobile){
+        requestAnimationFrame(()=>{
+          card.scrollIntoView({behavior:'smooth', block:'start'});
+        });
+      }
     };
 
     card.addEventListener('click', ()=>toggle());

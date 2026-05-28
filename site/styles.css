@@ -32,7 +32,7 @@ a{color:inherit}
 .story-card:focus{outline:2px solid rgba(138,185,232,.6);outline-offset:2px}
 .story-card:hover{background:linear-gradient(90deg,rgba(138,185,232,.08),transparent 60%)}
 .story-stack .story{padding:8px 0}
-.story-details{margin-top:8px;padding:0 10px;max-height:0;opacity:0;overflow:hidden;border:1px solid transparent;border-radius:8px;background:linear-gradient(180deg,#fff 0%,#fbf8f2 100%);transition:max-height .32s ease,opacity .24s ease,padding .22s ease,border-color .22s ease}
+.story-details{margin-top:8px;padding:0 10px;max-height:0;opacity:0;overflow:hidden;border:1px solid transparent;border-radius:8px;background:linear-gradient(180deg,#fff 0%,#fbf8f2 100%);transition:max-height .46s cubic-bezier(.22,1.2,.32,1),opacity .28s ease,padding .24s ease,border-color .24s ease}
 .story-card.is-expanded .story-details{padding:10px;max-height:320px;opacity:1;border-color:var(--line)}
 .story-meta{font-family:var(--sans);font-size:12px;color:#403a33}
 .story-playbook p{margin:6px 0;font-size:13px;line-height:1.4}

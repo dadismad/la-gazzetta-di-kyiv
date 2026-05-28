@@ -16,6 +16,7 @@ os.makedirs(OUT_DATA, exist_ok=True)
 os.makedirs(OUT_SITE, exist_ok=True)
 os.makedirs(os.path.join(OUT_SITE, 'data'), exist_ok=True)
 os.makedirs(os.path.join(OUT_SITE, 'api', 'v1', 'home'), exist_ok=True)
+os.makedirs(os.path.join(OUT_DATA, 'publish'), exist_ok=True)
 
 registry_json = os.path.join(BASE, 'source_registry_ranked.json')
 events_db = os.path.join(BASE, 'events.db')
@@ -388,6 +389,20 @@ if os.path.exists(stories_in_play_path):
         stories_payload = json.load(sf)
     with open(os.path.join(OUT_SITE, 'data', 'stories_in_play.json'), 'w', encoding='utf-8') as sf:
         json.dump(stories_payload, sf, indent=2)
+
+# Channel-tailored publish payload mirrors (if generated)
+telegram_md = os.path.join(OUT_DATA, 'publish', 'telegram_latest.md')
+reddit_md = os.path.join(OUT_DATA, 'publish', 'reddit_latest.md')
+if os.path.exists(telegram_md):
+    with open(telegram_md, 'r', encoding='utf-8') as tf:
+        t_payload = tf.read()
+    with open(os.path.join(OUT_SITE, 'data', 'telegram_latest.md'), 'w', encoding='utf-8') as tf:
+        tf.write(t_payload)
+if os.path.exists(reddit_md):
+    with open(reddit_md, 'r', encoding='utf-8') as rf:
+        r_payload = rf.read()
+    with open(os.path.join(OUT_SITE, 'data', 'reddit_latest.md'), 'w', encoding='utf-8') as rf:
+        rf.write(r_payload)
 
 with open(os.path.join(OUT_DATA,'intelligence_objects.json'),'w') as f:
     json.dump({'generated_at': generated_at, 'items': intelligence_objects},f,indent=2)
