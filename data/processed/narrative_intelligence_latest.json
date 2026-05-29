@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-05-28T17:00:31.892041+00:00",
+  "generated_at": "2026-05-29T07:00:42.904014+00:00",
   "setups": [
     {
       "setup_id": "n21_geopolitics",
       "title": "Narrative acceleration: geopolitics",
       "horizon": "24-72h",
-      "thesis": "geopolitics second-order effects remain underpriced by consensus",
+      "thesis": "geopolitics narrative is sensitive to negotiation headlines and repricing whipsaws",
       "actors": [
         "Kremlin/Russia"
       ],
@@ -29,9 +29,9 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Gaza City hospitals say several killed in strike, as Israel targets Hamas leaders",
-        "Are US and Iran close to peace or sliding back to war?",
-        "Iran says it targeted American base after fresh US strikes"
+        "Russian drone crashes into apartment building in Romania",
+        "US and Iran 'very close' to deal but 'not there yet', Vance says",
+        "Are US and Iran close to peace or sliding back to war?"
       ]
     },
     {
@@ -40,8 +40,7 @@
       "horizon": "24-72h",
       "thesis": "markets second-order effects remain underpriced by consensus",
       "actors": [
-        "NVIDIA",
-        "Microsoft"
+        "OpenAI"
       ],
       "incentives": [
         "preserve policy credibility",
@@ -58,23 +57,23 @@
         "Use staged ETF entries with explicit invalidation",
         "Prefer defined-risk options in high-volatility windows"
       ],
-      "confidence": 0.64,
+      "confidence": 0.63,
       "citations": [
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Tilman Fertitta’s Years-Long Pursuit of Caesars Is Paying Off",
-        "US Defense Orders Surge to Near-Record Amid War With Iran",
-        "Aluminum Market Tightness Could Continue for 'Long Time,' Morgan Stanley Says"
+        "India Cuts Monsoon Outlook to 90% of Normal in Risk to Crops",
+        "Blue Origin's New Glenn Rocket Explodes on Launchpad",
+        "Blue Origin Rocket Explodes on Launchpad in Florida"
       ]
     },
     {
       "setup_id": "n21_macro",
       "title": "Narrative acceleration: macro",
       "horizon": "24-72h",
-      "thesis": "macro narrative is sensitive to negotiation headlines and repricing whipsaws",
+      "thesis": "macro second-order effects remain underpriced by consensus",
       "actors": [
-        "Kremlin/Russia"
+        "policy and market actors"
       ],
       "incentives": [
         "preserve policy credibility",
@@ -91,218 +90,14 @@
         "Use staged ETF entries with explicit invalidation",
         "Prefer defined-risk options in high-volatility windows"
       ],
-      "confidence": 0.64,
+      "confidence": 0.63,
       "citations": [
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Can the UK economy be revived? You asked, we answered",
-        "EU wants crisis powers to seize control of chip supplies",
-        "Billionaire Tilman Fertitta to buy Caesars Entertainment in $17.6bn deal"
-      ]
-    },
-    {
-      "setup_id": "n21_oil",
-      "title": "Narrative acceleration: oil",
-      "horizon": "24-72h",
-      "thesis": "Energy corridor fragility can reprice inflation expectations quickly",
-      "actors": [
-        "Kremlin/Russia"
-      ],
-      "incentives": [
-        "defend fiscal revenues",
-        "manage supply optics"
-      ],
-      "probability_base": 62,
-      "probability_bull": 15,
-      "probability_bear": 23,
-      "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.46,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "Oil prices fall after report of breakthrough in US-Iran talks",
-        "Oil Swings on Reports of Possible US-Iran Pact to Extend Truce",
-        "US Stocks Reverse Losses on Iran Deal Report as Oil Pares Gains"
-      ]
-    },
-    {
-      "setup_id": "n21_china",
-      "title": "Narrative acceleration: china",
-      "horizon": "24-72h",
-      "thesis": "Stimulus messaging may outpace private-demand follow-through",
-      "actors": [
-        "Kremlin/Russia",
-        "Chinese policy complex"
-      ],
-      "incentives": [
-        "stabilize growth optics",
-        "support employment channels"
-      ],
-      "probability_base": 62,
-      "probability_bull": 15,
-      "probability_bear": 23,
-      "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.46,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "South Korea detains dissident who fled China in rubber boat",
-        "China Sells $885 Million of Green Bonds in Hong Kong Debut",
-        "EU to broaden import quotas and tariffs against China"
-      ]
-    },
-    {
-      "setup_id": "n21_ai",
-      "title": "Narrative acceleration: ai",
-      "horizon": "24-72h",
-      "thesis": "AI capex concentration risk is rising while narrative momentum stays strong",
-      "actors": [
-        "ECB",
-        "OpenAI",
-        "Microsoft"
-      ],
-      "incentives": [
-        "capture compute rents",
-        "defend platform distribution"
-      ],
-      "probability_base": 62,
-      "probability_bull": 15,
-      "probability_bear": 23,
-      "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.46,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "Image of Thai police in sparkly dresses with handcuffed suspect turns out to be AI fake",
-        "Warren proposes taxing AI companies so ‘winnings’ ‘benefit all Americans’",
-        "ECB summons banks to urge them to fix flaws exposed by latest AI models - Supervisor to stress seriousness of risks to financial system at hastily arranged meeting"
-      ]
-    },
-    {
-      "setup_id": "n21_russia",
-      "title": "Narrative acceleration: russia",
-      "horizon": "24-72h",
-      "thesis": "Geopolitical escalation tails are underweighted in regional risk premia",
-      "actors": [
-        "Kremlin/Russia",
-        "Chinese policy complex"
-      ],
-      "incentives": [
-        "preserve strategic leverage",
-        "shape sanction pathways"
-      ],
-      "probability_base": 58,
-      "probability_bull": 17,
-      "probability_bear": 25,
-      "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.45,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "Russia on the back foot with dynamics of war shifting in Ukraine’s favour, EU says – as it happened",
-        "EU Chief Says Russia Must Remove Troops From Moldova and Georgia. Limit Russian Army Size If Peace Agreement Is Signed in Ukraine.",
-        "The U.K.’s top spy says the window to stay ahead of China and Russia is narrowing and cybersecurity needs to become \"10 times more urgent\""
-      ]
-    },
-    {
-      "setup_id": "n21_inflation",
-      "title": "Narrative acceleration: inflation",
-      "horizon": "24-72h",
-      "thesis": "Disinflation confidence is vulnerable to services and energy stickiness",
-      "actors": [
-        "Federal Reserve"
-      ],
-      "incentives": [
-        "anchor expectations",
-        "avoid policy whipsaw"
-      ],
-      "probability_base": 54,
-      "probability_bull": 19,
-      "probability_bear": 27,
-      "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.44,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "US core PCE inflation continues to rise",
-        "War-driven price shock sent April inflation to highest level in nearly three years | CNN Business",
-        "Core inflation hit an annual rate of 3.3% in April, as expected, Fed’s preferred gauge shows"
-      ]
-    },
-    {
-      "setup_id": "n21_rates",
-      "title": "Narrative acceleration: rates",
-      "horizon": "24-72h",
-      "thesis": "Rate-path ambiguity remains the key cross-asset transmission channel",
-      "actors": [
-        "Federal Reserve",
-        "ECB",
-        "rates desks"
-      ],
-      "incentives": [
-        "preserve policy credibility",
-        "stabilize inflation expectations"
-      ],
-      "probability_base": 50,
-      "probability_bull": 21,
-      "probability_bear": 29,
-      "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.43,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "Gold Advances as Report of US-Iran Deal Eases Higher Rates Bets",
-        "Gold just dumped hard while inflation is still hot. The bond market is telling you something",
-        "Mortgage refinance demand drops 18% as rates hit highest level since August"
+        "Charles Goodhart: ‘Demography is going to make life worse and worse and worse’",
+        "Magyar pushes for breakthrough to secure frozen EU funds",
+        "Marc Rowan rolled in Hamptons lobster fight"
       ]
     },
     {
@@ -317,9 +112,148 @@
         "preserve policy credibility",
         "capture allocation flows"
       ],
+      "probability_base": 52,
+      "probability_bull": 20,
+      "probability_bear": 28,
+      "invalidation_triggers": [
+        "Mention-share drops below 7d baseline for two cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.46,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "Learning from Ukraine war, Hezbollah is now using fibre-optic drones to hit Israel",
+        "FirstFT: Russia overspends on Putin’s Ukraine war by $28bn",
+        "Russia overspends on Putin’s war in Ukraine by $28bn"
+      ]
+    },
+    {
+      "setup_id": "n21_ai",
+      "title": "Narrative acceleration: ai",
+      "horizon": "24-72h",
+      "thesis": "AI capex concentration risk is rising while narrative momentum stays strong",
+      "actors": [
+        "OpenAI",
+        "Microsoft",
+        "NVIDIA",
+        "Amazon"
+      ],
+      "incentives": [
+        "capture compute rents",
+        "defend platform distribution"
+      ],
+      "probability_base": 52,
+      "probability_bull": 20,
+      "probability_bear": 28,
+      "invalidation_triggers": [
+        "Mention-share drops below 7d baseline for two cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.46,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "Jupiter Fund Taps Europe AI Energy Boom to Beat 92% of Peers",
+        "Not using AI in public services would mean ‘choosing decline’, UK minister warns",
+        "The Asian currency trading at ‘crisis’ levels despite an AI chip bonanza"
+      ]
+    },
+    {
+      "setup_id": "n21_oil",
+      "title": "Narrative acceleration: oil",
+      "horizon": "24-72h",
+      "thesis": "Energy corridor fragility can reprice inflation expectations quickly",
+      "actors": [
+        "OPEC+",
+        "Saudi Aramco",
+        "shipping insurers"
+      ],
+      "incentives": [
+        "defend fiscal revenues",
+        "manage supply optics"
+      ],
       "probability_base": 50,
       "probability_bull": 21,
       "probability_bear": 29,
+      "invalidation_triggers": [
+        "Mention-share drops below 7d baseline for two cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.45,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "Oil Set for 19% Collapse in May as Traders Bet On Truce Renewal",
+        "Stocks Rise to Record, Oil Drops on Iran Optimism: Markets Wrap",
+        "Oil Declines on US-Iran Ceasefire Optimism"
+      ]
+    },
+    {
+      "setup_id": "n21_russia",
+      "title": "Narrative acceleration: russia",
+      "horizon": "24-72h",
+      "thesis": "Geopolitical escalation tails are underweighted in regional risk premia",
+      "actors": [
+        "Kremlin/Russia"
+      ],
+      "incentives": [
+        "preserve strategic leverage",
+        "shape sanction pathways"
+      ],
+      "probability_base": 50,
+      "probability_bull": 21,
+      "probability_bear": 29,
+      "invalidation_triggers": [
+        "Mention-share drops below 7d baseline for two cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.45,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "FirstFT: Russia overspends on Putin’s Ukraine war by $28bn",
+        "Russia overspends on Putin’s war in Ukraine by $28bn",
+        "Russia on the back foot with dynamics of war shifting in Ukraine’s favour, EU says – as it happened"
+      ]
+    },
+    {
+      "setup_id": "n21_inflation",
+      "title": "Narrative acceleration: inflation",
+      "horizon": "24-72h",
+      "thesis": "Disinflation confidence is vulnerable to services and energy stickiness",
+      "actors": [
+        "BLS",
+        "Eurostat",
+        "central banks"
+      ],
+      "incentives": [
+        "anchor expectations",
+        "avoid policy whipsaw"
+      ],
+      "probability_base": 46,
+      "probability_bull": 22,
+      "probability_bear": 32,
       "invalidation_triggers": [
         "Mention-share drops below 7d baseline for two cycles",
         "Cross-source confirmation weakens materially"
@@ -333,24 +267,22 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Russia on the back foot with dynamics of war shifting in Ukraine’s favour, EU says – as it happened",
-        "EU Chief Says Russia Must Remove Troops From Moldova and Georgia. Limit Russian Army Size If Peace Agreement Is Signed in Ukraine.",
-        "How Trump used Starlink, oil sanctions, and Ukraine's mineral rights as three simultaneous levers of pressure on both sides of the war"
+        "French Inflation Accelerates to Highest in More Than Two Years"
       ]
     },
     {
-      "setup_id": "n21_crypto",
-      "title": "Narrative acceleration: crypto",
+      "setup_id": "n21_china",
+      "title": "Narrative acceleration: china",
       "horizon": "24-72h",
-      "thesis": "Liquidity reflexivity can extend risk-on sentiment but increases fragility",
+      "thesis": "Stimulus messaging may outpace private-demand follow-through",
       "actors": [
-        "ETF issuers",
-        "major exchanges",
-        "leveraged traders"
+        "PBoC",
+        "State Council",
+        "export manufacturers"
       ],
       "incentives": [
-        "grow flow capture",
-        "maintain market share"
+        "stabilize growth optics",
+        "support employment channels"
       ],
       "probability_base": 46,
       "probability_bull": 22,
@@ -363,12 +295,12 @@
         "Use staged ETF entries with explicit invalidation",
         "Prefer defined-risk options in high-volatility windows"
       ],
-      "confidence": 0.42,
+      "confidence": 0.43,
       "citations": [
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "MoneyGram’s Big Crypto Bet"
+        "How China is breaking apart a people and its culture"
       ]
     }
   ],
@@ -395,24 +327,24 @@
       "invalidation_window": "24-72h"
     },
     {
-      "narrative": "oil",
-      "claim_a": "oil is fully priced",
-      "claim_b": "oil transmission effects remain underpriced",
-      "urgency": "high",
-      "invalidation_window": "24-72h"
-    },
-    {
-      "narrative": "china",
-      "claim_a": "china is fully priced",
-      "claim_b": "china transmission effects remain underpriced",
-      "urgency": "high",
+      "narrative": "ukraine",
+      "claim_a": "ukraine is fully priced",
+      "claim_b": "ukraine transmission effects remain underpriced",
+      "urgency": "medium",
       "invalidation_window": "24-72h"
     },
     {
       "narrative": "ai",
       "claim_a": "ai is fully priced",
       "claim_b": "ai transmission effects remain underpriced",
-      "urgency": "high",
+      "urgency": "medium",
+      "invalidation_window": "24-72h"
+    },
+    {
+      "narrative": "oil",
+      "claim_a": "oil is fully priced",
+      "claim_b": "oil transmission effects remain underpriced",
+      "urgency": "medium",
       "invalidation_window": "24-72h"
     },
     {
@@ -430,35 +362,21 @@
       "invalidation_window": "24-72h"
     },
     {
-      "narrative": "rates",
-      "claim_a": "rates is fully priced",
-      "claim_b": "rates transmission effects remain underpriced",
-      "urgency": "medium",
-      "invalidation_window": "24-72h"
-    },
-    {
-      "narrative": "ukraine",
-      "claim_a": "ukraine is fully priced",
-      "claim_b": "ukraine transmission effects remain underpriced",
-      "urgency": "medium",
-      "invalidation_window": "24-72h"
-    },
-    {
-      "narrative": "crypto",
-      "claim_a": "crypto is fully priced",
-      "claim_b": "crypto transmission effects remain underpriced",
+      "narrative": "china",
+      "claim_a": "china is fully priced",
+      "claim_b": "china transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     }
   ],
   "regime": {
-    "generated_at": "2026-05-28T17:00:31.891841+00:00",
+    "generated_at": "2026-05-29T07:00:42.903801+00:00",
     "data_freshness_seconds": 3600,
-    "source_count": 8,
+    "source_count": 4,
     "regime_label": "Narrative Repricing Risk",
     "risk_state": "selective risk-off",
     "confidence": 0.74
   },
-  "source_events": 200,
+  "source_events": 100,
   "method": "v2.1 semantic extraction + quality-ready output"
 }

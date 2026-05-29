@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-28T17:00:31.892041+00:00",
+  "generated_at": "2026-05-29T07:00:42.904014+00:00",
   "items": [
     {
       "narrative": "geopolitics",
@@ -23,24 +23,24 @@
       "invalidation_window": "24-72h"
     },
     {
-      "narrative": "oil",
-      "claim_a": "oil is fully priced",
-      "claim_b": "oil transmission effects remain underpriced",
-      "urgency": "high",
-      "invalidation_window": "24-72h"
-    },
-    {
-      "narrative": "china",
-      "claim_a": "china is fully priced",
-      "claim_b": "china transmission effects remain underpriced",
-      "urgency": "high",
+      "narrative": "ukraine",
+      "claim_a": "ukraine is fully priced",
+      "claim_b": "ukraine transmission effects remain underpriced",
+      "urgency": "medium",
       "invalidation_window": "24-72h"
     },
     {
       "narrative": "ai",
       "claim_a": "ai is fully priced",
       "claim_b": "ai transmission effects remain underpriced",
-      "urgency": "high",
+      "urgency": "medium",
+      "invalidation_window": "24-72h"
+    },
+    {
+      "narrative": "oil",
+      "claim_a": "oil is fully priced",
+      "claim_b": "oil transmission effects remain underpriced",
+      "urgency": "medium",
       "invalidation_window": "24-72h"
     },
     {
@@ -58,23 +58,9 @@
       "invalidation_window": "24-72h"
     },
     {
-      "narrative": "rates",
-      "claim_a": "rates is fully priced",
-      "claim_b": "rates transmission effects remain underpriced",
-      "urgency": "medium",
-      "invalidation_window": "24-72h"
-    },
-    {
-      "narrative": "ukraine",
-      "claim_a": "ukraine is fully priced",
-      "claim_b": "ukraine transmission effects remain underpriced",
-      "urgency": "medium",
-      "invalidation_window": "24-72h"
-    },
-    {
-      "narrative": "crypto",
-      "claim_a": "crypto is fully priced",
-      "claim_b": "crypto transmission effects remain underpriced",
+      "narrative": "china",
+      "claim_a": "china is fully priced",
+      "claim_b": "china transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     }

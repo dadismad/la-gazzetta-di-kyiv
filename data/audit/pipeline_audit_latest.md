@@ -1,7 +1,7 @@
 # Pipeline Audit (Latest)
 
 Status: **ok**
-Generated: 2026-05-28T17:00:31.958444+00:00
+Generated: 2026-05-29T07:00:42.971056+00:00
 
 ## Artifact checks
 - normalized_events: exists=True age_seconds=0 path=`data/normalized/events_latest.json`
@@ -13,4 +13,4 @@ Generated: 2026-05-28T17:00:31.958444+00:00
 - reddit_payload: exists=True age_seconds=0 path=`data/publish/reddit_latest.md`
 
 ## Findings
-- No critical findings.
+- [MEDIUM] Source retrieval failures detected | evidence: failures=4 in data/normalized/events_latest.json | fix: Add alternate mirror/feed and retry policy for failed sources
