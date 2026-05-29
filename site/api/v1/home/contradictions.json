@@ -1,17 +1,10 @@
 {
-  "generated_at": "2026-05-29T07:00:42.904014+00:00",
+  "generated_at": "2026-05-29T12:00:24.620798+00:00",
   "items": [
     {
       "narrative": "geopolitics",
       "claim_a": "geopolitics is fully priced",
       "claim_b": "geopolitics transmission effects remain underpriced",
-      "urgency": "high",
-      "invalidation_window": "24-72h"
-    },
-    {
-      "narrative": "markets",
-      "claim_a": "markets is fully priced",
-      "claim_b": "markets transmission effects remain underpriced",
       "urgency": "high",
       "invalidation_window": "24-72h"
     },
@@ -23,30 +16,16 @@
       "invalidation_window": "24-72h"
     },
     {
+      "narrative": "markets",
+      "claim_a": "markets is fully priced",
+      "claim_b": "markets transmission effects remain underpriced",
+      "urgency": "high",
+      "invalidation_window": "24-72h"
+    },
+    {
       "narrative": "ukraine",
       "claim_a": "ukraine is fully priced",
       "claim_b": "ukraine transmission effects remain underpriced",
-      "urgency": "medium",
-      "invalidation_window": "24-72h"
-    },
-    {
-      "narrative": "ai",
-      "claim_a": "ai is fully priced",
-      "claim_b": "ai transmission effects remain underpriced",
-      "urgency": "medium",
-      "invalidation_window": "24-72h"
-    },
-    {
-      "narrative": "oil",
-      "claim_a": "oil is fully priced",
-      "claim_b": "oil transmission effects remain underpriced",
-      "urgency": "medium",
-      "invalidation_window": "24-72h"
-    },
-    {
-      "narrative": "russia",
-      "claim_a": "russia is fully priced",
-      "claim_b": "russia transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     },
@@ -58,9 +37,37 @@
       "invalidation_window": "24-72h"
     },
     {
+      "narrative": "ai",
+      "claim_a": "ai is fully priced",
+      "claim_b": "ai transmission effects remain underpriced",
+      "urgency": "medium",
+      "invalidation_window": "24-72h"
+    },
+    {
+      "narrative": "russia",
+      "claim_a": "russia is fully priced",
+      "claim_b": "russia transmission effects remain underpriced",
+      "urgency": "medium",
+      "invalidation_window": "24-72h"
+    },
+    {
+      "narrative": "oil",
+      "claim_a": "oil is fully priced",
+      "claim_b": "oil transmission effects remain underpriced",
+      "urgency": "medium",
+      "invalidation_window": "24-72h"
+    },
+    {
       "narrative": "china",
       "claim_a": "china is fully priced",
       "claim_b": "china transmission effects remain underpriced",
+      "urgency": "medium",
+      "invalidation_window": "24-72h"
+    },
+    {
+      "narrative": "nato",
+      "claim_a": "nato is fully priced",
+      "claim_b": "nato transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     }
