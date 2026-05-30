@@ -2,7 +2,7 @@
 
 **Regime snapshot:** Narrative Repricing Risk (selective risk-off)
 **Main claim:** geopolitics narrative is sensitive to negotiation headlines and repricing whipsaws
-**Actors driving this:** policy and market actors
+**Actors driving this:** Federal Reserve
 **24–72h probability path:** base 80% / bull 8% / bear 12%
 **Invalidation trigger:** Mention-share drops below 7d baseline for two cycles
 
@@ -17,6 +17,6 @@ Evidence links:
 - Setups API: https://pureciclismo.github.io/gazzetta-di-kyiv/api/v1/home/setups.json
 - Contradictions API: https://pureciclismo.github.io/gazzetta-di-kyiv/api/v1/home/contradictions.json
 
-Full intelligence brief and sources: https://pureciclismo.github.io/gazzetta-di-kyiv/
+Full cross-asset breakdown: https://pureciclismo.github.io/gazzetta-di-kyiv/
 
 READY_FOR_DEVVIT_POST
