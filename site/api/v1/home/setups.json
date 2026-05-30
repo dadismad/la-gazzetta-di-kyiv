@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T02:00:51.732840+00:00",
+  "generated_at": "2026-05-30T07:00:14.816474+00:00",
   "items": [
     {
       "setup_id": "n21_geopolitics",
@@ -24,14 +24,14 @@
         "Use staged ETF entries with explicit invalidation",
         "Prefer defined-risk options in high-volatility windows"
       ],
-      "confidence": 0.88,
+      "confidence": 0.87,
       "citations": [
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "'Poison seller' who sold toxic chemicals online to people across world admits aiding suicides",
         "No deal announced after Trump meeting to make 'final determination' on Iran",
-        "First of five men found alive in flooded Laos cave rescued"
+        "US not 'turning back' on Asia allies, but expects them to boost defence - Hegseth",
+        "'Poison seller' who sold toxic chemicals online to people across world admits aiding suicides"
       ]
     },
     {
@@ -40,7 +40,7 @@
       "horizon": "24-72h",
       "thesis": "macro narrative is sensitive to negotiation headlines and repricing whipsaws",
       "actors": [
-        "Kremlin/Russia"
+        "policy and market actors"
       ],
       "incentives": [
         "preserve policy credibility",
@@ -62,9 +62,9 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Trump’s ‘anti-weaponisation’ fund and Kennedy Center revamp blocked by judges",
-        "UN accuses Israel of committing sexual violence against Palestinians",
-        "Lula slams US move to designate Brazil drug cartels as terrorist groups"
+        "Trump will remain ‘patient’ in pursuit of a deal with Iran, says Hegseth",
+        "Greens discuss downgrading some policies to prepare for possible UK coalition",
+        "Bulgaria to be punished for deficit only months after joining euro"
       ]
     },
     {
@@ -95,9 +95,44 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Wall Street Week | Britain’s Debt Problem, Poland’s Economic Boom",
-        "Asia Rice Surges 20% in May as War and Weather Threaten Output",
-        "Citadel Securities Loses Court Fight Over New IEX Options Venue"
+        "Hegseth Takes Swipe at European Defense Partners",
+        "Hegseth Speaks at Shangri-La Dialogue  (Full)",
+        "Wall Street Week | Britain’s Debt Problem, Poland’s Economic Boom"
+      ]
+    },
+    {
+      "setup_id": "n21_china",
+      "title": "Narrative acceleration: china",
+      "horizon": "24-72h",
+      "thesis": "Stimulus messaging may outpace private-demand follow-through",
+      "actors": [
+        "PBoC",
+        "State Council",
+        "export manufacturers"
+      ],
+      "incentives": [
+        "stabilize growth optics",
+        "support employment channels"
+      ],
+      "probability_base": 56,
+      "probability_bull": 18,
+      "probability_bear": 26,
+      "invalidation_triggers": [
+        "Mention-share drops below 7d baseline for two cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.48,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "Ex-head monk of China's 'kung fu temple' jailed for embezzlement",
+        "MiniMax Plans China IPO as It Eyes Local Rivals Like DeepSeek",
+        "Hegseth Takes Swipe at Europe, Hails China Ties"
       ]
     },
     {
@@ -168,41 +203,6 @@
       ]
     },
     {
-      "setup_id": "n21_china",
-      "title": "Narrative acceleration: china",
-      "horizon": "24-72h",
-      "thesis": "Stimulus messaging may outpace private-demand follow-through",
-      "actors": [
-        "PBoC",
-        "State Council",
-        "export manufacturers"
-      ],
-      "incentives": [
-        "stabilize growth optics",
-        "support employment channels"
-      ],
-      "probability_base": 50,
-      "probability_bull": 21,
-      "probability_bear": 29,
-      "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.45,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "Ex-head monk of China's 'kung fu temple' jailed for embezzlement",
-        "Hegseth Takes Swipe at Europe, Hails China Ties",
-        "Durex sales hit by China’s condom crackdown"
-      ]
-    },
-    {
       "setup_id": "n21_russia",
       "title": "Narrative acceleration: russia",
       "horizon": "24-72h",
@@ -236,18 +236,16 @@
       ]
     },
     {
-      "setup_id": "n21_oil",
-      "title": "Narrative acceleration: oil",
+      "setup_id": "n21_ukraine",
+      "title": "Narrative acceleration: ukraine",
       "horizon": "24-72h",
-      "thesis": "Energy corridor fragility can reprice inflation expectations quickly",
+      "thesis": "ukraine second-order effects remain underpriced by consensus",
       "actors": [
-        "OPEC+",
-        "Saudi Aramco",
-        "shipping insurers"
+        "Kremlin/Russia"
       ],
       "incentives": [
-        "defend fiscal revenues",
-        "manage supply optics"
+        "preserve policy credibility",
+        "capture allocation flows"
       ],
       "probability_base": 48,
       "probability_bull": 21,
@@ -265,103 +263,8 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Treasuries Trim Iran War Losses on Week as Oil Retreats",
-        "Oil prices fall on hopes of Strait of Hormuz reopening"
-      ]
-    },
-    {
-      "setup_id": "n21_ukraine",
-      "title": "Narrative acceleration: ukraine",
-      "horizon": "24-72h",
-      "thesis": "ukraine second-order effects remain underpriced by consensus",
-      "actors": [
-        "Kremlin/Russia"
-      ],
-      "incentives": [
-        "preserve policy credibility",
-        "capture allocation flows"
-      ],
-      "probability_base": 46,
-      "probability_bull": 22,
-      "probability_bear": 32,
-      "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.43,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "Ukraine using AI drones to strike vital convoys supplying Russian troops"
-      ]
-    },
-    {
-      "setup_id": "n21_gas",
-      "title": "Narrative acceleration: gas",
-      "horizon": "24-72h",
-      "thesis": "gas second-order effects remain underpriced by consensus",
-      "actors": [
-        "policy and market actors"
-      ],
-      "incentives": [
-        "preserve policy credibility",
-        "capture allocation flows"
-      ],
-      "probability_base": 46,
-      "probability_bull": 22,
-      "probability_bear": 32,
-      "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.43,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "Hedge Funds Are Bearish on Natural Gas for First Time Since 2024"
-      ]
-    },
-    {
-      "setup_id": "n21_crypto",
-      "title": "Narrative acceleration: crypto",
-      "horizon": "24-72h",
-      "thesis": "Liquidity reflexivity can extend risk-on sentiment but increases fragility",
-      "actors": [
-        "ETF issuers",
-        "major exchanges",
-        "leveraged traders"
-      ],
-      "incentives": [
-        "grow flow capture",
-        "maintain market share"
-      ],
-      "probability_base": 46,
-      "probability_bull": 22,
-      "probability_bear": 32,
-      "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.43,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "CFTC Paves Way for Crypto’s Trillion-Dollar Offshore Trade"
+        "Ukraine using AI drones to strike vital convoys supplying Russian troops",
+        "Learning from Ukraine war, Hezbollah is now using fibre-optic drones to hit Israel"
       ]
     },
     {
@@ -394,7 +297,40 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Inflation and interest rates tracker: see how your country compares"
+        "Philippine Central Bank Says Inflation May Surge Further in May"
+      ]
+    },
+    {
+      "setup_id": "n21_oil",
+      "title": "Narrative acceleration: oil",
+      "horizon": "24-72h",
+      "thesis": "Energy corridor fragility can reprice inflation expectations quickly",
+      "actors": [
+        "OPEC+",
+        "Saudi Aramco",
+        "shipping insurers"
+      ],
+      "incentives": [
+        "defend fiscal revenues",
+        "manage supply optics"
+      ],
+      "probability_base": 46,
+      "probability_bull": 22,
+      "probability_bear": 32,
+      "invalidation_triggers": [
+        "Mention-share drops below 7d baseline for two cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.43,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "Treasuries Trim Iran War Losses on Week as Oil Retreats"
       ]
     }
   ]
