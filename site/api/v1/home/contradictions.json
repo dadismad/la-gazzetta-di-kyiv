@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T12:00:57.684002+00:00",
+  "generated_at": "2026-05-30T17:00:15.758912+00:00",
   "items": [
     {
       "narrative": "geopolitics",
@@ -30,16 +30,16 @@
       "invalidation_window": "24-72h"
     },
     {
-      "narrative": "nato",
-      "claim_a": "nato is fully priced",
-      "claim_b": "nato transmission effects remain underpriced",
+      "narrative": "ai",
+      "claim_a": "ai is fully priced",
+      "claim_b": "ai transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     },
     {
-      "narrative": "ai",
-      "claim_a": "ai is fully priced",
-      "claim_b": "ai transmission effects remain underpriced",
+      "narrative": "nato",
+      "claim_a": "nato is fully priced",
+      "claim_b": "nato transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     },
@@ -54,13 +54,6 @@
       "narrative": "ukraine",
       "claim_a": "ukraine is fully priced",
       "claim_b": "ukraine transmission effects remain underpriced",
-      "urgency": "medium",
-      "invalidation_window": "24-72h"
-    },
-    {
-      "narrative": "inflation",
-      "claim_a": "inflation is fully priced",
-      "claim_b": "inflation transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     },

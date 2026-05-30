@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T12:00:57.684002+00:00",
+  "generated_at": "2026-05-30T17:00:15.758912+00:00",
   "items": [
     {
       "setup_id": "n21_geopolitics",
@@ -24,14 +24,14 @@
         "Use staged ETF entries with explicit invalidation",
         "Prefer defined-risk options in high-volatility windows"
       ],
-      "confidence": 0.87,
+      "confidence": 0.88,
       "citations": [
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
         "No deal announced after Trump meeting to make 'final determination' on Iran",
-        "US not 'turning back' on Asia allies, but expects them to boost defence - Hegseth",
-        "'Poison seller' who sold toxic chemicals online to people across world admits aiding suicides"
+        "US, UK and Australia to develop underwater drone technology",
+        "Italy bans Kanye West and Travis Scott concerts over security concerns"
       ]
     },
     {
@@ -62,16 +62,16 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
+        "Historic cattle shortages push US beef prices to record highs",
         "It is time for a European Security Council",
-        "Submit your questions: Ten years on, what’s next for Brexit?",
-        "Trump will remain ‘patient’ in pursuit of a deal with Iran, says Hegseth"
+        "Submit your questions: Ten years on, what’s next for Brexit?"
       ]
     },
     {
       "setup_id": "n21_markets",
       "title": "Narrative acceleration: markets",
       "horizon": "24-72h",
-      "thesis": "markets narrative is sensitive to negotiation headlines and repricing whipsaws",
+      "thesis": "markets second-order effects remain underpriced by consensus",
       "actors": [
         "policy and market actors"
       ],
@@ -95,9 +95,9 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "<strong>Aluminum Under Pressure, While Poland Surges Ahead</strong>",
-        "Hanwha Aerospace Eyes Europe, US Arms Deals",
-        "New Zealand’s Penk on Hormuz Uncertainty (Video) (Correct)"
+        "This Millennial University President Sees Running Grambling State Like an Enterprise",
+        "At Scrabble’s Biggest Tournament, Thailand Punches Above Its Weight",
+        "Ebola Outbreak Raises Global Health Concerns"
       ]
     },
     {
@@ -114,9 +114,9 @@
         "stabilize growth optics",
         "support employment channels"
       ],
-      "probability_base": 62,
-      "probability_bull": 15,
-      "probability_bear": 23,
+      "probability_base": 60,
+      "probability_bull": 16,
+      "probability_bear": 24,
       "invalidation_triggers": [
         "Mention-share drops below 7d baseline for two cycles",
         "Cross-source confirmation weakens materially"
@@ -125,7 +125,7 @@
         "Use staged ETF entries with explicit invalidation",
         "Prefer defined-risk options in high-volatility windows"
       ],
-      "confidence": 0.51,
+      "confidence": 0.5,
       "citations": [
         "data/normalized/events_latest.json"
       ],
@@ -133,6 +133,39 @@
         "Ex-head monk of China's 'kung fu temple' jailed for embezzlement",
         "Hegseth Hails China Relationship at Defense Summit",
         "China Pledges to Retaliate If EU Imposes Trade Restrictions"
+      ]
+    },
+    {
+      "setup_id": "n21_ai",
+      "title": "Narrative acceleration: ai",
+      "horizon": "24-72h",
+      "thesis": "AI capex concentration risk is rising while narrative momentum stays strong",
+      "actors": [
+        "Kremlin/Russia"
+      ],
+      "incentives": [
+        "capture compute rents",
+        "defend platform distribution"
+      ],
+      "probability_base": 54,
+      "probability_bull": 19,
+      "probability_bear": 27,
+      "invalidation_triggers": [
+        "Mention-share drops below 7d baseline for two cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.47,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "Ukraine using AI drones to strike vital convoys supplying Russian troops",
+        "Can AI Grow Without Hurting Local Communities?",
+        "‘Dinosaur’ Tech Stocks Reborn as AI Fuels $1.7 Trillion Rally"
       ]
     },
     {
@@ -147,39 +180,6 @@
       "incentives": [
         "preserve policy credibility",
         "capture allocation flows"
-      ],
-      "probability_base": 52,
-      "probability_bull": 20,
-      "probability_bear": 28,
-      "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.46,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "Nato and EU condemn Russia after drone hits Romanian residential block",
-        "NATO Military Head Says No ‘Drama’ With US",
-        "Nato says drone that crashed in Romania was ‘of Russian origin’ despite Moscow’s denials – as it happened"
-      ]
-    },
-    {
-      "setup_id": "n21_ai",
-      "title": "Narrative acceleration: ai",
-      "horizon": "24-72h",
-      "thesis": "AI capex concentration risk is rising while narrative momentum stays strong",
-      "actors": [
-        "Kremlin/Russia"
-      ],
-      "incentives": [
-        "capture compute rents",
-        "defend platform distribution"
       ],
       "probability_base": 50,
       "probability_bull": 21,
@@ -197,9 +197,9 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Ukraine using AI drones to strike vital convoys supplying Russian troops",
-        "MiniMax Eyes China Listing, Takes on AI Rivals Like DeepSeek",
-        "Samsung’s AI Bonuses Divide Workers"
+        "Nato and EU condemn Russia after drone hits Romanian residential block",
+        "Hegseth Praises Asian Allies, Takes Swipe at NATO",
+        "NATO Military Head Says No ‘Drama’ With US"
       ]
     },
     {
@@ -265,39 +265,6 @@
       "evidence_titles": [
         "Ukraine using AI drones to strike vital convoys supplying Russian troops",
         "Learning from Ukraine war, Hezbollah is now using fibre-optic drones to hit Israel"
-      ]
-    },
-    {
-      "setup_id": "n21_inflation",
-      "title": "Narrative acceleration: inflation",
-      "horizon": "24-72h",
-      "thesis": "Disinflation confidence is vulnerable to services and energy stickiness",
-      "actors": [
-        "BLS",
-        "Eurostat",
-        "central banks"
-      ],
-      "incentives": [
-        "anchor expectations",
-        "avoid policy whipsaw"
-      ],
-      "probability_base": 46,
-      "probability_bull": 22,
-      "probability_bear": 32,
-      "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.43,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "Philippine Central Bank Says Inflation May Surge Further in May"
       ]
     },
     {
