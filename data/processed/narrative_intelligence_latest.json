@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T07:00:14.816474+00:00",
+  "generated_at": "2026-05-30T12:00:57.684002+00:00",
   "setups": [
     {
       "setup_id": "n21_geopolitics",
@@ -57,21 +57,21 @@
         "Use staged ETF entries with explicit invalidation",
         "Prefer defined-risk options in high-volatility windows"
       ],
-      "confidence": 0.66,
+      "confidence": 0.65,
       "citations": [
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Trump will remain ‘patient’ in pursuit of a deal with Iran, says Hegseth",
-        "Greens discuss downgrading some policies to prepare for possible UK coalition",
-        "Bulgaria to be punished for deficit only months after joining euro"
+        "It is time for a European Security Council",
+        "Submit your questions: Ten years on, what’s next for Brexit?",
+        "Trump will remain ‘patient’ in pursuit of a deal with Iran, says Hegseth"
       ]
     },
     {
       "setup_id": "n21_markets",
       "title": "Narrative acceleration: markets",
       "horizon": "24-72h",
-      "thesis": "markets second-order effects remain underpriced by consensus",
+      "thesis": "markets narrative is sensitive to negotiation headlines and repricing whipsaws",
       "actors": [
         "policy and market actors"
       ],
@@ -95,9 +95,9 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Hegseth Takes Swipe at European Defense Partners",
-        "Hegseth Speaks at Shangri-La Dialogue  (Full)",
-        "Wall Street Week | Britain’s Debt Problem, Poland’s Economic Boom"
+        "<strong>Aluminum Under Pressure, While Poland Surges Ahead</strong>",
+        "Hanwha Aerospace Eyes Europe, US Arms Deals",
+        "New Zealand’s Penk on Hormuz Uncertainty (Video) (Correct)"
       ]
     },
     {
@@ -114,9 +114,9 @@
         "stabilize growth optics",
         "support employment channels"
       ],
-      "probability_base": 56,
-      "probability_bull": 18,
-      "probability_bear": 26,
+      "probability_base": 62,
+      "probability_bull": 15,
+      "probability_bear": 23,
       "invalidation_triggers": [
         "Mention-share drops below 7d baseline for two cycles",
         "Cross-source confirmation weakens materially"
@@ -125,47 +125,14 @@
         "Use staged ETF entries with explicit invalidation",
         "Prefer defined-risk options in high-volatility windows"
       ],
-      "confidence": 0.48,
+      "confidence": 0.51,
       "citations": [
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
         "Ex-head monk of China's 'kung fu temple' jailed for embezzlement",
-        "MiniMax Plans China IPO as It Eyes Local Rivals Like DeepSeek",
-        "Hegseth Takes Swipe at Europe, Hails China Ties"
-      ]
-    },
-    {
-      "setup_id": "n21_ai",
-      "title": "Narrative acceleration: ai",
-      "horizon": "24-72h",
-      "thesis": "AI capex concentration risk is rising while narrative momentum stays strong",
-      "actors": [
-        "Kremlin/Russia"
-      ],
-      "incentives": [
-        "capture compute rents",
-        "defend platform distribution"
-      ],
-      "probability_base": 56,
-      "probability_bull": 18,
-      "probability_bear": 26,
-      "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.48,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "Ukraine using AI drones to strike vital convoys supplying Russian troops",
-        "Samsung’s AI Bonuses Divide Workers",
-        "'There's A Lot More To Come' In AI Says Aliaga"
+        "Hegseth Hails China Relationship at Defense Summit",
+        "China Pledges to Retaliate If EU Imposes Trade Restrictions"
       ]
     },
     {
@@ -180,6 +147,39 @@
       "incentives": [
         "preserve policy credibility",
         "capture allocation flows"
+      ],
+      "probability_base": 52,
+      "probability_bull": 20,
+      "probability_bear": 28,
+      "invalidation_triggers": [
+        "Mention-share drops below 7d baseline for two cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.46,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "Nato and EU condemn Russia after drone hits Romanian residential block",
+        "NATO Military Head Says No ‘Drama’ With US",
+        "Nato says drone that crashed in Romania was ‘of Russian origin’ despite Moscow’s denials – as it happened"
+      ]
+    },
+    {
+      "setup_id": "n21_ai",
+      "title": "Narrative acceleration: ai",
+      "horizon": "24-72h",
+      "thesis": "AI capex concentration risk is rising while narrative momentum stays strong",
+      "actors": [
+        "Kremlin/Russia"
+      ],
+      "incentives": [
+        "capture compute rents",
+        "defend platform distribution"
       ],
       "probability_base": 50,
       "probability_bull": 21,
@@ -197,9 +197,9 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Nato and EU condemn Russia after drone hits Romanian residential block",
-        "Nato says drone that crashed in Romania was ‘of Russian origin’ despite Moscow’s denials – as it happened",
-        "Nato ready to defend ‘every inch’ of territory as Russian drone hits Romania"
+        "Ukraine using AI drones to strike vital convoys supplying Russian troops",
+        "MiniMax Eyes China Listing, Takes on AI Rivals Like DeepSeek",
+        "Samsung’s AI Bonuses Divide Workers"
       ]
     },
     {
@@ -301,18 +301,16 @@
       ]
     },
     {
-      "setup_id": "n21_oil",
-      "title": "Narrative acceleration: oil",
+      "setup_id": "n21_election",
+      "title": "Narrative acceleration: election",
       "horizon": "24-72h",
-      "thesis": "Energy corridor fragility can reprice inflation expectations quickly",
+      "thesis": "election second-order effects remain underpriced by consensus",
       "actors": [
-        "OPEC+",
-        "Saudi Aramco",
-        "shipping insurers"
+        "policy and market actors"
       ],
       "incentives": [
-        "defend fiscal revenues",
-        "manage supply optics"
+        "preserve policy credibility",
+        "capture allocation flows"
       ],
       "probability_base": 46,
       "probability_bull": 22,
@@ -330,7 +328,7 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Treasuries Trim Iran War Losses on Week as Oil Retreats"
+        "Colombia prepares to go to polls in election shadowed by resurgence of political violence"
       ]
     }
   ],
@@ -360,6 +358,13 @@
       "narrative": "china",
       "claim_a": "china is fully priced",
       "claim_b": "china transmission effects remain underpriced",
+      "urgency": "high",
+      "invalidation_window": "24-72h"
+    },
+    {
+      "narrative": "nato",
+      "claim_a": "nato is fully priced",
+      "claim_b": "nato transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     },
@@ -367,13 +372,6 @@
       "narrative": "ai",
       "claim_a": "ai is fully priced",
       "claim_b": "ai transmission effects remain underpriced",
-      "urgency": "medium",
-      "invalidation_window": "24-72h"
-    },
-    {
-      "narrative": "nato",
-      "claim_a": "nato is fully priced",
-      "claim_b": "nato transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     },
@@ -399,15 +397,15 @@
       "invalidation_window": "24-72h"
     },
     {
-      "narrative": "oil",
-      "claim_a": "oil is fully priced",
-      "claim_b": "oil transmission effects remain underpriced",
+      "narrative": "election",
+      "claim_a": "election is fully priced",
+      "claim_b": "election transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     }
   ],
   "regime": {
-    "generated_at": "2026-05-30T07:00:14.816252+00:00",
+    "generated_at": "2026-05-30T12:00:57.683807+00:00",
     "data_freshness_seconds": 3600,
     "source_count": 4,
     "regime_label": "Narrative Repricing Risk",

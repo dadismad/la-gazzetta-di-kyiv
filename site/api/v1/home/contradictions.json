@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T07:00:14.816474+00:00",
+  "generated_at": "2026-05-30T12:00:57.684002+00:00",
   "items": [
     {
       "narrative": "geopolitics",
@@ -26,6 +26,13 @@
       "narrative": "china",
       "claim_a": "china is fully priced",
       "claim_b": "china transmission effects remain underpriced",
+      "urgency": "high",
+      "invalidation_window": "24-72h"
+    },
+    {
+      "narrative": "nato",
+      "claim_a": "nato is fully priced",
+      "claim_b": "nato transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     },
@@ -33,13 +40,6 @@
       "narrative": "ai",
       "claim_a": "ai is fully priced",
       "claim_b": "ai transmission effects remain underpriced",
-      "urgency": "medium",
-      "invalidation_window": "24-72h"
-    },
-    {
-      "narrative": "nato",
-      "claim_a": "nato is fully priced",
-      "claim_b": "nato transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     },
@@ -65,9 +65,9 @@
       "invalidation_window": "24-72h"
     },
     {
-      "narrative": "oil",
-      "claim_a": "oil is fully priced",
-      "claim_b": "oil transmission effects remain underpriced",
+      "narrative": "election",
+      "claim_a": "election is fully priced",
+      "claim_b": "election transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     }
