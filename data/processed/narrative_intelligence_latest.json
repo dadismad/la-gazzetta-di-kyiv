@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-31T12:00:20.248834+00:00",
+  "generated_at": "2026-05-31T17:00:51.996935+00:00",
   "setups": [
     {
       "setup_id": "n21_geopolitics",
@@ -29,9 +29,43 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
+        "Israel seizes castle in Lebanon as it expands ground offensive",
         "Hundreds arrested and dozens of police injured after Champions League riots in France",
-        "Ebola spread in DR Congo 'deeply alarming', MSF warns",
-        "Laos cave survivors help with plan to find last two missing men"
+        "Huge blast kills dozens in rebel-held village in Myanmar"
+      ]
+    },
+    {
+      "setup_id": "n21_markets",
+      "title": "Narrative acceleration: markets",
+      "horizon": "24-72h",
+      "thesis": "markets narrative is sensitive to negotiation headlines and repricing whipsaws",
+      "actors": [
+        "ECB",
+        "Federal Reserve"
+      ],
+      "incentives": [
+        "preserve policy credibility",
+        "capture allocation flows"
+      ],
+      "probability_base": 80,
+      "probability_bull": 8,
+      "probability_bear": 12,
+      "invalidation_triggers": [
+        "Mention-share drops below 7d baseline for two cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.65,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "Gen Z Swaps Bars for Barbells",
+        "Trump Requests Edits to Iran Deal",
+        "Bolton on Iran: We'll Be Right Back Where We Started"
       ]
     },
     {
@@ -57,47 +91,14 @@
         "Use staged ETF entries with explicit invalidation",
         "Prefer defined-risk options in high-volatility windows"
       ],
-      "confidence": 0.63,
+      "confidence": 0.65,
       "citations": [
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Israel captures Crusader castle in deepening Lebanon push",
-        "Is the US jobs market immune to the Iran war?",
-        "England’s treatment of vulnerable children is a scandal"
-      ]
-    },
-    {
-      "setup_id": "n21_markets",
-      "title": "Narrative acceleration: markets",
-      "horizon": "24-72h",
-      "thesis": "markets narrative is sensitive to negotiation headlines and repricing whipsaws",
-      "actors": [
-        "policy and market actors"
-      ],
-      "incentives": [
-        "preserve policy credibility",
-        "capture allocation flows"
-      ],
-      "probability_base": 76,
-      "probability_bull": 10,
-      "probability_bear": 14,
-      "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.6,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "Indonesia Advances Export Control Plan Despite Uncertainty",
-        "African Development Bank Allots $650 Million for Uganda Railroad",
-        "Saudi Contractor’s Owners Seek Up To $800 Million in Riyadh IPO"
+        "The end of cheap",
+        "How Maine’s lobster revolt could cost Trump the Senate",
+        "Africa’s response to Ebola must be defined by Africa itself"
       ]
     },
     {
@@ -114,9 +115,9 @@
         "stabilize growth optics",
         "support employment channels"
       ],
-      "probability_base": 70,
-      "probability_bull": 12,
-      "probability_bear": 18,
+      "probability_base": 60,
+      "probability_bull": 16,
+      "probability_bear": 24,
       "invalidation_triggers": [
         "Mention-share drops below 7d baseline for two cycles",
         "Cross-source confirmation weakens materially"
@@ -125,7 +126,7 @@
         "Use staged ETF entries with explicit invalidation",
         "Prefer defined-risk options in high-volatility windows"
       ],
-      "confidence": 0.55,
+      "confidence": 0.5,
       "citations": [
         "data/normalized/events_latest.json"
       ],
@@ -133,40 +134,6 @@
         "Japan defence minister denies militarism and criticises China's 'huge arsenal'",
         "Singapore’s CapitaLand Sheds 10% of China Staff Amid Downturn",
         "China Mine Collapse Kills Five, Days After Deadly Shanxi Blast"
-      ]
-    },
-    {
-      "setup_id": "n21_ai",
-      "title": "Narrative acceleration: ai",
-      "horizon": "24-72h",
-      "thesis": "AI capex concentration risk is rising while narrative momentum stays strong",
-      "actors": [
-        "Kremlin/Russia",
-        "OpenAI"
-      ],
-      "incentives": [
-        "capture compute rents",
-        "defend platform distribution"
-      ],
-      "probability_base": 56,
-      "probability_bull": 18,
-      "probability_bear": 26,
-      "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.48,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "Ukraine using AI drones to strike vital convoys supplying Russian troops",
-        "SpaceX, OpenAI Windfall Fuels Bets on Next-Wave Asian AI Winners",
-        "Can AI Grow Without Hurting Local Communities?"
       ]
     },
     {
@@ -203,6 +170,39 @@
       ]
     },
     {
+      "setup_id": "n21_ai",
+      "title": "Narrative acceleration: ai",
+      "horizon": "24-72h",
+      "thesis": "AI capex concentration risk is rising while narrative momentum stays strong",
+      "actors": [
+        "Kremlin/Russia"
+      ],
+      "incentives": [
+        "capture compute rents",
+        "defend platform distribution"
+      ],
+      "probability_base": 50,
+      "probability_bull": 21,
+      "probability_bear": 29,
+      "invalidation_triggers": [
+        "Mention-share drops below 7d baseline for two cycles",
+        "Cross-source confirmation weakens materially"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.45,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "Ukraine using AI drones to strike vital convoys supplying Russian troops",
+        "AI Bubble Debate Gets Real as Chip Stocks Rally Turns Historic",
+        "Anthropic’s alliance with pope on AI harms: all in good faith or ‘Vatican-washing?’"
+      ]
+    },
+    {
       "setup_id": "n21_ukraine",
       "title": "Narrative acceleration: ukraine",
       "horizon": "24-72h",
@@ -214,9 +214,9 @@
         "preserve policy credibility",
         "capture allocation flows"
       ],
-      "probability_base": 46,
-      "probability_bull": 22,
-      "probability_bear": 32,
+      "probability_base": 48,
+      "probability_bull": 21,
+      "probability_bear": 31,
       "invalidation_triggers": [
         "Mention-share drops below 7d baseline for two cycles",
         "Cross-source confirmation weakens materially"
@@ -225,12 +225,13 @@
         "Use staged ETF entries with explicit invalidation",
         "Prefer defined-risk options in high-volatility windows"
       ],
-      "confidence": 0.43,
+      "confidence": 0.44,
       "citations": [
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Ukraine using AI drones to strike vital convoys supplying Russian troops"
+        "Ukraine using AI drones to strike vital convoys supplying Russian troops",
+        "Ukraine’s Drone Warfare Redefines Battlefield Dynamics"
       ]
     }
   ],
@@ -243,16 +244,16 @@
       "invalidation_window": "24-72h"
     },
     {
-      "narrative": "macro",
-      "claim_a": "macro is fully priced",
-      "claim_b": "macro transmission effects remain underpriced",
+      "narrative": "markets",
+      "claim_a": "markets is fully priced",
+      "claim_b": "markets transmission effects remain underpriced",
       "urgency": "high",
       "invalidation_window": "24-72h"
     },
     {
-      "narrative": "markets",
-      "claim_a": "markets is fully priced",
-      "claim_b": "markets transmission effects remain underpriced",
+      "narrative": "macro",
+      "claim_a": "macro is fully priced",
+      "claim_b": "macro transmission effects remain underpriced",
       "urgency": "high",
       "invalidation_window": "24-72h"
     },
@@ -264,16 +265,16 @@
       "invalidation_window": "24-72h"
     },
     {
-      "narrative": "ai",
-      "claim_a": "ai is fully priced",
-      "claim_b": "ai transmission effects remain underpriced",
+      "narrative": "election",
+      "claim_a": "election is fully priced",
+      "claim_b": "election transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     },
     {
-      "narrative": "election",
-      "claim_a": "election is fully priced",
-      "claim_b": "election transmission effects remain underpriced",
+      "narrative": "ai",
+      "claim_a": "ai is fully priced",
+      "claim_b": "ai transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     },
@@ -286,7 +287,7 @@
     }
   ],
   "regime": {
-    "generated_at": "2026-05-31T12:00:20.248633+00:00",
+    "generated_at": "2026-05-31T17:00:51.996732+00:00",
     "data_freshness_seconds": 3600,
     "source_count": 4,
     "regime_label": "Narrative Repricing Risk",

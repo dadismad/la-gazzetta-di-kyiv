@@ -1,17 +1,10 @@
 {
-  "generated_at": "2026-05-31T12:00:20.248834+00:00",
+  "generated_at": "2026-05-31T17:00:51.996935+00:00",
   "items": [
     {
       "narrative": "geopolitics",
       "claim_a": "geopolitics is fully priced",
       "claim_b": "geopolitics transmission effects remain underpriced",
-      "urgency": "high",
-      "invalidation_window": "24-72h"
-    },
-    {
-      "narrative": "macro",
-      "claim_a": "macro is fully priced",
-      "claim_b": "macro transmission effects remain underpriced",
       "urgency": "high",
       "invalidation_window": "24-72h"
     },
@@ -23,6 +16,13 @@
       "invalidation_window": "24-72h"
     },
     {
+      "narrative": "macro",
+      "claim_a": "macro is fully priced",
+      "claim_b": "macro transmission effects remain underpriced",
+      "urgency": "high",
+      "invalidation_window": "24-72h"
+    },
+    {
       "narrative": "china",
       "claim_a": "china is fully priced",
       "claim_b": "china transmission effects remain underpriced",
@@ -30,16 +30,16 @@
       "invalidation_window": "24-72h"
     },
     {
-      "narrative": "ai",
-      "claim_a": "ai is fully priced",
-      "claim_b": "ai transmission effects remain underpriced",
+      "narrative": "election",
+      "claim_a": "election is fully priced",
+      "claim_b": "election transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     },
     {
-      "narrative": "election",
-      "claim_a": "election is fully priced",
-      "claim_b": "election transmission effects remain underpriced",
+      "narrative": "ai",
+      "claim_a": "ai is fully priced",
+      "claim_b": "ai transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     },
