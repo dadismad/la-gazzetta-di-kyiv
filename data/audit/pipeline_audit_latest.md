@@ -1,7 +1,7 @@
 # Pipeline Audit (Latest)
 
 Status: **ok**
-Generated: 2026-05-30T17:00:15.825992+00:00
+Generated: 2026-05-31T12:00:20.316838+00:00
 
 ## Artifact checks
 - normalized_events: exists=True age_seconds=0 path=`data/normalized/events_latest.json`

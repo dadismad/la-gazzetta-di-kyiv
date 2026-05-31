@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T17:00:15.758912+00:00",
+  "generated_at": "2026-05-31T12:00:20.248834+00:00",
   "items": [
     {
       "narrative": "geopolitics",
@@ -37,16 +37,9 @@
       "invalidation_window": "24-72h"
     },
     {
-      "narrative": "nato",
-      "claim_a": "nato is fully priced",
-      "claim_b": "nato transmission effects remain underpriced",
-      "urgency": "medium",
-      "invalidation_window": "24-72h"
-    },
-    {
-      "narrative": "russia",
-      "claim_a": "russia is fully priced",
-      "claim_b": "russia transmission effects remain underpriced",
+      "narrative": "election",
+      "claim_a": "election is fully priced",
+      "claim_b": "election transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     },
@@ -54,13 +47,6 @@
       "narrative": "ukraine",
       "claim_a": "ukraine is fully priced",
       "claim_b": "ukraine transmission effects remain underpriced",
-      "urgency": "medium",
-      "invalidation_window": "24-72h"
-    },
-    {
-      "narrative": "election",
-      "claim_a": "election is fully priced",
-      "claim_b": "election transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     }

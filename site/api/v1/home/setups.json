@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-05-30T17:00:15.758912+00:00",
+  "generated_at": "2026-05-31T12:00:20.248834+00:00",
   "items": [
     {
       "setup_id": "n21_geopolitics",
       "title": "Narrative acceleration: geopolitics",
       "horizon": "24-72h",
-      "thesis": "geopolitics narrative is sensitive to negotiation headlines and repricing whipsaws",
+      "thesis": "geopolitics second-order effects remain underpriced by consensus",
       "actors": [
-        "Federal Reserve"
+        "policy and market actors"
       ],
       "incentives": [
         "preserve policy credibility",
@@ -24,21 +24,21 @@
         "Use staged ETF entries with explicit invalidation",
         "Prefer defined-risk options in high-volatility windows"
       ],
-      "confidence": 0.88,
+      "confidence": 0.89,
       "citations": [
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "No deal announced after Trump meeting to make 'final determination' on Iran",
-        "US, UK and Australia to develop underwater drone technology",
-        "Italy bans Kanye West and Travis Scott concerts over security concerns"
+        "Hundreds arrested and dozens of police injured after Champions League riots in France",
+        "Ebola spread in DR Congo 'deeply alarming', MSF warns",
+        "Laos cave survivors help with plan to find last two missing men"
       ]
     },
     {
       "setup_id": "n21_macro",
       "title": "Narrative acceleration: macro",
       "horizon": "24-72h",
-      "thesis": "macro narrative is sensitive to negotiation headlines and repricing whipsaws",
+      "thesis": "macro second-order effects remain underpriced by consensus",
       "actors": [
         "policy and market actors"
       ],
@@ -57,21 +57,21 @@
         "Use staged ETF entries with explicit invalidation",
         "Prefer defined-risk options in high-volatility windows"
       ],
-      "confidence": 0.65,
+      "confidence": 0.63,
       "citations": [
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Historic cattle shortages push US beef prices to record highs",
-        "It is time for a European Security Council",
-        "Submit your questions: Ten years on, what’s next for Brexit?"
+        "Israel captures Crusader castle in deepening Lebanon push",
+        "Is the US jobs market immune to the Iran war?",
+        "England’s treatment of vulnerable children is a scandal"
       ]
     },
     {
       "setup_id": "n21_markets",
       "title": "Narrative acceleration: markets",
       "horizon": "24-72h",
-      "thesis": "markets second-order effects remain underpriced by consensus",
+      "thesis": "markets narrative is sensitive to negotiation headlines and repricing whipsaws",
       "actors": [
         "policy and market actors"
       ],
@@ -79,9 +79,9 @@
         "preserve policy credibility",
         "capture allocation flows"
       ],
-      "probability_base": 78,
-      "probability_bull": 9,
-      "probability_bear": 13,
+      "probability_base": 76,
+      "probability_bull": 10,
+      "probability_bear": 14,
       "invalidation_triggers": [
         "Mention-share drops below 7d baseline for two cycles",
         "Cross-source confirmation weakens materially"
@@ -90,14 +90,14 @@
         "Use staged ETF entries with explicit invalidation",
         "Prefer defined-risk options in high-volatility windows"
       ],
-      "confidence": 0.61,
+      "confidence": 0.6,
       "citations": [
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "This Millennial University President Sees Running Grambling State Like an Enterprise",
-        "At Scrabble’s Biggest Tournament, Thailand Punches Above Its Weight",
-        "Ebola Outbreak Raises Global Health Concerns"
+        "Indonesia Advances Export Control Plan Despite Uncertainty",
+        "African Development Bank Allots $650 Million for Uganda Railroad",
+        "Saudi Contractor’s Owners Seek Up To $800 Million in Riyadh IPO"
       ]
     },
     {
@@ -114,9 +114,9 @@
         "stabilize growth optics",
         "support employment channels"
       ],
-      "probability_base": 60,
-      "probability_bull": 16,
-      "probability_bear": 24,
+      "probability_base": 70,
+      "probability_bull": 12,
+      "probability_bear": 18,
       "invalidation_triggers": [
         "Mention-share drops below 7d baseline for two cycles",
         "Cross-source confirmation weakens materially"
@@ -125,14 +125,14 @@
         "Use staged ETF entries with explicit invalidation",
         "Prefer defined-risk options in high-volatility windows"
       ],
-      "confidence": 0.5,
+      "confidence": 0.55,
       "citations": [
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Ex-head monk of China's 'kung fu temple' jailed for embezzlement",
-        "Hegseth Hails China Relationship at Defense Summit",
-        "China Pledges to Retaliate If EU Imposes Trade Restrictions"
+        "Japan defence minister denies militarism and criticises China's 'huge arsenal'",
+        "Singapore’s CapitaLand Sheds 10% of China Staff Amid Downturn",
+        "China Mine Collapse Kills Five, Days After Deadly Shanxi Blast"
       ]
     },
     {
@@ -141,15 +141,16 @@
       "horizon": "24-72h",
       "thesis": "AI capex concentration risk is rising while narrative momentum stays strong",
       "actors": [
-        "Kremlin/Russia"
+        "Kremlin/Russia",
+        "OpenAI"
       ],
       "incentives": [
         "capture compute rents",
         "defend platform distribution"
       ],
-      "probability_base": 54,
-      "probability_bull": 19,
-      "probability_bear": 27,
+      "probability_base": 56,
+      "probability_bull": 18,
+      "probability_bear": 26,
       "invalidation_triggers": [
         "Mention-share drops below 7d baseline for two cycles",
         "Cross-source confirmation weakens materially"
@@ -158,24 +159,23 @@
         "Use staged ETF entries with explicit invalidation",
         "Prefer defined-risk options in high-volatility windows"
       ],
-      "confidence": 0.47,
+      "confidence": 0.48,
       "citations": [
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
         "Ukraine using AI drones to strike vital convoys supplying Russian troops",
-        "Can AI Grow Without Hurting Local Communities?",
-        "‘Dinosaur’ Tech Stocks Reborn as AI Fuels $1.7 Trillion Rally"
+        "SpaceX, OpenAI Windfall Fuels Bets on Next-Wave Asian AI Winners",
+        "Can AI Grow Without Hurting Local Communities?"
       ]
     },
     {
-      "setup_id": "n21_nato",
-      "title": "Narrative acceleration: nato",
+      "setup_id": "n21_election",
+      "title": "Narrative acceleration: election",
       "horizon": "24-72h",
-      "thesis": "nato second-order effects remain underpriced by consensus",
+      "thesis": "election second-order effects remain underpriced by consensus",
       "actors": [
-        "NATO",
-        "Kremlin/Russia"
+        "policy and market actors"
       ],
       "incentives": [
         "preserve policy credibility",
@@ -197,42 +197,9 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Nato and EU condemn Russia after drone hits Romanian residential block",
-        "Hegseth Praises Asian Allies, Takes Swipe at NATO",
-        "NATO Military Head Says No ‘Drama’ With US"
-      ]
-    },
-    {
-      "setup_id": "n21_russia",
-      "title": "Narrative acceleration: russia",
-      "horizon": "24-72h",
-      "thesis": "Geopolitical escalation tails are underweighted in regional risk premia",
-      "actors": [
-        "Kremlin/Russia",
-        "NATO"
-      ],
-      "incentives": [
-        "preserve strategic leverage",
-        "shape sanction pathways"
-      ],
-      "probability_base": 48,
-      "probability_bull": 21,
-      "probability_bear": 31,
-      "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.44,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "Nato and EU condemn Russia after drone hits Romanian residential block",
-        "UN adds Israel and Russia to blacklist for sexual violence in conflict"
+        "Colombia votes in presidential election that could redefine relations with US",
+        "Colombia goes to polls in election pitting outgoing leader’s ally against pro-Trump candidates",
+        "Colombia prepares to go to polls in election shadowed by resurgence of political violence"
       ]
     },
     {
@@ -242,38 +209,6 @@
       "thesis": "ukraine second-order effects remain underpriced by consensus",
       "actors": [
         "Kremlin/Russia"
-      ],
-      "incentives": [
-        "preserve policy credibility",
-        "capture allocation flows"
-      ],
-      "probability_base": 48,
-      "probability_bull": 21,
-      "probability_bear": 31,
-      "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.44,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "Ukraine using AI drones to strike vital convoys supplying Russian troops",
-        "Learning from Ukraine war, Hezbollah is now using fibre-optic drones to hit Israel"
-      ]
-    },
-    {
-      "setup_id": "n21_election",
-      "title": "Narrative acceleration: election",
-      "horizon": "24-72h",
-      "thesis": "election second-order effects remain underpriced by consensus",
-      "actors": [
-        "policy and market actors"
       ],
       "incentives": [
         "preserve policy credibility",
@@ -295,7 +230,7 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Colombia prepares to go to polls in election shadowed by resurgence of political violence"
+        "Ukraine using AI drones to strike vital convoys supplying Russian troops"
       ]
     }
   ]
