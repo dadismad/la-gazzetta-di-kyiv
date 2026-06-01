@@ -16,6 +16,7 @@ os.makedirs(OUT_DATA, exist_ok=True)
 os.makedirs(OUT_SITE, exist_ok=True)
 os.makedirs(os.path.join(OUT_SITE, 'data'), exist_ok=True)
 os.makedirs(os.path.join(OUT_SITE, 'api', 'v1', 'home'), exist_ok=True)
+os.makedirs(os.path.join(OUT_DATA, 'publish'), exist_ok=True)
 
 registry_json = os.path.join(BASE, 'source_registry_ranked.json')
 events_db = os.path.join(BASE, 'events.db')
@@ -25,6 +26,131 @@ with open(registry_json, 'r') as f:
 
 since = datetime.now(timezone.utc) - timedelta(hours=24)
 keywords = ['ukraine','russia','nato','eu','inflation','rates','oil','gas','ai','china','sanctions','ceasefire','drone','crypto','election']
+NARRATIVE_SEMANTICS = {
+    'ai': {
+        'actors': ['Sam Altman', 'Jensen Huang', 'Microsoft', 'NVIDIA'],
+        'svo': 'US hyperscalers increase AI capex and pull forward semiconductor demand',
+        'claim': 'AI infrastructure spending is extending equity momentum while concentrating liquidity risk',
+        'contradiction': 'Consensus says AI upside is fully priced, while compute bottlenecks imply further repricing',
+        'manipulation': 'Headline selection bias toward product launches can hide margin and power-constraint risks',
+        'transmission': 'Capex headlines -> growth expectations -> equity leadership -> duration sensitivity and USD spillovers',
+        'repricing': 'NQ +1.5% to +4.0%; SOXX leads if breadth holds',
+        'invalidation': 'Mega-cap guidance cuts or AI capex deferrals across two reporting cycles'
+    },
+    'eu': {
+        'actors': ['European Commission', 'ECB', 'Germany', 'France'],
+        'svo': 'EU institutions tighten industrial and fiscal responses to external shocks',
+        'claim': 'Policy fragmentation risk inside Europe is underpriced in cross-asset correlation',
+        'contradiction': 'Headline calm implies cohesion, but fiscal-energy divergence suggests rising dispersion',
+        'manipulation': 'National headlines can downplay cross-border policy conflict and timeline slippage',
+        'transmission': 'Policy signal -> sovereign spread expectations -> EUR risk premium -> equity factor rotation',
+        'repricing': 'SX5E dispersion +2% to +5%; EURUSD two-way with downside skew on policy conflict',
+        'invalidation': 'Coordinated fiscal package and stable energy forwards over multiple sessions'
+    },
+    'china': {
+        'actors': ['Xi Jinping', 'PBoC', 'State Council', 'MOFCOM'],
+        'svo': 'Chinese policymakers recalibrate stimulus while trade constraints reshape export channels',
+        'claim': 'China macro impulse uncertainty is mispriced in cyclicals and commodity beta',
+        'contradiction': 'Stimulus headlines suggest reflation, while private-demand weakness limits follow-through',
+        'manipulation': 'Policy headlines may overstate immediacy while underreporting implementation lag',
+        'transmission': 'Policy tone -> EM growth expectations -> commodity demand assumptions -> FX beta',
+        'repricing': 'Copper/EM equities ±3% range; AUDCNH sensitivity rises in policy windows',
+        'invalidation': 'Sustained PMIs and credit impulse confirmation across two data cycles'
+    },
+    'election': {
+        'actors': ['White House', 'US Congress', 'European Parliament', 'party leaderships'],
+        'svo': 'Election narratives alter fiscal and regulatory expectations across regions',
+        'claim': 'Political transition risk is feeding risk premia faster than consensus models imply',
+        'contradiction': 'Poll stability implies low risk, while policy path asymmetry keeps tail risk elevated',
+        'manipulation': 'Campaign framing can amplify certainty and suppress policy implementation constraints',
+        'transmission': 'Political probability shifts -> fiscal path repricing -> rates vol -> sector leadership changes',
+        'repricing': 'Rates vol +10% to +25%; policy-sensitive sectors swing 2% to 6%',
+        'invalidation': 'Cross-party convergence on fiscal and trade policy trajectories'
+    },
+    'gas': {
+        'actors': ['Gazprom', 'QatarEnergy', 'European utilities', 'energy ministers'],
+        'svo': 'Gas supply narratives influence European cost structures and inflation expectations',
+        'claim': 'Gas transport and storage risk remains underweighted in equity and FX pricing',
+        'contradiction': 'Inventory comfort implies stability, while routing fragility preserves upside price risk',
+        'manipulation': 'Spot-price focus can obscure forward-curve stress and storage quality differences',
+        'transmission': 'Gas headlines -> inflation expectations -> real rates path -> equity margin assumptions',
+        'repricing': 'EU utilities/chemicals dispersion +3% to +8%; EUR volatility firm on supply shocks',
+        'invalidation': 'Storage trajectory beats seasonal path with stable LNG arrivals'
+    },
+    'oil': {
+        'actors': ['OPEC+', 'Saudi Aramco', 'IEA', 'US shale producers'],
+        'svo': 'Producers manage supply while conflict headlines alter shipping and insurance costs',
+        'claim': 'Energy risk premium remains underpriced when geopolitical supply corridors are unstable',
+        'contradiction': 'Spot calm suggests normalization, but tanker risk and inventory drawdowns suggest fragility',
+        'manipulation': 'Short-term price relief can be over-amplified while logistics stress is under-reported',
+        'transmission': 'Energy headlines -> inflation expectations -> rates volatility -> equity and FX rotation',
+        'repricing': 'Brent +2% to +6% in shock windows; airlines/transport underperform; gold supported',
+        'invalidation': 'Verified de-escalation with sustained inventory rebuild and freight normalization'
+    },
+    'inflation': {
+        'actors': ['Federal Reserve', 'ECB', 'BLS', 'Eurostat'],
+        'svo': 'Inflation prints reset central-bank reaction functions and real-yield expectations',
+        'claim': 'Disinflation confidence is fragile and vulnerable to energy and wage second-round effects',
+        'contradiction': 'Core moderation implies easing path, while services stickiness delays policy pivot',
+        'manipulation': 'Single-print framing can hide composition effects and revision risk',
+        'transmission': 'Inflation surprise -> terminal-rate repricing -> duration and growth-beta reset',
+        'repricing': 'UST 2Y/10Y move 8-18bp window; growth-value rotation 2% to 5%',
+        'invalidation': 'Sequential core cooling plus easing wage indicators across releases'
+    },
+    'rates': {
+        'actors': ['Federal Reserve', 'ECB', 'UST market', 'Bund market'],
+        'svo': 'Rate expectations re-anchor portfolio duration and equity valuation assumptions',
+        'claim': 'Rates volatility remains a primary transmission channel for cross-asset repricing',
+        'contradiction': 'Soft-landing consensus implies lower vol, while policy ambiguity keeps vol supply constrained',
+        'manipulation': 'Forward-guidance headlines may overstate certainty around reaction functions',
+        'transmission': 'Rates path -> discount-rate reset -> equity multiple compression/expansion -> FX carry shifts',
+        'repricing': 'MOVE regime upshift; duration-sensitive equities ±3% to 7%',
+        'invalidation': 'Consistent central-bank signaling and realized inflation convergence'
+    },
+    'russia': {
+        'actors': ['Kremlin', 'Russian MoD', 'EU Council', 'NATO'],
+        'svo': 'Conflict escalation narratives affect sanctions expectations and defense-energy pricing',
+        'claim': 'Geopolitical escalation risk is repeatedly under-discounted in European risk assets',
+        'contradiction': 'Frontline stalemate implies contained risk, while sanctions and logistics dynamics keep spillovers alive',
+        'manipulation': 'War coverage can prioritize tactical headlines over supply-chain strategic impact',
+        'transmission': 'Conflict headline -> sanctions premium -> energy/defense repricing -> regional risk premium',
+        'repricing': 'European defensives and defense names +2% to +6%; cyclical beta under pressure',
+        'invalidation': 'Verified durable de-escalation and sanctions path relaxation'
+    },
+    'nato': {
+        'actors': ['NATO', 'US DoD', 'European defense ministries', 'Ukrainian command'],
+        'svo': 'Alliance posture updates alter procurement, fiscal defense burdens, and risk perception',
+        'claim': 'Defense-cycle extension has longer earnings visibility than consensus assumes',
+        'contradiction': 'Budget fatigue narrative implies slowdown, while procurement pipelines suggest persistence',
+        'manipulation': 'Announcement headlines may overstate immediate capacity without delivery timelines',
+        'transmission': 'Posture shifts -> procurement cycle -> industrial order books -> fiscal mix expectations',
+        'repricing': 'Defense complex outperformance +3% to +9%; sovereign spread sensitivity rises',
+        'invalidation': 'Procurement delays and coalition budget retrenchment'
+    },
+    'crypto': {
+        'actors': ['SEC', 'Major exchanges', 'ETF issuers', 'Institutional allocators'],
+        'svo': 'Regulatory and liquidity signals drive crypto beta and risk appetite spillovers',
+        'claim': 'Crypto risk-on reflex can front-run broader liquidity shifts but remains shock-sensitive',
+        'contradiction': 'ETF inflow narrative implies stability, while leverage concentration increases fragility',
+        'manipulation': 'Flow headlines can omit concentration and liquidation cascade risk',
+        'transmission': 'Crypto flows -> risk sentiment -> high-beta equity participation -> vol spillovers',
+        'repricing': 'BTC/ETH ±4% to ±12% windows; high-beta tech correlation episodically rises',
+        'invalidation': 'Sustained deleveraging with stable spot participation and lower funding stress'
+    }
+}
+
+def semantic_for_topic(topic: str):
+    default = {
+        'actors': ['European Commission', 'Federal Reserve', 'Global macro funds', 'Major corporates'],
+        'svo': f'{topic.upper()} headlines change policy expectations and reprice cross-asset risk',
+        'claim': f'{topic.upper()} narrative intensity is shifting positioning behaviour across markets',
+        'contradiction': f'{topic.upper()} appears priced in, yet second-order effects remain underweighted',
+        'manipulation': 'Framing distortion and omission risk can exaggerate certainty in fast headlines',
+        'transmission': 'Headline flow -> liquidity regime -> positioning -> cross-asset repricing',
+        'repricing': 'Risk assets +1% to +3% in risk-on continuation; defensive assets bid on volatility spikes',
+        'invalidation': 'Narrative share falls below 7-day baseline for two consecutive cycles'
+    }
+    return NARRATIVE_SEMANTICS.get(topic, default)
 counts = Counter()
 recent_items = 0
 
@@ -76,6 +202,7 @@ for n in narratives:
         'intensity_score': intensity,
         'momentum': momentum,
         'review': review,
+        'semantics': semantic_for_topic(topic),
     })
 
 generated_at = datetime.now(timezone.utc).isoformat()
@@ -255,6 +382,28 @@ with open(os.path.join(OUT_DATA,'narratives.json'),'w') as f:
 with open(os.path.join(OUT_SITE,'data','narratives.json'),'w') as f:
     json.dump(summary,f,indent=2)
 
+# Stories in Play editorial package (if present in data/, publish through to site/data/)
+stories_in_play_path = os.path.join(OUT_DATA, 'stories_in_play.json')
+if os.path.exists(stories_in_play_path):
+    with open(stories_in_play_path, 'r', encoding='utf-8') as sf:
+        stories_payload = json.load(sf)
+    with open(os.path.join(OUT_SITE, 'data', 'stories_in_play.json'), 'w', encoding='utf-8') as sf:
+        json.dump(stories_payload, sf, indent=2)
+
+# Channel-tailored publish payload mirrors (if generated)
+telegram_md = os.path.join(OUT_DATA, 'publish', 'telegram_latest.md')
+reddit_md = os.path.join(OUT_DATA, 'publish', 'reddit_latest.md')
+if os.path.exists(telegram_md):
+    with open(telegram_md, 'r', encoding='utf-8') as tf:
+        t_payload = tf.read()
+    with open(os.path.join(OUT_SITE, 'data', 'telegram_latest.md'), 'w', encoding='utf-8') as tf:
+        tf.write(t_payload)
+if os.path.exists(reddit_md):
+    with open(reddit_md, 'r', encoding='utf-8') as rf:
+        r_payload = rf.read()
+    with open(os.path.join(OUT_SITE, 'data', 'reddit_latest.md'), 'w', encoding='utf-8') as rf:
+        rf.write(r_payload)
+
 with open(os.path.join(OUT_DATA,'intelligence_objects.json'),'w') as f:
     json.dump({'generated_at': generated_at, 'items': intelligence_objects},f,indent=2)
 with open(os.path.join(OUT_SITE,'data','intelligence_objects.json'),'w') as f:
@@ -313,8 +462,8 @@ html = f'''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport
 <h1>Gazzetta di Kyiv</h1><div class="muted">Continuous source intelligence + narrative interpretation.</div>
 <p>Updated: {summary['generated_at']}</p>
 <h2>Top Narratives (24h)</h2>
-<table><thead><tr><th>Narrative</th><th>Mentions(24h)</th><th>Intensity</th><th>Momentum</th><th>Analytical review</th></tr></thead><tbody>
-{''.join([f"<tr><td>{n['topic']}</td><td>{n['mentions_24h']}</td><td>{n['intensity_score']}</td><td>{n['momentum']}</td><td>{n['review']}</td></tr>" for n in narrative_reviews]) or '<tr><td colspan="5">No data yet</td></tr>'}
+<table><thead><tr><th>Narrative</th><th>Actors</th><th>Proposition (SVO)</th><th>Claim/Thesis</th><th>Contradiction</th><th>Manipulation risk</th><th>Transmission</th><th>Repricing</th><th>Invalidation</th><th>Mentions(24h)</th><th>Intensity</th><th>Momentum</th></tr></thead><tbody>
+{''.join([f"<tr><td>{n['topic']}</td><td>{', '.join(n['semantics']['actors'])}</td><td>{n['semantics']['svo']}</td><td>{n['semantics']['claim']}</td><td>{n['semantics']['contradiction']}</td><td>{n['semantics']['manipulation']}</td><td>{n['semantics']['transmission']}</td><td>{n['semantics']['repricing']}</td><td>{n['semantics']['invalidation']}</td><td>{n['mentions_24h']}</td><td>{n['intensity_score']}</td><td>{n['momentum']}</td></tr>" for n in narrative_reviews]) or '<tr><td colspan="12">No data yet</td></tr>'}
 </tbody></table>
 <h2>Written Narrative Reviews</h2>
 {''.join([f"<article style='margin:14px 0;padding:10px 12px;background:#121a33;border-radius:10px'><h3 style='margin:0 0 6px'>{n['topic'].upper()}</h3><p style='margin:0 0 4px;color:#c7d4ff'>Mentions: {n['mentions_24h']} | Intensity: {n['intensity_score']} | Momentum: {n['momentum']}</p><p style='margin:0'>{n['review']}</p></article>" for n in narrative_reviews]) or '<p>No written reviews yet.</p>'}

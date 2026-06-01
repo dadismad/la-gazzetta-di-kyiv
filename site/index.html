@@ -3,56 +3,61 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Gazzetta di Kyiv — Narrative Intelligence Newspaper</title>
-  <meta name="description" content="European narrative-intelligence newspaper on geopolitics, AI convergence, energy transition, and cross-asset market implications."/>
-  <meta name="robots" content="index,follow,max-image-preview:large"/>
-  <meta name="theme-color" content="#1a1a1a"/>
-  <link rel="canonical" href="https://pureciclismo.github.io/gazzetta-di-kyiv/"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Gazzetta di Kyiv — Narrative Intelligence Newspaper"/>
-  <meta property="og:description" content="Strategic narrative intelligence across geopolitics, technology convergence, and cross-asset market psychology."/>
-  <meta property="og:url" content="https://pureciclismo.github.io/gazzetta-di-kyiv/"/>
-  <meta property="og:site_name" content="Gazzetta di Kyiv"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Gazzetta di Kyiv — Narrative Intelligence Newspaper"/>
-  <meta name="twitter:description" content="High-signal geopolitical and market narrative intelligence for decision-focused readers."/>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "NewsMediaOrganization",
-    "name": "Gazzetta di Kyiv",
-    "url": "https://pureciclismo.github.io/gazzetta-di-kyiv/",
-    "description": "European narrative-intelligence newspaper focused on strategic transformation and cross-asset implications.",
-    "sameAs": ["https://t.me/LaGazzettadiKyiv"]
-  }
-  </script>
+  <title>La Gazzetta di Kyiv — Narrative Intelligence</title>
+  <meta name="description" content="Premium narrative intelligence terminal for geopolitics, markets, wealth, and pleasure."/>
   <link rel="stylesheet" href="./styles.css"/>
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">La Gazzetta di Kyiv</div>
-    <p class="brand-subtitle">People do not react only to facts. People react to stories they collectively believe about those facts.</p>
-    <nav class="nav-links">
-      <a href="#">Geopolitics</a>
-      <a href="#">Markets</a>
-      <a href="#">Wealth</a>
-      <a href="#">Pleasure</a>
-    </nav>
+  <header class="masthead">
+    <h1>La Gazzetta di Kyiv</h1>
+    <p class="statement">People do not react only to facts. People react to stories they collectively believe about those facts.</p>
   </header>
 
-  <main class="two-col">
-    <section class="narratives-col">
-      <h2 class="section-label">Stories in Play</h2>
-      <div id="narrativesList"></div>
+  <nav class="topnav">
+    <a href="#geopolitics">Geopolitics</a>
+    <a href="#markets">Markets</a>
+    <a href="#wealth">Wealth</a>
+    <a href="#pleasure">Pleasure</a>
+  </nav>
+  <div class="nav-anchors" aria-hidden="true">
+    <span id="geopolitics" class="anchor-target"></span>
+    <span id="markets" class="anchor-target"></span>
+    <span id="wealth" class="anchor-target"></span>
+    <span id="pleasure" class="anchor-target"></span>
+  </div>
+
+  <main class="layout">
+    <section id="stories-in-play" class="panel stories">
+      <div class="stories-head">
+        <h2>Stories in Play</h2>
+        <p class="stories-mode">Main: Version B (institutional)</p>
+      </div>
+      <article class="story story-lead" id="leadStory">Loading…</article>
+      <div class="story-stack" id="storyStack"></div>
     </section>
 
-    <aside class="sidebar-col">
-      <h2 class="section-label">Narrative Focus</h2>
-      <div id="spectreOfInfluence"></div>
-      <div id="stakesInPlay"></div>
-      <div id="betAndBenefit"></div>
+    <aside id="narrative-focus" class="panel focus">
+      <h2>Narrative Focus</h2>
+      <div class="focus-block">
+        <h3>Spectre of Influence</h3>
+        <div id="focusInfluence" class="focus-body">Loading…</div>
+      </div>
+      <div class="focus-block">
+        <h3>Stakes in Play</h3>
+        <div id="focusStakes" class="focus-body">Loading…</div>
+      </div>
+      <div class="focus-block">
+        <h3>Bet &amp; Benefit</h3>
+        <div id="focusBet" class="focus-body">Loading…</div>
+      </div>
     </aside>
   </main>
+
+  <footer class="footer">
+    <a href="https://t.me/LaGazzettadiKyiv" target="_blank" rel="noopener">Telegram</a>
+    <span>·</span>
+    <a href="https://www.reddit.com/r/LaGazzettadiKyiv/" target="_blank" rel="noopener">Reddit</a>
+  </footer>
 
   <script src="./app.js"></script>
 </body>

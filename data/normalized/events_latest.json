@@ -1,0 +1,1029 @@
+{
+  "generated_at": "2026-06-01T16:44:05.688166+00:00",
+  "event_count": 100,
+  "failures": [
+    {
+      "source": "worldnews",
+      "type": "reddit",
+      "error": "HTTP Error 403: Blocked"
+    },
+    {
+      "source": "economics",
+      "type": "reddit",
+      "error": "HTTP Error 403: Blocked"
+    },
+    {
+      "source": "stocks",
+      "type": "reddit",
+      "error": "HTTP Error 403: Blocked"
+    },
+    {
+      "source": "geopolitics",
+      "type": "reddit",
+      "error": "HTTP Error 403: Blocked"
+    }
+  ],
+  "stale": false,
+  "items": [
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "US says it struck Iranian radar sites as Iran targets American forces in Kuwait",
+      "url": "https://www.bbc.com/news/articles/crlpy8n7pr6o?at_medium=RSS&at_campaign=rss",
+      "published_at": "Mon, 01 Jun 2026 13:12:26 GMT",
+      "text": "US says it struck Iranian radar sites as Iran targets American forces in Kuwait",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "Iran attacks damage 20 US military sites since start of war, satellite images show",
+      "url": "https://www.bbc.com/news/articles/c2l2yl7r8r2o?at_medium=RSS&at_campaign=rss",
+      "published_at": "Mon, 01 Jun 2026 05:33:18 GMT",
+      "text": "Iran attacks damage 20 US military sites since start of war, satellite images show",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "Israel PM orders strikes on Beirut suburbs as Hezbollah conflict escalates",
+      "url": "https://www.bbc.com/news/articles/c4g419e2xlvo?at_medium=RSS&at_campaign=rss",
+      "published_at": "Mon, 01 Jun 2026 16:42:14 GMT",
+      "text": "Israel PM orders strikes on Beirut suburbs as Hezbollah conflict escalates",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "Huge blast kills dozens in rebel-held village in Myanmar",
+      "url": "https://www.bbc.com/news/articles/cglp7p787njo?at_medium=RSS&at_campaign=rss",
+      "published_at": "Mon, 01 Jun 2026 06:23:59 GMT",
+      "text": "Huge blast kills dozens in rebel-held village in Myanmar",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "Five patients recover from Ebola in DR Congo and leave hospital",
+      "url": "https://www.bbc.com/news/articles/cz928xq588no?at_medium=RSS&at_campaign=rss",
+      "published_at": "Mon, 01 Jun 2026 09:56:24 GMT",
+      "text": "Five patients recover from Ebola in DR Congo and leave hospital",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "France seized sanctioned Russian oil tanker with UK help, Macron says",
+      "url": "https://www.bbc.com/news/articles/cn8pwgej1gxo?at_medium=RSS&at_campaign=rss",
+      "published_at": "Mon, 01 Jun 2026 11:53:26 GMT",
+      "text": "France seized sanctioned Russian oil tanker with UK help, Macron says",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "Poland's controversial 'Highway to Hel' 666 bus revived",
+      "url": "https://www.bbc.com/news/articles/c1d2ld91635o?at_medium=RSS&at_campaign=rss",
+      "published_at": "Mon, 01 Jun 2026 03:19:57 GMT",
+      "text": "Poland's controversial 'Highway to Hel' 666 bus revived",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "Nigeria police warn against reprisal attacks against South Africans",
+      "url": "https://www.bbc.com/news/articles/ce8prypdpz6o?at_medium=RSS&at_campaign=rss",
+      "published_at": "Mon, 01 Jun 2026 10:02:49 GMT",
+      "text": "Nigeria police warn against reprisal attacks against South Africans",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "Litterbugs now face on-the-spot fines in Tokyo's tourist hotspot",
+      "url": "https://www.bbc.com/news/articles/cr7py513njmo?at_medium=RSS&at_campaign=rss",
+      "published_at": "Mon, 01 Jun 2026 06:52:40 GMT",
+      "text": "Litterbugs now face on-the-spot fines in Tokyo's tourist hotspot",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "Voting suspended in parts of Ethiopia over security concerns",
+      "url": "https://www.bbc.com/news/articles/cn0pngz2rego?at_medium=RSS&at_campaign=rss",
+      "published_at": "Mon, 01 Jun 2026 14:35:36 GMT",
+      "text": "Voting suspended in parts of Ethiopia over security concerns",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "Colombia presidential runoff pits leftist senator against pro-Trump rival",
+      "url": "https://www.bbc.com/news/articles/c1w2xvwq8g9o?at_medium=RSS&at_campaign=rss",
+      "published_at": "Mon, 01 Jun 2026 01:53:03 GMT",
+      "text": "Colombia presidential runoff pits leftist senator against pro-Trump rival",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "South Africa made to look like fools over World Cup visa issues, says minister",
+      "url": "https://www.bbc.com/news/articles/c86dxvql3qno?at_medium=RSS&at_campaign=rss",
+      "published_at": "Sun, 31 May 2026 17:27:18 GMT",
+      "text": "South Africa made to look like fools over World Cup visa issues, says minister",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "Hundreds arrested and dozens of police injured after Champions League riots in France",
+      "url": "https://www.bbc.com/news/articles/c0r2ejg1w9xo?at_medium=RSS&at_campaign=rss",
+      "published_at": "Sun, 31 May 2026 18:13:39 GMT",
+      "text": "Hundreds arrested and dozens of police injured after Champions League riots in France",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "Dead whale towed ashore in Denmark ahead of autopsy",
+      "url": "https://www.bbc.com/news/articles/cpwpl9vn0yqo?at_medium=RSS&at_campaign=rss",
+      "published_at": "Sun, 31 May 2026 19:05:42 GMT",
+      "text": "Dead whale towed ashore in Denmark ahead of autopsy",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "Nicaraguan indigenous leader dies after three years in prison",
+      "url": "https://www.bbc.com/news/articles/cvgzyyrzj1jo?at_medium=RSS&at_campaign=rss",
+      "published_at": "Sun, 31 May 2026 21:52:38 GMT",
+      "text": "Nicaraguan indigenous leader dies after three years in prison",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "Laos cave survivors help with plan to find last two missing men",
+      "url": "https://www.bbc.com/news/articles/c8094jdpzv3o?at_medium=RSS&at_campaign=rss",
+      "published_at": "Sun, 31 May 2026 15:52:42 GMT",
+      "text": "Laos cave survivors help with plan to find last two missing men",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "Trump seeking edits to US-Iran deal, US media report",
+      "url": "https://www.bbc.com/news/articles/c1w2xve315do?at_medium=RSS&at_campaign=rss",
+      "published_at": "Sun, 31 May 2026 22:54:20 GMT",
+      "text": "Trump seeking edits to US-Iran deal, US media report",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "Japan defence minister denies militarism and criticises China's 'huge arsenal'",
+      "url": "https://www.bbc.com/news/articles/cp8p4ejy8ppo?at_medium=RSS&at_campaign=rss",
+      "published_at": "Sun, 31 May 2026 06:34:04 GMT",
+      "text": "Japan defence minister denies militarism and criticises China's 'huge arsenal'",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "Brazil monitors two patients for possible Ebola infection",
+      "url": "https://www.bbc.com/news/articles/cy72z48zd7po?at_medium=RSS&at_campaign=rss",
+      "published_at": "Sun, 31 May 2026 19:07:47 GMT",
+      "text": "Brazil monitors two patients for possible Ebola infection",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "'Cancel it', Trump says after artists drop out of US Freedom 250 festival",
+      "url": "https://www.bbc.com/news/articles/cwy2z23122zo?at_medium=RSS&at_campaign=rss",
+      "published_at": "Sun, 31 May 2026 17:40:58 GMT",
+      "text": "'Cancel it', Trump says after artists drop out of US Freedom 250 festival",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "A year of grief after Air India crash: What remains when a plane falls from the sky",
+      "url": "https://www.bbc.com/news/articles/ce9pp53ky42o?at_medium=RSS&at_campaign=rss",
+      "published_at": "Mon, 01 Jun 2026 00:24:47 GMT",
+      "text": "A year of grief after Air India crash: What remains when a plane falls from the sky",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "The drivers risking death on Ukraine's most dangerous bus routes",
+      "url": "https://www.bbc.com/news/articles/c87q2eq8r1yo?at_medium=RSS&at_campaign=rss",
+      "published_at": "Sun, 31 May 2026 23:40:57 GMT",
+      "text": "The drivers risking death on Ukraine's most dangerous bus routes",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "Grammy-winning director explores his Nigerian grandfather's role in the Biafran war",
+      "url": "https://www.bbc.com/news/articles/c8r826465dko?at_medium=RSS&at_campaign=rss",
+      "published_at": "Mon, 01 Jun 2026 01:32:07 GMT",
+      "text": "Grammy-winning director explores his Nigerian grandfather's role in the Biafran war",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "Secret tunnels and unregistered workers: China's coal mine disaster is a reminder of darker days",
+      "url": "https://www.bbc.com/news/articles/cpwpeg57777o?at_medium=RSS&at_campaign=rss",
+      "published_at": "Sun, 31 May 2026 23:32:04 GMT",
+      "text": "Secret tunnels and unregistered workers: China's coal mine disaster is a reminder of darker days",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bbc_world",
+      "topic": "geopolitics",
+      "title": "Caribbean hot sauce producers warn of shortages and higher prices",
+      "url": "https://www.bbc.com/news/articles/cq8p1jy3vxlo?at_medium=RSS&at_campaign=rss",
+      "published_at": "Sun, 31 May 2026 23:19:32 GMT",
+      "text": "Caribbean hot sauce producers warn of shortages and higher prices",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "Europe’s Junk Firms Look to Cut Loan Costs in Hot Market",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-01/europe-s-junk-firms-look-to-cut-loan-costs-in-hot-credit-market",
+      "published_at": "Mon, 01 Jun 2026 15:54:32 GMT",
+      "text": "Europe’s Junk Firms Look to Cut Loan Costs in Hot Market",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "Citadel Seeks to Extend Maturity, Upsize $4 Billion Loan",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-01/citadel-seeks-to-extend-maturity-upsize-4-billion-loan",
+      "published_at": "Mon, 01 Jun 2026 16:35:30 GMT",
+      "text": "Citadel Seeks to Extend Maturity, Upsize $4 Billion Loan",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "FedEx Freight Shares Fall in First Trading Day After Spinoff",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-01/fedex-freight-shares-drop-in-first-day-of-trading-after-spinoff",
+      "published_at": "Mon, 01 Jun 2026 14:08:52 GMT",
+      "text": "FedEx Freight Shares Fall in First Trading Day After Spinoff",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "Illinois Passes $56 Billion Budget as Chicago Bears Deal Stalled",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-01/illinois-passes-56-billion-budget-as-chicago-bears-deal-stalled",
+      "published_at": "Mon, 01 Jun 2026 16:26:23 GMT",
+      "text": "Illinois Passes $56 Billion Budget as Chicago Bears Deal Stalled",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "Oil Soars After Report Says Iran Is Set to Halt Messages With US",
+      "url": "https://www.bloomberg.com/news/articles/2026-05-31/latest-oil-market-news-and-analysis-for-june-1",
+      "published_at": "Sun, 31 May 2026 22:02:15 GMT",
+      "text": "Oil Soars After Report Says Iran Is Set to Halt Messages With US",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "Salesforce Investment in Anthropic Is Valued at About $5 Billion",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-01/salesforce-investment-in-anthropic-is-valued-at-about-5-billion",
+      "published_at": "Mon, 01 Jun 2026 16:21:11 GMT",
+      "text": "Salesforce Investment in Anthropic Is Valued at About $5 Billion",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "QXO Kicks Off $3 Billion Loan Offering for TopBuild Takeover",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-01/qxo-kicks-off-3-billion-loan-sale-in-m-a-debt-deal-for-topbuild",
+      "published_at": "Mon, 01 Jun 2026 12:24:04 GMT",
+      "text": "QXO Kicks Off $3 Billion Loan Offering for TopBuild Takeover",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "World Trade Has 'Stalled,' But Hasn't 'Turned Down Just Yet,' Says Nick Sargen",
+      "url": "https://www.bloomberg.com/news/videos/2026-06-01/world-trade-hasn-t-turned-down-just-yet-says-sargen-video",
+      "published_at": "Mon, 01 Jun 2026 16:14:14 GMT",
+      "text": "World Trade Has 'Stalled,' But Hasn't 'Turned Down Just Yet,' Says Nick Sargen",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "US Stocks Rise as Report Says Hezbollah Is Ready for Ceasefire",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-01/us-futures-rise-as-traders-remain-hopeful-of-us-iran-peace-deal",
+      "published_at": "Mon, 01 Jun 2026 12:11:02 GMT",
+      "text": "US Stocks Rise as Report Says Hezbollah Is Ready for Ceasefire",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "Oil Jumps on Report Iran to Halt Exchanges With US: Markets Wrap",
+      "url": "https://www.bloomberg.com/news/articles/2026-05-31/oil-climbs-as-us-iran-ceasefire-remains-elusive-markets-wrap",
+      "published_at": "Sun, 31 May 2026 22:10:32 GMT",
+      "text": "Oil Jumps on Report Iran to Halt Exchanges With US: Markets Wrap",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "Zambia Creditor Group Challenges $1.36 Billion Bond Buyback",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-01/zambia-creditor-group-pushes-back-on-1-36-billion-bond-buyback",
+      "published_at": "Mon, 01 Jun 2026 08:22:37 GMT",
+      "text": "Zambia Creditor Group Challenges $1.36 Billion Bond Buyback",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "Fluence Shares Soar on Design for Nvidia AI Data Center Factory",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-01/fluence-shares-soar-on-design-for-nvidia-ai-data-center-factory",
+      "published_at": "Mon, 01 Jun 2026 15:50:59 GMT",
+      "text": "Fluence Shares Soar on Design for Nvidia AI Data Center Factory",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "Open Interest 6/1/2026 | Jensen Huang's Bullish Software Call",
+      "url": "https://www.bloomberg.com/news/videos/2026-06-01/open-interest-6-1-2026-video",
+      "published_at": "Mon, 01 Jun 2026 15:50:53 GMT",
+      "text": "Open Interest 6/1/2026 | Jensen Huang's Bullish Software Call",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "Activist Toms Capital Ramps Up Campaign at Voya Financial",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-01/activist-toms-capital-ramps-up-campaign-at-voya-financial",
+      "published_at": "Mon, 01 Jun 2026 12:15:20 GMT",
+      "text": "Activist Toms Capital Ramps Up Campaign at Voya Financial",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "Mercedes-AMG Launches GT Luxury Performance EV",
+      "url": "https://www.bloomberg.com/news/videos/2026-06-01/mercedes-amg-launches-gt-luxury-performance-ev-video",
+      "published_at": "Mon, 01 Jun 2026 15:39:32 GMT",
+      "text": "Mercedes-AMG Launches GT Luxury Performance EV",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "US Crude Refiners Are Pushing Run Rates to Maximum Levels",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-01/us-crude-refiners-are-pushing-run-rates-to-maximum-levels",
+      "published_at": "Mon, 01 Jun 2026 15:39:15 GMT",
+      "text": "US Crude Refiners Are Pushing Run Rates to Maximum Levels",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "S&P 500 Hangs Close to Record as Tech Gains Offset Broad Losses",
+      "url": "https://www.bloomberg.com/news/videos/2026-06-01/s-p-500-sits-close-to-record-as-tech-offsets-broad-loss-video",
+      "published_at": "Mon, 01 Jun 2026 15:33:14 GMT",
+      "text": "S&P 500 Hangs Close to Record as Tech Gains Offset Broad Losses",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "CoreWeave-Tied Data Center’s Junk Bond Sale Seeks $850 Million",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-01/coreweave-tied-data-center-s-junk-bond-sale-seeks-850-million",
+      "published_at": "Mon, 01 Jun 2026 15:30:34 GMT",
+      "text": "CoreWeave-Tied Data Center’s Junk Bond Sale Seeks $850 Million",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "Bond Trader Bets on Fed Hike Poised for Gut Check From Jobs Data",
+      "url": "https://www.bloomberg.com/news/videos/2026-06-01/bond-bets-on-fed-hike-poised-for-gut-check-from-jobs-video",
+      "published_at": "Mon, 01 Jun 2026 15:29:38 GMT",
+      "text": "Bond Trader Bets on Fed Hike Poised for Gut Check From Jobs Data",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "Taylor Morrison Soars on Berkshire Deal; IBM Jumps on Trump Mention | Stock Movers",
+      "url": "https://www.bloomberg.com/news/videos/2026-06-01/taylor-morrison-soars-on-berkshire-deal-ibm-jumps-video",
+      "published_at": "Mon, 01 Jun 2026 15:24:27 GMT",
+      "text": "Taylor Morrison Soars on Berkshire Deal; IBM Jumps on Trump Mention | Stock Movers",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "Meredith Whitney Expects Worse Housing Market Than Last Year",
+      "url": "https://www.bloomberg.com/news/videos/2026-06-01/whitney-expects-worse-housing-market-than-last-year-video",
+      "published_at": "Mon, 01 Jun 2026 15:24:17 GMT",
+      "text": "Meredith Whitney Expects Worse Housing Market Than Last Year",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "Everything Is Warming Up",
+      "url": "https://www.bloomberg.com/news/newsletters/2026-06-01/everything-is-warming-up",
+      "published_at": "Mon, 01 Jun 2026 15:20:01 GMT",
+      "text": "Everything Is Warming Up",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "AI Compute to Become a Wall Street Asset",
+      "url": "https://www.bloomberg.com/news/videos/2026-06-01/ai-compute-to-become-a-wall-street-asset",
+      "published_at": "Mon, 01 Jun 2026 15:18:22 GMT",
+      "text": "AI Compute to Become a Wall Street Asset",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "FS KKR Is Selling $400 Million Bonds in Rare Junk-Rated BDC Deal",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-01/fs-kkr-is-selling-400-million-bonds-in-rare-junk-rated-bdc-deal",
+      "published_at": "Mon, 01 Jun 2026 15:10:19 GMT",
+      "text": "FS KKR Is Selling $400 Million Bonds in Rare Junk-Rated BDC Deal",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "bloomberg_markets",
+      "topic": "markets",
+      "title": "Ashmore Bets on Mexico’s Booming Pension Funds With Equity Fund",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-01/ashmore-bets-on-mexico-s-booming-pension-funds-with-equity-fund",
+      "published_at": "Mon, 01 Jun 2026 15:00:00 GMT",
+      "text": "Ashmore Bets on Mexico’s Booming Pension Funds With Equity Fund",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "Iran suspends peace talks and threatens ‘closure’ of Strait of Hormuz",
+      "url": "https://www.ft.com/content/a4f1e36d-f3a5-4959-b227-133300f01be1",
+      "published_at": "Mon, 01 Jun 2026 16:18:53 GMT",
+      "text": "Iran suspends peace talks and threatens ‘closure’ of Strait of Hormuz",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "Drahi’s indebted US cable group escalates fight with creditors",
+      "url": "https://www.ft.com/content/7d0b35ea-e063-4603-ba08-2722caa22904",
+      "published_at": "Mon, 01 Jun 2026 16:16:51 GMT",
+      "text": "Drahi’s indebted US cable group escalates fight with creditors",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "Anthropic confidentially files for IPO",
+      "url": "https://www.ft.com/content/4f82f41c-24e7-4323-899a-17a04badd29e",
+      "published_at": "Mon, 01 Jun 2026 16:11:39 GMT",
+      "text": "Anthropic confidentially files for IPO",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "Barry Diller launches $18bn takeover offer for MGM Resorts",
+      "url": "https://www.ft.com/content/2793d548-0535-4f0c-9959-14bf9554b8d0",
+      "published_at": "Mon, 01 Jun 2026 16:11:33 GMT",
+      "text": "Barry Diller launches $18bn takeover offer for MGM Resorts",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "I, Vera — how a cross-dressing Russian princess became a battlefield surgeon",
+      "url": "https://www.ft.com/content/db58d64a-c0f4-47dc-83b9-62024ffc79ed",
+      "published_at": "Mon, 01 Jun 2026 16:00:02 GMT",
+      "text": "I, Vera — how a cross-dressing Russian princess became a battlefield surgeon",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "EasyJet says takeover bid would be ‘highly opportunistic’ as shares jump",
+      "url": "https://www.ft.com/content/2dea556c-9c64-4903-81be-d77210a9774c",
+      "published_at": "Mon, 01 Jun 2026 14:28:48 GMT",
+      "text": "EasyJet says takeover bid would be ‘highly opportunistic’ as shares jump",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "America at 250 — and the war it forgot",
+      "url": "https://www.ft.com/content/551f1442-d00f-4201-9d2b-90de8caf0ee1",
+      "published_at": "Mon, 01 Jun 2026 14:26:42 GMT",
+      "text": "America at 250 — and the war it forgot",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "Italy labour abuse crackdown spreads to US group building Milan consulate",
+      "url": "https://www.ft.com/content/b85b47d5-4fc3-4f67-8240-a96c37c9fe9c",
+      "published_at": "Mon, 01 Jun 2026 13:59:23 GMT",
+      "text": "Italy labour abuse crackdown spreads to US group building Milan consulate",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "Uber faces Prosus challenge in Delivery Hero pursuit",
+      "url": "https://www.ft.com/content/899ca2a9-9991-45e0-a521-9819353be6ae",
+      "published_at": "Mon, 01 Jun 2026 13:10:41 GMT",
+      "text": "Uber faces Prosus challenge in Delivery Hero pursuit",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "How to combat corruption",
+      "url": "https://www.ft.com/content/cbd469bf-35b4-413b-84fd-ee03cf55012b",
+      "published_at": "Mon, 01 Jun 2026 13:00:01 GMT",
+      "text": "How to combat corruption",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "Germany to punish ministries for failing to spend funds quickly enough",
+      "url": "https://www.ft.com/content/b9b7fb8d-b4fe-452f-abe0-80ccfb93d169",
+      "published_at": "Mon, 01 Jun 2026 12:39:00 GMT",
+      "text": "Germany to punish ministries for failing to spend funds quickly enough",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "Anthropic offers EU access to Mythos",
+      "url": "https://www.ft.com/content/f88d62e3-5b67-4aed-ad69-6f38b62559b3",
+      "published_at": "Mon, 01 Jun 2026 12:11:32 GMT",
+      "text": "Anthropic offers EU access to Mythos",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "UK defeats Rwanda claim for £100mn compensation over asylum plan",
+      "url": "https://www.ft.com/content/a26bc838-0c48-46a3-8668-dee04f744b10",
+      "published_at": "Mon, 01 Jun 2026 12:00:10 GMT",
+      "text": "UK defeats Rwanda claim for £100mn compensation over asylum plan",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "Putin could pay a personal price for failure in Ukraine",
+      "url": "https://www.ft.com/content/7b986a53-3f7b-40fc-99ef-953905963ce3",
+      "published_at": "Mon, 01 Jun 2026 11:33:43 GMT",
+      "text": "Putin could pay a personal price for failure in Ukraine",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "EU’s dealmaking machine grinds steadily on",
+      "url": "https://www.ft.com/content/e59cedd1-d678-4412-a39b-53155fe7bd09",
+      "published_at": "Mon, 01 Jun 2026 11:31:01 GMT",
+      "text": "EU’s dealmaking machine grinds steadily on",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "Berkshire buys homebuilder Taylor Morrison for $8.5bn in Abel’s first big deal",
+      "url": "https://www.ft.com/content/ee4b5e6a-3027-4cd1-aa0f-5d9365418cbd",
+      "published_at": "Mon, 01 Jun 2026 10:58:24 GMT",
+      "text": "Berkshire buys homebuilder Taylor Morrison for $8.5bn in Abel’s first big deal",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "FirstFT: Nvidia targets consumer PC market",
+      "url": "https://www.ft.com/content/4aa774b7-273b-4380-81ba-8e0508239b6a",
+      "published_at": "Mon, 01 Jun 2026 10:19:20 GMT",
+      "text": "FirstFT: Nvidia targets consumer PC market",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "Transcript of an interview with Andrew Bailey",
+      "url": "https://www.ft.com/content/77ebb3e6-91b7-4db3-bd67-522ac30c0f38",
+      "published_at": "Mon, 01 Jun 2026 10:18:20 GMT",
+      "text": "Transcript of an interview with Andrew Bailey",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "US and Iran launch fresh strikes as peace efforts continue",
+      "url": "https://www.ft.com/content/b425ebc9-18a9-4a0c-987d-10837df565bb",
+      "published_at": "Mon, 01 Jun 2026 09:47:54 GMT",
+      "text": "US and Iran launch fresh strikes as peace efforts continue",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "Hungarian PM to remove president and other ‘Orbán puppets’ from office",
+      "url": "https://www.ft.com/content/5da845c8-b6aa-4a25-ad34-6bd97ddcd3f7",
+      "published_at": "Mon, 01 Jun 2026 09:40:51 GMT",
+      "text": "Hungarian PM to remove president and other ‘Orbán puppets’ from office",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "Submit your questions: Ten years on, what’s next for Brexit?",
+      "url": "https://www.ft.com/content/8d6dacc0-0def-45ef-bd00-95e2daca35ef",
+      "published_at": "Mon, 01 Jun 2026 09:07:43 GMT",
+      "text": "Submit your questions: Ten years on, what’s next for Brexit?",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "Chinese firms’ market share gains driven by subsidies, says OECD",
+      "url": "https://www.ft.com/content/885ca606-5339-47d5-8ee9-14593f5a8d11",
+      "published_at": "Mon, 01 Jun 2026 09:00:09 GMT",
+      "text": "Chinese firms’ market share gains driven by subsidies, says OECD",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "UK house prices fall in May amid Iran turmoil",
+      "url": "https://www.ft.com/content/183ceed0-c8a9-453b-875e-f2c77248fcea",
+      "published_at": "Mon, 01 Jun 2026 08:35:48 GMT",
+      "text": "UK house prices fall in May amid Iran turmoil",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "Young Britons pay the price of Labour’s choices",
+      "url": "https://www.ft.com/content/7b1500ea-ea42-4cd6-a03a-588a0f142d4b",
+      "published_at": "Mon, 01 Jun 2026 08:30:10 GMT",
+      "text": "Young Britons pay the price of Labour’s choices",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "ft_world",
+      "topic": "macro",
+      "title": "SoftBank overtakes Toyota after over 20 years to become Japan’s largest company",
+      "url": "https://www.ft.com/content/eef96fb0-5a56-4ce2-9a69-5f8eca754995",
+      "published_at": "Mon, 01 Jun 2026 07:14:53 GMT",
+      "text": "SoftBank overtakes Toyota after over 20 years to become Japan’s largest company",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "People ‘panicking’ as Ghana passes sweeping law criminalising LGBTQ+ activity",
+      "url": "https://www.theguardian.com/global-development/2026/jun/01/ghana-new-law-criminalising-lgbtq-activity",
+      "published_at": "Mon, 01 Jun 2026 11:59:11 GMT",
+      "text": "People ‘panicking’ as Ghana passes sweeping law criminalising LGBTQ+ activity",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "UK will not have to pay Rwanda £100m over failed asylum scheme, court rules",
+      "url": "https://www.theguardian.com/uk-news/2026/jun/01/uk-will-not-pay-rwanda-over-failed-asylum-scheme",
+      "published_at": "Mon, 01 Jun 2026 10:50:51 GMT",
+      "text": "UK will not have to pay Rwanda £100m over failed asylum scheme, court rules",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "Wildfires devastating richer areas but fewer hectares burned globally – study",
+      "url": "https://www.theguardian.com/world/2026/jun/01/wildfires-devastating-richer-areas-but-fewer-hectares-burned-globally-study",
+      "published_at": "Mon, 01 Jun 2026 06:00:09 GMT",
+      "text": "Wildfires devastating richer areas but fewer hectares burned globally – study",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "WHO calls for community cooperation to contain Ebola outbreak in DRC",
+      "url": "https://www.theguardian.com/world/2026/may/31/who-calls-for-community-cooperation-to-contain-drc-ebola-outbreak",
+      "published_at": "Sun, 31 May 2026 15:49:47 GMT",
+      "text": "WHO calls for community cooperation to contain Ebola outbreak in DRC",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "Death of Congolese man renews scrutiny of race relations in Ireland",
+      "url": "https://www.theguardian.com/world/2026/may/31/yves-sakila-death-congolese-man-ireland-race-relations",
+      "published_at": "Sun, 31 May 2026 13:59:34 GMT",
+      "text": "Death of Congolese man renews scrutiny of race relations in Ireland",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "Trump admirer’s surprise first-round win is a blow to Colombia’s traditional conservatives",
+      "url": "https://www.theguardian.com/world/2026/jun/01/trump-admirer-abelardo-de-la-espriella-election-win-blow-to-colombia-conservatives",
+      "published_at": "Mon, 01 Jun 2026 14:44:45 GMT",
+      "text": "Trump admirer’s surprise first-round win is a blow to Colombia’s traditional conservatives",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "Colombia’s far-right presidential candidate De la Espriella wins first round of vote ahead of runoff",
+      "url": "https://www.theguardian.com/world/2026/jun/01/colombia-far-right-presidential-candidate-espriella-wins-first-round-of-vote-ahead-of-election-runoff",
+      "published_at": "Mon, 01 Jun 2026 10:35:40 GMT",
+      "text": "Colombia’s far-right presidential candidate De la Espriella wins first round of vote ahead of runoff",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "Colombia goes to polls in election pitting outgoing leader’s ally against pro-Trump candidates",
+      "url": "https://www.theguardian.com/world/2026/may/31/colombia-polls-election-outgoing-leaders-ally-pro-trump-candidates",
+      "published_at": "Sun, 31 May 2026 11:23:36 GMT",
+      "text": "Colombia goes to polls in election pitting outgoing leader’s ally against pro-Trump candidates",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "Colombia prepares to go to polls in election shadowed by resurgence of political violence",
+      "url": "https://www.theguardian.com/world/2026/may/30/colombia-presidential-election-vote-resurgence-political-violence",
+      "published_at": "Sat, 30 May 2026 09:00:14 GMT",
+      "text": "Colombia prepares to go to polls in election shadowed by resurgence of political violence",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "Alarm at Mexico bill allowing elections to be annulled for ‘foreign interference’",
+      "url": "https://www.theguardian.com/world/2026/may/29/mexico-senate-election-constitutional-amendment",
+      "published_at": "Fri, 29 May 2026 17:33:35 GMT",
+      "text": "Alarm at Mexico bill allowing elections to be annulled for ‘foreign interference’",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "Typhoon Jangmi threatens Japan as Europe swelters",
+      "url": "https://www.theguardian.com/environment/2026/jun/01/typhoon-jangmi-japan-europe-temperatures-australia",
+      "published_at": "Mon, 01 Jun 2026 07:17:53 GMT",
+      "text": "Typhoon Jangmi threatens Japan as Europe swelters",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "Japan defence minister rebuffs claims of ‘new militarism’ levelled by China",
+      "url": "https://www.theguardian.com/world/2026/may/31/japan-defence-minister-rebuffs-claims-of-new-militarism-levelled-by-china",
+      "published_at": "Sun, 31 May 2026 05:02:39 GMT",
+      "text": "Japan defence minister rebuffs claims of ‘new militarism’ levelled by China",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "New Aukus drone tech to protect critical undersea cables as Marles warns: ‘seabed is a battlefield’",
+      "url": "https://www.theguardian.com/australia-news/2026/may/31/richard-marles-defence-summit-singapore-china-transparency-pete-hegseth",
+      "published_at": "Sat, 30 May 2026 22:10:04 GMT",
+      "text": "New Aukus drone tech to protect critical undersea cables as Marles warns: ‘seabed is a battlefield’",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "Four more men freed from flooded Laos cave in hazardous rescue mission",
+      "url": "https://www.theguardian.com/world/2026/may/30/four-more-men-freed-from-flooded-laos-cave-in-hazardous-rescue-mission",
+      "published_at": "Sat, 30 May 2026 10:46:52 GMT",
+      "text": "Four more men freed from flooded Laos cave in hazardous rescue mission",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "Chinese dissident says he was berated by ‘pro-regime’ interpreter for UK police",
+      "url": "https://www.theguardian.com/uk-news/2026/may/30/chinese-dissident-says-he-was-berated-by-pro-regime-interpreter-for-uk-police",
+      "published_at": "Sat, 30 May 2026 09:00:16 GMT",
+      "text": "Chinese dissident says he was berated by ‘pro-regime’ interpreter for UK police",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "Linda Reynolds repays nearly $9,000 after partner billed taxpayers to visit son in Melbourne",
+      "url": "https://www.theguardian.com/australia-news/2026/jun/02/linda-reynolds-repays-travel-allowance-family-reunion-partner-melbourne-ntwnfb",
+      "published_at": "Mon, 01 Jun 2026 15:00:23 GMT",
+      "text": "Linda Reynolds repays nearly $9,000 after partner billed taxpayers to visit son in Melbourne",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "Property prices may drop but it’s decades of policy failure, not the budget, to blame",
+      "url": "https://www.theguardian.com/australia-news/2026/jun/02/property-prices-budget-negative-gearing-capital-gains-investors",
+      "published_at": "Mon, 01 Jun 2026 15:00:21 GMT",
+      "text": "Property prices may drop but it’s decades of policy failure, not the budget, to blame",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "Australia’s 178 billionaires are $25.7bn richer than last year as 3.7 million live in poverty",
+      "url": "https://www.theguardian.com/australia-news/2026/jun/02/australian-billionaires-richer-than-last-year",
+      "published_at": "Mon, 01 Jun 2026 14:01:18 GMT",
+      "text": "Australia’s 178 billionaires are $25.7bn richer than last year as 3.7 million live in poverty",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "Labor to highlight ‘risk’ of One Nation to cost of living in bid to dent Pauline Hanson’s popularity",
+      "url": "https://www.theguardian.com/australia-news/2026/jun/01/labor-cost-of-living-risk-one-nation-pauline-hanson-ntwnfb",
+      "published_at": "Mon, 01 Jun 2026 08:27:18 GMT",
+      "text": "Labor to highlight ‘risk’ of One Nation to cost of living in bid to dent Pauline Hanson’s popularity",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "‘Imminent threat’: charges laid against 13-year-old who allegedly planned attack on Queensland school",
+      "url": "https://www.theguardian.com/australia-news/2026/jun/01/teen-planned-attack-on-queensland-school-imminent-threat-charges-13-year-old-ntwnfb",
+      "published_at": "Mon, 01 Jun 2026 08:18:45 GMT",
+      "text": "‘Imminent threat’: charges laid against 13-year-old who allegedly planned attack on Queensland school",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "‘Catastrophic for creative industries’: Brexit barriers shut UK actors out of EU jobs",
+      "url": "https://www.theguardian.com/politics/2026/jun/01/creative-industries-brexit-barriers-uk-actors-eu-jobs",
+      "published_at": "Mon, 01 Jun 2026 13:00:17 GMT",
+      "text": "‘Catastrophic for creative industries’: Brexit barriers shut UK actors out of EU jobs",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "Cyclist praised for rescuing four people who nearly drowned in Ruhr, Germany",
+      "url": "https://www.theguardian.com/world/2026/jun/01/cyclist-rescue-people-who-nearly-drowned-ruhr-germany",
+      "published_at": "Mon, 01 Jun 2026 11:59:55 GMT",
+      "text": "Cyclist praised for rescuing four people who nearly drowned in Ruhr, Germany",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "‘What happened to the testicles?’: mockery in Milan over bull mosaic’s restoration",
+      "url": "https://www.theguardian.com/world/2026/jun/01/milan-mockery-rampant-bull-mosaic-restoration-refurbishment-testicles-castrated",
+      "published_at": "Mon, 01 Jun 2026 11:48:37 GMT",
+      "text": "‘What happened to the testicles?’: mockery in Milan over bull mosaic’s restoration",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "French navy seizes Russia-linked oil tanker in Atlantic",
+      "url": "https://www.theguardian.com/world/2026/jun/01/macron-french-navy-boarded-russia-linked-oil-tanker-atlantic",
+      "published_at": "Mon, 01 Jun 2026 11:34:23 GMT",
+      "text": "French navy seizes Russia-linked oil tanker in Atlantic",
+      "tags": []
+    },
+    {
+      "source_type": "rss",
+      "source_id": "guardian_world",
+      "topic": "geopolitics",
+      "title": "French police arrest 780 after violent clashes as PSG fans celebrate Champions League win",
+      "url": "https://www.theguardian.com/world/2026/may/30/paris-police-arrest-paris-saint-germain-fans-celebrate-champions-league-win-over-arsenal",
+      "published_at": "Sun, 31 May 2026 16:31:27 GMT",
+      "text": "French police arrest 780 after violent clashes as PSG fans celebrate Champions League win",
+      "tags": []
+    }
+  ]
+}

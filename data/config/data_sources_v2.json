@@ -1,0 +1,14 @@
+{
+  "rss": [
+    {"id": "bbc_world", "url": "http://feeds.bbci.co.uk/news/world/rss.xml", "topic": "geopolitics"},
+    {"id": "bloomberg_markets", "url": "https://feeds.bloomberg.com/markets/news.rss", "topic": "markets"},
+    {"id": "ft_world", "url": "https://www.ft.com/world?format=rss", "topic": "macro"},
+    {"id": "guardian_world", "url": "https://www.theguardian.com/world/rss", "topic": "geopolitics"}
+  ],
+  "reddit": [
+    {"id": "worldnews", "url": "https://www.reddit.com/r/worldnews/new.json?limit=25", "topic": "geopolitics"},
+    {"id": "economics", "url": "https://www.reddit.com/r/economics/new.json?limit=25", "topic": "macro"},
+    {"id": "stocks", "url": "https://www.reddit.com/r/stocks/new.json?limit=25", "topic": "markets"},
+    {"id": "geopolitics", "url": "https://www.reddit.com/r/geopolitics/new.json?limit=25", "topic": "geopolitics"}
+  ]
+}

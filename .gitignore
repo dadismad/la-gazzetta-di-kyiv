@@ -1,0 +1,7 @@
+# Transient pipeline artifacts
+data/raw/
+data/x/x_collection_status_*.json
+
+# Python cache
+__pycache__/
+*.pyc

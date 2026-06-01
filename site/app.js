@@ -1,213 +1,173 @@
-function el(id){ return document.getElementById(id); }
+function byId(id){ return document.getElementById(id); }
 
-let STATE = {
-  regime: null,
-  setups: [],
-  divergences: [],
-  contradictions: [],
-  narrativeReviews: []
-};
-
-async function fetchJSON(path, fallback){
+async function getJSON(path, fallback){
   try{
-    const r = await fetch(path, {cache:'no-store'});
-    if(!r.ok) throw new Error(`${path} ${r.status}`);
+    const r = await fetch(path,{cache:'no-store'});
+    if(!r.ok) throw new Error(String(r.status));
     return await r.json();
-  }catch(e){
-    console.warn('fetch failed', path, e.message);
-    return fallback;
-  }
+  }catch{ return fallback; }
 }
 
-function capitalize(str){
-  if(!str) return '';
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
-function formatTopic(topic){
-  if(!topic) return '';
-  return topic.length <= 3 ? topic.toUpperCase() : capitalize(topic);
-}
-
-function ensurePeriod(text){
-  if(!text) return '';
-  const trimmed = text.trim();
-  return trimmed.endsWith('.') ? trimmed : `${trimmed}.`;
-}
-
-function topicFromSetup(setup){
-  if(!setup || !setup.title) return '';
-  const parts = setup.title.split(':');
-  const topic = parts.length > 1 ? parts[1] : setup.title;
-  return topic.trim().toLowerCase();
-}
-
-function confidenceLabel(confidence){
-  if(confidence >= 0.75) return 'High';
-  if(confidence >= 0.6) return 'Medium';
+function short(s='', n=180){ const v=String(s||'').trim(); return v.length>n?`${v.slice(0,n-1)}…`:v; }
+function ensureSentence(value=''){ const t=String(value||'').trim(); if(!t) return ''; return /[.!?]$/.test(t)?t:`${t}.`; }
+function confidenceLabel(conf=0){
+  if(conf >= 0.75) return 'High';
+  if(conf >= 0.6) return 'Medium';
+  if(conf >= 0.45) return 'Measured';
   return 'Low';
 }
 
-function repricingRange(momentum){
-  if(momentum === 'high') return '+8–12%';
-  if(momentum === 'medium') return '+5–9%';
-  return '+3–6%';
+function confidenceRetailTag(conf='medium'){
+  const v = String(conf).toLowerCase();
+  if(v.includes('high')) return 'Stronger setup';
+  if(v.includes('low')) return 'Higher risk';
+  return 'Balanced risk';
 }
 
-function renderNarratives(){
-  const reviews = STATE.narrativeReviews;
-  const setups = STATE.setups;
-  const target = el('narrativesList');
+function cardStoryMarkup(card, {lead=false} = {}){
+  const title = short(card?.title || 'Story in Play', 96);
+  const summary = ensureSentence(card?.summary || card?.body || 'Update pending.');
+  const contradiction = ensureSentence(card?.contradiction || 'Consensus framing and real positioning remain misaligned.');
+  const strategy = ensureSentence(card?.transmission || card?.strategy || 'Transmission runs through rates, FX, credit, and policy-sensitive equities.');
+  const actors = (card?.actors || []).slice(0,6);
+  const map = card?.market_map || [];
+  const playbook = card?.playbook || {};
+  const confidence = card?.confidence || confidenceLabel(0.58);
 
-  if(!reviews.length && !setups.length){
-    target.innerHTML = '<p style="color:var(--ink-muted)">No narrative data available yet.</p>';
+  return `
+    <article class="story story-card ${lead ? 'story-lead' : ''}" data-expandable="true" tabindex="0" role="button" aria-expanded="false" aria-label="${title}. Click to expand details.">
+      <div class="story-core">
+        <h3>${title}</h3>
+        <p class="story-thesis">${short(summary, lead ? 220 : 150)}</p>
+        <p class="story-contradiction"><strong>Contradiction:</strong> ${short(contradiction, lead ? 185 : 130)}</p>
+      </div>
+      <div class="story-details">
+        <p class="story-strategy"><strong>How it moves markets:</strong> ${short(strategy, 220)}</p>
+        ${actors.length ? `<p class="story-meta"><strong>Main actors:</strong> ${actors.join(', ')}</p>` : ''}
+        ${map.length ? `<p class="story-meta"><strong>Likely market path:</strong> ${map.join(' · ')}</p>` : ''}
+        <div class="story-playbook">
+          <p><strong>Retail entry idea:</strong> ${ensureSentence(playbook.entry || 'Wait for confirmation move in primary asset and vol companion.')}</p>
+          <p><strong>Stop / invalidation:</strong> ${ensureSentence(playbook.invalidation || 'Narrative fails if policy and price stop reinforcing each other.')}</p>
+          <p><strong>What to watch next 24h:</strong> ${ensureSentence(playbook.next_24h || 'Watch policy headlines, liquidity conditions, and cross-asset follow-through.')}</p>
+          <p class="story-confidence"><strong>Risk level:</strong> ${confidenceRetailTag(confidence)}</p>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function profileFromCard(card){
+  const tags = card?.asset_tags || [];
+  const profiles = {
+    oil: {ticker:'BZ=F', name:'Brent Crude', if_right:'Oil likely rises', if_wrong:'Oil cools fast', trigger:'New Hormuz risk headline', horizon:'24-72h'},
+    shipping: {ticker:'BDRY', name:'Shipping Costs', if_right:'Freight rates rise', if_wrong:'Freight stress fades', trigger:'Insurance/routing stress', horizon:'2-5 days'},
+    ust_yields: {ticker:'TLT', name:'US Bonds (TLT)', if_right:'TLT weak if yields rise', if_wrong:'TLT rebounds', trigger:'Hawkish Fed signal', horizon:'1-2 weeks'},
+    usd: {ticker:'DXY', name:'US Dollar', if_right:'Dollar strengthens', if_wrong:'Dollar softens', trigger:'Risk-off and delayed cuts', horizon:'1-2 weeks'},
+    semiconductors: {ticker:'SOXX', name:'Semis ETF', if_right:'Leadership extends', if_wrong:'Fast pullback risk', trigger:'AI guidance upgrades/downgrades', horizon:'1-2 weeks'},
+    megacap_tech: {ticker:'QQQ', name:'Nasdaq 100', if_right:'Trend continues', if_wrong:'Crowded unwind', trigger:'Mega-cap earnings signal', horizon:'24-72h'},
+    autos: {ticker:'CARZ', name:'Global Autos', if_right:'Winners by policy', if_wrong:'Tariff relief squeeze', trigger:'Tariff/probe announcement', horizon:'1-3 weeks'},
+    batteries: {ticker:'LIT', name:'Battery Supply Chain', if_right:'Policy winners outperform', if_wrong:'Input prices normalize', trigger:'EV trade restrictions', horizon:'1-3 weeks'},
+    lng: {ticker:'UNG', name:'US Nat Gas', if_right:'Gas pricing firm', if_wrong:'Demand cool-off', trigger:'New LNG contract news', horizon:'1-4 weeks'},
+    prediction_markets: {ticker:'COIN', name:'Platform Risk Proxy', if_right:'Risk premium expands', if_wrong:'Regulatory clarity relief', trigger:'Enforcement headlines', horizon:'24-72h'},
+    default: {ticker:'SPY', name:'S&P 500', if_right:'Risk premium rises/falls with narrative', if_wrong:'Mean reversion', trigger:'Macro contradiction resolves', horizon:'1-2 weeks'}
+  };
+  const key = tags.find((t)=>profiles[t]) || 'default';
+  return profiles[key] || profiles.default;
+}
+
+function renderBetContainer(items){
+  const target = byId('focusBet');
+  if(!target) return;
+  const picks = items.slice(0,5);
+  if(!picks.length){
+    target.innerHTML = '<p>Positioning watchlist pending.</p>';
     return;
   }
 
-  const items = reviews.slice(0, 6);
-  target.innerHTML = items.map((item) => {
-    const setup = setups.find(s => s.title && s.title.toLowerCase().includes(item.topic));
-    const divergence = STATE.divergences.find(d => d.narrative === item.topic);
-    const headline = setup ? `${formatTopic(item.topic)} narrative acceleration` : formatTopic(item.topic);
-    const thesis = ensurePeriod(setup ? setup.thesis : 'Second-order effects remain underpriced by consensus');
-    const contradiction = ensurePeriod(
-      divergence
-        ? `Consensus expects ${divergence.market_belief.toLowerCase()}, yet ${divergence.observed_reality.toLowerCase()}`
-        : 'Consensus expects continuity, yet signal drift keeps downside branches open'
-    );
-    const interpretation = item.review && item.review.includes('Interpretation:')
-      ? item.review.split('Interpretation:')[1].trim()
-      : item.review;
-    const strategic = ensurePeriod(interpretation || 'Strategic attention remains warranted across desks');
-    const positioning = ensurePeriod(
-      setup && setup.retail_execution && setup.retail_execution.length
-        ? setup.retail_execution[0]
-        : 'Positioning favors liquid, defined-risk exposure until momentum resolves'
-    );
-
-    return `<article class="narrative-card">
-      <h3 class="card-headline">${headline}</h3>
-      <p class="card-line">${thesis}</p>
-      <p class="card-line">${contradiction}</p>
-      <p class="card-line">${strategic}</p>
-      <p class="card-line">${positioning}</p>
-    </article>`;
+  target.innerHTML = picks.map((card, idx)=>{
+    const p = profileFromCard(card);
+    const confidence = card?.confidence ? String(card.confidence).replace('_',' ') : 'medium';
+    return `
+      <article class="bet-item">
+        <div class="bet-top"><span class="bet-rank">Idea ${idx+1}</span><span class="bet-ticker">${p.ticker}</span></div>
+        <div class="bet-name">${p.name}</div>
+        <div class="bet-hook">${short(card?.title || 'Story', 72)}</div>
+        <div class="bet-meta"><strong>If this story is right:</strong> ${p.if_right}</div>
+        <div class="bet-meta"><strong>If this story is wrong:</strong> ${p.if_wrong}</div>
+        <div class="bet-meta"><strong>Trigger:</strong> ${p.trigger}</div>
+        <div class="bet-meta"><strong>Time window:</strong> ${p.horizon} · <strong>Risk:</strong> ${confidenceRetailTag(confidence)}</div>
+      </article>
+    `;
   }).join('');
 }
 
-function renderSidebar(){
-  const reviews = STATE.narrativeReviews;
-  const setups = STATE.setups;
-  const divergences = STATE.divergences;
+function setStoryExpanded(card, expanded){
+  const details = card?.querySelector('.story-details');
+  if(!details) return;
+  card.setAttribute('aria-expanded', String(expanded));
+  card.classList.toggle('is-expanded', expanded);
+}
 
-  const influenceMap = {
-    ai: ['US AI policy teams', 'chipmakers', 'cloud platforms', 'venture funds'],
-    eu: ['European Commission', 'ECB', 'NATO liaisons', 'energy ministries'],
-    china: ['State Council', 'SOEs', 'tech champions', 'sovereign funds'],
-    election: ['incumbent blocs', 'donor networks', 'media coalitions', 'policy advisors'],
-    gas: ['producer states', 'utility buyers', 'shipping firms', 'state energy traders'],
-    oil: ['OPEC+ core', 'shale producers', 'refiners', 'sovereign funds'],
-    inflation: ['central banks', 'labor groups', 'consumer staples', 'treasury desks'],
-    rates: ['central banks', 'primary dealers', 'mortgage desks', 'pension funds'],
-    russia: ['security councils', 'energy majors', 'sanctions offices', 'defense primes'],
-    crypto: ['exchanges', 'stablecoin issuers', 'market makers', 'regulators'],
-    drone: ['defense ministries', 'aerospace primes', 'ISR contractors', 'border agencies'],
-    nato: ['member states', 'defense ministries', 'logistics commands', 'arms suppliers']
-  };
+function wireExpandableStories(){
+  const cards = [...document.querySelectorAll('[data-expandable="true"]')];
+  const isMobile = window.matchMedia('(max-width: 760px)').matches;
+  cards.forEach((card)=>{
+    const toggle = ()=>{
+      const expanded = card.getAttribute('aria-expanded') === 'true';
+      if(expanded){
+        setStoryExpanded(card, false);
+        return;
+      }
+      cards.forEach((other)=>{ if(other !== card) setStoryExpanded(other, false); });
+      setStoryExpanded(card, true);
+      if(isMobile){
+        requestAnimationFrame(()=>{
+          card.scrollIntoView({behavior:'smooth', block:'start'});
+        });
+      }
+    };
 
-  const stakesMap = {
-    ai: 'Semis, data-center capex, and grid demand are repricing on a shorter fuse.',
-    eu: 'Rates, energy imports, and defense procurement are pulling capital toward core Europe.',
-    china: 'Export chains, industrial metals, and EM FX risk skew to policy cadence.',
-    election: 'Domestic fiscal paths and regulatory outlooks are driving front-end volatility.',
-    gas: 'Utility balance sheets and storage economics face asymmetric winter pressure.',
-    oil: 'Refining margins and shipping insurance remain sensitive to policy shocks.',
-    inflation: 'Consumer staples margins and duration assets are most exposed to prints.',
-    rates: 'Duration sensitivity and mortgage convexity remain the primary fault lines.',
-    russia: 'Energy corridors and sanctions enforcement remain the pressure points.',
-    crypto: 'Liquidity conditions and regulatory headlines set the near-term range.',
-    drone: 'Defense procurement and ISR budgets are in a re-rating window.',
-    nato: 'Defense supply chains and sovereign budgets anchor the repricing.'
-  };
+    card.addEventListener('click', ()=>toggle());
+    card.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        toggle();
+      }
+    });
+  });
+}
 
-  const tickerMap = {
-    ai: 'NVDA',
-    eu: 'EZU',
-    china: 'FXI',
-    election: 'SPY',
-    gas: 'UNG',
-    oil: 'XLE',
-    inflation: 'TIP',
-    rates: 'TLT',
-    russia: 'RSX',
-    crypto: 'BTC',
-    drone: 'ITA',
-    nato: 'ITA'
-  };
-
-  const influenceTarget = el('spectreOfInfluence');
-  const influenceTopics = reviews.slice(0, 4).map(r => r.topic);
-  const influenceItems = influenceTopics.map(topic => {
-    const actors = influenceMap[topic] || ['state actors', 'institutional capital', 'strategic corporates', 'policy offices'];
-    return `<li><span class="item-topic">${formatTopic(topic)}</span> — ${actors.join(', ')}.</li>`;
-  }).join('');
-  influenceTarget.innerHTML = `<div class="sidebar-section">
-    <div class="sidebar-title">Spectre of Influence</div>
-    <ul class="sidebar-list">
-      ${influenceItems || '<li>Influence map pending data refresh.</li>'}
-    </ul>
-  </div>`;
-
-  const stakesTarget = el('stakesInPlay');
-  const stakesItems = divergences.slice(0, 3).map(d => {
-    const stake = stakesMap[d.narrative] || 'Cross-asset sensitivity is rising with uneven liquidity.';
-    return `<li><span class="item-topic">${formatTopic(d.narrative)}</span> — ${stake}</li>`;
-  }).join('');
-  stakesTarget.innerHTML = `<div class="sidebar-section">
-    <div class="sidebar-title">Stakes in Play</div>
-    <ul class="sidebar-list">
-      ${stakesItems || '<li>Stake assessment pending data refresh.</li>'}
-    </ul>
-  </div>`;
-
-  const betTarget = el('betAndBenefit');
-  const betItems = setups.slice(0, 3).map(setup => {
-    const topic = topicFromSetup(setup);
-    const review = reviews.find(r => r.topic === topic) || {};
-    const ticker = tickerMap[topic] || formatTopic(topic) || 'GLOBAL';
-    const probability = setup && setup.probability_base ? `${setup.probability_base}%` : `${Math.round((setup.confidence || 0.6) * 100)}%`;
-    const range = repricingRange(review.momentum);
-    const confidence = confidenceLabel(setup.confidence || 0);
-    return `<div class="bet-card">
-      <div class="bet-ticker">${ticker}</div>
-      <div class="bet-meta">
-        <span>Probability: ${probability}</span>
-        <span>Projected repricing: ${range}</span>
-        <span>Confidence: ${confidence}</span>
-      </div>
-    </div>`;
-  }).join('');
-  betTarget.innerHTML = `<div class="sidebar-section">
-    <div class="sidebar-title">Bet & Benefit</div>
-    ${betItems || '<div class="bet-card"><div class="bet-ticker">Awaiting setup feed</div></div>'}
-  </div>`;
+function renderFocus(items){
+  const lead = items[0] || {};
+  if(byId('focusInfluence')){
+    byId('focusInfluence').innerHTML = `
+      <p>${short(ensureSentence(lead?.summary || lead?.body || 'Power actors are forcing repricing faster than public messaging admits.'), 170)}</p>
+      <p>${short(ensureSentence(lead?.contradiction || 'Watch who decides, who pays, and who quietly benefits.'), 150)}</p>
+    `;
+  }
+  if(byId('focusStakes')){
+    const map = (lead?.market_map || ['Rates path sensitivity','Cross-asset volatility transmission','Policy credibility risk']).slice(0,5);
+    byId('focusStakes').innerHTML = `<ul class="focus-list">${map.map((x)=>`<li>${x}</li>`).join('')}</ul>`;
+  }
+  renderBetContainer(items);
 }
 
 async function boot(){
-  const [regime, setups, divergences, narratives] = await Promise.all([
-    fetchJSON('./api/v1/home/regime.json', {}),
-    fetchJSON('./api/v1/home/setups.json', {items:[]}),
-    fetchJSON('./api/v1/home/divergences.json', {items:[]}),
-    fetchJSON('./data/narratives.json', {narrative_reviews:[]})
-  ]);
+  const curated = await getJSON('./data/stories_in_play.json', null);
+  const cards = (curated?.main?.cards || curated?.version_b?.cards || []).slice(0,10);
 
-  STATE.regime = regime;
-  STATE.setups = setups.items || [];
-  STATE.divergences = divergences.items || [];
-  STATE.narrativeReviews = narratives.narrative_reviews || [];
+  const lead = cards[0] || null;
+  const stack = cards.slice(1,10);
 
-  renderNarratives();
-  renderSidebar();
+  if(byId('leadStory')){
+    byId('leadStory').innerHTML = lead ? cardStoryMarkup(lead, {lead:true}) : '<p>Intelligence update pending.</p>';
+  }
+  if(byId('storyStack')){
+    byId('storyStack').innerHTML = stack.map((card)=>cardStoryMarkup(card)).join('') || '<p>No additional stories yet.</p>';
+  }
+
+  renderFocus(cards);
+  wireExpandableStories();
 }
 
 boot();
