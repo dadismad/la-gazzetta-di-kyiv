@@ -9,4 +9,4 @@ Most Probable 24–72h Path:
 • Base case: geopolitics second-order effects remain underpriced by consensus (80%)
 • Flip trigger: Mention-share drops below 7d baseline for two cycles
 
-Full briefing and positioning map: https://pureciclismo.github.io/gazzetta-di-kyiv/
+Complete intelligence brief: https://pureciclismo.github.io/gazzetta-di-kyiv/

@@ -1,11 +1,11 @@
 # Pipeline Audit (Latest)
 
 Status: **ok**
-Generated: 2026-06-01T12:00:12.814401+00:00
+Generated: 2026-06-01T16:44:24.494166+00:00
 
 ## Artifact checks
-- normalized_events: exists=True age_seconds=0 path=`data/normalized/events_latest.json`
-- processed_intelligence: exists=True age_seconds=0 path=`data/processed/narrative_intelligence_latest.json`
+- normalized_events: exists=True age_seconds=18 path=`data/normalized/events_latest.json`
+- processed_intelligence: exists=True age_seconds=18 path=`data/processed/narrative_intelligence_latest.json`
 - site_regime: exists=True age_seconds=0 path=`site/api/v1/home/regime.json`
 - site_setups: exists=True age_seconds=0 path=`site/api/v1/home/setups.json`
 - site_contradictions: exists=True age_seconds=0 path=`site/api/v1/home/contradictions.json`

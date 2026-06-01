@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-01T12:00:12.747635+00:00",
+  "generated_at": "2026-06-01T16:44:05.761509+00:00",
   "items": [
     {
       "narrative": "geopolitics",
@@ -37,9 +37,9 @@
       "invalidation_window": "24-72h"
     },
     {
-      "narrative": "election",
-      "claim_a": "election is fully priced",
-      "claim_b": "election transmission effects remain underpriced",
+      "narrative": "ukraine",
+      "claim_a": "ukraine is fully priced",
+      "claim_b": "ukraine transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     },
@@ -51,9 +51,16 @@
       "invalidation_window": "24-72h"
     },
     {
-      "narrative": "inflation",
-      "claim_a": "inflation is fully priced",
-      "claim_b": "inflation transmission effects remain underpriced",
+      "narrative": "election",
+      "claim_a": "election is fully priced",
+      "claim_b": "election transmission effects remain underpriced",
+      "urgency": "medium",
+      "invalidation_window": "24-72h"
+    },
+    {
+      "narrative": "rates",
+      "claim_a": "rates is fully priced",
+      "claim_b": "rates transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     },
@@ -61,20 +68,6 @@
       "narrative": "russia",
       "claim_a": "russia is fully priced",
       "claim_b": "russia transmission effects remain underpriced",
-      "urgency": "medium",
-      "invalidation_window": "24-72h"
-    },
-    {
-      "narrative": "ukraine",
-      "claim_a": "ukraine is fully priced",
-      "claim_b": "ukraine transmission effects remain underpriced",
-      "urgency": "medium",
-      "invalidation_window": "24-72h"
-    },
-    {
-      "narrative": "nato",
-      "claim_a": "nato is fully priced",
-      "claim_b": "nato transmission effects remain underpriced",
       "urgency": "medium",
       "invalidation_window": "24-72h"
     }

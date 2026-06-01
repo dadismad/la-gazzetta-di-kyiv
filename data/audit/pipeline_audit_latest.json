@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-06-01T12:00:12.814401+00:00",
+  "generated_at": "2026-06-01T16:44:24.494166+00:00",
   "status": "ok",
   "artifact_checks": [
     {
       "key": "normalized_events",
       "path": "data/normalized/events_latest.json",
       "exists": true,
-      "age_seconds": 0
+      "age_seconds": 18
     },
     {
       "key": "processed_intelligence",
       "path": "data/processed/narrative_intelligence_latest.json",
       "exists": true,
-      "age_seconds": 0
+      "age_seconds": 18
     },
     {
       "key": "site_regime",

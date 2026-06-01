@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-01T12:00:12.770357+00:00",
-  "ok": true,
-  "reason": "quality gate passed",
-  "checked_setups": 11,
+  "generated_at": "2026-06-01T16:44:05.786355+00:00",
+  "ok": false,
+  "reason": "quality gate failed",
+  "checked_setups": 10,
   "thresholds": {
     "min_setups": 3,
     "min_confidence": 0.45,
@@ -11,5 +11,10 @@
     "min_source_count": 4,
     "min_evidence_titles": 2
   },
-  "findings": []
+  "findings": [
+    {
+      "severity": "blocker",
+      "detail": "low confidence 0.44 on Narrative acceleration: ukraine"
+    }
+  ]
 }
