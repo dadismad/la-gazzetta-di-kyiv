@@ -6,8 +6,10 @@ a{color:inherit}
 .masthead::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,transparent 0%, var(--sky-blue) 20%, var(--gold-tint) 50%, var(--sky-blue) 80%, transparent 100%);opacity:.55}
 .masthead h1{margin:0;font-size:46px;line-height:1.1;font-weight:600;letter-spacing:.02em;text-shadow:0 0 0.5px var(--gold-tint)}
 .statement{margin:14px auto 4px;max-width:720px;color:var(--muted);font-size:17px;line-height:1.5;font-style:italic}
-.topnav{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;align-items:center;padding:22px 18px;min-height:180px;border-bottom:1px solid var(--line);background-image:url("./media/geopolitics-markets-wealth-pleasure-bg.jpg");background-size:cover;background-position:center center;background-repeat:no-repeat;font-family:var(--sans);text-transform:uppercase;letter-spacing:.14em;font-size:12px;position:relative;overflow:hidden}
-.topnav a{text-decoration:none;color:#111;background:rgba(255,255,255,.82);padding:6px 10px;border-radius:4px;backdrop-filter:blur(1px)}
+.topnav{display:flex;flex-direction:column;gap:14px;flex-wrap:wrap;justify-content:center;align-items:center;padding:26px 18px;min-height:180px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#10151c 0%,#181e26 100%);font-family:var(--sans);letter-spacing:.14em;font-size:12px;position:relative;overflow:hidden}
+.topnav .statement{font-family:var(--serif);font-size:18px;font-style:italic;color:#ece4d5;text-align:center;max-width:680px;line-height:1.5;letter-spacing:.02em;text-shadow:0 1px 3px rgba(0,0,0,.4);margin:0 auto;text-transform:none}
+.topnav a{text-decoration:none;color:#ece4d5;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:6px 10px;border-radius:4px;backdrop-filter:blur(1px);text-transform:uppercase}
+.topnav a:hover{background:rgba(255,255,255,.16);border-color:var(--gold-tint)}
 .nav-anchors{position:relative;height:0}
 .anchor-target{display:block;height:0;position:relative;top:-80px}
 .layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px;padding:24px 18px 40px;max-width:1200px;margin:0 auto;position:relative}
@@ -59,4 +61,4 @@ a{color:inherit}
 .footer{display:flex;justify-content:center;gap:8px;padding:18px;border-top:1px solid var(--line);background:linear-gradient(90deg, rgba(138,185,232,.12) 0%, #fff 18%, #fff 82%, rgba(138,185,232,.12) 100%);font-size:13px;font-family:var(--sans)}
 .footer a{text-decoration:none;color:var(--ink)}
 @media (max-width:980px){.layout{grid-template-columns:1fr}.focus{margin-top:18px}}
-@media (max-width:760px){.masthead h1{font-size:36px}.statement{font-size:16px}.story-lead h3{font-size:20px}.topnav{gap:12px}.stories-head{align-items:flex-start;flex-direction:column}.story-card:hover{background:transparent}.story-card::after{content:"tap for details";font-size:9px}}
+@media (max-width:760px){.masthead h1{font-size:36px}.topnav .statement{font-size:15px;max-width:94vw}.story-lead h3{font-size:20px}.topnav{gap:12px}.stories-head{align-items:flex-start;flex-direction:column}.story-card:hover{background:transparent}.story-card::after{content:"tap for details";font-size:9px}}
