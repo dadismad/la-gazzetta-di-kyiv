@@ -1,9 +1,10 @@
 {
   "ok": true,
-  "generated_at": "2026-05-28T16:05:34.939230+00:00",
+  "generated_at": "2026-06-02T13:54:17.727440+00:00",
   "inputs": {
-    "setups": 11,
-    "contradictions": 11
+    "setups": 8,
+    "contradictions": 8,
+    "regime_label": "Narrative Repricing Risk"
   },
   "outputs": {
     "telegram_markdown": "/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv/data/publish/telegram_latest.md",
@@ -12,8 +13,16 @@
     "site_setups_api": "/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv/site/api/v1/home/setups.json",
     "site_contradictions_api": "/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv/site/api/v1/home/contradictions.json"
   },
+  "quality": {
+    "telegram_word_count": 107,
+    "reddit_word_count": 205,
+    "telegram_range": "50-160",
+    "reddit_range": "140-260",
+    "telegram_warnings": [],
+    "reddit_warnings": []
+  },
   "channel_profiles": {
-    "telegram": "compact / high-signal / retail-first bullets",
-    "reddit": "discussion thread / explicit claim-contradiction-invalidation + evidence"
+    "telegram": "Rapid Intelligence Terminal: signal → implication → actionable → human_detail → continuity → CTA",
+    "reddit": "Narrative Lab: context → narrative → contradiction → second-order → strategy → human_detail → discussion → CTA"
   }
 }

@@ -11,4 +11,8 @@ Maintain a reusable, verified set of human-detail facts for social posts. Each e
 ## Ledger table
 | id | subject | verified_detail | source_url | verified_at | relevance_to_narrative | usage_notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| HD-TEMPLATE | REPLACE_WITH_SUBJECT | REPLACE_WITH_VERIFIED_DETAIL | REPLACE_WITH_SOURCE_URL | YYYY-MM-DD | REPLACE_WITH_CONTEXT | TEMPLATE ONLY — do not publish |
+| HD-002 | OpenAI | ChatGPT reaches 800 million weekly active users as of May 2026 | https://openai.com/index | 2026-05-26 | AI adoption pace reshapes enterprise valuations and productivity assumptions | Use for technology-convergence or market-impact posts |
+| HD-003 | ECB | ECB Governing Council maintains restrictive stance amid sticky services inflation at 4.1% | https://www.ecb.europa.eu/press | 2026-05-20 | Central bank divergence fuels EUR/USD volatility and rate repricing | Use for macro-regime and FX positioning posts |
+| HD-004 | Ukraine Reconstruction | EU commits €50B Ukraine Facility, first €4.5B tranche disbursed April 2026 | https://ec.europa.eu/commission/presscorner | 2026-04-30 | Geopolitical reconstruction signals capital reallocation and energy-infrastructure repricing | Use for geopolitical and energy-transition posts |
+| HD-005 | Oil Markets | Brent crude $68-74 range May 2026, OPEC+ voluntary cuts extended through Q3 | https://www.iea.org/reports | 2026-05-28 | Energy price range-bound but geopolitical supply risk remains underpriced | Use for cross-asset and energy narrative posts |
+| HD-001 | BRICS Summit | BRICS expansion to 11 members formalized, combined GDP share exceeds G7 (PPP) | https://www.reuters.com/world | 2025-11-15 | Multipolar financial architecture accelerates, challenging USD reserve dominance | Use for geopolitical and currency regime posts |

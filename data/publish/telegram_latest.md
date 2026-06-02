@@ -1,12 +1,14 @@
-Risk Regime: Narrative Repricing Risk (selective risk-off)
+geopolitics second-order effects remain underpriced by consensus
 
-Asset Repricing Map:
-• Narrative acceleration: geopolitics — base 80%
-• Narrative acceleration: macro — base 80%
-• Narrative acceleration: markets — base 80%
+Implication: Narrative Repricing Risk regime (selective risk-off) — positioning shifts likely within 24–72h.
 
-Most Probable 24–72h Path:
-• Base case: geopolitics second-order effects remain underpriced by consensus (80%)
-• Flip trigger: Mention-share drops below 7d baseline for two cycles
+Actionable:
+• Narrative acceleration: geopolitics: geopolitics second-order effects remain underpriced by consensus
+• Narrative acceleration: macro: macro second-order effects remain underpriced by consensus
+• Narrative acceleration: markets: markets second-order effects remain underpriced by consensus
 
-Complete intelligence brief: https://pureciclismo.github.io/gazzetta-di-kyiv/
+¹ ChatGPT reaches 800 million weekly active users as of May 2026 (ledger: HD-002, source: https://openai.com/index)
+
+Continuity: via https://pureciclismo.github.io/gazzetta-di-kyiv/ | 24-72h invalidation: Mention-share drops below 7d baseline for two cycles
+
+Detailed contradiction map: https://pureciclismo.github.io/gazzetta-di-kyiv/

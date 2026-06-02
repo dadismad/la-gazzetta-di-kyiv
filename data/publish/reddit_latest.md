@@ -1,22 +1,32 @@
-## La Gazzetta di Kyiv — Market Narrative Thread
+**Regime:** Narrative Repricing Risk (selective risk-off)
 
-**Regime snapshot:** Narrative Repricing Risk (selective risk-off)
-**Main claim:** geopolitics second-order effects remain underpriced by consensus
-**Actors driving this:** policy and market actors
-**24–72h probability path:** base 80% / bull 8% / bear 12%
-**Invalidation trigger:** Mention-share drops below 7d baseline for two cycles
+*Context:* Data compiled 2026-06-02 13:54 UTC — 4 sources, 8 setups, 8 contradictions.
 
-Why this matters for positioning:
-- Narrative intensity can reprice risk faster than fundamentals catch up.
-- Cross-asset confirmation (rates, USD, energy, equity breadth) decides follow-through.
-- If confirmation fails, unwind risk rises quickly.
+**Dominant narrative:**
+geopolitics second-order effects remain underpriced by consensus. Key actors: OpenAI. Incentives: preserve policy credibility, capture allocation flows.
 
-Evidence links:
-- Homepage: https://pureciclismo.github.io/gazzetta-di-kyiv/
-- Regime API: https://pureciclismo.github.io/gazzetta-di-kyiv/api/v1/home/regime.json
-- Setups API: https://pureciclismo.github.io/gazzetta-di-kyiv/api/v1/home/setups.json
-- Contradictions API: https://pureciclismo.github.io/gazzetta-di-kyiv/api/v1/home/contradictions.json
+**Contradiction:**
+Consensus says *geopolitics is fully priced*, but *geopolitics transmission effects remain underpriced*. This gap creates repricing potential (urgency: high).
 
-Complete contradiction map: https://pureciclismo.github.io/gazzetta-di-kyiv/
+**Second-order:**
+• Use staged ETF entries with explicit invalidation
+• Prefer defined-risk options in high-volatility windows
+• Cross-asset: narrative repricing risk regimes historically compress within 24h of the first narrative acceleration: geopolitics breakout.
+
+**24–72h path:**
+Base 80% / Bull 8% / Bear 12%
+Invalidation: Mention-share drops below 7d baseline for two cycles
+Secondary: Cross-source confirmation weakens materially
+
+¹ ChatGPT reaches 800 million weekly active users as of May 2026 (ledger: HD-002, source: https://openai.com/index)
+
+**Discussion:** What signals would falsify or strengthen this Narrative acceleration: geopolitics thesis in your framework?
+
+Evidence:
+• Homepage: https://pureciclismo.github.io/gazzetta-di-kyiv/
+• Setups API: https://pureciclismo.github.io/gazzetta-di-kyiv/api/v1/home/setups.json
+• Contradictions API: https://pureciclismo.github.io/gazzetta-di-kyiv/api/v1/home/contradictions.json
+
+Full cross-asset breakdown: https://pureciclismo.github.io/gazzetta-di-kyiv/
 
 READY_FOR_DEVVIT_POST
