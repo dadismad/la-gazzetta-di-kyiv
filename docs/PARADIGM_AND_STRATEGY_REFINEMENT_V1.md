@@ -225,3 +225,115 @@ Premium tier ($100/mo):
 6. **Phase newsletters 1-3** — Tech Convergence (Week 2), Longevity (Week 4), Space Economy (Week 6) — staggered to build audience.
 7. **Redesign website** — Add newsletter signup CTAs, channel directory, paradigm framing on homepage.
 8. **Cron pipeline update** — New posting schedules, new source collection, multi-channel Telegram delivery.
+
+---
+
+## VII. SITE STRUCTURE (Current)
+
+### Homepage Layout (June 2026)
+- **Masthead:** "La Gazzetta di Kyiv" + statement: *"People do not react only to facts. People react to stories they collectively believe about those facts."* + nav links (Geopolitics | Markets | Wealth | Pleasure)
+- **Decorative strip:** Full-bleed floral image band (`.topnav`, 140px, purely ornamental — no text)
+- **Ornament divider:** Narrow image strip (`.ornament-strip`, 24px) between decorative band and main content
+- **Left panel:** "Stories in Play" — expandable narrative cards (lead story + stack)
+- **Right panel:** "Narrative Focus" — Spectre of Influence, Stakes in Play, Bet & Benefit
+- **Footer:** Telegram | Reddit links
+
+### Site Files
+```
+site/
+├── index.html              # Main homepage — narrative terminal
+├── capital.html            # Capital markets desk
+├── data.html               # Data desk
+├── ops.html                # Operations page
+├── app.js                  # Frontend engine — fetches JSON, renders story cards
+├── styles.css              # Main stylesheet
+├── api/v1/                 # API endpoints (setups.json, regime.json, contradictions.json)
+├── data/                   # Static data assets
+└── media/                  # geopolitics-markets-wealth-pleasure-bg.jpg (floral)
+```
+
+---
+
+## VIII. DATA PIPELINE — Current Implementation
+
+### Core pipeline (`scripts/run_pipeline_v2.sh`)
+1. `collect_multisource.py` — multi-source ingestion
+2. `analyze_narratives_v2.py` — narrative analysis & structuring
+3. `publish_quality_gate_v22.py` — quality gate (min 3 setups, confidence ≥0.45, min 2 invalidations, min 1 actor, min 4 sources)
+4. `prepare_publish_payloads_v2.py` (v3.0) — payload generation with full editorial alignment
+5. `pipeline_audit.py` — final audit
+
+### Payload Builder (`prepare_publish_payloads_v2.py` v3.0)
+Aligned with SOCIAL_DISTRIBUTION_SYSTEM, CROSS_CHANNEL_EDITORIAL_SOP, BRAND_BOOK, OPERATING_MANDATE.
+
+**Telegram format** (50-160 words):
+1. Opening signal → 2. Immediate implication → 3. Actionable bullets (3 max) → 4. Verified human detail → 5. Continuity + next trigger → 6. CTA
+
+**Reddit/Narrative Lab format** (140-260 words):
+1. Context → 2. Dominant narrative → 3. Contradiction → 4. Second-order → 5. Strategy (24-72h) → 6. Human detail → 7. Discussion prompt → 8. CTA + evidence
+
+### Supporting data files
+- `data/human_detail_ledger.md` — 5 verified entries (OpenAI, ECB, Ukraine, Oil, BRICS)
+- `data/cta_library.json` — 5 rotating phrases per platform with `{website_url}`
+- `data/social_distribution_log.jsonl` — per-post tracking (narrative_id, channel, CTA, word count)
+- `data/contracts/article_contract_v1.json` — canonical narrative object schema
+
+### Narrative Object Schema (canonical)
+**Core mandatory fields:** narrative_id, title, claim, contradiction, implications, invalidation_trigger, confidence_score, capital_flow_3d_estimate, actors, sectors, evidence_urls, continuity_link, narrative_stage, publish_window, verified_human_detail, website_cta.
+
+**Confidence system:** High (≥0.75), Medium (≥0.60), Measured (≥0.45), Low (<0.45).
+
+---
+
+## IX. CRON OPERATIONS — Active Schedule
+
+| Time | Job | What | Model |
+|------|-----|------|-------|
+| 06:00 / 18:00 | `gazzetta-website-refresh-v22-2xday` | Pipeline → commit → push to Pages | N/A (script-only) |
+| 06:30 / 18:30 | `gazzetta-hourly-narrative-review` | Read payload → send to Telegram channel | deepseek-v4-pro |
+| 06:45 / 18:45 | `gazzetta-agentic-nlp-guarded-autopost-8h` | Full Reddit cycle → Devvit publish | deepseek-v4-pro |
+
+**Deployment:** GitHub Pages via `refresh-and-deploy.yml`. Gates: UI contract → brand book → claims integrity → CEO gate → smoke check.
+
+**Repos:** pureciclismo/gazzetta-di-kyiv (primary) ⇄ dadismad/la-gazzetta-di-kyiv (mirror). Bidirectional sync via GitHub Actions.
+
+---
+
+## X. CHANNELS
+
+- **Website:** https://pureciclismo.github.io/gazzetta-di-kyiv/
+- **Telegram:** https://t.me/LaGazzettadiKyiv (msg #46 posted June 2)
+- **Reddit:** https://www.reddit.com/r/LaGazzettadiKyiv/ (Devvit v0.0.33 deployed June 2)
+- **X:** Via xurl CLI — Newspaper X + Chief Editor X
+
+---
+
+## XI. INFRASTRUCTURE
+
+| Component | Detail |
+|-----------|--------|
+| Hermes Agent | v0.14.0 |
+| Primary LLM | deepseek-v4-pro (deepseek provider, 1M context) |
+| STT | Groq Whisper (free tier) |
+| Python | 3.11 |
+| Data storage | JSON files in `data/` (git-tracked) |
+| Deployment | GitHub Pages (auto-deploy on push to main) |
+| Orchestration | Hermes cron scheduler (3 active, 4 paused) |
+
+### Key Hermes Skills
+- `frontend-image-slot-integration` (v2.0.0) — image placement, ornament strips, scrim overlays
+- `gazzetta-paradigm-and-strategy` (v1.0.0) — this document as a loadable skill
+- `hermes-provider-switching` (v1.1.0) — provider/model switching with billing awareness
+
+---
+
+## XII. NEXT STEPS — Implementation Priority
+
+1. **Update editorial mandate** — Replace neutral language with explicit paradigm lens.
+2. **Restructure data pipeline** — Add Tier 1 sources from categories A-G (40 sources, §III).
+3. **Launch Telegram channel structure** — Create @GazzettaTech, @GazzettaMacro, @GazzettaEU, @GazzettaCrypto.
+4. **Launch Newsletter 4 (White Pill)** — Weekly Dose format: Friday publishing, science/tech breakthroughs.
+5. **Build newsletter infrastructure** — Mailchimp/ConvertKit/Substack, templates, welcome sequence.
+6. **Phase newsletters 1-3** — Tech Convergence (Week 2), Longevity (Week 4), Space Economy (Week 6).
+7. **Redesign website** — Newsletter signup CTAs, channel directory, paradigm framing on homepage.
+8. **Cron pipeline update** — New posting schedules, multi-channel Telegram delivery.
