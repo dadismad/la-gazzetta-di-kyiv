@@ -6,10 +6,18 @@ a{color:inherit}
 .masthead::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,transparent 0%, var(--sky-blue) 20%, var(--gold-tint) 50%, var(--sky-blue) 80%, transparent 100%);opacity:.55}
 .masthead h1{margin:0;font-size:46px;line-height:1.1;font-weight:600;letter-spacing:.02em;text-shadow:0 0 0.5px var(--gold-tint)}
 .statement{margin:14px auto 4px;max-width:720px;color:var(--muted);font-size:17px;line-height:1.5;font-style:italic}
-.topnav{display:flex;flex-direction:column;gap:14px;flex-wrap:wrap;justify-content:center;align-items:center;padding:26px 18px;min-height:180px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#10151c 0%,#181e26 100%);font-family:var(--sans);letter-spacing:.14em;font-size:12px;position:relative;overflow:hidden}
+.topnav{display:flex;flex-direction:column;gap:14px;flex-wrap:wrap;justify-content:center;align-items:center;padding:26px 18px;min-height:200px;border-bottom:none;background:url("./media/geopolitics-markets-wealth-pleasure-bg.jpg") center/cover no-repeat;font-family:var(--sans);letter-spacing:.14em;font-size:12px;position:relative;overflow:hidden}
+/* dark scrim over image so cream text stays readable */
+.topnav::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.32);pointer-events:none;z-index:1}
+.topnav .statement,.topnav a{position:relative;z-index:2}
 .topnav .statement{font-family:var(--serif);font-size:18px;font-style:italic;color:#ece4d5;text-align:center;max-width:680px;line-height:1.5;letter-spacing:.02em;text-shadow:0 1px 3px rgba(0,0,0,.4);margin:0 auto;text-transform:none}
 .topnav a{text-decoration:none;color:#ece4d5;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:6px 10px;border-radius:4px;backdrop-filter:blur(1px);text-transform:uppercase}
 .topnav a:hover{background:rgba(255,255,255,.16);border-color:var(--gold-tint)}
+
+/* Ornament strip — full-bleed decorative divider between containers */
+.ornament-strip{height:48px;background:url("./media/geopolitics-markets-wealth-pleasure-bg.jpg") center 35%/cover no-repeat;border-bottom:1px solid var(--line);position:relative}
+.ornament-strip::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(246,243,236,.0) 0%, rgba(246,243,236,.55) 100%);pointer-events:none}
+
 .nav-anchors{position:relative;height:0}
 .anchor-target{display:block;height:0;position:relative;top:-80px}
 .layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px;padding:24px 18px 40px;max-width:1200px;margin:0 auto;position:relative}
