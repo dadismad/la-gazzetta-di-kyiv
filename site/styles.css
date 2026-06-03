@@ -47,8 +47,15 @@ body {
   gap: 8px;
 }
 .masthead-ornament {
-  font-size: 18px;
+  font-size: 14px;
   color: var(--gold);
+  line-height: 1;
+  letter-spacing: 2px;
+}
+.masthead-khmelnytsky {
+  font-size: 14px;
+  color: var(--gold-dark);
+  opacity: 0.6;
   line-height: 1;
 }
 .masthead-name {
