@@ -1,8 +1,36 @@
 {
-  "generated_at": "2026-06-03T08:05:15.991308+00:00",
+  "generated_at": "2026-06-03T17:26:56.685838+00:00",
   "data_freshness_seconds": 3600,
   "source_count": 4,
-  "regime_label": "Narrative Repricing Risk",
+  "source_diversity": [
+    "bbc_world",
+    "bloomberg_markets",
+    "ft_world",
+    "guardian_world"
+  ],
+  "paradigm_coverage": {
+    "china_ascendancy": {
+      "label": "China Ascendancy \u2014 Execution Over Invention",
+      "setup_count": 0
+    },
+    "dollar_decline": {
+      "label": "Dollar Architecture Erosion",
+      "setup_count": 0
+    },
+    "eu_fragmentation": {
+      "label": "EU Structural Pressures",
+      "setup_count": 0
+    },
+    "abundance_tech": {
+      "label": "Abundance Technologies",
+      "setup_count": 0
+    },
+    "blockchain_agentic": {
+      "label": "Blockchain as Agentic Economy Rail",
+      "setup_count": 0
+    }
+  },
+  "regime_label": "Paradigm-Lens Intelligence",
   "risk_state": "selective risk-off",
   "confidence": 0.74
 }

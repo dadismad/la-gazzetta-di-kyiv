@@ -1,63 +1,71 @@
 {
-  "generated_at": "2026-06-03T08:05:15.991500+00:00",
+  "generated_at": "2026-06-03T17:26:56.686019+00:00",
   "data_freshness_seconds": 3600,
   "source_count": 4,
   "items": [
     {
       "narrative": "geopolitics",
-      "claim_a": "geopolitics is fully priced",
-      "claim_b": "geopolitics transmission effects remain underpriced",
+      "claim_a": "Gulf States policy remains stable",
+      "claim_b": "Israel strikes southern Lebanon but partial truce with Hezbollah appears to hold",
       "urgency": "high",
-      "invalidation_window": "24-72h"
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar"
     },
     {
       "narrative": "macro",
-      "claim_a": "macro is fully priced",
-      "claim_b": "macro transmission effects remain underpriced",
+      "claim_a": "Gulf States policy remains stable",
+      "claim_b": "OECD warns of \u2018dark scenario\u2019 if Gulf energy crisis drags on",
       "urgency": "high",
-      "invalidation_window": "24-72h"
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar"
     },
     {
       "narrative": "markets",
-      "claim_a": "markets is fully priced",
-      "claim_b": "markets transmission effects remain underpriced",
+      "claim_a": "Gulf States policy remains stable",
+      "claim_b": "Yen Hovers Near 160 Per Dollar as Traders Eye Intervention Risk",
       "urgency": "high",
-      "invalidation_window": "24-72h"
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar"
     },
     {
       "narrative": "oil",
-      "claim_a": "oil is fully priced",
-      "claim_b": "oil transmission effects remain underpriced",
+      "claim_a": "Gulf States policy remains stable",
+      "claim_b": "Shell pumped oil through Nigeria pipeline for years despite pollution evidence, documents show",
       "urgency": "medium",
-      "invalidation_window": "24-72h"
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar"
     },
     {
       "narrative": "ai",
-      "claim_a": "ai is fully priced",
-      "claim_b": "ai transmission effects remain underpriced",
+      "claim_a": "Anthropic policy remains stable",
+      "claim_b": "AI giant Anthropic plans to sell shares in US as valuation nears $1tn",
       "urgency": "medium",
-      "invalidation_window": "24-72h"
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar"
     },
     {
       "narrative": "ukraine",
-      "claim_a": "ukraine is fully priced",
-      "claim_b": "ukraine transmission effects remain underpriced",
+      "claim_a": "Kremlin/Russia policy remains stable",
+      "claim_b": "Seven killed after drone hits bus in Russia-controlled part of Ukraine",
       "urgency": "medium",
-      "invalidation_window": "24-72h"
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar"
     },
     {
       "narrative": "russia",
-      "claim_a": "russia is fully priced",
-      "claim_b": "russia transmission effects remain underpriced",
+      "claim_a": "Kremlin/Russia policy remains stable",
+      "claim_b": "Seven killed after drone hits bus in Russia-controlled part of Ukraine",
       "urgency": "medium",
-      "invalidation_window": "24-72h"
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar"
     },
     {
       "narrative": "china",
-      "claim_a": "china is fully priced",
-      "claim_b": "china transmission effects remain underpriced",
+      "claim_a": "PBoC policy remains stable",
+      "claim_b": "China Picks State Firm to Help Coordinate Mining Deals Abroad",
       "urgency": "medium",
-      "invalidation_window": "24-72h"
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar"
     }
   ]
 }
