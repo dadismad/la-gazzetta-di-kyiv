@@ -1,28 +1,15 @@
 {
-  "generated_at": 1780318831,
-  "count": 12,
+  "generated_at": 1780458325,
+  "count": 11,
   "top": [
     {
       "post_id": "n21_geopolitics",
       "title": "Narrative acceleration: geopolitics",
       "sector": "AI & Semis",
       "regime": "mixed",
-      "captivation_score": 72,
-      "capital_flow_score": 54,
-      "beneficiary_score": 63,
-      "links": [
-        "https://pureciclismo.github.io/gazzetta-di-kyiv/",
-        "https://pureciclismo.github.io/gazzetta-di-kyiv/data.html"
-      ]
-    },
-    {
-      "post_id": "n21_markets",
-      "title": "Narrative acceleration: markets",
-      "sector": "Broad Risk Basket",
-      "regime": "mixed",
-      "captivation_score": 63,
-      "capital_flow_score": 41,
-      "beneficiary_score": 52,
+      "captivation_score": 74,
+      "capital_flow_score": 56,
+      "beneficiary_score": 65,
       "links": [
         "https://pureciclismo.github.io/gazzetta-di-kyiv/",
         "https://pureciclismo.github.io/gazzetta-di-kyiv/data.html"
@@ -42,26 +29,26 @@
       ]
     },
     {
-      "post_id": "n21_oil",
-      "title": "Narrative acceleration: oil",
-      "sector": "Energy & Grid",
+      "post_id": "n21_markets",
+      "title": "Narrative acceleration: markets",
+      "sector": "Broad Risk Basket",
       "regime": "mixed",
-      "captivation_score": 54,
-      "capital_flow_score": 33,
-      "beneficiary_score": 43,
+      "captivation_score": 61,
+      "capital_flow_score": 39,
+      "beneficiary_score": 50,
       "links": [
         "https://pureciclismo.github.io/gazzetta-di-kyiv/",
         "https://pureciclismo.github.io/gazzetta-di-kyiv/data.html"
       ]
     },
     {
-      "post_id": "n21_election",
-      "title": "Narrative acceleration: election",
+      "post_id": "n21_ai",
+      "title": "Narrative acceleration: ai",
       "sector": "AI & Semis",
       "regime": "mixed",
-      "captivation_score": 54,
-      "capital_flow_score": 33,
-      "beneficiary_score": 43,
+      "captivation_score": 56,
+      "capital_flow_score": 35,
+      "beneficiary_score": 45,
       "links": [
         "https://pureciclismo.github.io/gazzetta-di-kyiv/",
         "https://pureciclismo.github.io/gazzetta-di-kyiv/data.html"
@@ -81,9 +68,9 @@
       ]
     },
     {
-      "post_id": "n21_russia",
-      "title": "Narrative acceleration: russia",
-      "sector": "AI & Semis",
+      "post_id": "n21_oil",
+      "title": "Narrative acceleration: oil",
+      "sector": "Energy & Grid",
       "regime": "mixed",
       "captivation_score": 54,
       "capital_flow_score": 33,
@@ -107,34 +94,8 @@
       ]
     },
     {
-      "post_id": "n21_ai",
-      "title": "Narrative acceleration: ai",
-      "sector": "AI & Semis",
-      "regime": "mixed",
-      "captivation_score": 53,
-      "capital_flow_score": 32,
-      "beneficiary_score": 42,
-      "links": [
-        "https://pureciclismo.github.io/gazzetta-di-kyiv/",
-        "https://pureciclismo.github.io/gazzetta-di-kyiv/data.html"
-      ]
-    },
-    {
-      "post_id": "n21_gas",
-      "title": "Narrative acceleration: gas",
-      "sector": "Energy & Grid",
-      "regime": "mixed",
-      "captivation_score": 53,
-      "capital_flow_score": 32,
-      "beneficiary_score": 42,
-      "links": [
-        "https://pureciclismo.github.io/gazzetta-di-kyiv/",
-        "https://pureciclismo.github.io/gazzetta-di-kyiv/data.html"
-      ]
-    },
-    {
-      "post_id": "n21_nato",
-      "title": "Narrative acceleration: nato",
+      "post_id": "n21_russia",
+      "title": "Narrative acceleration: russia",
       "sector": "AI & Semis",
       "regime": "mixed",
       "captivation_score": 53,
@@ -149,6 +110,32 @@
       "post_id": "n21_inflation",
       "title": "Narrative acceleration: inflation",
       "sector": "Energy & Grid",
+      "regime": "mixed",
+      "captivation_score": 53,
+      "capital_flow_score": 32,
+      "beneficiary_score": 42,
+      "links": [
+        "https://pureciclismo.github.io/gazzetta-di-kyiv/",
+        "https://pureciclismo.github.io/gazzetta-di-kyiv/data.html"
+      ]
+    },
+    {
+      "post_id": "n21_crypto",
+      "title": "Narrative acceleration: crypto",
+      "sector": "Broad Risk Basket",
+      "regime": "mixed",
+      "captivation_score": 53,
+      "capital_flow_score": 32,
+      "beneficiary_score": 42,
+      "links": [
+        "https://pureciclismo.github.io/gazzetta-di-kyiv/",
+        "https://pureciclismo.github.io/gazzetta-di-kyiv/data.html"
+      ]
+    },
+    {
+      "post_id": "n21_gas",
+      "title": "Narrative acceleration: gas",
+      "sector": "AI & Semis",
       "regime": "mixed",
       "captivation_score": 53,
       "capital_flow_score": 32,

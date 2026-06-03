@@ -1,5 +1,5 @@
 {
-  "generated_at": 1780318831,
+  "generated_at": 1780458325,
   "items": [
     {
       "rank": 1,
@@ -18,7 +18,7 @@
       "bet_snippet_24_72h": {
         "instrument": "NASDAQ-100 proxy",
         "direction": "two-way / fade spikes",
-        "probability_pct": 73,
+        "probability_pct": 75,
         "projection_pct": "+1.0% to +3.2%",
         "invalidation": "Engagement decay >50% vs first 12h baseline"
       },
@@ -29,32 +29,6 @@
     },
     {
       "rank": 2,
-      "headline_hook": "Narrative acceleration: markets",
-      "core_claim": "Narrative momentum and engagement suggest near-term repricing attention.",
-      "actors": [
-        "Retail flow",
-        "Narrative amplifiers",
-        "Cross-platform curators"
-      ],
-      "contradiction_map": {
-        "consensus": "Viral = noise",
-        "evidence": "Sustained score + comment depth indicates durable positioning narrative",
-        "implication": "Short horizon assets can reprice before fundamentals catch up"
-      },
-      "bet_snippet_24_72h": {
-        "instrument": "NASDAQ-100 proxy",
-        "direction": "two-way / fade spikes",
-        "probability_pct": 66,
-        "projection_pct": "+1.0% to +3.2%",
-        "invalidation": "Engagement decay >50% vs first 12h baseline"
-      },
-      "links": [
-        "https://pureciclismo.github.io/gazzetta-di-kyiv/",
-        "https://pureciclismo.github.io/gazzetta-di-kyiv/data.html"
-      ]
-    },
-    {
-      "rank": 3,
       "headline_hook": "Narrative acceleration: macro",
       "core_claim": "Narrative momentum and engagement suggest near-term repricing attention.",
       "actors": [
@@ -80,8 +54,8 @@
       ]
     },
     {
-      "rank": 4,
-      "headline_hook": "Narrative acceleration: oil",
+      "rank": 3,
+      "headline_hook": "Narrative acceleration: markets",
       "core_claim": "Narrative momentum and engagement suggest near-term repricing attention.",
       "actors": [
         "Retail flow",
@@ -96,7 +70,33 @@
       "bet_snippet_24_72h": {
         "instrument": "NASDAQ-100 proxy",
         "direction": "two-way / fade spikes",
-        "probability_pct": 60,
+        "probability_pct": 65,
+        "projection_pct": "+1.0% to +3.2%",
+        "invalidation": "Engagement decay >50% vs first 12h baseline"
+      },
+      "links": [
+        "https://pureciclismo.github.io/gazzetta-di-kyiv/",
+        "https://pureciclismo.github.io/gazzetta-di-kyiv/data.html"
+      ]
+    },
+    {
+      "rank": 4,
+      "headline_hook": "Narrative acceleration: ai",
+      "core_claim": "Narrative momentum and engagement suggest near-term repricing attention.",
+      "actors": [
+        "Retail flow",
+        "Narrative amplifiers",
+        "Cross-platform curators"
+      ],
+      "contradiction_map": {
+        "consensus": "Viral = noise",
+        "evidence": "Sustained score + comment depth indicates durable positioning narrative",
+        "implication": "Short horizon assets can reprice before fundamentals catch up"
+      },
+      "bet_snippet_24_72h": {
+        "instrument": "NASDAQ-100 proxy",
+        "direction": "two-way / fade spikes",
+        "probability_pct": 61,
         "projection_pct": "+1.0% to +3.2%",
         "invalidation": "Engagement decay >50% vs first 12h baseline"
       },
@@ -107,32 +107,6 @@
     },
     {
       "rank": 5,
-      "headline_hook": "Narrative acceleration: election",
-      "core_claim": "Narrative momentum and engagement suggest near-term repricing attention.",
-      "actors": [
-        "Retail flow",
-        "Narrative amplifiers",
-        "Cross-platform curators"
-      ],
-      "contradiction_map": {
-        "consensus": "Viral = noise",
-        "evidence": "Sustained score + comment depth indicates durable positioning narrative",
-        "implication": "Short horizon assets can reprice before fundamentals catch up"
-      },
-      "bet_snippet_24_72h": {
-        "instrument": "NASDAQ-100 proxy",
-        "direction": "two-way / fade spikes",
-        "probability_pct": 60,
-        "projection_pct": "+1.0% to +3.2%",
-        "invalidation": "Engagement decay >50% vs first 12h baseline"
-      },
-      "links": [
-        "https://pureciclismo.github.io/gazzetta-di-kyiv/",
-        "https://pureciclismo.github.io/gazzetta-di-kyiv/data.html"
-      ]
-    },
-    {
-      "rank": 6,
       "headline_hook": "Narrative acceleration: china",
       "core_claim": "Narrative momentum and engagement suggest near-term repricing attention.",
       "actors": [
@@ -158,8 +132,8 @@
       ]
     },
     {
-      "rank": 7,
-      "headline_hook": "Narrative acceleration: russia",
+      "rank": 6,
+      "headline_hook": "Narrative acceleration: oil",
       "core_claim": "Narrative momentum and engagement suggest near-term repricing attention.",
       "actors": [
         "Retail flow",
@@ -184,7 +158,7 @@
       ]
     },
     {
-      "rank": 8,
+      "rank": 7,
       "headline_hook": "Narrative acceleration: ukraine",
       "core_claim": "Narrative momentum and engagement suggest near-term repricing attention.",
       "actors": [
@@ -210,8 +184,34 @@
       ]
     },
     {
+      "rank": 8,
+      "headline_hook": "Narrative acceleration: russia",
+      "core_claim": "Narrative momentum and engagement suggest near-term repricing attention.",
+      "actors": [
+        "Retail flow",
+        "Narrative amplifiers",
+        "Cross-platform curators"
+      ],
+      "contradiction_map": {
+        "consensus": "Viral = noise",
+        "evidence": "Sustained score + comment depth indicates durable positioning narrative",
+        "implication": "Short horizon assets can reprice before fundamentals catch up"
+      },
+      "bet_snippet_24_72h": {
+        "instrument": "NASDAQ-100 proxy",
+        "direction": "two-way / fade spikes",
+        "probability_pct": 59,
+        "projection_pct": "+1.0% to +3.2%",
+        "invalidation": "Engagement decay >50% vs first 12h baseline"
+      },
+      "links": [
+        "https://pureciclismo.github.io/gazzetta-di-kyiv/",
+        "https://pureciclismo.github.io/gazzetta-di-kyiv/data.html"
+      ]
+    },
+    {
       "rank": 9,
-      "headline_hook": "Narrative acceleration: ai",
+      "headline_hook": "Narrative acceleration: inflation",
       "core_claim": "Narrative momentum and engagement suggest near-term repricing attention.",
       "actors": [
         "Retail flow",
@@ -237,7 +237,7 @@
     },
     {
       "rank": 10,
-      "headline_hook": "Narrative acceleration: gas",
+      "headline_hook": "Narrative acceleration: crypto",
       "core_claim": "Narrative momentum and engagement suggest near-term repricing attention.",
       "actors": [
         "Retail flow",

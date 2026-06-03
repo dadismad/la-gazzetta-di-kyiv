@@ -7,44 +7,51 @@
     "thesis": "Markets are pricing a sectoral energy shock. The data reveals a compounding macro regime shift: energy-driven inflation + tariff headwinds + central bank policy constraint = recession risk repricing across bonds, FX, and equities.",
     "actors": "OECD, ECB, Federal Reserve, Trump Administration",
     "horizon": "24-72 hours",
-    "confidence": "high"
+    "confidence": "high",
+    "image_url": "https://images.unsplash.com/photo-1639322537228-f740dceb448d?w=240&h=160&fit=crop&q=80"
   },
   "stories": [
     {
       "headline": "ECB Rate Rise Still on Table Despite Iran Peace Deal, Central Banker Says",
       "they_say": "An Iran ceasefire would remove geopolitical uncertainty and allow the ECB to pause rate normalization.",
       "reality": "ECB Governing Council member confirms services inflation at 4.1% keeps tightening bias regardless of Iran outcome. Rate rise probability unchanged at 72% for June meeting.",
-      "sector": "markets"
+      "sector": "markets",
+      "image_url": "https://images.unsplash.com/photo-1621871741118-3c0b5d1ac56d?w=240&h=160&fit=crop&q=80"
     },
     {
       "headline": "Trump Proposes 10% Tariffs on Forced Labour, 25% on Brazil",
       "they_say": "Tariffs target specific forced labour practices in China and Brazil, limited trade impact expected.",
       "reality": "Proposed levies of at least 10% on all imports linked to forced labour — a broad trade-war layer that compounds energy-driven inflation. Brazil tariff hits 25% despite US running a trade surplus with Brazil.",
-      "sector": "markets"
+      "sector": "markets",
+      "image_url": "https://images.unsplash.com/photo-1590283603385-17ffb3a7f193?w=240&h=160&fit=crop&q=80"
     },
     {
       "headline": "Iranian Drones Hit Kuwait International Airport",
       "they_say": "US-Iran strikes are contained to military targets — civilian infrastructure not at risk.",
       "reality": "Kuwait International Airport struck by Iranian drones in escalation on June 3. Civilian infrastructure targeting threshold crossed in the Gulf. Kuwait authorities confirm airport operations suspended.",
-      "sector": "geopolitics"
+      "sector": "geopolitics",
+      "image_url": "https://images.unsplash.com/photo-1588681661410-bacb9c44de0a?w=240&h=160&fit=crop&q=80"
     },
     {
       "headline": "Yen Nears 160 Per Dollar as Intervention Risk Mounts",
       "they_say": "USD/JPY above 155 is a one-way bet on further yen weakness driven by rate differentials.",
       "reality": "Yen crosses 159.50 into BOJ intervention zone. If macro stress from Gulf crisis triggers safe-haven flows, the carry trade unwind accelerates — the opposite of the consensus yen-weakening bet.",
-      "sector": "markets"
+      "sector": "markets",
+      "image_url": "https://images.unsplash.com/photo-1613909207039-3c0b5d1ac56d?w=240&h=160&fit=crop&q=80"
     },
     {
       "headline": "Seven Killed as Drone Hits Bus in Russian-Controlled Ukraine",
       "they_say": "Drone strikes in Ukraine are precision military operations with minimal civilian impact.",
       "reality": "Seven civilians killed when drone hits a bus in Russian-controlled part of Ukraine. Zelenskyy requests US missiles in response to intensified Russian strikes across the country.",
-      "sector": "geopolitics"
+      "sector": "geopolitics",
+      "image_url": "https://images.unsplash.com/photo-1527066579998-dbbae57f45ce?w=240&h=160&fit=crop&q=80"
     },
     {
       "headline": "AI Giant Anthropic Plans US Share Sale at Near-$1tn Valuation",
       "they_say": "AI capex growth continues without limit — demand for compute and AI services is structurally unbounded.",
       "reality": "Anthropic's valuation approaching $1tn while Instagram AI chatbot was hacked to expose user accounts. Concentration risk in AI equity exposure rises even as security vulnerabilities emerge.",
-      "sector": "tech"
+      "sector": "tech",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Claude_AI_logo.svg"
     }
   ]
 }

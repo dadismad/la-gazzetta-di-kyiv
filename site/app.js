@@ -148,7 +148,7 @@ function cardHTML(story, idx, isLead) {
   const sector = (story.sector || '').toLowerCase();
   const theySay = story.they_say || '';
   const reality = story.reality || '';
-  const photoUrl = pickPhoto(sector, idx);
+  const photoUrl = story.image_url || pickPhoto(sector, idx);
 
   // Asset claim pill
   const claim = SECTOR_CLAIMS[sector] || SECTOR_CLAIMS.default;
