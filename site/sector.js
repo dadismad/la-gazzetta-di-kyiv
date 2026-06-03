@@ -35,7 +35,6 @@ async function boot() {
   const setups = setupsData?.items || [];
   const filtered = setups.filter(matchesSector);
 
-  // Also check website stories
   const siteStories = storiesData?.stories || [];
   const filteredStories = siteStories.filter(s =>
     (s.sector || '').toLowerCase() === SECTOR ||
@@ -46,32 +45,30 @@ async function boot() {
   if (!el) return;
 
   if (!filtered.length && !filteredStories.length) {
-    el.innerHTML = '<p style="color:var(--text-muted);text-align:center;padding:40px">No {SECTOR} narratives active this cycle. Check back soon.</p>'.replace('{SECTOR}', SECTOR);
+    el.innerHTML = '<p style="color:var(--ink-muted);text-align:center;padding:40px;font-style:italic">No narratives active in this sector. Check back soon.</p>';
     return;
   }
 
   const items = [];
 
-  // Website stories first (hand-curated)
   filteredStories.forEach(s => {
     items.push(`
-      <article style="background:var(--bg-surface);border:1px solid var(--border);border-radius:6px;padding:20px;margin-bottom:12px">
-        <h3 style="font-family:var(--sans);font-weight:600;font-size:17px;color:#fff;margin-bottom:8px">${s.headline}</h3>
-        <p style="color:var(--text-secondary);font-size:13px;line-height:1.5">${s.thesis}</p>
-        <div style="margin-top:8px;font-family:var(--mono);font-size:10px;color:var(--text-muted)">
+      <article style="background:var(--white);border:1px solid var(--divider);padding:20px 22px;margin-bottom:14px">
+        <h3 style="font-family:var(--serif);font-weight:700;font-size:20px;color:var(--ink);margin-bottom:8px">${s.headline}</h3>
+        <p style="color:var(--ink-light);font-size:16px;line-height:1.55">${s.thesis}</p>
+        <div style="margin-top:8px;font-family:var(--sans);font-size:10px;color:var(--ink-muted);text-transform:uppercase;letter-spacing:0.06em">
           Sources: ${s.source_count || '—'} · Setup: ${s.setup_id || '—'}
         </div>
       </article>`);
   });
 
-  // Pipeline setups
   filtered.forEach(s => {
     items.push(`
-      <article style="background:var(--bg-surface);border:1px solid var(--border);border-radius:6px;padding:20px;margin-bottom:12px">
-        <h3 style="font-family:var(--sans);font-weight:600;font-size:17px;color:#fff;margin-bottom:8px">${s.title || s.event || 'Narrative Signal'}</h3>
-        <p style="color:var(--text-secondary);font-size:13px;line-height:1.5">${short(s.thesis || '', 300)}</p>
-        ${s.actors ? `<p style="color:var(--text-muted);font-size:11px;margin-top:6px">Actors: ${s.actors.slice(0,5).join(', ')}</p>` : ''}
-        <div style="margin-top:8px;font-family:var(--mono);font-size:10px;color:var(--text-muted)">
+      <article style="background:var(--white);border:1px solid var(--divider);border-left:4px solid var(--sky);padding:18px 20px;margin-bottom:12px">
+        <h3 style="font-family:var(--serif);font-weight:700;font-size:20px;color:var(--ink);margin-bottom:8px">${s.title || s.event || 'Narrative Signal'}</h3>
+        <p style="color:var(--ink-light);font-size:16px;line-height:1.5">${short(s.thesis || '', 300)}</p>
+        ${s.actors ? `<p style="color:var(--ink-muted);font-size:13px;margin-top:6px">Actors: ${s.actors.slice(0,5).join(', ')}</p>` : ''}
+        <div style="margin-top:8px;font-family:var(--sans);font-size:10px;color:var(--ink-muted);text-transform:uppercase;letter-spacing:0.06em">
           Confidence: ${Math.round((s.confidence||0.5)*100)}% · Horizon: ${s.horizon || '24-72h'}
         </div>
       </article>`);
