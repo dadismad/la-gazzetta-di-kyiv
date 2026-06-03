@@ -8,19 +8,37 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=3"/>
+  <link rel="stylesheet" href="./styles.css?v=4"/>
 </head>
 <body>
 
 <header class="masthead">
-  <span class="masthead-name">La Gazzetta di Kyiv</span>
-  <span class="masthead-tagline">Narrative intelligence. Contradiction-first.</span>
-  <span class="masthead-meta" id="mastheadMeta">—</span>
+  <div class="masthead-left">
+    <span class="masthead-ornament" aria-hidden="true">◆</span>
+    <span class="masthead-name">La Gazzetta di Kyiv</span>
+  </div>
+  <div class="masthead-right">
+    <span class="masthead-thinker" id="thinkerPortrait" title="Machiavelli — Power & Strategy">⚜</span>
+    <span class="masthead-tagline">The stories that move markets</span>
+    <span class="masthead-meta" id="mastheadMeta">—</span>
+  </div>
 </header>
 
-<main class="grid" id="storyGrid">
-  <!-- JS-populated -->
-</main>
+<div class="layout">
+  <!-- LEFT: Vertical news list -->
+  <section class="news-col" id="newsCol">
+    <!-- JS-populated -->
+  </section>
+
+  <!-- RIGHT: Asset panel -->
+  <aside class="asset-panel" id="assetPanel">
+    <h3>Market Pulse</h3>
+    <div class="asset-list" id="assetList">
+      <!-- JS-populated -->
+    </div>
+    <div class="asset-note">Assets most exposed to today's narratives</div>
+  </aside>
+</div>
 
 <footer class="footer">
   <a href="https://t.me/GazzettaDiKyiv">Telegram</a>
@@ -30,6 +48,6 @@
   <span>Kyiv · Since 2025</span>
 </footer>
 
-<script src="./app.js?v=3"></script>
+<script src="./app.js?v=4"></script>
 </body>
 </html>
