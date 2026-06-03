@@ -1,33 +1,94 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "GazzettaArticleContractV1",
-  "type": "object",
-  "required": [
-    "headline",
-    "claim",
-    "market_belief",
-    "what_is_happening",
-    "actors",
-    "incentives",
-    "second_order_effects",
-    "cross_asset_effects",
-    "retail_positioning",
-    "invalidation_conditions",
-    "confidence",
-    "narrative_tags"
-  ],
-  "properties": {
-    "headline": {"type": "string", "minLength": 12},
-    "claim": {"type": "string", "minLength": 20},
-    "market_belief": {"type": "string", "minLength": 20},
-    "what_is_happening": {"type": "string", "minLength": 20},
-    "actors": {"type": "array", "minItems": 2, "items": {"type": "string"}},
-    "incentives": {"type": "array", "minItems": 2, "items": {"type": "string"}},
-    "second_order_effects": {"type": "array", "minItems": 2, "items": {"type": "string"}},
-    "cross_asset_effects": {"type": "array", "minItems": 3, "items": {"type": "string"}},
-    "retail_positioning": {"type": "array", "minItems": 2, "items": {"type": "string"}},
-    "invalidation_conditions": {"type": "array", "minItems": 1, "items": {"type": "string"}},
-    "confidence": {"type": "string", "enum": ["Low", "Medium", "High"]},
-    "narrative_tags": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+  "version": "1.0.0",
+  "description": "Article contract schema for Gazzetta di Kyiv — every published narrative object must conform to this structure",
+  "required_fields": {
+    "headline": {
+      "type": "string",
+      "max_chars": 120,
+      "rules": "Must name a specific event, actor, or data point. No taxonomy words. Must pass 'would this make someone stop scrolling?' test."
+    },
+    "they_say": {
+      "type": "string",
+      "max_chars": 280,
+      "rules": "The consensus claim. Must be a falsifiable statement a real person/institution actually made or would make. No straw men."
+    },
+    "reality": {
+      "type": "string",
+      "max_chars": 280,
+      "rules": "The specific event, data point, or evidence that contradicts They Say. Must cite a source. Named actors only."
+    },
+    "sector": {
+      "type": "string",
+      "enum": ["geopolitics", "markets", "tech", "wealth", "pleasure"],
+      "rules": "Primary domain of the story"
+    },
+    "paradigm_pillar": {
+      "type": "string",
+      "enum": ["china_ascendancy", "dollar_decline", "eu_fragmentation", "abundance_tech", "blockchain_agentic", "multi_pillar"],
+      "rules": "Which pillar of the refined lens this story activates"
+    }
+  },
+  "optional_fields": {
+    "paradigm_implications": {
+      "type": "array",
+      "items": {"type": "string"},
+      "rules": "Second-order effects under the paradigm lens. Array of 1-3 strings describing what gets repriced, who benefits, what changes."
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["high", "medium", "low"],
+      "rules": "Required for lead stories. Must be paired with invalidation_trigger."
+    },
+    "invalidation_trigger": {
+      "type": "string",
+      "rules": "What event or data point would falsify this narrative? Required when confidence is set."
+    },
+    "capital_flow_implication": {
+      "type": "string",
+      "max_chars": 140,
+      "rules": "What gets repriced? Where does capital flow? One sentence."
+    },
+    "asset_claim": {
+      "type": "object",
+      "properties": {
+        "asset": {"type": "string"},
+        "symbol": {"type": "string"},
+        "target": {"type": "string"},
+        "change": {"type": "string"}
+      },
+      "rules": "Which specific asset is most exposed to this narrative?"
+    },
+    "image_url": {
+      "type": "string",
+      "rules": "A photo URL that matches the SPECIFIC story content. Test: if you swapped it with another story in the same sector, would it still make sense? If yes, it's too generic."
+    },
+    "actors": {
+      "type": "array",
+      "items": {"type": "string"},
+      "rules": "Named institutions, people, or mechanisms involved. No 'policy and market actors.'"
+    },
+    "horizon": {
+      "type": "string",
+      "enum": ["24-72 hours", "1-2 weeks", "1-3 months", "6-12 months"],
+      "rules": "Timeframe over which the narrative repricing occurs"
+    }
+  },
+  "anti_patterns": {
+    "banned_phrases": [
+      "narrative acceleration",
+      "second-order effects remain underpriced by consensus",
+      "transmission effects remain underpriced",
+      "repricing whipsaws",
+      "mention-share drops below 7d baseline",
+      "cross-source confirmation pending",
+      "narrative is sensitive to negotiation headlines",
+      "policy and market actors"
+    ],
+    "banned_patterns": [
+      "Starting a headline with an abstract noun",
+      "Using more than one abstract noun per sentence",
+      "Hedging with 'may,' 'could potentially,' 'might be considered'",
+      "Generic contradiction pattern: 'X is fully priced, but X transmission effects remain underpriced'"
+    ]
   }
 }

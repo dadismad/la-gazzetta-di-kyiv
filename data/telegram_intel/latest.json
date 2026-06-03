@@ -1,8 +1,8 @@
 {
-  "scrape_timestamp": "2026-06-03T16:38:32.153097+00:00",
-  "analysis_timestamp": "2026-06-03T16:40:00+00:00",
-  "cutoff_minutes": 30,
-  "total_recent_messages": 8,
+  "scrape_timestamp": "2026-06-03T17:10:44.170816+00:00",
+  "analysis_timestamp": "2026-06-03T17:12:00+00:00",
+  "cutoff_minutes": 35,
+  "total_recent_messages_30m": 3,
   "channels_checked": [
     "trad_fin",
     "MonitoringSituation",
@@ -15,127 +15,140 @@
   "messages": [
     {
       "channel": "ASupersharij",
-      "text": "Последствия прилёта по складам АТБ в Днепре.",
-      "published": "2026-06-03T16:14:29+00:00",
-      "link": "https://t.me/ASupersharij/55321"
-    },
-    {
-      "channel": "ASupersharij",
-      "text": "Монета из чистого серебра с профилем Владимира Путина на Форуме представлена.",
-      "published": "2026-06-03T16:16:02+00:00",
-      "link": "https://t.me/ASupersharij/55324"
+      "text": "Реально же по поводу складов АТБ, куда летит баллистика, ситуация крайне грустная. Это региональный склад, он один на весь Днепровский регион, на Днепропетровскую и Запорожскую области. Всего таких 7 по Украине. Магазины сейчас работали в обычном режиме, получая товары каждый день и загружены были на день-два. Руководство прямо сейчас проводит совещание и прогнозы пугающие - вплоть до гуманитарных больших проблем для населения. Сотрудники в завтрашний день смотрят с ужасом, в компании 50 тыс только рядового персонала, который останется без средств к существованию",
+      "published": "2026-06-03T16:56:36+00:00",
+      "link": "https://t.me/ASupersharij/55329"
     },
     {
       "channel": "markettwits",
-      "text": "⚠️🇷🇺#бизнес #россия #отчетность Сальдированная прибыль предприятий в 1кв 2026г упала на 26,5%, до 5,19 трлн руб — Росстат",
-      "published": "2026-06-03T16:11:41+00:00",
+      "text": "⚠️🇮🇷#иран #геополитика \"Хезболла\" и движение \"Амаль\" не идут на прекращение огня в обмен на вывод израильских войск - Al Hadath со ссылкой на ливанский источник на Ближнем Востоке",
+      "published": "2026-06-03T16:40:51+00:00",
+      "link": "https://t.me/markettwits/372722"
+    },
+    {
+      "channel": "markettwits",
+      "text": "❗️🇷🇺#ipo #россия #пмэф В России уже сформирован пул примерно из 20 компаний, готовых к IPO, среди которых много технологических игроков,— замминистра финансов Иван Чебесков на ПМЭФ. Ключ к успешным IPO сейчас — институциональные инвесторы, так как они менее чувствительны к рыночной волатильности, — управляющий директор по рынкам капитала Т-Банка Антон Мальков. Мальков также отметил, что рынок находится в периоде \"низкой воды\" с консервативными мультипликаторами, но так же было в 2018, 2020 и 2022 годах, каждый раз потом начинался новый цикл активности.",
+      "published": "2026-06-03T16:45:45+00:00",
+      "link": "https://t.me/markettwits/372723"
+    },
+    {
+      "channel": "markettwits",
+      "text": "⚠️🇷🇺#бизнес #россия Около 80% компаний малого и среднего бизнеса РФ не будут инвестировать в 2026 году, заявил президент \"Опоры России\" Александр Калинин #пмэф",
+      "published": "2026-06-03T15:35:15+00:00",
+      "link": "https://t.me/markettwits/372710"
+    },
+    {
+      "channel": "markettwits",
+      "text": "⚠️🇺🇦#украина #геополитика Вероятность развязывания конфликта против России и Беларуси предельно высока, как и шанс на его последующее превращение в глобальный — министр обороны Беларуси",
+      "published": "2026-06-03T15:37:16+00:00",
+      "link": "https://t.me/markettwits/372711"
+    },
+    {
+      "channel": "markettwits",
+      "text": "⚠️🇮🇷#иран #геополитика Министр иностранных дел Ирана Арагчи: Вооруженные силы Ирана наносят удары в целях самообороны по объектам, которые Америке разрешено использовать для нападения на гражданские суда и для нарушения режима прекращения огня. На любой враждебный акт будет дан немедленный и решительный ответ.",
+      "published": "2026-06-03T15:40:19+00:00",
+      "link": "https://t.me/markettwits/372712"
+    },
+    {
+      "channel": "markettwits",
+      "text": "💥✴️#WLD = +33% Артур Хейс начал пиарить Worldcoin (WLD)",
+      "published": "2026-06-03T15:42:09+00:00",
+      "link": "https://t.me/markettwits/372713"
+    },
+    {
+      "channel": "markettwits",
+      "text": "⚠️🇹🇼#тайвань #геополитика Рубио: США не прекращают военную помощь Тайваню, а просто пересматривают ее.",
+      "published": "2026-06-03T15:55:29+00:00",
+      "link": "https://t.me/markettwits/372714"
+    },
+    {
+      "channel": "markettwits",
+      "text": "❗️ВПЕРЕДИ 🇷🇺РФ - потребинфляция CPI (апр) - 19:00мск",
+      "published": "2026-06-03T15:55:47+00:00",
       "link": "https://t.me/markettwits/372715"
     },
     {
       "channel": "markettwits",
-      "text": "🇷🇺#фнб #россия #отчетность ФНБ в мае сократился на 257,92 млрд рублей, до 12,96 трлн рублей",
-      "published": "2026-06-03T16:12:51+00:00",
+      "text": "⚠️🇷🇺#сталь #россия Стальной отрасли РФ потребуется не один год для устранения последствий кризиса 2026 года - Мордашов - ИФ #пмэф",
+      "published": "2026-06-03T15:57:33+00:00",
       "link": "https://t.me/markettwits/372716"
     },
     {
       "channel": "markettwits",
-      "text": "💥✴️#HYPE #крипто Hyperliquid продолжает рвать все сети по объему заработанных комиссий за сутки",
-      "published": "2026-06-03T16:15:21+00:00",
+      "text": "🔥🇷🇺#инфляция #россия #отчетность ИНФЛЯЦИЯ В РФ С 26 МАЯ ПО 1 ИЮНЯ УСКОРИЛАСЬ ДО 0,15% С 0,07% НЕДЕЛЕЙ РАНЕЕ - РОССТАТ. ГОДОВАЯ ИНФЛЯЦИЯ В РФ НА 1 ИЮНЯ ВЫРОСЛА ДО 5,39% С 5,33% НА 25 МАЯ",
+      "published": "2026-06-03T16:00:09+00:00",
       "link": "https://t.me/markettwits/372717"
     },
     {
-      "channel": "markettwits",
-      "text": "🇷🇺#пмэф #today Все ищут Эльвиру Набиуллину — мониторинг Frank Media направили запрос в Банк России",
-      "published": "2026-06-03T16:31:26+00:00",
-      "link": "https://t.me/markettwits/372718"
+      "channel": "MonitoringSituation",
+      "text": "A drone strike on a passenger terminal in Kuwait's international airport wounded several people Wednesday and forced air traffic to be suspended, as Iranian and US forces traded attacks in the Gulf.",
+      "published": "2026-06-03T08:43:42+00:00",
+      "link": "https://t.me/MonitoringSituation/32861"
     },
     {
-      "channel": "markettwits",
-      "text": "💥✴️#POLY #прогнозы Дневной объем торгов на Polymarket обновил исторический рекорд",
-      "published": "2026-06-03T16:34:59+00:00",
-      "link": "https://t.me/markettwits/372719"
-    },
-    {
-      "channel": "markettwits",
-      "text": "🌕🇷🇺#золото #россия #cot #цб Чистые продажи золота ЦБ РФ составили 6 тонн золота в апреле — WGC",
-      "published": "2026-06-03T16:37:59+00:00",
-      "link": "https://t.me/markettwits/372720"
+      "channel": "ethanlevins",
+      "text": "🇮🇱🇺🇲 Channel 13: Israeli officials say the latest call between Trump and Netanyahu was one of the most tense conversations the two have held since Trump returned to the White House, with officials in Jerusalem openly acknowledging the severity of the crisis that has emerged between the two leaders",
+      "published": "2026-06-02T17:46:24+00:00",
+      "link": "https://t.me/ethanlevins/8882"
     }
   ],
   "analysis": {
     "stories": [
       {
         "rank": 1,
-        "title": "Iran-U.S. Gulf War: Kuwait Airport Drone Strike + Bahrain Base Explosions + Qeshm Island Strike",
-        "event": "Active military escalation in the Gulf. Iran's FM Araghchi: 'Armed forces are striking in self-defense against facilities the US is allowed to use.' A drone strike hit the passenger terminal at Kuwait International Airport — wounded civilians, suspended all air traffic. Explosions reported at US bases in Bahrain (Iran's Tasnim news agency). US struck Iran's Qeshm Island. Iran explicitly targets US-allied sovereign territory. This is an open multi-front exchange — not a drill.",
-        "they_say": "US and Iran both frame this as 'measured,' 'self-defense,' 'contained.' Rubio claims conversations with Iran are 'continuous and ongoing.' Hezbollah rejects partial ceasefire with Israel. The narrative: escalation ladder has guardrails.",
-        "contradiction": "There are no guardrails. A civilian airport terminal in a Gulf state was hit by a drone. US bases in Bahrain took fire. Qeshm Island was struck by the US. Iran's foreign minister just publicly stated they are targeting US-allowed facilities. The 'measured' narrative is corpse-paint on a widening regional war. Kuwait — a non-belligerent — now has wounded civilians and a closed airport. This is how a regional war tips into a general one.",
-        "bet": "LONG Brent crude (+3-5% in 2h), LONG WTI, LONG VIX (+15-25%), SHORT SPX/SPY, SHORT airlines globally (DAL, UAL, Lufthansa, Emirates proxy ETFs), LONG defense primes (GD, LMT, NOC +2-4%), LONG gold (GLD +1-2%), LONG energy sector (XLE +2-3%). SHORT emerging market equities exposed to Gulf trade (EEM, KSA, UAE ETFs).",
-        "benefit": "Oil: +3-5% within 2h on supply disruption premium. VIX: +15-25% as tail risk reprices. Defense: +2-4%. Airlines: -3-5%. Gold: +1-2%. If Kuwait airport remains closed and Bahrain bases sustain casualties, Brent breaches $85 within the session."
+        "title": "Hezbollah + Amal Reject Ceasefire — Iran FM Threatens Immediate Retaliation Against US Assets",
+        "event": "Hezbollah and the Amal movement formally refuse a ceasefire in exchange for Israeli troop withdrawal from Lebanon, per Al Hadath citing a Lebanese source at 16:40 UTC. Simultaneously, Iran's Foreign Minister Araghchi publishes a statement at 15:40 UTC: 'Armed forces are striking in self-defense against facilities America is allowed to use for attacking civilian ships and violating the ceasefire. Any hostile act will receive an immediate and decisive response.' This follows the Kuwait airport drone strike (08:43 UTC, wounded civilians, air traffic suspended), Bahrain base explosions, and US strike on Qeshm Island that were confirmed overnight. Trump-Netanyahu relations are in open crisis — Israeli Channel 12 reports their last call was 'one of the most tense' since Trump returned to office. Both men agreed on a fake evacuation warning for Beirut's Dahiyeh to pressure Hezbollah without actually attacking — but Netanyahu may renege.",
+        "they_say": "Rubio claims US is 'reviewing' Taiwan aid and conversations with Iran are 'ongoing.' Trump says talks are 'continuous.' State media frames each strike as measured, contained, self-defense. The narrative: this is coercive diplomacy with guardrails.",
+        "contradiction": "There are no guardrails. Hezbollah just publicly rejected the only off-ramp on the table — ceasefire for withdrawal. Iran's foreign minister just threatened 'immediate and decisive response' to ANY hostile act. Trump and Netanyahu are in a secret crisis — Trump feared Netanyahu would bomb Beirut without authorization. A civilian airport terminal in a non-belligerent state (Kuwait) was already hit by a drone. This is not coercive diplomacy with guardrails. This is a widening regional war where one side (Iran/Hezbollah) has explicitly refused to de-escalate while the other side (US/Israel) has leadership communications breaking down. The 'contained' narrative is a lagging indicator that will snap when the next civilian infrastructure gets hit.",
+        "bet": "LONG Brent crude (+3-5% in 2h), LONG WTI, LONG VIX (+15-25% on Hezbollah rejection of ceasefire repricing), SHORT SPX/SPY, SHORT airlines globally (DAL, UAL, Lufthansa, Emirates proxy ETFs), LONG defense primes (GD, LMT, NOC +2-4%), LONG gold (GLD +1-2%), LONG energy sector (XLE +2-3%). SHORT emerging markets exposed to Gulf trade (EEM, KSA, UAE ETFs). If Netanyahu strikes Beirut's Dahiyeh — which Channel 12 reveals was discussed as a bluff but may now be real — Brent breaches $87, VIX gaps +25%.",
+        "benefit": "Oil: +3-5% within 2h on supply disruption + no-de-escalation-premium. VIX: +15-25% as ceasefire rejection reprices tail risk upward. Defense primes: +2-4%. Airlines: -3-5%. Gold: +1-2%. Hezbollah's refusal is the single highest-conviction escalation signal in this window."
       },
       {
         "rank": 2,
-        "title": "Russia's Central Bank Governor Nabiullina Vanishes at SPIEF — Frank Media Files Formal Inquiry",
-        "event": "Elvira Nabiullina, chair of Russia's Central Bank, is absent from the St. Petersburg International Economic Forum (SPIEF) — Russia's premier annual economic event. Independent media outlet Frank Media has sent an official inquiry to the Bank of Russia requesting her whereabouts. The timing: she was scheduled to speak; she didn't show; no one will say where she is.",
-        "they_say": "Official silence. The Kremlin is not commenting. No 'sick,' 'busy,' or 'rescheduled' excuse has been issued. The absence is simply not acknowledged.",
-        "contradiction": "The head of the central bank does not miss SPIEF. Period. Not with inflation at 5.39% and accelerating, not with a 21% key rate crushing the real economy, not with the welfare fund draining 258 billion rubles in a single month. Nabiullina has been the lone institutionalist holding the ruble together. If she's been fired, arrested, or resigned — and the radio silence points to one of those three — the ruble collapses on the open and capital controls become inevitable within 48 hours. Her absence at the exact moment Russia's economic data cascade (profits -26.5%, FNB drain, inflation surge, SME investment collapse) hits the public domain is not a coincidence.",
-        "bet": "SHORT USD/RUB spot (+2-4% in 2h), SHORT MOEX index futures (-3-5%), SHORT RSX ETF (-2-4%), LONG RUB volatility via short-dated FX options. If she's gone for political reasons (coup-adjacent), LONG gold (+1-2%), SHORT Russian OFZ bonds.",
-        "benefit": "RUB: -2-4% vs USD within 2h on regime-change-in-CB probability pricing. MOEX: -3-5% as foreign investors front-run capital control risk. If official confirmation of departure hits, USD/RUB gaps +5-7% in minutes."
+        "title": "Russia CPI Hits 5.39% + Weekly Inflation Doubles to 0.15% — Stagflation Confirmed + Steel Crisis + SME Investment Freeze + Nabiullina Still Missing",
+        "event": "Rosstat reported at 16:00 UTC: Russian weekly inflation accelerated to 0.15% from 0.07% (May 26-Jun 1). Annual CPI hits 5.39% — up from 5.33%. This is the CPI print that was telegraphed at 15:55 UTC. Concurrently: Mordashov (Severstal) says steel sector needs 'years to recover' from the 2026 crisis. 80% of Russian SMEs will not invest in 2026. Enterprise profits fell 26.5% in Q1. The National Welfare Fund (FNB) drained 258 billion rubles in May alone. GDP growth slowed to 1.3%. And Nabiullina — the Central Bank governor — remains officially unaccounted for at SPIEF, with Frank Media's inquiry unanswered. All data released simultaneously at the St. Petersburg Economic Forum.",
+        "they_say": "Deputy Finance Minister Chebeskov announces 20 companies ready for IPO — the Kremlin narrative is 'market adaptation, structural transformation, new cycle.' T-Bank's Malkov calls the market 'low water' but says this happened in 2018/2020/2022 and activity resumed. State media: 'economy is resilient.'",
+        "contradiction": "Malkov's comparison to 2018, 2020, and 2022 is propaganda gaslighting. In 2018 Russia had 4.3% inflation and 23% GDP growth in oil. In 2020 COVID was exogenous. In 2022 the invasion shock was one-off. The 2026 situation is a structural implosion: inflation DOUBLING week-over-week (0.07% → 0.15%), profits collapsing 26.5%, the sovereign wealth fund draining at 258B/month (4-year runway to zero), and the industrial backbone in multi-year crisis. 80% of SMEs refusing to invest means Q2/Q3 GDP will be worse. The '20 companies ready for IPO' announcement at the same moment 80% of SMEs are in investment strike is a desperate attempt to manufacture confidence. 'Low water' is a euphemism for a market that doesn't trust its own currency. And the CB governor is still missing — if she's gone, there's no institutional hand left on the wheel.",
+        "bet": "SHORT MOEX index (-2-3% in 2h at open), SHORT RSX (-2-4%), SHORT Russian metals/steel ADRs (Severstal, NLMK proxies), LONG puts on MOEX. LONG gold (GLD) as ruble devaluation hedge. SHORT USD/RUB (+2-4% in 2h at next trading session — Nabiullina absence is unresolved). SHORT Russian OFZ bonds on CPI acceleration. If Nabiullina is confirmed fired/arrested before next session, USD/RUB gaps +5-7% in minutes.",
+        "benefit": "MOEX: -2-3% at open on CPI + profit collapse + SME freeze triple-whammy. RSX: -2-4%. Gold: +0.5-1% on ruble devaluation hedge flows. CPI acceleration from 0.07% to 0.15% weekly is a velocity shock — the data cascade is still being absorbed, and Nabiullina's absence means no credible policy response is coming."
       },
       {
         "rank": 3,
-        "title": "Russian Economy Data Cascade: Enterprise Profits -26.5%, FNB -258B RUB, Inflation Accelerates, SMEs Freeze Investment",
-        "event": "Rosstat reports salaried enterprise profit fell 26.5% in Q1 2026 to 5.19 trillion rubles. Russia's National Welfare Fund (FNB) contracted 257.92 billion rubles in May alone to 12.96 trillion. Weekly inflation accelerated 0.07% → 0.15%, annual CPI hits 5.39%. GDP growth slowed to 1.3% in April (vs 1.9% in March). Mordashov (Severstal) says steel sector needs 'years to recover' from 2026 crisis. 80% of SMEs will not invest in 2026. Russian inflation data release at 19:00 MSK today.",
-        "they_say": "'The economy is adapting to sanctions.' 'Structural transformation is underway.' 'Growth will resume in H2.' Kremlin mouthpieces and state media frame this as temporary readjustment. Ryabkov says 'SVO will continue as long as necessary.'",
-        "contradiction": "Profits down 26.5% is not adaptation — it's the productive base being hollowed out. The FNB is being drained at 258B/month to plug budget holes — at this rate it's a 4-year runway to zero. Meanwhile inflation is accelerating, not peaking. 80% of SMEs refusing to invest means the collapse is forward-indicative, not backward-looking. The steel sector — Russia's industrial backbone — is in a multi-year crisis. GDP crawling at 1.3% while inflation runs at 5.39% with 21% rates is textbook stagflation. The 'resilience' narrative is statistical cosmetics covering an industrial heart attack.",
-        "bet": "SHORT MOEX index (-2-3% in 2h), SHORT RSX (-2-4%), SHORT Russian metals/steel ADRs (NLMK, Severstal proxies), LONG puts on MOEX. LONG gold (GLD) as ruble devaluation hedge. SHORT Russian OFZ if CPI release at 19:00 MSK comes in hot (which it will, given 0.15% weekly).",
-        "benefit": "MOEX: -2-3% on profit collapse + inflation data combo. RSX: -2-4%. Gold: +0.5-1% on ruble devaluation flows. If CPI at 19:00 MSK prints above consensus, MOEX extends losses to -4-5% in 2h."
-      },
-      {
-        "rank": 4,
-        "title": "Polymarket (POLY) ATH Daily Volume + Hyperliquid (HYPE) Dominance — Direct Beneficiaries of Geopolitical Chaos",
-        "event": "Polymarket daily trading volume hit an all-time record. Hyperliquid continues to dominate cross-chain fee revenue. Both driven by the ongoing Gulf war and Russia-Ukraine escalation event markets and hedging demand.",
-        "they_say": "'Retail interest in prediction markets is growing.' 'DeFi volume is recovering.'",
-        "contradiction": "These volumes are not organic DeFi growth — they are a direct function of kinetic geopolitical events creating binary outcome demand. Polymarket is the only venue to hedge 'will Iran strike again' or 'will Russia use tactical nukes.' This is war-hedging, not speculation.",
-        "bet": "LONG HYPE spot (+5-10% in 2h momentum continuation), LONG POLY (+3-7% as ATH volume reprices token), SHORT broader alts that aren't geopolitical-wired (bleeding liquidity to HYPE/POLY).",
-        "benefit": "HYPE: +5-10% as institutional and retail flow floods into the dominant perpetuals venue handling Russia-Gulf volume. POLY: +3-7% on ATH volume narrative."
-      },
-      {
-        "rank": 5,
-        "title": "Dnipro Strike: Ballistic Missile Hits ATB Warehouses in Dnipro City",
-        "event": "Ballistic missile strike on ATB (Ukraine's largest retail chain) warehouses in Dnipro. ASupersharij published aftermath footage. 121K views in minutes. ATB is a grocery/logistics network — hitting their warehouses targets Ukraine's food distribution and civilian logistics.",
-        "they_say": "'Military logistics target.' 'ATB warehouses were storing military supplies.' (Russian MOD framing will claim dual-use.)",
-        "contradiction": "Hitting a grocery chain's warehouses in a major city during afternoon hours is civilian infrastructure targeting. ATB is the Ukrainian equivalent of Walmart. 121K views on the aftermath video means it resonated. This is Russia systematically degrading Ukraine's ability to distribute food and goods — a civilian siege tactic, not a military operation.",
-        "bet": "LONG wheat futures (+1-2%), LONG defense tickers (Ukraine proxy: GD, NOC), SHORT Ukrainian sovereign bonds. Safe-haven flows into gold and CHF.",
-        "benefit": "Wheat: +1-2% on Ukrainian logistics disruption risk. If Dnipro is a major distribution hub for grain export routes, the premium goes higher."
+        "title": "ATB Dnipro Regional Warehouse Destroyed — Russia Targets Ukraine's Food Distribution Network, 50,000 Jobs at Risk",
+        "event": "Fresh details from ASupersharij (16:56 UTC, 85.8K views): The ballistic missile strike hit ATB's regional warehouse serving the entire Dnipro and Zaporizhzhia regions. There are only SEVEN such regional warehouses in all of Ukraine — this is a critical node in the national food distribution network. ATB management is holding an emergency meeting; internal forecasts warn of 'humanitarian problems for the population.' 50,000 ATB employees (just rank-and-file staff) face losing their livelihoods. The warehouse was stocked for 1-2 days of normal operations. Stores are still running but cannot restock. Belarus' defense minister simultaneously warns that the probability of conflict against Russia and Belarus is 'extremely high' and could turn global — signaling potential Belarusian front expansion.",
+        "they_say": "Russian MOD will frame this as a dual-use military target. ATB is Ukraine's largest retail chain — the Kremlin claims it stores military supplies. State media will call this legitimate military targeting. The Belarus escalation warning is dismissed as 'sabre-rattling.'",
+        "contradiction": "There is nothing dual-use about a regional grocery warehouse serving civilian populations in two oblasts. ATB is Walmart — not a military depot. Destroying 1 of only 7 such warehouses is not tactical targeting; it's strategic civilian logistics warfare. Russia is systematically degrading Ukraine's ability to distribute food to its own population. The 50,000 job loss figure alone, if realized, is a domestic stability crisis for Ukraine. The Belarus defense minister's statement is not sabre-rattling — it's the formal predicate for Belarusian entry into the war on a new northern front, which would stretch Ukraine's already depleted forces across another 1,000km of border. The 'dual-use' narrative is corpse-paint on a civilian starvation strategy.",
+        "bet": "LONG wheat futures (+1-2% in 2h on Ukrainian food distribution disruption), LONG defense primes (GD, LMT, NOC, LHX +1-3% on Ukraine escalation + potential Belarus front expansion), LONG gold (GLD +0.5-1%). If Belarus enters the war (the defense minister's statement is the traditional prelude), SHORT Ukrainian sovereign bonds hard, LONG oil (+2-3% on Black Sea disruption risk). LONG CHF as safe haven on European war expansion.",
+        "benefit": "Wheat: +1-2% in 2h as market prices Ukrainian food logistics degradation. If ATB confirms the warehouse is unrecoverable for weeks, wheat extends to +3%. Defense: +1-3% on dual escalation vector (Gulf + Eastern Europe). Gold: +0.5-1% on generalized safe-haven flows. Belarus mobilization would add 200-300 bps to oil as Black Sea shipping risk reprices."
       }
     ],
     "top_stories_for_positioning": [
       {
-        "name": "Iran-U.S. Gulf War — Kuwait Airport Struck, Bahrain Bases Hit, Qeshm Struck",
-        "action": "Immediate long oil, VIX, defense. Short airlines, SPX.",
+        "name": "Hezbollah Rejects Ceasefire + Iran FM Threatens Retaliation — No Off-Ramp in Gulf",
+        "action": "Immediate long oil, VIX, defense, gold. Short airlines, SPX, emerging market Gulf ETFs.",
         "horizon": "1-2 hours",
         "confidence": 85
       },
       {
-        "name": "Nabiullina Missing at SPIEF — Russia CB Governor Vanishes",
-        "action": "Short USD/RUB, MOEX, RSX. Buy RUB vol.",
-        "horizon": "1-2 hours",
-        "confidence": 75
+        "name": "Russian CPI 5.39% + Inflation Velocity Shock + 80% SME Freeze + Nabiullina MIA",
+        "action": "Short MOEX, RSX, Russian steel ADRs at open. Long gold, short USD/RUB. Short OFZ bonds.",
+        "horizon": "1-2 hours (next trading session open)",
+        "confidence": 80
       },
       {
-        "name": "Russian Economic Data Cascade — Profits -26.5%, FNB Drain, Inflation Surge",
-        "action": "Short MOEX, RSX, Russian metals. Long gold.",
-        "horizon": "1-2 hours (CPI print at 19:00 MSK)",
-        "confidence": 80
+        "name": "ATB Dnipro Warehouse Destroyed — 1 of 7 National Food Hubs — + Belarus Warns of 'Extremely High' War Risk",
+        "action": "Long wheat, defense primes, gold. Monitor Belarus border for mobilization orders.",
+        "horizon": "1-2 hours",
+        "confidence": 70
       }
     ],
     "tickers_to_watch": [
-      "Brent Crude", "WTI", "VIX", "SPY", "GLD", "GD", "LMT", "NOC", "XLE",
+      "Brent Crude", "WTI", "VIX", "SPY", "GLD", "GD", "LMT", "NOC", "LHX", "XLE",
       "DAL", "UAL", "AAL",
       "USD/RUB", "MOEX", "RSX", "OFZ Bonds",
-      "HYPE", "POLY",
-      "Wheat Futures"
+      "Wheat Futures",
+      "HYPE", "WLD",
+      "CHF"
     ]
   }
 }

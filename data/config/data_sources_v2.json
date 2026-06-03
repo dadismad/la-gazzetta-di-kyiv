@@ -1,14 +1,108 @@
 {
-  "rss": [
-    {"id": "bbc_world", "url": "http://feeds.bbci.co.uk/news/world/rss.xml", "topic": "geopolitics"},
-    {"id": "bloomberg_markets", "url": "https://feeds.bloomberg.com/markets/news.rss", "topic": "markets"},
-    {"id": "ft_world", "url": "https://www.ft.com/world?format=rss", "topic": "macro"},
-    {"id": "guardian_world", "url": "https://www.theguardian.com/world/rss", "topic": "geopolitics"}
-  ],
-  "reddit": [
-    {"id": "worldnews", "url": "https://www.reddit.com/r/worldnews/new.json?limit=25", "topic": "geopolitics"},
-    {"id": "economics", "url": "https://www.reddit.com/r/economics/new.json?limit=25", "topic": "macro"},
-    {"id": "stocks", "url": "https://www.reddit.com/r/stocks/new.json?limit=25", "topic": "markets"},
-    {"id": "geopolitics", "url": "https://www.reddit.com/r/geopolitics/new.json?limit=25", "topic": "geopolitics"}
-  ]
+  "version": "2.0.0",
+  "generated": "2026-06-03",
+  "description": "Expanded multi-source ingestion registry for Gazzetta di Kyiv. Each source includes paradigm relevance scoring alongside factual density and reputation.",
+  "sources": {
+    "china_tech_execution": {
+      "category": "China Tech & Industrial Execution",
+      "pillar": "china_ascendancy",
+      "paradigm_relevance": 0.95,
+      "sources": [
+        {"name": "Nikkei Asia", "url": "https://asia.nikkei.com", "type": "rss", "priority": "high"},
+        {"name": "SCMP", "url": "https://www.scmp.com", "type": "rss", "priority": "high"},
+        {"name": "ASPI Critical Technology Tracker", "url": "https://www.aspi.org.au/report/critical-technology-tracker", "type": "scrape", "priority": "high", "refresh_hours": 168},
+        {"name": "ITIF China Innovation Series", "url": "https://itif.org", "type": "rss", "priority": "medium"},
+        {"name": "WIPO Patent Data", "url": "https://www.wipo.int", "type": "api", "priority": "medium", "refresh_hours": 720},
+        {"name": "15th Five-Year Plan Documents", "url": "https://english.www.gov.cn", "type": "scrape", "priority": "high", "refresh_hours": 720}
+      ]
+    },
+    "dollar_architecture": {
+      "category": "Dollar Architecture & De-dollarisation",
+      "pillar": "dollar_decline",
+      "paradigm_relevance": 0.90,
+      "sources": [
+        {"name": "IMF COFER", "url": "https://data.imf.org/cofer", "type": "api", "priority": "high", "refresh_hours": 720},
+        {"name": "BIS Triennial Surveys", "url": "https://www.bis.org", "type": "scrape", "priority": "high", "refresh_hours": 720},
+        {"name": "SWIFT Currency Reports", "url": "https://www.swift.com", "type": "scrape", "priority": "medium", "refresh_hours": 168},
+        {"name": "BRICS Official Communiqués", "url": "https://brics2023.gov.za", "type": "scrape", "priority": "high", "refresh_hours": 168},
+        {"name": "Commodity Settlement Data", "url": "https://www.eia.gov", "type": "api", "priority": "medium"}
+      ]
+    },
+    "eu_structural": {
+      "category": "EU Structural & Migration Dynamics",
+      "pillar": "eu_fragmentation",
+      "paradigm_relevance": 0.85,
+      "sources": [
+        {"name": "Eurostat Migration/Asylum/Labor", "url": "https://ec.europa.eu/eurostat", "type": "api", "priority": "high", "refresh_hours": 168},
+        {"name": "YouGov EuroTrack", "url": "https://yougov.co.uk", "type": "scrape", "priority": "medium", "refresh_hours": 168},
+        {"name": "Eurobarometer", "url": "https://europa.eu/eurobarometer", "type": "scrape", "priority": "medium", "refresh_hours": 720},
+        {"name": "Frontex Irregular Migration", "url": "https://frontex.europa.eu", "type": "scrape", "priority": "high", "refresh_hours": 168}
+      ]
+    },
+    "abundance_tech": {
+      "category": "Abundance Technologies",
+      "pillar": "abundance_tech",
+      "paradigm_relevance": 0.92,
+      "sources": [
+        {"name": "Fusion Industry Association", "url": "https://www.fusionindustryassociation.org", "type": "scrape", "priority": "high", "refresh_hours": 168},
+        {"name": "Commonwealth Fusion Systems", "url": "https://cfs.energy", "type": "scrape", "priority": "high"},
+        {"name": "Helion Energy", "url": "https://www.helionenergy.com", "type": "scrape", "priority": "high"},
+        {"name": "DOE/ITER Updates", "url": "https://www.energy.gov", "type": "rss", "priority": "medium"},
+        {"name": "BryceTech Space Economy", "url": "https://brycetech.com", "type": "scrape", "priority": "high", "refresh_hours": 720},
+        {"name": "Space Capital Reports", "url": "https://www.spacecapital.com", "type": "scrape", "priority": "medium", "refresh_hours": 720},
+        {"name": "Longevity.Technology", "url": "https://longevity.technology", "type": "rss", "priority": "high"},
+        {"name": "NASA/ESA/CNSA Releases", "url": "https://www.nasa.gov", "type": "rss", "priority": "medium"}
+      ]
+    },
+    "blockchain_agentic": {
+      "category": "Blockchain & Agentic Economy",
+      "pillar": "blockchain_agentic",
+      "paradigm_relevance": 0.88,
+      "sources": [
+        {"name": "RWA.xyz", "url": "https://app.rwa.xyz", "type": "api", "priority": "high", "refresh_hours": 24},
+        {"name": "DefiLlama", "url": "https://defillama.com", "type": "api", "priority": "high", "refresh_hours": 24},
+        {"name": "Dune Analytics", "url": "https://dune.com", "type": "api", "priority": "medium"}
+      ]
+    },
+    "positive_breakthroughs": {
+      "category": "Positive Breakthroughs (White Pill)",
+      "pillar": "abundance_tech",
+      "paradigm_relevance": 0.80,
+      "sources": [
+        {"name": "ScienceDaily", "url": "https://www.sciencedaily.com", "type": "rss", "priority": "medium"},
+        {"name": "MIT Technology Review", "url": "https://www.technologyreview.com", "type": "rss", "priority": "high"},
+        {"name": "ARK Invest Big Ideas", "url": "https://ark-invest.com", "type": "scrape", "priority": "medium", "refresh_hours": 8760},
+        {"name": "Epoch AI", "url": "https://epochai.org", "type": "scrape", "priority": "medium", "refresh_hours": 168},
+        {"name": "Optimist Daily", "url": "https://www.optimistdaily.com", "type": "rss", "priority": "low"}
+      ]
+    },
+    "geopolitics_events": {
+      "category": "Geopolitics & Event-Driven",
+      "pillar": "multi_pillar",
+      "paradigm_relevance": 0.75,
+      "sources": [
+        {"name": "Telegram Intel Monitor (6 channels)", "url": "local:data/telegram_intel/latest.json", "type": "local", "priority": "high", "refresh_hours": 0.5},
+        {"name": "Reuters World", "url": "https://www.reuters.com", "type": "rss", "priority": "high"},
+        {"name": "Al Jazeera", "url": "https://www.aljazeera.com", "type": "rss", "priority": "medium"}
+      ]
+    }
+  },
+  "scoring_dimensions": {
+    "paradigm_relevance": {
+      "description": "How strongly the source aligns with the five-pillar paradigm lens (0–1)",
+      "weight": 0.35
+    },
+    "factual_density": {
+      "description": "Concrete, verifiable data points per 1000 words",
+      "weight": 0.30
+    },
+    "source_reputation": {
+      "description": "Institutional credibility and track record",
+      "weight": 0.20
+    },
+    "timeliness": {
+      "description": "How frequently the source produces actionable new information",
+      "weight": 0.15
+    }
+  }
 }
