@@ -1,16 +1,32 @@
-# Pipeline Audit (Latest)
+# Pipeline Audit
 
 Status: **ok**
-Generated: 2026-06-03T03:45:25.358432+00:00
+Generated: 2026-06-03T17:26:50.871028+00:00
 
-## Artifact checks
-- normalized_events: exists=True age_seconds=0 path=`data/normalized/events_latest.json`
-- processed_intelligence: exists=True age_seconds=0 path=`data/processed/narrative_intelligence_latest.json`
-- site_regime: exists=True age_seconds=0 path=`site/api/v1/home/regime.json`
-- site_setups: exists=True age_seconds=0 path=`site/api/v1/home/setups.json`
-- site_contradictions: exists=True age_seconds=0 path=`site/api/v1/home/contradictions.json`
-- telegram_payload: exists=True age_seconds=0 path=`data/publish/telegram_latest.md`
-- reddit_payload: exists=True age_seconds=0 path=`data/publish/reddit_latest.md`
+## Artifacts
+- normalized_events: ✅ age=33699s
+- processed_intelligence: ✅ age=33694s
+- stories_json: ✅ age=6013s
+- telegram_payload: ✅ age=5991s
+- reddit_payload: ✅ age=5986s
+- editorial_state: ✅ age=5954s
+- **source_diversity**: 4/34 active (11.8%)
+- **paradigm_coverage**: 0.0%
+  - china_ascendancy: 0 ❌
+  - dollar_decline: 0 ❌
+  - eu_fragmentation: 0 ❌
+  - abundance_tech: 0 ❌
+  - blockchain_agentic: 0 ❌
 
 ## Findings
-- [MEDIUM] Source retrieval failures detected | evidence: failures=4 in data/normalized/events_latest.json | fix: Add alternate mirror/feed and retry policy for failed sources
+- [MEDIUM] Paradigm pillars uncovered | No setups: china_ascendancy, dollar_decline, eu_fragmentation, abundance_tech, blockchain_agentic
+
+## Source Coverage
+- 4 of 34 configured sources active
+
+## Paradigm Lens
+- **china_ascendancy**: 0 setups
+- **dollar_decline**: 0 setups
+- **eu_fragmentation**: 0 setups
+- **abundance_tech**: 0 setups
+- **blockchain_agentic**: 0 setups

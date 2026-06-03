@@ -1,28 +1,34 @@
 {
-  "generated_at": "2026-06-03T08:05:15.991500+00:00",
+  "generated_at": "2026-06-03T17:26:56.686019+00:00",
   "setups": [
     {
       "setup_id": "n21_geopolitics",
-      "title": "Narrative acceleration: geopolitics",
+      "title": "geopolitics: Israel strikes southern Lebanon but partial truce with Hezbollah appears to hold",
       "horizon": "24-72h",
-      "thesis": "geopolitics second-order effects remain underpriced by consensus",
+      "thesis": "geopolitics — civilian infrastructure targeting threshold crossed in the Gulf",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar",
+        "eu_fragmentation"
+      ],
       "actors": [
+        "Gulf States",
         "Microsoft",
         "Kremlin/Russia"
       ],
       "incentives": [
-        "preserve policy credibility",
         "capture allocation flows"
       ],
       "probability_base": 80,
       "probability_bull": 8,
       "probability_bear": 12,
       "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
+        "Gulf States announces policy reversal within 72 hours",
+        "New data contradicts the geopolitics repricing direction within 24 hours"
       ],
       "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
+        "Use staged ETF entries with explicit invalidation stop",
         "Prefer defined-risk options in high-volatility windows"
       ],
       "confidence": 0.88,
@@ -37,26 +43,33 @@
     },
     {
       "setup_id": "n21_macro",
-      "title": "Narrative acceleration: macro",
+      "title": "macro: OECD warns of ‘dark scenario’ if Gulf energy crisis drags on",
       "horizon": "24-72h",
-      "thesis": "macro second-order effects remain underpriced by consensus",
+      "thesis": "macro tariff escalation is compounding energy-driven inflation — stagflation risk is being repriced",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar",
+        "eu_fragmentation"
+      ],
       "actors": [
+        "Gulf States",
+        "EU institutions",
         "Federal Reserve",
         "ECB"
       ],
       "incentives": [
-        "preserve policy credibility",
         "capture allocation flows"
       ],
       "probability_base": 80,
       "probability_bull": 8,
       "probability_bear": 12,
       "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
+        "Gulf States announces policy reversal within 72 hours",
+        "New data contradicts the macro repricing direction within 24 hours"
       ],
       "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
+        "Use staged ETF entries with explicit invalidation stop",
         "Prefer defined-risk options in high-volatility windows"
       ],
       "confidence": 0.67,
@@ -71,25 +84,30 @@
     },
     {
       "setup_id": "n21_markets",
-      "title": "Narrative acceleration: markets",
+      "title": "markets: Yen Hovers Near 160 Per Dollar as Traders Eye Intervention Risk",
       "horizon": "24-72h",
-      "thesis": "markets narrative is sensitive to negotiation headlines and repricing whipsaws",
+      "thesis": "Yen Hovers Near 160 Per Dollar as Traders Eye Intervention Risk — this changes the markets repricing calculation",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar",
+        "dollar_decline"
+      ],
       "actors": [
-        "policy and market actors"
+        "Gulf States"
       ],
       "incentives": [
-        "preserve policy credibility",
         "capture allocation flows"
       ],
       "probability_base": 80,
       "probability_bull": 8,
       "probability_bear": 12,
       "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
+        "Gulf States announces policy reversal within 72 hours",
+        "New data contradicts the markets repricing direction within 24 hours"
       ],
       "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
+        "Use staged ETF entries with explicit invalidation stop",
         "Prefer defined-risk options in high-volatility windows"
       ],
       "confidence": 0.63,
@@ -104,13 +122,16 @@
     },
     {
       "setup_id": "n21_oil",
-      "title": "Narrative acceleration: oil",
+      "title": "oil: Shell pumped oil through Nigeria pipeline for years despite pollution evidence, ",
       "horizon": "24-72h",
-      "thesis": "Energy corridor fragility can reprice inflation expectations quickly",
+      "thesis": "Energy corridor fragility is repricing inflation expectations in real time",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar"
+      ],
       "actors": [
-        "OPEC+",
-        "Saudi Aramco",
-        "shipping insurers"
+        "Gulf States"
       ],
       "incentives": [
         "defend fiscal revenues",
@@ -120,11 +141,11 @@
       "probability_bull": 19,
       "probability_bear": 27,
       "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
+        "Gulf States announces policy reversal within 72 hours",
+        "New data contradicts the oil repricing direction within 24 hours"
       ],
       "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
+        "Use staged ETF entries with explicit invalidation stop",
         "Prefer defined-risk options in high-volatility windows"
       ],
       "confidence": 0.47,
@@ -139,14 +160,17 @@
     },
     {
       "setup_id": "n21_ai",
-      "title": "Narrative acceleration: ai",
+      "title": "ai: AI giant Anthropic plans to sell shares in US as valuation nears $1tn",
       "horizon": "24-72h",
-      "thesis": "AI capex concentration risk is rising while narrative momentum stays strong",
+      "thesis": "AI compute concentration is accelerating — the semiconductor supply chain is the new oil pipeline",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar"
+      ],
       "actors": [
-        "OpenAI",
-        "Microsoft",
-        "NVIDIA",
-        "Amazon"
+        "Anthropic",
+        "Gulf States"
       ],
       "incentives": [
         "capture compute rents",
@@ -156,11 +180,11 @@
       "probability_bull": 19,
       "probability_bear": 27,
       "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
+        "Anthropic announces policy reversal within 72 hours",
+        "New data contradicts the ai repricing direction within 24 hours"
       ],
       "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
+        "Use staged ETF entries with explicit invalidation stop",
         "Prefer defined-risk options in high-volatility windows"
       ],
       "confidence": 0.47,
@@ -175,25 +199,30 @@
     },
     {
       "setup_id": "n21_ukraine",
-      "title": "Narrative acceleration: ukraine",
+      "title": "ukraine: Seven killed after drone hits bus in Russia-controlled part of Ukraine",
       "horizon": "24-72h",
-      "thesis": "ukraine second-order effects remain underpriced by consensus",
+      "thesis": "ukraine — civilian infrastructure targeting threshold crossed in the Gulf",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar"
+      ],
       "actors": [
-        "Kremlin/Russia"
+        "Kremlin/Russia",
+        "Zelenskyy"
       ],
       "incentives": [
-        "preserve policy credibility",
         "capture allocation flows"
       ],
       "probability_base": 50,
       "probability_bull": 21,
       "probability_bear": 29,
       "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
+        "Kremlin/Russia announces policy reversal within 72 hours",
+        "New data contradicts the ukraine repricing direction within 24 hours"
       ],
       "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
+        "Use staged ETF entries with explicit invalidation stop",
         "Prefer defined-risk options in high-volatility windows"
       ],
       "confidence": 0.45,
@@ -208,9 +237,14 @@
     },
     {
       "setup_id": "n21_russia",
-      "title": "Narrative acceleration: russia",
+      "title": "russia: Seven killed after drone hits bus in Russia-controlled part of Ukraine",
       "horizon": "24-72h",
-      "thesis": "Geopolitical escalation tails are underweighted in regional risk premia",
+      "thesis": "The Ukraine attrition war is slowly draining Western political will to fund — not a stalemate, a grinding test of endurance",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar"
+      ],
       "actors": [
         "Kremlin/Russia"
       ],
@@ -222,11 +256,11 @@
       "probability_bull": 21,
       "probability_bear": 31,
       "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
+        "Kremlin/Russia announces policy reversal within 72 hours",
+        "New data contradicts the russia repricing direction within 24 hours"
       ],
       "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
+        "Use staged ETF entries with explicit invalidation stop",
         "Prefer defined-risk options in high-volatility windows"
       ],
       "confidence": 0.44,
@@ -240,13 +274,19 @@
     },
     {
       "setup_id": "n21_china",
-      "title": "Narrative acceleration: china",
+      "title": "china: China Picks State Firm to Help Coordinate Mining Deals Abroad",
       "horizon": "24-72h",
-      "thesis": "Stimulus messaging may outpace private-demand follow-through",
+      "thesis": "China is executing industrial policy at 5-year-plan tempo while US policy oscillates with election cycles",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar",
+        "china_ascendancy"
+      ],
       "actors": [
         "PBoC",
         "State Council",
-        "export manufacturers"
+        "CCP"
       ],
       "incentives": [
         "stabilize growth optics",
@@ -256,11 +296,11 @@
       "probability_bull": 21,
       "probability_bear": 31,
       "invalidation_triggers": [
-        "Mention-share drops below 7d baseline for two cycles",
-        "Cross-source confirmation weakens materially"
+        "PBoC announces policy reversal within 72 hours",
+        "New data contradicts the china repricing direction within 24 hours"
       ],
       "retail_execution": [
-        "Use staged ETF entries with explicit invalidation",
+        "Use staged ETF entries with explicit invalidation stop",
         "Prefer defined-risk options in high-volatility windows"
       ],
       "confidence": 0.44,
@@ -276,69 +316,112 @@
   "contradictions": [
     {
       "narrative": "geopolitics",
-      "claim_a": "geopolitics is fully priced",
-      "claim_b": "geopolitics transmission effects remain underpriced",
+      "claim_a": "Gulf States policy remains stable",
+      "claim_b": "Israel strikes southern Lebanon but partial truce with Hezbollah appears to hold",
       "urgency": "high",
-      "invalidation_window": "24-72h"
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar"
     },
     {
       "narrative": "macro",
-      "claim_a": "macro is fully priced",
-      "claim_b": "macro transmission effects remain underpriced",
+      "claim_a": "Gulf States policy remains stable",
+      "claim_b": "OECD warns of ‘dark scenario’ if Gulf energy crisis drags on",
       "urgency": "high",
-      "invalidation_window": "24-72h"
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar"
     },
     {
       "narrative": "markets",
-      "claim_a": "markets is fully priced",
-      "claim_b": "markets transmission effects remain underpriced",
+      "claim_a": "Gulf States policy remains stable",
+      "claim_b": "Yen Hovers Near 160 Per Dollar as Traders Eye Intervention Risk",
       "urgency": "high",
-      "invalidation_window": "24-72h"
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar"
     },
     {
       "narrative": "oil",
-      "claim_a": "oil is fully priced",
-      "claim_b": "oil transmission effects remain underpriced",
+      "claim_a": "Gulf States policy remains stable",
+      "claim_b": "Shell pumped oil through Nigeria pipeline for years despite pollution evidence, documents show",
       "urgency": "medium",
-      "invalidation_window": "24-72h"
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar"
     },
     {
       "narrative": "ai",
-      "claim_a": "ai is fully priced",
-      "claim_b": "ai transmission effects remain underpriced",
+      "claim_a": "Anthropic policy remains stable",
+      "claim_b": "AI giant Anthropic plans to sell shares in US as valuation nears $1tn",
       "urgency": "medium",
-      "invalidation_window": "24-72h"
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar"
     },
     {
       "narrative": "ukraine",
-      "claim_a": "ukraine is fully priced",
-      "claim_b": "ukraine transmission effects remain underpriced",
+      "claim_a": "Kremlin/Russia policy remains stable",
+      "claim_b": "Seven killed after drone hits bus in Russia-controlled part of Ukraine",
       "urgency": "medium",
-      "invalidation_window": "24-72h"
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar"
     },
     {
       "narrative": "russia",
-      "claim_a": "russia is fully priced",
-      "claim_b": "russia transmission effects remain underpriced",
+      "claim_a": "Kremlin/Russia policy remains stable",
+      "claim_b": "Seven killed after drone hits bus in Russia-controlled part of Ukraine",
       "urgency": "medium",
-      "invalidation_window": "24-72h"
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar"
     },
     {
       "narrative": "china",
-      "claim_a": "china is fully priced",
-      "claim_b": "china transmission effects remain underpriced",
+      "claim_a": "PBoC policy remains stable",
+      "claim_b": "China Picks State Firm to Help Coordinate Mining Deals Abroad",
       "urgency": "medium",
-      "invalidation_window": "24-72h"
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar"
     }
   ],
   "regime": {
-    "generated_at": "2026-06-03T08:05:15.991308+00:00",
+    "generated_at": "2026-06-03T17:26:56.685838+00:00",
     "data_freshness_seconds": 3600,
     "source_count": 4,
-    "regime_label": "Narrative Repricing Risk",
+    "source_diversity": [
+      "bbc_world",
+      "bloomberg_markets",
+      "ft_world",
+      "guardian_world"
+    ],
+    "paradigm_coverage": {
+      "china_ascendancy": {
+        "label": "China Ascendancy — Execution Over Invention",
+        "setup_count": 0
+      },
+      "dollar_decline": {
+        "label": "Dollar Architecture Erosion",
+        "setup_count": 0
+      },
+      "eu_fragmentation": {
+        "label": "EU Structural Pressures",
+        "setup_count": 0
+      },
+      "abundance_tech": {
+        "label": "Abundance Technologies",
+        "setup_count": 0
+      },
+      "blockchain_agentic": {
+        "label": "Blockchain as Agentic Economy Rail",
+        "setup_count": 0
+      }
+    },
+    "regime_label": "Paradigm-Lens Intelligence",
     "risk_state": "selective risk-off",
     "confidence": 0.74
   },
   "source_events": 100,
-  "method": "v2.1 semantic extraction + quality-ready output"
+  "paradigm_pillar_counts": {
+    "china_ascendancy": 0,
+    "dollar_decline": 0,
+    "eu_fragmentation": 0,
+    "abundance_tech": 0,
+    "blockchain_agentic": 0
+  },
+  "method": "v2.2 paradigm-lens + anti-template + concrete claims"
 }

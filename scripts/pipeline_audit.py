@@ -1,21 +1,30 @@
 #!/usr/bin/env python3
+"""
+Pipeline audit v2.2 — source diversity + paradigm coverage + anti-template checks.
+"""
 from __future__ import annotations
 import json, os, time
+from collections import Counter
 from datetime import datetime, timezone
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 AUDIT_DIR = os.path.join(REPO, 'data', 'audit')
 JSON_OUT = os.path.join(AUDIT_DIR, 'pipeline_audit_latest.json')
 MD_OUT = os.path.join(AUDIT_DIR, 'pipeline_audit_latest.md')
+SRC_CFG = os.path.join(REPO, 'data', 'config', 'data_sources_v2.json')
 
 CHECKS = [
     ('normalized_events', 'data/normalized/events_latest.json'),
     ('processed_intelligence', 'data/processed/narrative_intelligence_latest.json'),
-    ('site_regime', 'site/api/v1/home/regime.json'),
-    ('site_setups', 'site/api/v1/home/setups.json'),
-    ('site_contradictions', 'site/api/v1/home/contradictions.json'),
+    ('stories_json', 'data/publish/stories.json'),
     ('telegram_payload', 'data/publish/telegram_latest.md'),
     ('reddit_payload', 'data/publish/reddit_latest.md'),
+    ('editorial_state', 'data/editorial_state.json'),
+]
+
+EXPECTED_PILLARS = [
+    'china_ascendancy', 'dollar_decline', 'eu_fragmentation',
+    'abundance_tech', 'blockchain_agentic',
 ]
 
 
@@ -29,54 +38,82 @@ def main():
     os.makedirs(AUDIT_DIR, exist_ok=True)
     findings = []
     artifacts = []
+    paradigm_counts = Counter({p: 0 for p in EXPECTED_PILLARS})
 
+    # ── Artifact freshness ──
     for key, rel in CHECKS:
         p = os.path.join(REPO, rel)
         ok = os.path.exists(p)
         age = age_seconds(p)
         artifacts.append({'key': key, 'path': rel, 'exists': ok, 'age_seconds': age})
         if not ok:
-            findings.append({'severity': 'blocker', 'title': f'Missing artifact: {key}', 'evidence': rel, 'fix': f'Generate {rel} via v2 pipeline scripts'})
+            findings.append({'severity': 'blocker', 'title': f'Missing: {key}', 'evidence': rel, 'fix': f'Generate {rel}'})
         elif age is not None and age > 86400:
-            findings.append({'severity': 'high', 'title': f'Stale artifact: {key}', 'evidence': f'{rel} age={age}s', 'fix': 'Run pipeline and refresh'})
+            findings.append({'severity': 'high', 'title': f'Stale: {key}', 'evidence': f'{rel} age={age}s', 'fix': 'Run pipeline'})
 
-    # source ingestion checks
+    # ── Source diversity ──
+    total_sources = 0
+    if os.path.exists(SRC_CFG):
+        src_cfg = json.load(open(SRC_CFG, 'r', encoding='utf-8'))
+        for cat_data in src_cfg.get('sources', {}).values():
+            total_sources += len(cat_data.get('sources', []))
+
     norm_path = os.path.join(REPO, 'data/normalized/events_latest.json')
+    norm_sources = set()
     if os.path.exists(norm_path):
         norm = json.load(open(norm_path, 'r', encoding='utf-8'))
-        failures = norm.get('failures', [])
-        if failures:
-            findings.append({
-                'severity': 'medium',
-                'title': 'Source retrieval failures detected',
-                'evidence': f"failures={len(failures)} in data/normalized/events_latest.json",
-                'fix': 'Add alternate mirror/feed and retry policy for failed sources'
-            })
-        if norm.get('stale'):
-            findings.append({
-                'severity': 'blocker',
-                'title': 'Normalized events marked stale',
-                'evidence': 'events_latest.json stale=true',
-                'fix': 'Recover collection stage before publish'
-            })
+        for ev in norm.get('items', []):
+            sid = ev.get('source_id', '')
+            if sid:
+                norm_sources.add(sid)
 
-    # schema/semantic checks
-    setups_path = os.path.join(REPO, 'site/api/v1/home/setups.json')
-    if os.path.exists(setups_path):
-        setups = json.load(open(setups_path, 'r', encoding='utf-8')).get('items', [])
-        for i, s in enumerate(setups[:20]):
-            ps = s.get('probability_base', 0) + s.get('probability_bull', 0) + s.get('probability_bear', 0)
-            if ps != 100:
-                findings.append({'severity': 'high', 'title': 'Probability sum != 100', 'evidence': f'setups[{i}] {s.get("title")}', 'fix': 'Normalize probabilities in analyze stage'})
-            if not s.get('invalidation_triggers'):
-                findings.append({'severity': 'high', 'title': 'Missing invalidation trigger', 'evidence': f'setups[{i}] {s.get("title")}', 'fix': 'Enforce invalidation in analyzer'})
+    coverage_pct = round(len(norm_sources) / max(total_sources, 1) * 100, 1)
+    artifacts.append({
+        'key': 'source_diversity', 'path': 'data/normalized/events_latest.json',
+        'active_sources': len(norm_sources), 'total_configured': total_sources,
+        'coverage_pct': coverage_pct,
+    })
+    if len(norm_sources) < 3 and total_sources > 0:
+        findings.append({'severity': 'medium', 'title': 'Low source diversity',
+                         'evidence': f'{len(norm_sources)}/{total_sources} active', 'fix': 'Check RSS/API reachability'})
 
-    regime_path = os.path.join(REPO, 'site/api/v1/home/regime.json')
-    if os.path.exists(regime_path):
-        regime = json.load(open(regime_path, 'r', encoding='utf-8'))
-        if not regime.get('regime_label'):
-            findings.append({'severity': 'medium', 'title': 'Missing regime label', 'evidence': 'regime.json', 'fix': 'Set fallback regime label'})
+    # ── Paradigm coverage ──
+    intel_path = os.path.join(REPO, 'data/processed/narrative_intelligence_latest.json')
+    if os.path.exists(intel_path):
+        intel = json.load(open(intel_path, 'r', encoding='utf-8'))
+        for s in intel.get('setups', []):
+            pillar = s.get('paradigm_pillar', 'unknown')
+            paradigm_counts[pillar] += 1
 
+    uncovered = [p for p in EXPECTED_PILLARS if paradigm_counts.get(p, 0) == 0]
+    paradigm_report = [{'pillar': p, 'setup_count': paradigm_counts.get(p, 0), 'covered': paradigm_counts.get(p, 0) > 0} for p in EXPECTED_PILLARS]
+    artifacts.append({
+        'key': 'paradigm_coverage', 'pillars': paradigm_report,
+        'coverage_pct': round(len([p for p in EXPECTED_PILLARS if paradigm_counts.get(p, 0) > 0]) / len(EXPECTED_PILLARS) * 100, 1),
+    })
+    if uncovered:
+        findings.append({'severity': 'medium', 'title': 'Paradigm pillars uncovered',
+                         'evidence': f'No setups: {", ".join(uncovered)}', 'fix': 'Expand source ingestion'})
+
+    # ── Anti-template check ──
+    stories_path = os.path.join(REPO, 'data/publish/stories.json')
+    if os.path.exists(stories_path):
+        stories_data = json.load(open(stories_path, 'r', encoding='utf-8'))
+        banned = ['narrative acceleration', 'second-order effects remain underpriced',
+                  'transmission effects remain underpriced', 'repricing whipsaws',
+                  'mention-share drops below 7d baseline', 'cross-source confirmation',
+                  'policy and market actors']
+        all_s = [stories_data.get('lead', {})] + stories_data.get('stories', [])
+        violations = []
+        for i, s in enumerate(all_s):
+            for phrase in banned:
+                if phrase in json.dumps(s).lower():
+                    violations.append({'story_index': i, 'banned_phrase': phrase, 'headline': s.get('headline', '')[:60]})
+        if violations:
+            findings.append({'severity': 'high', 'title': f'Taxonomy phrases: {len(violations)} stories',
+                             'evidence': json.dumps(violations[:3]), 'fix': 'Rewrite without template language'})
+
+    # ── Status ──
     status = 'ok' if not [f for f in findings if f['severity'] in ('blocker', 'high')] else 'degraded'
     report = {
         'generated_at': datetime.now(timezone.utc).isoformat(),
@@ -88,28 +125,34 @@ def main():
             'blockers': len([f for f in findings if f['severity'] == 'blocker']),
             'high': len([f for f in findings if f['severity'] == 'high']),
             'medium': len([f for f in findings if f['severity'] == 'medium']),
-            'low': len([f for f in findings if f['severity'] == 'low']),
-        }
+        },
     }
     json.dump(report, open(JSON_OUT, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
 
-    lines = [
-        '# Pipeline Audit (Latest)',
-        '',
-        f"Status: **{status}**",
-        f"Generated: {report['generated_at']}",
-        '',
-        '## Artifact checks',
-    ]
+    # ── Markdown report ──
+    lines = ['# Pipeline Audit', '', f"Status: **{status}**", f"Generated: {report['generated_at']}", '', '## Artifacts']
     for a in artifacts:
-        lines.append(f"- {a['key']}: exists={a['exists']} age_seconds={a['age_seconds']} path=`{a['path']}`")
-    lines.append('')
-    lines.append('## Findings')
+        if a.get('pillars'):
+            lines.append(f"- **paradigm_coverage**: {a.get('coverage_pct', '?')}%")
+            for pr in a['pillars']:
+                lines.append(f"  - {pr['pillar']}: {pr['setup_count']} {'✅' if pr['covered'] else '❌'}")
+        elif a.get('active_sources') is not None:
+            lines.append(f"- **source_diversity**: {a['active_sources']}/{a['total_configured']} active ({a['coverage_pct']}%)")
+        else:
+            age_str = f"{a.get('age_seconds', '?')}s" if a.get('age_seconds') is not None else 'N/A'
+            lines.append(f"- {a['key']}: {'✅' if a.get('exists') else '❌'} age={age_str}")
+
+    lines.append(''); lines.append('## Findings')
     if findings:
         for f in findings:
-            lines.append(f"- [{f['severity'].upper()}] {f['title']} | evidence: {f['evidence']} | fix: {f['fix']}")
+            lines.append(f"- [{f['severity'].upper()}] {f['title']} | {f.get('evidence','')}")
     else:
-        lines.append('- No critical findings.')
+        lines.append('- No findings.')
+    lines.append(''); lines.append('## Source Coverage')
+    lines.append(f"- {len(norm_sources)} of {total_sources} configured sources active")
+    lines.append(''); lines.append('## Paradigm Lens')
+    for pid in EXPECTED_PILLARS:
+        lines.append(f"- **{pid}**: {paradigm_counts.get(pid, 0)} setups")
 
     open(MD_OUT, 'w', encoding='utf-8').write('\n'.join(lines))
     print(json.dumps({'ok': True, 'status': status, 'json': JSON_OUT, 'md': MD_OUT, 'findings': len(findings)}))

@@ -1,4 +1,18 @@
 #!/usr/bin/env python3
+"""
+Multi-source collector v2.1 — pulls from RSS, Reddit, and (future) API sources
+configured in data/config/data_sources_v2.json. Expanded source registry covers:
+- China tech execution (Nikkei Asia, SCMP, ASPI, ITIF, WIPO, 5YP documents)
+- Dollar architecture (IMF COFER, BIS, SWIFT, BRICS communiqués)
+- EU structural (Eurostat, YouGov, Eurobarometer, Frontex)
+- Abundance tech (Fusion Industry Assoc, BryceTech, Longevity.Technology, NASA/ESA)
+- Blockchain/agentic (RWA.xyz, DefiLlama, Dune)
+- Positive breakthroughs (ScienceDaily, MIT Tech Review, ARK, Epoch AI)
+- Geopolitics events (Telegram intel monitor, Reuters, Al Jazeera)
+
+To add a new ingestion method (API, structured scrape), add a function below
+and register it in main() with the appropriate source type from the config.
+"""
 from __future__ import annotations
 import json, os, re, time, urllib.request
 from datetime import datetime, timezone
