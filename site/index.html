@@ -3,106 +3,33 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>La Gazzetta di Kyiv — Narrative Intelligence</title>
-  <meta name="description" content="The stories that move markets. Contradiction-first narrative intelligence."/>
+  <title>La Gazzetta di Kyiv</title>
+  <meta name="description" content="Contradiction-first narrative intelligence. The stories that move markets."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=2"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css?v=3"/>
 </head>
 <body>
 
 <header class="masthead">
-  <div class="masthead-top">
-    <span class="date-line" id="dateLine"></span>
-    <span class="edition">NARRATIVE INTELLIGENCE · DAILY</span>
-  </div>
-  <h1 class="title">La Gazzetta di Kyiv</h1>
-  <p class="subtitle">People do not react to facts. People react to the stories they collectively believe about those facts.</p>
-  <p class="about-line">Narrative intelligence from Kyiv · Edited by Alexander Stocchi · Since 2025</p>
-  <nav class="nav-theses" id="navTheses">
-    <span>China Ascendant</span>
-    <span>Dollar Decline</span>
-    <span>EU Fracture</span>
-    <span>Tech Convergence</span>
-    <span>Agentic Economy</span>
-    <span>Longevity</span>
-  </nav>
+  <span class="masthead-name">La Gazzetta di Kyiv</span>
+  <span class="masthead-tagline">Narrative intelligence. Contradiction-first.</span>
+  <span class="masthead-meta" id="mastheadMeta">—</span>
 </header>
 
-<main class="layout">
-
-  <!-- LEAD STORY — Contradiction-first -->
-  <section class="lead-section" id="leadSection">
-    <div class="contradiction-banner">
-      <span class="con-label">CONTRADICTION OF THE DAY</span>
-    </div>
-    <article class="lead-story" id="leadStory">
-      <div class="story-split">
-        <div class="split-col consensus">
-          <span class="split-label">WHAT THEY SAY</span>
-          <p class="split-text" id="leadConsensus">Loading…</p>
-        </div>
-        <div class="split-col reality">
-          <span class="split-label">WHAT'S HAPPENING</span>
-          <p class="split-text" id="leadReality">Loading…</p>
-        </div>
-      </div>
-      <div class="lead-body">
-        <h2 class="lead-headline" id="leadHeadline">Loading…</h2>
-        <p class="lead-thesis" id="leadThesis"></p>
-        <p class="lead-implication" id="leadImplication"></p>
-      </div>
-    </article>
-  </section>
-
-  <!-- STORY STACK -->
-  <section class="stories-section" id="storyStack">
-    <!-- JS-populated -->
-  </section>
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <div class="side-block regime-block" id="regimeBlock">
-      <h3>Narrative Regime</h3>
-      <div class="regime-status" id="regimeStatus">Loading…</div>
-    </div>
-
-    <div class="side-block signal-block">
-      <h3>Signal Map</h3>
-      <div id="signalMap">Loading…</div>
-    </div>
-
-    <div class="side-block sources-block">
-      <h3>Sources Today</h3>
-      <div id="sourceCount">—</div>
-    </div>
-
-    <div class="side-block theses-block">
-      <h3>The Six Theses</h3>
-      <ul class="theses-list">
-        <li><strong>China Ascendancy</strong> — State-capitalist model outcompetes US profit-driven approach</li>
-        <li><strong>Petrodollar Decline</strong> — BRICS, de-dollarization, gold accumulation</li>
-        <li><strong>EU Self-Destruction</strong> — Immigration, stagnation, regulatory overreach</li>
-        <li><strong>Tech Convergence</strong> — AI + Robotics + Fusion + Biotech = discontinuity</li>
-        <li><strong>Agentic Economy</strong> — Stablecoins as rails for autonomous AI commerce</li>
-        <li><strong>Longevity</strong> — Largest addressable market in human history</li>
-      </ul>
-    </div>
-
-    <div class="side-block channels-block">
-      <h3>Follow</h3>
-      <p><a href="https://t.me/GazzettaDiKyiv" target="_blank" rel="noopener">Telegram</a></p>
-      <p><a href="https://www.reddit.com/r/LaGazzettadiKyiv/" target="_blank" rel="noopener">Reddit</a></p>
-    </div>
-  </aside>
-
+<main class="grid" id="storyGrid">
+  <!-- JS-populated -->
 </main>
 
 <footer class="footer">
-  <p>La Gazzetta di Kyiv · Narrative Intelligence · <span id="footerFreshness"></span></p>
+  <a href="https://t.me/GazzettaDiKyiv">Telegram</a>
+  <span>·</span>
+  <a href="https://www.reddit.com/r/LaGazzettadiKyiv/">Reddit</a>
+  <span>·</span>
+  <span>Kyiv · Since 2025</span>
 </footer>
 
-<script src="./app.js?v=2"></script>
+<script src="./app.js?v=3"></script>
 </body>
 </html>

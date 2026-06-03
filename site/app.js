@@ -1,6 +1,4 @@
-// La Gazzetta di Kyiv — Concrete Editorial Language
-// Loads hand-written stories with direct, specific claims.
-
+// La Gazzetta di Kyiv — Ultra-Dense Front Page
 const DATA = './data/stories.json';
 
 function byId(id) { return document.getElementById(id); }
@@ -10,119 +8,67 @@ async function getJSON(path, fallback) {
     const r = await fetch(path, { cache: 'no-store' });
     if (!r.ok) throw new Error(String(r.status));
     return await r.json();
-  } catch (e) { console.warn('Fetch failed:', path); return fallback; }
+  } catch (e) { console.warn('Fetch:', path, e.message); return fallback; }
 }
 
-// ── Date line ──
-(function() {
-  const el = byId('dateLine');
+// ── Masthead meta ──
+function updateMasthead(stories) {
+  const el = byId('mastheadMeta');
   if (!el) return;
   const now = new Date();
-  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-  el.textContent = `${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
-})();
-
-// ── Render lead story ──
-function renderLead(lead) {
-  const consensusEl = byId('leadConsensus');
-  const realityEl = byId('leadReality');
-  const headlineEl = byId('leadHeadline');
-  const thesisEl = byId('leadThesis');
-  const implicationEl = byId('leadImplication');
-
-  if (consensusEl) consensusEl.textContent = `«${lead.they_say}»`;
-  if (realityEl) realityEl.textContent = `«${lead.reality}»`;
-  if (headlineEl) headlineEl.textContent = lead.headline;
-  if (thesisEl) thesisEl.textContent = lead.thesis;
-  if (implicationEl) {
-    implicationEl.textContent = `The actors: ${lead.actors || 'Multiple parties'}. The window: ${lead.horizon || '24–72 hours'}. The gap between consensus and reality is where capital moves.`;
-  }
+  const h = now.getHours().toString().padStart(2,'0');
+  const m = now.getMinutes().toString().padStart(2,'0');
+  el.textContent = `${stories.length} stories · Updated ${h}:${m}`;
 }
 
-// ── Render story stack ──
-function renderStack(stories) {
-  const el = byId('storyStack');
-  if (!el) return;
-  if (!stories.length) {
-    el.innerHTML = '<p style="color:var(--ink-muted);text-align:center;padding:30px;font-style:italic">Fresh intelligence arriving next cycle.</p>';
-    return;
-  }
+// ── Build card ──
+function cardHTML(story, idx, isLead) {
+  const sector = story.sector || '';
+  const leadClass = isLead ? ' lead' : '';
+  const theySay = story.they_say || '';
+  const reality = story.reality || '';
 
-  el.innerHTML = stories.map(s => `
-    <article class="story-item">
-      <div class="con-pair">
-        <div class="they-say">
-          <strong>They say</strong>
-          ${s.they_say}
-        </div>
-        <div class="reality-say">
-          <strong>Reality</strong>
-          ${s.reality}
-        </div>
-      </div>
-      <h3>${s.headline}</h3>
-      ${s.sector ? `<p class="story-thesis" style="font-family:var(--sans);font-size:10px;color:var(--sky);text-transform:uppercase;letter-spacing:0.08em">${s.sector}</p>` : ''}
-    </article>`).join('');
+  return `
+    <article class="card${leadClass}" data-expand="true">
+      ${sector ? `<span class="sector">${sector}</span>` : ''}
+      <h3>${story.headline}</h3>
+      ${reality ? `<p class="summary">${reality}</p>` : ''}
+      ${theySay || reality ? `
+      <div class="detail">
+        ${theySay ? `<div class="con-they"><span class="con-label">They say</span>${theySay}</div>` : ''}
+        ${reality ? `<div class="con-real"><span class="con-label">Reality</span>${reality}</div>` : ''}
+      </div>` : ''}
+    </article>`;
 }
 
-// ── Render sidebar with human-facing labels ──
-function renderSidebar(lead, stories) {
-  // Regime — show what it means, not just the label
-  const rEl = byId('regimeStatus');
-  if (rEl && lead) {
-    rEl.innerHTML = `
-      <div style="font-family:var(--serif);font-size:20px;font-weight:700;color:var(--ink);margin-bottom:6px">Repricing Risk</div>
-      <div style="font-family:var(--sans);font-size:12px;color:var(--ink-muted);line-height:1.5">
-        Markets are repricing Middle East energy corridor risk. Gulf states are directly affected — not just watching. The OECD has flagged a <em>dark scenario</em> for prolonged crisis.
-      </div>`;
-  }
-
-  // Signal Map → renamed to "Today's Stories"
-  const sEl = byId('signalMap');
-  if (sEl && stories) {
-    const label = sEl.parentElement?.querySelector('h3');
-    if (label) label.textContent = 'In This Edition';
-    sEl.innerHTML = stories.map(s => `
-      <div style="padding:5px 0;border-bottom:1px solid var(--divider-light);font-size:13px;line-height:1.4;color:var(--ink-light)">
-        <span style="font-family:var(--sans);font-size:9px;color:var(--sky);text-transform:uppercase;letter-spacing:0.06em;display:block">${s.sector || 'story'}</span>
-        ${s.headline}
-      </div>`).join('');
-  }
-
-  // Source count with context
-  const scEl = byId('sourceCount');
-  if (scEl) {
-    const label = scEl.parentElement?.querySelector('h3');
-    if (label) label.textContent = 'Data Freshness';
-    scEl.innerHTML = `
-      <div style="font-family:var(--sans);font-size:11px;color:var(--ink-muted);line-height:1.5">
-        Compiled from RSS feeds, Reddit, and financial news sources. Updated every 12 hours.
-      </div>`;
-  }
-
-  // Footer freshness
-  const ffEl = byId('footerFreshness');
-  if (ffEl) {
-    const now = new Date();
-    ffEl.textContent = `Updated ${now.toLocaleTimeString()}`;
-  }
+// ── Wire expand ──
+function wireExpand() {
+  document.querySelectorAll('.card[data-expand]').forEach(card => {
+    card.addEventListener('click', () => {
+      const was = card.classList.contains('expanded');
+      // Close all
+      document.querySelectorAll('.card.expanded').forEach(c => c.classList.remove('expanded'));
+      if (!was) card.classList.add('expanded');
+    });
+  });
 }
 
 // ── Boot ──
 async function boot() {
   const data = await getJSON(DATA, null);
-
   if (!data || !data.lead) {
-    // Graceful fallback
-    const leadEl = byId('leadHeadline');
-    if (leadEl) leadEl.textContent = 'Intelligence update in progress';
+    const grid = byId('storyGrid');
+    if (grid) grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:var(--ink-muted);padding:40px;font-style:italic">Intelligence update in progress.</p>';
     return;
   }
 
-  renderLead(data.lead);
-  renderStack(data.stories || []);
-  renderSidebar(data.lead, data.stories || []);
+  const all = [data.lead, ...(data.stories || [])];
+  const grid = byId('storyGrid');
+  if (!grid) return;
+
+  grid.innerHTML = all.map((s, i) => cardHTML(s, i, i === 0)).join('');
+  updateMasthead(all);
+  wireExpand();
 }
 
 boot();
