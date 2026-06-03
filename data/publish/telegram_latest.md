@@ -1,14 +1,12 @@
-geopolitics second-order effects remain underpriced by consensus
+OECD warns 'dark scenario' if Iran-Gulf crisis persists — first forecaster to break containment consensus.
 
-Implication: Narrative Repricing Risk regime (selective risk-off) — positioning shifts likely within 24–72h.
+Recession Risk Regime (selective risk-off): growth repricing overtakes oil. Bonds catching up.
 
-Actionable:
-• Narrative acceleration: geopolitics: geopolitics second-order effects remain underpriced by consensus
-• Narrative acceleration: markets: markets second-order effects remain underpriced by consensus
-• Narrative acceleration: macro: macro second-order effects remain underpriced by consensus
+• Macro hedge: long vol on EUR/USD into ECB — rate rise on table regardless of Iran deal
+• Trade overlay: Trump 10%+ tariffs on forced labour — trade-war layer compounds energy shock
 
-¹ ChatGPT reaches 800 million weekly active users as of May 2026 (ledger: HD-002, source: https://openai.com/index)
+¹ OECD GDP contraction scenario if Gulf disruption persists through Q3 2026. (source: https://ft.com/content/c79f9b4a-4fe9-b031-81c56511893c)
 
-Continuity: via https://pureciclismo.github.io/gazzetta-di-kyiv/ | 24-72h invalidation: Mention-share drops below 7d baseline for two cycles
+Continuity: pureciclismo.github.io/gazzetta-di-kyiv/ | Next trigger: ECB June meeting — rate decision vs growth downgrade
 
-Full briefing and positioning map: https://pureciclismo.github.io/gazzetta-di-kyiv/
+Detailed contradiction map: pureciclismo.github.io/gazzetta-di-kyiv/

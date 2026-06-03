@@ -1,13 +1,12 @@
-US and Iran trade direct strikes as Iranian drones hit Kuwait airport — Middle East conflict is spilling beyond regional containment. Energy corridor risk is being repriced in real time.
+OECD warns 'dark scenario' if Iran-Gulf crisis persists — first forecaster to break containment consensus.
 
-Implication: Narrative Repricing Risk (selective risk-off) — Gulf transit fragility moving from tail-risk to base-case.
+Recession Risk Regime (selective risk-off): growth repricing overtakes oil. Bonds catching up.
 
-Actionable:
-• Middle East premium: staged energy ETF entries with Brent invalidation stops
-• AI capex: Anthropic nears $1tn valuation — compute concentration risk accelerates
+• Macro hedge: long vol on EUR/USD into ECB — rate rise on table regardless of Iran deal
+• Trade overlay: Trump 10%+ tariffs on forced labour — trade-war layer compounds energy shock
 
-¹ Kuwait International Airport struck by Iranian drones during US-Iran exchange of fire, June 3 2026 (source: https://www.bbc.com/news/articles/c5yx135yg53o)
+¹ OECD GDP contraction scenario if Gulf disruption persists through Q3 2026. (source: https://ft.com/content/c79f9b4a-4fe9-b031-81c56511893c)
 
-Continuity: https://pureciclismo.github.io/gazzetta-di-kyiv/ | Next trigger: Iran retaliation scope within 48h
+Continuity: pureciclismo.github.io/gazzetta-di-kyiv/ | Next trigger: ECB June meeting — rate decision vs growth downgrade
 
-Full 24–72h positioning note: https://pureciclismo.github.io/gazzetta-di-kyiv/
+Detailed contradiction map: pureciclismo.github.io/gazzetta-di-kyiv/

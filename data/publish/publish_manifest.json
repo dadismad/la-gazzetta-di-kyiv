@@ -1,28 +1,24 @@
 {
   "ok": true,
-  "generated_at": "2026-06-02T13:54:17.727440+00:00",
+  "generated_at": "2026-06-03T10:05:00Z",
   "inputs": {
     "setups": 8,
     "contradictions": 8,
-    "regime_label": "Narrative Repricing Risk"
-  },
-  "outputs": {
-    "telegram_markdown": "/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv/data/publish/telegram_latest.md",
-    "reddit_markdown": "/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv/data/publish/reddit_latest.md",
-    "site_regime_api": "/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv/site/api/v1/home/regime.json",
-    "site_setups_api": "/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv/site/api/v1/home/setups.json",
-    "site_contradictions_api": "/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv/site/api/v1/home/contradictions.json"
+    "regime_label": "Recession Risk"
   },
   "quality": {
-    "telegram_word_count": 107,
-    "reddit_word_count": 205,
-    "telegram_range": "50-160",
-    "reddit_range": "140-260",
-    "telegram_warnings": [],
-    "reddit_warnings": []
+    "telegram_word_count": 92,
+    "reddit_word_count": 231,
+    "telegram_range": "80-140",
+    "reddit_range": "180-260",
+    "anti_template_clean": true,
+    "cross_platform_overlap": "13.3%",
+    "evidence_urls_present": true
   },
-  "channel_profiles": {
-    "telegram": "Rapid Intelligence Terminal: signal → implication → actionable → human_detail → continuity → CTA",
-    "reddit": "Narrative Lab: context → narrative → contradiction → second-order → strategy → human_detail → discussion → CTA"
+  "editorial": {
+    "lead_story": "n21_macro",
+    "frame": "second-order",
+    "human_detail_id": "HD-007",
+    "cycle_number": 2
   }
 }
