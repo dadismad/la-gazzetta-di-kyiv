@@ -159,6 +159,33 @@ body {
   object-fit: cover;
   display: block;
 }
+
+/* Asset claim pill — above headline */
+.asset-claim {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(135deg, var(--gold-pale), #FDF8EE);
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  padding: 2px 8px;
+  margin-bottom: 6px;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.card.lead .asset-claim {
+  background: var(--white);
+  border-color: var(--gold-dark);
+}
+.claim-asset { color: var(--ink-light); font-weight: 500; }
+.claim-arrow { color: var(--gold-dark); margin: 0 1px; }
+.claim-target { color: var(--ink); }
+.claim-change { font-weight: 700; }
+.claim-change.up { color: var(--green); }
+.claim-change.down { color: var(--red); }
+
 .card .card-head {
   display: flex;
   align-items: baseline;
@@ -327,6 +354,27 @@ body {
 }
 .proj-price { font-weight: 700; }
 .proj-vol { opacity: 0.7; }
+
+/* Repricing % line */
+.asset-repricing {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--sans);
+  font-size: 7px;
+  padding: 1px 6px;
+  opacity: 0.65;
+}
+.repricing-pct {
+  font-weight: 700;
+  color: var(--gold-dark);
+}
+.repricing-label {
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
 .asset-note {
   font-family: var(--sans);
   font-size: 8px;
