@@ -12,35 +12,34 @@ async function getJSON(path, fallback) {
 }
 
 // ── Domain-specific photo selection ──
-// Each sector maps to a curated set of photo queries for diversity
 const SECTOR_PHOTOS = {
   geopolitics: [
-    'https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=200&h=140&fit=crop',  // diplomacy flags
-    'https://images.unsplash.com/photo-1589519160732-57fc498494f8?w=200&h=140&fit=crop',  // military
-    'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=200&h=140&fit=crop',  // geopolitics
+    'https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=200&h=140&fit=crop',
+    'https://images.unsplash.com/photo-1589519160732-57fc498494f8?w=200&h=140&fit=crop',
+    'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=200&h=140&fit=crop',
   ],
   markets: [
-    'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=200&h=140&fit=crop',  // trading floor
-    'https://images.unsplash.com/photo-1535320903710-d993d3d77d29?w=200&h=140&fit=crop',  // charts
-    'https://images.unsplash.com/photo-1590283603385-17ffb3a7f193?w=200&h=140&fit=crop',  // stock exchange
+    'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=200&h=140&fit=crop',
+    'https://images.unsplash.com/photo-1535320903710-d993d3d77d29?w=200&h=140&fit=crop',
+    'https://images.unsplash.com/photo-1590283603385-17ffb3a7f193?w=200&h=140&fit=crop',
   ],
   tech: [
-    'https://images.unsplash.com/photo-1518770660439-4636190af475?w=200&h=140&fit=crop',  // chips
-    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=200&h=140&fit=crop',  // servers
-    'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=200&h=140&fit=crop',  // AI
+    'https://images.unsplash.com/photo-1518770660439-4636190af475?w=200&h=140&fit=crop',
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=200&h=140&fit=crop',
+    'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=200&h=140&fit=crop',
   ],
   wealth: [
-    'https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?w=200&h=140&fit=crop',  // gold
-    'https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=200&h=140&fit=crop',  // wealth
-    'https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?w=200&h=140&fit=crop',  // BTC
+    'https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?w=200&h=140&fit=crop',
+    'https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=200&h=140&fit=crop',
+    'https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?w=200&h=140&fit=crop',
   ],
   pleasure: [
-    'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=200&h=140&fit=crop',  // wine
-    'https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=200&h=140&fit=crop',  // luxury
-    'https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=200&h=140&fit=crop',  // design
+    'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=200&h=140&fit=crop',
+    'https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=200&h=140&fit=crop',
+    'https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=200&h=140&fit=crop',
   ],
   default: [
-    'https://images.unsplash.com/photo-1504711434969-e33886168d6c?w=200&h=140&fit=crop',  // news
+    'https://images.unsplash.com/photo-1504711434969-e33886168d6c?w=200&h=140&fit=crop',
   ]
 };
 
@@ -54,8 +53,7 @@ function updateMasthead() {
   const metaEl = byId('mastheadMeta');
   if (metaEl) {
     const now = new Date();
-    const ts = now.toTimeString().slice(0,5);
-    metaEl.textContent = ts + ' EET';
+    metaEl.textContent = now.toTimeString().slice(0,5) + ' EET';
   }
 }
 
@@ -77,10 +75,8 @@ const ASSETS = [
     h2h_price: '69,200', h2h_vol: '+41%', h2h_bias: 'bullish', sector: 'wealth' },
 ];
 
-function renderAssets() {
-  const el = byId('assetList');
-  if (!el) return;
-  el.innerHTML = ASSETS.map(a => `
+function assetRowHTML(a) {
+  return `
     <div class="asset-row">
       <div class="asset-info">
         <span class="asset-symbol">${a.symbol}</span>
@@ -93,8 +89,40 @@ function renderAssets() {
         <span class="proj-price">$${a.h2h_price}</span>
         <span class="proj-vol">Vol ${a.h2h_vol}</span>
       </div>
-    </div>
-  `).join('');
+    </div>`;
+}
+
+function renderAssets() {
+  const el = byId('assetList');
+  if (el) el.innerHTML = ASSETS.map(assetRowHTML).join('');
+
+  const bbBody = byId('bbSheetBody');
+  if (bbBody) bbBody.innerHTML = ASSETS.map(assetRowHTML).join('');
+}
+
+// ── Mobile Bet&Benefit toggle ──
+function wireBBToggle() {
+  const toggle = byId('bbToggle');
+  const overlay = byId('bbOverlay');
+  const close = byId('bbClose');
+  if (!toggle || !overlay || !close) return;
+
+  toggle.addEventListener('click', () => {
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+
+  close.addEventListener('click', () => {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
 }
 
 // ── Story card with domain photo ──
@@ -120,7 +148,7 @@ function cardHTML(story, idx, isLead) {
           </div>` : ''}
         </div>
         <div class="card-photo">
-          <img src="${photoUrl}" alt="${sector}" loading="lazy" onerror="this.style.display='none'">
+          <img src="${photoUrl}" alt="${sector}" loading="lazy" onerror="this.parentElement.style.display='none'">
         </div>
       </div>
     </article>`;
@@ -143,6 +171,7 @@ async function boot() {
     const el = byId('newsCol');
     if (el) el.innerHTML = '<p style="text-align:center;color:var(--ink-muted);padding:40px;font-style:italic">Intelligence update in progress.</p>';
     renderAssets();
+    wireBBToggle();
     return;
   }
 
@@ -153,6 +182,7 @@ async function boot() {
   updateMasthead();
   renderAssets();
   wireExpand();
+  wireBBToggle();
 }
 
 boot();
