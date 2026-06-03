@@ -47,11 +47,17 @@ body {
   align-items: center;
   gap: 8px;
 }
-.masthead-maces {
-  font-size: 16px;
-  color: var(--ink);
+.masthead-bulava {
+  display: flex;
+  align-items: center;
+  color: var(--gold-dark);
+  opacity: 0.8;
   line-height: 1;
-  letter-spacing: 1px;
+}
+.masthead-bulava svg {
+  display: block;
+  width: 20px;
+  height: 24px;
 }
 .masthead-machiavelli {
   font-size: 16px;
@@ -471,7 +477,7 @@ body {
 /* ── Responsive — Phone (≤600px) ── */
 @media (max-width: 600px) {
   .masthead { padding: 5px 10px; }
-  .masthead-maces { font-size: 14px; }
+  .masthead-bulava svg { width: 16px; height: 20px; }
   .masthead-name { font-size: 15px; }
   .masthead-machiavelli { font-size: 13px; }
 
@@ -497,7 +503,7 @@ body {
 @media (max-width: 400px) {
   .masthead { padding: 4px 8px; gap: 6px; }
   .masthead-left { gap: 4px; }
-  .masthead-maces { font-size: 12px; letter-spacing: 0; }
+  .masthead-bulava svg { width: 14px; height: 18px; }
   .masthead-name { font-size: 14px; }
   .masthead-machiavelli { font-size: 11px; }
   .masthead-meta { font-size: 7px; }
