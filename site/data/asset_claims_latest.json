@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-06-03T12:00:00Z",
+  "cycle": "editorial-cycle-2026-06-03",
+  "editorial_lead": "OECD Warns Global GDP Faces 'Dark Scenario' as Iran-Gulf Crisis Persists",
+  "claims": [
+    {
+      "ticker": "CL",
+      "direction": "up",
+      "price_target": "$82.50",
+      "strategy": "Fade-the-initial-move (post-spike fade to 61.8% retrace)",
+      "win_rate": "55%",
+      "horizon": "2-24h",
+      "narrative_driven_pct": 75,
+      "crowd_belief": "Consensus says Iran-Gulf conflict is 'contained to proxies' — Kuwait airport civilian infrastructure strike disproves that thesis",
+      "contradiction": "Crude spiking on headline, but the structural oil surplus still caps sustained upside above $85 — the spike IS the trade, not the entry",
+      "story_id": "kuwait_airport_drone_strike",
+      "story_headline": "Iranian Drones Hit Kuwait International Airport — Civilian Infrastructure Threshold Crossed",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Gulf state civilian infrastructure now in play — widens risk premium corridor from 30 to 60 cents per barrel",
+        "Kuwait suspended airport operations: first direct operational impact on a major OPEC member's economic infrastructure since 1990"
+      ],
+      "capital_flow_implication": "Crude risk premium repriced upward 40-60¢ barrel; energy-linked EM FX and Gulf sovereign bonds under pressure as insurance costs rise"
+    },
+    {
+      "ticker": "GC",
+      "direction": "up",
+      "price_target": "$3,450",
+      "strategy": "Accumulate on pullbacks, sell 2% OTM puts for premium collection",
+      "win_rate": "65%",
+      "horizon": "1-2 weeks",
+      "narrative_driven_pct": 60,
+      "crowd_belief": "Polymarket 'Global Recession 2026' at 34% — gold positioning still below Q1 highs, suggesting room to run as stagflation narrative strengthens",
+      "contradiction": "Real yields are not deeply negative, yet gold holds $3,300+ — the bid is coming from central bank reserve diversification, not inflation hedging alone. Dollar decline thesis accelerating this",
+      "story_id": "oecd_dark_scenario_stagflation",
+      "story_headline": "OECD Warns Global GDP Faces 'Dark Scenario' — Three Stagflationary Forces Converging",
+      "paradigm_pillar": "dollar_decline",
+      "paradigm_implications": [
+        "$USD reserve share at ~58% (IMF COFER) — every stagflation scare accelerates BRICS+ de-dollarization",
+        "Central bank gold buying at 1,000+ tonnes/year structural bid that doesn't depend on rate cycle"
+      ],
+      "capital_flow_implication": "Central bank reserve diversification + stagflation hedge demand converging on gold as the only asset that works in both regimes"
+    },
+    {
+      "ticker": "EUR/USD",
+      "direction": "up",
+      "price_target": "1.1050",
+      "strategy": "Straddle into June ECB decision (IV elevated), sell vol post-decision",
+      "win_rate": "60%",
+      "horizon": "1-2 weeks via June expiration",
+      "narrative_driven_pct": 45,
+      "crowd_belief": "ECB rate rise probability at 72% — market pricing this as a done deal. The contradiction: services inflation at 4.1% is sticky, not accelerating",
+      "contradiction": "72% probability means the rate rise is mostly priced — the EUR outperformance vs. USD has already repriced the spread by ~50 pips. The real trade is vol crush + fade the EUR rally post-announcement",
+      "story_id": "ecb_rate_rise_june",
+      "story_headline": "ECB Rate Rise Still on Table Despite Iran Peace Deal — Services Inflation 4.1%",
+      "paradigm_pillar": "eu_fragmentation",
+      "paradigm_implications": [
+        "ECB hiking into a Gulf-driven stagflation shock is the playbook mismatch that defines EU institutional fragility",
+        "Southern European bond spreads vs Bunds widening as rate differential penalises high-debt periphery"
+      ],
+      "capital_flow_implication": "EUR carry trades unwinding as rate rise + stagflation combo hits periphery hardest; Bunds bid, BTPs offer under widening pressure"
+    },
+    {
+      "ticker": "JPY/USD",
+      "direction": "down",
+      "price_target": "155.00 (on BOJ intervention)",
+      "strategy": "Fade-the-move above 160: sell USD/JPY on intervention spike, target 155. Straddle on further BOJ decision uncertainty",
+      "win_rate": "55%",
+      "horizon": "24-72h",
+      "narrative_driven_pct": 70,
+      "crowd_belief": "Consensus says BOJ will intervene at 160 — the same consensus has been wrong three times in 2025-26 about intervention effectiveness. This is the 4th attempt",
+      "contradiction": "The carry trade unwind narrative is real, but each intervention yields smaller JPY gains and faster reversion. The BOJ is losing credibility — and that loss is the actual tradable signal",
+      "story_id": "yen_nears_160_intervention_risk",
+      "story_headline": "Yen Nears 160 Per Dollar as Intervention Risk Mounts — Carry Trade Unwind Threatens",
+      "paradigm_pillar": "dollar_decline",
+      "paradigm_implications": [
+        "USD/JPY at 160 is a systemic risk channel: $1.5T+ in FX-hedged carry trades unwind could cascade through global rates",
+        "BOJ's credibility erosion mirrors the broader dollar architecture strain — intervention as a tool works less each time it's deployed"
+      ],
+      "capital_flow_implication": "Carry trade unwind forces JPY shorts to cover → Nikkei selling → Asian EM FX re-pricing. The reflexivity of yen at 160 is the risk, not the level itself"
+    },
+    {
+      "ticker": "ANTH (pre-IPO secondary) / QQQ",
+      "direction": "down",
+      "price_target": "QQQ -5% relative to SPY",
+      "strategy": "Buy 3-month OTM QQQ puts or short AI-concentrated ETFs (AIQ, BOTZ); long gold/commodities as rotation beneficiary",
+      "win_rate": "50%",
+      "horizon": "1-4 weeks",
+      "narrative_driven_pct": 55,
+      "crowd_belief": "Anthropic $1tn valuation is the peak of private AI euphoria — the market is treating 'AI everything' as if concentration risk doesn't exist. It does",
+      "contradiction": "Anthropic raising at $1tn while security vulnerabilities emerge at the model layer is peak signal: the highest private market valuation of 2026 corresponds to the moment AI security doubts are loudest. The contradiction between valuation and risk is itself the trade",
+      "story_id": "anthropic_1tn_share_sale",
+      "story_headline": "AI Giant Anthropic Plans US Share Sale at Near-$1tn Valuation — Concentration Risk Surfaces",
+      "paradigm_pillar": "abundance_tech",
+      "paradigm_implications": [
+        "$1tn private valuation for an AI lab signals either (a) the market sees AGI as imminent, or (b) we're in a froth regime where concentration risk is ignored",
+        "Security vulnerabilities emerging at the same time: market is pricing optionality, not risk"
+      ],
+      "capital_flow_implication": "Capital rotating out of concentrated AI mega-caps into diversifiers (commodities, energy, healthcare) as IPO signal suggests peak private valuation"
+    }
+  ]
+}

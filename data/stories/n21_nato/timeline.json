@@ -3,11 +3,22 @@
   "updates": [
     {
       "update_id": "n21_nato__ev_001",
-      "timestamp": "2026-06-03T21:34:43.477008+00:00",
+      "timestamp": "2026-06-03T21:35:42.864956+00:00",
       "type": "evidence",
       "summary": "Initial broadcast — nato: Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response",
       "source_url": "",
       "evolution_score": 0.0
+    },
+    {
+      "update_id": "n21_nato__ev_002",
+      "timestamp": "2026-06-03T21:35:42.889222+00:00",
+      "type": "evidence",
+      "summary": "Evolution match (score=0.80): Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response",
+      "source_url": "https://www.wsj.com/articles/suspected-sabotage-of-deep-sea-cable-triggers-first-nato-led-response-337119ba",
+      "source_id": "wsj_world",
+      "evolution_score": 0.8,
+      "actor_match": 1.0,
+      "geography_match": 1.0
     }
   ]
 }

@@ -1,64 +1,24 @@
 {
-  "generated_at": "2026-06-03T17:26:56.686019+00:00",
+  "generated_at": "2026-06-03T21:35:42.864415+00:00",
   "data_freshness_seconds": 3600,
-  "source_count": 4,
+  "source_count": 6,
   "items": [
     {
-      "setup_id": "n21_geopolitics",
-      "title": "geopolitics: Israel strikes southern Lebanon but partial truce with Hezbollah appears to hold",
-      "horizon": "24-72h",
-      "thesis": "geopolitics \u2014 civilian infrastructure targeting threshold crossed in the Gulf",
-      "paradigm_pillar": "multi_pillar",
-      "paradigm_label": "multi_pillar",
-      "paradigm_pillars": [
-        "multi_pillar",
-        "eu_fragmentation"
-      ],
-      "actors": [
-        "Gulf States",
-        "Microsoft",
-        "Kremlin/Russia"
-      ],
-      "incentives": [
-        "capture allocation flows"
-      ],
-      "probability_base": 80,
-      "probability_bull": 8,
-      "probability_bear": 12,
-      "invalidation_triggers": [
-        "Gulf States announces policy reversal within 72 hours",
-        "New data contradicts the geopolitics repricing direction within 24 hours"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation stop",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.88,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "Israel strikes southern Lebanon but partial truce with Hezbollah appears to hold",
-        "US and Iran launch new strikes, as Kuwait says airport hit by Iranian drones",
-        "British couple lose Iran jail sentence appeal, family says"
-      ]
-    },
-    {
       "setup_id": "n21_macro",
-      "title": "macro: OECD warns of \u2018dark scenario\u2019 if Gulf energy crisis drags on",
+      "title": "macro: Trump\u2019s proposed grant rules could destroy US science, researcher warns",
       "horizon": "24-72h",
-      "thesis": "macro tariff escalation is compounding energy-driven inflation \u2014 stagflation risk is being repriced",
+      "thesis": "Trump\u2019s proposed grant rules could destroy US science, researcher warns \u2014 this changes the macro repricing calculation",
       "paradigm_pillar": "multi_pillar",
       "paradigm_label": "multi_pillar",
       "paradigm_pillars": [
         "multi_pillar",
-        "eu_fragmentation"
+        "eu_fragmentation",
+        "china_ascendancy"
       ],
       "actors": [
         "Gulf States",
-        "EU institutions",
         "Federal Reserve",
-        "ECB"
+        "Kremlin/Russia"
       ],
       "incentives": [
         "capture allocation flows"
@@ -74,57 +34,59 @@
         "Use staged ETF entries with explicit invalidation stop",
         "Prefer defined-risk options in high-volatility windows"
       ],
-      "confidence": 0.67,
+      "confidence": 0.9,
       "citations": [
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "OECD warns of \u2018dark scenario\u2019 if Gulf energy crisis drags on",
-        "US proposes tariffs of at least 10% over forced labour practices",
-        "Hyperscalers and the equity tap: more to come"
-      ]
+        "Trump\u2019s proposed grant rules could destroy US science, researcher warns",
+        "Europe\u2019s tightrope walk on tech sovereignty",
+        "Barclays hopes to boost UK economy with enlightened self-interest"
+      ],
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Meta_-_Facebook%2C_Instagram%2C_Whatsapp_-_Nein_Danke.png"
     },
     {
-      "setup_id": "n21_markets",
-      "title": "markets: Yen Hovers Near 160 Per Dollar as Traders Eye Intervention Risk",
+      "setup_id": "n21_ai",
+      "title": "ai: Meta bets on AI agents to unlock WhatsApp revenues",
       "horizon": "24-72h",
-      "thesis": "Yen Hovers Near 160 Per Dollar as Traders Eye Intervention Risk \u2014 this changes the markets repricing calculation",
+      "thesis": "AI compute concentration is accelerating \u2014 the semiconductor supply chain is the new oil pipeline",
       "paradigm_pillar": "multi_pillar",
       "paradigm_label": "multi_pillar",
       "paradigm_pillars": [
-        "multi_pillar",
-        "dollar_decline"
+        "multi_pillar"
       ],
       "actors": [
-        "Gulf States"
+        "Federal Reserve"
       ],
       "incentives": [
-        "capture allocation flows"
+        "capture compute rents",
+        "defend platform distribution"
       ],
-      "probability_base": 80,
-      "probability_bull": 8,
-      "probability_bear": 12,
+      "probability_base": 64,
+      "probability_bull": 15,
+      "probability_bear": 21,
       "invalidation_triggers": [
-        "Gulf States announces policy reversal within 72 hours",
-        "New data contradicts the markets repricing direction within 24 hours"
+        "Federal Reserve announces policy reversal within 72 hours",
+        "New data contradicts the ai repricing direction within 24 hours"
       ],
       "retail_execution": [
         "Use staged ETF entries with explicit invalidation stop",
         "Prefer defined-risk options in high-volatility windows"
       ],
-      "confidence": 0.63,
+      "confidence": 0.49,
       "citations": [
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Yen Hovers Near 160 Per Dollar as Traders Eye Intervention Risk",
-        "Legoland Owner\u2019s Junk Bonds Slide Amid Refinancing Pressure",
-        "Hong Kong\u2019s $550 Billion Exchange Fund Mulls S&amp;P 500 Allocation"
-      ]
+        "Meta bets on AI agents to unlock WhatsApp revenues",
+        "Fed\u2019s Beige Book highlights weak consumer and reliance on AI build-out",
+        "Google upsizes historic equity raising to $85bn to back AI spending spree"
+      ],
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Meta_-_Facebook%2C_Instagram%2C_Whatsapp_-_Nein_Danke.png"
     },
     {
       "setup_id": "n21_oil",
-      "title": "oil: Shell pumped oil through Nigeria pipeline for years despite pollution evidence, ",
+      "title": "oil: Trump\u2019s Iran war drains US oil stocks to lowest level since 2004",
       "horizon": "24-72h",
       "thesis": "Energy corridor fragility is repricing inflation expectations in real time",
       "paradigm_pillar": "multi_pillar",
@@ -139,89 +101,12 @@
         "defend fiscal revenues",
         "manage supply optics"
       ],
-      "probability_base": 54,
-      "probability_bull": 19,
-      "probability_bear": 27,
+      "probability_base": 52,
+      "probability_bull": 20,
+      "probability_bear": 28,
       "invalidation_triggers": [
         "Gulf States announces policy reversal within 72 hours",
         "New data contradicts the oil repricing direction within 24 hours"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation stop",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.47,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "Shell pumped oil through Nigeria pipeline for years despite pollution evidence, documents show",
-        "Iran Didn\u2019t Get Any Crude Oil Past US Blockade in May, UANI Says",
-        "US Stocks Hit Pause as US-Iran Tensions Lift Oil: Markets Wrap"
-      ]
-    },
-    {
-      "setup_id": "n21_ai",
-      "title": "ai: AI giant Anthropic plans to sell shares in US as valuation nears $1tn",
-      "horizon": "24-72h",
-      "thesis": "AI compute concentration is accelerating \u2014 the semiconductor supply chain is the new oil pipeline",
-      "paradigm_pillar": "multi_pillar",
-      "paradigm_label": "multi_pillar",
-      "paradigm_pillars": [
-        "multi_pillar"
-      ],
-      "actors": [
-        "Anthropic",
-        "Gulf States"
-      ],
-      "incentives": [
-        "capture compute rents",
-        "defend platform distribution"
-      ],
-      "probability_base": 54,
-      "probability_bull": 19,
-      "probability_bear": 27,
-      "invalidation_triggers": [
-        "Anthropic announces policy reversal within 72 hours",
-        "New data contradicts the ai repricing direction within 24 hours"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation stop",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.47,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "AI giant Anthropic plans to sell shares in US as valuation nears $1tn",
-        "Instagram AI chatbot tricked by hackers to give access to others' accounts",
-        "US-Iran Impasse Fails to Stall AI Rally| Insight with Haslinda Amin 06/03/2026"
-      ]
-    },
-    {
-      "setup_id": "n21_ukraine",
-      "title": "ukraine: Seven killed after drone hits bus in Russia-controlled part of Ukraine",
-      "horizon": "24-72h",
-      "thesis": "ukraine \u2014 civilian infrastructure targeting threshold crossed in the Gulf",
-      "paradigm_pillar": "multi_pillar",
-      "paradigm_label": "multi_pillar",
-      "paradigm_pillars": [
-        "multi_pillar"
-      ],
-      "actors": [
-        "Kremlin/Russia",
-        "Zelenskyy"
-      ],
-      "incentives": [
-        "capture allocation flows"
-      ],
-      "probability_base": 50,
-      "probability_bull": 21,
-      "probability_bear": 29,
-      "invalidation_triggers": [
-        "Kremlin/Russia announces policy reversal within 72 hours",
-        "New data contradicts the ukraine repricing direction within 24 hours"
       ],
       "retail_execution": [
         "Use staged ETF entries with explicit invalidation stop",
@@ -232,51 +117,15 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Seven killed after drone hits bus in Russia-controlled part of Ukraine",
-        "Putin remains uncompromising on Ukraine, but is public discourse on war changing in Russia?",
-        "Zelenskyy asks Trump to send missiles after Russian strikes across Ukraine"
-      ]
-    },
-    {
-      "setup_id": "n21_russia",
-      "title": "russia: Seven killed after drone hits bus in Russia-controlled part of Ukraine",
-      "horizon": "24-72h",
-      "thesis": "The Ukraine attrition war is slowly draining Western political will to fund \u2014 not a stalemate, a grinding test of endurance",
-      "paradigm_pillar": "multi_pillar",
-      "paradigm_label": "multi_pillar",
-      "paradigm_pillars": [
-        "multi_pillar"
+        "Trump\u2019s Iran war drains US oil stocks to lowest level since 2004",
+        "Gulf states in talks for oil pipelines to bypass Hormuz",
+        "Oil Extends Gain as US-Iran Clashes Cloud Outlook for Peace Deal"
       ],
-      "actors": [
-        "Kremlin/Russia"
-      ],
-      "incentives": [
-        "preserve strategic leverage",
-        "shape sanction pathways"
-      ],
-      "probability_base": 48,
-      "probability_bull": 21,
-      "probability_bear": 31,
-      "invalidation_triggers": [
-        "Kremlin/Russia announces policy reversal within 72 hours",
-        "New data contradicts the russia repricing direction within 24 hours"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation stop",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.44,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "Seven killed after drone hits bus in Russia-controlled part of Ukraine",
-        "Putin remains uncompromising on Ukraine, but is public discourse on war changing in Russia?"
-      ]
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Donald_Trump_official_portrait.jpg"
     },
     {
       "setup_id": "n21_china",
-      "title": "china: China Picks State Firm to Help Coordinate Mining Deals Abroad",
+      "title": "china: Nissan signs deal with China\u2019s Chery for Sunderland car production",
       "horizon": "24-72h",
       "thesis": "China is executing industrial policy at 5-year-plan tempo while US policy oscillates with election cycles",
       "paradigm_pillar": "multi_pillar",
@@ -294,12 +143,51 @@
         "stabilize growth optics",
         "support employment channels"
       ],
-      "probability_base": 48,
-      "probability_bull": 21,
-      "probability_bear": 31,
+      "probability_base": 52,
+      "probability_bull": 20,
+      "probability_bear": 28,
       "invalidation_triggers": [
         "PBoC announces policy reversal within 72 hours",
         "New data contradicts the china repricing direction within 24 hours"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation stop",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.45,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "Nissan signs deal with China\u2019s Chery for Sunderland car production",
+        "Hurricane Trump threatens to blow China off course",
+        "Leading China Property Developer Reports Huge loss, in Sign of Widening Real-Estate Woes"
+      ],
+      "image_url": "https://i.guim.co.uk/img/media/02d774e13d041f094f583254b13136c5a354374e/846_0_4583_3667/master/4583.jpg?width=700&quality=85&auto=format&fit=max&s=76103f6b3aeacef960917fa88cbed56f"
+    },
+    {
+      "setup_id": "n21_inflation",
+      "title": "inflation: Bessent says US inflation jump will be \u2018short-term blip\u2019",
+      "horizon": "24-72h",
+      "thesis": "Services inflation at 4.1% keeps tightening bias alive regardless of energy price swings",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar"
+      ],
+      "actors": [
+        "Federal Reserve"
+      ],
+      "incentives": [
+        "anchor expectations",
+        "avoid policy whipsaw"
+      ],
+      "probability_base": 50,
+      "probability_bull": 21,
+      "probability_bear": 29,
+      "invalidation_triggers": [
+        "Federal Reserve announces policy reversal within 72 hours",
+        "New data contradicts the inflation repricing direction within 24 hours"
       ],
       "retail_execution": [
         "Use staged ETF entries with explicit invalidation stop",
@@ -310,9 +198,122 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "China Picks State Firm to Help Coordinate Mining Deals Abroad",
-        "Japan defence minister rebuffs claims of \u2018new militarism\u2019 levelled by China"
-      ]
+        "Bessent says US inflation jump will be \u2018short-term blip\u2019",
+        "Fed Beige Book Shows Steady Employment, Higher Inflation",
+        "Gold Slips as Middle East Tensions Keep Inflation Risks Elevated"
+      ],
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Official_portrait_of_Treasury_Secretary_Scott_Bessent_%28cropped%29.jpg"
+    },
+    {
+      "setup_id": "n21_ukraine",
+      "title": "ukraine: To fight Russia, Europe needs Ukraine",
+      "horizon": "24-72h",
+      "thesis": "To fight Russia, Europe needs Ukraine \u2014 this changes the ukraine repricing calculation",
+      "paradigm_pillar": "eu_fragmentation",
+      "paradigm_label": "EU Structural Pressures",
+      "paradigm_pillars": [
+        "eu_fragmentation"
+      ],
+      "actors": [
+        "Kremlin/Russia"
+      ],
+      "incentives": [
+        "reassert national sovereignty",
+        "redirect fiscal capacity inward",
+        "contain electoral backlash"
+      ],
+      "probability_base": 46,
+      "probability_bull": 22,
+      "probability_bear": 32,
+      "invalidation_triggers": [
+        "Kremlin/Russia announces policy reversal within 72 hours",
+        "New data contradicts the ukraine repricing direction within 24 hours"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation stop",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.43,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "To fight Russia, Europe needs Ukraine"
+      ],
+      "image_url": null
+    },
+    {
+      "setup_id": "n21_russia",
+      "title": "russia: To fight Russia, Europe needs Ukraine",
+      "horizon": "24-72h",
+      "thesis": "russia exposes the institutional mismatch between supranational governance and national political realities in Europe",
+      "paradigm_pillar": "eu_fragmentation",
+      "paradigm_label": "EU Structural Pressures",
+      "paradigm_pillars": [
+        "eu_fragmentation"
+      ],
+      "actors": [
+        "Kremlin/Russia"
+      ],
+      "incentives": [
+        "preserve strategic leverage",
+        "shape sanction pathways"
+      ],
+      "probability_base": 46,
+      "probability_bull": 22,
+      "probability_bear": 32,
+      "invalidation_triggers": [
+        "Kremlin/Russia announces policy reversal within 72 hours",
+        "New data contradicts the russia repricing direction within 24 hours"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation stop",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.43,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "To fight Russia, Europe needs Ukraine"
+      ],
+      "image_url": null
+    },
+    {
+      "setup_id": "n21_nato",
+      "title": "nato: Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response",
+      "horizon": "24-72h",
+      "thesis": "Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response \u2014 this changes the nato repricing calculation",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar"
+      ],
+      "actors": [
+        "NATO"
+      ],
+      "incentives": [
+        "capture allocation flows"
+      ],
+      "probability_base": 46,
+      "probability_bull": 22,
+      "probability_bear": 32,
+      "invalidation_triggers": [
+        "NATO announces policy reversal within 72 hours",
+        "New data contradicts the nato repricing direction within 24 hours"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation stop",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.43,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response"
+      ],
+      "image_url": null
     }
   ]
 }

@@ -1,0 +1,54 @@
+{
+  "collected_at": "2026-06-03T18:06:47.720810Z",
+  "accounts_polled": 16,
+  "accounts_total_mapped": 33,
+  "accounts_missing": [
+    "BeijingLaoK",
+    "china_tech_node",
+    "MarlinKreuzer",
+    "ZoeSchneeweiss"
+  ],
+  "accounts_suspended": [
+    "DuneAnalytics"
+  ],
+  "summary": {
+    "dominant_themes": [
+      "Iran-US-Israel escalation \u2014 active conflict with diplomatic channels open (Trump: 'Iran agreed to no nukes', Iran FM: 'only strike US attack targets', Netanyahu: 'not over', Kuwait expels Iranian diplomats)",
+      "Crypto liquidity pivot \u2014 Raoul Pal refutes 'crypto is dead' narrative with cycle data, Galaxy launches institutional OTC prediction market trading ($10M day-1 trade), Solana leads chain revenues at $91M/mo, DeFi inflows at lowest since Oct 2024",
+      "US macro fault lines \u2014 El-Erian warns of buffer depletion + private credit redemption caps, Bianco flags Trump firing Fed Gov Cook 'for cause' + VOO hitting $1T AUM, Gromen: Bessent's '3 Arrows' plan dead, retail now 75% of 2-5Y Treasury demand",
+      "AI agentic economy acceleration \u2014 Bianco: token usage 'exploding higher' since Jan, Novogratz building 1,000-worker AI infrastructure in West Texas, Miles Deutscher on Claude dynamic workflows replacing employees",
+      "De-dollarization data \u2014 Brad Setser: China PIT 1% GDP vs US 8%, forced labor tariffs = attempt to recreate base 10% tariff, China private outflows shrinking as CNY appreciates",
+      "ECB digital euro push \u2014 'freedom to pay' framing, physical + digital cash, supervisory warnings on AI resilience for banks"
+    ],
+    "account_breakdown": {
+      "geopolitics_flash": [
+        "BRICSinfo \u2014 4 tweets, 9,014 total likes, real-time Iran conflict feed"
+      ],
+      "macro_institutional": [
+        "elerianm \u2014 5 tweets, ISM prices spike, yen at 160, buffer depletion",
+        "biancoresearch \u2014 4 tweets, VOO $1T, Trump firing Fed Gov Cook, token usage explosion",
+        "LukeGromen \u2014 3 tweets, Bessent plan dead, retail Treasury demand",
+        "Brad_Setser \u2014 5 tweets, China tax structure, forced labor tariffs"
+      ],
+      "crypto_macro": [
+        "RaoulGMI \u2014 5 tweets, crypto liquidity cycle defense",
+        "novogratz \u2014 5 tweets, Galaxy OTC prediction markets, AI infrastructure build",
+        "MilesDeutscher \u2014 5 tweets, AI workflows for crypto, K-shaped economy",
+        "DefiLlama \u2014 5 tweets, Solana revenues, RWA perps dashboard, DeFi inflows"
+      ],
+      "dollar_thesis": [
+        "LynAldenContact \u2014 5 tweets, 'nothing stops this train' (deficit/debt)",
+        "SantiagoAuFund \u2014 5 tweets, ECB behind curve, diamonds/cartels thesis"
+      ],
+      "historical_signals": [
+        "BittelJulien \u2014 last tweet Jan 2026, BTC RSI chart (6,398 likes)",
+        "MacroAlf \u2014 stopped posting Aug 2025, left platform",
+        "nouriel \u2014 2 tweets, Iran war scenarios"
+      ],
+      "europe": [
+        "ecb \u2014 5 tweets, digital euro, energy shock analysis, banking AI resilience",
+        "AndreasSteno \u2014 5 tweets, Hezbollah-Israel ceasefire, AI bubble theory debate"
+      ]
+    }
+  }
+}

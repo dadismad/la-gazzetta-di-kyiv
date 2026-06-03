@@ -192,6 +192,7 @@ def main():
     actors_by_topic = defaultdict(Counter)
     paradigm_by_topic = defaultdict(Counter)  # NEW: track paradigm coverage
     source_diversity = set()  # NEW: track source diversity
+    image_by_topic = {}  # NEW: track first image_url per topic
 
     for ev in items:
         txt = f"{ev.get('title','')}\n{ev.get('text','')}"
@@ -200,6 +201,11 @@ def main():
         source_id = ev.get('source_id', '')
         if source_id:
             source_diversity.add(source_id)
+
+        # Capture first image_url per topic (from highest-quality source)
+        img = ev.get('image_url')
+        if img and topic not in image_by_topic:
+            image_by_topic[topic] = img
 
         # Paradigm tagging for this event
         event_pillars = tag_paradigm(txt)
@@ -212,6 +218,11 @@ def main():
                     actors_by_topic[t][a] += 1
                 for p in event_pillars:
                     paradigm_by_topic[t][p] += 1
+            # Also capture image_url by tag
+            if img:
+                for t in tags:
+                    if t not in image_by_topic:
+                        image_by_topic[t] = img
         else:
             topic_count[topic] += 1
             evidence_by_topic[topic].append(ev.get('title', ''))
@@ -275,6 +286,7 @@ def main():
             'confidence': conf,
             'citations': ['data/normalized/events_latest.json'],
             'evidence_titles': evidence_titles[:3],
+            'image_url': image_by_topic.get(k) or None,
         })
 
         # Contradictions with CONCRETE claims — NO template language
@@ -288,6 +300,7 @@ def main():
             'urgency': 'high' if v >= 8 else 'medium',
             'invalidation_window': '24-72h',
             'paradigm_pillar': primary_id,
+            'image_url': image_by_topic.get(k) or None,
         })
 
     # Paradigm coverage stats
@@ -317,6 +330,10 @@ def main():
         'method': 'v2.2 paradigm-lens + anti-template + concrete claims',
     }
     json.dump(out, open(OUT, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
+
+    # ── Seed story registry from new setups ──
+    seed_story_registry(setups, regime)
+
     print(json.dumps({
         'ok': True,
         'setups': len(setups),
@@ -324,6 +341,168 @@ def main():
         'sources': len(source_diversity),
         'output': OUT,
     }))
+
+
+# ── Story registry seeding ───────────────────────────────────────────────
+
+GEOGRAPHIES = {
+    'iran', 'kuwait', 'gulf', 'iraq', 'saudi arabia', 'uae', 'united arab emirates',
+    'qatar', 'bahrain', 'oman', 'yemen', 'syria', 'russia', 'ukraine', 'china',
+    'beijing', 'shanghai', 'taiwan', 'japan', 'tokyo', 'south korea', 'india',
+    'united states', 'us', 'usa', 'america', 'washington', 'new york',
+    'europe', 'eu', 'european union', 'brussels', 'germany', 'berlin',
+    'france', 'paris', 'uk', 'united kingdom', 'london', 'italy', 'rome',
+    'spain', 'madrid', 'netherlands', 'switzerland', 'zurich',
+    'turkey', 'ankara', 'israel', 'tel aviv', 'palestine', 'gaza',
+    'africa', 'south africa', 'nigeria', 'egypt', 'cairo',
+    'brazil', 'brasilia', 'argentina', 'mexico', 'canada', 'ottawa',
+    'australia', 'sydney', 'indonesia', 'malaysia', 'singapore',
+    'afghanistan', 'pakistan', 'bangladesh', 'thailand', 'vietnam',
+    'north korea', 'belarus', 'poland', 'warsaw', 'sweden', 'stockholm',
+    'norway', 'denmark', 'finland', 'helsinki', 'kyiv', 'moscow',
+    'strait of hormuz', 'persian gulf', 'middle east', 'asia',
+    'latin america', 'european union', 'gulf states', 'baltic',
+    'california', 'hong kong',
+}
+
+
+def extract_geographies(text: str) -> list[str]:
+    """Extract known geography terms from text."""
+    lower = text.lower()
+    found = []
+    for geo in GEOGRAPHIES:
+        if geo in lower:
+            found.append(geo)
+    return found
+
+
+def derive_sector(setup: dict) -> str:
+    """Derive sector from a setup's content."""
+    pid = setup.get('paradigm_pillar', 'multi_pillar')
+    sector_map = {
+        'china_ascendancy': 'geopolitics',
+        'dollar_decline': 'macro',
+        'eu_fragmentation': 'geopolitics',
+        'abundance_tech': 'tech',
+        'blockchain_agentic': 'markets',
+    }
+    title = (setup.get('title', '') + ' ' + ' '.join(setup.get('evidence_titles', []))).lower()
+    if 'oil' in title or 'energy' in title or 'drone' in title or 'kuwait' in title:
+        return 'geopolitics'
+    if 'inflation' in title or 'rates' in title or 'fed' in title or 'ecb' in title:
+        return 'macro'
+    if 'ai' in title or 'tech' in title or 'google' in title or 'meta' in title:
+        return 'tech'
+    if 'crypto' in title or 'bitcoin' in title or 'ethereum' in title:
+        return 'markets'
+    return sector_map.get(pid, 'geopolitics')
+
+
+def seed_story_registry(setups: list[dict], regime: dict) -> dict:
+    """Check each setup against the story registry and create entries
+    for any new stories not yet tracked. Returns summary dict."""
+    REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    REGISTRY_PATH = os.path.join(REPO, 'data', 'story_registry.json')
+    STORIES_DIR = os.path.join(REPO, 'data', 'stories')
+    now = datetime.now(timezone.utc).isoformat()
+
+    # Load or create the registry
+    registry = {}
+    if os.path.exists(REGISTRY_PATH):
+        try:
+            with open(REGISTRY_PATH, 'r', encoding='utf-8') as f:
+                registry = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            registry = {}
+
+    if 'stories' not in registry:
+        registry['version'] = 1
+        registry['updated_at'] = now
+        registry['story_count'] = 0
+        registry['active_count'] = 0
+        registry['stories'] = {}
+
+    stories = registry['stories']
+    seeded = 0
+
+    for setup in setups:
+        setup_id = setup.get('setup_id', '')
+        if not setup_id:
+            continue
+
+        # Use setup_id as story_id (e.g., n21_oil)
+        story_id = setup_id
+        if story_id in stories:
+            continue  # Already tracked
+
+        # Extract geographies from evidence text
+        all_text = ' '.join(setup.get('evidence_titles', []) + [setup.get('title', '')])
+        geos = extract_geographies(all_text)
+        actors = setup.get('actors', [])
+
+        headline = (setup.get('title', '') or 'New story')[:200]
+        if len(headline) > 120:
+            headline = headline[:117] + '...'
+
+        stories[story_id] = {
+            'story_id': story_id,
+            'first_seen': now,
+            'last_updated': now,
+            'status': 'new',
+            'status_reason': 'Seeded from narrative intelligence pipeline',
+            'update_count': 1,
+            'original_setup_id': setup_id,
+            'original_headline': (setup.get('title', '') or '')[:200],
+            'current_headline': headline,
+            'sector': derive_sector(setup),
+            'paradigm_pillar': setup.get('paradigm_pillar', 'multi_pillar'),
+            'actors': actors,
+            'geography': geos,
+            'thread_ids': [f'{story_id}__main'],
+            'primary_thread_id': f'{story_id}__main',
+            'evidence_count': len(setup.get('evidence_titles', [])),
+            'source_count': regime.get('source_count', 1),
+            'invalidation_triggers': setup.get('invalidation_triggers', []),
+            'confidence': setup.get('confidence', 0.5),
+            'paradigm_implications': [],
+            'capital_flow_implication': '',
+            'asset_claim': {},
+            'image_url': setup.get('image_url') or None,
+            'evolution_score_current': 0.0,
+            'evolution_score_peak': 0.0,
+        }
+
+        # Create initial timeline entry
+        os.makedirs(os.path.join(STORIES_DIR, story_id), exist_ok=True)
+        timeline = {
+            'story_id': story_id,
+            'updates': [{
+                'update_id': f'{story_id}__ev_001',
+                'timestamp': now,
+                'type': 'evidence',
+                'summary': f'Initial broadcast — {headline[:200]}',
+                'source_url': '',
+                'evolution_score': 0.0,
+            }]
+        }
+        with open(os.path.join(STORIES_DIR, story_id, 'timeline.json'), 'w', encoding='utf-8') as f:
+            json.dump(timeline, f, ensure_ascii=False, indent=2)
+
+        seeded += 1
+
+    # Update registry metadata
+    active = sum(1 for s in stories.values() if s.get('status') != 'resolved')
+    registry['version'] = 1
+    registry['updated_at'] = now
+    registry['story_count'] = len(stories)
+    registry['active_count'] = active
+    registry['stories'] = stories
+
+    os.makedirs(os.path.dirname(REGISTRY_PATH), exist_ok=True)
+    with open(REGISTRY_PATH, 'w', encoding='utf-8') as f:
+        json.dump(registry, f, ensure_ascii=False, indent=2)
+
+    return {'seeded': seeded, 'total_stories': len(stories)}
 
 
 if __name__ == '__main__':

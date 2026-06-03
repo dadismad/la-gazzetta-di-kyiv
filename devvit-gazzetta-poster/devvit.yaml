@@ -1,0 +1,6 @@
+name: gazzetta-poster
+slug: gazzetta-poster
+version: 1.0.0
+description: Post text to r/LaGazzettadiKyiv
+permissions:
+  reddit_api: true

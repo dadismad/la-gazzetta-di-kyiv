@@ -200,6 +200,9 @@ def compute_evolution_score(
     """
     Compute evolution score components.
 
+    Uses Jaccard similarity + substring overlap matching for actors and
+    geography. All pure Python — no LLM calls.
+
     Returns dict with:
       - score: float (0-1)
       - actor_match: float
@@ -207,28 +210,51 @@ def compute_evolution_score(
       - pillar_match: float
       - recency: float
     """
-    # Extract all entities + geography from event titles
+    all_text = ' '.join(event_titles).lower()
+
+    # ── Actor match ──────────────────────────────────────────────────
+    # First: Jaccard on extracted entities
     all_event_entities = set()
-    all_event_geos = set()
     for title in event_titles:
         for e in _extract_entities(title):
             all_event_entities.add(e.lower())
+
+    story_actor_set = set(a.lower() for a in story_actors)
+    actor_jaccard = jaccard_similarity(list(all_event_entities), list(story_actor_set))
+
+    # Second: substring overlap (any story actor name appears in event text)
+    actor_substring_matches = []
+    for actor in story_actors:
+        if actor.lower() in all_text:
+            actor_substring_matches.append(actor.lower())
+    actor_substring_ratio = len(actor_substring_matches) / max(len(story_actors), 1)
+
+    # Use the best of Jaccard and substring match
+    actor_match = max(actor_jaccard, actor_substring_ratio)
+
+    # ── Geography match ──────────────────────────────────────────────
+    all_event_geos = set()
+    for title in event_titles:
         for g in extract_geographies(title):
             all_event_geos.add(g)
 
-    # Actor match: Jaccard between event entities and story actors
-    story_actor_set = set(a.lower() for a in story_actors)
-    actor_match = jaccard_similarity(list(all_event_entities), list(story_actor_set))
-
-    # Geography match: Jaccard between event geographies and story geographies
     story_geo_set = set(g.lower() for g in story_geography)
-    geography_match = jaccard_similarity(list(all_event_geos), list(story_geo_set))
+    geo_jaccard = jaccard_similarity(list(all_event_geos), list(story_geo_set))
 
-    # Pillar match: 1.0 if story pillar matches (we use best match from event pillar tags)
-    # For simplicity, we check if the event pillar aligns — always 0.5 as neutral
+    # Substring overlap for geography
+    geo_substring_matches = []
+    for geo in story_geography:
+        if geo.lower() in all_text:
+            geo_substring_matches.append(geo.lower())
+    geo_substring_ratio = len(geo_substring_matches) / max(len(story_geography), 1)
+
+    geography_match = max(geo_jaccard, geo_substring_ratio)
+
+    # ── Pillar match ────────────────────────────────────────────────
+    # 0.5 as neutral — could be improved with keyword matching
     pillar_match = 0.5
 
-    # Recency: highest recency score among events
+    # ── Recency ──────────────────────────────────────────────────────
     recency = 0.0
     for ts in event_timestamps:
         if ts:
@@ -249,8 +275,10 @@ def compute_evolution_score(
         'geography_match': round(geography_match, 4),
         'pillar_match': round(pillar_match, 4),
         'recency': round(recency, 4),
-        'matching_entities': list(all_event_entities & story_actor_set),
-        'matching_geographies': list(all_event_geos & story_geo_set),
+        'actor_jaccard': round(actor_jaccard, 4),
+        'actor_substring_matches': actor_substring_matches,
+        'geo_jaccard': round(geo_jaccard, 4),
+        'geo_substring_matches': geo_substring_matches,
     }
 
 

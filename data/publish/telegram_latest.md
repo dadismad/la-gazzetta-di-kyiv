@@ -1,12 +1,23 @@
-OECD warns 'dark scenario' if Iran-Gulf crisis persists — first forecaster to break containment consensus.
+Two-way actionable window into US close.
 
-Recession Risk Regime (selective risk-off): growth repricing overtakes oil. Bonds catching up.
+CENTCOM (19:01 UTC): Iran struck Kuwait airport with drones — "deliberate, calculated, unjustified."
+IRGC had just blamed a malfunctioning US Patriot. CENTCOM shot that cover story down on the record.
+Diplomatic off-ramp just got narrower. The "deal close" narrative lost the US military's plausible deniability.
 
-• Macro hedge: long vol on EUR/USD into ECB — rate rise on table regardless of Iran deal
-• Trade overlay: Trump 10%+ tariffs on forced labour — trade-war layer compounds energy shock
+• LONG WTI: +2.0-3.5% on narrative hardening. Add to position from previous window.
 
-¹ OECD GDP contraction scenario if Gulf disruption persists through Q3 2026. (source: https://ft.com/content/c79f9b4a-4fe9-b031-81c56511893c)
+Strategy/MSTR unrealized BTC loss exceeds $8.5B (markettwits, 19:12 UTC).
+At $65.9K BTC, the Saylor buying machine is broken. Convert arb unwind is the transmission mechanism.
+• SHORT BTC: -2.5 to -4.5% into close. SHORT MSTR: -4 to -7%.
 
-Continuity: pureciclismo.github.io/gazzetta-di-kyiv/ | Next trigger: ECB June meeting — rate decision vs growth downgrade
+Continuing stories (carried forward from 18:45 UTC):
+• Iran FM: ZERO progress in negotiations
+• Trump: blockade stays, final determination coming
+• Israel Chief of Staff: no ceasefire in Lebanon
+• Hezbollah: no partial ceasefire
+• Dnipro ATB warehouse destroyed — Ukraine logistics chain hit
+
+BTC: $65,868 (-1.84% 24h)
+Trad_fin live margin: 0 new messages in 28h. InfinityHedge: inactive since April 29. Ethanlevins: 0 new in 29h.
 
 Detailed contradiction map: pureciclismo.github.io/gazzetta-di-kyiv/

@@ -3,11 +3,22 @@
   "updates": [
     {
       "update_id": "n21_macro__ev_001",
-      "timestamp": "2026-06-03T21:34:43.477008+00:00",
+      "timestamp": "2026-06-03T21:35:42.864956+00:00",
       "type": "evidence",
       "summary": "Initial broadcast — macro: Trump’s proposed grant rules could destroy US science, researcher warns",
       "source_url": "",
       "evolution_score": 0.0
+    },
+    {
+      "update_id": "n21_macro__ev_002",
+      "timestamp": "2026-06-03T21:35:42.889222+00:00",
+      "type": "evidence",
+      "summary": "Evolution match (score=0.63): Meta bets on AI agents to unlock WhatsApp revenues; Bessent says US inflation jump will be ‘short-term blip’",
+      "source_url": "https://www.ft.com/content/1cc27b92-4ad0-4c62-9d8c-a58900f9a1d4",
+      "source_id": "ft_world",
+      "evolution_score": 0.6333,
+      "actor_match": 0.3333,
+      "geography_match": 1.0
     }
   ]
 }

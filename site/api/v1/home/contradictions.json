@@ -1,71 +1,79 @@
 {
-  "generated_at": "2026-06-03T17:26:56.686019+00:00",
+  "generated_at": "2026-06-03T21:35:42.864415+00:00",
   "data_freshness_seconds": 3600,
-  "source_count": 4,
+  "source_count": 6,
   "items": [
-    {
-      "narrative": "geopolitics",
-      "claim_a": "Gulf States policy remains stable",
-      "claim_b": "Israel strikes southern Lebanon but partial truce with Hezbollah appears to hold",
-      "urgency": "high",
-      "invalidation_window": "24-72h",
-      "paradigm_pillar": "multi_pillar"
-    },
     {
       "narrative": "macro",
       "claim_a": "Gulf States policy remains stable",
-      "claim_b": "OECD warns of \u2018dark scenario\u2019 if Gulf energy crisis drags on",
+      "claim_b": "Trump\u2019s proposed grant rules could destroy US science, researcher warns",
       "urgency": "high",
       "invalidation_window": "24-72h",
-      "paradigm_pillar": "multi_pillar"
+      "paradigm_pillar": "multi_pillar",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Meta_-_Facebook%2C_Instagram%2C_Whatsapp_-_Nein_Danke.png"
     },
     {
-      "narrative": "markets",
-      "claim_a": "Gulf States policy remains stable",
-      "claim_b": "Yen Hovers Near 160 Per Dollar as Traders Eye Intervention Risk",
+      "narrative": "ai",
+      "claim_a": "Federal Reserve policy remains stable",
+      "claim_b": "Meta bets on AI agents to unlock WhatsApp revenues",
       "urgency": "high",
       "invalidation_window": "24-72h",
-      "paradigm_pillar": "multi_pillar"
+      "paradigm_pillar": "multi_pillar",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Meta_-_Facebook%2C_Instagram%2C_Whatsapp_-_Nein_Danke.png"
     },
     {
       "narrative": "oil",
       "claim_a": "Gulf States policy remains stable",
-      "claim_b": "Shell pumped oil through Nigeria pipeline for years despite pollution evidence, documents show",
+      "claim_b": "Trump\u2019s Iran war drains US oil stocks to lowest level since 2004",
       "urgency": "medium",
       "invalidation_window": "24-72h",
-      "paradigm_pillar": "multi_pillar"
-    },
-    {
-      "narrative": "ai",
-      "claim_a": "Anthropic policy remains stable",
-      "claim_b": "AI giant Anthropic plans to sell shares in US as valuation nears $1tn",
-      "urgency": "medium",
-      "invalidation_window": "24-72h",
-      "paradigm_pillar": "multi_pillar"
-    },
-    {
-      "narrative": "ukraine",
-      "claim_a": "Kremlin/Russia policy remains stable",
-      "claim_b": "Seven killed after drone hits bus in Russia-controlled part of Ukraine",
-      "urgency": "medium",
-      "invalidation_window": "24-72h",
-      "paradigm_pillar": "multi_pillar"
-    },
-    {
-      "narrative": "russia",
-      "claim_a": "Kremlin/Russia policy remains stable",
-      "claim_b": "Seven killed after drone hits bus in Russia-controlled part of Ukraine",
-      "urgency": "medium",
-      "invalidation_window": "24-72h",
-      "paradigm_pillar": "multi_pillar"
+      "paradigm_pillar": "multi_pillar",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Donald_Trump_official_portrait.jpg"
     },
     {
       "narrative": "china",
       "claim_a": "PBoC policy remains stable",
-      "claim_b": "China Picks State Firm to Help Coordinate Mining Deals Abroad",
+      "claim_b": "Nissan signs deal with China\u2019s Chery for Sunderland car production",
       "urgency": "medium",
       "invalidation_window": "24-72h",
-      "paradigm_pillar": "multi_pillar"
+      "paradigm_pillar": "multi_pillar",
+      "image_url": "https://i.guim.co.uk/img/media/02d774e13d041f094f583254b13136c5a354374e/846_0_4583_3667/master/4583.jpg?width=700&quality=85&auto=format&fit=max&s=76103f6b3aeacef960917fa88cbed56f"
+    },
+    {
+      "narrative": "inflation",
+      "claim_a": "Federal Reserve policy remains stable",
+      "claim_b": "Bessent says US inflation jump will be \u2018short-term blip\u2019",
+      "urgency": "medium",
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Official_portrait_of_Treasury_Secretary_Scott_Bessent_%28cropped%29.jpg"
+    },
+    {
+      "narrative": "ukraine",
+      "claim_a": "Kremlin/Russia policy remains stable",
+      "claim_b": "To fight Russia, Europe needs Ukraine",
+      "urgency": "medium",
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "eu_fragmentation",
+      "image_url": null
+    },
+    {
+      "narrative": "russia",
+      "claim_a": "Kremlin/Russia policy remains stable",
+      "claim_b": "To fight Russia, Europe needs Ukraine",
+      "urgency": "medium",
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "eu_fragmentation",
+      "image_url": null
+    },
+    {
+      "narrative": "nato",
+      "claim_a": "NATO policy remains stable",
+      "claim_b": "Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response",
+      "urgency": "medium",
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar",
+      "image_url": null
     }
   ]
 }
