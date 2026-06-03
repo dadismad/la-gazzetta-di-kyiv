@@ -46,17 +46,18 @@ body {
   align-items: center;
   gap: 8px;
 }
-.masthead-ornament {
-  font-size: 14px;
-  color: var(--gold);
+.masthead-maces {
+  font-size: 16px;
+  color: var(--ink);
   line-height: 1;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
-.masthead-khmelnytsky {
-  font-size: 14px;
+.masthead-machiavelli {
+  font-size: 16px;
   color: var(--gold-dark);
-  opacity: 0.6;
-  line-height: 1;
+  opacity: 0.7;
+  cursor: default;
+  margin-left: 2px;
 }
 .masthead-name {
   font-family: var(--display);
@@ -68,12 +69,6 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-.masthead-thinker {
-  font-size: 16px;
-  color: var(--gold-dark);
-  opacity: 0.7;
-  cursor: default;
 }
 .masthead-tagline {
   font-family: var(--body);
@@ -112,7 +107,7 @@ body {
 .card {
   background: var(--white);
   border: 1px solid var(--divider);
-  padding: 10px 14px;
+  padding: 8px 12px;
   cursor: pointer;
   transition: border-color 0.12s;
 }
@@ -120,6 +115,29 @@ body {
 .card.lead {
   border-left: 3px solid var(--gold);
   background: var(--gold-pale);
+}
+.card .card-body {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.card .card-text {
+  flex: 1;
+  min-width: 0;
+}
+.card .card-photo {
+  flex-shrink: 0;
+  width: 100px;
+  height: 70px;
+  overflow: hidden;
+  border-radius: 2px;
+  border: 1px solid var(--divider);
+}
+.card .card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .card .card-head {
   display: flex;
@@ -225,43 +243,74 @@ body {
 }
 .asset-row {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4px 0;
+  flex-direction: column;
+  padding: 5px 0;
   border-bottom: 1px solid #F5F1E8;
+  gap: 3px;
 }
 .asset-row:last-child { border-bottom: none; }
+.asset-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
 .asset-symbol {
   font-family: var(--sans);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   color: var(--ink);
 }
 .asset-name {
-  font-size: 10px;
+  font-size: 9px;
   color: var(--ink-muted);
-  flex: 1;
-  margin: 0 6px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .asset-price {
   font-family: var(--sans);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
-  text-align: right;
-  min-width: 55px;
+  margin-left: auto;
 }
 .asset-change {
   font-family: var(--sans);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 600;
-  text-align: right;
-  min-width: 45px;
 }
 .asset-change.up { color: var(--green); }
 .asset-change.down { color: var(--red); }
+
+/* Bet&Benefit 2h projection */
+.asset-projection {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--sans);
+  font-size: 8px;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+.asset-projection.bullish {
+  background: #EAF7EA;
+  color: #1B7A1B;
+}
+.asset-projection.bearish {
+  background: #FDECEC;
+  color: #A82020;
+}
+.proj-label {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+}
+.proj-price {
+  font-weight: 700;
+}
+.proj-vol {
+  opacity: 0.7;
+}
 .asset-note {
   font-family: var(--sans);
   font-size: 8px;
@@ -299,6 +348,7 @@ body {
   .masthead-name { font-size: 17px; }
 }
 @media (max-width: 500px) {
-  .masthead-thinker { display: none; }
-  .masthead-ornament { display: none; }
+  .masthead-machiavelli { display: none; }
+  .masthead-maces { display: none; }
+  .card .card-photo { display: none; }
 }

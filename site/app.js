@@ -1,4 +1,4 @@
-// La Gazzetta di Kyiv — News + Asset Terminal
+// La Gazzetta di Kyiv — News + Bet&Benefit Terminal
 const DATA = './data/stories.json';
 
 function byId(id) { return document.getElementById(id); }
@@ -11,75 +11,118 @@ async function getJSON(path, fallback) {
   } catch (e) { console.warn('Fetch:', path); return fallback; }
 }
 
-// ── Italian thinkers mapped to sectors ──
-const THINKERS = {
-  geopolitics:  { icon: '⚜', name: 'Machiavelli — Power & Strategy' },
-  markets:      { icon: '⚖', name: 'Pareto — Elite Circulation' },
-  tech:         { icon: '⚡', name: 'Marinetti — Acceleration' },
-  wealth:       { icon: '🏛', name: 'Vico — Historical Cycles' },
-  pleasure:     { icon: '✧', name: "D'Annunzio — Aesthetic Will" },
-  default:      { icon: '⚜', name: 'Machiavelli — Power & Strategy' },
+// ── Domain-specific photo selection ──
+// Each sector maps to a curated set of photo queries for diversity
+const SECTOR_PHOTOS = {
+  geopolitics: [
+    'https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=200&h=140&fit=crop',  // diplomacy flags
+    'https://images.unsplash.com/photo-1589519160732-57fc498494f8?w=200&h=140&fit=crop',  // military
+    'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=200&h=140&fit=crop',  // geopolitics
+  ],
+  markets: [
+    'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=200&h=140&fit=crop',  // trading floor
+    'https://images.unsplash.com/photo-1535320903710-d993d3d77d29?w=200&h=140&fit=crop',  // charts
+    'https://images.unsplash.com/photo-1590283603385-17ffb3a7f193?w=200&h=140&fit=crop',  // stock exchange
+  ],
+  tech: [
+    'https://images.unsplash.com/photo-1518770660439-4636190af475?w=200&h=140&fit=crop',  // chips
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=200&h=140&fit=crop',  // servers
+    'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=200&h=140&fit=crop',  // AI
+  ],
+  wealth: [
+    'https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?w=200&h=140&fit=crop',  // gold
+    'https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=200&h=140&fit=crop',  // wealth
+    'https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?w=200&h=140&fit=crop',  // BTC
+  ],
+  pleasure: [
+    'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=200&h=140&fit=crop',  // wine
+    'https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=200&h=140&fit=crop',  // luxury
+    'https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=200&h=140&fit=crop',  // design
+  ],
+  default: [
+    'https://images.unsplash.com/photo-1504711434969-e33886168d6c?w=200&h=140&fit=crop',  // news
+  ]
 };
 
-// ── Asset tickers influenced by story sectors ──
-const ASSETS = [
-  { symbol: 'BZ=F', name: 'Brent Crude', price: '74.20', change: '+2.1%', dir: 'up', sector: 'geopolitics' },
-  { symbol: 'USD/JPY', name: 'Dollar-Yen', price: '159.85', change: '-0.4%', dir: 'down', sector: 'markets' },
-  { symbol: 'NVDA', name: 'NVIDIA', price: '1,142', change: '+3.2%', dir: 'up', sector: 'tech' },
-  { symbol: 'SOXX', name: 'Semiconductor ETF', price: '248.60', change: '+1.8%', dir: 'up', sector: 'tech' },
-  { symbol: 'XLE', name: 'Energy Select', price: '92.45', change: '+1.5%', dir: 'up', sector: 'geopolitics' },
-  { symbol: 'DXY', name: 'Dollar Index', price: '104.30', change: '-0.2%', dir: 'down', sector: 'markets' },
-  { symbol: 'BTC', name: 'Bitcoin', price: '68,450', change: '+0.9%', dir: 'up', sector: 'wealth' },
-];
+function pickPhoto(sector, idx) {
+  const pool = SECTOR_PHOTOS[sector] || SECTOR_PHOTOS.default;
+  return pool[idx % pool.length];
+}
 
 // ── Masthead ──
-function updateMasthead(leadStory) {
+function updateMasthead() {
   const metaEl = byId('mastheadMeta');
   if (metaEl) {
     const now = new Date();
-    metaEl.textContent = `${now.getHours().toString().padStart(2,'0')}:${now.getMinutes().toString().padStart(2,'0')} EET`;
-  }
-  // Update thinker based on lead story sector
-  const thinkerEl = byId('thinkerPortrait');
-  if (thinkerEl && leadStory) {
-    const sector = (leadStory.sector || '').toLowerCase();
-    const thinker = THINKERS[sector] || THINKERS.default;
-    thinkerEl.textContent = thinker.icon;
-    thinkerEl.title = thinker.name;
+    const ts = now.toTimeString().slice(0,5);
+    metaEl.textContent = ts + ' EET';
   }
 }
 
-// ── Asset panel ──
-function renderAssets(leadSector) {
+// ── Bet&Benefit Panel — 2h horizon projections ──
+const ASSETS = [
+  { symbol: 'BZ=F', name: 'Brent Crude', price: '74.20', change: '+2.1%', dir: 'up',
+    h2h_price: '75.80', h2h_vol: '+34%', h2h_bias: 'bullish', sector: 'geopolitics' },
+  { symbol: 'USD/JPY', name: 'Dollar-Yen', price: '159.85', change: '-0.4%', dir: 'down',
+    h2h_price: '159.10', h2h_vol: '+22%', h2h_bias: 'bearish', sector: 'markets' },
+  { symbol: 'NVDA', name: 'NVIDIA', price: '1,142', change: '+3.2%', dir: 'up',
+    h2h_price: '1,190', h2h_vol: '+58%', h2h_bias: 'bullish', sector: 'tech' },
+  { symbol: 'SOXX', name: 'Semiconductor ETF', price: '248.60', change: '+1.8%', dir: 'up',
+    h2h_price: '256', h2h_vol: '+31%', h2h_bias: 'bullish', sector: 'tech' },
+  { symbol: 'XLE', name: 'Energy Select', price: '92.45', change: '+1.5%', dir: 'up',
+    h2h_price: '94.20', h2h_vol: '+27%', h2h_bias: 'bullish', sector: 'geopolitics' },
+  { symbol: 'DXY', name: 'Dollar Index', price: '104.30', change: '-0.2%', dir: 'down',
+    h2h_price: '103.80', h2h_vol: '+18%', h2h_bias: 'bearish', sector: 'markets' },
+  { symbol: 'BTC', name: 'Bitcoin', price: '68,450', change: '+0.9%', dir: 'up',
+    h2h_price: '69,200', h2h_vol: '+41%', h2h_bias: 'bullish', sector: 'wealth' },
+];
+
+function renderAssets() {
   const el = byId('assetList');
   if (!el) return;
   el.innerHTML = ASSETS.map(a => `
     <div class="asset-row">
-      <span class="asset-symbol">${a.symbol}</span>
-      <span class="asset-name">${a.name}</span>
-      <span class="asset-change ${a.dir}">${a.change}</span>
+      <div class="asset-info">
+        <span class="asset-symbol">${a.symbol}</span>
+        <span class="asset-name">${a.name}</span>
+        <span class="asset-price">$${a.price}</span>
+        <span class="asset-change ${a.dir}">${a.change}</span>
+      </div>
+      <div class="asset-projection ${a.h2h_bias}">
+        <span class="proj-label">2h→</span>
+        <span class="proj-price">$${a.h2h_price}</span>
+        <span class="proj-vol">Vol ${a.h2h_vol}</span>
+      </div>
     </div>
   `).join('');
 }
 
-// ── Story card ──
+// ── Story card with domain photo ──
 function cardHTML(story, idx, isLead) {
-  const sector = story.sector || '';
+  const sector = (story.sector || '').toLowerCase();
   const theySay = story.they_say || '';
   const reality = story.reality || '';
+  const photoUrl = pickPhoto(sector, idx);
 
   return `
     <article class="card${isLead ? ' lead' : ''}" data-expand="true">
-      <div class="card-head">
-        ${sector ? `<span class="sector">${sector}</span>` : ''}
-        <h3>${story.headline}</h3>
+      <div class="card-body">
+        <div class="card-text">
+          <div class="card-head">
+            ${sector ? `<span class="sector">${sector}</span>` : ''}
+            <h3>${story.headline}</h3>
+          </div>
+          ${reality ? `<p class="summary">${reality}</p>` : ''}
+          ${theySay || reality ? `
+          <div class="detail">
+            ${theySay ? `<div class="con-they"><span class="con-label">They say</span>${theySay}</div>` : ''}
+            ${reality ? `<div class="con-real"><span class="con-label">Reality</span>${reality}</div>` : ''}
+          </div>` : ''}
+        </div>
+        <div class="card-photo">
+          <img src="${photoUrl}" alt="${sector}" loading="lazy" onerror="this.style.display='none'">
+        </div>
       </div>
-      ${reality ? `<p class="summary">${reality}</p>` : ''}
-      ${theySay || reality ? `
-      <div class="detail">
-        ${theySay ? `<div class="con-they"><span class="con-label">They say</span>${theySay}</div>` : ''}
-        ${reality ? `<div class="con-real"><span class="con-label">Reality</span>${reality}</div>` : ''}
-      </div>` : ''}
     </article>`;
 }
 
@@ -99,7 +142,7 @@ async function boot() {
   if (!data || !data.lead) {
     const el = byId('newsCol');
     if (el) el.innerHTML = '<p style="text-align:center;color:var(--ink-muted);padding:40px;font-style:italic">Intelligence update in progress.</p>';
-    renderAssets('default');
+    renderAssets();
     return;
   }
 
@@ -107,8 +150,8 @@ async function boot() {
   const el = byId('newsCol');
   if (el) el.innerHTML = all.map((s, i) => cardHTML(s, i, i === 0)).join('');
 
-  updateMasthead(data.lead);
-  renderAssets(data.lead.sector);
+  updateMasthead();
+  renderAssets();
   wireExpand();
 }
 
