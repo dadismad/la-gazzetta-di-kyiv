@@ -245,13 +245,139 @@ function renderCapitalFlows() {
       <div class="flow-detail" style="margin-top:2px;font-size:10px;color:var(--ink-muted)">${f.positioning}</div>
     </div>
   `).join('');
-  // Update subtitle
   const sub = byId('cfSubtitle');
   if (sub) {
     const inflows = CAPITAL_FLOWS_DATA.filter(f => f.direction === 'inflow');
     const outflows = CAPITAL_FLOWS_DATA.filter(f => f.direction === 'outflow');
     sub.textContent = `${inflows.length} inflows · ${outflows.length} outflows`;
   }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// TRIANGULATION — Cross-Container Intelligence Signal
+// ═══════════════════════════════════════════════════════════════
+
+const STORY_ANCHOR_MAP = {
+  oil: 'BRENT', energy: 'BRENT', gold: 'GOLD',
+  treasury: '10Y', fed: '10Y', nvidia: 'NVDA', ai: 'NVDA',
+  tech: 'NVDA', china: 'DXY', defense: 'SPX', nato: 'SPX',
+  ukraine: 'GOLD', europe: 'DXY'
+};
+
+function matchAnchor(headline) {
+  const h = headline.toLowerCase();
+  for (const [kw, asset] of Object.entries(STORY_ANCHOR_MAP)) {
+    if (h.includes(kw)) return asset;
+  }
+  return null;
+}
+
+function computeTriangulation(story, flow, anchorAsset) {
+  let score = 0;
+  const signals = [];
+
+  // Event strength (max 35)
+  if (story.confidence === 'high') score += 15;
+  if (story.they_say && story.reality) score += 10;
+  if (story.extremum) score += 10;
+  signals.push({label: 'Event', cls: 'event', val: 'strong'});
+
+  // Flow alignment (max 35)
+  if (flow) {
+    const amt = parseFloat(flow.amount);
+    const denom = flow.denomination || flow.denom || 'B';
+    if (denom === 'B' && amt >= 3) score += 15;
+    else if (denom === 'B' && amt >= 1) score += 10;
+    else score += 5;
+    const pace = parseFloat(flow.pace) || 1;
+    if (pace >= 2.5) score += 10;
+    else if (pace >= 1.5) score += 7;
+    else score += 4;
+    if (flow.positioning === 'accumulating') score += 10;
+    else if (flow.positioning === 'distributing') score += 8;
+    else score += 5;
+    signals.push({label: 'Flow', cls: 'flow', val: `${flow.direction} $${amt}${denom} ${pace}x`});
+  } else {
+    signals.push({label: 'Flow', cls: 'flow', val: 'none'});
+  }
+
+  // Bet alignment (max 30)
+  let betBias = 'WATCH', betConviction = 'LOW';
+  if (anchorAsset && anchorAsset in ANCHOR_ASSETS.reduce((m,a)=>(m[a.symbol]=a,m),{})) {
+    const a = ANCHOR_ASSETS.find(x => x.symbol === anchorAsset);
+    if (a) { betBias = a.bias; betConviction = a.conviction; }
+    if (a && a.bias !== 'WATCH') score += 15;
+    if (a && a.conviction === 'HIGH') score += 10;
+    else if (a && a.conviction === 'MED') score += 5;
+    signals.push({label: 'Bet', cls: 'bet', val: `${anchorAsset} ${betBias} ${betConviction}`});
+  } else {
+    signals.push({label: 'Bet', cls: 'bet', val: 'no match'});
+  }
+
+  // Alignment bonus
+  const flowDir = flow ? (flow.direction || 'none') : 'none';
+  let alignment = 'neutral', alignDetail = '';
+  if (flowDir === 'inflow' && betBias === 'BUY') { score += 5; alignment = 'aligned'; alignDetail = '✅ Flow+Bet aligned BUY'; }
+  else if (flowDir === 'outflow' && betBias === 'SELL') { score += 5; alignment = 'aligned'; alignDetail = '✅ Flow+Bet aligned SELL'; }
+  else if (flowDir === 'inflow' && betBias === 'SELL') { alignment = 'divergent'; alignDetail = '⚠️ Inflow but SELL signal'; }
+  else if (flowDir === 'outflow' && betBias === 'BUY') { alignment = 'divergent'; alignDetail = '⚠️ Outflow but BUY signal'; }
+  else if (betBias === 'WATCH') { alignment = 'neutral'; alignDetail = 'Bet is WATCH — no directional signal'; }
+
+  const cappedScore = Math.min(score, 100);
+  let verdict, verdictCls;
+  if (cappedScore >= 85) { verdict = 'MAX CONVICTION'; verdictCls = 'max'; }
+  else if (cappedScore >= 70) { verdict = 'HIGH CONVICTION'; verdictCls = 'high'; }
+  else if (cappedScore >= 55) { verdict = 'MODERATE'; verdictCls = 'moderate'; }
+  else { verdict = 'WATCH'; verdictCls = 'watch'; }
+
+  return { score: cappedScore, verdict, verdictCls, alignment, alignDetail, signals, anchorAsset, flowDir, betBias };
+}
+
+function renderTriangulation() {
+  const el = byId('triangulationList');
+  if (!el) return;
+
+  // Collect stories from the DOM
+  const cards = document.querySelectorAll('.card[data-story-id]');
+  const items = [];
+  cards.forEach(card => {
+    const sid = card.dataset.storyId;
+    const headline = card.querySelector('h3')?.textContent || '';
+    const flowItem = CAPITAL_FLOWS_DATA.find(f => f.storyId === sid);
+    // Build a minimal story object from card data
+    const story = {
+      story_id: sid,
+      headline: headline,
+      confidence: 'high', // default
+      they_say: card.querySelector('.con-they')?.textContent || '',
+      reality: card.querySelector('.con-real')?.textContent || '',
+      extremum: card.querySelector('.card-extremum')?.textContent || '',
+    };
+    const anchorAsset = matchAnchor(headline);
+    const tri = computeTriangulation(story, flowItem, anchorAsset);
+    items.push({ ...tri, headline, storyId: sid });
+  });
+
+  if (items.length === 0) {
+    el.innerHTML = '<div style="padding:12px;color:var(--ink-muted);font-style:italic;font-size:12px">Stories loading — triangulation will appear when cards are rendered.</div>';
+    return;
+  }
+
+  items.sort((a, b) => b.score - a.score);
+
+  el.innerHTML = items.map(t => `
+    <div class="triangulation-item">
+      <div class="triangulation-header">
+        <span class="triangulation-score ${t.alignment}">${t.score}</span>
+        <span class="triangulation-headline">${t.headline}</span>
+        <span class="triangulation-verdict ${t.verdictCls}">${t.verdict}</span>
+      </div>
+      <div class="triangulation-detail">
+        ${t.signals.map(s => `<span><span class="tri-label ${s.cls}">${s.label}</span> ${s.val}</span>`).join('')}
+        ${t.alignDetail ? `<span class="tri-align ${t.alignment}">${t.alignDetail}</span>` : ''}
+      </div>
+    </div>
+  `).join('');
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -818,6 +944,7 @@ async function boot() {
   // Render static content
   renderAnchor();
   renderCapitalFlows();
+  renderTriangulation();
 
   // Try data sources
   const livingData = await getJSON(LIVING_DATA, null);
