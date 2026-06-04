@@ -351,30 +351,31 @@ function livingCardHTML(story, isLead) {
              data-update-count="${story.update_count}"
              data-last-updated="${story.last_updated || ''}"
              data-pillar="${story.paradigm_pillar || ''}">
-      <div class="card-body">
-        <div class="card-text">
-          <div class="card-head">
-            ${claimHTML}
-            ${sector ? `<span class="category-tag ${sector}">${SECTOR_LABELS[sector] || sector}</span>` : ''}
-            <h3 class="${story.original_headline ? 'headline-locked' : ''}" data-original="${story.original_headline || ''}">${story.headline}</h3>
-          </div>
-          ${reality ? `<p class="summary">${reality}</p>` : ''}
-          ${theySay || reality ? `
-          <div class="detail">
-            ${theySay ? `<div class="con-they"><span class="con-label">They say</span>${theySay}</div>` : ''}
-            ${reality ? `<div class="con-real"><span class="con-label">Reality</span>${reality}</div>` : ''}
-          </div>` : ''}
-          ${story.capital_flow ? `
-          <div class="capital-flow-block">
-            <span class="cf-label">CAPITAL FLOW</span>
-            ${story.capital_flow}
-          </div>` : ''}
-          ${story.portfolio_implication ? `
-          <div class="the-play">
-            <span class="pi-label">THE PLAY</span>
-            <span class="pi-text">${story.portfolio_implication}</span>
-          </div>` : ''}
+      <div class="card-collapsed" onclick="this.parentElement.classList.toggle('expanded')">
+        <div class="card-head">
+          ${claimHTML}
+          ${sector ? `<span class="category-tag ${sector}">${SECTOR_LABELS[sector] || sector}</span>` : ''}
+          <h3>${story.headline}</h3>
         </div>
+        <span class="expand-hint">▾</span>
+      </div>
+      <div class="card-expanded-body">
+        ${reality ? `<p class="summary">${reality}</p>` : ''}
+        ${theySay || reality ? `
+        <div class="detail">
+          ${theySay ? `<div class="con-they"><span class="con-label">They say</span>${theySay}</div>` : ''}
+          ${reality ? `<div class="con-real"><span class="con-label">Reality</span>${reality}</div>` : ''}
+        </div>` : ''}
+        ${story.capital_flow ? `
+        <div class="capital-flow-block">
+          <span class="cf-label">CAPITAL FLOW</span>
+          ${story.capital_flow}
+        </div>` : ''}
+        ${story.portfolio_implication ? `
+        <div class="the-play">
+          <span class="pi-label">THE PLAY</span>
+          <span class="pi-text">${story.portfolio_implication}</span>
+        </div>` : ''}
         <div class="card-photo">
           <img src="${photoUrl}" alt="${sector}" loading="lazy" onerror="this.parentElement.style.display='none'">
         </div>
