@@ -1,4 +1,4 @@
-// La Gazzetta di Kyiv v20 — φ-Constellation Layout · Bet & Benefit · Share Buttons · Extremum Lines
+// La Gazzetta di Kyiv v20.3 — Pure white · Lucide icons · Single Share menu · Typography-first
 const DATA = './data/stories.json';
 const LIVING_DATA = './data/living_stories.json';
 const POLL_INTERVAL = 120000; // 2 minutes
@@ -313,24 +313,16 @@ function livingCardHTML(story, isLead) {
              data-last-updated="${story.last_updated || ''}"
              data-pillar="${story.paradigm_pillar || ''}">
       <div class="card-collapsed">
-        <div class="card-head">
-          ${cfClaim}
-          <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:2px">
-            ${sector ? `<span class="category-tag ${sector}">${SECTOR_LABELS[sector] || sector}</span>` : ''}
-            ${updateBadge}
-            ${updatedAgo}
-          </div>
-          <h3>${story.headline}</h3>
+      <div class="card-head">
+        ${cfClaim}
+        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:2px">
+          ${sector ? `<span class="category-tag ${sector}">${SECTOR_LABELS[sector] || sector}</span>` : ''}
+          ${updateBadge}
+          ${updatedAgo}
         </div>
-        <div class="card-actions">
-          <div class="share-actions">
-            <button class="share-btn copy-link" title="Copy link"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="1" width="6" height="2" rx="0.5"/><rect x="3" y="3" width="10" height="11" rx="1"/></svg></button>
-            <button class="share-btn share-x" title="Share on X"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="2" y1="2" x2="12" y2="12"/><line x1="12" y1="2" x2="2" y2="12"/></svg></button>
-            <button class="share-btn share-telegram" title="Share on Telegram"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,8 10,2 14,2 10,14 2,8"/></svg></button>
-          </div>
-          <span class="expand-hint"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="3,5 6,8 9,5"/></svg></span>
-        </div>
+        <h3>${story.headline}</h3>
       </div>
+      </div><!-- /card-collapsed -->
       <div class="card-expanded-body">
         ${reality ? `<p class="summary">${reality}</p>` : ''}
         ${theySay || reality ? `
@@ -345,19 +337,25 @@ function livingCardHTML(story, isLead) {
           <span class="pi-text">${story.portfolio_implication}</span>
         </div>` : ''}
         ${extremumHTML}
+        <div class="share-row">
+          <button class="share-toggle" title="Share this story">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> Share
+          </button>
+          <div class="share-menu">
+            <button class="share-btn copy-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Copy link</button>
+            <button class="share-btn share-x"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7.5 7.5L4 19"/><path d="M20 4l-7.5 7.5L20 19"/></svg> X</button>
+            <button class="share-btn share-telegram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Telegram</button>
+            <button class="share-btn share-linkedin"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn</button>
+          </div>
+        </div>
         <div class="card-photo">
           <img src="${photoUrl}" alt="${sector}" loading="lazy" onerror="this.parentElement.style.display='none'">
-        </div>
-        <div class="share-actions" style="margin-top:6px;opacity:0.3">
-          <button class="share-btn copy-link" title="Copy link"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="1" width="6" height="2" rx="0.5"/><rect x="3" y="3" width="10" height="11" rx="1"/></svg> Copy link</button>
-          <button class="share-btn share-x" title="Share on X"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="2" y1="2" x2="12" y2="12"/><line x1="12" y1="2" x2="2" y2="12"/></svg> Share on X</button>
-          <button class="share-btn share-telegram" title="Share on Telegram"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,8 10,2 14,2 10,14 2,8"/></svg> Share on Telegram</button>
         </div>
       </div>
       <div class="story-evolution-timeline" style="display:none">
         <div class="timeline-loading">Loading evolution timeline...</div>
       </div>
-      ${story.status === 'resolved' ? `<div class="resolved-banner"><span class="resolved-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Resolved</span></div>` : ''}
+      ${story.status === 'resolved' ? `<div class="resolved-banner"><span class="resolved-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Resolved</span></div>` : ''}
     </article>`;
 }
 
@@ -389,8 +387,8 @@ function wireCardDelegation() {
   if (!newsCol) return;
 
   newsCol.addEventListener('click', async function(e) {
-    // Skip share button clicks
-    if (e.target.closest('.share-btn') || e.target.closest('.thread-pill') || e.target.closest('.resolved-archive-link')) return;
+    // Skip share menu clicks — they're handled by wireShareControls
+    if (e.target.closest('.share-toggle') || e.target.closest('.share-menu') || e.target.closest('.thread-pill') || e.target.closest('.resolved-archive-link')) return;
 
     const card = e.target.closest('.card');
     if (!card) return;
@@ -538,12 +536,6 @@ function appendStoryCard(story, isLead) {
   // Insert at the top — newest first
   el.insertAdjacentHTML('afterbegin', html);
 
-  // Wire click handler on new card (delegation handles expand, wire share buttons directly)
-  const newCard = el.querySelector(`[data-story-id="${story.story_id}"]`);
-  if (newCard) {
-    wireShareButtons(newCard);
-  }
-
   // Update story count badge
   updateStoryCount();
 }
@@ -670,9 +662,9 @@ function updateTimestamps() {
   });
 }
 
-// ═══════════════════════════════════════════════════════════════
-// SHARE BUTTONS
-// ═══════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════
+// SHARE — single toggle + inline menu
+// ═══════════════════════════════════════════════
 
 function getShareText(articleEl) {
   const headline = articleEl.querySelector('h3')?.textContent || '';
@@ -695,15 +687,35 @@ function showToast(msg) {
   setTimeout(() => toast.remove(), 2500);
 }
 
-function wireShareButtons(container) {
-  container.querySelectorAll('.share-btn').forEach(btn => {
-    btn.addEventListener('click', function(e) {
+function closeAllShareMenus() {
+  document.querySelectorAll('.share-menu.visible').forEach(m => m.classList.remove('visible'));
+}
+
+function wireShareControls() {
+  // Share toggle click — open/close menu (clicking the toggle in expanded view is fine)
+  document.addEventListener('click', function(e) {
+    const toggle = e.target.closest('.share-toggle');
+    if (toggle) {
       e.stopPropagation();
-      const card = this.closest('.card');
+      const menu = toggle.nextElementSibling;
+      if (!menu || !menu.classList.contains('share-menu')) return;
+      // Close all other menus
+      closeAllShareMenus();
+      menu.classList.toggle('visible');
+      return;
+    }
+
+    // Share menu action buttons
+    const btn = e.target.closest('.share-menu .share-btn');
+    if (btn) {
+      e.stopPropagation();
+      const card = btn.closest('.card');
       if (!card) return;
       const text = getShareText(card);
+      const menu = btn.closest('.share-menu');
+      menu.classList.remove('visible');
 
-      if (this.classList.contains('copy-link')) {
+      if (btn.classList.contains('copy-link')) {
         if (navigator.share) {
           navigator.share({ title: text.split('\n')[0], text: text }).catch(() => {});
         } else if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -713,14 +725,22 @@ function wireShareButtons(container) {
         } else {
           try { document.execCommand('copy'); showToast('✓ Copied to clipboard'); } catch(e) {}
         }
-      } else if (this.classList.contains('share-x')) {
+      } else if (btn.classList.contains('share-x')) {
         window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank', 'width=600,height=400');
-      } else if (this.classList.contains('share-telegram')) {
+      } else if (btn.classList.contains('share-telegram')) {
         const url = window.location.href;
         const shareUrl = 'https://t.me/share/url?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text.split('\n')[0]);
         window.open(shareUrl, '_blank', 'width=600,height=400');
+      } else if (btn.classList.contains('share-linkedin')) {
+        const url = window.location.href;
+        const shareUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+        window.open(shareUrl, '_blank', 'width=600,height=400');
       }
-    });
+      return;
+    }
+
+    // Click outside closes all share menus
+    closeAllShareMenus();
   });
 }
 
@@ -734,6 +754,9 @@ async function boot() {
 
   // Wire card click delegation (one listener on newsCol for all cards)
   wireCardDelegation();
+
+  // Wire share toggle + menu (document-level delegation)
+  wireShareControls();
 
   // Render static content
   renderAnchor();
