@@ -324,11 +324,11 @@ function livingCardHTML(story, isLead) {
         </div>
         <div class="card-actions">
           <div class="share-actions">
-            <button class="share-btn copy-link" title="Copy link">📋</button>
-            <button class="share-btn share-x" title="Share on X">𝕏</button>
-            <button class="share-btn share-telegram" title="Share on Telegram">✈</button>
+            <button class="share-btn copy-link" title="Copy link"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="1" width="6" height="2" rx="0.5"/><rect x="3" y="3" width="10" height="11" rx="1"/></svg></button>
+            <button class="share-btn share-x" title="Share on X"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="2" y1="2" x2="12" y2="12"/><line x1="12" y1="2" x2="2" y2="12"/></svg></button>
+            <button class="share-btn share-telegram" title="Share on Telegram"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,8 10,2 14,2 10,14 2,8"/></svg></button>
           </div>
-          <span class="expand-hint">▾</span>
+          <span class="expand-hint"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="3,5 6,8 9,5"/></svg></span>
         </div>
       </div>
       <div class="card-expanded-body">
@@ -349,15 +349,15 @@ function livingCardHTML(story, isLead) {
           <img src="${photoUrl}" alt="${sector}" loading="lazy" onerror="this.parentElement.style.display='none'">
         </div>
         <div class="share-actions" style="margin-top:6px;opacity:0.3">
-          <button class="share-btn copy-link" title="Copy link">📋 Share</button>
-          <button class="share-btn share-x" title="Share on X">𝕏 Share</button>
-          <button class="share-btn share-telegram" title="Share on Telegram">✈ Share</button>
+          <button class="share-btn copy-link" title="Copy link"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="1" width="6" height="2" rx="0.5"/><rect x="3" y="3" width="10" height="11" rx="1"/></svg> Copy link</button>
+          <button class="share-btn share-x" title="Share on X"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="2" y1="2" x2="12" y2="12"/><line x1="12" y1="2" x2="2" y2="12"/></svg> Share on X</button>
+          <button class="share-btn share-telegram" title="Share on Telegram"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,8 10,2 14,2 10,14 2,8"/></svg> Share on Telegram</button>
         </div>
       </div>
       <div class="story-evolution-timeline" style="display:none">
         <div class="timeline-loading">Loading evolution timeline...</div>
       </div>
-      ${story.status === 'resolved' ? `<div class="resolved-banner"><span class="resolved-icon">✓</span><span>Resolved</span></div>` : ''}
+      ${story.status === 'resolved' ? `<div class="resolved-banner"><span class="resolved-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 5,9 10,3"/></svg></span><span>Resolved</span></div>` : ''}
     </article>`;
 }
 
