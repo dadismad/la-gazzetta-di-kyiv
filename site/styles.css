@@ -68,16 +68,17 @@ body {
   align-items: center;
   gap: 10px;
 }
-.masthead-bulava {
+.masthead-machiavelli {
   display: flex;
   align-items: center;
   color: var(--gold);
   line-height: 1;
+  opacity: 0.7;
 }
-.masthead-bulava svg {
+.masthead-machiavelli svg {
   display: block;
-  width: 20px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
 }
 .masthead-name {
   font-family: var(--display);
@@ -252,8 +253,7 @@ body {
 /* THE SIGNAL — synthesis container, visually distinct */
 .signal-container {
   border-left: 3px solid var(--gold);
-  background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(212,175,55,0.02) 60%, rgba(255,255,255,1) 100%);
-  box-shadow: 0 2px 14px rgba(212,175,55,0.12), 0 1px 3px rgba(0,0,0,0.04);
+  background: linear-gradient(135deg, rgba(212,175,55,0.06) 0%, rgba(212,175,55,0.01) 60%, rgba(255,255,255,1) 100%);
 }
 .signal-container .container-header {
   border-bottom-color: rgba(212,175,55,0.25);
@@ -979,7 +979,7 @@ body {
 /* Phone (≤600px) */
 @media (max-width: 600px) {
   .masthead { padding: 5px 10px; }
-  .masthead-bulava svg { width: 16px; height: 20px; }
+  .masthead-machiavelli svg { width: 14px; height: 14px; }
   .masthead-name { font-size: 15px; }
   .container-header { padding: 8px 10px; }
   .container-title { font-size: 10px; }
@@ -995,7 +995,7 @@ body {
 @media (max-width: 400px) {
   .masthead { padding: 4px 8px; gap: 6px; }
   .masthead-left { gap: 4px; }
-  .masthead-bulava svg { width: 14px; height: 18px; }
+  .masthead-machiavelli svg { width: 12px; height: 12px; }
   .masthead-name { font-size: 14px; }
   .masthead-meta { font-size: 7px; }
   .container-header { padding: 6px 8px; }
