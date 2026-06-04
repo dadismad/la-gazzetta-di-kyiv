@@ -1,18 +1,21 @@
 {
-  "cycle_number": 2,
-  "last_lead_topic": "macro",
-  "last_frame": "second-order",
+  "cycle_number": 3,
+  "last_lead_topic": "ai",
+  "last_frame": "contradiction",
   "last_human_detail_ids": [
+    "HD-008",
+    "HD-009",
     "HD-007",
     "HD-006"
   ],
-  "last_telegram_opening": "OECD warns 'dark scenario' if Iran-Gulf crisis persists — first forecaster to break containment consensus.",
-  "last_reddit_opening": "**Regime:** Recession Risk (selective risk-off)",
+  "last_telegram_opening": "SpaceX wins tax exemption for $55bn AI chip plant — while simultaneously pitching the largest IPO in US history at $1.8tn value. The AI infrastructure buildout is not slowing down. It's accelerating.",
+  "last_reddit_opening": "**Regime:** Contradiction (selective risk-on for AI infra, semis rotation)",
   "topic_history": [
-    "geopolitics",
-    "macro"
+    "ai",
+    "macro",
+    "geopolitics"
   ],
-  "last_micro_update": "2026-06-04T03:15:52.964724+00:00",
+  "last_micro_update": "2026-06-04T09:15:34.703866+00:00",
   "micro_update_skips": 0,
   "active_story_ids": [
     "n21_macro",

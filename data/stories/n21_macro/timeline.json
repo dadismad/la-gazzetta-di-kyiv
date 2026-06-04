@@ -52,6 +52,39 @@
       "evolution_score": 0.6182,
       "actor_match": 0.3333,
       "geography_match": 1.0
+    },
+    {
+      "update_id": "n21_macro__ev_006",
+      "timestamp": "2026-06-04T05:15:08.761453+00:00",
+      "type": "evidence",
+      "summary": "Evolution match (score=0.63): Broadcom loses more than $300bn in market value as revenue forecast disappoints; Israel and Lebanon agree to implement ceasefire",
+      "source_url": "https://www.ft.com/content/c8d506d3-7e81-49be-bb72-24ae289b9240",
+      "source_id": "ft_world",
+      "evolution_score": 0.6333,
+      "actor_match": 0.3333,
+      "geography_match": 1.0
+    },
+    {
+      "update_id": "n21_macro__ev_007",
+      "timestamp": "2026-06-04T07:15:29.539131+00:00",
+      "type": "evidence",
+      "summary": "Evolution match (score=0.63): Broadcom loses more than $300bn in market value as revenue forecast disappoints; Israel and Lebanon agree to implement ceasefire",
+      "source_url": "https://www.ft.com/content/c8d506d3-7e81-49be-bb72-24ae289b9240",
+      "source_id": "ft_world",
+      "evolution_score": 0.6254,
+      "actor_match": 0.3333,
+      "geography_match": 1.0
+    },
+    {
+      "update_id": "n21_macro__ev_008",
+      "timestamp": "2026-06-04T09:15:34.703866+00:00",
+      "type": "evidence",
+      "summary": "Evolution match (score=0.62): Broadcom loses more than $300bn in market value as revenue forecast disappoints; Israel and Lebanon agree to implement ceasefire",
+      "source_url": "https://www.ft.com/content/c8d506d3-7e81-49be-bb72-24ae289b9240",
+      "source_id": "ft_world",
+      "evolution_score": 0.6212,
+      "actor_match": 0.3333,
+      "geography_match": 1.0
     }
   ]
 }

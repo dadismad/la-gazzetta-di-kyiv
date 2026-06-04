@@ -52,6 +52,39 @@
       "evolution_score": 0.7273,
       "actor_match": 1.0,
       "geography_match": 0.5
+    },
+    {
+      "update_id": "n21_oil__ev_006",
+      "timestamp": "2026-06-04T05:15:08.761453+00:00",
+      "type": "evidence",
+      "summary": "Evolution match (score=0.72): Gulf states in talks for oil pipelines to bypass Hormuz; Gulf states are burning through interceptors",
+      "source_url": "https://www.ft.com/content/2842a164-bd15-4d76-be8b-b4f52321f57a",
+      "source_id": "ft_world",
+      "evolution_score": 0.7232,
+      "actor_match": 1.0,
+      "geography_match": 0.5
+    },
+    {
+      "update_id": "n21_oil__ev_007",
+      "timestamp": "2026-06-04T07:15:29.539131+00:00",
+      "type": "evidence",
+      "summary": "Evolution match (score=0.72): Gulf states in talks for oil pipelines to bypass Hormuz; Gulf states are burning through interceptors",
+      "source_url": "https://www.ft.com/content/2842a164-bd15-4d76-be8b-b4f52321f57a",
+      "source_id": "ft_world",
+      "evolution_score": 0.719,
+      "actor_match": 1.0,
+      "geography_match": 0.5
+    },
+    {
+      "update_id": "n21_oil__ev_008",
+      "timestamp": "2026-06-04T09:15:34.703866+00:00",
+      "type": "evidence",
+      "summary": "Evolution match (score=0.71): Gulf states in talks for oil pipelines to bypass Hormuz; Gulf states are burning through interceptors",
+      "source_url": "https://www.ft.com/content/2842a164-bd15-4d76-be8b-b4f52321f57a",
+      "source_id": "ft_world",
+      "evolution_score": 0.7148,
+      "actor_match": 1.0,
+      "geography_match": 0.5
     }
   ]
 }

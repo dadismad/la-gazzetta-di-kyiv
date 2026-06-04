@@ -1,20 +1,43 @@
 :root {
-  --gold: #C8A44E;
-  --gold-dark: #9B7B2C;
-  --gold-pale: #F5F0E0;
-  --sky: #4A8FCC;
-  --sky-pale: #EAF2FA;
-  --paper: #FEFCF5;
-  --white: #FFFDF8;
-  --ink: #1C1A16;
-  --ink-light: #5A5550;
-  --ink-muted: #9A9488;
-  --divider: #E8E2D4;
-  --red: #C0392B;
-  --green: #27AE60;
+  /* ═══════════════════════════════════════════════
+     GAZZETTA EVENT ROOM — "Glass Floor" Palette
+     
+     Casino (Scorsese) × Casino Royale (Bond) × Ballad of a Small Player (Macau)
+     Elevated, exclusive, high-stakes. NOT dark mode — cool teal twilight.
+     ═══════════════════════════════════════════════ */
+  
+  /* Backgrounds */
+  --paper:    #0F2027;   /* Primary: cool teal-navy twilight — the "room" above the casino */
+  --white:    #E8EDF2;   /* Secondary: frosted glass off-white — cards, panels */
+  --bg-tertiary: #D5DEE6; /* Slightly cooler secondary variant */
+  
+  /* Accents */
+  --gold:     #00B894;   /* Primary: emerald green — poker table glow through glass. Wealth, luck, status. */
+  --gold-dark:#00A381;   /* Primary darker: deeper emerald for hover/active */
+  --gold-pale:rgba(0,184,148,0.08); /* Emerald wash — subtle highlight */
+  --sky:      #A0B4C8;   /* Secondary: cool silver/chrome — borders, structural accents */
+  --sky-pale: rgba(160,180,200,0.12); /* Chrome wash */
+  
+  /* Danger */
+  --red:      #D63031;   /* Hot casino crimson — alerts, stops, urgency, all-in moments */
+  --red-hover:#E74C3C;   /* Crimson hover */
+  --green:    #00B894;   /* Emerald IS the green — up moves, inflows, conviction */
+  
+  /* Text */
+  --ink:      #F0F4F8;   /* Primary text: cool white (for dark surfaces) */
+  --ink-light:#94A3B8;   /* Secondary text: blue-grey */
+  --ink-muted:#64748B;   /* Muted text/metadata */
+  --ink-card: #1A2A3A;   /* Dark text for light card surfaces */
+  --ink-card-light: #4A5568; /* Secondary dark text for cards */
+  
+  /* Dividers */
+  --divider:  #2D3F4F;   /* Dark dividers for dark surfaces */
+  --divider-light: #CBD5E1; /* Light dividers for card surfaces */
+  
+  /* Typography */
   --display: 'DM Serif Display', Georgia, serif;
-  --body: 'Source Serif 4', Georgia, serif;
-  --sans: 'Inter', -apple-system, sans-serif;
+  --body:    'Source Serif 4', Georgia, serif;
+  --sans:    'Inter', -apple-system, sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -35,7 +58,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 6px 14px;
-  background: var(--white);
+  background: #E8EDF2;
   border-bottom: 2px solid var(--gold);
   position: sticky;
   top: 0;
@@ -69,7 +92,7 @@ body {
 .masthead-name {
   font-family: var(--display);
   font-size: 20px;
-  color: var(--gold-dark);
+  color: var(--ink-card);
   white-space: nowrap;
 }
 .masthead-right {
@@ -81,12 +104,12 @@ body {
   font-family: var(--body);
   font-style: italic;
   font-size: 12px;
-  color: var(--ink-light);
+  color: var(--ink-card-light);
 }
 .masthead-meta {
   font-family: var(--sans);
   font-size: 9px;
-  color: var(--ink-muted);
+  color: var(--ink-card-light);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   white-space: nowrap;
@@ -130,7 +153,7 @@ body {
 
 /* ── Story Card ── */
 .card {
-  background: var(--white);
+  background: #E8EDF2;
   border: 1px solid var(--divider);
   padding: 8px 12px;
   cursor: pointer;
@@ -182,7 +205,7 @@ body {
   white-space: nowrap;
 }
 .card.lead .asset-claim {
-  background: var(--white);
+  background: #E8EDF2;
   border-color: var(--gold-dark);
 }
 .claim-asset { color: var(--ink-light); font-weight: 500; }
@@ -204,22 +227,22 @@ body {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--sky);
+  color: var(--gold);
   white-space: nowrap;
 }
-.card.lead .sector { color: var(--gold-dark); }
+.card.lead .sector { color: var(--gold); }
 .card h3 {
   font-family: var(--display);
   font-size: 17px;
   font-weight: 400;
   line-height: 1.2;
-  color: var(--ink);
+  color: var(--ink-card);
 }
 .card.lead h3 { font-size: 19px; }
 .card .summary {
   font-size: 12px;
   line-height: 1.35;
-  color: var(--ink-light);
+  color: var(--ink-card-light);
 }
 
 /* Expanded detail */
@@ -241,21 +264,21 @@ body {
   border-top-color: var(--divider);
 }
 .card .detail .con-they {
-  color: var(--ink-muted);
+  color: var(--ink-card-light);
   font-style: italic;
   margin-bottom: 4px;
   padding: 5px 8px;
-  background: #F8F5EE;
-  border-left: 2px solid var(--divider);
+  background: rgba(0,0,0,0.04);
+  border-left: 2px solid var(--divider-light);
   font-size: 12px;
 }
 .card .detail .con-real {
-  color: #2a4055;
+  color: #1A3A4A;
   font-weight: 500;
   margin-bottom: 6px;
   padding: 5px 8px;
-  background: var(--sky-pale);
-  border-left: 2px solid var(--sky);
+  background: rgba(0,184,148,0.06);
+  border-left: 2px solid var(--gold);
   font-size: 12px;
 }
 .card .detail .con-label {
@@ -275,10 +298,10 @@ body {
   margin-top: 8px;
   padding: 5px 8px;
   border-left: 2px solid var(--gold);
-  background: #FDFBF5;
+  background: rgba(0,184,148,0.06);
   font-size: 11px;
   line-height: 1.4;
-  color: var(--ink-light);
+  color: var(--ink-card);
 }
 .portfolio-implication .pi-label, .the-play .pi-label {
   font-family: var(--sans);
@@ -286,18 +309,18 @@ body {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gold-dark);
+  color: var(--gold);
   display: block;
   margin-bottom: 2px;
 }
 .portfolio-implication .pi-text, .the-play .pi-text {
   font-style: italic;
   font-size: 11px;
-  color: var(--ink-light);
+  color: var(--ink-card-light);
 }
 .card.lead .portfolio-implication, .card.lead .the-play {
-  background: #FAF6EC;
-  border-left-color: var(--gold-dark);
+  background: rgba(0,184,148,0.10);
+  border-left-color: var(--gold);
 }
 
 /* ── Category Tag Pills (sector labels on story cards) ── */
@@ -315,29 +338,34 @@ body {
   white-space: nowrap;
 }
 .category-tag.geopolitics {
-  background: #EAF2FA;
-  color: #4A8FCC;
-  border: 1px solid rgba(74,143,204,0.25);
+  background: rgba(0,184,148,0.10);
+  color: var(--gold);
+  border: 1px solid rgba(0,184,148,0.25);
 }
 .category-tag.markets {
-  background: #F5F0E0;
-  color: #C8A44E;
-  border: 1px solid rgba(200,164,78,0.25);
+  background: rgba(0,184,148,0.08);
+  color: var(--gold);
+  border: 1px solid rgba(0,184,148,0.20);
 }
 .category-tag.tech {
-  background: #E8F4F0;
-  color: #4A8F9C;
-  border: 1px solid rgba(74,143,156,0.25);
+  background: rgba(160,180,200,0.12);
+  color: var(--sky);
+  border: 1px solid rgba(160,180,200,0.25);
 }
 .category-tag.wealth {
-  background: #EAF7EA;
-  color: #27AE60;
-  border: 1px solid rgba(39,174,96,0.25);
+  background: rgba(0,184,148,0.10);
+  color: var(--gold);
+  border: 1px solid rgba(0,184,148,0.25);
 }
 .category-tag.pleasure {
-  background: #FDECEC;
-  color: #C0392B;
-  border: 1px solid rgba(192,57,43,0.25);
+  background: rgba(214,48,49,0.10);
+  color: var(--red);
+  border: 1px solid rgba(214,48,49,0.25);
+}
+.category-tag.crypto {
+  background: rgba(0,184,148,0.08);
+  color: var(--gold);
+  border: 1px solid rgba(0,184,148,0.20);
 }
 
 /* ── Thesis/Pillar Filter Bar ── */
@@ -346,7 +374,7 @@ body {
   align-items: center;
   gap: 6px;
   padding: 8px 14px;
-  background: var(--white);
+  background: #E8EDF2;
   border-bottom: 1px solid var(--divider);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -365,7 +393,7 @@ body {
   padding: 5px 12px;
   border-radius: 14px;
   border: 1.5px solid var(--divider);
-  background: var(--white);
+  background: #E8EDF2;
   color: var(--ink-light);
   cursor: pointer;
   transition: all 0.15s ease;
@@ -431,7 +459,7 @@ body {
 
 /* ── Asset Panel (desktop) ── */
 .asset-panel {
-  background: var(--white);
+  background: #E8EDF2;
   border: 1px solid var(--divider);
   padding: 12px;
   position: sticky;
@@ -443,10 +471,10 @@ body {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--gold-dark);
+  color: var(--gold);
   margin-bottom: 10px;
   padding-bottom: 6px;
-  border-bottom: 1px solid var(--divider);
+  border-bottom: 1px solid var(--divider-light);
 }
 .asset-list {
   display: flex;
@@ -543,12 +571,12 @@ body {
 .asset-note {
   font-family: var(--sans);
   font-size: 8px;
-  color: var(--ink-muted);
+  color: var(--ink-card-light);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-top: 10px;
   padding-top: 6px;
-  border-top: 1px solid var(--divider);
+  border-top: 1px solid var(--divider-light);
   font-style: italic;
 }
 
@@ -564,7 +592,7 @@ body {
 }
 .bb-overlay.open { display: flex; }
 .bb-sheet {
-  background: var(--white);
+  background: #E8EDF2;
   border-radius: 14px 14px 0 0;
   width: 100%;
   max-width: 500px;
@@ -616,7 +644,7 @@ body {
   font-size: 10px;
   color: var(--ink-muted);
   border-top: 1px solid var(--divider);
-  background: var(--white);
+  background: #E8EDF2;
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -956,7 +984,7 @@ body {
   cursor: pointer;
   color: var(--ink-muted);
   transition: all 0.15s;
-  background: var(--white);
+  background: #E8EDF2;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1021,7 +1049,7 @@ body {
     left: 0;
     right: 0;
     z-index: 300;
-    background: var(--white);
+    background: #E8EDF2;
     border-left: none;
     border-top: 2px solid var(--gold);
     border-radius: 14px 14px 0 0;
@@ -1112,7 +1140,7 @@ body {
   gap: 6px;
   padding: 6px 8px;
   margin-bottom: 8px;
-  background: linear-gradient(135deg, var(--gold-pale), #FDF8EE);
+  background: rgba(0,184,148,0.08);
   border: 1px solid var(--gold);
   border-radius: 4px;
 }
@@ -1122,13 +1150,13 @@ body {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gold-dark);
+  color: var(--gold);
 }
 .pdr-value {
   font-family: var(--display);
   font-size: 15px;
   font-weight: 400;
-  color: var(--ink);
+  color: var(--ink-card);
 }
 .pdr-regime {
   font-family: var(--sans);
@@ -1140,21 +1168,21 @@ body {
   border-radius: 3px;
   margin-left: auto;
 }
-.pdr-regime.passive   { background: #E8F4F0; color: #1B7A1B; }
-.pdr-regime.contested { background: #FDF3E0; color: #B8860B; }
-.pdr-regime.active    { background: var(--gold-pale); color: var(--gold-dark); }
+.pdr-regime.passive   { background: rgba(0,184,148,0.15); color: #00A381; }
+.pdr-regime.contested { background: rgba(214,48,49,0.12); color: var(--red); }
+.pdr-regime.active    { background: rgba(160,180,200,0.15); color: var(--sky); }
 .pdr-trend {
   font-size: 9px;
   letter-spacing: 1px;
-  color: var(--ink-muted);
+  color: var(--ink-card-light);
   font-family: var(--sans);
 }
 
 /* ── THE PLAY OF THE DAY ── */
 .play-of-day {
-  background: linear-gradient(135deg, #FDF3E0, #FFF8EC);
+  background: rgba(0,184,148,0.08);
   border: 2px solid var(--gold);
-  border-left: 4px solid var(--gold-dark);
+  border-left: 4px solid var(--gold);
   padding: 10px 14px;
   margin-bottom: 10px;
 }
@@ -1164,29 +1192,29 @@ body {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--gold-dark);
+  color: var(--gold);
   margin-bottom: 8px;
 }
 .pod-body {
   font-family: var(--body);
   font-size: 13px;
   line-height: 1.5;
-  color: var(--ink);
+  color: var(--ink-card);
 }
 .pod-body .pod-trade {
   font-weight: 600;
   font-size: 14px;
-  color: var(--ink);
+  color: var(--ink-card);
   margin-bottom: 4px;
 }
 .pod-body .pod-levels {
   font-size: 12px;
-  color: var(--ink-light);
+  color: var(--ink-card-light);
   margin-bottom: 4px;
 }
 .pod-body .pod-why {
   font-size: 11px;
-  color: var(--ink-muted);
+  color: var(--ink-card-light);
   font-style: italic;
 }
 .pod-body .pod-conviction {
@@ -1200,18 +1228,18 @@ body {
   border-radius: 3px;
   margin-right: 6px;
 }
-.pod-body .pod-conviction.high { background: #E8F4F0; color: #1B7A1B; }
-.pod-body .pod-conviction.med  { background: #FDF3E0; color: #B8860B; }
+.pod-body .pod-conviction.high { background: rgba(0,184,148,0.15); color: #00A381; }
+.pod-body .pod-conviction.med  { background: rgba(214,48,49,0.12); color: var(--red); }
 
-/* ── Capital Flow block (in story detail) ── */
+/* ── Capital Flow block ── */
 .capital-flow-block {
   margin-top: 8px;
   padding: 5px 8px;
   border-left: 2px solid var(--gold);
-  background: #FDFBF5;
+  background: rgba(0,184,148,0.06);
   font-size: 11px;
   line-height: 1.4;
-  color: var(--ink-light);
+  color: var(--ink-card-light);
 }
 .capital-flow-block .cf-label {
   font-family: var(--sans);
@@ -1219,7 +1247,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gold-dark);
+  color: var(--gold);
   display: block;
   margin-bottom: 2px;
 }
