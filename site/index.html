@@ -8,16 +8,28 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=20.6"/>
+  <link rel="stylesheet" href="./styles.css?v=20.10"/>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='2' fill='%23111827'/><text x='16' y='24' text-anchor='middle' font-size='22' font-weight='bold' font-family='Georgia,serif' fill='%23D4AF37'>G</text></svg>"/>
 </head>
 <body>
 
 <header class="masthead">
   <div class="masthead-left">
+    <span class="masthead-bulava" title="Hetman Bohdan Khmelnytsky — The Bulava" aria-hidden="true">
+      <svg width="36" height="44" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="10" y1="16" x2="10" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="10" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/>
+        <circle cx="10" cy="12" r="2.5" fill="currentColor" opacity="0.3"/>
+        <line x1="7" y1="7" x2="13" y2="7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="10" y1="3" x2="10" y2="7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="10" cy="2" r="1.5" fill="currentColor"/>
+        <rect x="5" y="16" width="10" height="2" rx="1" fill="currentColor" opacity="0.4"/>
+        <rect x="6" y="19" width="8" height="1.5" rx="0.75" fill="currentColor" opacity="0.3"/>
+      </svg>
+    </span>
     <span class="masthead-name">La Gazzetta di Kyiv</span>
     <span class="masthead-machiavelli" title="Niccolò Machiavelli — Virtù e Fortuna" aria-hidden="true">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 4l-1 2v2l1 1h3l1-1V6L11 4H8z"/>
         <path d="M5 10l-1 4 2 3 3 1 3-1 2-3-1-4"/>
         <circle cx="9" cy="5" r="1" fill="currentColor" opacity="0.6"/>
@@ -33,8 +45,8 @@
 
 <section class="hero">
   <div class="hero-content">
-    <h1 class="hero-headline">The markets price consensus. We track what they're missing.</h1>
-    <p class="hero-subtitle">Every day, stories drive capital flows that the headlines won't tell you about. Contradiction-first analysis. Trade-specific positioning. Institutional flow tracking. All free.</p>
+    <h1 class="hero-headline">Follow the capital. That's where the truth is.</h1>
+    <p class="hero-subtitle">$17.1B in institutional flows tracked today. Contradiction-first analysis. Trade-specific positioning. The stories that move markets — before they move prices.</p>
     <div class="hero-cta">
       <button class="hero-btn" onclick="document.getElementById('storiesContainer').classList.add('expanded');document.getElementById('storiesContainer').scrollIntoView({behavior:'smooth'})">View today's brief →</button>
       <a href="https://t.me/GazzettaDiKyiv" class="hero-link">Telegram</a>
@@ -43,7 +55,8 @@
   </div>
   <div class="hero-stats">
     <div class="hero-stat"><span class="hero-stat-value" id="heroStoryCount">—</span><span class="hero-stat-label">Stories today</span></div>
-    <div class="hero-stat"><span class="hero-stat-value">14</span><span class="hero-stat-label">Assets tracked</span></div>
+    <div class="hero-stat"><span class="hero-stat-value">$17.1B</span><span class="hero-stat-label">Capital tracked</span></div>
+    <div class="hero-stat"><span class="hero-stat-value">14</span><span class="hero-stat-label">Assets positioned</span></div>
     <div class="hero-stat"><span class="hero-stat-value">70%</span><span class="hero-stat-label">Avg confidence</span></div>
   </div>
 </section>
@@ -127,6 +140,6 @@
   <span>Kyiv · Since 2025</span>
 </footer>
 
-<script src="./app.js?v=20.6"></script>
+<script src="./app.js?v=20.10"></script>
 </body>
 </html>

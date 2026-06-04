@@ -68,6 +68,17 @@ body {
   align-items: center;
   gap: 10px;
 }
+.masthead-bulava {
+  display: flex;
+  align-items: center;
+  color: var(--gold);
+  line-height: 1;
+}
+.masthead-bulava svg {
+  display: block;
+  width: 36px;
+  height: 44px;
+}
 .masthead-machiavelli {
   display: flex;
   align-items: center;
@@ -77,8 +88,8 @@ body {
 }
 .masthead-machiavelli svg {
   display: block;
-  width: 18px;
-  height: 18px;
+  width: 36px;
+  height: 36px;
 }
 .masthead-name {
   font-family: var(--display);
@@ -979,7 +990,8 @@ body {
 /* Phone (≤600px) */
 @media (max-width: 600px) {
   .masthead { padding: 5px 10px; }
-  .masthead-machiavelli svg { width: 14px; height: 14px; }
+  .masthead-bulava svg { width: 24px; height: 30px; }
+  .masthead-machiavelli svg { width: 22px; height: 22px; }
   .masthead-name { font-size: 15px; }
   .container-header { padding: 8px 10px; }
   .container-title { font-size: 10px; }
