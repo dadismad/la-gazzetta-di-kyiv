@@ -1,7 +1,6 @@
-// La Gazzetta di Kyiv v19 — Collapsible Containers · White Metallic · Expanded Anchor
+// La Gazzetta di Kyiv v20 — φ-Constellation Layout · Bet & Benefit · Share Buttons · Extremum Lines
 const DATA = './data/stories.json';
 const LIVING_DATA = './data/living_stories.json';
-const STORY_REGISTRY_URL = './data/story_registry.json';
 const POLL_INTERVAL = 120000; // 2 minutes
 
 function byId(id) { return document.getElementById(id); }
@@ -137,7 +136,7 @@ function updateMastheadLiving(generatedAt, nextMicroUpdate) {
 }
 
 // ═══════════════════════════════════════════════════════════════
-// THE ANCHOR — Expanded to 14 assets (7 tradFi + 7 crypto)
+// THE ANCHOR / BET & BENEFIT — Expanded to 14 assets (7 tradFi + 7 crypto)
 // ═══════════════════════════════════════════════════════════════
 
 const ANCHOR_ASSETS = [
@@ -303,6 +302,9 @@ function livingCardHTML(story, isLead) {
     ? `<span class="updated-ago">${formatTimeAgo(story.last_updated)}</span>`
     : '';
 
+  // Extremum line
+  const extremumHTML = story.extremum ? extremumLineHTML(story.extremum) : '';
+
   return `
     <article class="card${isLead ? ' lead' : ''}${sectorClass ? ' ' + sectorClass : ''}"
              data-story-id="${story.story_id}"
@@ -310,7 +312,7 @@ function livingCardHTML(story, isLead) {
              data-update-count="${story.update_count}"
              data-last-updated="${story.last_updated || ''}"
              data-pillar="${story.paradigm_pillar || ''}">
-      <div class="card-collapsed" onclick="this.parentElement.classList.toggle('expanded')">
+      <div class="card-collapsed">
         <div class="card-head">
           ${cfClaim}
           <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:2px">
@@ -320,7 +322,14 @@ function livingCardHTML(story, isLead) {
           </div>
           <h3>${story.headline}</h3>
         </div>
-        <span class="expand-hint">▾</span>
+        <div class="card-actions">
+          <div class="share-actions">
+            <button class="share-btn copy-link" title="Copy link">📋</button>
+            <button class="share-btn share-x" title="Share on X">𝕏</button>
+            <button class="share-btn share-telegram" title="Share on Telegram">✈</button>
+          </div>
+          <span class="expand-hint">▾</span>
+        </div>
       </div>
       <div class="card-expanded-body">
         ${reality ? `<p class="summary">${reality}</p>` : ''}
@@ -335,8 +344,14 @@ function livingCardHTML(story, isLead) {
           <span class="pi-label">THE PLAY</span>
           <span class="pi-text">${story.portfolio_implication}</span>
         </div>` : ''}
+        ${extremumHTML}
         <div class="card-photo">
           <img src="${photoUrl}" alt="${sector}" loading="lazy" onerror="this.parentElement.style.display='none'">
+        </div>
+        <div class="share-actions" style="margin-top:6px;opacity:0.3">
+          <button class="share-btn copy-link" title="Copy link">📋 Share</button>
+          <button class="share-btn share-x" title="Share on X">𝕏 Share</button>
+          <button class="share-btn share-telegram" title="Share on Telegram">✈ Share</button>
         </div>
       </div>
       <div class="story-evolution-timeline" style="display:none">
@@ -346,29 +361,58 @@ function livingCardHTML(story, isLead) {
     </article>`;
 }
 
-// ── Card click: expand/collapse + lazy-load timeline ──
-function wireCardClick(card) {
-  card.addEventListener('click', async function(e) {
-    if (e.target.closest('.thread-pill') || e.target.closest('.resolved-archive-link') || e.target.closest('.card-collapsed')) return;
+// ── Extremum Line HTML ──
+function extremumLineHTML(extremumStr) {
+  if (!extremumStr) return '';
+  // Parse format: "WINNER: ... | LOSER: ... | IDIOT: ... | GENIUS: ..."
+  const parts = extremumStr.split('|').map(s => s.trim());
+  let winner = '', loser = '', idiot = '', genius = '';
+  parts.forEach(p => {
+    if (p.startsWith('WINNER:')) winner = p.replace('WINNER:', '').trim();
+    else if (p.startsWith('LOSER:')) loser = p.replace('LOSER:', '').trim();
+    else if (p.startsWith('IDIOT:')) idiot = p.replace('IDIOT:', '').trim();
+    else if (p.startsWith('GENIUS:')) genius = p.replace('GENIUS:', '').trim();
+  });
+  return `
+    <div class="card-extremum">
+      <span class="ex-label">EXTREMUM</span>
+      ${winner ? `<span class="ex-win">WINNER: ${winner}</span>` : ''}
+      ${loser ? `<span class="ex-lose">LOSER: ${loser}</span>` : ''}
+      ${idiot ? `<span class="ex-idiot">IDIOT: ${idiot}</span>` : ''}
+      ${genius ? `<span class="ex-genius">GENIUS: ${genius}</span>` : ''}
+    </div>`;
+}
 
-    const storyId = this.dataset.storyId;
-    const timelineEl = this.querySelector('.story-evolution-timeline');
+// ── Card click: expand/collapse + lazy-load timeline (event delegation) ──
+function wireCardDelegation() {
+  const newsCol = byId('newsCol');
+  if (!newsCol) return;
+
+  newsCol.addEventListener('click', async function(e) {
+    // Skip share button clicks
+    if (e.target.closest('.share-btn') || e.target.closest('.thread-pill') || e.target.closest('.resolved-archive-link')) return;
+
+    const card = e.target.closest('.card');
+    if (!card) return;
+
+    const storyId = card.dataset.storyId;
+    const timelineEl = card.querySelector('.story-evolution-timeline');
     if (!timelineEl) return;
 
-    const wasExpanded = this.classList.contains('expanded');
+    const wasExpanded = card.classList.contains('expanded');
 
     // Close all other expanded cards
     document.querySelectorAll('.card.expanded').forEach(c => {
-      if (c !== this) c.classList.remove('expanded');
+      if (c !== card) c.classList.remove('expanded');
     });
 
     if (wasExpanded) {
-      this.classList.remove('expanded');
+      card.classList.remove('expanded');
       return;
     }
 
     // Expand this card
-    this.classList.add('expanded');
+    card.classList.add('expanded');
 
     // Lazy-load timeline
     if (!timelineEl.dataset.loaded) {
@@ -494,9 +538,11 @@ function appendStoryCard(story, isLead) {
   // Insert at the top — newest first
   el.insertAdjacentHTML('afterbegin', html);
 
-  // Wire click handler on new card
+  // Wire click handler on new card (delegation handles expand, wire share buttons directly)
   const newCard = el.querySelector(`[data-story-id="${story.story_id}"]`);
-  if (newCard) wireCardClick(newCard);
+  if (newCard) {
+    wireShareButtons(newCard);
+  }
 
   // Update story count badge
   updateStoryCount();
@@ -625,6 +671,60 @@ function updateTimestamps() {
 }
 
 // ═══════════════════════════════════════════════════════════════
+// SHARE BUTTONS
+// ═══════════════════════════════════════════════════════════════
+
+function getShareText(articleEl) {
+  const headline = articleEl.querySelector('h3')?.textContent || '';
+  const playEl = articleEl.querySelector('.the-play .pi-text');
+  const playText = playEl ? playEl.textContent.trim() : '';
+  const url = window.location.href;
+  let text = headline;
+  if (playText) text += '\n\n' + playText;
+  text += '\n\n' + url;
+  return text;
+}
+
+function showToast(msg) {
+  const existing = document.querySelector('.toast');
+  if (existing) existing.remove();
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = msg;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 2500);
+}
+
+function wireShareButtons(container) {
+  container.querySelectorAll('.share-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const card = this.closest('.card');
+      if (!card) return;
+      const text = getShareText(card);
+
+      if (this.classList.contains('copy-link')) {
+        if (navigator.share) {
+          navigator.share({ title: text.split('\n')[0], text: text }).catch(() => {});
+        } else if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(() => showToast('✓ Copied to clipboard')).catch(() => {
+            try { document.execCommand('copy'); showToast('✓ Copied to clipboard'); } catch(e) {}
+          });
+        } else {
+          try { document.execCommand('copy'); showToast('✓ Copied to clipboard'); } catch(e) {}
+        }
+      } else if (this.classList.contains('share-x')) {
+        window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank', 'width=600,height=400');
+      } else if (this.classList.contains('share-telegram')) {
+        const url = window.location.href;
+        const shareUrl = 'https://t.me/share/url?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text.split('\n')[0]);
+        window.open(shareUrl, '_blank', 'width=600,height=400');
+      }
+    });
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
 // BOOT
 // ═══════════════════════════════════════════════════════════════
 
@@ -632,13 +732,15 @@ async function boot() {
   // Wire collapsible containers first
   wireCollapsibleContainers();
 
+  // Wire card click delegation (one listener on newsCol for all cards)
+  wireCardDelegation();
+
   // Render static content
   renderAnchor();
   renderCapitalFlows();
 
   // Try data sources
   const livingData = await getJSON(LIVING_DATA, null);
-  const regData = await getJSON(STORY_REGISTRY_URL, null);
 
   if (livingData && livingData.lead) {
     // Render with living stories format

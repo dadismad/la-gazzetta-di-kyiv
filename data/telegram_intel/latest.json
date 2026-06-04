@@ -1,89 +1,54 @@
 {
-  "fetched_at": "2026-06-04T16:56:27.299681+00:00",
-  "cycle": "2026-06-04-17:00",
-  "channels_monitored": [
-    "@trad_fin",
-    "@MonitoringSituation",
-    "@ASupersharij",
-    "@infinityhedge",
-    "@ethanlevins",
-    "@markettwits"
-  ],
+  "timestamp": "2026-06-04T18:04:57+00:00",
+  "scan_window": "last_30min",
+  "channels_scanned": ["trad_fin", "MonitoringSituation", "ASupersharij", "infinityhedge", "ethanlevins", "markettwits"],
+  "total_messages_scanned": 119,
+  "messages_from_last_30min": 7,
   "actionable_stories": [
     {
-      "rank": 1,
-      "title": "Ukraine destroys Russian corvette 'Boykiy' in Kronstadt — Baltic Fleet base hit during SPIEF",
-      "event": "At 16:38 UTC, video/confirmation emerged of a Ukrainian strike destroying the Russian corvette 'Boykiy' (Project 20380) in Kronstadt — the Baltic Fleet's primary base in St. Petersburg. This follows a wave of drone attacks on St. Petersburg infrastructure that began at 12:10 UTC, the first day of the St. Petersburg International Economic Forum (SPIEF) where Putin is currently meeting international media. Earlier today (09:52 UTC), Ukraine also struck and damaged a Russian border patrol ship 'Svetlyak' near Yurkino in Crimea.",
-      "consensus_narrative": "Russia claims SPIEF demonstrates economic stability and normalcy. State media treats the strikes as insignificant 'provocations' that don't affect the forum's operations. Siluanov and Novak are on stage projecting confidence about Russian economic growth.",
-      "contradiction": "Ukraine is systematically striking Russian naval assets in BOTH the Baltic (Kronstadt) and Black Sea (Crimea) theaters on the same day. Striking Kronstadt — the cradle of the Russian navy, 30km from Putin's hometown — during SPIEF is a precision psychological operation. It proves Ukraine can reach any military asset in Russia and that no 'safe zone' exists, even during the country's flagship economic showcase. The Boykiy is a modern stealth corvette; losing it in port is a significant capability and prestige blow.",
-      "bet": "LONG US defense primes (RTX, LMT, NOC) on increased NATO Baltic vigilance. LONG Ukraine sovereign bonds. SHORT Russian equity ETFs (RSX, ERUS). LONG Brent crude — the Black Sea disruption vector compounds the Novák oil crisis warning.",
+      "id": "russia_ukraine_st_petersburg_escalation",
+      "event": "Putin at SPIEF (St. Petersburg Economic Forum) live right now (18:00 UTC): 'Russia is ready and wants to negotiate with Ukraine peacefully on basis of Anchorage summit agreements.' 'Gas can flow through surviving Nord Stream pipe tomorrow — just push the button, contract still active.' Putin announces Russia-US tunnel project between Chukotka and Alaska. Announces forthcoming Russia-China energy deals. Says 'rumors about Russian economy problems are greatly exaggerated.' Mark Rutte (NATO Secretary General) in Kyiv. Simultaneously: Ukrainian drone attack footage released of corvette 'Boykiy' being hit in Kronstadt (St. Petersburg naval base) — DURING the SPIEF forum. ASupersharij posted the strike footage 16:38 UTC. Russian border patrol ship 'Svetlyak' hit in Crimea overnight. ATB regional warehouse (entire Dnipro + Zaporizhia supply chain) destroyed by Russian ballistic missiles. Drones targeted St. Petersburg during forum opening. UK (London) lifted sanctions on Raiffeisenbank depositary — TASS reports.",
+      "consensus_narrative": "Putin's SPIEF speech is being framed as a peace overture — 'ready to negotiate on Anchorage,' 'Nord Stream can restart,' 'Russia-US tunnel,' 'China energy deals.' The London Raiffeisen sanction lift signals Western thaw. Putin is 'winding down' the war. Markets interpret: European gas prices will fall on Nord Stream talk, Russian assets bid on peace premium, Ukraine war ending.",
+      "contradiction": "While Putin performs peace theater at SPIEF, Ukraine struck the Russian Navy at Kronstadt — the naval base of St. Petersburg, the very city hosting the forum. This is not a symbolic jab with a drone; this is a corvette hit inside Russia's most fortified naval hub. The message: Ukraine is escalating, not negotiating. The Anchorage framework demands Ukrainian neutrality and territorial concessions — Kyiv has already rejected this. Nord Stream cannot 'just push a button' — no certification, no insurance, no political will in Europe to restart it. It's a price manipulation statement, not an operational one. The Russia-US tunnel is fantasy. The Raiffeisen lift is one bank, not a trend. Ukraine struck St. Petersburg DURING the forum — the real signal is escalation, not de-escalation.",
+      "bet": "SHORT RSX (Russia ETF) into the SPIEF close. Putin's peace theater unwinds immediately when the forum ends and no Kyiv delegation appears. LONG Ukrainian wheat futures — the ATB warehouse destruction is a real supply chain event that reduces Ukrainian export capacity at a time of tightening global grain stocks. The drone footage of Kronstadt hit proves Ukraine has no interest in freezing the conflict — grain supply disruption premiums will reprice upward.",
       "benefit": {
-        "RTX_LMT_NOC": "+1-3% in 2-hour window on NATO Baltic reinforcement narrative",
-        "RSX_ERUS": "-2-4% on demonstration that Russia's rear is not secure",
-        "Brent_crude": "+1-2% compounding effect with oil supply disruption fears"
+        "asset": "RSX (Russia ETF) — SHORT; WEAT/ZW (Wheat futures) — LONG",
+        "direction": "SHORT RSX, LONG wheat",
+        "target_2h_move": "RSX: -3% to -5% as SPIEF closes and peace premium evaporates. Wheat: +2% to +3% on Ukraine supply disruption repricing. European TTF gas: temporary -1% on Putin's Nord Stream chatter then +2% recovery when market realizes it's non-operational theater.",
+        "volume_impact": "Moderate-High on RSX (thinly traded, 2-3x volume on SPIEF unwind). Wheat volume moderate but positionable. TTF gas sees 2-3x volume on Putin's Nord Stream mention alone.",
+        "estimated_probability": "70%",
+        "time_horizon": "1-3 hours (SPIEF closes June 5 15:00 Moscow, but peace premium fades within hours when markets process the Kronstadt strike)"
       }
     },
     {
-      "rank": 2,
-      "title": "Hezbollah kamikaze drones target Netanyahu directly in Shlomi — IDF prepares large-scale ground op",
-      "event": "At 14:01 UTC, Hezbollah launched kamikaze drones toward the western Galilee settlement of Shlomi during PM Netanyahu's visit. Security personnel physically shielded Netanyahu. Earlier (11:29 UTC, @ethanlevins/IDF Radio), Netanyahu held a security consultation after Hezbollah rocket fire triggered sirens in northern Israel. During that meeting, the IDF presented plans for a large-scale ground operation in Lebanon. Defense Minister Katz and Minister Ben Gvir supported the proposal. Netanyahu raised concerns about US pressure against expanding the fight. Separately, the IDF confirmed ongoing combat operations south of the Zahrani River in Lebanon (@markettwits 07:35).",
-      "consensus_narrative": "The mainstream framing is that 'Netanyahu will resist escalation due to US pressure' and that the drone attack was just another cross-border incident. Axios reported that 'Trump wants to end the war, but Netanyahu appears to want to resume it' (@MonitoringSituation 10:19). The assumption is that Washington's restraining hand will hold.",
-      "contradiction": "A kamikaze drone attack targeting a sitting prime minister changes the threshold. You cannot 'de-escalate' after an enemy tried to kill your head of government on a visit. Katz and Ben Gvir are already pushing for the ground invasion. Netanyahu's 'concerns about US pressure' are political cover — he's negotiating from a position where the IDF has already drawn up plans. The US House vote limiting Trump's war powers (@MonitoringSituation 11:15) actually WEAKENS Trump's negotiating hand with Iran/Hezbollah, making Israeli escalation MORE likely, not less. This is a feedback loop: Congressional constraint on Trump → perceived weakness by adversaries → more attacks → harder Israeli response.",
-      "bet": "LONG Brent crude (Strait of Hormuz + Lebanon front premium). LONG Israel defense stocks (IAI, ICL). LONG US defense primes (GD, LHX). LONG gold as geopolitical hedge. SHORT TL20 (Israel 20-year bonds).",
+      "id": "lebanon_hezbollah_drones_netanyahu",
+      "event": "17:44 UTC — ethanlevins reports: 'Channel 13: The Chief of Staff of the Israeli Army is upset by the American intervention in the negotiations with Lebanon.' 14:01 UTC: 'Hezbollah launched kamikaze drones towards the western Galilee during PM Netanyahu's visit to the settlement of Shlomi.' 11:29 UTC: 'IDF presented plans for large-scale ground operation in Lebanon.' Netanyahu convened emergency security consultation. Israeli Chief of Staff says no ceasefire in Lebanon as far as IDF is concerned. Axios (7h ago): 'Two senior US officials said Trump wants to end the war, but Netanyahu appears to want to resume it, with one official saying sometimes Bibi doesn't know when to stop.' MonitoringSituation: Hezbollah drones achieved direct hits in northeast Israel. Israeli strikes on Tyre — over 100 airstrikes. Trump: 'We spoke with Hezbollah, it was very nice.'",
+      "consensus_narrative": "Ceasefire is coming. Beirut and Tel Aviv reached an agreement framework — Hezbollah leaves southern Lebanon, IDF withdraws. Trump is negotiating with Hezbollah directly. The US is pushing for peace and Bibi is the obstacle. Markets price: Israel risk premium declining, shekel strengthening, defense stocks selling off.",
+      "contradiction": "Hezbollah just fired kamikaze drones at the Israeli Prime Minister's location. IDF's Chief of Staff is 'upset' at US intervention — meaning he wants to invade, not cease fire. The 'ceasefire deal' ethanlevins reported (Beirut-Tel Aviv agreement) is being contradicted by real-time events: 100+ Israeli airstrikes on Tyre, Hezbollah targeting Netanyahu's motorcade location, IDF presenting invasion plans. Trump saying he spoke with Hezbollah is being used as cover for unilateral Israeli escalation. Netanyahu needs this war politically — he has no domestic off-ramp without losing his coalition. The US-Israel-Iran triangle is the key: every Hezbollah rocket at Netanyahu makes a ceasefire less likely, not more.",
+      "bet": "LONG WTI crude oil futures. The Hezbollah-Israel escalation prevents any Iran deal from being finalized. As long as Hezbollah is firing at the Israeli PM, the Strait of Hormuz negotiations cannot proceed in good faith. Iran-linked risk premium on oil increases. Also LONG Israeli defense stocks (Israel iShares ETF EIS) — the IDF ground op plans benefit defense manufacturers.",
       "benefit": {
-        "Brent_crude": "+2-4% on Lebanon front escalation + Iran supply risk compounding",
-        "US_defense": "+1.5-3% on Israel-Hezbollah escalation narrative",
-        "Gold": "+0.5-1.5% safe haven bid",
-        "TL20": "-1-2% on war duration extension risk"
+        "asset": "WTI Crude Oil (/CL), USO ETF; EIS (Israel ETF)",
+        "direction": "LONG crude, LONG Israel defense",
+        "target_2h_move": "Crude: +2% to +4% on renewed Hezbollah-Israel escalation premium. EIS: +1.5% to +3% on defense spending expectations from ground op plans.",
+        "volume_impact": "High on crude — any headline about Hezbollah targeting Netanyahu's location triggers 3-5x volume spike. EIS moderate.",
+        "estimated_probability": "75%",
+        "time_horizon": "1-2 hours. Next Hezbollah rocket barrage or Israeli response within the hour."
       }
     },
     {
-      "rank": 3,
-      "title": "Russia's Novák warns 12M bbl/day missing from global oil markets — 'unprecedented crisis'",
-      "event": "At the SPIEF forum (07:29 UTC), Russian Deputy PM Alexander Novák stated: 'The current crisis on the global oil market is unprecedented. Nothing like this happened even in the last century. Approximately 12 million barrels of oil do not reach the world market daily. The world market has not yet fully felt the consequences of the energy crisis as it is being balanced by accumulated reserves. If the conflict continues, there will be a deficit. A deficit is possible in a few months as Gulf states' production will not increase while the Strait of Hormuz is blocked.' Putin is currently at SPIEF and is expected to reinforce this message in his press conference (@markettwits 16:47). Siluanov earlier confirmed Russia's economy has returned to growth and the key rate will be cut.",
-      "consensus_narrative": "Western analysts dismiss this as Russian propaganda/saber-rattling to drive oil prices higher. The assumption is that strategic reserves and Saudi spare capacity can cushion any disruption. The 'deficit in months' timeline is seen as alarmist.",
-      "contradiction": "12M bbl/day is ~12% of global supply. That is not saber-rattling — that is a structural supply hole. The US Strategic Petroleum Reserve is near 40-year lows after the 2022 release. Saudi spare capacity is a fraction of what it was and Gulf production cannot expand if Hormuz itself is blocked. Reserves being drawn down to balance today will not be there tomorrow. This is a Russian deputy prime minister delivering a factual description of the physical supply situation at the country's premier economic forum — not a tweet. Combined with the Hezbollah-Israel escalation and the Iran negotiations trap, the probability of a genuine supply crunch in Q3 2026 is rising fast.",
-      "bet": "LONG Brent/WTI crude futures aggressively. LONG XLE/XOP (energy sector). LONG OIH (oil services). LONG RTS/RSX (Russian equities benefit from higher oil + strong ruble narrative from Siluanov). LONG gold. SHORT SPY (energy crisis = demand destruction + inflation).",
+      "id": "quantinuum_ipo_quantum_rally",
+      "event": "17:34 UTC trad_fin: 'QUANTINUUM OPENS AT $68, IPO AT $60.' 17:44 UTC markettwits: 'Quantinuum opened at $68 on debut, range was $53-$55.' Initial range was $53-55, then upsized IPO at $60, now trading at $68 — a +25% pop from range top, +13% from IPO price. Honeywell-backed company. 20x oversubscribed as reported earlier. Traders fully price a quarter-point Fed hike by end of 2026 (infinityhedge, older data but still relevant context). MSTR down with BTC. Saylor bought bonds (infinityhedge).",
+      "consensus_narrative": "Quantinuum IPO pop is a quantum computing hype bubble. 'IPO market is back.' Traditional narrative: risk appetite returning, tech IPOs signaling market top. Fed hiking fears dismissed as irrelevant to tech risk-taking. BTC dump is separate (MSTR liquidation).",
+      "contradiction": "This is NOT a general risk-on signal — it's a specific signal that institutional capital is desperate for high-quality AI-adjacent hardware exposure. Quantinuum at $68 vs $60 IPO means the underwriters left $1.68B on the table. 20x oversubscribed means demand FAR exceeded supply. This is the single strongest 'real demand for compute infrastructure' signal in the market. The same institutions that piled into Quantinuum are rotating out of crypto (MSTR selling, BTC down) INTO productive compute assets. The Fed hike pricing is noise — liquidity is rotating, not drying up. The Quantum sector (IONQ, QBTS, RGTI) should reprice upward on this comp.",
+      "bet": "LONG quantum computing equities: IONQ, QBTS (D-Wave), RGTI (Rigetti). The Quantinuum $68 print is a price discovery signal that quantum hardware is being valued higher than the market thought. IONQ and RGTI trade at discounts to what Honeywell's backing of Quantinuum implies. Also LONG QTUM (Defiance Quantum ETF) for broad exposure.",
       "benefit": {
-        "Brent_crude_futures": "+5-8% in 2-week window as the Novák warning gets priced in",
-        "XLE_XOP": "+3-5% energy sector relative outperformance",
-        "RTS": "+2-4% Russian equity index on oil revenue + rate cut outlook",
-        "Gold": "+1-3% as real rates expectations collapse on supply-shock inflation"
+        "asset": "IONQ (IonQ), QBTS (D-Wave Quantum), RGTI (Rigetti Computing), QTUM (Defiance Quantum ETF)",
+        "direction": "LONG quantum computing names",
+        "target_2h_move": "IONQ: +5% to +10%. QBTS: +7% to +12%. RGTI: +8% to +15% (most volatile, highest beta). QTUM: +3% to +5%.",
+        "volume_impact": "High on quantum names. The Quantinuum debut is the biggest quantum IPO ever. Retail and algo traders will pile into 'cheaper' quantum names on the comp trade. Volume 3-5x normal on IONQ.",
+        "estimated_probability": "80%",
+        "time_horizon": "1-4 hours. Quantinuum's first-hour trading sets the tone. The comp trade into other quantum names typically fires within 2 hours of a major quantum IPO debut."
       }
     }
-  ],
-  "raw_data_summary": {
-    "channels_with_recent_content": [
-      {
-        "channel": "@ASupersharij",
-        "last_message": "2026-06-04T16:38:32+00:00",
-        "top_story": "Ukrainian strike destroys Russian corvette Boykiy in Kronstadt — 103K views"
-      },
-      {
-        "channel": "@markettwits",
-        "last_message": "2026-06-04T16:47:15+00:00",
-        "top_story": "Putin press conference at SPIEF + Novák oil crisis warning"
-      },
-      {
-        "channel": "@ethanlevins",
-        "last_message": "2026-06-04T14:01:16+00:00",
-        "top_story": "Hezbollah drones target Netanyahu in Shlomi — IDF ground op planned"
-      },
-      {
-        "channel": "@trad_fin",
-        "last_message": "2026-06-04T14:10:22+00:00",
-        "top_story": "Quantinuum IPO + Bitcoin drop to 61.3K on MSTR selling"
-      },
-      {
-        "channel": "@MonitoringSituation",
-        "last_message": "2026-06-04T11:15:39+00:00",
-        "top_story": "House votes to limit Trump Iran war powers; Axios: Trump wants peace, Bibi wants war"
-      },
-      {
-        "channel": "@infinityhedge",
-        "last_message": "2026-06-03T09:29:05+00:00",
-        "top_story": "No fresh content — oldest data in cycle"
-      }
-    ]
-  }
+  ]
 }

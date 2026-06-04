@@ -118,6 +118,18 @@
       "evolution_score": 0.8,
       "actor_match": 1.0,
       "geography_match": 1.0
+    },
+    {
+      "update_id": "n21_nato__ev_012",
+      "timestamp": "2026-06-04T17:15:50.779886+00:00",
+      "type": "thesis_update",
+      "summary": "Sub-thread spawned (score=0.89): US plans cuts to Nato’s rapid response force",
+      "source_url": "https://www.ft.com/content/a2174b1c-1231-41b6-a064-e7ba89ce388c",
+      "source_id": "ft_world",
+      "evolution_score": 0.8931,
+      "actor_match": 1.0,
+      "geography_match": 1.0,
+      "thread_id": "n21_nato__us_plans_cuts_to_nato_s_rapid_response_force"
     }
   ]
 }
