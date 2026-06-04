@@ -189,31 +189,20 @@ function updateMastheadLiving(generatedAt, nextMicroUpdate) {
 // ── THE ANCHOR ──
 // Static anchor: key levels persist weekly; price/regime/vol update per cycle
 const ANCHOR_ASSETS = [
-  { symbol: 'BZ=F', name: 'Brent Crude', price: '74.20', change: '+2.1%', dir: 'up',
-    regime: 'trending', atr: '$1.85', volPctile: '78th',
-    keyLevel: { type: 'support', label: '$72.00', note: 'tested 3x' },
-    gammaWall: { level: '$74.50', contracts: '+8K' },
-    conviction: { text: 'long $72', status: 'valid' } },
-  { symbol: 'NVDA', name: 'NVIDIA', price: '1,142', change: '+3.2%', dir: 'up',
-    regime: 'trending', atr: '$28.50', volPctile: '62nd',
-    keyLevel: { type: 'gamma-flip', label: '$1,140', note: 'flip zone ⚠' },
-    gammaWall: { level: '$1,165', contracts: '+12K' },
-    conviction: { text: 'break $1,140→short', status: 'invalidated' } },
-  { symbol: 'BTC', name: 'Bitcoin', price: '68,450', change: '+0.9%', dir: 'up',
-    regime: 'ranging', atr: '$2,140', volPctile: '91st', changeDot: true,
-    keyLevel: { type: 'support', label: '$67,200', note: 'liquidity wall' },
-    gammaWall: { level: '$70K', contracts: '+15K' },
-    conviction: { text: 'floor $67K', status: 'valid' } },
-  { symbol: 'XLE', name: 'Energy Select', price: '92.45', change: '+1.5%', dir: 'up',
-    regime: 'trending', atr: '$1.60', volPctile: '71st',
-    keyLevel: { type: 'support', label: '$90.50', note: '20d VWAP' },
-    gammaWall: { level: '$94.00', contracts: '+5K' },
-    conviction: { text: 'long dips', status: 'valid' } },
-  { symbol: 'DXY', name: 'Dollar Index', price: '104.30', change: '-0.2%', dir: 'down',
-    regime: 'ranging', atr: '$0.55', volPctile: '44th',
-    keyLevel: { type: 'resistance', label: '$105.20', note: '50d MA' },
-    gammaWall: { level: '$103.80', contracts: '+3K' },
-    conviction: { text: 'fade $105', status: 'valid' } },
+  { symbol: 'SPX', price: '5,840', change: '+0.4%', dir: 'up',
+    bias: 'BUY', entry: '5,750', target: '5,950', stop: '5,680', conviction: 'HIGH' },
+  { symbol: 'NVDA', price: '1,142', change: '+3.2%', dir: 'up',
+    bias: 'BUY', entry: '1,100', target: '1,240', stop: '1,070', conviction: 'HIGH' },
+  { symbol: 'BRENT', price: '74.20', change: '+2.1%', dir: 'up',
+    bias: 'BUY', entry: '72.00', target: '78.00', stop: '70.50', conviction: 'MED' },
+  { symbol: 'DXY', price: '104.30', change: '-0.2%', dir: 'down',
+    bias: 'SELL', entry: '105.20', target: '103.00', stop: '106.00', conviction: 'MED' },
+  { symbol: 'GOLD', price: '2,410', change: '+0.6%', dir: 'up',
+    bias: 'BUY', entry: '2,350', target: '2,500', stop: '2,320', conviction: 'HIGH' },
+  { symbol: 'BTC', price: '68,450', change: '+0.9%', dir: 'up',
+    bias: 'BUY', entry: '67,200', target: '72,000', stop: '65,500', conviction: 'LOW' },
+  { symbol: '10Y', price: '4.35%', change: '+3bp', dir: 'up',
+    bias: 'WATCH', entry: '4.35', target: '4.50', stop: '4.15', conviction: 'LOW' },
 ];
 const ANCHOR_CRYPTO = {
   stablecoinSupply: { value: '$172B', delta: '+$4.2B', label: 'Stablecoin Supply (30d)' },
@@ -223,19 +212,20 @@ const ANCHOR_CRYPTO = {
 const ANCHOR_PDR = { value: '1.7', regime: 'passive', regimeLabel: 'Passive Discovery', trend: '▁▃▅▆▇' };
 
 function anchorRowHTML(a) {
-  const dotHTML = a.changeDot ? '<span class="change-dot"></span>' : '';
-  const arrow = a.dir === 'up' ? '▲' : '▼';
-  const arrowClass = a.dir === 'up' ? 'up' : 'down';
+  const pillClass = a.bias === 'BUY' ? 'anchor-pill buy' : a.bias === 'SELL' ? 'anchor-pill sell' : 'anchor-pill watch';
+  const badgeClass = a.conviction === 'HIGH' ? 'anchor-badge high' : a.conviction === 'MED' ? 'anchor-badge med' : 'anchor-badge low';
   return `
     <div class="asset-row">
       <div class="asset-info">
         <span class="asset-symbol">${a.symbol}</span>
         <span class="asset-price">$${a.price}</span>
-        <span class="asset-change ${a.dir}">${arrow} ${a.change}${dotHTML}</span>
+        <span class="asset-change ${a.dir}">${a.change}</span>
       </div>
-      <div class="asset-key-line">
-        <span class="anchor-key-level ${a.keyLevel.type}">${a.keyLevel.label}</span>
-        <span class="anchor-conviction ${a.conviction.status}">${a.conviction.status === 'valid' ? '✓' : '✗'} ${a.conviction.text}</span>
+      <div class="asset-trade">
+        <span class="${pillClass}">${a.bias}</span>
+        <span class="asset-zone">${a.entry} → ${a.target}</span>
+        <span class="asset-stop">Stop ${a.stop}</span>
+        <span class="${badgeClass}">${a.conviction}</span>
       </div>
     </div>`;
 }
@@ -361,31 +351,29 @@ function livingCardHTML(story, isLead) {
              data-update-count="${story.update_count}"
              data-last-updated="${story.last_updated || ''}"
              data-pillar="${story.paradigm_pillar || ''}">
-      <div class="card-body" onclick="this.closest('.card').classList.toggle('expanded')">
+      <div class="card-body">
         <div class="card-text">
           <div class="card-head">
             ${claimHTML}
             ${sector ? `<span class="category-tag ${sector}">${SECTOR_LABELS[sector] || sector}</span>` : ''}
             <h3 class="${story.original_headline ? 'headline-locked' : ''}" data-original="${story.original_headline || ''}">${story.headline}</h3>
           </div>
-          <div class="card-detail-hidden">
-            ${reality ? `<p class="summary">${reality}</p>` : ''}
-            ${theySay || reality ? `
-            <div class="detail">
-              ${theySay ? `<div class="con-they"><span class="con-label">They say</span>${theySay}</div>` : ''}
-              ${reality ? `<div class="con-real"><span class="con-label">Reality</span>${reality}</div>` : ''}
-            </div>` : ''}
-            ${story.capital_flow ? `
-            <div class="capital-flow-block">
-              <span class="cf-label">CAPITAL FLOW</span>
-              ${story.capital_flow}
-            </div>` : ''}
-            ${story.portfolio_implication ? `
-            <div class="the-play">
-              <span class="pi-label">THE PLAY</span>
-              <span class="pi-text">${story.portfolio_implication}</span>
-            </div>` : ''}
-          </div>
+          ${reality ? `<p class="summary">${reality}</p>` : ''}
+          ${theySay || reality ? `
+          <div class="detail">
+            ${theySay ? `<div class="con-they"><span class="con-label">They say</span>${theySay}</div>` : ''}
+            ${reality ? `<div class="con-real"><span class="con-label">Reality</span>${reality}</div>` : ''}
+          </div>` : ''}
+          ${story.capital_flow ? `
+          <div class="capital-flow-block">
+            <span class="cf-label">CAPITAL FLOW</span>
+            ${story.capital_flow}
+          </div>` : ''}
+          ${story.portfolio_implication ? `
+          <div class="the-play">
+            <span class="pi-label">THE PLAY</span>
+            <span class="pi-text">${story.portfolio_implication}</span>
+          </div>` : ''}
         </div>
         <div class="card-photo">
           <img src="${photoUrl}" alt="${sector}" loading="lazy" onerror="this.parentElement.style.display='none'">

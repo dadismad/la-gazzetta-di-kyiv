@@ -1,32 +1,31 @@
 :root {
   /* ═══════════════════════════════════════════════
-     GAZZETTA EVENT ROOM — Salon Privé
-     Midnight navy · 24K gold · Pure white · Burgundy
+     GAZZETTA — Antique Cream · Dark Ink · Antique Gold
      ═══════════════════════════════════════════════ */
   
-  --paper:    #0F1629;   /* Midnight navy — the room */
-  --white:    #FFFFFF;   /* Pure white — cards, surfaces */
-  --bg-tertiary: #1A2240;
+  --paper:    #F5F1E8;   /* Antique cream — the page */
+  --white:    #FFFFFF;   /* Pure white — cards */
+  --bg-tertiary: #EDE8DE;
   
-  --gold:     #D4AF37;   /* 24K gold — accents, borders, highlights */
-  --gold-dark:#B8960F;   /* Deep gold */
-  --gold-pale:rgba(212,175,55,0.08);
+  --gold:     #C9A96E;   /* Antique gold — refined, pale */
+  --gold-dark:#B8955A;   /* Deeper antique gold */
+  --gold-pale:rgba(201,169,110,0.08);
   
-  --sky:      #2A3F6E;   /* Deep navy blue — structural trim */
-  --sky-pale: rgba(42,63,110,0.08);
+  --sky:      #4A6FA5;   /* Muted navy blue */
+  --sky-pale: rgba(74,111,165,0.06);
   
-  --red:      #8B0000;   /* Burgundy — danger, stops, VIP rope */
-  --red-hover:#A00000;
-  --green:    #2E7D32;   /* Emerald felt — success */
+  --red:      #C41E3A;   /* Vermilion — sharp, not muddy */
+  --red-hover:#D4344A;
+  --green:    #2E7D32;   /* Emerald felt */
   
-  --ink:      #E8ECF2;   /* Platinum white — text on dark */
-  --ink-light:#8899B4;   /* Muted silver */
-  --ink-muted:#5A6A84;   /* Faded silver */
-  --ink-card:       #1A1D28;  /* Deep ink — card headings on white */
-  --ink-card-light: #5A5F6E;  /* Grey — card body */
+  --ink:      #1A1D28;   /* Dark ink */
+  --ink-light:#5A5F6E;   /* Grey */
+  --ink-muted:#8A8F9A;   /* Muted */
+  --ink-card:       #1A1D28;
+  --ink-card-light: #5A5F6E;
   
-  --divider:       #2D3555;  /* Navy divider */
-  --divider-light: #E8E8EC;  /* Light divider for cards */
+  --divider:       #E0DBD0;  /* Cream divider */
+  --divider-light: #EFECE4;  /* Subtle */
   
   --display: 'DM Serif Display', Georgia, serif;
   --body:    'Source Serif 4', Georgia, serif;
@@ -45,28 +44,28 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* ── Masthead — 48px ── */
+/* ── Masthead ── */
 .masthead {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4px 12px;
-  background: #1F3A5F;
+  padding: 6px 14px;
+  background: #1A2440;
   border-bottom: 2px solid var(--gold);
   position: sticky;
   top: 0;
   z-index: 100;
-  gap: 8px;
+  gap: 12px;
 }
 .masthead-left {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 .masthead-bulava {
   display: flex;
   align-items: center;
-  color: rgba(255,255,255,0.8);
+  color: var(--gold);
   line-height: 1;
 }
 .masthead-bulava svg {
@@ -74,21 +73,9 @@ body {
   width: 20px;
   height: 24px;
 }
-.masthead-machiavelli {
-  font-size: 16px;
-  color: var(--gold-dark);
-  opacity: 0.7;
-  cursor: default;
-  color: rgba(255,255,255,0.8);
-}
-.masthead-machiavelli {
-  font-size: 16px;
-  color: rgba(255,255,255,0.7);
-  cursor: default;
-}
 .masthead-name {
   font-family: var(--display);
-  font-size: 20px;
+  font-size: 22px;
   color: var(--gold);
   white-space: nowrap;
 }
@@ -101,14 +88,14 @@ body {
   font-family: var(--body);
   font-style: italic;
   font-size: 12px;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.7);
 }
 .masthead-meta {
   font-family: var(--sans);
   font-size: 9px;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.5);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   white-space: nowrap;
 }
 
@@ -222,32 +209,16 @@ body {
 .card.lead .sector { color: var(--gold); }
 .card h3 {
   font-family: var(--display);
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1.2;
   color: var(--ink-card);
-  cursor: pointer;
-  flex: 1;
-  min-width: 0;
 }
-.card.lead h3 { font-size: 17px; }
+.card.lead h3 { font-size: 22px; }
 .card .summary {
   font-size: 12px;
   line-height: 1.3;
   color: var(--ink-card-light);
-}
-
-/* Collapsed detail — hidden until click */
-.card-detail-hidden {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.35s ease, opacity 0.25s;
-}
-.card.expanded .card-detail-hidden {
-  max-height: 600px;
-  opacity: 1;
-  margin-top: 8px;
 }
 
 /* Expanded detail */
@@ -258,14 +229,9 @@ body {
   transition: max-height 0.3s ease, opacity 0.2s, margin 0.2s;
   margin-top: 0;
   border-top: 1px solid transparent;
-  font-size: 12px;
-  line-height: 1.35;
+  font-size: 13px;
+  line-height: 1.45;
 }
-.card .detail .con-they,
-.card .detail .con-real {
-  font-size: 11px;
-  padding: 4px 6px;
-.card .detail .con-real { font-size: 11px; padding: 4px 6px; }
 .card.expanded .detail {
   max-height: 400px;
   opacity: 1;
@@ -278,8 +244,8 @@ body {
   font-style: italic;
   margin-bottom: 4px;
   padding: 5px 8px;
-  background: rgba(0,0,0,0.04);
-  border-left: 2px solid var(--divider-light);
+  background: rgba(0,0,0,0.03);
+  border-left: 2px solid var(--divider);
   font-size: 12px;
 }
 .card .detail .con-real {
@@ -287,11 +253,10 @@ body {
   font-weight: 500;
   margin-bottom: 6px;
   padding: 5px 8px;
-  background: rgba(0,184,148,0.06);
-  border-left: 2px solid var(--gold);
+  background: rgba(74,111,165,0.06);
+  border-left: 2px solid var(--sky);
   font-size: 12px;
 }
-.card .detail .con-label {
   font-family: var(--sans);
   font-size: 7px;
   font-weight: 700;
@@ -506,30 +471,55 @@ body {
 }
 .asset-symbol {
   font-family: var(--sans);
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--ink);
-}
-.asset-name {
-  font-size: 9px;
-  color: var(--ink-muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink-card);
 }
 .asset-price {
   font-family: var(--sans);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
-  margin-left: auto;
 }
 .asset-change {
   font-family: var(--sans);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 600;
 }
 .asset-change.up { color: var(--green); }
 .asset-change.down { color: var(--red); }
+
+.asset-trade {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--sans);
+  font-size: 10px;
+}
+.anchor-pill {
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+.anchor-pill.buy   { background: rgba(46,125,50,0.12); color: var(--green); }
+.anchor-pill.sell  { background: rgba(196,30,58,0.10); color: var(--red); }
+.anchor-pill.watch { background: rgba(201,169,110,0.12); color: var(--gold-dark); }
+.asset-zone { color: var(--ink-card); }
+.asset-stop  { color: var(--red); font-size: 9px; }
+.anchor-badge {
+  font-size: 7px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin-left: auto;
+}
+.anchor-badge.high { background: rgba(46,125,50,0.15); color: var(--green); }
+.anchor-badge.med  { background: rgba(201,169,110,0.15); color: var(--gold-dark); }
+.anchor-badge.low  { background: rgba(0,0,0,0.06); color: var(--ink-muted); }
 
 /* Bet&Benefit 2h projection */
 .asset-projection {
