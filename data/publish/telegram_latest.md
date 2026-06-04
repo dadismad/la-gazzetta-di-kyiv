@@ -1,13 +1,13 @@
-Trafigura warns oil at an 'inflection point' — the Iran war generated bumper half-year profits, but the real signal is structural: Gulf states are in talks to bypass Hormuz with overland pipelines at the same time US oil stocks hit their lowest since 2004.
+Trafigura warns oil at an 'inflection point' — Gulf states negotiate Hormuz bypass pipelines while US oil stocks hit 2004 lows. Three signals converge into one repricing signal.
 
-Regime: Convergence (selective risk-off on energy corridor): Three separate narratives — Iran supply disruption, Hormuz bypass infrastructure, and Trafigura's record $4B profit payout — are converging into a single energy crisis repricing signal.
+Regime: Convergence (selective risk-off on energy corridor): Iran supply disruption, Hormuz bypass infrastructure, and Trafigura's record $4B payout are converging into an energy crisis repricing.
 
-• Brent: staged long entries on dips to $72, 5% invalidation stop below $68
-• Energy ETFs (XLE): accumulate on pipeline news as infrastructure premium reprices
-• Gold holds $2,450 as Israel-Lebanon ceasefire fails to cool broader Middle East risk
+• Brent: staged long entries on dips to $72, 5% stop below $68
+• Energy ETFs (XLE): accumulate on pipeline news
+• Gold holds $2,450 as ceasefire fails to cool broader risk
 
-¹ Trafigura pays record dividend as profit hits $4 billion, more than double the prior year (source: https://www.bloomberg.com/news/articles/2026-06-04/trafigura-pays-record-dividend-as-profit-soars-over-4-billion)
+¹ Trafigura pays record dividend as profit hits $4B (source: https://www.bloomberg.com/news/articles/2026-06-04/trafigura-pays-record-dividend-as-profit-soars-over-4-billion)
 
-Continuity: https://pureciclismo.github.io/gazzetta-di-kyiv/ | Next trigger: Hormuz bypass pipeline confirmation or US-Iran de-escalation signal
+Continuity: https://pureciclismo.github.io/gazzetta-di-kyiv/ | Next trigger: Hormuz bypass confirmation or US-Iran de-escalation
 
 Narrative exposure dashboard: https://pureciclismo.github.io/gazzetta-di-kyiv/
