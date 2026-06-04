@@ -121,7 +121,10 @@ function formatTimestamp(isoString) {
 function updateMasthead() {
   const metaEl = byId('mastheadMeta');
   if (metaEl) {
-    metaEl.textContent = new Date().toTimeString().slice(0,5) + ' EET';
+    const now = new Date();
+    const time = now.toTimeString().slice(0,5);
+    const date = `${now.getDate()}/${now.getMonth()+1}/${now.getFullYear().toString().slice(-2)}`;
+    metaEl.textContent = `${date} · ${time} EET`;
   }
 }
 
@@ -237,7 +240,7 @@ function renderCapitalFlows() {
   const el = byId('flowsList');
   if (!el) return;
   el.innerHTML = CAPITAL_FLOWS_DATA.map(f => `
-    <div class="flow-item ${f.direction}" data-story-id="${f.storyId}">
+    <div class="flow-item ${f.direction}" data-flow-story-id="${f.storyId}">
       <div class="flow-headline">${f.headline}</div>
       <div class="flow-detail">${f.detail}</div>
       <div class="flow-detail" style="margin-top:2px;font-size:10px;color:var(--ink-muted)">${f.positioning}</div>
@@ -482,7 +485,8 @@ function appendStoryCard(story, isLead) {
   if (!el) return;
 
   // Check if this story_id already exists (deduplication)
-  if (document.querySelector(`[data-story-id="${story.story_id}"]`)) return;
+  // Deduplication: only check inside newsCol — flow items also carry data-story-id
+  if (el.querySelector(`[data-story-id="${story.story_id}"]`)) return;
   if (capturedStoryIds.has(story.story_id)) return;
   capturedStoryIds.add(story.story_id);
 

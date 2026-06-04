@@ -98,22 +98,18 @@ body {
   white-space: nowrap;
 }
 
-/* ── Layout — main content + sidebar spacer ── */
+/* ── Layout — single column ── */
 .layout {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 10px;
-  display: grid;
-  grid-template-columns: 1fr 280px;
-  gap: 12px;
-  align-items: start;
 }
-
 .main-col {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
+.sidebar-spacer { display: none; }
 
 /* ── Collapsible Container ── */
 .container {
@@ -913,13 +909,23 @@ body {
   gap: 6px;
   padding: 6px 10px;
   margin-top: 8px;
-  background: rgba(37,99,235,0.05);
-  font-family: var(--sans);
-  font-size: 10px;
-  color: var(--ink-muted);
-  border-left: 2px solid var(--blue);
-}
-.resolved-icon {
+  .container-subtitle {
+    font-family: var(--sans);
+    font-size: 9px;
+    color: var(--ink-muted);
+    flex: 1;
+  }
+  .container-hint {
+    font-family: var(--sans);
+    font-size: 8px;
+    color: var(--ink-muted);
+    font-style: italic;
+    opacity: 0.8;
+  }
+  .container.expanded .container-hint {
+    display: none;
+  }
+  .container-arrow {
   color: var(--blue);
   font-weight: bold;
   font-size: 12px;

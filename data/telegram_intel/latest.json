@@ -1,109 +1,89 @@
 {
-  "_meta": {
-    "fetched_at_utc": "2026-06-04T09:20:00Z",
-    "model": "deepseek-v4-flash",
-    "analysis_window": "last_30_min",
-    "source": "gazzetta-di-kyiv-telegram-intel-bot"
-  },
-  "stories": [
+  "fetched_at": "2026-06-04T16:56:27.299681+00:00",
+  "cycle": "2026-06-04-17:00",
+  "channels_monitored": [
+    "@trad_fin",
+    "@MonitoringSituation",
+    "@ASupersharij",
+    "@infinityhedge",
+    "@ethanlevins",
+    "@markettwits"
+  ],
+  "actionable_stories": [
     {
       "rank": 1,
-      "title": "Khamenei Declares US 'Defeated on the Battlefield' — Diplomatic Farce Collapses Into Escalation",
-      "channel": "@ethanlevins",
-      "timestamp_utc": "2026-06-04T08:40:04Z",
-      "age_minutes": 39,
-      "event": {
-        "what": "Iranian Supreme Leader Khamenei publicly states the United States has 'been defeated on the battlefield.' This is the highest-level Iranian messaging since CENTCOM confirmed Iran deliberately struck Kuwait International Airport with drones, and follows IRGC claims of striking a U.S. warship. IRGC warned 'any further escalation in the Strait of Hormuz will come at a heavy cost to the United States.'",
-        "where": "Tehran, Iran / Strait of Hormuz / Kuwait / Bahrain",
-        "when": "June 4, 2026, 08:40 UTC"
-      },
-      "narrative": {
-        "what_they_say": "Trump administration spin: Iran is 'close to signing papers.' Trump said 'Iran will agree to no nuclear weapon if they sign.' He told aides he 'won't resume all-out war unless US troops are killed' (WSJ). The House voted 215-208 to end Trump's war in Iran, but it's non-binding theater. Trump says Hormuz 'would open quickly when an MOU is signed.'",
-        "the_contradiction": "Khamenei does not declare battlefield defeats when his forces are about to fold. The Supreme Leader's public rhetoric is the single most reliable indicator of IRGC operational posture. He is declaring victory — which means Iran sees itself winning, not negotiating from weakness. Meanwhile Trump admits 'not one ship has gotten through the blockade.' The contradiction: Trump sells a deal that doesn't exist while Khamenei taunts a US military he says is broken."
-      },
-      "bet": {
-        "asset": "WTI Crude Oil (CL), Brent Crude (BNO), Gold (GLD)",
-        "direction": "LONG",
-        "time_horizon_hours": 2,
-        "estimated_move_pct": "+3% to +5%",
-        "volume_impact": "High — shorts squeeze on Khamenei statement as US session approaches. WTI likely to test recent highs as Hormuz remains functionally closed. Energy stocks (XLE) follow."
-      },
-      "signals": [
-        "Khamenei victory declaration = no diplomatic off-ramp imminent",
-        "IRGC operational momentum: Kuwait airport strike, warship claim, Fifth Fleet HQ targeted",
-        "CENTCOM confirmation of 'deliberate, calculated, unjustified attack' on Kuwait",
-        "House anti-war vote is symbolic only — Senate won't pass it, War Powers Act is non-binding",
-        "Trump's 'close to deal' claims are uncorrelated with on-ground reality"
-      ]
+      "title": "Ukraine destroys Russian corvette 'Boykiy' in Kronstadt — Baltic Fleet base hit during SPIEF",
+      "event": "At 16:38 UTC, video/confirmation emerged of a Ukrainian strike destroying the Russian corvette 'Boykiy' (Project 20380) in Kronstadt — the Baltic Fleet's primary base in St. Petersburg. This follows a wave of drone attacks on St. Petersburg infrastructure that began at 12:10 UTC, the first day of the St. Petersburg International Economic Forum (SPIEF) where Putin is currently meeting international media. Earlier today (09:52 UTC), Ukraine also struck and damaged a Russian border patrol ship 'Svetlyak' near Yurkino in Crimea.",
+      "consensus_narrative": "Russia claims SPIEF demonstrates economic stability and normalcy. State media treats the strikes as insignificant 'provocations' that don't affect the forum's operations. Siluanov and Novak are on stage projecting confidence about Russian economic growth.",
+      "contradiction": "Ukraine is systematically striking Russian naval assets in BOTH the Baltic (Kronstadt) and Black Sea (Crimea) theaters on the same day. Striking Kronstadt — the cradle of the Russian navy, 30km from Putin's hometown — during SPIEF is a precision psychological operation. It proves Ukraine can reach any military asset in Russia and that no 'safe zone' exists, even during the country's flagship economic showcase. The Boykiy is a modern stealth corvette; losing it in port is a significant capability and prestige blow.",
+      "bet": "LONG US defense primes (RTX, LMT, NOC) on increased NATO Baltic vigilance. LONG Ukraine sovereign bonds. SHORT Russian equity ETFs (RSX, ERUS). LONG Brent crude — the Black Sea disruption vector compounds the Novák oil crisis warning.",
+      "benefit": {
+        "RTX_LMT_NOC": "+1-3% in 2-hour window on NATO Baltic reinforcement narrative",
+        "RSX_ERUS": "-2-4% on demonstration that Russia's rear is not secure",
+        "Brent_crude": "+1-2% compounding effect with oil supply disruption fears"
+      }
     },
     {
       "rank": 2,
-      "title": "Six Fuel Tankers Burning on Tavrida Highway — Critical Crimean Supply Route Hit",
-      "channel": "@ASupersharij",
-      "timestamp_utc": "2026-06-04T09:10:17Z",
-      "age_minutes": 9,
-      "event": {
-        "what": "Two fuel tankers caught fire on the Tavrida highway between Feodosia and the Kerch Bridge in Crimea. When Shariy approached the bridge area, police officers told him the actual number burning is six. Russian authorities are actively suppressing publication of the incident. 'If you don't publish it, it's like they're not burning. Better not to see it. Turn away and it doesn't exist.' The Tavrida highway is the sole major road artery connecting Crimea to the Kerch Bridge (Russia's land link to the peninsula). 66.7K views in 9 minutes.",
-        "where": "Tavrida Highway, Crimea — Feodosia to Kerch Bridge approach",
-        "when": "June 4, 2026, 09:10 UTC (ongoing)"
-      },
-      "narrative": {
-        "what_they_say": "Russian authorities (via police at scene): deny, suppress, refuse publication. Official Russian media will likely report nothing. The standard Kremlin playbook for partisan strikes on military logistics.",
-        "the_contradiction": "Shariy reports two, police say six. The suppression itself is the story. When the Kremlin hides something this aggressively, it means the operational impact is severe. Six burning fuel tankers on the only road feeding Crimea means either (a) Ukrainian DRG/partisan operation deep in occupied territory, or (b) catastrophic Russian logistics failure. Either interpretation is a Russian defeat. This mirrors the 2022-2023 pattern of Ukrainian partisan strikes on Crimean logistics, but six tankers at once is the largest single fuel logistics strike since the Kerch Bridge attacks."
-      },
-      "bet": {
-        "asset": "USD/RUB, Gold (GLD), Ukrainian sovereign bonds (if listed)",
-        "direction": "SHORT RUB, LONG GOLD",
-        "time_horizon_hours": 2,
-        "estimated_move_pct": "USD/RUB +1.5% to +2%, Gold +0.5% to +1%",
-        "volume_impact": "Medium-high in RUB crosses during Moscow session. Risk-off bid for gold. If confirmed as Ukrainian SOF operation, expect broader escalation narrative to re-enter markets."
-      },
-      "signals": [
-        "Massive fuel logistics strike on Crimea's only road artery",
-        "Police admission of cover-up (six burning, not two)",
-        "Timing: day after reported Russian strikes on Dnipro ATB warehouses (Ukrainian food/logistics retaliation?)",
-        "Shariy has 800K+ subs and is highly credible on Ukraine war operational reporting",
-        "Kremlin suppression = military significance"
-      ]
+      "title": "Hezbollah kamikaze drones target Netanyahu directly in Shlomi — IDF prepares large-scale ground op",
+      "event": "At 14:01 UTC, Hezbollah launched kamikaze drones toward the western Galilee settlement of Shlomi during PM Netanyahu's visit. Security personnel physically shielded Netanyahu. Earlier (11:29 UTC, @ethanlevins/IDF Radio), Netanyahu held a security consultation after Hezbollah rocket fire triggered sirens in northern Israel. During that meeting, the IDF presented plans for a large-scale ground operation in Lebanon. Defense Minister Katz and Minister Ben Gvir supported the proposal. Netanyahu raised concerns about US pressure against expanding the fight. Separately, the IDF confirmed ongoing combat operations south of the Zahrani River in Lebanon (@markettwits 07:35).",
+      "consensus_narrative": "The mainstream framing is that 'Netanyahu will resist escalation due to US pressure' and that the drone attack was just another cross-border incident. Axios reported that 'Trump wants to end the war, but Netanyahu appears to want to resume it' (@MonitoringSituation 10:19). The assumption is that Washington's restraining hand will hold.",
+      "contradiction": "A kamikaze drone attack targeting a sitting prime minister changes the threshold. You cannot 'de-escalate' after an enemy tried to kill your head of government on a visit. Katz and Ben Gvir are already pushing for the ground invasion. Netanyahu's 'concerns about US pressure' are political cover — he's negotiating from a position where the IDF has already drawn up plans. The US House vote limiting Trump's war powers (@MonitoringSituation 11:15) actually WEAKENS Trump's negotiating hand with Iran/Hezbollah, making Israeli escalation MORE likely, not less. This is a feedback loop: Congressional constraint on Trump → perceived weakness by adversaries → more attacks → harder Israeli response.",
+      "bet": "LONG Brent crude (Strait of Hormuz + Lebanon front premium). LONG Israel defense stocks (IAI, ICL). LONG US defense primes (GD, LHX). LONG gold as geopolitical hedge. SHORT TL20 (Israel 20-year bonds).",
+      "benefit": {
+        "Brent_crude": "+2-4% on Lebanon front escalation + Iran supply risk compounding",
+        "US_defense": "+1.5-3% on Israel-Hezbollah escalation narrative",
+        "Gold": "+0.5-1.5% safe haven bid",
+        "TL20": "-1-2% on war duration extension risk"
+      }
     },
     {
       "rank": 3,
-      "title": "Russia's Inflation Doubles, Central Bank Governor on Sick Leave, Siluanov Signals Intentional Ruble Weakening",
-      "channel": "@markettwits",
-      "timestamp_utc": "2026-06-04T08:19:29Z to 09:19:19Z",
-      "age_minutes": "1 to 60",
-      "event": {
-        "what": "Multiple coordinated signals from Russian financial authorities in the past hour: (1) Weekly inflation in Russia doubled to the highest level since mid-April, (2) Central Bank Governor Elvira Nabiullina is on sick leave — the very week inflation spikes, (3) Finance Minister Siluanov says the government 'didn't overdo taxes,' and (4) Siluanov states the ruble exchange rate 'should be such that imports are accessible to the population but exports remain profitable' — which in central banker code means 'we are targeting a weaker ruble.' This is coming from the St. Petersburg International Economic Forum (PMEF/SPIEF).",
-        "where": "St. Petersburg, Russia (SPIEF forum)",
-        "when": "June 4, 2026, 08:19-09:19 UTC"
-      },
-      "narrative": {
-        "what_they_say": "Siluanov: 'the government did not overdo taxes,' inflation is manageable, Nabiullina's sick leave is unrelated. The official line is the Russian economy is stable and sanctions-proof.",
-        "the_contradiction": "Inflation doubling + CB governor conveniently sick at a critical moment + Finance Minister publicly discussing exchange rate policy = the monetary policy apparatus is in disarray. Nabiullina has been the anchor of Russian financial stability throughout the war. Her absence during an inflation spike is a signal that (a) she opposes the coming depreciation, (b) she's been sidelined by hawkish defense spending demands, or (c) the situation is genuinely out of control. Siluanov's explicit mention of ruble management is a direct signal of intentional depreciation to support the war budget. This parallels the 2014-2015 ruble devaluation playbook."
-      },
-      "bet": {
-        "asset": "USD/RUB, EUR/RUB, CNH/RUB, Russian OFZ bonds",
-        "direction": "SHORT RUB (LONG USD/RUB)",
-        "time_horizon_hours": 2,
-        "estimated_move_pct": "USD/RUB +1.5% to +3%",
-        "volume_impact": "Medium during SPIEF conference. Ruble weakness likely to accelerate as market digests Siluanov's explicit guidance. OFZ yields spike on implied monetization of war spending."
-      },
-      "signals": [
-        "Weekly inflation doubled to highest since mid-April",
-        "Nabiullina on sick leave at critical policy moment (unusual)",
-        "Siluanov signals intentional ruble depreciation",
-        "SPIEF forum setting means these are deliberate policy signals to elites",
-        "Government dismissing tax concerns when war spending is exploding",
-        "Parallel to 2014-2015 ruble crisis playbook"
-      ]
+      "title": "Russia's Novák warns 12M bbl/day missing from global oil markets — 'unprecedented crisis'",
+      "event": "At the SPIEF forum (07:29 UTC), Russian Deputy PM Alexander Novák stated: 'The current crisis on the global oil market is unprecedented. Nothing like this happened even in the last century. Approximately 12 million barrels of oil do not reach the world market daily. The world market has not yet fully felt the consequences of the energy crisis as it is being balanced by accumulated reserves. If the conflict continues, there will be a deficit. A deficit is possible in a few months as Gulf states' production will not increase while the Strait of Hormuz is blocked.' Putin is currently at SPIEF and is expected to reinforce this message in his press conference (@markettwits 16:47). Siluanov earlier confirmed Russia's economy has returned to growth and the key rate will be cut.",
+      "consensus_narrative": "Western analysts dismiss this as Russian propaganda/saber-rattling to drive oil prices higher. The assumption is that strategic reserves and Saudi spare capacity can cushion any disruption. The 'deficit in months' timeline is seen as alarmist.",
+      "contradiction": "12M bbl/day is ~12% of global supply. That is not saber-rattling — that is a structural supply hole. The US Strategic Petroleum Reserve is near 40-year lows after the 2022 release. Saudi spare capacity is a fraction of what it was and Gulf production cannot expand if Hormuz itself is blocked. Reserves being drawn down to balance today will not be there tomorrow. This is a Russian deputy prime minister delivering a factual description of the physical supply situation at the country's premier economic forum — not a tweet. Combined with the Hezbollah-Israel escalation and the Iran negotiations trap, the probability of a genuine supply crunch in Q3 2026 is rising fast.",
+      "bet": "LONG Brent/WTI crude futures aggressively. LONG XLE/XOP (energy sector). LONG OIH (oil services). LONG RTS/RSX (Russian equities benefit from higher oil + strong ruble narrative from Siluanov). LONG gold. SHORT SPY (energy crisis = demand destruction + inflation).",
+      "benefit": {
+        "Brent_crude_futures": "+5-8% in 2-week window as the Novák warning gets priced in",
+        "XLE_XOP": "+3-5% energy sector relative outperformance",
+        "RTS": "+2-4% Russian equity index on oil revenue + rate cut outlook",
+        "Gold": "+1-3% as real rates expectations collapse on supply-shock inflation"
+      }
     }
   ],
-  "_channels_status": {
-    "@trad_fin": "no new messages in last 30 min (last 7h ago: MSTR/BTC dump)",
-    "@MonitoringSituation": "no new messages in last 30 min (last 11h ago: House Iran vote)",
-    "@ASupersharij": "1 new: fuel tankers on Tavrida highway",
-    "@infinityhedge": "no new messages in last 30 min (last 23h ago: Zcash network down)",
-    "@ethanlevins": "1 new: Khamenei declares US defeated",
-    "@markettwits": "recent: Russian inflation, Siluanov on ruble, Cardano -10%, CLARITY Act, PMEF"
+  "raw_data_summary": {
+    "channels_with_recent_content": [
+      {
+        "channel": "@ASupersharij",
+        "last_message": "2026-06-04T16:38:32+00:00",
+        "top_story": "Ukrainian strike destroys Russian corvette Boykiy in Kronstadt — 103K views"
+      },
+      {
+        "channel": "@markettwits",
+        "last_message": "2026-06-04T16:47:15+00:00",
+        "top_story": "Putin press conference at SPIEF + Novák oil crisis warning"
+      },
+      {
+        "channel": "@ethanlevins",
+        "last_message": "2026-06-04T14:01:16+00:00",
+        "top_story": "Hezbollah drones target Netanyahu in Shlomi — IDF ground op planned"
+      },
+      {
+        "channel": "@trad_fin",
+        "last_message": "2026-06-04T14:10:22+00:00",
+        "top_story": "Quantinuum IPO + Bitcoin drop to 61.3K on MSTR selling"
+      },
+      {
+        "channel": "@MonitoringSituation",
+        "last_message": "2026-06-04T11:15:39+00:00",
+        "top_story": "House votes to limit Trump Iran war powers; Axios: Trump wants peace, Bibi wants war"
+      },
+      {
+        "channel": "@infinityhedge",
+        "last_message": "2026-06-03T09:29:05+00:00",
+        "top_story": "No fresh content — oldest data in cycle"
+      }
+    ]
   }
 }
