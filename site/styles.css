@@ -1007,6 +1007,65 @@ body {
   to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
+/* ── Track Record ── */
+.tr-empty {
+  text-align: center;
+  padding: 20px;
+  color: var(--ink-muted);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 11px;
+}
+.tr-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.tr-stat {
+  text-align: center;
+  padding: 8px 4px;
+  background: #F9FAFB;
+  border-radius: 0;
+  border: 1px solid #E5E7EB;
+}
+.tr-val {
+  display: block;
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--ink);
+}
+.tr-label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+  margin-top: 2px;
+}
+.tr-detail {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  font-family: var(--sans);
+  font-size: 10px;
+  color: var(--ink-muted);
+  padding: 4px 0;
+}
+.tr-methodology {
+  text-align: center;
+  padding: 6px 0 0;
+  font-family: var(--sans);
+  font-size: 9px;
+}
+.tr-methodology a {
+  color: var(--gold);
+  text-decoration: none;
+}
+.tr-methodology a:hover { text-decoration: underline; }
+
 /* ── Footer ── */
 .footer {
   text-align: center;

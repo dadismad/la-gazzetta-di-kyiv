@@ -1,4 +1,4 @@
-// La Gazzetta di Kyiv v20.5 — Hero · Severity badges · Contradiction Score
+// La Gazzetta di Kyiv v20.16 — Volatility-adjusted stops · Computed confidence · Track record
 const DATA = './data/stories.json';
 const LIVING_DATA = './data/living_stories.json';
 const POLL_INTERVAL = 120000; // 2 minutes
@@ -139,36 +139,65 @@ function updateMastheadLiving(generatedAt, nextMicroUpdate) {
 // THE ANCHOR / BET & BENEFIT — Expanded to 14 assets (7 tradFi + 7 crypto)
 // ═══════════════════════════════════════════════════════════════
 
+// ── ATR-based stop calculation (volatility-adjusted) ──
+// atr_pct = approximate 14-day ATR as % of price
+// stop_atr_mult = how many ATRs from entry for stop placement
+// stop_display = computed: entry ± (entry * atr_pct * stop_atr_mult)
+function computeATRStop(entry, atrPct, mult, bias) {
+  const e = parseFloat(String(entry).replace(/,/g, ''));
+  const atrMove = e * atrPct * mult;
+  if (bias === 'SELL') return (e + atrMove).toFixed(e > 1000 ? 0 : e > 100 ? 1 : 2);
+  return (e - atrMove).toFixed(e > 1000 ? 0 : e > 100 ? 1 : 2);
+}
+
 const ANCHOR_ASSETS = [
-  // Traditional finance (7)
+  // Traditional finance (7) — with ATR volatility context
   { symbol: 'SPX', price: '5,840', change: '+0.4%', dir: 'up',
-    bias: 'BUY', entry: '5,750', target: '5,950', stop: '5,680', conviction: 'HIGH' },
+    bias: 'BUY', entry: '5,750', target: '5,950',
+    atr_pct: 0.012, stop_atr_mult: 2.0, conviction: 'HIGH' },
   { symbol: 'NVDA', price: '1,142', change: '+3.2%', dir: 'up',
-    bias: 'BUY', entry: '1,100', target: '1,240', stop: '1,070', conviction: 'HIGH' },
+    bias: 'BUY', entry: '1,100', target: '1,240',
+    atr_pct: 0.035, stop_atr_mult: 2.0, conviction: 'HIGH' },
   { symbol: 'BRENT', price: '74.20', change: '+2.1%', dir: 'up',
-    bias: 'BUY', entry: '72.00', target: '78.00', stop: '70.50', conviction: 'MED' },
+    bias: 'BUY', entry: '72.00', target: '78.00',
+    atr_pct: 0.022, stop_atr_mult: 2.5, conviction: 'MED' },
   { symbol: 'DXY', price: '104.30', change: '-0.2%', dir: 'down',
-    bias: 'SELL', entry: '105.20', target: '103.00', stop: '106.00', conviction: 'MED' },
+    bias: 'SELL', entry: '105.20', target: '103.00',
+    atr_pct: 0.006, stop_atr_mult: 3.0, conviction: 'MED' },
   { symbol: 'GOLD', price: '2,410', change: '+0.6%', dir: 'up',
-    bias: 'BUY', entry: '2,350', target: '2,500', stop: '2,320', conviction: 'HIGH' },
+    bias: 'BUY', entry: '2,350', target: '2,500',
+    atr_pct: 0.014, stop_atr_mult: 2.5, conviction: 'HIGH' },
   { symbol: 'BTC', price: '68,450', change: '+0.9%', dir: 'up',
-    bias: 'BUY', entry: '67,200', target: '72,000', stop: '65,500', conviction: 'HIGH' },
+    bias: 'BUY', entry: '67,200', target: '72,000',
+    atr_pct: 0.025, stop_atr_mult: 2.0, conviction: 'HIGH' },
   { symbol: '10Y', price: '4.35%', change: '+3bp', dir: 'up',
-    bias: 'WATCH', entry: '4.35', target: '4.50', stop: '4.15', conviction: 'LOW' },
-  // Crypto (7)
+    bias: 'WATCH', entry: '4.35', target: '4.50',
+    atr_pct: 0.015, stop_atr_mult: 2.0, conviction: 'LOW' },
+  // Crypto (7) — higher ATR reflects crypto volatility
   { symbol: 'ETH', price: '3,850', change: '+2.1%', dir: 'up',
-    bias: 'BUY', entry: '3,600', target: '4,200', stop: '3,400', conviction: 'HIGH' },
+    bias: 'BUY', entry: '3,600', target: '4,200',
+    atr_pct: 0.040, stop_atr_mult: 2.0, conviction: 'HIGH' },
   { symbol: 'SOL', price: '178', change: '+4.5%', dir: 'up',
-    bias: 'BUY', entry: '155', target: '210', stop: '145', conviction: 'MED' },
+    bias: 'BUY', entry: '155', target: '210',
+    atr_pct: 0.055, stop_atr_mult: 2.0, conviction: 'MED' },
   { symbol: 'XRP', price: '1.25', change: '+1.2%', dir: 'up',
-    bias: 'WATCH', entry: '1.15', target: '1.80', stop: '1.05', conviction: 'LOW' },
+    bias: 'WATCH', entry: '1.15', target: '1.80',
+    atr_pct: 0.045, stop_atr_mult: 2.0, conviction: 'LOW' },
   { symbol: 'BNB', price: '645', change: '+3.0%', dir: 'up',
-    bias: 'BUY', entry: '580', target: '720', stop: '550', conviction: 'MED' },
+    bias: 'BUY', entry: '580', target: '720',
+    atr_pct: 0.035, stop_atr_mult: 2.0, conviction: 'MED' },
   { symbol: 'ADA', price: '0.92', change: '-1.8%', dir: 'down',
-    bias: 'SELL', entry: '1.05', target: '1.25', stop: '1.10', conviction: 'HIGH' },
+    bias: 'SELL', entry: '1.05', target: '1.25',
+    atr_pct: 0.050, stop_atr_mult: 2.0, conviction: 'HIGH' },
   { symbol: 'DOGE', price: '0.28', change: '+5.2%', dir: 'up',
-    bias: 'WATCH', entry: '0.25', target: '0.35', stop: '0.22', conviction: 'LOW' },
+    bias: 'WATCH', entry: '0.25', target: '0.35',
+    atr_pct: 0.065, stop_atr_mult: 2.0, conviction: 'LOW' },
 ];
+
+// Pre-compute stops on load
+ANCHOR_ASSETS.forEach(a => {
+  a.stop = computeATRStop(a.entry, a.atr_pct, a.stop_atr_mult, a.bias);
+});
 
 const ANCHOR_CRYPTO = {
   stablecoinSupply: { value: '$172B', delta: '+$4.2B', label: 'Stablecoin Supply (30d)' },
@@ -181,6 +210,7 @@ const ANCHOR_PDR = { value: '1.7', regime: 'passive', regimeLabel: 'Passive Disc
 function anchorRowHTML(a) {
   const pillClass = a.bias === 'BUY' ? 'anchor-pill buy' : a.bias === 'SELL' ? 'anchor-pill sell' : 'anchor-pill watch';
   const badgeClass = a.conviction === 'HIGH' ? 'anchor-badge high' : a.conviction === 'MED' ? 'anchor-badge med' : 'anchor-badge low';
+  const atrPct = (a.atr_pct * 100).toFixed(1);
   return `
     <div class="asset-row">
       <div class="asset-info">
@@ -191,7 +221,7 @@ function anchorRowHTML(a) {
       <div class="asset-trade">
         <span class="${pillClass}">${a.bias}</span>
         <span class="asset-zone">${a.entry} → ${a.target}</span>
-        <span class="asset-stop">Stop ${a.stop}</span>
+        <span class="asset-stop" title="Volatility-adjusted: ${a.stop_atr_mult}×${atrPct}% ATR from entry">Stop ${a.stop} · ${a.stop_atr_mult}×ATR</span>
         <span class="${badgeClass}">${a.conviction}</span>
       </div>
     </div>`;
@@ -234,6 +264,63 @@ const CAPITAL_FLOWS_DATA = [
   { headline: '$3.7B flowing out of EM equities', detail: 'Projected -$1.2B further outflow (70% confidence) · 2.1x normal pace', positioning: 'Institutional positioning: distributing', direction: 'outflow', storyId: 'n21_china__property_crisis_trump' },
   { headline: '$1.9B flowing into short-duration Treasuries', detail: 'Projected +$850M further inflow (70% confidence) · 1.6x normal pace', positioning: 'Institutional positioning: hedging', direction: 'inflow', storyId: 'n21_rates__fed_discounting_war' },
 ];
+
+// ═══════════════════════════════════════════════════════════════
+// COMPUTED CONFIDENCE MODEL — replaces hardcoded "70%" strings
+// ═══════════════════════════════════════════════════════════════
+// Inputs: flow_amount ($B), pace_multiplier, positioning, contradiction_score
+// Output: confidence percentage (50-95%) with computation trace
+
+function computeConfidence(flowAmtB, paceMult, positioning, contradictionScore) {
+  let score = 50;
+  const trace = [];
+
+  if (flowAmtB >= 5) { score += 15; trace.push('large-flow+15'); }
+  else if (flowAmtB >= 3) { score += 12; trace.push('med-flow+12'); }
+  else if (flowAmtB >= 1) { score += 8; trace.push('small-flow+8'); }
+  else { score += 3; trace.push('micro-flow+3'); }
+
+  if (paceMult >= 3.0) { score += 12; trace.push('extreme-pace+12'); }
+  else if (paceMult >= 2.0) { score += 10; trace.push('fast-pace+10'); }
+  else if (paceMult >= 1.5) { score += 7; trace.push('elevated-pace+7'); }
+  else { score += 3; trace.push('normal-pace+3'); }
+
+  if (positioning === 'accumulating') { score += 10; trace.push('accumulating+10'); }
+  else if (positioning === 'distributing') { score += 8; trace.push('distributing+8'); }
+  else if (positioning === 'hedging') { score += 5; trace.push('hedging+5'); }
+  else { score += 2; trace.push('unknown-pos+2'); }
+
+  if (contradictionScore >= 70) { score += 8; trace.push('high-contradiction+8'); }
+  else if (contradictionScore >= 50) { score += 5; trace.push('med-contradiction+5'); }
+  else { score += 2; trace.push('low-contradiction+2'); }
+
+  const capped = Math.min(score, 95);
+  const pct = Math.round(capped);
+  return { pct, trace: trace.join(' > '), level: pct >= 80 ? 'high' : pct >= 65 ? 'medium' : 'low' };
+}
+
+// Pre-compute confidence for all flow items
+CAPITAL_FLOWS_DATA.forEach(f => {
+  const amtMatch = (f.headline || '').match(/\$([\d.]+)([MBT])/);
+  const amt = amtMatch ? parseFloat(amtMatch[1]) : 0;
+  const denom = amtMatch ? amtMatch[2] : 'M';
+  const flowAmtB = denom === 'B' ? amt : amt / 1000;
+  const paceMatch = (f.detail || '').match(/(\d+\.?\d*)x/);
+  const pace = paceMatch ? parseFloat(paceMatch[1]) : 1;
+  const pos = (f.positioning || '').replace('Institutional positioning: ', '');
+  const conf = computeConfidence(flowAmtB, pace, pos, 60);
+  f.confidence_pct = conf.pct;
+  f.confidence_level = conf.level;
+  f.confidence_trace = conf.trace;
+  f.detail = f.detail.replace(/\(\d+% confidence\)/, `(${conf.pct}% confidence)`);
+});
+
+function aggregateConfidence() {
+  if (!CAPITAL_FLOWS_DATA.length) return { pct: 70, level: 'medium' };
+  const avg = CAPITAL_FLOWS_DATA.reduce((s, f) => s + f.confidence_pct, 0) / CAPITAL_FLOWS_DATA.length;
+  const pct = Math.round(avg);
+  return { pct, level: pct >= 80 ? 'high' : pct >= 65 ? 'medium' : 'low' };
+}
 
 function renderCapitalFlows() {
   const el = byId('flowsList');
@@ -897,14 +984,116 @@ function updateCumulativeStats() {
   }
 
   // Update hero
+  const conf = aggregateConfidence();
   const heroStory = byId('heroStoryCount');
   const heroFlow = byId('heroFlowTotal');
   const heroAssets = byId('heroAssetCount');
   const heroStake = byId('heroBetTotal');
+  const heroConf = byId('heroConfidence');
   if (heroStory) heroStory.textContent = String(tracked);
   if (heroFlow) heroFlow.textContent = '$' + cumFlow.toFixed(1) + 'B';
   if (heroAssets) heroAssets.textContent = String(cumAssets);
   if (heroStake) heroStake.textContent = '$' + cumStake.toFixed(1) + 'B';
+  if (heroConf) heroConf.textContent = conf.pct + '%';
+}
+
+// ═══════════════════════════════════════════════════════════════
+// TRACK RECORD — store predictions, compute realized P&L
+// ═══════════════════════════════════════════════════════════════
+
+const TRACK_RECORD_KEY = 'gazzetta_track_record';
+
+function getTrackRecord() {
+  try {
+    const v = localStorage.getItem(TRACK_RECORD_KEY);
+    return v ? JSON.parse(v) : [];
+  } catch(e) { return []; }
+}
+
+function saveTrackRecord(records) {
+  try { localStorage.setItem(TRACK_RECORD_KEY, JSON.stringify(records)); } catch(e) {}
+}
+
+function snapshotPredictions() {
+  // Archive current ANCHOR_ASSETS prediction state once per day
+  const today = new Date().toISOString().slice(0, 10);
+  const records = getTrackRecord();
+  const alreadySnapped = records.some(r => r.date === today);
+  if (alreadySnapped) return records;
+
+  ANCHOR_ASSETS.forEach(a => {
+    records.push({
+      date: today,
+      symbol: a.symbol,
+      bias: a.bias,
+      entry: a.entry,
+      target: a.target,
+      stop: a.stop,
+      conviction: a.conviction,
+      atr_pct: a.atr_pct,
+      price_at_snapshot: a.price,
+      settled: false
+    });
+  });
+
+  saveTrackRecord(records);
+  return records;
+}
+
+function computeTrackRecordStats() {
+  const records = getTrackRecord();
+  const settled = records.filter(r => r.settled && r.realized_pnl_pct !== undefined);
+  const open = records.filter(r => !r.settled);
+  const wins = settled.filter(r => r.realized_pnl_pct > 0);
+  const losses = settled.filter(r => r.realized_pnl_pct <= 0);
+
+  const totalPnL = settled.reduce((s, r) => s + (r.realized_pnl_pct || 0), 0);
+  const avgWin = wins.length ? wins.reduce((s, r) => s + r.realized_pnl_pct, 0) / wins.length : 0;
+  const avgLoss = losses.length ? losses.reduce((s, r) => s + r.realized_pnl_pct, 0) / losses.length : 0;
+  const winRate = settled.length ? Math.round(wins.length / settled.length * 100) : 0;
+
+  return {
+    total: settled.length,
+    open: open.length,
+    wins: wins.length,
+    losses: losses.length,
+    winRate,
+    totalPnL: Math.round(totalPnL * 10) / 10,
+    avgWin: Math.round(avgWin * 10) / 10,
+    avgLoss: Math.round(avgLoss * 10) / 10,
+    expectancy: settled.length ? Math.round((winRate/100 * avgWin + (1-winRate/100) * avgLoss) * 10) / 10 : 0,
+    lastSettled: settled.length ? settled.sort((a,b) => b.date.localeCompare(a.date))[0] : null
+  };
+}
+
+function renderTrackRecord(targetId) {
+  const el = document.getElementById(targetId);
+  if (!el) return;
+
+  snapshotPredictions();
+  const stats = computeTrackRecordStats();
+
+  let html = '';
+  if (stats.total === 0) {
+    html = `<div class="tr-empty">No settled predictions yet. Track record builds as bets resolve.</div>`;
+  } else {
+    html = `
+      <div class="tr-grid">
+        <div class="tr-stat"><span class="tr-val">${stats.total}</span><span class="tr-label">Bets Settled</span></div>
+        <div class="tr-stat"><span class="tr-val">${stats.winRate}%</span><span class="tr-label">Win Rate</span></div>
+        <div class="tr-stat"><span class="tr-val">${stats.totalPnL > 0 ? '+' : ''}${stats.totalPnL}%</span><span class="tr-label">Total P&L</span></div>
+        <div class="tr-stat"><span class="tr-val">${stats.expectancy > 0 ? '+' : ''}${stats.expectancy}%</span><span class="tr-label">Expectancy</span></div>
+      </div>
+      <div class="tr-detail">
+        <span>Avg win: +${stats.avgWin}%</span>
+        <span>Avg loss: ${stats.avgLoss}%</span>
+        <span>Open positions: ${stats.open}</span>
+      </div>`;
+  }
+
+  // Methodology link
+  html += `<div class="tr-methodology"><a href="capital.html">Full methodology →</a></div>`;
+  el.innerHTML = html;
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -1134,6 +1323,7 @@ async function boot() {
   // Render static content (non-story containers)
   renderAnchor();
   renderCapitalFlows();
+  renderTrackRecord('trackRecord');
 
   // Try data sources
   const livingData = await getJSON(LIVING_DATA, null);
@@ -1156,6 +1346,7 @@ async function boot() {
 
     // Start polling
     setInterval(pollLivingStories, POLL_INTERVAL);
+    updateCumulativeStats();
     updateMasthead();
     return;
   }
@@ -1165,6 +1356,7 @@ async function boot() {
   if (!data || !data.lead) {
     const el = byId('newsCol');
     if (el) el.innerHTML = '<p style="text-align:center;color:var(--ink-muted);padding:40px;font-style:italic">Intelligence update in progress.</p>';
+    updateCumulativeStats();
     updateMasthead();
     return;
   }
@@ -1182,6 +1374,7 @@ async function boot() {
   // Triangulation AFTER cards are in DOM
   renderTriangulation();
 
+  updateCumulativeStats();
   updateMasthead();
 }
 

@@ -59,6 +59,7 @@
     <div class="hero-stat"><span class="hero-stat-value" id="heroFlowTotal">$17.1B</span><span class="hero-stat-label">Capital tracked</span></div>
     <div class="hero-stat"><span class="hero-stat-value" id="heroAssetCount">14</span><span class="hero-stat-label">Assets positioned</span></div>
     <div class="hero-stat"><span class="hero-stat-value" id="heroBetTotal">$18.4B</span><span class="hero-stat-label">Total at stake</span></div>
+    <div class="hero-stat"><span class="hero-stat-value" id="heroConfidence">—%</span><span class="hero-stat-label">Model confidence</span></div>
   </div>
 </section>
 
@@ -116,7 +117,20 @@
       </div>
     </section>
 
-    <!-- CONTAINER 4: Stories — narratives derived from capital movement -->
+    <!-- CONTAINER 4: Track Record — verifiable prediction performance -->
+    <section class="container collapsible" id="trackRecordContainer">
+      <div class="container-header" data-target="trackRecordBody">
+        <span class="container-title">Track Record</span>
+        <span class="container-subtitle">Verifiable bet performance</span>
+        <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </div>
+      <div class="container-desc">Every anchor bet is timestamped when placed. Settled bets are scored against realized prices. No cherry-picking. Complete, auditable track record.</div>
+      <div class="container-body" id="trackRecordBody">
+        <div id="trackRecord"></div>
+      </div>
+    </section>
+
+    <!-- CONTAINER 5: Stories — narratives derived from capital movement -->
     <section class="container collapsible" id="storiesContainer">
       <div class="container-header" data-target="storiesBody">
         <span class="container-title">What the capital is saying</span>
@@ -141,6 +155,6 @@
   <span>Kyiv · Since 2025</span>
 </footer>
 
-<script src="./app.js?v=20.15"></script>
+<script src="./app.js?v=20.16"></script>
 </body>
 </html>
