@@ -917,13 +917,65 @@ body {
   font-family: var(--sans);
   font-size: 11px;
   line-height: 1.4;
+  margin-bottom: 4px;
 }
 .flow-item.inflow { border-left-color: var(--green); background: rgba(5,150,105,0.04); }
 .flow-item.outflow { border-left-color: var(--red); background: rgba(220,38,38,0.04); }
-.flow-headline {
+
+/* Expandable flow header */
+.expandable-flow-header {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+}
+.expandable-flow-header:hover { opacity: 0.85; }
+.flow-headline-text { flex: 1; }
+
+/* Bet pill inside flow header */
+.cf-bet-pill {
+  font-size: 9px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-weight: 600;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+}
+.cf-bet-pill.buy { background: rgba(5,150,105,0.12); color: var(--green); }
+.cf-bet-pill.sell { background: rgba(220,38,38,0.10); color: var(--red); }
+.cf-bet-pill.watch { background: rgba(107,114,128,0.10); color: var(--ink-muted); }
+
+/* Expand icon */
+.flow-expand-icon {
+  display: flex;
+  align-items: center;
+  color: var(--ink-muted);
+  transition: transform 0.2s;
+}
+
+/* Expanded section */
+.flow-expanded {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--divider);
+}
+
+/* Bet detail pill */
+.cf-bet-detail-pill {
+  font-size: 9px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.cf-bet-detail-pill.buy { background: rgba(5,150,105,0.12); color: var(--green); }
+.cf-bet-detail-pill.sell { background: rgba(220,38,38,0.10); color: var(--red); }
+.cf-bet-detail-pill.watch { background: rgba(107,114,128,0.10); color: var(--ink-muted); }
+
+.flow-headline-text {
   font-weight: 700;
   color: var(--ink);
-  margin-bottom: 2px;
 }
 .flow-detail {
   color: var(--ink-light);

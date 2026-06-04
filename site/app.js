@@ -238,13 +238,77 @@ const CAPITAL_FLOWS_DATA = [
 function renderCapitalFlows() {
   const el = byId('flowsList');
   if (!el) return;
-  el.innerHTML = CAPITAL_FLOWS_DATA.map(f => `
-    <div class="flow-item ${f.direction}" data-flow-story-id="${f.storyId}">
-      <div class="flow-headline">${f.headline}</div>
+  el.innerHTML = CAPITAL_FLOWS_DATA.map(f => {
+    const anchorSym = matchAnchor(f.headline);
+    const anchorAsset = ANCHOR_ASSETS.find(a => a.symbol === anchorSym);
+    const betLine = anchorAsset
+      ? `<span class="cf-bet-pill ${anchorAsset.bias.toLowerCase()}">${anchorAsset.symbol} ${anchorAsset.bias} · ${anchorAsset.conviction}</span>`
+      : '';
+
+    return `
+    <div class="flow-item ${f.direction}" data-flow-story-id="${f.storyId}" data-anchor="${anchorSym}">
+      <div class="flow-headline expandable-flow-header">
+        <span class="flow-headline-text">${f.headline}</span>
+        ${betLine}
+        <span class="flow-expand-icon">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </span>
+      </div>
       <div class="flow-detail">${f.detail}</div>
       <div class="flow-detail" style="margin-top:2px;font-size:10px;color:var(--ink-muted)">${f.positioning}</div>
-    </div>
-  `).join('');
+      <div class="flow-expanded" style="display:none">
+        <div class="flow-story-link" data-story-id="${f.storyId}">
+          <span style="color:var(--ink-muted);font-size:10px;text-transform:uppercase;letter-spacing:0.05em">Linked story</span>
+          <span class="flow-story-title" style="font-size:12px;color:var(--ink);font-style:italic">Loading...</span>
+        </div>
+        <div class="flow-bet-detail" style="margin-top:6px">
+          ${anchorAsset ? `
+          <span style="color:var(--ink-muted);font-size:10px;text-transform:uppercase;letter-spacing:0.05em">Position bet</span>
+          <div style="display:flex;gap:8px;margin-top:2px">
+            <span class="cf-bet-detail-pill ${anchorAsset.bias.toLowerCase()}">${anchorAsset.symbol} ${anchorAsset.bias}</span>
+            <span style="font-size:10px;color:var(--ink-light)">Entry ${anchorAsset.entry} → Target ${anchorAsset.target} · Stop ${anchorAsset.stop} · Conviction ${anchorAsset.conviction}</span>
+          </div>
+          ` : '<span style="font-size:10px;color:var(--ink-muted)">No positioned bet for this flow</span>'}
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Wire expand/collapse on flow headers
+  el.querySelectorAll('.expandable-flow-header').forEach(header => {
+    header.addEventListener('click', function(e) {
+      const item = this.closest('.flow-item');
+      const expanded = item.querySelector('.flow-expanded');
+      const icon = this.querySelector('.flow-expand-icon svg');
+      if (expanded.style.display === 'none') {
+        expanded.style.display = 'block';
+        icon.style.transform = 'rotate(180deg)';
+
+        // Populate linked story title if not yet loaded
+        const storyLink = item.querySelector('.flow-story-title');
+        if (storyLink && storyLink.textContent === 'Loading...') {
+          const sid = item.dataset.flowStoryId;
+          const card = document.querySelector(`.card[data-story-id="${sid}"]`);
+          if (card) {
+            const h3 = card.querySelector('h3');
+            storyLink.textContent = h3 ? h3.textContent : 'Story found';
+            storyLink.style.cursor = 'pointer';
+            storyLink.style.color = 'var(--blue)';
+            storyLink.addEventListener('click', () => {
+              card.scrollIntoView({behavior:'smooth'});
+              card.classList.add('expanded');
+            });
+          } else {
+            storyLink.textContent = 'Story not yet loaded';
+          }
+        }
+      } else {
+        expanded.style.display = 'none';
+        icon.style.transform = 'rotate(0deg)';
+      }
+    });
+  });
+
   const sub = byId('cfSubtitle');
   if (sub) {
     const inflows = CAPITAL_FLOWS_DATA.filter(f => f.direction === 'inflow');
