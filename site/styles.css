@@ -1,32 +1,32 @@
 :root {
   /* ═══════════════════════════════════════════════
-     GAZZETTA EVENT ROOM — Casino Floor
-     White marble · Red carpet lines · Dark metallic blue trim · Subtle brass
+     GAZZETTA EVENT ROOM — Salon Privé
+     Midnight navy · 24K gold · Pure white · Burgundy
      ═══════════════════════════════════════════════ */
   
-  --paper:    #F8F9FA;   /* Near-white marble — bright, clean */
-  --white:    #FFFFFF;   /* Pure white — cards, content surfaces */
-  --bg-tertiary: #F0F2F5; /* Subtle off-white for hover states */
+  --paper:    #0F1629;   /* Midnight navy — the room */
+  --white:    #FFFFFF;   /* Pure white — cards, surfaces */
+  --bg-tertiary: #1A2240;
   
-  --gold:     #C9A84C;   /* Soft brass — subtle, refined, not dominant */
-  --gold-dark:#B08A3A;   /* Aged brass — hover/active */
-  --gold-pale:rgba(201,168,76,0.06); /* Brass wash */
+  --gold:     #D4AF37;   /* 24K gold — accents, borders, highlights */
+  --gold-dark:#B8960F;   /* Deep gold */
+  --gold-pale:rgba(212,175,55,0.08);
   
-  --sky:      #1F3A5F;   /* Dark metallic blue — structural trim, borders */
-  --sky-pale: rgba(31,58,95,0.06); /* Blue wash */
+  --sky:      #2A3F6E;   /* Deep navy blue — structural trim */
+  --sky-pale: rgba(42,63,110,0.08);
   
-  --red:      #C62828;   /* Rich casino red — carpet lines, danger, action */
-  --red-hover:#D32F2F;
-  --green:    #388E3C;   /* Casino felt green — success, inflows */
+  --red:      #8B0000;   /* Burgundy — danger, stops, VIP rope */
+  --red-hover:#A00000;
+  --green:    #2E7D32;   /* Emerald felt — success */
   
-  --ink:      #1A1A1A;   /* Near-black — high contrast on white */
-  --ink-light:#4B5563;   /* Graphite grey — secondary */
-  --ink-muted:#9CA3AF;   /* Light grey — muted/metadata */
-  --ink-card:       #1A1A1A;   /* Card headings */
-  --ink-card-light: #6B7280;   /* Card body */
+  --ink:      #E8ECF2;   /* Platinum white — text on dark */
+  --ink-light:#8899B4;   /* Muted silver */
+  --ink-muted:#5A6A84;   /* Faded silver */
+  --ink-card:       #1A1D28;  /* Deep ink — card headings on white */
+  --ink-card-light: #5A5F6E;  /* Grey — card body */
   
-  --divider:       #D1D5DB;  /* Light grey border */
-  --divider-light: #E5E7EB;  /* Subtle hairline */
+  --divider:       #2D3555;  /* Navy divider */
+  --divider-light: #E8E8EC;  /* Light divider for cards */
   
   --display: 'DM Serif Display', Georgia, serif;
   --body:    'Source Serif 4', Georgia, serif;
@@ -51,8 +51,8 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 4px 12px;
-  background: var(--sky);
-  border-bottom: 2px solid var(--red);
+  background: #1F3A5F;
+  border-bottom: 2px solid var(--gold);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -89,7 +89,7 @@ body {
 .masthead-name {
   font-family: var(--display);
   font-size: 20px;
-  color: #FFFFFF;
+  color: var(--gold);
   white-space: nowrap;
 }
 .masthead-right {
@@ -159,8 +159,8 @@ body {
 }
 .card:hover, .card:active { border-color: var(--gold); }
 .card.lead {
-  border-left: 3px solid var(--red);
-  background: rgba(198,40,40,0.03);
+  border-left: 3px solid var(--gold);
+  background: rgba(212,175,55,0.06);
 }
 .card .card-body {
   display: flex;
@@ -207,7 +207,8 @@ body {
   display: flex;
   align-items: baseline;
   gap: 8px;
-  margin-bottom: 2px;
+  margin-bottom: 0;
+  flex-wrap: wrap;
 }
 .card .sector {
   font-family: var(--sans);
@@ -221,16 +222,32 @@ body {
 .card.lead .sector { color: var(--gold); }
 .card h3 {
   font-family: var(--display);
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.15;
   color: var(--ink-card);
+  cursor: pointer;
+  flex: 1;
+  min-width: 0;
 }
-.card.lead h3 { font-size: 18px; line-height: 1.15; }
+.card.lead h3 { font-size: 17px; }
 .card .summary {
   font-size: 12px;
   line-height: 1.3;
   color: var(--ink-card-light);
+}
+
+/* Collapsed detail — hidden until click */
+.card-detail-hidden {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s;
+}
+.card.expanded .card-detail-hidden {
+  max-height: 600px;
+  opacity: 1;
+  margin-top: 8px;
 }
 
 /* Expanded detail */

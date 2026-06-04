@@ -224,27 +224,19 @@ const ANCHOR_PDR = { value: '1.7', regime: 'passive', regimeLabel: 'Passive Disc
 
 function anchorRowHTML(a) {
   const dotHTML = a.changeDot ? '<span class="change-dot"></span>' : '';
-  const regimeClass = a.regime === 'trending' ? 'trending' : 'ranging';
-  const convClass = a.conviction.status === 'valid' ? 'valid' : 'invalidated';
-  const convPrefix = a.conviction.status === 'valid' ? '✓' : '✗';
+  const arrow = a.dir === 'up' ? '▲' : '▼';
+  const arrowClass = a.dir === 'up' ? 'up' : 'down';
   return `
     <div class="asset-row">
       <div class="asset-info">
         <span class="asset-symbol">${a.symbol}</span>
-        <span class="asset-name">${a.name}</span>
         <span class="asset-price">$${a.price}</span>
-        <span class="asset-change ${a.dir}">${a.change}${dotHTML}</span>
+        <span class="asset-change ${a.dir}">${arrow} ${a.change}${dotHTML}</span>
       </div>
-      <div class="anchor-meta">
-        <span class="anchor-regime ${regimeClass}">${a.regime}</span>
-        <span class="anchor-atr">ATR ${a.atr} · Vol ${a.volPctile} %ile</span>
-      </div>
-      <div class="anchor-levels">
+      <div class="asset-key-line">
         <span class="anchor-key-level ${a.keyLevel.type}">${a.keyLevel.label}</span>
-        <span class="anchor-key-level-note">${a.keyLevel.note}</span>
-        ${a.gammaWall ? `<span class="anchor-gamma">γ ${a.gammaWall.level} (${a.gammaWall.contracts})</span>` : ''}
+        <span class="anchor-conviction ${a.conviction.status}">${a.conviction.status === 'valid' ? '✓' : '✗'} ${a.conviction.text}</span>
       </div>
-      <div class="anchor-conviction ${convClass}">→ ${convPrefix} ${a.conviction.text}</div>
     </div>`;
 }
 
@@ -369,29 +361,31 @@ function livingCardHTML(story, isLead) {
              data-update-count="${story.update_count}"
              data-last-updated="${story.last_updated || ''}"
              data-pillar="${story.paradigm_pillar || ''}">
-      <div class="living-badge">
-        <span class="${dotClass}"></span>
-        ${updateBadge}
-        ${updatedAgo}
-      </div>
-      <div class="card-body">
+      <div class="card-body" onclick="this.closest('.card').classList.toggle('expanded')">
         <div class="card-text">
-          ${claimHTML}
           <div class="card-head">
+            ${claimHTML}
             ${sector ? `<span class="category-tag ${sector}">${SECTOR_LABELS[sector] || sector}</span>` : ''}
             <h3 class="${story.original_headline ? 'headline-locked' : ''}" data-original="${story.original_headline || ''}">${story.headline}</h3>
           </div>
-          ${reality ? `<p class="summary">${reality}</p>` : ''}
-          ${theySay || reality ? `
-          <div class="detail">
-            ${theySay ? `<div class="con-they"><span class="con-label">They say</span>${theySay}</div>` : ''}
-            ${reality ? `<div class="con-real"><span class="con-label">Reality</span>${reality}</div>` : ''}
-          </div>` : ''}
-          ${story.portfolio_implication ? `
-          <div class="the-play">
-            <span class="pi-label">THE PLAY</span>
-            <span class="pi-text">${story.portfolio_implication}</span>
-          </div>` : ''}
+          <div class="card-detail-hidden">
+            ${reality ? `<p class="summary">${reality}</p>` : ''}
+            ${theySay || reality ? `
+            <div class="detail">
+              ${theySay ? `<div class="con-they"><span class="con-label">They say</span>${theySay}</div>` : ''}
+              ${reality ? `<div class="con-real"><span class="con-label">Reality</span>${reality}</div>` : ''}
+            </div>` : ''}
+            ${story.capital_flow ? `
+            <div class="capital-flow-block">
+              <span class="cf-label">CAPITAL FLOW</span>
+              ${story.capital_flow}
+            </div>` : ''}
+            ${story.portfolio_implication ? `
+            <div class="the-play">
+              <span class="pi-label">THE PLAY</span>
+              <span class="pi-text">${story.portfolio_implication}</span>
+            </div>` : ''}
+          </div>
         </div>
         <div class="card-photo">
           <img src="${photoUrl}" alt="${sector}" loading="lazy" onerror="this.parentElement.style.display='none'">
