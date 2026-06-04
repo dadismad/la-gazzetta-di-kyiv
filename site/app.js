@@ -284,19 +284,24 @@ function computeTriangulation(story, flow, anchorAsset) {
 
   // Flow alignment (max 35)
   if (flow) {
-    const amt = parseFloat(flow.amount);
-    const denom = flow.denomination || flow.denom || 'B';
+    // Extract amount from headline: "$4.2B flowing..." → { amt: 4.2, denom: 'B' }
+    const amtMatch = (flow.headline || '').match(/\$([\d.]+)([MBT])/);
+    const amt = amtMatch ? parseFloat(amtMatch[1]) : 0;
+    const denom = amtMatch ? amtMatch[2] : 'M';
+    const paceMatch = (flow.detail || '').match(/(\d+\.?\d*)x/);
+    const pace = paceMatch ? parseFloat(paceMatch[1]) : 1;
+    const direction = flow.direction || 'none';
+    
     if (denom === 'B' && amt >= 3) score += 15;
     else if (denom === 'B' && amt >= 1) score += 10;
     else score += 5;
-    const pace = parseFloat(flow.pace) || 1;
     if (pace >= 2.5) score += 10;
     else if (pace >= 1.5) score += 7;
     else score += 4;
     if (flow.positioning === 'accumulating') score += 10;
     else if (flow.positioning === 'distributing') score += 8;
     else score += 5;
-    signals.push({label: 'Flow', cls: 'flow', val: `${flow.direction} $${amt}${denom} ${pace}x`});
+    signals.push({label: 'Flow', cls: 'flow', val: `${direction} $${amt}${denom} ${pace}x`});
   } else {
     signals.push({label: 'Flow', cls: 'flow', val: 'none'});
   }
