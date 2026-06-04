@@ -7,20 +7,20 @@ URL = "https://pureciclismo.github.io/gazzetta-di-kyiv/"
 
 INDEX_CHECKS = {
     "brand_title": r"La Gazzetta di Kyiv",
-    "stories_heading": r"Stories in Play",
-    "stories_container": r"id=\"stories-in-play\"",
-    "lead_story_mount": r"id=\"leadStory\"",
-    "focus_influence_mount": r"id=\"focusInfluence\"",
-    "appjs_script_tag": r"<script\s+src=\"\./app\.js\"",
+    "stories_container": r"STORIES IN PLAY",
+    "anchor_container": r"THE ANCHOR",
+    "capital_flows_container": r"CAPITAL FLOWS REPORT",
+    "collapsible_class": r"container\.collapsible",
+    "appjs_script_tag": r"<script\s+src=\"./app\.js\?v=19\"",
 }
 
 APPJS_CHECKS = {
     "boot_function": r"async\s+function\s+boot\s*\(",
-    "story_body_renderer": r"function\s+storyBody\s*\(",
-    "setups_feed": r"\./api/v1/home/setups\.json",
-    "narratives_feed": r"\./data/narratives\.json",
-    "focus_stakes_block": r"focusStakes",
-    "focus_bet_block": r"focusBet",
+    "story_renderer": r"appendStoryCard",
+    "capital_flow_renderer": r"renderCapitalFlows",
+    "collapsible_wiring": r"wireCollapsibleContainers",
+    "anchor_expanded": r"ANCHOR_ASSETS",
+    "deduplication": r"filter\(s\s=>\s+s\.story_id\s*!==\s*leadId\)",
 }
 
 
@@ -31,7 +31,7 @@ def _fetch(url: str) -> str:
 
 def main() -> int:
     html = _fetch(URL)
-    appjs = _fetch(URL + "app.js")
+    appjs = _fetch(URL + "app.js?v=19")
     failed = []
 
     for name, pattern in INDEX_CHECKS.items():
