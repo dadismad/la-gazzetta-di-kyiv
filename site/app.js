@@ -186,50 +186,94 @@ function updateMastheadLiving(generatedAt, nextMicroUpdate) {
   metaEl.textContent = `${time} ${next}`;
 }
 
-// ── Bet&Benefit Panel ──
-const ASSETS = [
+// ── THE ANCHOR ──
+// Static anchor: key levels persist weekly; price/regime/vol update per cycle
+const ANCHOR_ASSETS = [
   { symbol: 'BZ=F', name: 'Brent Crude', price: '74.20', change: '+2.1%', dir: 'up',
-    h2h_price: '75.80', h2h_vol: '+34%', h2h_bias: 'bullish', repricing: '68% of move' },
-  { symbol: 'USD/JPY', name: 'Dollar-Yen', price: '159.85', change: '-0.4%', dir: 'down',
-    h2h_price: '159.10', h2h_vol: '+22%', h2h_bias: 'bearish', repricing: '41% of move' },
+    regime: 'trending', atr: '$1.85', volPctile: '78th',
+    keyLevel: { type: 'support', label: '$72.00', note: 'tested 3x' },
+    gammaWall: { level: '$74.50', contracts: '+8K' },
+    conviction: { text: 'long $72', status: 'valid' } },
   { symbol: 'NVDA', name: 'NVIDIA', price: '1,142', change: '+3.2%', dir: 'up',
-    h2h_price: '1,190', h2h_vol: '+58%', h2h_bias: 'bullish', repricing: '73% of move' },
-  { symbol: 'SOXX', name: 'Semiconductor ETF', price: '248.60', change: '+1.8%', dir: 'up',
-    h2h_price: '256', h2h_vol: '+31%', h2h_bias: 'bullish', repricing: '55% of move' },
-  { symbol: 'XLE', name: 'Energy Select', price: '92.45', change: '+1.5%', dir: 'up',
-    h2h_price: '94.20', h2h_vol: '+27%', h2h_bias: 'bullish', repricing: '71% of move' },
-  { symbol: 'DXY', name: 'Dollar Index', price: '104.30', change: '-0.2%', dir: 'down',
-    h2h_price: '103.80', h2h_vol: '+18%', h2h_bias: 'bearish', repricing: '34% of move' },
+    regime: 'trending', atr: '$28.50', volPctile: '62nd',
+    keyLevel: { type: 'gamma-flip', label: '$1,140', note: 'flip zone ⚠' },
+    gammaWall: { level: '$1,165', contracts: '+12K' },
+    conviction: { text: 'break $1,140→short', status: 'invalidated' } },
   { symbol: 'BTC', name: 'Bitcoin', price: '68,450', change: '+0.9%', dir: 'up',
-    h2h_price: '69,200', h2h_vol: '+41%', h2h_bias: 'bullish', repricing: '26% of move' },
+    regime: 'ranging', atr: '$2,140', volPctile: '91st', changeDot: true,
+    keyLevel: { type: 'support', label: '$67,200', note: 'liquidity wall' },
+    gammaWall: { level: '$70K', contracts: '+15K' },
+    conviction: { text: 'floor $67K', status: 'valid' } },
+  { symbol: 'XLE', name: 'Energy Select', price: '92.45', change: '+1.5%', dir: 'up',
+    regime: 'trending', atr: '$1.60', volPctile: '71st',
+    keyLevel: { type: 'support', label: '$90.50', note: '20d VWAP' },
+    gammaWall: { level: '$94.00', contracts: '+5K' },
+    conviction: { text: 'long dips', status: 'valid' } },
+  { symbol: 'DXY', name: 'Dollar Index', price: '104.30', change: '-0.2%', dir: 'down',
+    regime: 'ranging', atr: '$0.55', volPctile: '44th',
+    keyLevel: { type: 'resistance', label: '$105.20', note: '50d MA' },
+    gammaWall: { level: '$103.80', contracts: '+3K' },
+    conviction: { text: 'fade $105', status: 'valid' } },
 ];
+const ANCHOR_CRYPTO = {
+  stablecoinSupply: { value: '$172B', delta: '+$4.2B', label: 'Stablecoin Supply (30d)' },
+  exchangeNetflow: { value: '-$890M', delta: '7d outflow', label: 'Exchange Netflow' },
+  fundingRate: { value: '-0.01%', regime: 'neutral', label: 'Aggregate Funding' },
+};
+const ANCHOR_PDR = { value: '1.7', regime: 'passive', regimeLabel: 'Passive Discovery', trend: '▁▃▅▆▇' };
 
-function assetRowHTML(a) {
+function anchorRowHTML(a) {
+  const dotHTML = a.changeDot ? '<span class="change-dot"></span>' : '';
+  const regimeClass = a.regime === 'trending' ? 'trending' : 'ranging';
+  const convClass = a.conviction.status === 'valid' ? 'valid' : 'invalidated';
+  const convPrefix = a.conviction.status === 'valid' ? '✓' : '✗';
   return `
     <div class="asset-row">
       <div class="asset-info">
         <span class="asset-symbol">${a.symbol}</span>
         <span class="asset-name">${a.name}</span>
         <span class="asset-price">$${a.price}</span>
-        <span class="asset-change ${a.dir}">${a.change}</span>
+        <span class="asset-change ${a.dir}">${a.change}${dotHTML}</span>
       </div>
-      <div class="asset-projection ${a.h2h_bias}">
-        <span class="proj-label">2h→</span>
-        <span class="proj-price">$${a.h2h_price}</span>
-        <span class="proj-vol">Vol ${a.h2h_vol}</span>
+      <div class="anchor-meta">
+        <span class="anchor-regime ${regimeClass}">${a.regime}</span>
+        <span class="anchor-atr">ATR ${a.atr} · Vol ${a.volPctile} %ile</span>
       </div>
-      <div class="asset-repricing">
-        <span class="repricing-pct">${a.repricing}</span>
-        <span class="repricing-label">narrative-driven</span>
+      <div class="anchor-levels">
+        <span class="anchor-key-level ${a.keyLevel.type}">${a.keyLevel.label}</span>
+        <span class="anchor-key-level-note">${a.keyLevel.note}</span>
+        ${a.gammaWall ? `<span class="anchor-gamma">γ ${a.gammaWall.level} (${a.gammaWall.contracts})</span>` : ''}
       </div>
+      <div class="anchor-conviction ${convClass}">→ ${convPrefix} ${a.conviction.text}</div>
     </div>`;
 }
 
-function renderAssets() {
+function cryptoSignalHTML() {
+  return `
+    <div class="asset-row anchor-crypto">
+      <div class="anchor-crypto-row"><span class="anchor-crypto-label">${ANCHOR_CRYPTO.stablecoinSupply.label}</span><span class="anchor-crypto-value">${ANCHOR_CRYPTO.stablecoinSupply.value} <span class="asset-change up">${ANCHOR_CRYPTO.stablecoinSupply.delta}</span></span></div>
+      <div class="anchor-crypto-row"><span class="anchor-crypto-label">${ANCHOR_CRYPTO.exchangeNetflow.label}</span><span class="anchor-crypto-value">${ANCHOR_CRYPTO.exchangeNetflow.value} <span class="anchor-crypto-sub">${ANCHOR_CRYPTO.exchangeNetflow.delta}</span></span></div>
+      <div class="anchor-crypto-row"><span class="anchor-crypto-label">${ANCHOR_CRYPTO.fundingRate.label}</span><span class="anchor-crypto-value">${ANCHOR_CRYPTO.fundingRate.value} <span class="anchor-crypto-sub">${ANCHOR_CRYPTO.fundingRate.regime}</span></span></div>
+    </div>`;
+}
+
+function renderPDR(elId) {
+  const el = document.getElementById(elId);
+  if (!el) return;
+  el.querySelector('.pdr-value').textContent = ANCHOR_PDR.value;
+  const regimeEl = el.querySelector('.pdr-regime');
+  regimeEl.textContent = ANCHOR_PDR.regimeLabel;
+  regimeEl.className = 'pdr-regime ' + ANCHOR_PDR.regime;
+  el.querySelector('.pdr-trend').textContent = ANCHOR_PDR.trend;
+}
+
+function renderAnchor() {
   const el = byId('assetList');
-  if (el) el.innerHTML = ASSETS.map(assetRowHTML).join('');
+  if (el) el.innerHTML = ANCHOR_ASSETS.map(anchorRowHTML).join('') + cryptoSignalHTML();
   const bbBody = byId('bbSheetBody');
-  if (bbBody) bbBody.innerHTML = ASSETS.map(assetRowHTML).join('');
+  if (bbBody) bbBody.innerHTML = ANCHOR_ASSETS.map(anchorRowHTML).join('') + cryptoSignalHTML();
+  renderPDR('pdrGauge');
+  renderPDR('pdrGaugeMobile');
 }
 
 // ── Mobile Bet&Benefit toggle ──
@@ -279,8 +323,6 @@ function assetClaimHTML(claim) {
       <span class="claim-asset">${claim.ticker || claim.asset}</span>
       <span class="asset-delta monospace">${deltaStr}</span>
       <span class="asset-delta ${changeClass}">${claim.change}</span>
-      <span class="claim-sep">|</span>
-      <span class="asset-delta">narrative-driven ${claim.narrative_driven_pct}%</span>
     </span>`;
 }
 
@@ -346,8 +388,8 @@ function livingCardHTML(story, isLead) {
             ${reality ? `<div class="con-real"><span class="con-label">Reality</span>${reality}</div>` : ''}
           </div>` : ''}
           ${story.portfolio_implication ? `
-          <div class="portfolio-implication">
-            <span class="pi-label">POSITIONING</span>
+          <div class="the-play">
+            <span class="pi-label">THE PLAY</span>
             <span class="pi-text">${story.portfolio_implication}</span>
           </div>` : ''}
         </div>
@@ -427,17 +469,20 @@ function patchStoryCard(card, story) {
     conReal.innerHTML = `<span class="con-label">Reality</span>${story.reality}`;
   }
 
-  // Update portfolio implication
+  // Update portfolio implication → THE PLAY
   if (story.portfolio_implication) {
-    const piEl = card.querySelector('.portfolio-implication');
+    const piEl = card.querySelector('.the-play, .portfolio-implication');
     if (piEl) {
-      piEl.querySelector('.pi-text').textContent = story.portfolio_implication;
+      const textEl = piEl.querySelector('.pi-text');
+      if (textEl) textEl.textContent = story.portfolio_implication;
+      const labelEl = piEl.querySelector('.pi-label');
+      if (labelEl) labelEl.textContent = 'THE PLAY';
     } else {
-      // Insert new portfolio_implication block after detail section
+      // Insert new THE PLAY block after detail section
       const detailEl = card.querySelector('.detail');
       const piHTML = `
-        <div class="portfolio-implication">
-          <span class="pi-label">POSITIONING</span>
+        <div class="the-play">
+          <span class="pi-label">THE PLAY</span>
           <span class="pi-text">${story.portfolio_implication}</span>
         </div>`;
       if (detailEl) {
@@ -785,8 +830,8 @@ function cardHTML(story, idx, isLead) {
             ${reality ? `<div class="con-real"><span class="con-label">Reality</span>${reality}</div>` : ''}
           </div>` : ''}
           ${story.portfolio_implication ? `
-          <div class="portfolio-implication">
-            <span class="pi-label">POSITIONING</span>
+          <div class="the-play">
+            <span class="pi-label">THE PLAY</span>
             <span class="pi-text">${story.portfolio_implication}</span>
           </div>` : ''}
         </div>
@@ -826,7 +871,7 @@ async function boot() {
     if (el) el.innerHTML = all.map((s, i) => livingCardHTML(s, i === 0)).join('');
 
     updateMastheadLiving(livingData.generated_at, livingData.next_micro_update);
-    renderAssets();
+    renderAnchor();
     wireBBToggle();
 
     // Wire click handlers for living story cards
@@ -845,7 +890,7 @@ async function boot() {
   if (!data || !data.lead) {
     const el = byId('newsCol');
     if (el) el.innerHTML = '<p style="text-align:center;color:var(--ink-muted);padding:40px;font-style:italic">Intelligence update in progress.</p>';
-    renderAssets();
+    renderAnchor();
     wireBBToggle();
     return;
   }
@@ -858,7 +903,7 @@ async function boot() {
   applyFilter(savedPillar);
 
   updateMasthead();
-  renderAssets();
+  renderAnchor();
   wireExpand();
   wireBBToggle();
 }

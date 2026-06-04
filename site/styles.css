@@ -270,8 +270,8 @@ body {
 .card .detail .con-they .con-label { color: var(--ink-muted); }
 .card .detail .con-real .con-label { color: var(--sky); }
 
-/* ── Portfolio Implication (POSITIONING label) ── */
-.portfolio-implication {
+/* ── THE PLAY (formerly Portfolio Implication) ── */
+.portfolio-implication, .the-play {
   margin-top: 8px;
   padding: 5px 8px;
   border-left: 2px solid var(--gold);
@@ -280,7 +280,7 @@ body {
   line-height: 1.4;
   color: var(--ink-light);
 }
-.portfolio-implication .pi-label {
+.portfolio-implication .pi-label, .the-play .pi-label {
   font-family: var(--sans);
   font-size: 7px;
   font-weight: 700;
@@ -290,12 +290,12 @@ body {
   display: block;
   margin-bottom: 2px;
 }
-.portfolio-implication .pi-text {
+.portfolio-implication .pi-text, .the-play .pi-text {
   font-style: italic;
   font-size: 11px;
   color: var(--ink-light);
 }
-.card.lead .portfolio-implication {
+.card.lead .portfolio-implication, .card.lead .the-play {
   background: #FAF6EC;
   border-left-color: var(--gold-dark);
 }
@@ -1099,4 +1099,185 @@ body {
   .timeline-state {
     border-top-color: #3A3730;
   }
+}
+
+/* ════════════════════════════════════════════════
+   THE ANCHOR REDESIGN — 6-persona consensus
+   ════════════════════════════════════════════════ */
+
+/* ── PDR Gauge ── */
+.pdr-gauge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, var(--gold-pale), #FDF8EE);
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+}
+.pdr-label {
+  font-family: var(--sans);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+.pdr-value {
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--ink);
+}
+.pdr-regime {
+  font-family: var(--sans);
+  font-size: 7px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin-left: auto;
+}
+.pdr-regime.passive   { background: #E8F4F0; color: #1B7A1B; }
+.pdr-regime.contested { background: #FDF3E0; color: #B8860B; }
+.pdr-regime.active    { background: var(--gold-pale); color: var(--gold-dark); }
+.pdr-trend {
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--ink-muted);
+  font-family: var(--sans);
+}
+
+/* ── THE PLAY OF THE DAY ── */
+.play-of-day {
+  background: linear-gradient(135deg, #FDF3E0, #FFF8EC);
+  border: 2px solid var(--gold);
+  border-left: 4px solid var(--gold-dark);
+  padding: 10px 14px;
+  margin-bottom: 10px;
+}
+.pod-header {
+  font-family: var(--sans);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 8px;
+}
+.pod-body {
+  font-family: var(--body);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.pod-body .pod-trade {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.pod-body .pod-levels {
+  font-size: 12px;
+  color: var(--ink-light);
+  margin-bottom: 4px;
+}
+.pod-body .pod-why {
+  font-size: 11px;
+  color: var(--ink-muted);
+  font-style: italic;
+}
+.pod-body .pod-conviction {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-right: 6px;
+}
+.pod-body .pod-conviction.high { background: #E8F4F0; color: #1B7A1B; }
+.pod-body .pod-conviction.med  { background: #FDF3E0; color: #B8860B; }
+
+/* ── Capital Flow block (in story detail) ── */
+.capital-flow-block {
+  margin-top: 8px;
+  padding: 5px 8px;
+  border-left: 2px solid var(--gold);
+  background: #FDFBF5;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--ink-light);
+}
+.capital-flow-block .cf-label {
+  font-family: var(--sans);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* ── THE ANCHOR asset row (extended format) ── */
+.anchor-key-level {
+  font-family: var(--sans);
+  font-size: 8px;
+  padding: 2px 6px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-right: 4px;
+}
+.anchor-key-level.support    { background: #E8F4F0; color: #1B7A1B; }
+.anchor-key-level.resistance { background: #FDECEC; color: #A82020; }
+.anchor-key-level.gamma-flip { background: #FDF3E0; color: #B8860B; }
+
+.anchor-regime {
+  font-family: var(--sans);
+  font-size: 7px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+.anchor-regime.trending { background: #E8F4F0; color: #1B7A1B; }
+.anchor-regime.ranging  { background: #F5F1E8; color: var(--ink-muted); }
+
+.anchor-atr {
+  font-family: var(--sans);
+  font-size: 8px;
+  color: var(--ink-muted);
+}
+
+.anchor-conviction {
+  font-family: var(--sans);
+  font-size: 8px;
+  margin-top: 2px;
+}
+.anchor-conviction.valid      { color: var(--green); }
+.anchor-conviction.invalidated { color: var(--red); }
+
+/* ── Change dot (structural shifts) ── */
+.change-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  background: var(--red);
+  margin-left: 3px;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* ── Responsive: THE ANCHOR on mobile ── */
+@media (max-width: 600px) {
+  .pdr-gauge { padding: 5px 6px; }
+  .pdr-value { font-size: 14px; }
+  .play-of-day { padding: 8px 10px; }
+  .pod-body .pod-trade { font-size: 13px; }
 }

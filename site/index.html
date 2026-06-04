@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=11"/>
+  <link rel="stylesheet" href="./styles.css?v=12"/>
 </head>
 <body>
 
@@ -27,39 +27,42 @@
       </svg>
     </span>
     <span class="masthead-name">La Gazzetta di Kyiv</span>
-    <span class="masthead-machiavelli" title="Machiavelli — Power & Strategy" aria-hidden="true">⚜</span>
+    <span class="masthead-machiavelli" title="Machiavelli — Khmelnytsky's Anchor" aria-hidden="true">⚔⚔</span>
   </div>
   <div class="masthead-right">
     <span class="masthead-tagline">The stories that move markets</span>
-    <button class="bb-toggle" id="bbToggle" title="Bet&Benefit" aria-label="Toggle Bet&Benefit panel">📊</button>
+    <button class="bb-toggle" id="bbToggle" title="THE ANCHOR" aria-label="Toggle anchor panel">⚓</button>
     <span class="masthead-meta" id="mastheadMeta">—</span>
   </div>
 </header>
 
-<!-- Thesis/Pillar Filter Bar -->
-<div class="thesis-filter-bar" id="thesisFilterBar">
-  <button class="thesis-filter-btn active" data-pillar="ALL">ALL</button>
-  <button class="thesis-filter-btn" data-pillar="CHINA ASCENDANCY">CHINA ASCENDANCY</button>
-  <button class="thesis-filter-btn" data-pillar="DOLLAR DECLINE">DOLLAR DECLINE</button>
-  <button class="thesis-filter-btn" data-pillar="EU FRAGMENTATION">EU FRAGMENTATION</button>
-  <button class="thesis-filter-btn" data-pillar="ABUNDANCE TECH">ABUNDANCE TECH</button>
-  <button class="thesis-filter-btn" data-pillar="BLOCKCHAIN AGENTIC">BLOCKCHAIN AGENTIC</button>
-  <button class="thesis-filter-btn" data-pillar="LONGEVITY">LONGEVITY</button>
-</div>
+<!-- Thesis/Pillar Filter Bar — hidden: internal editorial lens, not public-facing UI -->
+<!-- The lens still functions: stories are tagged and filterable via JS, just not exposed as buttons -->
 
 <div class="layout">
   <!-- LEFT: Vertical news list -->
   <section class="news-col" id="newsCol">
-    <!-- JS-populated -->
+    <!-- THE PLAY OF THE DAY -->
+    <div class="play-of-day" id="playOfDay" style="display:none">
+      <div class="pod-header">🔥 THE PLAY OF THE DAY</div>
+      <div class="pod-body"></div>
+    </div>
+    <!-- JS-populated story cards -->
   </section>
 
-  <!-- RIGHT: Asset panel (desktop) -->
+  <!-- RIGHT: THE ANCHOR (desktop) -->
   <aside class="asset-panel" id="assetPanel">
-    <h3>Bet&Benefit</h3>
+    <h3>⚔ THE ANCHOR</h3>
+    <div class="pdr-gauge" id="pdrGauge">
+      <span class="pdr-label">PDR</span>
+      <span class="pdr-value">—</span>
+      <span class="pdr-regime">—</span>
+      <span class="pdr-trend">▁▁▁▁▁</span>
+    </div>
     <div class="asset-list" id="assetList">
       <!-- JS-populated -->
     </div>
-    <div class="asset-note">2-hour horizon projections on price direction & volume</div>
+    <div class="asset-note">Key levels · Weekly anchor · Updated Tue 10:00 EET</div>
   </aside>
 </div>
 
@@ -67,13 +70,19 @@
 <div class="bb-overlay" id="bbOverlay">
   <div class="bb-sheet" id="bbSheet">
     <div class="bb-sheet-header">
-      <h3>Bet&Benefit</h3>
+      <h3>⚔ THE ANCHOR</h3>
       <button class="bb-close" id="bbClose" aria-label="Close">✕</button>
+    </div>
+    <div class="pdr-gauge" id="pdrGaugeMobile">
+      <span class="pdr-label">PDR</span>
+      <span class="pdr-value">—</span>
+      <span class="pdr-regime">—</span>
+      <span class="pdr-trend">▁▁▁▁▁</span>
     </div>
     <div class="bb-sheet-body" id="bbSheetBody">
       <!-- JS-populated -->
     </div>
-    <div class="asset-note">2-hour horizon projections on price direction & volume</div>
+    <div class="asset-note">Key levels · Weekly anchor · Updated Tue 10:00 EET</div>
   </div>
 </div>
 
@@ -85,6 +94,6 @@
   <span>Kyiv · Since 2025</span>
 </footer>
 
-<script src="./app.js?v=11"></script>
+<script src="./app.js?v=12"></script>
 </body>
 </html>
