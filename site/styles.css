@@ -105,6 +105,124 @@ body {
   white-space: nowrap;
 }
 
+/* ── Hero Section ── */
+.hero {
+  text-align: center;
+  padding: 48px 20px 36px;
+  border-bottom: 1px solid var(--divider);
+  background: #FFFFFF;
+}
+.hero-content { max-width: 640px; margin: 0 auto; }
+.hero-headline {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.hero-subtitle {
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-light);
+  margin-bottom: 24px;
+}
+.hero-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.hero-btn {
+  background: var(--ink);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 24px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.hero-btn:hover { background: #374151; }
+.hero-link {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--blue);
+  text-decoration: none;
+}
+.hero-link:hover { text-decoration: underline; }
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+.hero-stat { text-align: center; }
+.hero-stat-value {
+  display: block;
+  font-family: var(--display);
+  font-size: 24px;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.hero-stat-label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 9px;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 2px;
+}
+@media (max-width: 600px) {
+  .hero { padding: 32px 16px 24px; }
+  .hero-headline { font-size: 22px; }
+  .hero-stats { gap: 20px; }
+}
+
+/* ── Severity Badges ── */
+.severity {
+  font-family: var(--sans);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+.severity.critical {
+  color: var(--red);
+  background: rgba(220,38,38,0.08);
+  border: 1px solid rgba(220,38,38,0.2);
+}
+.severity.high {
+  color: #D97706;
+  background: rgba(217,119,6,0.08);
+  border: 1px solid rgba(217,119,6,0.2);
+}
+.severity.elevated {
+  color: var(--blue);
+  background: rgba(37,99,235,0.06);
+  border: 1px solid rgba(37,99,235,0.15);
+}
+
+/* ── Contradiction Score ── */
+.contradiction-score {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  color: #B8955A;
+  background: rgba(212,175,55,0.08);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: 10px;
+  padding: 1px 7px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 /* ── Layout — single column ── */
 .layout {
   max-width: 1000px;

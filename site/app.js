@@ -1,4 +1,4 @@
-// La Gazzetta di Kyiv v20.3 — Pure white · Lucide icons · Single Share menu · Typography-first
+// La Gazzetta di Kyiv v20.5 — Hero · Severity badges · Contradiction Score
 const DATA = './data/stories.json';
 const LIVING_DATA = './data/living_stories.json';
 const POLL_INTERVAL = 120000; // 2 minutes
@@ -279,6 +279,39 @@ function statusDotClass(status) {
   return 'story-status-dot grey';
 }
 
+// ── Severity determination ──
+function determineSeverity(story) {
+  const cf = story.capital_flow;
+  // CRITICAL: capital_flow with large amount (>$3B) or pace >2x
+  if (cf) {
+    const amt = parseFloat(cf.amount) || 0;
+    const denom = (cf.denomination || '').toUpperCase();
+    const pace = (cf.pace || '');
+    const paceNum = parseFloat(pace.match(/^(\d+\.?\d*)x/)?.[1] || '0');
+    const amountInB = denom === 'B' ? amt : denom === 'M' ? amt / 1000 : 0;
+    if (amountInB > 3 || paceNum > 2) {
+      return 'critical';
+    }
+  }
+  // HIGH: high confidence + THE PLAY
+  if (story.confidence === 'high' && story.portfolio_implication) {
+    return 'high';
+  }
+  // Falling from the living stories format
+  return 'elevated';
+}
+
+// ── Contradiction Score (0-100) ──
+function calcContradictionScore(story) {
+  let score = 50;
+  const cf = story.capital_flow;
+  if (cf) score += 20;
+  if (story.extremum) score += 15;
+  if (story.confidence === 'high') score += 10;
+  if (cf && cf.direction === 'outflow') score += 5;
+  return Math.min(score, 95);
+}
+
 function livingCardHTML(story, isLead) {
   const sector = (story.sector || '').toLowerCase();
   const theySay = story.they_say || '';
@@ -305,6 +338,12 @@ function livingCardHTML(story, isLead) {
   // Extremum line
   const extremumHTML = story.extremum ? extremumLineHTML(story.extremum) : '';
 
+  // Severity
+  const severity = determineSeverity(story);
+
+  // Contradiction Score
+  const cs = calcContradictionScore(story);
+
   return `
     <article class="card${isLead ? ' lead' : ''}${sectorClass ? ' ' + sectorClass : ''}"
              data-story-id="${story.story_id}"
@@ -317,10 +356,14 @@ function livingCardHTML(story, isLead) {
         ${cfClaim}
         <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:2px">
           ${sector ? `<span class="category-tag ${sector}">${SECTOR_LABELS[sector] || sector}</span>` : ''}
+          <span class="severity ${severity}">${severity}</span>
           ${updateBadge}
           ${updatedAgo}
         </div>
-        <h3>${story.headline}</h3>
+        <div style="display:flex;align-items:flex-start;gap:6px">
+          <h3 style="flex:1">${story.headline}</h3>
+          <span class="contradiction-score">${cs}</span>
+        </div>
       </div>
       </div><!-- /card-collapsed -->
       <div class="card-expanded-body">
@@ -584,6 +627,20 @@ function patchStoryCard(card, story) {
   if (headlineEl && !headlineEl.dataset.original) {
     headlineEl.dataset.original = story.headline;
     headlineEl.textContent = story.headline;
+  }
+
+  // Update severity badge
+  const sevEl = card.querySelector('.severity');
+  if (sevEl) {
+    const newSev = determineSeverity(story);
+    sevEl.className = 'severity ' + newSev;
+    sevEl.textContent = newSev;
+  }
+
+  // Update contradiction score
+  const csEl = card.querySelector('.contradiction-score');
+  if (csEl) {
+    csEl.textContent = String(calcContradictionScore(story));
   }
 
   const summary = card.querySelector('.summary');
