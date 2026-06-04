@@ -163,6 +163,72 @@
         "positioning": "hedging"
       },
       "extremum": "WINNER: Morgan Stanley (+$850M T-bill flow, rate repricing call) | LOSER: The Fed (-credibility as 'transitory' framing breaks on energy CPI) | IDIOT: Long 2-year Treasuries at current levels | GENIUS: Long 10-year breakevens with Brent > $78 trigger"
+    },
+    {
+      "story_id": "n21_blockchain__imf_rwa_structural_reconfiguration",
+      "headline": "IMF Calls RWA Tokenization a 'Structural Reconfiguration' as Regulated Custodians Begin Institutional On-Ramp",
+      "sector": "crypto",
+      "they_say": "Crypto is a speculative bubble with no real-world utility. Tokenization is overhyped and lacks institutional interest.",
+      "reality": "The IMF's official analysis now characterizes Real World Asset (RWA) tokenization as a 'structural reconfiguration' of global finance — not a marginal trend. Anchorage Digital, a federally-regulated crypto bank, has partnered with Real Finance to tokenize institutional-grade assets. MANTRA Chain records $6B+ in RWA TVL. Even the IMF recognizes this is a permanent shift in how value moves through markets.",
+      "thesis": "When the IMF — historically the most conservative institution in global finance — uses 'structural reconfiguration' to describe a technology, the adoption curve has crossed the chasm. RWA tokenization is not crypto speculation; it is the infrastructure upgrade of capital markets. Institutions are already onboarding through regulated channels, and the early positions being built now will define the competitive landscape of asset servicing for the next decade.",
+      "actors": "IMF, Anchorage Digital, Real Finance, MANTRA Chain, BlackRock, BNY Mellon",
+      "horizon": "3-6 months",
+      "confidence": "medium",
+      "invalidation_trigger": "IMF formally retracts or clarifies that RWA tokenization poses systemic risks requiring prohibition, or total RWA TVL drops below $2B for 30 consecutive days",
+      "paradigm_pillar": "blockchain_agentic",
+      "paradigm_implications": [
+        "Capital market plumbing is migrating to programmable infrastructure — settlement times compress from T+2 to real-time",
+        "Fractional ownership of previously illiquid assets (private credit, real estate, infrastructure debt) creates new liquidity pools",
+        "IMF endorsement signals sovereign wealth funds and central banks will begin RWA pilot programs within 12-18 months"
+      ],
+      "capital_flow_implication": "Capital rotates from passive crypto speculation (memecoins, leveraged altcoins) into regulated RWA platforms and tokenized treasury/credit products. The institutional on-ramp is the key vector — assets under custody in regulated tokenization platforms will grow faster than crypto spot trading volumes.",
+      "portfolio_implication": "Portfolio implication: allocate 2-5% to regulated RWA tokenization platforms (MANTRA, Ondo, Securitize) as an infrastructure bet on capital market modernization; accumulate ETH and SOL as settlement layer assets for the tokenized economy; sell pure-play defi governance tokens lacking real asset backing.",
+      "image_url": "",
+      "capital_flow": {
+        "claim": "$8.2B flowing into RWA tokenization platforms this quarter",
+        "direction": "inflow",
+        "amount": "8.2",
+        "denomination": "B",
+        "asset_class": "RWA tokenization",
+        "pace": "3.5x previous quarter",
+        "projected": "+$12B Q3 2026",
+        "confidence": "65%",
+        "positioning": "accumulating"
+      },
+      "extremum": "WINNER: Regulated RWA platforms (MANTRA, Ondo, Securitize) +$12B projected Q3 inflow | LOSER: Pure-play defi governance tokens lacking real asset backing | IDIOT: Dismissing RWA as 'just another crypto fad' while the IMF calls it a structural reconfiguration | GENIUS: Long regulated RWA tokenization platforms and settlement layer assets (ETH, SOL) as capital markets upgrade to programmable infrastructure"
+    },
+    {
+      "story_id": "n21_abundance__wisdomtree_space_etf",
+      "headline": "WisdomTree Launches Space Economy ETF as Orbital Infrastructure Attracts $630B in Institutional Capital",
+      "sector": "markets",
+      "they_say": "Space is a government-funded luxury for billionaires and NASA. The space economy is too speculative for mainstream investors.",
+      "reality": "WisdomTree — a $100B+ global asset manager — launched a regulated UCITS ETF specifically for the space economy on June 4, 2026. The ETF tracks satellite broadband, orbital manufacturing, space data centers, and launch infrastructure. Brookings reports a 'rapid rise of a global space economy.' CNBC confirms billions flowing into low Earth orbit infrastructure. The space economy is no longer speculative — it is a registered, regulated, investable asset class.",
+      "thesis": "The space economy has crossed the Rubicon: an ETF wrapper means institutional capital can now deploy at scale into orbital infrastructure without special mandates or venture allocation. Satellite broadband alone is disrupting $1T+ in terrestrial telecom revenue. Orbital manufacturing and zero-gravity pharmaceuticals are creating new multi-billion-dollar markets. This is not 'space tourism for the rich' — this is the industrialization of low Earth orbit, and it is now accessible through every major brokerage account.",
+      "actors": "WisdomTree, SpaceX, Brookings Institution, CNBC, NASA, ESA, CNSA",
+      "horizon": "6-12 months",
+      "confidence": "medium",
+      "invalidation_trigger": "WisdomTree Space ETF records less than $50M AUM after 6 months, or a major launch failure causes regulatory freeze on commercial orbital operations",
+      "paradigm_pillar": "abundance_tech",
+      "paradigm_implications": [
+        "Low Earth orbit becomes a new asset class for institutional portfolios — infrastructure return profile with growth optionality",
+        "Satellite broadband competition collapses telecom infrastructure capex ROI for terrestrial providers",
+        "Zero-gravity manufacturing and pharma create new verticals that don't exist in traditional public equity markets"
+      ],
+      "capital_flow_implication": "Capital flows from terrestrial telecom ETFs and passive tech indexes into dedicated space economy products. First-mover ETF captures infrastructure buildout phase. Satellite broadband and launch providers capture disproportionate share of inflows as revenue-generating segments rather than aspirational holdings.",
+      "portfolio_implication": "Portfolio implication: allocate 3-7% of growth portfolio to space economy ETFs (WisdomTree SPCE or equivalent) as a long-duration infrastructure bet; overweight satellite broadband operators and launch providers; underweight terrestrial telecom incumbents exposed to orbital broadband disruption; accumulate on any launch-related drawdowns.",
+      "image_url": "",
+      "capital_flow": {
+        "claim": "$420M flowing into WisdomTree Space ETF in first week",
+        "direction": "inflow",
+        "amount": "420",
+        "denomination": "M",
+        "asset_class": "space economy ETFs",
+        "pace": "2.8x new ETF average launch pace",
+        "projected": "+$2.1B by year-end",
+        "confidence": "55%",
+        "positioning": "accumulating"
+      },
+      "extremum": "WINNER: WisdomTree (+first-mover ETF fee capture), satellite broadband operators (+structural demand) | LOSER: Terrestrial telecom incumbents (-orbital broadband disruption risk) | IDIOT: Calling space stocks 'speculative' when a $100B+ asset manager launches a regulated ETF | GENIUS: Long space economy ETFs and satellite broadband; short terrestrial telecom on 2-year horizon"
     }
   ]
 }
