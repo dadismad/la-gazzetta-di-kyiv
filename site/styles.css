@@ -1,42 +1,33 @@
 :root {
   /* ═══════════════════════════════════════════════
-     GAZZETTA EVENT ROOM — "Polished Chrome" Palette
-     
-     Brushed brass · White gold · Liquid mercury · Ruby chrome
-     Bright, metallic, luxurious. Bulgari flagship at noon.
+     GAZZETTA EVENT ROOM — Casino Floor
+     White marble · Red carpet lines · Dark metallic blue trim · Subtle brass
      ═══════════════════════════════════════════════ */
   
-  /* Backgrounds */
-  --paper:    #E8EDF5;   /* Polished Chrome — Bright silver-white with blue shimmer */
-  --white:    #F7F4EF;   /* White Gold — Warm champagne-silver card surfaces */
-  --bg-tertiary: #DCE3EC; /* Slightly deeper chrome for hover states */
+  --paper:    #F8F9FA;   /* Near-white marble — bright, clean */
+  --white:    #FFFFFF;   /* Pure white — cards, content surfaces */
+  --bg-tertiary: #F0F2F5; /* Subtle off-white for hover states */
   
-  /* Accents */
-  --gold:     #C9A962;   /* Brushed Brass — Warm burnished gold */
-  --gold-dark:#A88D4F;   /* Aged Gold — Deeper antiqued gold for hover/active */
-  --gold-pale:rgba(201,169,98,0.08); /* Gold Shimmer Wash */
-  --sky:      #9BB5D4;   /* Liquid Mercury — Cool silver-blue */
-  --sky-pale: rgba(155,181,212,0.10); /* Mercury Shimmer */
+  --gold:     #C9A84C;   /* Soft brass — subtle, refined, not dominant */
+  --gold-dark:#B08A3A;   /* Aged brass — hover/active */
+  --gold-pale:rgba(201,168,76,0.06); /* Brass wash */
   
-  /* Danger */
-  --red:      #D64040;   /* Ruby Chrome — Bright metallic crimson */
-  --red-hover:#ED5555;
-  --green:    #00C9A7;   /* Polished Emerald — Bright gem-cut green */
+  --sky:      #1F3A5F;   /* Dark metallic blue — structural trim, borders */
+  --sky-pale: rgba(31,58,95,0.06); /* Blue wash */
   
-  /* Text (dark on bright metallic surfaces) */
-  --ink:      #2C3E50;   /* Dark Gunmetal — Primary text */
-  --ink-light:#6B7F94;   /* Brushed Steel — Secondary text */
-  --ink-muted:#9AAABF;   /* Silver Mist — Muted/metadata */
+  --red:      #C62828;   /* Rich casino red — carpet lines, danger, action */
+  --red-hover:#D32F2F;
+  --green:    #388E3C;   /* Casino felt green — success, inflows */
   
-  /* Card text */
-  --ink-card:       #1E2A38;  /* Deep Gunmetal — Card headings */
-  --ink-card-light: #4B5E73;  /* Titanium — Card body */
+  --ink:      #1A1A1A;   /* Near-black — high contrast on white */
+  --ink-light:#4B5563;   /* Graphite grey — secondary */
+  --ink-muted:#9CA3AF;   /* Light grey — muted/metadata */
+  --ink-card:       #1A1A1A;   /* Card headings */
+  --ink-card-light: #6B7280;   /* Card body */
   
-  /* Dividers */
-  --divider:       #D0D6E0;  /* Chrome Edge — Silver border line */
-  --divider-light: #E5EAF1;  /* Bright Chrome — Subtle hairline */
+  --divider:       #D1D5DB;  /* Light grey border */
+  --divider-light: #E5E7EB;  /* Subtle hairline */
   
-  /* Typography */
   --display: 'DM Serif Display', Georgia, serif;
   --body:    'Source Serif 4', Georgia, serif;
   --sans:    'Inter', -apple-system, sans-serif;
@@ -60,8 +51,8 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 4px 12px;
-  background: #E8EDF5;
-  border-bottom: 1px solid var(--gold);
+  background: var(--sky);
+  border-bottom: 2px solid var(--red);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -75,8 +66,7 @@ body {
 .masthead-bulava {
   display: flex;
   align-items: center;
-  color: var(--gold-dark);
-  opacity: 0.8;
+  color: rgba(255,255,255,0.8);
   line-height: 1;
 }
 .masthead-bulava svg {
@@ -89,12 +79,17 @@ body {
   color: var(--gold-dark);
   opacity: 0.7;
   cursor: default;
-  margin-left: 2px;
+  color: rgba(255,255,255,0.8);
+}
+.masthead-machiavelli {
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+  cursor: default;
 }
 .masthead-name {
   font-family: var(--display);
   font-size: 20px;
-  color: var(--ink-card);
+  color: #FFFFFF;
   white-space: nowrap;
 }
 .masthead-right {
@@ -106,12 +101,12 @@ body {
   font-family: var(--body);
   font-style: italic;
   font-size: 12px;
-  color: var(--ink-card-light);
+  color: rgba(255,255,255,0.75);
 }
 .masthead-meta {
   font-family: var(--sans);
   font-size: 9px;
-  color: var(--ink-card-light);
+  color: rgba(255,255,255,0.6);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   white-space: nowrap;
@@ -164,8 +159,8 @@ body {
 }
 .card:hover, .card:active { border-color: var(--gold); }
 .card.lead {
-  border-left: 3px solid var(--gold);
-  background: rgba(201,169,98,0.08);
+  border-left: 3px solid var(--red);
+  background: rgba(198,40,40,0.03);
 }
 .card .card-body {
   display: flex;
