@@ -1,23 +1,13 @@
-Two-way actionable window into US close.
+SpaceX wins tax exemption for $55bn AI chip plant — while simultaneously pitching the largest IPO in US history at $1.8tn value. The AI infrastructure buildout is not slowing down. It's accelerating.
 
-CENTCOM (19:01 UTC): Iran struck Kuwait airport with drones — "deliberate, calculated, unjustified."
-IRGC had just blamed a malfunctioning US Patriot. CENTCOM shot that cover story down on the record.
-Diplomatic off-ramp just got narrower. The "deal close" narrative lost the US military's plausible deniability.
+Regime: Contradiction (selective risk-on for AI infra, risk-off for semis laggards): Broadcom -$300bn on a revenue miss is the buyable dip in the AI trade — company-specific, not sector-wide.
 
-• LONG WTI: +2.0-3.5% on narrative hardening. Add to position from previous window.
+• NVIDIA: staged entries on Broadcom spillover, 5% invalidation stop
+• SpaceX IPO plays: satellite/defense ETFs accumulate before listing
+• Google $85bn AI equity raise — follow the cash, not the headlines
 
-Strategy/MSTR unrealized BTC loss exceeds $8.5B (markettwits, 19:12 UTC).
-At $65.9K BTC, the Saylor buying machine is broken. Convert arb unwind is the transmission mechanism.
-• SHORT BTC: -2.5 to -4.5% into close. SHORT MSTR: -4 to -7%.
+¹ SpaceX pitches investors $1.8tn valuation in historic IPO (source: https://www.ft.com/content/95286aa1-ee55-4a45-86b8-951cc0fb23a8)
 
-Continuing stories (carried forward from 18:45 UTC):
-• Iran FM: ZERO progress in negotiations
-• Trump: blockade stays, final determination coming
-• Israel Chief of Staff: no ceasefire in Lebanon
-• Hezbollah: no partial ceasefire
-• Dnipro ATB warehouse destroyed — Ukraine logistics chain hit
+Continuity: https://pureciclismo.github.io/gazzetta-di-kyiv/ | Next trigger: SpaceX S-1 filing confirms valuation range
 
-BTC: $65,868 (-1.84% 24h)
-Trad_fin live margin: 0 new messages in 28h. InfinityHedge: inactive since April 29. Ethanlevins: 0 new in 29h.
-
-Detailed contradiction map: pureciclismo.github.io/gazzetta-di-kyiv/
+Full briefing and positioning map: https://pureciclismo.github.io/gazzetta-di-kyiv/

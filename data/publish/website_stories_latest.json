@@ -1,40 +1,53 @@
 {
-  "generated_at": "2026-06-03T10:05:00Z",
+  "generated_at": "2026-06-04T03:46:46+00:00",
   "stories": [
     {
-      "headline": "OECD Warns 'Dark Scenario' if Gulf Energy Crisis Persists",
-      "thesis": "Global GDP contracts if Iran-Gulf corridor disruption lasts through Q3. First major forecaster to break from the 'contained' consensus.",
-      "sector": "macro",
-      "source_count": 4,
-      "setup_id": "n21_macro"
+      "headline": "SpaceX Wins $55bn AI Chip Plant Tax Exemption Despite Local Backlash",
+      "thesis": "Elon Musk's SpaceX secures tax breaks for a $55bn AI chip manufacturing plant, signaling the AI compute buildout is accelerating — not peaking — despite Broadcom's $300bn market cap wipeout.",
+      "sector": "tech",
+      "source_count": 6,
+      "setup_id": "n21_ai",
+      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iQ15AX23fMwo/v9/1200x-1.jpg"
     },
     {
-      "headline": "ECB Signals Rate Rise Regardless of Iran Peace Deal",
-      "central_banker": "No room to cut even with de-escalation — sticky services inflation at 4.1% keeps tightening bias",
-      "sector": "macro",
-      "source_count": 3,
-      "setup_id": "n21_macro"
-    },
-    {
-      "headline": "Trump Proposes 10%+ Tariffs on Forced Labour Practices",
-      "thesis": "Trade-war layer compounds energy-driven growth slowdown. Brazil also hit with 25% levy despite US trade surplus.",
-      "sector": "macro",
-      "source_count": 2,
-      "setup_id": "n21_macro"
-    },
-    {
-      "headline": "Iranian Drones Hit Kuwait Airport as US-Iran Strikes Escalate",
-      "thesis": "Energy corridor infrastructure targeting threshold crossed. Brent repricing accelerates as Gulf state positioning shifts.",
+      "headline": "Trump's Iran War Drains US Oil Stocks to Lowest Level Since 2004",
+      "thesis": "US crude inventories hit two-decade lows as the Iran conflict disrupts Gulf supply chains. Gulf states negotiate pipeline bypass routes around the Strait of Hormuz.",
       "sector": "geopolitics",
       "source_count": 4,
-      "setup_id": "n21_geopolitics"
+      "setup_id": "n21_oil",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anti-U.S._protest_sign_during_public_gatherings_in_Iran_amid_the_2026_war.jpg"
     },
     {
-      "headline": "Yen Hovers Near 160 as Traders Eye Intervention Risk",
-      "thesis": "BOJ intervention zone tested as USD/JPY crosses 159.50. Carry trade unwind risk rises if macro stress triggers safe-haven flows.",
+      "headline": "Broadcom Loses $300bn as Revenue Forecast Disappoints Markets",
+      "thesis": "Broadcom's $300bn+ market cap wipeout on a disappointing forecast creates the first major AI trade test — is this a company-specific rotation or a sector top signal?",
       "sector": "markets",
-      "source_count": 2,
-      "setup_id": "n21_markets"
+      "source_count": 6,
+      "setup_id": "n21_macro",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BCM70015.jpg"
+    },
+    {
+      "headline": "Bessent Calls US Inflation Jump a 'Short-Term Blip' as Services CPI Holds at 4.1%",
+      "thesis": "Treasury Secretary Scott Bessent dismisses the latest inflation spike as transitory, but sticky services inflation at 4.1% keeps the Fed's tightening bias alive regardless of energy price swings.",
+      "sector": "macro",
+      "source_count": 3,
+      "setup_id": "n21_inflation",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Official_portrait_of_Treasury_Secretary_Scott_Bessent_%28cropped%29.jpg"
+    },
+    {
+      "headline": "Hurricane Trump Threatens to Blow China Off Course",
+      "thesis": "Trump's Iran war and tariff escalation create a 'hurricane' for Chinese export-driven growth, as Beijing's industrial policy faces its first major external stress test.",
+      "sector": "geopolitics",
+      "source_count": 4,
+      "setup_id": "n21_china",
+      "image_url": "https://i.guim.co.uk/img/media/02d774e13d041f094f583254b13136c5a354374e/846_0_4583_3667/master/4583.jpg?width=700&quality=85&auto=format&fit=max&s=76103f6b3aeacef960917fa88cbed56f"
+    },
+    {
+      "headline": "Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response",
+      "thesis": "NATO activates its first collective response to suspected undersea cable sabotage, marking a new front in hybrid warfare and critical infrastructure protection.",
+      "sector": "geopolitics",
+      "source_count": 3,
+      "setup_id": "n21_nato",
+      "image_url": null
     }
   ]
 }

@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-06-03T21:35:42.864415+00:00",
+  "generated_at": "2026-06-04T03:46:46.963501+00:00",
   "data_freshness_seconds": 3600,
   "source_count": 6,
   "items": [
     {
       "narrative": "macro",
       "claim_a": "Gulf States policy remains stable",
-      "claim_b": "Trump\u2019s proposed grant rules could destroy US science, researcher warns",
+      "claim_b": "Broadcom loses more than $300bn in market value as revenue forecast disappoints",
       "urgency": "high",
       "invalidation_window": "24-72h",
       "paradigm_pillar": "multi_pillar",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Meta_-_Facebook%2C_Instagram%2C_Whatsapp_-_Nein_Danke.png"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BCM70015.jpg"
     },
     {
       "narrative": "ai",
       "claim_a": "Federal Reserve policy remains stable",
-      "claim_b": "Meta bets on AI agents to unlock WhatsApp revenues",
-      "urgency": "high",
+      "claim_b": "SpaceX wins tax exemption for $55bn AI chip plant despite local backlash",
+      "urgency": "medium",
       "invalidation_window": "24-72h",
       "paradigm_pillar": "multi_pillar",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Meta_-_Facebook%2C_Instagram%2C_Whatsapp_-_Nein_Danke.png"
+      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iQ15AX23fMwo/v9/1200x-1.jpg"
     },
     {
       "narrative": "oil",
@@ -28,25 +28,25 @@
       "urgency": "medium",
       "invalidation_window": "24-72h",
       "paradigm_pillar": "multi_pillar",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Donald_Trump_official_portrait.jpg"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anti-U.S._protest_sign_during_public_gatherings_in_Iran_amid_the_2026_war.jpg"
     },
     {
       "narrative": "china",
       "claim_a": "PBoC policy remains stable",
-      "claim_b": "Nissan signs deal with China\u2019s Chery for Sunderland car production",
+      "claim_b": "Hurricane Trump threatens to blow China off course",
       "urgency": "medium",
       "invalidation_window": "24-72h",
-      "paradigm_pillar": "multi_pillar",
+      "paradigm_pillar": "china_ascendancy",
       "image_url": "https://i.guim.co.uk/img/media/02d774e13d041f094f583254b13136c5a354374e/846_0_4583_3667/master/4583.jpg?width=700&quality=85&auto=format&fit=max&s=76103f6b3aeacef960917fa88cbed56f"
     },
     {
       "narrative": "inflation",
-      "claim_a": "Federal Reserve policy remains stable",
+      "claim_a": "BLS policy remains stable",
       "claim_b": "Bessent says US inflation jump will be \u2018short-term blip\u2019",
       "urgency": "medium",
       "invalidation_window": "24-72h",
       "paradigm_pillar": "multi_pillar",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Official_portrait_of_Treasury_Secretary_Scott_Bessent_%28cropped%29.jpg"
+      "image_url": null
     },
     {
       "narrative": "ukraine",

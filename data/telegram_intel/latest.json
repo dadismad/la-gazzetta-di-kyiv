@@ -1,7 +1,8 @@
 {
-  "scrape_timestamp": "2026-06-03T21:25:21.136137+00:00",
+  "scrape_timestamp": "2026-06-04T03:21:38+00:00",
+  "analysis_timestamp": "2026-06-04T03:21:40+00:00",
   "cutoff_minutes": 30,
-  "total_recent_messages": 2,
+  "data_horizon": "last_8_hours_plus_current_prices",
   "channels_checked": [
     "trad_fin",
     "MonitoringSituation",
@@ -10,105 +11,137 @@
     "ethanlevins",
     "markettwits"
   ],
+  "fresh_messages_in_last_30min": 0,
   "errors": [],
-  "raw_messages": [
+  "channel_status": {
+    "trad_fin": "Last post June 3 14:52 UTC (12.5h ago) — Netanyahu CNBC interview ends. SpaceX $135/share IPO target.",
+    "markettwits": "Last post June 3 20:04 UTC (7.3h ago) — Rubio called Russia 'a challenge.' Trump confirmed for G7 (Jun 15-17) and NATO summit (Jul 7-8).",
+    "MonitoringSituation": "Last post June 3 14:37 UTC (12.7h ago) — Netanyahu: Iran has not agreed to nuclear material removal. Trump yelled at Netanyahu: 'You'd be in prison if it weren't for me.'",
+    "ASupersharij": "Last post June 3 16:56 UTC (10.4h ago) — ATB regional warehouse destroyed by ballistic missile — 1 of 7 in all Ukraine. Dnipropetrovsk and Zaporizhzhia oblasts affected.",
+    "ethanlevins": "Last post June 3 13:37 UTC (13.7h ago) — Hezbollah drones hit NE Israel. Iran struck Kuwait Airport (killed 1) at 10:25 UTC. IRGC vs US Navy at Hormuz.",
+    "infinityhedge": "DEAD — last post May 20, 2026 (15+ days ago)."
+  },
+  "current_market_prices": {
+    "BTC_USD": 63528.53,
+    "ETH_USD": 1777.07,
+    "WTI_CRUDE": 94.92,
+    "WTI_prev_close": 96.02,
+    "WTI_range_24h": "$94.40 - $96.96",
+    "snapshot_time": "2026-06-04T02:48Z",
+    "note": "BTC price unchanged since last scrape — no fresh data available from public APIs. Previous snapshot used."
+  },
+  "stories": [
     {
-      "channel": "MonitoringSituation",
-      "text": "US HOUSE GETS ENOUGH VOTES TO PASS MOTION TO DISCHARGE ON PROVIDING FOR CONSIDERATION OF THE BILL (H.R. 2913) TO AUTHORIZE SUPPORT FOR UKRAINE, AND FOR OTHER PURPOSES, VOTING CONTINUES",
-      "published": "2026-06-03T21:24:49+00:00",
-      "link": "https://t.me/MonitoringSituation/5550"
-    },
-    {
-      "channel": "MonitoringSituation",
-      "text": "HOUSE FOR THE FIRST TIME PASSES RESOLUTION TO HALT MILITARY ACTION AGAINST IRAN IN REBUKE OF TRUMP'S WAR",
-      "published": "2026-06-03T21:25:17+00:00",
-      "link": "https://t.me/MonitoringSituation/5551"
-    }
-  ],
-  "actionable_intel": [
-    {
-      "story_id": "HALT_IRAN_WAR_20260603",
-      "headline": "US House passes resolution to halt military action against Iran — first such rebuke of Trump's war powers",
-      "event": "The US House of Representatives voted to pass a resolution (for the first time) that halts military action against Iran. This is a direct legislative rebuke of the Trump administration's authorization to use force. Passage is confirmed as of 21:25 UTC, June 3, 2026.",
-      "location": "Washington DC, USA",
-      "timestamp": "2026-06-03T21:25:17+00:00",
-      "narrative_consensus": "The mainstream narrative will frame this as a partisan check on executive war powers — a procedural victory for the anti-war bloc. The establishment line will downplay market impact, calling it 'symbolic' and noting it still needs Senate action or may face veto.",
-      "contradiction": "This is anything but symbolic. The House passing a war-halting resolution against Iran for the FIRST TIME creates massive legal and political uncertainty around any future kinetic action. War risk premium in oil prices collapses immediately. The Strait of Hormuz blockade scenario — the primary bullish thesis for crude since Q4 2025 — just lost its political backbone. Markets will front-run this: oil drops before the ink dries.",
+      "id": "MSTR_RECORD_LOSS_BOUNCE_TRAP_20260604",
+      "priority": 1,
+      "event": "Strategy (MSTR) unrealized PnL hit ALL-TIME RECORD -$11.5B (-18%) at 02:07 UTC June 4. BTC flash-crashed to $61.3K at 00:00 UTC after Saylor sold $2.5M BTC — first corporate BTC sale from Strategy ever. BTC has since recovered to ~$63.5K. BitMine concurrently filed for preferred shares, revealing $9B+ unrealized loss on ETH. Corporate BTC buying in May hit lowest since October 2024.",
+      "sources": [
+        "@trad_fin 02:07 UTC — MSTR $11.5B record loss",
+        "@trad_fin 00:00 UTC — BTC $61.3K crash, Saylor sells $2.5M",
+        "@markettwits 19:12 UTC — MSTR $8.5B+ unrealized loss",
+        "@markettwits 17:18 UTC — corporate BTC buying at Oct 2024 lows"
+      ],
+      "timestamp": "2026-06-04T02:07:42Z",
+      "current_prices": "BTC ~$63,528 | ETH ~$1,777 | WTI $94.92",
+      "consensus_narrative": "Flash crash to $61.3K was a liquidity event. BTC bounced to $63.5K proving support. Saylor's $2.5M sale is a rounding error. The worst is over — buy the dip.",
+      "contradiction": "MSTR loss JUST HIT A NEW ALL-TIME RECORD of $11.5B simultaneously with the bounce. The bounce hasn't reduced the loss. BitMine preferred filing = distress from largest ETH holder. BTC below $65K (former support, now resistance). Saylor selling even $2.5M is the first crack in the 'never sell' doctrine. The bounce is exit liquidity for smart money.",
       "bet": {
         "primary": {
-          "asset": "Crude Oil (WTI / Brent futures, USO, XLE)",
-          "direction": "SHORT / SELL",
-          "rationale": "Iran war risk premium was the #1 bullish driver for crude in H1 2026. This resolution removes that premium instantly. Expect algorithmics to front-run hard.",
-          "target_move": "-4% to -7% in WTI within 2 hours",
-          "volume_impact": "Extreme — breakout gap likely at next open. Over $50B notional at risk in oil futures in first hour."
+          "instrument": "BTC/USD (spot or perps)",
+          "direction": "SHORT at $63,500",
+          "entry": "$63.5K",
+          "target": "$60,000 in next 2 hours",
+          "stop": "$65,500",
+          "rationale": "Bounce stalled below $65K. MSTR record loss means Saylor trapped — can't buy (balance sheet underwater), any sell triggers panic. BitMine distress signal. Asia session thin — stop hunts to $61.3K, then $60K.",
+          "estimated_move": "-5% to -7% BTC ($63.5K → $59-60K)",
+          "volume_impact": "HIGH. BTC 24h volume elevated. OI contraction visible. Shorts below $65K mostly covered. Next leg is long liquidation."
         },
         "secondary": {
-          "asset": "Gold (XAU/USD, GLD)",
-          "direction": "SHORT / SELL",
-          "rationale": "Geopolitical risk premium unwind. Iran de-escalation removes one of the three pillars of the gold bid (alongside Fed cuts and dollar weakness). Expect $30-50/oz drop.",
-          "target_move": "-1.5% to -2.5% within 2 hours",
-          "volume_impact": "High — gold structurally overbought on war premium. Stop-loss cascade likely below $3100."
+          "instrument": "MSTR (Strategy)",
+          "direction": "SHORT",
+          "rationale": "$11.5B underwater on BTC. Every $1K BTC drop = ~$1B more loss. NAV premium compresses. MSTR falls faster than BTC.",
+          "estimated_move": "-8% to -12% vs BTC's -5%",
+          "volume_impact": "HIGH. Institutional margin calls on MSTR are catalyst."
         },
-        "tertiary": {
-          "asset": "US Defense Stocks (LMT, NOC, RTX, GD)",
-          "direction": "SHORT / SELL",
-          "rationale": "Short-term selling on reduced Middle Eastern conflict premium. These names rallied hard on Iran escalation expectations. Cash flows unwind.",
-          "target_move": "-2% to -4% in defense ETF (ITA) within 2 hours",
-          "volume_impact": "High institutional rotation out of war-bet defense names."
-        },
-        "contrarian": {
-          "asset": "Crypto (BTC, ETH)",
-          "direction": "LONG / BUY",
-          "rationale": "De-escalation is risk-on. Bitcoin trades as a liquidity proxy — reduced geopolitical angst = capital flows back into risk assets. The 'digital gold' narrative inverse to actual gold here.",
-          "target_move": "+2% to +4% BTC within 2 hours",
-          "volume_impact": "Moderate — correlated with SPX futures rally on war-unwind."
-        }
+        "reverse_scenario": "If BTC reclaims $65K in 2 hours, close shorts, go LONG. Target $68K. Requires new catalyst — none visible."
       }
     },
     {
-      "story_id": "UKRAINE_HR2913_20260603",
-      "headline": "US House clears procedural hurdle for Ukraine support bill H.R. 2913 — voting underway",
-      "event": "The US House secured enough votes to pass a motion to discharge on H.R. 2913, a bill to authorize support for Ukraine. The motion forces the bill to the floor for consideration. Voting was still ongoing at 21:24 UTC on June 3, 2026.",
-      "location": "Washington DC, USA",
-      "timestamp": "2026-06-03T21:24:49+00:00",
-      "narrative_consensus": "The establishment line: 'Bipartisan Ukraine support continues, the House is doing its job. This is routine procedure.' Media will focus on the procedural mechanics, not the signal it sends to Moscow.",
-      "contradiction": "This motion to discharge is NOT routine — it was forced because leadership was dragging its feet. The fact that supporters had to use a discharge petition means there was significant opposition to even CONSIDERING Ukraine aid. The 'bipartisan consensus' narrative is a fiction. What's actually happening: the pro-Ukraine coalition is on the back foot, fighting for procedural scraps to keep aid alive. The signal to Putin: US Ukraine support is fracturing, every extension is a battle now.",
+      "id": "TRUMP_IRAN_RED_LINE_OIL_MISDIRECTION_20260604",
+      "priority": 2,
+      "event": "WSJ (reported by @trad_fin 20:34 UTC June 3): Trump told aides he will NOT resume all-out war with Iran unless U.S. troops are killed. House voted 215-208 War Powers Act to end military action in Iran — symbolic, Senate needed. But: Iran struck Kuwait Airport (killed 1). Hormuz tanker engagement unresolved. IRGC claims it hit US warship. Iran's 4-stage deal rejected by US. Qeshm Island blast. WTI at $94.92, down $1.10 from $96.02 close.",
+      "sources": [
+        "@trad_fin 20:34 UTC — WSJ: Trump won't all-out-war unless troops killed",
+        "@MonitoringSituation 21:25 UTC — House votes 215-208 War Powers Act",
+        "@ethanlevins 10:25 UTC — Iran missile attack on Kuwait Airport, killed 1"
+      ],
+      "timestamp": "2026-06-03T20:34:59Z",
+      "current_prices": "WTI $94.92 | Range $94.40-$96.96",
+      "consensus_narrative": "Middle East at war. Oil at $95 justified by Iran striking Kuwait Airport, Hormuz tanker fire, IRGC-US Navy exchanges. Peace narrative dead after Iran hit civilian airport.",
+      "contradiction": "Market OVER-PRICED Iran risk. Trump explicitly told aides: no all-out war unless troops die. WSJ story is White House floating an off-ramp. House War Powers Act signals Congress won't support escalation. Oil at $94.92 pricing in a shooting war the US president has ruled out. The real action: Iran striking Kuwait while Trump says he won't escalate — Iran trying to provoke a response that won't come.",
       "bet": {
         "primary": {
-          "asset": "VanEck Ukraine ETF (UKR — if tradable) / Ukrainian sovereign bonds (Ukraine 2035s)",
-          "direction": "LONG / BUY cautiously on passage, front-run on motion-to-discharge success",
-          "rationale": "Motion to discharge passing = bill gets a floor vote. This is the first positive Ukraine legislative signal in weeks. Ukrainian bonds have been bleeding on aid fatigue. Any sign of renewed commitment stops the bleed.",
-          "target_move": "+1% to +3% in Ukrainian sovereign bonds within 2 hours",
-          "volume_impact": "Low liquidity — thin market means outsized moves on small flows."
+          "instrument": "WTI Crude (/CL)",
+          "direction": "SHORT at $94.92",
+          "entry": "$94.92",
+          "target": "$92.00 in next 2 hours",
+          "stop": "$97.50",
+          "rationale": "WSJ 'no escalation unless troops die' is the most important Iran story in 48 hours — ignored by late US session. WTI rallied from $68 to $95 on Iran/Hormuz fears. Trump defined his red line at 'US troops killed' — not Iran missiles Kuwait or Hormuz tanker fire. Asia opens and reprices ceiling lower.",
+          "estimated_move": "-3% to -5% WTI ($94.92 → $90-92)",
+          "volume_impact": "VERY HIGH. WTI vol 2-3x normal. OI maxed with longs. Any de-escalation signal triggers forced selling."
         },
         "secondary": {
-          "asset": "European Defense (EUAD, Rheinmetall RHM.DE, Thales HO.PA)",
-          "direction": "LONG / BUY",
-          "rationale": "US recommitment to Ukraine = longer war = sustained European defense spending. Rheinmetall specifically benefits from Ukrainian ammunition contracts.",
-          "target_move": "+1.5% to +3% in sector within 2 hours",
-          "volume_impact": "Moderate — European defense has been consolidating. This breaks the short-term downtrend."
+          "instrument": "USO (Oil ETF)",
+          "direction": "SHORT or PUTS",
+          "rationale": "USO tracks WTI futures — short the same thesis.",
+          "estimated_move": "-2% to -4% USO",
+          "volume_impact": "HIGH."
         },
-        "contrarian": {
-          "asset": "Russian equities (RSX) / Ruble",
-          "direction": "SHORT / SELL",
-          "rationale": "If Ukraine aid passes, the war continues at current intensity. No peace deal in sight = Russian economy bleeds longer. Ruble weakens on renewed sanctions risk.",
-          "target_move": "-1% to -2% RSX within 2 hours",
-          "volume_impact": "Low — RSX is mostly garbage. Symbolic more than actionable for liquidity."
-        }
+        "reverse_scenario": "If Iran strikes again with casualties in 2 hours, COVER shorts, GO LONG. WTI to $98-100. But no fresh messages — escalation window closing."
+      }
+    },
+    {
+      "id": "UKRAINE_ATB_LOGISTICS_WAR_ESCALATION_20260603",
+      "priority": 3,
+      "event": "Russia destroyed 1 of 7 regional ATB food distribution hubs in Dnipro with ballistic missiles (14:39 UTC June 3). This hub served Dnipropetrovsk and Zaporizhzhia oblasts — region the size of Netherlands. Russia's Deputy FM Ryabkov warned: 'do not test Russia's resolve to defend itself by all means available.' Rubio called Russia 'a challenge.' Germany, France, UK discussing Ukraine peace negotiations. G7 Jun 15-17. NATO Jul 7-8.",
+      "sources": [
+        "@ASupersharij 14:39 UTC — ballistic strike on ATB warehouses Dnipro",
+        "@ASupersharij 16:56 UTC — 1 of 7 regional hubs for all Ukraine",
+        "@ASupersharij 15:20 UTC — Ryabkov warning",
+        "@markettwits 20:04 UTC — Rubio calls Russia 'a challenge'"
+      ],
+      "timestamp": "2026-06-03T14:39:50Z",
+      "consensus_narrative": "Routine Russian strike on Ukrainian infrastructure. ATB is a grocery chain, not military target. West condemns and moves on. Ukraine peace talks discussed — de-escalation ahead.",
+      "contradiction": "Destroying 1 of 7 regional food distribution hubs for a country the size of Texas is NOT routine. This is strategic logistics warfare. Ryabkov warning timed with strike: Russia escalating ahead of G7/NATO summits. Germany/France/UK peace talks happening while Russia pounds distribution hubs — talks from position of Russian strength, Ukrainian weakness.",
+      "bet": {
+        "primary": {
+          "instrument": "Wheat Futures (ZW)",
+          "direction": "LONG / ACCUMULATE",
+          "entry": "Current levels (pre-market)",
+          "target": "+3% to +5% over 48 hours",
+          "rationale": "1 of 7 regional food hubs destroyed in Ukraine's breadbasket. Direct impact on grain storage/distribution. Combined with Ryabkov warning and peace talks positioning, Russia tightening logistics screws before negotiating.",
+          "estimated_move": "+2% to +4% wheat in 2 hours (US session open catalyst)",
+          "volume_impact": "MEDIUM. Wheat vol moderate. Ukraine supply stories have outsized impact."
+        },
+        "secondary": {
+          "instrument": "ITA / XAR (Defense ETFs)",
+          "direction": "LONG",
+          "rationale": "NATO summit Jul 7-8 is 34 days away. Russia escalating logistics warfare signals NATO will respond with more aid. G7 Jun 15-17 is prelude.",
+          "estimated_move": "+2% to +3% over 1-2 weeks",
+          "volume_impact": "MODERATE. Institutional accumulation."
+        },
+        "reverse_scenario": "If Ukraine-Russia ceasefire announced (no sign), wheat and defense positions wrong. Positioning for escalation, not resolution."
       }
     }
   ],
-  "meta": {
-    "analysis_model": "DeepSeek V4 Flash",
-    "analysis_timestamp": "2026-06-03T21:25:30+00:00",
-    "horizon": "2-hour market window",
-    "channel_coverage": {
-      "trad_fin": "0 recent messages",
-      "MonitoringSituation": "2 actionable stories",
-      "ASupersharij": "0 recent messages",
-      "infinityhedge": "0 recent messages",
-      "ethanlevins": "0 recent messages",
-      "markettwits": "0 recent messages"
-    }
+  "silent_mode_verdict": "SILENT — zero fresh messages in last 30 min. Three active stories unchanged from 02:48 UTC report. No new catalysts, no new data points, no new channels providing updates. Previous analysis holds. No delivery needed.",
+  "market_context": {
+    "current_time_utc": "2026-06-04T03:21:38Z",
+    "asia_session": "OPEN (thin liquidity)",
+    "us_session": "CLOSED (23:21 ET Tuesday)",
+    "european_session": "PRE-OPEN (opens ~06:00 UTC)",
+    "btc_daily_range": "$61,300 - ~$65,000+",
+    "wti_daily_range": "$94.40 - $96.96",
+    "note": "Low-liquidity window between US close and Europe open. All monitored channels silent for 30+ min. Previous analysis stands: SHORT BTC at $63.5K, SHORT WTI at $94.92, LONG wheat on Ukraine disruption."
   }
 }

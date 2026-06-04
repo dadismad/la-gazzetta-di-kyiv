@@ -1,24 +1,27 @@
 {
   "ok": true,
-  "generated_at": "2026-06-03T10:05:00Z",
+  "generated_at": "2026-06-04T03:46:46Z",
   "inputs": {
     "setups": 8,
     "contradictions": 8,
-    "regime_label": "Recession Risk"
+    "regime_label": "Paradigm-Lens Intelligence (selective risk-off)"
   },
   "quality": {
-    "telegram_word_count": 92,
-    "reddit_word_count": 231,
+    "telegram_word_count": 121,
+    "reddit_word_count": 219,
     "telegram_range": "80-140",
     "reddit_range": "180-260",
     "anti_template_clean": true,
-    "cross_platform_overlap": "13.3%",
-    "evidence_urls_present": true
+    "cross_platform_overlap": "<40%",
+    "evidence_urls_present": true,
+    "banned_phrases": 0
   },
   "editorial": {
-    "lead_story": "n21_macro",
-    "frame": "second-order",
-    "human_detail_id": "HD-007",
-    "cycle_number": 2
+    "lead_story": "n21_ai__spacex_chip_plant",
+    "lead_headline": "SpaceX Wins $55bn AI Chip Plant — IPO Hits $1.8tn Valuation",
+    "frame": "contradiction",
+    "human_detail_id": "HD-008",
+    "human_detail_id_secondary": "HD-009",
+    "cycle_number": 3
   }
 }

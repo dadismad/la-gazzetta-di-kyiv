@@ -1,80 +1,108 @@
 {
-  "generated_at": "2026-06-03T10:05:00Z",
+  "generated_at": "2026-06-04T03:46:46+00:00",
   "lead": {
-    "headline": "OECD Warns Global GDP Faces 'Dark Scenario' as Iran-Gulf Crisis Persists",
-    "they_say": "Financial consensus holds that Iran-US strikes are an oil market story — contained to crude futures and Middle East risk premia with limited macro spillover.",
-    "reality": "OECD publishes formal GDP contraction model if Gulf energy corridor disruption lasts through Q3 2026. The ECB signals rate rises regardless of an Iran peace deal. Trump proposes 10%+ broad tariffs on forced labour. Three separate stagflationary forces converging on growth forecasts.",
-    "thesis": "Markets are pricing a sectoral energy shock. The data reveals a compounding macro regime shift: energy-driven inflation + tariff headwinds + central bank policy constraint = recession risk repricing across bonds, FX, and equities.",
-    "actors": "OECD, ECB, Federal Reserve, Trump Administration",
+    "story_id": "n21_ai__spacex_chip_plant",
+    "headline": "SpaceX Wins $55bn AI Chip Plant — IPO Hits $1.8tn Valuation",
+    "they_say": "AI capex is peaking. Broadcom's $300bn+ market cap wipeout on a revenue miss proves the AI trade is overheating. The semiconductor cycle is turning down.",
+    "reality": "SpaceX secured tax exemption for a $55bn AI chip manufacturing plant, Google upsized equity raising to $85bn for AI spending, and Meta is rolling out AI agents on WhatsApp for monetization. Three separate infrastructure bets at billion-dollar scale, all active simultaneously. The Broadcom miss is a company-specific ASIC-to-GPU rotation, not a sector demand collapse.",
+    "thesis": "The AI compute buildout is accelerating through the Broadcom noise. The $300bn wipeout creates the buyable dip in NVDA and AMD. The signal is capital allocation — follow where the money goes, not where headlines point.",
+    "actors": "SpaceX, Elon Musk, Google/Alphabet, Meta, Broadcom, NVIDIA, AMD",
     "horizon": "24-72 hours",
-    "confidence": "high",
-    "invalidation_trigger": "A confirmed Iran ceasefire that de-escalates Gulf energy corridor threat, or a dovish ECB pivot away from rate normalization.",
-    "paradigm_pillar": "china_ascendancy|dollar_decline|eu_fragmentation|abundance_tech|blockchain_agentic|multi_pillar",
-    "paradigm_implications": ["Energy-driven inflation reprices global bond yields upward", "Tariff headwinds compress EM equity valuations", "Central bank policy constraint limits counter-cyclical stimulus"],
-    "capital_flow_implication": "Capital rotates out of European and EM equities into commodities, gold, and short-duration Treasuries as stagflation repricing crosses asset classes.",
-    "portfolio_implication": "Portfolio implication: reduce equity exposure across European and EM indices until Q3 GDP revisions clarify recession probability; add gold ETF on pullbacks to 50-day MA as stagflation hedge; overweight energy (XLE) on supply disruption premium.",
-    "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iYFM2zu6qWnY/v1/1200x-1.jpg"
+    "confidence": "medium",
+    "invalidation_trigger": "NVDA closes below $145 on >2x volume, or SpaceX delays IPO filing past Q3 2026",
+    "paradigm_pillar": "abundance_tech",
+    "paradigm_implications": [
+      "AI compute concentration shifts semiconductor supply chains from Taiwan-dependent to US-based fabrication",
+      "SpaceX IPO at $1.8tn would be largest in US history — resets valuation benchmarks for the entire AI ecosystem"
+    ],
+    "capital_flow_implication": "Capital rotates from Broadcom/ASIC plays into GPU-fabrication plays (NVDA, AMD) and AI infrastructure ETFs (AIQ, BOTZ). Follow the $85bn Google raise and $55bn SpaceX plant.",
+    "portfolio_implication": "Portfolio implication: buy NVDA on Broadcom spillover dip with 5% invalidation stop; accumulate satellite/defense ETFs (ITA, PPA) ahead of SpaceX IPO; trim Broadcom exposure until custom-chip demand signals stabilize.",
+    "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iQ15AX23fMwo/v9/1200x-1.jpg"
   },
   "stories": [
     {
-      "headline": "ECB Rate Rise Still on Table Despite Iran Peace Deal, Central Banker Says",
-      "they_say": "An Iran ceasefire would remove geopolitical uncertainty and allow the ECB to pause rate normalization.",
-      "reality": "ECB Governing Council member confirms services inflation at 4.1% keeps tightening bias regardless of Iran outcome. Rate rise probability unchanged at 72% for June meeting.",
-      "sector": "markets",
-      "paradigm_pillar": "EU FRAGMENTATION",
-      "paradigm_implications": ["ECB tightening independent of geopolitics constrains European fiscal space", "72% rate-hike probability pricing limits bond upside"],
-      "portfolio_implication": "Portfolio implication: establish EUR/USD straddle into June ECB meeting — 72% rate-hike probability priced but Iran ceasefire scenario could trigger a 50-100 pip unwind; hold short-dated European government bonds (2Y Schatz) as rates remain repriced higher regardless of geopolitics.",
-      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iT43oLHbNVv4/v0/1200x-1.jpg"
-    },
-    {
-      "headline": "Trump Proposes 10% Tariffs on Forced Labour, 25% on Brazil",
-      "they_say": "Tariffs target specific forced labour practices in China and Brazil, limited trade impact expected.",
-      "reality": "Proposed levies of at least 10% on all imports linked to forced labour — a broad trade-war layer that compounds energy-driven inflation. Brazil tariff hits 25% despite US running a trade surplus with Brazil.",
-      "sector": "markets",
-      "paradigm_pillar": "DOLLAR DECLINE",
-      "paradigm_implications": ["Broad tariff layer compounds energy-driven inflation pressures", "Brazil-specific tariff signals broader protectionist pivot beyond China"],
-      "portfolio_implication": "Portfolio implication: reduce EM equity and FX exposure (particularly Brazil via EWZ) by 15-20% ahead of tariff implementation; add TIPS or short-dated US Treasuries for inflation pass-through hedge; long USD vs. EM currencies on tariff-induced trade compression.",
-      "image_url": "https://i.guim.co.uk/img/media/e66b9330d6fbffa358a896f81ebbda7969d0ac58/643_0_3893_3114/master/3893.jpg?width=700&quality=85&auto=format&fit=max&s=af96ce26ae90cb53ede27061f4e4eba8"
-    },
-    {
-      "headline": "Iranian Drones Hit Kuwait International Airport",
-      "they_say": "US-Iran strikes are contained to military targets — civilian infrastructure not at risk.",
-      "reality": "Kuwait International Airport struck by Iranian drones in escalation on June 3. Civilian infrastructure targeting threshold crossed in the Gulf. Kuwait authorities confirm airport operations suspended.",
-      "sector": "geopolitics",
-      "paradigm_pillar": "CHINA ASCENDANCY",
-      "paradigm_implications": ["Civilian infrastructure targeting signals escalation, not containment", "Gulf energy corridor disruption risk repriced into crude"],
-      "portfolio_implication": "Portfolio implication: buy crude (BZ=F) on headline, target +3-5% within 24h — fade-the-move strategy with exit if prices gap above $78 (overreaction threshold); add energy sector (XLE) 2% position with 5% invalidation stop on diplomatic de-escalation.",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/7499/live/6a7fd000-5f11-11f1-89a3-d1f559421220.jpg"
-    },
-    {
-      "headline": "Yen Nears 160 Per Dollar as Intervention Risk Mounts",
-      "they_say": "USD/JPY above 155 is a one-way bet on further yen weakness driven by rate differentials.",
-      "reality": "Yen crosses 159.50 into BOJ intervention zone. If macro stress from Gulf crisis triggers safe-haven flows, the carry trade unwind accelerates — the opposite of the consensus yen-weakening bet.",
-      "sector": "markets",
-      "paradigm_pillar": "DOLLAR DECLINE",
-      "paradigm_implications": ["Yen at intervention zone creates asymmetric downside for USD/JPY longs", "Carry trade unwind risk accelerates if Gulf crisis triggers safe-haven flows"],
-      "portfolio_implication": "Portfolio implication: short USD/JPY into 159.50+ with tight 40-pip stop — BOJ intervention risk at 160 creates asymmetric downside; reduce carry trade positions (long AUD/JPY, NZD/JPY) as safe-haven flows accelerate on Gulf crisis; gold (XAU/USD) as alternative safe haven with central bank buying tailwind.",
-      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iesKZOQ2v2kA/v2/1200x-1.png"
-    },
-    {
-      "headline": "Seven Killed as Drone Hits Bus in Russian-Controlled Ukraine",
-      "they_say": "Drone strikes in Ukraine are precision military operations with minimal civilian impact.",
-      "reality": "Seven civilians killed when drone hits a bus in Russian-controlled part of Ukraine. Zelenskyy requests US missiles in response to intensified Russian strikes across the country.",
-      "sector": "geopolitics",
-      "paradigm_pillar": "EU FRAGMENTATION",
-      "paradigm_implications": ["Civilian casualties escalate Ukraine conflict intensity", "Zelenskyy's missile request tests NATO commitment limits"],
-      "portfolio_implication": "Portfolio implication: add geopolitical risk premium to European natural gas (TTF) via futures or BULL ETF with 2-week horizon; reduce defensive European equity (STOXX 600 hedge with V2EX puts); gold remains constructive as multi-theater conflict premium increases safe-haven bid.",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/163d/live/5daad590-5f08-11f1-a71c-b5829ec0cc2c.jpg"
-    },
-    {
-      "headline": "AI Giant Anthropic Plans US Share Sale at Near-$1tn Valuation",
-      "they_say": "AI capex growth continues without limit — demand for compute and AI services is structurally unbounded.",
-      "reality": "Anthropic's valuation approaching $1tn while Instagram AI chatbot was hacked to expose user accounts. Concentration risk in AI equity exposure rises even as security vulnerabilities emerge.",
+      "story_id": "n21_ai__spacex_chip_plant",
+      "headline": "SpaceX Wins $55bn AI Chip Plant — IPO Hits $1.8tn Valuation",
+      "they_say": "AI capex is peaking. Broadcom's -$300bn confirms the AI trade is over.",
+      "reality": "SpaceX built a $55bn chip plant, Google raised $85bn for AI, Meta launched AI agents on WhatsApp. Three simultaneous signals, all pointing up.",
       "sector": "tech",
-      "paradigm_pillar": "ABUNDANCE TECH",
-      "paradigm_implications": ["$1tn valuation signals peak narrative pricing for pure-play AI", "Security vulnerabilities emerge as AI concentration risk grows"],
-      "portfolio_implication": "Portfolio implication: take partial profits on pure-play AI equity exposure (NVDA, ANET) — $1tn valuation signals peak narrative pricing; add cybersecurity ETF (CIBR, HACK) 2% position as AI concentration risk and security vulnerability revelations drive rotation from AI builders to AI protectors.",
-      "image_url": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/92f7/live/51e59160-5dd6-11f1-b682-cf91850925ea.jpg"
+      "paradigm_pillar": "abundance_tech",
+      "paradigm_implications": [
+        "AI compute is decoupling from traditional semis cycles",
+        "Infrastructure buildout precedes application-layer monetization"
+      ],
+      "portfolio_implication": "Portfolio implication: buy NVDA on Broadcom dip with 5% stop; accumulate AI infrastructure ETFs ahead of SpaceX IPO catalyst.",
+      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iQ15AX23fMwo/v9/1200x-1.jpg"
+    },
+    {
+      "story_id": "n21_oil__iran_stocks",
+      "headline": "Trump's Iran War Drains US Oil Stocks to Lowest Level Since 2004",
+      "they_say": "Israel-Lebanon ceasefire and Republican House pushback signal de-escalation. The oil risk premium should contract.",
+      "reality": "US crude inventories hit two-decade lows. Gulf states are actively negotiating pipeline routes to bypass the Strait of Hormuz — a contingency you only plan if you expect the strait to close. Ceasefire headlines don't refill storage tanks.",
+      "sector": "geopolitics",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Energy corridor fragility is a structural repricing, not a headline-driven blip",
+        "Hormuz bypass pipelines would reshape global oil trade routes permanently"
+      ],
+      "portfolio_implication": "Portfolio implication: buy CL on dips to $72 with invalidation at $68; accumulate energy infrastructure ETFs (XLE, OIH) on structural supply thesis rather than headline chase.",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anti-U.S._protest_sign_during_public_gatherings_in_Iran_amid_the_2026_war.jpg"
+    },
+    {
+      "story_id": "n21_macro__broadcom_crash",
+      "headline": "Broadcom Loses $300bn as Revenue Forecast Disappoints",
+      "they_say": "The AI trade is over. Broadcom's -$300bn is the canary in the semiconductor coal mine — capex cuts are coming.",
+      "reality": "Broadcom's revenue miss is a company-specific rotation from custom ASIC chips to GPU clusters. Google ($85bn), SpaceX ($55bn), and Meta (WhatsApp AI) are increasing, not decreasing, AI infrastructure spend. The $300bn wipeout is a rotation signal, not a sector peak.",
+      "sector": "markets",
+      "paradigm_pillar": "abundance_tech",
+      "paradigm_implications": [
+        "Semiconductor leadership is rotating from custom-chip plays to GPU/fab plays",
+        "Company-specific corrections in a secular growth trend = buying opportunities"
+      ],
+      "portfolio_implication": "Portfolio implication: sell Broadcom into strength, rotate proceeds into NVDA and AMD for the GPU infrastructure buildout; use defined-risk put spreads for protection on further contagion.",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BCM70015.jpg"
+    },
+    {
+      "story_id": "n21_inflation__bessent_blip",
+      "headline": "Bessent Calls US Inflation Jump a 'Short-Term Blip' as Services CPI Holds at 4.1%",
+      "they_say": "Treasury Secretary Scott Bessent says the latest inflation spike is transitory and driven by one-off energy effects from the Iran conflict.",
+      "reality": "Services inflation is running at 4.1% — largely independent of energy prices. The Fed's Beige Book shows steady employment and higher inflation. A 'blip' that's been persistent for 18+ months is a trend, not a blip.",
+      "sector": "macro",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "The Fed's tightening bias stays alive regardless of oil price swings",
+        "Sticky services inflation means rate cuts are further away than bond markets price"
+      ],
+      "portfolio_implication": "Portfolio implication: trim duration in fixed income; prefer TIPS and floating-rate notes over nominal treasuries; add gold on pullbacks to $2,350 as real rate hedge.",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Official_portrait_of_Treasury_Secretary_Scott_Bessent_%28cropped%29.jpg"
+    },
+    {
+      "story_id": "n21_china__hurricane_trump",
+      "headline": "Hurricane Trump Threatens to Blow China Off Course",
+      "they_say": "China's industrial policy is executing at 5-year-plan tempo — insulated from US political cycles and tariff noise.",
+      "reality": "Trump's Iran war + tariff escalation create the first major external stress test for Beijing's export-driven growth model. A leading Chinese property developer reports massive losses. Japan's defence minister publicly rebuffs Chinese 'new militarism' claims. The 'hurricane' metaphor is apt — China is being blown off its planned course.",
+      "sector": "geopolitics",
+      "paradigm_pillar": "china_ascendancy",
+      "paradigm_implications": [
+        "China's industrial policy faces its first real external stress test since Belt and Road",
+        "Capital may rotate from China-exposed EM equities to India/SE Asia alternatives"
+      ],
+      "portfolio_implication": "Portfolio implication: underweight China-exposed EM ETFs (EEM) relative to India (INDA) and ASEAN (EEMA); add short-duration CNH bonds for carry, not growth exposure.",
+      "image_url": "https://i.guim.co.uk/img/media/02d774e13d041f094f583254b13136c5a354374e/846_0_4583_3667/master/4583.jpg?width=700&quality=85&auto=format&fit=max&s=76103f6b3aeacef960917fa88cbed56f"
+    },
+    {
+      "story_id": "n21_nato__cable_sabotage",
+      "headline": "Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response",
+      "they_say": "Undersea cable damage is a routine maritime incident — repair ships will handle it. No strategic implications.",
+      "reality": "NATO activated its first-ever collective response to suspected cable sabotage — a threshold has been crossed. Hybrid warfare against critical infrastructure now triggers the Alliance's Article 5-adjacent mechanisms. This is a new doctrine in action.",
+      "sector": "geopolitics",
+      "paradigm_pillar": "eu_fragmentation",
+      "paradigm_implications": [
+        "Critical infrastructure protection becomes a NATO-core mission, expanding defense budgets beyond troop commitments",
+        "Maritime infrastructure insurance premiums reprice globally — second-order inflation input"
+      ],
+      "portfolio_implication": "Portfolio implication: add cybersecurity ETFs (HACK, CIBR) and defense contractors (RTX, LMT) on NATO infrastructure protection mandate; marine insurance plays (CB, MKL) beneficiaries of premium repricing.",
+      "image_url": null
     }
   ]
 }
