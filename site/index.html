@@ -56,20 +56,7 @@
   <!-- LEFT COLUMN: Containerized sections -->
   <main class="main-col">
 
-    <!-- CONTAINER 1: What's moving markets right now -->
-    <section class="container collapsible" id="storiesContainer">
-      <div class="container-header" data-target="storiesBody">
-        <span class="container-title">What's moving markets right now</span>
-        <span class="container-count" id="storyCount"></span>
-        <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-      </div>
-      <div class="container-desc">Six stories driving capital flows today. Each with a trade idea, a contradiction analysis, and a confidence level. Open to see who's winning, who's losing, and where the smart money is positioned.</div>
-      <div class="container-body" id="storiesBody">
-        <div class="news-col" id="newsCol"></div>
-      </div>
-    </section>
-
-    <!-- CONTAINER 2: Bet & Benefit (collapsed by default — discovered after orientation) -->
+    <!-- CONTAINER 1: Bet & Benefit — highest action density, first -->
     <section class="container collapsible" id="anchorContainer">
       <div class="container-header" data-target="anchorBody">
         <span class="container-title">Your trades this week</span>
@@ -86,24 +73,12 @@
         </div>
         <div class="asset-list" id="assetList"></div>
         <div class="asset-note">Key levels · Weekly anchor · Updated Tue 10:00 EET</div>
+        <div class="asset-note" style="margin-top:4px;color:var(--ink-muted);font-size:9px">PDR (Passive Discovery Rate) measures the ratio of passive-to-active institutional flow. ▁▃▅▆▇ = low→high discovery pressure. Values above 1.5 signal passive accumulation; below 0.8 signal passive distribution.</div>
       </div>
     </section>
 
-    <!-- CONTAINER 3: Where the smart money is going -->
-    <section class="container collapsible" id="capitalFlowsContainer">
-      <div class="container-header" data-target="capitalFlowsBody">
-        <span class="container-title">Where the smart money is going</span>
-        <span class="container-subtitle" id="cfSubtitle"></span>
-        <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-      </div>
-      <div class="container-desc">Institutional capital flow tracking with directional conviction and projected velocity. See which assets are accumulating, which are distributing, and what the flow data contradicts about the consensus narrative.</div>
-      <div class="container-body" id="capitalFlowsBody">
-        <div class="flows-list" id="flowsList"></div>
-      </div>
-    </section>
-
-    <!-- CONTAINER 4: THE SIGNAL — Cross-Container Intelligence -->
-    <section class="container collapsible" id="triangulationContainer">
+    <!-- CONTAINER 2: THE SIGNAL — Cross-Container Intelligence (synthesis layer, visually distinct) -->
+    <section class="container collapsible signal-container" id="triangulationContainer">
       <div class="container-header" data-target="triangulationBody">
         <span class="container-title">The Signal</span>
         <span class="container-subtitle">Event × Flow × Bet</span>
@@ -113,6 +88,33 @@
       <div class="container-body" id="triangulationBody">
         <div class="triangulation-list" id="triangulationList"></div>
         <div class="asset-note" style="margin-top:8px">Triangulation: Event strength (max 35) + Flow alignment (max 35) + Bet conviction (max 30) = Signal Score · Updated per cycle</div>
+      </div>
+    </section>
+
+    <!-- CONTAINER 3: What's moving markets right now -->
+    <section class="container collapsible" id="storiesContainer">
+      <div class="container-header" data-target="storiesBody">
+        <span class="container-title">What's moving markets right now</span>
+        <span class="container-count" id="storyCount"></span>
+        <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </div>
+      <div class="container-desc">Six stories driving capital flows today. Each with a trade idea, a contradiction analysis, and a confidence level. Open to see who's winning, who's losing, and where the smart money is positioned.</div>
+      <div class="container-body" id="storiesBody">
+        <div class="news-col" id="newsCol"></div>
+      </div>
+    </section>
+
+    <!-- CONTAINER 4: Where the smart money is going -->
+    <section class="container collapsible" id="capitalFlowsContainer">
+      <div class="container-header" data-target="capitalFlowsBody">
+        <span class="container-title">Where the smart money is going</span>
+        <span class="container-subtitle" id="cfSubtitle"></span>
+        <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </div>
+      <div class="container-desc">Institutional capital flow tracking with directional conviction and projected velocity. See which assets are accumulating, which are distributing, and what the flow data contradicts about the consensus narrative.</div>
+      <div class="container-body" id="capitalFlowsBody">
+        <div class="flows-list" id="flowsList"></div>
+        <div class="asset-note" style="margin-top:8px">Flow data: EPFR Global, Morningstar Direct, and internal aggregation · Velocity measured vs 4-week rolling average · Timestamps reflect week ending Friday EET · Methodology: <a href="./capital.html" style="color:var(--gold)">capital.html</a></div>
       </div>
     </section>
 

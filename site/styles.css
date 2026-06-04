@@ -243,6 +243,20 @@ body {
   border-radius: var(--φ-md);
   box-shadow: 0 2px 12px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
 }
+
+/* THE SIGNAL — synthesis container, visually distinct */
+.signal-container {
+  border-left: 3px solid var(--gold);
+  background: linear-gradient(135deg, rgba(212,175,55,0.03) 0%, rgba(212,175,55,0.01) 100%);
+  box-shadow: 0 2px 14px rgba(212,175,55,0.08), 0 1px 3px rgba(0,0,0,0.04);
+}
+.signal-container .container-header {
+  border-bottom-color: rgba(212,175,55,0.25);
+}
+.signal-container .container-title {
+  color: var(--gold);
+}
+
 .container-header {
   display: flex;
   align-items: center;

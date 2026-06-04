@@ -429,13 +429,54 @@ function determineSeverity(story) {
 
 // ── Contradiction Score (0-100) ──
 function calcContradictionScore(story) {
-  let score = 50;
+  // Measures actual narrative-vs-reality tension + flow divergence + confidence grounding
+  let score = 30; // baseline — a story by definition has some contradiction
+
   const cf = story.capital_flow;
-  if (cf) score += 20;
-  if (story.extremum) score += 15;
-  if (story.confidence === 'high') score += 10;
-  if (cf && cf.direction === 'outflow') score += 5;
-  return Math.min(score, 95);
+  const theySay = (story.they_say || '').toLowerCase();
+  const reality = (story.reality || '').toLowerCase();
+
+  // 1. Narrative-Reality Tension (0-30)
+  if (theySay && reality) {
+    // Count contrast markers (signals of actual contradiction, not just co-existence)
+    const markers = ['but','however','not','instead','actually','yet','contrary','despite','while','whereas','though','unlike'];
+    const hits = markers.filter(m => reality.includes(m)).length;
+    score += Math.min(hits * 5, 15);
+
+    // Substantive pushback: reality should be meaningful length
+    if (reality.length > 50 && theySay.length > 30) score += 10;
+    if (reality.length > theySay.length * 0.7) score += 5;
+  }
+
+  // 2. Flow-Narrative Divergence (0-25)
+  if (cf) {
+    const claim = (cf.claim || '').toLowerCase();
+    const pos = /surge|boom|rally|bull|growth|soar|outperform|strength|optimis/.test(theySay);
+    const neg = /crash|fear|crisis|risk|plunge|bear|collapse|sell|recession|weakness|pessimis/.test(theySay);
+
+    if (pos && cf.direction === 'outflow') score += 20;
+    else if (neg && cf.direction === 'inflow') score += 20;
+    else if (pos || neg) score += 5;
+
+    // Flow magnitude = more at stake
+    const amt = parseFloat(cf.current_amount || '0');
+    if (amt > 5) score += 10;
+    else if (amt > 2) score += 5;
+  }
+
+  // 3. Extremum quality (0-15)
+  if (story.extremum) {
+    const e = story.extremum;
+    if (e.winner || e.loser) score += 5;
+    if (e.idiot || e.genius) score += 5;
+    if ((e.winner || e.loser) && (e.idiot || e.genius)) score += 5;
+  }
+
+  // 4. Confidence grounding (0-10)
+  if (story.confidence === 'high' && cf && cf.current_amount) score += 10;
+  else if (story.confidence === 'high') score += 5;
+
+  return Math.min(score, 100);
 }
 
 function livingCardHTML(story, isLead) {
