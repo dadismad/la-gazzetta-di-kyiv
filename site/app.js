@@ -757,10 +757,10 @@ function appendStoryCard(story, isLead) {
 
 function updateStoryCount() {
   const countEl = byId('storyCount');
-  if (countEl) {
-    const count = document.querySelectorAll('.card[data-story-id]').length;
-    countEl.textContent = `${count} stories`;
-  }
+  const heroCountEl = byId('heroStoryCount');
+  const count = document.querySelectorAll('.card[data-story-id]').length;
+  if (countEl) countEl.textContent = `${count} stories`;
+  if (heroCountEl) heroCountEl.textContent = String(count);
 }
 
 // ═══════════════════════════════════════════════════════════════

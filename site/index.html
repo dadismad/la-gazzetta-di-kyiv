@@ -28,6 +28,14 @@
       </svg>
     </span>
     <span class="masthead-name">La Gazzetta di Kyiv</span>
+    <span class="masthead-machiavelli" title="Niccolò Machiavelli — Virtù e Fortuna" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 4l-1 2v2l1 1h3l1-1V6L11 4H8z"/>
+        <path d="M5 10l-1 4 2 3 3 1 3-1 2-3-1-4"/>
+        <circle cx="9" cy="5" r="1" fill="currentColor" opacity="0.6"/>
+        <path d="M9 6v1" stroke-width="1"/>
+      </svg>
+    </span>
   </div>
   <div class="masthead-right">
     <span class="masthead-tagline">The stories that move markets</span>
@@ -38,14 +46,15 @@
 <section class="hero">
   <div class="hero-content">
     <h1 class="hero-headline">The markets price consensus. We track what they're missing.</h1>
-    <p class="hero-subtitle">Every day, six stories drive capital flows that the headlines won't tell you about. Contradiction-first analysis. Trade-specific positioning. Institutional flow tracking. All free.</p>
+    <p class="hero-subtitle">Every day, stories drive capital flows that the headlines won't tell you about. Contradiction-first analysis. Trade-specific positioning. Institutional flow tracking. All free.</p>
     <div class="hero-cta">
       <button class="hero-btn" onclick="document.getElementById('storiesContainer').classList.add('expanded');document.getElementById('storiesContainer').scrollIntoView({behavior:'smooth'})">View today's brief →</button>
-      <a href="https://t.me/GazzettaDiKyiv" class="hero-link">Get it on Telegram</a>
+      <a href="https://t.me/GazzettaDiKyiv" class="hero-link">Telegram</a>
+      <a href="https://www.reddit.com/r/LaGazzettadiKyiv/" class="hero-link">Reddit</a>
     </div>
   </div>
   <div class="hero-stats">
-    <div class="hero-stat"><span class="hero-stat-value">6</span><span class="hero-stat-label">Stories today</span></div>
+    <div class="hero-stat"><span class="hero-stat-value" id="heroStoryCount">—</span><span class="hero-stat-label">Stories today</span></div>
     <div class="hero-stat"><span class="hero-stat-value">14</span><span class="hero-stat-label">Assets tracked</span></div>
     <div class="hero-stat"><span class="hero-stat-value">70%</span><span class="hero-stat-label">Avg confidence</span></div>
   </div>
