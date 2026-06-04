@@ -175,6 +175,21 @@ body {
 .container.expanded .container-arrow {
   transform: rotate(180deg);
 }
+.container.expanded .container-hint {
+  display: none;
+}
+.container-desc {
+  font-family: var(--body);
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--ink-light);
+  padding: 8px 12px 0 12px;
+  font-style: italic;
+  max-width: 680px;
+}
+.container.expanded .container-desc {
+  display: none;
+}
 
 /* ── Container Body (collapsible) ── */
 .container-body {

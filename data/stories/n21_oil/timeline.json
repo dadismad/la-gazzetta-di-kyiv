@@ -129,6 +129,17 @@
       "evolution_score": 0.7412,
       "actor_match": 1.0,
       "geography_match": 0.5
+    },
+    {
+      "update_id": "n21_oil__ev_013",
+      "timestamp": "2026-06-04T19:15:22.709012+00:00",
+      "type": "evidence",
+      "summary": "Evolution match (score=0.74): The Gulf states and Ukraine need each other; Gulf states are burning through interceptors",
+      "source_url": "https://www.ft.com/content/4f6572ed-aa76-4370-bc0a-f686b8b323f7",
+      "source_id": "ft_world",
+      "evolution_score": 0.737,
+      "actor_match": 1.0,
+      "geography_match": 0.5
     }
   ]
 }
