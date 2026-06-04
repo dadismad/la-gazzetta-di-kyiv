@@ -831,6 +831,80 @@ function updateStoryCount() {
   const count = document.querySelectorAll('.card[data-story-id]').length;
   if (countEl) countEl.textContent = `${count} stories`;
   if (heroCountEl) heroCountEl.textContent = String(count);
+  updateCumulativeStats();
+}
+
+// ═══════════════════════════════════════════════════════════════
+// CUMULATIVE TRACKING — forever counters (localStorage)
+// ═══════════════════════════════════════════════════════════════
+
+function getCumulative(key, fallback) {
+  try {
+    const v = localStorage.getItem('gazzetta_' + key);
+    return v ? JSON.parse(v) : fallback;
+  } catch(e) { return fallback; }
+}
+
+function setCumulative(key, val) {
+  try { localStorage.setItem('gazzetta_' + key, JSON.stringify(val)); } catch(e) {}
+}
+
+function updateCumulativeStats() {
+  // Stories tracked — cumulative, never decreases
+  const currentStories = document.querySelectorAll('.card[data-story-id]').length;
+  let tracked = getCumulative('stories_tracked', 10);
+  if (currentStories > tracked) {
+    tracked = currentStories;
+    setCumulative('stories_tracked', tracked);
+  }
+
+  // Capital tracked — parse current total from flow data and accumulate
+  let flowTotal = 0;
+  CAPITAL_FLOWS_DATA.forEach(f => {
+    const m = (f.headline || '').match(/\$([\d.]+)([MBT])/);
+    if (m) {
+      const amt = parseFloat(m[1]);
+      flowTotal += m[2] === 'B' ? amt : amt / 1000;
+    }
+  });
+  let cumFlow = getCumulative('capital_tracked_b', 17.1);
+  if (flowTotal > cumFlow) {
+    cumFlow = flowTotal;
+    setCumulative('capital_tracked_b', cumFlow);
+  }
+
+  // Assets positioned
+  let cumAssets = getCumulative('assets_positioned', 14);
+  if (ANCHOR_ASSETS.length > cumAssets) {
+    cumAssets = ANCHOR_ASSETS.length;
+    setCumulative('assets_positioned', cumAssets);
+  }
+
+  // Total at stake — sum of all entry prices × conviction multiplier
+  let stakeTotal = 0;
+  ANCHOR_ASSETS.forEach(a => {
+    const price = parseFloat(String(a.price).replace(/[,$%bp]/g, ''));
+    if (!isNaN(price)) {
+      const mult = a.conviction === 'HIGH' ? 1.5 : a.conviction === 'MED' ? 1.0 : 0.5;
+      stakeTotal += price * mult;
+    }
+  });
+  stakeTotal = Math.round(stakeTotal / 1000); // in thousands for display
+  let cumStake = getCumulative('total_at_stake_k', 18.4);
+  if (stakeTotal > cumStake) {
+    cumStake = stakeTotal;
+    setCumulative('total_at_stake_k', cumStake);
+  }
+
+  // Update hero
+  const heroStory = byId('heroStoryCount');
+  const heroFlow = byId('heroFlowTotal');
+  const heroAssets = byId('heroAssetCount');
+  const heroStake = byId('heroBetTotal');
+  if (heroStory) heroStory.textContent = String(tracked);
+  if (heroFlow) heroFlow.textContent = '$' + cumFlow.toFixed(1) + 'B';
+  if (heroAssets) heroAssets.textContent = String(cumAssets);
+  if (heroStake) heroStake.textContent = '$' + cumStake.toFixed(1) + 'B';
 }
 
 // ═══════════════════════════════════════════════════════════════
