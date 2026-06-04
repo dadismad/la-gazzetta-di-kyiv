@@ -1,53 +1,53 @@
 {
-  "generated_at": "2026-06-04T03:46:46+00:00",
+  "generated_at": "2026-06-04T15:46:31.107039+00:00",
   "stories": [
     {
-      "headline": "SpaceX Wins $55bn AI Chip Plant Tax Exemption Despite Local Backlash",
-      "thesis": "Elon Musk's SpaceX secures tax breaks for a $55bn AI chip manufacturing plant, signaling the AI compute buildout is accelerating — not peaking — despite Broadcom's $300bn market cap wipeout.",
+      "headline": "Trafigura Warns Oil at 'Inflection Point' as Iran War Drives Record $4B Profit",
+      "thesis": "The world's largest commodity trader says energy markets have reached a structural turning point. Gulf states are negotiating Hormuz bypass pipelines while US oil stocks hit 2004 lows — three converging signals that change the risk calculation on crude.",
+      "sector": "geopolitics",
+      "source_count": 26,
+      "setup_id": "n21_oil",
+      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iGHUxqc89N9w/v1/1200x-1.jpg"
+    },
+    {
+      "headline": "Americans Lead Global AI Data Centre Backlash, Poll Finds",
+      "thesis": "NIMBY opposition to AI infrastructure is rising even as Nvidia calms disruption fears. The contradiction between public sentiment and corporate capex acceleration is the real story — $55bn SpaceX plant exemptions, Meta WhatsApp AI agents, and Google's $85bn raise all push forward.",
       "sector": "tech",
       "source_count": 6,
       "setup_id": "n21_ai",
-      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iQ15AX23fMwo/v9/1200x-1.jpg"
+      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iNawe03oXvdg/v7/1200x-1.jpg"
     },
     {
-      "headline": "Trump's Iran War Drains US Oil Stocks to Lowest Level Since 2004",
-      "thesis": "US crude inventories hit two-decade lows as the Iran conflict disrupts Gulf supply chains. Gulf states negotiate pipeline bypass routes around the Strait of Hormuz.",
+      "headline": "US Plans Cuts to NATO Rapid Response Force as Cable Sabotage Probes Expand",
+      "thesis": "America reduces NATO's quick-reaction capability at the same moment suspected deep-sea cable sabotage triggers the alliance's first collective response. The divergence between strategic posture and operational reality is widening.",
       "sector": "geopolitics",
-      "source_count": 4,
-      "setup_id": "n21_oil",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anti-U.S._protest_sign_during_public_gatherings_in_Iran_amid_the_2026_war.jpg"
+      "source_count": 16,
+      "setup_id": "n21_nato",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NATO_members_%28blue%29.svg"
     },
     {
-      "headline": "Broadcom Loses $300bn as Revenue Forecast Disappoints Markets",
-      "thesis": "Broadcom's $300bn+ market cap wipeout on a disappointing forecast creates the first major AI trade test — is this a company-specific rotation or a sector top signal?",
-      "sector": "markets",
+      "headline": "Hungary Lifts 17-Month Veto on Ukraine's EU Membership Bid",
+      "thesis": "Orban's blockage of Ukraine's EU accession path collapses after 17 months. The Gulf states and Ukraine need each other — a realignment that exposes Europe's dependence on non-EU energy corridors.",
+      "sector": "geopolitics",
       "source_count": 6,
-      "setup_id": "n21_macro",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BCM70015.jpg"
-    },
-    {
-      "headline": "Bessent Calls US Inflation Jump a 'Short-Term Blip' as Services CPI Holds at 4.1%",
-      "thesis": "Treasury Secretary Scott Bessent dismisses the latest inflation spike as transitory, but sticky services inflation at 4.1% keeps the Fed's tightening bias alive regardless of energy price swings.",
-      "sector": "macro",
-      "source_count": 3,
-      "setup_id": "n21_inflation",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Official_portrait_of_Treasury_Secretary_Scott_Bessent_%28cropped%29.jpg"
+      "setup_id": "n21_ukraine",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Deep_Discoverer_shipwreck_Gulf_of_Mexico_16_May_2019.png"
     },
     {
       "headline": "Hurricane Trump Threatens to Blow China Off Course",
-      "thesis": "Trump's Iran war and tariff escalation create a 'hurricane' for Chinese export-driven growth, as Beijing's industrial policy faces its first major external stress test.",
-      "sector": "geopolitics",
-      "source_count": 4,
+      "thesis": "Trump's tariff escalation and Iran war are destabilizing China's growth model. A leading property developer reports huge losses as real-estate crisis widens. The PBOC faces a trilemma: stabilize the yuan, support growth, or manage trade war fallout.",
+      "sector": "macro",
+      "source_count": 6,
       "setup_id": "n21_china",
       "image_url": "https://i.guim.co.uk/img/media/02d774e13d041f094f583254b13136c5a354374e/846_0_4583_3667/master/4583.jpg?width=700&quality=85&auto=format&fit=max&s=76103f6b3aeacef960917fa88cbed56f"
     },
     {
-      "headline": "Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response",
-      "thesis": "NATO activates its first collective response to suspected undersea cable sabotage, marking a new front in hybrid warfare and critical infrastructure protection.",
-      "sector": "geopolitics",
+      "headline": "Morgan Stanley Says Fed Is Discounting the Iran War in Rate Decisions",
+      "thesis": "The Fed is treating the Iran conflict as a transitory supply shock rather than a structural inflation driver. If Morgan Stanley is right that the war is being discounted, rate expectations will need a hard repricing when energy costs hit consumer prices.",
+      "sector": "macro",
       "source_count": 3,
-      "setup_id": "n21_nato",
-      "image_url": null
+      "setup_id": "n21_rates",
+      "image_url": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=240&h=160&fit=crop&q=80"
     }
   ]
 }

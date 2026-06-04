@@ -1,14 +1,14 @@
 {
   "ok": true,
-  "generated_at": "2026-06-04T03:46:46Z",
+  "generated_at": "2026-06-04T15:46:31Z",
   "inputs": {
-    "setups": 8,
+    "setups": 11,
     "contradictions": 8,
     "regime_label": "Paradigm-Lens Intelligence (selective risk-off)"
   },
   "quality": {
-    "telegram_word_count": 121,
-    "reddit_word_count": 219,
+    "telegram_word_count": 132,
+    "reddit_word_count": 254,
     "telegram_range": "80-140",
     "reddit_range": "180-260",
     "anti_template_clean": true,
@@ -17,11 +17,10 @@
     "banned_phrases": 0
   },
   "editorial": {
-    "lead_story": "n21_ai__spacex_chip_plant",
-    "lead_headline": "SpaceX Wins $55bn AI Chip Plant — IPO Hits $1.8tn Valuation",
-    "frame": "contradiction",
-    "human_detail_id": "HD-008",
-    "human_detail_id_secondary": "HD-009",
-    "cycle_number": 3
+    "lead_story": "n21_oil__inflection_point",
+    "lead_headline": "Trafigura Warns Oil at 'Inflection Point' — Iran War Drives Record $4B Profit",
+    "frame": "convergence",
+    "human_detail_id": "HD-010",
+    "cycle_number": 4
   }
 }

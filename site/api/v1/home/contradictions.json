@@ -1,34 +1,52 @@
 {
-  "generated_at": "2026-06-04T03:46:46.963501+00:00",
+  "generated_at": "2026-06-04T15:46:31.107039+00:00",
   "data_freshness_seconds": 3600,
-  "source_count": 6,
+  "source_count": 5,
   "items": [
     {
       "narrative": "macro",
       "claim_a": "Gulf States policy remains stable",
-      "claim_b": "Broadcom loses more than $300bn in market value as revenue forecast disappoints",
+      "claim_b": "Betfair targeted gambling addict, court hears in landmark case",
       "urgency": "high",
       "invalidation_window": "24-72h",
       "paradigm_pillar": "multi_pillar",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BCM70015.jpg"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Betfair_logo.png"
     },
     {
       "narrative": "ai",
-      "claim_a": "Federal Reserve policy remains stable",
-      "claim_b": "SpaceX wins tax exemption for $55bn AI chip plant despite local backlash",
+      "claim_a": "NVIDIA policy remains stable",
+      "claim_b": "Americans lead AI data centre backlash, global poll finds",
       "urgency": "medium",
       "invalidation_window": "24-72h",
       "paradigm_pillar": "multi_pillar",
-      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iQ15AX23fMwo/v9/1200x-1.jpg"
+      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iNawe03oXvdg/v7/1200x-1.jpg"
     },
     {
       "narrative": "oil",
       "claim_a": "Gulf States policy remains stable",
-      "claim_b": "Trump\u2019s Iran war drains US oil stocks to lowest level since 2004",
+      "claim_b": "Trafigura warns oil at \u2018inflection point\u2019 as Iran war stokes bumper half-year profits",
       "urgency": "medium",
       "invalidation_window": "24-72h",
       "paradigm_pillar": "multi_pillar",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anti-U.S._protest_sign_during_public_gatherings_in_Iran_amid_the_2026_war.jpg"
+      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iGHUxqc89N9w/v1/1200x-1.jpg"
+    },
+    {
+      "narrative": "ukraine",
+      "claim_a": "Gulf States policy remains stable",
+      "claim_b": "The Gulf states and Ukraine need each other",
+      "urgency": "medium",
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Deep_Discoverer_shipwreck_Gulf_of_Mexico_16_May_2019.png"
+    },
+    {
+      "narrative": "rates",
+      "claim_a": "Federal Reserve policy remains stable",
+      "claim_b": "Inflation and interest rates tracker: see how your country compares",
+      "urgency": "medium",
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar",
+      "image_url": null
     },
     {
       "narrative": "china",
@@ -40,36 +58,45 @@
       "image_url": "https://i.guim.co.uk/img/media/02d774e13d041f094f583254b13136c5a354374e/846_0_4583_3667/master/4583.jpg?width=700&quality=85&auto=format&fit=max&s=76103f6b3aeacef960917fa88cbed56f"
     },
     {
-      "narrative": "inflation",
-      "claim_a": "BLS policy remains stable",
-      "claim_b": "Bessent says US inflation jump will be \u2018short-term blip\u2019",
+      "narrative": "nato",
+      "claim_a": "NATO policy remains stable",
+      "claim_b": "US plans cuts to Nato\u2019s rapid response force",
+      "urgency": "medium",
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NATO_members_%28blue%29.svg"
+    },
+    {
+      "narrative": "russia",
+      "claim_a": "Kremlin/Russia policy remains stable",
+      "claim_b": "Russia prunes Armenian rose trade ahead of election",
+      "urgency": "medium",
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ergaki%2C_Buiba_Valley%2C_Western_Sayan_Mountains%2C_Krasnoyarsk_Krai%2C_Russia.jpg"
+    },
+    {
+      "narrative": "election",
+      "claim_a": "Kremlin/Russia policy remains stable",
+      "claim_b": "Russia prunes Armenian rose trade ahead of election",
+      "urgency": "medium",
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ergaki%2C_Buiba_Valley%2C_Western_Sayan_Mountains%2C_Krasnoyarsk_Krai%2C_Russia.jpg"
+    },
+    {
+      "narrative": "crypto",
+      "claim_a": "ETF issuers policy remains stable",
+      "claim_b": "Reform given another \u00a33mn by crypto billionaire Harborne",
       "urgency": "medium",
       "invalidation_window": "24-72h",
       "paradigm_pillar": "multi_pillar",
       "image_url": null
     },
     {
-      "narrative": "ukraine",
-      "claim_a": "Kremlin/Russia policy remains stable",
-      "claim_b": "To fight Russia, Europe needs Ukraine",
-      "urgency": "medium",
-      "invalidation_window": "24-72h",
-      "paradigm_pillar": "eu_fragmentation",
-      "image_url": null
-    },
-    {
-      "narrative": "russia",
-      "claim_a": "Kremlin/Russia policy remains stable",
-      "claim_b": "To fight Russia, Europe needs Ukraine",
-      "urgency": "medium",
-      "invalidation_window": "24-72h",
-      "paradigm_pillar": "eu_fragmentation",
-      "image_url": null
-    },
-    {
-      "narrative": "nato",
-      "claim_a": "NATO policy remains stable",
-      "claim_b": "Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response",
+      "narrative": "inflation",
+      "claim_a": "BLS policy remains stable",
+      "claim_b": "Inflation and interest rates tracker: see how your country compares",
       "urgency": "medium",
       "invalidation_window": "24-72h",
       "paradigm_pillar": "multi_pillar",

@@ -1,13 +1,13 @@
-SpaceX wins tax exemption for $55bn AI chip plant — while simultaneously pitching the largest IPO in US history at $1.8tn value. The AI infrastructure buildout is not slowing down. It's accelerating.
+Trafigura warns oil at an 'inflection point' — the Iran war generated bumper half-year profits, but the real signal is structural: Gulf states are in talks to bypass Hormuz with overland pipelines at the same time US oil stocks hit their lowest since 2004.
 
-Regime: Contradiction (selective risk-on for AI infra, risk-off for semis laggards): Broadcom -$300bn on a revenue miss is the buyable dip in the AI trade — company-specific, not sector-wide.
+Regime: Convergence (selective risk-off on energy corridor): Three separate narratives — Iran supply disruption, Hormuz bypass infrastructure, and Trafigura's record $4B profit payout — are converging into a single energy crisis repricing signal.
 
-• NVIDIA: staged entries on Broadcom spillover, 5% invalidation stop
-• SpaceX IPO plays: satellite/defense ETFs accumulate before listing
-• Google $85bn AI equity raise — follow the cash, not the headlines
+• Brent: staged long entries on dips to $72, 5% invalidation stop below $68
+• Energy ETFs (XLE): accumulate on pipeline news as infrastructure premium reprices
+• Gold holds $2,450 as Israel-Lebanon ceasefire fails to cool broader Middle East risk
 
-¹ SpaceX pitches investors $1.8tn valuation in historic IPO (source: https://www.ft.com/content/95286aa1-ee55-4a45-86b8-951cc0fb23a8)
+¹ Trafigura pays record dividend as profit hits $4 billion, more than double the prior year (source: https://www.bloomberg.com/news/articles/2026-06-04/trafigura-pays-record-dividend-as-profit-soars-over-4-billion)
 
-Continuity: https://pureciclismo.github.io/gazzetta-di-kyiv/ | Next trigger: SpaceX S-1 filing confirms valuation range
+Continuity: https://pureciclismo.github.io/gazzetta-di-kyiv/ | Next trigger: Hormuz bypass pipeline confirmation or US-Iran de-escalation signal
 
-Full briefing and positioning map: https://pureciclismo.github.io/gazzetta-di-kyiv/
+Narrative exposure dashboard: https://pureciclismo.github.io/gazzetta-di-kyiv/

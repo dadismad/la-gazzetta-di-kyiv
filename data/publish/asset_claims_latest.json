@@ -1,41 +1,53 @@
 {
-  "generated_at": "2026-06-04T03:46:46+00:00",
+  "generated_at": "2026-06-04T15:46:31.107039+00:00",
   "claims": [
+    {
+      "ticker": "CL",
+      "direction": "up",
+      "price_target": "$82.50",
+      "strategy": "Fade-the-move",
+      "win_rate": "65%",
+      "horizon": "2-24h",
+      "narrative_driven_pct": 40,
+      "crowd_belief": "Polymarket 'Iran peace accord by July' at 32% — crowd pricing de-escalation, but Trafigura's inflection point warning and Hormuz bypass talks signal structural bull case",
+      "contradiction": "Crowd pricing peace optimism (Israel-Lebanon ceasefire, Iran accord speculation) while commodity traders and Gulf states signal structural supply reconfiguration",
+      "story_id": "n21_oil"
+    },
+    {
+      "ticker": "XLE",
+      "direction": "up",
+      "price_target": "+12% from current",
+      "strategy": "Accumulation on dips",
+      "win_rate": "72% in corridor-disruption regimes",
+      "horizon": "1-4 weeks",
+      "narrative_driven_pct": 55,
+      "crowd_belief": "No active Polymarket contract for energy sector. Qualitative: consensus sees range-bound oil keeping energy sector in check — but structural supply signals are building beneath the surface.",
+      "contradiction": "Energy sector positioning remains underweight relative to 2004 oil-stock-depletion analogs. The structural bull case is consensus-undercounted.",
+      "story_id": "n21_oil"
+    },
+    {
+      "ticker": "GC",
+      "direction": "up",
+      "price_target": "$2,550",
+      "strategy": "Staged entries on pullback",
+      "win_rate": "68% during Middle East escalation",
+      "horizon": "1-2 weeks",
+      "narrative_driven_pct": 60,
+      "crowd_belief": "Gold positioning is elevated but not extreme. The ceasefire-driven dip was shallow — buyers stepped in immediately, suggesting structural demand floor.",
+      "contradiction": "Crowd believes the ceasefire caps gold but institutional gold buying (central banks + ETFs) continues unabated.",
+      "story_id": "n21_nato"
+    },
     {
       "ticker": "NVDA",
       "direction": "up",
       "price_target": "$165",
-      "strategy": "Gap-and-Go",
-      "win_rate": "72%",
-      "horizon": "24-72h",
-      "narrative_driven_pct": 65,
-      "crowd_belief": "Consensus says AI capex is peaking — Broadcom -$300bn confirms top. But three simultaneous buildout signals say otherwise: SpaceX $55bn chip plant, Google $85bn equity raise, Meta WhatsApp AI agents.",
-      "contradiction": "Broadcom's revenue miss is company-specific (custom chip demand rotation), not a sector signal. The $300bn wipeout is the buyable dip.",
+      "strategy": "Gap-and-Go on AI infra rotation",
+      "win_rate": "58% post-Broadcom spillover patterns",
+      "horizon": "3-5 days",
+      "narrative_driven_pct": 35,
+      "crowd_belief": "Polymarket 'Nvidia above $160 by June 30' at 48% — roughly 50-50, no strong conviction either way",
+      "contradiction": "Broadcom -$300bn was read as sector-wide AI peak, but the miss was company-specific (custom ASICs) — GPU cluster demand is accelerating via Google, SpaceX, Meta.",
       "story_id": "n21_ai"
-    },
-    {
-      "ticker": "CL",
-      "direction": "up",
-      "price_target": "$78.50",
-      "strategy": "Fade-the-Move",
-      "win_rate": "65%",
-      "horizon": "2-24h",
-      "narrative_driven_pct": 30,
-      "crowd_belief": "Israel-Lebanon ceasefire and Republican House blow to Trump suggest de-escalation priced in. Reality: US oil stocks at lowest since 2004, Gulf states planning Hormuz bypass pipelines as contingency.",
-      "contradiction": "Ceasefire headlines mask structural supply erosion. US oil inventory data doesn't lie.",
-      "story_id": "n21_oil"
-    },
-    {
-      "ticker": "QQQ",
-      "direction": "down",
-      "price_target": "$435",
-      "strategy": "Straddle",
-      "win_rate": "58%",
-      "horizon": "48-72h",
-      "narrative_driven_pct": 45,
-      "crowd_belief": "AI infrastructure spending justifies premium multiples. Reality: Broadcom -$300bn breaks the narrative that 'AI always goes up.' Rotation is underway.",
-      "contradiction": "Narrative-driven % is high because the Broadcom miss IS the signal — if AI trade unwinds further, QQQ drops 5%+.",
-      "story_id": "n21_macro"
     }
   ]
 }

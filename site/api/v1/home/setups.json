@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-04T03:46:46.963501+00:00",
+  "generated_at": "2026-06-04T15:46:31.107039+00:00",
   "data_freshness_seconds": 3600,
-  "source_count": 6,
+  "source_count": 5,
   "items": [
     {
       "setup_id": "n21_macro",
-      "title": "macro: Broadcom loses more than $300bn in market value as revenue forecast disappoints",
+      "title": "macro: Betfair targeted gambling addict, court hears in landmark case",
       "horizon": "24-72h",
-      "thesis": "Broadcom loses more than $300bn in market value as revenue forecast disappoints \u2014 this changes the macro repricing calculation",
+      "thesis": "Betfair targeted gambling addict, court hears in landmark case \u2014 this changes the macro repricing calculation",
       "paradigm_pillar": "multi_pillar",
       "paradigm_label": "multi_pillar",
       "paradigm_pillars": [
@@ -17,7 +17,7 @@
       ],
       "actors": [
         "Gulf States",
-        "Kremlin/Russia"
+        "Federal Reserve"
       ],
       "incentives": [
         "capture allocation flows"
@@ -38,15 +38,15 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Broadcom loses more than $300bn in market value as revenue forecast disappoints",
-        "Israel and Lebanon agree to implement ceasefire",
-        "Republican-led House deals blow to Trump over Iran war"
+        "Betfair targeted gambling addict, court hears in landmark case",
+        "Broadcom suffers $300bn rout as revenue outlook disappoints",
+        "Israel and Lebanon agree to implement ceasefire"
       ],
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/BCM70015.jpg"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Betfair_logo.png"
     },
     {
       "setup_id": "n21_ai",
-      "title": "ai: SpaceX wins tax exemption for $55bn AI chip plant despite local backlash",
+      "title": "ai: Americans lead AI data centre backlash, global poll finds",
       "horizon": "24-72h",
       "thesis": "AI compute concentration is accelerating \u2014 the semiconductor supply chain is the new oil pipeline",
       "paradigm_pillar": "multi_pillar",
@@ -55,37 +55,37 @@
         "multi_pillar"
       ],
       "actors": [
-        "Federal Reserve"
+        "NVIDIA"
       ],
       "incentives": [
         "capture compute rents",
         "defend platform distribution"
       ],
-      "probability_base": 58,
-      "probability_bull": 17,
-      "probability_bear": 25,
+      "probability_base": 54,
+      "probability_bull": 19,
+      "probability_bear": 27,
       "invalidation_triggers": [
-        "Federal Reserve announces policy reversal within 72 hours",
+        "NVIDIA announces policy reversal within 72 hours",
         "New data contradicts the ai repricing direction within 24 hours"
       ],
       "retail_execution": [
         "Use staged ETF entries with explicit invalidation stop",
         "Prefer defined-risk options in high-volatility windows"
       ],
-      "confidence": 0.47,
+      "confidence": 0.46,
       "citations": [
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "SpaceX wins tax exemption for $55bn AI chip plant despite local backlash",
-        "Meta bets on AI agents to unlock WhatsApp revenues",
-        "Fed\u2019s Beige Book highlights weak consumer and reliance on AI build-out"
+        "Americans lead AI data centre backlash, global poll finds",
+        "India IT Stocks Soar as Nvidia CEO Huang Calms AI Disruption Fears",
+        "AI Adoption High, but 'Incredibly Shallow' Says Dr. Rebecca Homkes"
       ],
-      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iQ15AX23fMwo/v9/1200x-1.jpg"
+      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iNawe03oXvdg/v7/1200x-1.jpg"
     },
     {
       "setup_id": "n21_oil",
-      "title": "oil: Trump\u2019s Iran war drains US oil stocks to lowest level since 2004",
+      "title": "oil: Trafigura warns oil at \u2018inflection point\u2019 as Iran war stokes bumper half-year pr",
       "horizon": "24-72h",
       "thesis": "Energy corridor fragility is repricing inflation expectations in real time",
       "paradigm_pillar": "multi_pillar",
@@ -116,11 +116,92 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Trump\u2019s Iran war drains US oil stocks to lowest level since 2004",
-        "Gulf states in talks for oil pipelines to bypass Hormuz",
-        "Stocks Fall From Record on Broadcom Miss, Oil Dips: Markets Wrap"
+        "Trafigura warns oil at \u2018inflection point\u2019 as Iran war stokes bumper half-year profits",
+        "Dangote Is Doubling Giant Oil Refinery and Plotting Trading Push",
+        "Treasuries Rise as Oil Signals Optimism on Iran Peace Accord"
       ],
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anti-U.S._protest_sign_during_public_gatherings_in_Iran_amid_the_2026_war.jpg"
+      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iGHUxqc89N9w/v1/1200x-1.jpg"
+    },
+    {
+      "setup_id": "n21_ukraine",
+      "title": "ukraine: The Gulf states and Ukraine need each other",
+      "horizon": "24-72h",
+      "thesis": "The Gulf states and Ukraine need each other \u2014 this changes the ukraine repricing calculation",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar",
+        "eu_fragmentation"
+      ],
+      "actors": [
+        "Gulf States",
+        "Kremlin/Russia"
+      ],
+      "incentives": [
+        "capture allocation flows"
+      ],
+      "probability_base": 50,
+      "probability_bull": 21,
+      "probability_bear": 29,
+      "invalidation_triggers": [
+        "Gulf States announces policy reversal within 72 hours",
+        "New data contradicts the ukraine repricing direction within 24 hours"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation stop",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.44,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "The Gulf states and Ukraine need each other",
+        "Hungary lifts 17-month veto on Ukraine\u2019s EU membership bid",
+        "To fight Russia, Europe needs Ukraine"
+      ],
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Deep_Discoverer_shipwreck_Gulf_of_Mexico_16_May_2019.png"
+    },
+    {
+      "setup_id": "n21_rates",
+      "title": "rates: Inflation and interest rates tracker: see how your country compares",
+      "horizon": "24-72h",
+      "thesis": "Rate-path divergence between Fed, ECB, and BOJ is the key cross-asset repricing channel",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar"
+      ],
+      "actors": [
+        "Federal Reserve",
+        "ECB",
+        "BOJ"
+      ],
+      "incentives": [
+        "preserve policy credibility",
+        "stabilize inflation expectations"
+      ],
+      "probability_base": 50,
+      "probability_bull": 21,
+      "probability_bear": 29,
+      "invalidation_triggers": [
+        "Federal Reserve announces policy reversal within 72 hours",
+        "New data contradicts the rates repricing direction within 24 hours"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation stop",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.44,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "Inflation and interest rates tracker: see how your country compares",
+        "ITC CEO Says Data Centers Will Put 'Downward Pressure on Rates'",
+        "Portland General Electric CEO Says Rates on Data Centers to Rise by 30%"
+      ],
+      "image_url": null
     },
     {
       "setup_id": "n21_china",
@@ -165,8 +246,159 @@
       "image_url": "https://i.guim.co.uk/img/media/02d774e13d041f094f583254b13136c5a354374e/846_0_4583_3667/master/4583.jpg?width=700&quality=85&auto=format&fit=max&s=76103f6b3aeacef960917fa88cbed56f"
     },
     {
+      "setup_id": "n21_nato",
+      "title": "nato: US plans cuts to Nato\u2019s rapid response force",
+      "horizon": "24-72h",
+      "thesis": "US plans cuts to Nato\u2019s rapid response force \u2014 this changes the nato repricing calculation",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar"
+      ],
+      "actors": [
+        "NATO"
+      ],
+      "incentives": [
+        "capture allocation flows"
+      ],
+      "probability_base": 48,
+      "probability_bull": 21,
+      "probability_bear": 31,
+      "invalidation_triggers": [
+        "NATO announces policy reversal within 72 hours",
+        "New data contradicts the nato repricing direction within 24 hours"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation stop",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.44,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "US plans cuts to Nato\u2019s rapid response force",
+        "Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response"
+      ],
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NATO_members_%28blue%29.svg"
+    },
+    {
+      "setup_id": "n21_russia",
+      "title": "russia: Russia prunes Armenian rose trade ahead of election",
+      "horizon": "24-72h",
+      "thesis": "The Ukraine attrition war is slowly draining Western political will to fund \u2014 not a stalemate, a grinding test of endurance",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar",
+        "eu_fragmentation"
+      ],
+      "actors": [
+        "Kremlin/Russia"
+      ],
+      "incentives": [
+        "preserve strategic leverage",
+        "shape sanction pathways"
+      ],
+      "probability_base": 48,
+      "probability_bull": 21,
+      "probability_bear": 31,
+      "invalidation_triggers": [
+        "Kremlin/Russia announces policy reversal within 72 hours",
+        "New data contradicts the russia repricing direction within 24 hours"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation stop",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.44,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "Russia prunes Armenian rose trade ahead of election",
+        "To fight Russia, Europe needs Ukraine"
+      ],
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ergaki%2C_Buiba_Valley%2C_Western_Sayan_Mountains%2C_Krasnoyarsk_Krai%2C_Russia.jpg"
+    },
+    {
+      "setup_id": "n21_election",
+      "title": "election: Russia prunes Armenian rose trade ahead of election",
+      "horizon": "24-72h",
+      "thesis": "Russia prunes Armenian rose trade ahead of election \u2014 this changes the election repricing calculation",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar"
+      ],
+      "actors": [
+        "Kremlin/Russia"
+      ],
+      "incentives": [
+        "capture allocation flows"
+      ],
+      "probability_base": 46,
+      "probability_bull": 22,
+      "probability_bear": 32,
+      "invalidation_triggers": [
+        "Kremlin/Russia announces policy reversal within 72 hours",
+        "New data contradicts the election repricing direction within 24 hours"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation stop",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.43,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "Russia prunes Armenian rose trade ahead of election"
+      ],
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ergaki%2C_Buiba_Valley%2C_Western_Sayan_Mountains%2C_Krasnoyarsk_Krai%2C_Russia.jpg"
+    },
+    {
+      "setup_id": "n21_crypto",
+      "title": "crypto: Reform given another \u00a33mn by crypto billionaire Harborne",
+      "horizon": "24-72h",
+      "thesis": "Real-world asset tokenisation crossed $31B \u2014 crypto is becoming capital market infrastructure, not retail speculation",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar"
+      ],
+      "actors": [
+        "ETF issuers",
+        "major exchanges",
+        "RWA platforms"
+      ],
+      "incentives": [
+        "grow flow capture",
+        "maintain market share"
+      ],
+      "probability_base": 46,
+      "probability_bull": 22,
+      "probability_bear": 32,
+      "invalidation_triggers": [
+        "ETF issuers announces policy reversal within 72 hours",
+        "New data contradicts the crypto repricing direction within 24 hours"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation stop",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.43,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "Reform given another \u00a33mn by crypto billionaire Harborne"
+      ],
+      "image_url": null
+    },
+    {
       "setup_id": "n21_inflation",
-      "title": "inflation: Bessent says US inflation jump will be \u2018short-term blip\u2019",
+      "title": "inflation: Inflation and interest rates tracker: see how your country compares",
       "horizon": "24-72h",
       "thesis": "Services inflation at 4.1% keeps tightening bias alive regardless of energy price swings",
       "paradigm_pillar": "multi_pillar",
@@ -199,118 +431,7 @@
         "data/normalized/events_latest.json"
       ],
       "evidence_titles": [
-        "Bessent says US inflation jump will be \u2018short-term blip\u2019"
-      ],
-      "image_url": null
-    },
-    {
-      "setup_id": "n21_ukraine",
-      "title": "ukraine: To fight Russia, Europe needs Ukraine",
-      "horizon": "24-72h",
-      "thesis": "To fight Russia, Europe needs Ukraine \u2014 this changes the ukraine repricing calculation",
-      "paradigm_pillar": "eu_fragmentation",
-      "paradigm_label": "EU Structural Pressures",
-      "paradigm_pillars": [
-        "eu_fragmentation"
-      ],
-      "actors": [
-        "Kremlin/Russia"
-      ],
-      "incentives": [
-        "reassert national sovereignty",
-        "redirect fiscal capacity inward",
-        "contain electoral backlash"
-      ],
-      "probability_base": 46,
-      "probability_bull": 22,
-      "probability_bear": 32,
-      "invalidation_triggers": [
-        "Kremlin/Russia announces policy reversal within 72 hours",
-        "New data contradicts the ukraine repricing direction within 24 hours"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation stop",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.43,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "To fight Russia, Europe needs Ukraine"
-      ],
-      "image_url": null
-    },
-    {
-      "setup_id": "n21_russia",
-      "title": "russia: To fight Russia, Europe needs Ukraine",
-      "horizon": "24-72h",
-      "thesis": "russia exposes the institutional mismatch between supranational governance and national political realities in Europe",
-      "paradigm_pillar": "eu_fragmentation",
-      "paradigm_label": "EU Structural Pressures",
-      "paradigm_pillars": [
-        "eu_fragmentation"
-      ],
-      "actors": [
-        "Kremlin/Russia"
-      ],
-      "incentives": [
-        "preserve strategic leverage",
-        "shape sanction pathways"
-      ],
-      "probability_base": 46,
-      "probability_bull": 22,
-      "probability_bear": 32,
-      "invalidation_triggers": [
-        "Kremlin/Russia announces policy reversal within 72 hours",
-        "New data contradicts the russia repricing direction within 24 hours"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation stop",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.43,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "To fight Russia, Europe needs Ukraine"
-      ],
-      "image_url": null
-    },
-    {
-      "setup_id": "n21_nato",
-      "title": "nato: Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response",
-      "horizon": "24-72h",
-      "thesis": "Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response \u2014 this changes the nato repricing calculation",
-      "paradigm_pillar": "multi_pillar",
-      "paradigm_label": "multi_pillar",
-      "paradigm_pillars": [
-        "multi_pillar"
-      ],
-      "actors": [
-        "NATO"
-      ],
-      "incentives": [
-        "capture allocation flows"
-      ],
-      "probability_base": 46,
-      "probability_bull": 22,
-      "probability_bear": 32,
-      "invalidation_triggers": [
-        "NATO announces policy reversal within 72 hours",
-        "New data contradicts the nato repricing direction within 24 hours"
-      ],
-      "retail_execution": [
-        "Use staged ETF entries with explicit invalidation stop",
-        "Prefer defined-risk options in high-volatility windows"
-      ],
-      "confidence": 0.43,
-      "citations": [
-        "data/normalized/events_latest.json"
-      ],
-      "evidence_titles": [
-        "Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response"
+        "Inflation and interest rates tracker: see how your country compares"
       ],
       "image_url": null
     }
