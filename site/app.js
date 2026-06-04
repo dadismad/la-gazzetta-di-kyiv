@@ -941,10 +941,9 @@ async function boot() {
   // Wire share toggle + menu (document-level delegation)
   wireShareControls();
 
-  // Render static content
+  // Render static content (non-story containers)
   renderAnchor();
   renderCapitalFlows();
-  renderTriangulation();
 
   // Try data sources
   const livingData = await getJSON(LIVING_DATA, null);
@@ -959,6 +958,9 @@ async function boot() {
     if (el) {
       all.forEach((s, i) => appendStoryCard(s, i === 0));
     }
+
+    // Triangulation AFTER cards are in DOM
+    renderTriangulation();
 
     updateMastheadLiving(livingData.generated_at, livingData.next_micro_update);
 
@@ -986,6 +988,9 @@ async function boot() {
   if (el) {
     all.forEach((s, i) => appendStoryCard(s, i === 0));
   }
+
+  // Triangulation AFTER cards are in DOM
+  renderTriangulation();
 
   updateMasthead();
 }
