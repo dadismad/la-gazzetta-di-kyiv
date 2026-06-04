@@ -340,15 +340,8 @@ function computeTriangulation(story, flow, anchorAsset) {
   let score = 0;
   const signals = [];
 
-  // Event strength (max 35)
-  if (story.confidence === 'high') score += 15;
-  if (story.they_say && story.reality) score += 10;
-  if (story.extremum) score += 10;
-  signals.push({label: 'Event', cls: 'event', val: 'strong'});
-
-  // Flow alignment (max 35)
+  // Flow alignment (max 50 — capital is the prime mover)
   if (flow) {
-    // Extract amount from headline: "$4.2B flowing..." → { amt: 4.2, denom: 'B' }
     const amtMatch = (flow.headline || '').match(/\$([\d.]+)([MBT])/);
     const amt = amtMatch ? parseFloat(amtMatch[1]) : 0;
     const denom = amtMatch ? amtMatch[2] : 'M';
@@ -356,21 +349,28 @@ function computeTriangulation(story, flow, anchorAsset) {
     const pace = paceMatch ? parseFloat(paceMatch[1]) : 1;
     const direction = flow.direction || 'none';
     
-    if (denom === 'B' && amt >= 3) score += 15;
+    // Amount tier
+    if (denom === 'B' && amt >= 5) score += 20;
+    else if (denom === 'B' && amt >= 3) score += 15;
     else if (denom === 'B' && amt >= 1) score += 10;
     else score += 5;
-    if (pace >= 2.5) score += 10;
+    // Velocity tier (boosted for capital-first: pace matters more)
+    if (pace >= 3.0) score += 15;
+    else if (pace >= 2.5) score += 12;
+    else if (pace >= 2.0) score += 10;
     else if (pace >= 1.5) score += 7;
     else score += 4;
+    // Positioning
     if (flow.positioning === 'accumulating') score += 10;
     else if (flow.positioning === 'distributing') score += 8;
     else score += 5;
     signals.push({label: 'Flow', cls: 'flow', val: `${direction} $${amt}${denom} ${pace}x`});
   } else {
     signals.push({label: 'Flow', cls: 'flow', val: 'none'});
+    // No flow data = story exists outside capital-first paradigm
   }
 
-  // Bet alignment (max 30)
+  // Bet conviction (max 30)
   let betBias = 'WATCH', betConviction = 'LOW';
   if (anchorAsset && anchorAsset in ANCHOR_ASSETS.reduce((m,a)=>(m[a.symbol]=a,m),{})) {
     const a = ANCHOR_ASSETS.find(x => x.symbol === anchorAsset);
@@ -382,6 +382,12 @@ function computeTriangulation(story, flow, anchorAsset) {
   } else {
     signals.push({label: 'Bet', cls: 'bet', val: 'no match'});
   }
+
+  // Event strength (max 20 — events without flow are noise)
+  if (story.confidence === 'high') score += 10;
+  if (story.they_say && story.reality) score += 5;
+  if (story.extremum) score += 5;
+  signals.push({label: 'Event', cls: 'event', val: story.confidence === 'high' ? 'strong' : 'moderate'});
 
   // Alignment bonus
   const flowDir = flow ? (flow.direction || 'none') : 'none';
