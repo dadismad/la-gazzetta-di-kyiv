@@ -1,7 +1,9 @@
-// La Gazzetta di Kyiv v20.17 — ATR stops fixed · Track record settlement · ADA corrected
+// La Gazzetta di Kyiv v20.18 — Dynamic capital flows · Confidence redesign · Inline glossary
 const DATA = './data/stories.json';
 const LIVING_DATA = './data/living_stories.json';
+const FLOWS_DATA = './data/flows.json';
 const POLL_INTERVAL = 120000; // 2 minutes
+const FLOWS_POLL_INTERVAL = 300000; // 5 minutes — flows change slower than stories
 
 function byId(id) { return document.getElementById(id); }
 
@@ -254,87 +256,42 @@ function renderAnchor() {
 }
 
 // ═══════════════════════════════════════════════════════════════
-// CAPITAL FLOWS REPORT
+// CAPITAL FLOWS REPORT — dynamically loaded from flows.json
 // ═══════════════════════════════════════════════════════════════
 
-const CAPITAL_FLOWS_DATA = [
-  { headline: '$4.2B flowing into energy ETFs', detail: 'Projected +$1.8B further inflow (70% confidence) · 2.3x normal pace', positioning: 'Institutional positioning: accumulating', direction: 'inflow', storyId: 'n21_oil__inflection_point' },
-  { headline: '$6.1B flowing into tech infrastructure', detail: 'Projected +$2.3B further inflow (70% confidence) · 3.1x normal pace', positioning: 'Institutional positioning: accumulating', direction: 'inflow', storyId: 'n21_ai__data_center_backlash' },
-  { headline: '$890M flowing out of European defense', detail: 'Projected -$450M further outflow (70% confidence) · 1.8x normal pace', positioning: 'Institutional positioning: hedging', direction: 'outflow', storyId: 'n21_nato__rapid_response_cuts' },
-  { headline: '$340M flowing into EM Europe bonds', detail: 'Projected +$210M further inflow (70% confidence) · 1.5x normal pace', positioning: 'Institutional positioning: accumulating', direction: 'inflow', storyId: 'n21_ukraine__gulf_eu_realignment' },
-  { headline: '$3.7B flowing out of EM equities', detail: 'Projected -$1.2B further outflow (70% confidence) · 2.1x normal pace', positioning: 'Institutional positioning: distributing', direction: 'outflow', storyId: 'n21_china__property_crisis_trump' },
-  { headline: '$1.9B flowing into short-duration Treasuries', detail: 'Projected +$850M further inflow (70% confidence) · 1.6x normal pace', positioning: 'Institutional positioning: hedging', direction: 'inflow', storyId: 'n21_rates__fed_discounting_war' },
-];
+let CAPITAL_FLOWS_DATA = [];
+let GLOSSARY = {};
 
-// ═══════════════════════════════════════════════════════════════
-// COMPUTED CONFIDENCE MODEL — replaces hardcoded "70%" strings
-// ═══════════════════════════════════════════════════════════════
-// Inputs: flow_amount ($B), pace_multiplier, positioning, contradiction_score
-// Output: confidence percentage (50-95%) with computation trace
-
-function computeConfidence(flowAmtB, paceMult, positioning, contradictionScore) {
-  let score = 50;
-  const trace = [];
-
-  if (flowAmtB >= 5) { score += 15; trace.push('large-flow+15'); }
-  else if (flowAmtB >= 3) { score += 12; trace.push('med-flow+12'); }
-  else if (flowAmtB >= 1) { score += 8; trace.push('small-flow+8'); }
-  else { score += 3; trace.push('micro-flow+3'); }
-
-  if (paceMult >= 3.0) { score += 12; trace.push('extreme-pace+12'); }
-  else if (paceMult >= 2.0) { score += 10; trace.push('fast-pace+10'); }
-  else if (paceMult >= 1.5) { score += 7; trace.push('elevated-pace+7'); }
-  else { score += 3; trace.push('normal-pace+3'); }
-
-  if (positioning === 'accumulating') { score += 10; trace.push('accumulating+10'); }
-  else if (positioning === 'distributing') { score += 8; trace.push('distributing+8'); }
-  else if (positioning === 'hedging') { score += 5; trace.push('hedging+5'); }
-  else { score += 2; trace.push('unknown-pos+2'); }
-
-  if (contradictionScore >= 70) { score += 8; trace.push('high-contradiction+8'); }
-  else if (contradictionScore >= 50) { score += 5; trace.push('med-contradiction+5'); }
-  else { score += 2; trace.push('low-contradiction+2'); }
-
-  const capped = Math.min(score, 95);
-  const pct = Math.round(capped);
-  return { pct, trace: trace.join(' > '), level: pct >= 80 ? 'high' : pct >= 65 ? 'medium' : 'low' };
-}
-
-// Pre-compute confidence for all flow items
-CAPITAL_FLOWS_DATA.forEach(f => {
-  const amtMatch = (f.headline || '').match(/\$([\d.]+)([MBT])/);
-  const amt = amtMatch ? parseFloat(amtMatch[1]) : 0;
-  const denom = amtMatch ? amtMatch[2] : 'M';
-  const flowAmtB = denom === 'B' ? amt : amt / 1000;
-  const paceMatch = (f.detail || '').match(/(\d+\.?\d*)x/);
-  const pace = paceMatch ? parseFloat(paceMatch[1]) : 1;
-  const pos = (f.positioning || '').replace('Institutional positioning: ', '');
-  const conf = computeConfidence(flowAmtB, pace, pos, 60);
-  f.confidence_pct = conf.pct;
-  f.confidence_level = conf.level;
-  f.confidence_trace = conf.trace;
-  f.detail = f.detail.replace(/\(\d+% confidence\)/, `(${conf.pct}% confidence)`);
-});
-
-function aggregateConfidence() {
-  if (!CAPITAL_FLOWS_DATA.length) return { pct: 70, level: 'medium' };
-  const avg = CAPITAL_FLOWS_DATA.reduce((s, f) => s + f.confidence_pct, 0) / CAPITAL_FLOWS_DATA.length;
-  const pct = Math.round(avg);
-  return { pct, level: pct >= 80 ? 'high' : pct >= 65 ? 'medium' : 'low' };
+async function fetchFlows() {
+  const data = await getJSON(FLOWS_DATA, null);
+  if (!data || !data.flows) return false;
+  CAPITAL_FLOWS_DATA = data.flows;
+  GLOSSARY = data.glossary || {};
+  renderCapitalFlows();
+  renderGlossaryTooltips();
+  updateHeroConfidence(data.aggregate_confidence, data.aggregate_confidence_label);
+  updateMastheadFlows(data);
+  return true;
 }
 
 function renderCapitalFlows() {
   const el = byId('flowsList');
   if (!el) return;
+  if (!CAPITAL_FLOWS_DATA.length) {
+    el.innerHTML = '<div class="flows-loading">Analyzing capital movements…</div>';
+    return;
+  }
   el.innerHTML = CAPITAL_FLOWS_DATA.map(f => {
-    const anchorSym = matchAnchor(f.headline);
+    const anchorSym = f.anchor_symbol || matchAnchor(f.headline);
     const anchorAsset = ANCHOR_ASSETS.find(a => a.symbol === anchorSym);
     const betLine = anchorAsset
       ? `<span class="cf-bet-pill ${anchorAsset.bias.toLowerCase()}">${anchorAsset.symbol} ${anchorAsset.bias} · ${anchorAsset.conviction}</span>`
       : '';
+    const detail = f.projected ? `Projected ${f.projected} further ${f.direction === 'inflow' ? 'inflow' : 'outflow'} (${f.confidence_pct}% confidence) · ${f.pace_multiplier}x normal pace` : '';
+    const positioning = f.positioning ? `Institutional positioning: ${f.positioning}` : '';
 
     return `
-    <div class="flow-item ${f.direction}" data-flow-story-id="${f.storyId}" data-anchor="${anchorSym}">
+    <div class="flow-item ${f.direction}" data-flow-story-id="${f.story_id}" data-anchor="${anchorSym}">
       <div class="flow-headline expandable-flow-header">
         <span class="flow-headline-text">${f.headline}</span>
         ${betLine}
@@ -342,10 +299,10 @@ function renderCapitalFlows() {
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </span>
       </div>
-      <div class="flow-detail">${f.detail}</div>
-      <div class="flow-detail" style="margin-top:2px;font-size:10px;color:var(--ink-muted)">${f.positioning}</div>
+      <div class="flow-detail">${detail}</div>
+      <div class="flow-detail" style="margin-top:2px;font-size:10px;color:var(--ink-muted)">${positioning}</div>
       <div class="flow-expanded" style="display:none">
-        <div class="flow-story-link" data-story-id="${f.storyId}">
+        <div class="flow-story-link" data-story-id="${f.story_id}">
           <span style="color:var(--ink-muted);font-size:10px;text-transform:uppercase;letter-spacing:0.05em">Linked story</span>
           <span class="flow-story-title" style="font-size:12px;color:var(--ink);font-style:italic">Loading...</span>
         </div>
@@ -371,8 +328,6 @@ function renderCapitalFlows() {
       if (expanded.style.display === 'none') {
         expanded.style.display = 'block';
         icon.style.transform = 'rotate(180deg)';
-
-        // Populate linked story title if not yet loaded
         const storyLink = item.querySelector('.flow-story-title');
         if (storyLink && storyLink.textContent === 'Loading...') {
           const sid = item.dataset.flowStoryId;
@@ -403,6 +358,71 @@ function renderCapitalFlows() {
     const outflows = CAPITAL_FLOWS_DATA.filter(f => f.direction === 'outflow');
     sub.textContent = `${inflows.length} inflows · ${outflows.length} outflows`;
   }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// HERO CONFIDENCE — meaningful label instead of naked %
+// ═══════════════════════════════════════════════════════════════
+
+function updateHeroConfidence(pct, label) {
+  const el = byId('heroConfidence');
+  if (!el) return;
+  if (!pct) {
+    el.textContent = '—%';
+    return;
+  }
+  el.textContent = `${pct}%`;
+  // Update the label to something meaningful
+  const labelEl = el.nextElementSibling;
+  if (labelEl && labelEl.classList.contains('hero-stat-label') && label) {
+    labelEl.textContent = label;
+    labelEl.style.maxWidth = '120px';
+  }
+}
+
+function updateMastheadFlows(flowsData) {
+  const total = byId('heroFlowTotal');
+  if (!total || !flowsData) return;
+  const totalB = flowsData.flows ? flowsData.flows.reduce((s, f) => s + (f.amount_b || 0), 0) : 0;
+  if (totalB > 0) {
+    total.textContent = `$${totalB.toFixed(1)}B`;
+  }
+  const storyCount = byId('heroStoryCount');
+  if (storyCount && flowsData.total_flows_tracked) {
+    storyCount.textContent = String(flowsData.total_flows_tracked);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// GLOSSARY TOOLTIPS — inline explanations for finance terms
+// ═══════════════════════════════════════════════════════════════
+
+function renderGlossaryTooltips() {
+  if (!Object.keys(GLOSSARY).length) return;
+  // Add tooltip data attributes to known acronyms in the DOM
+  const terms = Object.entries(GLOSSARY);
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+  const textNodes = [];
+  while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+  textNodes.forEach(node => {
+    if (!node.parentElement || node.parentElement.closest('script,style,noscript,.glossary-tip')) return;
+    let html = node.textContent;
+    let changed = false;
+    terms.forEach(([term, definition]) => {
+      const regex = new RegExp(`\\b(${term})\\b`, 'g');
+      if (regex.test(html)) {
+        const escaped = definition.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        html = html.replace(regex, `<span class="glossary-tip" data-tip="${escaped}" tabindex="0">$1</span>`);
+        changed = true;
+      }
+    });
+    if (changed && node.parentElement) {
+      const span = document.createElement('span');
+      span.innerHTML = html;
+      node.parentElement.replaceChild(span, node);
+    }
+  });
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -506,7 +526,7 @@ function renderTriangulation() {
   cards.forEach(card => {
     const sid = card.dataset.storyId;
     const headline = card.querySelector('h3')?.textContent || '';
-    const flowItem = CAPITAL_FLOWS_DATA.find(f => f.storyId === sid);
+    const flowItem = CAPITAL_FLOWS_DATA.find(f => f.story_id === sid);
     // Build a minimal story object from card data
     const story = {
       story_id: sid,
@@ -949,11 +969,7 @@ function updateCumulativeStats() {
   // Capital tracked — parse current total from flow data and accumulate
   let flowTotal = 0;
   CAPITAL_FLOWS_DATA.forEach(f => {
-    const m = (f.headline || '').match(/\$([\d.]+)([MBT])/);
-    if (m) {
-      const amt = parseFloat(m[1]);
-      flowTotal += m[2] === 'B' ? amt : amt / 1000;
-    }
+    flowTotal += (f.amount_b || 0);
   });
   let cumFlow = getCumulative('capital_tracked_b', 17.1);
   if (flowTotal > cumFlow) {
@@ -984,18 +1000,15 @@ function updateCumulativeStats() {
     setCumulative('total_at_stake_k', cumStake);
   }
 
-  // Update hero
-  const conf = aggregateConfidence();
+  // Update hero stats (stories/capital/assets/stake — confidence is handled by fetchFlows)
   const heroStory = byId('heroStoryCount');
   const heroFlow = byId('heroFlowTotal');
   const heroAssets = byId('heroAssetCount');
   const heroStake = byId('heroBetTotal');
-  const heroConf = byId('heroConfidence');
   if (heroStory) heroStory.textContent = String(tracked);
   if (heroFlow) heroFlow.textContent = '$' + cumFlow.toFixed(1) + 'B';
   if (heroAssets) heroAssets.textContent = String(cumAssets);
   if (heroStake) heroStake.textContent = '$' + cumStake.toFixed(1) + 'K';
-  if (heroConf) heroConf.textContent = conf.pct + '%';
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -1387,8 +1400,13 @@ async function boot() {
 
   // Render static content (non-story containers)
   renderAnchor();
-  renderCapitalFlows();
   renderTrackRecord('trackRecord');
+
+  // Fetch flows FIRST (they feed stats and container content)
+  await fetchFlows();
+
+  // Start flows polling (5 min cadence)
+  setInterval(fetchFlows, FLOWS_POLL_INTERVAL);
 
   // Try data sources
   const livingData = await getJSON(LIVING_DATA, null);
