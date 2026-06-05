@@ -1,4 +1,4 @@
-// La Gazzetta di Kyiv v20.19 — Container reorder: Flows→Stories→ANCHOR→Signal→Track Record
+// La Gazzetta di Kyiv v20.20 — Stories-first · Light blue masthead · Share buttons · Hero redesign
 const DATA = './data/stories.json';
 const LIVING_DATA = './data/living_stories.json';
 const FLOWS_DATA = './data/flows.json';
@@ -709,6 +709,7 @@ function livingCardHTML(story, isLead) {
           <span class="severity ${severity}">${severity}</span>
           ${updateBadge}
           ${updatedAgo}
+          <time class="story-date" datetime="${story.generated_at || story.last_updated || ''}">${story.generated_at ? new Date(story.generated_at).toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'}) : ''}</time>
         </div>
         <div style="display:flex;align-items:flex-start;gap:6px">
           <h3 style="flex:1">${story.headline}</h3>
@@ -731,15 +732,21 @@ function livingCardHTML(story, isLead) {
         </div>` : ''}
         ${extremumHTML}
         <div class="share-row">
-          <button class="share-toggle" title="Share this story">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> Share
+          <button class="share-btn copy-link" title="Copy link" onclick="copyShareLink(this.closest('.card'))">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
           </button>
-          <div class="share-menu">
-            <button class="share-btn copy-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Copy link</button>
-            <button class="share-btn share-x"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7.5 7.5L4 19"/><path d="M20 4l-7.5 7.5L20 19"/></svg> X</button>
-            <button class="share-btn share-telegram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Telegram</button>
-            <button class="share-btn share-linkedin"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn</button>
-          </div>
+          <button class="share-btn share-x" title="Share on X" onclick="shareToX(this.closest('.card'))">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7.5 7.5L4 19"/><path d="M20 4l-7.5 7.5L20 19"/></svg>
+          </button>
+          <button class="share-btn share-facebook" title="Share on Facebook" onclick="shareToFacebook(this.closest('.card'))">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </button>
+          <button class="share-btn share-telegram" title="Share on Telegram" onclick="shareToTelegram(this.closest('.card'))">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+          <button class="share-btn share-reddit" title="Share on Reddit" onclick="shareToReddit(this.closest('.card'))">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8s-4-1-8 2"/><path d="M8 16s4 1 8-2"/><circle cx="9" cy="9" r="0.5" fill="currentColor"/><circle cx="15" cy="9" r="0.5" fill="currentColor"/></svg>
+          </button>
         </div>
         <div class="card-photo">
           <img src="${photoUrl}" alt="${sector}" loading="lazy" onerror="this.parentElement.style.display='none'">
@@ -1303,7 +1310,7 @@ function updateTimestamps() {
 }
 
 // ═══════════════════════════════════════════════
-// SHARE — single toggle + inline menu
+// SHARE — conventional visible buttons (X, FB, Telegram, Reddit, Copy)
 // ═══════════════════════════════════════════════
 
 function getShareText(articleEl) {
@@ -1327,61 +1334,41 @@ function showToast(msg) {
   setTimeout(() => toast.remove(), 2500);
 }
 
-function closeAllShareMenus() {
-  document.querySelectorAll('.share-menu.visible').forEach(m => m.classList.remove('visible'));
+function copyShareLink(card) {
+  if (!card) return;
+  const text = getShareText(card);
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => showToast('✓ Link copied')).catch(() => {});
+  } else {
+    try { document.execCommand('copy'); showToast('✓ Link copied'); } catch(e) {}
+  }
 }
 
-function wireShareControls() {
-  // Share toggle click — open/close menu (clicking the toggle in expanded view is fine)
-  document.addEventListener('click', function(e) {
-    const toggle = e.target.closest('.share-toggle');
-    if (toggle) {
-      e.stopPropagation();
-      const menu = toggle.nextElementSibling;
-      if (!menu || !menu.classList.contains('share-menu')) return;
-      // Close all other menus
-      closeAllShareMenus();
-      menu.classList.toggle('visible');
-      return;
-    }
+function shareToX(card) {
+  if (!card) return;
+  const text = getShareText(card);
+  window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank', 'width=600,height=400');
+}
 
-    // Share menu action buttons
-    const btn = e.target.closest('.share-menu .share-btn');
-    if (btn) {
-      e.stopPropagation();
-      const card = btn.closest('.card');
-      if (!card) return;
-      const text = getShareText(card);
-      const menu = btn.closest('.share-menu');
-      menu.classList.remove('visible');
+function shareToFacebook(card) {
+  if (!card) return;
+  const url = encodeURIComponent(window.location.href);
+  window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, '_blank', 'width=600,height=400');
+}
 
-      if (btn.classList.contains('copy-link')) {
-        if (navigator.share) {
-          navigator.share({ title: text.split('\n')[0], text: text }).catch(() => {});
-        } else if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(text).then(() => showToast('✓ Copied to clipboard')).catch(() => {
-            try { document.execCommand('copy'); showToast('✓ Copied to clipboard'); } catch(e) {}
-          });
-        } else {
-          try { document.execCommand('copy'); showToast('✓ Copied to clipboard'); } catch(e) {}
-        }
-      } else if (btn.classList.contains('share-x')) {
-        window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank', 'width=600,height=400');
-      } else if (btn.classList.contains('share-telegram')) {
-        const url = window.location.href;
-        const shareUrl = 'https://t.me/share/url?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text.split('\n')[0]);
-        window.open(shareUrl, '_blank', 'width=600,height=400');
-      } else if (btn.classList.contains('share-linkedin')) {
-        const url = window.location.href;
-        const shareUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
-        window.open(shareUrl, '_blank', 'width=600,height=400');
-      }
-      return;
-    }
+function shareToTelegram(card) {
+  if (!card) return;
+  const text = getShareText(card);
+  const url = window.location.href;
+  const shareUrl = 'https://t.me/share/url?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text.split('\n')[0]);
+  window.open(shareUrl, '_blank', 'width=600,height=400');
+}
 
-    // Click outside closes all share menus
-    closeAllShareMenus();
-  });
+function shareToReddit(card) {
+  if (!card) return;
+  const headline = card.querySelector('h3')?.textContent || '';
+  const url = encodeURIComponent(window.location.href);
+  window.open('https://www.reddit.com/submit?url=' + url + '&title=' + encodeURIComponent(headline), '_blank', 'width=800,height=600');
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -1394,9 +1381,6 @@ async function boot() {
 
   // Wire card click delegation (one listener on newsCol for all cards)
   wireCardDelegation();
-
-  // Wire share toggle + menu (document-level delegation)
-  wireShareControls();
 
   // Render static content (non-story containers)
   renderAnchor();

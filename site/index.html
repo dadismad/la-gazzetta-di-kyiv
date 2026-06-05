@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=20.19"/>
+  <link rel="stylesheet" href="./styles.css?v=20.20"/>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='2' fill='%23111827'/><text x='16' y='24' text-anchor='middle' font-size='22' font-weight='bold' font-family='Georgia,serif' fill='%23D4AF37'>G</text></svg>"/>
 </head>
 <body>
@@ -46,16 +46,16 @@
 
 <section class="hero">
   <div class="hero-content">
-    <h1 class="hero-headline">Follow the capital. That's where the truth is.</h1>
-    <p class="hero-subtitle">$17.1B in flows tracked. Institutional, private, sovereign, derivatives-implied — every type of capital that moves markets. The stories that move markets — before they move prices.</p>
+    <h1 class="hero-headline">The stories that move markets — before they move prices.</h1>
+    <p class="hero-subtitle">Track capital flows, trade the contradictions, and follow the money through 5 intelligence layers — from institutional positioning to verifiable bets.</p>
     <div class="hero-cta">
-      <button class="hero-btn" onclick="document.getElementById('storiesContainer').classList.add('expanded');document.getElementById('storiesContainer').scrollIntoView({behavior:'smooth'})">View today's brief →</button>
+      <button class="hero-btn" onclick="document.getElementById('storiesContainer').classList.add('expanded');document.getElementById('storiesContainer').scrollIntoView({behavior:'smooth'})">Read today's stories →</button>
       <a href="https://t.me/GazzettaDiKyiv" class="hero-link">Telegram</a>
       <a href="https://www.reddit.com/r/LaGazzettadiKyiv/" class="hero-link">Reddit</a>
     </div>
   </div>
   <div class="hero-stats">
-    <div class="hero-stat"><span class="hero-stat-value" id="heroStoryCount">—</span><span class="hero-stat-label">Stories tracked</span></div>
+    <div class="hero-stat"><span class="hero-stat-value" id="heroStoryCount">—</span><span class="hero-stat-label">Stories</span></div>
     <div class="hero-stat"><span class="hero-stat-value" id="heroFlowTotal">$17.1B</span><span class="hero-stat-label">Capital tracked</span></div>
     <div class="hero-stat"><span class="hero-stat-value" id="heroAssetCount">14</span><span class="hero-stat-label">Assets positioned</span></div>
     <div class="hero-stat"><span class="hero-stat-value" id="heroBetTotal">$18.4K</span><span class="hero-stat-label">Total at stake</span></div>
@@ -68,41 +68,41 @@
   <!-- LEFT COLUMN: Containerized sections -->
   <main class="main-col">
 
-    <!-- CONTAINER 1: Capital flows — prime mover, first after hero -->
-    <section class="container collapsible" id="capitalFlowsContainer">
-      <div class="container-header" data-target="capitalFlowsBody">
-        <span class="container-title">Where the smart money is going</span>
-        <span class="container-subtitle" id="cfSubtitle"></span>
-        <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-      </div>
-      <div class="container-desc">Capital moves markets. Capital creates stories. Capital forces action. Track institutional flows with directional conviction and projected velocity — then see what stories, bets, and signals emerge from the money.</div>
-      <div class="container-body" id="capitalFlowsBody">
-        <div class="flows-list" id="flowsList"></div>
-        <div class="asset-note" style="margin-top:8px">Flow data: EPFR Global, Morningstar Direct, and internal aggregation · Velocity measured vs 4-week rolling average · Timestamps reflect week ending Friday EET · Methodology: <a href="./capital.html" style="color:var(--gold)">capital.html</a></div>
-      </div>
-    </section>
-
-    <!-- CONTAINER 2: Stories — narratives derived from capital movement -->
+    <!-- CONTAINER 1: Stories — front door, first after hero -->
     <section class="container collapsible" id="storiesContainer">
       <div class="container-header" data-target="storiesBody">
         <span class="container-title">What the capital is saying</span>
         <span class="container-count" id="storyCount"></span>
         <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
       </div>
-      <div class="container-desc">Stories emerge from capital movement — not the other way around. Each narrative is analyzed for what the flow data reveals: who benefits, who loses, and what the money already priced in before the headline broke.</div>
+      <div class="container-desc">Today's narratives, decoded. Each story reveals who benefits, who loses, and what the money already priced in — with a actionable trade idea.</div>
       <div class="container-body" id="storiesBody">
         <div class="news-col" id="newsCol"></div>
       </div>
     </section>
 
-    <!-- CONTAINER 3: Bet & Benefit — positioning derived from flows + stories -->
+    <!-- CONTAINER 2: Capital flows — the data behind the stories -->
+    <section class="container collapsible" id="capitalFlowsContainer">
+      <div class="container-header" data-target="capitalFlowsBody">
+        <span class="container-title">Where the smart money is going</span>
+        <span class="container-subtitle" id="cfSubtitle"></span>
+        <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </div>
+      <div class="container-desc">Institutional flow data with directional conviction, velocity, and projected movement. See what $XB is moving where — and which assets are accumulating or distributing.</div>
+      <div class="container-body" id="capitalFlowsBody">
+        <div class="flows-list" id="flowsList"></div>
+        <div class="asset-note" style="margin-top:8px">Flow data: EPFR Global, Morningstar Direct, and internal aggregation · Velocity measured vs 4-week rolling average · Timestamps reflect week ending Friday EET · Methodology: <a href="./capital.html" style="color:var(--gold)">capital.html</a></div>
+      </div>
+    </section>
+
+    <!-- CONTAINER 3: Bet & Benefit — positioning from flows + stories -->
     <section class="container collapsible" id="anchorContainer">
       <div class="container-header" data-target="anchorBody">
         <span class="container-title">Your trades this week</span>
         <span class="container-subtitle">Bet &amp; Benefit</span>
         <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
       </div>
-      <div class="container-desc">Positioning derived from capital flow data. 14 assets with directional conviction, entry zones, and stop levels. The anchor translates flow direction into trade action.</div>
+      <div class="container-desc">14 assets with directional conviction, entry zones, and stop levels — derived from the stories and flows above. Entry, target, stop, and conviction for each position.</div>
       <div class="container-body" id="anchorBody">
         <div class="pdr-gauge" id="pdrGauge">
           <span class="pdr-label">PDR</span>
@@ -116,17 +116,17 @@
       </div>
     </section>
 
-    <!-- CONTAINER 4: THE SIGNAL — where flows meet bets meet events -->
+    <!-- CONTAINER 4: THE SIGNAL — triangulation of all inputs -->
     <section class="container collapsible signal-container" id="triangulationContainer">
       <div class="container-header" data-target="triangulationBody">
         <span class="container-title">The Signal</span>
         <span class="container-subtitle">Flow × Bet × Event</span>
         <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
       </div>
-      <div class="container-desc">Cross-container intelligence. Capital flows (Container 1) meet anchor positioning (Container 3) meet narrative events (Container 2). When all three align, conviction amplifies. When they diverge, that's where the edge is.</div>
+      <div class="container-desc">Cross-container intelligence. Stories (Container 1) meet capital flows (Container 2) meet anchor positioning (Container 3). When all three align — MAX CONVICTION. When they diverge — that's where the edge is.</div>
       <div class="container-body" id="triangulationBody">
         <div class="triangulation-list" id="triangulationList"></div>
-        <div class="asset-note" style="margin-top:8px">Triangulation: Flow alignment (max 50) + Bet conviction (max 30) + Event strength (max 20) = Signal Score · Capital flows first, bets second, events third</div>
+        <div class="asset-note" style="margin-top:8px">Triangulation: Story strength (max 20) + Flow alignment (max 50) + Bet conviction (max 30) = Signal Score · Stories first, flows second, bets third</div>
       </div>
     </section>
 
@@ -137,7 +137,7 @@
         <span class="container-subtitle">Verifiable bet performance</span>
         <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
       </div>
-      <div class="container-desc">Every anchor bet is timestamped when placed. Settled bets are scored against realized prices. No cherry-picking. Complete, auditable track record.</div>
+      <div class="container-desc">Every bet timestamped when placed. Settled against realized prices. No cherry-picking. Complete, auditable.</div>
       <div class="container-body" id="trackRecordBody">
         <div id="trackRecord"></div>
       </div>
@@ -155,6 +155,6 @@
   <span>Kyiv · Since 2025</span>
 </footer>
 
-<script src="./app.js?v=20.19"></script>
+<script src="./app.js?v=20.20"></script>
 </body>
 </html>

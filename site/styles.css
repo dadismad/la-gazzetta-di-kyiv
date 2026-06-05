@@ -94,7 +94,9 @@ body {
 .masthead-name {
   font-family: var(--display);
   font-size: var(--φ-lg);
-  color: var(--gold);
+  color: #8EC8E8;   /* Light sky blue */
+  -webkit-text-stroke: 1.2px var(--gold);
+  text-stroke: 1.2px var(--gold);
   white-space: nowrap;
 }
 .masthead-right {
@@ -110,42 +112,42 @@ body {
 }
 .masthead-meta {
   font-family: var(--sans);
-  font-size: 9px;
-  color: var(--ink-muted);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-light);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   white-space: nowrap;
 }
 
 /* ── Hero Section ── */
 .hero {
   text-align: center;
-  padding: 24px 20px 18px;
+  padding: 16px 20px 10px;
   border-bottom: 1px solid var(--divider);
   background: #FFFFFF;
 }
-.hero-content { max-width: 580px; margin: 0 auto; }
+.hero-content { max-width: 600px; margin: 0 auto; }
 .hero-headline {
   font-family: var(--display);
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 1.25;
   color: var(--ink);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 .hero-subtitle {
   font-family: var(--body);
-  font-size: 13px;
-  line-height: 1.5;
+  font-size: 12px;
   color: var(--ink-light);
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 .hero-cta {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 .hero-btn {
   background: var(--ink);
@@ -477,68 +479,44 @@ body {
   transform: rotate(180deg);
 }
 
-/* ── Single Share Menu (expanded view only) ── */
+/* ── Share Buttons — conventional visible row (X, FB, Telegram, Reddit, Copy) ── */
 .share-row {
   margin-top: 8px;
-  position: relative;
-}
-.share-toggle {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 4px;
-  background: none;
-  border: 1px solid #E5E7EB;
-  border-radius: 6px;
-  padding: 4px 10px;
-  font-family: var(--sans);
-  font-size: 11px;
-  color: var(--ink-light);
-  cursor: pointer;
-  line-height: 1;
 }
-.share-toggle:hover {
-  background: #F3F4F6;
-  color: var(--ink);
-}
-.share-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: 4px;
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
-  border-radius: 6px;
-  padding: 4px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  z-index: 10;
-  min-width: 160px;
-}
-.share-menu.visible {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.share-menu .share-btn {
-  display: flex;
+.share-row .share-btn {
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
   background: none;
-  border: none;
+  border: 1px solid #E5E7EB;
   border-radius: 4px;
-  padding: 6px 10px;
-  font-family: var(--sans);
-  font-size: 12px;
-  color: var(--ink);
+  padding: 0;
+  color: var(--ink-muted);
   cursor: pointer;
-  text-align: left;
-  width: 100%;
+  transition: all 0.15s;
 }
-.share-menu .share-btn:hover {
-  background: #F3F4F6;
+.share-row .share-btn:hover {
+  background: var(--ink);
+  color: #FFFFFF;
+  border-color: var(--ink);
 }
-.share-menu .share-btn svg {
+.share-row .share-btn svg {
   flex-shrink: 0;
+}
+
+/* ── Story date timestamp ── */
+.story-date {
+  font-family: var(--sans);
+  font-size: 9px;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
 }
 
 /* ── Triangulation Signal ── */
