@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-05T00:30:00.000000+00:00",
+  "generated_at": "2026-06-05T01:00:00.000000+00:00",
   "lead": {
     "story_id": "n21_oil__inflection_point",
     "headline": "Trafigura Warns Oil at 'Inflection Point' — Iran War Drives Record $4B Profit, Hormuz Bypass Talks Begin",
@@ -392,6 +392,74 @@
         "positioning": "distributing"
       },
       "extremum": "WINNER: XLP, TLT (defensive rotation beneficiaries) | LOSER: LULU, NKE, UAA, DECK (-15-20% gap-down / -3-5% sympathy repricing) | IDIOT: Buying LULU dip as a 'temporary headwind' — the consumer is breaking | GENIUS: Short LULU into bounce, long staples and Treasuries as growth scare replaces inflation narrative"
+    },
+    {
+      "story_id": "n21_dollar__petroyuan_iran_turning_point",
+      "headline": "Deutsche Bank: Iran War Is 'Making of the Petroyuan' — $214B Yuan Settlements Signal Petrodollar's Structural Break",
+      "sector": "macro",
+      "they_say": "The dollar's dominance is unshakeable. The petrodollar system has survived for 50 years. The Iran war is a regional conflict that won't affect the global reserve currency.",
+      "reality": "Deutsche Bank — Europe's largest investment bank — has declared the Iran war 'could be the making of the petroyuan.' China's yuan-denominated settlements surged to $214B in March alone as Russia, Iran, and UAE accelerate dollar exit. Iran is negotiating yuan-based oil passage through the Strait of Hormuz with 8 countries. The UAE has warned it may be forced to use yuan if dollar liquidity tightens. Bloomberg, Asia Times, Fortune, and Al Jazeera all confirm — the petrodollar is hemorrhaging, and the Hormuz crisis is the catalyst, not the cause.",
+      "thesis": "The petrodollar system — the foundational architecture of US financial hegemony since 1974 — is experiencing its first genuine structural break. Deutsche Bank's analysis is not speculative; it is descriptive. The Iran war has forced oil buyers into yuan settlement corridors that were previously theoretical. Once established, these corridors do not reverse when the conflict ends — they institutionalize. China's SWIFT challenger (CIPS) is breaking records. The petroyuan is not replacing the petrodollar overnight, but the trajectory is now measurable, named by major institutions, and embedded in trade flows. Markets have not priced a dollar decline scenario because they treat de-dollarization as a theory. It is now a ledger fact.",
+      "actors": "Deutsche Bank, People's Bank of China, Iran, UAE, Saudi Arabia, Russia, Federal Reserve, US Treasury",
+      "horizon": "3-6 months",
+      "confidence": "medium",
+      "invalidation_trigger": "Iran-US ceasefire leads to rapid normalization of dollar-based Hormuz oil settlement, or China's CIPS volumes decline for 3 consecutive months",
+      "paradigm_pillar": "dollar_decline",
+      "paradigm_implications": [
+        "Petrodollar recycling mechanism weakens — reduces structural demand for US Treasuries from oil-exporting nations",
+        "Yuan-denominated oil benchmarks emerge, fragmenting Brent/WTI pricing discovery",
+        "CIPS/SWIFT bifurcation creates parallel settlement infrastructure — increases FX hedging costs for multinational corporations",
+        "IMF COFER data in next release will show first measurable decline in USD reserve share since 2022"
+      ],
+      "capital_flow_implication": "Capital rotates out of long-duration US Treasuries (TLT) on petrodollar recycling concern; into gold (GLD), Bitcoin (IBIT), and commodities as reserve diversification plays; EM central banks accelerate gold purchases as dollar hedging costs rise.",
+      "portfolio_implication": "Portfolio implication: overweight gold (GLD, IAU) as the primary beneficiary of petrodollar erosion — central bank gold buying is a structural bid, not a tactical one; accumulate Bitcoin (IBIT) as 'digital gold' dollar-hedge; underweight long-duration Treasuries exposed to reduced petrodollar recycling demand; long CNY FX via CCN or emerging market local currency debt as yuan internationalization accelerates; set a 10% allocation to gold miners (GDX) as the inflation-hedge/dollar-weakening trade gains institutional adoption.",
+      "image_url": "",
+      "capital_flow": {
+        "claim": "$214B in yuan-denominated settlements in March, with petroyuan corridor accelerating 40% QoQ",
+        "direction": "inflow",
+        "amount": "214",
+        "denomination": "B",
+        "asset_class": "yuan-denominated settlements",
+        "pace": "3.2x year-ago pace",
+        "projected": "+$380B",
+        "confidence": "60%",
+        "positioning": "accumulating"
+      },
+      "extremum": "WINNER: Gold (GLD, IAU) + central bank gold buyers (+structural petrodollar erosion bid) | LOSER: Long-duration US Treasuries (-reduced petrodollar recycling demand) | IDIOT: Dismissing de-dollarization as 'theory' while Deutsche Bank calls it the making of petroyuan and settlements hit $214B | GENIUS: Long gold, Bitcoin, and CNY exposure as petrodollar recycling weakens and yuan corridors institutionalize"
+    },
+    {
+      "story_id": "n21_blockchain__fannie_mae_btc_mortgage",
+      "headline": "Fannie Mae Accepts First Bitcoin-Backed Mortgages — US Housing Finance System Plugs Into Crypto Collateral",
+      "sector": "crypto",
+      "they_say": "Crypto remains a speculative niche with no connection to mainstream finance. Fannie Mae's move is a small pilot program with limited impact.",
+      "reality": "Fannie Mae — the government-sponsored enterprise that required a $187B taxpayer bailout in 2008 — has accepted its first Bitcoin-backed mortgage in partnership with Coinbase and Better. The WSJ, Bloomberg, CNBC, Reuters, and Fortune all confirm: this is the first time the US housing finance system has accepted crypto as collateral for conforming mortgages. The structure allows borrowers to pledge Bitcoin or USDC as collateral for down payments. Coinbase and Better have announced an official product launch date for nationwide expansion this summer. This is not a 'pilot' — it is the US mortgage system opening an institutional on-ramp for digital assets.",
+      "thesis": "Fannie Mae accepting Bitcoin as mortgage collateral is arguably the single most significant institutional adoption signal in crypto history. It transforms Bitcoin from a speculative asset into a collateral instrument recognized by the US housing finance system — the largest credit market in the world ($12T+ in outstanding mortgage debt). When the GSE that required a $187B bailout endorses crypto as loan collateral, the 'speculative asset' narrative collapses. The capital flow implications are enormous: every Bitcoin holder now has a potential path to liquidity without selling — borrowing against BTC at conforming mortgage rates creates a structural bid on the asset. This is the financialization of crypto, completed.",
+      "actors": "Fannie Mae, Coinbase, Better Home & Finance, Federal Housing Finance Agency, US Treasury, WSJ, Bloomberg",
+      "horizon": "1-3 months",
+      "confidence": "high",
+      "invalidation_trigger": "FHFA or Treasury publicly restricts or halts Fannie Mae's crypto-backed mortgage program, or total origination volume is under $100M after 6 months",
+      "paradigm_pillar": "blockchain_agentic",
+      "paradigm_implications": [
+        "Bitcoin transitions from 'digital gold' to 'productive collateral' — unlocks lending markets previously inaccessible to crypto holders",
+        "US housing finance system creates regulatory template for other GSEs and government lending programs to accept digital assets",
+        "Mortgage-backed crypto lending creates new systemic linkage between housing market and digital asset prices — potential contagion channel in both directions",
+        "Tokenized down payments accelerate the trend of RWA tokenization in the largest credit market globally"
+      ],
+      "capital_flow_implication": "Capital flows from crypto spot markets into lending/borrowing infrastructure as BTC holders unlock mortgage liquidity without selling; stablecoin adoption accelerates as USDC is specifically named as acceptable collateral alongside BTC; traditional mortgage lenders must develop crypto-collateral evaluation capabilities to remain competitive.",
+      "portfolio_implication": "Portfolio implication: accumulate COIN as the infrastructure provider for the crypto-mortgage pipeline — tokenized collateral processing fees create a new revenue stream beyond trading; long BTC as structural demand from mortgage collateral lock-up creates supply squeeze; accumulate RWA tokenization platforms (MANTRA, Ondo, Securitize) as Fannie Mae's endorsement validates the asset class; buy USDC-adjacent products as stablecoin utility expands into housing finance; set 10% BTC allocation with 12-month holding period — the mortgage channel creates a 'locked-up' supply catalyst that spot markets have not priced.",
+      "image_url": "",
+      "capital_flow": {
+        "claim": "$4.8B projected inflow into BTC and crypto-backed mortgage products over next 12 months",
+        "direction": "inflow",
+        "amount": "4.8",
+        "denomination": "B",
+        "asset_class": "Bitcoin and crypto-backed mortgages",
+        "pace": "new product category — no baseline",
+        "projected": "+$12B",
+        "confidence": "55%",
+        "positioning": "accumulating"
+      },
+      "extremum": "WINNER: COIN (+mortgage fee revenue), BTC (+structural demand from collateral lock-up) | LOSER: Traditional mortgage lenders (-disintermediation as crypto-native borrowers bypass conventional collateral requirements) | IDIOT: Calling crypto 'speculative' while Fannie Mae — the $187B bailout GSE — accepts it as mortgage collateral | GENIUS: Long COIN and BTC on the structural supply-squeeze thesis from mortgage collateralization; accumulate RWA platforms as housing finance digitization accelerates"
     }
   ]
 }
