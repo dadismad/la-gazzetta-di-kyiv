@@ -140,6 +140,28 @@
       "evolution_score": 0.6258,
       "actor_match": 0.3333,
       "geography_match": 1.0
+    },
+    {
+      "update_id": "n21_macro__ev_014",
+      "timestamp": "2026-06-05T01:15:35.692558+00:00",
+      "type": "evidence",
+      "summary": "Evolution match (score=0.61): Betfair targeted gambling addict, court hears in landmark case; US plans cuts to Nato’s rapid response force",
+      "source_url": "https://www.ft.com/content/1c2379dd-2a2a-40a7-8832-fd646895b420",
+      "source_id": "ft_world",
+      "evolution_score": 0.6133,
+      "actor_match": 0.3333,
+      "geography_match": 1.0
+    },
+    {
+      "update_id": "n21_macro__ev_015",
+      "timestamp": "2026-06-05T03:16:07.166166+00:00",
+      "type": "evidence",
+      "summary": "Evolution match (score=0.61): Betfair targeted gambling addict, court hears in landmark case; US plans cuts to Nato’s rapid response force",
+      "source_url": "https://www.ft.com/content/1c2379dd-2a2a-40a7-8832-fd646895b420",
+      "source_id": "ft_world",
+      "evolution_score": 0.6091,
+      "actor_match": 0.3333,
+      "geography_match": 1.0
     }
   ]
 }

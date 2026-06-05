@@ -140,6 +140,28 @@
       "evolution_score": 0.737,
       "actor_match": 1.0,
       "geography_match": 0.5
+    },
+    {
+      "update_id": "n21_oil__ev_014",
+      "timestamp": "2026-06-05T01:15:35.692558+00:00",
+      "type": "evidence",
+      "summary": "Evolution match (score=0.72): The Gulf states and Ukraine need each other; Gulf states are burning through interceptors",
+      "source_url": "https://www.ft.com/content/4f6572ed-aa76-4370-bc0a-f686b8b323f7",
+      "source_id": "ft_world",
+      "evolution_score": 0.7245,
+      "actor_match": 1.0,
+      "geography_match": 0.5
+    },
+    {
+      "update_id": "n21_oil__ev_015",
+      "timestamp": "2026-06-05T03:16:07.166166+00:00",
+      "type": "evidence",
+      "summary": "Evolution match (score=0.72): The Gulf states and Ukraine need each other; Gulf states are burning through interceptors",
+      "source_url": "https://www.ft.com/content/4f6572ed-aa76-4370-bc0a-f686b8b323f7",
+      "source_id": "ft_world",
+      "evolution_score": 0.7203,
+      "actor_match": 1.0,
+      "geography_match": 0.5
     }
   ]
 }

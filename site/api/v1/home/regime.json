@@ -1,12 +1,13 @@
 {
-  "generated_at": "2026-06-04T15:46:31.106878+00:00",
+  "generated_at": "2026-06-05T03:46:43.392316+00:00",
   "data_freshness_seconds": 3600,
-  "source_count": 5,
+  "source_count": 6,
   "source_diversity": [
     "bloomberg_markets",
     "economist_intl",
     "ft_world",
     "guardian_world",
+    "hn_front",
     "wsj_world"
   ],
   "paradigm_coverage": {
@@ -28,7 +29,7 @@
     },
     "blockchain_agentic": {
       "label": "Blockchain as Agentic Economy Rail",
-      "setup_count": 0
+      "setup_count": 1
     }
   },
   "regime_label": "Paradigm-Lens Intelligence",

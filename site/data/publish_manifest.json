@@ -1,26 +1,15 @@
 {
-  "ok": true,
-  "generated_at": "2026-06-04T15:46:31Z",
-  "inputs": {
-    "setups": 11,
-    "contradictions": 8,
-    "regime_label": "Paradigm-Lens Intelligence (selective risk-off)"
-  },
-  "quality": {
-    "telegram_word_count": 106,
-    "reddit_word_count": 224,
-    "telegram_range": "80-140",
-    "reddit_range": "180-260",
-    "anti_template_clean": true,
-    "cross_platform_overlap": "<40%",
-    "evidence_urls_present": true,
-    "banned_phrases": 0
-  },
-  "editorial": {
-    "lead_story": "n21_oil__inflection_point",
-    "lead_headline": "Trafigura Warns Oil at 'Inflection Point' — Iran War Drives Record $4B Profit",
-    "frame": "convergence",
-    "human_detail_id": "HD-010",
-    "cycle_number": 4
-  }
+  "version": 1,
+  "cycle_number": 5,
+  "generated_at": "2026-06-05T03:46:43.392523+00:00",
+  "lead_story": "n21_china__chip_boom_property_crisis",
+  "lead_headline": "China's $900 Billion Chip Stock Boom Masks Deepening Property Crisis as Trade War Escalates",
+  "frame": "contradiction",
+  "human_detail_ids": ["HD-011"],
+  "asset_claims_count": 5,
+  "website_stories_count": 6,
+  "telegram_word_count": 111,
+  "reddit_word_count": 234,
+  "commit_message": "editorial cycle 5: China chip boom masks property crisis — contradictions deepen",
+  "quality_gate_status": "pending"
 }

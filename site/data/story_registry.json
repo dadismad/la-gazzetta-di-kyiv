@@ -1,16 +1,16 @@
 {
   "version": 1,
-  "updated_at": "2026-06-04T19:15:22.709012+00:00",
+  "updated_at": "2026-06-05T03:46:43.393477+00:00",
   "story_count": 11,
   "active_count": 11,
   "stories": {
     "n21_macro": {
       "story_id": "n21_macro",
       "first_seen": "2026-06-03T21:35:42.864956+00:00",
-      "last_updated": "2026-06-04T19:15:22.709012+00:00",
+      "last_updated": "2026-06-05T03:16:07.166166+00:00",
       "status": "evolving",
-      "status_reason": "New evidence: Evolution match (score=0.63): Betfair targeted gambling addict, court hears in landmark case; US plans cuts to Nato’s ra",
-      "update_count": 13,
+      "status_reason": "New evidence: Evolution match (score=0.61): Betfair targeted gambling addict, court hears in landmark case; US plans cuts to Nato’s ra",
+      "update_count": 15,
       "original_setup_id": "n21_macro",
       "original_headline": "macro: Trump’s proposed grant rules could destroy US science, researcher warns",
       "current_headline": "Betfair targeted gambling addict, court hears in landmark case",
@@ -31,8 +31,8 @@
         "n21_macro__main"
       ],
       "primary_thread_id": "n21_macro__main",
-      "evidence_count": 1643,
-      "source_count": 76,
+      "evidence_count": 1883,
+      "source_count": 86,
       "invalidation_triggers": [
         "Gulf States announces policy reversal within 72 hours",
         "New data contradicts the macro repricing direction within 24 hours"
@@ -42,7 +42,7 @@
       "capital_flow_implication": "",
       "asset_claim": {},
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Meta_-_Facebook%2C_Instagram%2C_Whatsapp_-_Nein_Danke.png",
-      "evolution_score_current": 0.6258,
+      "evolution_score_current": 0.6091,
       "evolution_score_peak": 0.6333
     },
     "n21_ai": {
@@ -82,10 +82,10 @@
     "n21_oil": {
       "story_id": "n21_oil",
       "first_seen": "2026-06-03T21:35:42.864956+00:00",
-      "last_updated": "2026-06-04T19:15:22.709012+00:00",
+      "last_updated": "2026-06-05T03:16:07.166166+00:00",
       "status": "evolving",
-      "status_reason": "New evidence: Evolution match (score=0.74): The Gulf states and Ukraine need each other; Gulf states are burning through interceptors",
-      "update_count": 13,
+      "status_reason": "New evidence: Evolution match (score=0.72): The Gulf states and Ukraine need each other; Gulf states are burning through interceptors",
+      "update_count": 15,
       "original_setup_id": "n21_oil",
       "original_headline": "oil: Trump’s Iran war drains US oil stocks to lowest level since 2004",
       "current_headline": "The Gulf states and Ukraine need each other",
@@ -104,8 +104,8 @@
         "n21_oil__main"
       ],
       "primary_thread_id": "n21_oil__main",
-      "evidence_count": 27,
-      "source_count": 30,
+      "evidence_count": 31,
+      "source_count": 34,
       "invalidation_triggers": [
         "Gulf States announces policy reversal within 72 hours",
         "New data contradicts the oil repricing direction within 24 hours"
@@ -115,7 +115,7 @@
       "capital_flow_implication": "",
       "asset_claim": {},
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Donald_Trump_official_portrait.jpg",
-      "evolution_score_current": 0.737,
+      "evolution_score_current": 0.7203,
       "evolution_score_peak": 0.7412
     },
     "n21_china": {
@@ -278,10 +278,10 @@
     "n21_nato": {
       "story_id": "n21_nato",
       "first_seen": "2026-06-03T21:35:42.864956+00:00",
-      "last_updated": "2026-06-04T19:15:22.709012+00:00",
+      "last_updated": "2026-06-05T03:16:07.166166+00:00",
       "status": "evolving",
-      "status_reason": "New evidence: Evolution match (score=0.89): US plans cuts to Nato’s rapid response force; Suspected Sabotage of Deep-Sea Cable Trigger",
-      "update_count": 13,
+      "status_reason": "New evidence: Evolution match (score=0.87): US plans cuts to Nato’s rapid response force; Suspected Sabotage of Deep-Sea Cable Trigger",
+      "update_count": 15,
       "original_setup_id": "n21_nato",
       "original_headline": "nato: Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response",
       "current_headline": "US plans cuts to Nato’s rapid response force",
@@ -298,8 +298,8 @@
         "n21_nato__us_plans_cuts_to_nato_s_rapid_response_force"
       ],
       "primary_thread_id": "n21_nato__main",
-      "evidence_count": 15,
-      "source_count": 20,
+      "evidence_count": 19,
+      "source_count": 24,
       "invalidation_triggers": [
         "NATO announces policy reversal within 72 hours",
         "New data contradicts the nato repricing direction within 24 hours"
@@ -309,7 +309,7 @@
       "capital_flow_implication": "",
       "asset_claim": {},
       "image_url": null,
-      "evolution_score_current": 0.8889,
+      "evolution_score_current": 0.8723,
       "evolution_score_peak": 0.8931
     },
     "n21_rates": {

@@ -1,34 +1,34 @@
 {
-  "generated_at": "2026-06-04T15:46:31.107039+00:00",
+  "generated_at": "2026-06-05T03:46:43.392523+00:00",
   "data_freshness_seconds": 3600,
-  "source_count": 5,
+  "source_count": 6,
   "items": [
     {
       "narrative": "macro",
       "claim_a": "Gulf States policy remains stable",
-      "claim_b": "Betfair targeted gambling addict, court hears in landmark case",
+      "claim_b": "Can India\u2019s central banker calm the country\u2019s growing economic fears?",
       "urgency": "high",
       "invalidation_window": "24-72h",
       "paradigm_pillar": "multi_pillar",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Betfair_logo.png"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/India_roadway_map.svg"
     },
     {
       "narrative": "ai",
-      "claim_a": "NVIDIA policy remains stable",
-      "claim_b": "Americans lead AI data centre backlash, global poll finds",
-      "urgency": "medium",
+      "claim_a": "Anthropic policy remains stable",
+      "claim_b": "Tech groups find a new way to monetise AI hype: selling volatility",
+      "urgency": "high",
       "invalidation_window": "24-72h",
       "paradigm_pillar": "multi_pillar",
-      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iNawe03oXvdg/v7/1200x-1.jpg"
+      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iBbuAJfuM8Jw/v3/1200x-1.png"
     },
     {
-      "narrative": "oil",
-      "claim_a": "Gulf States policy remains stable",
-      "claim_b": "Trafigura warns oil at \u2018inflection point\u2019 as Iran war stokes bumper half-year profits",
+      "narrative": "china",
+      "claim_a": "PBoC policy remains stable",
+      "claim_b": "FirstFT: China\u2019s falling oil imports \u2018shield\u2019 global market from higher prices",
       "urgency": "medium",
       "invalidation_window": "24-72h",
-      "paradigm_pillar": "multi_pillar",
-      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iGHUxqc89N9w/v1/1200x-1.jpg"
+      "paradigm_pillar": "china_ascendancy",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Badaling_China_Great-Wall-of-China-01.jpg"
     },
     {
       "narrative": "ukraine",
@@ -37,25 +37,16 @@
       "urgency": "medium",
       "invalidation_window": "24-72h",
       "paradigm_pillar": "multi_pillar",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Deep_Discoverer_shipwreck_Gulf_of_Mexico_16_May_2019.png"
+      "image_url": "https://i.guim.co.uk/img/media/eacb316cc8ab8f7d2e2df3f31022f83d9c8e6812/313_190_1178_943/master/1178.jpg?width=700&quality=85&auto=format&fit=max&s=8a8f5ef8078dd8c51b126f508a7d94e9"
     },
     {
-      "narrative": "rates",
-      "claim_a": "Federal Reserve policy remains stable",
-      "claim_b": "Inflation and interest rates tracker: see how your country compares",
+      "narrative": "oil",
+      "claim_a": "OPEC+ policy remains stable",
+      "claim_b": "FirstFT: China\u2019s falling oil imports \u2018shield\u2019 global market from higher prices",
       "urgency": "medium",
       "invalidation_window": "24-72h",
       "paradigm_pillar": "multi_pillar",
-      "image_url": null
-    },
-    {
-      "narrative": "china",
-      "claim_a": "PBoC policy remains stable",
-      "claim_b": "Hurricane Trump threatens to blow China off course",
-      "urgency": "medium",
-      "invalidation_window": "24-72h",
-      "paradigm_pillar": "china_ascendancy",
-      "image_url": "https://i.guim.co.uk/img/media/02d774e13d041f094f583254b13136c5a354374e/846_0_4583_3667/master/4583.jpg?width=700&quality=85&auto=format&fit=max&s=76103f6b3aeacef960917fa88cbed56f"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Badaling_China_Great-Wall-of-China-01.jpg"
     },
     {
       "narrative": "nato",
@@ -64,7 +55,7 @@
       "urgency": "medium",
       "invalidation_window": "24-72h",
       "paradigm_pillar": "multi_pillar",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NATO_members_%28blue%29.svg"
+      "image_url": null
     },
     {
       "narrative": "russia",
@@ -73,30 +64,39 @@
       "urgency": "medium",
       "invalidation_window": "24-72h",
       "paradigm_pillar": "multi_pillar",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ergaki%2C_Buiba_Valley%2C_Western_Sayan_Mountains%2C_Krasnoyarsk_Krai%2C_Russia.jpg"
+      "image_url": null
     },
     {
-      "narrative": "election",
-      "claim_a": "Kremlin/Russia policy remains stable",
-      "claim_b": "Russia prunes Armenian rose trade ahead of election",
+      "narrative": "inflation",
+      "claim_a": "BLS policy remains stable",
+      "claim_b": "Philippine Inflation Slows as Transport Cost Pressures Ease",
       "urgency": "medium",
       "invalidation_window": "24-72h",
       "paradigm_pillar": "multi_pillar",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ergaki%2C_Buiba_Valley%2C_Western_Sayan_Mountains%2C_Krasnoyarsk_Krai%2C_Russia.jpg"
+      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iPWz0YJ9JtB8/v0/1200x-1.jpg"
     },
     {
       "narrative": "crypto",
       "claim_a": "ETF issuers policy remains stable",
-      "claim_b": "Reform given another \u00a33mn by crypto billionaire Harborne",
+      "claim_b": "Bitcoin tumbles after Strategy sale unnerves crypto traders",
+      "urgency": "medium",
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "blockchain_agentic",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin%2C_Wroclaw_%28P1180334%29.jpg"
+    },
+    {
+      "narrative": "rates",
+      "claim_a": "Federal Reserve policy remains stable",
+      "claim_b": "The case for raising UK interest rates is growing",
       "urgency": "medium",
       "invalidation_window": "24-72h",
       "paradigm_pillar": "multi_pillar",
       "image_url": null
     },
     {
-      "narrative": "inflation",
-      "claim_a": "BLS policy remains stable",
-      "claim_b": "Inflation and interest rates tracker: see how your country compares",
+      "narrative": "election",
+      "claim_a": "Kremlin/Russia policy remains stable",
+      "claim_b": "Russia prunes Armenian rose trade ahead of election",
       "urgency": "medium",
       "invalidation_window": "24-72h",
       "paradigm_pillar": "multi_pillar",

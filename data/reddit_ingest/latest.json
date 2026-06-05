@@ -1,0 +1,48 @@
+{
+  "generated_at": 1780630926,
+  "generated_at_iso": "2026-06-05T03:42:06Z",
+  "source": "devvit-api",
+  "api_url": "https://lagazzettadikyiv.devvit.zone",
+  "subreddits_fetched": [
+    "investing",
+    "wallstreetbets",
+    "geopolitics",
+    "economics",
+    "worldnews",
+    "stocks",
+    "cryptocurrency"
+  ],
+  "per_subreddit": {},
+  "total_posts": 0,
+  "errors": [
+    {
+      "subreddit": "investing",
+      "error": "Cannot reach Devvit API at https://lagazzettadikyiv.devvit.zone: [Errno 8] nodename nor servname provided, or not known"
+    },
+    {
+      "subreddit": "wallstreetbets",
+      "error": "Cannot reach Devvit API at https://lagazzettadikyiv.devvit.zone: [Errno 8] nodename nor servname provided, or not known"
+    },
+    {
+      "subreddit": "geopolitics",
+      "error": "Cannot reach Devvit API at https://lagazzettadikyiv.devvit.zone: [Errno 8] nodename nor servname provided, or not known"
+    },
+    {
+      "subreddit": "economics",
+      "error": "Cannot reach Devvit API at https://lagazzettadikyiv.devvit.zone: [Errno 8] nodename nor servname provided, or not known"
+    },
+    {
+      "subreddit": "worldnews",
+      "error": "Cannot reach Devvit API at https://lagazzettadikyiv.devvit.zone: [Errno 8] nodename nor servname provided, or not known"
+    },
+    {
+      "subreddit": "stocks",
+      "error": "Cannot reach Devvit API at https://lagazzettadikyiv.devvit.zone: [Errno 8] nodename nor servname provided, or not known"
+    },
+    {
+      "subreddit": "cryptocurrency",
+      "error": "Cannot reach Devvit API at https://lagazzettadikyiv.devvit.zone: [Errno 8] nodename nor servname provided, or not known"
+    }
+  ],
+  "items": []
+}

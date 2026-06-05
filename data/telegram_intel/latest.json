@@ -1,69 +1,40 @@
 {
-  "timestamp": "2026-06-04T20:26:00+00:00",
-  "scan_window": "last_30min",
-  "channels_scanned": ["trad_fin", "MonitoringSituation", "ASupersharij", "infinityhedge", "ethanlevins", "markettwits"],
-  "total_messages_scanned": 119,
-  "messages_from_last_30min": 9,
-  "channels_silent": ["infinityhedge (DEAD since Apr 29 — 36+ days)"],
-  "current_time_utc": "2026-06-04T20:26:00+00:00",
+  "scrape_time": "2026-06-05T03:10:00Z",
+  "timezone": "UTC",
+  "data_window": "48 hours",
+  "channels_checked": [
+    "trad_fin",
+    "MonitoringSituation",
+    "ASupersharij",
+    "infinityhedge",
+    "ethanlevins",
+    "markettwits"
+  ],
+  "total_messages_collected": 100,
   "actionable_stories": [
     {
-      "id": "quantinuum_ipo_below_ipo_confirmed",
-      "event": "Quantinuum (Honeywell) IPO opened at $68 at 17:34 UTC on NASDAQ. IPO priced at $60 (upsized from $53-55 range, 20x oversubscribed). By 19:45 UTC — 2 hours later — QNT dipped BELOW $60, erasing all 19% gains from open. trad_fin 19:45: 'QUANTINUUM DIPS BELOW $60 PER SHARE IPO PRICE.' marketwits 19:49: 'QNT < $60 debut trading opened at $68.' Now at 20:26 UTC, still sub-$60. Underwriters left ~$1.68B on the table. Every institution that got IPO allocations is underwater.",
-      "consensus_narrative": "Media: 'Quantinuum IPO pop then fade — normal volatility.' Bulls: '20x oversubscribed means real demand, this dip is a buying opportunity.' The narrative splits between 'healthy settling' and 'buy the dip.'",
-      "contradiction": "This is NOT normal settling. Opening at $68 (+25% from range top, +13% from IPO) and crashing below $60 in under 2 hours is a MASSIVE REVERSAL. The $68 open was retail/algo momentum. When institutional paper hit the market, the stock cratered. Institutional demand at the IPO price is ABSENT. Every quantum comp — IONQ, QBTS, RGTI — gets repriced LOWER tonight. The highest-quality quantum name (Honeywell-backed, actual revenue) can't hold IPO. This is a sector-wide signal that quantum valuations are a fiction.",
-      "bet": "SHORT quantum equities: IONQ (most liquid, highest gamma on this signal), QBTS (highest beta, most speculative), RGTI. SHORT QTUM (Defiance Quantum ETF) for broad exposure. QNT itself will see further selling as analysts cut ratings at open.",
-      "benefit": {
-        "asset": "IONQ SHORT, QBTS SHORT, RGTI SHORT, QTUM SHORT",
-        "direction": "SHORT quantum computing across the board",
-        "target_2h_move": "IONQ: -5% to -8% as comp trade from QNT collapse hits pre-market/after-hours. QBTS: -8% to -12% (zero revenue, pure momentum). RGTI: -6% to -10%. QTUM: -2% to -4%. QNT itself: -3% to -5% further from $59.50.",
-        "volume_impact": "HIGH. 3-5x normal volume. Financial media will pick up 'quantum IPO fizzles' within hours. Retail momentum shorts pile on as technical breakdown triggers stop-losses.",
-        "estimated_probability": "85%",
-        "time_horizon": "1-2 hours. QNT first-day close sets the comp for after-hours/pre-market trading in other quantum names. By US close + 2h, the full repricing cascades."
-      }
+      "title": "Zelensky Open Letter to Putin — Direct Negotiations Proposed",
+      "event": "On June 4, Zelensky published an open letter to Putin proposing a direct face-to-face meeting in a neutral country with full ceasefire during negotiations. Format: Ukraine-Russia first, then Europe and US join as security guarantors. Putin, through Peskov, responded within 15 minutes — Kremlin had the response ready. At the St. Petersburg Economic Forum (SPIEF), Putin stated no need to suspend hostilities to start negotiations and better to stop the war entirely. Putin also said of Ukraine: at minimum: Thank God this is all over. ASupersharij reports the Russian propaganda machine is pivoting hard to peace at any cost narratives — downplaying war crimes coverage, preparing the public for a deal that preserves face.",
+      "consensus_narrative": "The mainstream take is that Zelensky blinked first — the letter is a sign of Ukrainian exhaustion and Trump pressure forcing Kyiv to the table. Russia is portrayed as magnanimous, meeting Ukraine halfway.",
+      "contradiction": "The Kremlin had its response drafted within 15 minutes — this was not improvisation. ASupersharij calls it co-authored. Putin has been preparing the Russian public for weeks via hints that this can all end. The real story: both sides are synchronizing an exit, but the war never had to happen this way — it was always about Putin maximalist demands that they now pretend to abandon while keeping occupied territory. The peace being sold is capitulation dressed as compromise.",
+      "bet": "SHORT Russian equities (MOEX index, RSX ETF via derivatives) — Russia is about to open its economy to foreign capital again, selling the peace dividend narrative. But the real squeeze is LONG Ukraine sovereign debt — Ukrainian Eurobonds (tickers like UKRAIN 2026). If a ceasefire framework is announced in the next 48 hours, expect a 15-20 percent compression on Ukrainian sovereign spreads. ALSO: SHORT European defense primes (Rheinmetall, Thales, Leonardo) — peace narrative kills defense spending momentum overnight.",
+      "benefit": "Ukraine sovereign bonds: +12-18% in 2-hour window on ceasefire announcement. European defense stocks: -5-8%. Oil: -3-5% on broader geopolitical risk premium unwind."
     },
     {
-      "id": "beirut_armed_clashes_ceasefire_collapse_composite",
-      "event": "COMPOSITE SIGNAL from ethanlevins in last 2 hours: (1) 19:50 UTC — Armed clashes in Beirut Aisha Bakkar neighborhood between Muslim Brotherhood and Tarek Issa faction. Lebanese Army deployed, situation 'under control.' (2) 17:44 UTC — Israeli Chief of Staff is UPSET by American intervention in Lebanon negotiations. (3) 14:01 UTC — Hezbollah launched kamikaze drones at western Galilee during Netanyahu's visit to Shlomi — security personnel shielded him (assassination attempt). (4) 11:29 UTC — IDF presented plans for large-scale ground operation in Lebanon; Ben Gvir and Katz supported; Netanyahu raised concerns about US pressure. (5) MonitoringSituation (10:19 UTC yesterday) — Trump yelled at Netanyahu: 'What the fuck are you doing?' AXIOS: Two senior US officials said Trump wants to end the war but Netanyahu appears to want to resume it. (6) marketwits 20:07 — Trump: 'We don't need Europe's help in Hormuz Strait' — unilateralist posture confirms US is done coordinating.",
-      "consensus_narrative": "Beirut-Tel Aviv ceasefire framework is implemented. Hezbollah evacuates southern Lebanon. IDF withdraws. Trump-negotiated peace reduces Middle East risk premium. Israeli shekel strengthens, defense stocks sell off, oil risk premium declines. Markets are pricing the ceasefire as real and durable.",
-      "contradiction": "The ceasefire narrative is being dismantled in real time on FOUR vectors: (A) Israeli Chief of Staff UPSET at US intervention means the military wants to INVADE, not cease fire. (B) Hezbollah's drone strike on Netanyahu's location is an assassination attempt — there is no ceasefire if the other side is trying to kill your head of state. (C) IDF ground invasion plans are presented and supported by Ben Gvir and Katz. (D) NOW — internal Lebanese fighting between Muslim Brotherhood and Tarek Issa in central Beirut. Lebanon is losing state control. A ceasefire is unenforceable when the signatory's country is fragmenting internally. The Muslim Brotherhood vs Tarek Issa clashes are the first symptom of Hezbollah's control over Lebanon being contested from within. This metastasizes into civil war risk. The 'ceasefire' framework has no counterparty left to enforce it.",
-      "bet": "LONG WTI crude (/CL), LONG USO. The oil risk premium that markets removed on 'Lebanon ceasefire' news gets re-added with interest. The Beirut clashes (19:50 UTC — 36 minutes ago) are ZERO percent priced. LONG EIS (Israel ETF) — defense sector benefits from ground op spending regardless of ceasefire outcome. The Ben Gvir-Katz support for invasion means Israeli defense budget expands. SHORT TLT (long-duration treasuries) — Middle East escalation = higher energy prices = sticky inflation = Fed can't cut.",
-      "benefit": {
-        "asset": "WTI Crude (/CL), USO — LONG; EIS — LONG; TLT — SHORT",
-        "direction": "LONG crude on Lebanon collapse risk; LONG Israel defense spending; SHORT duration treasuries",
-        "target_2h_move": "WTI: +2.5% to +4% on compound de-escalation reversal (Beirut clashes + IDF Chief upset + drone on Netanyahu). The 4 simultaneous ceasefire-denial signals create a gamma squeeze on oil shorts who were positioned for risk-off. EIS: +1.5% to +3% on defense spending premium. TLT: -0.5% to -1% on energy-inflation pass-through.",
-        "volume_impact": "VERY HIGH on crude (3-5x). The Beirut clashes are 36 minutes old — ZERO market pricing. First-mover window is open for 30-45 minutes before algos pick it up from newswires. EIS sees 2x volume. TLT moderate.",
-        "estimated_probability": "75%",
-        "time_horizon": "1-2 hours. Beirut clashes will hit Bloomberg terminals within the hour. Oil repricing cascades within 60 minutes. The IDF ground op plans move from 'rumor' to 'reported' status as Israeli press picks up the Chief of Staff's frustration."
-      }
+      "title": "House Votes 215-208 to Halt Trump Iran War — First War Powers Resolution Ever Passed",
+      "event": "On June 3, the U.S. House voted 215-208 (4 Republicans crossed party lines with all Democrats) to invoke the 1973 War Powers Act to end Trump military campaign against Iran. FIRST TIME the House has ever passed such a resolution. Trump called it a meaningless vote. Simultaneously: Trump says Iran is close to signing papers on a nuclear deal, Hormuz blockade will open quickly when an MOU is signed, and he told aides he won resume all-out war unless US troops are killed (WSJ). Fitch already downgraded global growth forecasts citing the oil crisis. Iran foreign minister says contacts with US not cut off, but no progress. CENTCOM confirmed Iran struck Kuwait airport with drones in a deliberate, calculated attack.",
+      "consensus_narrative": "The political narrative is that Trump war is unpopular, the House is reining in an out-of-control president, and a deal with Iran is close. Oil bulls point to Hormuz blockade remaining tight.",
+      "contradiction": "Trump is simultaneously bombing Iran and negotiating — the Hormuz blockade is a bargaining chip, not a war aim. The War Powers vote is politically symbolic (Senate won pass it). Iran keeps striking (Kuwait airport, ships near waters) while also talking. The real story: Trump is wrapping up the war on his terms — maximum pressure to extract maximum concessions, then a grand deal that lets him declare victory. The blockade was never about war — it was about creating leverage on oil markets to force Iran to sign. Fitch downgrade is the market screaming that the global economy can take much more of this charade.",
+      "bet": "LONG WTI puts / SHORT oil (USO, XLE) — Hormuz reopening in the next 1-2 weeks will crash oil 15%+ as the blockade premium evaporates. Tradeable in 2-hour windows on any Hormuz headline. LONG Iran-exposed or Gulf equities via UAE/Saudi ETFs. SHORT geopolitical risk VIX futures (UVXY short) — the war ending removes the single largest risk premium from vol markets.",
+      "benefit": "WTI crude: -10-15% on Hormuz reopening headline (first 2 hours will capture -3-5%). USO short: +8-12% in 2-hour window on deal news. VIX: -15-20% as war risk collapses. Gold: -2-3% as safe-haven bid evaporates."
     },
     {
-      "id": "zelensky_putin_spief_coordinated_theater_still_live",
-      "event": "Still developing. Timeline: (1) 18:16 UTC — Putin at SPIEF says 'At minimum: Thank God this is all over' to Zelensky — meaning ending the war. (2) 18:30 UTC — Zelensky office publishes 'Open letter to Putin' proposing direct meeting in neutral third country with security guarantees. (3) 18:38 UTC — Putin says 'no need for ceasefire to begin negotiations' and 'better to stop the war entirely.' (4) 19:08 UTC — ASupersharij posts video 'Negotiations. The Rooster has risen.' (5) 19:20 UTC — Peskov responds within 15 MINUTES — will 'inform Putin.' ASupersharij analysis: 'Absolutely atypical instantaneous Kremlin reaction. They were WAITING for this letter. It's coordinated theater.' (6) 20:06 UTC — marketwits: Trump expects mutual compromises from Russia and Ukraine. (7) 20:14 UTC — ASupersharij: 'In Saudi Arabia or Turkey?' — speculating on meeting venue, confirming the narrative machine is already positioning the location for a staged summit.",
-      "consensus_narrative": "Mainstream: 'Zelensky offers direct talks — peace breakthrough imminent.' Russian state media: 'Zelensky capitulates, requests meeting.' Trump: 'Mutual compromises expected.' Markets: peace premium on Russian assets (RSX +2-3%), TTF gas dips on Putin's Nord Stream 'push the button' comment, wheat prices ease on supply chain normalization hopes. The narrative is BUILDING toward a negotiated settlement.",
-      "contradiction": "The Kremlin responded in 15 MINUTES. A genuine diplomatic open letter requires hours for internal Kremlin deliberation, translation, analysis, drafting, and approval. 15 MINUTES is the response time for a PRE-SCRIPTED EVENT. ASupersharij caught this immediately — it's coordinated theater between both sides to manufacture the appearance of a peace process. Putin needs the 'peacemaker' image at SPIEF while his military continues strikes. Zelensky needs the 'willing to negotiate' positioning for Western aid renewal. The anchors: Anchorage framework demands Ukrainian neutrality + territorial concessions — which Kyiv has rejected. Meanwhile: (A) Russian corvette 'Boykiy' was struck by Ukrainian drones at Kronstadt naval base DURING SPIEF opening day. (B) Russian missiles struck ATB warehouse in Dnipro. (C) Putin repeated that Oreshnik missile hasn't been used in 'full combat mode' yet — threatening escalation. The military reality is ESCALATION, not de-escalation. Markets buying 'peace premium' on this manufacturing process are buying propaganda.",
-      "bet": "LONG WEAT/ZW wheat futures. The peace theater distracts from real supply chain destruction (Dnipro ATB warehouse, Kronstadt strike showing Ukraine's ability to hit St. Petersburg). Wheat tightens physically regardless of diplomatic theater. SHORT TTF gas on Putin's 'Nord Stream can restart tomorrow' headline dip, then BUY THE REVERSAL within 2 hours when markets realize there's no certification, insurance, or European political will. RSX (Russia ETF): SHORT the peace rally fade. The peace premiums dissipate when the meeting doesn't happen.",
-      "benefit": {
-        "asset": "WEAT/ZW — LONG; TTF Gas — SHORT headline then BUY reversal; RSX — SHORT",
-        "direction": "LONG wheat (+2% to +3%); tactical SHORT TTF (-4% to -5%) then BUY back for +2% reversal; SHORT RSX the peace fade (-3% to -5%)",
-        "target_2h_move": "Wheat: +1.5% to +2.5% as supply chain reality persists through theater distractions. TTF: -3% to -5% initial dip on Putin's Nord Stream comment, then recovery of +2% to +3% within 90 minutes when non-operational reality sinks in. RSX: +1% to +2% initial peace rally, then -3% to -5% fade when no Kyiv delegation appears and Kronstadt strike gets covered.",
-        "volume_impact": "VERY HIGH on TTF gas (Putin Nord Stream mention alone triggers 3-5x volume in European gas). Wheat moderate steady volume. RSX thin (2x volume) but retail interest spikes on peace headlines.",
-        "estimated_probability": "70%",
-        "time_horizon": "1-2 hours. The peace premium fade begins when markets realize no meeting is scheduled. The ASupersharij 'Saudi Arabia or Turkey?' comment (20:14 UTC) is narrative positioning for a meeting that won't happen until conditions are met that neither side can accept. Trump's 'mutual compromises' comment (20:06 UTC) is the US trying to maintain relevance in a process neither side takes seriously."
-      }
+      "title": "Beirut-Tel Aviv Ceasefire Framework Emerges — But IDF Leadership Resists",
+      "event": "On June 3-4, reports circulated that Beirut and Tel Aviv reached agreement framework: IDF withdrawal from Lebanon if Hezbollah fully evacuates southern Lebanon (Hezbollah can remain armed but must leave the south). Trump confirmed: We spoke with Hezbollah, it was very nice. But Israeli Chief of Staff says there is no ceasefire in Lebanon as far as our forces are concerned. Channel 13 reports the IDF Chief of Staff is upset by American intervention in negotiations. Netanyahu held a security consultation where IDF presented plans for a large-scale ground operation in Lebanon — Defense Minister Katz and Ben Gvir backed it, Netanyahu raised concerns about U.S. pressure. Hezbollah launched kamikaze drones at western Galilee during Netanyahu visit to Shlomi. Armed clashes in Beirut between Muslim Brotherhood and Tarek Issa faction.",
+      "consensus_narrative": "Ceasefire is close — Hezbollah accepting terms, US mediating, Trump claiming progress. The IDF is on board with the political process.",
+      "contradiction": "The IDF Chief of Staff is openly resisting the ceasefire. Ben Gvir and Katz want to invade. Hezbollah is still hitting targets DURING progress. The ceasefire framework is a leak designed to condition markets for a deal — but on the ground, Israel security establishment is not on board. Netanyahu is playing both sides: talking ceasefire publicly while authorizing ground operation planning privately. This is a repeat of Gaza — ceasefire imminent headlines while bombs keep falling. The real story: Trump is imposing a ceasefire on Netanyahu, and Bibi is stalling because he knows ending the war ends his coalition.",
+      "bet": "In a 2-hour window: the play is oil — Lebanon-Israel ceasefire removes the wider Middle East war premium from crude. SHORT Israeli shekel (ILS via futures) — political instability coalition collapse risk. SHORT TA-35 Tel Aviv index on coalition crisis fears.",
+      "benefit": "Oil (WTI/BRENT) additional -2-3% on Lebanon ceasefire confirmation layered on top of Iran deal. TA-35 Israeli index: -1-2% in 2 hours on coalition crisis fears. VIX: additional -3-5% layer as wider war tail risk removed."
     }
-  ],
-  "meta": {
-    "analysis_model": "DeepSeek V4 Flash",
-    "analysis_timestamp": "2026-06-04T20:26:00+00:00",
-    "horizon": "2-hour market window",
-    "stories_identified": 3,
-    "beta_reminder": "infinityhedge channel has been dead since April 29, 2026 (36+ days silent). MonitoringSituation last active 9+ hours ago (11:15 UTC). Both unreliable for real-time intel.",
-    "secondary_signals": {
-      "lululemon_earnings_miss": "20:05 UTC — LULU Q2 guidance $1.76-$1.81 vs est $2.69. Massive forward guidance miss. Actionable for SHORT consumer discretionary retail (LULU, AEO, ANF) but non-geopolitical.",
-      "trump_hormuz_solo": "20:07 UTC — Trump says no Europe help needed in Hormuz. Unilateralist posture reinforces US acting alone on Iran blockades. Neutral to slightly bullish oil (less coordinated de-escalation).",
-      "coinbase_fannie_btc_mortgage": "19:52 UTC — First US BTC-backed mortgage via Coinbase/Fannie Mae. Long-term adoption positive for BTC, not 2-hour actionable.",
-      "coffee_2yr_low": "20:21 UTC — Coffee futures at 2-year low. Macro bearish for softs demand, not an event-driven signal."
-    }
-  }
+  ]
 }

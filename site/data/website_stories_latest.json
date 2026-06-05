@@ -1,49 +1,49 @@
 {
-  "generated_at": "2026-06-04T15:46:31.107039+00:00",
+  "generated_at": "2026-06-05T03:46:43.392523+00:00",
   "stories": [
     {
-      "headline": "Trafigura Warns Oil at 'Inflection Point' as Iran War Drives Record $4B Profit",
-      "thesis": "The world's largest commodity trader says energy markets have reached a structural turning point. Gulf states are negotiating Hormuz bypass pipelines while US oil stocks hit 2004 lows — three converging signals that change the risk calculation on crude.",
-      "sector": "geopolitics",
-      "source_count": 26,
-      "setup_id": "n21_oil",
-      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iGHUxqc89N9w/v1/1200x-1.jpg"
+      "headline": "China's $900 Billion Chip Stock Boom Masks Deepening Property Crisis",
+      "thesis": "Chinese chip stocks surged $900 billion as IPOs and Huawei expansion drive a historic semiconductor rally — but a leading property developer reports widening losses, and falling oil imports signal industrial demand destruction beneath the tech rally.",
+      "sector": "markets",
+      "source_count": 4,
+      "setup_id": "n21_china",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Badaling_China_Great-Wall-of-China-01.jpg"
     },
     {
-      "headline": "Americans Lead Global AI Data Centre Backlash, Poll Finds",
-      "thesis": "NIMBY opposition to AI infrastructure is rising even as Nvidia calms disruption fears. The contradiction between public sentiment and corporate capex acceleration is the real story — $55bn SpaceX plant exemptions, Meta WhatsApp AI agents, and Google's $85bn raise all push forward.",
-      "sector": "tech",
-      "source_count": 6,
-      "setup_id": "n21_ai",
-      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iNawe03oXvdg/v7/1200x-1.jpg"
-    },
-    {
-      "headline": "US Plans Cuts to NATO Rapid Response Force as Cable Sabotage Probes Expand",
-      "thesis": "America reduces NATO's quick-reaction capability at the same moment suspected deep-sea cable sabotage triggers the alliance's first collective response. The divergence between strategic posture and operational reality is widening.",
+      "headline": "US Plans Cuts to NATO Rapid Response Force as Deep-Sea Cable Sabotage Expands",
+      "thesis": "The US is cutting NATO's rapid response force — the unit designed for hybrid threats — while suspected sabotage triggers NATO's first-ever collective response. Strategic posture and operational reality are diverging.",
       "sector": "geopolitics",
-      "source_count": 16,
+      "source_count": 4,
       "setup_id": "n21_nato",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NATO_members_%28blue%29.svg"
     },
     {
-      "headline": "Hungary Lifts 17-Month Veto on Ukraine's EU Membership Bid",
-      "thesis": "Orban's blockage of Ukraine's EU accession path collapses after 17 months. The Gulf states and Ukraine need each other — a realignment that exposes Europe's dependence on non-EU energy corridors.",
-      "sector": "geopolitics",
-      "source_count": 6,
-      "setup_id": "n21_ukraine",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Deep_Discoverer_shipwreck_Gulf_of_Mexico_16_May_2019.png"
+      "headline": "Tech Groups Monetise AI Hype by Selling Volatility as SpaceX, Broadcom Signal Diverging AI Paths",
+      "thesis": "Tech groups have found a new way to profit from AI mania — selling volatility products to investors chasing AI exposure. Meanwhile Goldman Sachs expects SpaceX's AI revenue to increase 100-fold by 2030, even as Broadcom's $285bn rout raises questions about AI semiconductor demand concentration.",
+      "sector": "tech",
+      "source_count": 4,
+      "setup_id": "n21_ai",
+      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iBbuAJfuM8Jw/v3/1200x-1.png"
     },
     {
-      "headline": "Hurricane Trump Threatens to Blow China Off Course",
-      "thesis": "Trump's tariff escalation and Iran war are destabilizing China's growth model. A leading property developer reports huge losses as real-estate crisis widens. The PBOC faces a trilemma: stabilize the yuan, support growth, or manage trade war fallout.",
+      "headline": "Bitcoin Tumbles After Strategy Sale Unnerves Crypto Traders",
+      "thesis": "Bitcoin dropped sharply after Strategy (formerly MicroStrategy) sold a significant position, spooking crypto markets. The selloff tests the thesis that crypto infrastructure is transitioning from speculation to machine-to-machine capital rails.",
+      "sector": "crypto",
+      "source_count": 2,
+      "setup_id": "n21_crypto",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin%2C_Wroclaw_%28P1180334%29.jpg"
+    },
+    {
+      "headline": "India Rate-Hike Bets Build as Pricey Oil and Weak Rupee Stoke Inflation Risks",
+      "thesis": "India's central bank faces growing pressure to hike rates as oil prices strain import costs and the rupee weakens. A little-known Indian stock's 530% rally shows hidden AI winners emerging in India's market as capital rotates from China.",
       "sector": "macro",
-      "source_count": 6,
-      "setup_id": "n21_china",
-      "image_url": "https://i.guim.co.uk/img/media/02d774e13d041f094f583254b13136c5a354374e/846_0_4583_3667/master/4583.jpg?width=700&quality=85&auto=format&fit=max&s=76103f6b3aeacef960917fa88cbed56f"
+      "source_count": 3,
+      "setup_id": "n21_macro",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/India_roadway_map.svg"
     },
     {
-      "headline": "Morgan Stanley Says Fed Is Discounting the Iran War in Rate Decisions",
-      "thesis": "The Fed is treating the Iran conflict as a transitory supply shock rather than a structural inflation driver. If Morgan Stanley is right that the war is being discounted, rate expectations will need a hard repricing when energy costs hit consumer prices.",
+      "headline": "Morgan Stanley Warns Fed Is Discounting Iran War in Rate Calculus — Transitory Framing at Risk",
+      "thesis": "Morgan Stanley's research finds the Fed is treating the Iran war as a transitory supply shock in its rate decision framework. If energy costs persist, the 'transitory' framing will force a hard repricing of rate expectations across the curve.",
       "sector": "macro",
       "source_count": 3,
       "setup_id": "n21_rates",

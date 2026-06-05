@@ -141,6 +141,28 @@
       "evolution_score": 0.8889,
       "actor_match": 1.0,
       "geography_match": 1.0
+    },
+    {
+      "update_id": "n21_nato__ev_014",
+      "timestamp": "2026-06-05T01:15:35.692558+00:00",
+      "type": "evidence",
+      "summary": "Evolution match (score=0.88): US plans cuts to Nato’s rapid response force; Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response",
+      "source_url": "https://www.ft.com/content/a2174b1c-1231-41b6-a064-e7ba89ce388c",
+      "source_id": "ft_world",
+      "evolution_score": 0.8764,
+      "actor_match": 1.0,
+      "geography_match": 1.0
+    },
+    {
+      "update_id": "n21_nato__ev_015",
+      "timestamp": "2026-06-05T03:16:07.166166+00:00",
+      "type": "evidence",
+      "summary": "Evolution match (score=0.87): US plans cuts to Nato’s rapid response force; Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response",
+      "source_url": "https://www.ft.com/content/a2174b1c-1231-41b6-a064-e7ba89ce388c",
+      "source_id": "ft_world",
+      "evolution_score": 0.8723,
+      "actor_match": 1.0,
+      "geography_match": 1.0
     }
   ]
 }

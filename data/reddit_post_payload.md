@@ -12,6 +12,4 @@ Evidence:
 - https://pureciclismo.github.io/gazzetta-di-kyiv/
 - https://pureciclismo.github.io/gazzetta-di-kyiv/data.html
 
-**Actors in play:** Fed, EU, China narrative desks and risk allocators.
-
 READY_FOR_DEVVIT_POST

@@ -1,13 +1,13 @@
-Trafigura warns oil at an 'inflection point' — Gulf states negotiate Hormuz bypass pipelines while US oil stocks hit 2004 lows. Three signals converge into one repricing signal.
+China's $900 billion chip stock boom masks a deepening property crisis — a leading developer reports massive losses as Trump's tariffs hammer export channels.
 
-Regime: Convergence (selective risk-off on energy corridor): Iran supply disruption, Hormuz bypass infrastructure, and Trafigura's record $4B payout are converging into an energy crisis repricing.
+Contradiction Regime (selective risk-off on China): Consensus says "growth stabilizing, trade impact manageable" — but falling oil imports reveal demand destruction beneath the semiconductor rally.
 
-• Brent: staged long entries on dips to $72, 5% stop below $68
-• Energy ETFs (XLE): accumulate on pipeline news
-• Gold holds $2,450 as ceasefire fails to cool broader risk
+• FXI: short H-shares on property contagion fears, 5% stop above $31
+• INDA: accumulate India ETFs as trade-diversion plays
+• Gold holds $2,450 floor despite ceasefire hopes — institutional bid intact
 
-¹ Trafigura pays record dividend as profit hits $4B (source: https://www.bloomberg.com/news/articles/2026-06-04/trafigura-pays-record-dividend-as-profit-soars-over-4-billion)
+¹ Chinese chip stocks surged $900 billion as IPOs and Huawei expansion drive a historic semiconductor rally (source: https://www.bloomberg.com/news/articles/2026-06-05/ipos-huawei-plan-add-to-china-s-900-billion-chip-stock-boom)
 
-Continuity: https://pureciclismo.github.io/gazzetta-di-kyiv/ | Next trigger: Hormuz bypass confirmation or US-Iran de-escalation
+Continuity: https://pureciclismo.github.io/gazzetta-di-kyiv/ | Next trigger: China May trade data / PBo C rate decision
 
-Narrative exposure dashboard: https://pureciclismo.github.io/gazzetta-di-kyiv/
+Full briefing and positioning map: https://pureciclismo.github.io/gazzetta-di-kyiv/
