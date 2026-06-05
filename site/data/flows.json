@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-06-05T11:17:03+03:00",
+  "generated_at": "2026-06-05T12:21:33+03:00",
   "generated_by": "generate_flows.py",
-  "next_update": "2026-06-05T12:17:03+03:00",
+  "next_update": "2026-06-05T13:21:33+03:00",
   "update_frequency": "60m",
   "summary": "3 inflows \u00b7 2 outflows",
-  "aggregate_confidence": 73,
-  "aggregate_confidence_label": "Directional alignment across 9 tracked flows",
-  "total_flows_tracked": 9,
+  "aggregate_confidence": 72,
+  "aggregate_confidence_label": "Directional alignment across 11 tracked flows",
+  "total_flows_tracked": 11,
   "flows": [
     {
       "id": "flow_n21_china__chip_boom_property_crisis",
@@ -142,6 +142,36 @@
       "confidence_pct": 79,
       "confidence_level": "medium",
       "confidence_trace": "large-flow+15 > elevated-pace+7 > Short EWY, short EIDO, long PIN (tight stop), short iron ore futures+2 > med-contradiction+5"
+    },
+    {
+      "id": "flow_n21_eu__return_hubs_fortress_collapse",
+      "headline": "EU migration enforcement buildout creates a structural bid for border-security equities and sovereign debt of frontline states, while Schengen erosion pressures the euro",
+      "amount_b": 0,
+      "projected": "Thales +8-12% over 12 months on security/biometric push; Greek 10-year spread compression of 30-50bps on migration cost relief; EUR/USD down 3-5% over 12 months on Schengen fragmentation risk premium",
+      "pace_multiplier": 1.5,
+      "direction": "Bifurcated \u2014 capital flows into surveillance/security tech and frontline state bonds, out of European transport exposed to border friction, short EUR on single-market risk",
+      "positioning": "Long European security equities, long Greek bonds, short EUR/USD, short European transport",
+      "asset_class": "defense",
+      "anchor_symbol": "DXY",
+      "story_id": "n21_eu__return_hubs_fortress_collapse",
+      "confidence_pct": 67,
+      "confidence_level": "medium",
+      "confidence_trace": "micro-flow+3 > elevated-pace+7 > Long European security equities, long Greek bonds, short EUR/USD, short European transport+2 > med-contradiction+5"
+    },
+    {
+      "id": "flow_n21_china__subsidy_gap_backlash",
+      "headline": "OECD subsidy gap data triggers sector rotation out of Chinese subsidized industries into Western industrial champions as EU trade offensive escalates",
+      "amount_b": 0,
+      "projected": "European solar/steel/EV equities +10-15% on competitive relief; Chinese solar/EV names -8-12% on AD/CVD risk; US semi equipment +5-8% on Chips Act 2.0 momentum",
+      "pace_multiplier": 1.5,
+      "direction": "Rotation out of Chinese subsidized-exposed equities into Western industrial replacements; capital flows into re-shoring beneficiaries and domestic subsidy programs",
+      "positioning": "Long European industrial champions, long US semi equipment, short Chinese solar/EV, underweight Chinese semis",
+      "asset_class": "equities",
+      "anchor_symbol": "DXY",
+      "story_id": "n21_china__subsidy_gap_backlash",
+      "confidence_pct": 67,
+      "confidence_level": "medium",
+      "confidence_trace": "micro-flow+3 > elevated-pace+7 > Long European industrial champions, long US semi equipment, short Chinese solar/EV, underweight Chinese semis+2 > med-contradiction+5"
     }
   ],
   "methodology": "Flows sourced from EPFR Global, Morningstar Direct, and internal aggregation. Velocity measured vs 4-week rolling average. Confidence computed via 4-factor model. Updated hourly.",
