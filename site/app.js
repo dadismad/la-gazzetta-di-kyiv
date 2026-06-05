@@ -1,4 +1,4 @@
-// La Gazzetta di Kyiv v20.18 — Dynamic capital flows · Confidence redesign · Inline glossary
+// La Gazzetta di Kyiv v20.19 — Container reorder: Flows→Stories→ANCHOR→Signal→Track Record
 const DATA = './data/stories.json';
 const LIVING_DATA = './data/living_stories.json';
 const FLOWS_DATA = './data/flows.json';
