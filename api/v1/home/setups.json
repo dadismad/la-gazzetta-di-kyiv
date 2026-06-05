@@ -1,0 +1,443 @@
+{
+  "generated_at": "2026-06-05T03:46:43.392523+00:00",
+  "data_freshness_seconds": 3600,
+  "source_count": 6,
+  "items": [
+    {
+      "setup_id": "n21_macro",
+      "title": "macro: Can India\u2019s central banker calm the country\u2019s growing economic fears?",
+      "horizon": "24-72h",
+      "thesis": "Can India\u2019s central banker calm the country\u2019s growing economic fears? \u2014 this changes the macro repricing calculation",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar",
+        "eu_fragmentation",
+        "china_ascendancy"
+      ],
+      "actors": [
+        "Gulf States",
+        "Anthropic",
+        "Federal Reserve",
+        "Zelenskyy"
+      ],
+      "incentives": [
+        "capture allocation flows"
+      ],
+      "probability_base": 80,
+      "probability_bull": 8,
+      "probability_bear": 12,
+      "invalidation_triggers": [
+        "Gulf States announces policy reversal within 72 hours",
+        "New data contradicts the macro repricing direction within 24 hours"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation stop",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.9,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "Can India\u2019s central banker calm the country\u2019s growing economic fears?",
+        "Mountbatten-Windsor earned rent by subletting Royal Lodge properties",
+        "Burnham confirms he will seek to replace Starmer as UK prime minister"
+      ],
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/India_roadway_map.svg"
+    },
+    {
+      "setup_id": "n21_ai",
+      "title": "ai: Tech groups find a new way to monetise AI hype: selling volatility",
+      "horizon": "24-72h",
+      "thesis": "AI compute concentration is accelerating \u2014 the semiconductor supply chain is the new oil pipeline",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar"
+      ],
+      "actors": [
+        "Anthropic"
+      ],
+      "incentives": [
+        "capture compute rents",
+        "defend platform distribution"
+      ],
+      "probability_base": 66,
+      "probability_bull": 14,
+      "probability_bear": 20,
+      "invalidation_triggers": [
+        "Anthropic announces policy reversal within 72 hours",
+        "New data contradicts the ai repricing direction within 24 hours"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation stop",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.5,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "Tech groups find a new way to monetise AI hype: selling volatility",
+        "Goldman Sachs expects SpaceX\u2019s AI revenue to increase 100-fold by 2030",
+        "US Futures, Korean Stocks Drop as AI Mania Fades: Markets Wrap"
+      ],
+      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iBbuAJfuM8Jw/v3/1200x-1.png"
+    },
+    {
+      "setup_id": "n21_china",
+      "title": "china: FirstFT: China\u2019s falling oil imports \u2018shield\u2019 global market from higher prices",
+      "horizon": "24-72h",
+      "thesis": "China is deploying at national-strategic tempo in china while Western competitors optimize for quarterly returns",
+      "paradigm_pillar": "china_ascendancy",
+      "paradigm_label": "China Ascendancy \u2014 Execution Over Invention",
+      "paradigm_pillars": [
+        "china_ascendancy",
+        "multi_pillar"
+      ],
+      "actors": [
+        "PBoC",
+        "State Council",
+        "CCP"
+      ],
+      "incentives": [
+        "stabilize growth optics",
+        "support employment channels"
+      ],
+      "probability_base": 54,
+      "probability_bull": 19,
+      "probability_bear": 27,
+      "invalidation_triggers": [
+        "PBoC announces policy reversal within 72 hours",
+        "New data contradicts the china repricing direction within 24 hours"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation stop",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.45,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "FirstFT: China\u2019s falling oil imports \u2018shield\u2019 global market from higher prices",
+        "IPOs, Huawei Plan Add to China\u2019s $900 Billion Chip Stock Boom",
+        "Hurricane Trump threatens to blow China off course"
+      ],
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Badaling_China_Great-Wall-of-China-01.jpg"
+    },
+    {
+      "setup_id": "n21_ukraine",
+      "title": "ukraine: The Gulf states and Ukraine need each other",
+      "horizon": "24-72h",
+      "thesis": "The Gulf states and Ukraine need each other \u2014 this changes the ukraine repricing calculation",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar",
+        "eu_fragmentation"
+      ],
+      "actors": [
+        "Gulf States",
+        "Kremlin/Russia",
+        "Zelenskyy"
+      ],
+      "incentives": [
+        "capture allocation flows"
+      ],
+      "probability_base": 52,
+      "probability_bull": 20,
+      "probability_bear": 28,
+      "invalidation_triggers": [
+        "Gulf States announces policy reversal within 72 hours",
+        "New data contradicts the ukraine repricing direction within 24 hours"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation stop",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.45,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "The Gulf states and Ukraine need each other",
+        "To fight Russia, Europe needs Ukraine",
+        "Zelenskyy calls for face-to-face Ukraine war negotiations in letter to Putin"
+      ],
+      "image_url": "https://i.guim.co.uk/img/media/eacb316cc8ab8f7d2e2df3f31022f83d9c8e6812/313_190_1178_943/master/1178.jpg?width=700&quality=85&auto=format&fit=max&s=8a8f5ef8078dd8c51b126f508a7d94e9"
+    },
+    {
+      "setup_id": "n21_oil",
+      "title": "oil: FirstFT: China\u2019s falling oil imports \u2018shield\u2019 global market from higher prices",
+      "horizon": "24-72h",
+      "thesis": "Energy corridor fragility is repricing inflation expectations in real time",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar"
+      ],
+      "actors": [
+        "OPEC+",
+        "Saudi Aramco",
+        "Gulf states"
+      ],
+      "incentives": [
+        "defend fiscal revenues",
+        "manage supply optics"
+      ],
+      "probability_base": 50,
+      "probability_bull": 21,
+      "probability_bear": 29,
+      "invalidation_triggers": [
+        "OPEC+ announces policy reversal within 72 hours",
+        "New data contradicts the oil repricing direction within 24 hours"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation stop",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.44,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "FirstFT: China\u2019s falling oil imports \u2018shield\u2019 global market from higher prices",
+        "India Rate-Hike Bets Build as Pricey Oil, Weak Rupee Stoke Inflation Risks",
+        "Oil Steadies After First Drop This Week on Peace Talk Optimism"
+      ],
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Badaling_China_Great-Wall-of-China-01.jpg"
+    },
+    {
+      "setup_id": "n21_nato",
+      "title": "nato: US plans cuts to Nato\u2019s rapid response force",
+      "horizon": "24-72h",
+      "thesis": "US plans cuts to Nato\u2019s rapid response force \u2014 this changes the nato repricing calculation",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar"
+      ],
+      "actors": [
+        "NATO"
+      ],
+      "incentives": [
+        "capture allocation flows"
+      ],
+      "probability_base": 48,
+      "probability_bull": 21,
+      "probability_bear": 31,
+      "invalidation_triggers": [
+        "NATO announces policy reversal within 72 hours",
+        "New data contradicts the nato repricing direction within 24 hours"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation stop",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.43,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "US plans cuts to Nato\u2019s rapid response force",
+        "Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response"
+      ],
+      "image_url": null
+    },
+    {
+      "setup_id": "n21_russia",
+      "title": "russia: Russia prunes Armenian rose trade ahead of election",
+      "horizon": "24-72h",
+      "thesis": "The Ukraine attrition war is slowly draining Western political will to fund \u2014 not a stalemate, a grinding test of endurance",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar",
+        "eu_fragmentation"
+      ],
+      "actors": [
+        "Kremlin/Russia"
+      ],
+      "incentives": [
+        "preserve strategic leverage",
+        "shape sanction pathways"
+      ],
+      "probability_base": 48,
+      "probability_bull": 21,
+      "probability_bear": 31,
+      "invalidation_triggers": [
+        "Kremlin/Russia announces policy reversal within 72 hours",
+        "New data contradicts the russia repricing direction within 24 hours"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation stop",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.43,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "Russia prunes Armenian rose trade ahead of election",
+        "To fight Russia, Europe needs Ukraine"
+      ],
+      "image_url": null
+    },
+    {
+      "setup_id": "n21_inflation",
+      "title": "inflation: Philippine Inflation Slows as Transport Cost Pressures Ease",
+      "horizon": "24-72h",
+      "thesis": "Services inflation at 4.1% keeps tightening bias alive regardless of energy price swings",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar"
+      ],
+      "actors": [
+        "BLS",
+        "Eurostat",
+        "central banks"
+      ],
+      "incentives": [
+        "anchor expectations",
+        "avoid policy whipsaw"
+      ],
+      "probability_base": 48,
+      "probability_bull": 21,
+      "probability_bear": 31,
+      "invalidation_triggers": [
+        "BLS announces policy reversal within 72 hours",
+        "New data contradicts the inflation repricing direction within 24 hours"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation stop",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.43,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "Philippine Inflation Slows as Transport Cost Pressures Ease",
+        "India Rate-Hike Bets Build as Pricey Oil, Weak Rupee Stoke Inflation Risks"
+      ],
+      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iPWz0YJ9JtB8/v0/1200x-1.jpg"
+    },
+    {
+      "setup_id": "n21_crypto",
+      "title": "crypto: Bitcoin tumbles after Strategy sale unnerves crypto traders",
+      "horizon": "24-72h",
+      "thesis": "crypto is building the rails for machine-to-machine capital markets \u2014 this is infrastructure, not speculation",
+      "paradigm_pillar": "blockchain_agentic",
+      "paradigm_label": "Blockchain as Agentic Economy Rail",
+      "paradigm_pillars": [
+        "blockchain_agentic"
+      ],
+      "actors": [
+        "ETF issuers",
+        "major exchanges",
+        "RWA platforms"
+      ],
+      "incentives": [
+        "grow flow capture",
+        "maintain market share"
+      ],
+      "probability_base": 46,
+      "probability_bull": 22,
+      "probability_bear": 32,
+      "invalidation_triggers": [
+        "ETF issuers announces policy reversal within 72 hours",
+        "New data contradicts the crypto repricing direction within 24 hours"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation stop",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.43,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "Bitcoin tumbles after Strategy sale unnerves crypto traders"
+      ],
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin%2C_Wroclaw_%28P1180334%29.jpg"
+    },
+    {
+      "setup_id": "n21_rates",
+      "title": "rates: The case for raising UK interest rates is growing",
+      "horizon": "24-72h",
+      "thesis": "Rate-path divergence between Fed, ECB, and BOJ is the key cross-asset repricing channel",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar"
+      ],
+      "actors": [
+        "Federal Reserve",
+        "ECB",
+        "BOJ"
+      ],
+      "incentives": [
+        "preserve policy credibility",
+        "stabilize inflation expectations"
+      ],
+      "probability_base": 46,
+      "probability_bull": 22,
+      "probability_bear": 32,
+      "invalidation_triggers": [
+        "Federal Reserve announces policy reversal within 72 hours",
+        "New data contradicts the rates repricing direction within 24 hours"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation stop",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.43,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "The case for raising UK interest rates is growing"
+      ],
+      "image_url": null
+    },
+    {
+      "setup_id": "n21_election",
+      "title": "election: Russia prunes Armenian rose trade ahead of election",
+      "horizon": "24-72h",
+      "thesis": "Russia prunes Armenian rose trade ahead of election \u2014 this changes the election repricing calculation",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_label": "multi_pillar",
+      "paradigm_pillars": [
+        "multi_pillar"
+      ],
+      "actors": [
+        "Kremlin/Russia"
+      ],
+      "incentives": [
+        "capture allocation flows"
+      ],
+      "probability_base": 46,
+      "probability_bull": 22,
+      "probability_bear": 32,
+      "invalidation_triggers": [
+        "Kremlin/Russia announces policy reversal within 72 hours",
+        "New data contradicts the election repricing direction within 24 hours"
+      ],
+      "retail_execution": [
+        "Use staged ETF entries with explicit invalidation stop",
+        "Prefer defined-risk options in high-volatility windows"
+      ],
+      "confidence": 0.43,
+      "citations": [
+        "data/normalized/events_latest.json"
+      ],
+      "evidence_titles": [
+        "Russia prunes Armenian rose trade ahead of election"
+      ],
+      "image_url": null
+    }
+  ]
+}

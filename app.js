@@ -1,0 +1,1448 @@
+// La Gazzetta di Kyiv v20.20 — Stories-first · Light blue masthead · Share buttons · Hero redesign
+const DATA = './data/stories.json';
+const LIVING_DATA = './data/living_stories.json';
+const FLOWS_DATA = './data/flows.json';
+const POLL_INTERVAL = 120000; // 2 minutes
+const FLOWS_POLL_INTERVAL = 300000; // 5 minutes — flows change slower than stories
+
+function byId(id) { return document.getElementById(id); }
+
+async function getJSON(path, fallback) {
+  try {
+    const r = await fetch(path, { cache: 'no-store' });
+    if (!r.ok) throw new Error(String(r.status));
+    return await r.json();
+  } catch (e) { console.warn('Fetch:', path, e); return fallback; }
+}
+
+// ── Captured story set (accumulation — never remove old cards) ──
+let capturedStoryIds = new Set();
+
+// ── Sector photos ──
+const SECTOR_PHOTOS = {
+  geopolitics: [
+    'https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=240&h=160&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1589519160732-57fc498494f8?w=240&h=160&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=240&h=160&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=240&h=160&fit=crop&q=80',
+  ],
+  markets: [
+    'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=240&h=160&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1535320903710-d993d3d77d29?w=240&h=160&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1590283603385-17ffb3a7f193?w=240&h=160&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?w=240&h=160&fit=crop&q=80',
+  ],
+  tech: [
+    'https://images.unsplash.com/photo-1518770660439-4636190af475?w=240&h=160&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=240&h=160&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=240&h=160&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=240&h=160&fit=crop&q=80',
+  ],
+  wealth: [
+    'https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?w=240&h=160&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=240&h=160&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=240&h=160&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=240&h=160&fit=crop&q=80',
+  ],
+  pleasure: [
+    'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=240&h=160&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=240&h=160&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=240&h=160&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1551028714-001697bdd026?w=240&h=160&fit=crop&q=80',
+  ],
+  macro: [
+    'https://images.unsplash.com/photo-1504711434969-e33886168d6c?w=240&h=160&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=240&h=160&fit=crop&q=80',
+  ],
+  default: [
+    'https://images.unsplash.com/photo-1504711434969-e33886168d6c?w=240&h=160&fit=crop&q=80',
+  ]
+};
+
+function pickPhoto(sector, idx) {
+  const pool = SECTOR_PHOTOS[sector] || SECTOR_PHOTOS.default;
+  return pool[idx % pool.length];
+}
+
+// ── Category tag labels ──
+const SECTOR_LABELS = {
+  geopolitics: 'GEOPOLITICS',
+  markets: 'MARKETS',
+  tech: 'TECH',
+  macro: 'MACRO',
+  wealth: 'WEALTH',
+  pleasure: 'PLEASURE',
+};
+
+// ═══════════════════════════════════════════════════════════════
+// COLLAPSIBLE CONTAINERS
+// ═══════════════════════════════════════════════════════════════
+
+function wireCollapsibleContainers() {
+  document.querySelectorAll('.container.collapsible').forEach(container => {
+    const header = container.querySelector('.container-header');
+    if (!header) return;
+    header.addEventListener('click', function(e) {
+      e.stopPropagation();
+      container.classList.toggle('expanded');
+    });
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+// TIME FORMATTING
+// ═══════════════════════════════════════════════════════════════
+
+function formatTimeAgo(isoString) {
+  if (!isoString) return '';
+  const diff = Date.now() - new Date(isoString).getTime();
+  const mins = Math.floor(diff / 60000);
+  if (mins < 1) return 'just now';
+  if (mins < 60) return `${mins}m ago`;
+  const hours = Math.floor(mins / 60);
+  if (hours < 24) return `${hours}h ago`;
+  return `${Math.floor(hours / 24)}d ago`;
+}
+
+function formatTimestamp(isoString) {
+  if (!isoString) return '';
+  const d = new Date(isoString);
+  const now = new Date();
+  const isToday = d.toDateString() === now.toDateString();
+  const time = d.toTimeString().slice(0, 5);
+  if (isToday) return `${time} · Today`;
+  const date = `${d.getDate()}/${d.getMonth() + 1}`;
+  return `${time} · ${date}`;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// MASTHEAD
+// ═══════════════════════════════════════════════════════════════
+
+function updateMasthead() {
+  const metaEl = byId('mastheadMeta');
+  if (metaEl) {
+    const now = new Date();
+    const time = now.toTimeString().slice(0,5);
+    const date = `${now.getDate()}/${now.getMonth()+1}/${now.getFullYear().toString().slice(-2)}`;
+    metaEl.textContent = `${date} · ${time} EET`;
+  }
+}
+
+function updateMastheadLiving(generatedAt, nextMicroUpdate) {
+  const metaEl = byId('mastheadMeta');
+  if (!metaEl) return;
+  const time = generatedAt ? new Date(generatedAt).toTimeString().slice(0,5) + ' EET' : new Date().toTimeString().slice(0,5) + ' EET';
+  const next = nextMicroUpdate ? `· next update ${new Date(nextMicroUpdate).toTimeString().slice(0,5)}` : '';
+  metaEl.textContent = `${time} ${next}`;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// THE ANCHOR / BET & BENEFIT — Expanded to 14 assets (7 tradFi + 7 crypto)
+// ═══════════════════════════════════════════════════════════════
+
+// ── ATR-based stop calculation (volatility-adjusted) ──
+// atr_pct = approximate 14-day ATR as % of price
+// stop_atr_mult = how many ATRs from entry for stop placement
+// stop_display = computed: entry ± (entry * atr_pct * stop_atr_mult)
+function computeATRStop(entry, atrPct, mult, bias) {
+  if (bias === 'WATCH') return null; // WATCH assets have no directional stop
+  const e = parseFloat(String(entry).replace(/,/g, ''));
+  const atrMove = e * atrPct * mult;
+  if (bias === 'SELL') return (e + atrMove).toFixed(e > 1000 ? 0 : e > 100 ? 1 : 2);
+  return (e - atrMove).toFixed(e > 1000 ? 0 : e > 100 ? 1 : 2);
+}
+
+const ANCHOR_ASSETS = [
+  // Traditional finance (7) — with ATR volatility context
+  { symbol: 'SPX', price: '5,840', change: '+0.4%', dir: 'up',
+    bias: 'BUY', entry: '5,750', target: '5,950',
+    atr_pct: 0.012, stop_atr_mult: 2.0, conviction: 'HIGH' },
+  { symbol: 'NVDA', price: '1,142', change: '+3.2%', dir: 'up',
+    bias: 'BUY', entry: '1,100', target: '1,240',
+    atr_pct: 0.035, stop_atr_mult: 2.0, conviction: 'HIGH' },
+  { symbol: 'BRENT', price: '74.20', change: '+2.1%', dir: 'up',
+    bias: 'BUY', entry: '72.00', target: '78.00',
+    atr_pct: 0.022, stop_atr_mult: 2.5, conviction: 'MED' },
+  { symbol: 'DXY', price: '104.30', change: '-0.2%', dir: 'down',
+    bias: 'SELL', entry: '105.20', target: '103.00',
+    atr_pct: 0.006, stop_atr_mult: 3.0, conviction: 'MED' },
+  { symbol: 'GOLD', price: '2,410', change: '+0.6%', dir: 'up',
+    bias: 'BUY', entry: '2,350', target: '2,500',
+    atr_pct: 0.014, stop_atr_mult: 2.5, conviction: 'HIGH' },
+  { symbol: 'BTC', price: '68,450', change: '+0.9%', dir: 'up',
+    bias: 'BUY', entry: '67,200', target: '72,000',
+    atr_pct: 0.025, stop_atr_mult: 2.0, conviction: 'HIGH' },
+  { symbol: '10Y', price: '4.35%', change: '+3bp', dir: 'up',
+    bias: 'WATCH', entry: '4.35', target: '4.50',
+    atr_pct: 0.015, stop_atr_mult: 2.0, conviction: 'LOW' },
+  // Crypto (7) — higher ATR reflects crypto volatility
+  { symbol: 'ETH', price: '3,850', change: '+2.1%', dir: 'up',
+    bias: 'BUY', entry: '3,600', target: '4,200',
+    atr_pct: 0.040, stop_atr_mult: 2.0, conviction: 'HIGH' },
+  { symbol: 'SOL', price: '178', change: '+4.5%', dir: 'up',
+    bias: 'BUY', entry: '155', target: '210',
+    atr_pct: 0.055, stop_atr_mult: 2.0, conviction: 'MED' },
+  { symbol: 'XRP', price: '1.25', change: '+1.2%', dir: 'up',
+    bias: 'WATCH', entry: '1.15', target: '1.80',
+    atr_pct: 0.045, stop_atr_mult: 2.0, conviction: 'LOW' },
+  { symbol: 'BNB', price: '645', change: '+3.0%', dir: 'up',
+    bias: 'BUY', entry: '580', target: '720',
+    atr_pct: 0.035, stop_atr_mult: 2.0, conviction: 'MED' },
+  { symbol: 'ADA', price: '0.92', change: '-1.8%', dir: 'down',
+    bias: 'SELL', entry: '1.05', target: '0.85',
+    atr_pct: 0.050, stop_atr_mult: 2.0, conviction: 'HIGH' },
+  { symbol: 'DOGE', price: '0.28', change: '+5.2%', dir: 'up',
+    bias: 'WATCH', entry: '0.25', target: '0.35',
+    atr_pct: 0.065, stop_atr_mult: 2.0, conviction: 'LOW' },
+];
+
+// Pre-compute stops on load
+ANCHOR_ASSETS.forEach(a => {
+  a.stop = computeATRStop(a.entry, a.atr_pct, a.stop_atr_mult, a.bias);
+});
+
+const ANCHOR_CRYPTO = {
+  stablecoinSupply: { value: '$172B', delta: '+$4.2B', label: 'Stablecoin Supply (30d)' },
+  exchangeNetflow: { value: '-$890M', delta: '7d outflow', label: 'Exchange Netflow' },
+  fundingRate: { value: '-0.01%', regime: 'neutral', label: 'Aggregate Funding' },
+};
+
+const ANCHOR_PDR = { value: '1.7', regime: 'passive', regimeLabel: 'Passive Discovery', trend: '▁▃▅▆▇' };
+
+function anchorRowHTML(a) {
+  const pillClass = a.bias === 'BUY' ? 'anchor-pill buy' : a.bias === 'SELL' ? 'anchor-pill sell' : 'anchor-pill watch';
+  const badgeClass = a.conviction === 'HIGH' ? 'anchor-badge high' : a.conviction === 'MED' ? 'anchor-badge med' : 'anchor-badge low';
+  const atrPct = (a.atr_pct * 100).toFixed(1);
+  return `
+    <div class="asset-row">
+      <div class="asset-info">
+        <span class="asset-symbol">${a.symbol}</span>
+        <span class="asset-price">$${a.price}</span>
+        <span class="asset-change ${a.dir}">${a.change}</span>
+      </div>
+      <div class="asset-trade">
+        <span class="${pillClass}">${a.bias}</span>
+        <span class="asset-zone">${a.entry} → ${a.target}</span>
+        <span class="asset-stop" title="Volatility-adjusted: ${a.stop_atr_mult}×${atrPct}% ATR from entry">Stop ${a.stop} · ${a.stop_atr_mult}×ATR</span>
+        <span class="${badgeClass}">${a.conviction}</span>
+      </div>
+    </div>`;
+}
+
+function cryptoSignalHTML() {
+  return `
+    <div class="asset-row anchor-crypto">
+      <div class="anchor-crypto-row"><span class="anchor-crypto-label">${ANCHOR_CRYPTO.stablecoinSupply.label}</span><span class="anchor-crypto-value">${ANCHOR_CRYPTO.stablecoinSupply.value} <span class="asset-change up">${ANCHOR_CRYPTO.stablecoinSupply.delta}</span></span></div>
+      <div class="anchor-crypto-row"><span class="anchor-crypto-label">${ANCHOR_CRYPTO.exchangeNetflow.label}</span><span class="anchor-crypto-value">${ANCHOR_CRYPTO.exchangeNetflow.value} <span class="anchor-crypto-sub">${ANCHOR_CRYPTO.exchangeNetflow.delta}</span></span></div>
+      <div class="anchor-crypto-row"><span class="anchor-crypto-label">${ANCHOR_CRYPTO.fundingRate.label}</span><span class="anchor-crypto-value">${ANCHOR_CRYPTO.fundingRate.value} <span class="anchor-crypto-sub">${ANCHOR_CRYPTO.fundingRate.regime}</span></span></div>
+    </div>`;
+}
+
+function renderPDR(elId) {
+  const el = document.getElementById(elId);
+  if (!el) return;
+  el.querySelector('.pdr-value').textContent = ANCHOR_PDR.value;
+  const regimeEl = el.querySelector('.pdr-regime');
+  regimeEl.textContent = ANCHOR_PDR.regimeLabel;
+  regimeEl.className = 'pdr-regime ' + ANCHOR_PDR.regime;
+  el.querySelector('.pdr-trend').textContent = ANCHOR_PDR.trend;
+}
+
+function renderAnchor() {
+  const el = byId('assetList');
+  if (el) el.innerHTML = ANCHOR_ASSETS.map(anchorRowHTML).join('') + cryptoSignalHTML();
+  renderPDR('pdrGauge');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// CAPITAL FLOWS REPORT — dynamically loaded from flows.json
+// ═══════════════════════════════════════════════════════════════
+
+let CAPITAL_FLOWS_DATA = [];
+let GLOSSARY = {};
+
+async function fetchFlows() {
+  const data = await getJSON(FLOWS_DATA, null);
+  if (!data || !data.flows) return false;
+  CAPITAL_FLOWS_DATA = data.flows;
+  GLOSSARY = data.glossary || {};
+  renderCapitalFlows();
+  renderGlossaryTooltips();
+  updateHeroConfidence(data.aggregate_confidence, data.aggregate_confidence_label);
+  updateMastheadFlows(data);
+  return true;
+}
+
+function renderCapitalFlows() {
+  const el = byId('flowsList');
+  if (!el) return;
+  if (!CAPITAL_FLOWS_DATA.length) {
+    el.innerHTML = '<div class="flows-loading">Analyzing capital movements…</div>';
+    return;
+  }
+  el.innerHTML = CAPITAL_FLOWS_DATA.map(f => {
+    const anchorSym = f.anchor_symbol || matchAnchor(f.headline);
+    const anchorAsset = ANCHOR_ASSETS.find(a => a.symbol === anchorSym);
+    const betLine = anchorAsset
+      ? `<span class="cf-bet-pill ${anchorAsset.bias.toLowerCase()}">${anchorAsset.symbol} ${anchorAsset.bias} · ${anchorAsset.conviction}</span>`
+      : '';
+    const detail = f.projected ? `Projected ${f.projected} further ${f.direction === 'inflow' ? 'inflow' : 'outflow'} (${f.confidence_pct}% confidence) · ${f.pace_multiplier}x normal pace` : '';
+    const positioning = f.positioning ? `Institutional positioning: ${f.positioning}` : '';
+
+    return `
+    <div class="flow-item ${f.direction}" data-flow-story-id="${f.story_id}" data-anchor="${anchorSym}">
+      <div class="flow-headline expandable-flow-header">
+        <span class="flow-headline-text">${f.headline}</span>
+        ${betLine}
+        <span class="flow-expand-icon">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </span>
+      </div>
+      <div class="flow-detail">${detail}</div>
+      <div class="flow-detail" style="margin-top:2px;font-size:10px;color:var(--ink-muted)">${positioning}</div>
+      <div class="flow-expanded" style="display:none">
+        <div class="flow-story-link" data-story-id="${f.story_id}">
+          <span style="color:var(--ink-muted);font-size:10px;text-transform:uppercase;letter-spacing:0.05em">Linked story</span>
+          <span class="flow-story-title" style="font-size:12px;color:var(--ink);font-style:italic">Loading...</span>
+        </div>
+        <div class="flow-bet-detail" style="margin-top:6px">
+          ${anchorAsset ? `
+          <span style="color:var(--ink-muted);font-size:10px;text-transform:uppercase;letter-spacing:0.05em">Position bet</span>
+          <div style="display:flex;gap:8px;margin-top:2px">
+            <span class="cf-bet-detail-pill ${anchorAsset.bias.toLowerCase()}">${anchorAsset.symbol} ${anchorAsset.bias}</span>
+            <span style="font-size:10px;color:var(--ink-light)">Entry ${anchorAsset.entry} → Target ${anchorAsset.target} · Stop ${anchorAsset.stop} · Conviction ${anchorAsset.conviction}</span>
+          </div>
+          ` : '<span style="font-size:10px;color:var(--ink-muted)">No positioned bet for this flow</span>'}
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Wire expand/collapse on flow headers
+  el.querySelectorAll('.expandable-flow-header').forEach(header => {
+    header.addEventListener('click', function(e) {
+      const item = this.closest('.flow-item');
+      const expanded = item.querySelector('.flow-expanded');
+      const icon = this.querySelector('.flow-expand-icon svg');
+      if (expanded.style.display === 'none') {
+        expanded.style.display = 'block';
+        icon.style.transform = 'rotate(180deg)';
+        const storyLink = item.querySelector('.flow-story-title');
+        if (storyLink && storyLink.textContent === 'Loading...') {
+          const sid = item.dataset.flowStoryId;
+          const card = document.querySelector(`.card[data-story-id="${sid}"]`);
+          if (card) {
+            const h3 = card.querySelector('h3');
+            storyLink.textContent = h3 ? h3.textContent : 'Story found';
+            storyLink.style.cursor = 'pointer';
+            storyLink.style.color = 'var(--blue)';
+            storyLink.addEventListener('click', () => {
+              card.scrollIntoView({behavior:'smooth'});
+              card.classList.add('expanded');
+            });
+          } else {
+            storyLink.textContent = 'Story not yet loaded';
+          }
+        }
+      } else {
+        expanded.style.display = 'none';
+        icon.style.transform = 'rotate(0deg)';
+      }
+    });
+  });
+
+  const sub = byId('cfSubtitle');
+  if (sub) {
+    const inflows = CAPITAL_FLOWS_DATA.filter(f => f.direction === 'inflow');
+    const outflows = CAPITAL_FLOWS_DATA.filter(f => f.direction === 'outflow');
+    sub.textContent = `${inflows.length} inflows · ${outflows.length} outflows`;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// HERO CONFIDENCE — meaningful label instead of naked %
+// ═══════════════════════════════════════════════════════════════
+
+function updateHeroConfidence(pct, label) {
+  const el = byId('heroConfidence');
+  if (!el) return;
+  if (!pct) {
+    el.textContent = '—%';
+    return;
+  }
+  el.textContent = `${pct}%`;
+  // Update the label to something meaningful
+  const labelEl = el.nextElementSibling;
+  if (labelEl && labelEl.classList.contains('hero-stat-label') && label) {
+    labelEl.textContent = label;
+    labelEl.style.maxWidth = '120px';
+  }
+}
+
+function updateMastheadFlows(flowsData) {
+  const total = byId('heroFlowTotal');
+  if (!total || !flowsData) return;
+  const totalB = flowsData.flows ? flowsData.flows.reduce((s, f) => s + (f.amount_b || 0), 0) : 0;
+  if (totalB > 0) {
+    total.textContent = `$${totalB.toFixed(1)}B`;
+  }
+  const storyCount = byId('heroStoryCount');
+  if (storyCount && flowsData.total_flows_tracked) {
+    storyCount.textContent = String(flowsData.total_flows_tracked);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// GLOSSARY TOOLTIPS — inline explanations for finance terms
+// ═══════════════════════════════════════════════════════════════
+
+function renderGlossaryTooltips() {
+  if (!Object.keys(GLOSSARY).length) return;
+  // Add tooltip data attributes to known acronyms in the DOM
+  const terms = Object.entries(GLOSSARY);
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+  const textNodes = [];
+  while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+  textNodes.forEach(node => {
+    if (!node.parentElement || node.parentElement.closest('script,style,noscript,.glossary-tip')) return;
+    let html = node.textContent;
+    let changed = false;
+    terms.forEach(([term, definition]) => {
+      const regex = new RegExp(`\\b(${term})\\b`, 'g');
+      if (regex.test(html)) {
+        const escaped = definition.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        html = html.replace(regex, `<span class="glossary-tip" data-tip="${escaped}" tabindex="0">$1</span>`);
+        changed = true;
+      }
+    });
+    if (changed && node.parentElement) {
+      const span = document.createElement('span');
+      span.innerHTML = html;
+      node.parentElement.replaceChild(span, node);
+    }
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+// TRIANGULATION — Cross-Container Intelligence Signal
+// ═══════════════════════════════════════════════════════════════
+
+const STORY_ANCHOR_MAP = {
+  oil: 'BRENT', energy: 'BRENT', gold: 'GOLD',
+  treasury: '10Y', fed: '10Y', nvidia: 'NVDA', ai: 'NVDA',
+  tech: 'NVDA', china: 'DXY', defense: 'SPX', nato: 'SPX',
+  ukraine: 'GOLD', europe: 'DXY'
+};
+
+function matchAnchor(headline) {
+  const h = headline.toLowerCase();
+  for (const [kw, asset] of Object.entries(STORY_ANCHOR_MAP)) {
+    if (h.includes(kw)) return asset;
+  }
+  return null;
+}
+
+function computeTriangulation(story, flow, anchorAsset) {
+  let score = 0;
+  const signals = [];
+
+  // Flow alignment (max 50 — capital is the prime mover)
+  if (flow) {
+    const amtMatch = (flow.headline || '').match(/\$([\d.]+)([MBT])/);
+    const amt = amtMatch ? parseFloat(amtMatch[1]) : 0;
+    const denom = amtMatch ? amtMatch[2] : 'M';
+    const paceMatch = (flow.detail || '').match(/(\d+\.?\d*)x/);
+    const pace = paceMatch ? parseFloat(paceMatch[1]) : 1;
+    const direction = flow.direction || 'none';
+    
+    // Amount tier
+    if (denom === 'B' && amt >= 5) score += 20;
+    else if (denom === 'B' && amt >= 3) score += 15;
+    else if (denom === 'B' && amt >= 1) score += 10;
+    else score += 5;
+    // Velocity tier (boosted for capital-first: pace matters more)
+    if (pace >= 3.0) score += 15;
+    else if (pace >= 2.5) score += 12;
+    else if (pace >= 2.0) score += 10;
+    else if (pace >= 1.5) score += 7;
+    else score += 4;
+    // Positioning
+    if (flow.positioning === 'accumulating') score += 10;
+    else if (flow.positioning === 'distributing') score += 8;
+    else score += 5;
+    signals.push({label: 'Flow', cls: 'flow', val: `${direction} $${amt}${denom} ${pace}x`});
+  } else {
+    signals.push({label: 'Flow', cls: 'flow', val: 'none'});
+    // No flow data = story exists outside capital-first paradigm
+  }
+
+  // Bet conviction (max 30)
+  let betBias = 'WATCH', betConviction = 'LOW';
+  if (anchorAsset && anchorAsset in ANCHOR_ASSETS.reduce((m,a)=>(m[a.symbol]=a,m),{})) {
+    const a = ANCHOR_ASSETS.find(x => x.symbol === anchorAsset);
+    if (a) { betBias = a.bias; betConviction = a.conviction; }
+    if (a && a.bias !== 'WATCH') score += 15;
+    if (a && a.conviction === 'HIGH') score += 10;
+    else if (a && a.conviction === 'MED') score += 5;
+    signals.push({label: 'Bet', cls: 'bet', val: `${anchorAsset} ${betBias} ${betConviction}`});
+  } else {
+    signals.push({label: 'Bet', cls: 'bet', val: 'no match'});
+  }
+
+  // Event strength (max 20 — events without flow are noise)
+  if (story.confidence === 'high') score += 10;
+  if (story.they_say && story.reality) score += 5;
+  if (story.extremum) score += 5;
+  signals.push({label: 'Event', cls: 'event', val: story.confidence === 'high' ? 'strong' : 'moderate'});
+
+  // Alignment bonus
+  const flowDir = flow ? (flow.direction || 'none') : 'none';
+  let alignment = 'neutral', alignDetail = '';
+  if (flowDir === 'inflow' && betBias === 'BUY') { score += 5; alignment = 'aligned'; alignDetail = '✅ Flow+Bet aligned BUY'; }
+  else if (flowDir === 'outflow' && betBias === 'SELL') { score += 5; alignment = 'aligned'; alignDetail = '✅ Flow+Bet aligned SELL'; }
+  else if (flowDir === 'inflow' && betBias === 'SELL') { alignment = 'divergent'; alignDetail = '⚠️ Inflow but SELL signal'; }
+  else if (flowDir === 'outflow' && betBias === 'BUY') { alignment = 'divergent'; alignDetail = '⚠️ Outflow but BUY signal'; }
+  else if (betBias === 'WATCH') { alignment = 'neutral'; alignDetail = 'Bet is WATCH — no directional signal'; }
+
+  const cappedScore = Math.min(score, 100);
+  let verdict, verdictCls;
+  if (cappedScore >= 85) { verdict = 'MAX CONVICTION'; verdictCls = 'max'; }
+  else if (cappedScore >= 70) { verdict = 'HIGH CONVICTION'; verdictCls = 'high'; }
+  else if (cappedScore >= 55) { verdict = 'MODERATE'; verdictCls = 'moderate'; }
+  else { verdict = 'WATCH'; verdictCls = 'watch'; }
+
+  return { score: cappedScore, verdict, verdictCls, alignment, alignDetail, signals, anchorAsset, flowDir, betBias };
+}
+
+function renderTriangulation() {
+  const el = byId('triangulationList');
+  if (!el) return;
+
+  // Collect stories from the DOM
+  const cards = document.querySelectorAll('.card[data-story-id]');
+  const items = [];
+  cards.forEach(card => {
+    const sid = card.dataset.storyId;
+    const headline = card.querySelector('h3')?.textContent || '';
+    const flowItem = CAPITAL_FLOWS_DATA.find(f => f.story_id === sid);
+    // Build a minimal story object from card data
+    const story = {
+      story_id: sid,
+      headline: headline,
+      confidence: 'high', // default
+      they_say: card.querySelector('.con-they')?.textContent || '',
+      reality: card.querySelector('.con-real')?.textContent || '',
+      extremum: card.querySelector('.card-extremum')?.textContent || '',
+    };
+    const anchorAsset = matchAnchor(headline);
+    const tri = computeTriangulation(story, flowItem, anchorAsset);
+    items.push({ ...tri, headline, storyId: sid });
+  });
+
+  if (items.length === 0) {
+    el.innerHTML = '<div style="padding:12px;color:var(--ink-muted);font-style:italic;font-size:12px">Stories loading — triangulation will appear when cards are rendered.</div>';
+    return;
+  }
+
+  items.sort((a, b) => b.score - a.score);
+
+  el.innerHTML = items.map(t => `
+    <div class="triangulation-item">
+      <div class="triangulation-header">
+        <span class="triangulation-score ${t.alignment}">${t.score}</span>
+        <span class="triangulation-headline">${t.headline}</span>
+        <span class="triangulation-verdict ${t.verdictCls}">${t.verdict}</span>
+      </div>
+      <div class="triangulation-detail">
+        ${t.signals.map(s => `<span><span class="tri-label ${s.cls}">${s.label}</span> ${s.val}</span>`).join('')}
+        ${t.alignDetail ? `<span class="tri-align ${t.alignment}">${t.alignDetail}</span>` : ''}
+      </div>
+    </div>
+  `).join('');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// CAPITAL FLOW HTML HELPER (embedded per story card)
+// ═══════════════════════════════════════════════════════════════
+
+function capitalFlowHTML(cf) {
+  if (!cf) return '';
+  return `
+    <div class="capital-flow-block">
+      <span class="cf-label">CAPITAL FLOW</span>
+      <span class="cf-line">${cf.claim}</span>
+      <span class="cf-line">Projected further flow: ${cf.projected} (${cf.confidence} confidence)</span>
+      <span class="cf-line">Institutional positioning: ${cf.positioning}</span>
+    </div>`;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// STORY CARD RENDERING
+// ═══════════════════════════════════════════════════════════════
+
+function statusDotClass(status) {
+  if (status === 'evolving') return 'story-status-dot gold pulse';
+  if (status === 'stable') return 'story-status-dot sky';
+  return 'story-status-dot grey';
+}
+
+// ── Severity determination ──
+function determineSeverity(story) {
+  const cf = story.capital_flow;
+  // CRITICAL: capital_flow with large amount (>$3B) or pace >2x
+  if (cf) {
+    const amt = parseFloat(cf.amount) || 0;
+    const denom = (cf.denomination || '').toUpperCase();
+    const pace = (cf.pace || '');
+    const paceNum = parseFloat(pace.match(/^(\d+\.?\d*)x/)?.[1] || '0');
+    const amountInB = denom === 'B' ? amt : denom === 'M' ? amt / 1000 : 0;
+    if (amountInB > 3 || paceNum > 2) {
+      return 'critical';
+    }
+  }
+  // HIGH: high confidence + THE PLAY
+  if (story.confidence === 'high' && story.portfolio_implication) {
+    return 'high';
+  }
+  // Falling from the living stories format
+  return 'elevated';
+}
+
+// ── Contradiction Score (0-100) ──
+function calcContradictionScore(story) {
+  // Measures actual narrative-vs-reality tension + flow divergence + confidence grounding
+  let score = 30; // baseline — a story by definition has some contradiction
+
+  const cf = story.capital_flow;
+  const theySay = (story.they_say || '').toLowerCase();
+  const reality = (story.reality || '').toLowerCase();
+
+  // 1. Narrative-Reality Tension (0-30)
+  if (theySay && reality) {
+    // Count contrast markers (signals of actual contradiction, not just co-existence)
+    const markers = ['but','however','not','instead','actually','yet','contrary','despite','while','whereas','though','unlike'];
+    const hits = markers.filter(m => reality.includes(m)).length;
+    score += Math.min(hits * 5, 15);
+
+    // Substantive pushback: reality should be meaningful length
+    if (reality.length > 50 && theySay.length > 30) score += 10;
+    if (reality.length > theySay.length * 0.7) score += 5;
+  }
+
+  // 2. Flow-Narrative Divergence (0-25)
+  if (cf) {
+    const claim = (cf.claim || '').toLowerCase();
+    const pos = /surge|boom|rally|bull|growth|soar|outperform|strength|optimis/.test(theySay);
+    const neg = /crash|fear|crisis|risk|plunge|bear|collapse|sell|recession|weakness|pessimis/.test(theySay);
+
+    if (pos && cf.direction === 'outflow') score += 20;
+    else if (neg && cf.direction === 'inflow') score += 20;
+    else if (pos || neg) score += 5;
+
+    // Flow magnitude = more at stake
+    const amt = parseFloat(cf.current_amount || '0');
+    if (amt > 5) score += 10;
+    else if (amt > 2) score += 5;
+  }
+
+  // 3. Extremum quality (0-15)
+  if (story.extremum) {
+    const e = story.extremum;
+    if (e.winner || e.loser) score += 5;
+    if (e.idiot || e.genius) score += 5;
+    if ((e.winner || e.loser) && (e.idiot || e.genius)) score += 5;
+  }
+
+  // 4. Confidence grounding (0-10)
+  if (story.confidence === 'high' && cf && cf.current_amount) score += 10;
+  else if (story.confidence === 'high') score += 5;
+
+  return Math.min(score, 100);
+}
+
+function livingCardHTML(story, isLead) {
+  const sector = (story.sector || '').toLowerCase();
+  const theySay = story.they_say || '';
+  const reality = story.reality || '';
+  const photoUrl = story.image_url || pickPhoto(sector, 0);
+  const status = story.status || 'stable';
+
+  // Capital flow claim (first line, bold)
+  const cf = story.capital_flow;
+  const cfClaim = cf ? `<div class="cf-claim">${cf.claim} — projected ${cf.projected} change at ${cf.confidence} confidence</div>` : '';
+
+  // Sector border-left class
+  const sectorClass = sector === 'geopolitics' ? 'geopolitics' : sector === 'tech' ? 'tech' : sector === 'macro' ? 'macro' : sector === 'markets' ? 'markets' : '';
+
+  // Status dot + update badge
+  const dotClass = statusDotClass(status);
+  const updateBadge = story.update_count > 0
+    ? `<span class="story-update-badge">+${story.update_count} updates</span>`
+    : '';
+  const updatedAgo = story.last_updated
+    ? `<span class="updated-ago">${formatTimeAgo(story.last_updated)}</span>`
+    : '';
+
+  // Extremum line
+  const extremumHTML = story.extremum ? extremumLineHTML(story.extremum) : '';
+
+  // Severity
+  const severity = determineSeverity(story);
+
+  // Contradiction Score
+  const cs = calcContradictionScore(story);
+
+  return `
+    <article class="card${isLead ? ' lead' : ''}${sectorClass ? ' ' + sectorClass : ''}"
+             data-story-id="${story.story_id}"
+             data-status="${status}"
+             data-update-count="${story.update_count}"
+             data-last-updated="${story.last_updated || ''}"
+             data-pillar="${story.paradigm_pillar || ''}">
+      <div class="card-collapsed">
+      <div class="card-head">
+        ${cfClaim}
+        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:2px">
+          ${sector ? `<span class="category-tag ${sector}">${SECTOR_LABELS[sector] || sector}</span>` : ''}
+          <span class="severity ${severity}">${severity}</span>
+          ${updateBadge}
+          ${updatedAgo}
+          <time class="story-date" datetime="${story.generated_at || story.last_updated || ''}">${story.generated_at ? new Date(story.generated_at).toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'}) : ''}</time>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:6px">
+          <h3 style="flex:1">${story.headline}</h3>
+          <span class="contradiction-score">${cs}</span>
+        </div>
+      </div>
+      </div><!-- /card-collapsed -->
+      <div class="card-expanded-body">
+        ${reality ? `<p class="summary">${reality}</p>` : ''}
+        ${theySay || reality ? `
+        <div class="detail">
+          ${theySay ? `<div class="con-they"><span class="con-label">They say</span>${theySay}</div>` : ''}
+          ${reality ? `<div class="con-real"><span class="con-label">Reality</span>${reality}</div>` : ''}
+        </div>` : ''}
+        ${capitalFlowHTML(cf)}
+        ${story.portfolio_implication ? `
+        <div class="the-play">
+          <span class="pi-label">THE PLAY</span>
+          <span class="pi-text">${story.portfolio_implication}</span>
+        </div>` : ''}
+        ${extremumHTML}
+        <div class="share-row">
+          <button class="share-btn copy-link" title="Copy link" onclick="copyShareLink(this.closest('.card'))">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+          <button class="share-btn share-x" title="Share on X" onclick="shareToX(this.closest('.card'))">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7.5 7.5L4 19"/><path d="M20 4l-7.5 7.5L20 19"/></svg>
+          </button>
+          <button class="share-btn share-facebook" title="Share on Facebook" onclick="shareToFacebook(this.closest('.card'))">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </button>
+          <button class="share-btn share-telegram" title="Share on Telegram" onclick="shareToTelegram(this.closest('.card'))">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+          <button class="share-btn share-reddit" title="Share on Reddit" onclick="shareToReddit(this.closest('.card'))">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8s-4-1-8 2"/><path d="M8 16s4 1 8-2"/><circle cx="9" cy="9" r="0.5" fill="currentColor"/><circle cx="15" cy="9" r="0.5" fill="currentColor"/></svg>
+          </button>
+        </div>
+        <div class="card-photo">
+          <img src="${photoUrl}" alt="${sector}" loading="lazy" onerror="this.parentElement.style.display='none'">
+        </div>
+      </div>
+      <div class="story-evolution-timeline" style="display:none">
+        <div class="timeline-loading">Loading evolution timeline...</div>
+      </div>
+      ${story.status === 'resolved' ? `<div class="resolved-banner"><span class="resolved-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Resolved</span></div>` : ''}
+    </article>`;
+}
+
+// ── Extremum Line HTML ──
+function extremumLineHTML(extremumStr) {
+  if (!extremumStr) return '';
+  // Parse format: "WINNER: ... | LOSER: ... | IDIOT: ... | GENIUS: ..."
+  const parts = extremumStr.split('|').map(s => s.trim());
+  let winner = '', loser = '', idiot = '', genius = '';
+  parts.forEach(p => {
+    if (p.startsWith('WINNER:')) winner = p.replace('WINNER:', '').trim();
+    else if (p.startsWith('LOSER:')) loser = p.replace('LOSER:', '').trim();
+    else if (p.startsWith('IDIOT:')) idiot = p.replace('IDIOT:', '').trim();
+    else if (p.startsWith('GENIUS:')) genius = p.replace('GENIUS:', '').trim();
+  });
+  return `
+    <div class="card-extremum">
+      <span class="ex-label">EXTREMUM</span>
+      ${winner ? `<span class="ex-win">WINNER: ${winner}</span>` : ''}
+      ${loser ? `<span class="ex-lose">LOSER: ${loser}</span>` : ''}
+      ${idiot ? `<span class="ex-idiot">IDIOT: ${idiot}</span>` : ''}
+      ${genius ? `<span class="ex-genius">GENIUS: ${genius}</span>` : ''}
+    </div>`;
+}
+
+// ── Card click: expand/collapse + lazy-load timeline (event delegation) ──
+function wireCardDelegation() {
+  const newsCol = byId('newsCol');
+  if (!newsCol) return;
+
+  newsCol.addEventListener('click', async function(e) {
+    // Skip share menu clicks — they're handled by wireShareControls
+    if (e.target.closest('.share-toggle') || e.target.closest('.share-menu') || e.target.closest('.thread-pill') || e.target.closest('.resolved-archive-link')) return;
+
+    const card = e.target.closest('.card');
+    if (!card) return;
+
+    const storyId = card.dataset.storyId;
+    const timelineEl = card.querySelector('.story-evolution-timeline');
+    if (!timelineEl) return;
+
+    const wasExpanded = card.classList.contains('expanded');
+
+    // Close all other expanded cards
+    document.querySelectorAll('.card.expanded').forEach(c => {
+      if (c !== card) c.classList.remove('expanded');
+    });
+
+    if (wasExpanded) {
+      card.classList.remove('expanded');
+      return;
+    }
+
+    // Expand this card
+    card.classList.add('expanded');
+
+    // Lazy-load timeline
+    if (!timelineEl.dataset.loaded) {
+      timelineEl.style.display = 'block';
+      timelineEl.innerHTML = '<div class="timeline-loading">Loading evolution timeline...</div>';
+
+      try {
+        const timelineData = await getJSON(`./data/stories/${storyId}/timeline.json`, null);
+        if (timelineData && timelineData.threads) {
+          timelineEl.innerHTML = timelineHTML(timelineData, timelineData.threads[0]?.thread_id);
+          timelineEl.dataset.loaded = 'true';
+          wireThreadNavigation(timelineEl, timelineData, storyId);
+        } else {
+          timelineEl.innerHTML = '<div class="timeline-empty">No evolution data available yet.</div>';
+          timelineEl.dataset.loaded = 'true';
+        }
+      } catch (err) {
+        timelineEl.innerHTML = '<div class="timeline-empty">Could not load timeline.</div>';
+        timelineEl.dataset.loaded = 'true';
+      }
+    } else {
+      timelineEl.style.display = 'block';
+    }
+  });
+}
+
+// ── Timeline rendering (simplified, preserved from v18) ──
+function timelineHTML(timelineData, activeThreadId) {
+  const thread = timelineData.threads?.find(t => t.thread_id === activeThreadId)
+    || timelineData.threads?.[0];
+  if (!thread) return '<div class="timeline-empty">No thread data.</div>';
+
+  const threadNav = timelineData.threads && timelineData.threads.length > 1
+    ? `<div class="thread-nav">${timelineData.threads.map(t =>
+        `<span class="thread-pill${t.thread_id === activeThreadId ? ' active' : ''}" data-thread-id="${t.thread_id}">${t.type === 'main' ? 'Main' : (t.current_state?.headline?.slice(0,30) || t.thread_id.slice(0,25))} (${t.evolution?.length || 0})</span>`
+      ).join('')}</div>`
+    : '';
+
+  const entries = (thread.evolution || []).map((ev, i) => {
+    const isLatest = i === thread.evolution.length - 1;
+    const dotClass = (ev.type === 'frame_shift' || ev.type === 'thread_creation')
+      ? (isLatest ? 'timeline-dot gold pulse' : 'timeline-dot gold')
+      : (isLatest ? 'timeline-dot gold pulse' : 'timeline-dot');
+    const typeLabel = ev.type.replace(/_/g, ' ');
+    const sourceStr = ev.source_count ? ` · ${ev.source_count} sources` : '';
+    return `
+      <div class="update-entry" data-type="${ev.type}"${isLatest ? ' data-latest="true"' : ''}>
+        <span class="${dotClass}"></span>
+        <div class="timeline-content">
+          <span class="update-timestamp">${formatTimestamp(ev.timestamp)}</span>
+          <span class="update-type-badge">${typeLabel}</span>
+          <p class="update-delta">${ev.reality_delta || ''}</p>
+          ${ev.sub_thread_spawned ? `<span class="update-spawn">→ Sub-thread spawned</span>` : ''}
+        </div>
+      </div>`;
+  }).join('');
+
+  return `${threadNav}<div class="timeline-entries">${entries}</div>
+    <div class="timeline-state">
+      <span class="timeline-state-label">Status: </span>
+      <span class="story-status-dot ${statusDotClass(timelineData.status)}"></span>
+      <span class="timeline-state-text">${timelineData.status || 'unknown'}</span>
+      <span class="timeline-source-count">${thread.current_state?.source_count || 0} sources</span>
+    </div>`;
+}
+
+function wireThreadNavigation(timelineEl, timelineData, storyId) {
+  timelineEl.querySelectorAll('.thread-pill').forEach(pill => {
+    pill.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const threadId = this.dataset.threadId;
+      timelineEl.querySelectorAll('.thread-pill').forEach(p => p.classList.remove('active'));
+      this.classList.add('active');
+      const entriesContainer = timelineEl.querySelector('.timeline-entries');
+      const stateContainer = timelineEl.querySelector('.timeline-state');
+      if (entriesContainer && stateContainer) {
+        const thread = timelineData.threads.find(t => t.thread_id === threadId);
+        if (thread) {
+          const entries = (thread.evolution || []).map((ev, i) => {
+            const isLatest = i === thread.evolution.length - 1;
+            const dotClass = (ev.type === 'frame_shift' || ev.type === 'thread_creation')
+              ? (isLatest ? 'timeline-dot gold pulse' : 'timeline-dot gold')
+              : (isLatest ? 'timeline-dot gold pulse' : 'timeline-dot');
+            const typeLabel = ev.type.replace(/_/g, ' ');
+            return `<div class="update-entry" data-type="${ev.type}"${isLatest ? ' data-latest="true"' : ''}>
+              <span class="${dotClass}"></span>
+              <div class="timeline-content">
+                <span class="update-timestamp">${formatTimestamp(ev.timestamp)}</span>
+                <span class="update-type-badge">${typeLabel}</span>
+                <p class="update-delta">${ev.reality_delta || ''}</p>
+                ${ev.sub_thread_spawned ? `<span class="update-spawn">→ Sub-thread spawned</span>` : ''}
+              </div>
+            </div>`;
+          }).join('');
+          entriesContainer.innerHTML = entries;
+          stateContainer.innerHTML = `
+            <span class="timeline-state-label">Status: </span>
+            <span class="story-status-dot ${statusDotClass(timelineData.status)}"></span>
+            <span class="timeline-state-text">${timelineData.status || 'unknown'}</span>
+            <span class="timeline-source-count">${thread.current_state?.source_count || 0} sources</span>`;
+          wireThreadNavigation(timelineEl, timelineData, storyId);
+        }
+      }
+    });
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+// STORY ACCUMULATION — appendStoryCard adds new cards at the top
+// ═══════════════════════════════════════════════════════════════
+
+function appendStoryCard(story, isLead) {
+  const el = byId('newsCol');
+  if (!el) return;
+
+  // Check if this story_id already exists (deduplication)
+  // Deduplication: only check inside newsCol — flow items also carry data-story-id
+  if (el.querySelector(`[data-story-id="${story.story_id}"]`)) return;
+  if (capturedStoryIds.has(story.story_id)) return;
+  capturedStoryIds.add(story.story_id);
+
+  const html = livingCardHTML(story, isLead);
+  // Insert at the top — newest first
+  el.insertAdjacentHTML('afterbegin', html);
+
+  // Update story count badge
+  updateStoryCount();
+}
+
+function updateStoryCount() {
+  const countEl = byId('storyCount');
+  const heroCountEl = byId('heroStoryCount');
+  const count = document.querySelectorAll('.card[data-story-id]').length;
+  if (countEl) countEl.textContent = `${count} stories`;
+  if (heroCountEl) heroCountEl.textContent = String(count);
+  updateCumulativeStats();
+}
+
+// ═══════════════════════════════════════════════════════════════
+// CUMULATIVE TRACKING — forever counters (localStorage)
+// ═══════════════════════════════════════════════════════════════
+
+function getCumulative(key, fallback) {
+  try {
+    const v = localStorage.getItem('gazzetta_' + key);
+    return v ? JSON.parse(v) : fallback;
+  } catch(e) { return fallback; }
+}
+
+function setCumulative(key, val) {
+  try { localStorage.setItem('gazzetta_' + key, JSON.stringify(val)); } catch(e) {}
+}
+
+function updateCumulativeStats() {
+  // Stories tracked — cumulative, never decreases
+  const currentStories = document.querySelectorAll('.card[data-story-id]').length;
+  let tracked = getCumulative('stories_tracked', 10);
+  if (currentStories > tracked) {
+    tracked = currentStories;
+    setCumulative('stories_tracked', tracked);
+  }
+
+  // Capital tracked — parse current total from flow data and accumulate
+  let flowTotal = 0;
+  CAPITAL_FLOWS_DATA.forEach(f => {
+    flowTotal += (f.amount_b || 0);
+  });
+  let cumFlow = getCumulative('capital_tracked_b', 17.1);
+  if (flowTotal > cumFlow) {
+    cumFlow = flowTotal;
+    setCumulative('capital_tracked_b', cumFlow);
+  }
+
+  // Assets positioned
+  let cumAssets = getCumulative('assets_positioned', 14);
+  if (ANCHOR_ASSETS.length > cumAssets) {
+    cumAssets = ANCHOR_ASSETS.length;
+    setCumulative('assets_positioned', cumAssets);
+  }
+
+  // Total at stake — sum of all entry prices × conviction multiplier
+  let stakeTotal = 0;
+  ANCHOR_ASSETS.forEach(a => {
+    const price = parseFloat(String(a.price).replace(/[,$%bp]/g, ''));
+    if (!isNaN(price)) {
+      const mult = a.conviction === 'HIGH' ? 1.5 : a.conviction === 'MED' ? 1.0 : 0.5;
+      stakeTotal += price * mult;
+    }
+  });
+  stakeTotal = Math.round(stakeTotal / 1000); // in thousands for display
+  let cumStake = getCumulative('total_at_stake_k', 18.4);
+  if (stakeTotal > cumStake) {
+    cumStake = stakeTotal;
+    setCumulative('total_at_stake_k', cumStake);
+  }
+
+  // Update hero stats (stories/capital/assets/stake — confidence is handled by fetchFlows)
+  const heroStory = byId('heroStoryCount');
+  const heroFlow = byId('heroFlowTotal');
+  const heroAssets = byId('heroAssetCount');
+  const heroStake = byId('heroBetTotal');
+  if (heroStory) heroStory.textContent = String(tracked);
+  if (heroFlow) heroFlow.textContent = '$' + cumFlow.toFixed(1) + 'B';
+  if (heroAssets) heroAssets.textContent = String(cumAssets);
+  if (heroStake) heroStake.textContent = '$' + cumStake.toFixed(1) + 'K';
+}
+
+// ═══════════════════════════════════════════════════════════════
+// TRACK RECORD — store predictions, compute realized P&L
+// ═══════════════════════════════════════════════════════════════
+
+const TRACK_RECORD_KEY = 'gazzetta_track_record';
+
+function getTrackRecord() {
+  try {
+    const v = localStorage.getItem(TRACK_RECORD_KEY);
+    return v ? JSON.parse(v) : [];
+  } catch(e) { return []; }
+}
+
+function saveTrackRecord(records) {
+  try { localStorage.setItem(TRACK_RECORD_KEY, JSON.stringify(records)); } catch(e) {}
+}
+
+function snapshotPredictions() {
+  const today = new Date().toISOString().slice(0, 10);
+  const records = getTrackRecord();
+  const alreadySnapped = records.some(r => r.date === today);
+  if (alreadySnapped) return records;
+
+  ANCHOR_ASSETS.forEach(a => {
+    records.push({
+      date: today,
+      symbol: a.symbol,
+      bias: a.bias,
+      entry: a.entry,
+      target: a.target,
+      stop: a.stop,
+      conviction: a.conviction,
+      atr_pct: a.atr_pct,
+      price_at_snapshot: a.price,
+      settled: false
+    });
+  });
+
+  saveTrackRecord(records);
+  return records;
+}
+
+function settlePredictions() {
+  const records = getTrackRecord();
+  let changed = false;
+
+  records.forEach(r => {
+    if (r.settled) return;
+
+    // Find current asset data
+    const current = ANCHOR_ASSETS.find(a => a.symbol === r.symbol);
+    if (!current) return;
+
+    const entry = parseFloat(String(r.entry).replace(/,/g, ''));
+    const currentPrice = parseFloat(String(current.price).replace(/[,$%bp]/g, ''));
+    const target = parseFloat(String(r.target).replace(/,/g, ''));
+    const stop = parseFloat(String(r.stop).replace(/,/g, ''));
+
+    if (isNaN(entry) || isNaN(currentPrice)) return;
+
+    // Determine if target or stop was hit
+    let hitTarget = false, hitStop = false;
+    if (r.bias === 'BUY') {
+      hitTarget = currentPrice >= target;
+      hitStop = stop !== null && currentPrice <= stop;
+    } else if (r.bias === 'SELL') {
+      hitTarget = currentPrice <= target;
+      hitStop = stop !== null && currentPrice >= stop;
+    } else {
+      // WATCH — settle on significant move: >2× ATR from entry
+      const atrMove = entry * (r.atr_pct || 0.02);
+      hitTarget = Math.abs(currentPrice - entry) > atrMove * 3;
+    }
+
+    // Calculate P&L
+    let pnlPct;
+    if (r.bias === 'BUY' || r.bias === 'SELL') {
+      // Directional: long/short return
+      if (r.bias === 'BUY') {
+        pnlPct = ((currentPrice - entry) / entry) * 100;
+      } else {
+        pnlPct = ((entry - currentPrice) / entry) * 100;
+      }
+    } else {
+      // WATCH: absolute move P&L (just measuring event magnitude)
+      pnlPct = (Math.abs(currentPrice - entry) / entry) * 100;
+    }
+
+    // Settle if target, stop, or >7 days old
+    const ageDays = (Date.now() - new Date(r.date).getTime()) / 86400000;
+    const shouldSettle = hitTarget || hitStop || ageDays > 7;
+
+    if (shouldSettle) {
+      r.settled = true;
+      r.realized_pnl_pct = Math.round(pnlPct * 10) / 10;
+      r.resolved_price = String(currentPrice);
+      r.resolved_reason = hitTarget ? 'target' : hitStop ? 'stop' : 'expiry';
+      r.resolved_date = new Date().toISOString().slice(0, 10);
+      changed = true;
+    }
+  });
+
+  if (changed) saveTrackRecord(records);
+  return records;
+}
+
+function computeTrackRecordStats() {
+  const records = getTrackRecord();
+  const settled = records.filter(r => r.settled && r.realized_pnl_pct !== undefined);
+  const open = records.filter(r => !r.settled);
+  const wins = settled.filter(r => r.realized_pnl_pct > 0);
+  const losses = settled.filter(r => r.realized_pnl_pct <= 0);
+
+  const totalPnL = settled.reduce((s, r) => s + (r.realized_pnl_pct || 0), 0);
+  const avgWin = wins.length ? wins.reduce((s, r) => s + r.realized_pnl_pct, 0) / wins.length : 0;
+  const avgLoss = losses.length ? losses.reduce((s, r) => s + r.realized_pnl_pct, 0) / losses.length : 0;
+  const winRate = settled.length ? Math.round(wins.length / settled.length * 100) : 0;
+
+  return {
+    total: settled.length,
+    open: open.length,
+    wins: wins.length,
+    losses: losses.length,
+    winRate,
+    totalPnL: Math.round(totalPnL * 10) / 10,
+    avgWin: Math.round(avgWin * 10) / 10,
+    avgLoss: Math.round(avgLoss * 10) / 10,
+    expectancy: settled.length ? Math.round((winRate/100 * avgWin + (1-winRate/100) * avgLoss) * 10) / 10 : 0,
+    lastSettled: settled.length ? settled.sort((a,b) => b.date.localeCompare(a.date))[0] : null
+  };
+}
+
+function renderTrackRecord(targetId) {
+  const el = document.getElementById(targetId);
+  if (!el) return;
+
+  snapshotPredictions();
+  settlePredictions();
+  const stats = computeTrackRecordStats();
+
+  let html = '';
+  if (stats.total === 0) {
+    html = `<div class="tr-empty">No settled predictions yet. Track record builds as bets resolve.</div>`;
+  } else {
+    html = `
+      <div class="tr-grid">
+        <div class="tr-stat"><span class="tr-val">${stats.total}</span><span class="tr-label">Bets Settled</span></div>
+        <div class="tr-stat"><span class="tr-val">${stats.winRate}%</span><span class="tr-label">Win Rate</span></div>
+        <div class="tr-stat"><span class="tr-val">${stats.totalPnL > 0 ? '+' : ''}${stats.totalPnL}%</span><span class="tr-label">Total P&L</span></div>
+        <div class="tr-stat"><span class="tr-val">${stats.expectancy > 0 ? '+' : ''}${stats.expectancy}%</span><span class="tr-label">Expectancy</span></div>
+      </div>
+      <div class="tr-detail">
+        <span>Avg win: +${stats.avgWin}%</span>
+        <span>Avg loss: ${stats.avgLoss}%</span>
+        <span>Open positions: ${stats.open}</span>
+      </div>`;
+  }
+
+  // Methodology link
+  html += `<div class="tr-methodology"><a href="capital.html">Full methodology →</a></div>`;
+  el.innerHTML = html;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// PATCH EXISTING CARD
+// ═══════════════════════════════════════════════════════════════
+
+function patchStoryCard(card, story) {
+  if (!card) return;
+
+  card.dataset.status = story.status || 'stable';
+  card.dataset.updateCount = String(story.update_count || 0);
+  card.dataset.lastUpdated = story.last_updated || '';
+
+  const dot = card.querySelector('.story-status-dot');
+  if (dot) {
+    const newClass = statusDotClass(story.status);
+    dot.className = newClass;
+  }
+
+  const badge = card.querySelector('.story-update-badge');
+  if (badge) {
+    const newCount = story.update_count || 0;
+    badge.textContent = `+${newCount} updates`;
+    if (newCount > 0) {
+      card.classList.add('recently-updated');
+      setTimeout(() => card.classList.remove('recently-updated'), 3000);
+    }
+  }
+
+  const ago = card.querySelector('.updated-ago');
+  if (ago && story.last_updated) {
+    ago.textContent = formatTimeAgo(story.last_updated);
+  }
+
+  const headlineEl = card.querySelector('h3');
+  if (headlineEl && !headlineEl.dataset.original) {
+    headlineEl.dataset.original = story.headline;
+    headlineEl.textContent = story.headline;
+  }
+
+  // Update severity badge
+  const sevEl = card.querySelector('.severity');
+  if (sevEl) {
+    const newSev = determineSeverity(story);
+    sevEl.className = 'severity ' + newSev;
+    sevEl.textContent = newSev;
+  }
+
+  // Update contradiction score
+  const csEl = card.querySelector('.contradiction-score');
+  if (csEl) {
+    csEl.textContent = String(calcContradictionScore(story));
+  }
+
+  const summary = card.querySelector('.summary');
+  if (summary && story.reality) {
+    summary.textContent = story.reality;
+  }
+
+  const conThey = card.querySelector('.con-they');
+  if (conThey && story.they_say) {
+    conThey.innerHTML = `<span class="con-label">They say</span>${story.they_say}`;
+  }
+  const conReal = card.querySelector('.con-real');
+  if (conReal && story.reality) {
+    conReal.innerHTML = `<span class="con-label">Reality</span>${story.reality}`;
+  }
+
+  if (story.portfolio_implication) {
+    const piEl = card.querySelector('.the-play');
+    if (piEl) {
+      const textEl = piEl.querySelector('.pi-text');
+      if (textEl) textEl.textContent = story.portfolio_implication;
+    } else {
+      const detailEl = card.querySelector('.detail');
+      if (detailEl) {
+        detailEl.insertAdjacentHTML('afterend', `
+          <div class="the-play">
+            <span class="pi-label">THE PLAY</span>
+            <span class="pi-text">${story.portfolio_implication}</span>
+          </div>`);
+      }
+    }
+  }
+
+  if (story.last_updated && Date.now() - new Date(story.last_updated).getTime() < 600000) {
+    if (!card.classList.contains('recently-updated')) {
+      card.classList.add('recently-updated');
+      setTimeout(() => card.classList.remove('recently-updated'), 3000);
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// POLLING — accumulate, never remove
+// ═══════════════════════════════════════════════════════════════
+
+async function pollLivingStories() {
+  const data = await getJSON(LIVING_DATA, null);
+  if (!data) return;
+
+  updateMastheadLiving(data.generated_at, data.next_micro_update);
+
+  // Build story list — deduplicate: skip if story_id matches lead
+  const leadId = data.lead?.story_id;
+  const stories = (data.stories || []).filter(s => s.story_id !== leadId);
+  const allStories = [data.lead, ...stories, ...(data.archived_stories || [])].filter(Boolean);
+
+  allStories.forEach(story => {
+    const card = document.querySelector(`[data-story-id="${story.story_id}"]`);
+    if (card) {
+      patchStoryCard(card, story);
+    } else {
+      appendStoryCard(story, story === data.lead);
+    }
+  });
+
+  updateTimestamps();
+}
+
+function updateTimestamps() {
+  document.querySelectorAll('.card[data-last-updated]').forEach(card => {
+    const iso = card.dataset.lastUpdated;
+    if (iso) {
+      const ago = card.querySelector('.updated-ago');
+      if (ago) ago.textContent = formatTimeAgo(iso);
+    }
+  });
+}
+
+// ═══════════════════════════════════════════════
+// SHARE — conventional visible buttons (X, FB, Telegram, Reddit, Copy)
+// ═══════════════════════════════════════════════
+
+function getShareText(articleEl) {
+  const headline = articleEl.querySelector('h3')?.textContent || '';
+  const playEl = articleEl.querySelector('.the-play .pi-text');
+  const playText = playEl ? playEl.textContent.trim() : '';
+  const url = window.location.href;
+  let text = headline;
+  if (playText) text += '\n\n' + playText;
+  text += '\n\n' + url;
+  return text;
+}
+
+function showToast(msg) {
+  const existing = document.querySelector('.toast');
+  if (existing) existing.remove();
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = msg;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 2500);
+}
+
+function copyShareLink(card) {
+  if (!card) return;
+  const text = getShareText(card);
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => showToast('✓ Link copied')).catch(() => {});
+  } else {
+    try { document.execCommand('copy'); showToast('✓ Link copied'); } catch(e) {}
+  }
+}
+
+function shareToX(card) {
+  if (!card) return;
+  const text = getShareText(card);
+  window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank', 'width=600,height=400');
+}
+
+function shareToFacebook(card) {
+  if (!card) return;
+  const url = encodeURIComponent(window.location.href);
+  window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, '_blank', 'width=600,height=400');
+}
+
+function shareToTelegram(card) {
+  if (!card) return;
+  const text = getShareText(card);
+  const url = window.location.href;
+  const shareUrl = 'https://t.me/share/url?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text.split('\n')[0]);
+  window.open(shareUrl, '_blank', 'width=600,height=400');
+}
+
+function shareToReddit(card) {
+  if (!card) return;
+  const headline = card.querySelector('h3')?.textContent || '';
+  const url = encodeURIComponent(window.location.href);
+  window.open('https://www.reddit.com/submit?url=' + url + '&title=' + encodeURIComponent(headline), '_blank', 'width=800,height=600');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// BOOT
+// ═══════════════════════════════════════════════════════════════
+
+async function boot() {
+  // Wire collapsible containers first
+  wireCollapsibleContainers();
+
+  // Wire card click delegation (one listener on newsCol for all cards)
+  wireCardDelegation();
+
+  // Render static content (non-story containers)
+  renderAnchor();
+  renderTrackRecord('trackRecord');
+
+  // Fetch flows FIRST (they feed stats and container content)
+  await fetchFlows();
+
+  // Start flows polling (5 min cadence)
+  setInterval(fetchFlows, FLOWS_POLL_INTERVAL);
+
+  // Try data sources
+  const livingData = await getJSON(LIVING_DATA, null);
+
+  if (livingData && livingData.lead) {
+    // Render with living stories format
+    const leadId = livingData.lead?.story_id;
+    const stories = (livingData.stories || []).filter(s => s.story_id !== leadId);
+    const all = [livingData.lead, ...stories, ...(livingData.archived_stories || [])].filter(Boolean);
+
+    const el = byId('newsCol');
+    if (el) {
+      all.forEach((s, i) => appendStoryCard(s, i === 0));
+    }
+
+    // Triangulation AFTER cards are in DOM
+    renderTriangulation();
+
+    updateMastheadLiving(livingData.generated_at, livingData.next_micro_update);
+
+    // Start polling
+    setInterval(pollLivingStories, POLL_INTERVAL);
+    updateCumulativeStats();
+    updateMasthead();
+    return;
+  }
+
+  // Fallback: stories.json
+  const data = await getJSON(DATA, null);
+  if (!data || !data.lead) {
+    const el = byId('newsCol');
+    if (el) el.innerHTML = '<p style="text-align:center;color:var(--ink-muted);padding:40px;font-style:italic">Intelligence update in progress.</p>';
+    updateCumulativeStats();
+    updateMasthead();
+    return;
+  }
+
+  // Deduplicate: filter out stories matching lead story_id
+  const leadId = data.lead.story_id;
+  const filteredStories = (data.stories || []).filter(s => s.story_id !== leadId);
+  const all = [data.lead, ...filteredStories].filter(Boolean);
+
+  const el = byId('newsCol');
+  if (el) {
+    all.forEach((s, i) => appendStoryCard(s, i === 0));
+  }
+
+  // Triangulation AFTER cards are in DOM
+  renderTriangulation();
+
+  updateCumulativeStats();
+  updateMasthead();
+}
+
+boot();

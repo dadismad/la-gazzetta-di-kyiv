@@ -1,0 +1,106 @@
+{
+  "generated_at": "2026-06-05T03:46:43.392523+00:00",
+  "data_freshness_seconds": 3600,
+  "source_count": 6,
+  "items": [
+    {
+      "narrative": "macro",
+      "claim_a": "Gulf States policy remains stable",
+      "claim_b": "Can India\u2019s central banker calm the country\u2019s growing economic fears?",
+      "urgency": "high",
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/India_roadway_map.svg"
+    },
+    {
+      "narrative": "ai",
+      "claim_a": "Anthropic policy remains stable",
+      "claim_b": "Tech groups find a new way to monetise AI hype: selling volatility",
+      "urgency": "high",
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar",
+      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iBbuAJfuM8Jw/v3/1200x-1.png"
+    },
+    {
+      "narrative": "china",
+      "claim_a": "PBoC policy remains stable",
+      "claim_b": "FirstFT: China\u2019s falling oil imports \u2018shield\u2019 global market from higher prices",
+      "urgency": "medium",
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "china_ascendancy",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Badaling_China_Great-Wall-of-China-01.jpg"
+    },
+    {
+      "narrative": "ukraine",
+      "claim_a": "Gulf States policy remains stable",
+      "claim_b": "The Gulf states and Ukraine need each other",
+      "urgency": "medium",
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar",
+      "image_url": "https://i.guim.co.uk/img/media/eacb316cc8ab8f7d2e2df3f31022f83d9c8e6812/313_190_1178_943/master/1178.jpg?width=700&quality=85&auto=format&fit=max&s=8a8f5ef8078dd8c51b126f508a7d94e9"
+    },
+    {
+      "narrative": "oil",
+      "claim_a": "OPEC+ policy remains stable",
+      "claim_b": "FirstFT: China\u2019s falling oil imports \u2018shield\u2019 global market from higher prices",
+      "urgency": "medium",
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Badaling_China_Great-Wall-of-China-01.jpg"
+    },
+    {
+      "narrative": "nato",
+      "claim_a": "NATO policy remains stable",
+      "claim_b": "US plans cuts to Nato\u2019s rapid response force",
+      "urgency": "medium",
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar",
+      "image_url": null
+    },
+    {
+      "narrative": "russia",
+      "claim_a": "Kremlin/Russia policy remains stable",
+      "claim_b": "Russia prunes Armenian rose trade ahead of election",
+      "urgency": "medium",
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar",
+      "image_url": null
+    },
+    {
+      "narrative": "inflation",
+      "claim_a": "BLS policy remains stable",
+      "claim_b": "Philippine Inflation Slows as Transport Cost Pressures Ease",
+      "urgency": "medium",
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar",
+      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iPWz0YJ9JtB8/v0/1200x-1.jpg"
+    },
+    {
+      "narrative": "crypto",
+      "claim_a": "ETF issuers policy remains stable",
+      "claim_b": "Bitcoin tumbles after Strategy sale unnerves crypto traders",
+      "urgency": "medium",
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "blockchain_agentic",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin%2C_Wroclaw_%28P1180334%29.jpg"
+    },
+    {
+      "narrative": "rates",
+      "claim_a": "Federal Reserve policy remains stable",
+      "claim_b": "The case for raising UK interest rates is growing",
+      "urgency": "medium",
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar",
+      "image_url": null
+    },
+    {
+      "narrative": "election",
+      "claim_a": "Kremlin/Russia policy remains stable",
+      "claim_b": "Russia prunes Armenian rose trade ahead of election",
+      "urgency": "medium",
+      "invalidation_window": "24-72h",
+      "paradigm_pillar": "multi_pillar",
+      "image_url": null
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Gazzetta NIOS Ops Dashboard</title>
+  <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body class="news-body live-light">
+  <header class="topbar"><div class="brand">Gazzetta NIOS — Ops Dashboard</div></header>
+  <main style="padding:16px;max-width:1200px;margin:0 auto">
+    <section class="panel" style="margin-bottom:12px">
+      <h2 style="margin-top:0">Pipeline Health</h2>
+      <div id="opsHealth">Loading...</div>
+    </section>
+    <section class="panel">
+      <h2 style="margin-top:0">Next Actions</h2>
+      <ul>
+        <li>Resolve any failing cron lanes before expanding distribution.</li>
+        <li>Verify article-contract validator before publish jobs.</li>
+        <li>Confirm Reddit permalink + site endpoint after each deploy.</li>
+      </ul>
+    </section>
+  </main>
+  <script>
+    fetch('./data/ops_status.json',{cache:'no-store'})
+      .then(r=>r.json())
+      .then(j=>{
+        document.getElementById('opsHealth').innerHTML = `
+          <p><b>Generated:</b> ${j.generated_at}</p>
+          <p><b>Regime:</b> ${j.regime}</p>
+          <p><b>Healthy pipelines:</b> ${j.healthy_pipelines}</p>
+          <p><b>Degraded pipelines:</b> ${j.degraded_pipelines}</p>
+        `;
+      })
+      .catch(()=>{document.getElementById('opsHealth').textContent='No ops_status.json found yet.'});
+  </script>
+</body>
+</html>

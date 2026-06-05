@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>La Gazzetta di Kyiv</title>
+  <meta name="description" content="Contradiction-first narrative intelligence. The stories that move markets."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css?v=20.20"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='2' fill='%23111827'/><text x='16' y='24' text-anchor='middle' font-size='22' font-weight='bold' font-family='Georgia,serif' fill='%23D4AF37'>G</text></svg>"/>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-left">
+    <span class="masthead-bulava" title="Hetman Bohdan Khmelnytsky — The Bulava" aria-hidden="true">
+      <svg width="36" height="44" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="10" y1="16" x2="10" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="10" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/>
+        <circle cx="10" cy="12" r="2.5" fill="currentColor" opacity="0.3"/>
+        <line x1="7" y1="7" x2="13" y2="7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="10" y1="3" x2="10" y2="7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="10" cy="2" r="1.5" fill="currentColor"/>
+        <rect x="5" y="16" width="10" height="2" rx="1" fill="currentColor" opacity="0.4"/>
+        <rect x="6" y="19" width="8" height="1.5" rx="0.75" fill="currentColor" opacity="0.3"/>
+      </svg>
+    </span>
+    <span class="masthead-name">La Gazzetta di Kyiv</span>
+    <span class="masthead-machiavelli" title="Niccolò Machiavelli — Virtù e Fortuna" aria-hidden="true">
+      <svg width="32" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+        <!-- Quill nib -->
+        <path d="M12 20V6"/>
+        <path d="M12 6C12 3 9 1 6 2C7 4 7 7 5 8L12 20"/>
+        <path d="M16 2C14 4 14 7 16 8"/>
+        <line x1="6" y1="14" x2="18" y2="20"/>
+      </svg>
+    </span>
+  </div>
+  <div class="masthead-right">
+    <span class="masthead-tagline">Capital moves markets. We track where it's going.</span>
+    <span class="masthead-meta" id="mastheadMeta">—</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="hero-headline">The stories that move markets — before they move prices.</h1>
+    <p class="hero-subtitle">Track capital flows, trade the contradictions, and follow the money through 5 intelligence layers — from institutional positioning to verifiable bets.</p>
+    <div class="hero-cta">
+      <button class="hero-btn" onclick="document.getElementById('storiesContainer').classList.add('expanded');document.getElementById('storiesContainer').scrollIntoView({behavior:'smooth'})">Read today's stories →</button>
+      <a href="https://t.me/GazzettaDiKyiv" class="hero-link">Telegram</a>
+      <a href="https://www.reddit.com/r/LaGazzettadiKyiv/" class="hero-link">Reddit</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="hero-stat-value" id="heroStoryCount">—</span><span class="hero-stat-label">Stories</span></div>
+    <div class="hero-stat"><span class="hero-stat-value" id="heroFlowTotal">$17.1B</span><span class="hero-stat-label">Capital tracked</span></div>
+    <div class="hero-stat"><span class="hero-stat-value" id="heroAssetCount">14</span><span class="hero-stat-label">Assets positioned</span></div>
+    <div class="hero-stat"><span class="hero-stat-value" id="heroBetTotal">$18.4K</span><span class="hero-stat-label">Total at stake</span></div>
+    <div class="hero-stat"><span class="hero-stat-value" id="heroConfidence">—%</span><span class="hero-stat-label">Directional alignment</span></div>
+  </div>
+</section>
+
+<div class="layout">
+
+  <!-- LEFT COLUMN: Containerized sections -->
+  <main class="main-col">
+
+    <!-- CONTAINER 1: Stories — front door, first after hero -->
+    <section class="container collapsible" id="storiesContainer">
+      <div class="container-header" data-target="storiesBody">
+        <span class="container-title">What the capital is saying</span>
+        <span class="container-count" id="storyCount"></span>
+        <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </div>
+      <div class="container-desc">Today's narratives, decoded. Each story reveals who benefits, who loses, and what the money already priced in — with a actionable trade idea.</div>
+      <div class="container-body" id="storiesBody">
+        <div class="news-col" id="newsCol"></div>
+      </div>
+    </section>
+
+    <!-- CONTAINER 2: Capital flows — the data behind the stories -->
+    <section class="container collapsible" id="capitalFlowsContainer">
+      <div class="container-header" data-target="capitalFlowsBody">
+        <span class="container-title">Where the smart money is going</span>
+        <span class="container-subtitle" id="cfSubtitle"></span>
+        <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </div>
+      <div class="container-desc">Institutional flow data with directional conviction, velocity, and projected movement. See what $XB is moving where — and which assets are accumulating or distributing.</div>
+      <div class="container-body" id="capitalFlowsBody">
+        <div class="flows-list" id="flowsList"></div>
+        <div class="asset-note" style="margin-top:8px">Flow data: EPFR Global, Morningstar Direct, and internal aggregation · Velocity measured vs 4-week rolling average · Timestamps reflect week ending Friday EET · Methodology: <a href="./capital.html" style="color:var(--gold)">capital.html</a></div>
+      </div>
+    </section>
+
+    <!-- CONTAINER 3: Bet & Benefit — positioning from flows + stories -->
+    <section class="container collapsible" id="anchorContainer">
+      <div class="container-header" data-target="anchorBody">
+        <span class="container-title">Your trades this week</span>
+        <span class="container-subtitle">Bet &amp; Benefit</span>
+        <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </div>
+      <div class="container-desc">14 assets with directional conviction, entry zones, and stop levels — derived from the stories and flows above. Entry, target, stop, and conviction for each position.</div>
+      <div class="container-body" id="anchorBody">
+        <div class="pdr-gauge" id="pdrGauge">
+          <span class="pdr-label">PDR</span>
+          <span class="pdr-value">—</span>
+          <span class="pdr-regime">—</span>
+          <span class="pdr-trend">▁▁▁▁▁</span>
+        </div>
+        <div class="asset-list" id="assetList"></div>
+        <div class="asset-note">Key levels · Weekly anchor · Updated Tue 10:00 EET</div>
+        <div class="asset-note" style="margin-top:4px;color:var(--ink-muted);font-size:9px">PDR (Passive Discovery Rate) measures the ratio of passive-to-active institutional flow. ▁▃▅▆▇ = low→high discovery pressure. Values above 1.5 signal passive accumulation; below 0.8 signal passive distribution.</div>
+      </div>
+    </section>
+
+    <!-- CONTAINER 4: THE SIGNAL — triangulation of all inputs -->
+    <section class="container collapsible signal-container" id="triangulationContainer">
+      <div class="container-header" data-target="triangulationBody">
+        <span class="container-title">The Signal</span>
+        <span class="container-subtitle">Flow × Bet × Event</span>
+        <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </div>
+      <div class="container-desc">Cross-container intelligence. Stories (Container 1) meet capital flows (Container 2) meet anchor positioning (Container 3). When all three align — MAX CONVICTION. When they diverge — that's where the edge is.</div>
+      <div class="container-body" id="triangulationBody">
+        <div class="triangulation-list" id="triangulationList"></div>
+        <div class="asset-note" style="margin-top:8px">Triangulation: Story strength (max 20) + Flow alignment (max 50) + Bet conviction (max 30) = Signal Score · Stories first, flows second, bets third</div>
+      </div>
+    </section>
+
+    <!-- CONTAINER 5: Track Record — verifiable prediction performance -->
+    <section class="container collapsible" id="trackRecordContainer">
+      <div class="container-header" data-target="trackRecordBody">
+        <span class="container-title">Track Record</span>
+        <span class="container-subtitle">Verifiable bet performance</span>
+        <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </div>
+      <div class="container-desc">Every bet timestamped when placed. Settled against realized prices. No cherry-picking. Complete, auditable.</div>
+      <div class="container-body" id="trackRecordBody">
+        <div id="trackRecord"></div>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+<footer class="footer">
+  <a href="https://t.me/GazzettaDiKyiv">Telegram</a>
+  <span>·</span>
+  <a href="https://www.reddit.com/r/LaGazzettadiKyiv/">Reddit</a>
+  <span>·</span>
+  <span>Kyiv · Since 2025</span>
+</footer>
+
+<script src="./app.js?v=20.20"></script>
+</body>
+</html>

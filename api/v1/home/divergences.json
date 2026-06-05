@@ -1,0 +1,115 @@
+{
+  "generated_at": "2026-05-26T17:31:06.497240+00:00",
+  "data_freshness_seconds": 86400,
+  "source_count": 20,
+  "items": [
+    {
+      "narrative": "ai",
+      "market_belief": "Consensus expects smooth continuation",
+      "observed_reality": "Signal remains noisy with asymmetric downside branches",
+      "divergence_score": 0.45,
+      "evidence_links": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "narrative": "eu",
+      "market_belief": "Consensus expects smooth continuation",
+      "observed_reality": "Signal remains noisy with asymmetric downside branches",
+      "divergence_score": 0.48,
+      "evidence_links": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "narrative": "china",
+      "market_belief": "Consensus expects smooth continuation",
+      "observed_reality": "Signal remains noisy with asymmetric downside branches",
+      "divergence_score": 0.51,
+      "evidence_links": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "narrative": "election",
+      "market_belief": "Consensus expects smooth continuation",
+      "observed_reality": "Signal remains noisy with asymmetric downside branches",
+      "divergence_score": 0.54,
+      "evidence_links": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "narrative": "gas",
+      "market_belief": "Consensus expects smooth continuation",
+      "observed_reality": "Signal remains noisy with asymmetric downside branches",
+      "divergence_score": 0.57,
+      "evidence_links": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "narrative": "oil",
+      "market_belief": "Consensus expects smooth continuation",
+      "observed_reality": "Signal remains noisy with asymmetric downside branches",
+      "divergence_score": 0.6,
+      "evidence_links": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "narrative": "inflation",
+      "market_belief": "Consensus expects smooth continuation",
+      "observed_reality": "Signal remains noisy with asymmetric downside branches",
+      "divergence_score": 0.63,
+      "evidence_links": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "narrative": "rates",
+      "market_belief": "Consensus expects smooth continuation",
+      "observed_reality": "Signal remains noisy with asymmetric downside branches",
+      "divergence_score": 0.66,
+      "evidence_links": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "narrative": "russia",
+      "market_belief": "Consensus expects smooth continuation",
+      "observed_reality": "Signal remains noisy with asymmetric downside branches",
+      "divergence_score": 0.69,
+      "evidence_links": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "narrative": "crypto",
+      "market_belief": "Consensus expects smooth continuation",
+      "observed_reality": "Signal remains noisy with asymmetric downside branches",
+      "divergence_score": 0.72,
+      "evidence_links": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "narrative": "drone",
+      "market_belief": "Consensus expects smooth continuation",
+      "observed_reality": "Signal remains noisy with asymmetric downside branches",
+      "divergence_score": 0.75,
+      "evidence_links": [
+        "events.db (rolling 24h titles)"
+      ]
+    },
+    {
+      "narrative": "nato",
+      "market_belief": "Consensus expects smooth continuation",
+      "observed_reality": "Signal remains noisy with asymmetric downside branches",
+      "divergence_score": 0.78,
+      "evidence_links": [
+        "events.db (rolling 24h titles)"
+      ]
+    }
+  ]
+}

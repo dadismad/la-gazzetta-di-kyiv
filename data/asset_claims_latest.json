@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-06-05T03:46:43.392523+00:00",
+  "claims": [
+    {
+      "ticker": "FXI",
+      "direction": "down",
+      "price_target": "$28.50",
+      "strategy": "Fade-the-move on trade war escalation",
+      "win_rate": "62% in tariff-escalation regimes",
+      "horizon": "1-2 weeks",
+      "narrative_driven_pct": 45,
+      "crowd_belief": "No active Polymarket contract for China large-caps. Consensus is that China's economy is stabilizing — property crisis 'manageable,' trade war impact 'limited.' But property developer losses are still accelerating.",
+      "contradiction": "Consensus says China growth is stable while H-shares are down 18% YTD and property losses deepen. The $900B chip stock boom masks real-economy weakness.",
+      "story_id": "n21_china"
+    },
+    {
+      "ticker": "INDA",
+      "direction": "up",
+      "price_target": "$55.00",
+      "strategy": "Accumulation on dips as trade diversion beneficiary",
+      "win_rate": "58% during China-tariff rotation cycles",
+      "horizon": "2-4 weeks",
+      "narrative_driven_pct": 35,
+      "crowd_belief": "India rate-hike bets are building as pricey oil and weak rupee stoke inflation risks — the RBI is between a rock and a hard place",
+      "contradiction": "India's AI stock rally (+530% on one name) shows capital flowing to India as China alternative, but RBI tightening threatens the valuation multiple expansion.",
+      "story_id": "n21_china"
+    },
+    {
+      "ticker": "GC",
+      "direction": "up",
+      "price_target": "$2,550",
+      "strategy": "Staged entries on pullback",
+      "win_rate": "68% during Middle East escalation + Fed uncertainty",
+      "horizon": "1-2 weeks",
+      "narrative_driven_pct": 55,
+      "crowd_belief": "Gold dipped on ceasefire hopes but institutional buyers stepped in immediately — structural demand floor holds",
+      "contradiction": "Crowd believes the peace optimism caps gold, but the Fed is still discounting a war it can't control. Gold's shallow dip then recovery confirms structural bid.",
+      "story_id": "n21_nato"
+    },
+    {
+      "ticker": "NVDA",
+      "direction": "up",
+      "price_target": "$165",
+      "strategy": "Gap-and-Go on AI infra rotation",
+      "win_rate": "58% post-Broadcom spillover patterns",
+      "horizon": "3-5 days",
+      "narrative_driven_pct": 35,
+      "crowd_belief": "Polymarket 'Nvidia above $160 by June 30' at 48% — roughly 50-50, no strong conviction",
+      "contradiction": "Broadcom -$300bn read as sector-wide AI peak, but the miss was company-specific (custom ASICs). GPU cluster demand via Google, SpaceX, Meta is accelerating.",
+      "story_id": "n21_ai"
+    },
+    {
+      "ticker": "CL",
+      "direction": "down",
+      "price_target": "$70.00",
+      "strategy": "Fade rally on China demand weakness + ceasefire optimism",
+      "win_rate": "55% when China oil imports drop + peace talks coincide",
+      "horizon": "24-72h",
+      "narrative_driven_pct": 40,
+      "crowd_belief": "No active Polymarket contract. Oil steadied after first weekly drop on peace talk optimism. China's falling imports 'shield' global market from higher prices.",
+      "contradiction": "Peace hopes cap crude short-term, but China's import drop is demand destruction — not a shield. If China GDP falters, demand-side pressure builds underneath the geopolitical premium.",
+      "story_id": "n21_oil"
+    }
+  ]
+}
