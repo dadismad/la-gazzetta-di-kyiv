@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-06-05T10:16:02+03:00",
+  "generated_at": "2026-06-05T11:17:03+03:00",
   "generated_by": "generate_flows.py",
-  "next_update": "2026-06-05T11:16:02+03:00",
+  "next_update": "2026-06-05T12:17:03+03:00",
   "update_frequency": "60m",
-  "summary": "3 inflows \u00b7 1 outflows",
+  "summary": "3 inflows \u00b7 2 outflows",
   "aggregate_confidence": 73,
-  "aggregate_confidence_label": "Directional alignment across 7 tracked flows",
-  "total_flows_tracked": 7,
+  "aggregate_confidence_label": "Directional alignment across 9 tracked flows",
+  "total_flows_tracked": 9,
   "flows": [
     {
       "id": "flow_n21_china__chip_boom_property_crisis",
@@ -112,6 +112,36 @@
       "confidence_pct": 67,
       "confidence_level": "medium",
       "confidence_trace": "micro-flow+3 > elevated-pace+7 > 70% short WTI (Iran deal), 30% long VIX calls + gold (Lebanon escalation hedge)+2 > med-contradiction+5"
+    },
+    {
+      "id": "flow_n21_abundance__us_gov_ai_equity_nsa",
+      "headline": "Government equity proposal reprices pre-IPO AI secondary market by -10-20% as equity dilution risk is priced in; defense AI primes gain 5-8% on government procurement narrative",
+      "amount_b": 0,
+      "projected": "Pre-IPO AI secondary market -15-25% if 10%+ government equity framework confirmed; PLTR +8-12%; NVDA +3-5% on government compute procurement",
+      "pace_multiplier": 1.5,
+      "direction": "bifurcated \u2014 private AI secondary market sees outflows on dilution risk, defense AI primes see inflows on government weaponization premium",
+      "positioning": "Long defense AI contractors, short pre-IPO AI secondary market exposure, long compute infrastructure",
+      "asset_class": "tech",
+      "anchor_symbol": "NVDA",
+      "story_id": "n21_abundance__us_gov_ai_equity_nsa",
+      "confidence_pct": 67,
+      "confidence_level": "medium",
+      "confidence_trace": "micro-flow+3 > elevated-pace+7 > Long defense AI contractors, short pre-IPO AI secondary market exposure, long compute infrastructure+2 > med-contradiction+5"
+    },
+    {
+      "id": "flow_n21_multi_pillar__korea_indonesia_exodus",
+      "headline": "$10B in Korean equity outflows in one week triggers mechanical index fund rebalancing that compounds selling pressure to $15-20B over 3 weeks",
+      "amount_b": 10.0,
+      "projected": "$15-20B additional Korea outflows over 2-3 weeks; Indonesia JCI -5-8%; Korea KOSPI -8-12%",
+      "pace_multiplier": 1.5,
+      "direction": "outflow",
+      "positioning": "Short EWY, short EIDO, long PIN (tight stop), short iron ore futures",
+      "asset_class": "equities",
+      "anchor_symbol": "SPX",
+      "story_id": "n21_multi_pillar__korea_indonesia_exodus",
+      "confidence_pct": 79,
+      "confidence_level": "medium",
+      "confidence_trace": "large-flow+15 > elevated-pace+7 > Short EWY, short EIDO, long PIN (tight stop), short iron ore futures+2 > med-contradiction+5"
     }
   ],
   "methodology": "Flows sourced from EPFR Global, Morningstar Direct, and internal aggregation. Velocity measured vs 4-week rolling average. Confidence computed via 4-factor model. Updated hourly.",
