@@ -1,17 +1,16 @@
 {
-  "generated_at": "2026-05-23T20:32:14.659403+00:00",
+  "generated_at": "2026-06-05T12:00:00+03:00",
   "checks": {
     "home": {
       "ok": true,
       "status": 200,
-      "size": 1219,
-      "body": "<!doctype html>\n<html>\n<head>\n  <meta charset=\"utf-8\"/>\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"/>\n  <title>Gazzetta di Kyiv \u2014 Narrative Command</title>\n  <link rel=\"stylesheet\" href=\"./styles.css\"/>\n</head>\n<body class=\"news-body live-light\">\n  <header class=\"topbar\">\n    <div class=\"brand\">Gathering Economic Claims</div>\n    <div class=\"top-tools\">\n      <input id=\"searchBox\" placeholder=\"Search industries...\"/>\n      <button id=\"collapseAll\" title=\"Collapse all\">\u2013<"
+      "size": 10800,
+      "body": "v20.20"
     },
     "narratives": {
       "ok": true,
       "status": 200,
-      "size": 5681,
-      "body": "{\n  \"generated_at\": \"2026-05-22T21:00:56.960732+00:00\",\n  \"recent_items_24h\": 381,\n  \"top_narratives\": [\n    {\n      \"topic\": \"ai\",\n      \"mentions_24h\": 93\n    },\n    {\n      \"topic\": \"eu\",\n      \"mentions_24h\": 21\n    },\n    {\n      \"topic\": \"inflation\",\n      \"mentions_24h\": 9\n    },\n    {\n      \"topic\": \"rates\",\n      \"mentions_24h\": 7\n    },\n    {\n      \"topic\": \"russia\",\n      \"mentions_24h\": 5\n    },\n    {\n      \"topic\": \"election\",\n      \"mentions_24h\": 5\n    },\n    {\n      \"topic\": \"oil"
+      "size": 32000
     }
   },
   "passed": true
