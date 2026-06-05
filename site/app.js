@@ -1,4 +1,4 @@
-// La Gazzetta di Kyiv v20.16 — Volatility-adjusted stops · Computed confidence · Track record
+// La Gazzetta di Kyiv v20.17 — ATR stops fixed · Track record settlement · ADA corrected
 const DATA = './data/stories.json';
 const LIVING_DATA = './data/living_stories.json';
 const POLL_INTERVAL = 120000; // 2 minutes
@@ -144,6 +144,7 @@ function updateMastheadLiving(generatedAt, nextMicroUpdate) {
 // stop_atr_mult = how many ATRs from entry for stop placement
 // stop_display = computed: entry ± (entry * atr_pct * stop_atr_mult)
 function computeATRStop(entry, atrPct, mult, bias) {
+  if (bias === 'WATCH') return null; // WATCH assets have no directional stop
   const e = parseFloat(String(entry).replace(/,/g, ''));
   const atrMove = e * atrPct * mult;
   if (bias === 'SELL') return (e + atrMove).toFixed(e > 1000 ? 0 : e > 100 ? 1 : 2);
@@ -187,7 +188,7 @@ const ANCHOR_ASSETS = [
     bias: 'BUY', entry: '580', target: '720',
     atr_pct: 0.035, stop_atr_mult: 2.0, conviction: 'MED' },
   { symbol: 'ADA', price: '0.92', change: '-1.8%', dir: 'down',
-    bias: 'SELL', entry: '1.05', target: '1.25',
+    bias: 'SELL', entry: '1.05', target: '0.85',
     atr_pct: 0.050, stop_atr_mult: 2.0, conviction: 'HIGH' },
   { symbol: 'DOGE', price: '0.28', change: '+5.2%', dir: 'up',
     bias: 'WATCH', entry: '0.25', target: '0.35',
@@ -993,7 +994,7 @@ function updateCumulativeStats() {
   if (heroStory) heroStory.textContent = String(tracked);
   if (heroFlow) heroFlow.textContent = '$' + cumFlow.toFixed(1) + 'B';
   if (heroAssets) heroAssets.textContent = String(cumAssets);
-  if (heroStake) heroStake.textContent = '$' + cumStake.toFixed(1) + 'B';
+  if (heroStake) heroStake.textContent = '$' + cumStake.toFixed(1) + 'K';
   if (heroConf) heroConf.textContent = conf.pct + '%';
 }
 
@@ -1015,7 +1016,6 @@ function saveTrackRecord(records) {
 }
 
 function snapshotPredictions() {
-  // Archive current ANCHOR_ASSETS prediction state once per day
   const today = new Date().toISOString().slice(0, 10);
   const records = getTrackRecord();
   const alreadySnapped = records.some(r => r.date === today);
@@ -1037,6 +1037,70 @@ function snapshotPredictions() {
   });
 
   saveTrackRecord(records);
+  return records;
+}
+
+function settlePredictions() {
+  const records = getTrackRecord();
+  let changed = false;
+
+  records.forEach(r => {
+    if (r.settled) return;
+
+    // Find current asset data
+    const current = ANCHOR_ASSETS.find(a => a.symbol === r.symbol);
+    if (!current) return;
+
+    const entry = parseFloat(String(r.entry).replace(/,/g, ''));
+    const currentPrice = parseFloat(String(current.price).replace(/[,$%bp]/g, ''));
+    const target = parseFloat(String(r.target).replace(/,/g, ''));
+    const stop = parseFloat(String(r.stop).replace(/,/g, ''));
+
+    if (isNaN(entry) || isNaN(currentPrice)) return;
+
+    // Determine if target or stop was hit
+    let hitTarget = false, hitStop = false;
+    if (r.bias === 'BUY') {
+      hitTarget = currentPrice >= target;
+      hitStop = stop !== null && currentPrice <= stop;
+    } else if (r.bias === 'SELL') {
+      hitTarget = currentPrice <= target;
+      hitStop = stop !== null && currentPrice >= stop;
+    } else {
+      // WATCH — settle on significant move: >2× ATR from entry
+      const atrMove = entry * (r.atr_pct || 0.02);
+      hitTarget = Math.abs(currentPrice - entry) > atrMove * 3;
+    }
+
+    // Calculate P&L
+    let pnlPct;
+    if (r.bias === 'BUY' || r.bias === 'SELL') {
+      // Directional: long/short return
+      if (r.bias === 'BUY') {
+        pnlPct = ((currentPrice - entry) / entry) * 100;
+      } else {
+        pnlPct = ((entry - currentPrice) / entry) * 100;
+      }
+    } else {
+      // WATCH: absolute move P&L (just measuring event magnitude)
+      pnlPct = (Math.abs(currentPrice - entry) / entry) * 100;
+    }
+
+    // Settle if target, stop, or >7 days old
+    const ageDays = (Date.now() - new Date(r.date).getTime()) / 86400000;
+    const shouldSettle = hitTarget || hitStop || ageDays > 7;
+
+    if (shouldSettle) {
+      r.settled = true;
+      r.realized_pnl_pct = Math.round(pnlPct * 10) / 10;
+      r.resolved_price = String(currentPrice);
+      r.resolved_reason = hitTarget ? 'target' : hitStop ? 'stop' : 'expiry';
+      r.resolved_date = new Date().toISOString().slice(0, 10);
+      changed = true;
+    }
+  });
+
+  if (changed) saveTrackRecord(records);
   return records;
 }
 
@@ -1071,6 +1135,7 @@ function renderTrackRecord(targetId) {
   if (!el) return;
 
   snapshotPredictions();
+  settlePredictions();
   const stats = computeTrackRecordStats();
 
   let html = '';
