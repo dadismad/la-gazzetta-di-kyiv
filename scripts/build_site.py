@@ -41,6 +41,24 @@ def main():
         src = os.path.join(DATA, fname)
         dst = os.path.join(SITE_DATA, fname)
         if os.path.exists(src):
+            # SMART MERGE for stories.json: preserve site-only stories (added by source monitor)
+            if fname == "stories.json" and os.path.exists(dst):
+                with open(src) as fs:
+                    data_stories = json.load(fs).get("stories", [])
+                with open(dst) as fd:
+                    site_stories = json.load(fd).get("stories", [])
+                data_ids = {s.get("story_id") for s in data_stories}
+                site_only = [s for s in site_stories if s.get("story_id") not in data_ids]
+                if site_only:
+                    merged = data_stories + site_only
+                    # Rebuild the full document
+                    with open(dst) as fd:
+                        site_doc = json.load(fd)
+                    site_doc["stories"] = merged
+                    with open(dst, "w") as fd:
+                        json.dump(site_doc, fd, indent=2)
+                    synced += 1
+                    continue
             shutil.copy2(src, dst)
             synced += 1
 
