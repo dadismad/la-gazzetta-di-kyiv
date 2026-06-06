@@ -890,7 +890,7 @@ function livingCardHTML(story, isLead) {
         </div>
       </div>
       <div class="story-evolution-timeline" style="display:none">
-        <div class="timeline-loading">' + i18n.t('loading_timeline','Loading evolution timeline...') + '</div>
+        <div class="timeline-loading">${i18n.t('loading_timeline','Loading evolution timeline...')}</div>
       </div>
       ${story.status === 'resolved' ? `<div class="resolved-banner"><span class="resolved-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>${i18n.t('resolved','Resolved')}</span></div>` : ''}
     </article>`;
@@ -899,7 +899,18 @@ function livingCardHTML(story, isLead) {
 // ── Extremum Line HTML ──
 function extremumLineHTML(extremumStr) {
   if (!extremumStr) return '';
-  // Parse format: "WINNER: ... | LOSER: ... | IDIOT: ... | GENIUS: ..."
+  // Handle object format: {type, description}
+  if (typeof extremumStr === 'object') {
+    const t = extremumStr.type || '';
+    const desc = extremumStr.description || JSON.stringify(extremumStr);
+    const typeLabel = t.replace(/_/g, ' ').toUpperCase();
+    return `
+    <div class="card-extremum">
+      <span class="ex-label">${i18n.t('extremum','EXTREMUM')}</span>
+      <span class="ex-win">${typeLabel}: ${desc.slice(0,120)}</span>
+    </div>`;
+  }
+  // Parse string format: "WINNER: ... | LOSER: ... | IDIOT: ... | GENIUS: ..."
   const parts = extremumStr.split('|').map(s => s.trim());
   let winner = '', loser = '', idiot = '', genius = '';
   parts.forEach(p => {

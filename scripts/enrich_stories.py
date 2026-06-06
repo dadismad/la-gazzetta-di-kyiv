@@ -96,11 +96,11 @@ def check_status_transitions(story, now):
 
     age_h = (now - last_updated).total_seconds() / 3600
 
-    # Status transition logic
+    # Status transition logic (check highest threshold first)
     transitions = {
         "new": [
+            (48, "stable"),      # new → stable after 48h (check first!)
             (2, "active"),       # new → active after 2h
-            (48, "stable"),      # new → stable after 48h
         ],
         "active": [
             (48, "stable"),      # active → stable after 48h
@@ -184,7 +184,7 @@ def main():
         if new_status and new_status != old_status:
             story["status"] = new_status
             story["status_reason"] = reason
-            story["last_updated"] = now.isoformat()
+            # Do NOT reset last_updated — that tracks actual content changes
             stories_updated += 1
             if new_status in ("stable", "background"):
                 stories_tagged_stale += 1
