@@ -1,114 +1,107 @@
 {
-  "generated_at": "2026-06-06T11:59:07.858059+00:00",
+  "generated_at": "2026-06-06T14:52:00+03:00",
   "lead": {
-    "story_id": "n21_abundance_tech__spacex_ipo_demand_2x_supply__75b_offering_oversibscribed",
-    "headline": "SPACEX IPO DEMAND 2x SUPPLY — $75B OFFERING OVERSIBSCRIBED",
-    "sector": "multi",
-    "pillar": "abundance_tech",
-    "they_say": "Mega-demand for SpaceX at any price. The roadshow is breaking records. Retail and institutional demand is overwhelming. The Elon-Tusk narrative (Trump calling Musk '80% brilliant') and Trump's pro-Musk stance boost sentiment. QNT's IPO (Quantinuum) opened at $68 vs $60, then dipped below $60 — but that's a smaller, less hyped name.",
-    "reality": "SpaceX is deeply unprofitable ($4.28B net loss Q1 2026, $2.6B operating loss FY2025). Capex is exploding ($10B/q, projected $40B for FY2026). The business is burning cash at a rate that would destroy any normal company. Yet retail is treating this as the next Nvidia. The IPO is priced for perfection at a time when Nasdaq just had its worst week in months (-4.68%). Risk appetite is fragile.",
-    "thesis": "BUY SPCX at IPO allocation if possible — the supply/demand imbalance guarantees a first-day pop. The reference to QNT opening +13% and then dipping below IPO is instructive: buy the IPO, take profits day 1-2. For 1-2 week horizon: LONG ASTS, GSAT, RKLB (SpaceX-adjacent satellite plays). LONG ANET (data center infrastructure — SpaceX's AI capex story benefits the whole buildout chain). The broader AI infrastructure theme (NVDA, MRVL joining S&P 500) is supported.",
+    "story_id": "n21_blockchain_agentic__bitcoin_free_fall__saylor_liquidates_etfs_bleed_200-week",
+    "headline": "BITCOIN FREE FALL — SAYLOR LIQUIDATES, ETFs BLEED, 200-WEEK MA IN PLAY",
+    "sector": "crypto",
+    "pillar": "blockchain_agentic",
+    "they_say": "Bitcoin is breaking down. The 200-week MA historically marks major bottoms but 'prostrels' (breakdowns below it) are normal. Market expects BTC to drop to $55K-50K. The leverage unwind from MSTR is creating a self-reinforcing downtrend — Saylor bought bonds instead of BTC this week (infinityhedge). Traders have fully priced a quarter-point Fed hike by end of 2026 (infinityhedge) — rate pressure compounds crypto weakness.",
+    "reality": "Trump claims he will 'never let crypto down' and blames Gensler's 'anti-crypto army' (infinityhedge, May 27). The Senate Banking Committee advanced the Clarity Act (pro-crypto regulation) with bipartisan 15-9 vote. Yet the market is ignoring all positive regulatory signals. The divergence between bullish policy narrative and bearish price action is extreme. Strategy's BTC sale — even tiny ($2.5M) — is psychologically devastating for the 'never sell' HODL narrative. If Saylor is selling at the bottom of a war-driven risk-off, who is buying?",
+    "thesis": "SHORT BTC aggressively. Short MSTR (the leverage unwind is just beginning). Short COIN, MARA, CLSK. If BTC breaks 200-week MA (~$61K), next stop is $55K and the liquidation cascade accelerates. Buy June/July BTC put options. Short ETH/BTC ratio continues to decline. For the brave: SHORT Hyperliquid ",
     "actors": [],
     "horizon": "24-72h",
-    "confidence": 75,
-    "actionable_trade": "BUY SPCX at IPO allocation if possible — the supply/demand imbalance guarantees a first-day pop. The reference to QNT opening +13% and then dipping below IPO is instructive: buy the IPO, take profits day 1-2. For 1-2 week horizon: LONG ASTS, GSAT, RKLB (SpaceX-adjacent satellite plays). LONG ANET (data center infrastructure — SpaceX's AI capex story benefits the whole buildout chain). The broader AI infrastructure theme (NVDA, MRVL joining S&P 500) is supported.",
+    "confidence": "medium",
+    "actionable_trade": "SHORT BTC aggressively. Short MSTR (the leverage unwind is just beginning). Short COIN, MARA, CLSK. If BTC breaks 200-week MA (~$61K), next stop is $55K and the liquidation cascade accelerates. Buy June/July BTC put options. Short ETH/BTC ratio continues to decline. For the brave: SHORT Hyperliquid ",
     "contradiction_score": 55,
+    "invalidation_trigger": "Narrative reversal or event resolution",
+    "portfolio_implication": "Cash/stablecoins outperform. If BTC drops below 200-week MA, it triggers a multi-asset deleveraging that spills into equities (already visible — NDX -3%, SPX -1.7% on Friday). The MSTR convertible bond arb unwind adds downward pressure. The only bullish angle: this is capitulation, and bottoms are f",
     "capital_flow": {
-      "direction": "inflow",
-      "amount_b": 8.0,
-      "asset_class": "equities",
-      "pace": "accelerating"
+      "direction": "outflow",
+      "amount_b": 11.5,
+      "asset_class": "crypto",
+      "projected": "Cash/stablecoins outperform. If BTC drops below 200-week MA, it triggers a multi-asset deleveraging that spills into equities (already visible — NDX -3%, SPX -1.7% on Friday). The MSTR convertible bon",
+      "pace_multiplier": 1.0,
+      "confidence_pct": 75,
+      "confidence_level": "medium"
     },
-    "capital_flow_implication": "BUY SPCX at IPO allocation if possible — the supply/demand imbalance guarantees a first-day pop. The reference to QNT opening +13% and then dipping below IPO is instructive: buy the IPO, take profits day 1-2. For 1-2 week horizon: LONG ASTS, GSAT, RKLB (SpaceX-adjacent satellite plays). LONG ANET (data center infrastructure — SpaceX's AI capex story benefits the whole buildout chain). The broader AI infrastructure theme (NVDA, MRVL joining S&P 500) is supported.",
+    "capital_flow_implication": "SHORT BTC aggressively. Short MSTR (the leverage unwind is just beginning). Short COIN, MARA, CLSK. If BTC breaks 200-week MA (~$61K), next stop is $55K and the liquidation cascade accelerates. Buy June/July BTC put options. Short ETH/BTC ratio continues to decline. For the brave: SHORT Hyperliquid ",
     "evidence": [
-      "trad_fin: SPACEX IPO DEMAND ABOUT TWICE SIZE OF $75B OFFERING (18:31 UTC, 2.05K views)",
-      "trad_fin: SPACEX IPO SAID TO DRAW MORE ORDERS THAN SHARES (14:35 UTC, 2.27K views)",
-      "trad_fin: TRUMP SAYS STOCKS SHOULD RISE FOLLOWING GREAT JOBS REPORT (14:33 UTC, 2.54K views)",
-      "markettwits: IPO SPACEX DEMAND 2x SUPPLY (18:32 UTC, 42.7K views)",
-      "markettwits: MARVELL & FLEX JOIN S&P 500 (21:16 UTC, 1.83K views)",
-      "infinityhedge: SPACEX FILES FOR NASDAQ IPO $SPCX (May 20, 25.8K views)",
-      "infinityhedge: SPACEX 1Q NET LOSS $4.28B (May 20, 13.9K views)"
+      "trad_fin: BTC DROPS 5.5% TO 61.3K AFTER STRATEGY SELLS $2.5M (02:07 UTC, 2.63K views)",
+      "trad_fin: STRATEGY'S UNREALIZED PNL -$11.5B, LARGEST DRAWDOWN (02:14 UTC, 3.11K views)",
+      "markettwits: BTC NEAR 200-WEEK MA, MASS LIQUIDATIONS ZONE (18:56 UTC, 54.6K views)",
+      "markettwits: STRONGEST OUTFLOWS FROM BTC ETFs FIRST WEEK JUNE (06:50 UTC, 37.3K views)",
+      "markettwits: GRAYSCALE: STRATEGY SELLING INCREASES VOLATILITY (07:18 UTC, 33.2K views)",
+      "markettwits: ARTHUR HAYES SELLS WLD AT -30% LOSS (10:22 UTC, 21.3K views)",
+      "infinityhedge: SAYLOR: WE BOUGHT BONDS, NOT BITCOIN (May 24, 36.8K views)",
+      "infinityhedge: TRADERS PRICE FED HIKE BY END 2026 (May 22, 21.9K views)"
     ],
     "source": "telegram_intel",
-    "generated_at": "2026-06-06T11:51:48.596135+00:00",
+    "generated_at": "2026-06-06T12:05:10.096125+00:00",
     "freshness": "breaking"
   },
   "stories": [
     {
-      "story_id": "n21_macro__india_uk_rate_convergence",
-      "headline": "Three Macro Narratives Converge: India RBI Dilemma, UK Leadership Challenge, Global Rate Divergence",
-      "they_say": "Consensus holds that India's growth story is intact despite inflation pressure, UK rate hikes are fully priced out after a dovish BoE signal, and major central banks are converging on a 'higher for longer' pause that markets have already discounted.",
-      "reality": "India's rate-hike bets are building as the rupee slides against a dollar buoyed by Fed hawkishness. Andy Burnham's challenge to replace Starmer injects political uncertainty into a Bank of England that, per the FT, has 'a growing case for raising rates.' Blackstone just capped withdrawals from its flagship private credit fund — the first visible stress in a $1.5 trillion market running on cheap liquidity. These aren't separate stories; they converge on the same signal: macro instability is accelerating, not resolving.",
-      "thesis": "When India (emerging market stress), the UK (developed market political + rate uncertainty), and global central banks (rate divergence) all point the same direction simultaneously, cross-asset contagion becomes the base case rather than a tail risk. Capital rotates toward safety — gold, USD, short-duration treasuries.",
-      "actors": "RBI, Andy Burnham, Keir Starmer, BoE, Federal Reserve, ECB, BOJ",
-      "horizon": "24-72 hours",
-      "confidence": "high",
-      "invalidation_trigger": "A strong US jobs report that validates rate divergence + a surprise RBI rate cut that breaks the India tightening narrative + Israel-Lebanon ceasefire holding = convergence thesis invalidated",
-      "paradigm_pillar": "multi_pillar",
-      "paradigm_implications": [
-        "Capital flow reversal from EM to DM adds pressure to already fragile emerging currencies",
-        "UK political instability compounds rate-path uncertainty, widening Gilt-Bund spreads",
-        "India rate-hike cycle, if confirmed, would be the first major EM tightening in a dovish global environment — a divergence signal in itself"
-      ],
-      "capital_flow_implication": "Foreign investors rotated $10B out of Korean equities alone in a single week — the EM outflow that started with trade war fears is now becoming a self-reinforcing macro-driven exodus.",
-      "portfolio_implication": "Portfolio implication: accumulate gold on pullbacks to $2,400-2,450; reduce EM equity exposure (especially in markets with $8B+ weekly foreign outflows); watch UK gilts for a 4.85% yield break — that level triggers a cross-asset repricing.",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/India_roadway_map.svg",
-      "freshness": "background"
-    },
-    {
-      "story_id": "n21_blockchain_agentic__bitcoin_free_fall__saylor_liquidates_etfs_bleed_200-week",
-      "headline": "BITCOIN FREE FALL — SAYLOR LIQUIDATES, ETFs BLEED, 200-WEEK MA IN PLAY",
+      "story_id": "n21_abundance_tech__spacex_ipo_demand_2x_supply__75b_offering_oversibscribed",
+      "headline": "SPACEX IPO DEMAND 2x SUPPLY — $75B OFFERING OVERSIBSCRIBED",
       "sector": "multi",
-      "pillar": "blockchain_agentic",
-      "they_say": "Bitcoin is breaking down. The 200-week MA historically marks major bottoms but 'prostrels' (breakdowns below it) are normal. Market expects BTC to drop to $55K-50K. The leverage unwind from MSTR is creating a self-reinforcing downtrend — Saylor bought bonds instead of BTC this week (infinityhedge). Traders have fully priced a quarter-point Fed hike by end of 2026 (infinityhedge) — rate pressure compounds crypto weakness.",
-      "reality": "Trump claims he will 'never let crypto down' and blames Gensler's 'anti-crypto army' (infinityhedge, May 27). The Senate Banking Committee advanced the Clarity Act (pro-crypto regulation) with bipartisan 15-9 vote. Yet the market is ignoring all positive regulatory signals. The divergence between bullish policy narrative and bearish price action is extreme. Strategy's BTC sale — even tiny ($2.5M) — is psychologically devastating for the 'never sell' HODL narrative. If Saylor is selling at the bottom of a war-driven risk-off, who is buying?",
-      "thesis": "SHORT BTC aggressively. Short MSTR (the leverage unwind is just beginning). Short COIN, MARA, CLSK. If BTC breaks 200-week MA (~$61K), next stop is $55K and the liquidation cascade accelerates. Buy June/July BTC put options. Short ETH/BTC ratio continues to decline. For the brave: SHORT Hyperliquid (HYPE) — the channel noise suggests it's overextended as the 10th largest crypto.",
+      "pillar": "abundance_tech",
+      "they_say": "Mega-demand for SpaceX at any price. The roadshow is breaking records. Retail and institutional demand is overwhelming. The Elon-Tusk narrative (Trump calling Musk '80% brilliant') and Trump's pro-Musk stance boost sentiment. QNT's IPO (Quantinuum) opened at $68 vs $60, then dipped below $60 — but that's a smaller, less hyped name.",
+      "reality": "SpaceX is deeply unprofitable ($4.28B net loss Q1 2026, $2.6B operating loss FY2025). Capex is exploding ($10B/q, projected $40B for FY2026). The business is burning cash at a rate that would destroy any normal company. Yet retail is treating this as the next Nvidia. The IPO is priced for perfection at a time when Nasdaq just had its worst week in months (-4.68%). Risk appetite is fragile.",
+      "thesis": "BUY SPCX at IPO allocation if possible — the supply/demand imbalance guarantees a first-day pop. The reference to QNT opening +13% and then dipping below IPO is instructive: buy the IPO, take profits day 1-2. For 1-2 week horizon: LONG ASTS, GSAT, RKLB (SpaceX-adjacent satellite plays). LONG ANET (data center infrastructure — SpaceX's AI capex story benefits the whole buildout chain). The broader AI infrastructure theme (NVDA, MRVL joining S&P 500) is supported.",
       "actors": [],
       "horizon": "24-72h",
       "confidence": 75,
-      "actionable_trade": "SHORT BTC aggressively. Short MSTR (the leverage unwind is just beginning). Short COIN, MARA, CLSK. If BTC breaks 200-week MA (~$61K), next stop is $55K and the liquidation cascade accelerates. Buy June/July BTC put options. Short ETH/BTC ratio continues to decline. For the brave: SHORT Hyperliquid (HYPE) — the channel noise suggests it's overextended as the 10th largest crypto.",
-      "contradiction_score": 55,
-      "capital_flow": {
-        "direction": "outflow",
-        "amount_b": 8.0,
-        "asset_class": "equities",
-        "pace": "accelerating"
-      },
-      "capital_flow_implication": "SHORT BTC aggressively. Short MSTR (the leverage unwind is just beginning). Short COIN, MARA, CLSK. If BTC breaks 200-week MA (~$61K), next stop is $55K and the liquidation cascade accelerates. Buy June/July BTC put options. Short ETH/BTC ratio continues to decline. For the brave: SHORT Hyperliquid (HYPE) — the channel noise suggests it's overextended as the 10th largest crypto.",
-      "evidence": [
-        "trad_fin: BTC DROPS 5.5% TO 61.3K AFTER STRATEGY SELLS $2.5M (02:07 UTC, 2.63K views)",
-        "trad_fin: STRATEGY'S UNREALIZED PNL -$11.5B, LARGEST DRAWDOWN (02:14 UTC, 3.11K views)",
-        "markettwits: BTC NEAR 200-WEEK MA, MASS LIQUIDATIONS ZONE (18:56 UTC, 54.6K views)",
-        "markettwits: STRONGEST OUTFLOWS FROM BTC ETFs FIRST WEEK JUNE (06:50 UTC, 37.3K views)",
-        "markettwits: GRAYSCALE: STRATEGY SELLING INCREASES VOLATILITY (07:18 UTC, 33.2K views)",
-        "markettwits: ARTHUR HAYES SELLS WLD AT -30% LOSS (10:22 UTC, 21.3K views)",
-        "infinityhedge: SAYLOR: WE BOUGHT BONDS, NOT BITCOIN (May 24, 36.8K views)",
-        "infinityhedge: TRADERS PRICE FED HIKE BY END 2026 (May 22, 21.9K views)"
-      ],
-      "source": "telegram_intel",
-      "generated_at": "2026-06-06T11:51:48.596102+00:00",
-      "freshness": "breaking"
-    },
-    {
-      "story_id": "n21_multi_pillar__iran-bahrain_missile_attack__hormuz_escalation_continues",
-      "headline": "IRAN-BAHRAIN MISSILE ATTACK — HORMUZ ESCALATION CONTINUES",
-      "sector": "multi",
-      "pillar": "multi_pillar",
-      "they_say": "The Strait of Hormuz remains effectively closed. Iran-US negotiations have halted (Iran's Fars agency confirmed nuclear issues off the table). Khamenei's aide rejected Trump meeting. Iran's foreign minister says 'no progress in negotiations'. House voted 215-208 to limit Trump's war powers, but the resolution is non-binding. The risk of wider Gulf conflict is rising, with Lebanon-Israel front also active (IDF withdrew from Dibbine after Hezbollah counterattacks, Israel struck Lebanese Army killing multiple soldiers).",
-      "reality": "Trump claims 'big success' and 'ready to rock after Iran conflict ends' but simultaneously orders more airstrikes and maintains naval blockade. The White House says negotiations are at 'final stages' while Iran denies any nuclear deal and military exchanges escalate. Bahrain — a US ally hosting the 5th Fleet — is now directly under Iranian drone/missile attack. This is the opposite of de-escalation.",
-      "thesis": "LONG OIL/ENERGY. Brent crude gaps up on Monday Asia open — targeting $95+ as Sechin (Rosneft) projects $95-96 if Hormuz restrictions lift (implying much higher if they don't). Buy WTI futures, XLE, OIH, XOM, CVX. Brent $90 calls. SHORT AIRLINES (JETS, AAL, DAL) as fuel costs surge. GOLD LONG (GLD, IAU) — gold has retraced all year-to-date gains creating an entry point. SHORT USD/TRY, long USD/CHF as safe-haven flows.",
-      "actors": [],
-      "horizon": "24-72h",
-      "confidence": 75,
-      "actionable_trade": "LONG OIL/ENERGY. Brent crude gaps up on Monday Asia open — targeting $95+ as Sechin (Rosneft) projects $95-96 if Hormuz restrictions lift (implying much higher if they don't). Buy WTI futures, XLE, OIH, XOM, CVX. Brent $90 calls. SHORT AIRLINES (JETS, AAL, DAL) as fuel costs surge. GOLD LONG (GLD, IAU) — gold has retraced all year-to-date gains creating an entry point. SHORT USD/TRY, long USD/CHF as safe-haven flows.",
+      "actionable_trade": "BUY SPCX at IPO allocation if possible — the supply/demand imbalance guarantees a first-day pop. The reference to QNT opening +13% and then dipping below IPO is instructive: buy the IPO, take profits day 1-2. For 1-2 week horizon: LONG ASTS, GSAT, RKLB (SpaceX-adjacent satellite plays). LONG ANET (data center infrastructure — SpaceX's AI capex story benefits the whole buildout chain). The broader AI infrastructure theme (NVDA, MRVL joining S&P 500) is supported.",
       "contradiction_score": 55,
       "capital_flow": {
         "direction": "inflow",
         "amount_b": 8.0,
         "asset_class": "equities",
-        "pace": "accelerating"
+        "pace": "accelerating",
+        "projected": "Capital flow tracked — direction forming",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 65,
+        "confidence_level": "medium"
       },
-      "capital_flow_implication": "LONG OIL/ENERGY. Brent crude gaps up on Monday Asia open — targeting $95+ as Sechin (Rosneft) projects $95-96 if Hormuz restrictions lift (implying much higher if they don't). Buy WTI futures, XLE, OIH, XOM, CVX. Brent $90 calls. SHORT AIRLINES (JETS, AAL, DAL) as fuel costs surge. GOLD LONG (GLD, IAU) — gold has retraced all year-to-date gains creating an entry point. SHORT USD/TRY, long USD/CHF as safe-haven flows.",
+      "capital_flow_implication": "BUY SPCX at IPO allocation if possible — the supply/demand imbalance guarantees a first-day pop. The reference to QNT opening +13% and then dipping below IPO is instructive: buy the IPO, take profits day 1-2. For 1-2 week horizon: LONG ASTS, GSAT, RKLB (SpaceX-adjacent satellite plays). LONG ANET (data center infrastructure — SpaceX's AI capex story benefits the whole buildout chain). The broader AI infrastructure theme (NVDA, MRVL joining S&P 500) is supported.",
+      "evidence": [
+        "trad_fin: SPACEX IPO DEMAND ABOUT TWICE SIZE OF $75B OFFERING (18:31 UTC, 2.05K views)",
+        "trad_fin: SPACEX IPO SAID TO DRAW MORE ORDERS THAN SHARES (14:35 UTC, 2.27K views)",
+        "trad_fin: TRUMP SAYS STOCKS SHOULD RISE FOLLOWING GREAT JOBS REPORT (14:33 UTC, 2.54K views)",
+        "markettwits: IPO SPACEX DEMAND 2x SUPPLY (18:32 UTC, 42.7K views)",
+        "markettwits: MARVELL & FLEX JOIN S&P 500 (21:16 UTC, 1.83K views)",
+        "infinityhedge: SPACEX FILES FOR NASDAQ IPO $SPCX (May 20, 25.8K views)",
+        "infinityhedge: SPACEX 1Q NET LOSS $4.28B (May 20, 13.9K views)"
+      ],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-06T11:51:48.596135+00:00",
+      "freshness": "breaking"
+    },
+    {
+      "story_id": "n21_multi_pillar__iran-bahrain_missile_attack__hormuz_escalation_continues",
+      "headline": "IRAN-BAHRAIN MISSILE ATTACK — HORMUZ ESCALATION CONTINUES",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "they_say": "The Strait of Hormuz remains effectively closed. Iran-US negotiations have halted (Iran's Fars agency confirmed nuclear issues off the table). Khamenei's aide rejected Trump meeting. Iran's foreign minister says 'no progress in negotiations'. House voted 215-208 to limit Trump's war powers, but the resolution is non-binding. The risk of wider Gulf conflict is rising, with Lebanon-Israel front also active (IDF withdrew from Dibbine after Hezbollah counterattacks, Israel struck Lebanese Army killing multiple soldiers).",
+      "reality": "Trump claims 'big success' and 'ready to rock after Iran conflict ends' but simultaneously orders more airstrikes and maintains naval blockade. The White House says negotiations are at 'final stages' while Iran denies any nuclear deal and military exchanges escalate. Bahrain — a US ally hosting the 5th Fleet — is now directly under Iranian drone/missile attack. This is the opposite of de-escalation.",
+      "thesis": "LONG OIL/ENERGY. Brent crude gaps up on Monday Asia open — targeting $95+ as Sechin (Rosneft) projects $95-96 if Hormuz restrictions lift (implying much higher if they don't). Buy WTI futures, XLE, OIH, XOM, CVX. Brent $90 calls. SHORT AIRLINES (JETS, AAL, DAL) as fuel costs surge. GOLD LONG (GLD, I",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "actionable_trade": "LONG OIL/ENERGY. Brent crude gaps up on Monday Asia open — targeting $95+ as Sechin (Rosneft) projects $95-96 if Hormuz restrictions lift (implying much higher if they don't). Buy WTI futures, XLE, OIH, XOM, CVX. Brent $90 calls. SHORT AIRLINES (JETS, AAL, DAL) as fuel costs surge. GOLD LONG (GLD, I",
+      "contradiction_score": 55,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Energy sector outperforms all others. Safe-haven assets (gold, USD, CHF) bid. Commodity supercycle thesis strengthened. Fertilizer prices rising (Hormuz closure impacts urea shipments — bullish for $MOS, $CF, $NTR). Broad risk-off means TLT (long-duration bonds) may find a bid as flight-to-safety ov",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Energy sector outperforms all others. Safe-haven assets (gold, USD, CHF) bid. Commodity supercycle thesis strengthened. Fertilizer prices rising (Hormuz closure impacts urea shipments — bullish for $M",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 75,
+        "confidence_level": "medium"
+      },
+      "capital_flow_implication": "LONG OIL/ENERGY. Brent crude gaps up on Monday Asia open — targeting $95+ as Sechin (Rosneft) projects $95-96 if Hormuz restrictions lift (implying much higher if they don't). Buy WTI futures, XLE, OIH, XOM, CVX. Brent $90 calls. SHORT AIRLINES (JETS, AAL, DAL) as fuel costs surge. GOLD LONG (GLD, I",
       "evidence": [
         "MonitoringSituation: BAHRAIN INTERCEPTED THREE MISSILES AND SEVERAL DRONES FROM IRAN (10:06 UTC, 740 views)",
         "MonitoringSituation: EXPLOSION HEARD IN BANDAR ABBAS (22:52 UTC, 2.23K views)",
@@ -122,7 +115,7 @@
         "markettwits: SECHIN: OIL $95-96 IF HORMUZ RESTRICTIONS LIFTED (10:07 UTC, 23.4K views)"
       ],
       "source": "telegram_intel",
-      "generated_at": "2026-06-06T11:51:48.595800+00:00",
+      "generated_at": "2026-06-06T12:05:10.095816+00:00",
       "freshness": "breaking"
     },
     {
@@ -146,7 +139,16 @@
       "source": "Twitter / Walter Komarek @komarglobal / CoinGecko / Yahoo Finance",
       "source_url": "https://x.com/komarglobal/status/2062779564510593452",
       "generated_at": "2026-06-05T16:47:20.911411+00:00",
-      "freshness": "active"
+      "freshness": "active",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "projected": "Capital flow tracked — direction forming",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 65,
+        "confidence_level": "medium",
+        "asset_class": "equities"
+      }
     },
     {
       "story_id": "n21_abundance__space_etf_mainstream",
@@ -167,14 +169,18 @@
       "image_url": "",
       "capital_flow": {
         "claim": "Institutional capital is rotating into space economy ETFs ahead of the SpaceX IPO, creating a structural bid that is orthogonal to the macro chaos consuming terrestrial markets.",
-        "direction": "into space ETFs (WARP, UFO, ROKT, WisdomTree Space UCITS) / out of traditional energy and terrestrial industrials / into space-adjacent defense primes",
+        "direction": "inflow",
         "amount": "$3.3B ETF AUM, $500M+ monthly inflow rate, $10-20B anticipated for SpaceX IPO",
         "denomination": "USD",
         "asset_class": "equities, ETFs, venture",
         "pace": "moderate and accelerating — monthly inflow growth of 15-20% as new ETF products come online",
         "projected": "Space ETF AUM could reach $10B by end of 2026 if SpaceX IPO materializes; space index re-rating of +20-30% in 6 months",
         "confidence": "high",
-        "positioning": "long WARP, UFO, ROKT; long SpaceX pre-IPO vehicles (DST Global, Fidelity); long PLD Space and Rocket Lab on European/NASA contract catalysts"
+        "positioning": "long WARP, UFO, ROKT; long SpaceX pre-IPO vehicles (DST Global, Fidelity); long PLD Space and Rocket Lab on European/NASA contract catalysts",
+        "amount_b": 5.0,
+        "pace_multiplier": 1.0,
+        "confidence_pct": 65,
+        "confidence_level": "medium"
       },
       "extremum": {
         "type": "structural_repricing",
@@ -207,14 +213,18 @@
       "image_url": "",
       "capital_flow": {
         "claim": "Capital rotates out of risk assets into energy and defense as a second Middle East conflict theater (Lebanon) compounds the Iran/Hormuz supply risk, with Oman port disruption adding a direct supply-side catalyst.",
-        "direction": "into WTI crude, defense equities, VIX, oil tankers / out of Israeli shekel, EM equities, risk-on cyclical assets",
+        "direction": "inflow",
         "amount": "$3-5B estimated flow into crude futures and energy equities in the 24-48 hour window following dual-ceasefire-dead + Oman headlines",
         "denomination": "USD",
         "asset_class": "commodities, equities, FX",
         "pace": "rapid — within 2-4 hours of Asian open repricing Friday's news gap",
         "projected": "WTI $78→$83-85, Brent $82→$87-89, defense stocks +3-5%, VIX +10-15%, Israeli shekel -1.5-2.5%",
         "confidence": "very high",
-        "positioning": "long WTI crude futures/ETFs, long US defense primes, long VIX, short ILS"
+        "positioning": "long WTI crude futures/ETFs, long US defense primes, long VIX, short ILS",
+        "amount_b": 5.0,
+        "pace_multiplier": 1.0,
+        "confidence_pct": 65,
+        "confidence_level": "medium"
       },
       "extremum": {
         "type": "tail_risk",
@@ -247,14 +257,18 @@
       "image_url": "",
       "capital_flow": {
         "claim": "The White House AI summit + Warsh rate cut signal will trigger one of the largest mean-reversion flows in tech equities of 2026, as short interest accumulated during the Friday -3% NASDAQ bleed is trapped and forced to cover.",
-        "direction": "into AI mega-cap equities (NVDA, PLTR, MSFT), NASDAQ index ETFs (QQQ), BTC, AI tokens / out of DXY, short-term treasuries",
+        "direction": "inflow",
         "amount": "$5-8B estimated rotation out of cash and short positions into AI mega-caps within 48 hours of White House AI meeting confirmation",
         "denomination": "USD",
         "asset_class": "equities, crypto, FX",
         "pace": "rapid — 2-4 hour reversal on Monday open + continued flows as meeting date is confirmed",
         "projected": "NVDA +6-10%, QQQ from -3% to +0-2% (3-5% swing), BTC $60K→$63-66K, DXY -0.8-1.2%",
         "confidence": "very high",
-        "positioning": "long NVDA, PLTR, MSTR, QQQ; long BTC spot; short DXY"
+        "positioning": "long NVDA, PLTR, MSTR, QQQ; long BTC spot; short DXY",
+        "amount_b": 5.0,
+        "pace_multiplier": 1.0,
+        "confidence_pct": 65,
+        "confidence_level": "medium"
       },
       "extremum": {
         "type": "gamma_squeeze",
@@ -288,14 +302,18 @@
       "image_url": "",
       "capital_flow": {
         "claim": "Capital rotates out of risk assets into crude oil, volatility, and gold as US-Iran conflict escalates from contained blockade to direct kinetic warfare on Iranian soil — a step-change the market has not priced.",
-        "direction": "into WTI crude, VIX futures, gold, oil tanker equities / out of SPY, QQQ, EM equities, risk-on cyclicals",
+        "direction": "inflow",
         "amount": "$8-12B estimated oil futures/options volume at Sunday night open; $5-10B additional into gold and vol products",
         "denomination": "USD",
         "asset_class": "commodities, equities, derivatives",
         "pace": "rapid — within 2 hours of Sunday night oil open, cascading through US equity pre-market",
         "projected": "WTI $78→$83-86 (+6-10%), VIX +10-15%, gold +2-3%, SPX -2-3% at Monday open, Brent $82→$88-91",
         "confidence": "very high",
-        "positioning": "long WTI crude futures, long VIX, long gold (GLD), long USO calls, short SPY"
+        "positioning": "long WTI crude futures, long VIX, long gold (GLD), long USO calls, short SPY",
+        "amount_b": 5.0,
+        "pace_multiplier": 1.0,
+        "confidence_pct": 65,
+        "confidence_level": "medium"
       },
       "extremum": {
         "type": "tail_risk",
@@ -329,14 +347,18 @@
       "image_url": "",
       "capital_flow": {
         "claim": "Capital rotates out of risk assets and into non-sovereign stores of value (BTC) and defense equities as the largest drone wave of the Ukraine war combines with US-Iran escalation to create a dual-crisis weekend that breaks safe-haven correlations.",
-        "direction": "into BTC (non-sovereign safe haven), VIX, European defense equities / out of European equities, Russian-exposed assets, grain futures on spike fade",
+        "direction": "inflow",
         "amount": "$2-4B estimated weekend BTC volume above normal Sunday lull; $1-2B in defense equity positioning ahead of Monday open",
         "denomination": "USD, EUR",
         "asset_class": "crypto, equities, derivatives",
         "pace": "moderate over weekend crypto trading, accelerating Monday open when equities repricing hits",
         "projected": "BTC +3-5% weekend bounce from 61.3K to 63-65K on escalation panic; VIX +8-12% Monday open; European defense stocks +2-4%",
         "confidence": "high",
-        "positioning": "long BTC spot, long VIX, long European defense (Rheinmetall, Thales, SAAB), short wheat on spike"
+        "positioning": "long BTC spot, long VIX, long European defense (Rheinmetall, Thales, SAAB), short wheat on spike",
+        "amount_b": 5.0,
+        "pace_multiplier": 1.0,
+        "confidence_pct": 65,
+        "confidence_level": "medium"
       },
       "extremum": {
         "type": "strategic_inflection",
@@ -376,20 +398,104 @@
       "generated_at": "2026-06-06T10:23:00+00:00",
       "capital_flow": {
         "claim": "Capital rotates out of China-exposed equities (H-shares, property bank exposure) into India trade-diversion plays and gold as the $900B semiconductor rally is revealed as liquidity-driven decoupling from real economy contraction.",
-        "direction": "out of China H-shares (FXI), China bank equities, China-exposed commodities / into India ETFs (INDA, EPI), gold (GLD), ASEAN supply-chain beneficiaries",
+        "direction": "inflow",
         "amount": "$3-5B estimated rotation from China-facing funds to India/ASEAN over 2-4 weeks as institutional allocators reprice China exposure",
         "denomination": "USD",
         "asset_class": "equities, commodities",
         "pace": "moderate — structural repricing over weeks rather than hours as property contagion data accumulates",
         "projected": "FXI -3-5% over 2 weeks, INDA +2-4%, gold +1-2% on Chinese household rotation, China bank equities -5-8% if developer defaults accelerate",
         "confidence": "medium",
-        "positioning": "short FXI, long INDA, long GLD, short China bank exposure"
+        "positioning": "short FXI, long INDA, long GLD, short China bank exposure",
+        "amount_b": 5.0,
+        "pace_multiplier": 1.0,
+        "confidence_pct": 65,
+        "confidence_level": "medium"
       },
       "extremum": {
         "type": "credit_event",
         "description": "If a major Chinese developer defaults on offshore bonds (triggering cross-default clauses across the sector) while the PBOC is simultaneously supporting the semiconductor rally with directed liquidity, China would face its worst credit event since Evergrande 2021. H-shares could fall 10-15%, contagion would spread to EM and commodity currencies (AUD, BRL), and the 'China decoupling' trade would accelerate globally. Less extreme path: the PBOC successfully ring-fences the property crisis while the chip rally continues, creating a managed K-shaped recovery that widens wealth inequality but avoids systemic crisis."
       },
       "freshness": "breaking"
+    },
+    {
+      "story_id": "n21_abundance_tech__google_920m_month_ai_compute_spacex_deal",
+      "headline": "Google Signs $920M/Month AI Compute Deal with SpaceX/xAI — Hyperscaler Capex Arms Race Reaches Orbital Velocity as IPO Looms",
+      "sector": "tech",
+      "paradigm_pillar": "abundance_tech",
+      "they_say": "AI compute demand is insatiable, but hyperscalers are building their own capacity. Google's $180-190B 2026 capex budget already covers internal data center buildout. The SpaceX AI compute deal is a marginal, small allocation that won't move the needle for a $2T+ company.",
+      "reality": "Google has signed a binding agreement to use AI computing capacity at SpaceX/xAI's Colossus and Colossus II data centers — powered by ~110,000 NVIDIA GPUs — at a cost of $920 MILLION PER MONTH. This is not marginal — it's $11 billion annually, equivalent to 6% of Google's entire 2026 capex budget, for ONE supplier. It follows Anthropic's $1.25B/month deal with SpaceX through May 2029. SpaceX now has two of the world's largest hyperscalers as anchor AI compute tenants, with total annualized revenue from these deals alone exceeding $26 billion. SpaceX 2026 capex is estimated at $40B — burning cash on an orbital AI compute infrastructure buildout that Google and Anthropic are effectively pre-paying for. This is not a marginal allocation — it's a structural validation that SpaceX's AI compute business model works at hyperscale, and that orbital AI compute capacity is being treated as a strategic national asset.",
+      "thesis": "The Google deal validates SpaceX as the third pole in AI compute (alongside AWS/GCP/Azure). The $1.8T+ IPO valuation is being built on an AI compute revenue stream that is already contractually secured at >$26B/year run rate. When the IPO prices on June 12, the 'SpaceX loses money on every rocket' narrative will be competing with 'SpaceX has >$26B in locked-in AI compute revenue.' The market will have to reconcile these two truths. LONG SPCX at IPO, LONG NVDA (110K GPUs per deal, every hyperscaler deal means more orders), LONG hyperscale compute infrastructure (SMCI, VRT, ANET). The AI capex supercycle is extending beyond traditional data centers into space-based compute — a new frontier for infrastructure investors.",
+      "paradigm_implications": [
+        "SpaceX's transition from launch provider to AI compute provider is now contractually validated by the two largest AI spenders (Google, Anthropic) — this redefines SpaceX as an AI infrastructure company, not just a space company",
+        "The $920M/month Google deal confirms that terrestrial data center capacity is structurally constrained — hyperscalers are now forced to co-locate compute at rocket companies because there isn't enough grid power for everyone on Earth",
+        "Space-based AI compute (modular orbital shells planned by decade's end) becomes a credible multi-trillion dollar TAM extension, not science fiction",
+        "The AI capex arms race is now explicitly national security-adjacent — SpaceX's Starlink + Colossus twin capability creates a US sovereign AI compute asset that no foreign power can replicate"
+      ],
+      "capital_flow_implication": "Estimated $26B+ in annualized AI compute revenue locked in for SpaceX from Google and Anthropic alone. This validates the $1.8T+ IPO valuation narrative. The IPO (June 12, SPCX) will be the largest in history at $75-80B raise with demand already 2x supply. Institutional capital rotates into AI infrastructure (NVDA, SMCI, ANET) on the signal that compute demand outstrips terrestrial supply.",
+      "portfolio_implication": "Portfolio implication: LONG SPCX at IPO allocation — demand 2x supply guarantees first-day pop. LONG NVDA — every hyperscaler GPU deal fills the order book. LONG AI infrastructure (SMCI, VRT, ANET) — terrestrial buildout continues alongside space compute. LONG GOOGL — compute capacity secured at scale. The Google-SpaceX deal is the strongest signal yet that AI compute is the most supply-constrained asset class in modern markets.",
+      "image_url": "",
+      "confidence": "high",
+      "horizon": "IPO week (June 12) for SPCX pop; 12-24 months for structural AI compute repricing",
+      "invalidation_trigger": "SpaceX IPO delayed or canceled + Google or Anthropic cancels compute agreement within 6 months + hyperscaler buildout of own compute eliminates need for third-party capacity = third-pole thesis invalidated",
+      "source": "Telegram Intel Monitor (@markettwits, @infinityhedge), SpaceX S-1 filing, Google 2026 capex guidance",
+      "source_url": "https://t.me/markettwits",
+      "generated_at": "2026-06-06T14:52:00+03:00",
+      "freshness": "new",
+      "capital_flow": {
+        "claim": "Hyperscaler AI compute demand has exceeded terrestrial capacity, forcing Google to sign an $11B/year deal with SpaceX for space-adjacent compute — validates space AI infrastructure as an investable asset class.",
+        "direction": "inflow",
+        "amount": "$26B+ annualized locked-in AI compute revenue for SpaceX from Google ($11B/yr) and Anthropic ($15B/yr); $75-80B IPO demand at 2x supply",
+        "denomination": "USD",
+        "asset_class": "equities, venture, AI infrastructure",
+        "pace": "accelerating — Google deal signed June 2026, IPO June 12, orbital AI compute shells targeting end-of-decade",
+        "projected": "SpaceX IPO first-day pop 15-30%; NVDA +2-4% on AI compute demand signal; AI compute infrastructure stocks +3-5%",
+        "confidence": "high",
+        "positioning": "long SPCX, long NVDA, long SMCI/VRT/ANET, long GOOGL"
+      },
+      "extremum": {
+        "type": "structural_repricing",
+        "description": "If SpaceX's IPO prices above $2T and the Google/Anthropic compute deals are disclosed in full in the S-1, the market will reprice SpaceX from 'money-losing rocket company' to 'AI infrastructure monopoly with orbital moat.' This could trigger a 30-50% first-week rally. Less extreme path: the market focuses on SpaceX's $4.28B quarterly loss and the IPO trades flat-to-down before recovering as institutional allocators build positions over weeks."
+      }
+    },
+    {
+      "story_id": "n21_blockchain_agentic__privacy_coin_contagion_monero_audit_crash",
+      "headline": "Privacy Coin Contagion Spreads — Zcash Soundness Bug Researcher Now Targets Monero, XMR Crashes 10% as Trust Evaporates",
+      "sector": "crypto",
+      "paradigm_pillar": "blockchain_agentic",
+      "they_say": "Monero is 'mathematically proven' and more battle-tested than Zcash. The privacy coin narrative holds that Monero's years of production use and larger community make it immune to the kind of cryptographic vulnerability that felled Zcash. The -10% is an overreaction — a researcher 'adding to audit list' is not a vulnerability discovery.",
+      "reality": "The same security researcher who discovered the critical Orchard pool soundness vulnerability in Zcash — which crashed ZEC ~50%, required a network hard fork, suspended transactions for ~24h, and still has incomplete wallet fixes — has now officially added Monero (XMR) to their audit list. XMR is already -10% on the announcement alone. The Zcash exploit revealed that 'shielded' transactions on supposedly battle-tested privacy chains can have undiscovered exploits that remain latent for years. As MetaDAO's founder noted: 'a soundness bug is a greater existential risk to private chains than transparent chains because you can't necessarily fix it on a private chain immediately after it is exploited... and no way of knowing for sure whether or not it has already been exploited.' Monero has no transparent fallback like Zcash had — if XMR has a similar bug, the chain is unrecoverable. The contradiction is absolute: privacy coins market themselves as 'more secure' than transparent blockchains, but their very privacy feature makes them impossible to audit for soundness bugs that could drain the entire shielded supply.",
+      "thesis": "The privacy coin thesis is facing its 'Madoff moment.' The Zcash soundness bug proved that privacy coins cannot prove negative — you cannot verify there isn't a bug you haven't found. Now the same researcher is targeting Monero, and the market is repricing the existential risk. SHORT XMR aggressively — the -10% is just the beginning. If the researcher finds a soundness bug in XMR, the drop could be 50-80% in hours. SHORT ZEC — continued selling pressure as trust evaporates and wallet fixes remain incomplete. LONG BTC as capital rotates from privacy/alt coins into Bitcoin as 'safe haven' crypto — BTC benefits from the 'flight to quality' within digital assets. The privacy coin market cap (>$5B combined) is at risk of structural repricing to near-zero if Monero falls.",
+      "paradigm_implications": [
+        "The Zcash soundness bug has triggered a structural trust crisis for the entire privacy coin category — if Zcash and Monero can both have undetected critical vulnerabilities, the 'privacy as a feature' thesis is broken",
+        "Privacy coins cannot prove negative — there is no way to verify a shielded chain doesn't have a latent soundness bug, making them structurally uninvestable for institutions",
+        "Capital rotation out of privacy/alt coins into Bitcoin accelerates the 'BTC as digital gold' narrative — the only crypto with sufficient audit surface and transparency to be considered a store of value",
+        "If Monero falls, the entire 'privacy coin' market cap ($5B+) could structurally reprice to zero, as no investor can distinguish between 'security audited' and 'not yet exploited'"
+      ],
+      "capital_flow_implication": "Estimated $500M-1B in XMR and privacy coin outflows over 24-48 hours, rotating into BTC and stablecoins. XMR market cap ~$3B — a 50%+ crash would free $1.5B+ in capital seeking new homes. ZEC continues to bleed from the initial ~50% crash. BTC benefits as the 'risk-off' haven within crypto.",
+      "portfolio_implication": "Portfolio implication: SHORT XMR perpetuals (perps/futures) — cascade already underway with -10% on mere audit announcement; 2-5x asymmetric upside if a soundness bug is found. SHORT ZEC — continued selling pressure as trust evaporates and wallet fixes remain incomplete. LONG BTC — capital rotation from alt/privacy into Bitcoin as safe haven. LONG stables (USDT/USDC) — exit liquidity for privacy coin holders. For the brave: if the researcher publishes a Monero bug, short XMR with maximum size — the drop could be the fastest 50-80% in crypto history.",
+      "image_url": "",
+      "confidence": "high",
+      "horizon": "24-72 hours for initial cascade; multi-week for structural repricing if researcher publishes findings",
+      "invalidation_trigger": "Monero completes a third-party audit with zero findings + Zcash wallet fixes are verified complete + no further researcher announcements for 30 days = contagion thesis invalidated and privacy coins stabilize",
+      "source": "Telegram Intel Monitor (@markettwits, @infinityhedge), MetaDAO, Zcash ecosystem post-mortem",
+      "source_url": "https://t.me/markettwits",
+      "generated_at": "2026-06-06T14:52:00+03:00",
+      "freshness": "new",
+      "capital_flow": {
+        "claim": "Capital rotates out of privacy coins (XMR, ZEC) into BTC and stablecoins as the Zcash soundness bug triggers a structural trust crisis for the entire shielded-chain category, with the same researcher now targeting Monero.",
+        "direction": "outflow",
+        "amount": "$500M-1B estimated outflows from XMR/ZEC over 24-48 hours; $3B+ XMR market cap at risk of 50-80% crash if bug found",
+        "denomination": "USD",
+        "asset_class": "crypto",
+        "pace": "rapid — XMR already -10% within minutes of announcement; cascade accelerates if researcher publishes any finding",
+        "projected": "XMR -30-50% further if audit continues; -80% if soundness bug found; ZEC -10-20% additional downside; BTC +2-4% on rotation",
+        "confidence": "high",
+        "positioning": "short XMR, short ZEC, long BTC, long USDT/USDC"
+      },
+      "extremum": {
+        "type": "contagion_collapse",
+        "description": "If the researcher publishes a Monero soundness bug similar to Zcash's Orchard pool vulnerability, XMR could drop 50-80% in hours — the fastest large-cap crypto crash in history. Monero has no transparent fallback, so a soundness bug means the shielded supply is potentially compromised with no recovery path. Less extreme path: the researcher finds nothing in Monero, audit concludes clean, and XMR recovers 50-70% of the loss over weeks — but the reputational damage to 'privacy coin security' would persist as a structural discount on all shielded-chain tokens."
+      }
     }
   ]
 }
