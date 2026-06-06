@@ -13,7 +13,7 @@ function byId(id) { return document.getElementById(id); }
 
 async function getJSON(path, fallback) {
   try {
-    const r = await fetch(path, { cache: 'no-store' });
+    const r = await fetch(`${path}?t=${Date.now()}`, { cache: 'no-store' });
     if (!r.ok) throw new Error(String(r.status));
     return await r.json();
   } catch (e) { console.warn('Fetch:', path, e); return fallback; }
