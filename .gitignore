@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+data/reddit_ingest/
+data/phase2_scores.json
+data/phase3_daily_brief.md
+data/reddit_candidates.json

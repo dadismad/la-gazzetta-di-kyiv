@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-06-06T11:56:49.784131+00:00",
+  "healthy": false,
+  "primary_healthy": false,
+  "mirror_healthy": false,
+  "recommended_url": null,
+  "checks": {
+    "primary": [
+      {
+        "url": "https://pureciclismo.github.io/gazzetta-di-kyiv/",
+        "ok": false,
+        "code": null,
+        "bad_404": false,
+        "error": "HTTP Error 404: Not Found"
+      },
+      {
+        "url": "https://pureciclismo.github.io/gazzetta-di-kyiv/data/narratives.json",
+        "ok": false,
+        "code": null,
+        "bad_404": false,
+        "error": "HTTP Error 404: Not Found"
+      }
+    ],
+    "mirrors": [
+      {
+        "url": "https://rawcdn.githack.com/pureciclismo/gazzetta-di-kyiv/main/site/index.html",
+        "ok": false,
+        "code": null,
+        "bad_404": false,
+        "error": "HTTP Error 404: Not Found"
+      },
+      {
+        "url": "https://cdn.jsdelivr.net/gh/pureciclismo/gazzetta-di-kyiv@main/site/index.html",
+        "ok": false,
+        "code": null,
+        "bad_404": false,
+        "error": "HTTP Error 404: Not Found"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "action": "dispatch_pages_deploy"
+    },
+    {
+      "ok": true,
+      "code": 0,
+      "out": "204",
+      "err": ""
+    }
+  ]
+}
