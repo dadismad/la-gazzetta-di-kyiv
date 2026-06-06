@@ -50,24 +50,23 @@ def build():
         modified = False
         
         for asset, info in manifest.items():
-            # Match: href="./asset.css" or href="./asset.css?v=..." or src="./asset.js" or src="./asset.js?v=..."
+            name, ext = os.path.splitext(asset)
+            # Match: href="./asset.css" or href="./asset.css?v=..." or href="./asset.HHHHHHHH.css" (already hashed)
             for attr in ['href', 'src']:
-                pattern = re.compile(
+                # Match unhashed: ./asset.css or ./asset.css?v=...
+                pattern_unhashed = re.compile(
                     rf'({attr}=["\']\.\/{re.escape(asset)})(\?v=[\d.]+)?(["\'])',
                     re.IGNORECASE
                 )
-                replacement = rf'\1\3'
                 new_attr = f'{attr}="./{info["hashed_name"]}"'
+                content = pattern_unhashed.sub(new_attr, content)
                 
-                # First remove any existing ?v= query string (just keep the base path)
-                cleaned = re.sub(
-                    rf'({attr}=["\'])\.\/{re.escape(asset)}\?v=[\d.]+(["\'])',
-                    new_attr,
-                    content
+                # Match already-hashed: ./name.HHHHHHHH.ext (any 8-char hex hash)
+                pattern_hashed = re.compile(
+                    rf'{attr}=["\']\.\/{re.escape(name)}\.[0-9a-f]{{8}}\.{ext.lstrip(".")}["\']',
+                    re.IGNORECASE
                 )
-                if cleaned != content:
-                    content = cleaned
-                    modified = True
+                content = pattern_hashed.sub(new_attr, content)
         
         if content != original:
             if not DRY_RUN:
