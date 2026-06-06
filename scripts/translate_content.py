@@ -38,44 +38,57 @@ def get_api_key():
     return ""
 
 
-def translate_via_api(texts):
-    """Batch translate via DeepSeek API."""
+def translate_via_api(texts, batch_size=20):
+    """Batch translate via DeepSeek API in chunks to avoid response truncation."""
     api_key = get_api_key()
     if not api_key:
         print("  [translate] No API key, using English as fallback", file=sys.stderr)
         return {}
 
-    items = "\n\n---\n\n".join(f"[{i}] {t[:400]}" for i, t in enumerate(texts))
-    prompt = (
-        "Translate these financial/market texts from English to Russian. "
-        "Keep tickers ($SPX, $NVDA), numbers, and % unchanged. "
-        "Return ONLY a JSON array: [\"translation1\", \"translation2\", ...]\n\n" + items
-    )
+    all_translations = {}
+    total_batches = (len(texts) + batch_size - 1) // batch_size
 
-    try:
-        payload = json.dumps({
-            "model": "deepseek-chat",
-            "messages": [{"role": "user", "content": prompt}],
-            "temperature": 0.3,
-            "max_tokens": 4000,
-        }).encode()
+    for batch_num in range(total_batches):
+        start = batch_num * batch_size
+        end = min(start + batch_size, len(texts))
+        batch_texts = texts[start:end]
 
-        req = urllib.request.Request(
-            "https://api.deepseek.com/v1/chat/completions",
-            data=payload,
-            headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
+        items = "\n\n---\n\n".join(f"[{i}] {t[:400]}" for i, t in enumerate(batch_texts))
+        prompt = (
+            "Translate these financial/market texts from English to Russian. "
+            "Keep tickers ($SPX, $NVDA), numbers, and % unchanged. "
+            "Return ONLY a JSON array: [\"translation1\", \"translation2\", ...]\n\n" + items
         )
 
-        with urllib.request.urlopen(req, timeout=60) as resp:
-            result = json.loads(resp.read())
-            content = result["choices"][0]["message"]["content"]
-            match = re.search(r"\[.*\]", content, re.DOTALL)
-            if match:
-                return {i: t for i, t in enumerate(json.loads(match.group()))}
-    except Exception as e:
-        print(f"  [translate] API error: {e}", file=sys.stderr)
+        try:
+            payload = json.dumps({
+                "model": "deepseek-chat",
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0.3,
+                "max_tokens": 4000,
+            }).encode()
 
-    return {}
+            req = urllib.request.Request(
+                "https://api.deepseek.com/v1/chat/completions",
+                data=payload,
+                headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
+            )
+
+            with urllib.request.urlopen(req, timeout=90) as resp:
+                result = json.loads(resp.read())
+                content = result["choices"][0]["message"]["content"]
+                match = re.search(r"\[.*\]", content, re.DOTALL)
+                if match:
+                    batch_translations = json.loads(match.group())
+                    for i, t in enumerate(batch_translations):
+                        all_translations[start + i] = t
+                    print(f"  [translate] Batch {batch_num+1}/{total_batches}: {len(batch_translations)} texts", file=sys.stderr)
+                else:
+                    print(f"  [translate] Batch {batch_num+1}/{total_batches}: no JSON array in response", file=sys.stderr)
+        except Exception as e:
+            print(f"  [translate] Batch {batch_num+1}/{total_batches} error: {e}", file=sys.stderr)
+
+    return all_translations
 
 
 def translate_story(story, trans):

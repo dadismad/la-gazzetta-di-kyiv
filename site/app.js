@@ -1,23 +1,10 @@
-// La Gazzetta di Kyiv v20.23 — i18n support · language-specific data files
+// La Gazzetta di Kyiv v20.24 — i18n support · language-specific data files
 const DATA_BASE = './data/stories';
 const LIVING_DATA = './data/living_stories.json';
 const FLOWS_BASE = './data/flows';
 function getDataPath() { return DATA_BASE + (window.i18n && i18n.lang === 'ru' ? '_ru' : '') + '.json'; }
 function getFlowsPath() { return FLOWS_BASE + (window.i18n && i18n.lang === 'ru' ? '_ru' : '') + '.json'; }
 const FLOWS_POLL_INTERVAL = 300000;
-
-// Wait for i18n to be ready before rendering
-let _i18nReady = false;
-window.addEventListener('i18nReady', () => { _i18nReady = true; });
-function waitForI18n() {
-  return new Promise(resolve => {
-    if (_i18nReady || !window.i18n) return resolve();
-    const check = setInterval(() => {
-      if (_i18nReady || (window.i18n && window.i18n._ready)) { clearInterval(check); resolve(); }
-    }, 50);
-    setTimeout(() => { clearInterval(check); resolve(); }, 3000);
-  });
-}
 
 // ── Story cache for flow→story cross-linking ──
 const STORIES_CACHE = {}; // story_id → {headline, dom_card}
@@ -83,12 +70,12 @@ function pickPhoto(sector, idx) {
 
 // ── Category tag labels ──
 const SECTOR_LABELS = {
-  geopolitics: 'GEOPOLITICS',
-  markets: 'MARKETS',
-  tech: 'TECH',
-  macro: 'MACRO',
-  wealth: 'WEALTH',
-  pleasure: 'PLEASURE',
+  geopolitics: () => i18n.t('sector_geopolitics','GEOPOLITICS'),
+  markets: () => i18n.t('sector_markets','MARKETS'),
+  tech: () => i18n.t('sector_tech','TECH'),
+  macro: () => i18n.t('sector_macro','MACRO'),
+  wealth: () => i18n.t('sector_wealth','WEALTH'),
+  pleasure: () => i18n.t('sector_pleasure','PLEASURE'),
 };
 
 // ═══════════════════════════════════════════════════════════════
@@ -118,11 +105,11 @@ function formatTimeAgo(isoString) {
   if (!isoString) return '';
   const diff = Date.now() - new Date(isoString).getTime();
   const mins = Math.floor(diff / 60000);
-  if (mins < 1) return 'just now';
-  if (mins < 60) return `${mins}m ago`;
+  if (mins < 1) return i18n.t('just_now','just now');
+  if (mins < 60) return `${mins}${i18n.t('m_ago','m ago')}`;
   const hours = Math.floor(mins / 60);
-  if (hours < 24) return `${hours}h ago`;
-  return `${Math.floor(hours / 24)}d ago`;
+  if (hours < 24) return `${hours}${i18n.t('h_ago','h ago')}`;
+  return `${Math.floor(hours / 24)}${i18n.t('d_ago','d ago')}`;
 }
 
 function formatTimestamp(isoString) {
@@ -131,7 +118,7 @@ function formatTimestamp(isoString) {
   const now = new Date();
   const isToday = d.toDateString() === now.toDateString();
   const time = d.toTimeString().slice(0, 5);
-  if (isToday) return `${time} · Today`;
+  if (isToday) return `${time} · ${i18n.t('today','Today')}`;
   const date = `${d.getDate()}/${d.getMonth() + 1}`;
   return `${time} · ${date}`;
 }
@@ -283,7 +270,7 @@ function renderAnchor() {
   const freshnessEl = byId('anchorFreshness');
   if (freshnessEl) {
     const now = new Date();
-    freshnessEl.textContent = `Reference prices · reviewed ${now.toDateString()}`;
+    freshnessEl.textContent = i18n.t('reference_prices','Reference prices · reviewed') + ` ${now.toDateString()}`;
   }
 }
 
@@ -358,7 +345,7 @@ function renderCapitalFlows() {
   const el = byId('flowsList');
   if (!el) return;
   if (!CAPITAL_FLOWS_DATA.length) {
-    el.innerHTML = '<div class="flows-loading">Analyzing capital movements…</div>';
+    el.innerHTML = '<div class="flows-loading">' + i18n.t('analyzing_capital','Analyzing capital movements…') + '</div>';
     return;
   }
   // Aggregate duplicate flows (same headline+direction+amount) with catalyst counts
@@ -371,7 +358,7 @@ function renderCapitalFlows() {
       : '';
     const detail = f.projected ? `Projected ${f.projected} further ${f.direction === 'inflow' ? (i18n.t('flow_further_inflow','inflow')) : (i18n.t('flow_further_outflow','outflow'))} (${f.confidence_pct}% ${i18n.t('flow_confidence_pct','confidence')}) · ${f.pace_multiplier}x ${i18n.t('flow_normal_pace','normal pace')}` : '';
     const positioning = f.positioning ? positionLabel(f.positioning) : '';
-    const catalystBadge = f.catalyst_count > 1 ? `<span class="catalyst-badge">${f.catalyst_count} catalysts</span>` : '';
+    const catalystBadge = f.catalyst_count > 1 ? `<span class="catalyst-badge">${f.catalyst_count} ` + i18n.t('catalysts','catalysts') + `</span>` : '';
     const primaryStoryId = f.story_ids ? f.story_ids[0] : f.story_id;
 
     return `
@@ -380,7 +367,7 @@ function renderCapitalFlows() {
         <span class="flow-headline-text">${f.headline}</span>
         ${catalystBadge}
         ${betLine}
-        <span class="flow-linked-story-hint" title="Linked story — expand to see">↳</span>
+        <span class="flow-linked-story-hint" title="${i18n.t('linked_story_hint','Linked story — expand to see')}">↳</span>
         <span class="flow-expand-icon">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </span>
@@ -389,17 +376,17 @@ function renderCapitalFlows() {
       <div class="flow-detail" style="margin-top:2px;font-size:10px;color:var(--ink-muted)">${positioning}</div>
       <div class="flow-expanded" style="display:none">
         <div class="flow-story-link" data-story-id="${f.story_id}">
-          <span style="color:var(--ink-muted);font-size:10px;text-transform:uppercase;letter-spacing:0.05em">Linked story</span>
+          <span style="color:var(--ink-muted);font-size:10px;text-transform:uppercase;letter-spacing:0.05em">${i18n.t('linked_story','Linked story')}</span>
           <span class="flow-story-title" style="font-size:12px;color:var(--ink);font-style:italic">Loading...</span>
         </div>
         <div class="flow-bet-detail" style="margin-top:6px">
           ${anchorAsset ? `
-          <span style="color:var(--ink-muted);font-size:10px;text-transform:uppercase;letter-spacing:0.05em">Position bet</span>
+          <span style="color:var(--ink-muted);font-size:10px;text-transform:uppercase;letter-spacing:0.05em">${i18n.t('position_bet','Position bet')}</span>
           <div style="display:flex;gap:8px;margin-top:2px">
             <span class="cf-bet-detail-pill ${anchorAsset.bias.toLowerCase()}">${anchorAsset.symbol} ${anchorAsset.bias}</span>
             <span style="font-size:10px;color:var(--ink-light)">Entry ${anchorAsset.entry} → Target ${anchorAsset.target} · Stop ${anchorAsset.stop} · Conviction ${anchorAsset.conviction}</span>
           </div>
-          ` : '<span style="font-size:10px;color:var(--ink-muted)">No positioned bet for this flow</span>'}
+          ` : '<span style="font-size:10px;color:var(--ink-muted)">' + i18n.t('no_positioned_bet','No positioned bet for this flow') + '</span>'}
         </div>
       </div>
     </div>`;
@@ -421,7 +408,7 @@ function renderCapitalFlows() {
           const cached = STORIES_CACHE[sid];
           if (card) {
             const h3 = card.querySelector('h3');
-            storyLink.textContent = h3 ? h3.textContent : 'Story found';
+            storyLink.textContent = h3 ? h3.textContent : i18n.t('story_found','Story found');
             storyLink.style.cursor = 'pointer';
             storyLink.style.color = 'var(--blue)';
             storyLink.addEventListener('click', () => {
@@ -432,9 +419,9 @@ function renderCapitalFlows() {
             storyLink.textContent = cached.headline;
             storyLink.style.color = 'var(--ink-muted)';
             storyLink.style.cursor = 'default';
-            storyLink.title = 'Refresh page to enable click-through to story';
+            storyLink.title = i18n.t('refresh_for_click','Refresh page to enable click-through to story');
           } else {
-            storyLink.textContent = 'Story not yet loaded';
+            storyLink.textContent = i18n.t('story_not_loaded','Story not yet loaded');
           }
         }
       } else {
@@ -463,7 +450,7 @@ function refreshFlowStoryLinks() {
       const cached = STORIES_CACHE[sid];
       if (card) {
         const h3 = card.querySelector('h3');
-        link.textContent = h3 ? h3.textContent : 'Story found';
+        link.textContent = h3 ? h3.textContent : i18n.t('story_found','Story found');
         link.style.cursor = 'pointer';
         link.style.color = 'var(--blue)';
         link.addEventListener('click', () => {
@@ -474,7 +461,7 @@ function refreshFlowStoryLinks() {
         link.textContent = cached.headline;
         link.style.color = 'var(--ink-muted)';
         link.style.cursor = 'default';
-        link.title = 'Refresh page to enable click-through to story';
+        link.title = i18n.t('refresh_for_click','Refresh page to enable click-through to story');
       }
     }
   });
@@ -492,7 +479,7 @@ function updateHeroConfidence(pct, label, direction) {
     return;
   }
   const arrow = direction === 'bullish' ? ' ↑' : direction === 'bearish' ? ' ↓' : '';
-  const tier = pct >= 70 ? 'HIGH' : pct >= 50 ? 'MEDIUM' : 'LOW';
+  const tier = pct >= 70 ? i18n.t('tier_high','HIGH') : pct >= 50 ? i18n.t('tier_medium','MEDIUM') : i18n.t('tier_low','LOW');
   el.innerHTML = `${pct}%${arrow} <span class="confidence-tier tier-${tier.toLowerCase()}">${tier}</span>`;
   // Update the label — simplified, no long text
   const labelEl = el.nextElementSibling;
@@ -627,10 +614,10 @@ function computeTriangulation(story, flow, anchorAsset) {
 
   const cappedScore = Math.min(score, 100);
   let verdict, verdictCls;
-  if (cappedScore >= 85) { verdict = 'MAX CONVICTION'; verdictCls = 'max'; }
-  else if (cappedScore >= 70) { verdict = 'HIGH CONVICTION'; verdictCls = 'high'; }
-  else if (cappedScore >= 55) { verdict = 'MODERATE'; verdictCls = 'moderate'; }
-  else { verdict = 'WATCH'; verdictCls = 'watch'; }
+  if (cappedScore >= 85) { verdict = i18n.t('tri_max_conviction','MAX CONVICTION'); verdictCls = 'max'; }
+  else if (cappedScore >= 70) { verdict = i18n.t('tri_high_conviction','HIGH CONVICTION'); verdictCls = 'high'; }
+  else if (cappedScore >= 55) { verdict = i18n.t('tri_moderate','MODERATE'); verdictCls = 'moderate'; }
+  else { verdict = i18n.t('tri_watch','WATCH'); verdictCls = 'watch'; }
 
   return { score: cappedScore, verdict, verdictCls, alignment, alignDetail, signals, anchorAsset, flowDir, betBias };
 }
@@ -661,7 +648,7 @@ function renderTriangulation() {
   });
 
   if (items.length === 0) {
-    el.innerHTML = '<div style="padding:12px;color:var(--ink-muted);font-style:italic;font-size:12px">Stories loading — triangulation will appear when cards are rendered.</div>';
+    el.innerHTML = '<div style="padding:12px;color:var(--ink-muted);font-style:italic;font-size:12px">' + i18n.t('stories_loading','Stories loading — triangulation will appear when cards are rendered.') + '</div>';
     return;
   }
 
@@ -822,7 +809,7 @@ function livingCardHTML(story, isLead) {
   // Status dot + update badge
   const dotClass = statusDotClass(status);
   const updateBadge = story.update_count > 0
-    ? `<span class="story-update-badge">+${story.update_count} updates</span>`
+    ? `<span class="story-update-badge">+${story.update_count} ` + i18n.t('updates','updates') + `</span>`
     : '';
   const updatedAgo = story.last_updated
     ? `<span class="updated-ago">${formatTimeAgo(story.last_updated)}</span>`
@@ -854,8 +841,8 @@ function livingCardHTML(story, isLead) {
       <div class="card-head">
         ${cfClaim}
         <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:2px">
-          ${sector ? `<span class="category-tag ${sector}">${SECTOR_LABELS[sector] || sector}</span>` : ''}
-          <span class="severity ${severity}">${severity}</span>
+          ${sector ? `<span class="category-tag ${sector}">${SECTOR_LABELS[sector] ? SECTOR_LABELS[sector]() : sector}</span>` : ''}
+          <span class="severity ${severity}">${severity === 'critical' ? i18n.t('severity_critical','CRITICAL') : severity === 'high' ? i18n.t('severity_high','HIGH') : i18n.t('severity_elevated','ELEVATED')}</span>
           ${updateBadge}
           ${updatedAgo}
           <time class="story-date" datetime="${story.generated_at || story.last_updated || ''}">${story.generated_at ? new Date(story.generated_at).toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'}) : ''}</time>
@@ -871,8 +858,8 @@ function livingCardHTML(story, isLead) {
         ${reality ? `<p class="summary">${reality}</p>` : ''}
         ${theySay || reality ? `
         <div class="detail">
-          ${theySay ? `<div class="con-they"><span class="con-label">They say</span>${theySay}</div>` : ''}
-          ${reality ? `<div class="con-real"><span class="con-label">Reality</span>${reality}</div>` : ''}
+          ${theySay ? `<div class="con-they"><span class="con-label">${i18n.t('they_say','They say')}</span>${theySay}</div>` : ''}
+          ${reality ? `<div class="con-real"><span class="con-label">${i18n.t('reality','Reality')}</span>${reality}</div>` : ''}
         </div>` : ''}
         ${capitalFlowHTML(cf)}
         ${story.portfolio_implication ? `
@@ -894,7 +881,7 @@ function livingCardHTML(story, isLead) {
           <button class="share-btn share-telegram" title="${i18n.t('share_telegram','Share on Telegram')}" onclick="shareToTelegram(this.closest('.card'))">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           </button>
-          <button class="share-btn share-reddit" title="Share on Reddit" onclick="shareToReddit(this.closest('.card'))">
+          <button class="share-btn share-reddit" title="${i18n.t('share_reddit','Share on Reddit')}" onclick="shareToReddit(this.closest('.card'))">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8s-4-1-8 2"/><path d="M8 16s4 1 8-2"/><circle cx="9" cy="9" r="0.5" fill="currentColor"/><circle cx="15" cy="9" r="0.5" fill="currentColor"/></svg>
           </button>
         </div>
@@ -903,9 +890,9 @@ function livingCardHTML(story, isLead) {
         </div>
       </div>
       <div class="story-evolution-timeline" style="display:none">
-        <div class="timeline-loading">Loading evolution timeline...</div>
+        <div class="timeline-loading">' + i18n.t('loading_timeline','Loading evolution timeline...') + '</div>
       </div>
-      ${story.status === 'resolved' ? `<div class="resolved-banner"><span class="resolved-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Resolved</span></div>` : ''}
+      ${story.status === 'resolved' ? `<div class="resolved-banner"><span class="resolved-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>${i18n.t('resolved','Resolved')}</span></div>` : ''}
     </article>`;
 }
 
@@ -923,11 +910,11 @@ function extremumLineHTML(extremumStr) {
   });
   return `
     <div class="card-extremum">
-      <span class="ex-label">EXTREMUM</span>
-      ${winner ? `<span class="ex-win">WINNER: ${winner}</span>` : ''}
-      ${loser ? `<span class="ex-lose">LOSER: ${loser}</span>` : ''}
-      ${idiot ? `<span class="ex-idiot">IDIOT: ${idiot}</span>` : ''}
-      ${genius ? `<span class="ex-genius">GENIUS: ${genius}</span>` : ''}
+      <span class="ex-label">${i18n.t('extremum','EXTREMUM')}</span>
+      ${winner ? `<span class="ex-win">${i18n.t('winner','WINNER')}: ${winner}</span>` : ''}
+      ${loser ? `<span class="ex-lose">${i18n.t('loser','LOSER')}: ${loser}</span>` : ''}
+      ${idiot ? `<span class="ex-idiot">${i18n.t('idiot','IDIOT')}: ${idiot}</span>` : ''}
+      ${genius ? `<span class="ex-genius">${i18n.t('genius','GENIUS')}: ${genius}</span>` : ''}
     </div>`;
 }
 
@@ -965,7 +952,7 @@ function wireCardDelegation() {
     // Lazy-load timeline
     if (!timelineEl.dataset.loaded) {
       timelineEl.style.display = 'block';
-      timelineEl.innerHTML = '<div class="timeline-loading">Loading evolution timeline...</div>';
+      timelineEl.innerHTML = '<div class="timeline-loading">' + i18n.t('loading_timeline','Loading evolution timeline...') + '</div>';
 
       try {
         const timelineData = await getJSON(`./data/stories/${storyId}/timeline.json`, null);
@@ -974,11 +961,11 @@ function wireCardDelegation() {
           timelineEl.dataset.loaded = 'true';
           wireThreadNavigation(timelineEl, timelineData, storyId);
         } else {
-          timelineEl.innerHTML = '<div class="timeline-empty">No evolution data available yet.</div>';
+          timelineEl.innerHTML = '<div class="timeline-empty">' + i18n.t('no_evolution','No evolution data available yet.') + '</div>';
           timelineEl.dataset.loaded = 'true';
         }
       } catch (err) {
-        timelineEl.innerHTML = '<div class="timeline-empty">Could not load timeline.</div>';
+        timelineEl.innerHTML = '<div class="timeline-empty">' + i18n.t('could_not_load','Could not load timeline.') + '</div>';
         timelineEl.dataset.loaded = 'true';
       }
     } else {
@@ -995,7 +982,7 @@ function timelineHTML(timelineData, activeThreadId) {
 
   const threadNav = timelineData.threads && timelineData.threads.length > 1
     ? `<div class="thread-nav">${timelineData.threads.map(t =>
-        `<span class="thread-pill${t.thread_id === activeThreadId ? ' active' : ''}" data-thread-id="${t.thread_id}">${t.type === 'main' ? 'Main' : (t.current_state?.headline?.slice(0,30) || t.thread_id.slice(0,25))} (${t.evolution?.length || 0})</span>`
+        `<span class="thread-pill${t.thread_id === activeThreadId ? ' active' : ''}" data-thread-id="${t.thread_id}">${t.type === 'main' ? i18n.t('main','Main') : (t.current_state?.headline?.slice(0,30) || t.thread_id.slice(0,25))} (${t.evolution?.length || 0})</span>`
       ).join('')}</div>`
     : '';
 
@@ -1549,9 +1536,6 @@ function shareToReddit(card) {
 // ═══════════════════════════════════════════════════════════════
 
 async function boot() {
-  // Wait for i18n to load translations before rendering dynamic content
-  await waitForI18n();
-  
   // Wire collapsible containers first
   wireCollapsibleContainers();
 

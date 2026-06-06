@@ -98,3 +98,6 @@
     }
   };
 })();
+
+// Auto-initialize
+i18n.init();
