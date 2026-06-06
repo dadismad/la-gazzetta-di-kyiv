@@ -1169,6 +1169,10 @@ function updateCumulativeStats() {
   if (heroFlow) heroFlow.textContent = '$' + cumFlow.toFixed(1) + 'B';
   if (heroAssets) heroAssets.textContent = String(cumAssets);
   if (heroStake) heroStake.textContent = '$' + cumStake.toFixed(1) + 'K';
+
+  // Dynamic layer count — number of intelligence containers (never hardcoded)
+  const heroLayer = byId('heroLayerCount');
+  if (heroLayer) heroLayer.textContent = String(document.querySelectorAll('section.container').length);
 }
 
 // ═══════════════════════════════════════════════════════════════

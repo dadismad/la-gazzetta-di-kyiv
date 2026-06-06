@@ -75,7 +75,7 @@
   </div>
   <div class="masthead-right">
     <span class="masthead-tagline" data-i18n="masthead_tagline">Capital moves markets. We track where it's going.</span>
-    <time class="masthead-meta" id="mastheadMeta" datetime="">—</time>
+    <time class="masthead-meta" id="mastheadMeta" datetime="2026-06-06T15:00:00.000Z">—</time>
     <span class="lang-switcher">
       <button class="lang-switch active" data-lang="en" onclick="i18n.switchLang('en')" aria-label="English">EN</button>
       <button class="lang-switch" data-lang="ru" onclick="i18n.switchLang('ru')" aria-label="Русский">RU</button>
@@ -86,7 +86,11 @@
 <section class="hero">
   <div class="hero-content">
     <h1 class="hero-headline" data-i18n="hero_headline">The stories that move markets — before they move prices.</h1>
-    <p class="hero-subtitle" data-i18n="hero_subtitle">Track capital flows, trade the contradictions, and follow the money through 5 intelligence layers — from institutional positioning to verifiable bets.</p>
+    <p class="hero-subtitle">
+      <span data-i18n="hero_subtitle_p1">Track capital flows, trade the contradictions, and follow the money through</span>
+      <span id="heroLayerCount">5</span>
+      <span data-i18n="hero_subtitle_p2">intelligence layers — from institutional positioning to verifiable bets.</span>
+    </p>
     <div class="hero-cta">
       <button class="hero-btn" onclick="document.getElementById('storiesContainer').classList.add('expanded');document.getElementById('storiesContainer').scrollIntoView({behavior:'smooth'})" data-i18n="hero_cta">Read today's stories →</button>
       <a href="https://t.me/GazzettaDiKyiv" class="hero-link">Telegram</a>
