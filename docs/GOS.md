@@ -61,6 +61,7 @@ gazzetta-di-kyiv/
 │   ├── GOS.md               # This document
 │   ├── strategy.md          # Strategy framework
 │   ├── process-registry.md  # All processes catalogued
+│   ├── architecture/        # Site architecture docs (site-map, components, CSS tokens, data schemas, pipeline, cron) ← NEW
 │   ├── execution-framework.md
 │   ├── monitoring.md
 │   ├── governance.md

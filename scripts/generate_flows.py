@@ -171,14 +171,17 @@ def extract_from_capital_flow_dict(cf, story, story_id):
     direction_raw = cf.get("direction", "")
     direction = normalize_direction(direction_raw)
 
-    # Amount: try amount_b first, then parse amount string
+    # Amount: parse amount string first (overrides hardcoded 5.0 default)
+    amt_str = cf.get("amount", "")
+    parsed_b, _ = parse_amount(amt_str) if amt_str else (0, "")
     amount_b = cf.get("amount_b", 0)
-    if not amount_b:
-        amt_str = cf.get("amount", "")
-        amount_b, _ = parse_amount(amt_str)
-
-    # Fallback: parse from claim
-    if amount_b == 0:
+    # If parsed value is real and differs from hardcoded, use parsed
+    if parsed_b > 0 and (amount_b == 0 or amount_b == 5.0):
+        amount_b = parsed_b
+    elif not amount_b and parsed_b > 0:
+        amount_b = parsed_b
+    elif not amount_b:
+        # Fallback: parse from claim
         claim = cf.get("claim", "")
         amount_b, _ = parse_amount(claim)
 
@@ -192,18 +195,18 @@ def extract_from_capital_flow_dict(cf, story, story_id):
     raw_positioning = cf.get("positioning", "")
     derived_pos = derive_positioning(direction, amount_b)
 
-    # Headline / claim
+    # Headline / claim — v22.17: always compact arrow format ($XB ↑/↓ asset_class)
     claim = cf.get("claim", "")
     headline = cf.get("headline", "") or cf.get("title", "")
     if not headline and claim:
-        # Truncate at word boundary — never cut mid-word
-        raw = claim[:200] if len(claim) > 120 else claim
-        if len(raw) > 120:
-            cut = raw[:120].rstrip()
-            last_space = cut.rfind(' ')
-            headline = cut[:last_space] if last_space > 80 else cut
+        # Only pass through if claim is in compact arrow format ($XB ↑/↓ class)
+        if claim.strip().startswith('$') and ('↑' in claim or '↓' in claim or '↑' in claim or '↓' in claim):
+            headline = claim[:120]
         else:
-            headline = raw
+            # Generate compact arrow format
+            arrow = "↑" if direction == "inflow" else "↓"
+            ac = simplify_asset_class(cf.get("asset_class", ""), story_id)
+            headline = f"${amount_b:.1f}B {arrow} {ac}"
 
     # Asset class — simplify compound values
     asset_class = simplify_asset_class(cf.get("asset_class", ""), story_id)
@@ -235,8 +238,9 @@ def extract_from_capital_flow_dict(cf, story, story_id):
 
     flow_id = f"flow_{story_id}"
 
-    # Position text: use the raw positioning from the story or derived keyword
-    pos_text = raw_positioning if raw_positioning else derived_pos
+    # Position text: use raw only if short (<40 chars). Else use derived keyword.
+    # Long strings are trade lists, not positioning tags. (v22.16)
+    pos_text = raw_positioning if (raw_positioning and len(raw_positioning) < 40) else derived_pos
 
     return {
         "id": flow_id,
@@ -268,11 +272,11 @@ def extract_from_implication(text, story, story_id):
     positioning = derive_positioning(direction, amount_b)
     pace_mult = extract_pace(text)
 
-    # Headline: compact format
+    # Headline: compact arrow format
     asset_class = story.get("capital_flow", {}).get("asset_class", "equities") if isinstance(story.get("capital_flow"), dict) else "equities"
     asset_class = simplify_asset_class(asset_class, story_id)
-    dir_word = "into" if direction == "inflow" else "out of"
-    headline = f"${amount_b:.1f}B flowing {dir_word} {asset_class}"
+    arrow = "↑" if direction == "inflow" else "↓"
+    headline = f"${amount_b:.1f}B {arrow} {asset_class}"
 
     contradiction = story.get("contradiction_score", 0)
     contr_bonus = 5 if contradiction > 0 else 0
@@ -323,13 +327,15 @@ def simplify_asset_class(raw, story_id=""):
         return "equities"
 
     r = raw.lower()
-    # Order matters: defense/energy before commodities
+    # Order matters: check most specific first
+    if any(kw in r for kw in ["crypto", "blockchain", "bitcoin", "stablecoin"]):
+        return "crypto"
     if any(kw in r for kw in ["defense", "energy", "oil", "gas", "ttf", "crude", "brent", "wti"]):
         return "defense"
-    if any(kw in r for kw in ["tech", "space", "fusion", "ai", "crypto", "blockchain"]):
-        return "tech"
-    if any(kw in r for kw in ["gold", "bond", "treasury", "fixed income"]):
+    if any(kw in r for kw in ["commodities", "gold", "bond", "treasury", "fixed income"]):
         return "commodities"
+    if any(kw in r for kw in ["tech", "space", "fusion", "ai"]):
+        return "tech"
     return "equities"
 
 
@@ -372,6 +378,34 @@ def derive_anchor_symbol(story_id, asset_class, story):
     return story_overrides.get(story_id, default_map.get(asset_class, "SPX"))
 
 
+
+def categorize_flow_source(story):
+    """v22.18: Derive flow source categories from story content."""
+    SOURCE_PATTERNS = {
+        'government': ['fed', 'central bank', 'treasury', 'pboc', 'ecb', 'boj', 'sovereign', 'government', 'white house', 'congress', 'ministry', 'regulator', 'sec', 'cftc', 'fomc'],
+        'institutional': ['pension', 'endowment', 'sovereign wealth', 'swf', 'blackrock', 'vanguard', 'statestreet', 'fidelity', 'institutional'],
+        'corporate': ['corporate', 'buyback', 'treasury stock', 'ipo', 'spac', 'merger', 'acquisition'],
+        'banking': ['bank', 'jpmorgan', 'goldman', 'morgan stanley', 'citi', 'deutsche', 'barclays', 'hsbc', 'credit'],
+        'insurance': ['insurance', 'reinsurance', 'annuity', 'allianz', 'axa'],
+        'funds': ['hedge fund', 'mutual fund', 'etf', 'private equity', 'venture capital', 'vc ', 'pe firm', 'family office'],
+        'retail': ['retail', '401k', 'ira', 'robinhood', 'individual investor', 'household'],
+        'foreign': ['foreign', 'cross-border', 'offshore', 'china', 'european', 'middle east', 'sovereign'],
+    }
+    text = ' '.join([
+        str(story.get('headline', '')),
+        str(story.get('thesis', '')),
+        str(story.get('reality', '')),
+        str(story.get('they_say', '')),
+        str(story.get('capital_flow', {}).get('claim', '')),
+    ]).lower()
+    
+    sources = []
+    for category, keywords in SOURCE_PATTERNS.items():
+        if any(kw in text for kw in keywords):
+            sources.append(category)
+    
+    return sources if sources else ['undetermined']
+
 def main():
     # Load stories
     data = json.loads(DATA_SOURCE.read_text())
@@ -385,6 +419,8 @@ def main():
     for story in stories:
         flow = extract_flow_from_story(story)
         if flow and flow["amount_b"] >= 0.01:  # Quality filter: min $10M
+            # v22.18: Categorize flow sources from story content
+            flow["flow_sources"] = categorize_flow_source(story)
             flows.append(flow)
 
     # Quality sort: rich headlines first, then by amount descending
@@ -393,8 +429,20 @@ def main():
         f["amount_b"]
     ), reverse=True)
 
-    # Cap at 12
-    flows = flows[:12]
+    # Cap at 12 with amount diversity gate: no more than 4 flows with identical amount_b
+    MAX_SAME_AMOUNT = 4
+    amount_counts = Counter()
+    diverse_flows = []
+    for flow in flows:
+        amt = flow["amount_b"]
+        if amount_counts[amt] >= MAX_SAME_AMOUNT:
+            continue  # Skip — this amount bucket is full
+        amount_counts[amt] += 1
+        diverse_flows.append(flow)
+        if len(diverse_flows) >= 12:
+            break
+
+    flows = diverse_flows
 
     # Stats
     inflows = sum(1 for f in flows if f["direction"] == "inflow")
@@ -415,7 +463,7 @@ def main():
         "update_frequency": "60m",
         "summary": f"{inflows} inflows · {outflows} outflows",
         "aggregate_confidence": agg_conf,
-        "aggregate_confidence_label": "Flow confidence",
+        "aggregate_confidence_label": "Outlook",
         "aggregate_direction": agg_direction,
         "total_flows_tracked": len(flows),
         "flows": flows,

@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-06-06T22:00:00+03:00",
+  "stories": {
+    "count": 18,
+    "top_contradiction": 72,
+    "lead_headline": "US Bombs Iranian Radar Sites After Kuwait Airport Strike"
+  },
+  "flows": {
+    "direction": "bullish",
+    "total_b": 219.5,
+    "inflows": 11,
+    "outflows": 1,
+    "confidence": 85
+  },
+  "trades": {
+    "pdr": 1.7,
+    "open_count": 13,
+    "top_tickers": [
+      "SPX",
+      "NVDA",
+      "BRENT"
+    ]
+  },
+  "signal": {
+    "count": 5,
+    "max_conviction": 3,
+    "highest_score": 79
+  },
+  "track": {
+    "win_rate": 68,
+    "total_trades": 47,
+    "avg_return": 2.3
+  }
+}

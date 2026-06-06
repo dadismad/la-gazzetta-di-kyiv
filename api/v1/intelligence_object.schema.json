@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IntelligenceObject",
+  "type": "object",
+  "required": [
+    "id",
+    "event",
+    "narrative_primary",
+    "scenarios",
+    "retail_setups",
+    "invalidations",
+    "confidence",
+    "citations",
+    "updated_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "event": {
+      "type": "string"
+    },
+    "narrative_primary": {
+      "type": "string"
+    },
+    "narrative_hidden": {
+      "type": "string"
+    },
+    "beneficiaries": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "losers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cross_asset_impacts": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "scenarios": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "probability"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "probability": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          }
+        }
+      }
+    },
+    "retail_setups": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "invalidations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "citations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  }
+}

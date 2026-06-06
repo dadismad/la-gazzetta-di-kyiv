@@ -1,104 +1,14 @@
 {
-  "generated_at": "2026-06-06T19:22:20+03:00",
+  "generated_at": "2026-06-06T23:58:06+03:00",
   "generated_by": "generate_flows.py",
-  "next_update": "2026-06-06T20:22:20+03:00",
+  "next_update": "2026-06-07T00:58:06+03:00",
   "update_frequency": "60m",
   "summary": "11 inflows \u00b7 1 outflows",
-  "aggregate_confidence": 82,
-  "aggregate_confidence_label": "Flow confidence",
+  "aggregate_confidence": 85,
+  "aggregate_confidence_label": "Outlook",
   "aggregate_direction": "bullish",
   "total_flows_tracked": 12,
   "flows": [
-    {
-      "id": "flow_n21_abundance__space_etf_mainstream",
-      "headline": "Institutional capital is rotating into space economy ETFs ahead of the SpaceX IPO, creating a structural bid that is",
-      "amount_b": 5.0,
-      "projected": "Space ETF AUM could reach $10B by end of 2026 if SpaceX IPO materializes; space index re-rating of +20-30% in 6 months",
-      "pace_multiplier": 1.0,
-      "direction": "inflow",
-      "positioning": "long WARP, UFO, ROKT; long SpaceX pre-IPO vehicles (DST Global, Fidelity); long PLD Space and Rocket Lab on European/NASA contract catalysts",
-      "asset_class": "tech",
-      "anchor_symbol": "SPX",
-      "story_id": "n21_abundance__space_etf_mainstream",
-      "confidence_pct": 80,
-      "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+0"
-    },
-    {
-      "id": "flow_n21_multi__lebanon_ceasefire_dead_oman_oil",
-      "headline": "Capital rotates out of risk assets into energy and defense as a second Middle East conflict theater (Lebanon)",
-      "amount_b": 5.0,
-      "projected": "WTI $78\u2192$83-85, Brent $82\u2192$87-89, defense stocks +3-5%, VIX +10-15%, Israeli shekel -1.5-2.5%",
-      "pace_multiplier": 1.0,
-      "direction": "inflow",
-      "positioning": "long WTI crude futures/ETFs, long US defense primes, long VIX, short ILS",
-      "asset_class": "defense",
-      "anchor_symbol": "BRENT",
-      "story_id": "n21_multi__lebanon_ceasefire_dead_oman_oil",
-      "confidence_pct": 80,
-      "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+0"
-    },
-    {
-      "id": "flow_n21_ai__trump_whitehouse_ai_summit_warsh",
-      "headline": "The White House AI summit + Warsh rate cut signal will trigger one of the largest mean-reversion flows in tech",
-      "amount_b": 5.0,
-      "projected": "NVDA +6-10%, QQQ from -3% to +0-2% (3-5% swing), BTC $60K\u2192$63-66K, DXY -0.8-1.2%",
-      "pace_multiplier": 1.0,
-      "direction": "inflow",
-      "positioning": "long NVDA, PLTR, MSTR, QQQ; long BTC spot; short DXY",
-      "asset_class": "tech",
-      "anchor_symbol": "NVDA",
-      "story_id": "n21_ai__trump_whitehouse_ai_summit_warsh",
-      "confidence_pct": 80,
-      "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+0"
-    },
-    {
-      "id": "flow_n21_multi__us_iran_overnight_strikes",
-      "headline": "Capital rotates out of risk assets into crude oil, volatility, and gold as US-Iran conflict escalates from contained",
-      "amount_b": 5.0,
-      "projected": "WTI $78\u2192$83-86 (+6-10%), VIX +10-15%, gold +2-3%, SPX -2-3% at Monday open, Brent $82\u2192$88-91",
-      "pace_multiplier": 1.0,
-      "direction": "inflow",
-      "positioning": "long WTI crude futures, long VIX, long gold (GLD), long USO calls, short SPY",
-      "asset_class": "defense",
-      "anchor_symbol": "BRENT",
-      "story_id": "n21_multi__us_iran_overnight_strikes",
-      "confidence_pct": 80,
-      "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+0"
-    },
-    {
-      "id": "flow_n21_multi__ukraine_300_drone_wave",
-      "headline": "Capital rotates out of risk assets and into non-sovereign stores of value (BTC) and defense equities as the largest",
-      "amount_b": 5.0,
-      "projected": "BTC +3-5% weekend bounce from 61.3K to 63-65K on escalation panic; VIX +8-12% Monday open; European defense stocks +2-4%",
-      "pace_multiplier": 1.0,
-      "direction": "inflow",
-      "positioning": "long BTC spot, long VIX, long European defense (Rheinmetall, Thales, SAAB), short wheat on spike",
-      "asset_class": "defense",
-      "anchor_symbol": "NVDA",
-      "story_id": "n21_multi__ukraine_300_drone_wave",
-      "confidence_pct": 80,
-      "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+0"
-    },
-    {
-      "id": "flow_n21_china__chip_boom_property_crisis",
-      "headline": "Capital rotates out of China-exposed equities (H-shares, property bank exposure) into India trade-diversion plays and",
-      "amount_b": 5.0,
-      "projected": "FXI -3-5% over 2 weeks, INDA +2-4%, gold +1-2% on Chinese household rotation, China bank equities -5-8% if developer defaults accelerate",
-      "pace_multiplier": 1.0,
-      "direction": "inflow",
-      "positioning": "short FXI, long INDA, long GLD, short China bank exposure",
-      "asset_class": "equities",
-      "anchor_symbol": "GOLD",
-      "story_id": "n21_china__chip_boom_property_crisis",
-      "confidence_pct": 80,
-      "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+0"
-    },
     {
       "id": "flow_n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai__i",
       "headline": "$80.0B \u2191 equities",
@@ -112,7 +22,11 @@
       "story_id": "n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai__i",
       "confidence_pct": 85,
       "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5"
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "government",
+        "corporate"
+      ]
     },
     {
       "id": "flow_n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai",
@@ -127,7 +41,32 @@
       "story_id": "n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai",
       "confidence_pct": 85,
       "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5"
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "government",
+        "corporate"
+      ]
+    },
+    {
+      "id": "flow_n21_abundance__space_etf_mainstream",
+      "headline": "$15.0B \u2191 tech",
+      "amount_b": 15.0,
+      "projected": "Space ETF AUM could reach $10B by end of 2026 if SpaceX IPO materializes; space index re-rating of +20-30% in 6 months",
+      "pace_multiplier": 1.0,
+      "direction": "inflow",
+      "positioning": "accumulating",
+      "asset_class": "tech",
+      "anchor_symbol": "SPX",
+      "story_id": "n21_abundance__space_etf_mainstream",
+      "confidence_pct": 85,
+      "confidence_level": "high",
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "institutional",
+        "corporate",
+        "funds",
+        "retail"
+      ]
     },
     {
       "id": "flow_n21_blockchain_agentic__bitcoin_free_fall__saylor_liquidates_etfs_bleed_200-week",
@@ -137,12 +76,38 @@
       "pace_multiplier": 1.0,
       "direction": "outflow",
       "positioning": "distributing",
-      "asset_class": "tech",
-      "anchor_symbol": "NVDA",
+      "asset_class": "crypto",
+      "anchor_symbol": "BTC",
       "story_id": "n21_blockchain_agentic__bitcoin_free_fall__saylor_liquidates_etfs_bleed_200-week",
       "confidence_pct": 83,
       "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > distributing+8 > med-contradiction+5"
+      "confidence_trace": "large-flow+15 > normal-pace+5 > distributing+8 > med-contradiction+5",
+      "flow_sources": [
+        "government",
+        "banking",
+        "funds"
+      ]
+    },
+    {
+      "id": "flow_n21_multi__us_iran_overnight_strikes",
+      "headline": "$10.0B \u2191 defense",
+      "amount_b": 10.0,
+      "projected": "WTI $78\u2192$83-86 (+6-10%), VIX +10-15%, gold +2-3%, SPX -2-3% at Monday open, Brent $82\u2192$88-91",
+      "pace_multiplier": 1.0,
+      "direction": "inflow",
+      "positioning": "accumulating",
+      "asset_class": "defense",
+      "anchor_symbol": "BRENT",
+      "story_id": "n21_multi__us_iran_overnight_strikes",
+      "confidence_pct": 85,
+      "confidence_level": "high",
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "government",
+        "corporate",
+        "banking",
+        "retail"
+      ]
     },
     {
       "id": "flow_n21_abundance_tech__spacex_ipo_demand_2x_supply__75b_offering_oversibscribed",
@@ -157,22 +122,48 @@
       "story_id": "n21_abundance_tech__spacex_ipo_demand_2x_supply__75b_offering_oversibscribed",
       "confidence_pct": 85,
       "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5"
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "institutional",
+        "corporate",
+        "retail"
+      ]
     },
     {
-      "id": "flow_n21_china_ascendancy__zcash_soundness_bug_researcher_now_targets_monero__xmr_-10",
-      "headline": "$5.0B \u2191 crypto",
-      "amount_b": 5.0,
-      "projected": "Short XMR is the trade with 2-5x asymmetric upside. XMR market cap ~$3B. If the researcher finds a soundness bug \u2014 and given Zcash had one,",
+      "id": "flow_n21_ai__trump_whitehouse_ai_summit_warsh",
+      "headline": "$6.5B \u2191 tech",
+      "amount_b": 6.5,
+      "projected": "NVDA +6-10%, QQQ from -3% to +0-2% (3-5% swing), BTC $60K\u2192$63-66K, DXY -0.8-1.2%",
       "pace_multiplier": 1.0,
       "direction": "inflow",
       "positioning": "accumulating",
       "asset_class": "tech",
       "anchor_symbol": "NVDA",
-      "story_id": "n21_china_ascendancy__zcash_soundness_bug_researcher_now_targets_monero__xmr_-10",
+      "story_id": "n21_ai__trump_whitehouse_ai_summit_warsh",
       "confidence_pct": 85,
       "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5"
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "government"
+      ]
+    },
+    {
+      "id": "flow_n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles__regional_war",
+      "headline": "$5.0B \u2191 commodities",
+      "amount_b": 5.0,
+      "projected": "Oil is the highest-conviction 48h play. Kuwait being directly struck changes the calculus entirely. At Sunday futures open, oil could gap +$10-15/bbl.",
+      "pace_multiplier": 1.0,
+      "direction": "inflow",
+      "positioning": "accumulating",
+      "asset_class": "commodities",
+      "anchor_symbol": "BRENT",
+      "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles__regional_war",
+      "confidence_pct": 85,
+      "confidence_level": "high",
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "retail"
+      ]
     },
     {
       "id": "flow_n21_china_ascendancy__zcash_soundness_researcher_now_audits_monero__xmr_intraday",
@@ -182,12 +173,71 @@
       "pace_multiplier": 1.0,
       "direction": "inflow",
       "positioning": "accumulating",
-      "asset_class": "tech",
-      "anchor_symbol": "NVDA",
+      "asset_class": "crypto",
+      "anchor_symbol": "BTC",
       "story_id": "n21_china_ascendancy__zcash_soundness_researcher_now_audits_monero__xmr_intraday",
       "confidence_pct": 85,
       "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5"
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "undetermined"
+      ]
+    },
+    {
+      "id": "flow_n21_china_ascendancy__zcash_soundness_bug_researcher_now_targets_monero__xmr_-10",
+      "headline": "$5.0B \u2191 crypto",
+      "amount_b": 5.0,
+      "projected": "Short XMR is the trade with 2-5x asymmetric upside. XMR market cap ~$3B. If the researcher finds a soundness bug \u2014 and given Zcash had one,",
+      "pace_multiplier": 1.0,
+      "direction": "inflow",
+      "positioning": "accumulating",
+      "asset_class": "crypto",
+      "anchor_symbol": "BTC",
+      "story_id": "n21_china_ascendancy__zcash_soundness_bug_researcher_now_targets_monero__xmr_-10",
+      "confidence_pct": 85,
+      "confidence_level": "high",
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "undetermined"
+      ]
+    },
+    {
+      "id": "flow_n21_china_ascendancy__zcash_soundness_bug_researcher_now_audits_monero__xmr_-10",
+      "headline": "$5.0B \u2191 crypto",
+      "amount_b": 5.0,
+      "projected": "Short XMR has 2-5x asymmetric downside. XMR market cap ~$3B. If the researcher finds a soundness bug \u2014 and given Zcash had one, the probability is non-trivial \u2014 XMR could drop 50-80% in hours.",
+      "pace_multiplier": 1.0,
+      "direction": "inflow",
+      "positioning": "accumulating",
+      "asset_class": "crypto",
+      "anchor_symbol": "BTC",
+      "story_id": "n21_china_ascendancy__zcash_soundness_bug_researcher_now_audits_monero__xmr_-10",
+      "confidence_pct": 85,
+      "confidence_level": "high",
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "undetermined"
+      ]
+    },
+    {
+      "id": "flow_n21_multi__lebanon_ceasefire_dead_oman_oil",
+      "headline": "$4.0B \u2191 defense",
+      "amount_b": 4.0,
+      "projected": "WTI $78\u2192$83-85, Brent $82\u2192$87-89, defense stocks +3-5%, VIX +10-15%, Israeli shekel -1.5-2.5%",
+      "pace_multiplier": 1.0,
+      "direction": "inflow",
+      "positioning": "accumulating",
+      "asset_class": "defense",
+      "anchor_symbol": "BRENT",
+      "story_id": "n21_multi__lebanon_ceasefire_dead_oman_oil",
+      "confidence_pct": 82,
+      "confidence_level": "high",
+      "confidence_trace": "med-flow+12 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "government",
+        "retail",
+        "foreign"
+      ]
     }
   ],
   "methodology": "Flows sourced from EPFR Global, Morningstar Direct, and internal aggregation. Velocity measured vs 4-week rolling average. Confidence computed via 4-factor model. Updated hourly.",

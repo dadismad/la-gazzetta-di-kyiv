@@ -3,13 +3,40 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>La Gazzetta di Kyiv</title>
-  <meta name="description" content="Contradiction-first narrative intelligence. The stories that move markets."/>
+  <title>La Gazzetta di Kyiv — Capital Flow Intelligence</title>
+  <meta name="description" content="Track capital flows, trade contradictions, and follow the money through 5 intelligence products."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css?v=22.16"/>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='2' fill='%23111827'/><text x='16' y='24' text-anchor='middle' font-size='22' font-weight='bold' font-family='Georgia,serif' fill='%23D4AF37'>G</text></svg>"/>
+
+  <link rel="canonical" href="https://www.lagazzettadikyiv.com/"/>
+  <link rel="alternate" hreflang="en" href="https://www.lagazzettadikyiv.com/"/>
+  <link rel="alternate" hreflang="ru" href="https://www.lagazzettadikyiv.com/ru/"/>
+  <link rel="alternate" hreflang="x-default" href="https://www.lagazzettadikyiv.com/"/>
+  <meta property="og:title" content="La Gazzetta di Kyiv — Capital Flow Intelligence"/>
+  <meta property="og:description" content="Track capital flows, trade contradictions, and follow the money through 5 intelligence products."/>
+  <meta property="og:url" content="https://www.lagazzettadikyiv.com/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="La Gazzetta di Kyiv"/>
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="La Gazzetta di Kyiv — Capital Flow Intelligence"/>
+  <meta name="twitter:description" content="Track capital flows, trade contradictions, and follow the money through 5 intelligence products."/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "La Gazzetta di Kyiv",
+    "url": "https://www.lagazzettadikyiv.com/",
+    "description": "Contradiction-first narrative intelligence. Capital flow analysis, trade ideas, and verifiable predictions.",
+    "sameAs": [
+      "https://t.me/GazzettaDiKyiv",
+      "https://www.reddit.com/r/LaGazzettadiKyiv/"
+    ]
+  }
+  </script>
+
 </head>
 <body>
 
@@ -96,47 +123,72 @@
 </section>
 
 <main class="hints-lobby">
-  <div class="hint-cards">
-    <a href="./stories.html" class="hint-card">
-      <span class="hint-card-title">Stories</span>
-      <span class="hint-card-value" id="hintStoriesCount">—</span>
-      <span class="hint-card-sub">Narrative intelligence decoded. Each story: who benefits, who loses, what the money already priced in.</span>
-      <span class="hint-card-stat" id="hintStoriesLatest"></span>
-      <span class="hint-card-arrow">&rarr;</span>
-    </a>
+  <!-- v22.20: Collapsible product sections — headlines only, full content on dedicated pages -->
 
-    <a href="./flows.html" class="hint-card">
-      <span class="hint-card-title">Flows</span>
-      <span class="hint-card-value" id="hintFlowsAmount">—</span>
-      <span class="hint-card-sub">Institutional capital flows with directional conviction, velocity, and projected movement.</span>
-      <span class="hint-card-stat" id="hintFlowsDirection"></span>
-      <span class="hint-card-arrow">&rarr;</span>
-    </a>
+  <section class="container collapsible expanded" id="storiesTeaser">
+    <div class="container-header" onclick="this.parentElement.classList.toggle('expanded')">
+      <span class="container-title">Stories</span>
+      <span class="container-count" id="teaserStoryCount">—</span>
+      <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+    </div>
+    <div class="container-desc">Narrative intelligence decoded — who benefits, who loses, what the money already priced in.</div>
+    <div class="container-body" id="storiesTeaserBody">
+      <div id="storiesTeaserContent" class="teaser-list"></div>
+      <a href="./stories.html" class="teaser-full-link">All stories →</a>
+    </div>
+  </section>
 
-    <a href="./trades.html" class="hint-card">
-      <span class="hint-card-title">Trades</span>
-      <span class="hint-card-value" id="hintTradesCount">—</span>
-      <span class="hint-card-sub">Active trade ideas with entry zones, stop levels, and conviction from flow + narrative data.</span>
-      <span class="hint-card-stat" id="hintTradesTop"></span>
-      <span class="hint-card-arrow">&rarr;</span>
-    </a>
+  <section class="container collapsible" id="flowsTeaser">
+    <div class="container-header" onclick="this.parentElement.classList.toggle('expanded')">
+      <span class="container-title">Capital Flows</span>
+      <span class="container-subtitle" id="teaserFlowSub">—</span>
+      <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+    </div>
+    <div class="container-desc">Where the smart money is going — directional conviction, velocity, projected movement.</div>
+    <div class="container-body" id="flowsTeaserBody">
+      <div id="flowsTeaserContent" class="teaser-list"></div>
+      <a href="./flows.html" class="teaser-full-link">Full flow dashboard →</a>
+    </div>
+  </section>
 
-    <a href="./signal.html" class="hint-card">
-      <span class="hint-card-title">Signal</span>
-      <span class="hint-card-value" id="hintSignalScore">—</span>
-      <span class="hint-card-sub">Triangulation: where stories, flows, and trades converge — or diverge. Divergence IS the edge.</span>
-      <span class="hint-card-stat" id="hintSignalDetail"></span>
-      <span class="hint-card-arrow">&rarr;</span>
-    </a>
+  <section class="container collapsible" id="tradesTeaser">
+    <div class="container-header" onclick="this.parentElement.classList.toggle('expanded')">
+      <span class="container-title">Trade Ideas</span>
+      <span class="container-subtitle" id="teaserTradeSub">—</span>
+      <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+    </div>
+    <div class="container-desc">Positions derived from flows and narrative intelligence — entry zones, stop levels, conviction.</div>
+    <div class="container-body" id="tradesTeaserBody">
+      <div id="tradesTeaserContent" class="teaser-list"></div>
+      <a href="./trades.html" class="teaser-full-link">All trade ideas →</a>
+    </div>
+  </section>
 
-    <a href="./track.html" class="hint-card">
-      <span class="hint-card-title">Track Record</span>
-      <span class="hint-card-value" id="hintTrackRate">—</span>
-      <span class="hint-card-sub">Verifiable prediction performance. Every bet placed, every outcome recorded — no cherry-picking.</span>
-      <span class="hint-card-stat" id="hintTrackTotal"></span>
-      <span class="hint-card-arrow">&rarr;</span>
-    </a>
-  </div>
+  <section class="container collapsible" id="signalTeaser">
+    <div class="container-header" onclick="this.parentElement.classList.toggle('expanded')">
+      <span class="container-title">The Signal</span>
+      <span class="container-subtitle" id="teaserSignalSub">—</span>
+      <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+    </div>
+    <div class="container-desc">Triangulation — stories × flows × trades. Divergence is the edge.</div>
+    <div class="container-body" id="signalTeaserBody">
+      <div id="signalTeaserContent" class="teaser-list"></div>
+      <a href="./signal.html" class="teaser-full-link">Full signal dashboard →</a>
+    </div>
+  </section>
+
+  <section class="container collapsible" id="trackTeaser">
+    <div class="container-header" onclick="this.parentElement.classList.toggle('expanded')">
+      <span class="container-title">Track Record</span>
+      <span class="container-subtitle" id="teaserTrackSub">—</span>
+      <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+    </div>
+    <div class="container-desc">Verifiable bets — every prediction, every outcome, no cherry-picking.</div>
+    <div class="container-body" id="trackTeaserBody">
+      <div id="trackTeaserContent" class="teaser-list"></div>
+      <a href="./track.html" class="teaser-full-link">Full track record →</a>
+    </div>
+  </section>
 </main>
 <footer class="footer">
   <a href="./about.html">About</a>

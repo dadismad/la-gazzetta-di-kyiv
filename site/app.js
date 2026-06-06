@@ -677,12 +677,10 @@ function statusDotClass(status) {
 function determineSeverity(story) {
   const cf = story.capital_flow;
   // CRITICAL: capital_flow with large amount (>$3B) or pace >2x
+  // v22.19: Read amount_b and pace_multiplier directly (pipeline writes these, not amount/denomination/pace strings)
   if (cf) {
-    const amt = parseFloat(cf.amount) || 0;
-    const denom = (cf.denomination || '').toUpperCase();
-    const pace = (cf.pace || '');
-    const paceNum = parseFloat(pace.match(/^(\d+\.?\d*)x/)?.[1] || '0');
-    const amountInB = denom === 'B' ? amt : denom === 'M' ? amt / 1000 : 0;
+    const amountInB = cf.amount_b || 0;
+    const paceNum = cf.pace_multiplier || 1;
     if (amountInB > 3 || paceNum > 2) {
       return 'critical';
     }
@@ -1546,10 +1544,7 @@ async function boot() {
   }
 
   // v22.18: Product page detection — only render what exists on this page
-  const isProductPage = !!(
-    document.querySelector('.product-page') ||
-    (document.querySelector('#newsCol') && !document.querySelector('#flowsList') && !document.querySelector('#anchorGrid'))
-  );
+  const isProductPage = !!document.querySelector('.product-page');
   
   // Wire collapsible containers first (if any)
   wireCollapsibleContainers();
@@ -1557,15 +1552,15 @@ async function boot() {
   // Wire card click delegation (one listener on newsCol for all cards)
   wireCardDelegation();
 
-  // Render static content (non-story containers)
-  renderAnchor();
-  renderTrackRecord('trackRecord');
+  // Render static content — only if containers exist on this page
+  if (byId('anchorGrid')) renderAnchor();
+  if (byId('trackRecord')) renderTrackRecord('trackRecord');
 
   // Set masthead timestamp IMMEDIATELY (don't wait for async ops)
   updateMasthead();
 
-  // Fetch flows FIRST (they feed stats and container content)
-  await fetchFlows();
+  // Fetch flows — only if flows container exists
+  if (byId('flowsList')) await fetchFlows();
 
   // Start flows polling (5 min cadence)
   setInterval(fetchFlows, FLOWS_POLL_INTERVAL);
@@ -1676,8 +1671,122 @@ async function boot() {
       })
       .catch(() => {}); // Silent fail — cards show dashes
   }
+  // v22.18: Mobile hint condensation — shorten subtitles on small screens
+  if (window.innerWidth < 600 && document.querySelector('.hints-lobby')) {
+    document.querySelectorAll('.hint-card-sub').forEach(el => {
+      const text = el.textContent;
+      // Condense to ~60 chars max
+      if (text.length > 60) {
+        el.textContent = text.slice(0, 57).trim() + '...';
+      }
+    });
+    // Smaller value font on mobile
+    document.querySelectorAll('.hint-card-value').forEach(el => {
+      el.style.fontSize = '20px';
+    });
+  }
+
 
 }
+
+// v22.20: Front-page teaser populator — headlines only, not full content
+async function populateTeasers() {
+  if (!document.querySelector('.teaser-list')) return;
+
+  // Stories teaser
+  try {
+    const storiesData = await getJSON(getDataPath(), null);
+    if (storiesData && storiesData.stories) {
+      const el = document.getElementById('storiesTeaserContent');
+      const countEl = document.getElementById('teaserStoryCount');
+      if (el) {
+        const items = [storiesData.lead, ...storiesData.stories].filter(Boolean).slice(0, 8);
+        el.innerHTML = items.map(s => {
+          const cf = s.capital_flow || {};
+          const amtHtml = cf.amount_b ? `<span class="teaser-amount">$${cf.amount_b}B</span>` : '';
+          const headline = (s.headline || '').slice(0, 80);
+          return `<a href="./story.html?id=${s.story_id || s.id || ''}" class="teaser-item">${amtHtml}${headline}</a>`;
+        }).join('');
+        if (countEl) countEl.textContent = items.length + ' stories';
+      }
+    }
+  } catch(e) {}
+
+  // Flows teaser
+  try {
+    const flowsData = await getJSON(getFlowsPath(), null);
+    if (flowsData && flowsData.flows) {
+      const el = document.getElementById('flowsTeaserContent');
+      const subEl = document.getElementById('teaserFlowSub');
+      if (el) {
+        const items = flowsData.flows.slice(0, 6);
+        el.innerHTML = items.map(f => {
+          const cls = f.direction === 'outflow' ? 'outflow' : '';
+          return `<a href="./flows.html" class="teaser-item"><span class="teaser-amount ${cls}">$${f.amount_b}B ${f.direction === 'inflow' ? '↑' : '↓'}</span>${f.asset_class} — ${(f.headline || '').replace(/^\$[\d.]+B\s*[↑↓]\s*/, '')}</a>`;
+        }).join('');
+        if (subEl) {
+          const inflows = flowsData.flows.filter(f => f.direction === 'inflow').length;
+          const outflows = flowsData.flows.filter(f => f.direction === 'outflow').length;
+          subEl.textContent = `${inflows} inflows · ${outflows} outflows · ${flowsData.aggregate_confidence}%`;
+        }
+      }
+    }
+  } catch(e) {}
+
+  // Trades teaser
+  try {
+    if (typeof ANCHOR_ASSETS !== 'undefined' && ANCHOR_ASSETS.length) {
+      const el = document.getElementById('tradesTeaserContent');
+      const subEl = document.getElementById('teaserTradeSub');
+      if (el) {
+        const items = ANCHOR_ASSETS.filter(a => a.bias !== 'WATCH').slice(0, 6);
+        el.innerHTML = items.map(a => {
+          const cls = a.bias === 'BUY' ? 'buy' : 'sell';
+          return `<a href="./trades.html" class="teaser-item">${a.symbol} <span class="teaser-ticker ${cls}">${a.bias} · ${a.conviction}</span> ${a.entry_low || a.entry}–${a.entry_high || a.target}</a>`;
+        }).join('');
+        if (subEl) subEl.textContent = `${ANCHOR_ASSETS.length} positions`;
+      }
+    }
+  } catch(e) {}
+
+  // Signal teaser
+  setTimeout(() => {
+    try {
+      const signalCards = document.querySelectorAll('#signalGrid .signal-card');
+      const el = document.getElementById('signalTeaserContent');
+      const subEl = document.getElementById('teaserSignalSub');
+      if (el && signalCards.length) {
+        el.innerHTML = Array.from(signalCards).slice(0, 4).map(c => {
+          const score = c.querySelector('.signal-score')?.textContent || '';
+          const name = c.querySelector('.signal-name')?.textContent || '';
+          return `<a href="./signal.html" class="teaser-item">${score} — ${name.slice(0, 60)}</a>`;
+        }).join('');
+        if (subEl) subEl.textContent = `${signalCards.length} signals`;
+      }
+    } catch(e) {}
+  }, 3000);
+
+  // Track teaser
+  try {
+    const trEl = document.getElementById('trackRecord');
+    const el = document.getElementById('trackTeaserContent');
+    const subEl = document.getElementById('teaserTrackSub');
+    if (el && trEl) {
+      const text = trEl.textContent || '';
+      el.innerHTML = `<span class="teaser-item">${text.slice(0, 120)}</span>`;
+      if (subEl) subEl.textContent = 'Performance summary';
+    }
+  } catch(e) {}
+
+  // Re-apply i18n
+  if (window.i18n && window.i18n.applyTranslations) window.i18n.applyTranslations();
+}
+
+// Call teasers after boot completes
+if (document.querySelector('.teaser-list')) {
+  setTimeout(populateTeasers, 1500);
+}
+
 
 // ── Delayed triangulation: retries if DOM not ready ──
 function scheduleTriangulation() {

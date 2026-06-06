@@ -1,9 +1,9 @@
 // Shared sector page logic — loads filtered setups + stories
 const API = {
-  regime: './api/v1/home/regime.json',
-  setups: './api/v1/home/setups.json',
-  contradictions: './api/v1/home/contradictions.json',
-  stories: './data/website_stories_latest.json',
+  regime: './data/flows.json',
+  setups: './data/stories.json',       // real data source
+  contradictions: './data/stories.json',
+  stories: './data/stories.json',      // real data source (was non-existent website_stories_latest.json)
 };
 
 async function getJSON(path, fallback) {
@@ -32,7 +32,7 @@ async function boot() {
     getJSON(API.stories, null),
   ]);
 
-  const setups = setupsData?.items || [];
+  const setups = setupsData?.stories || setupsData?.items || [];
   const filtered = setups.filter(matchesSector);
 
   const siteStories = storiesData?.stories || [];
