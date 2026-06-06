@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-06-06T12:32:11.016071+00:00",
+  "ceo_program": "active",
+  "overall_health_score": 110,
+  "summary": {
+    "groups": 5,
+    "best_practice_signals": [
+      "Clear ownership by process group",
+      "Scheduled oversight with fixed cadences",
+      "Objective health checks + machine-readable outputs",
+      "Separation of concerns: ingestion / analysis / publishing / governance",
+      "Closed-loop improvement recommendations"
+    ]
+  },
+  "checks": {
+    "design_compare": {
+      "ok": true,
+      "code": 0,
+      "out": "{\n  \"ok\": true,\n  \"file\": \"/Users/alexstocchi/projects/gazzetta-di-kyiv/data/design_compare.json\"\n}\n",
+      "err": ""
+    },
+    "pages_watchdog": {
+      "ok": true,
+      "code": 0,
+      "out": "{\"ok\": true, \"status\": \"healthy\", \"redeployed\": false}\n",
+      "err": ""
+    },
+    "pipeline_audit_file": {
+      "ok": true
+    },
+    "narratives_file": {
+      "ok": true
+    },
+    "site_index": {
+      "ok": true
+    }
+  },
+  "recommendations": [
+    "For new tasks outside known groups, create a new group-level overseer script before execution."
+  ],
+  "progress_view": {
+    "states": [
+      "running",
+      "partially_covered",
+      "needs_improvement"
+    ],
+    "problem_policy": "identify -> classify -> assign overseer -> verify twice/day"
+  }
+}

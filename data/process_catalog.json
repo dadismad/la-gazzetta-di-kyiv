@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-06-06T12:32:11.016071+00:00",
+  "objective": "Enterprise-grade autonomous narrative newsroom operations",
+  "groups": [
+    {
+      "group": "ingestion",
+      "description": "Collects and normalizes multi-source narrative signals.",
+      "programs": [
+        "social_umbrella_collector.py",
+        "gazzetta_source_strategy_update.py"
+      ],
+      "present": [],
+      "missing": [
+        "social_umbrella_collector.py",
+        "gazzetta_source_strategy_update.py"
+      ],
+      "coverage_pct": 0.0
+    },
+    {
+      "group": "analysis",
+      "description": "Computes narrative intelligence, QA, and rendering artifacts.",
+      "programs": [
+        "gazzetta_pipeline_audit.py",
+        "gazzetta_representation_research.py",
+        "build_site.py"
+      ],
+      "present": [
+        "gazzetta_pipeline_audit.py",
+        "build_site.py"
+      ],
+      "missing": [
+        "gazzetta_representation_research.py"
+      ],
+      "coverage_pct": 66.7
+    },
+    {
+      "group": "publishing",
+      "description": "Build/deploy delivery pipeline for public site updates.",
+      "programs": [
+        "gazzetta_phase2_publish.py",
+        "refresh-and-deploy.yml"
+      ],
+      "present": [],
+      "missing": [
+        "gazzetta_phase2_publish.py",
+        "refresh-and-deploy.yml"
+      ],
+      "coverage_pct": 0.0
+    },
+    {
+      "group": "governance",
+      "description": "Mandates, quality controls, and editorial constraints.",
+      "programs": [
+        "OPERATING_MANDATE.md",
+        "VARIANT_PROMPT.md"
+      ],
+      "present": [],
+      "missing": [
+        "OPERATING_MANDATE.md",
+        "VARIANT_PROMPT.md"
+      ],
+      "coverage_pct": 0.0
+    },
+    {
+      "group": "design_management",
+      "description": "Continuously validates UI against target editorial design heuristics.",
+      "programs": [
+        "design_compare.py",
+        "design_dev_runner.py"
+      ],
+      "present": [
+        "design_compare.py",
+        "design_dev_runner.py"
+      ],
+      "missing": [],
+      "coverage_pct": 100.0
+    }
+  ]
+}

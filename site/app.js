@@ -1,4 +1,4 @@
-// La Gazzetta di Kyiv v20.21 — Brighter masthead · Flows quality filter · Tension labels
+// La Gazzetta di Kyiv v20.22 — living_stories format compat · masthead from living data even on fallback
 const DATA = './data/stories.json';
 const LIVING_DATA = './data/living_stories.json';
 const FLOWS_DATA = './data/flows.json';
@@ -1557,8 +1557,10 @@ async function boot() {
   // Try data sources
   const livingData = await getJSON(LIVING_DATA, null);
 
+  // v20.22: living_stories.json now uses active_stories (no 'lead' key).
+  // If it has a legacy 'lead', render directly. Otherwise fall through to stories.json.
   if (livingData && livingData.lead) {
-    // Render with living stories format
+    // Render with living stories format (legacy)
     const leadId = livingData.lead?.story_id;
     const stories = (livingData.stories || []).filter(s => s.story_id !== leadId);
     const all = [livingData.lead, ...stories, ...(livingData.archived_stories || [])].filter(Boolean);
@@ -1579,6 +1581,11 @@ async function boot() {
     setInterval(pollLivingStories, POLL_INTERVAL);
     updateCumulativeStats();
     return;
+  }
+
+  // v20.22: Update masthead with living_stories timestamp even when using stories.json fallback
+  if (livingData && livingData.generated_at) {
+    updateMastheadLiving(livingData.generated_at, livingData.next_micro_update);
   }
 
   // Fallback: stories.json

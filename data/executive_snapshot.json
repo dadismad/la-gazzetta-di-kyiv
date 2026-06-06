@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-06-06T12:32:49.403121+00:00",
+  "completed": [],
+  "in_progress": [
+    {
+      "owner": "publishing",
+      "action": "maintain homepage retail quality and deploy continuity",
+      "eta": "ongoing",
+      "status": "in_progress"
+    },
+    {
+      "owner": "analysis",
+      "action": "refresh narratives and audit artifacts",
+      "eta": "<8h",
+      "status": "in_progress"
+    },
+    {
+      "owner": "governance",
+      "action": "monitor compliance and add group for truly new tasks",
+      "eta": "daily",
+      "status": "in_progress"
+    }
+  ],
+  "blocked": [],
+  "next_3_priorities": [
+    {
+      "owner": "publishing",
+      "action": "maintain homepage retail quality and deploy continuity",
+      "eta": "ongoing",
+      "status": "in_progress"
+    },
+    {
+      "owner": "analysis",
+      "action": "refresh narratives and audit artifacts",
+      "eta": "<8h",
+      "status": "in_progress"
+    },
+    {
+      "owner": "governance",
+      "action": "monitor compliance and add group for truly new tasks",
+      "eta": "daily",
+      "status": "in_progress"
+    }
+  ]
+}
