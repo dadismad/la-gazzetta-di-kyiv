@@ -1,5 +1,5 @@
 {
-  "scrape_time": "2026-06-06T21:12:41.382280+00:00",
+  "scrape_time": "2026-06-06T21:44:56.297031+00:00",
   "model": "deepseek-v4-flash",
   "horizon": "1-2 hours",
   "channels_monitored": [
@@ -11,12 +11,12 @@
     "@markettwits"
   ],
   "channel_status": {
-    "@trad_fin": "STALE — last post 1337 min ago (latest: 2026-06-05T22:54)",
-    "@MonitoringSituation": "ACTIVE — within last 2h (latest: 2026-06-06T19:41)",
+    "@trad_fin": "STALE — last post 1369 min ago (latest: 2026-06-05T22:54)",
+    "@MonitoringSituation": "STALE — last post 123 min ago (latest: 2026-06-06T19:41)",
     "@ASupersharij": "ACTIVE — within last 2h (latest: 2026-06-06T20:17)",
     "@infinityhedge": "DEAD — last post 3d ago (latest: 2026-06-03T09:29)",
-    "@ethanlevins": "ACTIVE — within last 2h (latest: 2026-06-06T20:28)",
-    "@markettwits": "HOT — within last 30min (latest: 2026-06-06T20:58)"
+    "@ethanlevins": "HOT — within last 30min (latest: 2026-06-06T21:15)",
+    "@markettwits": "ACTIVE — within last 2h (latest: 2026-06-06T20:58)"
   },
   "summary_stats": {
     "total_messages_scanned": 115,
@@ -60,8 +60,8 @@
     },
     {
       "id": "china-taiwan-maritime-20260606",
-      "title": "China Launches Maritime Enforcement Operation East of Taiwan — Fresh 14min ago",
-      "freshness": "14 minutes ago",
+      "title": "China Launches Maritime Enforcement Operation East of Taiwan — Fresh 46min ago",
+      "freshness": "46 minutes ago",
       "source_channels": [
         "@MonitoringSituation",
         "@markettwits"
@@ -121,7 +121,7 @@
     {
       "id": "israel-lebanon-ground-war-20260606",
       "title": "Israel-Lebanon Conflict Deepening — Full Occupation Publicly Discussed, IDF Taking Daily Casualties",
-      "freshness": "Latest 44min ago, active all day",
+      "freshness": "Latest 76min ago, active all day",
       "source_channels": [
         "@ethanlevins"
       ],
@@ -148,5 +148,5 @@
       "materiality_score": 7.0
     }
   ],
-  "meta_observation": "Sunday June 7, 21:12 UTC. Equity markets closed. Crypto (BTC 24/7) and CME futures (open Sunday evening) are the only liquid venues. Primary actionable themes: (1) China-Taiwan maritime operation — biggest potential Monday gap risk for semis/TSM. (2) Iran multi-front military posture — oil will react at CME Sunday open. (3) Ukraine St. Petersburg drone strike during PMEF — Gazzetta content gold, Russia budget bleeding. (4) Israel-Lebanon ground war — slow-burn accumulation, but daily IDF casualties + full occupation discussion is a ticking clock. BTC approaching 200-week MA ($57-58K) with Strategy selling — crypto narrative bearish but approaching technical levels where bottoms historically form."
+  "meta_observation": "Sunday June 7, 21:44 UTC. Equity markets closed. Crypto (BTC 24/7) and CME futures (open Sunday evening) are the only liquid venues. Primary actionable themes: (1) China-Taiwan maritime operation — biggest potential Monday gap risk for semis/TSM. (2) Iran multi-front military posture — oil will react at CME Sunday open. (3) Ukraine St. Petersburg drone strike during PMEF — Gazzetta content gold, Russia budget bleeding. (4) Israel-Lebanon ground war — slow-burn accumulation, but daily IDF casualties + full occupation discussion is a ticking clock. BTC approaching 200-week MA ($57-58K) with Strategy selling — crypto narrative bearish but approaching technical levels where bottoms historically form."
 }
