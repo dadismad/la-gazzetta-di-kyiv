@@ -134,7 +134,6 @@ function updateMasthead() {
     const time = now.toTimeString().slice(0,5);
     const date = `${now.getDate()}/${now.getMonth()+1}/${now.getFullYear().toString().slice(-2)}`;
     metaEl.textContent = `${date} · ${time} EET`;
-    metaEl.setAttribute('datetime', now.toISOString());
   }
 }
 
@@ -144,7 +143,6 @@ function updateMastheadLiving(generatedAt, nextMicroUpdate) {
   const time = generatedAt ? new Date(generatedAt).toTimeString().slice(0,5) + ' EET' : new Date().toTimeString().slice(0,5) + ' EET';
   const next = nextMicroUpdate ? `· next update ${new Date(nextMicroUpdate).toTimeString().slice(0,5)}` : '';
   metaEl.textContent = `${time} ${next}`;
-  if (generatedAt) metaEl.setAttribute('datetime', generatedAt);
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -218,7 +216,7 @@ const ANCHOR_CRYPTO = {
   fundingRate: { value: '-0.01%', regime: 'neutral', label: 'Aggregate Funding' },
 };
 
-const ANCHOR_PDR = { value: '1.7', regime: 'passive', regimeLabel: 'Passive Discovery', trend: '▁▃▅▆▇' };
+const ANCHOR_PDR = { value: '1.7', regime: 'passive', get regimeLabel() { return i18n.t('pdr_regime_passive','Passive Discovery'); }, trend: '▁▃▅▆▇' };
 
 function anchorRowHTML(a) {
   const pillClass = a.bias === 'BUY' ? 'anchor-pill buy' : a.bias === 'SELL' ? 'anchor-pill sell' : 'anchor-pill watch';
@@ -232,10 +230,10 @@ function anchorRowHTML(a) {
         <span class="asset-change ${a.dir}">${a.change}</span>
       </div>
       <div class="asset-trade">
-        <span class="${pillClass}">${a.bias}</span>
+        <span class="${pillClass}">${i18n.t(a.bias.toLowerCase(), a.bias)}</span>
         <span class="asset-zone">${a.entry} → ${a.target}</span>
         <span class="asset-stop" title="Volatility-adjusted: ${a.stop_atr_mult}×${atrPct}% ATR from entry">Stop ${a.stop} · ${a.stop_atr_mult}×ATR</span>
-        <span class="${badgeClass}">${a.conviction}</span>
+        <span class="${badgeClass}">${i18n.t("conviction_"+a.conviction, a.conviction)}</span>
       </div>
     </div>`;
 }
@@ -298,19 +296,19 @@ async function fetchFlows() {
 // ── Position label: institutional jargon → varied retail insight ──
 const POSITION_VARIANTS = {
   'accumulating': [
-    'Institutions buying — net inflow',
-    'Capital flowing in — accumulation detected',
-    'Positioning long — institutional demand'
+    { key: 'pos_accumulating_1', fallback: 'Institutions buying — net inflow' },
+    { key: 'pos_accumulating_2', fallback: 'Capital flowing in — accumulation detected' },
+    { key: 'pos_accumulating_3', fallback: 'Positioning long — institutional demand' }
   ],
   'distributing': [
-    'Institutions selling — net outflow',
-    'Capital flowing out — distribution detected',
-    'Reducing positions — institutional selling'
+    { key: 'pos_distributing_1', fallback: 'Institutions selling — net outflow' },
+    { key: 'pos_distributing_2', fallback: 'Capital flowing out — distribution detected' },
+    { key: 'pos_distributing_3', fallback: 'Reducing positions — institutional selling' }
   ],
   'hedging': [
-    'Mixed signals — hedging both sides',
-    'Direction unclear — capital in standby',
-    'Balanced flows — no clear direction'
+    { key: 'pos_hedging_1', fallback: 'Mixed signals — hedging both sides' },
+    { key: 'pos_hedging_2', fallback: 'Direction unclear — capital in standby' },
+    { key: 'pos_hedging_3', fallback: 'Balanced flows — no clear direction' }
   ]
 };
 
@@ -322,7 +320,8 @@ function positionLabel(positioning) {
   if (!_variantIdx[positioning]) _variantIdx[positioning] = 0;
   const idx = _variantIdx[positioning] % variants.length;
   _variantIdx[positioning] = (idx + 1) % variants.length;  // deterministic cycling
-  return variants[idx];
+  const v = variants[idx];
+  return i18n.t(v.key, v.fallback);
 }
 
 // ── Aggregate duplicate flows (same headline+direction+amount) ──
@@ -355,83 +354,32 @@ function renderCapitalFlows() {
   el.innerHTML = aggregated.map(f => {
     const anchorSym = f.anchor_symbol || matchAnchor(f.headline);
     const anchorAsset = ANCHOR_ASSETS.find(a => a.symbol === anchorSym);
-    const betLine = anchorAsset
-      ? `<span class="cf-bet-pill ${anchorAsset.bias.toLowerCase()}">${anchorAsset.symbol} ${anchorAsset.bias} · ${anchorAsset.conviction}</span>`
+    const dirArrow = f.direction === 'inflow' ? '↑' : '↓';
+    const dirLabel = f.direction === 'inflow' ? 'IN' : 'OUT';
+    const confPct = f.confidence_pct || 50;
+    const paceDisplay = f.pace_multiplier >= 1.5 ? `↑ ${f.pace_multiplier}×` : f.pace_multiplier <= 0.7 ? `↓ ${f.pace_multiplier}×` : `= ${f.pace_multiplier}×`;
+    const betPill = anchorAsset
+      ? `${anchorAsset.symbol} ${anchorAsset.bias} · ${anchorAsset.conviction}`
       : '';
-    const detail = f.projected ? `Projected ${f.projected} further ${f.direction === 'inflow' ? (i18n.t('flow_further_inflow','inflow')) : (i18n.t('flow_further_outflow','outflow'))} (${f.confidence_pct}% ${i18n.t('flow_confidence_pct','confidence')}) · ${f.pace_multiplier}x ${i18n.t('flow_normal_pace','normal pace')}` : '';
-    const positioning = f.positioning ? positionLabel(f.positioning) : '';
     const catalystBadge = f.catalyst_count > 1 ? `<span class="catalyst-badge">${f.catalyst_count} ` + i18n.t('catalysts','catalysts') + `</span>` : '';
-    const primaryStoryId = f.story_ids ? f.story_ids[0] : f.story_id;
 
     return `
-    <div class="flow-item ${f.direction}" data-flow-story-id="${primaryStoryId}" data-anchor="${anchorSym}">
-      <div class="flow-headline expandable-flow-header">
-        <span class="flow-headline-text">${f.headline}</span>
+    <div class="flow-row ${f.direction}" data-flow-story-id="${f.story_ids ? f.story_ids[0] : f.story_id}">
+      <div class="flow-row-main">
+        <span class="flow-amount">$${f.amount_b.toFixed(1)}B</span>
+        <span class="flow-dir ${f.direction}">${dirArrow} ${dirLabel}</span>
+        <span class="flow-asset">${f.asset_class || 'equities'}</span>
+        <span class="flow-conf">${confPct}%</span>
+        <span class="flow-pace">${paceDisplay}</span>
+        <span class="flow-bet-pill-mini">${betPill}</span>
         ${catalystBadge}
-        ${betLine}
-        <span class="flow-linked-story-hint" title="${i18n.t('linked_story_hint','Linked story — expand to see')}">↳</span>
-        <span class="flow-expand-icon">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </span>
       </div>
-      <div class="flow-detail">${detail}</div>
-      <div class="flow-detail" style="margin-top:2px;font-size:10px;color:var(--ink-muted)">${positioning}</div>
-      <div class="flow-expanded" style="display:none">
-        <div class="flow-story-link" data-story-id="${f.story_id}">
-          <span style="color:var(--ink-muted);font-size:10px;text-transform:uppercase;letter-spacing:0.05em">${i18n.t('linked_story','Linked story')}</span>
-          <span class="flow-story-title" style="font-size:12px;color:var(--ink);font-style:italic">Loading...</span>
-        </div>
-        <div class="flow-bet-detail" style="margin-top:6px">
-          ${anchorAsset ? `
-          <span style="color:var(--ink-muted);font-size:10px;text-transform:uppercase;letter-spacing:0.05em">${i18n.t('position_bet','Position bet')}</span>
-          <div style="display:flex;gap:8px;margin-top:2px">
-            <span class="cf-bet-detail-pill ${anchorAsset.bias.toLowerCase()}">${anchorAsset.symbol} ${anchorAsset.bias}</span>
-            <span style="font-size:10px;color:var(--ink-light)">Entry ${anchorAsset.entry} → Target ${anchorAsset.target} · Stop ${anchorAsset.stop} · Conviction ${anchorAsset.conviction}</span>
-          </div>
-          ` : '<span style="font-size:10px;color:var(--ink-muted)">' + i18n.t('no_positioned_bet','No positioned bet for this flow') + '</span>'}
-        </div>
+      <div class="flow-row-detail">
+        <span class="flow-headline-compact">${f.headline || ''}</span>
+        <span class="flow-positioning">${f.positioning ? positionLabel(f.positioning) : ''}</span>
       </div>
     </div>`;
   }).join('');
-
-  // Wire expand/collapse on flow headers
-  el.querySelectorAll('.expandable-flow-header').forEach(header => {
-    header.addEventListener('click', function(e) {
-      const item = this.closest('.flow-item');
-      const expanded = item.querySelector('.flow-expanded');
-      const icon = this.querySelector('.flow-expand-icon svg');
-      if (expanded.style.display === 'none' || !expanded.style.display) {
-        expanded.style.display = 'block';
-        if (icon) icon.style.transform = 'rotate(180deg)';
-        const storyLink = item.querySelector('.flow-story-title');
-        if (storyLink && (storyLink.textContent === 'Loading...' || storyLink.textContent === 'Story not yet loaded')) {
-          const sid = item.dataset.flowStoryId;
-          const card = document.querySelector(`.card[data-story-id="${sid}"]`);
-          const cached = STORIES_CACHE[sid];
-          if (card) {
-            const h3 = card.querySelector('h3');
-            storyLink.textContent = h3 ? h3.textContent : i18n.t('story_found','Story found');
-            storyLink.style.cursor = 'pointer';
-            storyLink.style.color = 'var(--blue)';
-            storyLink.addEventListener('click', () => {
-              card.scrollIntoView({behavior:'smooth'});
-              card.classList.add('expanded');
-            });
-          } else if (cached) {
-            storyLink.textContent = cached.headline;
-            storyLink.style.color = 'var(--ink-muted)';
-            storyLink.style.cursor = 'default';
-            storyLink.title = i18n.t('refresh_for_click','Refresh page to enable click-through to story');
-          } else {
-            storyLink.textContent = i18n.t('story_not_loaded','Story not yet loaded');
-          }
-        }
-      } else {
-        expanded.style.display = 'none';
-        icon.style.transform = 'rotate(0deg)';
-      }
-    });
-  });
 
   const sub = byId('cfSubtitle');
   if (sub) {
@@ -481,13 +429,19 @@ function updateHeroConfidence(pct, label, direction) {
     return;
   }
   const arrow = direction === 'bullish' ? ' ↑' : direction === 'bearish' ? ' ↓' : '';
-  const tier = pct >= 70 ? i18n.t('tier_high','HIGH') : pct >= 50 ? i18n.t('tier_medium','MEDIUM') : i18n.t('tier_low','LOW');
-  el.innerHTML = `${pct}%${arrow} <span class="confidence-tier tier-${tier.toLowerCase()}">${tier}</span>`;
-  // Update the label — simplified, no long text
+  // Simple: just percentage + direction arrow. No redundant tier badge.
+  el.innerHTML = `${pct}%${arrow}`;
+  // Color the arrow
+  if (direction === 'bullish') el.style.color = 'var(--green)';
+  else if (direction === 'bearish') el.style.color = 'var(--red)';
+  else el.style.color = '';
+  // Label stays clean, uses i18n from data-i18n attribute — don't overwrite
   const labelEl = el.nextElementSibling;
-  if (labelEl && labelEl.classList.contains('hero-stat-label') && label) {
-    labelEl.textContent = label;
-    labelEl.style.maxWidth = '130px';
+  if (labelEl && labelEl.classList.contains('hero-stat-label')) {
+    // Let the data-i18n attribute handle the label, only set fallback
+    if (!labelEl.hasAttribute('data-i18n')) {
+      labelEl.textContent = label;
+    }
   }
 }
 
@@ -850,7 +804,7 @@ function livingCardHTML(story, isLead) {
           <time class="story-date" datetime="${story.generated_at || story.last_updated || ''}">${story.generated_at ? new Date(story.generated_at).toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'}) : ''}</time>
         </div>
         <div style="display:flex;align-items:flex-start;gap:6px">
-          <h3 style="flex:1">${story.headline}</h3>
+          <h3 style="flex:1"><a href="./story.html?id=${story.story_id}" style="color:inherit;text-decoration:none">${story.headline}</a></h3>
           ${cfHint}
           <span class="tier-badge ${tier}" title="${tierTitle}">${tierLabel} <span class="tier-score">${cs}/100</span></span>
         </div>
@@ -870,6 +824,7 @@ function livingCardHTML(story, isLead) {
           <span class="pi-text">${story.portfolio_implication}</span>
         </div>` : ''}
         ${extremumHTML}
+        <a href="./story.html?id=${story.story_id}" class="intel-report-link" data-i18n="story_full_report">Full intelligence report →</a>
         <div class="share-row">
           <button class="share-btn copy-link" title="${i18n.t('share_copy','Copy link')}" onclick="copyShareLink(this.closest('.card'))">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
@@ -1169,10 +1124,6 @@ function updateCumulativeStats() {
   if (heroFlow) heroFlow.textContent = '$' + cumFlow.toFixed(1) + 'B';
   if (heroAssets) heroAssets.textContent = String(cumAssets);
   if (heroStake) heroStake.textContent = '$' + cumStake.toFixed(1) + 'K';
-
-  // Dynamic layer count — number of intelligence containers (never hardcoded)
-  const heroLayer = byId('heroLayerCount');
-  if (heroLayer) heroLayer.textContent = String(document.querySelectorAll('section.container').length);
 }
 
 // ═══════════════════════════════════════════════════════════════

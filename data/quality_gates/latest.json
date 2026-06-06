@@ -1,0 +1,51 @@
+{
+  "gate": "editorial_quality",
+  "pipeline": "gazzetta-agentic-nlp-guarded-autopost-8h",
+  "run_id": "011c8be0b17c",
+  "timestamp": "2026-06-06T18:49:08Z",
+  "target": "telegram_latest.md",
+  "verdict": "PASS",
+  "score": {
+    "overall": 8.5,
+    "banned_phrases": 10,
+    "factual_accuracy": 10,
+    "contradiction_sharpness": 8,
+    "word_count": 10,
+    "actionability": 7,
+    "platform_voice": 9
+  },
+  "assessment": {
+    "strengths": [
+      "Zero banned phrases — no consulting-speak, no taxonomy words, no McKinsey-isms",
+      "All 7 factual claims verified 100% against stories.json source material",
+      "Sharp contradiction framing: 'Consensus priced a ceasefire. Instead...' with named actors (Witkoff, Kushner, Oak Ridge) and specific events (Goruk, Qeshm, 7 missiles)",
+      "Under 100 words (~54) — tight, every sentence earns its place",
+      "Clear actionable bets with direction (Long/Short), timing (Sunday gap, Monday open), and price anchor ($78 WTI)",
+      "Correct Telegram voice — urgent, signal format, not discussion. Matches 'Telegram is the signal' principle",
+      "Deprecated GitHub Pages URL still returns HTTP 200 — not broken as previously documented"
+    ],
+    "issues": [
+      {
+        "severity": "minor",
+        "item": "\"Consensus\" is undefined — not anchored to a specific price, survey, or positioning metric",
+        "suggestion": "Rewrite as 'WTI at $78 priced a ceasefire. Instead...' to tie the contradiction to a concrete number readers see on their screens"
+      },
+      {
+        "severity": "minor",
+        "item": "No stop-losses or invalidation triggers on any of the 4 trade calls",
+        "suggestion": "Add 'Invalidated if oil opens flat Sunday' as a one-line caveat for reader risk management"
+      },
+      {
+        "severity": "minor",
+        "item": "Duplicate URL in footer — 'Continuity' line and 'Full briefing' line point to the same URL",
+        "suggestion": "Merge into one line, reclaim the other for one additional detail (e.g., the ~20M bbl/day Hormuz figure)"
+      },
+      {
+        "severity": "informational",
+        "item": "Only 1 of 5 claims has a footnote source — asymmetric sourcing for Telegram speed format",
+        "suggestion": "Acceptable trade-off for Telegram speed, but consider adding footnotes for Hormuz blockade and US strikes claims"
+      }
+    ]
+  },
+  "recommendation": "PUBLISH — minor improvements optional for next cycle. No content errors, no banned phrases, no factual inaccuracies."
+}

@@ -1,20 +1,21 @@
 {
-  "updated_at": "2026-06-06T14:39:57.835496+00:00",
-  "active_count": 11,
-  "stories": [
+  "version": 1,
+  "generated_at": "2026-06-05T15:15:52.679642+00:00",
+  "last_full_cycle": "",
+  "next_micro_update": "",
+  "next_full_cycle": "",
+  "active_stories": [
     {
       "story_id": "n21_macro",
-      "headline": "Betfair targeted gambling addict, court hears in landmark case",
-      "status": "evolving",
-      "update_count": 15,
-      "last_updated": "2026-06-05T03:16:07.166166+00:00",
-      "thread_ids": [
-        "n21_macro__main"
-      ],
-      "evolution_score_current": 0.3074,
-      "confidence": 0.9,
+      "headline": "Can India’s central banker calm the country’s growing economic fears?",
+      "one_line_summary": "New evidence: Evolution match (score=0.61): Can India’s central banker calm the country’s growing economic fears?; Mountbatten-Windsor",
       "sector": "tech",
       "paradigm_pillar": "multi_pillar",
+      "status": "evolving",
+      "last_updated": "2026-06-05T15:15:52.679642+00:00",
+      "update_count": 17,
+      "evidence_count": 2163,
+      "thread_count": 1,
       "actors": [
         "Gulf States",
         "Federal Reserve",
@@ -26,21 +27,22 @@
         "europe",
         "eu"
       ],
-      "asset_claim": {}
+      "evolution_score_current": 0.6085,
+      "latest_update_summary": "Evolution match (score=0.61): Can India’s central banker calm the country’s growing economic fears?; Mountbatten-Windsor earned rent by subletting Royal Lodge properties",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Meta_-_Facebook%2C_Instagram%2C_Whatsapp_-_Nein_Danke.png",
+      "has_live_updates": true
     },
     {
       "story_id": "n21_oil",
       "headline": "The Gulf states and Ukraine need each other",
-      "status": "evolving",
-      "update_count": 15,
-      "last_updated": "2026-06-05T03:16:07.166166+00:00",
-      "thread_ids": [
-        "n21_oil__main"
-      ],
-      "evolution_score_current": 0.3024,
-      "confidence": 0.45,
+      "one_line_summary": "New evidence: Evolution match (score=0.70): The Gulf states and Ukraine need each other; Gulf states are burning through interceptors",
       "sector": "geopolitics",
       "paradigm_pillar": "multi_pillar",
+      "status": "evolving",
+      "last_updated": "2026-06-05T15:15:52.679642+00:00",
+      "update_count": 17,
+      "evidence_count": 35,
+      "thread_count": 1,
       "actors": [
         "Gulf States"
       ],
@@ -50,62 +52,131 @@
         "gulf states",
         "gulf"
       ],
-      "asset_claim": {}
+      "evolution_score_current": 0.6954,
+      "latest_update_summary": "Evolution match (score=0.70): The Gulf states and Ukraine need each other; Gulf states are burning through interceptors",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Donald_Trump_official_portrait.jpg",
+      "has_live_updates": true
     },
     {
       "story_id": "n21_nato",
       "headline": "US plans cuts to Nato’s rapid response force",
-      "status": "evolving",
-      "update_count": 15,
-      "last_updated": "2026-06-05T03:16:07.166166+00:00",
-      "thread_ids": [
-        "n21_nato__main",
-        "n21_nato__us_plans_cuts_to_nato_s_rapid_response_force"
-      ],
-      "evolution_score_current": 0.2274,
-      "confidence": 0.43,
+      "one_line_summary": "New evidence: Evolution match (score=0.85): US plans cuts to Nato’s rapid response force; Suspected Sabotage of Deep-Sea Cable Trigger",
       "sector": "geopolitics",
       "paradigm_pillar": "multi_pillar",
+      "status": "evolving",
+      "last_updated": "2026-06-05T15:15:52.679642+00:00",
+      "update_count": 17,
+      "evidence_count": 23,
+      "thread_count": 2,
       "actors": [
         "NATO"
       ],
       "geography": [
         "us"
       ],
-      "asset_claim": {}
+      "evolution_score_current": 0.8473,
+      "latest_update_summary": "Evolution match (score=0.85): US plans cuts to Nato’s rapid response force; Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response",
+      "image_url": null,
+      "has_live_updates": true
+    },
+    {
+      "story_id": "n21_rates",
+      "headline": "rates: Inflation and interest rates tracker: see how your country compares",
+      "one_line_summary": "Seeded from narrative intelligence pipeline",
+      "sector": "macro",
+      "paradigm_pillar": "multi_pillar",
+      "status": "new",
+      "last_updated": "2026-06-04T15:46:31.108578+00:00",
+      "update_count": 1,
+      "evidence_count": 3,
+      "thread_count": 1,
+      "actors": [
+        "Federal Reserve",
+        "ECB",
+        "BOJ"
+      ],
+      "geography": [],
+      "evolution_score_current": 0.0,
+      "latest_update_summary": "Initial broadcast — rates: Inflation and interest rates tracker: see how your country compares",
+      "image_url": null,
+      "has_live_updates": false
+    },
+    {
+      "story_id": "n21_election",
+      "headline": "election: Russia prunes Armenian rose trade ahead of election",
+      "one_line_summary": "Seeded from narrative intelligence pipeline",
+      "sector": "geopolitics",
+      "paradigm_pillar": "multi_pillar",
+      "status": "new",
+      "last_updated": "2026-06-04T15:46:31.108578+00:00",
+      "update_count": 1,
+      "evidence_count": 1,
+      "thread_count": 1,
+      "actors": [
+        "Kremlin/Russia"
+      ],
+      "geography": [
+        "us",
+        "russia"
+      ],
+      "evolution_score_current": 0.0,
+      "latest_update_summary": "Initial broadcast — election: Russia prunes Armenian rose trade ahead of election",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ergaki%2C_Buiba_Valley%2C_Western_Sayan_Mountains%2C_Krasnoyarsk_Krai%2C_Russia.jpg",
+      "has_live_updates": false
+    },
+    {
+      "story_id": "n21_crypto",
+      "headline": "crypto: Reform given another £3mn by crypto billionaire Harborne",
+      "one_line_summary": "Seeded from narrative intelligence pipeline",
+      "sector": "tech",
+      "paradigm_pillar": "multi_pillar",
+      "status": "new",
+      "last_updated": "2026-06-04T15:46:31.108578+00:00",
+      "update_count": 1,
+      "evidence_count": 1,
+      "thread_count": 1,
+      "actors": [
+        "ETF issuers",
+        "major exchanges",
+        "RWA platforms"
+      ],
+      "geography": [],
+      "evolution_score_current": 0.0,
+      "latest_update_summary": "Initial broadcast — crypto: Reform given another £3mn by crypto billionaire Harborne",
+      "image_url": null,
+      "has_live_updates": false
     },
     {
       "story_id": "n21_ai",
       "headline": "ai: Meta bets on AI agents to unlock WhatsApp revenues",
-      "status": "active",
-      "update_count": 1,
-      "last_updated": "2026-06-06T13:56:43.253313+00:00",
-      "thread_ids": [
-        "n21_ai__main"
-      ],
-      "evolution_score_current": 0.0,
-      "confidence": 0.49,
+      "one_line_summary": "Seeded from narrative intelligence pipeline",
       "sector": "macro",
       "paradigm_pillar": "multi_pillar",
+      "status": "new",
+      "last_updated": "2026-06-03T21:35:42.864956+00:00",
+      "update_count": 1,
+      "evidence_count": 3,
+      "thread_count": 1,
       "actors": [
         "Federal Reserve"
       ],
       "geography": [],
-      "asset_claim": {}
+      "evolution_score_current": 0.0,
+      "latest_update_summary": "Initial broadcast — ai: Meta bets on AI agents to unlock WhatsApp revenues",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Meta_-_Facebook%2C_Instagram%2C_Whatsapp_-_Nein_Danke.png",
+      "has_live_updates": false
     },
     {
       "story_id": "n21_china",
       "headline": "china: Nissan signs deal with China’s Chery for Sunderland car production",
-      "status": "active",
-      "update_count": 1,
-      "last_updated": "2026-06-06T13:56:43.253313+00:00",
-      "thread_ids": [
-        "n21_china__main"
-      ],
-      "evolution_score_current": 0.0,
-      "confidence": 0.45,
+      "one_line_summary": "Seeded from narrative intelligence pipeline",
       "sector": "geopolitics",
       "paradigm_pillar": "multi_pillar",
+      "status": "new",
+      "last_updated": "2026-06-03T21:35:42.864956+00:00",
+      "update_count": 1,
+      "evidence_count": 3,
+      "thread_count": 1,
       "actors": [
         "PBoC",
         "State Council",
@@ -114,21 +185,22 @@
       "geography": [
         "china"
       ],
-      "asset_claim": {}
+      "evolution_score_current": 0.0,
+      "latest_update_summary": "Initial broadcast — china: Nissan signs deal with China’s Chery for Sunderland car production",
+      "image_url": "https://i.guim.co.uk/img/media/02d774e13d041f094f583254b13136c5a354374e/846_0_4583_3667/master/4583.jpg?width=700&quality=85&auto=format&fit=max&s=76103f6b3aeacef960917fa88cbed56f",
+      "has_live_updates": false
     },
     {
       "story_id": "n21_inflation",
       "headline": "inflation: Bessent says US inflation jump will be ‘short-term blip’",
-      "status": "active",
-      "update_count": 1,
-      "last_updated": "2026-06-06T13:56:43.253313+00:00",
-      "thread_ids": [
-        "n21_inflation__main"
-      ],
-      "evolution_score_current": 0.0,
-      "confidence": 0.44,
+      "one_line_summary": "Seeded from narrative intelligence pipeline",
       "sector": "macro",
       "paradigm_pillar": "multi_pillar",
+      "status": "new",
+      "last_updated": "2026-06-03T21:35:42.864956+00:00",
+      "update_count": 1,
+      "evidence_count": 3,
+      "thread_count": 1,
       "actors": [
         "Federal Reserve"
       ],
@@ -136,21 +208,22 @@
         "us",
         "middle east"
       ],
-      "asset_claim": {}
+      "evolution_score_current": 0.0,
+      "latest_update_summary": "Initial broadcast — inflation: Bessent says US inflation jump will be ‘short-term blip’",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Official_portrait_of_Treasury_Secretary_Scott_Bessent_%28cropped%29.jpg",
+      "has_live_updates": false
     },
     {
       "story_id": "n21_ukraine",
       "headline": "ukraine: To fight Russia, Europe needs Ukraine",
-      "status": "active",
-      "update_count": 1,
-      "last_updated": "2026-06-06T13:56:43.253313+00:00",
-      "thread_ids": [
-        "n21_ukraine__main"
-      ],
-      "evolution_score_current": 0.0774,
-      "confidence": 0.43,
+      "one_line_summary": "Seeded from narrative intelligence pipeline",
       "sector": "tech",
       "paradigm_pillar": "eu_fragmentation",
+      "status": "new",
+      "last_updated": "2026-06-03T21:35:42.864956+00:00",
+      "update_count": 1,
+      "evidence_count": 1,
+      "thread_count": 1,
       "actors": [
         "Kremlin/Russia"
       ],
@@ -162,21 +235,22 @@
         "russia",
         "eu"
       ],
-      "asset_claim": {}
+      "evolution_score_current": 0.0,
+      "latest_update_summary": "Initial broadcast — ukraine: To fight Russia, Europe needs Ukraine",
+      "image_url": null,
+      "has_live_updates": false
     },
     {
       "story_id": "n21_russia",
       "headline": "russia: To fight Russia, Europe needs Ukraine",
-      "status": "active",
-      "update_count": 1,
-      "last_updated": "2026-06-06T13:56:43.253313+00:00",
-      "thread_ids": [
-        "n21_russia__main"
-      ],
-      "evolution_score_current": 0.0774,
-      "confidence": 0.43,
+      "one_line_summary": "Seeded from narrative intelligence pipeline",
       "sector": "tech",
       "paradigm_pillar": "eu_fragmentation",
+      "status": "new",
+      "last_updated": "2026-06-03T21:35:42.864956+00:00",
+      "update_count": 1,
+      "evidence_count": 1,
+      "thread_count": 1,
       "actors": [
         "Kremlin/Russia"
       ],
@@ -188,71 +262,11 @@
         "russia",
         "eu"
       ],
-      "asset_claim": {}
-    },
-    {
-      "story_id": "n21_rates",
-      "headline": "rates: Inflation and interest rates tracker: see how your country compares",
-      "status": "active",
-      "update_count": 1,
-      "last_updated": "2026-06-06T13:56:43.253313+00:00",
-      "thread_ids": [
-        "n21_rates__main"
-      ],
-      "evolution_score_current": 0.2274,
-      "confidence": 0.44,
-      "sector": "macro",
-      "paradigm_pillar": "multi_pillar",
-      "actors": [
-        "Federal Reserve",
-        "ECB",
-        "BOJ"
-      ],
-      "geography": [],
-      "asset_claim": {}
-    },
-    {
-      "story_id": "n21_election",
-      "headline": "election: Russia prunes Armenian rose trade ahead of election",
-      "status": "active",
-      "update_count": 1,
-      "last_updated": "2026-06-06T13:56:43.253313+00:00",
-      "thread_ids": [
-        "n21_election__main"
-      ],
       "evolution_score_current": 0.0,
-      "confidence": 0.43,
-      "sector": "geopolitics",
-      "paradigm_pillar": "multi_pillar",
-      "actors": [
-        "Kremlin/Russia"
-      ],
-      "geography": [
-        "us",
-        "russia"
-      ],
-      "asset_claim": {}
-    },
-    {
-      "story_id": "n21_crypto",
-      "headline": "crypto: Reform given another £3mn by crypto billionaire Harborne",
-      "status": "active",
-      "update_count": 1,
-      "last_updated": "2026-06-06T13:56:43.253313+00:00",
-      "thread_ids": [
-        "n21_crypto__main"
-      ],
-      "evolution_score_current": 0.0,
-      "confidence": 0.43,
-      "sector": "tech",
-      "paradigm_pillar": "multi_pillar",
-      "actors": [
-        "ETF issuers",
-        "major exchanges",
-        "RWA platforms"
-      ],
-      "geography": [],
-      "asset_claim": {}
+      "latest_update_summary": "Initial broadcast — russia: To fight Russia, Europe needs Ukraine",
+      "image_url": null,
+      "has_live_updates": false
     }
-  ]
+  ],
+  "archived_stories": []
 }

@@ -72,8 +72,17 @@ def intel_story_to_gazzetta(intel_story, pillar):
     if amounts:
         amount_b = float(amounts[0])
     
-    # Build projected: use benefit or first 120 chars of event
-    projected = (benefit_text or event_text)[:200] if (benefit_text or event_text) else f"Capital repositioning on {headline[:80]}"
+    # Build projected: use benefit or event, truncate at word boundary (never mid-word)
+    raw_proj = benefit_text or event_text
+    if raw_proj:
+        if len(raw_proj) > 200:
+            cut = raw_proj[:200].rstrip()
+            last_space = cut.rfind(' ')
+            projected = (cut[:last_space] if last_space > 150 else cut) + '…'
+        else:
+            projected = raw_proj
+    else:
+        projected = f"Capital repositioning on {headline[:80]}"
     
     # Confidence tier
     conf = intel_story.get("confidence", 75)
@@ -84,8 +93,30 @@ def intel_story_to_gazzetta(intel_story, pillar):
     else:
         confidence_level = "low"
     
-    # Contradiction score from intel
-    contradiction_score = intel_story.get("contradiction_score", 55)
+    # Contradiction score: use intel value if provided, otherwise compute from content
+    raw_contradiction = intel_story.get("contradiction_score")
+    if raw_contradiction is not None and raw_contradiction != 55:  # reject the stale default
+        contradiction_score = raw_contradiction
+    else:
+        # Compute heuristic contradiction score from they_say/reality divergence
+        they_say = (intel_story.get("consensus_narrative", "") or "").lower()
+        reality = (intel_story.get("contradiction", "") or "").lower()
+        combined = they_say + " " + reality
+        contradiction_keywords = [
+            "but", "however", "despite", "unexpected", "surprising", "contrary",
+            "diverging", "contradiction", "paradox", "irony", "ironically",
+            "yet", "nonetheless", "nevertheless", "whereas", "while",
+            "in reality", "actually", "the truth", "the reality",
+        ]
+        kw_count = sum(1 for k in contradiction_keywords if k in combined)
+        # Base score 45-65 range based on keyword density, length-adjusted
+        base = 45 + min(kw_count * 5, 20)
+        # Add variance from content length (longer content = more likely real analysis)
+        length_bonus = min(len(combined) // 200, 10)
+        contradiction_score = min(base + length_bonus, 95)
+    
+    # Compute tier from contradiction score
+    tier = "DEVELOPING" if contradiction_score >= 55 else "ALIGNED"
     
     # Positioning from bet
     positioning = bet_text[:300]
@@ -117,6 +148,7 @@ def intel_story_to_gazzetta(intel_story, pillar):
         "actors": intel_story.get("actors", []),
         "horizon": intel_story.get("horizon", "24-72h"),
         "confidence": confidence_level,
+        "tier": tier,
         "actionable_trade": bet_text[:300],
         "contradiction_score": contradiction_score,
         "invalidation_trigger": "Narrative reversal or event resolution",

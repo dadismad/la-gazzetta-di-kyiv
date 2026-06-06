@@ -1567,3 +1567,405 @@ body {
   padding: 20px;
   font-size: 12px;
 }
+
+/* ═══════════════════════════════════════════════
+   STORY PAGE — Immersive intel report layout
+   ═══════════════════════════════════════════════ */
+
+.story-masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-bottom: 1px solid #E5E7EB;
+  background: #FFFFFF;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.story-back {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.story-back:hover { color: var(--ink); }
+.story-masthead-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #990024, #B8305A, #990024, #7B2D5E, #990024);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.story-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.story-loading, .story-error {
+  text-align: center;
+  color: var(--ink-muted);
+  font-style: italic;
+  padding: 60px 20px;
+  font-size: 14px;
+  font-family: 'Source Serif 4', Georgia, serif;
+}
+.story-error a { color: var(--gold); }
+
+/* Intel Report Article */
+.intel-report {
+  font-family: 'Source Serif 4', Georgia, serif;
+  color: var(--ink);
+}
+
+.intel-header {
+  margin-bottom: 28px;
+}
+.intel-meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.intel-category {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+}
+.intel-severity {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 1px 6px;
+  border-radius: 2px;
+}
+.severity-high { color: #DC2626; background: rgba(220,38,38,0.06); }
+.severity-elevated { color: #B45309; background: rgba(180,83,9,0.06); }
+.severity-critical { color: #DC2626; background: rgba(220,38,38,0.10); font-weight: 700; }
+
+.intel-date {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.intel-headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
+
+.intel-photo {
+  width: 100%;
+  max-height: 360px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: #F9FAFB;
+}
+.intel-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Intel sections */
+.intel-section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 8px;
+  color: var(--gold);
+}
+
+.intel-brief {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #E5E7EB;
+}
+.intel-summary {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+/* THE PLAY */
+.intel-play {
+  background: rgba(5,150,105,0.04);
+  border-left: 3px solid #059669;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+.play-label { color: #059669; }
+.intel-play-content {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.intel-catalysts {
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--ink-muted);
+}
+.catalyst-tag { font-weight: 600; color: var(--gold); }
+
+/* Contradiction — THEY SAY / REALITY */
+.intel-contradiction {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.intel-they-say, .intel-reality {
+  padding: 16px;
+}
+.intel-they-say {
+  background: rgba(217,119,6,0.04);
+  border-left: 3px solid #B45309;
+}
+.intel-reality {
+  background: rgba(220,38,38,0.04);
+  border-left: 3px solid #DC2626;
+}
+.they-say-label { color: #B45309; }
+.reality-label { color: #DC2626; }
+.intel-they-say-content, .intel-reality-content {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+/* CAPITAL FLOW */
+.intel-capital-flow {
+  background: rgba(37,99,235,0.03);
+  border-left: 3px solid #2563EB;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+.cf-label { color: #2563EB; }
+.intel-cf-amount {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.intel-cf-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 11px;
+  color: var(--ink-muted);
+  margin-bottom: 10px;
+}
+.intel-cf-confidence { color: var(--gold); font-weight: 600; }
+.intel-cf-claim, .intel-cf-projected, .intel-cf-positioning {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.intel-cf-projected-label { font-weight: 600; color: var(--ink-muted); }
+
+/* EXTREMUM */
+.intel-extremum {
+  background: rgba(0,0,0,0.02);
+  border-left: 3px solid var(--ink-muted);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+.extremum-label { color: var(--ink-muted); }
+.intel-extremum-content {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-light);
+  font-style: italic;
+}
+
+/* Share row */
+.intel-share {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 20px 0;
+  border-top: 1px solid #E5E7EB;
+}
+.share-btn {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #E5E7EB;
+  background: #FFFFFF;
+  cursor: pointer;
+  color: var(--ink-muted);
+  transition: all 0.15s;
+}
+.share-btn:hover { color: var(--ink); border-color: var(--ink-muted); }
+
+/* Story nav */
+.story-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
+  border-top: 1px solid #E5E7EB;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+}
+.story-nav-back {
+  color: var(--ink-muted);
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.story-nav-back:hover { color: var(--ink); }
+.story-position {
+  color: var(--ink-muted);
+  font-size: 10px;
+}
+.story-nav-next {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+}
+.story-nav-next:hover { text-decoration: underline; }
+
+/* Mobile */
+@media (max-width: 600px) {
+  .intel-contradiction {
+    grid-template-columns: 1fr;
+  }
+  .intel-headline {
+    font-size: 22px;
+  }
+  .story-page {
+    padding: 16px 12px 32px;
+  }
+  .story-masthead-name { font-size: 14px; }
+}
+
+/* ═══════════════════════════════════════════════
+   C2 FLOWS — Numbers-first table layout (Mike Green spec)
+   ═══════════════════════════════════════════════ */
+
+.flow-row {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  border-bottom: 1px solid #F3F4F6;
+  font-family: 'Inter', sans-serif;
+}
+.flow-row:last-child { border-bottom: none; }
+.flow-row-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.flow-amount {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  min-width: 55px;
+}
+.flow-dir {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 1px 5px;
+  min-width: 42px;
+  text-align: center;
+}
+.flow-dir.inflow { color: #059669; background: rgba(5,150,105,0.06); }
+.flow-dir.outflow { color: #DC2626; background: rgba(220,38,38,0.06); }
+.flow-asset {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-muted);
+}
+.flow-conf {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold);
+  min-width: 35px;
+}
+.flow-pace {
+  font-size: 10px;
+  color: var(--ink-muted);
+  min-width: 45px;
+}
+.flow-bet-pill-mini {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--ink-light);
+  padding: 1px 6px;
+  white-space: nowrap;
+}
+.flow-row-detail {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+  padding-left: 2px;
+}
+.flow-headline-compact {
+  font-size: 11px;
+  color: var(--ink-muted);
+  line-height: 1.4;
+  flex: 1;
+}
+.flow-positioning {
+  font-size: 9px;
+  color: var(--ink-muted);
+  font-style: italic;
+  white-space: nowrap;
+  opacity: 0.7;
+}
+
+/* Intel report link in expanded cards */
+.intel-report-link {
+  display: block;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  text-decoration: none;
+  padding: 10px 0;
+  margin-bottom: 4px;
+  border: 1px solid rgba(212,175,55,0.2);
+  transition: all 0.15s;
+}
+.intel-report-link:hover {
+  background: rgba(212,175,55,0.06);
+  border-color: var(--gold);
+}

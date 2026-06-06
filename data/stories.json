@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-06T14:14:52.418334+00:00",
+  "generated_at": "2026-06-06T16:22:20.229789+00:00",
   "lead": {
     "story_id": "n21_china_ascendancy__zcash_soundness_bug_researcher_now_targets_monero__xmr_-10",
     "headline": "Zcash Soundness Bug Researcher Now Targets Monero — XMR -10%",
@@ -16,7 +16,7 @@
     "horizon": "24-72h",
     "confidence": "medium",
     "actionable_trade": "Short XMR perpetuals (perps/futures) — cascade already underway. Short ZEC — continued selling pressure as trust evaporates. Long BTC — capital rotation from alt/privacy into BTC as 'safe haven' crypto. Long stables (USDT/USDC) — exit liquidity for privacy coin holders.",
-    "contradiction_score": 55,
+    "contradiction_score": 58,
     "invalidation_trigger": "Narrative reversal or event resolution",
     "portfolio_implication": "Short XMR is the trade with 2-5x asymmetric upside. XMR market cap ~$3B. If the researcher finds a soundness bug — and given Zcash had one, the probability is non-trivial — XMR could drop 50-80% in hours. Even the announcement of the audit starting is enough to keep pressure on. BTC benefits as the ",
     "capital_flow": {
@@ -34,7 +34,8 @@
     "evidence": [],
     "source": "telegram_intel",
     "generated_at": "2026-06-06T12:51:12.691990+00:00",
-    "freshness": "breaking"
+    "freshness": "new",
+    "tier": "DEVELOPING"
   },
   "stories": [
     {
@@ -53,7 +54,7 @@
       "horizon": "24-72h",
       "confidence": "medium",
       "actionable_trade": "Short XMR with tight stop — price recovered to $118.70 from $110.40 lows. If researcher publishes findings, downside to $60-80 is realistic. If researcher finds nothing, XMR could rally back above $130. Asymmetric short if you can position before the next researcher update. Pair with long BTC — capi",
-      "contradiction_score": 55,
+      "contradiction_score": 64,
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "XMR short has 2-3x downside IF a bug is found, but the recovery from $110.40 to $118.70 suggests initial panic sellers were absorbed. The risk/reward depends entirely on timing of the next researcher update. This is a binary event — either the audit finds nothing (XMR rallies) or finds something (XM",
       "capital_flow": {
@@ -71,7 +72,8 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-06T13:30:05.751388+00:00",
-      "freshness": "breaking"
+      "freshness": "new",
+      "tier": "DEVELOPING"
     },
     {
       "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles__regional_war",
@@ -89,7 +91,7 @@
       "horizon": "24-72h",
       "confidence": "medium",
       "actionable_trade": "Long oil (USO, XLE, XOM, CVX) — Kuwait missiles raise supply disruption probability to maximum. Hormuz blockade (~20M bbl/day). Long VIX futures — gap-up Sunday evening. Short SPY/QQQ — NASDAQ already -4.68% in correction. Long defense (LMT, GD, NOC). Long gold (GLD). Short-term: Long natural gas (U",
-      "contradiction_score": 55,
+      "contradiction_score": 60,
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "Oil is the highest-conviction 48h play. Kuwait being directly struck changes the calculus entirely. At Sunday futures open, oil could gap +$10-15/bbl. The diplomatic off-ramp that markets priced in (ceasefire hopes) has been explicitly denied by Iran. VIX futures will price gap-down Monday. BTC at $",
       "capital_flow": {
@@ -107,7 +109,8 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-06T13:30:05.750906+00:00",
-      "freshness": "breaking"
+      "freshness": "new",
+      "tier": "DEVELOPING"
     },
     {
       "story_id": "n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai__i",
@@ -125,7 +128,7 @@
       "horizon": "24-72h",
       "confidence": "medium",
       "actionable_trade": "Long SPCX at IPO — momentum will carry first week higher on scarcity and oversubscription. Long NVDA — 110K GPUs per deal, every hyperscaler deal means more GPU orders. Long GOOGL — compute capacity secured. Long AI infrastructure (SMCI, VRT, ANET). Short-term: the risk-off tape could mute IPO pop —",
-      "contradiction_score": 55,
+      "contradiction_score": 54,
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "The IPO pop is the fastest trade with the most defined catalyst. June 12 is 6 days away. If demand is 2x supply at $75B, the opening pop could be 20-40%. NVDA benefits structurally — every hyperscaler GPU deal fills the order book for quarters ahead. But note the NAV: with markets in risk-off mode (",
       "capital_flow": {
@@ -143,7 +146,8 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-06T13:14:33.334440+00:00",
-      "freshness": "breaking"
+      "freshness": "new",
+      "tier": "ALIGNED"
     },
     {
       "story_id": "n21_china_ascendancy__zcash_soundness_bug_researcher_now_audits_monero__xmr_-10",
@@ -161,7 +165,7 @@
       "horizon": "24-72h",
       "confidence": "medium",
       "actionable_trade": "Short XMR perpetuals — cascade already underway at -10%. Short ZEC — continued selling pressure as trust evaporates. Long BTC — capital rotation from privacy coins into BTC as 'safe haven' crypto. Long USDT/USDC — exit liquidity for privacy coin holders exiting into stables.",
-      "contradiction_score": 55,
+      "contradiction_score": 58,
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "Short XMR has 2-5x asymmetric downside. XMR market cap ~$3B. If the researcher finds a soundness bug — and given Zcash had one, the probability is non-trivial — XMR could drop 50-80% in hours. Even without a bug find, the announcement of the audit is enough to keep selling pressure on. The 24/7 cryp",
       "capital_flow": {
@@ -179,7 +183,8 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-06T13:14:33.334393+00:00",
-      "freshness": "breaking"
+      "freshness": "new",
+      "tier": "DEVELOPING"
     },
     {
       "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles__gulf_war_wid",
@@ -197,7 +202,7 @@
       "horizon": "24-72h",
       "confidence": "medium",
       "actionable_trade": "Long oil (USO, XLE, XOM, CVX) — Kuwait is a major US ally getting hit directly. Hormuz blockade (~20M bbl/day) + now missiles hitting Gulf states = supply disruption probability has never been higher. Long VIX/UVXY — futures will gap up Sunday evening. Short SPY/QQQ — NASDAQ already -4.68% in correc",
-      "contradiction_score": 55,
+      "contradiction_score": 54,
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "Oil is the highest-conviction play. Kuwait being struck by 7 Iranian missiles changes the calculus — this is no longer a US-Iran proxy fight, it's a regional war. Kuwait is a critical OPEC producer and key US ally. If this escalates further over the weekend, oil +$10-15/bbl at Sunday futures open is",
       "capital_flow": {
@@ -215,7 +220,8 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-06T13:14:33.333884+00:00",
-      "freshness": "breaking"
+      "freshness": "new",
+      "tier": "ALIGNED"
     },
     {
       "story_id": "n21_blockchain_agentic__bitcoin_free_fall__saylor_liquidates_etfs_bleed_200-week",
@@ -229,7 +235,7 @@
       "horizon": "24-72h",
       "confidence": "medium",
       "actionable_trade": "SHORT BTC aggressively. Short MSTR (the leverage unwind is just beginning). Short COIN, MARA, CLSK. If BTC breaks 200-week MA (~$61K), next stop is $55K and the liquidation cascade accelerates. Buy June/July BTC put options. Short ETH/BTC ratio continues to decline. For the brave: SHORT Hyperliquid ",
-      "contradiction_score": 55,
+      "contradiction_score": 59,
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "Cash/stablecoins outperform. If BTC drops below 200-week MA, it triggers a multi-asset deleveraging that spills into equities (already visible — NDX -3%, SPX -1.7% on Friday). The MSTR convertible bond arb unwind adds downward pressure. The only bullish angle: this is capitulation, and bottoms are f",
       "capital_flow": {
@@ -258,7 +264,8 @@
       "generated_at": "2026-06-06T12:05:10.096125+00:00",
       "freshness": "new",
       "paradigm_pillar": "blockchain_agentic",
-      "paradigm_implications": []
+      "paradigm_implications": [],
+      "tier": "DEVELOPING"
     },
     {
       "story_id": "n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai",
@@ -276,7 +283,7 @@
       "horizon": "24-72h",
       "confidence": "medium",
       "actionable_trade": "Long SPCX at/before IPO — momentum will carry it higher in first week. Long NVDA — 110K GPUs per deal, every hyperscaler deal means more GPU orders. Long GOOGL — compute capacity secured. Long AI infrastructure (SMCI, VRT, ANET).",
-      "contradiction_score": 55,
+      "contradiction_score": 53,
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "The IPO pop is the fastest immediate trade. June 12 is 6 days away — this is a known catalyst with a defined timeline. If demand is 2x supply at $75B, the opening pop could be 20-40%. NVDA benefits structurally — every hyperscaler GPU deal fills the order book for quarters ahead.",
       "capital_flow": {
@@ -294,7 +301,8 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-06T12:51:12.691933+00:00",
-      "freshness": "breaking"
+      "freshness": "new",
+      "tier": "ALIGNED"
     },
     {
       "story_id": "n21_multi_pillar__us_strikes_iranian_naval_bases__hormuz_escalation_intensifi",
@@ -312,7 +320,7 @@
       "horizon": "24-72h",
       "confidence": "medium",
       "actionable_trade": "Long oil (USO, XLE, XOM/CVX) — Hormuz closure + active strikes = supply shock. Long VIX/UVXY — risk-off spike incoming. Short SPY/QQQ/QQQ — NASDAQ already in correction territory. Long defense (LMT, GD, NOC). Long gold (GLD) — geopolitical panic bid.",
-      "contradiction_score": 55,
+      "contradiction_score": 59,
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "Oil is the highest-conviction trade. Hormuz handles ~20M bbl/day. Any direct hit on Iranian radar/shipping increases the probability of a broader blockade breach event. If Iran mines the strait in retaliation, oil +$10-15/bbl overnight. S&P futures gap-down at Sunday open is the setup.",
       "capital_flow": {
@@ -330,7 +338,8 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-06T12:51:12.691662+00:00",
-      "freshness": "breaking"
+      "freshness": "new",
+      "tier": "DEVELOPING"
     },
     {
       "story_id": "n21_abundance_tech__spacex_ipo_demand_2x_supply__75b_offering_oversibscribed",
@@ -344,7 +353,7 @@
       "horizon": "24-72h",
       "confidence": 75,
       "actionable_trade": "BUY SPCX at IPO allocation if possible — the supply/demand imbalance guarantees a first-day pop. The reference to QNT opening +13% and then dipping below IPO is instructive: buy the IPO, take profits day 1-2. For 1-2 week horizon: LONG ASTS, GSAT, RKLB (SpaceX-adjacent satellite plays). LONG ANET (data center infrastructure — SpaceX's AI capex story benefits the whole buildout chain). The broader AI infrastructure theme (NVDA, MRVL joining S&P 500) is supported.",
-      "contradiction_score": 55,
+      "contradiction_score": 58,
       "capital_flow": {
         "direction": "inflow",
         "amount_b": 8.0,
@@ -371,7 +380,8 @@
       "generated_at": "2026-06-06T11:51:48.596135+00:00",
       "freshness": "new",
       "paradigm_pillar": "abundance_tech",
-      "paradigm_implications": []
+      "paradigm_implications": [],
+      "tier": "DEVELOPING"
     },
     {
       "story_id": "n21_multi_pillar__iran-bahrain_missile_attack__hormuz_escalation_continues",
@@ -385,7 +395,7 @@
       "horizon": "24-72h",
       "confidence": "medium",
       "actionable_trade": "LONG OIL/ENERGY. Brent crude gaps up on Monday Asia open — targeting $95+ as Sechin (Rosneft) projects $95-96 if Hormuz restrictions lift (implying much higher if they don't). Buy WTI futures, XLE, OIH, XOM, CVX. Brent $90 calls. SHORT AIRLINES (JETS, AAL, DAL) as fuel costs surge. GOLD LONG (GLD, I",
-      "contradiction_score": 55,
+      "contradiction_score": 59,
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "Energy sector outperforms all others. Safe-haven assets (gold, USD, CHF) bid. Commodity supercycle thesis strengthened. Fertilizer prices rising (Hormuz closure impacts urea shipments — bullish for $MOS, $CF, $NTR). Broad risk-off means TLT (long-duration bonds) may find a bid as flight-to-safety ov",
       "capital_flow": {
@@ -416,7 +426,8 @@
       "generated_at": "2026-06-06T12:05:10.095816+00:00",
       "freshness": "new",
       "paradigm_pillar": "multi_pillar",
-      "paradigm_implications": []
+      "paradigm_implications": [],
+      "tier": "DEVELOPING"
     },
     {
       "story_id": "ai_rotation_crypto_20260605",
@@ -450,7 +461,9 @@
         "asset_class": "equities",
         "claim": "$5.0B ↑ equities",
         "confidence": "65%"
-      }
+      },
+      "contradiction_score": 52,
+      "tier": "ALIGNED"
     },
     {
       "story_id": "n21_abundance__space_etf_mainstream",
@@ -494,7 +507,9 @@
       "source": "Reuters, VanEck, WisdomTree, Global X, FT Adviser, EU-Startups",
       "source_url": "https://www.reuters.com",
       "generated_at": "2026-06-05T18:31:00+00:00",
-      "freshness": "active"
+      "freshness": "active",
+      "contradiction_score": 60,
+      "tier": "DEVELOPING"
     },
     {
       "story_id": "n21_multi__lebanon_ceasefire_dead_oman_oil",
@@ -538,7 +553,9 @@
       "source": "NYT, BBC, Telegram Intel Monitor (@monitoringsituation, @trad_fin), Reuters",
       "source_url": "https://www.nytimes.com/2026/06/05/world/middleeast/lebanon-cease-fire-israel-hezbollah.html",
       "generated_at": "2026-06-05T19:45:00+00:00",
-      "freshness": "active"
+      "freshness": "active",
+      "contradiction_score": 60,
+      "tier": "DEVELOPING"
     },
     {
       "story_id": "n21_ai__trump_whitehouse_ai_summit_warsh",
@@ -582,7 +599,9 @@
       "source": "BBC News, Telegram Intel Monitor (@trad_fin, @ethanlevins), NYT Business section",
       "source_url": "https://www.bbc.com/news/articles/c98r8r7dz5no",
       "generated_at": "2026-06-05T19:45:00+00:00",
-      "freshness": "active"
+      "freshness": "active",
+      "contradiction_score": 50,
+      "tier": "ALIGNED"
     },
     {
       "story_id": "n21_multi__us_iran_overnight_strikes",
@@ -627,7 +646,9 @@
       "source": "Telegram Intel Monitor (@trad_fin, @monitoringsituation), CENTCOM statements, Mehr News, Reuters",
       "source_url": "https://t.me/trad_fin",
       "generated_at": "2026-06-06T07:46:00+00:00",
-      "freshness": "active"
+      "freshness": "active",
+      "contradiction_score": 66,
+      "tier": "DEVELOPING"
     },
     {
       "story_id": "n21_multi__ukraine_300_drone_wave",
@@ -672,7 +693,9 @@
       "source": "Telegram Intel Monitor (@ASupersharij, @monitoringsituation, @trad_fin), Zelensky SBU statement, Putin press pool, Reuters",
       "source_url": "https://t.me/ASupersharij",
       "generated_at": "2026-06-06T07:46:00+00:00",
-      "freshness": "active"
+      "freshness": "active",
+      "contradiction_score": 51,
+      "tier": "ALIGNED"
     },
     {
       "story_id": "n21_china__chip_boom_property_crisis",
@@ -717,7 +740,9 @@
         "type": "credit_event",
         "description": "If a major Chinese developer defaults on offshore bonds (triggering cross-default clauses across the sector) while the PBOC is simultaneously supporting the semiconductor rally with directed liquidity, China would face its worst credit event since Evergrande 2021. H-shares could fall 10-15%, contagion would spread to EM and commodity currencies (AUD, BRL), and the 'China decoupling' trade would accelerate globally. Less extreme path: the PBOC successfully ring-fences the property crisis while the chip rally continues, creating a managed K-shaped recovery that widens wealth inequality but avoids systemic crisis."
       },
-      "freshness": "new"
+      "freshness": "new",
+      "contradiction_score": 66,
+      "tier": "DEVELOPING"
     }
   ]
 }

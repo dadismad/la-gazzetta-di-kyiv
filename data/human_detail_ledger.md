@@ -1,0 +1,1 @@
+| HD-013 | Kuwait | Iran struck Kuwait — a major OPEC producer and US ally — with 7 ballistic missiles | telegram intel monitors | 2026-06-06 | Direct escalation of Iran-Gulf war, contradicts ceasefire consensus | Used in editorial cycle 7 Telegram |

@@ -196,7 +196,14 @@ def extract_from_capital_flow_dict(cf, story, story_id):
     claim = cf.get("claim", "")
     headline = cf.get("headline", "") or cf.get("title", "")
     if not headline and claim:
-        headline = claim[:120]
+        # Truncate at word boundary — never cut mid-word
+        raw = claim[:200] if len(claim) > 120 else claim
+        if len(raw) > 120:
+            cut = raw[:120].rstrip()
+            last_space = cut.rfind(' ')
+            headline = cut[:last_space] if last_space > 80 else cut
+        else:
+            headline = raw
 
     # Asset class — simplify compound values
     asset_class = simplify_asset_class(cf.get("asset_class", ""), story_id)
@@ -206,8 +213,17 @@ def extract_from_capital_flow_dict(cf, story, story_id):
     if not anchor:
         anchor = derive_anchor_symbol(story_id, asset_class, story)
 
-    # Projected
+    # Projected — ensure no mid-word truncation
     projected = cf.get("projected", "")
+    if projected and len(projected) > 0:
+        words = projected.rstrip().split()
+        if words and len(words[-1]) <= 4 and words[-1].islower() and not projected.rstrip().endswith(('.','!','?',':',';','…','-','—')):
+            # Truncated mid-word — try to find last clean break
+            last_period = projected.rfind('. ')
+            last_comma = projected.rfind(', ')
+            cut_point = max(last_period, last_comma)
+            if cut_point > 100:
+                projected = projected[:cut_point+1]
 
     # Contradiction bonus
     contradiction = story.get("contradiction_score", 0)
