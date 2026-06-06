@@ -1547,6 +1547,19 @@ function shareToReddit(card) {
 // ═══════════════════════════════════════════════════════════════
 
 async function boot() {
+  // Wait for i18n translations to finish loading before rendering
+  if (window.i18n && !window.i18n._ready) {
+    await new Promise(resolve => {
+      const check = () => {
+        if (window.i18n._ready) { resolve(); return; }
+        setTimeout(check, 50);
+      };
+      window.addEventListener('i18nReady', resolve, { once: true });
+      check();
+      // Hard safety: proceed after 5s regardless
+      setTimeout(resolve, 5000);
+    });
+  }
   // Wire collapsible containers first
   wireCollapsibleContainers();
 
