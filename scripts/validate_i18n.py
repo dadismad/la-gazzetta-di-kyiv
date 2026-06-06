@@ -35,11 +35,11 @@ def extract_js_keys(js_path):
     for pattern in [str(js_path / "**/*.js"), str(js_path / "*.js")]:
         for f in glob(pattern, recursive=True):
             text = Path(f).read_text(errors='ignore')
-            # i18n.t('key', 'fallback')
-            for m in re.finditer(r"i18n\.t\(\s*['\"]([^'\"]+)['\"]", text):
+            # i18n.t('key', 'fallback') — skip string concatenation (e.g., "conviction_"+"HIGH")
+            for m in re.finditer(r"i18n\.t\(\s*['\"]([^'\"]+)['\"]\s*[,\)]", text):
                 keys.add(m.group(1))
             # Template literal: ${i18n.t('key', ...)}
-            for m in re.finditer(r"\$\{i18n\.t\(\s*['\"]([^'\"]+)['\"]", text):
+            for m in re.finditer(r"\$\{i18n\.t\(\s*['\"]([^'\"]+)['\"]\s*[,\)]", text):
                 keys.add(m.group(1))
     return keys
 
