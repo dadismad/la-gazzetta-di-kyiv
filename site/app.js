@@ -134,6 +134,7 @@ function updateMasthead() {
     const time = now.toTimeString().slice(0,5);
     const date = `${now.getDate()}/${now.getMonth()+1}/${now.getFullYear().toString().slice(-2)}`;
     metaEl.textContent = `${date} · ${time} EET`;
+    metaEl.setAttribute('datetime', now.toISOString());
   }
 }
 
@@ -143,6 +144,7 @@ function updateMastheadLiving(generatedAt, nextMicroUpdate) {
   const time = generatedAt ? new Date(generatedAt).toTimeString().slice(0,5) + ' EET' : new Date().toTimeString().slice(0,5) + ' EET';
   const next = nextMicroUpdate ? `· next update ${new Date(nextMicroUpdate).toTimeString().slice(0,5)}` : '';
   metaEl.textContent = `${time} ${next}`;
+  if (generatedAt) metaEl.setAttribute('datetime', generatedAt);
 }
 
 // ═══════════════════════════════════════════════════════════════
