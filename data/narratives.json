@@ -1,0 +1,346 @@
+{
+  "generated_at": "2026-05-26T17:31:06.497240+00:00",
+  "recent_items_24h": 594,
+  "top_narratives": [
+    {
+      "topic": "ai",
+      "mentions_24h": 127
+    },
+    {
+      "topic": "eu",
+      "mentions_24h": 23
+    },
+    {
+      "topic": "china",
+      "mentions_24h": 12
+    },
+    {
+      "topic": "election",
+      "mentions_24h": 9
+    },
+    {
+      "topic": "gas",
+      "mentions_24h": 9
+    },
+    {
+      "topic": "oil",
+      "mentions_24h": 6
+    },
+    {
+      "topic": "inflation",
+      "mentions_24h": 6
+    },
+    {
+      "topic": "rates",
+      "mentions_24h": 4
+    },
+    {
+      "topic": "russia",
+      "mentions_24h": 3
+    },
+    {
+      "topic": "crypto",
+      "mentions_24h": 3
+    },
+    {
+      "topic": "drone",
+      "mentions_24h": 2
+    },
+    {
+      "topic": "nato",
+      "mentions_24h": 2
+    },
+    {
+      "topic": "ceasefire",
+      "mentions_24h": 2
+    }
+  ],
+  "narrative_reviews": [
+    {
+      "topic": "ai",
+      "mentions_24h": 127,
+      "intensity_score": 100,
+      "momentum": "high",
+      "review": "Signal strength 100/100 with high momentum. Regime bias appears risk-on. Interpretation: short-term desks should treat this narrative as position-relevant and timing-sensitive; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "Sam Altman",
+          "Jensen Huang",
+          "Microsoft",
+          "NVIDIA"
+        ],
+        "svo": "US hyperscalers increase AI capex and pull forward semiconductor demand",
+        "claim": "AI infrastructure spending is extending equity momentum while concentrating liquidity risk",
+        "contradiction": "Consensus says AI upside is fully priced, while compute bottlenecks imply further repricing",
+        "manipulation": "Headline selection bias toward product launches can hide margin and power-constraint risks",
+        "transmission": "Capex headlines -> growth expectations -> equity leadership -> duration sensitivity and USD spillovers",
+        "repricing": "NQ +1.5% to +4.0%; SOXX leads if breadth holds",
+        "invalidation": "Mega-cap guidance cuts or AI capex deferrals across two reporting cycles"
+      }
+    },
+    {
+      "topic": "eu",
+      "mentions_24h": 23,
+      "intensity_score": 96.6,
+      "momentum": "high",
+      "review": "Signal strength 96.6/100 with high momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as position-relevant and timing-sensitive; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "European Commission",
+          "ECB",
+          "Germany",
+          "France"
+        ],
+        "svo": "EU institutions tighten industrial and fiscal responses to external shocks",
+        "claim": "Policy fragmentation risk inside Europe is underpriced in cross-asset correlation",
+        "contradiction": "Headline calm implies cohesion, but fiscal-energy divergence suggests rising dispersion",
+        "manipulation": "National headlines can downplay cross-border policy conflict and timeline slippage",
+        "transmission": "Policy signal -> sovereign spread expectations -> EUR risk premium -> equity factor rotation",
+        "repricing": "SX5E dispersion +2% to +5%; EURUSD two-way with downside skew on policy conflict",
+        "invalidation": "Coordinated fiscal package and stable energy forwards over multiple sessions"
+      }
+    },
+    {
+      "topic": "china",
+      "mentions_24h": 12,
+      "intensity_score": 50.4,
+      "momentum": "medium",
+      "review": "Signal strength 50.4/100 with medium momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "Xi Jinping",
+          "PBoC",
+          "State Council",
+          "MOFCOM"
+        ],
+        "svo": "Chinese policymakers recalibrate stimulus while trade constraints reshape export channels",
+        "claim": "China macro impulse uncertainty is mispriced in cyclicals and commodity beta",
+        "contradiction": "Stimulus headlines suggest reflation, while private-demand weakness limits follow-through",
+        "manipulation": "Policy headlines may overstate immediacy while underreporting implementation lag",
+        "transmission": "Policy tone -> EM growth expectations -> commodity demand assumptions -> FX beta",
+        "repricing": "Copper/EM equities \u00b13% range; AUDCNH sensitivity rises in policy windows",
+        "invalidation": "Sustained PMIs and credit impulse confirmation across two data cycles"
+      }
+    },
+    {
+      "topic": "election",
+      "mentions_24h": 9,
+      "intensity_score": 37.8,
+      "momentum": "medium",
+      "review": "Signal strength 37.8/100 with medium momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "White House",
+          "US Congress",
+          "European Parliament",
+          "party leaderships"
+        ],
+        "svo": "Election narratives alter fiscal and regulatory expectations across regions",
+        "claim": "Political transition risk is feeding risk premia faster than consensus models imply",
+        "contradiction": "Poll stability implies low risk, while policy path asymmetry keeps tail risk elevated",
+        "manipulation": "Campaign framing can amplify certainty and suppress policy implementation constraints",
+        "transmission": "Political probability shifts -> fiscal path repricing -> rates vol -> sector leadership changes",
+        "repricing": "Rates vol +10% to +25%; policy-sensitive sectors swing 2% to 6%",
+        "invalidation": "Cross-party convergence on fiscal and trade policy trajectories"
+      }
+    },
+    {
+      "topic": "gas",
+      "mentions_24h": 9,
+      "intensity_score": 37.8,
+      "momentum": "medium",
+      "review": "Signal strength 37.8/100 with medium momentum. Regime bias appears risk-off. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "Gazprom",
+          "QatarEnergy",
+          "European utilities",
+          "energy ministers"
+        ],
+        "svo": "Gas supply narratives influence European cost structures and inflation expectations",
+        "claim": "Gas transport and storage risk remains underweighted in equity and FX pricing",
+        "contradiction": "Inventory comfort implies stability, while routing fragility preserves upside price risk",
+        "manipulation": "Spot-price focus can obscure forward-curve stress and storage quality differences",
+        "transmission": "Gas headlines -> inflation expectations -> real rates path -> equity margin assumptions",
+        "repricing": "EU utilities/chemicals dispersion +3% to +8%; EUR volatility firm on supply shocks",
+        "invalidation": "Storage trajectory beats seasonal path with stable LNG arrivals"
+      }
+    },
+    {
+      "topic": "oil",
+      "mentions_24h": 6,
+      "intensity_score": 25.2,
+      "momentum": "medium",
+      "review": "Signal strength 25.2/100 with medium momentum. Regime bias appears risk-off. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "OPEC+",
+          "Saudi Aramco",
+          "IEA",
+          "US shale producers"
+        ],
+        "svo": "Producers manage supply while conflict headlines alter shipping and insurance costs",
+        "claim": "Energy risk premium remains underpriced when geopolitical supply corridors are unstable",
+        "contradiction": "Spot calm suggests normalization, but tanker risk and inventory drawdowns suggest fragility",
+        "manipulation": "Short-term price relief can be over-amplified while logistics stress is under-reported",
+        "transmission": "Energy headlines -> inflation expectations -> rates volatility -> equity and FX rotation",
+        "repricing": "Brent +2% to +6% in shock windows; airlines/transport underperform; gold supported",
+        "invalidation": "Verified de-escalation with sustained inventory rebuild and freight normalization"
+      }
+    },
+    {
+      "topic": "inflation",
+      "mentions_24h": 6,
+      "intensity_score": 25.2,
+      "momentum": "medium",
+      "review": "Signal strength 25.2/100 with medium momentum. Regime bias appears risk-off. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "Federal Reserve",
+          "ECB",
+          "BLS",
+          "Eurostat"
+        ],
+        "svo": "Inflation prints reset central-bank reaction functions and real-yield expectations",
+        "claim": "Disinflation confidence is fragile and vulnerable to energy and wage second-round effects",
+        "contradiction": "Core moderation implies easing path, while services stickiness delays policy pivot",
+        "manipulation": "Single-print framing can hide composition effects and revision risk",
+        "transmission": "Inflation surprise -> terminal-rate repricing -> duration and growth-beta reset",
+        "repricing": "UST 2Y/10Y move 8-18bp window; growth-value rotation 2% to 5%",
+        "invalidation": "Sequential core cooling plus easing wage indicators across releases"
+      }
+    },
+    {
+      "topic": "rates",
+      "mentions_24h": 4,
+      "intensity_score": 16.8,
+      "momentum": "low",
+      "review": "Signal strength 16.8/100 with low momentum. Regime bias appears risk-off. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "Federal Reserve",
+          "ECB",
+          "UST market",
+          "Bund market"
+        ],
+        "svo": "Rate expectations re-anchor portfolio duration and equity valuation assumptions",
+        "claim": "Rates volatility remains a primary transmission channel for cross-asset repricing",
+        "contradiction": "Soft-landing consensus implies lower vol, while policy ambiguity keeps vol supply constrained",
+        "manipulation": "Forward-guidance headlines may overstate certainty around reaction functions",
+        "transmission": "Rates path -> discount-rate reset -> equity multiple compression/expansion -> FX carry shifts",
+        "repricing": "MOVE regime upshift; duration-sensitive equities \u00b13% to 7%",
+        "invalidation": "Consistent central-bank signaling and realized inflation convergence"
+      }
+    },
+    {
+      "topic": "russia",
+      "mentions_24h": 3,
+      "intensity_score": 12.6,
+      "momentum": "low",
+      "review": "Signal strength 12.6/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "Kremlin",
+          "Russian MoD",
+          "EU Council",
+          "NATO"
+        ],
+        "svo": "Conflict escalation narratives affect sanctions expectations and defense-energy pricing",
+        "claim": "Geopolitical escalation risk is repeatedly under-discounted in European risk assets",
+        "contradiction": "Frontline stalemate implies contained risk, while sanctions and logistics dynamics keep spillovers alive",
+        "manipulation": "War coverage can prioritize tactical headlines over supply-chain strategic impact",
+        "transmission": "Conflict headline -> sanctions premium -> energy/defense repricing -> regional risk premium",
+        "repricing": "European defensives and defense names +2% to +6%; cyclical beta under pressure",
+        "invalidation": "Verified durable de-escalation and sanctions path relaxation"
+      }
+    },
+    {
+      "topic": "crypto",
+      "mentions_24h": 3,
+      "intensity_score": 12.6,
+      "momentum": "low",
+      "review": "Signal strength 12.6/100 with low momentum. Regime bias appears risk-on. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "SEC",
+          "Major exchanges",
+          "ETF issuers",
+          "Institutional allocators"
+        ],
+        "svo": "Regulatory and liquidity signals drive crypto beta and risk appetite spillovers",
+        "claim": "Crypto risk-on reflex can front-run broader liquidity shifts but remains shock-sensitive",
+        "contradiction": "ETF inflow narrative implies stability, while leverage concentration increases fragility",
+        "manipulation": "Flow headlines can omit concentration and liquidation cascade risk",
+        "transmission": "Crypto flows -> risk sentiment -> high-beta equity participation -> vol spillovers",
+        "repricing": "BTC/ETH \u00b14% to \u00b112% windows; high-beta tech correlation episodically rises",
+        "invalidation": "Sustained deleveraging with stable spot participation and lower funding stress"
+      }
+    },
+    {
+      "topic": "drone",
+      "mentions_24h": 2,
+      "intensity_score": 8.4,
+      "momentum": "low",
+      "review": "Signal strength 8.4/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "European Commission",
+          "Federal Reserve",
+          "Global macro funds",
+          "Major corporates"
+        ],
+        "svo": "DRONE headlines change policy expectations and reprice cross-asset risk",
+        "claim": "DRONE narrative intensity is shifting positioning behaviour across markets",
+        "contradiction": "DRONE appears priced in, yet second-order effects remain underweighted",
+        "manipulation": "Framing distortion and omission risk can exaggerate certainty in fast headlines",
+        "transmission": "Headline flow -> liquidity regime -> positioning -> cross-asset repricing",
+        "repricing": "Risk assets +1% to +3% in risk-on continuation; defensive assets bid on volatility spikes",
+        "invalidation": "Narrative share falls below 7-day baseline for two consecutive cycles"
+      }
+    },
+    {
+      "topic": "nato",
+      "mentions_24h": 2,
+      "intensity_score": 8.4,
+      "momentum": "low",
+      "review": "Signal strength 8.4/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "NATO",
+          "US DoD",
+          "European defense ministries",
+          "Ukrainian command"
+        ],
+        "svo": "Alliance posture updates alter procurement, fiscal defense burdens, and risk perception",
+        "claim": "Defense-cycle extension has longer earnings visibility than consensus assumes",
+        "contradiction": "Budget fatigue narrative implies slowdown, while procurement pipelines suggest persistence",
+        "manipulation": "Announcement headlines may overstate immediate capacity without delivery timelines",
+        "transmission": "Posture shifts -> procurement cycle -> industrial order books -> fiscal mix expectations",
+        "repricing": "Defense complex outperformance +3% to +9%; sovereign spread sensitivity rises",
+        "invalidation": "Procurement delays and coalition budget retrenchment"
+      }
+    },
+    {
+      "topic": "ceasefire",
+      "mentions_24h": 2,
+      "intensity_score": 8.4,
+      "momentum": "low",
+      "review": "Signal strength 8.4/100 with low momentum. Regime bias appears mixed. Interpretation: short-term desks should treat this narrative as context-relevant with selective execution; cross-check with rates, energy, and policy headlines for confirmation before sizing.",
+      "semantics": {
+        "actors": [
+          "European Commission",
+          "Federal Reserve",
+          "Global macro funds",
+          "Major corporates"
+        ],
+        "svo": "CEASEFIRE headlines change policy expectations and reprice cross-asset risk",
+        "claim": "CEASEFIRE narrative intensity is shifting positioning behaviour across markets",
+        "contradiction": "CEASEFIRE appears priced in, yet second-order effects remain underweighted",
+        "manipulation": "Framing distortion and omission risk can exaggerate certainty in fast headlines",
+        "transmission": "Headline flow -> liquidity regime -> positioning -> cross-asset repricing",
+        "repricing": "Risk assets +1% to +3% in risk-on continuation; defensive assets bid on volatility spikes",
+        "invalidation": "Narrative share falls below 7-day baseline for two consecutive cycles"
+      }
+    }
+  ]
+}

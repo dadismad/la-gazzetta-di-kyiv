@@ -1,0 +1,425 @@
+{
+  "version": 1,
+  "updated_at": "2026-06-06T11:12:47.438352+00:00",
+  "story_count": 11,
+  "active_count": 11,
+  "stories": {
+    "n21_macro": {
+      "story_id": "n21_macro",
+      "first_seen": "2026-06-03T21:35:42.864956+00:00",
+      "last_updated": "2026-06-05T03:16:07.166166+00:00",
+      "status": "evolving",
+      "status_reason": "New evidence: Evolution match (score=0.61): Betfair targeted gambling addict, court hears in landmark case; US plans cuts to Nato’s ra",
+      "update_count": 15,
+      "original_setup_id": "n21_macro",
+      "original_headline": "macro: Trump’s proposed grant rules could destroy US science, researcher warns",
+      "current_headline": "Betfair targeted gambling addict, court hears in landmark case",
+      "sector": "tech",
+      "paradigm_pillar": "multi_pillar",
+      "actors": [
+        "Gulf States",
+        "Federal Reserve",
+        "Kremlin/Russia"
+      ],
+      "geography": [
+        "us",
+        "uk",
+        "europe",
+        "eu"
+      ],
+      "thread_ids": [
+        "n21_macro__main"
+      ],
+      "primary_thread_id": "n21_macro__main",
+      "evidence_count": 1883,
+      "source_count": 86,
+      "invalidation_triggers": [
+        "Gulf States announces policy reversal within 72 hours",
+        "New data contradicts the macro repricing direction within 24 hours"
+      ],
+      "confidence": 0.9,
+      "paradigm_implications": [],
+      "capital_flow_implication": "",
+      "asset_claim": {},
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Meta_-_Facebook%2C_Instagram%2C_Whatsapp_-_Nein_Danke.png",
+      "evolution_score_current": 0.6091,
+      "evolution_score_peak": 0.6333
+    },
+    "n21_ai": {
+      "story_id": "n21_ai",
+      "first_seen": "2026-06-03T21:35:42.864956+00:00",
+      "last_updated": "2026-06-03T21:35:42.864956+00:00",
+      "status": "new",
+      "status_reason": "Seeded from narrative intelligence pipeline",
+      "update_count": 1,
+      "original_setup_id": "n21_ai",
+      "original_headline": "ai: Meta bets on AI agents to unlock WhatsApp revenues",
+      "current_headline": "ai: Meta bets on AI agents to unlock WhatsApp revenues",
+      "sector": "macro",
+      "paradigm_pillar": "multi_pillar",
+      "actors": [
+        "Federal Reserve"
+      ],
+      "geography": [],
+      "thread_ids": [
+        "n21_ai__main"
+      ],
+      "primary_thread_id": "n21_ai__main",
+      "evidence_count": 3,
+      "source_count": 6,
+      "invalidation_triggers": [
+        "Federal Reserve announces policy reversal within 72 hours",
+        "New data contradicts the ai repricing direction within 24 hours"
+      ],
+      "confidence": 0.49,
+      "paradigm_implications": [],
+      "capital_flow_implication": "",
+      "asset_claim": {},
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Meta_-_Facebook%2C_Instagram%2C_Whatsapp_-_Nein_Danke.png",
+      "evolution_score_current": 0.0,
+      "evolution_score_peak": 0.0
+    },
+    "n21_oil": {
+      "story_id": "n21_oil",
+      "first_seen": "2026-06-03T21:35:42.864956+00:00",
+      "last_updated": "2026-06-05T03:16:07.166166+00:00",
+      "status": "evolving",
+      "status_reason": "New evidence: Evolution match (score=0.72): The Gulf states and Ukraine need each other; Gulf states are burning through interceptors",
+      "update_count": 15,
+      "original_setup_id": "n21_oil",
+      "original_headline": "oil: Trump’s Iran war drains US oil stocks to lowest level since 2004",
+      "current_headline": "The Gulf states and Ukraine need each other",
+      "sector": "geopolitics",
+      "paradigm_pillar": "multi_pillar",
+      "actors": [
+        "Gulf States"
+      ],
+      "geography": [
+        "us",
+        "iran",
+        "gulf states",
+        "gulf"
+      ],
+      "thread_ids": [
+        "n21_oil__main"
+      ],
+      "primary_thread_id": "n21_oil__main",
+      "evidence_count": 31,
+      "source_count": 34,
+      "invalidation_triggers": [
+        "Gulf States announces policy reversal within 72 hours",
+        "New data contradicts the oil repricing direction within 24 hours"
+      ],
+      "confidence": 0.45,
+      "paradigm_implications": [],
+      "capital_flow_implication": "",
+      "asset_claim": {},
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Donald_Trump_official_portrait.jpg",
+      "evolution_score_current": 0.7203,
+      "evolution_score_peak": 0.7412
+    },
+    "n21_china": {
+      "story_id": "n21_china",
+      "first_seen": "2026-06-03T21:35:42.864956+00:00",
+      "last_updated": "2026-06-03T21:35:42.864956+00:00",
+      "status": "new",
+      "status_reason": "Seeded from narrative intelligence pipeline",
+      "update_count": 1,
+      "original_setup_id": "n21_china",
+      "original_headline": "china: Nissan signs deal with China’s Chery for Sunderland car production",
+      "current_headline": "china: Nissan signs deal with China’s Chery for Sunderland car production",
+      "sector": "geopolitics",
+      "paradigm_pillar": "multi_pillar",
+      "actors": [
+        "PBoC",
+        "State Council",
+        "CCP"
+      ],
+      "geography": [
+        "china"
+      ],
+      "thread_ids": [
+        "n21_china__main"
+      ],
+      "primary_thread_id": "n21_china__main",
+      "evidence_count": 3,
+      "source_count": 6,
+      "invalidation_triggers": [
+        "PBoC announces policy reversal within 72 hours",
+        "New data contradicts the china repricing direction within 24 hours"
+      ],
+      "confidence": 0.45,
+      "paradigm_implications": [],
+      "capital_flow_implication": "",
+      "asset_claim": {},
+      "image_url": "https://i.guim.co.uk/img/media/02d774e13d041f094f583254b13136c5a354374e/846_0_4583_3667/master/4583.jpg?width=700&quality=85&auto=format&fit=max&s=76103f6b3aeacef960917fa88cbed56f",
+      "evolution_score_current": 0.0,
+      "evolution_score_peak": 0.0
+    },
+    "n21_inflation": {
+      "story_id": "n21_inflation",
+      "first_seen": "2026-06-03T21:35:42.864956+00:00",
+      "last_updated": "2026-06-03T21:35:42.864956+00:00",
+      "status": "new",
+      "status_reason": "Seeded from narrative intelligence pipeline",
+      "update_count": 1,
+      "original_setup_id": "n21_inflation",
+      "original_headline": "inflation: Bessent says US inflation jump will be ‘short-term blip’",
+      "current_headline": "inflation: Bessent says US inflation jump will be ‘short-term blip’",
+      "sector": "macro",
+      "paradigm_pillar": "multi_pillar",
+      "actors": [
+        "Federal Reserve"
+      ],
+      "geography": [
+        "us",
+        "middle east"
+      ],
+      "thread_ids": [
+        "n21_inflation__main"
+      ],
+      "primary_thread_id": "n21_inflation__main",
+      "evidence_count": 3,
+      "source_count": 6,
+      "invalidation_triggers": [
+        "Federal Reserve announces policy reversal within 72 hours",
+        "New data contradicts the inflation repricing direction within 24 hours"
+      ],
+      "confidence": 0.44,
+      "paradigm_implications": [],
+      "capital_flow_implication": "",
+      "asset_claim": {},
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Official_portrait_of_Treasury_Secretary_Scott_Bessent_%28cropped%29.jpg",
+      "evolution_score_current": 0.0,
+      "evolution_score_peak": 0.0
+    },
+    "n21_ukraine": {
+      "story_id": "n21_ukraine",
+      "first_seen": "2026-06-03T21:35:42.864956+00:00",
+      "last_updated": "2026-06-03T21:35:42.864956+00:00",
+      "status": "new",
+      "status_reason": "Seeded from narrative intelligence pipeline",
+      "update_count": 1,
+      "original_setup_id": "n21_ukraine",
+      "original_headline": "ukraine: To fight Russia, Europe needs Ukraine",
+      "current_headline": "ukraine: To fight Russia, Europe needs Ukraine",
+      "sector": "tech",
+      "paradigm_pillar": "eu_fragmentation",
+      "actors": [
+        "Kremlin/Russia"
+      ],
+      "geography": [
+        "us",
+        "uk",
+        "europe",
+        "ukraine",
+        "russia",
+        "eu"
+      ],
+      "thread_ids": [
+        "n21_ukraine__main"
+      ],
+      "primary_thread_id": "n21_ukraine__main",
+      "evidence_count": 1,
+      "source_count": 6,
+      "invalidation_triggers": [
+        "Kremlin/Russia announces policy reversal within 72 hours",
+        "New data contradicts the ukraine repricing direction within 24 hours"
+      ],
+      "confidence": 0.43,
+      "paradigm_implications": [],
+      "capital_flow_implication": "",
+      "asset_claim": {},
+      "image_url": null,
+      "evolution_score_current": 0.0,
+      "evolution_score_peak": 0.0
+    },
+    "n21_russia": {
+      "story_id": "n21_russia",
+      "first_seen": "2026-06-03T21:35:42.864956+00:00",
+      "last_updated": "2026-06-03T21:35:42.864956+00:00",
+      "status": "new",
+      "status_reason": "Seeded from narrative intelligence pipeline",
+      "update_count": 1,
+      "original_setup_id": "n21_russia",
+      "original_headline": "russia: To fight Russia, Europe needs Ukraine",
+      "current_headline": "russia: To fight Russia, Europe needs Ukraine",
+      "sector": "tech",
+      "paradigm_pillar": "eu_fragmentation",
+      "actors": [
+        "Kremlin/Russia"
+      ],
+      "geography": [
+        "us",
+        "uk",
+        "europe",
+        "ukraine",
+        "russia",
+        "eu"
+      ],
+      "thread_ids": [
+        "n21_russia__main"
+      ],
+      "primary_thread_id": "n21_russia__main",
+      "evidence_count": 1,
+      "source_count": 6,
+      "invalidation_triggers": [
+        "Kremlin/Russia announces policy reversal within 72 hours",
+        "New data contradicts the russia repricing direction within 24 hours"
+      ],
+      "confidence": 0.43,
+      "paradigm_implications": [],
+      "capital_flow_implication": "",
+      "asset_claim": {},
+      "image_url": null,
+      "evolution_score_current": 0.0,
+      "evolution_score_peak": 0.0
+    },
+    "n21_nato": {
+      "story_id": "n21_nato",
+      "first_seen": "2026-06-03T21:35:42.864956+00:00",
+      "last_updated": "2026-06-05T03:16:07.166166+00:00",
+      "status": "evolving",
+      "status_reason": "New evidence: Evolution match (score=0.87): US plans cuts to Nato’s rapid response force; Suspected Sabotage of Deep-Sea Cable Trigger",
+      "update_count": 15,
+      "original_setup_id": "n21_nato",
+      "original_headline": "nato: Suspected Sabotage of Deep-Sea Cable Triggers First NATO-Led Response",
+      "current_headline": "US plans cuts to Nato’s rapid response force",
+      "sector": "geopolitics",
+      "paradigm_pillar": "multi_pillar",
+      "actors": [
+        "NATO"
+      ],
+      "geography": [
+        "us"
+      ],
+      "thread_ids": [
+        "n21_nato__main",
+        "n21_nato__us_plans_cuts_to_nato_s_rapid_response_force"
+      ],
+      "primary_thread_id": "n21_nato__main",
+      "evidence_count": 19,
+      "source_count": 24,
+      "invalidation_triggers": [
+        "NATO announces policy reversal within 72 hours",
+        "New data contradicts the nato repricing direction within 24 hours"
+      ],
+      "confidence": 0.43,
+      "paradigm_implications": [],
+      "capital_flow_implication": "",
+      "asset_claim": {},
+      "image_url": null,
+      "evolution_score_current": 0.8723,
+      "evolution_score_peak": 0.8931
+    },
+    "n21_rates": {
+      "story_id": "n21_rates",
+      "first_seen": "2026-06-04T15:46:31.108578+00:00",
+      "last_updated": "2026-06-04T15:46:31.108578+00:00",
+      "status": "new",
+      "status_reason": "Seeded from narrative intelligence pipeline",
+      "update_count": 1,
+      "original_setup_id": "n21_rates",
+      "original_headline": "rates: Inflation and interest rates tracker: see how your country compares",
+      "current_headline": "rates: Inflation and interest rates tracker: see how your country compares",
+      "sector": "macro",
+      "paradigm_pillar": "multi_pillar",
+      "actors": [
+        "Federal Reserve",
+        "ECB",
+        "BOJ"
+      ],
+      "geography": [],
+      "thread_ids": [
+        "n21_rates__main"
+      ],
+      "primary_thread_id": "n21_rates__main",
+      "evidence_count": 3,
+      "source_count": 5,
+      "invalidation_triggers": [
+        "Federal Reserve announces policy reversal within 72 hours",
+        "New data contradicts the rates repricing direction within 24 hours"
+      ],
+      "confidence": 0.44,
+      "paradigm_implications": [],
+      "capital_flow_implication": "",
+      "asset_claim": {},
+      "image_url": null,
+      "evolution_score_current": 0.0,
+      "evolution_score_peak": 0.0
+    },
+    "n21_election": {
+      "story_id": "n21_election",
+      "first_seen": "2026-06-04T15:46:31.108578+00:00",
+      "last_updated": "2026-06-04T15:46:31.108578+00:00",
+      "status": "new",
+      "status_reason": "Seeded from narrative intelligence pipeline",
+      "update_count": 1,
+      "original_setup_id": "n21_election",
+      "original_headline": "election: Russia prunes Armenian rose trade ahead of election",
+      "current_headline": "election: Russia prunes Armenian rose trade ahead of election",
+      "sector": "geopolitics",
+      "paradigm_pillar": "multi_pillar",
+      "actors": [
+        "Kremlin/Russia"
+      ],
+      "geography": [
+        "us",
+        "russia"
+      ],
+      "thread_ids": [
+        "n21_election__main"
+      ],
+      "primary_thread_id": "n21_election__main",
+      "evidence_count": 1,
+      "source_count": 5,
+      "invalidation_triggers": [
+        "Kremlin/Russia announces policy reversal within 72 hours",
+        "New data contradicts the election repricing direction within 24 hours"
+      ],
+      "confidence": 0.43,
+      "paradigm_implications": [],
+      "capital_flow_implication": "",
+      "asset_claim": {},
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ergaki%2C_Buiba_Valley%2C_Western_Sayan_Mountains%2C_Krasnoyarsk_Krai%2C_Russia.jpg",
+      "evolution_score_current": 0.0,
+      "evolution_score_peak": 0.0
+    },
+    "n21_crypto": {
+      "story_id": "n21_crypto",
+      "first_seen": "2026-06-04T15:46:31.108578+00:00",
+      "last_updated": "2026-06-04T15:46:31.108578+00:00",
+      "status": "new",
+      "status_reason": "Seeded from narrative intelligence pipeline",
+      "update_count": 1,
+      "original_setup_id": "n21_crypto",
+      "original_headline": "crypto: Reform given another £3mn by crypto billionaire Harborne",
+      "current_headline": "crypto: Reform given another £3mn by crypto billionaire Harborne",
+      "sector": "tech",
+      "paradigm_pillar": "multi_pillar",
+      "actors": [
+        "ETF issuers",
+        "major exchanges",
+        "RWA platforms"
+      ],
+      "geography": [],
+      "thread_ids": [
+        "n21_crypto__main"
+      ],
+      "primary_thread_id": "n21_crypto__main",
+      "evidence_count": 1,
+      "source_count": 5,
+      "invalidation_triggers": [
+        "ETF issuers announces policy reversal within 72 hours",
+        "New data contradicts the crypto repricing direction within 24 hours"
+      ],
+      "confidence": 0.43,
+      "paradigm_implications": [],
+      "capital_flow_implication": "",
+      "asset_claim": {},
+      "image_url": null,
+      "evolution_score_current": 0.0,
+      "evolution_score_peak": 0.0
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-06-05T06:46:00Z",
+  "claims": [
+    {
+      "ticker": "GC",
+      "direction": "up",
+      "price_target": "$2,520",
+      "strategy": "Fade-the-move on pullbacks",
+      "win_rate": "68% during macro instability + rate divergence windows",
+      "horizon": "2-3 weeks",
+      "narrative_driven_pct": 50,
+      "crowd_belief": "No active Polymarket contract. Gold stabilized after ceasefire hopes faded — institutional demand absorbing the dip.",
+      "contradiction": "Consensus says peace optimism capped gold, but three macro narratives (India RBI tightening, UK rates rising, Fed-BOJ divergence) all point to the same bid. The dip was a healthy consolidation, not a reversal.",
+      "story_id": "n21_macro"
+    },
+    {
+      "ticker": "EWY",
+      "direction": "down",
+      "price_target": "$55",
+      "strategy": "Short bias on foreign capitulation",
+      "win_rate": "72% when foreign selling exceeds $8B/week on Korean KOSPI",
+      "horizon": "1-2 weeks",
+      "narrative_driven_pct": 40,
+      "crowd_belief": "No active Polymarket contract. KOSPI had a 105% rally but breadth is collapsing — foreigners sold $10B in one week.",
+      "contradiction": "Korea's KOSPI surged 105% on AI/semiconductor mania. But foreign investors just sold $10 billion in a single week — breadth is collapsing. The macro convergence story (India+UK+rates) is accelerating EM outflows, not containing them.",
+      "story_id": "n21_macro"
+    },
+    {
+      "ticker": "UK10Y",
+      "direction": "up",
+      "price_target": "4.85%",
+      "strategy": "Yield-rise positioning via gilt ETF puts",
+      "win_rate": "65% when case for BoE hikes builds + political instability",
+      "horizon": "2-4 weeks",
+      "narrative_driven_pct": 35,
+      "crowd_belief": "Polymarket 'UK base rate above 5% by Sep' at 38%. The case for raising UK rates is growing but the market is pricing only a 30% chance of a hike.",
+      "contradiction": "The case for raising UK interest rates is growing — and Burnham challenging Starmer adds political uncertainty to the rate path. The crowd undercounts a hawkish BoE pivot.",
+      "story_id": "n21_rates"
+    },
+    {
+      "ticker": "DBB",
+      "direction": "down",
+      "price_target": "$18.50",
+      "strategy": "Pre-jobs report short bias",
+      "win_rate": "58% when industrial metals soften ahead of NFP + macro uncertainty",
+      "horizon": "3-5 days",
+      "narrative_driven_pct": 30,
+      "crowd_belief": "No active Polymarket contract. Industrial metals swinging lower ahead of 'crucial US jobs report' — positioning for a strong print that keeps Fed hawkish.",
+      "contradiction": "Crowd is bracing for a strong NFP that keeps rates higher. But if the report shows weakness, industrial metals get a double hit — China demand destruction + US recession fears. The risk is asymmetric to the downside here.",
+      "story_id": "n21_inflation"
+    },
+    {
+      "ticker": "BTC",
+      "direction": "down",
+      "price_target": "$82,000",
+      "strategy": "Gap-and-Go on Strategy unwind",
+      "win_rate": "55% during Strategy-selling events (historical)",
+      "horizon": "3-7 days",
+      "narrative_driven_pct": 60,
+      "crowd_belief": "Polymarket 'Bitcoin above $100K by June 30' at 42% — significant unwind risk from Strategy's sale.",
+      "contradiction": "Strategy (MicroStrategy) just sold — the company that was the bull case is now the source of supply. Crypto infrastructure thesis intact but the price signal right now is net supply entering the market.",
+      "story_id": "n21_crypto"
+    }
+  ]
+}
