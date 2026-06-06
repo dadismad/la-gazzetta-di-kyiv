@@ -358,24 +358,24 @@ function renderCapitalFlows() {
     const dirLabel = f.direction === 'inflow' ? 'IN' : 'OUT';
     const confPct = f.confidence_pct || 50;
     const paceDisplay = f.pace_multiplier >= 1.5 ? `↑ ${f.pace_multiplier}×` : f.pace_multiplier <= 0.7 ? `↓ ${f.pace_multiplier}×` : `= ${f.pace_multiplier}×`;
-    const betPill = anchorAsset
-      ? `${anchorAsset.symbol} ${anchorAsset.bias} · ${anchorAsset.conviction}`
-      : '';
     const catalystBadge = f.catalyst_count > 1 ? `<span class="catalyst-badge">${f.catalyst_count} ` + i18n.t('catalysts','catalysts') + `</span>` : '';
 
+    // v22.16: Retail-flattened — direction + sector + play only. % and pace in detail.
+    const playPill = anchorAsset
+      ? `<span class="flow-bet-pill-mini">${anchorAsset.symbol} ${anchorAsset.bias} · ${anchorAsset.conviction}</span>`
+      : '';
     return `
     <div class="flow-row ${f.direction}" data-flow-story-id="${f.story_ids ? f.story_ids[0] : f.story_id}">
       <div class="flow-row-main">
         <span class="flow-amount">$${f.amount_b.toFixed(1)}B</span>
         <span class="flow-dir ${f.direction}">${dirArrow} ${dirLabel}</span>
         <span class="flow-asset">${f.asset_class || 'equities'}</span>
-        <span class="flow-conf">${confPct}%</span>
-        <span class="flow-pace">${paceDisplay}</span>
-        <span class="flow-bet-pill-mini">${betPill}</span>
+        ${playPill}
         ${catalystBadge}
       </div>
       <div class="flow-row-detail">
         <span class="flow-headline-compact">${f.headline || ''}</span>
+        <span class="flow-meta">${confPct}% conviction · ${paceDisplay} pace</span>
         <span class="flow-positioning">${f.positioning ? positionLabel(f.positioning) : ''}</span>
       </div>
     </div>`;
@@ -425,24 +425,19 @@ function updateHeroConfidence(pct, label, direction) {
   const el = byId('heroConfidence');
   if (!el) return;
   if (!pct) {
-    el.textContent = '—%';
+    el.textContent = '—';
+    el.style.color = '';
     return;
   }
-  const arrow = direction === 'bullish' ? ' ↑' : direction === 'bearish' ? ' ↓' : '';
-  // Simple: just percentage + direction arrow. No redundant tier badge.
-  el.innerHTML = `${pct}%${arrow}`;
-  // Color the arrow
-  if (direction === 'bullish') el.style.color = 'var(--green)';
-  else if (direction === 'bearish') el.style.color = 'var(--red)';
-  else el.style.color = '';
-  // Label stays clean, uses i18n from data-i18n attribute — don't overwrite
-  const labelEl = el.nextElementSibling;
-  if (labelEl && labelEl.classList.contains('hero-stat-label')) {
-    // Let the data-i18n attribute handle the label, only set fallback
-    if (!labelEl.hasAttribute('data-i18n')) {
-      labelEl.textContent = label;
-    }
-  }
+  // Directional conviction badge — retail-comprehensible (v22.16)
+  // Shows BULLISH/BEARISH as primary signal, percentage as secondary tooltip
+  const badge = direction === 'bullish' ? 'BULLISH' : direction === 'bearish' ? 'BEARISH' : 'NEUTRAL';
+  const color = direction === 'bullish' ? 'var(--green)' : direction === 'bearish' ? 'var(--red)' : 'var(--ink-muted)';
+  el.innerHTML = `<span style="color:${color};font-weight:700;font-size:inherit;">${badge}</span>`;
+  el.title = `${pct}% conviction — ${direction}`;
+  // Color the outer span
+  el.style.color = color;
+  // Label stays clean — data-i18n handles it
 }
 
 function updateMastheadFlows(flowsData) {
@@ -1120,10 +1115,12 @@ function updateCumulativeStats() {
   const heroFlow = byId('heroFlowTotal');
   const heroAssets = byId('heroAssetCount');
   const heroStake = byId('heroBetTotal');
+  const heroLayers = byId('heroLayerCount');
   if (heroStory) heroStory.textContent = String(currentStories);
   if (heroFlow) heroFlow.textContent = '$' + cumFlow.toFixed(1) + 'B';
   if (heroAssets) heroAssets.textContent = String(cumAssets);
   if (heroStake) heroStake.textContent = '$' + cumStake.toFixed(1) + 'K';
+  if (heroLayers) heroLayers.textContent = String(document.querySelectorAll('.container.collapsible').length);
 }
 
 // ═══════════════════════════════════════════════════════════════

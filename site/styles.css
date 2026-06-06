@@ -1930,16 +1930,25 @@ body {
   white-space: nowrap;
 }
 .flow-row-detail {
-  display: flex;
+  display: none;  /* v22.16: hidden in collapsed state — expand to show */
   gap: 8px;
   margin-top: 4px;
   padding-left: 2px;
+}
+.flow-row.expanded .flow-row-detail {
+  display: flex;
 }
 .flow-headline-compact {
   font-size: 11px;
   color: var(--ink-muted);
   line-height: 1.4;
   flex: 1;
+}
+.flow-meta {
+  font-size: 10px;
+  color: var(--ink-muted);
+  opacity: 0.65;
+  white-space: nowrap;
 }
 .flow-positioning {
   font-size: 9px;
