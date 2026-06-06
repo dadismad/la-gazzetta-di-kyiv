@@ -1,9 +1,23 @@
-// La Gazzetta di Kyiv v20.22 — living_stories format compat · masthead from living data even on fallback
-const DATA = './data/stories.json';
+// La Gazzetta di Kyiv v20.23 — i18n support · language-specific data files
+const DATA_BASE = './data/stories';
 const LIVING_DATA = './data/living_stories.json';
-const FLOWS_DATA = './data/flows.json';
-const POLL_INTERVAL = 120000; // 2 minutes
-const FLOWS_POLL_INTERVAL = 300000; // 5 minutes — flows change slower than stories
+const FLOWS_BASE = './data/flows';
+function getDataPath() { return DATA_BASE + (window.i18n && i18n.lang === 'ru' ? '_ru' : '') + '.json'; }
+function getFlowsPath() { return FLOWS_BASE + (window.i18n && i18n.lang === 'ru' ? '_ru' : '') + '.json'; }
+const FLOWS_POLL_INTERVAL = 300000;
+
+// Wait for i18n to be ready before rendering
+let _i18nReady = false;
+window.addEventListener('i18nReady', () => { _i18nReady = true; });
+function waitForI18n() {
+  return new Promise(resolve => {
+    if (_i18nReady || !window.i18n) return resolve();
+    const check = setInterval(() => {
+      if (_i18nReady || (window.i18n && window.i18n._ready)) { clearInterval(check); resolve(); }
+    }, 50);
+    setTimeout(() => { clearInterval(check); resolve(); }, 3000);
+  });
+}
 
 // ── Story cache for flow→story cross-linking ──
 const STORIES_CACHE = {}; // story_id → {headline, dom_card}
@@ -281,7 +295,7 @@ let CAPITAL_FLOWS_DATA = [];
 let GLOSSARY = {};
 
 async function fetchFlows() {
-  const data = await getJSON(FLOWS_DATA, null);
+  const data = await getJSON(getFlowsPath(), null);
   if (!data || !data.flows) return false;
   CAPITAL_FLOWS_DATA = data.flows;
   GLOSSARY = data.glossary || {};
@@ -355,7 +369,7 @@ function renderCapitalFlows() {
     const betLine = anchorAsset
       ? `<span class="cf-bet-pill ${anchorAsset.bias.toLowerCase()}">${anchorAsset.symbol} ${anchorAsset.bias} · ${anchorAsset.conviction}</span>`
       : '';
-    const detail = f.projected ? `Projected ${f.projected} further ${f.direction === 'inflow' ? 'inflow' : 'outflow'} (${f.confidence_pct}% confidence) · ${f.pace_multiplier}x normal pace` : '';
+    const detail = f.projected ? `Projected ${f.projected} further ${f.direction === 'inflow' ? (i18n.t('flow_further_inflow','inflow')) : (i18n.t('flow_further_outflow','outflow'))} (${f.confidence_pct}% ${i18n.t('flow_confidence_pct','confidence')}) · ${f.pace_multiplier}x ${i18n.t('flow_normal_pace','normal pace')}` : '';
     const positioning = f.positioning ? positionLabel(f.positioning) : '';
     const catalystBadge = f.catalyst_count > 1 ? `<span class="catalyst-badge">${f.catalyst_count} catalysts</span>` : '';
     const primaryStoryId = f.story_ids ? f.story_ids[0] : f.story_id;
@@ -434,7 +448,7 @@ function renderCapitalFlows() {
   if (sub) {
     const inflows = CAPITAL_FLOWS_DATA.filter(f => f.direction === 'inflow');
     const outflows = CAPITAL_FLOWS_DATA.filter(f => f.direction === 'outflow');
-    sub.textContent = `${inflows.length} inflows · ${outflows.length} outflows`;
+    sub.textContent = `${inflows.length} ${i18n.t('flow_inflows','inflows')} · ${outflows.length} ${i18n.t('flow_outflows','outflows')}`;
   }
 }
 
@@ -676,9 +690,9 @@ function capitalFlowHTML(cf) {
   if (!cf) return '';
   return `
     <div class="capital-flow-block">
-      <span class="cf-label">CAPITAL FLOW</span>
-      <span class="cf-line">${cf.claim}</span>
-      <span class="cf-line">Projected further flow: ${cf.projected} (${cf.confidence} confidence)</span>
+      <span class="cf-label">${i18n.t('capital_flow_label','CAPITAL FLOW')}</span>
+      <span class="cf-line">${cf.claim || ''}</span>
+      <span class="cf-line">${i18n.t('flow_projected','Projected further flow')}: ${cf.projected} (${cf.confidence} ${i18n.t('flow_confidence_pct','confidence')})</span>
       <span class="cf-line">${cf.positioning ? positionLabel(cf.positioning) : ''}</span>
     </div>`;
 }
@@ -823,7 +837,7 @@ function livingCardHTML(story, isLead) {
   // Contradiction tier badge — 4 tiers for visual differentiation
   const cs = calcContradictionScore(story);
   const tier = cs >= 66 ? 'contradicted' : cs >= 51 ? 'divergent' : cs >= 31 ? 'developing' : 'aligned';
-  const tierLabel = cs >= 66 ? 'MAX TENSION' : cs >= 51 ? 'HIGH TENSION' : cs >= 31 ? 'BUILDING' : 'CONSENSUS';
+  const tierLabel = cs >= 66 ? i18n.t('tension_max','MAX TENSION') : cs >= 51 ? i18n.t('tension_high','HIGH TENSION') : cs >= 31 ? i18n.t('tension_building','BUILDING') : i18n.t('tension_consensus','CONSENSUS');
   const tierTitle = cs >= 66 ? 'Narrative inverts reality — strongest trade signal. Contradiction score: ' + cs + '/100'
     : cs >= 51 ? 'Material gap between narrative and reality — opportunity. Contradiction score: ' + cs + '/100'
     : cs >= 31 ? 'Early tension forming — watch for widening. Contradiction score: ' + cs + '/100'
@@ -863,21 +877,21 @@ function livingCardHTML(story, isLead) {
         ${capitalFlowHTML(cf)}
         ${story.portfolio_implication ? `
         <div class="the-play">
-          <span class="pi-label">THE PLAY</span>
+          <span class="pi-label">${i18n.t('the_play_label','THE PLAY')}</span>
           <span class="pi-text">${story.portfolio_implication}</span>
         </div>` : ''}
         ${extremumHTML}
         <div class="share-row">
-          <button class="share-btn copy-link" title="Copy link" onclick="copyShareLink(this.closest('.card'))">
+          <button class="share-btn copy-link" title="${i18n.t('share_copy','Copy link')}" onclick="copyShareLink(this.closest('.card'))">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
           </button>
-          <button class="share-btn share-x" title="Share on X" onclick="shareToX(this.closest('.card'))">
+          <button class="share-btn share-x" title="${i18n.t('share_x','Share on X')}" onclick="shareToX(this.closest('.card'))">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7.5 7.5L4 19"/><path d="M20 4l-7.5 7.5L20 19"/></svg>
           </button>
-          <button class="share-btn share-facebook" title="Share on Facebook" onclick="shareToFacebook(this.closest('.card'))">
+          <button class="share-btn share-facebook" title="${i18n.t('share_facebook','Share on Facebook')}" onclick="shareToFacebook(this.closest('.card'))">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           </button>
-          <button class="share-btn share-telegram" title="Share on Telegram" onclick="shareToTelegram(this.closest('.card'))">
+          <button class="share-btn share-telegram" title="${i18n.t('share_telegram','Share on Telegram')}" onclick="shareToTelegram(this.closest('.card'))">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           </button>
           <button class="share-btn share-reddit" title="Share on Reddit" onclick="shareToReddit(this.closest('.card'))">
@@ -1083,7 +1097,7 @@ function updateStoryCount() {
   const countEl = byId('storyCount');
   const heroCountEl = byId('heroStoryCount');
   const count = document.querySelectorAll('.card[data-story-id]').length;
-  if (countEl) countEl.textContent = `${count} stories`;
+  if (countEl) countEl.textContent = `${count} ${i18n.t('hero_stories','stories')}`;
   if (heroCountEl) heroCountEl.textContent = String(count);
   updateCumulativeStats();
 }
@@ -1535,6 +1549,9 @@ function shareToReddit(card) {
 // ═══════════════════════════════════════════════════════════════
 
 async function boot() {
+  // Wait for i18n to load translations before rendering dynamic content
+  await waitForI18n();
+  
   // Wire collapsible containers first
   wireCollapsibleContainers();
 
@@ -1589,7 +1606,7 @@ async function boot() {
   }
 
   // Fallback: stories.json
-  const data = await getJSON(DATA, null);
+  const data = await getJSON(getDataPath(), null);
   if (!data || !data.lead) {
     const el = byId('newsCol');
     if (el) el.innerHTML = '<p style="text-align:center;color:var(--ink-muted);padding:40px;font-style:italic">Intelligence update in progress.</p>';

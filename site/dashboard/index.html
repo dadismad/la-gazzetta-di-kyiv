@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Gazzetta di Kyiv — CEO Dashboard</title>
+<style>
+:root {
+  --bg: #111827; --surface: #1a2332; --border: #2a3544;
+  --gold: #D4AF37; --ink: #e2e8f0; --muted: #94a3b8;
+  --green: #22c55e; --amber: #f59e0b; --red: #ef4444; --blue: #3b82f6;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--ink); font-family:Inter,system-ui,sans-serif; padding:24px; }
+h1 { font-family:'Playfair Display',Georgia,serif; color:var(--gold); font-size:28px; margin-bottom:4px; }
+.subtitle { color:var(--muted); font-size:13px; margin-bottom:24px; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media(max-width:900px){.grid{grid-template-columns:1fr;}}
+.card { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:16px; }
+.card h2 { font-size:14px; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:12px; }
+.metric-row { display:flex; gap:16px; flex-wrap:wrap; }
+.metric { flex:1; min-width:100px; }
+.metric .val { font-size:32px; font-weight:700; }
+.metric .label { font-size:11px; color:var(--muted); margin-top:2px; }
+.status-ok { color:var(--green); }
+.status-warn { color:var(--amber); }
+.status-err { color:var(--red); }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th { text-align:left; color:var(--muted); padding:6px 8px; border-bottom:1px solid var(--border); font-weight:500; }
+td { padding:6px 8px; border-bottom:1px solid rgba(42,53,68,0.5); }
+.health-dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; }
+.dot-ok { background:var(--green); }
+.dot-warn { background:var(--amber); }
+.dot-err { background:var(--red); }
+.bar { height:6px; border-radius:3px; background:var(--border); margin-top:4px; overflow:hidden; }
+.bar-fill { height:100%; border-radius:3px; transition:width 0.5s; }
+.alert-item { padding:8px; border-left:3px solid var(--border); margin-bottom:8px; font-size:12px; }
+.alert-p0 { border-color:var(--red); }
+.alert-p1 { border-color:var(--amber); }
+.refresh { color:var(--muted); font-size:10px; text-align:right; margin-top:16px; }
+</style>
+</head>
+<body>
+<h1>La Gazzetta di Kyiv</h1>
+<div class="subtitle">CEO Dashboard · <span id="refreshTime">—</span> · Auto-refresh 60s</div>
+
+<div class="grid">
+  <!-- TOP LEFT: Pipeline Health -->
+  <div class="card">
+    <h2>📊 Pipeline Health</h2>
+    <div class="metric-row">
+      <div class="metric"><div class="val" id="storyCount">—</div><div class="label">Active Stories</div></div>
+      <div class="metric"><div class="val" id="flowCount">—</div><div class="label">Tracked Flows</div></div>
+      <div class="metric"><div class="val" id="flowConf">—</div><div class="label">Confidence</div></div>
+      <div class="metric"><div class="val" id="dataAge">—</div><div class="label">Data Age</div></div>
+    </div>
+    <table id="cronTable"><thead><tr><th>Process</th><th>Status</th><th>Last Run</th></tr></thead><tbody></tbody></table>
+  </div>
+
+  <!-- TOP RIGHT: Site & Deploy -->
+  <div class="card">
+    <h2>🌐 Site & Deploy</h2>
+    <div class="metric-row">
+      <div class="metric"><div class="val" id="siteStatus">—</div><div class="label">Site Status</div></div>
+      <div class="metric"><div class="val" id="lastDeploy">—</div><div class="label">Last Deploy</div></div>
+      <div class="metric"><div class="val" id="siteLatency">—</div><div class="label">Latency</div></div>
+    </div>
+    <div id="freshnessBar"></div>
+  </div>
+
+  <!-- BOTTOM LEFT: Data Freshness -->
+  <div class="card">
+    <h2>⏱️ Data Freshness</h2>
+    <div id="freshnessGauges"></div>
+  </div>
+
+  <!-- BOTTOM RIGHT: Alerts -->
+  <div class="card">
+    <h2>🚨 Alerts</h2>
+    <div id="alertsFeed"><div class="alert-item">Loading alerts...</div></div>
+  </div>
+</div>
+<div class="refresh">Last refreshed: <span id="lastRefresh">—</span></div>
+
+<script>
+const PROJECT = '/Users/alexstocchi/projects/gazzetta-di-kyiv';
+const CRON_DIR = '/Users/alexstocchi/.hermes/cron';
+
+async function fetchJSON(path) {
+  try { const r = await fetch(path, {cache:'no-store'}); return r.ok ? r.json() : null; }
+  catch(e) { return null; }
+}
+
+async function refresh() {
+  const now = new Date();
+  
+  // Load local data files
+  const stories = await fetchJSON(PROJECT + '/data/stories.json');
+  const flows = await fetchJSON(PROJECT + '/data/flows.json');
+  
+  // Pipeline metrics
+  if (stories && flows) {
+    const storyList = stories.stories || [];
+    document.getElementById('storyCount').textContent = storyList.length;
+    document.getElementById('flowCount').textContent = (flows.flows || []).length;
+    document.getElementById('flowConf').textContent = (flows.aggregate_confidence || '?') + '%';
+    
+    // Data age
+    const genTime = new Date(flows.generated_at || 0);
+    const ageMin = Math.round((now - genTime) / 60000);
+    document.getElementById('dataAge').textContent = ageMin + 'm';
+    document.getElementById('dataAge').className = 'val ' + (ageMin > 120 ? 'status-err' : ageMin > 60 ? 'status-warn' : 'status-ok');
+  }
+  
+  // Site check
+  const siteStart = Date.now();
+  try {
+    const resp = await fetch('https://www.lagazzettadikyiv.com/', {cache:'no-store', mode:'no-cors'});
+    document.getElementById('siteStatus').textContent = 'ONLINE';
+    document.getElementById('siteStatus').className = 'val status-ok';
+    document.getElementById('siteLatency').textContent = (Date.now() - siteStart) + 'ms';
+  } catch(e) {
+    document.getElementById('siteStatus').textContent = 'OFFLINE';
+    document.getElementById('siteStatus').className = 'val status-err';
+  }
+  
+  // Deploy status
+  try {
+    const deployResp = await fetch(PROJECT + '/data/flows.json', {cache:'no-store'});
+    const lastMod = deployResp.headers.get('last-modified');
+    if (lastMod) {
+      const deployAge = Math.round((now - new Date(lastMod)) / 60000);
+      document.getElementById('lastDeploy').textContent = deployAge + 'm ago';
+      document.getElementById('lastDeploy').className = 'val ' + (deployAge > 30 ? 'status-err' : 'status-ok');
+    }
+  } catch(e) {}
+  
+  // Freshness gauges
+  const gauges = [];
+  if (stories) {
+    const byFreshness = {};
+    (stories.stories || []).forEach(s => {
+      const f = s.freshness || 'unknown';
+      byFreshness[f] = (byFreshness[f] || 0) + 1;
+    });
+    const order = ['breaking','new','active','developing','background'];
+    gauges.push('<div style="display:flex;gap:8px;flex-wrap:wrap">');
+    order.forEach(f => {
+      const count = byFreshness[f] || 0;
+      const color = f==='breaking'?'var(--red)':f==='new'?'var(--amber)':f==='active'?'var(--blue)':'var(--muted)';
+      gauges.push(`<div style="text-align:center;min-width:50px"><div style="font-size:20px;font-weight:700;color:${color}">${count}</div><div style="font-size:10px;color:var(--muted)">${f}</div></div>`);
+    });
+    gauges.push('</div>');
+  }
+  document.getElementById('freshnessGauges').innerHTML = gauges.join('');
+  
+  // Alerts
+  const alerts = [];
+  if (stories && (stories.stories || []).length < 10) {
+    alerts.push({level:'p1',text:`Low story count: ${(stories.stories||[]).length} stories (target ≥15)`});
+  }
+  if (flows && (flows.aggregate_confidence || 0) < 70) {
+    alerts.push({level:'p1',text:`Low flow confidence: ${flows.aggregate_confidence}% (target ≥75%)`});
+  }
+  if (alerts.length === 0) {
+    alerts.push({level:'ok',text:'✅ All systems nominal. No alerts.'});
+  }
+  document.getElementById('alertsFeed').innerHTML = alerts.map(a => 
+    `<div class="alert-item alert-${a.level}">${a.text}</div>`
+  ).join('');
+  
+  // Timestamps
+  document.getElementById('lastRefresh').textContent = now.toLocaleTimeString();
+  document.getElementById('refreshTime').textContent = now.toLocaleTimeString();
+}
+
+refresh();
+setInterval(refresh, 60000);
+</script>
+</body>
+</html>

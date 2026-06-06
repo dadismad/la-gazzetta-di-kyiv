@@ -7,8 +7,8 @@
   <meta name="description" content="Contradiction-first narrative intelligence. The stories that move markets."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=22.11"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css?v=22.12"/>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='2' fill='%23111827'/><text x='16' y='24' text-anchor='middle' font-size='22' font-weight='bold' font-family='Georgia,serif' fill='%23D4AF37'>G</text></svg>"/>
 </head>
 <body>
@@ -74,27 +74,31 @@
     </span>
   </div>
   <div class="masthead-right">
-    <span class="masthead-tagline">Capital moves markets. We track where it's going.</span>
+    <span class="masthead-tagline" data-i18n="masthead_tagline">Capital moves markets. We track where it's going.</span>
     <span class="masthead-meta" id="mastheadMeta">—</span>
+    <span class="lang-switcher">
+      <button class="lang-switch active" data-lang="en" onclick="i18n.switchLang('en')" aria-label="English">EN</button>
+      <button class="lang-switch" data-lang="ru" onclick="i18n.switchLang('ru')" aria-label="Русский">RU</button>
+    </span>
   </div>
 </header>
 
 <section class="hero">
   <div class="hero-content">
-    <h1 class="hero-headline">The stories that move markets — before they move prices.</h1>
-    <p class="hero-subtitle">Track capital flows, trade the contradictions, and follow the money through 5 intelligence layers — from institutional positioning to verifiable bets.</p>
+    <h1 class="hero-headline" data-i18n="hero_headline">The stories that move markets — before they move prices.</h1>
+    <p class="hero-subtitle" data-i18n="hero_subtitle">Track capital flows, trade the contradictions, and follow the money through 5 intelligence layers — from institutional positioning to verifiable bets.</p>
     <div class="hero-cta">
-      <button class="hero-btn" onclick="document.getElementById('storiesContainer').classList.add('expanded');document.getElementById('storiesContainer').scrollIntoView({behavior:'smooth'})">Read today's stories →</button>
+      <button class="hero-btn" onclick="document.getElementById('storiesContainer').classList.add('expanded');document.getElementById('storiesContainer').scrollIntoView({behavior:'smooth'})" data-i18n="hero_cta">Read today's stories →</button>
       <a href="https://t.me/GazzettaDiKyiv" class="hero-link">Telegram</a>
       <a href="https://www.reddit.com/r/LaGazzettadiKyiv/" class="hero-link">Reddit</a>
     </div>
   </div>
   <div class="hero-stats">
-    <div class="hero-stat"><span class="hero-stat-value" id="heroStoryCount">—</span><span class="hero-stat-label">Stories</span></div>
-    <div class="hero-stat"><span class="hero-stat-value" id="heroFlowTotal">—</span><span class="hero-stat-label">Capital tracked</span></div>
-    <div class="hero-stat"><span class="hero-stat-value" id="heroAssetCount">—</span><span class="hero-stat-label">Active positions</span></div>
-    <div class="hero-stat"><span class="hero-stat-value" id="heroBetTotal">—</span><span class="hero-stat-label">Open exposure</span></div>
-    <div class="hero-stat"><span class="hero-stat-value" id="heroConfidence">—%</span><span class="hero-stat-label">Flow confidence</span></div>
+    <div class="hero-stat"><span class="hero-stat-value" id="heroStoryCount">—</span><span class="hero-stat-label" data-i18n="hero_stories">Stories</span></div>
+    <div class="hero-stat"><span class="hero-stat-value" id="heroFlowTotal">—</span><span class="hero-stat-label" data-i18n="hero_capital_tracked">Capital tracked</span></div>
+    <div class="hero-stat"><span class="hero-stat-value" id="heroAssetCount">—</span><span class="hero-stat-label" data-i18n="hero_active_positions">Active positions</span></div>
+    <div class="hero-stat"><span class="hero-stat-value" id="heroBetTotal">—</span><span class="hero-stat-label" data-i18n="hero_open_exposure">Open exposure</span></div>
+    <div class="hero-stat"><span class="hero-stat-value" id="heroConfidence">—%</span><span class="hero-stat-label" data-i18n="hero_flow_confidence">Flow confidence</span></div>
   </div>
 </section>
 
@@ -103,14 +107,14 @@
   <!-- LEFT COLUMN: Containerized sections -->
   <main class="main-col">
 
-    <!-- CONTAINER 1: Stories — front door, first after hero -->
+    <!-- CONTAINER 1: Stories -->
     <section class="container collapsible" id="storiesContainer">
       <div class="container-header" data-target="storiesBody">
-        <span class="container-title">What the capital is saying</span>
+        <span class="container-title" data-i18n="container_stories_title">What the capital is saying</span>
         <span class="container-count" id="storyCount"></span>
         <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
       </div>
-      <div class="container-desc">Today's narratives, decoded. Each story reveals who benefits, who loses, and what the money already priced in — with an actionable trade idea.</div>
+      <div class="container-desc" data-i18n="container_stories_desc">Today's narratives, decoded. Each story reveals who benefits, who loses, and what the money already priced in — with an actionable trade idea.</div>
       <div class="container-body" id="storiesBody">
         <div class="news-col" id="newsCol"></div>
       </div>
@@ -190,6 +194,7 @@
   <span>Kyiv · Since 2025</span>
 </footer>
 
-<script src="./app.js?v=20.22"></script>
+<script src="./i18n.js"></script>
+<script src="./app.js?v=20.23"></script>
 </body>
 </html>

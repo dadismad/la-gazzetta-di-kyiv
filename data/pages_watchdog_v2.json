@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-06T12:32:47.828015+00:00",
+  "generated_at": "2026-06-06T12:50:10.226833+00:00",
   "status": "healthy",
   "checks": {
     "main": {
@@ -14,7 +14,7 @@
       "ok": true,
       "status": 200,
       "sig404": false,
-      "size": 51720,
+      "size": 64466,
       "content_type": "application/json",
       "render_ok": true
     },

@@ -15,8 +15,14 @@ python3 scripts/intel_to_stories.py
 echo "[2/4] decay_stories..."
 python3 scripts/decay_stories.py
 
+echo "[2.5/4] validate_stories..."
+python3 scripts/validate_stories.py
+
 echo "[3/4] generate_flows..."
 python3 scripts/generate_flows.py
+
+echo "[3.5/4] translate_content..."
+python3 scripts/translate_content.py
 
 echo "[4/4] build_site..."
 python3 scripts/build_site.py

@@ -52,31 +52,85 @@ def generate_story_id(headline, pillar):
 
 
 def intel_story_to_gazzetta(intel_story, pillar):
-    """Convert a telegram intel story into Gazzetta story format."""
+    """Convert a telegram intel story into Gazzetta story format matching pipeline expectations."""
     headline = intel_story.get("title", intel_story.get("headline", "Untitled"))
     story_id = intel_story.get("story_id") or generate_story_id(headline, pillar)
     now = datetime.now(timezone.utc).isoformat()
+    
+    bet_text = intel_story.get("bet", "")
+    benefit_text = intel_story.get("benefit", "")
+    event_text = intel_story.get("event", "")
+    
+    # Determine direction from bet text
+    is_long = "LONG" in bet_text.upper()
+    direction = "inflow" if is_long else "outflow"
+    
+    # Extract amount: search for $XB patterns in bet/event
+    amount_b = 5.0  # default
+    import re
+    amounts = re.findall(r'\$(\d+\.?\d*)\s*[Bb]', bet_text + " " + event_text)
+    if amounts:
+        amount_b = float(amounts[0])
+    
+    # Build projected: use benefit or first 120 chars of event
+    projected = (benefit_text or event_text)[:200] if (benefit_text or event_text) else f"Capital repositioning on {headline[:80]}"
+    
+    # Confidence tier
+    conf = intel_story.get("confidence", 75)
+    if conf >= 80:
+        confidence_level = "high"
+    elif conf >= 60:
+        confidence_level = "medium"
+    else:
+        confidence_level = "low"
+    
+    # Contradiction score from intel
+    contradiction_score = intel_story.get("contradiction_score", 55)
+    
+    # Positioning from bet
+    positioning = bet_text[:300]
+    
+    # Asset class detection
+    asset_class = "equities"
+    text_lower = (bet_text + " " + event_text).lower()
+    if any(w in text_lower for w in ["oil", "crude", "brent", "wti", "energy"]):
+        asset_class = "commodities"
+    elif any(w in text_lower for w in ["btc", "bitcoin", "crypto", "eth"]):
+        asset_class = "crypto"
+    elif any(w in text_lower for w in ["gold", "silver", "metal"]):
+        asset_class = "commodities"
+    elif any(w in text_lower for w in ["bond", "treasury", "yield", "tlt"]):
+        asset_class = "fixed_income"
+    elif any(w in text_lower for w in ["defense", "missile", "military"]):
+        asset_class = "defense"
 
     return {
         "story_id": story_id,
         "headline": headline[:200],
-        "sector": intel_story.get("sector", "multi"),
+        "sector": asset_class,
         "pillar": pillar,
-        "they_say": intel_story.get("consensus_narrative", intel_story.get("they_say", "")),
-        "reality": intel_story.get("contradiction", intel_story.get("reality", "")),
-        "thesis": intel_story.get("bet", intel_story.get("thesis", "")),
+        "paradigm_pillar": pillar,  # app.js reads paradigm_pillar for data-pillar attribute
+        "paradigm_implications": [benefit_text[:200]] if benefit_text else [],
+        "they_say": intel_story.get("consensus_narrative", ""),
+        "reality": intel_story.get("contradiction", ""),
+        "thesis": bet_text[:300],
         "actors": intel_story.get("actors", []),
         "horizon": intel_story.get("horizon", "24-72h"),
-        "confidence": intel_story.get("confidence", 75),
-        "actionable_trade": intel_story.get("bet", intel_story.get("positioning", "")),
-        "contradiction_score": intel_story.get("contradiction_score", 55),
+        "confidence": confidence_level,
+        "actionable_trade": bet_text[:300],
+        "contradiction_score": contradiction_score,
+        "invalidation_trigger": "Narrative reversal or event resolution",
+        "portfolio_implication": benefit_text[:300],
         "capital_flow": {
-            "direction": "inflow" if "LONG" in intel_story.get("bet", "") else "outflow",
-            "amount_b": intel_story.get("amount_b", 8.0),
-            "asset_class": intel_story.get("asset_class", "equities"),
-            "pace": "accelerating",
+            "direction": direction,
+            "amount_b": amount_b,
+            "asset_class": asset_class,
+            "projected": projected,
+            "pace_multiplier": 1.0,
+            "confidence_pct": conf,
+            "confidence_level": confidence_level,
         },
-        "capital_flow_implication": intel_story.get("bet", ""),
+        "capital_flow_implication": bet_text[:300],
         "evidence": intel_story.get("sources", []),
         "source": "telegram_intel",
         "generated_at": now,
@@ -93,9 +147,10 @@ def main():
     with open(INTEL_PATH) as f:
         intel = json.load(f)
 
-    actionable = intel.get("actionable_stories", [])
+    # Support both "stories" (newer intel format) and "actionable_stories" (legacy)
+    actionable = intel.get("stories") or intel.get("actionable_stories", [])
     if not actionable:
-        print(json.dumps({"ok": True, "stories_added": 0, "reason": "no actionable stories in intel"}))
+        print(json.dumps({"ok": True, "stories_added": 0, "reason": "no stories in intel", "intel_keys": list(intel.keys())[:10]}))
         return
 
     # Load current stories
