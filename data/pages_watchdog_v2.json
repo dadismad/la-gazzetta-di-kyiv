@@ -1,52 +1,34 @@
 {
-  "generated_at": "2026-06-06T15:15:00+00:00",
+  "generated_at": "2026-06-06T14:57:14.045874+00:00",
   "status": "healthy",
   "checks": {
     "main": {
       "ok": true,
       "status": 200,
       "sig404": false,
-      "size": 13642,
+      "size": 13564,
       "content_type": "text/html",
       "render_ok": true
     },
-    "data_narratives": {
+    "data": {
       "ok": true,
       "status": 200,
       "sig404": false,
-      "render_ok": true
-    },
-    "data_stories": {
-      "ok": true,
-      "status": 200,
-      "sig404": false,
-      "render_ok": true,
-      "count": 17
-    },
-    "api_regime": {
-      "ok": true,
-      "status": 200,
-      "sig404": false,
-      "render_ok": true
-    },
-    "custom_domain": {
-      "ok": true,
-      "status": 200,
-      "sig404": false,
+      "size": 96762,
+      "content_type": "application/json",
       "render_ok": true
     },
     "backup": {
       "ok": true,
       "status": 200,
       "sig404": false,
-      "size": 13642,
+      "size": 13564,
       "content_type": "text/html",
       "render_ok": true
     }
   },
   "fail_streak": 0,
-  "redeployed": true,
-  "last_deploy_commit": "89aa97d",
-  "canonical_url": "https://pureciclismo.github.io/gazzetta-di-kyiv/",
+  "redeployed": false,
+  "canonical_url": "https://www.lagazzettadikyiv.com/",
   "fallback_url": "https://www.lagazzettadikyiv.com/"
 }
