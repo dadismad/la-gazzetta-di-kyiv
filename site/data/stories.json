@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-06T18:20:20.598988+00:00",
+  "generated_at": "2026-06-06T18:28:18.701229+00:00",
   "lead": {
     "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles__regional_war",
     "headline": "Iran Strikes Kuwait With 7 Ballistic Missiles — Regional War Expands, Diplomatic Track Dead",
@@ -742,6 +742,84 @@
       },
       "freshness": "active",
       "contradiction_score": 66,
+      "tier": "DEVELOPING"
+    },
+    {
+      "story_id": "n21_dollar_decline__india_rbi_proposes_brics_digital_currency_link_erupee_pilot",
+      "headline": "India's Central Bank Proposes Linking BRICS Digital Currencies — E-Rupee Pilots Expand as De-Dollarization Infrastructure Goes Live, Trump Threatens 100% Tariffs in Response",
+      "sector": "macro",
+      "paradigm_pillar": "dollar_decline",
+      "paradigm_implications": [
+        "The RBI's proposal to link BRICS CBDCs represents the first concrete infrastructure for post-dollar settlement — not a currency replacement but a parallel clearing system that reduces USD dependency at the wholesale level",
+        "India's e-rupee welfare pilots demonstrate real domestic demand for digital fiat in a BRICS anchor economy — this is adoption at scale, not just theoretical framework",
+        "Trump's '100% tariff' threat against BRICS nations that 'commit' to de-dollarization creates a self-defeating dynamic: the tariff threat itself accelerates the very infrastructure building it seeks to prevent",
+        "If BRICS CBDC linking succeeds institutionally, the marginal dollar demand from trade settlement erodes structurally — not overnight, but the trajectory shifts from 'will it happen?' to 'how fast?'"
+      ],
+      "they_say": "Consensus holds that de-dollarization is a fringe narrative — the dollar's reserve status is unchallenged, BRICS 'currency' is years away if ever, and CBDCs are domestic payment modernization tools with no geopolitical implications. IMF COFER data shows dollar share stable at ~58%. The BRICS summit declarations are rhetorical. Trump's tariff threat is dismissed as 'more of the same' positioning.",
+      "reality": "The Reserve Bank of India has formally proposed linking BRICS nations' digital currencies — creating a cross-border CBDC settlement layer that bypasses SWIFT and dollar-clearing entirely. India is simultaneously expanding e-rupee welfare pilots, demonstrating domestic adoption at scale. This is not theoretical: the technical framework for BRICS CBDC interoperability is being built now. Trump's threat of '100% tariffs' confirms the White House takes this seriously enough to escalate trade war — but the tariff threat itself accelerates the BRICS push for alternatives by validating their thesis that dollar hegemony is weaponized. The contradiction is total: the West dismisses de-dollarization as improbable while taking maximalist action to prevent it.",
+      "thesis": "The BRICS CBDC linking proposal is the most concrete de-dollarization infrastructure development since the 2023 BRICS expansion. Unlike the Russia-China bilateral yuan/rouble settlement (which is sanctions-driven), India's proposal represents a G20 economy with balanced geopolitical positioning building a parallel settlement system. Long gold (GLD, IAUM) — central bank gold buying is the physical hedge for this digital infrastructure build. Long BTC — non-sovereign digital value settlement benefits from sovereign digital currency infrastructure adoption creating network effects. Long India equities (INDA, EPI) — India's strategic position as the 'swing state' between US and BRICS gives it unique bargaining power and inward investment appeal. Short DXY — structural dollar demand erosion accelerates with every BRICS CBDC interoperability announcement.",
+      "actors": [],
+      "horizon": "1-4 weeks for market awareness of the RBI proposal; 6-12 months for technical implementation of CBDC linking",
+      "confidence": "medium",
+      "actionable_trade": "Long gold (GLD, IAUM) — central bank gold buying is the physical hedge. Long BTC — non-sovereign digital settlement beneficiary. Long INDA/EPI — India's structural bet on multipolarity. Short DXY — structural headwind from de-dollarization infrastructure.",
+      "contradiction_score": 60,
+      "invalidation_trigger": "India backs down from BRICS CBDC linking under US pressure + RBI halts e-rupee expansion + IMF COFER data shows dollar share rising above 60% for 3 consecutive quarters",
+      "portfolio_implication": "Gold and BTC are the asymmetric beneficiaries of BRICS digital currency infrastructure — physical gold as reserve hedge, BTC as the non-sovereign network. India equities benefit from strategic positioning. The dollar faces structural headwind that accelerates with each infrastructure announcement, regardless of whether 'de-dollarization' happens in any headline sense.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 3.0,
+        "asset_class": "commodities",
+        "projected": "Central bank gold buying continues at record pace as BRICS CBDC infrastructure builds — estimated $2-3B/month in structural gold demand from BRICS central banks alone. India equity inflows accelerate as foreign capital prices India's strategic hedging premium.",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 65,
+        "confidence_level": "medium",
+        "claim": "$3.0B ↑ commodities (gold) + emerging market equities rotation"
+      },
+      "capital_flow_implication": "Long gold as BRICS central banks accelerate reserve diversification ahead of CBDC interoperability. Long India equities as strategic beneficiary of multipolar financial architecture. Short DXY on structural de-dollarization infrastructure timeline.",
+      "image_url": "",
+      "evidence": [],
+      "source": "Bing News / Reuters / RBI statements",
+      "generated_at": "2026-06-06T18:28:18.701017+00:00",
+      "freshness": "new",
+      "tier": "DEVELOPING"
+    },
+    {
+      "story_id": "n21_eu_fragmentation__eu_migration_deal_balkans_detention_germany_rejects_schengen",
+      "headline": "EU Strikes Migration Deal for Detention Centers Abroad — Germany Rejects Request to Scrap Internal Border Controls as Schengen Fiction Deepens",
+      "sector": "geopolitics",
+      "paradigm_pillar": "eu_fragmentation",
+      "paradigm_implications": [
+        "Germany — the EU's largest economy and de facto leader — unilaterally maintaining internal Schengen border controls while the EU simultaneously negotiates external detention deals exposes the fundamental contradiction: the EU enforces external borders through third countries while its own members refuse internal free movement",
+        "The Balkans becoming a location for EU return centers transforms candidate countries into detention zones — a two-tier Europe where non-members absorb the enforcement costs of a policy members won't implement themselves",
+        "Migration politics are pushing European electorates toward Trump-like tactics (hardening views, externalization of enforcement) — a structural shift in EU political identity that accelerates fragmentation between Northern enforcement advocates and Southern front-line states",
+        "Europe's 'winning the easy half' of the migration battle (reducing illegal crossings) while the hard half (integration, deportation, internal controls) fractures the union internally creates a regime where EU institutions appear unified in Brussels but fragmented in practice"
+      ],
+      "they_say": "EU leaders claim a unified migration policy is being established. The new deal for more deportations and external detention centers is framed as a 'humane and effective' solution. The European Commission insists Schengen remains 'a cornerstone of the European project.' Mainstream media reports Germany's internal border controls as a 'temporary' measure. Migration numbers are down, presented as evidence of policy success.",
+      "reality": "Germany has rejected the EU's request to scrap its internal border controls — maintaining checks at its borders with Austria, Poland, Czech Republic, and Switzerland indefinitely. At the same time, the EU is negotiating detention centers in Balkan countries (Serbia, Bosnia, Albania) and North African states — outsourcing enforcement to non-members while its largest member refuses to open its own internal borders. The Justice and Home Affairs Council (June 4) agreed to 'more deportations' but implementation remains with member states who increasingly act unilaterally. Defense Secretary Hegseth hijacked the D-Day ceremony to confront Europe over migration, calling arrivals 'new invaders on old beaches' — a US official publicly attacking European border policy during a WW2 commemoration. The contradiction is total: the EU claims a unified migration policy while its largest member rejects free movement, its enforcement is outsourced to non-members, and US officials publicly humiliate the bloc on migration during its own memorial ceremonies.",
+      "thesis": "The EU's migration policy is entering a phase of structural fragmentation where Brussels pretends to have a policy while capitals act unilaterally. Germany's rejection of Schengen normalization is the most significant signal — if Germany won't open its borders, the single market's free movement principle is selectively suspended at the core economy level. Short EU financials (EUFN) — regulatory fragmentation and political uncertainty hurt cross-border banking. Long European defense primes (Rheinmetall, Thales) — as internal EU cohesion frays, defense spending shifts from NATO collective to national equipment. Long gold — the ultimate hedge against European institutional decay. Short EUR/USD — political fragmentation premium versus dollar safety (ironically, the dollar benefits from EU disunity).",
+      "actors": [],
+      "horizon": "1-4 weeks for next EU Council migration session; 3-6 months for structural repricing of EU political risk",
+      "confidence": "medium",
+      "actionable_trade": "Short EUR/USD — EU fragmentation premium builds. Long gold (GLD) — European institutional decay hedge. Short EUFN (European financials ETF) — cross-border banking hurt by internal border fragmentation. Long European defense (Rheinmetall, Thales, SAAB) — national defense spending replaces collective NATO framework.",
+      "contradiction_score": 62,
+      "invalidation_trigger": "Germany reinstates full Schengen free movement within 30 days + EU successfully implements unified deportation framework with measurable results + Commission gains binding enforcement authority over member state border policy = fragmentation thesis invalidated",
+      "portfolio_implication": "EUR/USD downside as Germany's Schengen defiance signals that EU institutional cohesion is weakening at the core. Gold benefits from the safe-haven bid as the EU's political fragmentation accelerates — a slow-moving crisis markets underprice relative to headline risk. European financials face structural headwinds from internal border friction that undermines cross-border banking efficiency. Defense primes benefit from national over NATO-level spending frameworks.",
+      "capital_flow": {
+        "direction": "outflow",
+        "amount_b": 2.5,
+        "asset_class": "FX",
+        "projected": "EUR/USD drifts from current ~1.08 toward 1.04-1.05 over 3-6 months as EU institutional fragmentation premium builds. Gold sees additional European safe-haven flows estimated at $1-2B/month. European financial equities underperform US/Asian peers by 5-8%.",
+        "pace_multiplier": 0.7,
+        "confidence_pct": 60,
+        "confidence_level": "medium",
+        "claim": "$2.5B ↓ EUR/USD + European financials rotation to gold"
+      },
+      "capital_flow_implication": "Short EUR/USD on institutional fragmentation premium. Long gold as European safe-haven rotation accelerates. Underweight EU financials on internal border friction impairing cross-border banking economics.",
+      "image_url": "",
+      "evidence": [],
+      "source": "Bing News / EU Council statements / Reuters / Politico",
+      "generated_at": "2026-06-06T18:28:18.701220+00:00",
+      "freshness": "new",
       "tier": "DEVELOPING"
     }
   ]
