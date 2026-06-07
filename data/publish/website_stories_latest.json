@@ -1,49 +1,41 @@
 {
-  "generated_at": "2026-06-07T22:00:00Z",
+  "generated_at": "2026-06-07T22:30:00Z",
   "stories": [
     {
-      "headline": "Iran Strikes Kuwait With 7 Ballistic Missiles — Regional War Widens, Diplomatic Track Contradicted by Kinetic Activity",
-      "thesis": "Iran struck Kuwait, a major OPEC producer and US ally, with 7 ballistic missiles. Hormuz fully blockaded. Iran denies nuclear talks. Ceasefire hopes contradicted by active escalation.",
+      "headline": "Iran Turns Hormuz Into Toll Road — $1.5-2M Per Tanker. Israel Bombs Beirut.",
+      "thesis": "Iran unilaterally monetizes the Strait of Hormuz at $1.5-2M per tanker transit, accepting Tether. Israel strikes Beirut's southern suburbs — first time in this campaign. Two independent escalation vectors converge into a systemic geopolitical crisis the market has not connected. OPEC+'s 188k bpd increase is noise vs. this structural change.",
       "sector": "geopolitics",
-      "source_count": 5,
-      "setup_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles",
+      "source_count": 6,
+      "setup_id": "n21_multi_pillar__iran_hormuz_toll_beirut_strikes",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strait_of_Hormuz.jpg"
     },
     {
-      "headline": "China Launches Maritime Enforcement East of Taiwan — First Time Beijing Names Time, Place, Legal Basis",
-      "thesis": "Beijing announced a specific maritime traffic enforcement operation east of Taiwan with time, place, and legal basis for the first time. Markets dismiss as posturing. No vessel boarded yet.",
+      "headline": "China Extends Maritime Patrols East of Taiwan While US Is Distracted by Middle East",
+      "thesis": "Beijing launched maritime enforcement east of Taiwan with named time/place/legal basis for the first time. Classic strategic opportunism: advance claims while US is locked into Iran-Lebanon multi-front war. No vessel boarded yet but structural shift in enforcement posture.",
       "sector": "geopolitics",
-      "source_count": 6,
-      "setup_id": "n21_china_ascendancy__china_launches_maritime_enforcement_operation_east_of_taiwan",
+      "source_count": 5,
+      "setup_id": "n21_china_ascendancy__china_maritime_enforcement_east_of_taiwan",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Republic_of_China_(Taiwan)_and_disputed_territories_in_the_South_China_Sea.png"
     },
     {
-      "headline": "Ukraine Hits St. Petersburg With 250+ Drones During PMEF — Military Base, Physics Institute Destroyed",
-      "thesis": "Ukraine struck Russia's second city during its flagship economic forum. Putin rejects peace talks. Russian budget deficit at 6.01T rubles, oil/gas revenues down 29.8%.",
-      "sector": "geopolitics",
-      "source_count": 4,
-      "setup_id": "n21_blockchain_agentic__ukraine_hits_st_petersburg_with_250_drones_during_pmef",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Petersburg_View_from_St_Isaac%27s_Cathedral_1.jpg"
-    },
-    {
-      "headline": "Bitcoin Free Fall — Saylor Liquidates, ETFs Bleed, 200-Week MA Tested at $61K",
-      "thesis": "BTC drops 5.5% as Strategy sells $2.5M — 'never sell' narrative dead. $11.5B unrealized loss. ETF outflows at record. 200-week MA is last line before cascade.",
+      "headline": "Bitcoin Tests $61K — 200-Week MA Is Last Line as Saylor Sells, ETFs Bleed",
+      "thesis": "BTC drops 5.5% to $61.3K. Strategy sells $2.5M — 'never sell' narrative dead. $11.5B unrealized loss. ETF outflows at record. Iran accepting Tether for Hormuz is a bullish counterweight but short-term risk-off dominates crypto alongside broader markets.",
       "sector": "crypto",
       "source_count": 8,
       "setup_id": "n21_blockchain_agentic__bitcoin_free_fall_saylor_liquidates_etfs_bleed",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_logo.svg"
     },
     {
-      "headline": "Google Signs $920M/Month AI Compute Deal With SpaceX — IPO 2x Oversubscribed at $75B",
-      "thesis": "Google locked in $920M/month AI compute with SpaceX. SpaceX loses $0.91 per dollar of revenue ($4.28B loss on $4.69B Q1 revenue). $1.8T+ valuation vs. real revenue. IPO June 12.",
+      "headline": "Google Signs $920M/Month AI Compute Deal With SpaceX — IPO 2x at $75B",
+      "thesis": "Google locked in $920M/month AI compute with SpaceX. SpaceX loses $0.91 per dollar of revenue ($4.28B loss on $4.69B Q1). $1.8T+ valuation vs. real revenue. IPO June 12 faces risk-off headwinds from geopolitical escalation.",
       "sector": "tech",
       "source_count": 7,
       "setup_id": "n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX_Logo.svg"
     },
     {
-      "headline": "Zcash Soundness Researcher Now Audits Monero — XMR Recovers From -10% Panic to +4.77%",
-      "thesis": "The researcher who found Zcash's bug targets Monero. Core contradiction: privacy coins can't prove absence of bugs. Zcash was 'battle-tested' before its bug. XMR has no transparent fallback.",
+      "headline": "Monero Faces Systemic Crisis — Zcash Bug Researcher Now Audits XMR",
+      "thesis": "The researcher who found Zcash's Orchard bug now targets Monero. Privacy coins cannot prove absence of cryptographic bugs. XMR has no transparent fallback — if a bug exists, the coin is unrecoverable. Binary event risk.",
       "sector": "crypto",
       "source_count": 4,
       "setup_id": "n21_blockchain_agentic__zcash_researcher_audits_monero_xmr_volatility",

@@ -2284,10 +2284,6 @@ body {
   padding: 1px 6px;
   white-space: nowrap;
 }
-.flow-bet-pill-mini:hover { color: var(--gold); text-decoration: underline; }
-
-/* v22.35: Cross-link pills — UX architect spec */
-.cf-hint:hover { opacity: 0.8; text-decoration: underline; }
 
 /* v22.33: Heat score color scale + trade signal + PDR mini badges */
 .flow-heat {

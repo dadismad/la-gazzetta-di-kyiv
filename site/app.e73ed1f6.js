@@ -9,12 +9,7 @@ const FLOWS_POLL_INTERVAL = 300000;
 // ── Story cache for flow→story cross-linking ──
 const STORIES_CACHE = {}; // story_id → {headline, dom_card}
 
-// Page-aware element resolver — prevents duplicate-ID bugs from hidden compatibility divs.
-function byId(id) {
-  const pp = document.querySelector('.product-page');
-  if (pp) { const el = pp.querySelector('#' + CSS.escape(id)); if (el) return el; }
-  return document.getElementById(id);
-}
+function byId(id) { return document.getElementById(id); }
 
 // AbortController for stale fetch cancellation
 let _fetchAC = null;
@@ -281,7 +276,7 @@ function renderPDR(elId) {
 }
 
 function renderAnchor() {
-  const el = byId('assetList') || byId('anchorGrid');
+  const el = byId('assetList');
   if (el) el.innerHTML = ANCHOR_ASSETS.map(anchorRowHTML).join('') + cryptoSignalHTML();
   renderPDR('pdrGauge');
   
@@ -310,16 +305,9 @@ async function fetchFlows() {
   if (!data || !data.flows) return false;
   CAPITAL_FLOWS_DATA = data.flows;
   GLOSSARY = data.glossary || {};
-  if (data.generated_at) window._flowsGeneratedAt = data.generated_at;  // v22.35: for time badges
   renderCapitalFlows();
   renderFlowInsight(data);  // v22.31: sector aggregation + lead insight
   renderMarketRegime();     // v22.34: Mike Green top 3 retail indicators
-  renderDivergenceMeter();  // v22.35: Cross-product signal overlay
-  // v22.35: Update signal freshness from stories data
-  const sfEl = byId('signalFreshness');
-  if (sfEl && window._storiesGeneratedAt) {
-    sfEl.textContent = formatTimeAgo(window._storiesGeneratedAt);
-  }
   renderGlossaryTooltips();
   updateHeroConfidence(data.aggregate_confidence, data.aggregate_confidence_label, data.aggregate_direction);
   updateMastheadFlows(data);
@@ -428,11 +416,6 @@ function renderMarketRegime() {
         valueEl.innerHTML = `<span style="color:${color};">${direction}</span> <span style="font-size:11px;color:var(--ink-muted);font-weight:400;">${strength}</span>`;
         if (subEl) subEl.textContent = ind.description || ind.components ? ind.description : '';
       });
-      // v22.35: add time badge to market regime
-      const tsEl = byId('regimeTimestamp');
-      if (tsEl && data.generated_at) {
-        tsEl.textContent = formatTimeAgo(data.generated_at);
-      }
       mr.style.display = 'grid';
     })
     .catch(() => { if (mr) mr.style.display = 'none'; });
@@ -494,7 +477,7 @@ function renderCapitalFlows() {
 
     // v22.32: Trade signal emoji + heat score in collapsed view
     const playPill = anchorAsset
-      ? `<a href="./trades.html" class="flow-bet-pill-mini" style="text-decoration:none;" title="View trade idea for ${anchorAsset.symbol}">${anchorAsset.symbol} ${anchorAsset.bias} · ${anchorAsset.conviction}</a>`
+      ? `<span class="flow-bet-pill-mini">${anchorAsset.symbol} ${anchorAsset.bias} · ${anchorAsset.conviction}</span>`
       : '';
     const tradeEmoji = f.trade_emoji || '';
     const tradeSignal = f.trade_signal || '';
@@ -537,7 +520,6 @@ function renderCapitalFlows() {
         <div class="flow-detail-section">
           <span class="flow-detail-label">LINKED STORY</span>
           <a href="./story.html?id=${f.story_ids ? f.story_ids[0] : f.story_id || ''}" class="flow-story-link">&rarr; View intelligence report</a>
-          ${f.story_ids && f.story_ids.length > 1 ? `<span class="flow-story-extra" style="font-size:9px;color:var(--ink-muted);margin-left:4px;">+${f.story_ids.length - 1} more</span>` : ''}
         </div>
         <div class="flow-detail-section">
           <span class="flow-detail-label">DATA SOURCE</span>
@@ -559,10 +541,7 @@ function renderCapitalFlows() {
   if (sub) {
     const inflows = CAPITAL_FLOWS_DATA.filter(f => f.direction === 'inflow');
     const outflows = CAPITAL_FLOWS_DATA.filter(f => f.direction === 'outflow');
-    // v22.35: time freshness badge on every product
-    const genTime = window._flowsGeneratedAt || '';
-    const ageStr = genTime ? formatTimeAgo(genTime) : '';
-    sub.innerHTML = `${inflows.length} ${i18n.t('flow_inflows','inflows')} · ${outflows.length} ${i18n.t('flow_outflows','outflows')}${ageStr ? ' · <span style="font-size:9px;color:var(--ink-muted);">' + ageStr + '</span>' : ''}`;
+    sub.textContent = `${inflows.length} ${i18n.t('flow_inflows','inflows')} · ${outflows.length} ${i18n.t('flow_outflows','outflows')}`;
   }
 
   // Wire expand-on-click (v22.17)
@@ -760,100 +739,8 @@ function computeTriangulation(story, flow, anchorAsset) {
   return { score: cappedScore, verdict, verdictCls, alignment, alignDetail, signals, anchorAsset, flowDir, betBias };
 }
 
-// v22.35: Cross-product divergence meter — Wall Street #1 request
-// Shows story signal × flow signal × trade signal = divergence score per asset
-function renderDivergenceMeter() {
-  const el = byId('divergenceMeter');
-  if (!el) return;
-  if (!ANCHOR_ASSETS.length || !CAPITAL_FLOWS_DATA.length) return;
-  
-  const rows = [];
-  ANCHOR_ASSETS.forEach(a => {
-    if (a.bias === 'WATCH') return; // Skip WATCH — no directional signal
-    
-    // Find matching flow(s)
-    const matchingFlows = CAPITAL_FLOWS_DATA.filter(f => {
-      const ac = (f.asset_class || '').toLowerCase();
-      const sym = a.symbol.toLowerCase();
-      if (sym === 'spx' && (ac.includes('equit') || ac.includes('sp'))) return true;
-      if (sym === 'brent' && (ac.includes('commodit') || ac.includes('oil') || ac.includes('energy'))) return true;
-      if (sym === 'nvda' && (ac.includes('tech') || ac.includes('semi'))) return true;
-      if (sym === 'gold' && (ac.includes('gold') || ac.includes('commodit'))) return true;
-      if (sym === 'btc' && ac.includes('crypto')) return true;
-      if (sym === 'dxy' && ac.includes('fx')) return true;
-      return false;
-    });
-    
-    // Count story signals matching this asset
-    const matchingStories = STORIES_DATA.filter(s => {
-      const h = (s.headline || '').toLowerCase();
-      const sym = a.symbol.toLowerCase();
-      if (sym === 'spx' && (h.includes('spx') || h.includes('s&p') || h.includes('equit'))) return true;
-      if (sym === 'brent' && (h.includes('oil') || h.includes('brent') || h.includes('crude') || h.includes('opec'))) return true;
-      if (sym === 'nvda' && (h.includes('nvda') || h.includes('nvidia') || h.includes('ai') || h.includes('chip'))) return true;
-      if (sym === 'gold' && h.includes('gold')) return true;
-      if (sym === 'btc' && (h.includes('btc') || h.includes('bitcoin') || h.includes('crypto'))) return true;
-      if (sym === 'dxy' && (h.includes('dollar') || h.includes('dxy'))) return true;
-      return false;
-    });
-    
-    const flowDir = matchingFlows.length ? (matchingFlows.filter(f => f.direction === 'inflow').length >= matchingFlows.filter(f => f.direction === 'outflow').length ? '↑' : '↓') : '—';
-    const storyBias = matchingStories.filter(s => {
-      const cf = s.capital_flow || {};
-      return cf.direction === 'inflow';
-    }).length >= matchingStories.filter(s => {
-      const cf = s.capital_flow || {};
-      return cf.direction === 'outflow';
-    }).length ? '↑' : '↓';
-    
-    const tradeDir = a.bias === 'BUY' ? '↑' : '↓';
-    
-    // Divergence: do all three agree?
-    const dirs = [flowDir, tradeDir];
-    if (matchingStories.length) dirs.unshift(storyBias);
-    const allSame = dirs.every(d => d === dirs[0] || d === '—');
-    const divergence = allSame ? 'ALIGNED' : dirs.filter(d => d !== '—').length >= 2 && !allSame ? 'DIVERGENT' : 'NEUTRAL';
-    const divColor = divergence === 'ALIGNED' ? 'var(--green)' : divergence === 'DIVERGENT' ? 'var(--red)' : 'var(--gold)';
-    
-    rows.push({
-      symbol: a.symbol,
-      storySignal: matchingStories.length ? storyBias : '—',
-      flowSignal: flowDir,
-      tradeSignal: tradeDir,
-      divergence,
-      divColor,
-      stories: matchingStories.length,
-      flows: matchingFlows.length,
-      conviction: a.conviction
-    });
-  });
-  
-  // Sort: divergent first, then by conviction
-  rows.sort((a,b) => {
-    if (a.divergence === 'DIVERGENT' && b.divergence !== 'DIVERGENT') return -1;
-    if (b.divergence === 'DIVERGENT' && a.divergence !== 'DIVERGENT') return 1;
-    return (a.conviction === 'HIGH' ? 0 : 1) - (b.conviction === 'HIGH' ? 0 : 1);
-  });
-  
-  el.innerHTML = `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--divider);margin-bottom:16px;">
-    ${rows.map(r => `
-      <div style="background:var(--white);padding:8px 10px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-          <span style="font-family:var(--sans);font-size:11px;font-weight:700;">${r.symbol}</span>
-          <span style="font-family:var(--sans);font-size:8px;font-weight:700;color:${r.divColor};text-transform:uppercase;">${r.divergence}</span>
-        </div>
-        <div style="display:flex;gap:8px;font-size:10px;font-family:var(--sans);color:var(--ink-muted);">
-          <span>Story ${r.storySignal} (${r.stories})</span>
-          <span>Flow ${r.flowSignal} (${r.flows})</span>
-          <span>Trade ${r.tradeSignal}</span>
-        </div>
-      </div>
-    `).join('')}
-  </div>`;
-}
-
 function renderTriangulation() {
-  const el = byId('signalGrid') || byId('triangulationList');
+  const el = byId('triangulationList') || byId('signalGrid');
   if (!el) return;
 
   // Collect stories — prefer DOM cards, fall back to STORIES_DATA global
@@ -1051,7 +938,7 @@ function livingCardHTML(story, isLead) {
       tradeHint = `<span style="color:${tradeColor};margin-left:4px;">→ ${anchorAsset.symbol} ${anchorAsset.bias} ${anchorAsset.conviction}</span>`;
     }
   }
-  cfHint = `<a href="./flows.html" class="cf-hint" style="color:${hintColor};text-decoration:none;" title="View in Capital Flows — ${cf.direction === 'outflow' ? 'out of' : 'into'} ${cf.asset_class || 'this sector'}">${hintAmt} ${hintDir}${sectorHint}${tradeHint}</a>`;
+  cfHint = `<span class="cf-hint" style="color:${hintColor}" title="Capital flowing ${cf.direction === 'outflow' ? 'out of' : 'into'} ${cf.asset_class || 'this sector'}">${hintAmt} ${hintDir}${sectorHint}${tradeHint}</span>`;
   }
 
   // Sector border-left class
@@ -1910,8 +1797,8 @@ async function boot() {
   // Set masthead timestamp IMMEDIATELY (don't wait for async ops)
   updateMasthead();
 
-  // Fetch flows — always, regardless of page (drives hero confidence, flowFreshness, global state)
-  await fetchFlows();
+  // Fetch flows — only if flows container exists
+  if (byId('flowsList')) await fetchFlows();
 
   // Start flows polling (5 min cadence)
   setInterval(fetchFlows, FLOWS_POLL_INTERVAL);
@@ -1983,16 +1870,57 @@ async function boot() {
   // Re-apply i18n to dynamically inserted DOM (v22.18)
   if (window.i18n && window.i18n.applyTranslations) window.i18n.applyTranslations();
 
-  // v22.42: Homepage teasers are populated by populateTeasers() called via setTimeout below
-
+  // v22.18: Hints lobby — populate front page cards from summary.json
+  if (document.querySelector('.hints-lobby')) {
+    fetch('./api/v1/home/summary.json?t=' + Date.now(), {cache:'no-store'})
+      .then(r => r.json())
+      .then(d => {
+        if (d.stories) {
+          const sc = document.getElementById('hintStoriesCount');
+          const sl = document.getElementById('hintStoriesLatest');
+          if (sc) sc.textContent = d.stories.count + ' stories';
+          if (sl) sl.textContent = (d.stories.lead_headline || '').slice(0, 60) + '...';
+        }
+        if (d.flows) {
+          const fa = document.getElementById('hintFlowsAmount');
+          const fd = document.getElementById('hintFlowsDirection');
+          if (fa) fa.textContent = '$' + d.flows.total_b.toFixed(1) + 'B';
+          if (fd) {
+            const arrow = d.flows.direction === 'bullish' ? '↑' : '↓';
+            fd.textContent = arrow + ' ' + d.flows.inflows + ' inflows · ' + d.flows.outflows + ' outflows · ' + d.flows.confidence + '% confidence';
+          }
+        }
+        if (d.trades) {
+          const tc = document.getElementById('hintTradesCount');
+          const tt = document.getElementById('hintTradesTop');
+          if (tc) tc.textContent = d.trades.open_count + ' positions';
+          if (tt) tt.textContent = 'PDR ' + d.trades.pdr + ' · Top: ' + (d.trades.top_tickers || []).join(', ');
+        }
+        if (d.signal) {
+          const ss = document.getElementById('hintSignalScore');
+          const sd = document.getElementById('hintSignalDetail');
+          if (ss) ss.textContent = d.signal.highest_score + '/100';
+          if (sd) sd.textContent = d.signal.count + ' signals · ' + d.signal.max_conviction + ' max conviction';
+        }
+        if (d.track) {
+          const tr = document.getElementById('hintTrackRate');
+          const tt = document.getElementById('hintTrackTotal');
+          if (tr) tr.textContent = d.track.win_rate + '%';
+          if (tt) tt.textContent = 'Win rate · ' + d.track.total_trades + ' trades · +' + d.track.avg_return + '% avg';
+        }
+      })
+      .catch(() => {}); // Silent fail — cards show dashes
+  }
   // v22.18: Mobile hint condensation — shorten subtitles on small screens
   if (window.innerWidth < 600 && document.querySelector('.hints-lobby')) {
     document.querySelectorAll('.hint-card-sub').forEach(el => {
       const text = el.textContent;
+      // Condense to ~60 chars max
       if (text.length > 60) {
         el.textContent = text.slice(0, 57).trim() + '...';
       }
     });
+    // Smaller value font on mobile
     document.querySelectorAll('.hint-card-value').forEach(el => {
       el.style.fontSize = '20px';
     });

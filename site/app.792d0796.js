@@ -9,12 +9,7 @@ const FLOWS_POLL_INTERVAL = 300000;
 // ── Story cache for flow→story cross-linking ──
 const STORIES_CACHE = {}; // story_id → {headline, dom_card}
 
-// Page-aware element resolver — prevents duplicate-ID bugs from hidden compatibility divs.
-function byId(id) {
-  const pp = document.querySelector('.product-page');
-  if (pp) { const el = pp.querySelector('#' + CSS.escape(id)); if (el) return el; }
-  return document.getElementById(id);
-}
+function byId(id) { return document.getElementById(id); }
 
 // AbortController for stale fetch cancellation
 let _fetchAC = null;
@@ -281,7 +276,7 @@ function renderPDR(elId) {
 }
 
 function renderAnchor() {
-  const el = byId('assetList') || byId('anchorGrid');
+  const el = byId('assetList');
   if (el) el.innerHTML = ANCHOR_ASSETS.map(anchorRowHTML).join('') + cryptoSignalHTML();
   renderPDR('pdrGauge');
   
@@ -853,7 +848,7 @@ function renderDivergenceMeter() {
 }
 
 function renderTriangulation() {
-  const el = byId('signalGrid') || byId('triangulationList');
+  const el = byId('triangulationList') || byId('signalGrid');
   if (!el) return;
 
   // Collect stories — prefer DOM cards, fall back to STORIES_DATA global
@@ -1910,8 +1905,8 @@ async function boot() {
   // Set masthead timestamp IMMEDIATELY (don't wait for async ops)
   updateMasthead();
 
-  // Fetch flows — always, regardless of page (drives hero confidence, flowFreshness, global state)
-  await fetchFlows();
+  // Fetch flows — only if flows container exists
+  if (byId('flowsList')) await fetchFlows();
 
   // Start flows polling (5 min cadence)
   setInterval(fetchFlows, FLOWS_POLL_INTERVAL);
@@ -1983,16 +1978,57 @@ async function boot() {
   // Re-apply i18n to dynamically inserted DOM (v22.18)
   if (window.i18n && window.i18n.applyTranslations) window.i18n.applyTranslations();
 
-  // v22.42: Homepage teasers are populated by populateTeasers() called via setTimeout below
-
+  // v22.18: Hints lobby — populate front page cards from summary.json
+  if (document.querySelector('.hints-lobby')) {
+    fetch('./api/v1/home/summary.json?t=' + Date.now(), {cache:'no-store'})
+      .then(r => r.json())
+      .then(d => {
+        if (d.stories) {
+          const sc = document.getElementById('hintStoriesCount');
+          const sl = document.getElementById('hintStoriesLatest');
+          if (sc) sc.textContent = d.stories.count + ' stories';
+          if (sl) sl.textContent = (d.stories.lead_headline || '').slice(0, 60) + '...';
+        }
+        if (d.flows) {
+          const fa = document.getElementById('hintFlowsAmount');
+          const fd = document.getElementById('hintFlowsDirection');
+          if (fa) fa.textContent = '$' + d.flows.total_b.toFixed(1) + 'B';
+          if (fd) {
+            const arrow = d.flows.direction === 'bullish' ? '↑' : '↓';
+            fd.textContent = arrow + ' ' + d.flows.inflows + ' inflows · ' + d.flows.outflows + ' outflows · ' + d.flows.confidence + '% confidence';
+          }
+        }
+        if (d.trades) {
+          const tc = document.getElementById('hintTradesCount');
+          const tt = document.getElementById('hintTradesTop');
+          if (tc) tc.textContent = d.trades.open_count + ' positions';
+          if (tt) tt.textContent = 'PDR ' + d.trades.pdr + ' · Top: ' + (d.trades.top_tickers || []).join(', ');
+        }
+        if (d.signal) {
+          const ss = document.getElementById('hintSignalScore');
+          const sd = document.getElementById('hintSignalDetail');
+          if (ss) ss.textContent = d.signal.highest_score + '/100';
+          if (sd) sd.textContent = d.signal.count + ' signals · ' + d.signal.max_conviction + ' max conviction';
+        }
+        if (d.track) {
+          const tr = document.getElementById('hintTrackRate');
+          const tt = document.getElementById('hintTrackTotal');
+          if (tr) tr.textContent = d.track.win_rate + '%';
+          if (tt) tt.textContent = 'Win rate · ' + d.track.total_trades + ' trades · +' + d.track.avg_return + '% avg';
+        }
+      })
+      .catch(() => {}); // Silent fail — cards show dashes
+  }
   // v22.18: Mobile hint condensation — shorten subtitles on small screens
   if (window.innerWidth < 600 && document.querySelector('.hints-lobby')) {
     document.querySelectorAll('.hint-card-sub').forEach(el => {
       const text = el.textContent;
+      // Condense to ~60 chars max
       if (text.length > 60) {
         el.textContent = text.slice(0, 57).trim() + '...';
       }
     });
+    // Smaller value font on mobile
     document.querySelectorAll('.hint-card-value').forEach(el => {
       el.style.fontSize = '20px';
     });

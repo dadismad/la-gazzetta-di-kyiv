@@ -9,12 +9,7 @@ const FLOWS_POLL_INTERVAL = 300000;
 // ── Story cache for flow→story cross-linking ──
 const STORIES_CACHE = {}; // story_id → {headline, dom_card}
 
-// Page-aware element resolver — prevents duplicate-ID bugs from hidden compatibility divs.
-function byId(id) {
-  const pp = document.querySelector('.product-page');
-  if (pp) { const el = pp.querySelector('#' + CSS.escape(id)); if (el) return el; }
-  return document.getElementById(id);
-}
+function byId(id) { return document.getElementById(id); }
 
 // AbortController for stale fetch cancellation
 let _fetchAC = null;

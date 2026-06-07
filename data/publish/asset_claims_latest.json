@@ -1,53 +1,65 @@
 {
-  "generated_at": "2026-06-07T22:00:00Z",
+  "generated_at": "2026-06-07T22:30:00Z",
   "claims": [
     {
-      "ticker": "USO",
+      "ticker": "CL",
       "direction": "up",
-      "price_target": "$5-8/bbl gap at Sunday CME open",
-      "strategy": "Long crude ETF — fade-the-move on Sunday gap (65% win rate for geopolitical gap ups)",
+      "price_target": "$3-8/bbl structural premium at Sunday CME open — target $75-80/bbl",
+      "strategy": "Long crude — fade-the-move on Sunday gap (65% win rate for geopolitical structural changes). OPEC+ 188k bpd dip is an additional entry opportunity.",
       "win_rate": "65%",
-      "horizon": "2-24h",
+      "horizon": "24-72h",
+      "narrative_driven_pct": 85,
+      "crowd_belief": "Markets price Iran as 'contained skirmishing.' Polymarket has no active contract for Hormuz toll scenario. OPEC+ increase seen as bearish.",
+      "contradiction": "The $1.5-2M/tanker toll is NOT a skirmish — it's a structural change in global oil transit cost that the market has zero history pricing. OPEC+'s 188k bpd is a rounding error vs. daily Hormuz toll revenue extraction.",
+      "story_id": "n21_multi_pillar__iran_hormuz_toll_beirut_strikes"
+    },
+    {
+      "ticker": "STNG",
+      "direction": "up",
+      "price_target": "+10-20% on shipping rate re-pricing as Hormuz risk premium loads into contracts",
+      "strategy": "Long tanker shipping — Hormuz toll turns into war risk premium for shipping lines. Every tanker that transits Hormuz now carries a $1.5-2M cost that gets passed to cargo rates.",
+      "win_rate": "70%",
+      "horizon": "24-72h",
       "narrative_driven_pct": 80,
-      "crowd_belief": "Markets priced ceasefire into WTI at $68.45. Iran striking a US ally directly contradicts every ceasefire thesis.",
-      "contradiction": "House votes to end war while missiles hit Kuwait — the gap between diplomatic theater and kinetic reality is maximal",
-      "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles"
+      "crowd_belief": "Tanker rates not yet pricing Hormuz structural change. Shipping analysts still focused on OPEC+ supply dynamics.",
+      "contradiction": "The Hormuz toll is a direct transfer from global oil trade to Iran. Tanker companies that transit Hormuz will either pay (cost passed to rates) or divert around Africa (massively higher cost). Either path = tanker rate spike.",
+      "story_id": "n21_multi_pillar__iran_hormuz_toll_beirut_strikes"
     },
     {
       "ticker": "GLD",
       "direction": "up",
-      "price_target": "$2,450+ (2% from $2,415)",
-      "strategy": "Long gold — geopolitical hedge, weekend carry",
-      "win_rate": "70%",
+      "price_target": "$2,500+ (3.5% from $2,415)",
+      "strategy": "Long gold as geopolitical hedge — multi-front escalation (Hormuz toll + Beirut strikes + Kuwait strikes + Taiwan patrol) creates compounding safe-haven demand.",
+      "win_rate": "75%",
       "horizon": "24-72h",
-      "narrative_driven_pct": 60,
-      "crowd_belief": "Gold already priced at $2,415 reflects elevated risk, but direct strikes on OPEC producers are not priced",
-      "contradiction": "Gold is the traditional Gulf war hedge — 7 missiles into Kuwait is a textbook gold catalyst",
-      "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles"
-    },
-    {
-      "ticker": "VIX",
-      "direction": "up",
-      "price_target": "Futures gap-up Sunday evening — target 22-25 range",
-      "strategy": "Long VIX futures — weekend escalation carry",
-      "win_rate": "60%",
-      "horizon": "24-72h",
-      "narrative_driven_pct": 75,
-      "crowd_belief": "S&P snapped 9-week streak — market in risk-off mode already. A weekend escalation compounds existing skittishness.",
-      "contradiction": "S&P already -2.59% before the Kuwait strikes. Weekend escalation risk is an accelerant on an already nervous tape.",
-      "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles"
+      "narrative_driven_pct": 70,
+      "crowd_belief": "Gold at $2,415 reflects elevated Middle East risk, but the escalation has gone from one front to three (Iran-Kuwait, Iran-Hormuz, Israel-Beirut). This compounding is not priced.",
+      "contradiction": "Each front independently justifies gold — combined they create a safe-haven demand spike that exceeds any single-front pricing. Gold remains the cleanest cross-theater geopolitical hedge.",
+      "story_id": "n21_multi_pillar__iran_hormuz_toll_beirut_strikes"
     },
     {
       "ticker": "TSM",
       "direction": "down",
-      "price_target": "-3-5% at Monday Asia open if vessel boarded",
-      "strategy": "Short / put options Monday expiry — blockade rehearsal risk",
+      "price_target": "-3-5% at Monday Asia open if Taiwan tension escalates",
+      "strategy": "Short / put options — China extended maritime patrols east of Taiwan while US is Middle East-distracted. Strategic opportunism thesis.",
+      "win_rate": "60%",
+      "horizon": "24-72h",
+      "narrative_driven_pct": 75,
+      "crowd_belief": "Markets focused on Middle East entirely. Taiwan risk premium near zero. Consensus: 'China won't invade Taiwan this cycle.'",
+      "contradiction": "China extends patrols east of Taiwan exactly when US is locked into a multi-front Middle East war — textbook strategic opportunism. The Taiwan risk premium is underpriced vs. reality.",
+      "story_id": "n21_china_ascendancy__china_maritime_enforcement_east_of_taiwan"
+    },
+    {
+      "ticker": "TLT",
+      "direction": "down",
+      "price_target": "Yields spike 10-15bp on stagflation repricing",
+      "strategy": "Short duration bonds — oil spike feeds inflation expectations, Fed less likely to cut. Stagflation regime favors commodities over bonds.",
       "win_rate": "65%",
-      "horizon": "24-48h",
-      "narrative_driven_pct": 85,
-      "crowd_belief": "Markets price zero confrontation risk — consensus dismisses operation as posturing",
-      "contradiction": "First time Beijing named time/place/legal basis for enforcement east of Taiwan — not posturing",
-      "story_id": "n21_china_ascendancy__china_launches_maritime_enforcement_operation_east_of_taiwan"
+      "horizon": "24-72h",
+      "narrative_driven_pct": 60,
+      "crowd_belief": "Markets fully priced Fed rate hike by end-2026. 2-year real yields at Trump-era highs. But oil structural change from Hormuz toll compounds already-hawkish bond pricing.",
+      "contradiction": "The market has priced a rate hike but NOT the compounding effect of a structural oil cost increase on inflation expectations. The bond selloff has further to go.",
+      "story_id": "n21_multi_pillar__iran_hormuz_toll_beirut_strikes"
     }
   ]
 }
