@@ -1,0 +1,1 @@
+/Users/alexstocchi/.hermes/scripts/gazzetta_deploy_to_gcs.sh

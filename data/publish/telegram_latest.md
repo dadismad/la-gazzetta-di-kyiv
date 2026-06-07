@@ -1,12 +1,10 @@
-US bombs Iranian radar sites at Goruk and Qeshm. Iran hits Kuwait with 7 ballistic missiles. Hormuz blocked. Bahrain under drones.
+China announced maritime enforcement east of Taiwan — first time Beijing named a time, place, and legal basis for control in those waters.
 
-Consensus priced a ceasefire. Instead, the heaviest direct US kinetic strikes on Iranian soil — while Witkoff/Kushner "negotiated" at Oak Ridge.
+Consensus says posturing. This is a blockade rehearsal with operational transparency. Markets price zero confrontation risk.
 
-• Long WTI: $78 prices zero of this. Sunday gap +$5-8 minimum.
-• Long VIX, GLD. Short SPY Monday open.
+• Short TSM/SMH — if any vessel boarded, Monday Asia open gaps -3-5%
+• Long GLD, VIX — semicon supply chain hedge
 
-¹ Iran struck Kuwait — a major OPEC producer and US ally — with 7 ballistic missiles (source: telegram intel monitors)
+¹ China announced specific enforcement operation east of Taiwan, June 6 — unprecedented operational transparency (source: @MonitoringSituation, @markettwits)
 
-Continuity: https://pureciclismo.github.io/gazzetta-di-kyiv/ | Next trigger: Sunday oil futures open / Iran retaliation window
-
-Full briefing and positioning map: https://pureciclismo.github.io/gazzetta-di-kyiv/
+Continuity: gazzetta-di-kyiv.github.io | Next trigger: Monday Asia open / Japan-Philippines response

@@ -1,352 +1,453 @@
 {
-  "generated_at": "2026-06-07T00:00:00Z",
+  "generated_at": "2026-06-07T02:24:51.241799+03:00",
   "generated_by": "generate_flow_nodes.py",
-  "next_update": "2026-06-07T01:00:00Z",
   "update_frequency": "60m",
   "node_types": {
-    "gov":          { "label": "Governmental",       "color": "#D4AF37", "order": 0 },
-    "institutional":{ "label": "Private/Institutional","color": "#3B82F6", "order": 1 },
-    "corporate":    { "label": "Corporate",          "color": "#10B981", "order": 2 },
-    "retail":       { "label": "Retail",             "color": "#A78BFA", "order": 3 },
-    "crypto":       { "label": "Crypto",             "color": "#F59E0B", "order": 4 }
+    "gov": {
+      "label": "Governmental",
+      "color": "#D4AF37",
+      "order": 0
+    },
+    "institutional": {
+      "label": "Private/Institutional",
+      "color": "#3B82F6",
+      "order": 1
+    },
+    "corporate": {
+      "label": "Corporate",
+      "color": "#10B981",
+      "order": 2
+    },
+    "retail": {
+      "label": "Retail",
+      "color": "#A78BFA",
+      "order": 3
+    },
+    "crypto": {
+      "label": "Crypto",
+      "color": "#F59E0B",
+      "order": 4
+    }
   },
   "nodes": [
     {
-      "id": "federal-reserve",
+      "id": "gov-fx",
       "type": "gov",
-      "label": "Federal Reserve",
-      "subtype": "central_bank",
-      "description": "US central bank — sets monetary policy, conducts QE, manages reserve balances",
+      "label": "Governmental → FX",
+      "description": "Auto-generated from 1 stories",
       "metrics": {
-        "total_assets_b": 7800,
-        "inflow_velocity": "moderate",
-        "outflow_velocity": "moderate",
-        "confidence_pct": 95
+        "total_inflow_b": 0,
+        "total_outflow_b": 2.5,
+        "net_flow_b": -2.5,
+        "confidence_pct": 65,
+        "pace_avg": 1.0
       },
-      "sources": [
-        { "type": "treasury_issuance", "amount_b": 1200, "description": "Treasury bond issuance proceeds deposited at Fed" },
-        { "type": "seigniorage", "amount_b": 60, "description": "Currency seigniorage from banknote issuance" },
-        { "type": "swap_lines", "amount_b": 45, "description": "Central bank liquidity swap lines (FIMA repo facility)" }
-      ],
-      "destinations": [
-        { "type": "qe_asset_purchases", "amount_b": 950, "target_node_types": ["gov", "corporate"], "description": "MBS and Treasury bond purchases via QE" },
-        { "type": "reserve_balances", "amount_b": 3200, "target_node_types": ["institutional"], "description": "Bank reserve balances held at Fed" },
-        { "type": "repo_operations", "amount_b": 150, "target_node_types": ["institutional"], "description": "Overnight and term repo operations" },
-        { "type": "interest_on_reserves", "amount_b": 175, "target_node_types": ["institutional"], "description": "Interest paid on reserve balances (IORB)" }
-      ],
-      "data_sources": ["Fed H.4.1", "FOMC Minutes", "New York Fed SRMA"]
+      "flow_count": 1
     },
     {
-      "id": "us-treasury",
+      "id": "gov-crypto",
       "type": "gov",
-      "label": "US Treasury",
-      "subtype": "treasury_department",
-      "description": "US federal debt management, fiscal policy, and sanctions enforcement",
+      "label": "Governmental → crypto",
+      "description": "Auto-generated from 1 stories",
       "metrics": {
-        "total_assets_b": 36200,
-        "inflow_velocity": "fast",
-        "outflow_velocity": "fast",
-        "confidence_pct": 93
+        "total_inflow_b": 0,
+        "total_outflow_b": 11.5,
+        "net_flow_b": -11.5,
+        "confidence_pct": 70,
+        "pace_avg": 1.0
       },
-      "sources": [
-        { "type": "tax_receipts", "amount_b": 4890, "description": "Federal individual and corporate income tax receipts (annual)" },
-        { "type": "debt_issuance", "amount_b": 2400, "description": "Treasury bond, note, and bill auction proceeds" },
-        { "type": "tariffs", "amount_b": 120, "description": "Customs duties and tariff revenue" }
-      ],
-      "destinations": [
-        { "type": "debt_service", "amount_b": 1050, "target_node_types": ["institutional", "retail", "gov"], "description": "Interest and principal payments on outstanding debt" },
-        { "type": "fiscal_transfers", "amount_b": 1800, "target_node_types": ["retail", "corporate", "gov"], "description": "Social Security, Medicare, defense contracts, infrastructure grants" },
-        { "type": "sanctions_enforcement", "amount_b": 5, "target_node_types": ["corporate", "crypto"], "description": "OFAC sanctions compliance and enforcement costs" }
-      ],
-      "data_sources": ["Treasury Direct", "FMS (Financial Management Service)", "CBO Budget Report"]
+      "flow_count": 1
     },
     {
-      "id": "norway-swf",
-      "type": "gov",
-      "label": "Norway GPFG",
-      "subtype": "sovereign_wealth_fund",
-      "description": "Norwegian Government Pension Fund Global — largest SWF, $1.6T in global equities and fixed income",
-      "metrics": {
-        "total_assets_b": 1600,
-        "inflow_velocity": "moderate",
-        "outflow_velocity": "slow",
-        "confidence_pct": 88
-      },
-      "sources": [
-        { "type": "oil_revenue", "amount_b": 85, "description": "Norwegian petroleum revenue transfers to GPFG" },
-        { "type": "investment_returns", "amount_b": 120, "description": "Dividends, interest, and capital gains on portfolio" }
-      ],
-      "destinations": [
-        { "type": "global_equity_deployment", "amount_b": 900, "target_node_types": ["corporate", "institutional"], "description": "Allocation to global equities (70% of portfolio)" },
-        { "type": "fixed_income_allocation", "amount_b": 400, "target_node_types": ["gov", "corporate"], "description": "Government and corporate bond holdings" },
-        { "type": "real_estate", "amount_b": 180, "target_node_types": ["institutional"], "description": "Unlisted real estate investments" }
-      ],
-      "data_sources": ["NBIM Annual Report", "GPFG Quarterly Holdings"]
-    },
-    {
-      "id": "blackrock",
+      "id": "institutional-source",
       "type": "institutional",
-      "label": "BlackRock",
-      "subtype": "asset_manager",
-      "description": "World's largest asset manager — $11.5T AUM across passive ETFs, active funds, and Aladdin risk platform",
+      "label": "Private/Institutional → crypto",
+      "description": "Auto-generated from 18 stories",
       "metrics": {
-        "total_assets_b": 11500,
-        "inflow_velocity": "fast",
-        "outflow_velocity": "fast",
-        "confidence_pct": 91
+        "total_inflow_b": 248.5,
+        "total_outflow_b": 2.5,
+        "net_flow_b": 246.0,
+        "confidence_pct": 69,
+        "pace_avg": 1.0
       },
-      "sources": [
-        { "type": "etf_inflows", "amount_b": 380, "description": "Net inflows into iShares ETF suite (quarterly)" },
-        { "type": "institutional_mandates", "amount_b": 220, "description": "Pension fund, insurance, and endowment mandates" },
-        { "type": "401k_contributions", "amount_b": 180, "description": "Retirement plan contributions via target-date funds and index funds" }
-      ],
-      "destinations": [
-        { "type": "equity_purchases", "amount_b": 5200, "target_node_types": ["corporate"], "description": "Passive and active equities — largest holder of SPX components" },
-        { "type": "fixed_income", "amount_b": 3400, "target_node_types": ["gov", "corporate"], "description": "Treasuries, agency MBS, investment-grade and high-yield corporate bonds" },
-        { "type": "money_market", "amount_b": 850, "target_node_types": ["gov", "corporate"], "description": "Money market fund assets in T-bills and CP" },
-        { "type": "alternatives", "amount_b": 580, "target_node_types": ["institutional", "corporate"], "description": "Private equity, real estate, infrastructure, and credit" }
-      ],
-      "data_sources": ["BlackRock 10-K", "SEC 13F", "Morningstar Direct", "iShares.com"]
+      "flow_count": 18
     },
     {
-      "id": "bridgewater",
+      "id": "institutional-equities",
       "type": "institutional",
-      "label": "Bridgewater Associates",
-      "subtype": "hedge_fund",
-      "description": "Largest macro hedge fund — $125B AUM, Pure Alpha and All Weather strategies",
+      "label": "Private/Institutional → equities",
+      "description": "Auto-generated from 4 stories",
       "metrics": {
-        "total_assets_b": 125,
-        "inflow_velocity": "slow",
-        "outflow_velocity": "slow",
-        "confidence_pct": 82
+        "total_inflow_b": 173.0,
+        "total_outflow_b": 0,
+        "net_flow_b": 173.0,
+        "confidence_pct": 70,
+        "pace_avg": 1.0
       },
-      "sources": [
-        { "type": "institutional_allocation", "amount_b": 15, "description": "Pension fund and SWF allocations to Pure Alpha / All Weather" },
-        { "type": "management_fees", "amount_b": 2, "description": "Management fees (2% of AUM)" }
-      ],
-      "destinations": [
-        { "type": "macro_positions", "amount_b": 95, "target_node_types": ["gov", "corporate", "crypto"], "description": "Global macro: FX forwards, bond futures, equity index swaps, commodity futures" },
-        { "type": "portfolio_insurance", "amount_b": 10, "target_node_types": ["institutional"], "description": "Tail-risk hedging via OTC options and volatility products" },
-        { "type": "cash_and_treasuries", "amount_b": 20, "target_node_types": ["gov", "institutional"], "description": "Cash collateral and Treasury bill holdings" }
-      ],
-      "data_sources": ["Bridgewater investor letters", "SEC 13F", "Bloomberg Billionaires Index"]
+      "flow_count": 4
     },
     {
-      "id": "microstrategy",
+      "id": "institutional-equities,-etfs,-venture",
+      "type": "institutional",
+      "label": "Private/Institutional → equities, ETFs, venture",
+      "description": "Auto-generated from 1 stories",
+      "metrics": {
+        "total_inflow_b": 15.0,
+        "total_outflow_b": 0,
+        "net_flow_b": 15.0,
+        "confidence_pct": 70,
+        "pace_avg": 1.0
+      },
+      "flow_count": 1
+    },
+    {
+      "id": "institutional-commodities,-equities,-derivatives",
+      "type": "institutional",
+      "label": "Private/Institutional → commodities, equities, derivatives",
+      "description": "Auto-generated from 1 stories",
+      "metrics": {
+        "total_inflow_b": 10.0,
+        "total_outflow_b": 0,
+        "net_flow_b": 10.0,
+        "confidence_pct": 70,
+        "pace_avg": 1.0
+      },
+      "flow_count": 1
+    },
+    {
+      "id": "institutional-equities,-crypto,-fx",
+      "type": "institutional",
+      "label": "Private/Institutional → equities, crypto, FX",
+      "description": "Auto-generated from 1 stories",
+      "metrics": {
+        "total_inflow_b": 6.5,
+        "total_outflow_b": 0,
+        "net_flow_b": 6.5,
+        "confidence_pct": 70,
+        "pace_avg": 1.0
+      },
+      "flow_count": 1
+    },
+    {
+      "id": "institutional-commodities,-equities,-fx",
+      "type": "institutional",
+      "label": "Private/Institutional → commodities, equities, FX",
+      "description": "Auto-generated from 1 stories",
+      "metrics": {
+        "total_inflow_b": 4.0,
+        "total_outflow_b": 0,
+        "net_flow_b": 4.0,
+        "confidence_pct": 67,
+        "pace_avg": 1.0
+      },
+      "flow_count": 1
+    },
+    {
+      "id": "institutional-equities,-commodities",
+      "type": "institutional",
+      "label": "Private/Institutional → equities, commodities",
+      "description": "Auto-generated from 1 stories",
+      "metrics": {
+        "total_inflow_b": 4.0,
+        "total_outflow_b": 0,
+        "net_flow_b": 4.0,
+        "confidence_pct": 67,
+        "pace_avg": 1.0
+      },
+      "flow_count": 1
+    },
+    {
+      "id": "institutional-crypto,-equities,-derivatives",
+      "type": "institutional",
+      "label": "Private/Institutional → crypto, equities, derivatives",
+      "description": "Auto-generated from 1 stories",
+      "metrics": {
+        "total_inflow_b": 3.0,
+        "total_outflow_b": 0,
+        "net_flow_b": 3.0,
+        "confidence_pct": 67,
+        "pace_avg": 1.0
+      },
+      "flow_count": 1
+    },
+    {
+      "id": "corporate-commodities",
       "type": "corporate",
-      "label": "MicroStrategy",
-      "subtype": "corporate_treasury",
-      "description": "Corporate intelligence firm turned Bitcoin treasury company — largest corporate BTC holder",
+      "label": "Corporate → commodities",
+      "description": "Auto-generated from 4 stories",
       "metrics": {
-        "total_assets_b": 26,
-        "inflow_velocity": "moderate",
-        "outflow_velocity": "slow",
-        "confidence_pct": 85
+        "total_inflow_b": 18.0,
+        "total_outflow_b": 0,
+        "net_flow_b": 18.0,
+        "confidence_pct": 69,
+        "pace_avg": 1.0
       },
-      "sources": [
-        { "type": "convertible_debt_issuance", "amount_b": 6.5, "description": "Convertible senior note offerings to fund BTC purchases" },
-        { "type": "operating_revenue", "amount_b": 0.5, "description": "Business intelligence software revenue" },
-        { "type": "atm_equity_issuance", "amount_b": 3.0, "description": "At-the-market equity offering proceeds" }
-      ],
-      "destinations": [
-        { "type": "bitcoin_acquisition", "amount_b": 25, "target_node_types": ["crypto"], "description": "Cumulative BTC holdings (~500K BTC at average ~$50K)" },
-        { "type": "debt_service", "amount_b": 0.4, "target_node_types": ["institutional"], "description": "Convertible note interest payments" },
-        { "type": "share_buyback", "amount_b": 0.2, "target_node_types": ["retail", "institutional"], "description": "Share repurchase program" }
-      ],
-      "data_sources": ["MicroStrategy 10-K/10-Q", "SEC 8-K BTC purchase announcements", "MSTR tracker"]
+      "flow_count": 4
     },
     {
-      "id": "apple-treasury",
-      "type": "corporate",
-      "label": "Apple Inc.",
-      "subtype": "corporate_treasury",
-      "description": "Largest US company by market cap — massive cash pile, record buyback programs",
-      "metrics": {
-        "total_assets_b": 350,
-        "inflow_velocity": "fast",
-        "outflow_velocity": "fast",
-        "confidence_pct": 94
-      },
-      "sources": [
-        { "type": "operating_cash_flow", "amount_b": 110, "description": "Annual operating cash flow from iPhone, Services, Mac, iPad, Wearables" },
-        { "type": "debt_issuance", "amount_b": 15, "description": "Corporate bond issuance (Aaa-rated, among lowest yields)" }
-      ],
-      "destinations": [
-        { "type": "share_buyback", "amount_b": 90, "target_node_types": ["retail", "institutional"], "description": "Largest buyback program globally — $90B/year authorized" },
-        { "type": "dividends", "amount_b": 15, "target_node_types": ["retail", "institutional"], "description": "Quarterly dividend ($0.25/share)" },
-        { "type": "r_and_d_capex", "amount_b": 30, "target_node_types": ["corporate", "institutional"], "description": "R&D spending and capital expenditures" },
-        { "type": "supply_chain_finance", "amount_b": 55, "target_node_types": ["corporate"], "description": "Payments to Foxconn, TSMC, Corning, and other suppliers" },
-        { "type": "tax_payments", "amount_b": 8, "target_node_types": ["gov"], "description": "US federal and state corporate income taxes" }
-      ],
-      "data_sources": ["Apple 10-K", "SEC filings", "Bloomberg buyback data"]
-    },
-    {
-      "id": "retail-401k",
-      "type": "retail",
-      "label": "401k / IRA Flows",
-      "subtype": "retirement_plans",
-      "description": "US retirement plan flows — largest single source of retail equity and bond market participation",
-      "metrics": {
-        "total_assets_b": 38000,
-        "inflow_velocity": "fast",
-        "outflow_velocity": "moderate",
-        "confidence_pct": 87
-      },
-      "sources": [
-        { "type": "payroll_deductions", "amount_b": 480, "description": "Annual 401k employee and employer contributions" },
-        { "type": "ira_contributions", "amount_b": 140, "description": "Traditional and Roth IRA annual contributions" },
-        { "type": "rollovers", "amount_b": 380, "description": "401k rollovers to IRA upon job change" }
-      ],
-      "destinations": [
-        { "type": "mutual_fund_allocation", "amount_b": 780, "target_node_types": ["institutional"], "description": "Target-date funds, index funds, and active mutual funds" },
-        { "type": "etf_purchases", "amount_b": 320, "target_node_types": ["institutional"], "description": "Direct ETF holdings in brokerage and IRA accounts" },
-        { "type": "money_market", "amount_b": 280, "target_node_types": ["institutional"], "description": "Money market fund and stable value fund allocations" },
-        { "type": "bond_purchases", "amount_b": 120, "target_node_types": ["gov", "corporate"], "description": "TreasuryDirect, muni, and corporate bond purchases" }
-      ],
-      "data_sources": ["ICI Fund Flow Survey", "Vanguard How America Saves", "FINRA Margin Debt"]
-    },
-    {
-      "id": "retail-brokerage",
-      "type": "retail",
-      "label": "Retail Brokerage",
-      "subtype": "trading_platforms",
-      "description": "Robinhood, Schwab, E*Trade, Webull — self-directed retail investor order flow",
-      "metrics": {
-        "total_assets_b": 8500,
-        "inflow_velocity": "moderate",
-        "outflow_velocity": "moderate",
-        "confidence_pct": 82
-      },
-      "sources": [
-        { "type": "bank_transfers", "amount_b": 65, "description": "Net new money transfers from bank accounts into brokerage" },
-        { "type": "dividend_income", "amount_b": 42, "description": "Dividends credited to brokerage cash accounts" },
-        { "type": "margin_loans", "amount_b": 28, "description": "Margin loan drawdowns (FINRA margin debt)" }
-      ],
-      "destinations": [
-        { "type": "equity_orders", "amount_b": 285, "target_node_types": ["corporate", "institutional"], "description": "Retail equity and ETF purchase orders" },
-        { "type": "options_flow", "amount_b": 180, "target_node_types": ["institutional"], "description": "Retail options flow — heavily concentrated in 0DTE SPX and single-name" },
-        { "type": "pforf_payments", "amount_b": 4, "target_node_types": ["institutional"], "description": "Payment for order flow to market makers (Citadel, Virtu)" },
-        { "type": "crypto_onramp", "amount_b": 35, "target_node_types": ["crypto"], "description": "Retail crypto purchases via brokerage platforms" }
-      ],
-      "data_sources": ["Robinhood SEC 10-K", "FINRA OTC Transparency Data", "SEC Rule 605/606 Reports"]
-    },
-    {
-      "id": "binance",
+      "id": "crypto-crypto",
       "type": "crypto",
-      "label": "Binance",
-      "subtype": "centralized_exchange",
-      "description": "Largest crypto exchange by volume — spot, futures, staking, and BNB Chain ecosystem",
+      "label": "Crypto → crypto",
+      "description": "Auto-generated from 3 stories",
       "metrics": {
-        "total_assets_b": 120,
-        "inflow_velocity": "fast",
-        "outflow_velocity": "fast",
-        "confidence_pct": 70
+        "total_inflow_b": 15.0,
+        "total_outflow_b": 0,
+        "net_flow_b": 15.0,
+        "confidence_pct": 70,
+        "pace_avg": 1.0
       },
-      "sources": [
-        { "type": "retail_deposits", "amount_b": 85, "description": "Retail fiat-to-crypto on-ramp deposits (daily volume)" },
-        { "type": "institutional_otc", "amount_b": 42, "description": "Institutional OTC desk crypto conversions" },
-        { "type": "trading_fees", "amount_b": 8, "description": "Spot and futures trading fee revenue" }
-      ],
-      "destinations": [
-        { "type": "hot_wallet_outflows", "amount_b": 110, "target_node_types": ["crypto"], "description": "Withdrawals to external wallets, DeFi protocols, and cold storage" },
-        { "type": "stablecoin_minting", "amount_b": 55, "target_node_types": ["crypto"], "description": "USDT and BUSD minting against fiat reserves" },
-        { "type": "defi_yield", "amount_b": 18, "target_node_types": ["crypto"], "description": "Exchange-held assets deployed in DeFi yield strategies" },
-        { "type": "regulatory_fines", "amount_b": 4, "target_node_types": ["gov"], "description": "DOJ, FinCEN, and OFAC settlement payments" }
-      ],
-      "data_sources": ["CoinMetrics Exchange Flow", "Binance Proof of Reserves", "Chainalysis Exchange Report"]
+      "flow_count": 3
     },
     {
-      "id": "tether",
+      "id": "crypto-source",
       "type": "crypto",
-      "label": "Tether (USDT)",
-      "subtype": "stablecoin_issuer",
-      "description": "Largest stablecoin by market cap — $120B USDT, primary on-ramp/off-ramp for crypto markets",
+      "label": "Crypto → crypto",
+      "description": "Auto-generated from 1 stories",
       "metrics": {
-        "total_assets_b": 120,
-        "inflow_velocity": "fast",
-        "outflow_velocity": "fast",
-        "confidence_pct": 55
+        "total_inflow_b": 0,
+        "total_outflow_b": 11.5,
+        "net_flow_b": -11.5,
+        "confidence_pct": 70,
+        "pace_avg": 1.0
       },
-      "sources": [
-        { "type": "usdt_minting", "amount_b": 85, "description": "New USDT issuance against fiat collateral (T-bills, cash, CP)" },
-        { "type": "trading_fees", "amount_b": 2, "description": "Revenue from Tether transaction fees" }
-      ],
-      "destinations": [
-        { "type": "exchange_balances", "amount_b": 65, "target_node_types": ["crypto"], "description": "USDT held on CEX hot wallets as trading pairs" },
-        { "type": "reserve_holdings", "amount_b": 90, "target_node_types": ["gov", "corporate"], "description": "Reserve portfolio: T-bills (80%), cash, CP, Bitcoin" },
-        { "type": "defi_liquidity", "amount_b": 12, "target_node_types": ["crypto"], "description": "USDT liquidity deployed in DeFi protocols" },
-        { "type": "redemptions", "amount_b": 38, "target_node_types": ["crypto", "retail"], "description": "USDT redemptions back to fiat (off-ramp)" }
-      ],
-      "data_sources": ["Tether Transparency Report", "CoinMetrics Stablecoin Report", "DefiLlama"]
-    },
-    {
-      "id": "usdt-driven-defi",
-      "type": "crypto",
-      "label": "DeFi (Lido, Aave, Uniswap)",
-      "subtype": "defi_protocol",
-      "description": "Top DeFi protocols — staking, lending, and DEX liquidity across Ethereum and L2s",
-      "metrics": {
-        "total_assets_b": 95,
-        "inflow_velocity": "moderate",
-        "outflow_velocity": "moderate",
-        "confidence_pct": 78
-      },
-      "sources": [
-        { "type": "yield_farming_deposits", "amount_b": 22, "description": "ETH staked in Lido, USDC/USDT deposited in Aave, Uniswap LP deposits" },
-        { "type": "liquidity_mining", "amount_b": 3, "description": "Protocol token incentives for liquidity provision" },
-        { "type": "bridges", "amount_b": 8, "description": "Cross-chain bridge deposits from L1 to L2" }
-      ],
-      "destinations": [
-        { "type": "lending_outflows", "amount_b": 18, "target_node_types": ["crypto", "institutional"], "description": "Aave and Compound lending withdrawals" },
-        { "type": "cex_withdrawals", "amount_b": 14, "target_node_types": ["crypto"], "description": "Withdrawals from DeFi back to centralized exchanges" },
-        { "type": "protocol_treasury", "amount_b": 6, "target_node_types": ["crypto"], "description": "DAO treasury holdings (UNI, AAVE, LDO tokens)" },
-        { "type": "liquid_staking", "amount_b": 32, "target_node_types": ["crypto"], "description": "stETH pooling and Lido validators" }
-      ],
-      "data_sources": ["DefiLlama", "Dune Analytics", "Lido Dashboard", "Aave Risk Monitor"]
+      "flow_count": 1
     }
   ],
   "edges": [
-    { "id": "e_fed_banks", "source": "federal-reserve", "target": "blackrock", "amount_b": 450, "flow_type": "reserves", "direction": "outflow", "confidence_pct": 92, "data_sources": ["Fed H.8", "Fed H.4.1"] },
-    { "id": "e_treasury_fed", "source": "us-treasury", "target": "federal-reserve", "amount_b": 1200, "flow_type": "treasury_issuance", "direction": "inflow", "confidence_pct": 95, "data_sources": ["Treasury Direct"] },
-    { "id": "e_treasury_retail", "source": "us-treasury", "target": "retail-401k", "amount_b": 850, "flow_type": "fiscal_transfer", "direction": "outflow", "confidence_pct": 90, "data_sources": ["CBO", "SSA"] },
-    { "id": "e_treasury_apple", "source": "us-treasury", "target": "apple-treasury", "amount_b": 180, "flow_type": "defense_contract", "direction": "outflow", "confidence_pct": 75, "data_sources": ["USASpending.gov"] },
-    { "id": "e_norway_blackrock", "source": "norway-swf", "target": "blackrock", "amount_b": 350, "flow_type": "swf_mandate", "direction": "outflow", "confidence_pct": 80, "data_sources": ["NBIM Mandates", "SEC 13F"] },
-    { "id": "e_norway_apple", "source": "norway-swf", "target": "apple-treasury", "amount_b": 42, "flow_type": "equity_holding", "direction": "outflow", "confidence_pct": 85, "data_sources": ["NBIM Holdings"] },
-    { "id": "e_blackrock_apple", "source": "blackrock", "target": "apple-treasury", "amount_b": 185, "flow_type": "etf_equity", "direction": "outflow", "confidence_pct": 90, "data_sources": ["SEC 13F", "BlackRock Holdings"] },
-    { "id": "e_blackrock_treasury", "source": "blackrock", "target": "us-treasury", "amount_b": 680, "flow_type": "bond_purchase", "direction": "outflow", "confidence_pct": 88, "data_sources": ["Treasury Auction Results"] },
-    { "id": "e_bridgewater_fed", "source": "bridgewater", "target": "federal-reserve", "amount_b": 12, "flow_type": "macro_hedging", "direction": "inflow", "confidence_pct": 65, "data_sources": ["CFTC COT Report", "SEC 13F"] },
-    { "id": "e_apple_retail", "source": "apple-treasury", "target": "retail-401k", "amount_b": 90, "flow_type": "buyback", "direction": "outflow", "confidence_pct": 94, "data_sources": ["Apple 10-K", "SEC Filing"] },
-    { "id": "e_apple_retail_div", "source": "apple-treasury", "target": "retail-brokerage", "amount_b": 15, "flow_type": "dividend", "direction": "outflow", "confidence_pct": 94, "data_sources": ["Apple Dividend History"] },
-    { "id": "e_retail_blackrock", "source": "retail-401k", "target": "blackrock", "amount_b": 180, "flow_type": "mutual_fund_inflow", "direction": "outflow", "confidence_pct": 85, "data_sources": ["ICI", "Vanguard", "BlackRock"] },
-    { "id": "e_retail_bridgewater", "source": "retail-brokerage", "target": "bridgewater", "amount_b": 4, "flow_type": "pforp", "direction": "outflow", "confidence_pct": 70, "data_sources": ["Robinhood SEC Filing", "FINRA"] },
-    { "id": "e_retail_crypto_binance", "source": "retail-brokerage", "target": "binance", "amount_b": 35, "flow_type": "crypto_onramp", "direction": "outflow", "confidence_pct": 80, "data_sources": ["Chainalysis", "CoinMetrics"] },
-    { "id": "e_mstr_binance", "source": "microstrategy", "target": "binance", "amount_b": 25, "flow_type": "btc_acquisition", "direction": "outflow", "confidence_pct": 85, "data_sources": ["MSTR 8-K", "SEC Filing"] },
-    { "id": "e_binance_tether", "source": "binance", "target": "tether", "amount_b": 55, "flow_type": "stablecoin_minting", "direction": "outflow", "confidence_pct": 55, "data_sources": ["CoinMetrics Stablecoin", "Tether Transparency"] },
-    { "id": "e_tether_defi", "source": "tether", "target": "usdt-driven-defi", "amount_b": 12, "flow_type": "defi_liquidity", "direction": "outflow", "confidence_pct": 50, "data_sources": ["DefiLlama", "Dune Analytics"] },
-    { "id": "e_defi_binance", "source": "usdt-driven-defi", "target": "binance", "amount_b": 14, "flow_type": "cex_withdrawal", "direction": "outflow", "confidence_pct": 75, "data_sources": ["DefiLlama", "Nansen"] },
-    { "id": "e_bridgewater_mstr", "source": "bridgewater", "target": "microstrategy", "amount_b": 3, "flow_type": "convertible_note", "direction": "outflow", "confidence_pct": 45, "data_sources": ["SEC 13F", "Bloomberg"] },
-    { "id": "e_retail_tether", "source": "retail-brokerage", "target": "tether", "amount_b": 25, "flow_type": "retail_stablecoin", "direction": "outflow", "confidence_pct": 60, "data_sources": ["CoinMetrics", "Glassnode"] },
-    { "id": "e_blackrock_norway", "source": "blackrock", "target": "norway-swf", "amount_b": 85, "flow_type": "management_fee", "direction": "inflow", "confidence_pct": 75, "data_sources": ["BlackRock 10-K"] },
-    { "id": "e_apple_supply_chain", "source": "apple-treasury", "target": "microstrategy", "amount_b": 2, "flow_type": "supply_chain_payment", "direction": "outflow", "confidence_pct": 40, "data_sources": ["Apple Supplier List"] },
-    { "id": "e_fed_tether", "source": "federal-reserve", "target": "tether", "amount_b": 25, "flow_type": "tbill_purchase", "direction": "inflow", "confidence_pct": 65, "data_sources": ["Tether Reserve Report"] },
-    { "id": "e_binance_gov", "source": "binance", "target": "us-treasury", "amount_b": 4, "flow_type": "regulatory_fine", "direction": "outflow", "confidence_pct": 85, "data_sources": ["DOJ Press Release"] }
-  ],
-  "metadata": {
-    "total_flow_tracked_b": 48500,
-    "total_edges": 24,
-    "total_nodes": 12,
-    "active_flows": 19,
-    "barometer_score": 62,
-    "barometer_label": "Elevated",
-    "methodology": "Node-based capital flow decomposition. Sources and destinations derived from Fed Z.1 inter-sector matrices, EPFR Global fund flow data, SEC 13F filings, on-chain exchange flow analysis, and corporate treasury disclosures. Confidence scores reflect data latency and source reliability: SEC filings (90-95%), Fed data (90-95%), on-chain aggregates (55-85%), SWF disclosures (80-88%), estimates based on partial data (40-65%). Updated hourly via Gazzetta AI pipeline.",
-    "glossary": {
-      "node": "A structural entity that receives, holds, and/or deploys capital. Each node has known sources (inflows) and destinations (outflows).",
-      "edge": "A directional capital flow between two nodes. Edge width scales with amount; color indicates direction (green = toward destination, red = away from source).",
-      "inflow_velocity": "Rate at which capital enters the node: slow (quarterly), moderate (monthly), fast (weekly), surge (daily/weekly acceleration).",
-      "outflow_velocity": "Rate at which capital leaves the node: slow (quarterly), moderate (monthly), fast (weekly), surge (daily/weekly acceleration).",
-      "confidence_pct": "Weighted aggregate of data source reliability, reporting lag, and signal strength. Below 60% uses dashed edge rendering.",
-      "subtype": "Node specialization within its type category. Examples: central_bank, hedge_fund, stablecoin_issuer, corporate_treasury, trading_platform.",
-      "Z.1": "Federal Reserve Financial Accounts of the United States — the official flow-of-funds matrix that decomposes US sectors into inter-sector lending/borrowing."
+    {
+      "source": "institutional-source",
+      "target": "institutional-equities",
+      "amount_b": 80.0,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai__i",
+      "headline": "Google Signs $920M/Month AI Compute Deal with SpaceX/xAI — IPO Demand Surges",
+      "asset_class": "equities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "institutional-equities",
+      "amount_b": 80.0,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai",
+      "headline": "Google Signs $920M/Month AI Compute Deal with SpaceX/xAI",
+      "asset_class": "equities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "institutional-equities,-etfs,-venture",
+      "amount_b": 15.0,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_abundance__space_etf_mainstream",
+      "headline": "Space Economy Reaches Escape Velocity — $3.3B Flows Into ETFs as Wall Street Pre",
+      "asset_class": "equities, ETFs, venture",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "crypto-source",
+      "target": "gov-crypto",
+      "amount_b": 11.5,
+      "direction": "outflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_blockchain_agentic__bitcoin_free_fall__saylor_liquidates_etfs_bleed_200-week",
+      "headline": "BITCOIN FREE FALL — SAYLOR LIQUIDATES, ETFs BLEED, 200-WEEK MA IN PLAY",
+      "asset_class": "crypto",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "institutional-commodities,-equities,-derivatives",
+      "amount_b": 10.0,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_multi__us_iran_overnight_strikes",
+      "headline": "US Bombs Iranian Radar Sites and Naval Base Overnight — Iran Fires Drones at Hor",
+      "asset_class": "commodities, equities, derivatives",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "institutional-equities",
+      "amount_b": 8.0,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_abundance_tech__spacex_ipo_demand_2x_supply__75b_offering_oversibscribed",
+      "headline": "SPACEX IPO DEMAND 2x SUPPLY — $75B OFFERING OVERSIBSCRIBED",
+      "asset_class": "equities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "institutional-equities,-crypto,-fx",
+      "amount_b": 6.5,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_ai__trump_whitehouse_ai_summit_warsh",
+      "headline": "Trump Confirms White House AI Summit With All Major Companies Next Week — Says H",
+      "asset_class": "equities, crypto, FX",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "crypto-crypto",
+      "amount_b": 5.0,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_china_ascendancy__zcash_soundness_researcher_now_audits_monero__xmr_intraday",
+      "headline": "Zcash Soundness Researcher Now Audits Monero — XMR Intraday Panic, Recovery Unde",
+      "asset_class": "crypto",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "crypto-crypto",
+      "amount_b": 5.0,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_china_ascendancy__zcash_soundness_bug_researcher_now_targets_monero__xmr_-10",
+      "headline": "Zcash Soundness Bug Researcher Now Targets Monero — XMR -10%",
+      "asset_class": "crypto",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "crypto-crypto",
+      "amount_b": 5.0,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_china_ascendancy__zcash_soundness_bug_researcher_now_audits_monero__xmr_-10",
+      "headline": "Zcash Soundness Bug Researcher Now Audits Monero — XMR -10%, Cascade Risk",
+      "asset_class": "crypto",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "corporate-commodities",
+      "amount_b": 5.0,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles__gulf_war_wid",
+      "headline": "Iran Strikes Kuwait With 7 Ballistic Missiles — Gulf War Widens Live",
+      "asset_class": "commodities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "corporate-commodities",
+      "amount_b": 5.0,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_multi_pillar__us_strikes_iranian_naval_bases__hormuz_escalation_intensifi",
+      "headline": "US Strikes Iranian Naval Bases — Hormuz Escalation Intensifies",
+      "asset_class": "commodities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "corporate-commodities",
+      "amount_b": 5.0,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_multi_pillar__iran-bahrain_missile_attack__hormuz_escalation_continues",
+      "headline": "IRAN-BAHRAIN MISSILE ATTACK — HORMUZ ESCALATION CONTINUES",
+      "asset_class": "commodities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "institutional-equities",
+      "amount_b": 5.0,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "ai_rotation_crypto_20260605",
+      "headline": "AI Rotation Devours Crypto — Dow Hits ATH as ETH Crashes Below $1,600",
+      "asset_class": "equities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "institutional-commodities,-equities,-fx",
+      "amount_b": 4.0,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 67,
+      "story_id": "n21_multi__lebanon_ceasefire_dead_oman_oil",
+      "headline": "Lebanon Ceasefire Officially Dead, IDF Retreats Under Fire — Oman Port Drone-Str",
+      "asset_class": "commodities, equities, FX",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "institutional-equities,-commodities",
+      "amount_b": 4.0,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 67,
+      "story_id": "n21_china__chip_boom_property_crisis",
+      "headline": "China's $900B Chip Stock Boom Masks Deepening Property Crisis — IPOs and Huawei ",
+      "asset_class": "equities, commodities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "institutional-crypto,-equities,-derivatives",
+      "amount_b": 3.0,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 67,
+      "story_id": "n21_multi__ukraine_300_drone_wave",
+      "headline": "300 Ukrainian Drones Hit Russia Overnight — Largest Single Wave of the Entire Wa",
+      "asset_class": "crypto, equities, derivatives",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "corporate-commodities",
+      "amount_b": 3.0,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 67,
+      "story_id": "n21_dollar_decline__india_rbi_proposes_brics_digital_currency_link_erupee_pilot",
+      "headline": "India's Central Bank Proposes Linking BRICS Digital Currencies — E-Rupee Pilots ",
+      "asset_class": "commodities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "gov-fx",
+      "amount_b": 2.5,
+      "direction": "outflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 65,
+      "story_id": "n21_eu_fragmentation__eu_migration_deal_balkans_detention_germany_rejects_schengen",
+      "headline": "EU Strikes Migration Deal for Detention Centers Abroad — Germany Rejects Request",
+      "asset_class": "FX",
+      "data_source": "stories.json → capital_flow"
     }
+  ],
+  "summary": {
+    "total_nodes": 13,
+    "total_edges": 19,
+    "total_flow_b": 262.5,
+    "inflow_count": 17,
+    "outflow_count": 2
   }
 }

@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-07T00:58:50+03:00",
+  "generated_at": "2026-06-07T10:18:59+03:00",
   "generated_by": "generate_flows.py",
-  "next_update": "2026-06-07T01:58:50+03:00",
+  "next_update": "2026-06-07T11:18:59+03:00",
   "update_frequency": "60m",
   "summary": "11 inflows \u00b7 1 outflows",
   "aggregate_confidence": 85,
@@ -148,6 +148,24 @@
       ]
     },
     {
+      "id": "flow_n21_china_ascendancy__china_launches_maritime_enforcement_operation_east_of_taiwan",
+      "headline": "$5.0B \u2191 commodities",
+      "amount_b": 5.0,
+      "projected": "Position short semiconductor futures pre-market Sunday night. If China boards any vessel before Monday open, gap down guaranteed. TSM options with Monday expiry \u2014 buy puts. Without boarding, the\u2026",
+      "pace_multiplier": 1.0,
+      "direction": "inflow",
+      "positioning": "accumulating",
+      "asset_class": "commodities",
+      "anchor_symbol": "BRENT",
+      "story_id": "n21_china_ascendancy__china_launches_maritime_enforcement_operation_east_of_taiwan",
+      "confidence_pct": 85,
+      "confidence_level": "high",
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "foreign"
+      ]
+    },
+    {
       "id": "flow_n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles__regional_war",
       "headline": "$5.0B \u2191 commodities",
       "amount_b": 5.0,
@@ -166,57 +184,41 @@
       ]
     },
     {
-      "id": "flow_n21_china_ascendancy__zcash_soundness_researcher_now_audits_monero__xmr_intraday",
-      "headline": "$5.0B \u2191 crypto",
+      "id": "flow_n21_multi_pillar__israel-lebanon_conflict_deepening__full_occupation_publicly",
+      "headline": "$5.0B \u2191 commodities",
       "amount_b": 5.0,
-      "projected": "XMR short has 2-3x downside IF a bug is found, but the recovery from $110.40 to $118.70 suggests initial panic sellers were absorbed. The risk/reward depends entirely on timing of the next researcher ",
+      "projected": "Broad Middle East conflict hedge (gold + oil) for weekend carry. Market underestimates spillover risk. If Iran-US talks officially break AND Israel announces full Lebanon occupation simultaneously,\u2026",
       "pace_multiplier": 1.0,
       "direction": "inflow",
       "positioning": "accumulating",
-      "asset_class": "crypto",
-      "anchor_symbol": "BTC",
-      "story_id": "n21_china_ascendancy__zcash_soundness_researcher_now_audits_monero__xmr_intraday",
+      "asset_class": "commodities",
+      "anchor_symbol": "BRENT",
+      "story_id": "n21_multi_pillar__israel-lebanon_conflict_deepening__full_occupation_publicly",
       "confidence_pct": 85,
       "confidence_level": "high",
       "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
       "flow_sources": [
-        "undetermined"
+        "funds",
+        "retail"
       ]
     },
     {
-      "id": "flow_n21_china_ascendancy__zcash_soundness_bug_researcher_now_targets_monero__xmr_-10",
-      "headline": "$5.0B \u2191 crypto",
+      "id": "flow_n21_blockchain_agentic__ukraine_hits_st_petersburg_with_250_drones_during_pmef__m",
+      "headline": "$5.0B \u2191 commodities",
       "amount_b": 5.0,
-      "projected": "Short XMR is the trade with 2-5x asymmetric upside. XMR market cap ~$3B. If the researcher finds a soundness bug \u2014 and given Zcash had one,",
+      "projected": "Narrative is the main product here \u2014 this is Gazzetta di Kyiv front-page material. For Bet&Benefit: if IAEA Zaporizhzhia incident escalates into a radiological event, uranium/nuclear safety plays\u2026",
       "pace_multiplier": 1.0,
       "direction": "inflow",
       "positioning": "accumulating",
-      "asset_class": "crypto",
-      "anchor_symbol": "BTC",
-      "story_id": "n21_china_ascendancy__zcash_soundness_bug_researcher_now_targets_monero__xmr_-10",
+      "asset_class": "commodities",
+      "anchor_symbol": "BRENT",
+      "story_id": "n21_blockchain_agentic__ukraine_hits_st_petersburg_with_250_drones_during_pmef__m",
       "confidence_pct": 85,
       "confidence_level": "high",
       "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
       "flow_sources": [
-        "undetermined"
-      ]
-    },
-    {
-      "id": "flow_n21_china_ascendancy__zcash_soundness_bug_researcher_now_audits_monero__xmr_-10",
-      "headline": "$5.0B \u2191 crypto",
-      "amount_b": 5.0,
-      "projected": "Short XMR has 2-5x asymmetric downside. XMR market cap ~$3B. If the researcher finds a soundness bug \u2014 and given Zcash had one, the probability is non-trivial \u2014 XMR could drop 50-80% in hours.",
-      "pace_multiplier": 1.0,
-      "direction": "inflow",
-      "positioning": "accumulating",
-      "asset_class": "crypto",
-      "anchor_symbol": "BTC",
-      "story_id": "n21_china_ascendancy__zcash_soundness_bug_researcher_now_audits_monero__xmr_-10",
-      "confidence_pct": 85,
-      "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
-      "flow_sources": [
-        "undetermined"
+        "government",
+        "retail"
       ]
     },
     {

@@ -57,8 +57,13 @@ def intel_story_to_gazzetta(intel_story, pillar):
     story_id = intel_story.get("story_id") or generate_story_id(headline, pillar)
     now = datetime.now(timezone.utc).isoformat()
     
-    bet_text = intel_story.get("bet", "")
-    benefit_text = intel_story.get("benefit", "")
+    bet_raw = intel_story.get("bet", {})
+    bet_text = bet_raw if isinstance(bet_raw, str) else bet_raw.get("direction", "")
+    benefit_raw = intel_story.get("benefit", {})
+    if isinstance(benefit_raw, str):
+        benefit_text = benefit_raw
+    else:
+        benefit_text = benefit_raw.get("Bet&Benefit", "") or benefit_raw.get("Gazzetta di Kyiv", "") or json.dumps(benefit_raw)
     event_text = intel_story.get("event", "")
     
     # Determine direction from bet text

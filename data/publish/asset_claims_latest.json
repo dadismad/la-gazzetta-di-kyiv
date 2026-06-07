@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-06-07T08:52:00Z",
+  "claims": [
+    {
+      "ticker": "TSM",
+      "direction": "down",
+      "price_target": "See Monday Asia open: -3-5% if vessel boarded",
+      "strategy": "Pre-market short / put options Monday expiry",
+      "win_rate": "65%",
+      "horizon": "24-48h",
+      "narrative_driven_pct": 85,
+      "crowd_belief": "Consensus pricing zero confrontation risk — markets dismissing as posturing despite unprecedented operational transparency",
+      "contradiction": "Market says 'posturing.' China announced a specific time/place/legal basis for enforcement for the first time ever — that's not posturing, that's preparation.",
+      "story_id": "n21_china_ascendancy__china_launches_maritime_enforcement_operation_east_of_taiwan"
+    },
+    {
+      "ticker": "SMH",
+      "direction": "down",
+      "price_target": "-3-5% correlated with TSM",
+      "strategy": "Short semicon ETF",
+      "win_rate": "60%",
+      "horizon": "24-48h",
+      "narrative_driven_pct": 75,
+      "crowd_belief": "Semiconductor supply chains assumed immune to Taiwan Strait disruption",
+      "contradiction": "Taiwan produces >90% of advanced semiconductors. A blockade rehearsal east of Taiwan directly targets the supply chain markets assume is untouchable.",
+      "story_id": "n21_china_ascendancy__china_launches_maritime_enforcement_operation_east_of_taiwan"
+    }
+  ]
+}

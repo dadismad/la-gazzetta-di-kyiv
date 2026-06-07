@@ -1,152 +1,120 @@
 {
-  "scrape_time": "2026-06-06T21:44:56.297031+00:00",
+  "scrape_time": "2026-06-07T08:09:51+00:00",
   "model": "deepseek-v4-flash",
-  "horizon": "1-2 hours",
-  "channels_monitored": [
-    "@trad_fin",
-    "@MonitoringSituation",
-    "@ASupersharij",
-    "@infinityhedge",
-    "@ethanlevins",
-    "@markettwits"
-  ],
+  "horizon": "1-2 hours (Sunday 08:09 UTC → CME open ~10h, Asia open ~13h)",
+  "channels_monitored": ["@trad_fin", "@MonitoringSituation", "@ASupersharij", "@infinityhedge", "@ethanlevins", "@markettwits"],
   "channel_status": {
-    "@trad_fin": "STALE — last post 1369 min ago (latest: 2026-06-05T22:54)",
-    "@MonitoringSituation": "STALE — last post 123 min ago (latest: 2026-06-06T19:41)",
-    "@ASupersharij": "ACTIVE — within last 2h (latest: 2026-06-06T20:17)",
-    "@infinityhedge": "DEAD — last post 3d ago (latest: 2026-06-03T09:29)",
-    "@ethanlevins": "HOT — within last 30min (latest: 2026-06-06T21:15)",
-    "@markettwits": "ACTIVE — within last 2h (latest: 2026-06-06T20:58)"
+    "@trad_fin": "STALE — 0/20 messages in last 30min. Weekend dormant. Last active yesterday (Iran radar strike).",
+    "@MonitoringSituation": "STALE — 0/20 messages in last 30min. Weekend downtime.",
+    "@ASupersharij": "LOW — 1/14 messages in last 30min. Internal Ukraine political gossip (soldier reporting users for liking Polish post). Not market actionable.",
+    "@infinityhedge": "DEAD — 0/20 messages. No posts in 4+ days. Channel inactive.",
+    "@ethanlevins": "ACTIVE — 1/20 messages in last 30min. NEW: 'IDF tanks burning on live TV' (Lebanon front). Reinforces existing escalation narrative.",
+    "@markettwits": "HOT — 7/20 messages in last 30min. KEY NEW DATA: OPEC+ expected to raise output by 188K bpd from July. Also: Armenia elections, Armenia-Russia relations deteriorating."
   },
   "summary_stats": {
-    "total_messages_scanned": 115,
-    "messages_last_30min": 1,
-    "messages_last_2h": 5,
-    "actionable_stories_identified": 4
+    "total_messages_scanned": 114,
+    "messages_last_30min": 9,
+    "messages_last_2h": 9,
+    "actionable_stories_identified": 3,
+    "compared_to_previous_cycle": "6 new messages vs 6 previously. Significant: OPEC+ output hike is entirely new. Cuba, crypto sentiment, and Chongar bridge from prior cycle have NO updates."
   },
   "stories": [
     {
-      "id": "iran-multi-front-escalation-20260606",
-      "title": "Iran Military Posture Surge — Fighter Jets, Missiles into Kuwait/Bahrain, Negotiations Leaked as Collapsing",
-      "freshness": "Active within last 2-4 hours",
-      "source_channels": [
-        "@ethanlevins",
-        "@MonitoringSituation",
-        "@trad_fin"
-      ],
-      "event": "Iranian fighter jets spotted over Bandar Abbas + Shiraz + Hamedan. Kuwait Army intercepted 7 ballistic missiles. Bahrain intercepted 3 missiles + drones from Iran. Iran strongly condemned Israeli attacks on Lebanese Army. Leaked US-Iran negotiation sticking points: US interceptions of Iranian ships causing drone/missile exchanges. Pakistan Interior Minister traveled to Tehran. US struck Iranian radar sites at Goruk and Qeshm Island yesterday (trad_fin). Khamenei aide confirmed no meeting with Trump. Bandar Abbas explosions reported.",
-      "consensus_narrative": "Iran is in active military posture shift — air activity across multiple cities, missile launches toward Gulf states, all while negotiations with US are on brink of failure. The pattern is coherent: Iran is preparing for escalation or demonstrating capability as bargaining leverage. Oil risk premium is underpriced given Hormuz blockade + active strikes.",
-      "contradiction": "Pakistan Interior Minister traveling to Tehran suggests diplomatic channels still open. Iran's condemnation of Israeli attacks on Lebanon is diplomatic language — may signal they want to keep the conflict framed as Israel-Lebanon, not US-Iran. House voted 215-208 to end Trump's Iran war — domestic US political pressure may constrain further escalation. Axios: Trump wants to end the war but Netanyahu wants to resume it — the actual escalation vector may shift to Israel-Lebanon.",
+      "rank": 1,
+      "id": "opec-plus-output-hike-188k-bpd-20260607",
+      "title": "🛢 OPEC+ Expected to Raise Output by 188,000 bpd from July — Supply Management Caps Oil Spike",
+      "freshness": "28 minutes ago (07:41 UTC)",
+      "source_channels": ["@markettwits"],
+      "source_posts": ["markettwits/373163"],
+      "event": "OPEC+ is expected to agree on increasing oil production by 188,000 barrels per day starting July, per RTRS (Reuters). This was expected to be confirmed at today's OPEC+ meeting. The increase is modest (~0.18% of global supply) but sends a clear policy signal: OPEC+ is actively managing supply to prevent an Iran-linked price spike from running away.",
+      "consensus_narrative": "OPEC+ is gradually unwinding production cuts as demand holds up. 188K bpd is a routine adjustment — markets already have this priced. The broader oil narrative is dominated by Iran/Hormuz risk premium, not by OPEC+ supply management. Oil analysts view this as a non-event relative to geopolitical risk.",
+      "contradiction": "THIS IS THE FIRST DATA POINT THIS CYCLE CONFIRMING ACTIVE OPEC+ INTERVENTION TO CAGE OIL PRICES. Iran tensions (Hormuz strikes, missile fire into Kuwait/Bahrain, US radar strikes on Qeshm Island) should be pushing WTI toward $80-85. OPEC+ adding supply is a direct response to exactly this risk — they are trying to cap the geopolitical premium. The contradiction: if OPEC+ feels the need to add supply NOW (before any actual Hormuz disruption), it implies they see the Iran risk as real and rising. But their action also limits the upside for oil longs. The net: oil is stuck in a range — Iran risk premium provides a floor ($74-76 WTI), OPEC+ supply cap provides a ceiling ($80-82). Breakout requires either (a) confirmed Hormuz disruption (no amount of OPEC+ supply can replace 17M bpd through the Strait), or (b) Iran-US de-escalation (which removes the premium entirely, sending oil below $70). The market is pricing neither tail — which means there's a binary event ahead.",
       "bet": {
-        "direction": "LONG oil, LONG gold, LONG defense",
-        "assets": [
-          "$USO",
-          "$CL (WTI Crude)",
-          "$XLE",
-          "$LMT",
-          "$GD",
-          "$GLD",
-          "$SPY puts"
-        ],
-        "trigger": "Additional Iranian missile fire toward Gulf states or Hormuz tanker incident = $3-5 WTI spike within hours. US-Iran talks officially declared broken accelerates move. CME opens Sunday evening — oil futures will gap.",
-        "horizon": "Next 2-12 hours / Sunday CME open through Monday",
-        "confidence": "MEDIUM-HIGH — multiple corroborating channels, coherent pattern across military + diplomatic signals"
+        "direction": "NEUTRAL on crude for immediate horizon — range-bound between Iran floor and OPEC+ ceiling. Long oil still works as Iran hedge, but reduce size. SHORT energy sector ($XLE) if Iran de-escalates. LONG refiners ($VLO, $MPC) who benefit from stable crude + strong product demand.",
+        "assets": ["$USO (hold, reduce size)", "$CL (WTI — range trade $74-$82)", "$VLO (Valero — refiner margin beneficiary)", "$XLE (energy sector — fade on OPEC+ cap)", "$SHEL (European supermajor — more exposed to Iran disruption)"],
+        "trigger": "OPEC+ confirmation at today's meeting = short-term oil dip (sell the news). Confirmed Hormuz tanker disruption = breakout above $82. Iran de-escalation = breakdown below $74.",
+        "horizon": "Next 12-24 hours for OPEC+ confirmation. 1-2 weeks for Iran resolution. CME Sunday evening will price the OPEC+ news — expect a small dip at open.",
+        "confidence": "HIGH for the policy signal (RTRS is Reuters wire, reliable). MEDIUM for market impact — the 188K bpd is small but the signal matters."
       },
       "benefit": {
-        "Gazzetta di Kyiv": "Frame: 'Putin watches as US is stretched toward two-front conflict; Iran tests American resolve while Russia grinds in Donbas.' Connect Iran escalation to Ukraine: 'The US can't arm Israel, Ukraine, and Taiwan simultaneously — something breaks.'",
-        "Bet&Benefit": "Crude oil longs for Sunday CME open. If Hormuz disruption narrative intensifies (radar already struck), WTI above $85 is plausible. Defense stocks (LMT, GD) have multi-front conflict tailwind. If House vote gains Senate traction, USD weakens = commodities bid."
-      },
-      "materiality_score": 9.0
-    },
-    {
-      "id": "china-taiwan-maritime-20260606",
-      "title": "China Launches Maritime Enforcement Operation East of Taiwan — Fresh 46min ago",
-      "freshness": "46 minutes ago",
-      "source_channels": [
-        "@MonitoringSituation",
-        "@markettwits"
-      ],
-      "event": "China announced a special maritime traffic law enforcement operation east of Taiwan on June 6. Framed as 'exercising jurisdiction' in response to Japan-Philippines maritime boundary talks. This is the first time China has publicly announced a specific time/place/legal basis for an enforcement operation in waters east of Taiwan.",
-      "consensus_narrative": "Consensus reads this as incremental blockade preparation — China establishing administrative control over waters east of Taiwan via 'traffic enforcement' as legal basis for interdiction and boarding. Markets pricing zero probability of actual confrontation but the operational transparency is unusual.",
-      "contradiction": "Operation is framed as routine 'maritime traffic safety / law enforcement.' But timing — same day as Japan-Philippines talks — and language ('necessary action', 'safeguard rights') suggest escalatory intent. Markets may dismiss as posturing until a vessel is actually boarded. No physical confrontation yet.",
-      "bet": {
-        "direction": "SHORT Taiwan equities/semis, LONG gold/VIX",
-        "assets": [
-          "$TSM",
-          "$SMH",
-          "$GLD",
-          "$VIX",
-          "EWT (Taiwan ETF)"
-        ],
-        "trigger": "Any report of Chinese MSA boarding/intercepting a vessel in the operation zone = 3-5% TSM gap down at Monday Asia open. No boarding = elevated risk premium but no immediate trade.",
-        "horizon": "Next 24-48 hours / Monday Asia open",
-        "confidence": "HIGH — China has publicly announced time/place/legal basis, unusually transparent. Japan-Philippines talks give them a pretext."
-      },
-      "benefit": {
-        "Gazzetta di Kyiv": "Frame: 'China's Taiwan blockade rehearsal — what Europe must learn from Ukraine.' Taiwan security = global semiconductor supply chain risk. Connect to Ukraine: 'Putin watches as US is stretched across three theaters.'",
-        "Bet&Benefit": "Position short semiconductor futures pre-market Sunday night. If China boards any vessel before Monday open, gap down guaranteed. TSM options with Monday expiry — buy puts. Without boarding, the elevated risk premium alone is a short-term fade."
-      },
-      "materiality_score": 8.5
-    },
-    {
-      "id": "ukraine-st-petersburg-drone-pmef-20260606",
-      "title": "Ukraine Hits St. Petersburg with 250+ Drones During PMEF — Military Base + Physics Institute Destroyed",
-      "freshness": "Today (posts from 07:25-20:17 UTC)",
-      "source_channels": [
-        "@ASupersharij",
-        "@ethanlevins"
-      ],
-      "event": "Ukraine launched ~250 drones attacking Russia. St. Petersburg and Leningrad Oblast hit during PMEF (St. Petersburg International Economic Forum). Target hits: Military unit 81263 (7082nd naval mine-torpedo base, 1st category), Fock Physics Research Institute in Petrodvorets, Kronstadt cadet corps area. Sochi simultaneously under drone attack. Port of Mariupol also struck. Russian budget deficit at 6.01T rubles (2.6% of GDP), oil/gas revenues down 29.8%.",
-      "consensus_narrative": "Ukraine demonstrated deep-strike capability against Russia's second city during Russia's flagship economic forum — massive political humiliation. Shows St. Petersburg air defense is porous. Russia's budget bleeding accelerates (29.8% oil/gas revenue drop). War increasingly expensive for Moscow.",
-      "contradiction": "Putin rejected peace talks with Zelensky same day, telling army to 'work.' Strike may strengthen Putin's hardline position domestically — 'see what they do to us.' Ushakov says US prioritizing Iran over Ukraine — Ukraine acting more aggressively precisely because US attention diverted to Iran, trying to force battlefield realities before US focus shifts away from Ukraine permanently.",
-      "bet": {
-        "direction": "LONG defense/nuclear security (Zaporizhzhia incident), LONG Ukrainian war bonds if risk-on, SHORT Russian assets",
-        "assets": [
-          "$LMT",
-          "$GD",
-          "$RSX (Russia ETF shorts)",
-          "Ukrainian sovereign bonds (if tradeable)",
-          "$URA (uranium/nuclear)"
-        ],
-        "trigger": "Russia retaliates against Ukrainian energy grid forcefully = energy spike. IAEA Zaporizhzhia incident escalates = nuclear security plays bid. Budget data shows Russia's financial runway shortening = RSX shorts accumulate.",
-        "horizon": "This week (Monday-Friday)",
-        "confidence": "HIGH for narrative value (Gazzetta content), MEDIUM for direct market impact"
-      },
-      "benefit": {
-        "Gazzetta di Kyiv": "PRIMARY FRAME: Ukraine just bombed St. Petersburg during Putins Davos - this destroys Russias normal life continues propaganda. Secondary: The Ukrainian drone industry - 250+ drones, started by kitchen enthusiasts - is a compelling tech/industrial underdog narrative. Budget deficit data shows Russias war is financially unsustainable.",
-        "Bet&Benefit": "Narrative is the main product here — this is Gazzetta di Kyiv front-page material. For Bet&Benefit: if IAEA Zaporizhzhia incident escalates into a radiological event, uranium/nuclear safety plays get bid. Russian budget data is a slow-burn short thesis on RSX."
+        "Gazzetta di Kyiv": "Frame: 'OPEC+ Blinks — Raises Output as Iran Threat Looms.' Connect to Ukraine: 'Russia's petro-economy gets squeezed — OPEC+ adding supply depresses Urals price further, cutting Putin's war budget.' Russia budget data already shows oil/gas revenues down 29.8%. Any OPEC+ output increase that further pressures Urals is a direct hit to Russia's war financing. Frame as: 'The oil weapon is breaking in Putin's hands.'",
+        "Bet&Benefit": "Reduce crude oil long position size — OPEC+ cap limits upside. Move into refiner equities (VLO, MPC) which benefit from stable crude input costs + strong summer gasoline demand. If you want crude exposure, use 6-month deferred contracts to avoid the OPEC+ dip at the front of the curve. Algeria 'ready to extend cuts' provides a floor — but the dominant signal is supply management, not supply restriction."
       },
       "materiality_score": 7.5
     },
     {
-      "id": "israel-lebanon-ground-war-20260606",
-      "title": "Israel-Lebanon Conflict Deepening — Full Occupation Publicly Discussed, IDF Taking Daily Casualties",
-      "freshness": "Latest 76min ago, active all day",
-      "source_channels": [
-        "@ethanlevins"
-      ],
-      "event": "IDF officer from Egoz Recon Unit died of wounds from southern Lebanon clashes. Several Israeli soldiers injured in battles in southern Lebanon. Israeli military leader: 'Impossible to disarm Hezbollah without full occupation of Lebanon.' Israel attacked Lebanese Army vehicle, killing soldiers including officer. 2,500 Hezbollah fighters operating south of Litani. Israeli airstrikes continue across southern Lebanon. Iran condemns Israeli attacks on Lebanese Army.",
-      "consensus_narrative": "Escalation is accelerating — IDF taking casualties daily, leadership publicly discussing full occupation. 2,500 Hezbollah fighters south of Litani despite ceasefire terms. This is no longer 'border clashes' — it's an entrenched ground war with no exit strategy. Axios: Netanyahu wants to resume Iran war, but Israel is already heavily committed in Lebanon — suggests two-front Israeli strategy.",
-      "contradiction": "Ceasefire understanding included halt of demolitions in southern Lebanon — diplomatic framework still active. Halt of demolitions is a concession, implying both sides still bargaining. Israel killed Lebanese Army soldiers but Lebanese Army has zero ties to Hezbollah — could backfire diplomatically. Full occupation language may be negotiating posture, not actual strategy.",
+      "rank": 2,
+      "id": "lebanon-idf-tanks-burning-escalation-20260607",
+      "title": "🔥🇱🇧🇮🇱 IDF Tanks Burning on Live TV — Lebanon Ground War Intensifies",
+      "freshness": "3 minutes ago (08:06 UTC)",
+      "source_channels": ["@ethanlevins"],
+      "source_posts": ["ethanlevins/3386"],
+      "event": "IDF tanks were shown burning on live TV on the Lebanon front. This follows a pattern of escalating IDF casualties in southern Lebanon: Egoz Recon Unit officer killed, multiple soldiers wounded in daily battles. Israeli military leadership has publicly discussed full occupation of southern Lebanon. 2,500 Hezbollah fighters are operating south of the Litani River.",
+      "consensus_narrative": "The Israel-Lebanon conflict is an entrenched ground war. IDF is taking casualties daily. Hezbollah retains capability south of Litani despite ceasefire agreements. Full occupation is being discussed as necessary. Markets have priced a 'Middle East risk premium' into oil and gold, but the Israel-Lebanon specific component is underweighted — US-Iran dominates the narrative.",
+      "contradiction": "Tanks burning on live TV is a VISUAL escalation — it changes the perception of the conflict for TV viewers worldwide. This is NOT a minor border clash — it's a heavy armor engagement being broadcast in real time. The contradiction: Israel is publicly discussing full occupation but ALSO halted demolitions of villages in southern Lebanon (a concession). This suggests internal Israeli debate between escalation (Netanyahu, military) and restraint (ceasefire framework). If tanks burning live TV shifts Israeli public opinion toward escalation (demand for 'doing something'), it could trigger the full occupation decision. Conversely, if it reveals Israeli vulnerability, it could strengthen restraint. The market impact path: any Israeli decision to escalate Lebanon = Hezbollah-Iran link triggered = oil spike + risk-off across Middle East assets.",
       "bet": {
-        "direction": "LONG oil (broader ME risk), LONG gold, LONG defense (Israel-specific $ISRA ETF if accessible)",
-        "assets": [
-          "$USO",
-          "$CL",
-          "$GLD",
-          "$LMT",
-          "$ISRA"
-        ],
-        "trigger": "Full occupation announcement or major Israeli ground operation into southern Lebanon = risk-off spike across all Middle East exposed assets. Iran entering the conflict explicitly = oil spike above $85.",
-        "horizon": "Next 12-48 hours / week",
-        "confidence": "MEDIUM — casualties are real but occupation language may be negotiating posture; however trend is clearly escalatory and accumulating"
+        "direction": "LONG gold ($GLD), LONG oil ($USO) as broad Middle East hedge. SHORT Israeli shekel via FX if full occupation announced. LONG defense ($LMT, $GD) on sustained multi-front conflict.",
+        "assets": ["$GLD (gold — safe haven)", "$USO (oil — broader ME risk)", "$ISRA (Israel Equity Fund — potential buying opportunity on panic dip)", "$LMT", "$GD"],
+        "trigger": "Full Israeli occupation announcement or major new ground operation in southern Lebanon = immediate gold/oil spike + regional risk-off. Hezbollah rocket fire into northern Israel (retaliation for tank losses) = similar move.",
+        "horizon": "Next 12-48 hours. Sunday night CME open will not specifically price Lebanon — this is a Monday-Asia-open story. Gold/oil already have ME premium incorporated.",
+        "confidence": "MEDIUM — the tanks burning is visually significant but doesn't represent a NEW policy decision. It's escalation within an already active conflict. The marginal information content is low despite the high drama."
       },
       "benefit": {
-        "Gazzetta di Kyiv": "Frame: 'Middle East 2026: Three Wars, No Off-Ramp.' Tie Iran, Lebanon, Ukraine into single narrative of global conflict expansion under distracted US administration. 'The US can't fight three wars — which one gets deprioritized?'",
-        "Bet&Benefit": "Broad Middle East conflict hedge (gold + oil) for weekend carry. Market underestimates spillover risk. If Iran-US talks officially break AND Israel announces full Lebanon occupation simultaneously, that's a multi-standard-deviation oil move."
+        "Gazzetta di Kyiv": "Not a primary Gazzetta angle (not Ukraine-related). But can be woven into broader 'Global Conflict Web' narrative: 'While Ukraine pounds Chongar bridge and St. Petersburg, Israel's tanks burn in Lebanon and Iran's missiles fly toward Kuwait. The world's hot wars are multiplying, not ending.'",
+        "Bet&Benefit": "Maintain existing Middle East hedges (gold, oil). Do NOT trade on this specific headline — it's noise within an already-escalated conflict. Wait for a NEW policy signal (occupation announcement, Hezbollah retaliation) before adding position size."
       },
-      "materiality_score": 7.0
+      "materiality_score": 5.5
+    },
+    {
+      "rank": 3,
+      "id": "armenia-eu-pivot-russia-loss-20260607",
+      "title": "🇦🇲🇷🇺 Armenia-Russia Divergence Accelerates — Pashinyan Opens Door to EU Exit from EAEU, Elections Underway",
+      "freshness": "3-25 minutes ago (07:44-08:06 UTC)",
+      "source_channels": ["@markettwits"],
+      "source_posts": ["markettwits/373164", "markettwits/373168", "markettwits/373169"],
+      "event": "Three related developments: (1) Armenian PM Pashinyan says a referendum on leaving EAEU (Russia-led economic bloc) for EU membership will happen once an EU application or membership status exists. (2) Armenia parliamentary elections are taking place today. (3) Armenian FM Ararat Mirzoyan states relations with Russia need 'recovery.' Russia Security Council says: 'Armenia is repeating the path Ukraine followed in 2013-2014.'",
+      "consensus_narrative": "Armenia is frustrated with Russia's failure to protect it from Azerbaijan (Nagorno-Karabakh 2023). Pashinyan is drifting toward the West, but Armenia remains deeply dependent on Russia economically (remittances, energy, trade). The EAEU departure is years away, if it happens at all. Markets don't care about Armenia.",
+      "contradiction": "Russia's Security Council explicitly comparing Armenia to UKRAINE 2013-2014 is a RED ALERT statement. Russia considers losing Armenia as geopolitically equivalent to losing Ukraine — a civilization-level threat to their post-Soviet sphere. If Russia reacts to Armenia's pivot the way it reacted to Ukraine's Euromaidan, we are watching the early stages of Russia's second frozen conflict brewing in the Caucasus. The contradiction: Armenia is SMALLER than Ukraine, but strategically MORE important to Russia — it hosts Russia's only military base in the South Caucasus (Gyumri), borders Iran and Turkey, and controls transit routes. If Armenia fully pivots to the EU, Russia loses its southern strategic depth. The 2013-2014 Ukraine comparison is not hyperbole — it's a warning. BUT: Armenia has no oil, no gas, no industry of global significance. The market impact runs through: (1) Turkey relations (Erdogan may see this as opportunity to absorb more influence), (2) Iran border security (Russia's loss = Iran's gain in Caucasus), (3) Russia-focused risk premiums. The potential for a Russia-Armenia crisis is higher than markets price, but the timeline is months, not hours.",
+      "bet": {
+        "direction": "No immediate 1-2h trade. Medium-term: SHORT Russian equities/bonds if Armenia pivot triggers Russian overreaction. LONG Turkish equities ($TUR) if Turkey capitalizes on Russian weakness in Caucasus.",
+        "assets": ["$RSX (Russia ETF — short on any escalation)", "$TUR (Turkey ETF — potential beneficiary)", "Russian sovereign bonds (short on geopolitical risk premium increase)"],
+        "trigger": "Russian military buildup near Armenian border (Gyumri base reinforcement) = escalation signal. Election results showing pro-EU mandate = accelerates timeline. Russian disinformation campaign against Pashinyan (modeled on 2014 Ukraine) = confirmation of pattern.",
+        "horizon": "1-3 months for market impact to materialize. Immediate: narrative value only.",
+        "confidence": "LOW for 1-2h trade. MEDIUM for medium-term thesis — the parallel to Ukraine 2013-2014 is explicitly drawn by RUSSIA ITSELF, which is extraordinary."
+      },
+      "benefit": {
+        "Gazzetta di Kyiv": "FRONT-PAGE GOLD: 'Russia's Second Ukraine — Armenia Repeats the Path to Independence.' Connect directly: 'While Putin warns army to work' in Ukraine, Russia's southern flank is crumbling. Armenia is walking out of the Russian orbit. The post-Soviet empire is unravelling faster than the Kremlin can control. Interview: Armenian diaspora perspective. Data: Russian peacekeeping in Nagorno-Karabakh failed. Armenia watched Ukraine survive Russian invasion and decided they could too.'",
+        "Bet&Benefit": "Not actionable for 1-2h trading. Add to watchlist for medium-term positioning. If Armenia election produces a clear pro-EU majority, prepare to short RSX. The Russia Security Council statement is the key data point — they are signaling that Russia will NOT accept losing Armenia quietly. That's a future crisis being telegraphed today."
+      },
+      "materiality_score": 4.5
     }
   ],
-  "meta_observation": "Sunday June 7, 21:44 UTC. Equity markets closed. Crypto (BTC 24/7) and CME futures (open Sunday evening) are the only liquid venues. Primary actionable themes: (1) China-Taiwan maritime operation — biggest potential Monday gap risk for semis/TSM. (2) Iran multi-front military posture — oil will react at CME Sunday open. (3) Ukraine St. Petersburg drone strike during PMEF — Gazzetta content gold, Russia budget bleeding. (4) Israel-Lebanon ground war — slow-burn accumulation, but daily IDF casualties + full occupation discussion is a ticking clock. BTC approaching 200-week MA ($57-58K) with Strategy selling — crypto narrative bearish but approaching technical levels where bottoms historically form."
+  "carryover_narratives_from_prior_cycle": [
+    {
+      "story": "🇨🇺 Cuba Arming Civilians for Possible US Invasion",
+      "status": "NO UPDATE in last 30 min. Previous cycle (07:12 UTC) report from marketwits via Versión Final. No corroboration or denial yet.",
+      "still_actionable": "YES — still the highest-potential asymmetric story. Requires US official response for confirmation. Monday US government reaction will determine if this is a real crisis or Cuban disinformation. Hold positions as described in prior cycle, but do NOT add until confirmation."
+    },
+    {
+      "story": "✴️ Crypto Sentiment at February Extreme — Contrarian Bounce Signal",
+      "status": "NO UPDATE in last 30 min. The new Cryptorank post (07:58) is backward-looking top AI tokens, not a fresh sentiment reading. Santiment data from previous cycle (07:19 UTC) is the relevant signal.",
+      "still_actionable": "YES — crypto trades 24/7. The sentiment extreme signal from 40+ min ago is still fresh. BTC long with tight stop at $55K remains the ONLY trade executable RIGHT NOW while equity markets are closed."
+    },
+    {
+      "story": "🇺🇦 Ukraine Strikes Chongar Bridge — Crimea Logistics Cut",
+      "status": "NO UPDATE in last 30 min. ASupersharij's new post (08:01) is about internal Ukrainian politics, not military operations.",
+      "still_actionable": "YES for Gazzetta narrative. No new military data."
+    },
+    {
+      "story": "🇮🇷 US-Iran: Radar Strikes, Missile Fire, Talks Collapse",
+      "status": "NO UPDATE in last 30 min. Neither trad_fin, ethanlevins, nor MonitoringSituation added new Iran content this cycle.",
+      "still_actionable": "YES — still the dominant macro risk. CME Sunday evening oil pricing will incorporate the latest. OPEC+ output increase (this cycle) partially offsets Iran risk premium."
+    },
+    {
+      "story": "🇨🇳🇹🇼 China-Taiwan Maritime Enforcement Operation",
+      "status": "NO UPDATE in last 30 min. MonitoringSituation had zero new posts this cycle.",
+      "still_actionable": "YES — still the #1 Monday gap risk for semis/TSM. Any vessel boarding incident before Monday Asia open would be catastrophic for Taiwan equities."
+    }
+  ],
+  "meta_observation": "Sunday 08:09 UTC — Second cycle of the day. The dominant NEW finding is OPEC+ increasing output by 188K bpd from July. This caps the oil upside and slightly dampens the Iran risk premium that has been building. For the 1-2 hour horizon: crypto sentiment extreme (previous cycle) remains the only immediately executable trade (BTC longs, tight stop at $55K). The Cuba arms story (previous cycle) has NO fresh data — await US government confirmation. For Gazzetta di Kyiv, the top content angles this cycle are: (1) OPEC+ output hike + Russia budget bleeding (oil/gas revenues -29.8%) = 'Putin's war budget squeezed from both sides', (2) Armenia = Russia's Second Ukraine narrative (Russia SB explicitly compared Armenia to Ukraine 2013-2014), (3) IDF tanks burning on live TV (Lebanon) — dramatic visual but no new policy signal. The Cuba story from previous cycle, if confirmed, would be the most consequential — but we need official US reaction to deploy. For Bet&Benefit Monday open positioning: reduce oil long size (OPEC+ cap), maintain defense longs (LMT, GD), maintain TSM puts (Taiwan), move airline shorts from AAL/UAL to rest of sector on IATA bankruptcy warning (previous cycle). The multi-front escalation pattern (Ukraine-Crimea, Cuba, Iran-Hormuz, Israel-Lebanon, China-Taiwan, now Armenia-Russia) is the most distributed pressure on US strategic resources observed in years."
 }

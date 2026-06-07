@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-06T21:20:20+03:00",
+  "generated_at": "2026-06-07T08:51:57+03:00",
   "generated_by": "generate_flows.py",
-  "next_update": "2026-06-06T22:20:20+03:00",
+  "next_update": "2026-06-07T09:51:57+03:00",
   "update_frequency": "60m",
   "summary": "11 inflows · 1 outflows",
   "aggregate_confidence": 85,
@@ -22,7 +22,11 @@
       "story_id": "n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai__i",
       "confidence_pct": 85,
       "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5"
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "government",
+        "corporate"
+      ]
     },
     {
       "id": "flow_n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai",
@@ -37,7 +41,32 @@
       "story_id": "n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai",
       "confidence_pct": 85,
       "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5"
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "government",
+        "corporate"
+      ]
+    },
+    {
+      "id": "flow_n21_abundance__space_etf_mainstream",
+      "headline": "$15.0B ↑ tech",
+      "amount_b": 15.0,
+      "projected": "Space ETF AUM could reach $10B by end of 2026 if SpaceX IPO materializes; space index re-rating of +20-30% in 6 months",
+      "pace_multiplier": 1.0,
+      "direction": "inflow",
+      "positioning": "accumulating",
+      "asset_class": "tech",
+      "anchor_symbol": "SPX",
+      "story_id": "n21_abundance__space_etf_mainstream",
+      "confidence_pct": 85,
+      "confidence_level": "high",
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "institutional",
+        "corporate",
+        "funds",
+        "retail"
+      ]
     },
     {
       "id": "flow_n21_blockchain_agentic__bitcoin_free_fall__saylor_liquidates_etfs_bleed_200-week",
@@ -47,12 +76,38 @@
       "pace_multiplier": 1.0,
       "direction": "outflow",
       "positioning": "distributing",
-      "asset_class": "tech",
-      "anchor_symbol": "NVDA",
+      "asset_class": "crypto",
+      "anchor_symbol": "BTC",
       "story_id": "n21_blockchain_agentic__bitcoin_free_fall__saylor_liquidates_etfs_bleed_200-week",
       "confidence_pct": 83,
       "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > distributing+8 > med-contradiction+5"
+      "confidence_trace": "large-flow+15 > normal-pace+5 > distributing+8 > med-contradiction+5",
+      "flow_sources": [
+        "government",
+        "banking",
+        "funds"
+      ]
+    },
+    {
+      "id": "flow_n21_multi__us_iran_overnight_strikes",
+      "headline": "$10.0B ↑ defense",
+      "amount_b": 10.0,
+      "projected": "WTI $78→$83-86 (+6-10%), VIX +10-15%, gold +2-3%, SPX -2-3% at Monday open, Brent $82→$88-91",
+      "pace_multiplier": 1.0,
+      "direction": "inflow",
+      "positioning": "accumulating",
+      "asset_class": "defense",
+      "anchor_symbol": "BRENT",
+      "story_id": "n21_multi__us_iran_overnight_strikes",
+      "confidence_pct": 85,
+      "confidence_level": "high",
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "government",
+        "corporate",
+        "banking",
+        "retail"
+      ]
     },
     {
       "id": "flow_n21_abundance_tech__spacex_ipo_demand_2x_supply__75b_offering_oversibscribed",
@@ -67,7 +122,48 @@
       "story_id": "n21_abundance_tech__spacex_ipo_demand_2x_supply__75b_offering_oversibscribed",
       "confidence_pct": 85,
       "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5"
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "institutional",
+        "corporate",
+        "retail"
+      ]
+    },
+    {
+      "id": "flow_n21_ai__trump_whitehouse_ai_summit_warsh",
+      "headline": "$6.5B ↑ tech",
+      "amount_b": 6.5,
+      "projected": "NVDA +6-10%, QQQ from -3% to +0-2% (3-5% swing), BTC $60K→$63-66K, DXY -0.8-1.2%",
+      "pace_multiplier": 1.0,
+      "direction": "inflow",
+      "positioning": "accumulating",
+      "asset_class": "tech",
+      "anchor_symbol": "NVDA",
+      "story_id": "n21_ai__trump_whitehouse_ai_summit_warsh",
+      "confidence_pct": 85,
+      "confidence_level": "high",
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "government"
+      ]
+    },
+    {
+      "id": "flow_n21_china_ascendancy__china_launches_maritime_enforcement_operation_east_of_taiwan",
+      "headline": "$5.0B ↑ commodities",
+      "amount_b": 5.0,
+      "projected": "Position short semiconductor futures pre-market Sunday night. If China boards any vessel before Monday open, gap down guaranteed. TSM options with Monday expiry — buy puts. Without boarding, the…",
+      "pace_multiplier": 1.0,
+      "direction": "inflow",
+      "positioning": "accumulating",
+      "asset_class": "commodities",
+      "anchor_symbol": "BRENT",
+      "story_id": "n21_china_ascendancy__china_launches_maritime_enforcement_operation_east_of_taiwan",
+      "confidence_pct": 85,
+      "confidence_level": "high",
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "foreign"
+      ]
     },
     {
       "id": "flow_n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles__regional_war",
@@ -77,117 +173,73 @@
       "pace_multiplier": 1.0,
       "direction": "inflow",
       "positioning": "accumulating",
-      "asset_class": "equities",
-      "anchor_symbol": "SPX",
+      "asset_class": "commodities",
+      "anchor_symbol": "BRENT",
       "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles__regional_war",
       "confidence_pct": 85,
       "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5"
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "retail"
+      ]
     },
     {
-      "id": "flow_n21_china_ascendancy__zcash_soundness_researcher_now_audits_monero__xmr_intraday",
-      "headline": "$5.0B ↑ crypto",
-      "amount_b": 5.0,
-      "projected": "XMR short has 2-3x downside IF a bug is found, but the recovery from $110.40 to $118.70 suggests initial panic sellers were absorbed. The risk/reward depends entirely on timing of the next researcher ",
-      "pace_multiplier": 1.0,
-      "direction": "inflow",
-      "positioning": "accumulating",
-      "asset_class": "tech",
-      "anchor_symbol": "NVDA",
-      "story_id": "n21_china_ascendancy__zcash_soundness_researcher_now_audits_monero__xmr_intraday",
-      "confidence_pct": 85,
-      "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5"
-    },
-    {
-      "id": "flow_n21_china_ascendancy__zcash_soundness_bug_researcher_now_targets_monero__xmr_-10",
-      "headline": "$5.0B ↑ crypto",
-      "amount_b": 5.0,
-      "projected": "Short XMR is the trade with 2-5x asymmetric upside. XMR market cap ~$3B. If the researcher finds a soundness bug — and given Zcash had one,",
-      "pace_multiplier": 1.0,
-      "direction": "inflow",
-      "positioning": "accumulating",
-      "asset_class": "tech",
-      "anchor_symbol": "NVDA",
-      "story_id": "n21_china_ascendancy__zcash_soundness_bug_researcher_now_targets_monero__xmr_-10",
-      "confidence_pct": 85,
-      "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5"
-    },
-    {
-      "id": "flow_n21_china_ascendancy__zcash_soundness_bug_researcher_now_audits_monero__xmr_-10",
-      "headline": "$5.0B ↑ crypto",
-      "amount_b": 5.0,
-      "projected": "Short XMR has 2-5x asymmetric downside. XMR market cap ~$3B. If the researcher finds a soundness bug — and given Zcash had one, the probability is non-trivial — XMR could drop 50-80% in hours.",
-      "pace_multiplier": 1.0,
-      "direction": "inflow",
-      "positioning": "accumulating",
-      "asset_class": "tech",
-      "anchor_symbol": "NVDA",
-      "story_id": "n21_china_ascendancy__zcash_soundness_bug_researcher_now_audits_monero__xmr_-10",
-      "confidence_pct": 85,
-      "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5"
-    },
-    {
-      "id": "flow_n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles__gulf_war_wid",
+      "id": "flow_n21_multi_pillar__israel-lebanon_conflict_deepening__full_occupation_publicly",
       "headline": "$5.0B ↑ commodities",
       "amount_b": 5.0,
-      "projected": "Oil is the highest-conviction play. Kuwait being struck by 7 Iranian missiles changes the calculus — this is no longer a US-Iran proxy fight, it's a regional war.",
+      "projected": "Broad Middle East conflict hedge (gold + oil) for weekend carry. Market underestimates spillover risk. If Iran-US talks officially break AND Israel announces full Lebanon occupation simultaneously,…",
       "pace_multiplier": 1.0,
       "direction": "inflow",
       "positioning": "accumulating",
-      "asset_class": "equities",
-      "anchor_symbol": "SPX",
-      "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles__gulf_war_wid",
+      "asset_class": "commodities",
+      "anchor_symbol": "BRENT",
+      "story_id": "n21_multi_pillar__israel-lebanon_conflict_deepening__full_occupation_publicly",
       "confidence_pct": 85,
       "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5"
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "funds",
+        "retail"
+      ]
     },
     {
-      "id": "flow_n21_multi_pillar__us_strikes_iranian_naval_bases__hormuz_escalation_intensifi",
+      "id": "flow_n21_blockchain_agentic__ukraine_hits_st_petersburg_with_250_drones_during_pmef__m",
       "headline": "$5.0B ↑ commodities",
       "amount_b": 5.0,
-      "projected": "Oil is the highest-conviction trade. Hormuz handles ~20M bbl/day. Any direct hit on Iranian radar/shipping increases the probability of a broader blockade breach event.",
+      "projected": "Narrative is the main product here — this is Gazzetta di Kyiv front-page material. For Bet&Benefit: if IAEA Zaporizhzhia incident escalates into a radiological event, uranium/nuclear safety plays…",
       "pace_multiplier": 1.0,
       "direction": "inflow",
       "positioning": "accumulating",
-      "asset_class": "equities",
-      "anchor_symbol": "SPX",
-      "story_id": "n21_multi_pillar__us_strikes_iranian_naval_bases__hormuz_escalation_intensifi",
+      "asset_class": "commodities",
+      "anchor_symbol": "BRENT",
+      "story_id": "n21_blockchain_agentic__ukraine_hits_st_petersburg_with_250_drones_during_pmef__m",
       "confidence_pct": 85,
       "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5"
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "government",
+        "retail"
+      ]
     },
     {
-      "id": "flow_n21_multi_pillar__iran-bahrain_missile_attack__hormuz_escalation_continues",
-      "headline": "$5.0B ↑ commodities",
-      "amount_b": 5.0,
-      "projected": "Energy sector outperforms all others. Safe-haven assets (gold, USD, CHF) bid. Commodity supercycle thesis strengthened. Fertilizer prices rising (Hormuz closure impacts urea shipments — bullish for $M",
+      "id": "flow_n21_multi__lebanon_ceasefire_dead_oman_oil",
+      "headline": "$4.0B ↑ defense",
+      "amount_b": 4.0,
+      "projected": "WTI $78→$83-85, Brent $82→$87-89, defense stocks +3-5%, VIX +10-15%, Israeli shekel -1.5-2.5%",
       "pace_multiplier": 1.0,
       "direction": "inflow",
       "positioning": "accumulating",
-      "asset_class": "equities",
-      "anchor_symbol": "SPX",
-      "story_id": "n21_multi_pillar__iran-bahrain_missile_attack__hormuz_escalation_continues",
-      "confidence_pct": 85,
+      "asset_class": "defense",
+      "anchor_symbol": "BRENT",
+      "story_id": "n21_multi__lebanon_ceasefire_dead_oman_oil",
+      "confidence_pct": 82,
       "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5"
-    },
-    {
-      "id": "flow_ai_rotation_crypto_20260605",
-      "headline": "$5.0B ↑ equities",
-      "amount_b": 5.0,
-      "projected": "Capital flow tracked — direction forming",
-      "pace_multiplier": 1.0,
-      "direction": "inflow",
-      "positioning": "accumulating",
-      "asset_class": "equities",
-      "anchor_symbol": "NVDA",
-      "story_id": "ai_rotation_crypto_20260605",
-      "confidence_pct": 85,
-      "confidence_level": "high",
-      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5"
+      "confidence_trace": "med-flow+12 > normal-pace+5 > accumulating+10 > med-contradiction+5",
+      "flow_sources": [
+        "government",
+        "retail",
+        "foreign"
+      ]
     }
   ],
   "methodology": "Flows sourced from EPFR Global, Morningstar Direct, and internal aggregation. Velocity measured vs 4-week rolling average. Confidence computed via 4-factor model. Updated hourly.",

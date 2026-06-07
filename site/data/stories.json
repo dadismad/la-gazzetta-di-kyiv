@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T07:15:00.000000+00:00",
+  "generated_at": "2026-06-07T05:51:57.457456+00:00",
   "lead": {
     "story_id": "n21_china_ascendancy__china_launches_maritime_enforcement_operation_east_of_taiwan",
     "headline": "China Launches Maritime Enforcement Operation East of Taiwan — Fresh 46min ago",
@@ -971,97 +971,6 @@
       "generated_at": "2026-06-06T18:28:18.701220+00:00",
       "freshness": "active",
       "tier": "DEVELOPING"
-    },
-    {
-      "story_id": "n21_multi_pillar__mossad_multi_stage_iran_strike_plan_halted_by_us",
-      "headline": "Mossad Multi-Stage Iran Strike Plan Halted by US — US-Israel Fracture Revealed as Talks Collapse",
-      "sector": "commodities",
-      "pillar": "multi_pillar",
-      "paradigm_pillar": "multi_pillar",
-      "paradigm_implications": [
-        "The Mossad plan revelation is the highest-impact overnight development for oil markets. If Israel retaliates unilaterally before Monday, WTI gaps $5-7 at Asia open in <5h. The US halting Israel's strike plan means restraint is the only thing preventing wider war — any signal US restraint weakens = immediate oil spike.",
-        "This exposes a structural fracture in US-Israel relations on Iran strategy that markets have not priced. Israel is a trigger-happy actor held back only by US pressure. The 'peace deal' narrative that markets accepted at face value is unraveling in real-time.",
-        "Treasury Secretary Bessent's directive to assess Iranian assets for Gulf ally reparations confirms the administration is planning for a prolonged conflict with no ceasefire — endgame planning that contradicts the ceasefire narrative.",
-        "Iran's flat denial of any uranium transfer deal and nuclear file being 'postponed' removes the last diplomatic off-ramp. Combined with Mossad wanting to strike, the probability space is shifting from 'ceasefire' to 'Israel unilateral action'."
-      ],
-      "they_say": "Consensus narrative priced a 60% probability of a US-Iran ceasefire deal within weeks. Markets assumed de-escalation, Hormuz reopening, sanctions relief. The diplomatic track was active — Witkoff/Kushner visited Oak Ridge nuclear lab, Trump claimed he wanted to end the war. S&P snapped 9-week streak but the dip was seen as a buying opportunity. Markets expected Sunday futures to open flat-to-slightly-up on peace hopes.",
-      "reality": "Channel 12 (via EthanLevin) confirmed Mossad had a multi-stage plan against the Iran regime that was halted by the US. This means: (a) Israel wanted kinetic action against Iran, (b) the US restrained them, (c) the 'US wants peace' narrative is shielding markets from the fact that Israel is primed for unilateral escalation. Simultaneously, leaked US-Iran negotiation sticking points reveal talks are failing on substance — continued US interception of Iranian ships, Israeli actions in Lebanon violating ceasefire, Iran refusing to halt nuclear program at 60% enrichment. Treasury Secretary Bessent directed his team to assess using Iranian assets to compensate Gulf allies — reparations planning, not ceasefire planning. Khamenei aide: no meeting with Trump. The diplomatic track is dead. The Mossad leak on a Sunday with Asia opening in ~5h is a bomb that detonates at the worst possible time for risk assets.",
-      "thesis": "LONG crude oil futures ($CL, $USO) and energy equities ($XLE, $OIH) aggressively into Sunday evening/Monday open. The Mossad plan revelation alone is a weekend bomb — if Israel acts unilaterally while markets are closed, WTI gaps $5-7+. Position for $95+ oil. LONG gold ($GLD) — geopolitical panic bid. LONG VIX futures — gap-up Sunday evening. SHORT SPY/QQQ — energy-cost inflation + geopolitical risk premium will hit equities. HEDGE tail risk: if surprise peace somehow hits, buy OTM puts on oil/VTL calls. The weekend gap risk strongly favors energy longs.",
-      "actors": [],
-      "horizon": "24-72h",
-      "confidence": "medium",
-      "tier": "DEVELOPING",
-      "actionable_trade": "LONG crude oil futures ($CL, $USO) and energy equities ($XLE, $OIH) — the Mossad plan leak is a weekend bomb. LONG gold ($GLD). LONG VIX futures. SHORT SPY/QQQ. The asymmetry favors energy longs — escalation risk is underpriced, peace deal probability is fading.",
-      "contradiction_score": 62,
-      "invalidation_trigger": "US announces credible ceasefire framework with Iran + Israel publicly agrees to halt any unilateral action + Iran returns to nuclear negotiation table with verified halt of 60% enrichment = fracture narrative invalidated",
-      "portfolio_implication": "This is the highest-conviction asymmetric bet for Sunday evening/Monday open. The Mossad plan revelation is a new variable that changes the weekend risk calculus entirely. For Gazzetta di Kyiv: frame as 'Mossad Plan Reveals US-Israel Fracture on Iran — The War That Could Have Been.' For Bet&Benefit: flag 'Israel-Iran shadow war — energy hedges essential.' Carry energy longs and TSM puts through the weekend.",
-      "capital_flow": {
-        "direction": "inflow",
-        "amount_b": 5.0,
-        "asset_class": "commodities",
-        "projected": "Oil is the highest-conviction 48h play. If Israel retaliates unilaterally before Monday open, WTI could gap +$5-7/bbl. The Mossad plan leak + Hormuz blockade (~20M bbl/day) + Kuwait/Bahrain strikes = supply disruption probability at maximum since 1973.",
-        "pace_multiplier": 1.0,
-        "confidence_pct": 70,
-        "confidence_level": "medium",
-        "claim": "$5.0B ↑ commodities (crude oil)",
-        "confidence": "70%"
-      },
-      "capital_flow_implication": "LONG crude oil, LONG gold, LONG VIX, SHORT SPY/QQQ — highest conviction asymmetric bet for Sunday evening open",
-      "image_url": "",
-      "evidence": [
-        "ethanlevins/3382: Mossad multi-stage plan against Iran regime halted after US decided to end war (Channel 12)",
-        "ethanlevins/3375: Leaked US-Iran negotiation sticking points — ship interception, Lebanon violations, Iran nuclear at 60%",
-        "MonitoringSituation: Bessent directed team to assess using Iranian assets for Gulf allies compensation",
-        "Khamenei aide: no meeting with Trump — diplomatic track dead"
-      ],
-      "source": "telegram_intel / ethanlevins / Channel 12",
-      "generated_at": "2026-06-07T07:05:27+00:00",
-      "freshness": "breaking"
-    },
-    {
-      "story_id": "n21_eu_fragmentation__us_extends_gazprom_neft_sanctions_deadline_hungary_slovakia_russian_oil",
-      "headline": "US Extends Gazprom Neft Sanctions Deadline to June 16 — Hungary and Slovakia Still Unable to Break Russian Oil Dependency as EU Fragmentation on Energy Deepens",
-      "sector": "macro",
-      "pillar": "eu_fragmentation",
-      "paradigm_pillar": "eu_fragmentation",
-      "paradigm_implications": [
-        "The US extension of the Gazprom Neft/NIS/MOL sanctions deadline confirms that Europe's energy decoupling from Russia is taking longer than official timelines. Hungary and Slovakia — the EU's Russian oil holdouts — still cannot secure alternative supply within the original window.",
-        "This is a structural signal that EU energy fragmentation persists: the 'Russia exit' is bilateral for some member states but unimplementable for others, creating a two-speed Europe where core economies (Germany, France) are fully decoupled while periphery states (Hungary, Slovakia, Serbia) remain dependent.",
-        "Each extension normalizes continued Russian energy revenue flows to Moscow, undercutting the EU's sanctions credibility. Hungary's Orban gains leverage over Brussels by playing the 'Russian energy dependency' card.",
-        "For dollar decline: MOL paying Gazprom Neft in euros or forints for Russian oil throughput means Russia continues to receive non-dollar settlement revenue, maintaining the parallel financial ecosystem that BRICS de-dollarization relies on."
-      ],
-      "they_say": "The European Commission and US Treasury claim the sanctions regime against Russia is working effectively. European energy independence from Russia is progressing on schedule. Hungary and Slovakia are expected to find alternative suppliers within the transition window. The extension is framed as 'procedural flexibility' not a sign of structural dependency.",
-      "reality": "The US Treasury extended the deadline for Gazprom Neft, MOL (Hungarian oil company), and NIS (Serbian oil company) to June 16 — a 10-day extension. This is the third such extension, indicating that Hungary and Slovakia cannot secure alternative crude supply for the Druzhba pipeline within the original sanctions timeline. MOL remains Gazprom Neft's largest foreign customer, processing Russian Urals crude at its Hungarian refineries. With the Trans-Alpine pipeline at capacity and Adriatic pipeline infrastructure insufficient, Hungary physically cannot replace Druzhba volumes in the near term. The extension exposes the fundamental contradiction of EU sanctions: the political will to decouple exists in Brussels, but the physical infrastructure to do so does not exist in Budapest and Bratislava. This is not 'flexibility' — it's structural dependency that no amount of sanctions enforcement can solve.",
-      "thesis": "The Gazprom Neft deadline extension is a canary in the coal mine for EU sanctions credibility. If Hungary cannot source alternative crude by June 16, either (a) another extension is granted (further undermining sanctions), or (b) Hungary vetoes EU sanctions renewal using its veto power (triggering EU fragmentation crisis). Short EUR/USD — EU sanctions credibility erosion is negative for the euro. Long Hungarian forint (HUF) — if Orban wins another extension, it confirms Hungary's strategic positioning as the Russia-Europe intermediary. Short EU financials (EUFN) — regulatory fragmentation in energy markets hurts cross-border European banking. Long gold — as EU institutional cohesion continues to fray over Russia energy dependency.",
-      "actors": [],
-      "horizon": "1-4 weeks (June 16 deadline), 3-6 months (structural EU energy fragmentation repricing)",
-      "confidence": "medium",
-      "tier": "DEVELOPING",
-      "actionable_trade": "Short EUR/USD — EU fragmentation premium builds as sanctions credibility erodes. Long gold (GLD) — European institutional decay hedge. Short EUFN (European financials ETF) — energy regulatory fragmentation hurts cross-border banking. Long Hungarian forint (HUF) — Hungary's strategic intermediary position is strengthening.",
-      "contradiction_score": 56,
-      "invalidation_trigger": "Hungary and Slovakia successfully secure non-Russian crude supply by June 16 + EU renews Russia sanctions without Hungarian veto + Druzhba alternative infrastructure comes online within 90 days = dependency narrative invalidated",
-      "portfolio_implication": "This is a slow-burn structural story rather than a 24h trade. The June 16 deadline is the next catalyst — if another extension is granted, it confirms the EU cannot enforce its own sanctions. For Gazzetta di Kyiv: frame as 'Europe's Russian Oil Addiction — The Third Extension That Exposes the EU's Impossible Energy Dilemma.' Gold and EUR/USD downside are the cleanest expressions of the fragmentation thesis.",
-      "capital_flow": {
-        "direction": "outflow",
-        "amount_b": 1.5,
-        "asset_class": "FX",
-        "projected": "EUR/USD drifts lower on EU sanctions credibility erosion. Hungarian forint strengthens if Orban secures another extension. Gold receives modest European safe-haven flows as EU institutional cohesion continues to fray over Russia energy policy.",
-        "pace_multiplier": 0.6,
-        "confidence_pct": 55,
-        "confidence_level": "medium",
-        "claim": "$1.5B ↓ EUR/USD + modest gold inflows on EU fragmentation premium",
-        "confidence": "55%"
-      },
-      "capital_flow_implication": "Short EUR/USD on EU institutional fragmentation premium. Long gold as European safe-haven rotation accelerates on sanctions credibility erosion. Long HUF as Hungary benefits from strategic energy intermediary positioning.",
-      "image_url": "",
-      "evidence": [
-        "markettwits/373154: US extended Gazprom Neft/NIS/MOL negotiation deadline 10 days to June 16",
-        "MonitoringSituation: Confirmed deadline extension for Russian oil sanctions compliance",
-        "EU energy policy: Hungary and Slovakia still unable to replace Druzhba pipeline Russian crude volumes"
-      ],
-      "source": "telegram_intel / markettwits / US Treasury statements",
-      "generated_at": "2026-06-07T07:05:27+00:00",
-      "freshness": "breaking"
     }
   ]
 }

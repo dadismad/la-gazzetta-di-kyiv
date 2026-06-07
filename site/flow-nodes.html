@@ -540,7 +540,7 @@
 
       // Sort each type by assets descending
       Object.keys(byType).forEach(t => {
-        byType[t].sort((a, b) => (b.metrics.total_assets_b || 0) - (a.metrics.total_assets_b || 0));
+        byType[t].sort((a, b) => ((b.metrics.total_assets_b || b.metrics.net_flow_b) || 0) - ((a.metrics.total_assets_b || a.metrics.net_flow_b) || 0));
       });
 
       // Compute max count per column to set row height
@@ -584,7 +584,8 @@
 
     /* ── RENDER ── */
     function render(data) {
-      const { nodes, edges, metadata, node_types } = data;
+      const { nodes, edges, metadata, node_types, summary } = data;
+      const meta = metadata || summary || {};
       const { positions, svgW, svgH } = computeLayout(nodes, edges);
 
       // Update SVG viewBox
@@ -682,7 +683,8 @@
 
         // Node shape
         const shape = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        const scaledW = Math.max(80, Math.min(180, node.metrics.total_assets_b / 30));
+        const nodeSize = node.metrics.total_assets_b || node.metrics.net_flow_b || Math.abs(node.metrics.total_inflow_b || 0);
+        const scaledW = Math.max(80, Math.min(180, nodeSize / 30));
         const scaledH = Math.max(50, Math.min(90, scaledW * 0.55));
         p.w = scaledW;
         p.h = scaledH;
@@ -705,7 +707,7 @@
         const amount = document.createElementNS('http://www.w3.org/2000/svg', 'text');
         amount.setAttribute('class', 'cn-node-amount');
         amount.setAttribute('y', 10);
-        amount.textContent = fmtB(node.metrics.total_assets_b);
+        amount.textContent = fmtB(node.metrics.total_assets_b || node.metrics.net_flow_b || 0);
         g.appendChild(amount);
 
         // Subtype
@@ -727,11 +729,11 @@
       document.getElementById('cn-last-updated').textContent = data.generated_at ? 
         new Date(data.generated_at).toLocaleString() : '—';
       document.getElementById('cn-total-tracked').textContent = 
-        fmtB(metadata.total_flow_tracked_b);
+        fmtB(meta.total_flow_tracked_b || meta.total_flow_b || 0);
       document.getElementById('cn-node-count').textContent = 
-        metadata.total_nodes + ' nodes';
+        meta.total_nodes + ' nodes';
       document.getElementById('cn-edge-count').textContent = 
-        metadata.total_edges + ' edges';
+        meta.total_edges + ' edges';
     }
 
     /* ── INFO PANEL ── */
@@ -774,7 +776,7 @@
       document.getElementById('pn-type-badge').style.color = typeColor(node.type);
       document.getElementById('pn-subtype').textContent = (node.subtype || '').replace(/_/g, ' ');
       document.getElementById('pn-desc').textContent = node.description || '';
-      document.getElementById('pn-assets').textContent = fmtB(node.metrics.total_assets_b);
+      document.getElementById('pn-assets').textContent = fmtB(node.metrics.total_assets_b || node.metrics.net_flow_b || 0);
       document.getElementById('pn-inflow-vel').textContent = (node.metrics.inflow_velocity || '—').toUpperCase();
       document.getElementById('pn-outflow-vel').textContent = (node.metrics.outflow_velocity || '—').toUpperCase();
       document.getElementById('pn-confidence').textContent = (node.metrics.confidence_pct || '—') + '%';
