@@ -389,7 +389,7 @@ function renderFlowInsight(flowsData) {
     liEl.style.background = isContrarian
       ? 'linear-gradient(135deg,rgba(220,38,38,0.06),rgba(255,255,255,1))'
       : 'linear-gradient(135deg,rgba(5,150,105,0.06),rgba(255,255,255,1))';
-    liEl.style.borderLeft = '3px solid ' + (isContrarian ? 'var(--red)' : 'var(--green)');
+    liEl.style.borderLeftColor = isContrarian ? 'var(--red)' : 'var(--green)';
     liEl.querySelector('.flow-lead-headline').textContent = li.headline;
     liEl.querySelector('.flow-lead-detail').textContent = li.detail || '';
     const label = liEl.querySelector('span');
@@ -406,10 +406,10 @@ function renderFlowInsight(flowsData) {
     ssEl.innerHTML = Object.entries(ss).map(([sector, data]) => {
       const arrow = data.direction === 'inflow' ? '↑' : '⇅';
       const color = data.direction === 'inflow' ? 'var(--green)' : 'var(--ink-muted)';
-      return `<div class="sector-stat-box">
-        <div class="sector-stat-label">${sector}</div>
-        <div class="sector-stat-value" style="color:${color};">$${data.total_b.toFixed(1)}B ${arrow}</div>
-        <div class="sector-stat-sub">${data.count} flows · ${data.avg_pace}x pace · ${data.avg_confidence}% conf</div>
+      return `<div style="background:var(--white);border:1px solid var(--divider);padding:10px 12px;text-align:center;">
+        <div style="font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:4px;">${sector}</div>
+        <div style="font-family:var(--body);font-size:18px;font-weight:700;color:${color};">$${data.total_b.toFixed(1)}B ${arrow}</div>
+        <div style="font-family:var(--sans);font-size:9px;color:var(--ink-muted);margin-top:2px;">${data.count} flows · ${data.avg_pace}x pace · ${data.avg_confidence}% conf</div>
       </div>`;
     }).join('');
   }
@@ -438,30 +438,17 @@ function renderCapitalFlows() {
       ? `<span class="flow-bet-pill-mini">${anchorAsset.symbol} ${anchorAsset.bias} · ${anchorAsset.conviction}</span>`
       : '';
     const tradeEmoji = f.trade_emoji || '';
-    const tradeSignal = f.trade_signal || '';
-    // Fix ⑥: Divergence — separate flow direction from trade direction
-    const flowIsOutflow = f.direction === 'outflow';
-    const tradeIsBuy = tradeSignal === 'BUY';
-    const divergenceWarn = (flowIsOutflow && tradeIsBuy) ? ' ⚠ contrarian' : (!flowIsOutflow && tradeSignal === 'SELL') ? ' ⚠ contrarian' : '';
-    
     const heatScore = f.heat_score || 50;
-    const heatClass = heatScore >= 80 ? 'heat-extreme' : heatScore >= 60 ? 'heat-high' : heatScore >= 40 ? 'heat-moderate' : 'heat-low';
-    
-    // Fix ③: PDR mini badge in collapsed view
-    const pdr = f.pdr || 1.0;
-    const pdrClass = pdr >= 1.5 ? 'passive' : pdr <= 0.7 ? 'active' : 'mixed';
-    const pdrLabel = pdr >= 1.5 ? 'PASSIVE' : pdr <= 0.7 ? 'ACTIVE' : 'MIXED';
-    
+    const heatColor = heatScore >= 75 ? 'var(--green)' : heatScore >= 50 ? 'var(--gold)' : 'var(--ink-muted)';
     return `
     <div class="flow-row ${f.direction}" data-flow-story-id="${f.story_ids ? f.story_ids[0] : f.story_id}">
       <div class="flow-row-main">
-        <span class="flow-trade-signal" title="${tradeSignal}${divergenceWarn}" aria-label="${tradeSignal}">${tradeEmoji}</span>
+        <span class="flow-trade-signal" style="font-size:14px;min-width:24px;text-align:center;" title="${f.trade_signal || ''}">${tradeEmoji}</span>
         <span class="flow-amount">$${f.amount_b.toFixed(1)}B</span>
         <span class="flow-dir ${f.direction}">${dirArrow} ${dirLabel}</span>
         <span class="flow-asset">${f.asset_class || 'equities'}</span>
         ${playPill}
-        <span class="flow-pdr-mini ${pdrClass}" title="PDR ${pdr.toFixed(1)}x — ${pdrLabel} flow dominance">PDR ${pdr.toFixed(1)}x</span>
-        <span class="flow-heat ${heatClass}" title="Flow heat: ${heatScore}/100 (${heatScore>=80?'extreme':heatScore>=60?'high':heatScore>=40?'moderate':'low'})">${heatScore}</span>
+        <span class="flow-heat" style="font-family:var(--sans);font-size:8px;color:${heatColor};margin-left:auto;min-width:28px;text-align:right;" title="Flow heat: ${heatScore}/100 (${heatScore>=75?'extreme':heatScore>=50?'elevated':'normal'})">${heatScore}</span>
         ${catalystBadge}
         <span class="flow-expand-hint">&#9660;</span>
       </div>
@@ -473,7 +460,7 @@ function renderCapitalFlows() {
         <div class="flow-detail-section">
           <span class="flow-detail-label">CONVICTION</span>
           <span class="flow-confidence-badge">${confPct}% ${f.confidence_level || ''}</span>
-          ${f.confidence_trace ? '<span class="flow-confidence-trace" title="Model components: ' + f.confidence_trace.replace(/>/g, '→') + '">' + f.confidence_trace.split(' > ').length + ' signals</span>' : ''}
+          ${f.confidence_trace ? '<span class="flow-confidence-trace">' + f.confidence_trace.split(' > ').join(' + ') + '</span>' : ''}
         </div>
         <div class="flow-detail-section">
           <span class="flow-detail-label">LINKED STORY</span>
@@ -481,7 +468,7 @@ function renderCapitalFlows() {
         </div>
         <div class="flow-detail-section">
           <span class="flow-detail-label">DATA SOURCE</span>
-          <span class="flow-source-badge">${sourceLabel(f.source || 'telegram_intel')}</span>
+          <span class="flow-source-badge" style="font-family:var(--sans);font-size:10px;color:var(--ink-muted);">${sourceLabel(f.source || 'telegram_intel')}</span>
         </div>
         <div class="flow-detail-section">
           <span class="flow-detail-label">POSITIONING</span>
@@ -489,7 +476,7 @@ function renderCapitalFlows() {
         </div>
         <div class="flow-detail-section">
           <span class="flow-detail-label">PDR · FLOW TYPE</span>
-          <span class="flow-pdr-badge">PDR ${pdr.toFixed(1)}x · ${(f.flow_type||'mixed').replace('_',' ')} ${pdr >= 1.5 ? '· Index-driven (not active buying)' : pdr <= 0.7 ? '· Active conviction (follow)' : '· Mixed signal'}</span>
+          <span class="flow-pdr-badge" style="font-family:var(--sans);font-size:10px;">PDR ${(f.pdr||1.0).toFixed(1)}x · ${(f.flow_type||'mixed').replace('_',' ')} ${f.pdr >= 1.5 ? '⚠ Passive-driven (fade?)' : f.pdr <= 0.7 ? '✓ Active conviction (follow)' : '· Mixed signal'}</span>
         </div>
       </div>
     </div>`;
@@ -1848,12 +1835,7 @@ async function populateTeasers() {
         if (subEl) {
           const inflows = flowsData.flows.filter(f => f.direction === 'inflow').length;
           const outflows = flowsData.flows.filter(f => f.direction === 'outflow').length;
-          const aggDir = flowsData.aggregate_direction || "neutral";
-          const aggPct = flowsData.aggregate_confidence || 0;
-          const badgeLabel = aggDir === "bullish" ? "BULLISH" : aggDir === "bearish" ? "BEARISH" : "NEUTRAL";
-          const badgeColor = aggDir === "bullish" ? "#059669" : aggDir === "bearish" ? "#DC2626" : "var(--ink-muted)";
-          const badgeClass = aggDir === "bullish" ? "bullish" : aggDir === "bearish" ? "bearish" : "neutral";
-          subEl.innerHTML = `${inflows} in · ${outflows} out · <span class="flow-aggregate-badge ${badgeClass}">${badgeLabel} ${aggPct}%</span>`;
+          subEl.textContent = `${inflows} inflows · ${outflows} outflows · ${flowsData.aggregate_confidence}%`;
         }
       }
     }

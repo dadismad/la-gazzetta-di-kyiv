@@ -14,10 +14,10 @@
   --card-bg:   #FFFFFF;
 
   --blue:      #2563EB;   /* Sharp blue — links, interactive */
-  --green:     #047857;   /* Darker emerald — better contrast, buy signals */
+  --green:     #059669;   /* Casino green — buy signals, inflows */
   --red:       #DC2626;   /* Casino red — sell signals, outflows */
-  --gold:      #B8860B;   /* DarkGoldenrod — better contrast, accents */
-  --gold-light: rgba(184,134,11,0.10);
+  --gold:      #D4AF37;   /* 24K gold — accents, masthead name */
+  --gold-light: rgba(212,175,55,0.10);
 
   --ink:       #111827;   /* Near-black — all body text */
   --ink-light: #6B7280;   /* Grey — secondary text */

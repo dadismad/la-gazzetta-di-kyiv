@@ -22,14 +22,36 @@
     "portfolio_implication": "Position short semiconductor futures pre-market Sunday night. If China boards any vessel before Monday open, gap down guaranteed. TSM options with Monday expiry — buy puts. Without boarding, the elevated risk premium alone is a short-term fade.",
     "capital_flow": {
       "direction": "inflow",
-      "amount_b": 5.0,
+      "amount_b": 9.6,
       "asset_class": "commodities",
-      "projected": "Position short semiconductor futures pre-market Sunday night. If China boards any vessel before Monday open, gap down guaranteed. TSM options with Monday expiry — buy puts. Without boarding, the…",
-      "pace_multiplier": 1.0,
+      "projected": "+$1.9B",
+      "pace_multiplier": 2.5,
       "confidence_pct": 75,
       "confidence_level": "medium",
       "claim": "$5.0B ↑ commodities",
-      "confidence": "75%"
+      "confidence": "75%",
+      "market_data": {
+        "price_WTI": {
+          "value": 68.45,
+          "unit": "USD per barrel",
+          "date": "2026-06-06"
+        },
+        "price_BRENT": {
+          "value": 72.3,
+          "unit": "USD per barrel",
+          "date": "2026-06-06"
+        },
+        "price_NATURAL_GAS": {
+          "value": 3.82,
+          "unit": "USD per MMBtu",
+          "date": "2026-06-06"
+        },
+        "price_GOLD": {
+          "value": 2415.0,
+          "unit": "USD per troy ounce",
+          "date": "2026-06-06"
+        }
+      }
     },
     "capital_flow_implication": "SHORT Taiwan equities/semis, LONG gold/VIX",
     "evidence": [],
@@ -59,14 +81,36 @@
       "portfolio_implication": "Oil is the highest-conviction 48h play. Kuwait being directly struck changes the calculus entirely. At Sunday futures open, oil could gap +$10-15/bbl. The diplomatic off-ramp that markets priced in (ceasefire hopes) has been explicitly denied by Iran. VIX futures will price gap-down Monday. BTC at $",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 5.0,
+        "amount_b": 21.6,
         "asset_class": "commodities",
-        "projected": "Oil is the highest-conviction 48h play. Kuwait being directly struck changes the calculus entirely. At Sunday futures open, oil could gap +$10-15/bbl. The diplomatic off-ramp that markets priced in (c",
-        "pace_multiplier": 1.0,
+        "projected": "+$10-15",
+        "pace_multiplier": 2.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$5.0B ↑ commodities",
-        "confidence": "75%"
+        "claim": "$21.6B ↑ commodities",
+        "confidence": "75%",
+        "market_data": {
+          "price_WTI": {
+            "value": 68.45,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_BRENT": {
+            "value": 72.3,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_NATURAL_GAS": {
+            "value": 3.82,
+            "unit": "USD per MMBtu",
+            "date": "2026-06-06"
+          },
+          "price_GOLD": {
+            "value": 2415.0,
+            "unit": "USD per troy ounce",
+            "date": "2026-06-06"
+          }
+        }
       },
       "capital_flow_implication": "Long oil (USO, XLE, XOM, CVX) — Kuwait missiles raise supply disruption probability to maximum. Hormuz blockade (~20M bbl/day). Long VIX futures — gap-up Sunday evening. Short SPY/QQQ — NASDAQ already -4.68% in correction. Long defense (LMT, GD, NOC). Long gold (GLD). Short-term: Long natural gas (U",
       "evidence": [],
@@ -97,14 +141,36 @@
       "portfolio_implication": "Broad Middle East conflict hedge (gold + oil) for weekend carry. Market underestimates spillover risk. If Iran-US talks officially break AND Israel announces full Lebanon occupation simultaneously, that's a multi-standard-deviation oil move.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 5.0,
+        "amount_b": 16.8,
         "asset_class": "commodities",
-        "projected": "Broad Middle East conflict hedge (gold + oil) for weekend carry. Market underestimates spillover risk. If Iran-US talks officially break AND Israel announces full Lebanon occupation simultaneously,…",
-        "pace_multiplier": 1.0,
+        "projected": "+$1.0B",
+        "pace_multiplier": 2.5,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$5.0B ↑ commodities",
-        "confidence": "75%"
+        "claim": "$16.8B ↑ commodities",
+        "confidence": "75%",
+        "market_data": {
+          "price_WTI": {
+            "value": 68.45,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_BRENT": {
+            "value": 72.3,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_NATURAL_GAS": {
+            "value": 3.82,
+            "unit": "USD per MMBtu",
+            "date": "2026-06-06"
+          },
+          "price_GOLD": {
+            "value": 2415.0,
+            "unit": "USD per troy ounce",
+            "date": "2026-06-06"
+          }
+        }
       },
       "capital_flow_implication": "LONG oil (broader ME risk), LONG gold, LONG defense (Israel-specific $ISRA ETF if accessible)",
       "evidence": [],
@@ -134,14 +200,36 @@
       "portfolio_implication": "Narrative is the main product here — this is Gazzetta di Kyiv front-page material. For Bet&Benefit: if IAEA Zaporizhzhia incident escalates into a radiological event, uranium/nuclear safety plays get bid. Russian budget data is a slow-burn short thesis on RSX.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 5.0,
+        "amount_b": 7.2,
         "asset_class": "commodities",
-        "projected": "Narrative is the main product here — this is Gazzetta di Kyiv front-page material. For Bet&Benefit: if IAEA Zaporizhzhia incident escalates into a radiological event, uranium/nuclear safety plays…",
-        "pace_multiplier": 1.0,
+        "projected": "+$1.0B",
+        "pace_multiplier": 2.5,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$5.0B ↑ commodities",
-        "confidence": "75%"
+        "claim": "$7.2B ↑ commodities",
+        "confidence": "75%",
+        "market_data": {
+          "price_WTI": {
+            "value": 68.45,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_BRENT": {
+            "value": 72.3,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_NATURAL_GAS": {
+            "value": 3.82,
+            "unit": "USD per MMBtu",
+            "date": "2026-06-06"
+          },
+          "price_GOLD": {
+            "value": 2415.0,
+            "unit": "USD per troy ounce",
+            "date": "2026-06-06"
+          }
+        }
       },
       "capital_flow_implication": "LONG defense/nuclear security (Zaporizhzhia incident), LONG Ukrainian war bonds if risk-on, SHORT Russian assets",
       "evidence": [],
@@ -171,14 +259,36 @@
       "portfolio_implication": "Crude oil longs for Sunday CME open. If Hormuz disruption narrative intensifies (radar already struck), WTI above $85 is plausible. Defense stocks (LMT, GD) have multi-front conflict tailwind. If House vote gains Senate traction, USD weakens = commodities bid.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 5.0,
+        "amount_b": 14.4,
         "asset_class": "commodities",
-        "projected": "Crude oil longs for Sunday CME open. If Hormuz disruption narrative intensifies (radar already struck), WTI above $85 is plausible. Defense stocks (LMT, GD) have multi-front conflict tailwind. If…",
-        "pace_multiplier": 1.0,
+        "projected": "+$1.0B",
+        "pace_multiplier": 2.5,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$5.0B ↑ commodities",
-        "confidence": "75%"
+        "claim": "$14.4B ↑ commodities",
+        "confidence": "75%",
+        "market_data": {
+          "price_WTI": {
+            "value": 68.45,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_BRENT": {
+            "value": 72.3,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_NATURAL_GAS": {
+            "value": 3.82,
+            "unit": "USD per MMBtu",
+            "date": "2026-06-06"
+          },
+          "price_GOLD": {
+            "value": 2415.0,
+            "unit": "USD per troy ounce",
+            "date": "2026-06-06"
+          }
+        }
       },
       "capital_flow_implication": "LONG oil, LONG gold, LONG defense",
       "evidence": [],
@@ -207,13 +317,13 @@
       "portfolio_implication": "XMR short has 2-3x downside IF a bug is found, but the recovery from $110.40 to $118.70 suggests initial panic sellers were absorbed. The risk/reward depends entirely on timing of the next researcher update. This is a binary event — either the audit finds nothing (XMR rallies) or finds something (XM",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 5.0,
+        "amount_b": 6.5,
         "asset_class": "crypto",
-        "projected": "XMR short has 2-3x downside IF a bug is found, but the recovery from $110.40 to $118.70 suggests initial panic sellers were absorbed. The risk/reward depends entirely on timing of the next researcher ",
-        "pace_multiplier": 1.0,
+        "projected": "+$1.0B",
+        "pace_multiplier": 2.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$5.0B ↑ crypto",
+        "claim": "$6.5B ↑ crypto",
         "confidence": "75%"
       },
       "capital_flow_implication": "Short XMR with tight stop — price recovered to $118.70 from $110.40 lows. If researcher publishes findings, downside to $60-80 is realistic. If researcher finds nothing, XMR could rally back above $130. Asymmetric short if you can position before the next researcher update. Pair with long BTC — capi",
@@ -244,13 +354,13 @@
       "portfolio_implication": "Short XMR is the trade with 2-5x asymmetric upside. XMR market cap ~$3B. If the researcher finds a soundness bug — and given Zcash had one, the probability is non-trivial — XMR could drop 50-80% in hours. Even the announcement of the audit starting is enough to keep pressure on. BTC benefits as the ",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 5.0,
+        "amount_b": 6.5,
         "asset_class": "crypto",
-        "projected": "Short XMR is the trade with 2-5x asymmetric upside. XMR market cap ~$3B. If the researcher finds a soundness bug — and given Zcash had one, the probability is non-trivial — XMR could drop 50-80% in ho",
-        "pace_multiplier": 1.0,
+        "projected": "+$50-80",
+        "pace_multiplier": 2.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$5.0B ↑ crypto",
+        "claim": "$6.5B ↑ crypto",
         "confidence": "75%"
       },
       "capital_flow_implication": "Short XMR perpetuals (perps/futures) — cascade already underway. Short ZEC — continued selling pressure as trust evaporates. Long BTC — capital rotation from alt/privacy into BTC as 'safe haven' crypto. Long stables (USDT/USDC) — exit liquidity for privacy coin holders.",
@@ -281,13 +391,13 @@
       "portfolio_implication": "The IPO pop is the fastest trade with the most defined catalyst. June 12 is 6 days away. If demand is 2x supply at $75B, the opening pop could be 20-40%. NVDA benefits structurally — every hyperscaler GPU deal fills the order book for quarters ahead. But note the NAV: with markets in risk-off mode (",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 80.0,
+        "amount_b": 30.0,
         "asset_class": "equities",
-        "projected": "The IPO pop is the fastest trade with the most defined catalyst. June 12 is 6 days away. If demand is 2x supply at $75B, the opening pop could be 20-40%. NVDA benefits structurally — every hyperscaler",
-        "pace_multiplier": 1.0,
+        "projected": "+$16.0B",
+        "pace_multiplier": 2.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$80.0B ↑ equities",
+        "claim": "$30.0B ↑ equities",
         "confidence": "75%"
       },
       "capital_flow_implication": "Long SPCX at IPO — momentum will carry first week higher on scarcity and oversubscription. Long NVDA — 110K GPUs per deal, every hyperscaler deal means more GPU orders. Long GOOGL — compute capacity secured. Long AI infrastructure (SMCI, VRT, ANET). Short-term: the risk-off tape could mute IPO pop —",
@@ -318,13 +428,13 @@
       "portfolio_implication": "Short XMR has 2-5x asymmetric downside. XMR market cap ~$3B. If the researcher finds a soundness bug — and given Zcash had one, the probability is non-trivial — XMR could drop 50-80% in hours. Even without a bug find, the announcement of the audit is enough to keep selling pressure on. The 24/7 cryp",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 5.0,
+        "amount_b": 6.5,
         "asset_class": "crypto",
-        "projected": "Short XMR has 2-5x asymmetric downside. XMR market cap ~$3B. If the researcher finds a soundness bug — and given Zcash had one, the probability is non-trivial — XMR could drop 50-80% in hours. Even wi",
-        "pace_multiplier": 1.0,
+        "projected": "+$50-80",
+        "pace_multiplier": 2.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$5.0B ↑ crypto",
+        "claim": "$6.5B ↑ crypto",
         "confidence": "75%"
       },
       "capital_flow_implication": "Short XMR perpetuals — cascade already underway at -10%. Short ZEC — continued selling pressure as trust evaporates. Long BTC — capital rotation from privacy coins into BTC as 'safe haven' crypto. Long USDT/USDC — exit liquidity for privacy coin holders exiting into stables.",
@@ -355,14 +465,36 @@
       "portfolio_implication": "Oil is the highest-conviction play. Kuwait being struck by 7 Iranian missiles changes the calculus — this is no longer a US-Iran proxy fight, it's a regional war. Kuwait is a critical OPEC producer and key US ally. If this escalates further over the weekend, oil +$10-15/bbl at Sunday futures open is",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 5.0,
+        "amount_b": 21.6,
         "asset_class": "commodities",
-        "projected": "Oil is the highest-conviction play. Kuwait being struck by 7 Iranian missiles changes the calculus — this is no longer a US-Iran proxy fight, it's a regional war. Kuwait is a critical OPEC producer an",
-        "pace_multiplier": 1.0,
+        "projected": "+$1.0B",
+        "pace_multiplier": 2.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$5.0B ↑ commodities",
-        "confidence": "75%"
+        "claim": "$21.6B ↑ commodities",
+        "confidence": "75%",
+        "market_data": {
+          "price_WTI": {
+            "value": 68.45,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_BRENT": {
+            "value": 72.3,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_NATURAL_GAS": {
+            "value": 3.82,
+            "unit": "USD per MMBtu",
+            "date": "2026-06-06"
+          },
+          "price_GOLD": {
+            "value": 2415.0,
+            "unit": "USD per troy ounce",
+            "date": "2026-06-06"
+          }
+        }
       },
       "capital_flow_implication": "Long oil (USO, XLE, XOM, CVX) — Kuwait is a major US ally getting hit directly. Hormuz blockade (~20M bbl/day) + now missiles hitting Gulf states = supply disruption probability has never been higher. Long VIX/UVXY — futures will gap up Sunday evening. Short SPY/QQQ — NASDAQ already -4.68% in correc",
       "evidence": [],
@@ -388,13 +520,13 @@
       "portfolio_implication": "Cash/stablecoins outperform. If BTC drops below 200-week MA, it triggers a multi-asset deleveraging that spills into equities (already visible — NDX -3%, SPX -1.7% on Friday). The MSTR convertible bond arb unwind adds downward pressure. The only bullish angle: this is capitulation, and bottoms are f",
       "capital_flow": {
         "direction": "outflow",
-        "amount_b": 11.5,
+        "amount_b": 6.5,
         "asset_class": "crypto",
-        "projected": "Cash/stablecoins outperform. If BTC drops below 200-week MA, it triggers a multi-asset deleveraging that spills into equities (already visible — NDX -3%, SPX -1.7% on Friday). The MSTR convertible bon",
-        "pace_multiplier": 1.0,
+        "projected": "+$2.3B",
+        "pace_multiplier": 2.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$11.5B ↓ crypto",
+        "claim": "$6.5B ↓ crypto",
         "confidence": "75%"
       },
       "capital_flow_implication": "SHORT BTC aggressively. Short MSTR (the leverage unwind is just beginning). Short COIN, MARA, CLSK. If BTC breaks 200-week MA (~$61K), next stop is $55K and the liquidation cascade accelerates. Buy June/July BTC put options. Short ETH/BTC ratio continues to decline. For the brave: SHORT Hyperliquid ",
@@ -436,13 +568,13 @@
       "portfolio_implication": "The IPO pop is the fastest immediate trade. June 12 is 6 days away — this is a known catalyst with a defined timeline. If demand is 2x supply at $75B, the opening pop could be 20-40%. NVDA benefits structurally — every hyperscaler GPU deal fills the order book for quarters ahead.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 80.0,
+        "amount_b": 20.0,
         "asset_class": "equities",
-        "projected": "The IPO pop is the fastest immediate trade. June 12 is 6 days away — this is a known catalyst with a defined timeline. If demand is 2x supply at $75B, the opening pop could be 20-40%. NVDA benefits st",
-        "pace_multiplier": 1.0,
+        "projected": "+$16.0B",
+        "pace_multiplier": 2.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$80.0B ↑ equities",
+        "claim": "$20.0B ↑ equities",
         "confidence": "75%"
       },
       "capital_flow_implication": "Long SPCX at/before IPO — momentum will carry it higher in first week. Long NVDA — 110K GPUs per deal, every hyperscaler deal means more GPU orders. Long GOOGL — compute capacity secured. Long AI infrastructure (SMCI, VRT, ANET).",
@@ -473,14 +605,36 @@
       "portfolio_implication": "Oil is the highest-conviction trade. Hormuz handles ~20M bbl/day. Any direct hit on Iranian radar/shipping increases the probability of a broader blockade breach event. If Iran mines the strait in retaliation, oil +$10-15/bbl overnight. S&P futures gap-down at Sunday open is the setup.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 5.0,
+        "amount_b": 14.4,
         "asset_class": "commodities",
-        "projected": "Oil is the highest-conviction trade. Hormuz handles ~20M bbl/day. Any direct hit on Iranian radar/shipping increases the probability of a broader blockade breach event. If Iran mines the strait in ret",
-        "pace_multiplier": 1.0,
+        "projected": "+$1.0B",
+        "pace_multiplier": 2.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$5.0B ↑ commodities",
-        "confidence": "75%"
+        "claim": "$14.4B ↑ commodities",
+        "confidence": "75%",
+        "market_data": {
+          "price_WTI": {
+            "value": 68.45,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_BRENT": {
+            "value": 72.3,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_NATURAL_GAS": {
+            "value": 3.82,
+            "unit": "USD per MMBtu",
+            "date": "2026-06-06"
+          },
+          "price_GOLD": {
+            "value": 2415.0,
+            "unit": "USD per troy ounce",
+            "date": "2026-06-06"
+          }
+        }
       },
       "capital_flow_implication": "Long oil (USO, XLE, XOM/CVX) — Hormuz closure + active strikes = supply shock. Long VIX/UVXY — risk-off spike incoming. Short SPY/QQQ/QQQ — NASDAQ already in correction territory. Long defense (LMT, GD, NOC). Long gold (GLD) — geopolitical panic bid.",
       "evidence": [],
@@ -504,14 +658,14 @@
       "contradiction_score": 58,
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 8.0,
+        "amount_b": 30.0,
         "asset_class": "equities",
         "pace": "accelerating",
-        "projected": "Capital flow tracked — direction forming",
-        "pace_multiplier": 1.0,
+        "projected": "+$1.6B",
+        "pace_multiplier": 2.0,
         "confidence_pct": 65,
         "confidence_level": "medium",
-        "claim": "$8.0B ↑ equities",
+        "claim": "$30.0B ↑ equities",
         "confidence": "65%"
       },
       "capital_flow_implication": "BUY SPCX at IPO allocation if possible — the supply/demand imbalance guarantees a first-day pop. The reference to QNT opening +13% and then dipping below IPO is instructive: buy the IPO, take profits day 1-2. For 1-2 week horizon: LONG ASTS, GSAT, RKLB (SpaceX-adjacent satellite plays). LONG ANET (data center infrastructure — SpaceX's AI capex story benefits the whole buildout chain). The broader AI infrastructure theme (NVDA, MRVL joining S&P 500) is supported.",
@@ -548,14 +702,36 @@
       "portfolio_implication": "Energy sector outperforms all others. Safe-haven assets (gold, USD, CHF) bid. Commodity supercycle thesis strengthened. Fertilizer prices rising (Hormuz closure impacts urea shipments — bullish for $MOS, $CF, $NTR). Broad risk-off means TLT (long-duration bonds) may find a bid as flight-to-safety ov",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 5.0,
+        "amount_b": 14.4,
         "asset_class": "commodities",
-        "projected": "Energy sector outperforms all others. Safe-haven assets (gold, USD, CHF) bid. Commodity supercycle thesis strengthened. Fertilizer prices rising (Hormuz closure impacts urea shipments — bullish for $M",
-        "pace_multiplier": 1.0,
+        "projected": "+$1.0B",
+        "pace_multiplier": 2.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$5.0B ↑ commodities",
-        "confidence": "75%"
+        "claim": "$14.4B ↑ commodities",
+        "confidence": "75%",
+        "market_data": {
+          "price_WTI": {
+            "value": 68.45,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_BRENT": {
+            "value": 72.3,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_NATURAL_GAS": {
+            "value": 3.82,
+            "unit": "USD per MMBtu",
+            "date": "2026-06-06"
+          },
+          "price_GOLD": {
+            "value": 2415.0,
+            "unit": "USD per troy ounce",
+            "date": "2026-06-06"
+          }
+        }
       },
       "capital_flow_implication": "LONG OIL/ENERGY. Brent crude gaps up on Monday Asia open — targeting $95+ as Sechin (Rosneft) projects $95-96 if Hormuz restrictions lift (implying much higher if they don't). Buy WTI futures, XLE, OIH, XOM, CVX. Brent $90 calls. SHORT AIRLINES (JETS, AAL, DAL) as fuel costs surge. GOLD LONG (GLD, I",
       "evidence": [
@@ -601,13 +777,13 @@
       "freshness": "developing",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 5.0,
-        "projected": "Capital flow tracked — direction forming",
-        "pace_multiplier": 1.0,
+        "amount_b": 18.0,
+        "projected": "+$1.0B",
+        "pace_multiplier": 3.3,
         "confidence_pct": 65,
         "confidence_level": "medium",
         "asset_class": "equities",
-        "claim": "$5.0B ↑ equities",
+        "claim": "$18.0B ↑ equities",
         "confidence": "65%"
       },
       "contradiction_score": 52,
@@ -631,17 +807,17 @@
       "portfolio_implication": "Portfolio implication: accumulate space ETFs (WARP, UFO, ROKT) before the SpaceX IPO liquidity event re-rates the entire sector. The space economy trades at a fraction of AI multiples despite comparable TAM ($1.8T by 2040 per multiple forecasts). The macro chaos (Iran, Zaporizhzhia) creates a perfect entry point — institutional capital rotating into space is uncorrelated with the oil/rates chaos that dominates headlines. Position for a 12-24 month structural rotation.",
       "image_url": "",
       "capital_flow": {
-        "claim": "Institutional capital is rotating into space economy ETFs ahead of the SpaceX IPO, creating a structural bid that is orthogonal to the macro chaos consuming terrestrial markets.",
+        "claim": "$3.3B ↑ equities, ETFs, venture",
         "direction": "inflow",
         "amount": "$3.3B ETF AUM, $500M+ monthly inflow rate, $10-20B anticipated for SpaceX IPO",
         "denomination": "USD",
         "asset_class": "equities, ETFs, venture",
         "pace": "moderate and accelerating — monthly inflow growth of 15-20% as new ETF products come online",
-        "projected": "Space ETF AUM could reach $10B by end of 2026 if SpaceX IPO materializes; space index re-rating of +20-30% in 6 months",
+        "projected": "+$1.5B",
         "confidence": "high",
         "positioning": "long WARP, UFO, ROKT; long SpaceX pre-IPO vehicles (DST Global, Fidelity); long PLD Space and Rocket Lab on European/NASA contract catalysts",
-        "amount_b": 15.0,
-        "pace_multiplier": 1.0,
+        "amount_b": 3.3,
+        "pace_multiplier": 1.3,
         "confidence_pct": 65,
         "confidence_level": "medium"
       },
@@ -677,19 +853,41 @@
       "portfolio_implication": "Portfolio implication: LONG WTI crude (+4-7%) and USO; LONG defense primes (LMT, GD, RTX) on multi-theater escalation; LONG VIX (+10-15%) as volatility reprices upward; LONG oil tanker equities (Stena, Frontline) on supply-route disruption. SHORT Israeli shekel as the two-front war (Gaza/Lebanon) strains fiscal capacity. The triple catalyst (ceasefire dead + Oman hit + IRGC threat) is not yet priced across energy or equity vol markets.",
       "image_url": "",
       "capital_flow": {
-        "claim": "Capital rotates out of risk assets into energy and defense as a second Middle East conflict theater (Lebanon) compounds the Iran/Hormuz supply risk, with Oman port disruption adding a direct supply-side catalyst.",
+        "claim": "$5.4B ↑ commodities, equities, FX",
         "direction": "inflow",
         "amount": "$3-5B estimated flow into crude futures and energy equities in the 24-48 hour window following dual-ceasefire-dead + Oman headlines",
         "denomination": "USD",
         "asset_class": "commodities, equities, FX",
         "pace": "rapid — within 2-4 hours of Asian open repricing Friday's news gap",
-        "projected": "WTI $78→$83-85, Brent $82→$87-89, defense stocks +3-5%, VIX +10-15%, Israeli shekel -1.5-2.5%",
+        "projected": "+$0.8B",
         "confidence": "very high",
         "positioning": "long WTI crude futures/ETFs, long US defense primes, long VIX, short ILS",
-        "amount_b": 4.0,
-        "pace_multiplier": 1.0,
+        "amount_b": 5.4,
+        "pace_multiplier": 3.3,
         "confidence_pct": 65,
-        "confidence_level": "medium"
+        "confidence_level": "medium",
+        "market_data": {
+          "price_WTI": {
+            "value": 68.45,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_BRENT": {
+            "value": 72.3,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_NATURAL_GAS": {
+            "value": 3.82,
+            "unit": "USD per MMBtu",
+            "date": "2026-06-06"
+          },
+          "price_GOLD": {
+            "value": 2415.0,
+            "unit": "USD per troy ounce",
+            "date": "2026-06-06"
+          }
+        }
       },
       "extremum": {
         "type": "tail_risk",
@@ -723,17 +921,17 @@
       "portfolio_implication": "Portfolio implication: LONG NVDA (+6-10%), LONG PLTR (+5-8%), LONG MSTR/BTC (+5-7%) on rate-cut + AI double catalyst. LONG QQQ for leveraged index reversal. LONG SPY (+1.5-3%). AI tokens (FET/RENDER/TAO +8-15%). SHORT DXY (-1%) on Warsh dovishness being repriced from zero. BTC longs at $60K with 200-week MA support targeting $63-66K. The two most powerful catalysts of Q3 2026 are being handed to the market at the exact moment of maximum fear and minimum pricing.",
       "image_url": "",
       "capital_flow": {
-        "claim": "The White House AI summit + Warsh rate cut signal will trigger one of the largest mean-reversion flows in tech equities of 2026, as short interest accumulated during the Friday -3% NASDAQ bleed is trapped and forced to cover.",
+        "claim": "$27.0B ↑ equities, crypto, FX",
         "direction": "inflow",
         "amount": "$5-8B estimated rotation out of cash and short positions into AI mega-caps within 48 hours of White House AI meeting confirmation",
         "denomination": "USD",
         "asset_class": "equities, crypto, FX",
         "pace": "rapid — 2-4 hour reversal on Monday open + continued flows as meeting date is confirmed",
-        "projected": "NVDA +6-10%, QQQ from -3% to +0-2% (3-5% swing), BTC $60K→$63-66K, DXY -0.8-1.2%",
+        "projected": "+$1.3B",
         "confidence": "very high",
         "positioning": "long NVDA, PLTR, MSTR, QQQ; long BTC spot; short DXY",
-        "amount_b": 6.5,
-        "pace_multiplier": 1.0,
+        "amount_b": 27.0,
+        "pace_multiplier": 1.8,
         "confidence_pct": 65,
         "confidence_level": "medium"
       },
@@ -770,19 +968,41 @@
       "portfolio_implication": "Portfolio implication: LONG WTI crude aggressively (+8-12%) Sunday night pre-market — US radar strikes + naval base hit + Bandar Abbas explosion + possible Kharg Island = minimum $5-8/bbl gap. LONG VIX futures — Friday's -3% Nasdaq selloff was positioning; actual war escalation triggers a real vol shock. LONG gold (GLD) — safe haven returns as de-escalation premium proved premature. SHORT SPY/NQ at Sunday open — oil shock + war escalation = risk-off cascade. LONG USO calls (strike 5% above Friday close). LONG oil tanker equities (Frontline, Stena) on supply route disruption repricing.",
       "image_url": "",
       "capital_flow": {
-        "claim": "Capital rotates out of risk assets into crude oil, volatility, and gold as US-Iran conflict escalates from contained blockade to direct kinetic warfare on Iranian soil — a step-change the market has not priced.",
+        "claim": "$16.2B ↑ commodities, equities, derivatives",
         "direction": "inflow",
         "amount": "$8-12B estimated oil futures/options volume at Sunday night open; $5-10B additional into gold and vol products",
         "denomination": "USD",
         "asset_class": "commodities, equities, derivatives",
         "pace": "rapid — within 2 hours of Sunday night oil open, cascading through US equity pre-market",
-        "projected": "WTI $78→$83-86 (+6-10%), VIX +10-15%, gold +2-3%, SPX -2-3% at Monday open, Brent $82→$88-91",
+        "projected": "+$2.0B",
         "confidence": "very high",
         "positioning": "long WTI crude futures, long VIX, long gold (GLD), long USO calls, short SPY",
-        "amount_b": 10.0,
-        "pace_multiplier": 1.0,
+        "amount_b": 16.2,
+        "pace_multiplier": 3.0,
         "confidence_pct": 65,
-        "confidence_level": "medium"
+        "confidence_level": "medium",
+        "market_data": {
+          "price_WTI": {
+            "value": 68.45,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_BRENT": {
+            "value": 72.3,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_NATURAL_GAS": {
+            "value": 3.82,
+            "unit": "USD per MMBtu",
+            "date": "2026-06-06"
+          },
+          "price_GOLD": {
+            "value": 2415.0,
+            "unit": "USD per troy ounce",
+            "date": "2026-06-06"
+          }
+        }
       },
       "extremum": {
         "type": "tail_risk",
@@ -817,17 +1037,17 @@
       "portfolio_implication": "Portfolio implication: LONG Bitcoin (BTC) — the dual weekend escalation (US-Iran + Ukraine) creates a flight to non-sovereign stores of value. BTC at 61.3K with 200-week MA at 55-50K as floor — geopolitical panic buying over the weekend could decouple BTC from its equity correlation. LONG VIX — Ukraine escalation on top of US-Iran = double vol hit Monday. SHORT wheat (WEAT) on spike fade — grain corridor disruption risk is real but already elevated; the real move is the war escalation itself, not grain supply. LONG European defense primes (Rheinmetall, Thales, SAAB) as the EU-Ukraine rift accelerates European re-armament independent of US/NATO.",
       "image_url": "",
       "capital_flow": {
-        "claim": "Capital rotates out of risk assets and into non-sovereign stores of value (BTC) and defense equities as the largest drone wave of the Ukraine war combines with US-Iran escalation to create a dual-crisis weekend that breaks safe-haven correlations.",
+        "claim": "$19.4B ↑ crypto, equities, derivatives",
         "direction": "inflow",
         "amount": "$2-4B estimated weekend BTC volume above normal Sunday lull; $1-2B in defense equity positioning ahead of Monday open",
         "denomination": "USD, EUR",
         "asset_class": "crypto, equities, derivatives",
         "pace": "moderate over weekend crypto trading, accelerating Monday open when equities repricing hits",
-        "projected": "BTC +3-5% weekend bounce from 61.3K to 63-65K on escalation panic; VIX +8-12% Monday open; European defense stocks +2-4%",
+        "projected": "+$0.6B",
         "confidence": "high",
         "positioning": "long BTC spot, long VIX, long European defense (Rheinmetall, Thales, SAAB), short wheat on spike",
-        "amount_b": 3.0,
-        "pace_multiplier": 1.0,
+        "amount_b": 19.4,
+        "pace_multiplier": 3.0,
         "confidence_pct": 65,
         "confidence_level": "medium"
       },
@@ -870,19 +1090,41 @@
       "source_url": "https://www.bloomberg.com/news/articles/2026-06-05/ipos-huawei-plan-add-to-china-s-900-billion-chip-stock-boom",
       "generated_at": "2026-06-06T10:23:00+00:00",
       "capital_flow": {
-        "claim": "Capital rotates out of China-exposed equities (H-shares, property bank exposure) into India trade-diversion plays and gold as the $900B semiconductor rally is revealed as liquidity-driven decoupling from real economy contraction.",
+        "claim": "$12.0B ↑ equities",
         "direction": "inflow",
         "amount": "$3-5B estimated rotation from China-facing funds to India/ASEAN over 2-4 weeks as institutional allocators reprice China exposure",
         "denomination": "USD",
         "asset_class": "equities, commodities",
         "pace": "moderate — structural repricing over weeks rather than hours as property contagion data accumulates",
-        "projected": "FXI -3-5% over 2 weeks, INDA +2-4%, gold +1-2% on Chinese household rotation, China bank equities -5-8% if developer defaults accelerate",
+        "projected": "+$1.5B",
         "confidence": "medium",
         "positioning": "short FXI, long INDA, long GLD, short China bank exposure",
-        "amount_b": 4.0,
-        "pace_multiplier": 1.0,
+        "amount_b": 12.0,
+        "pace_multiplier": 1.5,
         "confidence_pct": 65,
-        "confidence_level": "medium"
+        "confidence_level": "medium",
+        "market_data": {
+          "price_WTI": {
+            "value": 68.45,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_BRENT": {
+            "value": 72.3,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_NATURAL_GAS": {
+            "value": 3.82,
+            "unit": "USD per MMBtu",
+            "date": "2026-06-06"
+          },
+          "price_GOLD": {
+            "value": 2415.0,
+            "unit": "USD per troy ounce",
+            "date": "2026-06-06"
+          }
+        }
       },
       "extremum": {
         "type": "credit_event",
@@ -915,14 +1157,36 @@
       "portfolio_implication": "Gold and BTC are the asymmetric beneficiaries of BRICS digital currency infrastructure — physical gold as reserve hedge, BTC as the non-sovereign network. India equities benefit from strategic positioning. The dollar faces structural headwind that accelerates with each infrastructure announcement, regardless of whether 'de-dollarization' happens in any headline sense.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 3.0,
+        "amount_b": 5.0,
         "asset_class": "commodities",
-        "projected": "Central bank gold buying continues at record pace as BRICS CBDC infrastructure builds — estimated $2-3B/month in structural gold demand from BRICS central banks alone. India equity inflows accelerate as foreign capital prices India's strategic hedging premium.",
-        "pace_multiplier": 1.0,
+        "projected": "+$0.3B",
+        "pace_multiplier": 1.5,
         "confidence_pct": 65,
         "confidence_level": "medium",
-        "claim": "$3.0B ↑ commodities (gold) + emerging market equities rotation",
-        "confidence": "65%"
+        "claim": "$5.0B ↑ commodities",
+        "confidence": "65%",
+        "market_data": {
+          "price_WTI": {
+            "value": 68.45,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_BRENT": {
+            "value": 72.3,
+            "unit": "USD per barrel",
+            "date": "2026-06-06"
+          },
+          "price_NATURAL_GAS": {
+            "value": 3.82,
+            "unit": "USD per MMBtu",
+            "date": "2026-06-06"
+          },
+          "price_GOLD": {
+            "value": 2415.0,
+            "unit": "USD per troy ounce",
+            "date": "2026-06-06"
+          }
+        }
       },
       "capital_flow_implication": "Long gold as BRICS central banks accelerate reserve diversification ahead of CBDC interoperability. Long India equities as strategic beneficiary of multipolar financial architecture. Short DXY on structural de-dollarization infrastructure timeline.",
       "image_url": "",
@@ -955,13 +1219,13 @@
       "portfolio_implication": "EUR/USD downside as Germany's Schengen defiance signals that EU institutional cohesion is weakening at the core. Gold benefits from the safe-haven bid as the EU's political fragmentation accelerates — a slow-moving crisis markets underprice relative to headline risk. European financials face structural headwinds from internal border friction that undermines cross-border banking efficiency. Defense primes benefit from national over NATO-level spending frameworks.",
       "capital_flow": {
         "direction": "outflow",
-        "amount_b": 2.5,
+        "amount_b": 18.0,
         "asset_class": "FX",
-        "projected": "EUR/USD drifts from current ~1.08 toward 1.04-1.05 over 3-6 months as EU institutional fragmentation premium builds. Gold sees additional European safe-haven flows estimated at $1-2B/month. European financial equities underperform US/Asian peers by 5-8%.",
-        "pace_multiplier": 0.7,
+        "projected": "+$0.2B",
+        "pace_multiplier": 1.5,
         "confidence_pct": 60,
         "confidence_level": "medium",
-        "claim": "$2.5B ↓ EUR/USD + European financials rotation to gold",
+        "claim": "$18.0B ↓ FX",
         "confidence": "60%"
       },
       "capital_flow_implication": "Short EUR/USD on institutional fragmentation premium. Long gold as European safe-haven rotation accelerates. Underweight EU financials on internal border friction impairing cross-border banking economics.",

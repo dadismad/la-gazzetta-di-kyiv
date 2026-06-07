@@ -14,10 +14,10 @@
   --card-bg:   #FFFFFF;
 
   --blue:      #2563EB;   /* Sharp blue — links, interactive */
-  --green:     #047857;   /* Darker emerald — better contrast, buy signals */
+  --green:     #059669;   /* Casino green — buy signals, inflows */
   --red:       #DC2626;   /* Casino red — sell signals, outflows */
-  --gold:      #B8860B;   /* DarkGoldenrod — better contrast, accents */
-  --gold-light: rgba(184,134,11,0.10);
+  --gold:      #D4AF37;   /* 24K gold — accents, masthead name */
+  --gold-light: rgba(212,175,55,0.10);
 
   --ink:       #111827;   /* Near-black — all body text */
   --ink-light: #6B7280;   /* Grey — secondary text */
@@ -156,9 +156,9 @@ body {
 /* ── Hero Section ── */
 .hero {
   text-align: center;
-  padding: 20px 16px 16px;
+  padding: 16px 20px 10px;
   border-bottom: 1px solid var(--divider);
-}
+  background: #FFFFFF;
 }
 .hero-content { max-width: 600px; margin: 0 auto; }
 .hero-headline {
@@ -255,27 +255,20 @@ body {
 }
 
 /* v22.18: Product navigation */
-.product-nav { display: flex; gap: 12px; align-items: center; margin: 0 12px; }
-.nav-link {
-  font-size: 10px;
-  opacity: 0.7;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-.nav-link.active { color: var(--gold); opacity: 1; }
-.product-nav a, .nav-link {
+.product-nav { display: flex; gap: 14px; align-items: center; }
+.product-nav a {
   font-family: var(--sans);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   color: var(--ink-light);
   text-decoration: none;
   padding: 3px 0;
   border-bottom: 2px solid transparent;
   transition: color 0.2s, border-color 0.2s;
 }
-.product-nav a:hover, .product-nav a.active, .nav-link:hover, .nav-link.active { color: var(--gold); border-bottom-color: var(--gold); }
+.product-nav a:hover, .product-nav a.active { color: var(--gold); border-bottom-color: var(--gold); }
 .product-page { max-width: 1000px; margin: 0 auto; padding: 16px 20px 40px; }
 .product-page .container { margin-bottom: 0; }
 .product-page .container-header { cursor: default; }
@@ -333,11 +326,7 @@ body {
 /* v22.18: Hints lobby */
 .hints-lobby { max-width: 1000px; margin: 0 auto; padding: 20px; }
 /* v22.18: Sophisticated hint cards — money, players, contracts, hooks */
-.flow-sector-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; margin-bottom: 16px; }
-.sector-stat-box { background: var(--white); border: 1px solid var(--divider); padding: 10px 12px; text-align: center; }
-.sector-stat-label { font-family: var(--sans); font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 4px; }
-.sector-stat-value { font-family: var(--body); font-size: 18px; font-weight: 700; }
-.sector-stat-sub { font-family: var(--sans); font-size: 9px; color: var(--ink-muted); margin-top: 2px; }
+.hint-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
 .hint-card {
   background: #FFFFFF;
   padding: 20px 22px;
@@ -495,7 +484,7 @@ body {
   .hero-stat-label { font-size: 9px !important; }
   .hero-stat-value { font-size: 15px !important; }
   /* Touch targets */
-  .share-btn { min-width: 44px !important; min-height: 44px !important; }
+  .share-btn { min-width: 38px !important; min-height: 38px !important; }
   .share-btn svg { width: 16px !important; height: 16px !important; }
   .container-header { 
     min-height: 44px !important; 
@@ -2251,7 +2240,7 @@ body {
 /* v22.33: Heat score color scale + trade signal + PDR mini badges */
 .flow-heat {
   font-family: var(--sans);
-  font-size: 10px;
+  font-size: 8px;
   font-weight: 700;
   min-width: 28px;
   text-align: right;
@@ -2288,7 +2277,7 @@ body {
 /* PDR mini — collapsed row */
 .flow-pdr-mini {
   font-family: var(--sans);
-  font-size: 10px;
+  font-size: 8px;
   font-weight: 600;
   padding: 1px 5px;
   white-space: nowrap;

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T02:24:51.241799+03:00",
+  "generated_at": "2026-06-07T13:26:58.603074+03:00",
   "generated_by": "generate_flow_nodes.py",
   "update_frequency": "60m",
   "node_types": {
@@ -31,28 +31,28 @@
   },
   "nodes": [
     {
-      "id": "gov-fx",
-      "type": "gov",
-      "label": "Governmental → FX",
-      "description": "Auto-generated from 1 stories",
-      "metrics": {
-        "total_inflow_b": 0,
-        "total_outflow_b": 2.5,
-        "net_flow_b": -2.5,
-        "confidence_pct": 65,
-        "pace_avg": 1.0
-      },
-      "flow_count": 1
-    },
-    {
       "id": "gov-crypto",
       "type": "gov",
       "label": "Governmental → crypto",
       "description": "Auto-generated from 1 stories",
       "metrics": {
         "total_inflow_b": 0,
-        "total_outflow_b": 11.5,
-        "net_flow_b": -11.5,
+        "total_outflow_b": 6.5,
+        "net_flow_b": -6.5,
+        "confidence_pct": 70,
+        "pace_avg": 1.0
+      },
+      "flow_count": 1
+    },
+    {
+      "id": "gov-fx",
+      "type": "gov",
+      "label": "Governmental → FX",
+      "description": "Auto-generated from 1 stories",
+      "metrics": {
+        "total_inflow_b": 0,
+        "total_outflow_b": 18.0,
+        "net_flow_b": -18.0,
         "confidence_pct": 70,
         "pace_avg": 1.0
       },
@@ -61,16 +61,16 @@
     {
       "id": "institutional-source",
       "type": "institutional",
-      "label": "Private/Institutional → crypto",
-      "description": "Auto-generated from 18 stories",
+      "label": "Private/Institutional → commodities",
+      "description": "Auto-generated from 22 stories",
       "metrics": {
-        "total_inflow_b": 248.5,
-        "total_outflow_b": 2.5,
-        "net_flow_b": 246.0,
-        "confidence_pct": 69,
+        "total_inflow_b": 275.4,
+        "total_outflow_b": 18.0,
+        "net_flow_b": 257.4,
+        "confidence_pct": 70,
         "pace_avg": 1.0
       },
-      "flow_count": 18
+      "flow_count": 22
     },
     {
       "id": "institutional-equities",
@@ -78,9 +78,9 @@
       "label": "Private/Institutional → equities",
       "description": "Auto-generated from 4 stories",
       "metrics": {
-        "total_inflow_b": 173.0,
+        "total_inflow_b": 98.0,
         "total_outflow_b": 0,
-        "net_flow_b": 173.0,
+        "net_flow_b": 98.0,
         "confidence_pct": 70,
         "pace_avg": 1.0
       },
@@ -174,15 +174,15 @@
       "id": "corporate-commodities",
       "type": "corporate",
       "label": "Corporate → commodities",
-      "description": "Auto-generated from 4 stories",
+      "description": "Auto-generated from 8 stories",
       "metrics": {
-        "total_inflow_b": 18.0,
+        "total_inflow_b": 115.4,
         "total_outflow_b": 0,
-        "net_flow_b": 18.0,
-        "confidence_pct": 69,
+        "net_flow_b": 115.4,
+        "confidence_pct": 70,
         "pace_avg": 1.0
       },
-      "flow_count": 4
+      "flow_count": 8
     },
     {
       "id": "crypto-crypto",
@@ -190,9 +190,9 @@
       "label": "Crypto → crypto",
       "description": "Auto-generated from 3 stories",
       "metrics": {
-        "total_inflow_b": 15.0,
+        "total_inflow_b": 19.5,
         "total_outflow_b": 0,
-        "net_flow_b": 15.0,
+        "net_flow_b": 19.5,
         "confidence_pct": 70,
         "pace_avg": 1.0
       },
@@ -205,8 +205,8 @@
       "description": "Auto-generated from 1 stories",
       "metrics": {
         "total_inflow_b": 0,
-        "total_outflow_b": 11.5,
-        "net_flow_b": -11.5,
+        "total_outflow_b": 6.5,
+        "net_flow_b": -6.5,
         "confidence_pct": 70,
         "pace_avg": 1.0
       },
@@ -217,7 +217,7 @@
     {
       "source": "institutional-source",
       "target": "institutional-equities",
-      "amount_b": 80.0,
+      "amount_b": 30.0,
       "direction": "inflow",
       "pace_mult": 1.0,
       "confidence_pct": 70,
@@ -229,13 +229,85 @@
     {
       "source": "institutional-source",
       "target": "institutional-equities",
-      "amount_b": 80.0,
+      "amount_b": 30.0,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_abundance_tech__spacex_ipo_demand_2x_supply__75b_offering_oversibscribed",
+      "headline": "SPACEX IPO DEMAND 2x SUPPLY — $75B OFFERING OVERSIBSCRIBED",
+      "asset_class": "equities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "corporate-commodities",
+      "amount_b": 21.6,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles__regional_war",
+      "headline": "Iran Strikes Kuwait With 7 Ballistic Missiles — Regional War Expands, Diplomatic",
+      "asset_class": "commodities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "corporate-commodities",
+      "amount_b": 21.6,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles__gulf_war_wid",
+      "headline": "Iran Strikes Kuwait With 7 Ballistic Missiles — Gulf War Widens Live",
+      "asset_class": "commodities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "institutional-equities",
+      "amount_b": 20.0,
       "direction": "inflow",
       "pace_mult": 1.0,
       "confidence_pct": 70,
       "story_id": "n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai",
       "headline": "Google Signs $920M/Month AI Compute Deal with SpaceX/xAI",
       "asset_class": "equities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "institutional-equities",
+      "amount_b": 18.0,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "ai_rotation_crypto_20260605",
+      "headline": "AI Rotation Devours Crypto — Dow Hits ATH as ETH Crashes Below $1,600",
+      "asset_class": "equities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "gov-fx",
+      "amount_b": 18.0,
+      "direction": "outflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_eu_fragmentation__eu_migration_deal_balkans_detention_germany_rejects_schengen",
+      "headline": "EU Strikes Migration Deal for Detention Centers Abroad — Germany Rejects Request",
+      "asset_class": "FX",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "corporate-commodities",
+      "amount_b": 16.8,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_multi_pillar__israel-lebanon_conflict_deepening__full_occupation_publicly",
+      "headline": "Israel-Lebanon Conflict Deepening — Full Occupation Publicly Discussed, IDF Taki",
+      "asset_class": "commodities",
       "data_source": "stories.json → capital_flow"
     },
     {
@@ -251,15 +323,39 @@
       "data_source": "stories.json → capital_flow"
     },
     {
-      "source": "crypto-source",
-      "target": "gov-crypto",
-      "amount_b": 11.5,
-      "direction": "outflow",
+      "source": "institutional-source",
+      "target": "corporate-commodities",
+      "amount_b": 14.4,
+      "direction": "inflow",
       "pace_mult": 1.0,
       "confidence_pct": 70,
-      "story_id": "n21_blockchain_agentic__bitcoin_free_fall__saylor_liquidates_etfs_bleed_200-week",
-      "headline": "BITCOIN FREE FALL — SAYLOR LIQUIDATES, ETFs BLEED, 200-WEEK MA IN PLAY",
-      "asset_class": "crypto",
+      "story_id": "n21_multi_pillar__iran_military_posture_surge__fighter_jets_missiles_into_ku",
+      "headline": "Iran Military Posture Surge — Fighter Jets, Missiles into Kuwait/Bahrain, Negoti",
+      "asset_class": "commodities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "corporate-commodities",
+      "amount_b": 14.4,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_multi_pillar__us_strikes_iranian_naval_bases__hormuz_escalation_intensifi",
+      "headline": "US Strikes Iranian Naval Bases — Hormuz Escalation Intensifies",
+      "asset_class": "commodities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "corporate-commodities",
+      "amount_b": 14.4,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_multi_pillar__iran-bahrain_missile_attack__hormuz_escalation_continues",
+      "headline": "IRAN-BAHRAIN MISSILE ATTACK — HORMUZ ESCALATION CONTINUES",
+      "asset_class": "commodities",
       "data_source": "stories.json → capital_flow"
     },
     {
@@ -276,14 +372,62 @@
     },
     {
       "source": "institutional-source",
-      "target": "institutional-equities",
-      "amount_b": 8.0,
+      "target": "corporate-commodities",
+      "amount_b": 7.2,
       "direction": "inflow",
       "pace_mult": 1.0,
       "confidence_pct": 70,
-      "story_id": "n21_abundance_tech__spacex_ipo_demand_2x_supply__75b_offering_oversibscribed",
-      "headline": "SPACEX IPO DEMAND 2x SUPPLY — $75B OFFERING OVERSIBSCRIBED",
-      "asset_class": "equities",
+      "story_id": "n21_blockchain_agentic__ukraine_hits_st_petersburg_with_250_drones_during_pmef__m",
+      "headline": "Ukraine Hits St. Petersburg with 250+ Drones During PMEF — Military Base + Physi",
+      "asset_class": "commodities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "crypto-crypto",
+      "amount_b": 6.5,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_china_ascendancy__zcash_soundness_researcher_now_audits_monero__xmr_intraday",
+      "headline": "Zcash Soundness Researcher Now Audits Monero — XMR Intraday Panic, Recovery Unde",
+      "asset_class": "crypto",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "crypto-crypto",
+      "amount_b": 6.5,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_china_ascendancy__zcash_soundness_bug_researcher_now_targets_monero__xmr_-10",
+      "headline": "Zcash Soundness Bug Researcher Now Targets Monero — XMR -10%",
+      "asset_class": "crypto",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "crypto-crypto",
+      "amount_b": 6.5,
+      "direction": "inflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_china_ascendancy__zcash_soundness_bug_researcher_now_audits_monero__xmr_-10",
+      "headline": "Zcash Soundness Bug Researcher Now Audits Monero — XMR -10%, Cascade Risk",
+      "asset_class": "crypto",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "crypto-source",
+      "target": "gov-crypto",
+      "amount_b": 6.5,
+      "direction": "outflow",
+      "pace_mult": 1.0,
+      "confidence_pct": 70,
+      "story_id": "n21_blockchain_agentic__bitcoin_free_fall__saylor_liquidates_etfs_bleed_200-week",
+      "headline": "BITCOIN FREE FALL — SAYLOR LIQUIDATES, ETFs BLEED, 200-WEEK MA IN PLAY",
+      "asset_class": "crypto",
       "data_source": "stories.json → capital_flow"
     },
     {
@@ -300,86 +444,14 @@
     },
     {
       "source": "institutional-source",
-      "target": "crypto-crypto",
-      "amount_b": 5.0,
-      "direction": "inflow",
-      "pace_mult": 1.0,
-      "confidence_pct": 70,
-      "story_id": "n21_china_ascendancy__zcash_soundness_researcher_now_audits_monero__xmr_intraday",
-      "headline": "Zcash Soundness Researcher Now Audits Monero — XMR Intraday Panic, Recovery Unde",
-      "asset_class": "crypto",
-      "data_source": "stories.json → capital_flow"
-    },
-    {
-      "source": "institutional-source",
-      "target": "crypto-crypto",
-      "amount_b": 5.0,
-      "direction": "inflow",
-      "pace_mult": 1.0,
-      "confidence_pct": 70,
-      "story_id": "n21_china_ascendancy__zcash_soundness_bug_researcher_now_targets_monero__xmr_-10",
-      "headline": "Zcash Soundness Bug Researcher Now Targets Monero — XMR -10%",
-      "asset_class": "crypto",
-      "data_source": "stories.json → capital_flow"
-    },
-    {
-      "source": "institutional-source",
-      "target": "crypto-crypto",
-      "amount_b": 5.0,
-      "direction": "inflow",
-      "pace_mult": 1.0,
-      "confidence_pct": 70,
-      "story_id": "n21_china_ascendancy__zcash_soundness_bug_researcher_now_audits_monero__xmr_-10",
-      "headline": "Zcash Soundness Bug Researcher Now Audits Monero — XMR -10%, Cascade Risk",
-      "asset_class": "crypto",
-      "data_source": "stories.json → capital_flow"
-    },
-    {
-      "source": "institutional-source",
       "target": "corporate-commodities",
       "amount_b": 5.0,
       "direction": "inflow",
       "pace_mult": 1.0,
       "confidence_pct": 70,
-      "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles__gulf_war_wid",
-      "headline": "Iran Strikes Kuwait With 7 Ballistic Missiles — Gulf War Widens Live",
+      "story_id": "n21_dollar_decline__india_rbi_proposes_brics_digital_currency_link_erupee_pilot",
+      "headline": "India's Central Bank Proposes Linking BRICS Digital Currencies — E-Rupee Pilots ",
       "asset_class": "commodities",
-      "data_source": "stories.json → capital_flow"
-    },
-    {
-      "source": "institutional-source",
-      "target": "corporate-commodities",
-      "amount_b": 5.0,
-      "direction": "inflow",
-      "pace_mult": 1.0,
-      "confidence_pct": 70,
-      "story_id": "n21_multi_pillar__us_strikes_iranian_naval_bases__hormuz_escalation_intensifi",
-      "headline": "US Strikes Iranian Naval Bases — Hormuz Escalation Intensifies",
-      "asset_class": "commodities",
-      "data_source": "stories.json → capital_flow"
-    },
-    {
-      "source": "institutional-source",
-      "target": "corporate-commodities",
-      "amount_b": 5.0,
-      "direction": "inflow",
-      "pace_mult": 1.0,
-      "confidence_pct": 70,
-      "story_id": "n21_multi_pillar__iran-bahrain_missile_attack__hormuz_escalation_continues",
-      "headline": "IRAN-BAHRAIN MISSILE ATTACK — HORMUZ ESCALATION CONTINUES",
-      "asset_class": "commodities",
-      "data_source": "stories.json → capital_flow"
-    },
-    {
-      "source": "institutional-source",
-      "target": "institutional-equities",
-      "amount_b": 5.0,
-      "direction": "inflow",
-      "pace_mult": 1.0,
-      "confidence_pct": 70,
-      "story_id": "ai_rotation_crypto_20260605",
-      "headline": "AI Rotation Devours Crypto — Dow Hits ATH as ETH Crashes Below $1,600",
-      "asset_class": "equities",
       "data_source": "stories.json → capital_flow"
     },
     {
@@ -417,37 +489,13 @@
       "headline": "300 Ukrainian Drones Hit Russia Overnight — Largest Single Wave of the Entire Wa",
       "asset_class": "crypto, equities, derivatives",
       "data_source": "stories.json → capital_flow"
-    },
-    {
-      "source": "institutional-source",
-      "target": "corporate-commodities",
-      "amount_b": 3.0,
-      "direction": "inflow",
-      "pace_mult": 1.0,
-      "confidence_pct": 67,
-      "story_id": "n21_dollar_decline__india_rbi_proposes_brics_digital_currency_link_erupee_pilot",
-      "headline": "India's Central Bank Proposes Linking BRICS Digital Currencies — E-Rupee Pilots ",
-      "asset_class": "commodities",
-      "data_source": "stories.json → capital_flow"
-    },
-    {
-      "source": "institutional-source",
-      "target": "gov-fx",
-      "amount_b": 2.5,
-      "direction": "outflow",
-      "pace_mult": 1.0,
-      "confidence_pct": 65,
-      "story_id": "n21_eu_fragmentation__eu_migration_deal_balkans_detention_germany_rejects_schengen",
-      "headline": "EU Strikes Migration Deal for Detention Centers Abroad — Germany Rejects Request",
-      "asset_class": "FX",
-      "data_source": "stories.json → capital_flow"
     }
   ],
   "summary": {
     "total_nodes": 13,
-    "total_edges": 19,
-    "total_flow_b": 262.5,
-    "inflow_count": 17,
+    "total_edges": 23,
+    "total_flow_b": 299.9,
+    "inflow_count": 21,
     "outflow_count": 2
   }
 }

@@ -1,28 +1,52 @@
 {
-  "generated_at": "2026-06-07T08:52:00Z",
+  "generated_at": "2026-06-07T22:00:00Z",
   "claims": [
+    {
+      "ticker": "USO",
+      "direction": "up",
+      "price_target": "$5-8/bbl gap at Sunday CME open",
+      "strategy": "Long crude ETF — fade-the-move on Sunday gap (65% win rate for geopolitical gap ups)",
+      "win_rate": "65%",
+      "horizon": "2-24h",
+      "narrative_driven_pct": 80,
+      "crowd_belief": "Markets priced ceasefire into WTI at $68.45. Iran striking a US ally directly contradicts every ceasefire thesis.",
+      "contradiction": "House votes to end war while missiles hit Kuwait — the gap between diplomatic theater and kinetic reality is maximal",
+      "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles"
+    },
+    {
+      "ticker": "GLD",
+      "direction": "up",
+      "price_target": "$2,450+ (2% from $2,415)",
+      "strategy": "Long gold — geopolitical hedge, weekend carry",
+      "win_rate": "70%",
+      "horizon": "24-72h",
+      "narrative_driven_pct": 60,
+      "crowd_belief": "Gold already priced at $2,415 reflects elevated risk, but direct strikes on OPEC producers are not priced",
+      "contradiction": "Gold is the traditional Gulf war hedge — 7 missiles into Kuwait is a textbook gold catalyst",
+      "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles"
+    },
+    {
+      "ticker": "VIX",
+      "direction": "up",
+      "price_target": "Futures gap-up Sunday evening — target 22-25 range",
+      "strategy": "Long VIX futures — weekend escalation carry",
+      "win_rate": "60%",
+      "horizon": "24-72h",
+      "narrative_driven_pct": 75,
+      "crowd_belief": "S&P snapped 9-week streak — market in risk-off mode already. A weekend escalation compounds existing skittishness.",
+      "contradiction": "S&P already -2.59% before the Kuwait strikes. Weekend escalation risk is an accelerant on an already nervous tape.",
+      "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles"
+    },
     {
       "ticker": "TSM",
       "direction": "down",
-      "price_target": "See Monday Asia open: -3-5% if vessel boarded",
-      "strategy": "Pre-market short / put options Monday expiry",
+      "price_target": "-3-5% at Monday Asia open if vessel boarded",
+      "strategy": "Short / put options Monday expiry — blockade rehearsal risk",
       "win_rate": "65%",
       "horizon": "24-48h",
       "narrative_driven_pct": 85,
-      "crowd_belief": "Consensus pricing zero confrontation risk — markets dismissing as posturing despite unprecedented operational transparency",
-      "contradiction": "Market says 'posturing.' China announced a specific time/place/legal basis for enforcement for the first time ever — that's not posturing, that's preparation.",
-      "story_id": "n21_china_ascendancy__china_launches_maritime_enforcement_operation_east_of_taiwan"
-    },
-    {
-      "ticker": "SMH",
-      "direction": "down",
-      "price_target": "-3-5% correlated with TSM",
-      "strategy": "Short semicon ETF",
-      "win_rate": "60%",
-      "horizon": "24-48h",
-      "narrative_driven_pct": 75,
-      "crowd_belief": "Semiconductor supply chains assumed immune to Taiwan Strait disruption",
-      "contradiction": "Taiwan produces >90% of advanced semiconductors. A blockade rehearsal east of Taiwan directly targets the supply chain markets assume is untouchable.",
+      "crowd_belief": "Markets price zero confrontation risk — consensus dismisses operation as posturing",
+      "contradiction": "First time Beijing named time/place/legal basis for enforcement east of Taiwan — not posturing",
       "story_id": "n21_china_ascendancy__china_launches_maritime_enforcement_operation_east_of_taiwan"
     }
   ]

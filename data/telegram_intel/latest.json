@@ -1,120 +1,77 @@
 {
-  "scrape_time": "2026-06-07T08:09:51+00:00",
-  "model": "deepseek-v4-flash",
-  "horizon": "1-2 hours (Sunday 08:09 UTC → CME open ~10h, Asia open ~13h)",
-  "channels_monitored": ["@trad_fin", "@MonitoringSituation", "@ASupersharij", "@infinityhedge", "@ethanlevins", "@markettwits"],
-  "channel_status": {
-    "@trad_fin": "STALE — 0/20 messages in last 30min. Weekend dormant. Last active yesterday (Iran radar strike).",
-    "@MonitoringSituation": "STALE — 0/20 messages in last 30min. Weekend downtime.",
-    "@ASupersharij": "LOW — 1/14 messages in last 30min. Internal Ukraine political gossip (soldier reporting users for liking Polish post). Not market actionable.",
-    "@infinityhedge": "DEAD — 0/20 messages. No posts in 4+ days. Channel inactive.",
-    "@ethanlevins": "ACTIVE — 1/20 messages in last 30min. NEW: 'IDF tanks burning on live TV' (Lebanon front). Reinforces existing escalation narrative.",
-    "@markettwits": "HOT — 7/20 messages in last 30min. KEY NEW DATA: OPEC+ expected to raise output by 188K bpd from July. Also: Armenia elections, Armenia-Russia relations deteriorating."
-  },
-  "summary_stats": {
-    "total_messages_scanned": 114,
-    "messages_last_30min": 9,
-    "messages_last_2h": 9,
-    "actionable_stories_identified": 3,
-    "compared_to_previous_cycle": "6 new messages vs 6 previously. Significant: OPEC+ output hike is entirely new. Cuba, crypto sentiment, and Chongar bridge from prior cycle have NO updates."
-  },
+  "fetched_at": "2026-06-07T10:21:30Z",
+  "horizon": "2-hour actionable window",
   "stories": [
     {
       "rank": 1,
-      "id": "opec-plus-output-hike-188k-bpd-20260607",
-      "title": "🛢 OPEC+ Expected to Raise Output by 188,000 bpd from July — Supply Management Caps Oil Spike",
-      "freshness": "28 minutes ago (07:41 UTC)",
-      "source_channels": ["@markettwits"],
-      "source_posts": ["markettwits/373163"],
-      "event": "OPEC+ is expected to agree on increasing oil production by 188,000 barrels per day starting July, per RTRS (Reuters). This was expected to be confirmed at today's OPEC+ meeting. The increase is modest (~0.18% of global supply) but sends a clear policy signal: OPEC+ is actively managing supply to prevent an Iran-linked price spike from running away.",
-      "consensus_narrative": "OPEC+ is gradually unwinding production cuts as demand holds up. 188K bpd is a routine adjustment — markets already have this priced. The broader oil narrative is dominated by Iran/Hormuz risk premium, not by OPEC+ supply management. Oil analysts view this as a non-event relative to geopolitical risk.",
-      "contradiction": "THIS IS THE FIRST DATA POINT THIS CYCLE CONFIRMING ACTIVE OPEC+ INTERVENTION TO CAGE OIL PRICES. Iran tensions (Hormuz strikes, missile fire into Kuwait/Bahrain, US radar strikes on Qeshm Island) should be pushing WTI toward $80-85. OPEC+ adding supply is a direct response to exactly this risk — they are trying to cap the geopolitical premium. The contradiction: if OPEC+ feels the need to add supply NOW (before any actual Hormuz disruption), it implies they see the Iran risk as real and rising. But their action also limits the upside for oil longs. The net: oil is stuck in a range — Iran risk premium provides a floor ($74-76 WTI), OPEC+ supply cap provides a ceiling ($80-82). Breakout requires either (a) confirmed Hormuz disruption (no amount of OPEC+ supply can replace 17M bpd through the Strait), or (b) Iran-US de-escalation (which removes the premium entirely, sending oil below $70). The market is pricing neither tail — which means there's a binary event ahead.",
-      "bet": {
-        "direction": "NEUTRAL on crude for immediate horizon — range-bound between Iran floor and OPEC+ ceiling. Long oil still works as Iran hedge, but reduce size. SHORT energy sector ($XLE) if Iran de-escalates. LONG refiners ($VLO, $MPC) who benefit from stable crude + strong product demand.",
-        "assets": ["$USO (hold, reduce size)", "$CL (WTI — range trade $74-$82)", "$VLO (Valero — refiner margin beneficiary)", "$XLE (energy sector — fade on OPEC+ cap)", "$SHEL (European supermajor — more exposed to Iran disruption)"],
-        "trigger": "OPEC+ confirmation at today's meeting = short-term oil dip (sell the news). Confirmed Hormuz tanker disruption = breakout above $82. Iran de-escalation = breakdown below $74.",
-        "horizon": "Next 12-24 hours for OPEC+ confirmation. 1-2 weeks for Iran resolution. CME Sunday evening will price the OPEC+ news — expect a small dip at open.",
-        "confidence": "HIGH for the policy signal (RTRS is Reuters wire, reliable). MEDIUM for market impact — the 188K bpd is small but the signal matters."
-      },
-      "benefit": {
-        "Gazzetta di Kyiv": "Frame: 'OPEC+ Blinks — Raises Output as Iran Threat Looms.' Connect to Ukraine: 'Russia's petro-economy gets squeezed — OPEC+ adding supply depresses Urals price further, cutting Putin's war budget.' Russia budget data already shows oil/gas revenues down 29.8%. Any OPEC+ output increase that further pressures Urals is a direct hit to Russia's war financing. Frame as: 'The oil weapon is breaking in Putin's hands.'",
-        "Bet&Benefit": "Reduce crude oil long position size — OPEC+ cap limits upside. Move into refiner equities (VLO, MPC) which benefit from stable crude input costs + strong summer gasoline demand. If you want crude exposure, use 6-month deferred contracts to avoid the OPEC+ dip at the front of the curve. Algeria 'ready to extend cuts' provides a floor — but the dominant signal is supply management, not supply restriction."
-      },
-      "materiality_score": 7.5
+      "title": "OPEC+ Meeting TODAY (June 7) — 188k bpd Hike Expected as 149 S&P 500 Companies Flag Oil Pain",
+      "event": "OPEC+ meeting is happening TODAY with sources confirming expected agreement to raise production by 188,000 bpd from July. The decision is imminent — could drop within hours. Meanwhile FactSet reports 149 S&P 500 companies complained about high oil prices on earnings calls — a 5-year record high, signaling the oil pain has reached critical mass across the US economy. This directly pressures Trump to resolve Hormuz faster.",
+      "consensus_narrative": "188k bpd increase is modest (0.2% of global supply) and already priced in. Market expects a measured response that keeps oil anchored but doesn't crash it. OPEC+ seen as keeping powder dry for further increases if Hormuz stays blocked.",
+      "contradiction": "OPEC+ raising output while Strait of Hormuz remains blockaded creates a 'paper barrels' problem — the extra supply cannot physically transit the Strait. 149 companies complaining is a MASSIVE signal — this is not normal earnings chatter, it's an economic warning flare that puts the Fed and White House on notice. The 188k figure may be the floor, not the ceiling — if OPEC+ smells political desperation, they could go larger (300k+), which would crash oil 8-10%. Conversely, if they deliver less than 188k, oil rips higher as relief is denied. Saturday meeting = no US market influence, pure OPEC+ internal dynamics.",
+      "bet": "SHORT oil (USO, XLE) into the OPEC+ announcement. Asymmetry favors a sell-the-news setup at these levels. If 188k is confirmed without hawkish language, oil drops 3-5%. If 300k+ surprise, oil crashes 8-10%. Hedge with put spreads on USO. LONG airlines (DAL, AAL, UAL) as the most direct oil-pain beneficiaries. SHORT XLE vs LONG XRT (retail) as a pair trade on consumer fuel-cost relief. Horizon: next 2 hours — decision could drop any minute.",
+      "benefit": "Airlines (DAL, AAL, UAL) benefit from any oil decline. S&P 500 broad market (SPY) benefits if inflation fears ease. Crypto (BTC, ETH) gets a bid if risk-off reverses. Fed gets marginal breathing room on rate policy."
     },
     {
       "rank": 2,
-      "id": "lebanon-idf-tanks-burning-escalation-20260607",
-      "title": "🔥🇱🇧🇮🇱 IDF Tanks Burning on Live TV — Lebanon Ground War Intensifies",
-      "freshness": "3 minutes ago (08:06 UTC)",
-      "source_channels": ["@ethanlevins"],
-      "source_posts": ["ethanlevins/3386"],
-      "event": "IDF tanks were shown burning on live TV on the Lebanon front. This follows a pattern of escalating IDF casualties in southern Lebanon: Egoz Recon Unit officer killed, multiple soldiers wounded in daily battles. Israeli military leadership has publicly discussed full occupation of southern Lebanon. 2,500 Hezbollah fighters are operating south of the Litani River.",
-      "consensus_narrative": "The Israel-Lebanon conflict is an entrenched ground war. IDF is taking casualties daily. Hezbollah retains capability south of Litani despite ceasefire agreements. Full occupation is being discussed as necessary. Markets have priced a 'Middle East risk premium' into oil and gold, but the Israel-Lebanon specific component is underweighted — US-Iran dominates the narrative.",
-      "contradiction": "Tanks burning on live TV is a VISUAL escalation — it changes the perception of the conflict for TV viewers worldwide. This is NOT a minor border clash — it's a heavy armor engagement being broadcast in real time. The contradiction: Israel is publicly discussing full occupation but ALSO halted demolitions of villages in southern Lebanon (a concession). This suggests internal Israeli debate between escalation (Netanyahu, military) and restraint (ceasefire framework). If tanks burning live TV shifts Israeli public opinion toward escalation (demand for 'doing something'), it could trigger the full occupation decision. Conversely, if it reveals Israeli vulnerability, it could strengthen restraint. The market impact path: any Israeli decision to escalate Lebanon = Hezbollah-Iran link triggered = oil spike + risk-off across Middle East assets.",
-      "bet": {
-        "direction": "LONG gold ($GLD), LONG oil ($USO) as broad Middle East hedge. SHORT Israeli shekel via FX if full occupation announced. LONG defense ($LMT, $GD) on sustained multi-front conflict.",
-        "assets": ["$GLD (gold — safe haven)", "$USO (oil — broader ME risk)", "$ISRA (Israel Equity Fund — potential buying opportunity on panic dip)", "$LMT", "$GD"],
-        "trigger": "Full Israeli occupation announcement or major new ground operation in southern Lebanon = immediate gold/oil spike + regional risk-off. Hezbollah rocket fire into northern Israel (retaliation for tank losses) = similar move.",
-        "horizon": "Next 12-48 hours. Sunday night CME open will not specifically price Lebanon — this is a Monday-Asia-open story. Gold/oil already have ME premium incorporated.",
-        "confidence": "MEDIUM — the tanks burning is visually significant but doesn't represent a NEW policy decision. It's escalation within an already active conflict. The marginal information content is low despite the high drama."
-      },
-      "benefit": {
-        "Gazzetta di Kyiv": "Not a primary Gazzetta angle (not Ukraine-related). But can be woven into broader 'Global Conflict Web' narrative: 'While Ukraine pounds Chongar bridge and St. Petersburg, Israel's tanks burn in Lebanon and Iran's missiles fly toward Kuwait. The world's hot wars are multiplying, not ending.'",
-        "Bet&Benefit": "Maintain existing Middle East hedges (gold, oil). Do NOT trade on this specific headline — it's noise within an already-escalated conflict. Wait for a NEW policy signal (occupation announcement, Hezbollah retaliation) before adding position size."
-      },
-      "materiality_score": 5.5
+      "title": "Israel's Nabatieh Offensive — 'Earthquake That Topples Hezbollah' as IDF Tanks Burn on Live TV, Leaks Show It's Sabotaging US-Iran Hormuz Deal",
+      "event": "Israeli forces advancing on Nabatieh — the primary Hezbollah stronghold in southern Lebanon — with ground operations toward Metula, Kfar Tibnit, and Nabatieh al-Fawqa (ethanlevins, 08:59 UTC). Israeli media (Walla) citing military sources: 'The fall of Nabatieh would be an earthquake that topples Hezbollah' (09:26 UTC). Overnight, IDF tanks burned on live TV in Yohmor village (08:06 UTC) — 2 Merkava tanks hit. Hezbollah snipers killed an IDF soldier; another killed by friendly fire. IDF Egoz Recon officer died of wounds. Leaked US-Iran negotiation stick points (ethanlevins, June 6 18:12 UTC) explicitly cite 'Israeli actions in Lebanon violating ceasefire agreement' as a sticking point. Israel's Nabatieh offensive is directly sabotaging Trump's ability to reopen Hormuz — if Hezbollah falls, Iran loses its most powerful proxy and becomes MORE desperate, keeping Hormuz closed as leverage.",
+      "consensus_narrative": "Israel is grinding through southern Lebanon slowly. Hezbollah is putting up stiff resistance. Conflict is a costly stalemate that doesn't directly threaten oil flows. Markets have priced in the Israel-Lebanon front as contained — it's been ongoing for months without systemic market impact. Nabatieh is just another town.",
+      "contradiction": "Israeli sources calling Nabatieh's fall an 'earthquake that topples Hezbollah' is not normal military briefing language — this is existential framing. The leaked US-Iran documents show Israeli actions in Lebanon are directly straining the US-Iran talks that could reopen Hormuz. This means: the Nabatieh offensive is a direct threat to the oil-supply normalization narrative that markets are pricing. Three independent corroborations: (1) IDF tanks burning on live TV — not the 'surgical operation' narrative, (2) leaked negotiations showing Lebanon ops as a sticking point, (3) Walla explicitly stating this topples Hezbollah. Market is NOT pricing a Nabatieh-linked Hormuz derailment.",
+      "bet": "LONG oil (WTI, USO) — Nabatieh offensive increases odds of Iran-Israel proxy escalation, delaying Hormuz reopening. LONG defense (LMT, RTX, GD) — extended Middle East conflict. LONG gold (GLD) — geopolitical hedge. SHORT TLT (long-dated bonds) — extended conflict keeps inflation elevated. If Nabatieh falls in next 12-24 hours: expect Hezbollah rocket retaliation into northern Israel, potentially drawing Iran in directly. That's a $5+ WTI spike trigger.",
+      "benefit": "Defense stocks (LMT, RTX, NOC, GD) benefit from prolonged multi-front conflict. Energy majors (XOM, CVX, OXY) benefit from sustained high oil. Cybersecurity (PANW, CRWD) benefits from increased Iran-linked cyber activity. Gazzetta di Kyiv: frame as 'Three Wars, No Off-Ramp' — Iran, Lebanon, Ukraine connected under a distracted US administration."
     },
     {
       "rank": 3,
-      "id": "armenia-eu-pivot-russia-loss-20260607",
-      "title": "🇦🇲🇷🇺 Armenia-Russia Divergence Accelerates — Pashinyan Opens Door to EU Exit from EAEU, Elections Underway",
-      "freshness": "3-25 minutes ago (07:44-08:06 UTC)",
-      "source_channels": ["@markettwits"],
-      "source_posts": ["markettwits/373164", "markettwits/373168", "markettwits/373169"],
-      "event": "Three related developments: (1) Armenian PM Pashinyan says a referendum on leaving EAEU (Russia-led economic bloc) for EU membership will happen once an EU application or membership status exists. (2) Armenia parliamentary elections are taking place today. (3) Armenian FM Ararat Mirzoyan states relations with Russia need 'recovery.' Russia Security Council says: 'Armenia is repeating the path Ukraine followed in 2013-2014.'",
-      "consensus_narrative": "Armenia is frustrated with Russia's failure to protect it from Azerbaijan (Nagorno-Karabakh 2023). Pashinyan is drifting toward the West, but Armenia remains deeply dependent on Russia economically (remittances, energy, trade). The EAEU departure is years away, if it happens at all. Markets don't care about Armenia.",
-      "contradiction": "Russia's Security Council explicitly comparing Armenia to UKRAINE 2013-2014 is a RED ALERT statement. Russia considers losing Armenia as geopolitically equivalent to losing Ukraine — a civilization-level threat to their post-Soviet sphere. If Russia reacts to Armenia's pivot the way it reacted to Ukraine's Euromaidan, we are watching the early stages of Russia's second frozen conflict brewing in the Caucasus. The contradiction: Armenia is SMALLER than Ukraine, but strategically MORE important to Russia — it hosts Russia's only military base in the South Caucasus (Gyumri), borders Iran and Turkey, and controls transit routes. If Armenia fully pivots to the EU, Russia loses its southern strategic depth. The 2013-2014 Ukraine comparison is not hyperbole — it's a warning. BUT: Armenia has no oil, no gas, no industry of global significance. The market impact runs through: (1) Turkey relations (Erdogan may see this as opportunity to absorb more influence), (2) Iran border security (Russia's loss = Iran's gain in Caucasus), (3) Russia-focused risk premiums. The potential for a Russia-Armenia crisis is higher than markets price, but the timeline is months, not hours.",
-      "bet": {
-        "direction": "No immediate 1-2h trade. Medium-term: SHORT Russian equities/bonds if Armenia pivot triggers Russian overreaction. LONG Turkish equities ($TUR) if Turkey capitalizes on Russian weakness in Caucasus.",
-        "assets": ["$RSX (Russia ETF — short on any escalation)", "$TUR (Turkey ETF — potential beneficiary)", "Russian sovereign bonds (short on geopolitical risk premium increase)"],
-        "trigger": "Russian military buildup near Armenian border (Gyumri base reinforcement) = escalation signal. Election results showing pro-EU mandate = accelerates timeline. Russian disinformation campaign against Pashinyan (modeled on 2014 Ukraine) = confirmation of pattern.",
-        "horizon": "1-3 months for market impact to materialize. Immediate: narrative value only.",
-        "confidence": "LOW for 1-2h trade. MEDIUM for medium-term thesis — the parallel to Ukraine 2013-2014 is explicitly drawn by RUSSIA ITSELF, which is extraordinary."
-      },
-      "benefit": {
-        "Gazzetta di Kyiv": "FRONT-PAGE GOLD: 'Russia's Second Ukraine — Armenia Repeats the Path to Independence.' Connect directly: 'While Putin warns army to work' in Ukraine, Russia's southern flank is crumbling. Armenia is walking out of the Russian orbit. The post-Soviet empire is unravelling faster than the Kremlin can control. Interview: Armenian diaspora perspective. Data: Russian peacekeeping in Nagorno-Karabakh failed. Armenia watched Ukraine survive Russian invasion and decided they could too.'",
-        "Bet&Benefit": "Not actionable for 1-2h trading. Add to watchlist for medium-term positioning. If Armenia election produces a clear pro-EU majority, prepare to short RSX. The Russia Security Council statement is the key data point — they are signaling that Russia will NOT accept losing Armenia quietly. That's a future crisis being telegraphed today."
-      },
-      "materiality_score": 4.5
+      "title": "HTX (Justin Sun) Delists Trump's WLFI and USD1 — Forced Conversion of User Funds Signals Potential Asian Exchange Crisis",
+      "event": "Justin Sun's HTX exchange abruptly halted trading of Trump's WLFI token and USD1 stablecoin, and forcibly converted all user USD1 balances to USDT without consent (markettwits, 08:54 UTC). World Liberty Financial (Trump's DeFi project) had previously deposited $8M into HTX in September 2025. This is a de facto delisting of Trump-branded crypto assets from one of the largest Asian exchanges. Crypto market already under pressure — BTC at ~$61K, MSTR unrealized loss at -$11.5B.",
+      "consensus_narrative": "HTX is complying with regulatory pressure or internal risk management. WLFI was a low-liquidity meme token, USD1 was a minor stablecoin. Market views this as a non-event for BTC/ETH — just a rug-pull on Trump-adjacent garbage tokens.",
+      "contradiction": "Forcibly converting user funds (USD1 -> USDT) without consent is an EXTRAORDINARY action. Exchanges do not do this unless under extreme duress — regulatory seizure, insolvency, or a hammer from Asian authorities. The timing during a crypto crash suggests either coordinated action or HTX-specific distress. If HTX is collapsing or under regulatory attack, contagion risk flows into Tron (TRX) — Justin Sun's $10B+ ecosystem. A TRX crash would be systemic for Asian crypto markets. Furthermore, Trump said 'TRUMP will never let crypto down' — his own token being delisted directly contradicts this. The forced conversion is the kind of event that triggers broader centralized exchange trust crisis.",
+      "bet": "SHORT TRX (Tron) — contagion from HTX delisting. If HTX is under regulatory/insolvency pressure, TRX is the next domino. LONG USDT — as flight to safety in stablecoin land. SHORT BTC (outright or via puts) — the delisting adds to already negative sentiment (Santiment shows local pessimism extremes). Go SHORT centralized exchange tokens (BNB, OKB) on the 'exchange trust crisis' thesis. All crypto trades 24/7 — this is immediately actionable.",
+      "benefit": "USDC (Circle) benefits from USD1 failure as competing stablecoin. Decentralized exchanges (UNI, SUSHI) benefit from trust flight from CEXs. Privacy coins see 'not your keys, not your coins' narrative boost — though ZEC just had its own network crisis. Hardware wallet narratives benefit from self-custody panic."
     }
   ],
-  "carryover_narratives_from_prior_cycle": [
-    {
-      "story": "🇨🇺 Cuba Arming Civilians for Possible US Invasion",
-      "status": "NO UPDATE in last 30 min. Previous cycle (07:12 UTC) report from marketwits via Versión Final. No corroboration or denial yet.",
-      "still_actionable": "YES — still the highest-potential asymmetric story. Requires US official response for confirmation. Monday US government reaction will determine if this is a real crisis or Cuban disinformation. Hold positions as described in prior cycle, but do NOT add until confirmation."
+  "meta": {
+    "channels_scraped": ["trad_fin", "MonitoringSituation", "ASupersharij", "infinityhedge", "ethanlevins", "markettwits"],
+    "total_messages_analyzed": 114,
+    "scan_time_utc": "2026-06-07T10:21:30Z",
+    "channel_health": {
+      "@trad_fin": "STALE — last post June 5 22:54 UTC. No weekend coverage.",
+      "@MonitoringSituation": "MODERATE — last post June 7 06:39 UTC (opinion only). Last substantive post was China-Taiwan on June 6.",
+      "@ASupersharij": "ACTIVE — last post June 7 08:01 UTC. Ukraine war focus, Russian-language. Chongar bridge strike is notable.",
+      "@infinityhedge": "DEAD — last post June 3. No recent activity.",
+      "@ethanlevins": "HOT — continuous posting through 10:18 UTC. Best real-time source for Middle East escalation. Nabatieh coverage is comprehensive and time-sensitive.",
+      "@markettwits": "HOT — continuous posting through 10:21 UTC. Excellent breadth: OPEC+, crypto, macro, earnings. Most valuable channel this cycle for market-relevant intel."
     },
-    {
-      "story": "✴️ Crypto Sentiment at February Extreme — Contrarian Bounce Signal",
-      "status": "NO UPDATE in last 30 min. The new Cryptorank post (07:58) is backward-looking top AI tokens, not a fresh sentiment reading. Santiment data from previous cycle (07:19 UTC) is the relevant signal.",
-      "still_actionable": "YES — crypto trades 24/7. The sentiment extreme signal from 40+ min ago is still fresh. BTC long with tight stop at $55K remains the ONLY trade executable RIGHT NOW while equity markets are closed."
-    },
-    {
-      "story": "🇺🇦 Ukraine Strikes Chongar Bridge — Crimea Logistics Cut",
-      "status": "NO UPDATE in last 30 min. ASupersharij's new post (08:01) is about internal Ukrainian politics, not military operations.",
-      "still_actionable": "YES for Gazzetta narrative. No new military data."
-    },
-    {
-      "story": "🇮🇷 US-Iran: Radar Strikes, Missile Fire, Talks Collapse",
-      "status": "NO UPDATE in last 30 min. Neither trad_fin, ethanlevins, nor MonitoringSituation added new Iran content this cycle.",
-      "still_actionable": "YES — still the dominant macro risk. CME Sunday evening oil pricing will incorporate the latest. OPEC+ output increase (this cycle) partially offsets Iran risk premium."
-    },
-    {
-      "story": "🇨🇳🇹🇼 China-Taiwan Maritime Enforcement Operation",
-      "status": "NO UPDATE in last 30 min. MonitoringSituation had zero new posts this cycle.",
-      "still_actionable": "YES — still the #1 Monday gap risk for semis/TSM. Any vessel boarding incident before Monday Asia open would be catastrophic for Taiwan equities."
+    "observations": [
+      "OPEC+ meeting TODAY (June 7) — 188k bpd hike expected; decision imminent within hours",
+      "149 S&P 500 companies complained about oil prices on earnings calls — 5-year high per FactSet",
+      "Israel advancing on Nabatieh — IDF sources call its fall 'earthquake that topples Hezbollah'",
+      "IDF tanks burning on live TV in Yohmor — 2 Merkava destroyed by Hezbollah overnight",
+      "Leaked US-Iran negotiation docs: Israeli Lebanon ops violating ceasefire, straining Hormuz deal",
+      "HTX (Justin Sun) delists WLFI and USD1, forcibly converts USD1 to USDT — extraordinary exchange action",
+      "Battle for Kozacha Lopan began — Russian Army entered northern outskirts (ethanlevins, 10:18 UTC)",
+      "Ukraine struck Chongar bridge on Crimea border (ASupersharij, 07:37 UTC)",
+      "~250 Ukrainian drones attacking Russia overnight (ASupersharij, June 6 20:17 UTC)",
+      "US real 2Y yields at Trump 2nd term highs — Fed speakers hinting at more inflation risk",
+      "AAPL WWDC26 tomorrow June 8 — historically bearish for AAPL on event day",
+      "Grayscale filed for spot Canton ETF (CC ETF) — institutional crypto expansion",
+      "Russian budget deficit expected to grow — Siluanov (markettwits, 10:17 UTC)",
+      "BTC global bottom formation signal — 10M+ coins going into loss territory (markettwits, 10:21 UTC)",
+      "Armenia elections underway — Russia warns Ukraine 2014-style path"
+    ],
+    "risk_flags": [
+      "OPEC+ decision could surprise — larger hike crashes oil, smaller hike sends oil higher. Decision imminent.",
+      "Nabatieh offensive directly threatens Hormuz reopening by sabotaging US-Iran talks",
+      "HTX forced conversion of USD1 signals potential exchange crisis in Asian crypto markets — trading NOW",
+      "Crypto at local pessimism extremes — Santiment data, MSTR at -$11.5B unrealized loss",
+      "Saturday trading: crypto and futures only venues until Monday open",
+      "Israel-Lebanon escalation is ACCELERATING, not stabilizing — overnight tank losses on live TV prove it"
+    ],
+    "channel_notes": {
+      "ethanlevins_active": true,
+      "markettwits_active": true,
+      "infinityhedge_dead": "No posts since June 3. Consider removing from watchlist.",
+      "trad_fin_weekend_stale": "Consistent pattern — no weekend coverage."
     }
-  ],
-  "meta_observation": "Sunday 08:09 UTC — Second cycle of the day. The dominant NEW finding is OPEC+ increasing output by 188K bpd from July. This caps the oil upside and slightly dampens the Iran risk premium that has been building. For the 1-2 hour horizon: crypto sentiment extreme (previous cycle) remains the only immediately executable trade (BTC longs, tight stop at $55K). The Cuba arms story (previous cycle) has NO fresh data — await US government confirmation. For Gazzetta di Kyiv, the top content angles this cycle are: (1) OPEC+ output hike + Russia budget bleeding (oil/gas revenues -29.8%) = 'Putin's war budget squeezed from both sides', (2) Armenia = Russia's Second Ukraine narrative (Russia SB explicitly compared Armenia to Ukraine 2013-2014), (3) IDF tanks burning on live TV (Lebanon) — dramatic visual but no new policy signal. The Cuba story from previous cycle, if confirmed, would be the most consequential — but we need official US reaction to deploy. For Bet&Benefit Monday open positioning: reduce oil long size (OPEC+ cap), maintain defense longs (LMT, GD), maintain TSM puts (Taiwan), move airline shorts from AAL/UAL to rest of sector on IATA bankruptcy warning (previous cycle). The multi-front escalation pattern (Ukraine-Crimea, Cuba, Iran-Hormuz, Israel-Lebanon, China-Taiwan, now Armenia-Russia) is the most distributed pressure on US strategic resources observed in years."
+  }
 }

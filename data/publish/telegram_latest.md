@@ -1,10 +1,8 @@
-China announced maritime enforcement east of Taiwan — first time Beijing named a time, place, and legal basis for control in those waters.
+Iran struck Kuwait with 7 ballistic missiles — a major OPEC producer and US ally hit directly. Hormuz fully blockaded (~20M bbl/day). Iran denies nuclear talks exist. Diplomatic theater is performance; kinetic activity is the only real signal.
 
-Consensus says posturing. This is a blockade rehearsal with operational transparency. Markets price zero confrontation risk.
+• Long crude (USO/XLE) — Sunday futures gap +$5-8/bbl
+• Long gold, VIX — weekend escalation hedge
 
-• Short TSM/SMH — if any vessel boarded, Monday Asia open gaps -3-5%
-• Long GLD, VIX — semicon supply chain hedge
+¹ Iran struck Kuwait with 7 ballistic missiles — a major OPEC producer and US ally — ceasefire hopes contradicted by direct escalation (source: @ethanlevins, @MonitoringSituation)
 
-¹ China announced specific enforcement operation east of Taiwan, June 6 — unprecedented operational transparency (source: @MonitoringSituation, @markettwits)
-
-Continuity: gazzetta-di-kyiv.github.io | Next trigger: Monday Asia open / Japan-Philippines response
+Continuity: pureciclismo.github.io/gazzetta-di-kyiv/ | Next trigger: Sunday CME open / Israel-Lebanon escalation

@@ -296,7 +296,6 @@ async function fetchFlows() {
   CAPITAL_FLOWS_DATA = data.flows;
   GLOSSARY = data.glossary || {};
   renderCapitalFlows();
-  renderFlowInsight(data);  // v22.31: sector aggregation + lead insight
   renderGlossaryTooltips();
   updateHeroConfidence(data.aggregate_confidence, data.aggregate_confidence_label, data.aggregate_direction);
   updateMastheadFlows(data);
@@ -378,43 +377,6 @@ function aggregateFlows(flows) {
   return result;
 }
 
-// v22.31: Render lead insight + sector summary from flows.json
-function renderFlowInsight(flowsData) {
-  // Lead insight
-  const li = flowsData.lead_insight;
-  const liEl = byId('flowLeadInsight');
-  if (liEl && li) {
-    liEl.style.display = 'block';
-    const isContrarian = li.type === 'contrarian';
-    liEl.style.background = isContrarian
-      ? 'linear-gradient(135deg,rgba(220,38,38,0.06),rgba(255,255,255,1))'
-      : 'linear-gradient(135deg,rgba(5,150,105,0.06),rgba(255,255,255,1))';
-    liEl.style.borderLeft = '3px solid ' + (isContrarian ? 'var(--red)' : 'var(--green)');
-    liEl.querySelector('.flow-lead-headline').textContent = li.headline;
-    liEl.querySelector('.flow-lead-detail').textContent = li.detail || '';
-    const label = liEl.querySelector('span');
-    if (label) label.textContent = isContrarian ? '⚠ Divergence Signal' : '⚡ Velocity Signal';
-    if (label) label.style.color = isContrarian ? 'var(--red)' : 'var(--green)';
-  } else if (liEl) {
-    liEl.style.display = 'none';
-  }
-
-  // Sector summary grid
-  const ss = flowsData.sector_summary;
-  const ssEl = byId('flowSectorGrid');
-  if (ssEl && ss) {
-    ssEl.innerHTML = Object.entries(ss).map(([sector, data]) => {
-      const arrow = data.direction === 'inflow' ? '↑' : '⇅';
-      const color = data.direction === 'inflow' ? 'var(--green)' : 'var(--ink-muted)';
-      return `<div class="sector-stat-box">
-        <div class="sector-stat-label">${sector}</div>
-        <div class="sector-stat-value" style="color:${color};">$${data.total_b.toFixed(1)}B ${arrow}</div>
-        <div class="sector-stat-sub">${data.count} flows · ${data.avg_pace}x pace · ${data.avg_confidence}% conf</div>
-      </div>`;
-    }).join('');
-  }
-}
-
 function renderCapitalFlows() {
   const el = byId('flowsList');
   if (!el) return;
@@ -433,35 +395,17 @@ function renderCapitalFlows() {
     const paceDisplay = f.pace_multiplier >= 1.5 ? `↑ ${f.pace_multiplier}×` : f.pace_multiplier <= 0.7 ? `↓ ${f.pace_multiplier}×` : `= ${f.pace_multiplier}×`;
     const catalystBadge = f.catalyst_count > 1 ? `<span class="catalyst-badge">${f.catalyst_count} ` + i18n.t('catalysts','catalysts') + `</span>` : '';
 
-    // v22.32: Trade signal emoji + heat score in collapsed view
+    // v22.16: Retail-flattened — direction + sector + play only. % and pace in detail.
     const playPill = anchorAsset
       ? `<span class="flow-bet-pill-mini">${anchorAsset.symbol} ${anchorAsset.bias} · ${anchorAsset.conviction}</span>`
       : '';
-    const tradeEmoji = f.trade_emoji || '';
-    const tradeSignal = f.trade_signal || '';
-    // Fix ⑥: Divergence — separate flow direction from trade direction
-    const flowIsOutflow = f.direction === 'outflow';
-    const tradeIsBuy = tradeSignal === 'BUY';
-    const divergenceWarn = (flowIsOutflow && tradeIsBuy) ? ' ⚠ contrarian' : (!flowIsOutflow && tradeSignal === 'SELL') ? ' ⚠ contrarian' : '';
-    
-    const heatScore = f.heat_score || 50;
-    const heatClass = heatScore >= 80 ? 'heat-extreme' : heatScore >= 60 ? 'heat-high' : heatScore >= 40 ? 'heat-moderate' : 'heat-low';
-    
-    // Fix ③: PDR mini badge in collapsed view
-    const pdr = f.pdr || 1.0;
-    const pdrClass = pdr >= 1.5 ? 'passive' : pdr <= 0.7 ? 'active' : 'mixed';
-    const pdrLabel = pdr >= 1.5 ? 'PASSIVE' : pdr <= 0.7 ? 'ACTIVE' : 'MIXED';
-    
     return `
     <div class="flow-row ${f.direction}" data-flow-story-id="${f.story_ids ? f.story_ids[0] : f.story_id}">
       <div class="flow-row-main">
-        <span class="flow-trade-signal" title="${tradeSignal}${divergenceWarn}" aria-label="${tradeSignal}">${tradeEmoji}</span>
         <span class="flow-amount">$${f.amount_b.toFixed(1)}B</span>
         <span class="flow-dir ${f.direction}">${dirArrow} ${dirLabel}</span>
         <span class="flow-asset">${f.asset_class || 'equities'}</span>
         ${playPill}
-        <span class="flow-pdr-mini ${pdrClass}" title="PDR ${pdr.toFixed(1)}x — ${pdrLabel} flow dominance">PDR ${pdr.toFixed(1)}x</span>
-        <span class="flow-heat ${heatClass}" title="Flow heat: ${heatScore}/100 (${heatScore>=80?'extreme':heatScore>=60?'high':heatScore>=40?'moderate':'low'})">${heatScore}</span>
         ${catalystBadge}
         <span class="flow-expand-hint">&#9660;</span>
       </div>
@@ -473,7 +417,7 @@ function renderCapitalFlows() {
         <div class="flow-detail-section">
           <span class="flow-detail-label">CONVICTION</span>
           <span class="flow-confidence-badge">${confPct}% ${f.confidence_level || ''}</span>
-          ${f.confidence_trace ? '<span class="flow-confidence-trace" title="Model components: ' + f.confidence_trace.replace(/>/g, '→') + '">' + f.confidence_trace.split(' > ').length + ' signals</span>' : ''}
+          ${f.confidence_trace ? '<span class="flow-confidence-trace">' + f.confidence_trace.split(' > ').join(' + ') + '</span>' : ''}
         </div>
         <div class="flow-detail-section">
           <span class="flow-detail-label">LINKED STORY</span>
@@ -481,15 +425,11 @@ function renderCapitalFlows() {
         </div>
         <div class="flow-detail-section">
           <span class="flow-detail-label">DATA SOURCE</span>
-          <span class="flow-source-badge">${sourceLabel(f.source || 'telegram_intel')}</span>
+          <span class="flow-source-badge" style="font-family:var(--sans);font-size:10px;color:var(--ink-muted);">${sourceLabel(f.source || 'telegram_intel')}</span>
         </div>
         <div class="flow-detail-section">
           <span class="flow-detail-label">POSITIONING</span>
           <span class="flow-positioning-detail">${f.positioning ? positionLabel(f.positioning) : 'No data'} &middot; ${paceDisplay} pace</span>
-        </div>
-        <div class="flow-detail-section">
-          <span class="flow-detail-label">PDR · FLOW TYPE</span>
-          <span class="flow-pdr-badge">PDR ${pdr.toFixed(1)}x · ${(f.flow_type||'mixed').replace('_',' ')} ${pdr >= 1.5 ? '· Index-driven (not active buying)' : pdr <= 0.7 ? '· Active conviction (follow)' : '· Mixed signal'}</span>
         </div>
       </div>
     </div>`;
@@ -1848,12 +1788,7 @@ async function populateTeasers() {
         if (subEl) {
           const inflows = flowsData.flows.filter(f => f.direction === 'inflow').length;
           const outflows = flowsData.flows.filter(f => f.direction === 'outflow').length;
-          const aggDir = flowsData.aggregate_direction || "neutral";
-          const aggPct = flowsData.aggregate_confidence || 0;
-          const badgeLabel = aggDir === "bullish" ? "BULLISH" : aggDir === "bearish" ? "BEARISH" : "NEUTRAL";
-          const badgeColor = aggDir === "bullish" ? "#059669" : aggDir === "bearish" ? "#DC2626" : "var(--ink-muted)";
-          const badgeClass = aggDir === "bullish" ? "bullish" : aggDir === "bearish" ? "bearish" : "neutral";
-          subEl.innerHTML = `${inflows} in · ${outflows} out · <span class="flow-aggregate-badge ${badgeClass}">${badgeLabel} ${aggPct}%</span>`;
+          subEl.textContent = `${inflows} inflows · ${outflows} outflows · ${flowsData.aggregate_confidence}%`;
         }
       }
     }

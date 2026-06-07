@@ -1,0 +1,585 @@
+{
+  "generated_at": "2026-06-07T10:38:53.934619+00:00",
+  "source": "CFTC COT (2026)",
+  "base_url_fin": "https://www.cftc.gov/files/dea/history/fut_fin_txt_2026.zip",
+  "base_url_dis": "https://www.cftc.gov/files/dea/history/fut_disagg_txt_2026.zip",
+  "markets": {
+    "S&P_500": {
+      "market": "S&P 500 Consolidated - CHICAGO MERCANTILE EXCHANGE",
+      "report_date": "2026-06-02",
+      "as_of": "260602",
+      "open_interest": 2183680,
+      "categories": {
+        "Dealer": {
+          "long": 162738,
+          "short": 774056,
+          "net": -611318,
+          "net_pct_oi": -27.99,
+          "net_change_1w": 59098
+        },
+        "Asset_Mgr": {
+          "long": 1202632,
+          "short": 217711,
+          "net": 984921,
+          "net_pct_oi": 45.1,
+          "net_change_1w": -21581
+        },
+        "Lev_Money": {
+          "long": 160224,
+          "short": 663733,
+          "net": -503509,
+          "net_pct_oi": -23.06,
+          "net_change_1w": -44094
+        },
+        "Other_Rept": {
+          "long": 76569,
+          "short": 49093,
+          "net": 27476,
+          "net_pct_oi": 1.26,
+          "net_change_1w": 7438
+        },
+        "NonRept": {
+          "long": 283012,
+          "short": 180583,
+          "net": 102429,
+          "net_pct_oi": 4.69,
+          "net_change_1w": -862
+        }
+      },
+      "smart_money_net": 481412,
+      "smart_money_change_1w": -65675
+    },
+    "VIX": {
+      "market": "VIX FUTURES - CBOE FUTURES EXCHANGE",
+      "report_date": "2026-06-02",
+      "as_of": "260602",
+      "open_interest": 410614,
+      "categories": {
+        "Dealer": {
+          "long": 93958,
+          "short": 44621,
+          "net": 49337,
+          "net_pct_oi": 12.02,
+          "net_change_1w": -2313
+        },
+        "Asset_Mgr": {
+          "long": 64339,
+          "short": 76855,
+          "net": -12516,
+          "net_pct_oi": -3.05,
+          "net_change_1w": -12883
+        },
+        "Lev_Money": {
+          "long": 80763,
+          "short": 113796,
+          "net": -33033,
+          "net_pct_oi": -8.04,
+          "net_change_1w": 16303
+        },
+        "Other_Rept": {
+          "long": 1344,
+          "short": 2411,
+          "net": -1067,
+          "net_pct_oi": -0.26,
+          "net_change_1w": -1132
+        },
+        "NonRept": {
+          "long": 25505,
+          "short": 28226,
+          "net": -2721,
+          "net_pct_oi": -0.66,
+          "net_change_1w": 25
+        }
+      },
+      "smart_money_net": -45549,
+      "smart_money_change_1w": 3420
+    },
+    "UST_10Y": {
+      "market": "UST 10Y NOTE - CHICAGO BOARD OF TRADE",
+      "report_date": "2026-06-02",
+      "as_of": "260602",
+      "open_interest": 5323279,
+      "categories": {
+        "Dealer": {
+          "long": 179080,
+          "short": 621236,
+          "net": -442156,
+          "net_pct_oi": -8.31,
+          "net_change_1w": 16810
+        },
+        "Asset_Mgr": {
+          "long": 3273499,
+          "short": 919207,
+          "net": 2354292,
+          "net_pct_oi": 44.23,
+          "net_change_1w": 283949
+        },
+        "Lev_Money": {
+          "long": 398043,
+          "short": 2361137,
+          "net": -1963094,
+          "net_pct_oi": -36.88,
+          "net_change_1w": 42886
+        },
+        "Other_Rept": {
+          "long": 251295,
+          "short": 208170,
+          "net": 43125,
+          "net_pct_oi": 0.81,
+          "net_change_1w": -59709
+        },
+        "NonRept": {
+          "long": 383763,
+          "short": 375930,
+          "net": 7833,
+          "net_pct_oi": 0.15,
+          "net_change_1w": -283936
+        }
+      },
+      "smart_money_net": 391198,
+      "smart_money_change_1w": 326835
+    },
+    "UST_2Y": {
+      "market": "UST 2Y NOTE - CHICAGO BOARD OF TRADE",
+      "report_date": "2026-06-02",
+      "as_of": "260602",
+      "open_interest": 4331344,
+      "categories": {
+        "Dealer": {
+          "long": 140799,
+          "short": 470418,
+          "net": -329619,
+          "net_pct_oi": -7.61,
+          "net_change_1w": 49798
+        },
+        "Asset_Mgr": {
+          "long": 2640094,
+          "short": 681324,
+          "net": 1958770,
+          "net_pct_oi": 45.22,
+          "net_change_1w": -32535
+        },
+        "Lev_Money": {
+          "long": 362038,
+          "short": 2175049,
+          "net": -1813011,
+          "net_pct_oi": -41.86,
+          "net_change_1w": -40454
+        },
+        "Other_Rept": {
+          "long": 315775,
+          "short": 166345,
+          "net": 149430,
+          "net_pct_oi": 3.45,
+          "net_change_1w": 43334
+        },
+        "NonRept": {
+          "long": 210826,
+          "short": 176396,
+          "net": 34430,
+          "net_pct_oi": 0.79,
+          "net_change_1w": -20143
+        }
+      },
+      "smart_money_net": 145759,
+      "smart_money_change_1w": -72989
+    },
+    "UST_5Y": {
+      "market": "UST 5Y NOTE - CHICAGO BOARD OF TRADE",
+      "report_date": "2026-06-02",
+      "as_of": "260602",
+      "open_interest": 6302329,
+      "categories": {
+        "Dealer": {
+          "long": 96044,
+          "short": 782320,
+          "net": -686276,
+          "net_pct_oi": -10.89,
+          "net_change_1w": 10180
+        },
+        "Asset_Mgr": {
+          "long": 4030145,
+          "short": 1132241,
+          "net": 2897904,
+          "net_pct_oi": 45.98,
+          "net_change_1w": 190077
+        },
+        "Lev_Money": {
+          "long": 442026,
+          "short": 2699621,
+          "net": -2257595,
+          "net_pct_oi": -35.82,
+          "net_change_1w": -186242
+        },
+        "Other_Rept": {
+          "long": 215100,
+          "short": 187077,
+          "net": 28023,
+          "net_pct_oi": 0.44,
+          "net_change_1w": 32323
+        },
+        "NonRept": {
+          "long": 419540,
+          "short": 401596,
+          "net": 17944,
+          "net_pct_oi": 0.28,
+          "net_change_1w": -46338
+        }
+      },
+      "smart_money_net": 640309,
+      "smart_money_change_1w": 3835
+    },
+    "UST_BOND": {
+      "market": "UST BOND - CHICAGO BOARD OF TRADE",
+      "report_date": "2026-06-02",
+      "as_of": "260602",
+      "open_interest": 1875352,
+      "categories": {
+        "Dealer": {
+          "long": 19371,
+          "short": 289756,
+          "net": -270385,
+          "net_pct_oi": -14.42,
+          "net_change_1w": -49172
+        },
+        "Asset_Mgr": {
+          "long": 1102161,
+          "short": 620510,
+          "net": 481651,
+          "net_pct_oi": 25.68,
+          "net_change_1w": 11052
+        },
+        "Lev_Money": {
+          "long": 160099,
+          "short": 440161,
+          "net": -280062,
+          "net_pct_oi": -14.93,
+          "net_change_1w": 40684
+        },
+        "Other_Rept": {
+          "long": 93636,
+          "short": 112321,
+          "net": -18685,
+          "net_pct_oi": -1.0,
+          "net_change_1w": -6693
+        },
+        "NonRept": {
+          "long": 232813,
+          "short": 145332,
+          "net": 87481,
+          "net_pct_oi": 4.66,
+          "net_change_1w": 4129
+        }
+      },
+      "smart_money_net": 201589,
+      "smart_money_change_1w": 51736
+    },
+    "ULTRA_BOND": {
+      "market": "ULTRA UST BOND - CHICAGO BOARD OF TRADE",
+      "report_date": "2026-06-02",
+      "as_of": "260602",
+      "open_interest": 2354254,
+      "categories": {
+        "Dealer": {
+          "long": 23929,
+          "short": 197023,
+          "net": -173094,
+          "net_pct_oi": -7.35,
+          "net_change_1w": 18916
+        },
+        "Asset_Mgr": {
+          "long": 1604194,
+          "short": 522324,
+          "net": 1081870,
+          "net_pct_oi": 45.95,
+          "net_change_1w": 15612
+        },
+        "Lev_Money": {
+          "long": 77882,
+          "short": 987279,
+          "net": -909397,
+          "net_pct_oi": -38.63,
+          "net_change_1w": -38384
+        },
+        "Other_Rept": {
+          "long": 46062,
+          "short": 37147,
+          "net": 8915,
+          "net_pct_oi": 0.38,
+          "net_change_1w": 38
+        },
+        "NonRept": {
+          "long": 180337,
+          "short": 188631,
+          "net": -8294,
+          "net_pct_oi": -0.35,
+          "net_change_1w": 3818
+        }
+      },
+      "smart_money_net": 172473,
+      "smart_money_change_1w": -22772
+    },
+    "FED_FUNDS": {
+      "market": "FED FUNDS - CHICAGO BOARD OF TRADE",
+      "report_date": "2026-06-02",
+      "as_of": "260602",
+      "open_interest": 1701171,
+      "categories": {
+        "Dealer": {
+          "long": 427411,
+          "short": 361309,
+          "net": 66102,
+          "net_pct_oi": 3.89,
+          "net_change_1w": 76553
+        },
+        "Asset_Mgr": {
+          "long": 8022,
+          "short": 86132,
+          "net": -78110,
+          "net_pct_oi": -4.59,
+          "net_change_1w": -15008
+        },
+        "Lev_Money": {
+          "long": 268612,
+          "short": 289951,
+          "net": -21339,
+          "net_pct_oi": -1.25,
+          "net_change_1w": -63818
+        },
+        "Other_Rept": {
+          "long": 22831,
+          "short": 0,
+          "net": 22831,
+          "net_pct_oi": 1.34,
+          "net_change_1w": 500
+        },
+        "NonRept": {
+          "long": 34706,
+          "short": 24190,
+          "net": 10516,
+          "net_pct_oi": 0.62,
+          "net_change_1w": 1773
+        }
+      },
+      "smart_money_net": -99449,
+      "smart_money_change_1w": -78826
+    },
+    "GOLD": {
+      "market": "GOLD - COMMODITY EXCHANGE INC.",
+      "report_date": "2026-06-02",
+      "as_of": "260602",
+      "open_interest": 326052,
+      "categories": {
+        "Prod_Merc": {
+          "long": 10275,
+          "short": 30429,
+          "net": -20154,
+          "net_pct_oi": -6.18,
+          "net_change_1w": -644
+        },
+        "Swap": {
+          "long": 27505,
+          "short": 0,
+          "net": 27505,
+          "net_pct_oi": 8.44,
+          "net_change_1w": -1528
+        },
+        "M_Money": {
+          "long": 129367,
+          "short": 17188,
+          "net": 112179,
+          "net_pct_oi": 34.41,
+          "net_change_1w": 14733
+        },
+        "Other_Rept": {
+          "long": 76729,
+          "short": 12888,
+          "net": 63841,
+          "net_pct_oi": 19.58,
+          "net_change_1w": 7027
+        },
+        "NonRept": {
+          "long": 43656,
+          "short": 13331,
+          "net": 30325,
+          "net_pct_oi": 9.3,
+          "net_change_1w": -1181
+        }
+      },
+      "smart_money_net": 112179,
+      "smart_money_change_1w": 14733
+    },
+    "WTI_CRUDE": {
+      "market": "CRUDE OIL, LIGHT SWEET-WTI - ICE FUTURES EUROPE",
+      "report_date": "2026-06-02",
+      "as_of": "260602",
+      "open_interest": 816733,
+      "categories": {
+        "Prod_Merc": {
+          "long": 447131,
+          "short": 346539,
+          "net": 100592,
+          "net_pct_oi": 12.32,
+          "net_change_1w": -6412
+        },
+        "Swap": {
+          "long": 6950,
+          "short": 0,
+          "net": 6950,
+          "net_pct_oi": 0.85,
+          "net_change_1w": 340
+        },
+        "M_Money": {
+          "long": 6038,
+          "short": 32732,
+          "net": -26694,
+          "net_pct_oi": -3.27,
+          "net_change_1w": 4164
+        },
+        "Other_Rept": {
+          "long": 86421,
+          "short": 67578,
+          "net": 18843,
+          "net_pct_oi": 2.31,
+          "net_change_1w": 15217
+        },
+        "NonRept": {
+          "long": 15772,
+          "short": 14918,
+          "net": 854,
+          "net_pct_oi": 0.1,
+          "net_change_1w": -2416
+        }
+      },
+      "smart_money_net": -26694,
+      "smart_money_change_1w": 4164
+    },
+    "NAT_GAS": {
+      "market": "NAT GAS NYME - NEW YORK MERCANTILE EXCHANGE",
+      "report_date": "2026-06-02",
+      "as_of": "260602",
+      "open_interest": 1664003,
+      "categories": {
+        "Prod_Merc": {
+          "long": 252074,
+          "short": 274857,
+          "net": -22783,
+          "net_pct_oi": -1.37,
+          "net_change_1w": -12076
+        },
+        "Swap": {
+          "long": 221272,
+          "short": 0,
+          "net": 221272,
+          "net_pct_oi": 13.3,
+          "net_change_1w": -1063
+        },
+        "M_Money": {
+          "long": 189645,
+          "short": 304499,
+          "net": -114854,
+          "net_pct_oi": -6.9,
+          "net_change_1w": 19572
+        },
+        "Other_Rept": {
+          "long": 49663,
+          "short": 120924,
+          "net": -71261,
+          "net_pct_oi": -4.28,
+          "net_change_1w": -2506
+        },
+        "NonRept": {
+          "long": 54471,
+          "short": 42269,
+          "net": 12202,
+          "net_pct_oi": 0.73,
+          "net_change_1w": -801
+        }
+      },
+      "smart_money_net": -114854,
+      "smart_money_change_1w": 19572
+    }
+  },
+  "summary": {
+    "count": 11
+  },
+  "signals": [
+    {
+      "market": "S&P_500",
+      "trader_type": "Lev_Money",
+      "signal": "BEARISH",
+      "net_position": -503509,
+      "weekly_change": -44094
+    },
+    {
+      "market": "VIX",
+      "trader_type": "Lev_Money",
+      "signal": "BULLISH",
+      "net_position": -33033,
+      "weekly_change": 16303
+    },
+    {
+      "market": "UST_10Y",
+      "trader_type": "Lev_Money",
+      "signal": "BULLISH",
+      "net_position": -1963094,
+      "weekly_change": 42886
+    },
+    {
+      "market": "UST_2Y",
+      "trader_type": "Lev_Money",
+      "signal": "BEARISH",
+      "net_position": -1813011,
+      "weekly_change": -40454
+    },
+    {
+      "market": "UST_5Y",
+      "trader_type": "Lev_Money",
+      "signal": "BEARISH",
+      "net_position": -2257595,
+      "weekly_change": -186242
+    },
+    {
+      "market": "UST_BOND",
+      "trader_type": "Lev_Money",
+      "signal": "BULLISH",
+      "net_position": -280062,
+      "weekly_change": 40684
+    },
+    {
+      "market": "ULTRA_BOND",
+      "trader_type": "Lev_Money",
+      "signal": "BEARISH",
+      "net_position": -909397,
+      "weekly_change": -38384
+    },
+    {
+      "market": "FED_FUNDS",
+      "trader_type": "Lev_Money",
+      "signal": "BEARISH",
+      "net_position": -21339,
+      "weekly_change": -63818
+    },
+    {
+      "market": "GOLD",
+      "trader_type": "M_Money",
+      "signal": "BULLISH",
+      "net_position": 112179,
+      "weekly_change": 14733
+    },
+    {
+      "market": "WTI_CRUDE",
+      "trader_type": "M_Money",
+      "signal": "BULLISH",
+      "net_position": -26694,
+      "weekly_change": 4164
+    },
+    {
+      "market": "NAT_GAS",
+      "trader_type": "M_Money",
+      "signal": "BULLISH",
+      "net_position": -114854,
+      "weekly_change": 19572
+    }
+  ]
+}

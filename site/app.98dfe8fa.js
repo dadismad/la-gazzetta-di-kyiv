@@ -389,7 +389,7 @@ function renderFlowInsight(flowsData) {
     liEl.style.background = isContrarian
       ? 'linear-gradient(135deg,rgba(220,38,38,0.06),rgba(255,255,255,1))'
       : 'linear-gradient(135deg,rgba(5,150,105,0.06),rgba(255,255,255,1))';
-    liEl.style.borderLeft = '3px solid ' + (isContrarian ? 'var(--red)' : 'var(--green)');
+    liEl.style.borderLeftColor = isContrarian ? 'var(--red)' : 'var(--green)';
     liEl.querySelector('.flow-lead-headline').textContent = li.headline;
     liEl.querySelector('.flow-lead-detail').textContent = li.detail || '';
     const label = liEl.querySelector('span');
@@ -406,10 +406,10 @@ function renderFlowInsight(flowsData) {
     ssEl.innerHTML = Object.entries(ss).map(([sector, data]) => {
       const arrow = data.direction === 'inflow' ? '↑' : '⇅';
       const color = data.direction === 'inflow' ? 'var(--green)' : 'var(--ink-muted)';
-      return `<div class="sector-stat-box">
-        <div class="sector-stat-label">${sector}</div>
-        <div class="sector-stat-value" style="color:${color};">$${data.total_b.toFixed(1)}B ${arrow}</div>
-        <div class="sector-stat-sub">${data.count} flows · ${data.avg_pace}x pace · ${data.avg_confidence}% conf</div>
+      return `<div style="background:var(--white);border:1px solid var(--divider);padding:10px 12px;text-align:center;">
+        <div style="font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:4px;">${sector}</div>
+        <div style="font-family:var(--body);font-size:18px;font-weight:700;color:${color};">$${data.total_b.toFixed(1)}B ${arrow}</div>
+        <div style="font-family:var(--sans);font-size:9px;color:var(--ink-muted);margin-top:2px;">${data.count} flows · ${data.avg_pace}x pace · ${data.avg_confidence}% conf</div>
       </div>`;
     }).join('');
   }
@@ -1852,8 +1852,7 @@ async function populateTeasers() {
           const aggPct = flowsData.aggregate_confidence || 0;
           const badgeLabel = aggDir === "bullish" ? "BULLISH" : aggDir === "bearish" ? "BEARISH" : "NEUTRAL";
           const badgeColor = aggDir === "bullish" ? "#059669" : aggDir === "bearish" ? "#DC2626" : "var(--ink-muted)";
-          const badgeClass = aggDir === "bullish" ? "bullish" : aggDir === "bearish" ? "bearish" : "neutral";
-          subEl.innerHTML = `${inflows} in · ${outflows} out · <span class="flow-aggregate-badge ${badgeClass}">${badgeLabel} ${aggPct}%</span>`;
+          subEl.innerHTML = `${inflows} in · ${outflows} out · <span style="display:inline-block;font-family:Inter,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:1px 6px;line-height:1.2;color:#fff;background:${badgeColor};">${badgeLabel} ${aggPct}%</span>`;
         }
       }
     }

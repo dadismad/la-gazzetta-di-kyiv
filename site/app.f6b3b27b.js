@@ -288,7 +288,6 @@ function renderAnchor() {
 
 let CAPITAL_FLOWS_DATA = [];
 let GLOSSARY = {};
-let STORIES_DATA = [];
 
 async function fetchFlows() {
   const data = await getJSON(getFlowsPath(), null);
@@ -296,7 +295,6 @@ async function fetchFlows() {
   CAPITAL_FLOWS_DATA = data.flows;
   GLOSSARY = data.glossary || {};
   renderCapitalFlows();
-  renderFlowInsight(data);  // v22.31: sector aggregation + lead insight
   renderGlossaryTooltips();
   updateHeroConfidence(data.aggregate_confidence, data.aggregate_confidence_label, data.aggregate_direction);
   updateMastheadFlows(data);
@@ -342,24 +340,6 @@ function positionLabel(positioning) {
   return i18n.t(v.key, v.fallback);
 }
 
-// ── Source label mappings ──
-const SOURCE_LABELS = {
-  'epfr': 'EPFR Global (institutional fund flows)',
-  'morningstar': 'Morningstar Direct (mutual fund/ETF)',
-  'bloomberg': 'Bloomberg Terminal (market data)',
-  'fed_z1': 'Federal Reserve Z.1 (Flow of Funds)',
-  'cftc_cot': 'CFTC Commitments of Traders',
-  'ici': 'ICI Weekly Fund Flows',
-  'cboe': 'CBOE (VIX/options data)',
-  'bls': 'BLS Employment (age-cohort data)',
-  'telegram_intel': 'Open-source intelligence (Telegram)',
-  'internal': 'Internal editorial pipeline',
-};
-function sourceLabel(source) {
-  if (!source) return 'Open-source intelligence';
-  return SOURCE_LABELS[source] || source.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-}
-
 // ── Aggregate duplicate flows (same headline+direction+amount) ──
 function aggregateFlows(flows) {
   const seen = new Map();
@@ -376,43 +356,6 @@ function aggregateFlows(flows) {
     }
   });
   return result;
-}
-
-// v22.31: Render lead insight + sector summary from flows.json
-function renderFlowInsight(flowsData) {
-  // Lead insight
-  const li = flowsData.lead_insight;
-  const liEl = byId('flowLeadInsight');
-  if (liEl && li) {
-    liEl.style.display = 'block';
-    const isContrarian = li.type === 'contrarian';
-    liEl.style.background = isContrarian
-      ? 'linear-gradient(135deg,rgba(220,38,38,0.06),rgba(255,255,255,1))'
-      : 'linear-gradient(135deg,rgba(5,150,105,0.06),rgba(255,255,255,1))';
-    liEl.style.borderLeft = '3px solid ' + (isContrarian ? 'var(--red)' : 'var(--green)');
-    liEl.querySelector('.flow-lead-headline').textContent = li.headline;
-    liEl.querySelector('.flow-lead-detail').textContent = li.detail || '';
-    const label = liEl.querySelector('span');
-    if (label) label.textContent = isContrarian ? '⚠ Divergence Signal' : '⚡ Velocity Signal';
-    if (label) label.style.color = isContrarian ? 'var(--red)' : 'var(--green)';
-  } else if (liEl) {
-    liEl.style.display = 'none';
-  }
-
-  // Sector summary grid
-  const ss = flowsData.sector_summary;
-  const ssEl = byId('flowSectorGrid');
-  if (ssEl && ss) {
-    ssEl.innerHTML = Object.entries(ss).map(([sector, data]) => {
-      const arrow = data.direction === 'inflow' ? '↑' : '⇅';
-      const color = data.direction === 'inflow' ? 'var(--green)' : 'var(--ink-muted)';
-      return `<div class="sector-stat-box">
-        <div class="sector-stat-label">${sector}</div>
-        <div class="sector-stat-value" style="color:${color};">$${data.total_b.toFixed(1)}B ${arrow}</div>
-        <div class="sector-stat-sub">${data.count} flows · ${data.avg_pace}x pace · ${data.avg_confidence}% conf</div>
-      </div>`;
-    }).join('');
-  }
 }
 
 function renderCapitalFlows() {
@@ -433,35 +376,17 @@ function renderCapitalFlows() {
     const paceDisplay = f.pace_multiplier >= 1.5 ? `↑ ${f.pace_multiplier}×` : f.pace_multiplier <= 0.7 ? `↓ ${f.pace_multiplier}×` : `= ${f.pace_multiplier}×`;
     const catalystBadge = f.catalyst_count > 1 ? `<span class="catalyst-badge">${f.catalyst_count} ` + i18n.t('catalysts','catalysts') + `</span>` : '';
 
-    // v22.32: Trade signal emoji + heat score in collapsed view
+    // v22.16: Retail-flattened — direction + sector + play only. % and pace in detail.
     const playPill = anchorAsset
       ? `<span class="flow-bet-pill-mini">${anchorAsset.symbol} ${anchorAsset.bias} · ${anchorAsset.conviction}</span>`
       : '';
-    const tradeEmoji = f.trade_emoji || '';
-    const tradeSignal = f.trade_signal || '';
-    // Fix ⑥: Divergence — separate flow direction from trade direction
-    const flowIsOutflow = f.direction === 'outflow';
-    const tradeIsBuy = tradeSignal === 'BUY';
-    const divergenceWarn = (flowIsOutflow && tradeIsBuy) ? ' ⚠ contrarian' : (!flowIsOutflow && tradeSignal === 'SELL') ? ' ⚠ contrarian' : '';
-    
-    const heatScore = f.heat_score || 50;
-    const heatClass = heatScore >= 80 ? 'heat-extreme' : heatScore >= 60 ? 'heat-high' : heatScore >= 40 ? 'heat-moderate' : 'heat-low';
-    
-    // Fix ③: PDR mini badge in collapsed view
-    const pdr = f.pdr || 1.0;
-    const pdrClass = pdr >= 1.5 ? 'passive' : pdr <= 0.7 ? 'active' : 'mixed';
-    const pdrLabel = pdr >= 1.5 ? 'PASSIVE' : pdr <= 0.7 ? 'ACTIVE' : 'MIXED';
-    
     return `
     <div class="flow-row ${f.direction}" data-flow-story-id="${f.story_ids ? f.story_ids[0] : f.story_id}">
       <div class="flow-row-main">
-        <span class="flow-trade-signal" title="${tradeSignal}${divergenceWarn}" aria-label="${tradeSignal}">${tradeEmoji}</span>
         <span class="flow-amount">$${f.amount_b.toFixed(1)}B</span>
         <span class="flow-dir ${f.direction}">${dirArrow} ${dirLabel}</span>
         <span class="flow-asset">${f.asset_class || 'equities'}</span>
         ${playPill}
-        <span class="flow-pdr-mini ${pdrClass}" title="PDR ${pdr.toFixed(1)}x — ${pdrLabel} flow dominance">PDR ${pdr.toFixed(1)}x</span>
-        <span class="flow-heat ${heatClass}" title="Flow heat: ${heatScore}/100 (${heatScore>=80?'extreme':heatScore>=60?'high':heatScore>=40?'moderate':'low'})">${heatScore}</span>
         ${catalystBadge}
         <span class="flow-expand-hint">&#9660;</span>
       </div>
@@ -473,23 +398,15 @@ function renderCapitalFlows() {
         <div class="flow-detail-section">
           <span class="flow-detail-label">CONVICTION</span>
           <span class="flow-confidence-badge">${confPct}% ${f.confidence_level || ''}</span>
-          ${f.confidence_trace ? '<span class="flow-confidence-trace" title="Model components: ' + f.confidence_trace.replace(/>/g, '→') + '">' + f.confidence_trace.split(' > ').length + ' signals</span>' : ''}
+          ${f.confidence_trace ? '<span class="flow-confidence-trace">' + f.confidence_trace.split(' > ').join(' + ') + '</span>' : ''}
         </div>
         <div class="flow-detail-section">
           <span class="flow-detail-label">LINKED STORY</span>
           <a href="./story.html?id=${f.story_ids ? f.story_ids[0] : f.story_id || ''}" class="flow-story-link">&rarr; View intelligence report</a>
         </div>
         <div class="flow-detail-section">
-          <span class="flow-detail-label">DATA SOURCE</span>
-          <span class="flow-source-badge">${sourceLabel(f.source || 'telegram_intel')}</span>
-        </div>
-        <div class="flow-detail-section">
           <span class="flow-detail-label">POSITIONING</span>
           <span class="flow-positioning-detail">${f.positioning ? positionLabel(f.positioning) : 'No data'} &middot; ${paceDisplay} pace</span>
-        </div>
-        <div class="flow-detail-section">
-          <span class="flow-detail-label">PDR · FLOW TYPE</span>
-          <span class="flow-pdr-badge">PDR ${pdr.toFixed(1)}x · ${(f.flow_type||'mixed').replace('_',' ')} ${pdr >= 1.5 ? '· Index-driven (not active buying)' : pdr <= 0.7 ? '· Active conviction (follow)' : '· Mixed signal'}</span>
         </div>
       </div>
     </div>`;
@@ -698,42 +615,29 @@ function computeTriangulation(story, flow, anchorAsset) {
 }
 
 function renderTriangulation() {
-  const el = byId('triangulationList') || byId('signalGrid');
+  const el = byId('triangulationList');
   if (!el) return;
 
-  // Collect stories — prefer DOM cards, fall back to STORIES_DATA global
+  // Collect stories from the DOM
   const cards = document.querySelectorAll('.card[data-story-id]');
   const items = [];
-
-  if (cards.length > 0) {
-    // DOM-based collection (index page / stories page)
-    cards.forEach(card => {
-      const sid = card.dataset.storyId;
-      const headline = card.querySelector('h3')?.textContent || '';
-      const flowItem = CAPITAL_FLOWS_DATA.find(f => f.story_id === sid);
-      const story = {
-        story_id: sid,
-        headline: headline,
-        confidence: 'medium',
-        they_say: card.querySelector('.con-they')?.textContent || '',
-        reality: card.querySelector('.con-real')?.textContent || '',
-        extremum: card.querySelector('.card-extremum')?.textContent || '',
-      };
-      const anchorAsset = matchAnchor(headline);
-      const tri = computeTriangulation(story, flowItem, anchorAsset);
-      items.push({ ...tri, headline, storyId: sid });
-    });
-  } else if (STORIES_DATA.length > 0) {
-    // STORIES_DATA fallback (signal page, product pages without DOM cards)
-    STORIES_DATA.forEach(story => {
-      const sid = story.story_id;
-      const headline = story.headline || '';
-      const flowItem = CAPITAL_FLOWS_DATA.find(f => f.story_id === sid);
-      const anchorAsset = matchAnchor(headline);
-      const tri = computeTriangulation(story, flowItem, anchorAsset);
-      items.push({ ...tri, headline, storyId: sid });
-    });
-  }
+  cards.forEach(card => {
+    const sid = card.dataset.storyId;
+    const headline = card.querySelector('h3')?.textContent || '';
+    const flowItem = CAPITAL_FLOWS_DATA.find(f => f.story_id === sid);
+    // Build a minimal story object from card data
+    const story = {
+      story_id: sid,
+      headline: headline,
+      confidence: 'high', // default
+      they_say: card.querySelector('.con-they')?.textContent || '',
+      reality: card.querySelector('.con-real')?.textContent || '',
+      extremum: card.querySelector('.card-extremum')?.textContent || '',
+    };
+    const anchorAsset = matchAnchor(headline);
+    const tri = computeTriangulation(story, flowItem, anchorAsset);
+    items.push({ ...tri, headline, storyId: sid });
+  });
 
   if (items.length === 0) {
     el.innerHTML = '<div style="padding:12px;color:var(--ink-muted);font-style:italic;font-size:12px">' + i18n.t('stories_loading','Stories loading — triangulation will appear when cards are rendered.') + '</div>';
@@ -879,24 +783,14 @@ function livingCardHTML(story, isLead) {
   }
   const cfClaim = cf ? `<div class="cf-claim">${cf.claim} — projected ${cf.projected} change at ${cf.confidence} confidence</div>` : '';
 
-  // Capital flow connector chip — flow amount + trade position (v22.29)
+  // Capital flow hint chip (tiny magnitude indicator for collapsed view)
   let cfHint = '';
   if (cf && cf.amount_b) {
   const hintDir = (cf.direction === 'outflow') ? '↓' : '↑';
   const hintAmt = cf.amount_b >= 1 ? `$${cf.amount_b.toFixed(1)}B` : `$${(cf.amount_b * 1000).toFixed(0)}M`;
   const hintColor = cf.direction === 'outflow' ? 'var(--red)' : 'var(--green)';
   const sectorHint = cf.asset_class ? ` ${cf.asset_class}` : '';
-  // Find linked trade position from ANCHOR_ASSETS
-  let tradeHint = '';
-  const anchorSym = cf.anchor_symbol || matchAnchor(story.headline || '');
-  if (anchorSym) {
-    const anchorAsset = ANCHOR_ASSETS.find(a => a.symbol === anchorSym);
-    if (anchorAsset) {
-      const tradeColor = anchorAsset.bias === 'BUY' || anchorAsset.bias === 'LONG' ? 'var(--green)' : anchorAsset.bias === 'SELL' || anchorAsset.bias === 'SHORT' ? 'var(--red)' : 'var(--ink-muted)';
-      tradeHint = `<span style="color:${tradeColor};margin-left:4px;">→ ${anchorAsset.symbol} ${anchorAsset.bias} ${anchorAsset.conviction}</span>`;
-    }
-  }
-  cfHint = `<span class="cf-hint" style="color:${hintColor}" title="Capital flowing ${cf.direction === 'outflow' ? 'out of' : 'into'} ${cf.asset_class || 'this sector'}">${hintAmt} ${hintDir}${sectorHint}${tradeHint}</span>`;
+  cfHint = `<span class="cf-hint" style="color:${hintColor}" title="Capital flowing ${cf.direction === 'outflow' ? 'out of' : 'into'} ${cf.asset_class || 'this sector'}">${hintAmt} ${hintDir}${sectorHint}</span>`;
   }
 
   // Sector border-left class
@@ -1694,7 +1588,6 @@ async function boot() {
     const leadId = livingData.lead?.story_id;
     const stories = (livingData.stories || []).filter(s => s.story_id !== leadId);
     const all = [livingData.lead, ...stories, ...(livingData.archived_stories || [])].filter(Boolean);
-    STORIES_DATA = all;  // v22.30: global store
 
     const el = byId('newsCol');
     if (el) {
@@ -1735,7 +1628,6 @@ async function boot() {
   const leadId = data.lead.story_id;
   const filteredStories = (data.stories || []).filter(s => s.story_id !== leadId);
   const all = [data.lead, ...filteredStories].filter(Boolean);
-  STORIES_DATA = all;  // v22.30: global store for cross-page triangulation
 
   const el2 = byId('newsCol');
   if (el2) {
@@ -1848,12 +1740,7 @@ async function populateTeasers() {
         if (subEl) {
           const inflows = flowsData.flows.filter(f => f.direction === 'inflow').length;
           const outflows = flowsData.flows.filter(f => f.direction === 'outflow').length;
-          const aggDir = flowsData.aggregate_direction || "neutral";
-          const aggPct = flowsData.aggregate_confidence || 0;
-          const badgeLabel = aggDir === "bullish" ? "BULLISH" : aggDir === "bearish" ? "BEARISH" : "NEUTRAL";
-          const badgeColor = aggDir === "bullish" ? "#059669" : aggDir === "bearish" ? "#DC2626" : "var(--ink-muted)";
-          const badgeClass = aggDir === "bullish" ? "bullish" : aggDir === "bearish" ? "bearish" : "neutral";
-          subEl.innerHTML = `${inflows} in · ${outflows} out · <span class="flow-aggregate-badge ${badgeClass}">${badgeLabel} ${aggPct}%</span>`;
+          subEl.textContent = `${inflows} inflows · ${outflows} outflows · ${flowsData.aggregate_confidence}%`;
         }
       }
     }
