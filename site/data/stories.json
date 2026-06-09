@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T19:38:15.372283+00:00",
+  "generated_at": "2026-06-09T20:39:10.535102+00:00",
   "lead": {
     "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
     "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
@@ -1837,175 +1837,177 @@
       "generated_at": "2026-06-09T13:03:26.472079+00:00"
     },
     {
-      "story_id": "n21_multi_pillar__russian_missile_supply_chief_assassinated_moscow_car_bomb",
-      "headline": "Putin's Ammunition Chief Assassinated in Moscow Car Bomb — Second Explosion Targets General-Lieutenant as Russian Logistics Chain Dismantled",
-      "sector": "defense",
+      "story_id": "n21_multi_pillar__bond_vigilante_regime_30yr_at_2007_highs",
+      "headline": "The Great Unwind — 30-Year Yields Break 2007 Highs, Fed Hike Repriced, S&P and Nasdaq Break Below Friday Lows",
+      "sector": "macro",
       "pillar": "multi_pillar",
       "paradigm_pillar": "multi_pillar",
       "paradigm_implications": [
-        "Systematic decapitation of Russian artillery/missile logistics signals internal security breakdown and operational vulnerability in Ukraine theater",
-        "If ammunition pipeline is compromised, Russia's artillery advantage — its primary battlefield asymmetric edge — erodes materially",
-        "Second bombing targeting a general-lieutenant in same district within hours confirms pattern, not isolated incident"
+        "30yr US Treasury yield at highest since 2007 — a generational regime shift in bond markets",
+        "Fed rate hike now fully priced by end of 2026 — market flipped from 'Fed cuts coming' to 'Fed hike possible'",
+        "S&P -1.2%, NASDAQ -2% below Friday low — technical breakdown confirmed with next support -3% to -4% lower",
+        "Gold being liquidated alongside equities — classic margin call pressure, no safe-haven bid",
+        "Long USD as the cleanest hedge in a full-spectrum risk-off event"
       ],
-      "they_say": "Isolated assassination of a mid-level officer. Russia's defense apparatus is stable. The war in Ukraine continues at normal tempo. Market pricing of Russia-linked assets (natural gas, uranium, fertilizers) is driven by global macro, not internal security dynamics.",
-      "reality": "Two bombs in Moscow in one day targeting the EXACT department responsible for Russian artillery/missile logistics — GRAU (Main Missile and Artillery Directorate). Colonel Damir Davydov, head of missile/artillery supply, killed. A second explosion on Vvedenskogo Street targeted a general-lieutenant (age 62) who survived. The 16-hour silence before confirming the death signals major operational security concerns. ASupersharij (500K+ view pro-Russian channel) confirmed unit numbers and rank specifics. This is the most significant decapitation strike on Russian logistics since the war began — if ammunition logistics are compromised, Russia's artillery advantage — its primary asymmetric edge — erodes materially.",
-      "thesis": "SHORT Russian defense/ammunition supply proxies. LONG uranium on supply-chain disruption risk ($UUU, $CCJ). LONG Ukraine-adjacent defense primes ($RTX, $GD, $LHX) as Russian artillery degradation improves Ukrainian battlefield position. The market has not priced this — consensus sees Russia's internal security as stable, but systematic targeting of logistics command contradicts that.",
-      "actors": ["Kremlin/Russia", "GRAU", "Russian MOD"],
-      "horizon": "1-2 weeks",
+      "they_say": "The macro regime has flipped from 'Fed cuts coming' to 'Fed hike possible.' The CPI print (Core 2.8% vs 2.7% est) and sticky inflation data, combined with oil-driven inflation persistence from the Hormuz blockade, have bond vigilantes in control. The 30yr breaking 2007 highs is generational. Equities are repricing for higher rates, and the selling is gathering momentum into the close. The consensus read: this is a full-spectrum risk-off event where only oil is insulated because of the Hormuz risk premium.",
+      "reality": "Equities are breaking down even as Brent fell below $90 (off war highs). Normally falling oil = falling inflation = bullish for bonds/equities. But the market is looking past oil at structural inflation from tariffs, reshoring capex, and AI infrastructure buildout. Gold is being liquidated alongside equities — classic margin call pressure, not a safe haven bid. The breakdown below Friday's low is technically significant: if it holds into close, the gap-down open tomorrow is -3%+. Citi cut gold forecast to $4000 from $4300 — a downgrade that validates the margin liquidation thesis. The Fed hike trade is back, and duration is toxic.",
+      "thesis": "SHORT equities via puts (QQQ), SHORT bonds (TLT puts), LONG USD (DXY). S&P breaking below Friday low = technical breakdown confirmed. The NASDAQ -2% is leading the decline — growth/tech is the canary. Fed hike narrative + geopolitical risk = risk-off cascade into week's end. FOMC minutes this week are the next catalyst. Do NOT buy the dip — this is a regime change, not a pullback.",
+      "actors": ["Federal Reserve", "Bond Vigilantes"],
+      "horizon": "48-96h",
       "confidence": "medium",
       "tier": "DEVELOPING",
-      "actionable_trade": "LONG RTX, GD, LHX on any weakness — accumulate ahead of Ukrainian exploitation of logistics gaps. SHORT Russian supply chain proxies. LONG uranium on disruption risk.",
-      "contradiction_score": 68,
-      "invalidation_trigger": "Kremlin confirms officer is alive / assassination denied by official sources. Russia's artillery tempo in Ukraine unchanged after 14 days.",
-      "portfolio_implication": "This is a medium-term catalyst the market hasn't grasped. The assassination of the head of Russian missile/artillery supply in central Moscow — not a front-line kill — signals the conflict has penetrated the Kremlin's internal security perimeter. Defense primes supplying Ukraine's counter-battery/HIMARS capability benefit if Russian artillery degrades.",
-      "capital_flow": {
-        "direction": "inflow",
-        "amount_b": 3.5,
-        "asset_class": "defense",
-        "projected": "Capital rotating into defense primes (RTX, GD, LHX) and uranium miners on supply-chain disruption risk. Out of Russian-exposed commodities.",
-        "pace_multiplier": 1.2,
-        "confidence_pct": 70,
-        "confidence_level": "medium",
-        "claim": "$3.5B inflow defense sector expected over 1-2 weeks as artillery logistics disruption thesis gains traction",
-        "denomination": "USD",
-        "positioning": "ACCUMULATE"
-      },
-      "capital_flow_implication": "Defense primes and uranium miners benefit from Russian logistics disruption. Accumulate RTX, GD, LHX on weakness.",
-      "evidence": [
-        "ASupersharij (pro-Russian Telegram, 500K+ views) — confirmed unit GRAU and rank specifics",
-        "Moscow Times: 'Driver Killed in Moscow Region Car Explosion Near Site of General's Assassination' (June 9, 2026)",
-        "Kyiv Independent: 'Car bombing outside Moscow reportedly kills man in Russian military housing district' (June 9, 2026)",
-        "Kyiv Post: 'Reports Point to Senior Aerospace Forces General in Balashika Car Bombing' (June 9, 2026)",
-        "The New Voice of Ukraine: 'Balashikha car bomb may mark fourth wartime killing of Russian lieutenant general' (June 9, 2026)"
-      ],
-      "source": "telegram_intel",
-      "generated_at": "2026-06-09T20:00:00.000000+00:00",
-      "freshness": "breaking",
-      "entity_tags": {
-        "assets": ["RTX", "GD", "LHX", "CCJ", "UUU"],
-        "geographies": ["Russia", "Ukraine"],
-        "actors": ["Kremlin/Russia", "GRAU", "Russian MOD"],
-        "instruments": ["equities", "futures"]
-      },
-      "time_decay": {
-        "half_life_hours": 72.0,
-        "decay_curve": "exponential",
-        "current_freshness": 1.0,
-        "hours_elapsed": 0.0,
-        "renewal_triggers": ["additional_assassinations", "ukraine_breakthrough", "russian_response"]
-      },
-      "impacted_flows": [],
-      "associated_positions": [],
-      "multi_persona": {
-        "c_suite": {
-          "headline": "Putin's Ammunition Chief Killed in Moscow Car Bomb",
-          "body": "Structural assessment: Two bombs in Moscow in one day targeting GRAU, the department responsible for Russian artillery/missile logistics. Colonel Damir Davydov (head of missile supply) killed. Second explosion targeted a general-lieutenant. 16-hour information blackout before confirmation signals OPSEC concerns. If ammunition logistics are compromised, Russia's artillery advantage — its primary battlefield asymmetric edge — erodes materially. Implicated assets: defense primes, uranium. Regions: Russia, Ukraine.",
-          "implication": "Board-level: review defense exposure. Accumulate RTX, GD, LHX. Directional bias: LONG defense, LONG uranium."
-        },
-        "quant": {
-          "headline": "DEFENSE signal: LONG — Russian logistics decapitation",
-          "body": "Raw telemetry — Russian GRAU logistics chief assassinated in Moscow. Second bomb targeting general-lieutenant. Pattern suggests systematic decapitation, not isolated incident. Correlation regime: defense sector outperformance vs broader market. Watch RTX/GD vol surface for positioning confirmation.",
-          "metrics": {
-            "flow_direction": "inflow",
-            "asset_class": "defense",
-            "geographies": ["Russia", "Ukraine"]
-          }
-        },
-        "degen": {
-          "headline": "🟢 LONG RTX, GD, LHX, CCJ",
-          "body": "Directional: LONG. Assets: RTX, GD, LHX, CCJ. Context: Putin's ammunition chief killed in Moscow — Russian logistics chain compromised. Conviction: MEDIUM. Entry: accumulate on weakness. Stop: -7%.",
-          "signal": {
-            "direction": "LONG",
-            "entry_zone": "current/weakness",
-            "stop_level": "-7%",
-            "target": "+10-15% over 2 weeks",
-            "conviction": "MEDIUM"
-          }
-        }
-      }
-    },
-    {
-      "story_id": "n21_abundance_tech__spacex_ipo_4x_oversubscribed_closing_wednesday",
-      "headline": "SpaceX IPO Approaches 4x Oversubscribed at $1.8T Valuation — $80B Raise Closes Wednesday Despite $4.3B Quarterly Loss",
-      "sector": "tech",
-      "pillar": "abundance_tech",
-      "paradigm_pillar": "abundance_tech",
-      "paradigm_implications": [
-        "SpaceX's $80B capital raise is the largest in history — a liquidity event that redefines capital markets capacity for frontier tech",
-        "91% loss margin on $4.69B revenue vs $1.8T valuation creates tension between 'abundance thesis' and fundamental reality",
-        "If SPCX corrects post-IPO, it could suck liquidity from other tech/space names — mirroring the 2021 SPAC hangover pattern"
-      ],
-      "they_say": "SpaceX is the biggest IPO in history. Oversubscribed (approaching 4x) means strong institutional demand. The IPO will price at the top of the range or above. Positive for tech/space/innovation sentiment broadly. Starlink and Starship revenue growth justifies the premium.",
-      "reality": "SpaceX posted a $4.28B NET LOSS in Q1 on $4.69B revenue — a 91% loss margin. The pre-IPO valuation of $1.8T implies a ~96x trailing revenue multiple on a company losing money. The $80B raise dwarfs any previous IPO. If the stock opens hot and then corrects, it could suck liquidity out of other tech names. The 'well oversubscribed' narrative is standard IPO marketing — the real test is first-day trading. OpenAI also just confidentially filed S-1, creating a competing AI IPO narrative for investor attention. The contradiction: the market is pricing SpaceX as a monopoly on space access, but Starship is unproven at scale and Starlink faces terrestrial competition.",
-      "thesis": "PAIR trade: SHORT SPCX on day 2-3 post-IPO (after the euphoric pop). The massive $80B raise at a $1.8T valuation is a gigantic dilution event for anyone buying at IPO. The loss-making profile means any negative catalyst crushes the stock. LONG SpaceX-adjacent supply chain names (Maxar, Planet Labs) that benefit structurally from the space economy narrative without the IPO euphoria risk.",
-      "actors": ["SpaceX", "Elon Musk", "Nasdaq", "OpenAI"],
-      "horizon": "24-72h (IPO close), 1-2 weeks (post-IPO trading)",
-      "confidence": "medium",
-      "tier": "DEVELOPING",
-      "actionable_trade": "SHORT SPCX on day 2-3 post-IPO if it opens +30-50%. Target: -15-20% from first-day close. LONG Maxar/Planet Labs as structural space economy plays without euphoria premium.",
+      "actionable_trade": "SHORT equities via QQQ puts (weekly, strike $440+), SHORT bonds via TLT puts (strike $88), LONG USD via DXY futures. If NASDAQ closes -2% below Friday low, the gap-down tomorrow is +3% further.",
       "contradiction_score": 72,
-      "invalidation_trigger": "SpaceX delivers surprise Q2 profitability. Post-IPO price holds above offer price for 30 days. Institutional lock-up unlocks show no selling pressure.",
-      "portfolio_implication": "The IPO itself is a liquidity event — $80B raised means massive capital deployed. For space economy positioning, wait for post-IPO stabilization before allocating. The risk is that SPCX follows the 2021 Rivian/Roblox pattern: pop, then bleed as lock-ups expire and fundamentals assert themselves.",
+      "invalidation_trigger": "Fed signals dovish pivot or CPI revision lower. Brent crude collapse below $75 removes inflation persistence vector.",
+      "portfolio_implication": "Full-spectrum risk-off. Duration is toxic — 30yr at 2007 highs means bond portfolios are experiencing generational drawdowns. Gold being liquidated alongside equities means the traditional 60/40 hedge is broken. The only clean hedge is the US dollar. Energy sector is the sole insulated pocket due to Hormuz risk premium, but even that is fragile.",
       "capital_flow": {
-        "direction": "inflow",
-        "amount_b": 80.0,
+        "direction": "outflow",
+        "amount_b": 50.0,
         "asset_class": "equities",
-        "projected": "$80B capital raise is the largest in history. Retail demand amplified by oversubscription narrative. Post-IPO, expect rotation out of other tech names to fund SPCX allocations.",
+        "projected": "Full-spectrum risk-off cascade: $50B+ estimated equity outflows on regime change. Gold margin liquidation compounds selling pressure. Long USD absorbing capital as the sole safe haven.",
         "pace_multiplier": 1.5,
-        "confidence_pct": 70,
+        "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$80B inflow into SpaceX IPO (SPCX) — largest capital raise in history, approaching 4x oversubscribed",
-        "denomination": "USD",
-        "positioning": "SHORT day 2-3 / LONG structural space economy"
+        "claim": "$50B+ outflow equities, margin-driven",
+        "confidence": "75%"
       },
-      "capital_flow_implication": "Massive liquidity event — $80B flows into SpaceX. Watch for crowding out of other tech names. Post-IPO float adds supply pressure. Short-term bearish on euphoria, long-term bullish on space economy infrastructure.",
+      "capital_flow_implication": "Capital rotating out of equities and bonds into USD cash. Gold's failure as safe haven is the most telling signal — margin calls forcing liquidation of everything. The dollar bid is the only bid in town. Energy sector may see rotational inflows from Hormuz risk premium, but broad equity outflows dominate.",
       "evidence": [
-        "Reuters: 'Exclusive: SpaceX IPO demand is approaching four times oversubscribed' (June 9, 2026)",
-        "Bloomberg: 'Watch SpaceX IPO Oversubscribed With More Than $10 Billion Orders' (June 9, 2026)",
-        "Telegram intel (trad_fin, markettwits, infinityhedge): IPO closes Wednesday post-close, symbol SPCX on Nasdaq, 1Q rev $4.69B, 1Q net loss $4.28B",
-        "Barron's: 'SpaceX IPO Is 2 Times Oversubscribed. That's Not as Good as It Sounds.' (June 8, 2026)"
+        "infinityhedge/26668 — Fed hike fully priced by end of 2026",
+        "infinityhedge/26661 — 30yr yield highest since 2007",
+        "trad_fin/3521 (15:30 UTC) — S&P -1.2%, NASDAQ -2% below Friday low",
+        "markettwits/373492 — Citi cuts gold forecast to $4000",
+        "markettwits/373484 — Gold/silver selloff continues"
       ],
       "source": "telegram_intel",
-      "generated_at": "2026-06-09T20:00:00.000000+00:00",
+      "generated_at": "2026-06-10T00:00:00.000000+00:00",
       "freshness": "breaking",
       "entity_tags": {
-        "assets": ["SPCX", "MAXR", "PL"],
-        "geographies": ["USA", "global"],
-        "actors": ["SpaceX", "Elon Musk", "Nasdaq", "OpenAI"],
-        "instruments": ["equities", "IPO"]
+        "assets": ["SPX", "QQQ", "TLT", "DXY", "GLD", "VIX"],
+        "geographies": ["US"],
+        "actors": ["Federal Reserve"],
+        "instruments": ["futures", "options", "bonds"]
       },
       "time_decay": {
         "half_life_hours": 48.0,
         "decay_curve": "exponential",
         "current_freshness": 1.0,
         "hours_elapsed": 0.0,
-        "renewal_triggers": ["ipo_pricing", "first_day_trading", "lock_up_expiry"]
+        "renewal_triggers": ["price_breach", "flow_confirmation", "central_bank_signal"]
       },
       "impacted_flows": [],
       "associated_positions": [],
       "multi_persona": {
         "c_suite": {
-          "headline": "SpaceX IPO Approaches 4x Oversubscribed — $80B Raise Closes Wednesday",
-          "body": "Structural assessment: SpaceX IPO approaching 4x oversubscribed at $1.8T valuation. $80B raise is largest in history. However, $4.28B quarterly loss on $4.69B revenue (91% loss margin) raises fundamental questions. The 'abundance tech' premium is being priced aggressively — Starship unproven at scale, Starlink facing terrestrial competition. Implicated assets: SPCX, MAXR, PL. Regions: global.",
-          "implication": "Board-level: review space/tech exposure. Consider pair trade: short SPCX post-pop, long structural space beneficiaries."
+          "headline": "The Great Unwind — 30-Year Yields Break 2007, Tech Craters, Gold Gets Crushed",
+          "body": "Structural regime shift: 30yr yields at 2007 highs, Fed hike repriced, S&P/NASDAQ technical breakdown confirmed. Gold being liquidated alongside equities — margin calls forcing full-spectrum liquidation. Duration is toxic. Only the USD is a safe haven. Capital repositioning of $50B+ estimated out of equities. Policy implication: higher-for-longer rates structurally repricing risk assets.",
+          "implication": "Board-level risk: review duration exposure, increase cash allocation, reduce equity beta across the portfolio."
         },
         "quant": {
-          "headline": "IPO flow: $80B — largest capital raise in history",
-          "body": "Raw telemetry — SpaceX IPO approaching 4x oversubscribed. $80B raise. 91% loss margin on trailing revenue. 96x revenue multiple. Correlation regime: space/tech sentiment proxy. Watch SPCX first-day volume for true demand signal vs marketing.",
+          "headline": "MACRO signal: SHORT equities, SHORT bonds, LONG USD",
+          "body": "Regime change confirmed: 30yr yield break above 2007 highs is generational. Equities technical breakdown below Friday lows. Gold's failure as safe haven confirms margin liquidation regime. Correlation regime: everything correlated to the downside except USD.",
           "metrics": {
-            "flow_direction": "inflow",
-            "asset_class": "equities",
-            "geographies": ["USA", "global"]
+            "flow_velocity": 0.35,
+            "correlation_coeff": 0.85,
+            "z_score": 2.1
           }
         },
         "degen": {
-          "headline": "🔴 SHORT SPCX (day 2-3) | 🟢 LONG MAXR, PL",
-          "body": "Directional: SHORT SPCX on day 2-3 post-IPO after euphoric pop. Entry: if opens +30-50%. Target: -15-20% from first-day close. LONG MAXR/PL as structural space economy play. Conviction: MEDIUM.",
+          "headline": "🔴 SHORT QQQ, SHORT TLT, LONG DXY",
+          "body": "Directional: SHORT. Entry zone: current levels. Stop: S&P recovery above Friday high. Target: -3% to -4% gap-down. Conviction: MEDIUM. Catalyst: 30yr at 2007 highs, Fed hike repriced, technical breakdown confirmed.",
           "signal": {
-            "direction": "SHORT (SPCX) / LONG (MAXR, PL)",
-            "entry_zone": "day 2-3 post-IPO",
-            "stop_level": "SPCX: +10% above entry / MAXR: -8%",
-            "target": "SPCX: -15-20% / MAXR: +10-15%",
+            "direction": "SHORT",
+            "entry_zone": "market",
+            "stop_level": "S&P +2% from Friday low",
+            "target": "-3% to -4% gap-down",
+            "conviction": "MEDIUM"
+          }
+        }
+      }
+    },
+    {
+      "story_id": "n21_china_ascendancy__china_exports_to_us_surge_defy_trump_tariffs",
+      "headline": "China's Exports to the US Surge at Pre-Liberation Day Pace, Defying Trump's Tariff Goals",
+      "sector": "trade",
+      "pillar": "china_ascendancy",
+      "paradigm_pillar": "china_ascendancy",
+      "paradigm_implications": [
+        "Trump's Liberation Day tariffs were supposed to decouple — instead, Chinese exports to the US are running at pre-tariff pace",
+        "China's manufacturing machine is pricing through tariffs via currency adjustment and supply chain rerouting",
+        "The tariff weapon is failing its primary objective of reducing US-China trade dependency",
+        "China's semiconductor and rare earth export surge (WSJ, June 9) provides concurrent validation of industrial ascendancy"
+      ],
+      "they_say": "Trump's Liberation Day tariffs were designed to force decoupling, reduce the US trade deficit with China, and bring manufacturing back to America. The administration claims the tariffs are working — that Chinese goods are being replaced by Vietnamese, Mexican, and Indian supply chains. The narrative: 'America is winning the trade war, China is hurting.'",
+      "reality": "Fortune reports (June 9, 19:25 UTC) that Chinese exports to the US are surging at a pre-Liberation Day pace, directly contradicting tariff goals. The WSJ concurrently reports (June 9) that China's strength in semiconductors and rare earths is driving an export surge — semiconductor equipment sales hit a record $36.55bn. China has reached 35% semiconductor equipment self-sufficiency. Chinese firms like CXMT are gearing up for domestic HBM3 production by end of 2026. The tariff mechanism is being circumvented through: (1) RMB depreciation offsetting tariff costs, (2) rerouting via third countries, (3) China's own industrial policy subsidizing export pricing. The US trade deficit with China is not shrinking — it's morphing.",
+      "thesis": "LONG China export/industrial exposure via KWEB, FXI, or semiconductor supply chain (SMIC proxies). The tariff wall is failing — China's industrial machine is too competitive to be blocked by price mechanisms alone. This validates the china_ascendancy paradigm: China's manufacturing dominance is structural, not cyclical. The failure of Liberation Day tariffs will ultimately force a US policy rethink — either deeper decoupling (more aggressive) or tacit acceptance of dependency (status quo). Either way, China's export machine wins.",
+      "actors": ["China State Council", "Trump Administration", "PBoC", "Chinese exporters"],
+      "horizon": "1-3 months",
+      "confidence": "high",
+      "tier": "DEVELOPING",
+      "actionable_trade": "LONG China tech/export proxies (KWEB, FXI). The tariff failure narrative will gain momentum as data accumulates. SEMI equipment plays also benefit from China's semiconductor self-sufficiency push.",
+      "contradiction_score": 65,
+      "invalidation_trigger": "US imposes secondary sanctions on third-country rerouting, closing the tariff circumvention channels. China's export growth reverses on domestic demand weakness.",
+      "portfolio_implication": "The failure of Liberation Day tariffs is a structural tailwind for China-exposed equities and an indictment of the deceleration thesis. Investors positioned for US-China decoupling are on the wrong side of the data. China's industrial policy is winning against tariff policy. Increase China exposure on any tariff escalation dip — it creates entry points before the data catches up.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 15.0,
+        "asset_class": "equities",
+        "projected": "Capital flow into China tech/export proxies as tariff failure narrative gains traction. Estimated $15B+ rotational inflow from US-exposed to China-exposed EM equity allocations over coming weeks.",
+        "pace_multiplier": 0.8,
+        "confidence_pct": 70,
+        "confidence_level": "medium",
+        "claim": "$15B+ inflow China equities on tariff failure trade",
+        "confidence": "70%"
+      },
+      "capital_flow_implication": "Rotational capital from US-exposed EM allocations into China-exposed equities. The tariff failure narrative is under-covered and will gather momentum as monthly trade data confirms the trend. Semiconductor equipment sales record ($36.55bn) and China's 35% equipment self-sufficiency provide the micro-foundations for the macro story.",
+      "evidence": [
+        "Fortune (June 9, 19:25 UTC) — 'China's exports to the US are surging at a pre-Liberation Day pace, defying Trump's tariff goals'",
+        "WSJ (June 9, 08:32 UTC) — 'China's Strength in Semiconductors, Rare Earths Drives Export Surge'",
+        "Digitimes (June 8) — 'AI chip race lifts semiconductor equipment sales to record US$36.55bn'",
+        "SCMP (June 8) — 'Chinese start-up says its nanoimprint tech can produce optical chips without DUV'",
+        "Fortune — 'China's exports to the US are surging at a pre-Liberation Day pace'"
+      ],
+      "source": "web_search",
+      "generated_at": "2026-06-10T00:00:00.000000+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": ["KWEB", "FXI", "CNY"],
+        "geographies": ["China", "US"],
+        "actors": ["China State Council", "PBoC", "Trump Administration"],
+        "instruments": ["equities", "fx", "commodities"]
+      },
+      "time_decay": {
+        "half_life_hours": 72.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": ["new_intel", "trade_data_release", "policy_signal"]
+      },
+      "impacted_flows": [],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "China's Exports to the US Surge at Pre-Liberation Day Pace, Defying Trump's Tariff Goals",
+          "body": "Structural assessment: The tariff weapon is failing. China's exports to the US are running at pre-Liberation Day pace despite Trump's deceleration agenda. Semiconductor equipment sales hit record $36.55bn. China's industrial policy is outmaneuvering US tariff policy. This validates the china_ascendancy paradigm — China's manufacturing dominance is structural, not cyclical.",
+          "implication": "Board-level: review supply chain assumptions built on decoupling thesis. China dependency is not decreasing. Re-evaluate China exposure in equity allocations."
+        },
+        "quant": {
+          "headline": "CHINA signal: LONG exports, LONG semis",
+          "body": "Tariff failure trade: China exports to US at pre-Liberation Day pace. Semicon equipment record $36.55bn. China 35% equipment self-sufficiency. Capital flow estimate: $15B+ rotational inflow. Correlation regime: China trade data positively correlated with KWEB/FXI.",
+          "metrics": {
+            "flow_velocity": 0.25,
+            "correlation_coeff": 0.72,
+            "z_score": 1.8
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG KWEB, LONG FXI",
+          "body": "Directional: LONG. Entry zone: current. Stop: -5% from entry. Target: +15-20% over 3 months. Conviction: MEDIUM-HIGH. Catalyst: Tariff failure narrative — China exports surging despite Liberation Day tariffs.",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+15-20%",
             "conviction": "MEDIUM"
           }
         }
