@@ -1,117 +1,148 @@
 {
-  "scrape_time": "2026-06-09T16:05:36.139241+00:00",
+  "scrape_time": "2026-06-09T16:38:18.342920+00:00",
   "model": "deepseek-v4-flash",
   "horizon": "1-2 hours",
-  "day_of_week": "Tuesday (US markets OPEN — 5h remaining in session)",
+  "day_of_week": "Tuesday (US markets OPEN — ~4.5h remaining in session, close 21:00 UTC)",
   "channels_monitored": ["@trad_fin", "@MonitoringSituation", "@ASupersharij", "@infinityhedge", "@ethanlevins", "@markettwits"],
   "channel_status": {
-    "@trad_fin": "HOT — within last 30min (latest: 2026-06-09T15:30)",
-    "@MonitoringSituation": "HOT — within last 30min (latest: 2026-06-09T16:03)",
-    "@ASupersharij": "HOT — within last 30min (latest: 2026-06-09T15:29)",
-    "@infinityhedge": "ACTIVE — within last 2h (latest: 2026-06-09T14:10)",
-    "@ethanlevins": "ACTIVE — within last 2h (latest: 2026-06-09T14:58)",
-    "@markettwits": "HOT — within last 30min (latest: 2026-06-09T16:02)"
+    "@trad_fin": "COLD — no new messages in 30min (latest: 2026-06-09T15:30)",
+    "@MonitoringSituation": "HOT — 3 messages in 30min (latest: 2026-06-09T16:13)",
+    "@ASupersharij": "WARM — 1 message in 30min (latest: 2026-06-09T16:12)",
+    "@infinityhedge": "COLD — no new messages in 30min (latest: 2026-06-09T14:10)",
+    "@ethanlevins": "COLD — no new messages in 30min (latest: 2026-06-09T14:58)",
+    "@markettwits": "HOT — 2 messages in 30min (latest: 2026-06-09T16:22)"
+  },
+  "fresh_messages_30min": {
+    "@MonitoringSituation": [
+      {"text": "SOH Update: Still closed", "date": "2026-06-09T16:08:58+00:00"},
+      {"text": "EIA NOW ASSUMES OIL SHIPMENTS THROUGH STRAIT OF HORMUZ RESUME IN Q3 2026", "date": "2026-06-09T16:13:09+00:00"},
+      {"text": "EIA DOES NOT EXPECT STRAIT OF HORMUZ TRAFFIC TO RAMP UP TO PRE-IRAN WAR LEVEL UNTIL EARLY 2027", "date": "2026-06-09T16:13:27+00:00"}
+    ],
+    "@markettwits": [
+      {"text": "⚠️🇺🇸#акции #сша - в акциях США возобновились продажи после вчерашней передышки", "date": "2026-06-09T16:08:39+00:00"},
+      {"text": "⚠️🛢#нефть #прогноз - Минэнерго США теперь ожидает снижение мирового спроса на нефть в 2026г, ранее ожидало рост.", "date": "2026-06-09T16:22:37+00:00"}
+    ],
+    "@ASupersharij": [
+      {"text": "[Zelensky death narrative disinfo prep — propaganda content, non-actionable]", "date": "2026-06-09T16:12:47+00:00"}
+    ],
+    "@trad_fin": [],
+    "@infinityhedge": [],
+    "@ethanlevins": []
   },
   "summary_stats": {
     "total_messages_scanned": 114,
-    "messages_last_30min": 12,
+    "messages_last_30min": 6,
     "messages_last_2h": 38,
     "actionable_stories_identified": 3
   },
   "stories": [
     {
-      "id": "spx-nasdaq-break-below-friday-low-20260609",
-      "title": "S&P/Nasdaq Break Below Friday's Low — LIVE Breakdown During US Trading",
-      "freshness": "35 min ago (15:30 UTC)",
-      "source_channels": ["@trad_fin"],
-      "event": "S&P 500 down 1.2%, Nasdaq down 2%. Both indices broke below Friday's closing low. This is live price action happening during the US trading session on Tuesday June 9. The break of Friday's low is technically significant — it creates a lower low formation on the daily chart. The selloff has no single identifiable headline catalyst.",
-      "consensus_narrative": "The selloff is attributed to accumulated geopolitical risk premium (Iran multi-front escalation, Israel-Lebanon ground war, Hormuz blockade persistence, Russia-Ukraine deep strikes) finally hitting a tipping point at a vulnerable technical level. The existing home sales beat (3.2% vs 1.1% est) pushed rate-cut expectations back, adding macro pressure. Consensus calls this an 'orderly pullback' but the Friday low break objectively changes the technical structure — if it holds through close, momentum shorts will accumulate.",
-      "contradiction": "No single catalyst means this could be algorithmic stop-loss cascades rather than genuine repricing. S&P was only ~2% off all-time highs before this break. SpaceX IPO is massively oversubscribed (markettwits 15:19), implying risk appetite in high-conviction tech names hasn't collapsed. Japan BOJ rate hike expectations (markettwits 14:49) may be contributing via yen carry trade unwinding. If this is purely positioning/technical, the dip could reverse just as fast — especially if a headline catalyst doesn't materialize.",
+      "id": "eia-hormuz-timeline-q3-2026-closure-20260609",
+      "title": "EIA Drops Bombshell Hormuz Timeline — Blockade Persists Through Q3 2026, Full Recovery Only in 2027",
+      "freshness": "25 min ago (16:13 UTC)",
+      "source_channels": ["@MonitoringSituation", "@markettwits"],
+      "event": "The EIA (US Energy Information Administration) released two bombshell assumptions in its Short-Term Energy Outlook: (1) it now ASSUMES Strait of Hormuz oil shipments resume in Q3 2026 — meaning the US government forecasts the blockade persists at minimum another 3-6 months; (2) even after resumption, traffic won't ramp to pre-Iran-war levels until early 2027. This is the first time the US government's energy forecasting arm has published an explicit timeline for the blockade's duration. Simultaneously, the EIA lowered its global oil demand forecast for 2026 — previously expected growth, now expects decline. Yet the EIA's WTI price forecast still rose to $88.32/bbl from $85.68. Additionally, @markettwits reports that US stocks resumed selling (16:08 UTC) after yesterday's pause.",
+      "consensus_narrative": "The EIA Hormuz timeline is the single most important data point of the session for oil markets. The US government is telling markets: this blockade is not days or weeks — it is quarters to a year+ of disrupted flows. The EIA raising its WTI forecast DESPITE simultaneously cutting its demand forecast is the strongest possible signal that supply disruption dominates the oil price equation. For equity markets, the continued selling confirms the S&P/Nasdaq Friday low break is holding — positioning-driven breakdown with no single headline catalyst. The cumulative geopolitical risk premium (Iran multi-front, Lebanon ground war, Hormuz blockade, Russia-Ukraine deep strikes, BOJ rate hike signal) is finally hitting price in a vulnerable technical structure.",
+      "contradiction": "The EIA demand downgrade is non-trivial — if global oil demand is genuinely slowing, the supply disruption premium has a ceiling. High prices are destroying demand: airlines, shipping, consumer discretionary all face margin compression. The EIA timeline assumes a negotiated resolution in Q3 2026 — but if Iran talks collapse entirely (White House claims 'progress' at 13:55 UTC while IDF simultaneously declares readiness to resume Iran operations), the timeline extends further. The EIA may also be systematically underestimating the trajectory of escalation — the IDF Iran readiness statement (14:54 UTC) came after EIA's publication cycle. If Hormuz reopens earlier on a surprise deal, oil longs get crushed by the demand-downgrade fundamentals underneath. The equity selloff accelerating without a catalyst means algos chasing momentum — a fast reversal on any positive headline is equally possible.",
       "bet": {
-        "direction": "SHORT indices on Friday low breakdown, SCALP long if S&P reclaims Friday low within 30-60 min",
-        "assets": ["$SPY puts", "$QQQ puts", "$SDS (UltraPro Short S&P 500)", "$VIX calls"],
-        "trigger": "Continued breakdown = momentum shorts build, VIX above 20 confirms panic distribution. Reclaim of Friday's low before close = false breakdown, cover all shorts. Watch for Fed speak or Iran headline as potential reversal catalyst.",
-        "horizon": "Next 1-4 hours (US session remaining through 21:00 UTC)",
-        "confidence": "MEDIUM-HIGH — technical break is real but directionless; positioning-driven moves unpredictable; 60% probability the breakdown holds through close"
+        "direction": "LONG oil via futures/ETF on structural supply disruption thesis; SHORT SPY/QQQ on momentum breakdown continuation",
+        "assets": ["$USO", "$CL (WTI Crude)", "$XLE", "$TNK", "$STNG", "$SPY puts", "$QQQ puts"],
+        "trigger": "The EIA Hormuz timeline is live and being priced NOW. Oil should bid higher into US close as the market digests a multi-quarter blockade assumption vs the previous 'weeks' expectation. For equities, the 16:08 confirmation that selling resumed after yesterday's pause confirms the Friday low break is real, not a one-day event. Key trigger: if S&P fails to reclaim Friday low before 18:00 UTC (90 min from now), momentum shorts accumulate into close for gap-down open Wednesday. If S&P reclaims Friday low, cover all shorts — the positioning-driven selloff has exhausted.",
+        "horizon": "Next 2 hours through US close (21:00 UTC); oil position has multi-week structural tail",
+        "confidence": "HIGH on oil (EIA timeline is official US government forecast — not speculation), MEDIUM-HIGH on equity shorts (positioning-driven, unpredictable duration)"
       },
       "benefit": {
-        "Gazzetta di Kyiv": "PRIMARY FRAME: 'Wall Street is finally pricing multi-front war risk. Markets can ignore one war — but not three simultaneously (Iran, Lebanon, Ukraine). The S&P breaking Friday's low confirms the geopolitical risk premium is no longer theoretical.' Secondary: 'The yen carry trade unwind (BOJ June hike signal) adds a financial channel connecting Japan's rate normalization to US equity pain — a global contagion vector markets are underweight.'",
-        "Bet&Benefit": "Short SPY/QQQ for remainder of US session. If Friday low break holds through 21:00 UTC close, the gap-down open tomorrow is the momentum follow-through trade. VIX calls as hedge — if VIX breaches 20, panic options buying accelerates. Pair with oil longs for the stagflation hedge."
+        "Gazzetta di Kyiv": "FRAME: 'The EIA just admitted what Ukraine has known for two years — supply chain disruption doesn't resolve quickly. Hormuz stays blocked through 2026. Oil stays above $85. Inflation stays sticky. The war economy is now the baseline economy.' Angle: 'The same US government that set the Hormuz blockade as Iran negotiation leverage is now forecasting its own policy tool will persist for 9+ months. This is the West admitting it has no quick off-ramp for its primary coercive economic instrument — a lesson Ukraine learned in 2022 when sanctions on Russia also had no off-ramp.' The demand downgrade narrative: 'High oil prices are destroying demand globally — airlines, shipping, consumers feel the pain. This is the transmission mechanism from Middle Eastern geopolitics to European grocery prices.'",
+        "Bet&Benefit": "Oil longs are the highest-conviction trade this session. The EIA timeline is an official US government forecast — it's not a rumor, not a leak, not a channel opinion. When your own government says 'this blockade lasts through Q3 2026,' you position long energy. Even if demand is softening, supply disruption dominates. Pair with equity shorts for the momentum carry trade — the S&P Friday low break is holding, and the absence of a buying catalyst into close means professional shorts will position overnight for a gap-down Wednesday. VIX calls are cheap portfolio insurance."
       },
       "materiality_score": 9.5
     },
     {
-      "id": "idf-resume-iran-ops-tyre-evacuation-20260609",
-      "title": "IDF Declares Readiness to Immediately Resume Iran Operations + Tyre Under Full Evacuation — Two-Front Escalation Active",
-      "freshness": "Active within last 70 min (14:36-14:58 UTC)",
-      "source_channels": ["@markettwits", "@ethanlevins", "@trad_fin"],
-      "event": "Multiple coordinated signals of escalating Israeli military posture in the last 90 minutes: (1) IDF formally announced readiness to 'immediately resume military operations against Iran' (@markettwits 14:54 UTC) — this directly reverses Netanyahu's 'holding fire for now' statement from yesterday (@trad_fin 15:18 UTC June 8). (2) Strongest Israeli airstrikes of the week hitting Tyre with full city evacuation ordered (@ethanlevins 14:58 UTC). (3) Hezbollah ATGM strike destroyed an Israeli Merkava tank near Beaufort Castle (@ethanlevins 14:36 UTC). (4) Israel cabinet authorized automatic Beirut strikes on any cross-border launch from Lebanon (@ethanlevins 11:18 UTC) — this is a formal tripwire mechanism. (5) Hezbollah fighter infiltrated to Israeli border, opened fire on IDF (@ethanlevins 13:11 UTC). (6) Trump warned Netanyahu 'you will be on your own very soon' if attacks on Iran continue (@ethanlevins 11:10 UTC). (7) US Apache crashed near Hormuz — crew rescued (@ethanlevins 10:59 UTC).",
-      "consensus_narrative": "Israel is now fighting a confirmed two-front escalation — Lebanon ground war is intensifying (Tyre evacuation = major operational escalation) while simultaneously re-declaring the Iran strike option. The IDF Iran readiness statement is a direct reversal of yesterday's de-escalation stance. This creates a coherent pattern: the 'ceasefire' was tactical, not strategic. Markets have been pricing Iran risk down after weekend de-escalation signals (Trump calling off Netanyahu, Israel 'holding fire') — this IDF statement is a reversal of that re-pricing. Oil risk premium is underpriced relative to the trajectory. The Tyre evacuation indicates a ground operation is imminent or underway.",
-      "contradiction": "White House simultaneously claims 'progress' on Iran deal (@markettwits 13:55 UTC in prior scrape) — diplomatic channel still actively open. Trump's warning to Netanyahu ('you'll be on your own') suggests the US is actively restraining Israel, which has historically succeeded (2019, 2021). The IDF readiness statement may be positioning for negotiations rather than actual strikes. Netanyahu is known for making escalatory statements that don't materialize. The cabinet's automatic-Beirut response tripwire creates a mechanism Hezbollah may deliberately avoid triggering. US Apache crash was isolated, crew rescued — not an escalation signal by itself. Axios reported yesterday that Trump wants to end the war, Netanyahu wants to resume it — the gap between US and Israeli objectives creates a ceiling on how far Israel can escalate without US support.",
+      "id": "us-equity-selloff-continues-friday-low-break-20260609",
+      "title": "US Stock Selling Resumed After Yesterday's Pause — Friday Low Break Confirmed as Momentum Cascade",
+      "freshness": "30 min ago (16:08 UTC)",
+      "source_channels": ["@markettwits", "@trad_fin"],
+      "event": "@markettwits reports at 16:08 UTC: 'US stocks resumed selling after yesterday's respite.' This confirms the S&P/Nasdaq Friday low break (reported by @trad_fin at 15:30 UTC) is not a one-day event — selling momentum continued into Tuesday's session after a pause on Monday. S&P was down 1.2%, Nasdaq down 2% at 15:30 UTC. The selloff has no single identifiable headline catalyst — it is positioning-driven and technical. The break of Friday's low creates a lower-low formation on the daily chart that technical traders and algorithmic strategies will respect.",
+      "consensus_narrative": "The selloff is the accumulation of geopolitical risk premium finally hitting a tipping point at a vulnerable technical level. The Hormuz blockade (EIA confirmed multi-quarter persistence), Iran multi-front escalation (IDF just reversed its 'holding fire' stance at 14:54 UTC), Israel-Lebanon ground war intensification (Tyre under full evacuation), Russia-Ukraine deep strikes, and BOJ rate hike expectations creating yen carry trade unwind — all converging simultaneously. Existing home sales beat (3.2% vs 1.1% est) pushed rate-cut expectations back, adding macro pressure. Without a single clean catalyst, the move is 'death by a thousand cuts' — the hardest type of trend to reverse because there's no single headline to buy against.",
+      "contradiction": "No catalyst means this COULD reverse on any positive headline. SpaceX IPO is massively oversubscribed (markettwits 15:19) — risk appetite for high-conviction tech names hasn't collapsed. BlackRock is launching a STAR ETF for the space sector — capital formation continues. The selling resumed exactly one day after a pause, which could mean institutional rebalancing rather than genuine risk-off. If it's purely positioning/technical/algorithmic, the dip could reverse just as fast — especially if a Fed speaker or headline catalyst (Iran deal progress, Israel ceasefire) emerges. The EIA demand downgrade for oil is actually disinflationary — higher rates narrative may flip.",
       "bet": {
-        "direction": "LONG oil, LONG gold, LONG defense, SHORT risk assets exposed to Middle East",
-        "assets": ["$USO", "$CL (WTI Crude)", "$XLE", "$GLD", "$LMT", "$GD", "$SPY puts", "$ISRA (Israel ETF if accessible)"],
-        "trigger": "Tyre ground operation announcement or any IDF strike on Iran = oil spike $3-5 within hours. Tripwire: any Hezbollah rocket crossing into Israel triggers automatic Beirut strike — this is a binary escalation event. Even without escalation, the reversal of the de-escalation narrative (IDF 'holding fire' → 'ready to resume') reprices oil risk premium upward into US close and overnight.",
-        "horizon": "Next 2-12 hours through US close and into Wednesday",
-        "confidence": "HIGH — multiple independently corroborated sources across 3+ channels, a clear tripwire mechanism (automatic Beirut response), and direct reversal of yesterday's de-escalation stance"
+        "direction": "SHORT indices on momentum continuation; stand ready to cover instantly if S&P reclaims Friday low",
+        "assets": ["$SPY puts (delta 0.30-0.40, 0-3 DTE)", "$QQQ puts", "$SDS (UltraPro Short S&P 500)", "$VIX calls"],
+        "trigger": "S&P failing to reclaim Friday low by 18:00 UTC (90 min from now) confirms the breakdown for the session. If held through 21:00 UTC close, expect gap-down open Wednesday — position adds overnight. Key reversal trigger: any headline about Iran deal progress or Israel ceasefire would spark short covering that could rally S&P 1-2% in minutes. Must monitor both @MonitoringSituation and @ethanlevins for reversal catalysts.",
+        "horizon": "Next 2-4 hours through US close (+ potential overnight gap positioning)",
+        "confidence": "MEDIUM — direction is clear but the no-catalyst structure means reversal risk is asymmetric. 60% probability breakdown holds through close, but the 40% reversal scenario could see violent covering."
       },
       "benefit": {
-        "Gazzetta di Kyiv": "FRAME: 'The Middle East is a three-front fire — Iran, Lebanon, Gaza — and the US is trying to fight, negotiate out of, and contain it simultaneously. Ukraine watches as America's attention budget gets consumed.' Angle: 'Israel's automatic Beirut response doctrine mirrors Russia's tripwire threats — escalation automation is destabilizing by design. The same logic that keeps Ukraine fighting keeps the Middle East burning.' The Tyre evacuation of an entire city is an underreported humanitarian angle that parallels Ukrainian cities under siege.",
-        "Bet&Benefit": "Position oil and gold longs into US close. The weekend de-escalation narrative is dead — the IDF Iran readiness statement reverses it. If Tyre evacuation means a ground operation is imminent, oil gets a fear bid into Wednesday. LMT/GD have been consolidating — multi-front escalation is their catalyst. The automatic-Beirut tripwire means any single Hezbollah rocket crossing into Israel triggers an immediate escalation — this asymmetric risk is underpriced in options markets."
+        "Gazzetta di Kyiv": "FRAME: 'Wall Street is finally pricing what Ukraine has lived for years — cumulative geopolitical risk. Markets can ignore one war. They cannot ignore three simultaneously (Iran, Lebanon, Ukraine) while a blockade strangles global oil flows and the BOJ tightens into a fragile global carry trade. The S&P breaking Friday's low confirms the geopolitical risk premium is no longer theoretical — it's real, it's priced, and it's accelerating.' The yen carry trade unwind vector: 'Japan's rate normalization is the financial contagion channel connecting Tokyo to Wall Street — and markets are underweighting this transmission mechanism.'",
+        "Bet&Benefit": "Short SPY/QQQ into close with tight stop on any headline reversal catalyst. If Friday low holds through 21:00 UTC, the gap-down open Wednesday is the momentum follow-through — position overnight. Pair with VIX calls as tail hedge — if VIX breaches 20, panic buying accelerates. The asymmetric risk is a sudden ceasefire headline — keep stops wide enough to avoid being stopped out by volatility noise, but tight enough to survive a 2% reversal. Best risk/reward: sell put credit spreads below Friday low rather than naked puts — collect premium on the breakdown scenario with defined risk."
       },
-      "materiality_score": 9.0
+      "materiality_score": 8.5
     },
     {
-      "id": "kuwait-pipeline-bypass-eia-wti-forecast-20260609",
-      "title": "Kuwait Discussing Hormuz Bypass via Saudi/UAE Pipelines + EIA Raises WTI Forecast to $88.32 — Blockade Biting Structurally",
-      "freshness": "14:48 UTC (77 min ago) + 16:03 UTC (2 min ago)",
-      "source_channels": ["@markettwits", "@MonitoringSituation", "@ethanlevins"],
-      "event": "Kuwait is in active talks with Saudi Arabia and UAE to export oil through their pipeline networks, bypassing the Strait of Hormuz (@markettwits 14:48 UTC). This is the first confirmed case of a major OPEC producer seeking structural alternative export routes due to the US blockade. Simultaneously, the EIA released its June Short-Term Energy Outlook raising the 2026 WTI price forecast to $88.32/bbl from the prior $85.68 — a $2.64/bbl increase (@MonitoringSituation 16:03 UTC). The world's shipowners have ordered a record number of new supertankers, surpassing the 2008 boom, with 10-year-old ships costing ~$115M, the most since 2008 (@MonitoringSituation 16:40 UTC June 8). South Korean shipowners with MSC backing are snapping up tankers at sky-high prices (@MonitoringSituation 16:42 UTC June 8).",
-      "consensus_narrative": "The Hormuz blockade is proving economically effective — Kuwait, a major OPEC producer (2.7M bpd exporter), is actively seeking alternative export routes through Saudi/UAE pipeline infrastructure. This is the first concrete evidence that the blockade is materially altering oil trade flows for a Gulf state. The EIA raising its WTI forecast by $2.64 confirms official US government recognition of structurally higher oil prices driven by the blockade and broader Middle East risk. Record supertanker orders indicate the shipping market is pricing in a permanently elevated risk premium for Hormuz transit. This is structurally bullish for oil prices (WTI $85-90 range) and tanker rates. The blockade is the Trump administration's primary leverage in Iran negotiations — its demonstrated effectiveness strengthens the 'no deal without blockade relief' position.",
-      "contradiction": "White House claims 'progress' on Iran deal (@markettwits 13:55 UTC) — if a deal materializes, blockade relief would remove the structural oil bid. Kuwait pipeline talks may be contingency planning (due diligence), not an imminent operational shift. Supertanker orders reflect 3+ year delivery timelines — they signal long-term expectations, not current disruption. The EIA forecast, while bullish, is backward-looking on risk assumptions and may not fully capture the IDF Iran readiness reversal from today (which came after the EIA publication cycle). The US Apache crash near Hormuz could be a pretext for either escalation (blame Iran) or de-escalation (withdraw assets from risk). The blockade is a US policy tool — Trump could lift it at any time with a phone call.",
+      "id": "idf-two-front-escalation-tyre-evacuation-20260609",
+      "title": "IDF Iran Readiness Reversal + Tyre Full Evacuation + Hezbollah ATGM Kill — Two-Front Escalation Pattern Unchanged",
+      "freshness": "Still active — latest Tyre evacuation at 14:58 UTC (100 min ago), IDF Iran readiness 14:54 UTC, no contradiction signal in 30min",
+      "source_channels": ["@ethanlevins", "@markettwits", "@trad_fin"],
+      "event": "The two-front escalation pattern established in the prior scrape remains active and UNCONTRADICTED by any new de-escalation signal in the last 30 minutes. Key active signals: (1) IDF formally declared readiness to 'immediately resume military operations against Iran' (@markettwits 14:54 UTC) — directly reverses Netanyahu's 'holding fire' statement from yesterday. (2) Strongest Israeli airstrikes of the week hitting Tyre with full city evacuation ordered (@ethanlevins 14:58 UTC) — suggests ground operation is imminent or underway. (3) Hezbollah ATGM strike destroyed Israeli Merkava tank near Beaufort Castle (@ethanlevins 14:36 UTC). (4) Israeli cabinet authorized automatic Beirut strikes on any cross-border launch from Lebanon — a formal tripwire mechanism. (5) Hezbollah fighter infiltrated to Israeli border, opened fire on IDF (@ethanlevins 13:11 UTC). (6) Trump warned Netanyahu 'you will be on your own very soon' if attacks on Iran continue (@ethanlevins 11:10 UTC). No new de-escalation messages have appeared.",
+      "consensus_narrative": "Israel is actively fighting a two-front escalation. The 'ceasefire' from yesterday (Netanyahu 'holding fire in Iran for now') was tactical, not strategic — the IDF reversed it within 24 hours. The Tyre evacuation of an entire city is a major operational escalation in the Lebanon front. The automatic-Beirut response doctrine means any single Hezbollah rocket crossing into Israel triggers an immediate escalation — this is a binary tripwire that keeps escalation risk elevated continuously. Markets that re-priced Iran risk DOWN after the weekend de-escalation signals (Trump calling off Netanyahu, Israel 'holding fire') are now in the process of re-pricing that reversal. Oil risk premium is underpriced relative to the trajectory of IDF statements and actions.",
+      "contradiction": "White House simultaneously claims 'progress' on Iran deal (@markettwits 13:55 UTC in prior scrape) — diplomatic channel still active. Trump's warning to Netanyahu ('you'll be on your own') suggests the US is actively restraining Israel. The IDF readiness statement may be positioning for negotiations rather than actual strikes. Netanyahu is known for escalatory rhetoric that doesn't materialize into action. The Axios report that Trump wants to end the war while Netanyahu wants to resume it creates a ceiling on how far Israel can escalate without US support. The EIA Hormuz timeline assumption of Q3 2026 may itself assume the blockade is a negotiation tool that gets resolved — contradicting the IDF escalation trajectory. The US Apache crash near Hormuz (crew rescued) was isolated — not an escalation signal by itself.",
       "bet": {
-        "direction": "LONG oil (structural thesis), LONG tanker equities, PAIR short airlines/consumer discretionary for demand-destruction hedge",
-        "assets": ["$USO", "$CL (WTI Crude futures)", "$XLE", "$TNK (Teekay Tankers)", "$STNG (Scorpio Tankers)", "$FRO (Frontline)", "WTI calendar spreads (backwardation)"],
-        "trigger": "Formal Kuwait-Saudi pipeline agreement announced = confirmation of structural trade flow shift = immediate oil bid. EIA $88.32 forecast alone provides a floor for WTI long positions. Best structure: long oil via calendar spreads (near-month vs 6-month) to capture the backwardation premium without taking binary deal-announcement risk.",
-        "horizon": "Multi-week structural; immediate trade is oil futures long into US close and Wednesday EIA inventory data",
-        "confidence": "MEDIUM on timing (dependent on Iran deal trajectory), HIGH on directional conviction — structural blockage of a chokepoint for a major producer's exports is fundamentally bullish regardless of timing"
+        "direction": "LONG oil, LONG gold, LONG defense on continued escalation trajectory",
+        "assets": ["$USO", "$CL (WTI Crude)", "$GLD", "$LMT", "$GD", "$XLE"],
+        "trigger": "The Tyre evacuation + IDF Iran readiness reversal are already live. No new de-escalation signal appeared in the last 30 minutes, which is itself bullish — the absence of contradiction confirms the pattern. Oil is being repriced on EIA multi-quarter Hormuz closure assumption. If a ground operation in Tyre is confirmed or IDF strikes Iran, oil spikes $3-5 instantly. The automatic-Beirut tripwire means this is an asymmetric risk market is not pricing in options markets.",
+        "horizon": "Next 2-12 hours through US close and into Wednesday; structural multi-week for oil/gold/defense",
+        "confidence": "HIGH on directional conviction — multiple independently corroborated sources across 3+ channels, a clear tripwire mechanism, and direct reversal of yesterday's de-escalation stance. No contradictory signals in the last 30 min."
       },
       "benefit": {
-        "Gazzetta di Kyiv": "FRAME: 'The Hormuz blockade is working — and it's a model for how economic pressure changes war calculus. What happens when the same logic is applied to Russian energy exports?' Connect to Ukraine: 'The same supply chain disruption hitting Gulf oil is what Ukraine has faced for two years. Blockade economics cuts both ways — but it's a preview of how the West could pressure Russia without direct military engagement.' The EIA raising its forecast is a US government acknowledgment that the war economy is structurally inflationary — a story that connects ME oil prices to European consumer pain to Ukraine aid budgets.",
-        "Bet&Benefit": "Oil futures long with multi-week horizon. The Kuwait pipeline story is a 'tell' — when a major OPEC producer starts planning alternative infrastructure around a blockade, it means the blockade is expected to persist. This is a structural oil bid the market hasn't fully priced because most participants treat Hormuz as a 'temporary policy tool' rather than a 'semi-permanent feature of the landscape.' Pair with short airlines (JETS, AAL, DAL, UAL) for the demand-destruction hedge — structurally higher oil for longer directly compresses airline margins."
+        "Gazzetta di Kyiv": "FRAME: 'The Middle East is a three-front fire — Iran, Lebanon, Gaza — and the US is trying to fight, negotiate out of, and contain it simultaneously. Ukraine watches as America's attention budget gets consumed by a region that demands three simultaneous strategies.' The Tyre evacuation of an entire city is an underreported humanitarian angle that mirrors Ukrainian cities under siege. 'Israel's automatic Beirut response doctrine mirrors Russia's tripwire threats — escalation automation is destabilizing by design. The same logic that keeps Ukraine fighting keeps the Middle East burning, and both theaters drain the same Western arsenals.'",
+        "Bet&Benefit": "Oil longs from the EIA story are reinforced by the active IDF two-front escalation. Gold ($GLD) benefits from both the geopolitical risk bid and the equity selloff driving flight-to-safety flows. Defense primes ($LMT, $GD) have been consolidating — multi-front escalation is their catalyst. The automatic-Beirut tripwire means any single event could trigger significant escalation at any time — this asymmetric risk is underpriced. Position for the US close and overnight — escalation news is historically a non-US-hours phenomenon."
       },
-      "materiality_score": 8.0
+      "materiality_score": 8.5
     }
   ],
   "stories_considered_but_dropped": [
     {
-      "story": "Moscow Car Bomb — Colonel Davydov (GRAU Supply Chief) Assassinated + Second SW Moscow Explosion",
-      "reason": "High Gazzetta di Kyiv narrative value (internal Russian security breakdown, head of missile/artillery supply assassinated) but low direct market impact in 1-2h horizon. Russian equity markets are already structurally impaired. However, this builds the 'Russia regime fragility' narrative for Gazzetta content — the fact that the GRAU supply chain chief can be assassinated in Moscow speaks to internal security collapse. Material for Gazzetta, not for Bet&Benefit positioning."
+      "story": "EIA Lowers Global Oil Demand Forecast for 2026 (@markettwits 16:22 UTC)",
+      "reason": "Incorporated as contradiction element in Story #1 (EIA Hormuz timeline). Standalone, this is a bearish oil data point that partially offsets the supply disruption thesis but does not change the net bullish EIA price forecast. The net signal is still bullish: EIA raised WTI forecast DESPITE cutting demand, meaning supply effects dominate."
     },
     {
-      "story": "Taiwan Conducts Military Drills Repelling China Attack (@markettwits 15:57)",
-      "reason": "Relevant to Taiwan-China narrative but Taiwan runs these drills regularly — no specific new escalation trigger. No Chinese response reported. Monitor for Chinese reaction, but as a standalone data point it's routine."
+      "story": "ASupersharij Zelensky Death Narrative Disinformation Prep (16:12 UTC)",
+      "reason": "Russian propaganda content. Non-actionable for 1-2h markets. High Gazzetta narrative value as a signal of Russian info-ops preparation for a potential escalation against Ukrainian leadership. Monitor for future developments but not actionable now."
     },
     {
-      "story": "Zelensky Pledges Massive Drone/Missile Escalation Against Russia (@markettwits 14:49) + Ukraine-Latvia Drone Agreement (@markettwits 15:09)",
-      "reason": "High Gazzetta narrative value but too slow-burn for 1-2h market action. The Ukraine drone story is a structural longer-term thesis on Ukrainian defense industrialization. Confirms existing trend rather than creating new catalyst. Good Gazzetta content: 'Ukraine's drone industry — from kitchen table startups to international agreements.'"
+      "story": "BOJ June Rate Hike Expectations (markettwits 14:49 UTC, from prior scrape)",
+      "reason": "Important macro factor potentially contributing to equity selloff via yen carry trade unwind, but unchanged from prior scrape. Market has been pricing this for weeks. Impact is in the tails (larger-than-expected hike), not the base case."
     },
     {
-      "story": "BOJ Expected to Raise Rates at June Meeting (@markettwits 14:49)",
-      "reason": "Important macro catalyst that may be contributing to the equity selloff via yen carry trade unwind. However, the market has been pricing this for weeks — BOJ rate expectations are already discounted. The impact is in the tails (larger-than-expected hike) rather than the base case. Monitor for BOJ decision timing."
+      "story": "SpaceX IPO Oversubscribed (markettwits 15:19 UTC)",
+      "reason": "Contradicts broad risk-off narrative — risk appetite for high-conviction names hasn't collapsed. Supports 'selloff is technical/positioning, not fundamental' thesis. IPO closes Wednesday — not actionable for 1-2h horizon."
     },
     {
-      "story": "SpaceX IPO Books 'Multiple Times Oversubscribed' (@markettwits 15:19)",
-      "reason": "Contradicts the broad risk-off narrative — risk appetite for high-conviction names hasn't fully collapsed. Interesting datapoint for the 'selloff is technical/positioning, not fundamental' thesis. But not actionable as a trade in 1-2h — IPO closes Wednesday."
+      "story": "Taiwan Military Drills (markettwits 15:57 UTC)",
+      "reason": "Routine drills — no specific new escalation trigger or Chinese response. Monitor for Chinese reaction but standalone data point is not new."
     },
     {
-      "story": "EIA Raises 2026 WTI to $88.32 from $85.68 (@MonitoringSituation 16:03)",
-      "reason": "Incorporated into story #3 (Kuwait pipeline bypass) as supporting data. Standalone, the EIA forecast revision is slow-burn confirmation of structural oil thesis, not a new catalyst on its own."
+      "story": "BP Splitting Into Two Companies (@markettwits 14:57 UTC)",
+      "reason": "Corporate restructuring story, not geopolitical. Irrelevant to Gazzetta di Kyiv / Bet&Benefit mandate."
     },
     {
-      "story": "Anthropic to Release Claude Fable Today (@infinityhedge 14:10)",
-      "reason": "AI sector news, not geopolitical. Interesting for tech narrative but irrelevant to Gazzetta di Kyiv / Bet&Benefit geopolitical positioning mandate."
+      "story": "Anthropic to Release Claude Fable Today (@infinityhedge 14:10 UTC)",
+      "reason": "AI sector news. Not geopolitical. Irrelevant to mandate."
     }
   ],
-  "meta_observation": "Tuesday June 9, 16:05 UTC. US equity markets are actively selling off during the Tuesday session — S&P -1.2%, Nasdaq -2%, breaking Friday's low. This is the highest-priority signal because it's LIVE PRICE ACTION, not news interpretation. The selloff lacks a single identifiable catalyst, which cuts both ways: (a) it could reverse on any positive headline, or (b) it means the accumulation of geopolitical risk has reached a tipping point at a vulnerable technical level. HORIZON NOTE: Markets are open for ~5 more hours (US closes 21:00 UTC), which is within our 1-2h actionable horizon for intraday positioning. Three converging narratives today: (1) S&P/Nasdaq technical breakdown with live price action — most actionable immediate trade. (2) IDF reversing 'holding fire' on Iran + Tyre under full evacuation — a coherent two-front escalation pattern that the weekend de-escalation narrative had discounted. The reversal of that discounting is happening NOW. (3) Kuwait seeking pipeline bypass of Hormuz + EIA raising WTI forecast — structural oil thesis gaining concrete evidence. The Kuwait story is the most underappreciated market signal — the first time a major OPEC producer has publicly confirmed the blockade is altering trade flows. For Bet&Benefit: the highest-conviction 1-2h trades are (a) short SPY/QQQ on the technical breakdown momentum, (b) long oil futures on IDF Iran reversal + EIA forecast dual catalyst, (c) VIX calls as a cheap hedge on further cascade. For Gazzetta di Kyiv: the Moscow colonel assassination, Ukrainian drone escalation pledge, and the broader 'US distracted by three-front Middle East war' narrative all provide strong content angles."
+  "story_hierarchy": {
+    "primary": {
+      "title": "EIA Hormuz Timeline — Blockade Structural Through Q3 2026",
+      "why": "Official US government forecast with multi-quarter implications for oil prices, inflation, and macro. The single most important data point of the session."
+    },
+    "secondary": {
+      "title": "US Equity Selloff Resumed — Friday Low Break Holding",
+      "why": "Live price action with momentum cascade potential into close. Directly tradable in 1-2h horizon via SPY/QQQ shorts and VIX calls."
+    },
+    "tertiary": {
+      "title": "IDF Two-Front Escalation Active — No De-escalation Signal in 30 Min",
+      "why": "Absence of contradiction confirms the escalation pattern. Oil risk premium underpriced relative to IDF trajectory. Reinforces the primary oil thesis."
+    }
+  },
+  "meta_observation": "Tuesday June 9, 16:38 UTC. US equity markets continue selling — S&P Friday low break confirmed by @markettwits at 16:08 UTC (selling resumed after yesterday's respite). The EIA Hormuz timeline is the bombshell of this scrape: the US government now officially forecasts the Strait of Hormuz blockade to persist through Q3 2026, with full recovery only in early 2027. This is structural — not tactical — and it's bullish for oil regardless of the EIA's simultaneous demand downgrade. The IDF two-front escalation pattern (Iran readiness reversal + Tyre evacuation + Hezbollah ATGM kill) remains active with zero contradiction signals in the last 30 minutes. Three converging narratives: (1) EIA Hormuz timeline = structural oil bid, (2) US equity momentum breakdown = short opportunity into close, (3) IDF escalation active = reinforces oil and defense. For Bet&Benefit: highest-conviction trades are (a) long oil futures/ETF on EIA structural timeline, (b) short SPY/QQQ on momentum breakdown with tight stops on reversal headlines, (c) VIX calls as tail hedge. For Gazzetta di Kyiv: the EIA admitting its own policy tool (Hormuz blockade) will persist for 9+ months is the lead story — connect to Ukraine sanctions/blockade parallels and 'war economy is baseline economy' framing."
 }

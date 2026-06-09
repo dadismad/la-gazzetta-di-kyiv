@@ -41,21 +41,50 @@ def compile_stories(conn):
             generated_at DESC
     """).fetchall()
 
-    # Resolve story_flow_links → impacted_flows
+    # Resolve story_flow_links → impacted_flows AND inject real flow metrics
     links = conn.execute("SELECT story_id, flow_id FROM story_flow_links").fetchall()
-    story_to_flows = {}
+    story_to_flow_ids = {}
     for story_id, flow_id in links:
-        story_to_flows.setdefault(story_id, []).append(flow_id)
+        story_to_flow_ids.setdefault(story_id, []).append(flow_id)
+
+    # Fetch ALL flow data upfront for JOIN injection
+    flow_rows = conn.execute(
+        "SELECT id, amount_b, velocity, net_direction, category, full_json FROM flows"
+    ).fetchall()
+    flow_by_id = {}
+    for fid, amt, vel, direction, cat, fj in flow_rows:
+        flow_by_id[fid] = {
+            "amount_b": amt or 0, "velocity": vel or 1.0,
+            "direction": direction or "neutral", "category": cat or "",
+            "full_json": fj,
+        }
 
     stories = []
     for sid, full_json_str in rows:
         if not full_json_str:
             continue
         story = json.loads(full_json_str)
-        # Inject resolved impacted_flows
-        impacted = story_to_flows.get(sid, [])
-        if impacted:
-            story["impacted_flows"] = impacted
+
+        # Inject resolved impacted_flows (IDs)
+        impacted_ids = story_to_flow_ids.get(sid, [])
+        if impacted_ids:
+            story["impacted_flows"] = impacted_ids
+
+            # JOIN: inject REAL flow metrics into capital_flow dict
+            # Use the first linked flow's actual DB values
+            primary_flow = flow_by_id.get(impacted_ids[0])
+            if primary_flow:
+                cf = story.get("capital_flow", {})
+                cf["amount_b"] = primary_flow["amount_b"]
+                cf["pace_multiplier"] = primary_flow["velocity"]
+                cf["direction"] = primary_flow["direction"]
+                cf["asset_class"] = cf.get("asset_class") or primary_flow["category"]
+                cf["confidence_pct"] = cf.get("confidence_pct", 50)
+                cf["confidence_level"] = cf.get("confidence_level", "medium")
+                cf["claim"] = f"${primary_flow['amount_b']}B {primary_flow['direction']} {cf.get('asset_class', '')}"
+                if primary_flow["amount_b"] > 0:
+                    cf["confidence"] = f"{cf.get('confidence_pct', 50)}%"
+                story["capital_flow"] = cf
 
         # Ensure story_id is set
         story["story_id"] = sid

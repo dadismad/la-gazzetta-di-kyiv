@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T16:39:21.218240+00:00",
+  "generated_at": "2026-06-09T17:05:23.598321+00:00",
   "lead": {
     "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
     "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
@@ -27,7 +27,9 @@
       "projected": "Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath &nbsp;&nbsp; CNBC    MicroStrategy’s STR",
       "pace_multiplier": 1.0,
       "confidence_pct": 50,
-      "confidence_level": "low"
+      "confidence_level": "low",
+      "claim": "$5.0B inflow crypto",
+      "confidence": "50%"
     },
     "capital_flow_implication": "OSINT draft #58. Source: reuters_business.",
     "evidence": [
@@ -114,7 +116,9 @@
         "projected": "Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath &nbsp;&nbsp; CNBC    MicroStrategy’s STR",
         "pace_multiplier": 1.0,
         "confidence_pct": 50,
-        "confidence_level": "low"
+        "confidence_level": "low",
+        "claim": "$5.0B inflow crypto",
+        "confidence": "50%"
       },
       "capital_flow_implication": "OSINT draft #58. Source: reuters_business.",
       "evidence": [
@@ -200,7 +204,9 @@
         "projected": "This tiny mutual fund outperforms by backing the world’s best management teams &nbsp;&nbsp; MarketWatch",
         "pace_multiplier": 1.0,
         "confidence_pct": 50,
-        "confidence_level": "low"
+        "confidence_level": "low",
+        "claim": "$5.0B neutral equities",
+        "confidence": "50%"
       },
       "capital_flow_implication": "OSINT draft #21. Source: reuters_business.",
       "evidence": [
@@ -286,7 +292,9 @@
         "projected": "All the Ways Europe Is Ditching American Technology &nbsp;&nbsp; WIRED    ASML chief warns EU against directing chip supplies &nbsp;&nbsp; Financial Times    Europe unveils tech sovereignty package am",
         "pace_multiplier": 1.0,
         "confidence_pct": 50,
-        "confidence_level": "low"
+        "confidence_level": "low",
+        "claim": "$5.0B inflow defense",
+        "confidence": "50%"
       },
       "capital_flow_implication": "OSINT draft #67. Source: reuters_business.",
       "evidence": [
@@ -378,7 +386,9 @@
         "projected": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin’s Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; ",
         "pace_multiplier": 1.0,
         "confidence_pct": 50,
-        "confidence_level": "low"
+        "confidence_level": "low",
+        "claim": "$5.0B outflow crypto",
+        "confidence": "50%"
       },
       "capital_flow_implication": "OSINT draft #66. Source: reuters_business.",
       "evidence": [
@@ -466,7 +476,9 @@
         "projected": "Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates &nbsp;&nbsp; WSJ    Stock Market Today: Dow, S&amp;P 500, Nasdaq Open Up; Micron, Marvell, Intel, Nvidia, More ",
         "pace_multiplier": 1.0,
         "confidence_pct": 50,
-        "confidence_level": "low"
+        "confidence_level": "low",
+        "claim": "$5.0B outflow defense",
+        "confidence": "50%"
       },
       "capital_flow_implication": "OSINT draft #70. Source: reuters_business.",
       "evidence": [
@@ -553,7 +565,7 @@
         "pace_multiplier": 1.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$88.0B ↓ commodities",
+        "claim": "$88.0B outflow commodities",
         "confidence": "75%"
       },
       "capital_flow_implication": "BILATERAL — (A) SHORT oil into further downside if <$88 breaks = demand collapse confirmation. (B) BUY OTM oil calls (strike $95, June 12 expiry) for the asymmetric upside if Lebanon/Hezbollah trigger fires. The risk-reward on oil optionality is extreme right now: downside capped by OPEC+ support ne",
@@ -592,7 +604,9 @@
         "projected": "USD longs benefit from delayed rate cuts. Energy/inflation hedges (gold, oil) could dip on USD strength — buy the dip for geopolitical premium. Gazzetta di Kyiv: frame as 'US economy too hot for…",
         "pace_multiplier": 1.0,
         "confidence_pct": 75,
-        "confidence_level": "medium"
+        "confidence_level": "medium",
+        "claim": "$5.0B inflow crypto",
+        "confidence": "75%"
       },
       "capital_flow_implication": "SHORT BTC into the USD-strength narrative. If housing beat pushes rate-cut expectations further out, BTC faces a USD headwind. BTC at ~$61K is below key moving averages — housing beat adds pressure. LONG USD (via DXY or USD pairs) if the initial reaction hasn't fully played out. SHORT TLT (long bond",
       "evidence": [],
@@ -667,7 +681,9 @@
         "projected": "Airlines (DAL, AAL, UAL) benefit from any oil decline. S&P 500 broad market (SPY) benefits if inflation fears ease. Crypto (BTC, ETH) gets a bid if risk-off reverses. Fed gets marginal breathing…",
         "pace_multiplier": 1.0,
         "confidence_pct": 75,
-        "confidence_level": "medium"
+        "confidence_level": "medium",
+        "claim": "$5.0B inflow commodities",
+        "confidence": "75%"
       },
       "capital_flow_implication": "SHORT oil (USO, XLE) into the OPEC+ announcement. Asymmetry favors a sell-the-news setup at these levels. If 188k is confirmed without hawkish language, oil drops 3-5%. If 300k+ surprise, oil crashes 8-10%. Hedge with put spreads on USO. LONG airlines (DAL, AAL, UAL) as the most direct oil-pain bene",
       "evidence": [],
@@ -1023,7 +1039,9 @@
         "projected": "ENA token directly benefits from TVL growth narrative. sUSDe (Ethena's yield-bearing stablecoin) becomes more attractive with institutional credit products available. The entire RWA (Real World…",
         "pace_multiplier": 1.0,
         "confidence_pct": 75,
-        "confidence_level": "medium"
+        "confidence_level": "medium",
+        "claim": "$300.0B inflow crypto",
+        "confidence": "75%"
       },
       "capital_flow_implication": "LONG ENA (Ethena token). This partnership is THE missing piece for institutional DeFi adoption — a top asset manager distributing tokenized credit through Ethena's rails. ENA trades 24/7 on crypto exchanges. Target: re-test recent highs. SHORT traditional CLO ETFs (if available) as tokenized competi",
       "evidence": [],
@@ -1353,7 +1371,9 @@
         "projected": "AI infrastructure tokens (RNDR for compute, TAO for decentralized ML) benefit most. FET (Fetch.ai) as the broadest AI-crypto proxy. NVDA benefits at the next US equity open from the AI model…",
         "pace_multiplier": 1.0,
         "confidence_pct": 75,
-        "confidence_level": "medium"
+        "confidence_level": "medium",
+        "claim": "$5.0B inflow crypto",
+        "confidence": "75%"
       },
       "capital_flow_implication": "LONG AI-crypto tokens (FET, RNDR, TAO, AGIX) on the 'frontier AI accelerating' narrative. The release of Claude Fable within hours validates the thesis that AI capability is accelerating faster than the market prices. SHORT OpenAI-competitive tokens if any exist — Anthropic leapfrogging. LONG NVIDIA",
       "evidence": [],
@@ -1391,7 +1411,9 @@
         "projected": "Defense stocks (LMT, RTX, NOC, GD) benefit from prolonged multi-front conflict. Energy majors (XOM, CVX, OXY) benefit from sustained high oil. Cybersecurity (PANW, CRWD) benefits from increased…",
         "pace_multiplier": 1.0,
         "confidence_pct": 75,
-        "confidence_level": "medium"
+        "confidence_level": "medium",
+        "claim": "$5.0B inflow commodities",
+        "confidence": "75%"
       },
       "capital_flow_implication": "LONG oil (WTI, USO) — Nabatieh offensive increases odds of Iran-Israel proxy escalation, delaying Hormuz reopening. LONG defense (LMT, RTX, GD) — extended Middle East conflict. LONG gold (GLD) — geopolitical hedge. SHORT TLT (long-dated bonds) — extended conflict keeps inflation elevated. If Nabatie",
       "evidence": [],
@@ -1429,7 +1451,9 @@
         "projected": "USDC (Circle) benefits from USD1 failure as competing stablecoin. Decentralized exchanges (UNI, SUSHI) benefit from trust flight from CEXs. Privacy coins see 'not your keys, not your coins'…",
         "pace_multiplier": 1.0,
         "confidence_pct": 75,
-        "confidence_level": "medium"
+        "confidence_level": "medium",
+        "claim": "$11.5B inflow crypto",
+        "confidence": "75%"
       },
       "capital_flow_implication": "SHORT TRX (Tron) — contagion from HTX delisting. If HTX is under regulatory/insolvency pressure, TRX is the next domino. LONG USDT — as flight to safety in stablecoin land. SHORT BTC (outright or via puts) — the delisting adds to already negative sentiment (Santiment shows local pessimism extremes).",
       "evidence": [],
@@ -1617,89 +1641,6 @@
         "confidence": "65%"
       },
       "generated_at": "2026-06-09T13:03:26.472079+00:00"
-    },
-    {
-      "story_id": "n21_multi_pillar__eia_hormuz_timeline_q3_2026_blockade_persistent",
-      "headline": "EIA Bombshell: Strait of Hormuz Blockade to Persist Through Q3 2026 — WTI Forecast Raised to $88.32 Despite Demand Downgrade",
-      "sector": "commodities",
-      "pillar": "multi_pillar",
-      "paradigm_pillar": "multi_pillar",
-      "paradigm_implications": [
-        "\"The war economy is now the baseline economy\" — The same US government that set the Hormuz blockade as Iran negotiation leverage is now forecasting its own coercive instrument will persist 9+ months. Parallel to Ukraine sanctions: both weaponized economic tools with no quick off-ramp.",
-        "Oil supply disruption dominates demand destruction in the price equation. Every barrel that can't transit Hormuz is a structural bid under WTI, regardless of demand softening.",
-        "High oil prices destroying demand (airlines, shipping, consumer discretionary) is the transmission mechanism from Middle Eastern geopolitics to European grocery prices."
-      ],
-      "they_say": "The EIA's Short-Term Energy Outlook published today includes two bombshell assumptions: (1) Strait of Hormuz oil shipments assumed to resume in Q3 2026 — meaning the US government officially forecasts the blockade will persist at minimum another 3-6 months; (2) even after resumption, traffic won't ramp to pre-Iran-war levels until early 2027. The EIA simultaneously raised its WTI price forecast to $88.32/bbl (from $85.68) while cutting its global oil demand forecast for 2026 to a decline. Markets have been pricing the blockade as weeks, not quarters — this is a structural repricing event.",
-      "reality": "The EIA demand downgrade is non-trivial — if global oil demand is genuinely slowing, the supply disruption premium has a ceiling. The EIA timeline assumes a negotiated resolution in Q3 2026, but the IDF simultaneously reversed its 'holding fire' stance and declared readiness to resume Iran operations. If Iran talks collapse entirely, the timeline extends further. Conversely, if Hormuz reopens on a surprise deal, oil longs get crushed by the demand-downgrade fundamentals underneath. The EIA raised WTI forecast DESPITE cutting demand — this is the strongest possible signal that supply disruption dominates the price equation. When your own government says 'this blockade lasts through Q3 2026,' you position long energy.",
-      "thesis": "LONG oil (WTI futures, USO, XLE) on structural supply disruption thesis. The EIA timeline is an official US government forecast — not a rumor, not a leak. Even if demand is softening, supply disruption dominates. PAIR short airlines/consumer discretionary for demand-destruction hedge. The risk-reward asymmetry favors oil longs with multi-week horizon.",
-      "actors": ["EIA", "OPEC", "Iran", "US Government", "IDF"],
-      "horizon": "multi-week",
-      "confidence": "high",
-      "tier": "DEVELOPING",
-      "actionable_trade": "LONG WTI crude (USO, XLE), LONG tanker equities (TNK, STNG), PAIR short airlines (DAL, AAL, UAL). The EIA timeline is an official US government forecast — position for structural oil bid. Buy OTM oil calls (July $95 strike) as asymmetric upside on escalation trigger. If a surprise Iran deal materializes, cover all longs immediately.",
-      "contradiction_score": 82,
-      "invalidation_trigger": "Iran deal reached with verified Hormuz reopening timeline. EIA materially revises its timeline forward in a subsequent release. Global demand collapse overwhelms supply disruption in price data.",
-      "portfolio_implication": "Oil futures long with multi-week horizon. The EIA officially forecasting a Q3 2026 blockade timeline is a first-order repricing event. Kuwait pipeline bypass talks confirm structural persistence. This is the single most important data point of the session for oil markets — supply disruption timeline is now quantified.",
-      "capital_flow": {
-        "direction": "inflow",
-        "amount_b": 15.0,
-        "asset_class": "commodities",
-        "projected": "Structural oil bid as market reprices from weeks-to-quarters blockade timeline. EIA official forecast provides institutional cover for long oil positioning.",
-        "pace_multiplier": 2.0,
-        "confidence_pct": 80,
-        "confidence_level": "high",
-        "claim": "$15.0B ↑ commodities (oil)",
-        "confidence": "80%"
-      },
-      "capital_flow_implication": "STRUCTURAL LONG oil on EIA timeline repricing. The gap between market pricing (weeks) and official US government forecast (quarters) will close via higher oil prices. Equity markets face stagflation headwind — higher oil + higher rates + slowing demand = margin compression for consumer-facing sectors.",
-      "evidence": [],
-      "source": "telegram_intel",
-      "generated_at": "2026-06-09T16:38:18.342920+00:00",
-      "freshness": "breaking",
-      "image_url": "",
-      "extremum": "The EIA'S OFFICIAL FORECAST THAT ITS OWN POLICY TOOL (HORMUZ BLOCKADE) PERSISTS 9+ MONTHS IS THE STRONGEST SIGNAL YET THAT THE WAR ECONOMY IS THE NEW BASELINE — THE WEST ADMITTING IT HAS NO QUICK OFF-RAMP FOR ITS PRIMARY COERCIVE ECONOMIC INSTRUMENT."
-    },
-    {
-      "story_id": "n21_dollar_decline__hormuz_blockade_accelerates_petrodollar_erosion_yuan_oil_settlement",
-      "headline": "Hormuz Blockade Accelerates Petrodollar Erosion as Iran Demands Yuan Settlement for Oil Passage — Dollar Weaponization Backfires",
-      "sector": "currencies",
-      "pillar": "dollar_decline",
-      "paradigm_pillar": "dollar_decline",
-      "paradigm_implications": [
-        "The US weaponized the dollar to pressure Iran via the Hormuz blockade — but every month the blockade persists, oil buyers seek alternative settlement currencies, accelerating the very de-dollarization the US seeks to prevent",
-        "Iran has explicitly linked Hormuz passage to yuan-denominated settlement structures, creating a precedent for commodity trade decoupled from USD",
-        "BRICS payment system gains adoption velocity as the Hormuz crisis demonstrates the vulnerability of dollar-denominated energy trade to geopolitical weaponization",
-        "The contradiction is acute: the US blockade is designed to protect dollar hegemony but its effect is to accelerate the decline of the petrodollar"
-      ],
-      "they_say": "The dollar remains the world's reserve currency. The petrodollar system is reinforced by US military guarantees for Gulf oil producers. De-dollarization is a long-term trend, not an immediate threat. The Hormuz blockade is a temporary disruption, not a structural shift in settlement patterns.",
-      "reality": "The Hormuz blockade is demonstrating in real-time the vulnerability of dollar-denominated energy trade to US geopolitical weaponization. Iran has explicitly structured Hormuz passage negotiations around yuan-based settlement. China's CIPS (Cross-Border Interbank Payment System) is breaking records as an alternative to SWIFT. The BRICS+ bloc is actively developing a gold-backed settlement unit. Every month the blockade persists, oil importers (India, China, South Korea, Japan) experience USD-denominated supply disruption directly, creating an incentive to diversify settlement currencies. The EIA's official forecast that the blockade persists through Q3 2026 means this demonstration effect has 9+ months to reshape trade flows. The US is weaponizing the dollar to maintain strategic leverage — but the longer the weapon is deployed, the more it erodes the dollar's structural advantage. This is the petrodollar system's version of 'the US dollar's worst enemy is US foreign policy.'",
-      "thesis": "LONG gold ($GLD, $XAU) as the structural beneficiary of de-dollarization. LONG yuan (via CNH futures) as the alternative settlement currency gaining adoption. LONG BRICS-aligned digital asset infrastructure (XRP for cross-border settlement). LONG commodities generally as the dollar reserve premium erodes. The Hormuz blockade is the catalyst that converts de-dollarization from theoretical trend to tangible trade flow reality.",
-      "actors": ["Iran", "China/PBoC", "BRICS", "India/RBI", "OPEC", "EIA"],
-      "horizon": "multi-month",
-      "confidence": "medium",
-      "tier": "DEVELOPING",
-      "actionable_trade": "LONG gold ($GLD) as structural de-dollarization beneficiary. LONG XRP/XDC (cross-border settlement tokens) on BRICS payment system adoption narrative. LONG CNH (offshore yuan) on accelerated yuan settlement adoption for oil trade. The EIA Q3 2026 blockade timeline means this theme has months to develop.",
-      "contradiction_score": 78,
-      "invalidation_trigger": "Iran deal reached with Hormuz reopening confirmed — removes the demonstration effect. US reaffirms dollar-based oil settlement guarantees with new security commitments. Russia returns to USD settlement (reported in consideration). BRICS payment system fails to gain adoption traction.",
-      "portfolio_implication": "Gold as the structural beneficiary. The petrodollar system's vulnerability is being demonstrated in real-time. The US blockade-is-forcing-alternatives thesis is a medium-conviction multi-month trade. Pair with oil longs from the EIA story for the Hormuz-disruption complex.",
-      "capital_flow": {
-        "direction": "inflow",
-        "amount_b": 10.0,
-        "asset_class": "commodities",
-        "projected": "Structural shift in reserve asset allocation as petrodollar system vulnerabilities are demonstrated. Central bank gold buying accelerates. Yuan-denominated oil contracts increase share of global trade.",
-        "pace_multiplier": 1.5,
-        "confidence_pct": 70,
-        "confidence_level": "medium",
-        "claim": "$10.0B ↑ gold/yuan/commodities on de-dollarization acceleration",
-        "confidence": "70%"
-      },
-      "capital_flow_implication": "STRUCTURAL FLOW out of USD-denominated reserve assets into gold, yuan, and BRICS-aligned alternatives. The Hormuz blockade is a catalyst demonstrating in real-time the vulnerability of dollar-based energy trade. Central banks watching this crisis will accelerate reserve diversification. The EIA Q3 2026 timeline means this catalyst has months of runway.",
-      "evidence": [],
-      "source": "telegram_intel",
-      "generated_at": "2026-06-09T16:38:18.342920+00:00",
-      "freshness": "breaking",
-      "image_url": "",
-      "extremum": "THE US IS WEAPONIZING THE DOLLAR TO MAINTAIN STRATEGIC LEVERAGE, BUT EVERY MONTH THE HORMUZ BLOCKADE PERSISTS, IRAN, CHINA, INDIA, AND BRICS ARE BUILDING THE ALTERNATIVE INFRASTRUCTURE THAT MAKES DOLLAR HEGEMONY OBSOLETE — THE BLOCKADE IS ACCELERATING THE VERY DECLINE IT SEEKS TO PREVENT."
     }
   ]
 }

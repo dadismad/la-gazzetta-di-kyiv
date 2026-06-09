@@ -25,22 +25,22 @@
 
   <style>
     /* ═══════════════════════════════════════════════
-       EVENT HORIZON — Dark Command Center Theme
-       Overrides main site white for war-room aesthetic
+       EVENT HORIZON — Light Theme (matches index.html design system)
+       Background: #FFFFFF, Cards: #FFFFFF, borders: #E5E7EB
        ═══════════════════════════════════════════════ */
     :root {
-      --eh-bg: #0F172A;
-      --eh-card: #1E293B;
-      --eh-card-border: #334155;
-      --eh-text: #E2E8F0;
-      --eh-text-muted: #94A3B8;
-      --eh-text-dim: #64748B;
-      --eh-gold: #D4AF37;
-      --eh-green: #10B981;
-      --eh-red: #EF4444;
-      --eh-amber: #F59E0B;
-      --eh-blue: #3B82F6;
-      --eh-divider: rgba(255,255,255,0.08);
+      --eh-bg: #FFFFFF;
+      --eh-card: #FFFFFF;
+      --eh-card-border: #E5E7EB;
+      --eh-text: #111827;
+      --eh-text-muted: #6B7280;
+      --eh-text-dim: #9CA3AF;
+      --eh-gold: #B8860B;
+      --eh-green: #047857;
+      --eh-red: #DC2626;
+      --eh-amber: #B8860B;
+      --eh-blue: #2563EB;
+      --eh-divider: #E5E7EB;
     }
 
     body.eh-body {
@@ -55,12 +55,11 @@
       align-items: center;
       justify-content: space-between;
       padding: 8px 18px;
-      background: rgba(15,23,42,0.95);
+      background: #FFFFFF;
       border-bottom: 1px solid var(--eh-divider);
       position: sticky;
       top: 0;
       z-index: 100;
-      backdrop-filter: blur(8px);
     }
     .eh-masthead-left {
       display: flex;
@@ -80,8 +79,8 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: var(--eh-amber);
-      border: 1px solid rgba(245,158,11,0.3);
+      color: var(--eh-gold);
+      border: 1px solid rgba(184,134,11,0.3);
       padding: 2px 8px;
       border-radius: 2px;
     }
@@ -98,6 +97,13 @@
     }
     .eh-masthead-right a:hover {
       color: var(--eh-gold);
+    }
+    .eh-masthead-meta {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--eh-text-muted);
+      white-space: nowrap;
     }
 
     /* Main container */
@@ -157,7 +163,7 @@
     .eh-barometer-wrap {
       background: var(--eh-card);
       border: 1px solid var(--eh-card-border);
-      border-radius: 4px;
+      border-radius: 0;
       padding: 24px 28px 28px;
       margin-bottom: 20px;
       position: relative;
@@ -183,17 +189,17 @@
       padding: 3px 12px;
       border-radius: 2px;
     }
-    .eh-barometer-value.low { background: rgba(16,185,129,0.15); color: var(--eh-green); }
-    .eh-barometer-value.elevated { background: rgba(245,158,11,0.15); color: var(--eh-amber); }
-    .eh-barometer-value.high { background: rgba(239,68,68,0.15); color: var(--eh-red); }
-    .eh-barometer-value.critical { background: rgba(239,68,68,0.25); color: var(--eh-red); }
+    .eh-barometer-value.low { background: rgba(4,120,87,0.10); color: var(--eh-green); }
+    .eh-barometer-value.elevated { background: rgba(184,134,11,0.10); color: var(--eh-gold); }
+    .eh-barometer-value.high { background: rgba(220,38,38,0.10); color: var(--eh-red); }
+    .eh-barometer-value.critical { background: rgba(220,38,38,0.18); color: var(--eh-red); }
 
     /* Gauge */
     .eh-gauge {
       position: relative;
       height: 24px;
-      background: linear-gradient(to right, #10B981, #F59E0B 35%, #F97316 55%, #EF4444 75%, #7F1D1D 92%);
-      border-radius: 12px;
+      background: linear-gradient(to right, #047857, #B8860B 35%, #B8860B 55%, #DC2626 75%, #991B1B 92%);
+      border-radius: 0;
       overflow: visible;
       margin: 4px 0 14px;
     }
@@ -202,11 +208,10 @@
       top: -6px;
       width: 3px;
       height: 36px;
-      background: #E2E8F0;
-      border-radius: 2px;
+      background: #111827;
+      border-radius: 0;
       transform: translateX(-50%);
       transition: left 1.5s ease-out;
-      box-shadow: 0 0 8px rgba(226,232,240,0.5);
       z-index: 2;
     }
     .eh-gauge-needle::after {
@@ -217,9 +222,8 @@
       transform: translateX(-50%);
       width: 8px;
       height: 8px;
-      background: #E2E8F0;
-      border-radius: 50%;
-      box-shadow: 0 0 6px rgba(226,232,240,0.6);
+      background: #111827;
+      border-radius: 0;
     }
     .eh-gauge-labels {
       display: flex;
@@ -241,8 +245,8 @@
     .eh-barometer-comp {
       text-align: center;
       padding: 6px;
-      background: rgba(255,255,255,0.03);
-      border-radius: 3px;
+      background: rgba(0,0,0,0.02);
+      border-radius: 0;
     }
     .eh-barometer-comp-label {
       font-family: var(--sans);
@@ -270,15 +274,15 @@
       background: var(--eh-card);
       border: 1px solid var(--eh-card-border);
       border-left: 3px solid var(--eh-text-dim);
-      border-radius: 3px;
+      border-radius: 0;
       padding: 14px 16px;
       transition: border-color 0.2s;
     }
     .eh-chokepoint-card.watch { border-left-color: var(--eh-text-dim); }
     .eh-chokepoint-card.monitor { border-left-color: var(--eh-blue); }
-    .eh-chokepoint-card.caution { border-left-color: var(--eh-amber); }
+    .eh-chokepoint-card.caution { border-left-color: var(--eh-gold); }
     .eh-chokepoint-card.active { border-left-color: var(--eh-red); }
-    .eh-chokepoint-card.crisis { border-left-color: #7F1D1D; }
+    .eh-chokepoint-card.crisis { border-left-color: #991B1B; }
 
     .eh-cp-header {
       display: flex;
@@ -305,11 +309,11 @@
       border-radius: 2px;
       white-space: nowrap;
     }
-    .eh-cp-badge.financial { background: rgba(59,130,246,0.15); color: var(--eh-blue); }
-    .eh-cp-badge.technology { background: rgba(139,92,246,0.15); color: #A78BFA; }
-    .eh-cp-badge.energy { background: rgba(245,158,11,0.15); color: var(--eh-amber); }
-    .eh-cp-badge.supply-chain { background: rgba(16,185,129,0.15); color: var(--eh-green); }
-    .eh-cp-badge.sanctions { background: rgba(239,68,68,0.15); color: var(--eh-red); }
+    .eh-cp-badge.financial { background: rgba(37,99,235,0.10); color: var(--eh-blue); }
+    .eh-cp-badge.technology { background: rgba(139,92,246,0.10); color: #7C3AED; }
+    .eh-cp-badge.energy { background: rgba(184,134,11,0.10); color: var(--eh-gold); }
+    .eh-cp-badge.supply-chain { background: rgba(4,120,87,0.10); color: var(--eh-green); }
+    .eh-cp-badge.sanctions { background: rgba(220,38,38,0.10); color: var(--eh-red); }
 
     .eh-cp-status {
       font-family: var(--sans);
@@ -321,11 +325,11 @@
       display: inline-block;
       width: 6px;
       height: 6px;
-      border-radius: 50%;
+      border-radius: 0;
       margin-right: 4px;
       animation: pulse-dot 1.5s ease-in-out infinite;
     }
-    .eh-cp-status .pulse.esc { background: var(--eh-amber); }
+    .eh-cp-status .pulse.esc { background: var(--eh-gold); }
     .eh-cp-status .pulse.active { background: var(--eh-red); }
     .eh-cp-status .pulse.new { background: var(--eh-green); }
 
@@ -346,7 +350,7 @@
       font-family: 'SF Mono', 'Courier New', monospace;
       font-size: 11px;
       font-weight: 600;
-      color: var(--eh-amber);
+      color: var(--eh-gold);
     }
 
     /* ═══ SECTION 3: TRANSMISSION MATRIX ═══ */
@@ -367,7 +371,7 @@
       font-weight: 600;
       color: var(--eh-text-muted);
       border-bottom: 1px solid var(--eh-divider);
-      background: rgba(255,255,255,0.02);
+      background: rgba(0,0,0,0.02);
     }
     .eh-matrix th:first-child {
       position: sticky;
@@ -436,7 +440,7 @@
       margin-top: 6px;
     }
     .eh-timeline-impact {
-      background: rgba(255,255,255,0.04);
+      background: rgba(0,0,0,0.03);
       padding: 2px 8px;
       border-radius: 2px;
       font-family: 'SF Mono', monospace;
@@ -464,7 +468,7 @@
     .eh-pro-panel {
       background: var(--eh-card);
       border: 1px solid var(--eh-card-border);
-      border-radius: 3px;
+      border-radius: 0;
       padding: 14px 16px;
     }
     .eh-pro-panel-title {
@@ -484,7 +488,7 @@
       display: flex;
       gap: 8px;
       padding: 6px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid var(--eh-divider);
       font-size: 11px;
       line-height: 1.4;
     }
@@ -493,11 +497,11 @@
       flex-shrink: 0;
       width: 8px;
       height: 8px;
-      border-radius: 50%;
+      border-radius: 0;
       margin-top: 4px;
     }
     .eh-alert-severity.info { background: var(--eh-blue); }
-    .eh-alert-severity.warning { background: var(--eh-amber); }
+    .eh-alert-severity.warning { background: var(--eh-gold); }
     .eh-alert-severity.critical { background: var(--eh-red); animation: pulse-dot 1.5s ease-in-out infinite; }
     .eh-alert-text { flex: 1; }
     .eh-alert-time {
@@ -513,7 +517,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 5px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.03);
+      border-bottom: 1px solid var(--eh-divider);
       font-size: 11px;
     }
     .eh-price-row:last-child { border-bottom: none; }
@@ -547,8 +551,8 @@
     /* Scenario runbook */
     .eh-scenario-card {
       padding: 10px;
-      background: rgba(255,255,255,0.02);
-      border-radius: 3px;
+      background: rgba(0,0,0,0.02);
+      border-radius: 0;
       margin-bottom: 8px;
     }
     .eh-scenario-card:last-child { margin-bottom: 0; }
@@ -556,7 +560,7 @@
       font-family: var(--sans);
       font-size: 10px;
       font-weight: 600;
-      color: var(--eh-amber);
+      color: var(--eh-gold);
       margin-bottom: 4px;
     }
     .eh-scenario-moves {
@@ -580,7 +584,7 @@
       margin-top: 4px;
     }
     .eh-scenario-conviction.high { color: var(--eh-green); }
-    .eh-scenario-conviction.med { color: var(--eh-amber); }
+    .eh-scenario-conviction.med { color: var(--eh-gold); }
 
     /* Risk barometer */
     .eh-risk-grid {
@@ -590,8 +594,8 @@
     }
     .eh-risk-item {
       padding: 8px;
-      background: rgba(255,255,255,0.02);
-      border-radius: 2px;
+      background: rgba(0,0,0,0.02);
+      border-radius: 0;
       text-align: center;
     }
     .eh-risk-label {
@@ -610,13 +614,13 @@
     }
     .eh-risk-value.positive { color: var(--eh-green); }
     .eh-risk-value.negative { color: var(--eh-red); }
-    .eh-risk-value.warning { color: var(--eh-amber); }
+    .eh-risk-value.warning { color: var(--eh-gold); }
 
     /* ═══ SECTION 6: CONVICTION IMPOSER ═══ */
     .eh-conviction {
-      background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(212,175,55,0.02) 100%);
-      border: 1px solid rgba(212,175,55,0.2);
-      border-radius: 4px;
+      background: rgba(184,134,11,0.04);
+      border: 1px solid rgba(184,134,11,0.15);
+      border-radius: 0;
       padding: 24px 28px;
       margin-top: 20px;
     }
@@ -643,9 +647,9 @@
       gap: 12px;
     }
     .eh-conviction-action {
-      background: rgba(255,255,255,0.03);
+      background: rgba(0,0,0,0.02);
       border: 1px solid var(--eh-card-border);
-      border-radius: 3px;
+      border-radius: 0;
       padding: 14px 16px;
     }
     .eh-conviction-action .direction {
@@ -686,10 +690,10 @@
       font-family: var(--sans);
       font-size: 11px;
       font-weight: 600;
-      color: var(--eh-bg);
+      color: #FFFFFF;
       background: var(--eh-gold);
       padding: 8px 20px;
-      border-radius: 3px;
+      border-radius: 0;
       text-decoration: none;
       letter-spacing: 0.04em;
       transition: opacity 0.2s;
@@ -755,6 +759,7 @@
     <a href="./trades.html">Trades</a>
     <a href="./signal.html">Signal</a>
     <a href="./track.html">Track</a>
+    <time class="eh-masthead-meta" datetime="2026-06-09T00:00:00.000Z">updated today</time>
   </div>
 </header>
 

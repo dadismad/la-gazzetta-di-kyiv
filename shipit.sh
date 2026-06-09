@@ -53,6 +53,20 @@ $PYTHON "$PROJECT/scripts/build_site.py"
 echo "  ✓ site/data/ synced, API endpoints generated"
 echo ""
 
+# ═══ Stage 2.5: test_platform — automated UI & data integrity gate ═══
+echo "── Stage 2.5: test_platform ──"
+if $PYTHON "$PROJECT/scripts/test_platform.py"; then
+    echo "  ✓ All tests passed"
+else
+    echo ""
+    echo "══════════════════════════════════════"
+    echo "  DEPLOY ABORTED: test failures detected"
+    echo "  Fix issues above and re-run shipit.sh"
+    echo "══════════════════════════════════════"
+    exit 1
+fi
+echo ""
+
 # ═══ Stage 3: hash assets ═══
 echo "── Stage 3: hash assets ──"
 $PYTHON "$PROJECT/scripts/build_hashed_assets.py"
