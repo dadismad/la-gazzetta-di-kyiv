@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T20:39:10.535102+00:00",
+  "generated_at": "2026-06-09T21:41:40.337386+00:00",
   "lead": {
     "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
     "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
@@ -1837,178 +1837,159 @@
       "generated_at": "2026-06-09T13:03:26.472079+00:00"
     },
     {
-      "story_id": "n21_multi_pillar__bond_vigilante_regime_30yr_at_2007_highs",
-      "headline": "The Great Unwind — 30-Year Yields Break 2007 Highs, Fed Hike Repriced, S&P and Nasdaq Break Below Friday Lows",
-      "sector": "macro",
+      "story_id": "n21_multi_pillar__us_retaliatory_airstrikes_on_iran_qeshm_island_hit_gps_jamming_tehran",
+      "headline": "BREAKING: US Launches Retaliatory Airstrikes on Iran — Qeshm Island Hit, GPS Jamming Over Tehran, Iran Army on Full Combat Alert",
+      "sector": "commodities",
       "pillar": "multi_pillar",
       "paradigm_pillar": "multi_pillar",
       "paradigm_implications": [
-        "30yr US Treasury yield at highest since 2007 — a generational regime shift in bond markets",
-        "Fed rate hike now fully priced by end of 2026 — market flipped from 'Fed cuts coming' to 'Fed hike possible'",
-        "S&P -1.2%, NASDAQ -2% below Friday low — technical breakdown confirmed with next support -3% to -4% lower",
-        "Gold being liquidated alongside equities — classic margin call pressure, no safe-haven bid",
-        "Long USD as the cleanest hedge in a full-spectrum risk-off event"
+        "Oil at $88.70 WTI is NOT pricing active US-Iran combat. This is the most consequential mispricing in global markets right now. US airstrikes on Iranian air defense and radar sites at Qeshm Island escalate from proxy confrontation to direct kinetic exchange. The Strait of Hormuz blockade is now backstopped by live fire between the two nations. Iran's 'decisive response' promise introduces binary tail risk for oil. Trump's simultaneous messaging ('helicopter wasn't a big deal' vs launching sustained airstrikes) creates confusion that suppresses the risk premium the market SHOULD be pricing. WTI target $92-95 on Asian open repricing."
       ],
-      "they_say": "The macro regime has flipped from 'Fed cuts coming' to 'Fed hike possible.' The CPI print (Core 2.8% vs 2.7% est) and sticky inflation data, combined with oil-driven inflation persistence from the Hormuz blockade, have bond vigilantes in control. The 30yr breaking 2007 highs is generational. Equities are repricing for higher rates, and the selling is gathering momentum into the close. The consensus read: this is a full-spectrum risk-off event where only oil is insulated because of the Hormuz risk premium.",
-      "reality": "Equities are breaking down even as Brent fell below $90 (off war highs). Normally falling oil = falling inflation = bullish for bonds/equities. But the market is looking past oil at structural inflation from tariffs, reshoring capex, and AI infrastructure buildout. Gold is being liquidated alongside equities — classic margin call pressure, not a safe haven bid. The breakdown below Friday's low is technically significant: if it holds into close, the gap-down open tomorrow is -3%+. Citi cut gold forecast to $4000 from $4300 — a downgrade that validates the margin liquidation thesis. The Fed hike trade is back, and duration is toxic.",
-      "thesis": "SHORT equities via puts (QQQ), SHORT bonds (TLT puts), LONG USD (DXY). S&P breaking below Friday low = technical breakdown confirmed. The NASDAQ -2% is leading the decline — growth/tech is the canary. Fed hike narrative + geopolitical risk = risk-off cascade into week's end. FOMC minutes this week are the next catalyst. Do NOT buy the dip — this is a regime change, not a pullback.",
-      "actors": ["Federal Reserve", "Bond Vigilantes"],
-      "horizon": "48-96h",
-      "confidence": "medium",
-      "tier": "DEVELOPING",
-      "actionable_trade": "SHORT equities via QQQ puts (weekly, strike $440+), SHORT bonds via TLT puts (strike $88), LONG USD via DXY futures. If NASDAQ closes -2% below Friday low, the gap-down tomorrow is +3% further.",
-      "contradiction_score": 72,
-      "invalidation_trigger": "Fed signals dovish pivot or CPI revision lower. Brent crude collapse below $75 removes inflation persistence vector.",
-      "portfolio_implication": "Full-spectrum risk-off. Duration is toxic — 30yr at 2007 highs means bond portfolios are experiencing generational drawdowns. Gold being liquidated alongside equities means the traditional 60/40 hedge is broken. The only clean hedge is the US dollar. Energy sector is the sole insulated pocket due to Hormuz risk premium, but even that is fragile.",
+      "they_say": "US military launched calibrated retaliatory airstrikes against Iranian air defense systems and radar sites near the Strait of Hormuz at approximately 21:19 UTC on June 9. Trump described the response as 'very strong, very powerful.' Qeshm Island was hit by 6 explosions from fighter jet projectiles. GPS jamming is active over Tehran. Iran's army is on full combat alert. Iran's Tasnim agency: 'Iran will respond decisively to American aggression.' US refueling planes over the Middle East indicate sustained operations. This follows Iran shooting down a US Apache helicopter over Hormuz earlier in the session. The market treats this as 'calibrated retaliation' — oil barely reacting (+$0.50).",
+      "reality": "Oil at $88.70 WTI with ACTIVE US-Iran combat ongoing is a $3-5/bbl mispricing. API crude inventories already showed -9.119M draw vs -3.4M expected (bullish supply tightness BEFORE the strikes). Gold flat at $4,284 despite war escalation — Citi cut 3-month gold forecast to $4,000. Iran threatens 'decisive response' which could escalate further. Trump's dual messaging ('not a big deal' vs 'very strong, very powerful') creates noise that suppresses the premium. US-Iran airstrikes are not being priced as a live firefight. The EIA's Hormuz timeline (blockade through Q3 2026) now looks optimistic with active US-Iran combat.",
+      "thesis": "AGGRESSIVE LONG OIL — Brent at $91.83 with active US strikes on Iran is structurally mispriced. WTI target $92-95 within Asian open repricing. LONG defense primes (LMT, RTX, NOC) — sustained Middle East conflict benefits them directly. LONG shipping — record supertanker orders + Hormuz closure = tanker rates spiking. Gold divergence from war risk is anomalous but regime-shift signal.",
+      "actors": ["United States", "Iran", "Trump", "IRGC", "Pentagon"],
+      "horizon": "24-72h",
+      "confidence": "high",
+      "tier": "BREAKING",
+      "actionable_trade": "LONG WTI/Brent crude oil aggressively. The gap between market pricing and actual US-Iran kinetic engagement will close in Asian session. Long 2x-3x levered oil ETFs (UCO, GUSH). Long defense primes (LMT, RTX, NOC) — replenishment cycle + sustained engagement.",
+      "contradiction_score": 85,
+      "invalidation_trigger": "Confirmed ceasefire announcement between US and Iran. Iran refrains from retaliatory response. Both sides agree to de-escalation framework within 24 hours.",
+      "portfolio_implication": "Oil at $88.70 WTI with active US-Iran combat is not pricing live fire. Asian open will reprice. Long oil, defense, and shipping. Gold divergence from war is a regime shift signal — risk-on rotation despite geopolitical noise.",
       "capital_flow": {
-        "direction": "outflow",
-        "amount_b": 50.0,
-        "asset_class": "equities",
-        "projected": "Full-spectrum risk-off cascade: $50B+ estimated equity outflows on regime change. Gold margin liquidation compounds selling pressure. Long USD absorbing capital as the sole safe haven.",
-        "pace_multiplier": 1.5,
-        "confidence_pct": 75,
-        "confidence_level": "medium",
-        "claim": "$50B+ outflow equities, margin-driven",
-        "confidence": "75%"
+        "direction": "inflow",
+        "amount_b": 12.0,
+        "asset_class": "commodities",
+        "projected": "Oil repricing of $3-5/bbl on Asian open = $12-20B notional commodity flow. Defense sector catching a bid on sustained Middle East engagement premium.",
+        "pace_multiplier": 2.0,
+        "confidence_pct": 85,
+        "confidence_level": "high",
+        "claim": "$12.0B inflow commodities (oil repricing + defense)",
+        "confidence": "85%"
       },
-      "capital_flow_implication": "Capital rotating out of equities and bonds into USD cash. Gold's failure as safe haven is the most telling signal — margin calls forcing liquidation of everything. The dollar bid is the only bid in town. Energy sector may see rotational inflows from Hormuz risk premium, but broad equity outflows dominate.",
-      "evidence": [
-        "infinityhedge/26668 — Fed hike fully priced by end of 2026",
-        "infinityhedge/26661 — 30yr yield highest since 2007",
-        "trad_fin/3521 (15:30 UTC) — S&P -1.2%, NASDAQ -2% below Friday low",
-        "markettwits/373492 — Citi cuts gold forecast to $4000",
-        "markettwits/373484 — Gold/silver selloff continues"
-      ],
+      "capital_flow_implication": "Oil at $88.70 WTI is mispriced by $5+. Expect gap up in Asian session with $3-5/bbl repricing. Defense stocks gap up pre-market. Gold breakdown confirms risk-on rotation despite geopolitical noise.",
+      "evidence": ["source: telegram_intel", "source: @MonitoringSituation", "source: @markettwits", "source: @ethanlevins"],
       "source": "telegram_intel",
-      "generated_at": "2026-06-10T00:00:00.000000+00:00",
+      "generated_at": "2026-06-10T00:00:00+00:00",
       "freshness": "breaking",
       "entity_tags": {
-        "assets": ["SPX", "QQQ", "TLT", "DXY", "GLD", "VIX"],
-        "geographies": ["US"],
-        "actors": ["Federal Reserve"],
-        "instruments": ["futures", "options", "bonds"]
+        "assets": ["WTI", "BRENT", "XAU", "SPX", "VIX"],
+        "geographies": ["Iran", "USA", "Strait of Hormuz", "Qeshm Island", "Tehran"],
+        "actors": ["Trump", "Pentagon", "IRGC", "Iranian Military"],
+        "instruments": ["futures", "options", "ETFs"]
+      },
+      "time_decay": {
+        "half_life_hours": 24.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": ["new_intel", "price_breach", "flow_confirmation"]
+      },
+      "impacted_flows": ["flow_n21_multi_pillar__us_retaliatory_airstrikes_on_iran_qeshm_island_hit_gps_jamming_tehran"],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "BREAKING: US Launches Retaliatory Airstrikes on Iran — Qeshm Island Hit, GPS Jamming Over Tehran",
+          "body": "Structural assessment: US-Iran are now in direct kinetic conflict. The existing Apache shootdown story was the trigger — this is the response. Oil at $88.70 is structurally mispriced given active airstrikes. Iran's promise of 'decisive response' introduces binary tail risk. US refueling planes over Middle East indicate sustained operations, not a one-off strike. This is the most consequential geopolitical escalation since the Hormuz blockade began. Policy implication: energy hedging is now a board-level priority.",
+          "implication": "Board-level: immediate oil/energy hedging required. Defense sector structural beneficiary. Monitor for Iranian retaliation which would reprice oil $5+ higher."
+        },
+        "quant": {
+          "headline": "OIL signal: AGGRESSIVE LONG — $5/bbl mispricing on active US-Iran combat",
+          "body": "Raw telemetry — US airstrikes on Iran active 40+ min. Oil at $88.70 WTI. API crude draw -9.119M. Supply already tight BEFORE strikes. Brent at $91.83 with active combat is structurally mispriced. Expect $3-5/bbl repricing in Asian open. Correlation regime: oil-gold divergence is anomalous — gold flat at $4,284 despite war escalation.",
+          "metrics": {
+            "flow_velocity": 0.85,
+            "correlation_coeff": 0.45,
+            "z_score": 2.1
+          }
+        },
+        "degen": {
+          "headline": "🟢 AGGRESSIVE LONG OIL",
+          "body": "Directional: AGGRESSIVE LONG. Flow: $12B+. Entry zone: $88.70 WTI / $91.83 Brent. Stop: $85 WTI (-4%). Target: $95 WTI (+7%). Conviction: HIGH. Catalyst: US airstrikes on Iran active + API crude draw -9.119M + Iran threatens retaliation.",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "market ($88.70 WTI)",
+            "stop_level": "$85.00",
+            "target": "$95.00",
+            "conviction": "HIGH"
+          }
+        }
+      }
+    },
+    {
+      "story_id": "n21_abundance_tech__spacex_ipo_250b_demand_oversubscribed_books_close_june_10",
+      "headline": "SpaceX IPO Draws $250B Demand vs $75B Raise — 3.3x Oversubscribed, Books Close Wednesday, IPO June 12",
+      "sector": "technology",
+      "pillar": "abundance_tech",
+      "paradigm_pillar": "abundance_tech",
+      "paradigm_implications": [
+        "SpaceX at $1.8T+ valuation would be larger than Tesla. $250B demand for a $75B raise = 3.3x oversubscribed — biggest IPO in history. Starlink 10.3M subscribers generating $11.4B revenue is the cash cow. FY2025 revenue $18.7B but operating loss $2.6B. Q1 2026 net loss $4.28B on $4.69B revenue — hyper-growth narrative at nosebleed valuation. India suspended Starlink permits over national security — regulatory friction emerging. MicroStrategy buying BTC instead of high-conviction tech names suggests smart money caution on peak valuations. The contradiction: overwhelming institutional demand vs deteriorating unit economics. First-day pop near-certain given 3.3x oversubscription. This validates the space economy investment thesis and the abundance_tech pillar — capital is flooding into frontier technology infrastructure."
+      ],
+      "they_say": "Biggest IPO in history. 3.3x oversubscribed. Institutional demand overwhelming. $1.8T+ valuation. Starlink is the cash cow. First-day pop is guaranteed. SpaceX IPO books close Wednesday June 10 post-close. IPO date set for June 12 on Nasdaq. Filing shows: Elon Musk 85.1% voting power, 12.3% Class A / 93.6% Class B. FY2025 revenue $18.7B, Starlink 10.3M subscribers ($11.4B rev), AI revenue $3.2B, Q1 2026 rev $4.69B.",
+      "reality": "SpaceX losing $4.28B in Q1 2026 alone. At $1.8T, SpaceX would be larger than Tesla. India suspended Starlink permits over national security concerns. Operating loss $2.6B in FY2025 — this is a hyper-growth narrative IPO at extreme valuation. Q1 net loss nearly equals Q1 revenue ($4.28B loss on $4.69B rev). MicroStrategy buying BTC instead of high-conviction tech — smart money signaling caution on peak valuations. However, 3.3x oversubscription demonstrates that the market is pricing frontier technology at a premium to fundamentals. This is characteristic of the abundance_tech regime — capital allocates to transformational infrastructure regardless of current profitability.",
+      "thesis": "BUY SPCX at IPO open June 12 — first-day pop near-certain given 3.3x oversubscription. The SpaceX IPO is a capital market signal: frontier technology infrastructure (space, AI compute, satellite) is absorbing massive institutional capital. This validates the abundance_tech pillar thesis. Long satellite/space adjacents: ASTS, GSAT, IRDM. First-day follow-through boosts entire space sector. The India Starlink block is short-term noise — long-term AI compute narrative adds structural growth overlay.",
+      "actors": ["SpaceX", "Elon Musk", "Nasdaq", "Starlink", "SEC"],
+      "horizon": "24-72h",
+      "confidence": "high",
+      "tier": "BREAKING",
+      "actionable_trade": "LONG SPCX at IPO open June 12 — first-day pop near-certain. Pre-IPO via ARKX (Space ETF) or direct allocation. Long satellite/space adjacents: ASTS, GSAT. First-day follow-through boosts entire space sector.",
+      "contradiction_score": 72,
+      "invalidation_trigger": "SpaceX delays IPO, books undersubscribed, or valuation markdown. Regulatory block from SEC or CFIUS review. Major market dislocation before June 12 that reprices risk appetite.",
+      "portfolio_implication": "SpaceX IPO is the largest capital event in market history. 3.3x oversubscription is a read-through for frontier technology risk appetite. Long space/satellite ecosystem. The capital flow validates the abundance_tech paradigm at scale.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 75.0,
+        "asset_class": "equities",
+        "projected": "$75B raise with $250B demand = $175B in unfilled orders seeking space/satellite exposure. Adjacent sector spillover into ASTS, GSAT, IRDM, and broader space economy.",
+        "pace_multiplier": 3.3,
+        "confidence_pct": 90,
+        "confidence_level": "high",
+        "claim": "$75.0B inflow equities (SpaceX IPO)",
+        "confidence": "90%"
+      },
+      "capital_flow_implication": "$75B raise is the largest IPO in history. $250B total demand indicates structural capital rotation into frontier technology infrastructure. The 3.3x oversubscription is a risk-on signal that contradicts broader equity market weakness and geopolitical turmoil — institutional capital is bifurcating between risk-off (geopolitics) and risk-on (frontier tech deployment).",
+      "evidence": ["source: telegram_intel", "source: @trad_fin", "source: @infinityhedge", "source: @markettwits"],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-10T00:00:00+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": ["SPCX", "ASTS", "GSAT", "IRDM", "ARKX", "NVDA"],
+        "geographies": ["USA", "India", "Global"],
+        "actors": ["SpaceX", "Elon Musk", "Starlink", "SEC", "Nasdaq"],
+        "instruments": ["IPO", "equity", "ETF"]
       },
       "time_decay": {
         "half_life_hours": 48.0,
         "decay_curve": "exponential",
         "current_freshness": 1.0,
         "hours_elapsed": 0.0,
-        "renewal_triggers": ["price_breach", "flow_confirmation", "central_bank_signal"]
+        "renewal_triggers": ["new_intel", "price_breach", "ipo_pricing", "first_day_trading"]
       },
-      "impacted_flows": [],
+      "impacted_flows": ["flow_n21_abundance_tech__spacex_ipo_250b_demand_oversubscribed_books_close_june_10"],
       "associated_positions": [],
       "multi_persona": {
         "c_suite": {
-          "headline": "The Great Unwind — 30-Year Yields Break 2007, Tech Craters, Gold Gets Crushed",
-          "body": "Structural regime shift: 30yr yields at 2007 highs, Fed hike repriced, S&P/NASDAQ technical breakdown confirmed. Gold being liquidated alongside equities — margin calls forcing full-spectrum liquidation. Duration is toxic. Only the USD is a safe haven. Capital repositioning of $50B+ estimated out of equities. Policy implication: higher-for-longer rates structurally repricing risk assets.",
-          "implication": "Board-level risk: review duration exposure, increase cash allocation, reduce equity beta across the portfolio."
+          "headline": "SpaceX IPO Draws $250B Demand vs $75B Raise — 3.3x Oversubscribed",
+          "body": "Structural assessment: The largest IPO in history is 3.3x oversubscribed with $250B in demand. Elon Musk controls 85.1% voting power. Starlink's 10.3M subscribers ($11.4B rev) provide the cash flow anchor. AI revenue at $3.2B adds growth vector. The IPO validates SpaceX as the most valuable private company in history at $1.8T+. Policy implication: space economy is absorbing institutional capital at unprecedented scale. India's Starlink suspension is a regulatory speed bump, not a structural headwind.",
+          "implication": "Board-level: space/satellite sector re-rating imminent. First-day pop creates spillover for public space equities. Long-term structural capital rotation into frontier technology infrastructure."
         },
         "quant": {
-          "headline": "MACRO signal: SHORT equities, SHORT bonds, LONG USD",
-          "body": "Regime change confirmed: 30yr yield break above 2007 highs is generational. Equities technical breakdown below Friday lows. Gold's failure as safe haven confirms margin liquidation regime. Correlation regime: everything correlated to the downside except USD.",
+          "headline": "SPACE sector: $75B IPO inflow — STRONG BUY signal",
+          "body": "Raw telemetry — SpaceX IPO 3.3x oversubscribed. $250B demand for $75B raise. $1.8T+ valuation. Starlink $11.4B revenue at 10.3M subscribers. Q1 net loss $4.28B on $4.69B rev. Unit economics deteriorating but front-running frontier infrastructure demand. Correlation regime: decoupled from broader equity selloff — institutional capital bifurcating between risk-off (geopolitics) and risk-on (frontier tech).",
           "metrics": {
-            "flow_velocity": 0.35,
-            "correlation_coeff": 0.85,
-            "z_score": 2.1
+            "flow_velocity": 3.3,
+            "correlation_coeff": -0.15,
+            "z_score": 2.8
           }
         },
         "degen": {
-          "headline": "🔴 SHORT QQQ, SHORT TLT, LONG DXY",
-          "body": "Directional: SHORT. Entry zone: current levels. Stop: S&P recovery above Friday high. Target: -3% to -4% gap-down. Conviction: MEDIUM. Catalyst: 30yr at 2007 highs, Fed hike repriced, technical breakdown confirmed.",
-          "signal": {
-            "direction": "SHORT",
-            "entry_zone": "market",
-            "stop_level": "S&P +2% from Friday low",
-            "target": "-3% to -4% gap-down",
-            "conviction": "MEDIUM"
-          }
-        }
-      }
-    },
-    {
-      "story_id": "n21_china_ascendancy__china_exports_to_us_surge_defy_trump_tariffs",
-      "headline": "China's Exports to the US Surge at Pre-Liberation Day Pace, Defying Trump's Tariff Goals",
-      "sector": "trade",
-      "pillar": "china_ascendancy",
-      "paradigm_pillar": "china_ascendancy",
-      "paradigm_implications": [
-        "Trump's Liberation Day tariffs were supposed to decouple — instead, Chinese exports to the US are running at pre-tariff pace",
-        "China's manufacturing machine is pricing through tariffs via currency adjustment and supply chain rerouting",
-        "The tariff weapon is failing its primary objective of reducing US-China trade dependency",
-        "China's semiconductor and rare earth export surge (WSJ, June 9) provides concurrent validation of industrial ascendancy"
-      ],
-      "they_say": "Trump's Liberation Day tariffs were designed to force decoupling, reduce the US trade deficit with China, and bring manufacturing back to America. The administration claims the tariffs are working — that Chinese goods are being replaced by Vietnamese, Mexican, and Indian supply chains. The narrative: 'America is winning the trade war, China is hurting.'",
-      "reality": "Fortune reports (June 9, 19:25 UTC) that Chinese exports to the US are surging at a pre-Liberation Day pace, directly contradicting tariff goals. The WSJ concurrently reports (June 9) that China's strength in semiconductors and rare earths is driving an export surge — semiconductor equipment sales hit a record $36.55bn. China has reached 35% semiconductor equipment self-sufficiency. Chinese firms like CXMT are gearing up for domestic HBM3 production by end of 2026. The tariff mechanism is being circumvented through: (1) RMB depreciation offsetting tariff costs, (2) rerouting via third countries, (3) China's own industrial policy subsidizing export pricing. The US trade deficit with China is not shrinking — it's morphing.",
-      "thesis": "LONG China export/industrial exposure via KWEB, FXI, or semiconductor supply chain (SMIC proxies). The tariff wall is failing — China's industrial machine is too competitive to be blocked by price mechanisms alone. This validates the china_ascendancy paradigm: China's manufacturing dominance is structural, not cyclical. The failure of Liberation Day tariffs will ultimately force a US policy rethink — either deeper decoupling (more aggressive) or tacit acceptance of dependency (status quo). Either way, China's export machine wins.",
-      "actors": ["China State Council", "Trump Administration", "PBoC", "Chinese exporters"],
-      "horizon": "1-3 months",
-      "confidence": "high",
-      "tier": "DEVELOPING",
-      "actionable_trade": "LONG China tech/export proxies (KWEB, FXI). The tariff failure narrative will gain momentum as data accumulates. SEMI equipment plays also benefit from China's semiconductor self-sufficiency push.",
-      "contradiction_score": 65,
-      "invalidation_trigger": "US imposes secondary sanctions on third-country rerouting, closing the tariff circumvention channels. China's export growth reverses on domestic demand weakness.",
-      "portfolio_implication": "The failure of Liberation Day tariffs is a structural tailwind for China-exposed equities and an indictment of the deceleration thesis. Investors positioned for US-China decoupling are on the wrong side of the data. China's industrial policy is winning against tariff policy. Increase China exposure on any tariff escalation dip — it creates entry points before the data catches up.",
-      "capital_flow": {
-        "direction": "inflow",
-        "amount_b": 15.0,
-        "asset_class": "equities",
-        "projected": "Capital flow into China tech/export proxies as tariff failure narrative gains traction. Estimated $15B+ rotational inflow from US-exposed to China-exposed EM equity allocations over coming weeks.",
-        "pace_multiplier": 0.8,
-        "confidence_pct": 70,
-        "confidence_level": "medium",
-        "claim": "$15B+ inflow China equities on tariff failure trade",
-        "confidence": "70%"
-      },
-      "capital_flow_implication": "Rotational capital from US-exposed EM allocations into China-exposed equities. The tariff failure narrative is under-covered and will gather momentum as monthly trade data confirms the trend. Semiconductor equipment sales record ($36.55bn) and China's 35% equipment self-sufficiency provide the micro-foundations for the macro story.",
-      "evidence": [
-        "Fortune (June 9, 19:25 UTC) — 'China's exports to the US are surging at a pre-Liberation Day pace, defying Trump's tariff goals'",
-        "WSJ (June 9, 08:32 UTC) — 'China's Strength in Semiconductors, Rare Earths Drives Export Surge'",
-        "Digitimes (June 8) — 'AI chip race lifts semiconductor equipment sales to record US$36.55bn'",
-        "SCMP (June 8) — 'Chinese start-up says its nanoimprint tech can produce optical chips without DUV'",
-        "Fortune — 'China's exports to the US are surging at a pre-Liberation Day pace'"
-      ],
-      "source": "web_search",
-      "generated_at": "2026-06-10T00:00:00.000000+00:00",
-      "freshness": "breaking",
-      "entity_tags": {
-        "assets": ["KWEB", "FXI", "CNY"],
-        "geographies": ["China", "US"],
-        "actors": ["China State Council", "PBoC", "Trump Administration"],
-        "instruments": ["equities", "fx", "commodities"]
-      },
-      "time_decay": {
-        "half_life_hours": 72.0,
-        "decay_curve": "exponential",
-        "current_freshness": 1.0,
-        "hours_elapsed": 0.0,
-        "renewal_triggers": ["new_intel", "trade_data_release", "policy_signal"]
-      },
-      "impacted_flows": [],
-      "associated_positions": [],
-      "multi_persona": {
-        "c_suite": {
-          "headline": "China's Exports to the US Surge at Pre-Liberation Day Pace, Defying Trump's Tariff Goals",
-          "body": "Structural assessment: The tariff weapon is failing. China's exports to the US are running at pre-Liberation Day pace despite Trump's deceleration agenda. Semiconductor equipment sales hit record $36.55bn. China's industrial policy is outmaneuvering US tariff policy. This validates the china_ascendancy paradigm — China's manufacturing dominance is structural, not cyclical.",
-          "implication": "Board-level: review supply chain assumptions built on decoupling thesis. China dependency is not decreasing. Re-evaluate China exposure in equity allocations."
-        },
-        "quant": {
-          "headline": "CHINA signal: LONG exports, LONG semis",
-          "body": "Tariff failure trade: China exports to US at pre-Liberation Day pace. Semicon equipment record $36.55bn. China 35% equipment self-sufficiency. Capital flow estimate: $15B+ rotational inflow. Correlation regime: China trade data positively correlated with KWEB/FXI.",
-          "metrics": {
-            "flow_velocity": 0.25,
-            "correlation_coeff": 0.72,
-            "z_score": 1.8
-          }
-        },
-        "degen": {
-          "headline": "🟢 LONG KWEB, LONG FXI",
-          "body": "Directional: LONG. Entry zone: current. Stop: -5% from entry. Target: +15-20% over 3 months. Conviction: MEDIUM-HIGH. Catalyst: Tariff failure narrative — China exports surging despite Liberation Day tariffs.",
+          "headline": "🟢 LONG SPCX, ASTS, GSAT",
+          "body": "Directional: LONG. Flow: $75B. Entry zone: IPO open June 12. Stop: -10% from IPO price. Target: +20-30% first-day gain. Conviction: HIGH. Catalyst: 3.3x oversubscribed, biggest IPO in history, space economy validation.",
           "signal": {
             "direction": "LONG",
-            "entry_zone": "market",
-            "stop_level": "-5%",
-            "target": "+15-20%",
-            "conviction": "MEDIUM"
+            "entry_zone": "IPO open (June 12)",
+            "stop_level": "-10% from IPO price",
+            "target": "+20-30% first-day",
+            "conviction": "HIGH"
           }
         }
       }
