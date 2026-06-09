@@ -1,0 +1,501 @@
+{
+  "generated_at": "2026-06-07T14:35:25.566661+03:00",
+  "generated_by": "generate_flow_nodes.py",
+  "update_frequency": "60m",
+  "node_types": {
+    "gov": {
+      "label": "Governmental",
+      "color": "#D4AF37",
+      "order": 0
+    },
+    "institutional": {
+      "label": "Private/Institutional",
+      "color": "#3B82F6",
+      "order": 1
+    },
+    "corporate": {
+      "label": "Corporate",
+      "color": "#10B981",
+      "order": 2
+    },
+    "retail": {
+      "label": "Retail",
+      "color": "#A78BFA",
+      "order": 3
+    },
+    "crypto": {
+      "label": "Crypto",
+      "color": "#F59E0B",
+      "order": 4
+    }
+  },
+  "nodes": [
+    {
+      "id": "gov-crypto",
+      "type": "gov",
+      "label": "Governmental → crypto",
+      "description": "Auto-generated from 1 stories",
+      "metrics": {
+        "total_inflow_b": 0,
+        "total_outflow_b": 6.5,
+        "net_flow_b": -6.5,
+        "confidence_pct": 72,
+        "pace_avg": 2.0
+      },
+      "flow_count": 1
+    },
+    {
+      "id": "gov-fx",
+      "type": "gov",
+      "label": "Governmental → FX",
+      "description": "Auto-generated from 1 stories",
+      "metrics": {
+        "total_inflow_b": 0,
+        "total_outflow_b": 18.0,
+        "net_flow_b": -18.0,
+        "confidence_pct": 72,
+        "pace_avg": 1.5
+      },
+      "flow_count": 1
+    },
+    {
+      "id": "institutional-source",
+      "type": "institutional",
+      "label": "Private/Institutional → commodities",
+      "description": "Auto-generated from 22 stories",
+      "metrics": {
+        "total_inflow_b": 275.4,
+        "total_outflow_b": 18.0,
+        "net_flow_b": 257.4,
+        "confidence_pct": 72,
+        "pace_avg": 2.2
+      },
+      "flow_count": 22
+    },
+    {
+      "id": "institutional-equities",
+      "type": "institutional",
+      "label": "Private/Institutional → equities",
+      "description": "Auto-generated from 4 stories",
+      "metrics": {
+        "total_inflow_b": 98.0,
+        "total_outflow_b": 0,
+        "net_flow_b": 98.0,
+        "confidence_pct": 72,
+        "pace_avg": 2.3
+      },
+      "flow_count": 4
+    },
+    {
+      "id": "institutional-equities,-etfs,-venture",
+      "type": "institutional",
+      "label": "Private/Institutional → equities, ETFs, venture",
+      "description": "Auto-generated from 1 stories",
+      "metrics": {
+        "total_inflow_b": 15.0,
+        "total_outflow_b": 0,
+        "net_flow_b": 15.0,
+        "confidence_pct": 70,
+        "pace_avg": 1.3
+      },
+      "flow_count": 1
+    },
+    {
+      "id": "institutional-commodities,-equities,-derivatives",
+      "type": "institutional",
+      "label": "Private/Institutional → commodities, equities, derivatives",
+      "description": "Auto-generated from 1 stories",
+      "metrics": {
+        "total_inflow_b": 10.0,
+        "total_outflow_b": 0,
+        "net_flow_b": 10.0,
+        "confidence_pct": 73,
+        "pace_avg": 3.0
+      },
+      "flow_count": 1
+    },
+    {
+      "id": "institutional-equities,-crypto,-fx",
+      "type": "institutional",
+      "label": "Private/Institutional → equities, crypto, FX",
+      "description": "Auto-generated from 1 stories",
+      "metrics": {
+        "total_inflow_b": 6.5,
+        "total_outflow_b": 0,
+        "net_flow_b": 6.5,
+        "confidence_pct": 72,
+        "pace_avg": 1.8
+      },
+      "flow_count": 1
+    },
+    {
+      "id": "institutional-commodities,-equities,-fx",
+      "type": "institutional",
+      "label": "Private/Institutional → commodities, equities, FX",
+      "description": "Auto-generated from 1 stories",
+      "metrics": {
+        "total_inflow_b": 4.0,
+        "total_outflow_b": 0,
+        "net_flow_b": 4.0,
+        "confidence_pct": 70,
+        "pace_avg": 3.3
+      },
+      "flow_count": 1
+    },
+    {
+      "id": "institutional-equities,-commodities",
+      "type": "institutional",
+      "label": "Private/Institutional → equities, commodities",
+      "description": "Auto-generated from 1 stories",
+      "metrics": {
+        "total_inflow_b": 4.0,
+        "total_outflow_b": 0,
+        "net_flow_b": 4.0,
+        "confidence_pct": 69,
+        "pace_avg": 1.5
+      },
+      "flow_count": 1
+    },
+    {
+      "id": "institutional-crypto,-equities,-derivatives",
+      "type": "institutional",
+      "label": "Private/Institutional → crypto, equities, derivatives",
+      "description": "Auto-generated from 1 stories",
+      "metrics": {
+        "total_inflow_b": 3.0,
+        "total_outflow_b": 0,
+        "net_flow_b": 3.0,
+        "confidence_pct": 70,
+        "pace_avg": 3.0
+      },
+      "flow_count": 1
+    },
+    {
+      "id": "corporate-commodities",
+      "type": "corporate",
+      "label": "Corporate → commodities",
+      "description": "Auto-generated from 8 stories",
+      "metrics": {
+        "total_inflow_b": 115.4,
+        "total_outflow_b": 0,
+        "net_flow_b": 115.4,
+        "confidence_pct": 72,
+        "pace_avg": 2.1
+      },
+      "flow_count": 8
+    },
+    {
+      "id": "crypto-crypto",
+      "type": "crypto",
+      "label": "Crypto → crypto",
+      "description": "Auto-generated from 3 stories",
+      "metrics": {
+        "total_inflow_b": 19.5,
+        "total_outflow_b": 0,
+        "net_flow_b": 19.5,
+        "confidence_pct": 72,
+        "pace_avg": 2.0
+      },
+      "flow_count": 3
+    },
+    {
+      "id": "crypto-source",
+      "type": "crypto",
+      "label": "Crypto → crypto",
+      "description": "Auto-generated from 1 stories",
+      "metrics": {
+        "total_inflow_b": 0,
+        "total_outflow_b": 6.5,
+        "net_flow_b": -6.5,
+        "confidence_pct": 72,
+        "pace_avg": 2.0
+      },
+      "flow_count": 1
+    }
+  ],
+  "edges": [
+    {
+      "source": "institutional-source",
+      "target": "institutional-equities",
+      "amount_b": 30.0,
+      "direction": "inflow",
+      "pace_mult": 2.0,
+      "confidence_pct": 72,
+      "story_id": "n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai__i",
+      "headline": "Google Signs $920M/Month AI Compute Deal with SpaceX/xAI — IPO Demand Surges",
+      "asset_class": "equities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "institutional-equities",
+      "amount_b": 30.0,
+      "direction": "inflow",
+      "pace_mult": 2.0,
+      "confidence_pct": 72,
+      "story_id": "n21_abundance_tech__spacex_ipo_demand_2x_supply__75b_offering_oversibscribed",
+      "headline": "SPACEX IPO DEMAND 2x SUPPLY — $75B OFFERING OVERSIBSCRIBED",
+      "asset_class": "equities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "corporate-commodities",
+      "amount_b": 21.6,
+      "direction": "inflow",
+      "pace_mult": 2.0,
+      "confidence_pct": 72,
+      "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles__regional_war",
+      "headline": "Iran Strikes Kuwait With 7 Ballistic Missiles — Regional War Expands, Diplomatic",
+      "asset_class": "commodities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "corporate-commodities",
+      "amount_b": 21.6,
+      "direction": "inflow",
+      "pace_mult": 2.0,
+      "confidence_pct": 72,
+      "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles__gulf_war_wid",
+      "headline": "Iran Strikes Kuwait With 7 Ballistic Missiles — Gulf War Widens Live",
+      "asset_class": "commodities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "institutional-equities",
+      "amount_b": 20.0,
+      "direction": "inflow",
+      "pace_mult": 2.0,
+      "confidence_pct": 72,
+      "story_id": "n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai",
+      "headline": "Google Signs $920M/Month AI Compute Deal with SpaceX/xAI",
+      "asset_class": "equities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "institutional-equities",
+      "amount_b": 18.0,
+      "direction": "inflow",
+      "pace_mult": 3.3,
+      "confidence_pct": 73,
+      "story_id": "ai_rotation_crypto_20260605",
+      "headline": "AI Rotation Devours Crypto — Dow Hits ATH as ETH Crashes Below $1,600",
+      "asset_class": "equities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "gov-fx",
+      "amount_b": 18.0,
+      "direction": "outflow",
+      "pace_mult": 1.5,
+      "confidence_pct": 72,
+      "story_id": "n21_eu_fragmentation__eu_migration_deal_balkans_detention_germany_rejects_schengen",
+      "headline": "EU Strikes Migration Deal for Detention Centers Abroad — Germany Rejects Request",
+      "asset_class": "FX",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "corporate-commodities",
+      "amount_b": 16.8,
+      "direction": "inflow",
+      "pace_mult": 2.5,
+      "confidence_pct": 72,
+      "story_id": "n21_multi_pillar__israel-lebanon_conflict_deepening__full_occupation_publicly",
+      "headline": "Israel-Lebanon Conflict Deepening — Full Occupation Publicly Discussed, IDF Taki",
+      "asset_class": "commodities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "institutional-equities,-etfs,-venture",
+      "amount_b": 15.0,
+      "direction": "inflow",
+      "pace_mult": 1.3,
+      "confidence_pct": 70,
+      "story_id": "n21_abundance__space_etf_mainstream",
+      "headline": "Space Economy Reaches Escape Velocity — $3.3B Flows Into ETFs as Wall Street Pre",
+      "asset_class": "equities, ETFs, venture",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "corporate-commodities",
+      "amount_b": 14.4,
+      "direction": "inflow",
+      "pace_mult": 2.5,
+      "confidence_pct": 72,
+      "story_id": "n21_multi_pillar__iran_military_posture_surge__fighter_jets_missiles_into_ku",
+      "headline": "Iran Military Posture Surge — Fighter Jets, Missiles into Kuwait/Bahrain, Negoti",
+      "asset_class": "commodities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "corporate-commodities",
+      "amount_b": 14.4,
+      "direction": "inflow",
+      "pace_mult": 2.0,
+      "confidence_pct": 72,
+      "story_id": "n21_multi_pillar__us_strikes_iranian_naval_bases__hormuz_escalation_intensifi",
+      "headline": "US Strikes Iranian Naval Bases — Hormuz Escalation Intensifies",
+      "asset_class": "commodities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "corporate-commodities",
+      "amount_b": 14.4,
+      "direction": "inflow",
+      "pace_mult": 2.0,
+      "confidence_pct": 72,
+      "story_id": "n21_multi_pillar__iran-bahrain_missile_attack__hormuz_escalation_continues",
+      "headline": "IRAN-BAHRAIN MISSILE ATTACK — HORMUZ ESCALATION CONTINUES",
+      "asset_class": "commodities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "institutional-commodities,-equities,-derivatives",
+      "amount_b": 10.0,
+      "direction": "inflow",
+      "pace_mult": 3.0,
+      "confidence_pct": 73,
+      "story_id": "n21_multi__us_iran_overnight_strikes",
+      "headline": "US Bombs Iranian Radar Sites and Naval Base Overnight — Iran Fires Drones at Hor",
+      "asset_class": "commodities, equities, derivatives",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "corporate-commodities",
+      "amount_b": 7.2,
+      "direction": "inflow",
+      "pace_mult": 2.5,
+      "confidence_pct": 72,
+      "story_id": "n21_blockchain_agentic__ukraine_hits_st_petersburg_with_250_drones_during_pmef__m",
+      "headline": "Ukraine Hits St. Petersburg with 250+ Drones During PMEF — Military Base + Physi",
+      "asset_class": "commodities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "crypto-crypto",
+      "amount_b": 6.5,
+      "direction": "inflow",
+      "pace_mult": 2.0,
+      "confidence_pct": 72,
+      "story_id": "n21_china_ascendancy__zcash_soundness_researcher_now_audits_monero__xmr_intraday",
+      "headline": "Zcash Soundness Researcher Now Audits Monero — XMR Intraday Panic, Recovery Unde",
+      "asset_class": "crypto",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "crypto-crypto",
+      "amount_b": 6.5,
+      "direction": "inflow",
+      "pace_mult": 2.0,
+      "confidence_pct": 72,
+      "story_id": "n21_china_ascendancy__zcash_soundness_bug_researcher_now_targets_monero__xmr_-10",
+      "headline": "Zcash Soundness Bug Researcher Now Targets Monero — XMR -10%",
+      "asset_class": "crypto",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "crypto-crypto",
+      "amount_b": 6.5,
+      "direction": "inflow",
+      "pace_mult": 2.0,
+      "confidence_pct": 72,
+      "story_id": "n21_china_ascendancy__zcash_soundness_bug_researcher_now_audits_monero__xmr_-10",
+      "headline": "Zcash Soundness Bug Researcher Now Audits Monero — XMR -10%, Cascade Risk",
+      "asset_class": "crypto",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "crypto-source",
+      "target": "gov-crypto",
+      "amount_b": 6.5,
+      "direction": "outflow",
+      "pace_mult": 2.0,
+      "confidence_pct": 72,
+      "story_id": "n21_blockchain_agentic__bitcoin_free_fall__saylor_liquidates_etfs_bleed_200-week",
+      "headline": "BITCOIN FREE FALL — SAYLOR LIQUIDATES, ETFs BLEED, 200-WEEK MA IN PLAY",
+      "asset_class": "crypto",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "institutional-equities,-crypto,-fx",
+      "amount_b": 6.5,
+      "direction": "inflow",
+      "pace_mult": 1.8,
+      "confidence_pct": 72,
+      "story_id": "n21_ai__trump_whitehouse_ai_summit_warsh",
+      "headline": "Trump Confirms White House AI Summit With All Major Companies Next Week — Says H",
+      "asset_class": "equities, crypto, FX",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "corporate-commodities",
+      "amount_b": 5.0,
+      "direction": "inflow",
+      "pace_mult": 1.5,
+      "confidence_pct": 72,
+      "story_id": "n21_dollar_decline__india_rbi_proposes_brics_digital_currency_link_erupee_pilot",
+      "headline": "India's Central Bank Proposes Linking BRICS Digital Currencies — E-Rupee Pilots ",
+      "asset_class": "commodities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "institutional-commodities,-equities,-fx",
+      "amount_b": 4.0,
+      "direction": "inflow",
+      "pace_mult": 3.3,
+      "confidence_pct": 70,
+      "story_id": "n21_multi__lebanon_ceasefire_dead_oman_oil",
+      "headline": "Lebanon Ceasefire Officially Dead, IDF Retreats Under Fire — Oman Port Drone-Str",
+      "asset_class": "commodities, equities, FX",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "institutional-equities,-commodities",
+      "amount_b": 4.0,
+      "direction": "inflow",
+      "pace_mult": 1.5,
+      "confidence_pct": 69,
+      "story_id": "n21_china__chip_boom_property_crisis",
+      "headline": "China's $900B Chip Stock Boom Masks Deepening Property Crisis — IPOs and Huawei ",
+      "asset_class": "equities, commodities",
+      "data_source": "stories.json → capital_flow"
+    },
+    {
+      "source": "institutional-source",
+      "target": "institutional-crypto,-equities,-derivatives",
+      "amount_b": 3.0,
+      "direction": "inflow",
+      "pace_mult": 3.0,
+      "confidence_pct": 70,
+      "story_id": "n21_multi__ukraine_300_drone_wave",
+      "headline": "300 Ukrainian Drones Hit Russia Overnight — Largest Single Wave of the Entire Wa",
+      "asset_class": "crypto, equities, derivatives",
+      "data_source": "stories.json → capital_flow"
+    }
+  ],
+  "summary": {
+    "total_nodes": 13,
+    "total_edges": 23,
+    "total_flow_b": 299.9,
+    "inflow_count": 21,
+    "outflow_count": 2
+  }
+}

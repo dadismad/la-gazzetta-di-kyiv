@@ -238,5 +238,89 @@
     "portfolio_implication": "Portfolio implication: accumulate gold on pullbacks to $2,400-2,450; reduce EM equity exposure (especially in markets with $8B+ weekly foreign outflows); watch UK gilts for a 4.85% yield break — that level triggers a cross-asset repricing.",
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/India_roadway_map.svg",
     "freshness": "background"
+  },
+  {
+    "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles",
+    "headline": "Iran Strikes Kuwait With 7 Ballistic Missiles — Regional War Widens",
+    "they_say": "Diplomatic off-ramp is open. Witkoff/Kushner at Oak Ridge. House voted to end the war.",
+    "reality": "Iran struck Kuwait with 7 ballistic missiles. Hormuz blockaded. Iran denies nuclear deal exists.",
+    "sector": "geopolitics",
+    "paradigm_pillar": "multi_pillar",
+    "paradigm_implications": [
+      "Iran-Gulf war is now direct, not proxy",
+      "Two-front US strategy under strain"
+    ],
+    "portfolio_implication": "Long crude, gold, VIX — Sunday gap +$5-8/bbl. Short airlines. Invalidate on verified Iran talks.",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strait_of_Hormuz.jpg"
+  },
+  {
+    "story_id": "n21_china_ascendancy__china_launches_maritime_enforcement_operation_east_of_taiwan",
+    "headline": "China Launches Maritime Enforcement East of Taiwan — First Time Beijing Names Time, Place, Legal Basis",
+    "they_say": "Routine traffic enforcement — no different from past Taiwan pressure operations.",
+    "reality": "Beijing named specific time (June 6), place (east of Taiwan), and legal basis for assertion of control for the first time ever. No vessel boarded yet.",
+    "sector": "geopolitics",
+    "paradigm_pillar": "china_ascendancy",
+    "paradigm_implications": [
+      "Blockade rehearsal with operational transparency",
+      "Semicon supply chain risk unpriced"
+    ],
+    "portfolio_implication": "Short TSM/SMH at Monday Asia open. Invalidate if no boarding by Tuesday.",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Republic_of_China_(Taiwan)_and_disputed_territories_in_the_South_China_Sea.png"
+  },
+  {
+    "story_id": "n21_blockchain_agentic__ukraine_hits_st_petersburg_with_250_drones_during_pmef",
+    "headline": "Ukraine Hits St. Petersburg With 250+ Drones During PMEF — Military Base + Physics Institute Destroyed",
+    "they_say": "Putin rejects peace talks, tells army to 'work.' Russian budget deficit at 6.01T rubles, oil/gas revenues down 29.8%.",
+    "reality": "Ukraine struck Russia's second city during its flagship economic forum — a political humiliation. Naval mine-torpedo base and Fock Physics Institute hit. Strikes may harden Putin's domestic position, perversely prolonging war.",
+    "sector": "geopolitics",
+    "paradigm_pillar": "eu_fragmentation",
+    "paradigm_implications": [
+      "Deep-strike capability proven against any Russian city",
+      "Ukraine acts more aggressively as US attention diverts to Iran"
+    ],
+    "portfolio_implication": "Short Russian assets (RSX). Long defense/nuclear security. Ukrainian war bonds if risk-on.",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint_Petersburg_View_from_St_Isaac%27s_Cathedral_1.jpg"
+  },
+  {
+    "story_id": "n21_blockchain_agentic__bitcoin_free_fall_saylor_liquidates_etfs_bleed",
+    "headline": "Bitcoin Free Fall — Saylor Liquidates, ETFs Bleed, 200-Week MA Tested",
+    "they_say": "Trump says he'll 'never let crypto down.' Senate Clarity Act advances 15-9. Pro-crypto regulation is coming.",
+    "reality": "BTC drops 5.5% to $61.3K. Strategy sells $2.5M — 'never sell' narrative is dead. $11.5B unrealized loss. ETF outflows at record. 200-week MA at $61K is last line before liquidation cascade.",
+    "sector": "crypto",
+    "paradigm_pillar": "blockchain_agentic",
+    "paradigm_implications": [
+      "Positive regulation ignored by price — bearish divergence extreme",
+      "MSTR leverage unwind creates self-reinforcing downtrend"
+    ],
+    "portfolio_implication": "Short BTC on any bounce. Short MSTR. Invalidate if BTC holds $65K for 48h.",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_logo.svg"
+  },
+  {
+    "story_id": "n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai",
+    "headline": "Google Signs $920M/Month AI Compute Deal With SpaceX/xAI — IPO Demand Surges",
+    "they_say": "AI compute demand is insatiable. Google spending $180-190B capex in 2026. SpaceX IPO June 12 is 2x oversubscribed at $75B.",
+    "reality": "SpaceX lost $4.28B on $4.69B Q1 revenue — losing $0.91 per dollar. $1.8T+ valuation prices in AI revenues that don't exist yet. Broader market risk-off (NASDAQ -4.68%) threatens IPO pop.",
+    "sector": "tech",
+    "paradigm_pillar": "abundance_tech",
+    "paradigm_implications": [
+      "Hyperscaler capex arms race locks GPU demand for quarters",
+      "SpaceX losing money per dollar at $1.8T — pure narrative pricing"
+    ],
+    "portfolio_implication": "Buy SPCX at IPO for first-week momentum. Long NVDA. Sell half before Monday close.",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX_Logo.svg"
+  },
+  {
+    "story_id": "n21_blockchain_agentic__zcash_researcher_audits_monero_xmr_volatility",
+    "headline": "Zcash Soundness Bug Researcher Now Audits Monero — XMR Recovers From -10% Panic",
+    "they_say": "Monero is 'mathematically proven' and more audited than Zcash. The community says a soundness bug is impossible.",
+    "reality": "Zcash's Orchard pool was also 'battle-tested' before the bug was found. Privacy coins cannot prove absence of bugs. XMR has no transparent fallback — if a bug exists, the coin is unrecoverable.",
+    "sector": "crypto",
+    "paradigm_pillar": "blockchain_agentic",
+    "paradigm_implications": [
+      "Privacy coins face systemic trust crisis",
+      "No privacy coin can prove absence of cryptographic bugs"
+    ],
+    "portfolio_implication": "Short XMR on any bounce above $120. Binary event — next researcher update could drop with no warning.",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Monero_Logo.svg"
   }
 ]
