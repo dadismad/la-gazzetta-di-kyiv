@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T17:53:51.178242+00:00",
+  "generated_at": "2026-06-09T18:57:42.065887+00:00",
   "lead": {
     "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
     "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
@@ -1837,101 +1837,240 @@
       "generated_at": "2026-06-09T13:03:26.472079+00:00"
     },
     {
-      "story_id": "n21_multi_pillar__nyt_iran_15yr_enrichment_suspension_contradiction",
-      "headline": "CONTRADICTION: NYT Reports US Believes Iran Ready for 15-Year Enrichment Suspension — Diplomatic Off-Ramp Emerges 44 Minutes After Apache Shootdown",
-      "sector": "commodities",
-      "paradigm_pillar": "multi_pillar",
+      "story_id": "n21_abundance_tech__spacex_ipo_closes_oversubscribed_1_8t_valuation",
+      "headline": "SpaceX IPO Closes Wednesday Oversubscribed at $1.8T Valuation — $10B+ Orders Despite $4.3B Quarterly Loss",
+      "sector": "equities",
+      "pillar": "abundance_tech",
+      "paradigm_pillar": "abundance_tech",
       "paradigm_implications": [
-        "The diplomatic off-ramp directly contradicts the escalation narrative. If Iran is willing to accept a 15-year enrichment suspension, the entire US-Iran conflict framework shifts from war pricing to deal pricing. Oil risk premium that was repriced upward at 16:38 (Apache shootdown) must be repriced downward at 17:22 (NYT leak).",
-        "Gold/silver selloff at 17:40 confirms institutional money is pricing the resolution thesis, not the escalation thesis. The safe-haven bid unwinds as markets price diplomatic resolution.",
-        "This is the strongest signal yet that the Hormuz blockade timeline (EIA: through Q3 2026) may be optimistic — if the nuclear deal framework is back on, blockade relief could come sooner, collapsing the structural oil bid.",
-        "The contradiction creates asymmetric positioning: oil/gold longs from the Apache shootdown need to be flattened or hedged. If the NYT leak is genuine, the escalation premium unwinds fully."
+        "SpaceX IPO is the defining capital markets event of 2026 — $80B+ raise at $1.8T valuation is unprecedented in scale and signals that frontier technology companies are valued on narrative and strategic positioning, not earnings.",
+        "The 91% loss margin ($4.28B loss on $4.69B revenue in Q1) creates a fundamental contradiction: the market is pricing future monopoly rents in space/Starlink, not current financial performance.",
+        "If SPCX opens hot and corrects, it could suck liquidity from other tech names — the $80B+ raise is the largest capital extraction from public markets in history."
       ],
-      "they_say": "At 17:22 UTC, @trad_fin posted via NYT: US believes Iran will settle on a 15-year enrichment suspension. This directly contradicts the Apache shootdown narrative that dominated markets from 16:38. Consensus had been pricing US-Iran military escalation as the dominant risk factor — oil/gold bid, equities risk-off, VIX elevated. The NYT leak suggests the diplomatic track, far from being dead, may be closer to resolution than ever. Markets now face a binary: either the NYT leak is genuine (diplomatic resolution, risk-on) or it is a trial balloon to contain panic (escalation risk re-emerges tomorrow).",
-      "reality": "The NYT leak could be a deliberate administration signal to cool markets after the Apache shootdown created unwarranted panic. If the State Department or White House does not confirm the 15-year suspension language, the escalation premium re-emerges with a vengeance Wednesday. Conversely, if confirmed, the entire macro regime flips: oil to 7 (EIA baseline without escalation premium), equity selloff reverses, VIX compresses. The gold/silver selloff at 17:40 UTC is HARD evidence that at least some institutional capital believes the diplomatic thesis. The NYT is the paper of record — this is a specific, falsifiable claim, not rumor.",
-      "thesis": "FLATTEN/REVERSE previous oil/gold longs from Apache shootdown — the off-ramp is live. SHORT oil into the diplomatic resolution bid fade. LONG equities on geopolitical risk premium compression. The asymmetric risk: the NYT leak is a trial balloon that gets popped — position at 50% conviction vs. Apache-only trade.",
+      "they_say": "SpaceX IPO is 'well oversubscribed' per multiple sources (Reuters, Bloomberg, Business Times). IPO closes Wednesday June 10 post-close. Symbol: SPCX on Nasdaq. Raising ~$80B+. 1Q revenue $4.69B, 1Q net loss $4.28B. Valuation expected >$1.8T. 'Well oversubscribed' means strong institutional demand — the IPO will price at top of range or above. Positive for tech/space/innovation sentiment.",
+      "reality": "SpaceX had a $4.28B NET LOSS in Q1 on $4.69B revenue — that is a 91% loss margin. The pre-IPO valuation of $1.8T implies a ~96x trailing revenue multiple on a company burning cash at a staggering rate. The $80B+ raise dwarfs any previous IPO — for context, that's larger than the GDP of many small nations. The 'well oversubscribed' narrative is standard IPO marketing; the real test is first-day trading. OpenAI also just confidentially filed S-1 — AI IPO narrative is now competing with SpaceX for attention. The massive raise at a loss-making valuation is the highest-stakes liquidity event in market history.",
+      "thesis": "BILATERAL: (A) LONG SPCX on IPO day for the pop — institutional demand and retail frenzy will drive first-day gains of +30-50%. (B) SHORT SPCX on day 2-3 post-IPO — the $80B raise at $1.8T valuation on a company losing 91% of revenue is fundamentally unsustainable. Target: -15-20% from first-day close within 5 sessions. Alternative: LONG SpaceX-adjacent supply chain names (Maxar, Planet Labs, AST SpaceMobile) that benefit from the Starlink/space narrative validation.",
       "actors": [
-        "US Administration (Trump, Witkoff, Kushner)",
-        "Iran (Khamenei, IRGC)",
-        "NYT"
+        "SpaceX (Elon Musk)",
+        "Nasdaq",
+        "OpenAI"
       ],
       "horizon": "24-72h",
       "confidence": "medium",
-      "invalidation_trigger": "State Department or White House denies the 15-year enrichment suspension claim. Iran rejects the framework. No deal materializes within 72 hours. Gold spikes back above Apache-shootdown highs.",
-      "portfolio_implication": "The Apache-long-oil trade got killed by the NYT off-ramp leak. Flatten oil/gold longs. BUY SPY/QQQ calls for geopolitical risk compression. SHORT VIX. Key level: WTI below 8 confirms the narrative flip from escalation to resolution. Position sizing: 50% of standalone Apache conviction — the leak could be walked back.",
-      "capital_flow_implication": "REVERSE: from LONG oil/gold (escalation) to SHORT oil, LONG equities (diplomatic resolution). Capital flows unwind the Apache-shootdown premium and re-enter risk assets.",
-      "image_url": "",
+      "tier": "DEVELOPING",
+      "actionable_trade": "BILATERAL: (A) LONG SPCX on IPO day for the pop — institutional demand and retail frenzy will drive first-day gains of +30-50%. (B) SHORT SPCX on day 2-3 post-IPO — the $80B raise at $1.8T valuation on a company losing 91% of revenue is fundamentally unsustainable.",
+      "contradiction_score": 65,
+      "invalidation_trigger": "SPCX trades at or below IPO price on day 1, negating the pop-then-crash thesis. SpaceX announces profitability guidance within 12 months, justifying the valuation multiple.",
+      "portfolio_implication": "SpaceX IPO is the defining capital markets event of 2026 — $80B+ raise at $1.8T valuation is unprecedented. The tension between 'biggest IPO ever' and 'losing 91% of revenue' is the story. For Gazzetta di Kyiv: frame as capital markets signaling that frontier technology (Starlink for Ukraine connectivity, space-based ISR) is being valued at a strategic premium that transcends traditional financial metrics.",
       "capital_flow": {
-        "claim": ".0B reversal from commodities to equities on diplomatic off-ramp pricing",
-        "direction": "outflow",
-        "amount": 5.0,
-        "denomination": "USD",
-        "asset_class": "commodities",
-        "pace": "rapid (1-2 hours through US close)",
-        "projected": "Oil/gold longs unwound, equities bought. WTI toward 7, SPY recovers geopolitical risk premium.",
-        "confidence": "medium",
-        "positioning": "FLATTEN commodities, LONG SPY/QQQ"
+        "direction": "inflow",
+        "amount_b": 80.0,
+        "asset_class": "equities",
+        "projected": "SpaceX IPO $80B+ capital raise at $1.8T valuation — largest capital extraction from public markets in history. 91% loss margin creates asymmetric risk for post-IPO buyers.",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$80.0B inflow equities ($SPCX)",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "BILATERAL: LONG on IPO day pop, SHORT for day-2-3 reversion. $80B capital raise is a liquidity event that re-rates the entire space sector.",
+      "evidence": [
+        "source: reuters_business — 'SpaceX IPO running at two times oversubscribed'",
+        "source: bloomberg — 'SpaceX IPO Is Well Oversubscribed With Orders Closing Wednesday'",
+        "source: telegram_intel — 'SpaceX IPO Closing Wednesday — massively oversubscribed, $80B+ raise'"
+      ],
+      "source": "web_search_abundance",
+      "generated_at": "2026-06-09T18:57:18.837881+00:00",
+      "freshness": "breaking",
+      "image_url": "",
+      "entity_tags": {
+        "assets": [
+          "SPCX",
+          "TSLA",
+          "MAXR"
+        ],
+        "geographies": [
+          "USA",
+          "global"
+        ],
+        "actors": [
+          "Elon Musk",
+          "SpaceX",
+          "OpenAI"
+        ],
+        "instruments": [
+          "equity"
+        ]
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "SpaceX IPO Closes Wednesday Oversubscribed at $1.8T Valuation — $10B+ Orders Despite $4.3B Quarterly Loss",
+          "body": "Structural assessment: SpaceX had a $4.28B NET LOSS in Q1 on $4.69B revenue — 91% loss margin. $1.8T valuation implies ~96x trailing revenue on a loss-making company. The $80B+ raise dwarfs any previous IPO. SpaceX-adjacent supply chain benefits from narrative validation. Implicated assets: SPCX, TSLA, MAXR. Regions: global. Monitor for sector re-rating and liquidity effects on other tech names.",
+          "implication": "Board-level: space/tech exposure review recommended. Directional bias: BILATERAL — long IPO pop, short day-2 correction."
+        },
+        "quant": {
+          "headline": "EQUITIES signal: BILATERAL (LONG first day, SHORT day 2-3)",
+          "body": "Raw telemetry — $80B capital raise detected from SpaceX IPO. 91% loss margin (Q1 loss $4.28B / revenue $4.69B) is unprecedented for a $1.8T valuation. Assets tagged: SPCX, TSLA. Correlation regime: high-beta tech. Watch first-day trading volume for confirmation of oversubscription narrative.",
+          "metrics": {
+            "flow_direction": "inflow",
+            "asset_class": "equities",
+            "valuation_multiple": 96,
+            "loss_margin_pct": 91
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG SPCX Day 1 → 🔴 SHORT SPCX Day 2-3",
+          "body": "Directional: BILATERAL. Asset: SPCX. Catalyst: SpaceX IPO closing Wednesday. Conviction: MEDIUM. Entry: buy IPO for day 1 pop, short aggressively after first-day close. Target: -15-20% from first-day high within 5 sessions.",
+          "signal": {
+            "direction": "BILATERAL",
+            "entry_zone": "IPO price",
+            "stop_level": "TBD on day 1 close",
+            "target": "-15-20% from day 1 high",
+            "conviction": "MEDIUM"
+          }
+        }
       },
       "extremum": {
-        "type": "narrative_contradiction",
-        "magnitude": 9.5,
-        "description": "In 44 minutes the world flipped twice: Apache shot down (war), then 15-year enrichment suspension leak (peace). Markets must reprice the probability of US-Iran war from elevated back to baseline.",
-        "timeframe": "2-3 hours through US close; overnight gap risk"
-      },
-      "generated_at": "2026-06-09T17:53:51.178242+00:00",
-      "source": "telegram_intel",
-      "freshness": "breaking",
-      "tier": "DEVELOPING",
-      "contradiction_score": 85
+        "type": "size",
+        "magnitude": "historic",
+        "description": "Largest IPO in history — $80B+ raise at $1.8T valuation on a company with 91% loss margin"
+      }
     },
     {
-      "story_id": "n21_multi_pillar__venezuela_oil_surge_triples_production_dec2025",
-      "headline": "Venezuela Triples Oil Production Since December — Non-Hormuz Supply Surge Changes Global Oil Calculus",
-      "sector": "commodities",
-      "paradigm_pillar": "multi_pillar",
+      "story_id": "n21_dollar_decline__india_rbi_proposes_brics_digital_currency_link",
+      "headline": "India's Central Bank Proposes Linking BRICS' Digital Currencies — De-Dollarization Infrastructure Takes Shape",
+      "sector": "macro",
+      "pillar": "dollar_decline",
+      "paradigm_pillar": "dollar_decline",
       "paradigm_implications": [
-        "Venezuelan oil production tripling from ~400K bpd (Dec 2025) to ~1.2M bpd provides a non-Hormuz supply source that partially offsets the Strait of Hormuz blockade (~15-17M bpd transit). While 1.2M bpd does not fully replace Hormuz, it signals that spare capacity outside OPEC-Core is being activated.",
-        "The US EIA publishing this data simultaneously with the Hormuz blockade timeline is deliberate supply-overhang signaling — the US government is telegraphing that supply disruption concerns are manageable via non-Hormuz sources.",
-        "If Venezuela sanctions are relaxed further, production could ramp even faster. This caps the upside for oil even in an escalation scenario — every headline-driven oil spike becomes a shorting opportunity.",
-        "Lower oil prices reduce Russia's war revenue, easing the inflation pressure on European economies and reducing the stagflation risk premium in global markets."
+        "The RBI proposing a BRICS digital currency link is the most concrete de-dollarization infrastructure development to date — unlike political declarations, this is central bank technical architecture planning.",
+        "If BRICS CBDCs become interoperable via a common ledger or bridge, it creates an alternative settlement layer to SWIFT/CHIPS that specifically bypasses USD correspondent banking.",
+        "This is a structural headwind for USD reserve status — not imminent (5-10 year timeline) but directionally the most significant challenge to dollar hegemony since the euro's creation."
       ],
-      "they_say": "US Energy Department confirms Venezuela tripled oil production since December 2025. Markets focused on Apache shootdown and Hormuz blockade have not priced this supply-side shift. Consensus expects oil to remain elevated on Middle East risk — the Venezuela surge is dismissed as modest relative to Hormuz volumes. Venezuelan infrastructure is degraded and heavy sour crude requires different refining than the light sweet crude transiting Hormuz.",
-      "reality": "Venezuela tripling production from a December low that was artificially depressed by sanctions is structurally significant. PdVSA has demonstrated production recovery under the new US-Venezuela detente. While Venezuelan crude is heavy/sour, US Gulf Coast refineries are configured for it — this is not a structural mismatch. The US EIA publishing this data on the same day as the Hormuz blockade timeline is NOT a coincidence — it is a deliberate signal that alternative supply is being activated. If sanctions are relaxed further (and Venezuela has made overtures to normalize oil trade), production could reach 1.5M+ bpd within 6 months.",
-      "thesis": "BEARISH oil relative to consensus. Venezuela supply surge + diplomatic resolution (NYT 15-year suspension leak) = capped oil upside even on escalation headlines. SHORT oil into any spike above 9. The structural oil bid from Hormuz blockade is being actively managed by the US via non-Hormuz supply activation.",
+      "they_say": "India's central bank (RBI) has proposed linking the digital currencies of BRICS nations — China, India, Russia, Brazil, South Africa, and newly expanded members. Per Reuters exclusive, the proposal aims to create a common platform for CBDC (Central Bank Digital Currency) interoperability among BRICS members. Consensus view: this is exploratory and years away from implementation. Markets view BRICS de-dollarization as mostly rhetorical — past BRICS initiatives (New Development Bank, Contingent Reserve Arrangement) have limited real-world impact. The dollar remains dominant (>58% of global reserves per IMF COFER).",
+      "reality": "This is the FIRST time a BRICS central bank has proposed a concrete technical architecture for digital currency linkage — not a political declaration but an operational proposal from the RBI. India is a critical swing state in the global payments architecture: it operates the world's largest real-time payments system (UPI with 10B+ monthly transactions) and has the most advanced CBDC pilot (e-Rupee with 5M+ retail users). Unlike previous BRICS initiatives that were political posturing, digital currency interoperability has a clear implementation path — India's UPI already has bilateral linkages with Singapore, Nepal, and Bhutan. Extending this to BRICS members via CBDCs is technically feasible within 2-3 years. The strategic significance: if China's digital yuan and India's e-Rupee become interoperable through a BRICS bridge, it creates a settlement layer for bilateral trade that by design excludes USD. For Russia specifically, this offers a sanctions-evasion channel for cross-border payments.",
+      "thesis": "STRUCTURAL LONG de-dollarization basket: LONG gold (GLD, IAU) as the ultimate reserve asset alternative, LONG Bitcoin (BTC) as non-sovereign digital reserve, LONG BRICS payment infrastructure plays (if available via emerging market ETFs). STRUCTURAL SHORT USD via short DXY or long emerging market FX baskets. The RBI's proposal validates the thesis that de-dollarization is moving from rhetoric to infrastructure building.",
       "actors": [
-        "US EIA/Energy Department",
-        "PdVSA (Venezuela)",
-        "OPEC",
-        "US Administration"
+        "Reserve Bank of India (RBI)",
+        "BRICS",
+        "People's Bank of China (PBoC)",
+        "Central Bank of Russia"
       ],
-      "horizon": "1-2 weeks",
+      "horizon": "1-4 weeks",
       "confidence": "medium",
-      "invalidation_trigger": "Venezuelan production numbers are overstated and revised down. Sanctions are reimposed. Refinery configuration prevents meaningful import substitution. Hormuz blockade persists with no end in sight despite alternative supply.",
-      "portfolio_implication": "Oil producers: Venezuela surge + diplomatic off-ramp cap structural upside. SHORT oil into spikes (9+ WTI). LONG airlines (DAL, AAL, UAL) as oil-pain beneficiaries. SHORT XLE/XOM as energy sector reprices lower structural premium. LONG consumer discretionary on lower fuel cost expectations.",
-      "capital_flow_implication": "Capital rotates OUT of energy sector (commodity long positions that were premised on structural oil shortage) INTO consumer/transportation/airlines as supply-side relief is priced.",
-      "image_url": "",
+      "tier": "DEVELOPING",
+      "actionable_trade": "STRUCTURAL LONG gold (GLD, IAU), LONG BTC, LONG India equities (EEM/INDA) as digital currency leader. SHORT USD via DXY shorts or long emerging market FX. The RBI proposal is the first concrete technical step toward a BRICS payment alternative — this changes the de-dollarization timeline from theoretical to architectural.",
+      "contradiction_score": 62,
+      "invalidation_trigger": "BRICS members fail to agree on CBDC interoperability framework at next summit. RBI walks back proposal under US diplomatic pressure. Major technical/security obstacles delay implementation beyond 5-year horizon.",
+      "portfolio_implication": "The RBI proposing a BRICS digital currency link is the most concrete de-dollarization infrastructure development to date. Unlike political declarations, this is central bank technical architecture planning. LONG gold, LONG BTC, LONG emerging market FX, SHORT USD. Gazzetta di Kyiv angle: India positioning itself as the payments infrastructure architect of the multipolar world — connecting the digital yuan (China) with the e-Rupee (India) creates a settlement layer that bypasses USD entirely. Russia benefits most immediately as sanctions-evasion channel for cross-border payments.",
       "capital_flow": {
-        "claim": "-5B rotation out of energy sector longs into consumer/transportation on Venezuela supply signal",
         "direction": "outflow",
-        "amount": 4.0,
-        "denomination": "USD",
-        "asset_class": "commodities",
-        "pace": "moderate (1-2 week repricing)",
-        "projected": "Energy sector underperforms as Venezuela supply + diplomatic off-ramp cap oil. Airlines and consumer discretionary benefit from lower fuel cost expectations.",
-        "confidence": "medium",
-        "positioning": "SHORT USO/XLE, LONG airlines, LONG consumer discretionary"
+        "amount_b": 500.0,
+        "asset_class": "macro",
+        "projected": "Structural USD reserve erosion — if BRICS CBDC interoperability is achieved for bilateral trade settlement, an estimated $500B+ of trade currently settled in USD could shift to BRICS digital currency channels over 5 years.",
+        "pace_multiplier": 0.3,
+        "confidence_pct": 60,
+        "confidence_level": "medium",
+        "claim": "Up to $500B structural outflow from USD reserves over 5 years if implemented",
+        "confidence": "60%"
+      },
+      "capital_flow_implication": "Structural de-dollarization trade. RBI's BRICS CBDC proposal is an architectural blueprint for bypassing USD settlement. LONG gold, LONG BTC, LONG EM FX. Timeline: 2-5 years for implementation, but the direction of travel is clear.",
+      "evidence": [
+        "source: reuters — 'Exclusive: India's central bank proposes linking BRICS' digital currencies'",
+        "source: pymnts.com — 'India Wants BRICS Nations to Link Digital Currencies'",
+        "source: coindesk — 'India's central bank proposes a plan to create digital-currency link among BRICS nations'"
+      ],
+      "source": "web_search_dollar",
+      "generated_at": "2026-06-09T18:57:18.837881+00:00",
+      "freshness": "breaking",
+      "image_url": "",
+      "entity_tags": {
+        "assets": [
+          "GLD",
+          "BTC",
+          "DXY",
+          "EEM",
+          "INDA"
+        ],
+        "geographies": [
+          "India",
+          "China",
+          "Russia",
+          "Brazil",
+          "South Africa",
+          "BRICS"
+        ],
+        "actors": [
+          "Reserve Bank of India (RBI)",
+          "PBoC",
+          "Central Bank of Russia",
+          "BRICS"
+        ],
+        "instruments": [
+          "CBDC",
+          "FX",
+          "futures"
+        ]
+      },
+      "time_decay": {
+        "half_life_hours": 168.0,
+        "decay_curve": "linear",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "BRICS_summit",
+          "CBDC_pilot_launch"
+        ]
+      },
+      "impacted_flows": [],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "India's Central Bank Proposes Linking BRICS' Digital Currencies — De-Dollarization Infrastructure Takes Shape",
+          "body": "Structural assessment: India's RBI has proposed the first concrete technical architecture for BRICS digital currency interoperability. India operates the world's largest real-time payments system (UPI — 10B+ monthly transactions) and has the most advanced CBDC pilot (e-Rupee). This is the most significant de-dollarization infrastructure development to date — moving from political rhetoric to central bank technical planning. Implicated assets: gold, BTC, EM FX. Regions: BRICS, global. Monitor for next BRICS summit and CBDC pilot results.",
+          "implication": "Board-level: USD reserve exposure requires long-term hedge allocation to gold and non-USD assets. Directional bias: LONG gold, LONG BTC, SHORT USD."
+        },
+        "quant": {
+          "headline": "MACRO signal: STRUCTURAL SHORT USD",
+          "body": "Raw telemetry — de-dollarization infrastructure signal detected. RBI proposes BRICS CBDC linkage. India's UPI (10B+ monthly txns) + e-Rupee pilot (5M+ users) provides technical backbone. Potential $500B+ trade settlement shift from USD to BRICS digital channels over 5 years. Assets tagged: GLD, BTC, DXY, EM FX. Correlation regime: structural multi-year trend shift.",
+          "metrics": {
+            "flow_direction": "outflow",
+            "asset_class": "macro",
+            "estimated_annual_trade_shift_b": 100,
+            "timeline_years": 5
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG GOLD/BTC → 🔴 SHORT USD",
+          "body": "Directional: LONG gold and BTC; SHORT USD. Catalyst: RBI proposes BRICS CBDC interoperability framework. Conviction: MEDIUM (structural, not short-term). Entry: accumulate GLD/BTC on any USD strength. Timeline: multi-week to multi-year. Stop: if BRICS fails to agree at next summit.",
+          "signal": {
+            "direction": "LONG gold/BTC; SHORT USD",
+            "entry_zone": "market",
+            "stop_level": "BRICS summit failure",
+            "target": "$500B+ trade shift from USD over 5 years",
+            "conviction": "MEDIUM"
+          }
+        }
       },
       "extremum": {
-        "type": "supply_shock_mitigation",
-        "magnitude": 7.0,
-        "description": "Venezuela tripling production from ~400K to ~1.2M bpd in six months is the fastest production recovery from an OPEC nation outside of wartime. Combined with diplomatic resolution signals, the structural oil shortage narrative is being actively managed.",
-        "timeframe": "1-4 weeks for full market pricing"
-      },
-      "generated_at": "2026-06-09T17:53:51.178242+00:00",
-      "source": "telegram_intel",
-      "freshness": "breaking",
-      "tier": "DEVELOPING",
-      "contradiction_score": 75
+        "type": "structural_shift",
+        "magnitude": "significant",
+        "description": "First concrete BRICS central bank proposal for digital currency interoperability — most significant de-dollarization infrastructure development since BRICS founding"
+      }
     }
   ]
 }
