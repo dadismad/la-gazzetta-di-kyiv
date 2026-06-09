@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T17:34:30.749441+00:00",
+  "generated_at": "2026-06-09T17:53:51.178242+00:00",
   "lead": {
     "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
     "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
@@ -1835,6 +1835,103 @@
         "confidence": "65%"
       },
       "generated_at": "2026-06-09T13:03:26.472079+00:00"
+    },
+    {
+      "story_id": "n21_multi_pillar__nyt_iran_15yr_enrichment_suspension_contradiction",
+      "headline": "CONTRADICTION: NYT Reports US Believes Iran Ready for 15-Year Enrichment Suspension — Diplomatic Off-Ramp Emerges 44 Minutes After Apache Shootdown",
+      "sector": "commodities",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "The diplomatic off-ramp directly contradicts the escalation narrative. If Iran is willing to accept a 15-year enrichment suspension, the entire US-Iran conflict framework shifts from war pricing to deal pricing. Oil risk premium that was repriced upward at 16:38 (Apache shootdown) must be repriced downward at 17:22 (NYT leak).",
+        "Gold/silver selloff at 17:40 confirms institutional money is pricing the resolution thesis, not the escalation thesis. The safe-haven bid unwinds as markets price diplomatic resolution.",
+        "This is the strongest signal yet that the Hormuz blockade timeline (EIA: through Q3 2026) may be optimistic — if the nuclear deal framework is back on, blockade relief could come sooner, collapsing the structural oil bid.",
+        "The contradiction creates asymmetric positioning: oil/gold longs from the Apache shootdown need to be flattened or hedged. If the NYT leak is genuine, the escalation premium unwinds fully."
+      ],
+      "they_say": "At 17:22 UTC, @trad_fin posted via NYT: US believes Iran will settle on a 15-year enrichment suspension. This directly contradicts the Apache shootdown narrative that dominated markets from 16:38. Consensus had been pricing US-Iran military escalation as the dominant risk factor — oil/gold bid, equities risk-off, VIX elevated. The NYT leak suggests the diplomatic track, far from being dead, may be closer to resolution than ever. Markets now face a binary: either the NYT leak is genuine (diplomatic resolution, risk-on) or it is a trial balloon to contain panic (escalation risk re-emerges tomorrow).",
+      "reality": "The NYT leak could be a deliberate administration signal to cool markets after the Apache shootdown created unwarranted panic. If the State Department or White House does not confirm the 15-year suspension language, the escalation premium re-emerges with a vengeance Wednesday. Conversely, if confirmed, the entire macro regime flips: oil to 7 (EIA baseline without escalation premium), equity selloff reverses, VIX compresses. The gold/silver selloff at 17:40 UTC is HARD evidence that at least some institutional capital believes the diplomatic thesis. The NYT is the paper of record — this is a specific, falsifiable claim, not rumor.",
+      "thesis": "FLATTEN/REVERSE previous oil/gold longs from Apache shootdown — the off-ramp is live. SHORT oil into the diplomatic resolution bid fade. LONG equities on geopolitical risk premium compression. The asymmetric risk: the NYT leak is a trial balloon that gets popped — position at 50% conviction vs. Apache-only trade.",
+      "actors": [
+        "US Administration (Trump, Witkoff, Kushner)",
+        "Iran (Khamenei, IRGC)",
+        "NYT"
+      ],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "invalidation_trigger": "State Department or White House denies the 15-year enrichment suspension claim. Iran rejects the framework. No deal materializes within 72 hours. Gold spikes back above Apache-shootdown highs.",
+      "portfolio_implication": "The Apache-long-oil trade got killed by the NYT off-ramp leak. Flatten oil/gold longs. BUY SPY/QQQ calls for geopolitical risk compression. SHORT VIX. Key level: WTI below 8 confirms the narrative flip from escalation to resolution. Position sizing: 50% of standalone Apache conviction — the leak could be walked back.",
+      "capital_flow_implication": "REVERSE: from LONG oil/gold (escalation) to SHORT oil, LONG equities (diplomatic resolution). Capital flows unwind the Apache-shootdown premium and re-enter risk assets.",
+      "image_url": "",
+      "capital_flow": {
+        "claim": ".0B reversal from commodities to equities on diplomatic off-ramp pricing",
+        "direction": "outflow",
+        "amount": 5.0,
+        "denomination": "USD",
+        "asset_class": "commodities",
+        "pace": "rapid (1-2 hours through US close)",
+        "projected": "Oil/gold longs unwound, equities bought. WTI toward 7, SPY recovers geopolitical risk premium.",
+        "confidence": "medium",
+        "positioning": "FLATTEN commodities, LONG SPY/QQQ"
+      },
+      "extremum": {
+        "type": "narrative_contradiction",
+        "magnitude": 9.5,
+        "description": "In 44 minutes the world flipped twice: Apache shot down (war), then 15-year enrichment suspension leak (peace). Markets must reprice the probability of US-Iran war from elevated back to baseline.",
+        "timeframe": "2-3 hours through US close; overnight gap risk"
+      },
+      "generated_at": "2026-06-09T17:53:51.178242+00:00",
+      "source": "telegram_intel",
+      "freshness": "breaking",
+      "tier": "DEVELOPING",
+      "contradiction_score": 85
+    },
+    {
+      "story_id": "n21_multi_pillar__venezuela_oil_surge_triples_production_dec2025",
+      "headline": "Venezuela Triples Oil Production Since December — Non-Hormuz Supply Surge Changes Global Oil Calculus",
+      "sector": "commodities",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Venezuelan oil production tripling from ~400K bpd (Dec 2025) to ~1.2M bpd provides a non-Hormuz supply source that partially offsets the Strait of Hormuz blockade (~15-17M bpd transit). While 1.2M bpd does not fully replace Hormuz, it signals that spare capacity outside OPEC-Core is being activated.",
+        "The US EIA publishing this data simultaneously with the Hormuz blockade timeline is deliberate supply-overhang signaling — the US government is telegraphing that supply disruption concerns are manageable via non-Hormuz sources.",
+        "If Venezuela sanctions are relaxed further, production could ramp even faster. This caps the upside for oil even in an escalation scenario — every headline-driven oil spike becomes a shorting opportunity.",
+        "Lower oil prices reduce Russia's war revenue, easing the inflation pressure on European economies and reducing the stagflation risk premium in global markets."
+      ],
+      "they_say": "US Energy Department confirms Venezuela tripled oil production since December 2025. Markets focused on Apache shootdown and Hormuz blockade have not priced this supply-side shift. Consensus expects oil to remain elevated on Middle East risk — the Venezuela surge is dismissed as modest relative to Hormuz volumes. Venezuelan infrastructure is degraded and heavy sour crude requires different refining than the light sweet crude transiting Hormuz.",
+      "reality": "Venezuela tripling production from a December low that was artificially depressed by sanctions is structurally significant. PdVSA has demonstrated production recovery under the new US-Venezuela detente. While Venezuelan crude is heavy/sour, US Gulf Coast refineries are configured for it — this is not a structural mismatch. The US EIA publishing this data on the same day as the Hormuz blockade timeline is NOT a coincidence — it is a deliberate signal that alternative supply is being activated. If sanctions are relaxed further (and Venezuela has made overtures to normalize oil trade), production could reach 1.5M+ bpd within 6 months.",
+      "thesis": "BEARISH oil relative to consensus. Venezuela supply surge + diplomatic resolution (NYT 15-year suspension leak) = capped oil upside even on escalation headlines. SHORT oil into any spike above 9. The structural oil bid from Hormuz blockade is being actively managed by the US via non-Hormuz supply activation.",
+      "actors": [
+        "US EIA/Energy Department",
+        "PdVSA (Venezuela)",
+        "OPEC",
+        "US Administration"
+      ],
+      "horizon": "1-2 weeks",
+      "confidence": "medium",
+      "invalidation_trigger": "Venezuelan production numbers are overstated and revised down. Sanctions are reimposed. Refinery configuration prevents meaningful import substitution. Hormuz blockade persists with no end in sight despite alternative supply.",
+      "portfolio_implication": "Oil producers: Venezuela surge + diplomatic off-ramp cap structural upside. SHORT oil into spikes (9+ WTI). LONG airlines (DAL, AAL, UAL) as oil-pain beneficiaries. SHORT XLE/XOM as energy sector reprices lower structural premium. LONG consumer discretionary on lower fuel cost expectations.",
+      "capital_flow_implication": "Capital rotates OUT of energy sector (commodity long positions that were premised on structural oil shortage) INTO consumer/transportation/airlines as supply-side relief is priced.",
+      "image_url": "",
+      "capital_flow": {
+        "claim": "-5B rotation out of energy sector longs into consumer/transportation on Venezuela supply signal",
+        "direction": "outflow",
+        "amount": 4.0,
+        "denomination": "USD",
+        "asset_class": "commodities",
+        "pace": "moderate (1-2 week repricing)",
+        "projected": "Energy sector underperforms as Venezuela supply + diplomatic off-ramp cap oil. Airlines and consumer discretionary benefit from lower fuel cost expectations.",
+        "confidence": "medium",
+        "positioning": "SHORT USO/XLE, LONG airlines, LONG consumer discretionary"
+      },
+      "extremum": {
+        "type": "supply_shock_mitigation",
+        "magnitude": 7.0,
+        "description": "Venezuela tripling production from ~400K to ~1.2M bpd in six months is the fastest production recovery from an OPEC nation outside of wartime. Combined with diplomatic resolution signals, the structural oil shortage narrative is being actively managed.",
+        "timeframe": "1-4 weeks for full market pricing"
+      },
+      "generated_at": "2026-06-09T17:53:51.178242+00:00",
+      "source": "telegram_intel",
+      "freshness": "breaking",
+      "tier": "DEVELOPING",
+      "contradiction_score": 75
     }
   ]
 }
