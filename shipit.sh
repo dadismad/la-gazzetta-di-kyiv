@@ -16,13 +16,13 @@ echo "════════════════════════�
 
 # ── §1: DATA UPDATE ──────────────────────────────────
 echo ""
-echo "[1/6] intel_to_stories — ingest latest intel..."
+echo "[1/7] intel_to_stories — ingest latest intel..."
 $PYTHON scripts/intel_to_stories.py
 echo "  ✓ stories updated"
 
 # ── §2: LOCAL SYNC — canonical sources → site/ ──────
 echo ""
-echo "[2/6] Local sync — copy canonical sources → site/..."
+echo "[2/7] Local sync — copy canonical sources → site/..."
 SYNC_FILES=(
   index.html about.html capital.html contacts.html cooperation.html
   data.html event_horizon.html flows.html geopolitics.html markets.html
@@ -40,19 +40,19 @@ echo "  ✓ HTML/CSS/JS synced to site/"
 
 # ── §3: DATA SYNC — data/ → site/data/ + API ────────
 echo ""
-echo "[3/6] build_site — data → site/data/ + API endpoints..."
+echo "[3/7] build_site — data → site/data/ + API endpoints..."
 $PYTHON scripts/build_site.py
 echo "  ✓ data synced + API generated"
 
 # ── §4: BUILD & HASH — content-hashed assets ─────────
 echo ""
-echo "[4/6] build_hashed_assets — hash CSS/JS, rewrite HTML..."
+echo "[4/7] build_hashed_assets — hash CSS/JS, rewrite HTML..."
 $PYTHON scripts/build_hashed_assets.py
 echo "  ✓ assets hashed + HTML rewritten"
 
 # ── §5: GCS DEPLOY ───────────────────────────────────
 echo ""
-echo "[5/6] Deploy to GCS..."
+echo "[5/7] Deploy to GCS..."
 export CLOUDSDK_CONFIG="/Users/alexstocchi/.config/gcloud"
 GCLOUD_DIR="/Users/alexstocchi/lagazzettadikyiv/google-cloud-sdk"
 export PATH="$GCLOUD_DIR/bin:$PATH"
@@ -94,9 +94,10 @@ echo "  ✓ deployed to GCS"
 
 # ── §6: LIVE VERIFICATION ────────────────────────────
 echo ""
-echo "[6/6] Live verification..."
+echo "[6/7] Live verification..."
+VERIFY_HEADERS=$(curl -s -D - https://www.lagazzettadikyiv.com/ -o /dev/null 2>&1)
 echo "─────────────────────────────────────────────"
-curl -s -D - https://www.lagazzettadikyiv.com/ -o /dev/null 2>&1
+echo "$VERIFY_HEADERS"
 echo "─────────────────────────────────────────────"
 
 if curl -skI "https://www.lagazzettadikyiv.com/" 2>&1 | grep -q "200"; then
@@ -104,6 +105,33 @@ if curl -skI "https://www.lagazzettadikyiv.com/" 2>&1 | grep -q "200"; then
 else
     echo -e "  ${RED}⚠ DEPLOY WARN${NC} — check site"
 fi
+
+# ── §6.5: DEPLOY REPORT ──────────────────────────────
+echo ""
+echo "[6.5/7] Generate deploy report..."
+DEPLOY_TS=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
+GIT_COMMIT=$(git rev-parse --short HEAD)
+STORY_COUNT=$($PYTHON -c "import json; d=json.load(open('data/stories.json')); print(len(d.get('stories',[])))" 2>/dev/null || echo "?")
+ETAG=$(echo "$VERIFY_HEADERS" | grep -i "^etag:" | sed 's/^[Ee][Tt][Aa][Gg]: *//' | tr -d '\r')
+LAST_MOD=$(echo "$VERIFY_HEADERS" | grep -i "^last-modified:" | sed 's/^[Ll][Aa][Ss][Tt]-[Mm][Oo][Dd][Ii][Ff][Ii][Ee][Dd]: *//' | tr -d '\r')
+
+cat > site/deploy_report.txt << DEPLOYEOF
+Gazzetta di Kyiv — Deploy Report
+================================
+Timestamp (UTC) : $DEPLOY_TS
+Git commit      : $GIT_COMMIT
+Stories live    : $STORY_COUNT
+Live ETag       : ${ETAG:-missing}
+Live Last-Mod   : ${LAST_MOD:-missing}
+Deploy status   : OK
+DEPLOYEOF
+
+echo "  ✓ site/deploy_report.txt written"
+echo "  Syncing report to GCS..."
+gsutil cp site/deploy_report.txt gs://www.lagazzettadikyiv.com/deploy_report.txt 2>&1 | tail -1 || true
+gsutil setmeta -h "Cache-Control:public, max-age=0, must-revalidate" \
+  gs://www.lagazzettadikyiv.com/deploy_report.txt 2>&1 | tail -1 || true
+echo "  ✓ report live at https://www.lagazzettadikyiv.com/deploy_report.txt"
 
 # ── §7: GIT SYNC ────────────────────────────────────
 echo ""

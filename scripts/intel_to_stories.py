@@ -14,10 +14,17 @@ import hashlib
 from datetime import datetime, timezone
 from pathlib import Path
 
-PROJECT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA = os.path.join(PROJECT, "data")
-INTEL_PATH = os.path.join(DATA, "telegram_intel", "latest.json")
-STORIES_PATH = os.path.join(DATA, "stories.json")
+import yaml
+
+# Load central configuration
+CONFIG_PATH = Path(__file__).resolve().parent.parent / "config.yaml"
+with open(CONFIG_PATH) as f:
+    config = yaml.safe_load(f)
+
+PROJECT = str(CONFIG_PATH.parent)
+DATA = str(CONFIG_PATH.parent / config["paths"]["data"])
+INTEL_PATH = os.path.join(DATA, config["data_files"]["intel_latest"])
+STORIES_PATH = os.path.join(DATA, config["data_files"]["stories"])
 
 # Pillar detection keywords
 PILLAR_KEYWORDS = {
@@ -231,7 +238,7 @@ def main():
         json.dump(stories_data, f, indent=2, ensure_ascii=False)
 
     # Also sync to site/data/
-    site_data = os.path.join(PROJECT, "site", "data", "stories.json")
+    site_data = os.path.join(PROJECT, config["paths"]["site"], config["paths"]["data"], config["data_files"]["stories"])
     os.makedirs(os.path.dirname(site_data), exist_ok=True)
     with open(site_data, "w") as f:
         json.dump(stories_data, f, indent=2, ensure_ascii=False)
