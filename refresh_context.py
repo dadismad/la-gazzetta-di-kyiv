@@ -190,6 +190,8 @@ critical_elements = {
         ("container collapsible (Stories)", r'id="storiesTeaser"'),
         ("heroProductCount span", r'id="heroProductCount"'),
         ("onboarding overlay", r'id="onboardingOverlay"'),
+        ("storyFreshness span", r'id="storyFreshness"'),
+        ("flowFreshness span", r'id="flowFreshness"'),
     ],
     "flow-nodes.html": [
         ("flow-nodes page", r'flow-nodes'),
@@ -215,11 +217,36 @@ for page, checks in critical_elements.items():
         print(f"    {ok(f'{page}: all elements present')}")
         pages_ok += 1
 
+# 4.5c: Live product page 200 check
+import urllib.request
+product_pages = [
+    "flow-nodes.html",
+    "event-horizon.html",
+    "stories.html",
+    "flows.html",
+    "signal.html",
+    "track.html",
+    "trades.html",
+]
+for pp in product_pages:
+    try:
+        req = urllib.request.Request(f"{SITE_URL}/{pp}", method="HEAD")
+        resp = urllib.request.urlopen(req, timeout=10)
+        if resp.status == 200:
+            print(f"    {ok(f'{pp}: 200')}")
+            pages_ok += 1
+        else:
+            print(f"    {bad(f'{pp}: {resp.status}')}")
+            pages_warn += 1
+    except Exception as e:
+        print(f"    {bad(f'{pp}: FAILED — {e}')}")
+        pages_warn += 1
+
 if pages_warn > 0:
-    print(f"\n    {bad(f'PRE-DEPLOY BLOCKED: {pages_warn} element(s) missing. Fix before deploying.')}")
+    print(f"\n    {bad(f'PRE-DEPLOY BLOCKED: {pages_warn} issue(s). Fix before deploying.')}")
     drift = True  # Block deploy
 else:
-    print(f"    {ok('All critical elements verified — deploy safe')}")
+    print(f"    {ok('All critical elements + product pages verified — deploy safe')}")
 
 # ── §5: SYSTEM TRUTH ───────────────────────────────
 print(f"\n{hdr('═══ CURRENT SYSTEM TRUTH ═══')}")

@@ -1,10 +1,9 @@
-WTI below $90 (-2%) — oil collapsing INTO the biggest Middle East crisis since 1973. Iran tolls Hormuz. Israel auto-triggers Beirut strikes. Ben-Gvir proposes abducting civilians.
+US existing home sales just crushed estimates: +3.2% MoM vs +1.1%. Consensus calls it "resilient." Reality: shelter inflation just got stickier, rate-cut expectations just got pushed — and the Fed's softening narrative just shattered.
 
-Markets price demand destruction over supply risk. ADP +29K confirms stagflation. But one Hezbollah rocket gaps oil $95+ instantly — shorts caught offside.
+While Israel's Nabatieh offensive derails US-Iran Hormuz talks (leaked docs confirmed), oil stays below $90. Consensus prices normalization. Evidence points escalation.
 
-• Own both tails: sub-$88 = short oil; $95 OTM calls for Hezbollah trigger
-• Long gold (GLD), long bonds (TLT) on stagflation confirmation
+• Long USD, short BTC on rate-cut delay. Long GLD for geopolitical cover.
 
-¹ WTI -2% at 12:40 UTC June 9 — oil sold off while escalation accelerated across 3 fronts (source: @markettwits)
+¹ Existing home sales +3.2% MoM, June 9 14:00 UTC print (source: Census Bureau, NAR)
 
-Continuity: pureciclismo.github.io/gazzetta-di-kyiv/ | Next trigger: Hezbollah rocket / NFP Friday June 12
+Continuity: pureciclismo.github.io/gazzetta-di-kyiv/ | Next trigger: NFP Friday June 12

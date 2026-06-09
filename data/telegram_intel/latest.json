@@ -1,75 +1,99 @@
 {
-  "fetched_at": "2026-06-09T14:27:52Z",
-  "horizon": "1-2 hour actionable window",
+  "scrape_time": "2026-06-09T14:59:44.879116+00:00",
   "model": "deepseek-v4-flash",
-  "channels_monitored": ["@trad_fin", "@MonitoringSituation", "@ASupersharij", "@infinityhedge", "@ethanlevins", "@markettwits"],
-  "channel_health": {
-    "@trad_fin": "SILENT — no messages in last 30 min (consistently low activity)",
-    "@MonitoringSituation": "SILENT — no messages in last 30 min",
-    "@ASupersharij": "ACTIVE — 1 message in last 30 min (14:20 UTC). Russia/Ukraine geopolitical narrative.",
-    "@infinityhedge": "ACTIVE — 1 message in last 30 min (14:10 UTC). Anthropic Claude Fable release scoop.",
-    "@ethanlevins": "ACTIVE — 2 messages in last 30 min (13:59-14:16 UTC). War updates (Kharkiv, Gaza).",
-    "@markettwits": "HOT — 5 messages in last 30 min (14:00-14:12 UTC). Best source: macro data, crypto, markets."
+  "horizon": "1-2 hours (markets open — Tuesday 15:00 UTC)",
+  "channels_monitored": [
+    "@trad_fin",
+    "@MonitoringSituation",
+    "@ASupersharij",
+    "@infinityhedge",
+    "@ethanlevins",
+    "@markettwits"
+  ],
+  "channel_status": {
+    "@trad_fin": "STALE — last post 12h ago (S. Korea $350B US investment deal). Weekend coverage gap.",
+    "@MonitoringSituation": "ACTIVE — fresh posts today. China-Taiwan chip curbs + Iran deal 'imminent' skepticism.",
+    "@ASupersharij": "HOT — continuous Russian-language posts. Moscow colonel assassination + Zelensky drone surge.",
+    "@infinityhedge": "STALE — sporadically active. Last post Anthropic Claude Fable release.",
+    "@ethanlevins": "HOT — continuous real-time Middle East coverage. Latest 2 min ago (Tyre evacuation).",
+    "@markettwits": "HOT — active Russian-language financial channel. Hormuz pipeline bypass + IDF Iran readiness."
   },
   "summary_stats": {
-    "messages_last_30min": 9,
-    "actionable_stories": 3
+    "total_messages_scanned": 116,
+    "messages_last_30min": 12,
+    "messages_last_2h": 38,
+    "actionable_stories_identified": 3
   },
   "stories": [
     {
-      "rank": 1,
-      "title": "US Existing Home Sales Crush Estimates — +3.2% MoM vs +1.1% Expected (3x Beat)",
-      "event": "May US Existing Home Sales printed at +3.2% month-over-month, massively beating the +1.1% consensus estimate and accelerating from +0.2% prior. This is a 3x beat on a core housing market metric. Data released at ~14:00 UTC today (markettwits, 14:00 UTC). The housing market is showing unexpected strength despite elevated mortgage rates.",
-      "consensus_narrative": "Housing is resilient. The beat is positive for economic growth narrative. Risk-on for equities. Lower recession probability. The Fed has room to hold rates steady without crashing the housing market.",
-      "contradiction": "Housing SURGING is actually bad for the Fed's softening narrative. A stronger housing market = stickier shelter inflation = higher-for-longer rates = headwind for rate-sensitive assets. Existing home sales surging while new home inventory is constrained means prices will keep rising, keeping shelter CPI elevated. For crypto (BTC): this strengthens USD in the short term as rate-cut probability gets pushed out. The 14:00 UTC print means initial FX/bond reaction has already happened, but follow-through positioning into US afternoon could extend moves.",
-      "bet": "SHORT BTC into the USD-strength narrative. If housing beat pushes rate-cut expectations further out, BTC faces a USD headwind. BTC at ~$61K is below key moving averages — housing beat adds pressure. LONG USD (via DXY or USD pairs) if the initial reaction hasn't fully played out. SHORT TLT (long bonds) — housing strength = higher terminal rate = bonds down. Horizon: next 1-2 hours — the follow-through positioning window. Crypto trades 24/7; bonds futures open Sunday evening.",
-      "benefit": "USD longs benefit from delayed rate cuts. Energy/inflation hedges (gold, oil) could dip on USD strength — buy the dip for geopolitical premium. Gazzetta di Kyiv: frame as 'US economy too hot for comfort — Fed pinned, Ukraine aid gets harder budget fight.'"
+      "id": "idf-iran-resume-hormuz-bypass-20260609",
+      "title": "IDF Declares Readiness to Immediately Resume Operations Against Iran — Kuwait Seeks Hormuz Pipeline Bypass",
+      "freshness": "12-30 minutes ago",
+      "source_channels": ["@markettwits", "@ethanlevins"],
+      "materiality_score": 9.2,
+      "event": "IDF announces readiness to immediately resume military operations against Iran. Kuwait is in active discussions with Saudi Arabia and UAE to export oil via their pipelines to bypass the Hormuz blockade. A US Army AH-64 Apache crashed near the Strait of Hormuz yesterday (crew rescued). White House again claims 'progress' on Iran nuclear deal but Trump has declared 'deal imminent' 37 times with no agreement. Netanyahu told press at 6:15 PM Israel time yesterday saying the war 'has not yet ended' while also stating Israel is holding fire 'for now.' Trump told Netanyahu 'you will be on your own very soon' if attacks on Iran continue.",
+      "consensus_narrative": "The Iran deal is increasingly seen as a diplomatic mirage. Markets are pricing a fragile status quo — no new strikes, blockade continues, talks drift. IDF's readiness declaration is being framed as posturing, not imminent action. Oil is pricing in the blockade but NOT pricing in a second round of direct Israel-Iran exchanges.",
+      "contradiction": "White House keeps saying 'progress' — there IS an active diplomatic track, and Trump has publicly restrained Netanyahu multiple times. Kuwait's pipeline bypass discussions suggest Gulf states are preparing for a LONG blockade, not an immediate war. The US Apache crash near Hormuz could be mechanical, not hostile. The market may be correctly reading this as 'escalation theater' rather than real escalation.",
+      "bet": {
+        "direction": "LONG oil (WTI/CL), LONG tanker/shipping equities, LONG defense",
+        "assets": ["$CL (WTI Crude)", "$USO", "$XLE", "$LMT", "$GD", "$TNK (Teekay Tankers)", "$STNG (Scorpio Tankers)"],
+        "trigger": "Any of: (1) IDF actually launches airstrikes into Iran = $3-5 intraday WTI spike, (2) Hormuz tanker incident/spoofing = immediate panic buying, (3) Kuwait deal confirmed = structural bid for oil (blockade persists longer than priced). Cessation risk: if deal is actually signed, oil drops $8-10 instantly.",
+        "horizon": "Next 1-2 hours intraday",
+        "confidence": "HIGH — IDF declaration is official military readiness, not rumor. Kuwait pipeline talks are real structural adjustment. Oil is the cleanest expression."
+      },
+      "benefit": {
+        "Gazzetta di Kyiv": "Frame: 'Hormuz blockade is reshaping global oil routes — Ukraine must be part of the conversation on energy security.' Tie Kuwait's pipeline bypass to Russia's pipeline politics: 'Moscow watches as the world reroutes around Iranian chokepoints, learning lessons for its own energy blackmail.'",
+        "Bet&Benefit": "BUY WTI futures or USO calls with today's expiry or tomorrow. Kuwait pipeline deal confirmation = oil stays bid above $80 on structural premium. IDF readiness declaration alone may not move the needle but any Israeli action in the next 2 hours = immediate spike. The asymmetric payoff is strongly in favor of longs."
+      }
     },
     {
-      "rank": 2,
-      "title": "Anthropic Releasing 'Claude Fable' (Neutered Mythos) Later Today — 2x Opus Pricing, AI Model Drop Within Hours",
-      "event": "The Information reports Anthropic will release Claude Fable, a new version of their Mythos-class model, LATER TODAY (infinityhedge, 14:10 UTC). Fable is described as a 'neutered' version of Mythos with safeguards against misuse in cybersecurity hacks or bioweapons construction. Pricing will be approximately 2x the current most advanced Claude Opus models. Initial Mythos pricing shared in April was 5x higher than Opus, so Fable is a scaled-back but still premium-priced tier.",
-      "consensus_narrative": "Anthropic is releasing a safer, regulatory-compliant version of their frontier model to capture enterprise customers who need advanced AI without the biosafety/cybersecurity risks. Standard product segmentation. The market has already priced in the AI model release cadence — another model release is not a catalyst.",
-      "contradiction": "Claude Fable being released 'today' (Tuesday June 9) is earlier than expected — the market assumed Mythos-class rollout would take weeks if not months of safety testing. The fact that Anthropic is releasing ANY version of Mythos this quickly suggests either: (1) they are rushing to market to beat OpenAI's next release, or (2) the 'neutered' version passed safety reviews faster than anticipated, implying the underlying Mythos is more capable than publicly known. Pricing at 2x Opus is a significant markup — this is not a discount tier, this is a premium enterprise product. A 'later today' release means the catalyst is within the next 2 hours. Crypto AI tokens (FET, RNDR, AGIX, TAO, NEAR) trade 24/7 and will react immediately.",
-      "bet": "LONG AI-crypto tokens (FET, RNDR, TAO, AGIX) on the 'frontier AI accelerating' narrative. The release of Claude Fable within hours validates the thesis that AI capability is accelerating faster than the market prices. SHORT OpenAI-competitive tokens if any exist — Anthropic leapfrogging. LONG NVIDIA (NVDA) via futures/CFDs if accessible — another model release means more GPU demand. Horizon: next 2 hours — the release window. Crypto is the only liquid venue right now (Sunday US equity close).",
-      "benefit": "AI infrastructure tokens (RNDR for compute, TAO for decentralized ML) benefit most. FET (Fetch.ai) as the broadest AI-crypto proxy. NVDA benefits at the next US equity open from the AI model proliferation narrative. Gazzetta di Kyiv: connect to Ukraine's growing drone/AI warfare industry — 'while Anthropic debates safety, Ukraine deploys AI kill chains on the front line.'"
+      "id": "israel-lebanon-tyre-evacuation-auto-retaliation-20260609",
+      "title": "Israel Orders Full Evacuation of Tyre — Cabinet Authorizes Auto-Retaliation Strike on Beirut",
+      "freshness": "2-30 minutes ago (ongoing)",
+      "source_channels": ["@ethanlevins"],
+      "materiality_score": 8.8,
+      "event": "IDF issued evacuation order for the ENTIRE city of Tyre, southern Lebanon, including the Christian quarter and surrounding refugee camps. This is described as the strongest wave of Israeli airstrikes on Tyre this week — strikes continuing hourly. Hezbollah released footage of an ATGM strike destroying an Israeli Merkava tank near Beaufort Castle. The Israeli cabinet has codified a new policy: ANY launch from Lebanon crossing into Israeli territory will trigger an automatic response with an attack on Beirut, without requiring special political-level approval. This is a hair-trigger auto-escalation mechanism. An Israeli minister (Ben-Gvir) publicly urged abducting Lebanese women and children as psychological warfare. Hezbollah fighter infiltrated up to the Israeli border and fired on IDF soldiers. IDF killed an armed man in the Lebanese border area in Upper Galilee. The US Ambassador to Lebanon says 'there will be a ceasefire' but fighting continues unabated.",
+      "consensus_narrative": "This is being reported as 'continued border clashes' in mainstream coverage — downplaying the structural escalation. The auto-retaliation policy means any Hezbollah rocket across the border = immediate Israeli strike on Beirut. This creates a mechanical escalation path where neither side needs to make a deliberate decision to escalate — it's pre-authorized. Markets are not pricing this correctly.",
+      "contradiction": "The US Ambassador says 'there will be a ceasefire' — diplomatic off-ramp exists. Hezbollah's tank strike could be a show of strength before agreeing to terms. IDF evacuation of Tyre could be a maximum pressure tactic before accepting a deal. The auto-retaliation policy could be designed to DISINCENTIVIZE Hezbollah launches (mutually assured destruction at the city level).",
+      "bet": {
+        "direction": "LONG oil (same thesis as Story 1 — compounding), LONG gold, SHORT Israel equities, LONG VIX",
+        "assets": ["$GLD", "$VIX", "$ISRA (Israel ETF shorts if accessible)", "$USO", "$CL"],
+        "trigger": "Any Hezbollah rocket crossing into Israel in the next 2 hours = immediate Beirut airstrike under the new auto-retaliation rule. If a rocket hits a populated area in northern Israel, expect risk-off spike across all ME assets. Gold $VIX surge with oil tailwind.",
+        "horizon": "Next 1-4 hours",
+        "confidence": "HIGH — the auto-retaliation mechanism is new and creates mechanical escalation. Tyre evacuation is a scale of displacement (entire city) not seen before. This is structurally different from the 'same old clashes' narrative markets are applying."
+      },
+      "benefit": {
+        "Gazzetta di Kyiv": "Frame: 'Lebanon is becoming another Gaza — full cities evacuated, auto-retaliation policies, no off-ramp. The world is normalizing collective punishment.' Compare to Russian tactics in Mariupol/Bakhmut. 'Israel's Tyre evacuation is what Russia did to Ukrainian cities — the difference is only which side the West supports.'",
+        "Bet&Benefit": "Gold calls intraday. VIX calls if available (VIX is low currently — this explosion of volatility would catch most short-vol strategies flat-footed). The auto-retaliation mechanism is a genuine escalation innovation that markets haven't priced. If you want a high-beta trade: short Israeli shekel via futures if accessible."
+      }
     },
     {
-      "rank": 3,
-      "title": "Ethena (ENA) Partners with Janus Henderson ($300B+ AUM) for Tokenized CLOs — Institutional DeFi Breakthrough",
-      "event": "Ethena Labs has partnered with Janus Henderson, the $300B+ global asset management giant, to offer tokenized CLOs (collateralized loan obligations) to clients (markettwits, 14:04 UTC). CLOs are structured credit products backed by pools of corporate loans, typically sold to institutional investors. This partnership brings Ethena's yield infrastructure to Janus Henderson's massive client base.",
-      "consensus_narrative": "Another crypto-institutional partnership. Ethena is a growing DeFi protocol but CLO tokenization is niche. Markets will dismiss this as a small experiment — Janus Henderson testing a small allocation. ENA holders skeptical of CLO credit risk in a potential recession.",
-      "contradiction": "Janus Henderson managing $300B+ is not a 'small experiment' partner — this is a top-50 global asset manager. Ethena's core thesis is providing institutional-grade yield infrastructure on-chain, and Janus Henderson validating that with CLO tokenization is a major signal. CLOs are exactly the kind of high-yield, low-volatility asset that DeFi yield protocols need to scale. The timing is also notable: CLO tokenization solves the 'real-world asset yield' problem that has been THE bottleneck for DeFi institutional adoption. If ENA's USDe/sUSDe infrastructure becomes the distribution layer for tokenized CLOs, the TVL implications are enormous. CLOs also benefit from the current high-interest-rate environment — floating rate, credit-enhanced structures are attractive now.",
-      "bet": "LONG ENA (Ethena token). This partnership is THE missing piece for institutional DeFi adoption — a top asset manager distributing tokenized credit through Ethena's rails. ENA trades 24/7 on crypto exchanges. Target: re-test recent highs. SHORT traditional CLO ETFs (if available) as tokenized competition emerges. LONG DAI/USDC — stablecoins benefit from increased DeFi volumes. Horizon: next 2 hours for immediate pop, then extended run-up as more details emerge this week.",
-      "benefit": "ENA token directly benefits from TVL growth narrative. sUSDe (Ethena's yield-bearing stablecoin) becomes more attractive with institutional credit products available. The entire RWA (Real World Assets) tokenization thesis gets validated — other RWA tokens (ONDO, MKR, CFG) could see sympathy bids. Gazzetta di Kyiv: frame as 'Wall Street surrenders to DeFi — the tokenization of everything accelerates while Ukraine builds a digital war economy.'"
+      "id": "ukraine-moscow-colonel-assassination-drone-surge-20260609",
+      "title": "Ukraine Assassinates Russian Colonel (Missile Supply Chief) in Moscow — Zelensky Promises Massive Drone/Rocket Surge",
+      "freshness": "20-60 minutes ago",
+      "source_channels": ["@ASupersharij", "@markettwits"],
+      "materiality_score": 7.5,
+      "event": "Colonel Davydov Damir Rafailevich — head of the rocket and artillery ammunition supply department of the Main Rocket-Artillery Directorate (GRAU) of the Russian Ministry of Defense, military unit 64176 — was assassinated in Moscow via car bomb in the Aviators neighborhood. The location is 200 meters from where General-Major Yaroslav Moskalik's car was bombed a year ago. The assassination happened during a meeting of anti-terrorism structure heads from CIS countries in Moscow. Simultaneously, Zelensky stated Ukraine will significantly increase the number of drones and missiles launched against Russia. Russian Geran-2 drones attacked Dmytrivka in Dnipropetrovsk. Russian missiles struck Zatoka Bridge in Odesa (the only road connection to southern Odesa Oblast). Tornado-S strikes on Chuhuiv killed 3. This is the SECOND senior Russian military logistics officer killed in Moscow in the last year — showing Ukraine's intelligence penetration inside Russia.",
+      "consensus_narrative": "Consensus treats these as one-off 'terrorist acts' (Russian framing). Markets see Ukraine war as frozen/slogging with no market-moving developments. The assassination is being dismissed as insignificant for Russian war capability. Zelensky's drone surge promise is seen as aspirational.",
+      "contradiction": "The assassination of the HEAD of missile/artillery ammo supply is actually a high-value logistics target — these are not random targets. The location (200m from last year's general assassination) suggests a pattern of systematic targeting of Russian military logistics officers in Moscow. The timing during a CIS anti-terrorism meeting maximizes political humiliation. Zelensky's drone surge + fresh Western supplies could genuinely change the strike tempo. If Ukraine can systematically decapitate Russian logistics command inside Moscow, it HAS market implications for Russian equities and war sustainability.",
+      "bet": {
+        "direction": "SHORT RSX (Russia ETF), LONG defense (European: $EADF, $Rheinmetall if tradeable), LONG uranium/nuclear safety",
+        "assets": ["$RSX", "$RSX puts", "$GD", "$LMT", "$URA"],
+        "trigger": "This is a slow-burn narrative trade rather than 1-2 hour trigger. But if Russia retaliates disproportionately (major strike on Kyiv grid, tactical nuke rhetoric), RSX gap down and defense gap up immediately. The pattern of inside-Moscow assassinations accumulating = rising probability that Russia looks weak = eventual RSX re-rating lower.",
+        "horizon": "Next 24-48 hours (narrative accumulation), not immediate 1-2h price mover",
+        "confidence": "MEDIUM for direct market impact, HIGH as Gazzetta content — the assassination story is compelling and Zelensky's drone surge statement gives it a forward-looking angle"
+      },
+      "benefit": {
+        "Gazzetta di Kyiv": "FRONT PAGE: 'Ukraine's Long Arm Reaches Moscow Again — Colonel in Charge of Missile Supply Blown Up 200m from Last Year's General Hit.' Frame as 'Ukraine's intelligence war inside Russia is accelerating. The Kremlin can't protect its own generals in its own capital.' Tie to Zelensky's drone surge: 'More drones, more rockets, more hits inside Russia — Kyiv is taking the war to Moscow's doorstep.'",
+        "Bet&Benefit": "This is primarily a Gazzetta content play — compelling narrative, visual (car bomb in Moscow suburb), connects to Zelensky announcement. For Bet&Benefit: if this pattern continues (weekly Moscow assassinations of military logistics officers), Russian war sustainability comes into question — that's a medium-term RSX short thesis. No immediate 1-2h trade."
+      }
     }
   ],
-  "meta": {
-    "scan_time_utc": "2026-06-09T14:27:52Z",
-    "total_messages_analyzed": 9,
-    "observations": [
-      "US Existing Home Sales (May) +3.2% MoM vs +1.1% expected — 3x beat, strongest housing data this cycle",
-      "Anthropic Claude Fable release 'later today' — neutered Mythos, 2x Opus pricing, within hours",
-      "Ethena partners with Janus Henderson ($300B+) for tokenized CLOs — biggest institutional DeFi partnership signal",
-      "ZEC +80% since June 5 — privacy coin momentum continues (no catalyst identified)",
-      "Trump family crypto profits reported at $2.3B — narrative validation for Trump-adjacent crypto projects",
-      "ASupersharij claims Western financial groups negotiating division of Russian resources — Ukraine preparing to escalate",
-      "Russia Tornado-S strikes on Chuhuiv, Kharkiv — 3 dead, 6 injured (ongoing war updates)",
-      "IDF killed 3 PIJ commanders in Gaza — targeted assassinations (ongoing conflict)",
-      "@trad_fin and @MonitoringSituation both silent — zero new intel in last 30 min"
-    ],
-    "risk_flags": [
-      "Crypto-only trading until Monday US equity open — limited liquidity, higher spread risk",
-      "Existing Home Sales beat already 27 min old — initial FX move may be priced in; follow-through positioning is the remaining edge",
-      "Claude Fable release could slip to US business hours — 'later today' is vague; watch for actual release announcement",
-      "ENA token highly volatile — Janus Henderson partnership could be 'sell the news' if already leaked/anticipated",
-      "No macro catalyst until Monday US open — crypto driven by micro-narratives and whale positioning",
-      "Sunday session crypto volume typically thinner — slippage risk on ENA/FET entries"
-    ],
-    "gazzetta_di_kyiv_content_notes": [
-      "PRIMARY STORY: ASupersharij's claim that Western financial groups are already dividing Russian resources and Ukraine will 'start getting tough' — this is front-page Gazzetta material. Frame as 'West positions for post-Putin Russia: who gets the oil fields?'",
-      "SECONDARY: Ethena-Janus Henderson partnership as example of Western financial innovation vs Russian resource extraction economy",
-      "AI (Claude Fable) angle: Ukraine's drone AI warfare program vs Anthropic's safety-first approach — contrasts Silicon Valley caution with Kyiv battlefield necessity"
-    ]
+  "meta_observation": "Tuesday 15:00 UTC — equity markets open, oil trading live. The most actionable immediate trade is OIL LONG (WTI) driven by compounding factors: (1) IDF declares readiness to resume operations against Iran, (2) Kuwait actively seeking pipeline bypass of Hormuz (structural supply premium), (3) US Apache crashed near Hormuz yesterday, (4) Israel-Lebanon Tyre evacuation + auto-retaliation policy is a hair trigger for ME escalation. The auto-retaliation mechanism in Lebanon is new and genuinely changes the escalation calculus — markets haven't priced a 'first rocket = automatic Beirut strike' rule. The colonel assassination in Moscow is a high-quality Gazzetta story but not a 1-2 hour market mover. BTC at 200-week MA with no fresh catalyst from these channels. Missing: no US macro surprise, no China stimulus, no crypto regulatory news. The dominant theme is Middle East conflict premium underpricing — oil has room to run $3-5 intraday on any fresh escalation trigger.",
+  "market_call": {
+    "primary_trade": "LONG WTI crude / USO — IDF Iran readiness + Hormuz bypass discussion + Lebanon auto-escalation trigger",
+    "hedge": "LONG GLD / VIX — any Beirut strike under auto-retaliation rule triggers risk-off spike",
+    "narrative_play": "Gazzetta front page: Moscow colonel assassination + Zelensky drone surge speech + Tyre evacuation = 'Three wars, no off-ramp, Ukraine is winning the intelligence war'",
+    "risk": "Iran deal actually signed (White House keeps claiming 'progress') = oil collapses $8-10. Lebanon ceasefire through US mediation (Ambassador says 'there will be a ceasefire'). These are real tail risks to the long oil thesis."
   }
 }

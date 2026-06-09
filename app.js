@@ -2022,6 +2022,12 @@ async function populateTeasers() {
           return `<a href="./story.html?id=${s.story_id || s.id || ''}" class="teaser-item">${amtHtml}${headline}</a>`;
         }).join('');
         if (countEl) countEl.textContent = items.length + ' stories';
+        // Story freshness timestamp
+        const sfEl = document.getElementById('storyFreshness');
+        if (sfEl && storiesData.generated_at) {
+          sfEl.textContent = 'updated ' + formatTimeAgo(storiesData.generated_at);
+          sfEl.title = storiesData.generated_at;
+        }
       }
     }
   } catch(e) { console.error("populateTeasers:", e); }
@@ -2068,32 +2074,62 @@ async function populateTeasers() {
     }
   } catch(e) { console.error("populateTeasers:", e); }
 
-  // Signal teaser
+  // Signal teaser — use API data, not DOM scraping
   setTimeout(() => {
     try {
-      const signalCards = document.querySelectorAll('#signalGrid .signal-card');
       const el = document.getElementById('signalTeaserContent');
       const subEl = document.getElementById('teaserSignalSub');
-      if (el && signalCards.length) {
-        el.innerHTML = Array.from(signalCards).slice(0, 4).map(c => {
-          const score = c.querySelector('.signal-score')?.textContent || '';
-          const name = c.querySelector('.signal-name')?.textContent || '';
-          return `<a href="./signal.html" class="teaser-item">${score} — ${name.slice(0, 60)}</a>`;
-        }).join('');
-        if (subEl) subEl.textContent = `${signalCards.length} signals`;
+      if (el) {
+        getJSON(getFlowsPath(), null).then(flowsData => {
+          if (flowsData && flowsData.flows) {
+            const contradictions = flowsData.flows.filter(f => f.confidence_pct && f.confidence_pct < 70);
+            const regime = flowsData.aggregate_direction || 'neutral';
+            const conf = flowsData.aggregate_confidence || 0;
+            const badgeLabel = regime === 'bullish' ? 'BULLISH' : regime === 'bearish' ? 'BEARISH' : 'NEUTRAL';
+            const badgeClass = regime === 'bullish' ? 'bullish' : regime === 'bearish' ? 'bearish' : 'neutral';
+            const items = [];
+            // Regime signal
+            items.push(`<div class="teaser-item"><span class="flow-aggregate-badge ${badgeClass}">${badgeLabel} ${conf}%</span> Regime: ${flowsData.flows.length} flows, ${regime} aggregate</div>`);
+            // Contradictions
+            if (contradictions.length) {
+              items.push(`<div class="teaser-item">⚠ ${contradictions.length} contradiction${contradictions.length > 1 ? 's' : ''} — flow vs narrative divergence</div>`);
+            }
+            // Top flow
+            if (flowsData.flows[0]) {
+              const top = flowsData.flows[0];
+              items.push(`<a href="./flows.html" class="teaser-item">$${top.amount_b}B ${top.asset_class} ${top.direction === 'inflow' ? '↑' : '↓'} — ${(top.headline || '').slice(0, 60)}</a>`);
+            }
+            el.innerHTML = items.join('');
+            if (subEl) subEl.textContent = `${flowsData.flows.length} flows · ${contradictions.length} contradictions`;
+          }
+        }).catch(() => {
+          el.innerHTML = '<div class="teaser-item">Signal triangulation loading — stories × flows × trades.</div>';
+          if (subEl) subEl.textContent = 'Awaiting data';
+        });
       }
     } catch(e) { console.error("populateTeasers:", e); }
-  }, 3000);
+  }, 1000);
 
-  // Track teaser
+  // Track teaser — use localStorage track record, not DOM scraping
   try {
-    const trEl = document.getElementById('trackRecord');
     const el = document.getElementById('trackTeaserContent');
     const subEl = document.getElementById('teaserTrackSub');
-    if (el && trEl) {
-      const text = trEl.textContent || '';
-      el.innerHTML = `<span class="teaser-item">${text.slice(0, 120)}</span>`;
-      if (subEl) subEl.textContent = 'Performance summary';
+    if (el) {
+      const trackRecord = getTrackRecord();
+      if (trackRecord && trackRecord.length) {
+        const recent = trackRecord.slice(-3).reverse();
+        const winCount = trackRecord.filter(t => t.outcome === 'win').length;
+        const total = trackRecord.length;
+        const winRate = total ? Math.round(winCount / total * 100) : 0;
+        el.innerHTML = recent.map(t => {
+          const cls = t.outcome === 'win' ? 'buy' : t.outcome === 'loss' ? 'sell' : '';
+          return `<div class="teaser-item">${t.symbol || t.asset} <span class="teaser-ticker ${cls}">${t.outcome || 'pending'}</span> ${t.pnl || ''}</div>`;
+        }).join('');
+        if (subEl) subEl.textContent = `${total} bets · ${winRate}% win rate`;
+      } else {
+        el.innerHTML = '<div class="teaser-item">Track record initializing — verifiable predictions with realized P&L.</div>';
+        if (subEl) subEl.textContent = 'No bets yet';
+      }
     }
   } catch(e) { console.error("populateTeasers:", e); }
 
