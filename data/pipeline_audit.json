@@ -1,26 +1,59 @@
 {
-  "generated_at": "2026-05-23T13:00:59.008774+00:00",
-  "status": "ok",
-  "total_events": 656,
-  "last_collected_at": "2026-05-23T13:00:51.443036+00:00",
-  "by_platform": [
+  "generated_at": "2026-06-06T21:25:05.392622+00:00",
+  "artifacts": [
     {
-      "platform": "hackernews",
-      "count": 124
+      "name": "stories.json",
+      "exists": true,
+      "valid_json": true,
+      "size_bytes": 94709,
+      "generated_at": "2026-06-06T18:20:20.598988+00:00",
+      "age_hours": 3.1
     },
     {
-      "platform": "reddit",
-      "count": 160
+      "name": "flows.json",
+      "exists": true,
+      "valid_json": true,
+      "size_bytes": 11017,
+      "generated_at": "2026-06-06T23:58:06+03:00",
+      "age_hours": 0.4
     },
     {
-      "platform": "rss",
-      "count": 372
+      "name": "narratives.json",
+      "exists": true,
+      "valid_json": true,
+      "size_bytes": 17817,
+      "generated_at": "2026-05-26T17:31:06.497240+00:00",
+      "age_hours": 267.9
+    },
+    {
+      "name": "living_stories.json",
+      "exists": true,
+      "valid_json": true,
+      "size_bytes": 9897,
+      "generated_at": "2026-06-05T15:15:52.679642+00:00",
+      "age_hours": 30.2
+    },
+    {
+      "name": "source_registry_ranked.json",
+      "exists": true,
+      "valid_json": true,
+      "size_bytes": 8410,
+      "generated_at": "2026-05-21T22:03:14.405197+00:00",
+      "age_hours": 383.4
+    },
+    {
+      "name": "representation_techniques.json",
+      "exists": true,
+      "valid_json": true,
+      "size_bytes": 4857,
+      "generated_at": "2026-06-06T21:23:52.023644+00:00",
+      "age_hours": 0.0
     }
   ],
-  "recommended_upgrades": [
-    "Add source-level decay weighting for stale feeds",
-    "Add language detection and dedup by semantic similarity",
-    "Add rolling z-score for narrative spikes (24h vs 7d baseline)",
-    "Add confidence calibration from cross-source confirmation"
-  ]
+  "summary": {
+    "total": 6,
+    "present": 6,
+    "valid_json": 6,
+    "stale_24h": 3
+  }
 }

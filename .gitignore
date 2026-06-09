@@ -1,7 +1,43 @@
-# Transient pipeline artifacts
-data/raw/
-data/x/x_collection_status_*.json
-
-# Python cache
+# Python Virtual Environment
+.venv/
+venv/
+env/
 __pycache__/
 *.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env.local
+.env.*.local
+
+# Build artifacts (generated)
+site/styles.*.css
+site/app.*.js
+site/story-app.*.js
+site/i18n.*.js
+site/sector.*.js
+site/styles-modern.*.css
+site/build-manifest.json
+
+# Safe-git backups
+.backup/
+
+# SQLite database (local source of truth)
+gazzetta.db
+
+# Cron output (local)
+~/.hermes/cron/output/

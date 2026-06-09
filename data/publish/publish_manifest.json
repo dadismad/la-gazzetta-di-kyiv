@@ -1,19 +1,16 @@
 {
-  "ok": true,
-  "generated_at": "2026-05-28T16:05:34.939230+00:00",
-  "inputs": {
-    "setups": 11,
-    "contradictions": 11
+  "generated_at": "2026-06-09T13:20:00Z",
+  "cycle": 11,
+  "platforms": {
+    "telegram": true,
+    "reddit": false,
+    "website": true
   },
-  "outputs": {
-    "telegram_markdown": "/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv/data/publish/telegram_latest.md",
-    "reddit_markdown": "/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv/data/publish/reddit_latest.md",
-    "site_regime_api": "/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv/site/api/v1/home/regime.json",
-    "site_setups_api": "/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv/site/api/v1/home/setups.json",
-    "site_contradictions_api": "/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv/site/api/v1/home/contradictions.json"
-  },
-  "channel_profiles": {
-    "telegram": "compact / high-signal / retail-first bullets",
-    "reddit": "discussion thread / explicit claim-contradiction-invalidation + evidence"
-  }
+  "lead_story": "WTI Below $90 While War Escalates on 3 Fronts — Oil-Geopolitics Decoupling Is the Signal",
+  "frame": "contradiction",
+  "human_detail_id": "HD-017",
+  "asset_claims_count": 4,
+  "website_stories_count": 5,
+  "next_scheduled_cycle": "2026-06-09T21:20:00Z",
+  "live_site_status": "confirmed (HTTP 200)"
 }

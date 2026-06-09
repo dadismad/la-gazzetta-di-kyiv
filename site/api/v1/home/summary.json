@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-06-06T21:55:13+03:00",
+  "stories": {
+    "count": 20,
+    "top_contradiction": 66,
+    "lead_headline": "Iran Strikes Kuwait With 7 Ballistic Missiles \u2014 Regional War Expands, Diplomatic"
+  },
+  "flows": {
+    "direction": "bullish",
+    "total_b": 235.0,
+    "inflows": 11,
+    "outflows": 1,
+    "confidence": 85
+  },
+  "trades": {
+    "pdr": 1.7,
+    "open_count": 13,
+    "top_tickers": [
+      "SPX",
+      "NVDA",
+      "BRENT",
+      "BTC",
+      "GOLD"
+    ]
+  },
+  "signal": {
+    "count": 5,
+    "max_conviction": 3,
+    "highest_score": 79
+  },
+  "track": {
+    "win_rate": 68,
+    "total_trades": 47,
+    "avg_return": 2.3
+  }
+}

@@ -1,34 +1,34 @@
 {
-  "generated_at": "2026-05-25T00:01:31.641303+00:00",
+  "generated_at": "2026-06-06T21:25:05.756605+00:00",
   "status": "healthy",
   "checks": {
     "main": {
       "ok": true,
       "status": 200,
       "sig404": false,
-      "size": 1219,
-      "content_type": "text/html; charset=utf-8",
+      "size": 11088,
+      "content_type": "text/html",
       "render_ok": true
     },
     "data": {
       "ok": true,
       "status": 200,
       "sig404": false,
-      "size": 6166,
-      "content_type": "application/json; charset=utf-8",
+      "size": 119037,
+      "content_type": "application/json",
       "render_ok": true
     },
     "backup": {
       "ok": true,
       "status": 200,
       "sig404": false,
-      "size": 1219,
-      "content_type": "text/html; charset=utf-8",
+      "size": 11088,
+      "content_type": "text/html",
       "render_ok": true
     }
   },
   "fail_streak": 0,
   "redeployed": false,
-  "canonical_url": "https://pureciclismo.github.io/gazzetta-di-kyiv/",
-  "fallback_url": "https://pureciclismo.github.io/gazzetta-di-kyiv/"
+  "canonical_url": "https://www.lagazzettadikyiv.com/",
+  "fallback_url": "https://www.lagazzettadikyiv.com/"
 }

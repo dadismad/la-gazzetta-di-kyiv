@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-06-09T13:20:00Z",
+  "claims": [
+    {
+      "ticker": "CL",
+      "direction": "bilateral",
+      "price_target": "$88 break = short oil; $95+ on Hezbollah trigger",
+      "strategy": "Own both tails — OTM $95 calls (June 12 expiry, ~$0.30-0.50 premium) as lottery on Hezbollah trigger; short oil if sub-$88 confirms demand collapse",
+      "win_rate": "65%",
+      "horizon": "24-72h",
+      "narrative_driven_pct": 85,
+      "crowd_belief": "Markets pricing demand destruction (stagflation) over supply risk (Iran-Hormuz). ADP +29K confirms weakening labor. Consensus says war premium is unwinding.",
+      "contradiction": "Oil dropping 2% while Iran tolls Hormuz, Israel auto-triggers Beirut, and Ben-Gvir floats civilian abduction is a first-order anomaly. The contradiction is unresolved — one Hezbollah rocket gaps oil $95+ catching shorts offside.",
+      "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90"
+    },
+    {
+      "ticker": "GLD",
+      "direction": "up",
+      "price_target": "$2,500+ (stagflation confirm)",
+      "strategy": "Long gold as stagflation hedge — weak ADP + weakening labor + rising inflation expectations = Fed trapped. Gold benefits from both geopolitical risk premium and inflation hedge demand.",
+      "win_rate": "75%",
+      "horizon": "24-72h",
+      "narrative_driven_pct": 70,
+      "crowd_belief": "Gold at $2,415 reflects elevated geopolitical risk. But stagflation confirmation (ADP +29K + 3rd month inflation expectations rise) is a new vector not yet priced.",
+      "contradiction": "The stagflation vector is new — markets were pricing rate hikes, not cuts. If NFP Friday confirms ADP weakness, gold rallies on rate cut repricing + inflation hedge demand compounding.",
+      "story_id": "n21_macro__adp_29k_stagflation_signal"
+    },
+    {
+      "ticker": "TLT",
+      "direction": "up",
+      "price_target": "Yields -5-10bps on rate cut repricing",
+      "strategy": "Long duration bonds (TLT, ZN) — ADP +29K starts the clock on rate cut expectations. If NFP Friday confirms, aggressive curve steepening.",
+      "win_rate": "65%",
+      "horizon": "24-72h (through NFP Friday)",
+      "narrative_driven_pct": 60,
+      "crowd_belief": "2Y yields at year-highs pricing rate hikes. ADP +29K is the first crack in that thesis. Market consensus still pricing hikes.",
+      "contradiction": "ADP is noisy but directional trend (weakening labor + rising inflation expectations) is structurally bullish for bonds. If NFP confirms, rate hike expectations unwind violently.",
+      "story_id": "n21_macro__adp_29k_stagflation_signal"
+    },
+    {
+      "ticker": "VIX",
+      "direction": "up",
+      "price_target": "+2-3 points on binary escalation trigger",
+      "strategy": "Long VIX as tail hedge — Ben-Gvir proposal + automatic Beirut strike trigger = Hezbollah rocket event could fire at any time with zero diplomatic warning.",
+      "win_rate": "70%",
+      "horizon": "24-72h",
+      "narrative_driven_pct": 80,
+      "crowd_belief": "VIX complacent despite multi-front escalation. Markets not pricing Hezbollah rocket trigger probability.",
+      "contradiction": "The automatic Beirut strike mechanism means escalation is now a binary trigger, not a decision. Any rogue faction in Lebanon can start the next escalation cycle. VIX is underpricing this tail risk.",
+      "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90"
+    }
+  ]
+}

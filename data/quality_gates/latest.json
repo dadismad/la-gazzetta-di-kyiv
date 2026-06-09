@@ -1,0 +1,51 @@
+{
+  "gate": "editorial-quality",
+  "source": "telegram_latest.md",
+  "generated_at": "2026-06-09T18:25:04Z",
+  "verdict": "PASS",
+  "combined_score": 8.5,
+  "checks": {
+    "factual_accuracy": {
+      "status": "PASS",
+      "details": "All 3 claims cross-referenced against stories.json: (1) US existing home sales +3.2% MoM vs +1.1% — confirmed from story n21_china_ascendancy__us_existing_home_sales_crush_estimates, (2) Israel Nabatieh offensive derails US-Iran Hormuz talks — confirmed from story n21_multi_pillar__israel_s_nabatieh_offensive, (3) oil stays below $90 despite escalation — confirmed from lead story n21_multi_pillar__critical_contradiction_wti_drops_below_90. Source citation (Census Bureau, NAR, 14:00 UTC June 9) verified."
+    },
+    "contradiction_sharpness": {
+      "status": "PASS",
+      "score": 9,
+      "details": "Two sharp contradiction frames: (1) Housing 'resilient' consensus vs shelter inflation stickier + Fed narrative shattered, (2) Oil 'consensus normalization' vs 'evidence points escalation.' Both name specific actors (Fed, Israel, Iran). No straw-man constructions — each 'consensus' claim is a reasonable position that a real market participant could hold."
+    },
+    "ideological_voice": {
+      "status": "PASS",
+      "score": 9,
+      "details": "Bold declarative claims: 'Fed's softening narrative just shattered,' 'Evidence points escalation.' Named actors throughout (Fed, Israel, US-Iran). No hedging. No McKinsey-deck language. Reads like a journalist, not a consultant."
+    },
+    "word_count": {
+      "status": "PASS",
+      "count": 67,
+      "limit": 100,
+      "details": "Main body is 67 words — well under the 100-word Telegram ceiling."
+    },
+    "actionable_bet_clarity": {
+      "status": "PASS",
+      "score": 8,
+      "details": "Three clear, executable trades: (1) Long USD on rate-cut delay, (2) Short BTC on USD-strength narrative, (3) Long GLD for geopolitical cover. Each has a visible causal chain connecting to the contradiction frame. Cross-verified against stories.json thesis statements — all match."
+    },
+    "banned_phrases": {
+      "status": "PASS",
+      "details": "Zero banned phrases detected. No 'narrative acceleration,' 'second-order effects,' 'transmission effects,' 'repricing whipsaws,' 'mention-share,' 'cross-source confirmation,' or 'sensitive to negotiation headlines.'"
+    },
+    "platform_voice": {
+      "status": "PASS",
+      "details": "Telegram signal format correct: contradiction-led, concise, bullet-pointed trades, source footnote. Does not read like Reddit or website content."
+    }
+  },
+  "minor_issues": [
+    {
+      "severity": "low",
+      "element": "Continuity link",
+      "description": "Continuity URL points to deprecated GitHub Pages (pureciclismo.github.io/gazzetta-di-kyiv/) which returns 404 since v22.7 GCS migration. Should point to live site (storage.googleapis.com/www.lagazzettadikyiv.com/index.html or custom domain).",
+      "fix": "Replace continuity link with live site URL"
+    }
+  ],
+  "verdict_rationale": "All seven primary checks pass with strong scores. Two clean contradiction frames with concrete actors. Factual accuracy verified against stories.json. No banned phrases or consulting-slang. The only issue is a continuity link pointing to a deprecated URL — low severity as it doesn't affect editorial quality. Overall: a clean, sharp Telegram signal post."
+}

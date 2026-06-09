@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-06-09T15:02:36.055074Z",
+  "source": "Mike Green Framework \u2014 Gazzetta di Kyiv Market Regime Monitor",
+  "indicators": [
+    {
+      "indicator": "Money Flow",
+      "description": "Passive + active flow momentum \u2014 are markets absorbing capital or bleeding?",
+      "direction": "BULLISH",
+      "strength": 55,
+      "components": {
+        "etf_flows_billions": 15.6,
+        "etf_flows_date": "05/27/2026",
+        "cot_positioning_count": 11,
+        "cot_bullish_bias": -9
+      }
+    },
+    {
+      "indicator": "Top Heavy",
+      "description": "Equity concentration risk \u2014 how top-heavy is the market?",
+      "level": "EXTREME",
+      "concentration_pct": 45,
+      "components": {
+        "asset_mgr_net_pct_oi": 45.1,
+        "lev_money_net_pct_oi": -23.1,
+        "spx_open_interest": 2183680
+      }
+    },
+    {
+      "indicator": "Bond Fear",
+      "description": "Treasury volatility expectations \u2014 VIX for bonds.",
+      "level": "HIGH",
+      "score": 100,
+      "components": {
+        "treasury_position_divergence": 83.3,
+        "yield_curve_spread": -0.43
+      }
+    }
+  ]
+}

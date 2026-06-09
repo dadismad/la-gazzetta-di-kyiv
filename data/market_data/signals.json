@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-06-07T10:26:39.882820+00:00",
+  "signals": [
+    {
+      "type": "yield_curve",
+      "level": "warning",
+      "message": "Yield curve inverted (-0.43%) — monitor for reversal.",
+      "data": {
+        "spread": -0.43,
+        "status": "inverted",
+        "10y": 4.42,
+        "2y": 4.85
+      }
+    }
+  ]
+}

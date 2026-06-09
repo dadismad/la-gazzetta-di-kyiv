@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-06-09T16:11:05.381151+00:00",
+  "source": "/Users/alexstocchi/projects/gazzetta-di-kyiv/feedback/focus_groups.md",
+  "summary": {
+    "total": 3,
+    "by_priority": {
+      "High": 1,
+      "Medium": 1,
+      "Low": 1
+    },
+    "by_persona": {
+      "Quant": 1,
+      "Degen": 1,
+      "C-Suite": 1
+    },
+    "by_category": {
+      "General": 3
+    }
+  },
+  "backlog": [
+    {
+      "date": "2026-06-09",
+      "persona": "Quant",
+      "feedback": "Specific feedback here",
+      "priority": "High",
+      "category": "General",
+      "action": "[General] Address: Specific feedback here"
+    },
+    {
+      "date": "2026-06-09",
+      "persona": "Degen",
+      "feedback": "Specific feedback here",
+      "priority": "Medium",
+      "category": "General",
+      "action": "[General] Address: Specific feedback here"
+    },
+    {
+      "date": "2026-06-09",
+      "persona": "C-Suite",
+      "feedback": "Specific feedback here",
+      "priority": "Low",
+      "category": "General",
+      "action": "[General] Address: Specific feedback here"
+    }
+  ]
+}

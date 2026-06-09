@@ -1,0 +1,120 @@
+{
+  "story_id": "n21_geopolitics__kuwait_airport",
+  "current_headline": "Iranian Drones Hit Kuwait Airport as Gulf Infrastructure Crisis Deepens",
+  "status": "evolving",
+  "threads": [
+    {
+      "thread_id": "n21_geopolitics__kuwait_airport__main",
+      "type": "main",
+      "current_state": {
+        "headline": "Iranian Drones Hit Kuwait Airport as Gulf Infrastructure Crisis Deepens",
+        "they_say": "US-Iran strikes are contained to military targets — civilian infrastructure not at risk.",
+        "reality": "Kuwait International Airport struck by Iranian drones on June 3. Civilian infrastructure targeting threshold crossed. Kuwait operations remain suspended as of June 4.",
+        "thesis": "Energy corridor infrastructure targeting threshold crossed. Brent repricing accelerates as Gulf state positioning shifts.",
+        "source_count": 9,
+        "last_updated": "2026-06-04T10:15:00Z"
+      },
+      "evolution": [
+        {
+          "update_id": "ev_001",
+          "timestamp": "2026-06-03T06:45:00Z",
+          "type": "initial_broadcast",
+          "evidence_titles": [
+            "US and Iran launch new strikes as Kuwait says airport hit by Iranian drones",
+            "British couple lose Iran jail sentence appeal"
+          ],
+          "source_count": 2,
+          "reality_delta": "Initial report — airport struck, operations suspended.",
+          "asset_projection": { "asset": "Brent Crude", "ticker": "BZ=F", "initial": "$76.50", "current": "$76.50", "change": "+1.2%", "change_pct": 1.2, "narrative_driven_pct": 55 }
+        },
+        {
+          "update_id": "ev_002",
+          "timestamp": "2026-06-03T12:00:00Z",
+          "type": "evidence_update",
+          "evidence_titles": [
+            "Kuwait MOD confirms Iranian-made Shahed-136 debris found on runway",
+            "Gulf states call emergency GCC meeting"
+          ],
+          "source_count": 4,
+          "reality_delta": "Debris analysis confirms Iranian origin. GCC emergency meeting called. Disruption expected to extend beyond 48h.",
+          "evolution_score": 0.83,
+          "asset_projection": { "asset": "Brent Crude", "ticker": "BZ=F", "initial": "$76.50", "current": "$77.20", "change": "+1.8%", "change_pct": 1.8, "narrative_driven_pct": 62 }
+        },
+        {
+          "update_id": "ev_003",
+          "timestamp": "2026-06-04T06:45:00Z",
+          "type": "frame_shift",
+          "evidence_titles": [
+            "OECD warns 'dark scenario' if Gulf energy corridor disruption lasts through Q3",
+            "Brent futures open gap-up at $78.00 as Asian trading begins",
+            "US CENTCOM confirms additional naval assets to Persian Gulf"
+          ],
+          "source_count": 7,
+          "reality_delta": "OECD macro warning elevates from energy-sector story to macro regime risk. Brent breaks $78. US naval deployment signals escalation expectation.",
+          "evolution_score": 0.91,
+          "asset_projection": { "asset": "Brent Crude", "ticker": "BZ=F", "initial": "$76.50", "current": "$78.00", "change": "+2.1%", "change_pct": 2.1, "narrative_driven_pct": 68 },
+          "sub_thread_spawned": "n21_geopolitics__kuwait_airport__brent_repricing"
+        },
+        {
+          "update_id": "ev_004",
+          "timestamp": "2026-06-04T10:15:00Z",
+          "type": "evidence_update",
+          "evidence_titles": [
+            "Tanker rates for Gulf routes spike 40% in 24h as war risk premiums surge",
+            "Kuwait airport reopening delayed indefinitely — foreign ministries advise撤离"
+          ],
+          "source_count": 9,
+          "reality_delta": "Tanker rates spike confirms second-order economic impact beyond crude. Airport reopening timeline collapses.",
+          "evolution_score": 0.73,
+          "asset_projection": { "asset": "Brent Crude", "ticker": "BZ=F", "initial": "$76.50", "current": "$78.00", "change": "+2.1%", "change_pct": 2.1, "narrative_driven_pct": 68 }
+        }
+      ]
+    },
+    {
+      "thread_id": "n21_geopolitics__kuwait_airport__brent_repricing",
+      "type": "sub_thread",
+      "spawned_at": "2026-06-04T06:45:00Z",
+      "spawned_by_update": "ev_003",
+      "current_state": {
+        "headline": "Brent Breaks $78 as Gulf Tanker Rates Spike 40% on War Risk",
+        "they_say": "The oil risk premium is already priced in at current levels — limited upside from here.",
+        "reality": "Brent opens gap-up at $78. Gulf tanker war risk premiums surge 40% in 24h. Insurance costs for Strait of Hormuz transit are repricing at levels last seen in 2019 Abqaiq-Khurais attack.",
+        "thesis": "Crude futures lagging the physical market — war risk insurance and tanker rates are the leading indicator for a sustained $80+ Brent.",
+        "source_count": 5,
+        "last_updated": "2026-06-04T10:15:00Z"
+      },
+      "evolution": [
+        {
+          "update_id": "ev_003_sub_001",
+          "timestamp": "2026-06-04T06:45:00Z",
+          "type": "thread_creation",
+          "reality_delta": "Sub-thread spawned from main story evolution ev_003. Brent gap-up analysis.",
+          "asset_projection": { "asset": "Brent Crude", "ticker": "BZ=F", "initial": "$76.50", "current": "$78.00", "change": "+2.1%", "change_pct": 2.1, "narrative_driven_pct": 68 }
+        }
+      ]
+    },
+    {
+      "thread_id": "n21_geopolitics__kuwait_airport__gulf_state_repositioning",
+      "type": "sub_thread",
+      "spawned_at": "2026-06-04T06:45:00Z",
+      "spawned_by_update": "ev_003",
+      "current_state": {
+        "headline": "GCC Emergency Meeting — Gulf State Positioning Shifts",
+        "they_say": "Gulf states remain unified in diplomatic response with measured military posture.",
+        "reality": "GCC emergency meeting called. Saudi Arabia and UAE signal potential divergence on energy corridor security posture. Qatar offers mediation.",
+        "thesis": "Gulf state positioning shifts as internal fractures emerge over energy corridor security response.",
+        "source_count": 3,
+        "last_updated": "2026-06-04T06:45:00Z"
+      },
+      "evolution": [
+        {
+          "update_id": "ev_003_sub_002",
+          "timestamp": "2026-06-04T06:45:00Z",
+          "type": "thread_creation",
+          "reality_delta": "Sub-thread spawned: GCC emergency dynamics.",
+          "asset_projection": { "asset": "Brent Crude", "ticker": "BZ=F", "initial": "$76.50", "current": "$78.00", "change": "+2.1%", "change_pct": 2.1, "narrative_driven_pct": 68 }
+        }
+      ]
+    }
+  ]
+}

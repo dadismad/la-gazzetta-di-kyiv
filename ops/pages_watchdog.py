@@ -1,76 +1,67 @@
 #!/usr/bin/env python3
-import json, pathlib, subprocess, datetime, urllib.request
+import json, pathlib, datetime, urllib.request, subprocess, ssl
+ROOT=pathlib.Path('/Users/alexstocchi/projects/gazzetta-di-kyiv')
+D=ROOT/'data'; D.mkdir(exist_ok=True)
+STATE=D/'pages_watchdog_state.json'
+OUT=D/'pages_watchdog_v2.json'
 
-ROOT = pathlib.Path('/Users/alexstocchi/.hermes/hermes-agent/gazzetta-di-kyiv')
-OUT = ROOT / 'data' / 'pages_watchdog.json'
-ENV = pathlib.Path('/Users/alexstocchi/.hermes/.env')
-
-PRIMARY = [
-    'https://pureciclismo.github.io/gazzetta-di-kyiv/',
-    'https://pureciclismo.github.io/gazzetta-di-kyiv/data/narratives.json'
-]
-MIRRORS = [
-    'https://rawcdn.githack.com/pureciclismo/gazzetta-di-kyiv/main/site/index.html',
-    'https://cdn.jsdelivr.net/gh/pureciclismo/gazzetta-di-kyiv@main/site/index.html'
-]
-
-
-def check(url):
-    try:
-        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-        with urllib.request.urlopen(req, timeout=20) as r:
-            body = r.read(3000).decode('utf-8', errors='ignore')
-            code = r.getcode()
-        bad_404 = "There isn't a GitHub Pages site here" in body
-        return {'url': url, 'ok': code == 200 and not bad_404, 'code': code, 'bad_404': bad_404}
-    except Exception as e:
-        return {'url': url, 'ok': False, 'code': None, 'bad_404': False, 'error': str(e)}
-
-
-def run(cmd):
-    p = subprocess.run(cmd, shell=True, capture_output=True, text=True)
-    return {'ok': p.returncode == 0, 'code': p.returncode, 'out': p.stdout[-800:], 'err': p.stderr[-800:]}
-
-
-def get_token():
-    if not ENV.exists():
-        return None
-    for line in ENV.read_text().splitlines():
-        if line.startswith('GITHUB_TOKEN='):
-            return line.split('=', 1)[1].strip()
-    return None
-
-
-primary_results = [check(u) for u in PRIMARY]
-mirror_results = [check(u) for u in MIRRORS]
-primary_healthy = all(r['ok'] for r in primary_results)
-mirror_healthy = any(r['ok'] for r in mirror_results)
-healthy = primary_healthy
-
-actions = []
-if not primary_healthy:
-    token = get_token()
-    if token:
-        actions.append({'action': 'dispatch_pages_deploy'})
-        cmd = (
-            "curl -s -o /tmp/dispatch.out -w '%{http_code}' -X POST "
-            f"-H 'Authorization: Bearer {token}' "
-            "-H 'Accept: application/vnd.github+json' "
-            "https://api.github.com/repos/pureciclismo/gazzetta-di-kyiv/actions/workflows/refresh-and-deploy.yml/dispatches "
-            "-d '{\"ref\":\"main\"}'"
-        )
-        actions.append(run(cmd))
-
-recommended_url = PRIMARY[0] if primary_healthy else next((r['url'] for r in mirror_results if r['ok']), None)
-
-payload = {
-    'generated_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
-    'healthy': healthy,
-    'primary_healthy': primary_healthy,
-    'mirror_healthy': mirror_healthy,
-    'recommended_url': recommended_url,
-    'checks': {'primary': primary_results, 'mirrors': mirror_results},
-    'actions': actions,
+URLS={
+ 'main':'https://www.lagazzettadikyiv.com/',
+ 'data':'https://www.lagazzettadikyiv.com/data/stories.json',
+ 'backup':'https://www.lagazzettadikyiv.com/'  # safe fallback: canonical HTML endpoint
 }
-OUT.write_text(json.dumps(payload, indent=2))
-print(json.dumps({'ok': True, 'healthy': healthy, 'recommended_url': recommended_url, 'file': str(OUT)}))
+
+SSL_CTX = ssl._create_unverified_context()
+
+def fetch(u, require_renderable=False):
+    try:
+        with urllib.request.urlopen(u, timeout=20, context=SSL_CTX) as r:
+            ctype = (r.headers.get('Content-Type') or '').lower()
+            b=r.read().decode('utf-8','ignore')
+            sig = "There isn't a GitHub Pages site here" in b
+            render_ok = True
+            if require_renderable:
+                render_ok = ('text/html' in ctype) and ('app.js' in b)
+            return {'ok':200<=r.status<300 and not sig and render_ok,'status':r.status,'sig404':sig,'size':len(b),'content_type':ctype,'render_ok':render_ok}
+    except Exception as e:
+        return {'ok':False,'status':0,'error':str(e),'sig404':False,'size':0,'content_type':'','render_ok':False}
+
+checks={
+ 'main':fetch(URLS['main'], require_renderable=True),
+ 'data':fetch(URLS['data']),
+ 'backup':fetch(URLS['backup'], require_renderable=True)
+}
+now=datetime.datetime.now(datetime.timezone.utc).isoformat()
+state={'fail_streak':0,'last_redeploy_at':None}
+if STATE.exists():
+    state.update(json.loads(STATE.read_text()))
+
+critical_ok = checks['main']['ok'] and checks['data']['ok']
+if critical_ok:
+    state['fail_streak']=0
+else:
+    state['fail_streak']=int(state.get('fail_streak',0))+1
+
+redeployed=False
+if state['fail_streak']>=2:  # two consecutive failed probes
+    try:
+        subprocess.run('bash /Users/alexstocchi/.hermes/scripts/gazzetta_deploy_to_gcs.sh', shell=True, check=False, capture_output=True, text=True)
+        redeployed=True
+        state['last_redeploy_at']=now
+        state['fail_streak']=0
+    except Exception:
+        pass
+
+status='healthy' if critical_ok else ('degraded' if checks['backup']['ok'] else 'down')
+out={
+ 'generated_at':now,
+ 'status':status,
+ 'checks':checks,
+ 'fail_streak':state['fail_streak'],
+ 'redeployed':redeployed,
+ 'canonical_url':URLS['main'],
+ 'fallback_url':URLS['backup']
+}
+OUT.write_text(json.dumps(out,indent=2))
+STATE.write_text(json.dumps(state,indent=2))
+print(json.dumps({'ok':True,'status':status,'redeployed':redeployed}))

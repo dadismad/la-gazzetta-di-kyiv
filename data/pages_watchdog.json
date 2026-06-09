@@ -1,11 +1,17 @@
 {
-  "generated_at": "2026-05-23T05:00:13.154578+00:00",
+  "generated_at": "2026-06-06T17:19:26.051799+00:00",
   "healthy": true,
   "primary_healthy": true,
   "mirror_healthy": true,
-  "recommended_url": "https://pureciclismo.github.io/gazzetta-di-kyiv/",
+  "recommended_url": "https://www.lagazzettadikyiv.com/",
   "checks": {
     "primary": [
+      {
+        "url": "https://www.lagazzettadikyiv.com/",
+        "ok": true,
+        "code": 200,
+        "bad_404": false
+      },
       {
         "url": "https://pureciclismo.github.io/gazzetta-di-kyiv/",
         "ok": true,

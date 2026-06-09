@@ -1,14 +1,95 @@
 {
-  "rss": [
-    {"id": "bbc_world", "url": "http://feeds.bbci.co.uk/news/world/rss.xml", "topic": "geopolitics"},
-    {"id": "bloomberg_markets", "url": "https://feeds.bloomberg.com/markets/news.rss", "topic": "markets"},
-    {"id": "ft_world", "url": "https://www.ft.com/world?format=rss", "topic": "macro"},
-    {"id": "guardian_world", "url": "https://www.theguardian.com/world/rss", "topic": "geopolitics"}
+  "generated_at": "2026-06-06T14:52:00+03:00",
+  "version": "2.0",
+  "sources": [
+    {
+      "id": "telegram_intel",
+      "name": "Telegram Intel Monitor",
+      "type": "internal",
+      "priority": "critical",
+      "frequency": "30m",
+      "output": "data/telegram_intel/latest.json",
+      "pillars": ["multi_pillar", "china_ascendancy", "dollar_decline", "eu_fragmentation", "abundance_tech", "blockchain_agentic"],
+      "enabled": true
+    },
+    {
+      "id": "reddit_market",
+      "name": "Reddit Market Discourse",
+      "type": "api",
+      "priority": "high",
+      "frequency": "60m",
+      "subreddits": ["investing", "wallstreetbets", "geopolitics", "economics", "worldnews", "stocks", "cryptocurrency"],
+      "output": "data/reddit_ingest/latest.json",
+      "pillars": ["multi_pillar", "blockchain_agentic"],
+      "enabled": true
+    },
+    {
+      "id": "web_search_china",
+      "name": "China Tech/Industrial Web Search",
+      "type": "web_search",
+      "priority": "high",
+      "frequency": "120m",
+      "queries": ["China technology industrial policy 2026", "China semiconductor breakthrough", "China 15th Five Year Plan"],
+      "pillars": ["china_ascendancy"],
+      "enabled": true
+    },
+    {
+      "id": "web_search_dollar",
+      "name": "De-dollarization Web Search",
+      "type": "web_search",
+      "priority": "high",
+      "frequency": "120m",
+      "queries": ["BRICS currency settlement 2026", "de-dollarization IMF COFER", "central bank gold purchases 2026"],
+      "pillars": ["dollar_decline"],
+      "enabled": true
+    },
+    {
+      "id": "web_search_eu",
+      "name": "EU Fragmentation Web Search",
+      "type": "web_search",
+      "priority": "medium",
+      "frequency": "180m",
+      "queries": ["EU fragmentation migration 2026", "Eurozone political crisis", "European defense spending"],
+      "pillars": ["eu_fragmentation"],
+      "enabled": true
+    },
+    {
+      "id": "web_search_abundance",
+      "name": "Abundance Tech Web Search",
+      "type": "web_search",
+      "priority": "high",
+      "frequency": "120m",
+      "queries": ["fusion energy breakthrough 2026", "space economy investment launch 2026", "longevity science anti-aging breakthrough 2026"],
+      "pillars": ["abundance_tech"],
+      "enabled": true
+    },
+    {
+      "id": "web_search_blockchain",
+      "name": "Blockchain/Agentic Web Search",
+      "type": "web_search",
+      "priority": "medium",
+      "frequency": "120m",
+      "queries": ["RWA tokenization institutional adoption 2026", "DeFi regulation 2026", "crypto ETF flows"],
+      "pillars": ["blockchain_agentic"],
+      "enabled": true
+    },
+    {
+      "id": "web_search_geopolitics",
+      "name": "Geopolitical Web Search",
+      "type": "web_search",
+      "priority": "critical",
+      "frequency": "60m",
+      "queries": ["Iran conflict latest 2026", "Ukraine Russia war development", "Middle East oil supply disruption"],
+      "pillars": ["multi_pillar"],
+      "enabled": true
+    }
   ],
-  "reddit": [
-    {"id": "worldnews", "url": "https://www.reddit.com/r/worldnews/new.json?limit=25", "topic": "geopolitics"},
-    {"id": "economics", "url": "https://www.reddit.com/r/economics/new.json?limit=25", "topic": "macro"},
-    {"id": "stocks", "url": "https://www.reddit.com/r/stocks/new.json?limit=25", "topic": "markets"},
-    {"id": "geopolitics", "url": "https://www.reddit.com/r/geopolitics/new.json?limit=25", "topic": "geopolitics"}
-  ]
+  "pillar_definitions": {
+    "china_ascendancy": "China tech/industrial execution, semiconductor autonomy, 15th Five-Year Plan, patent leadership",
+    "dollar_decline": "De-dollarization, BRICS currency, commodity settlement shifts, IMF COFER data",
+    "eu_fragmentation": "EU structural stress, migration, defense spending divergence, Eurobarometer",
+    "abundance_tech": "Fusion energy, space economy, longevity science, AI compute, energy breakthroughs",
+    "blockchain_agentic": "RWA tokenization, DeFi institutional adoption, agentic economy, stablecoin regulation",
+    "multi_pillar": "Geopolitical events, macro regime shifts, commodity supply shocks, military conflicts"
+  }
 }

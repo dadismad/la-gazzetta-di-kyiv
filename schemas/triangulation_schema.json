@@ -1,0 +1,246 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.lagazzettadikyiv.com/schemas/triangulation_schema.json",
+  "title": "Gazzetta di Kyiv — Semantic Triangulation Graph Contract",
+  "description": "Unified schema enforcing bidirectional references between Stories, Capital Flows, Flow Nodes, and Trading Positions. Every entity must declare its links to the other two dimensions of the triangulation.",
+  "type": "object",
+  "required": ["stories", "flows", "flow_nodes", "positions", "cross_references"],
+  "properties": {
+
+    "stories": {
+      "type": "array",
+      "description": "Narrative intelligence objects — each story must link to flows and positions it impacts.",
+      "items": {
+        "type": "object",
+        "required": ["story_id", "headline", "generated_at", "impacted_flows", "associated_positions", "pillar", "sector", "time_decay"],
+        "properties": {
+          "story_id": { "type": "string", "description": "Unique identifier, e.g. n21_multi_pillar__descriptive_slug" },
+          "headline": { "type": "string" },
+          "sector": { "type": "string", "enum": ["crypto", "commodities", "equities", "fixed_income", "fx", "real_estate", "geopolitics", "tech", "defense", "energy"] },
+          "pillar": { "type": "string", "enum": ["china_ascendancy", "dollar_decline", "eu_fragmentation", "abundance_tech", "blockchain_agentic", "multi_pillar"] },
+          "generated_at": { "type": "string", "format": "date-time" },
+          "confidence": { "type": "string", "enum": ["low", "medium", "high", "confirmed"] },
+          "horizon": { "type": "string", "description": "Actionability window: 1-6h, 6-24h, 24-72h, 1w+, structural" },
+
+          "impacted_flows": {
+            "type": "array",
+            "description": "Flow IDs that this story drives or contradicts. REQUIRED — no orphan stories.",
+            "items": { "type": "string" },
+            "minItems": 1
+          },
+
+          "associated_positions": {
+            "type": "array",
+            "description": "Position IDs linked to this narrative. Can be empty if no trade yet.",
+            "items": { "type": "string" }
+          },
+
+          "entity_tags": {
+            "type": "object",
+            "description": "Auto-extracted entities for cross-referencing",
+            "properties": {
+              "assets": { "type": "array", "items": { "type": "string" }, "description": "Tickers/symbols: ['BTC', 'WTI', 'SPX']" },
+              "geographies": { "type": "array", "items": { "type": "string" }, "description": "Countries/regions: ['Iran', 'Ukraine', 'EU']" },
+              "actors": { "type": "array", "items": { "type": "string" }, "description": "Institutions/people: ['Fed', 'OPEC', 'BlackRock']" },
+              "instruments": { "type": "array", "items": { "type": "string" }, "description": "Financial instruments: ['futures', 'options', 'spot']" }
+            }
+          },
+
+          "time_decay": {
+            "type": "object",
+            "description": "Half-life of actionability — controls prominence decay",
+            "properties": {
+              "half_life_hours": { "type": "number", "description": "Hours until story is 50% decayed" },
+              "decay_curve": { "type": "string", "enum": ["linear", "exponential", "step"], "default": "exponential" },
+              "current_freshness": { "type": "number", "description": "0.0–1.0 freshness score computed at generation time", "minimum": 0, "maximum": 1 },
+              "renewal_triggers": { "type": "array", "items": { "type": "string" }, "description": "Event types that reset decay" }
+            }
+          },
+
+          "multi_persona": {
+            "type": "object",
+            "description": "Three-lens content blocks for different audience types",
+            "properties": {
+              "c_suite": {
+                "type": "object",
+                "required": ["headline", "body"],
+                "properties": {
+                  "headline": { "type": "string" },
+                  "body": { "type": "string", "description": "Macro horizon — structural, policy, supply-chain" },
+                  "implication": { "type": "string" }
+                }
+              },
+              "quant": {
+                "type": "object",
+                "required": ["headline", "body"],
+                "properties": {
+                  "headline": { "type": "string" },
+                  "body": { "type": "string", "description": "Telemetry feed — velocity, correlations, raw data" },
+                  "metrics": {
+                    "type": "object",
+                    "properties": {
+                      "flow_velocity": { "type": "number" },
+                      "correlation_coeff": { "type": "number" },
+                      "z_score": { "type": "number" }
+                    }
+                  }
+                }
+              },
+              "degen": {
+                "type": "object",
+                "required": ["headline", "body"],
+                "properties": {
+                  "headline": { "type": "string" },
+                  "body": { "type": "string", "description": "Action trigger — directional, entry/stop, conviction" },
+                  "signal": {
+                    "type": "object",
+                    "properties": {
+                      "direction": { "type": "string", "enum": ["LONG", "SHORT", "NEUTRAL"] },
+                      "entry_zone": { "type": "string" },
+                      "stop_level": { "type": "string" },
+                      "target": { "type": "string" },
+                      "conviction": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "MAX"] }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "flows": {
+      "type": "array",
+      "description": "Capital flow entries — each must declare narrative_drivers and linked_positions.",
+      "items": {
+        "type": "object",
+        "required": ["id", "asset_class", "direction", "amount_b", "narrative_drivers", "linked_positions"],
+        "properties": {
+          "id": { "type": "string" },
+          "asset_class": { "type": "string" },
+          "direction": { "type": "string", "enum": ["inflow", "outflow"] },
+          "amount_b": { "type": "number", "description": "Amount in billions USD" },
+          "anchor_symbol": { "type": "string" },
+          "confidence_pct": { "type": "number", "minimum": 0, "maximum": 100 },
+          "heat_score": { "type": "number", "minimum": 0, "maximum": 100 },
+          "trade_signal": { "type": "string", "enum": ["BUY", "SELL", "WATCH", "NEUTRAL"] },
+          "pace_multiplier": { "type": "number" },
+          "positioning": { "type": "string", "enum": ["accumulating", "distributing", "flat", "rotating"] },
+          "flow_type": { "type": "string", "enum": ["active_dominant", "passive_dominant", "whale", "retail_surge", "stealth"] },
+          "pdr": { "type": "number", "description": "Projected Directional Ratio" },
+
+          "narrative_drivers": {
+            "type": "array",
+            "description": "Story IDs that explain WHY this money is moving. REQUIRED.",
+            "items": { "type": "string" },
+            "minItems": 1
+          },
+
+          "linked_positions": {
+            "type": "array",
+            "description": "Position IDs connected to this capital flow",
+            "items": { "type": "string" }
+          },
+
+          "flow_sources": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Source types: institutional, retail, banking, sovereign, crypto"
+          }
+        }
+      }
+    },
+
+    "flow_nodes": {
+      "type": "array",
+      "description": "Graph nodes for the Flow Nodes visualization page.",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "label", "connected_flows", "connected_stories"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string", "enum": ["gov", "institutional", "corporate", "retail", "crypto", "cross_border"] },
+          "label": { "type": "string" },
+          "description": { "type": "string" },
+          "metrics": {
+            "type": "object",
+            "properties": {
+              "total_inflow_b": { "type": "number" },
+              "total_outflow_b": { "type": "number" },
+              "net_flow_b": { "type": "number" },
+              "confidence_pct": { "type": "number" },
+              "pace_avg": { "type": "number" }
+            }
+          },
+          "connected_flows": {
+            "type": "array",
+            "description": "Flow IDs traversing this node",
+            "items": { "type": "string" }
+          },
+          "connected_stories": {
+            "type": "array",
+            "description": "Story IDs that reference this node",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+
+    "positions": {
+      "type": "array",
+      "description": "Trading positions / bets derived from triangulation.",
+      "items": {
+        "type": "object",
+        "required": ["id", "symbol", "direction", "derived_from_stories", "derived_from_flows"],
+        "properties": {
+          "id": { "type": "string" },
+          "symbol": { "type": "string" },
+          "direction": { "type": "string", "enum": ["BUY", "SELL", "WATCH"] },
+          "entry_low": { "type": "string" },
+          "entry_high": { "type": "string" },
+          "stop": { "type": "string" },
+          "target": { "type": "string" },
+          "conviction": { "type": "string" },
+          "horizon": { "type": "string" },
+          "derived_from_stories": {
+            "type": "array",
+            "description": "Story IDs that generated this position",
+            "items": { "type": "string" }
+          },
+          "derived_from_flows": {
+            "type": "array",
+            "description": "Flow IDs that generated this position",
+            "items": { "type": "string" }
+          },
+          "pnl": { "type": "string" },
+          "outcome": { "type": "string", "enum": ["pending", "win", "loss", "scratch"] },
+          "opened_at": { "type": "string", "format": "date-time" },
+          "closed_at": { "type": "string", "format": "date-time" }
+        }
+      }
+    },
+
+    "cross_references": {
+      "type": "object",
+      "description": "Global integrity map — auto-generated index of all bidirectional links for validation.",
+      "properties": {
+        "orphan_stories": { "type": "array", "items": { "type": "string" }, "description": "Story IDs with zero impacted_flows" },
+        "orphan_flows": { "type": "array", "items": { "type": "string" }, "description": "Flow IDs with zero narrative_drivers" },
+        "orphan_positions": { "type": "array", "items": { "type": "string" }, "description": "Position IDs with no story or flow derivation" },
+        "link_graph": {
+          "type": "object",
+          "description": "Map of story_id → {flow_ids: [], position_ids: []}",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "flows": { "type": "array", "items": { "type": "string" } },
+              "positions": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "validated_at": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}

@@ -1,14 +1,6 @@
-# Verified Human Detail Ledger
-
-## Purpose
-Maintain a reusable, verified set of human-detail facts for social posts. Each entry must be public, non-defamatory, and cited.
-
-## Usage rules
-- Only use details with a valid ID and source URL.
-- Store the ledger ID in the post body and in the social log.
-- Do not fabricate or imply misconduct.
-
-## Ledger table
-| id | subject | verified_detail | source_url | verified_at | relevance_to_narrative | usage_notes |
-| --- | --- | --- | --- | --- | --- | --- |
-| HD-TEMPLATE | REPLACE_WITH_SUBJECT | REPLACE_WITH_VERIFIED_DETAIL | REPLACE_WITH_SOURCE_URL | YYYY-MM-DD | REPLACE_WITH_CONTEXT | TEMPLATE ONLY — do not publish |
+| HD-013 | Kuwait | Iran struck Kuwait — a major OPEC producer and US ally — with 7 ballistic missiles | telegram intel monitors | 2026-06-06 | Direct escalation of Iran-Gulf war, contradicts ceasefire consensus | Used in editorial cycle 7 Telegram |
+| HD-014 | China/Taiwan | China announced a specific maritime traffic law enforcement operation east of Taiwan on June 6 — first time Beijing has publicly named a time, place, and legal basis for assertion of control in those waters | @MonitoringSituation, @markettwits | 2026-06-07 | Unprecedented operational transparency in Taiwan Strait; contradicts consensus that Beijing is signaling only, not preparing for actual blockade enforcement | Used in editorial cycle 8 Telegram |
+|| HD-015 | US House / Iran War | US House voted 215-208 to end Trump's Iran war — first time a chamber voted on an end-the-war resolution since 1973. Trump called members 'grandstanders.' Symbolic only — Senate won't pass. | Axios, CSPAN floor vote record | 2026-06-07 | Contradiction: House votes to end war while 7 Iranian missiles hit Kuwait. Diplomatic theater vs. kinetic reality running in opposite directions. | Used in editorial cycle 9 Telegram |
+| HD-016 | Iran / Strait of Hormuz | Iran began charging ships $1.5-2M per transit through Strait of Hormuz, overseen by Supreme National Security Council. Payments accepted in cash, goods, services, and crypto (Tether). At ~50 tankers/day, Iran extracts $75-100M/day from global oil trade. | Mehr News Agency via @ethanlevins | 2026-06-07 | Unprecedented monetization of international waterway — structural change in global oil transit cost. Market consensus still prices "contained skirmishing." NOT a skirmish. | Used in editorial cycle 10 Telegram |
+| HD-017 | US / ADP Employment | US ADP National Employment Report printed +29K jobs on June 9, 2026 — well below the prior +35.7K. US 1-year consumer inflation expectations rose for the 3rd straight month. Combined = textbook stagflation signal. | @markettwits (ADP print 12:15 UTC June 9) | 2026-06-09 | First hard data point confirming stagflation thesis. Weak labor + rising inflation expectations = Fed trapped. Contradicts consensus that labor market remains resilient. | Used in editorial cycle 11 Telegram |
+| HD-018 | US / Existing Home Sales | US Existing Home Sales printed +3.2% MoM on June 9, 2026 — crushing the +1.1% consensus estimate. Housing surging despite high rates contradicts the Fed's softening narrative. Stickier shelter inflation = rate-cut expectations pushed out. | Census Bureau, NAR (14:00 UTC June 9) | 2026-06-09 | Strong housing beat is actually bearish for rate-cut hopes — stickier shelter CPI delays Fed easing. Contradicts the 'economy cooling' consensus. | Used in editorial cycle 12 Telegram |

@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-06-05T15:46:00Z",
+  "stories": [
+    {
+      "headline": "India RBI Faces Rate-Hike Test as Rupee Slides and Inflation Sticks",
+      "thesis": "India's central bank is caught between rate-hike pressure from sticky inflation and growth fears from a weakening rupee. Rate-hike bets build as pricey oil and weak rupee stoke inflation risks.",
+      "sector": "macro",
+      "source_count": 3,
+      "setup_id": "n21_macro",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/India_roadway_map.svg"
+    },
+    {
+      "headline": "Burnham Confirms Challenge to Replace Starmer as UK Prime Minister",
+      "thesis": "Andy Burnham declares his bid to replace Keir Starmer, injecting political uncertainty into a BoE already weighing rate hikes. UK gilt yields rise as the policy outlook grows murkier.",
+      "sector": "macro",
+      "source_count": 2,
+      "setup_id": "n21_macro",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Houses_of_Parliament_westminster.jpg"
+    },
+    {
+      "headline": "Tech Groups Monetise AI Hype by Selling Volatility — Broadcom Loses $285B",
+      "thesis": "AI infrastructure spending is accelerating but monetisation is shifting from compute rents to volatility harvesting. Broadcom's $285 billion rout signals company-specific risk in custom ASICs.",
+      "sector": "tech",
+      "source_count": 4,
+      "setup_id": "n21_ai",
+      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iBbuAJfuM8Jw/v3/1200x-1.png"
+    },
+    {
+      "headline": "Bitcoin Tumbles After Strategy Sale Unnerves Crypto Traders",
+      "thesis": "Strategy (formerly MicroStrategy) sells Bitcoin holdings, flooding the market with supply and breaking the 'perma-accumulation' narrative. Bitcoin tests $82,000 support.",
+      "sector": "crypto",
+      "source_count": 2,
+      "setup_id": "n21_crypto",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin%2C_Wroclaw_%28P1180334%29.jpg"
+    },
+    {
+      "headline": "US Plans Cuts to NATO Rapid Response Force as Cable Sabotage Probe Opens",
+      "thesis": "The US moves to reduce NATO's rapid response capability just as a deep-sea cable sabotage incident triggers the alliance's first collective response. European defense autonomy accelerates.",
+      "sector": "geopolitics",
+      "source_count": 3,
+      "setup_id": "n21_nato",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NATO_OTAN_north_atlantic_arc_zoom.svg"
+    },
+    {
+      "headline": "Gulf States and Ukraine Need Each Other as War Drags Into 2027",
+      "thesis": "Ukraine seeks Gulf investment for reconstruction while Gulf states need Ukrainian grain and energy transit leverage. Zelenskyy calls for face-to-face negotiations with Putin.",
+      "sector": "geopolitics",
+      "source_count": 3,
+      "setup_id": "n21_ukraine",
+      "image_url": "https://i.guim.co.uk/img/media/eacb316cc8ab8f7d2e2df3f31022f83d9c8e6812/313_190_1178_943/master/1178.jpg?width=700&quality=85&auto=format&fit=max&s=8a8f5ef8078dd8c51b126f508a7d94e9"
+    },
+    {
+      "headline": "Iran Deal Collapses in Public as Tehran Denies Uranium Transfer — Hormuz Stays Blocked",
+      "thesis": "The 'deal imminent' media narrative collapsed as Iran publicly denied uranium transfer, confirmed talks halted. Strait of Hormuz remains completely blocked. De-dollarization of oil trade accelerates as buyers seek non-dollar settlement routes.",
+      "sector": "geopolitics",
+      "source_count": 2,
+      "setup_id": "n21_dollar",
+      "image_url": ""
+    },
+    {
+      "headline": "Ukraine Black Sea War Spills Into NATO Waters as Drone Explodes at Romanian Port",
+      "thesis": "A Ukrainian Magura sea drone exploded at Romania's Constanta port (NATO member) after losing control to Russian EW jamming. The 'defensive war' framing collapses when Ukraine's weapons hit allied territory. Black Sea grain corridor threatened.",
+      "sector": "geopolitics",
+      "source_count": 2,
+      "setup_id": "n21_multi",
+      "image_url": ""
+    }
+  ]
+}

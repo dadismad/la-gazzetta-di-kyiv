@@ -1,0 +1,3511 @@
+{
+  "generated_at": "2026-06-07T10:38:59.579025+00:00",
+  "source": "ICI (Investment Company Institute) — Weekly Fund Flow Estimates",
+  "urls": {
+    "combined_flows": "https://www.ici.org/research/statistics/etfs/weekly-combined-estimated-etf-and-longterm-flows",
+    "mf_flows": "https://www.ici.org/research/statistics/mutual-funds/weekly-estimated-longterm-mutual-fund-flows",
+    "mm_assets": "https://www.ici.org/weekly-money-market-mutual-fund-assets"
+  },
+  "note_etf_vs_mf": "ETF flows are estimated as Combined flows minus Mutual Fund flows. ICI does not publish ETF-only flows directly.",
+  "note_domestic_vs_world": "Both equity (domestic/world) and detailed style/sector breakdowns are available in the mutual fund flows data.",
+  "data": {
+    "combined_flows": {
+      "source": "ICI - Combined ETF and Long-Term Fund Flows",
+      "unit": "millions_USD",
+      "monthly": [
+        {
+          "date": "01/31/2024",
+          "total_flows": 48545.0,
+          "equity": {
+            "total": 4017.0,
+            "domestic": 4658.0,
+            "world": -641.0
+          },
+          "hybrid": -7480.0,
+          "bond": {
+            "total": 55176.0,
+            "taxable": 49275.0,
+            "municipal": 5901.0
+          },
+          "commodity": -3168.0
+        },
+        {
+          "date": "02/29/2024",
+          "total_flows": 42249.0,
+          "equity": {
+            "total": 5858.0,
+            "domestic": -532.0,
+            "world": 6390.0
+          },
+          "hybrid": -8295.0,
+          "bond": {
+            "total": 46839.0,
+            "taxable": 44257.0,
+            "municipal": 2581.0
+          },
+          "commodity": -2153.0
+        },
+        {
+          "date": "03/31/2024",
+          "total_flows": 87185.0,
+          "equity": {
+            "total": 47831.0,
+            "domestic": 46771.0,
+            "world": 1060.0
+          },
+          "hybrid": -7220.0,
+          "bond": {
+            "total": 44945.0,
+            "taxable": 41201.0,
+            "municipal": 3744.0
+          },
+          "commodity": 1629.0
+        },
+        {
+          "date": "04/30/2024",
+          "total_flows": -37106.0,
+          "equity": {
+            "total": -49434.0,
+            "domestic": -40415.0,
+            "world": -9018.0
+          },
+          "hybrid": -13038.0,
+          "bond": {
+            "total": 24292.0,
+            "taxable": 24333.0,
+            "municipal": -41.0
+          },
+          "commodity": 1074.0
+        },
+        {
+          "date": "05/31/2024",
+          "total_flows": 53771.0,
+          "equity": {
+            "total": 26496.0,
+            "domestic": 26157.0,
+            "world": 339.0
+          },
+          "hybrid": -7876.0,
+          "bond": {
+            "total": 35549.0,
+            "taxable": 33395.0,
+            "municipal": 2154.0
+          },
+          "commodity": -399.0
+        },
+        {
+          "date": "06/30/2024",
+          "total_flows": 20282.0,
+          "equity": {
+            "total": 9639.0,
+            "domestic": -557.0,
+            "world": 10195.0
+          },
+          "hybrid": -9097.0,
+          "bond": {
+            "total": 19611.0,
+            "taxable": 19280.0,
+            "municipal": 331.0
+          },
+          "commodity": 130.0
+        },
+        {
+          "date": "07/31/2024",
+          "total_flows": 87776.0,
+          "equity": {
+            "total": 41551.0,
+            "domestic": 52451.0,
+            "world": -10899.0
+          },
+          "hybrid": -9971.0,
+          "bond": {
+            "total": 53227.0,
+            "taxable": 47371.0,
+            "municipal": 5856.0
+          },
+          "commodity": 2969.0
+        },
+        {
+          "date": "08/31/2024",
+          "total_flows": 10904.0,
+          "equity": {
+            "total": -18459.0,
+            "domestic": -7086.0,
+            "world": -11373.0
+          },
+          "hybrid": -8823.0,
+          "bond": {
+            "total": 36621.0,
+            "taxable": 30667.0,
+            "municipal": 5954.0
+          },
+          "commodity": 1565.0
+        },
+        {
+          "date": "09/30/2024",
+          "total_flows": 50484.0,
+          "equity": {
+            "total": 13809.0,
+            "domestic": 9600.0,
+            "world": 4209.0
+          },
+          "hybrid": -8731.0,
+          "bond": {
+            "total": 44496.0,
+            "taxable": 37865.0,
+            "municipal": 6631.0
+          },
+          "commodity": 910.0
+        },
+        {
+          "date": "10/31/2024",
+          "total_flows": 62278.0,
+          "equity": {
+            "total": -23.0,
+            "domestic": -3890.0,
+            "world": 3867.0
+          },
+          "hybrid": -8233.0,
+          "bond": {
+            "total": 66804.0,
+            "taxable": 57943.0,
+            "municipal": 8861.0
+          },
+          "commodity": 3731.0
+        },
+        {
+          "date": "11/30/2024",
+          "total_flows": 102916.0,
+          "equity": {
+            "total": 72057.0,
+            "domestic": 70926.0,
+            "world": 1131.0
+          },
+          "hybrid": -11889.0,
+          "bond": {
+            "total": 42850.0,
+            "taxable": 36515.0,
+            "municipal": 6335.0
+          },
+          "commodity": -101.0
+        },
+        {
+          "date": "12/31/2024",
+          "total_flows": 47402.0,
+          "equity": {
+            "total": 38002.0,
+            "domestic": 44887.0,
+            "world": -6884.0
+          },
+          "hybrid": -9750.0,
+          "bond": {
+            "total": 20233.0,
+            "taxable": 21901.0,
+            "municipal": -1668.0
+          },
+          "commodity": -1083.0
+        },
+        {
+          "date": "01/31/2025",
+          "total_flows": 33174.0,
+          "equity": {
+            "total": -3987.0,
+            "domestic": 6326.0,
+            "world": -10313.0
+          },
+          "hybrid": -7999.0,
+          "bond": {
+            "total": 45710.0,
+            "taxable": 39879.0,
+            "municipal": 5831.0
+          },
+          "commodity": -550.0
+        },
+        {
+          "date": "02/28/2025",
+          "total_flows": 65472.0,
+          "equity": {
+            "total": 6684.0,
+            "domestic": 10649.0,
+            "world": -3965.0
+          },
+          "hybrid": -5979.0,
+          "bond": {
+            "total": 57853.0,
+            "taxable": 51653.0,
+            "municipal": 6200.0
+          },
+          "commodity": 6913.0
+        },
+        {
+          "date": "03/31/2025",
+          "total_flows": 3591.0,
+          "equity": {
+            "total": -6555.0,
+            "domestic": -2374.0,
+            "world": -4180.0
+          },
+          "hybrid": -12095.0,
+          "bond": {
+            "total": 15860.0,
+            "taxable": 16333.0,
+            "municipal": -473.0
+          },
+          "commodity": 6381.0
+        },
+        {
+          "date": "04/30/2025",
+          "total_flows": -62018.0,
+          "equity": {
+            "total": 741.0,
+            "domestic": 11740.0,
+            "world": -10999.0
+          },
+          "hybrid": -13809.0,
+          "bond": {
+            "total": -53050.0,
+            "taxable": -47020.0,
+            "municipal": -6031.0
+          },
+          "commodity": 4100.0
+        },
+        {
+          "date": "05/31/2025",
+          "total_flows": 35925.0,
+          "equity": {
+            "total": -14552.0,
+            "domestic": -18003.0,
+            "world": 3451.0
+          },
+          "hybrid": -6328.0,
+          "bond": {
+            "total": 58765.0,
+            "taxable": 51552.0,
+            "municipal": 7212.0
+          },
+          "commodity": -1960.0
+        },
+        {
+          "date": "06/30/2025",
+          "total_flows": 41759.0,
+          "equity": {
+            "total": -8262.0,
+            "domestic": -21397.0,
+            "world": 13134.0
+          },
+          "hybrid": -6039.0,
+          "bond": {
+            "total": 49147.0,
+            "taxable": 43242.0,
+            "municipal": 5904.0
+          },
+          "commodity": 6914.0
+        },
+        {
+          "date": "07/31/2025",
+          "total_flows": -222756.0,
+          "equity": {
+            "total": -285668.0,
+            "domestic": -299439.0,
+            "world": 13770.0
+          },
+          "hybrid": -3297.0,
+          "bond": {
+            "total": 63968.0,
+            "taxable": 57855.0,
+            "municipal": 6113.0
+          },
+          "commodity": 2240.0
+        },
+        {
+          "date": "08/31/2025",
+          "total_flows": 46915.0,
+          "equity": {
+            "total": -18847.0,
+            "domestic": -22434.0,
+            "world": 3587.0
+          },
+          "hybrid": -5404.0,
+          "bond": {
+            "total": 65552.0,
+            "taxable": 59883.0,
+            "municipal": 5669.0
+          },
+          "commodity": 5614.0
+        },
+        {
+          "date": "09/30/2025",
+          "total_flows": 70762.0,
+          "equity": {
+            "total": -4806.0,
+            "domestic": -18248.0,
+            "world": 13441.0
+          },
+          "hybrid": -4664.0,
+          "bond": {
+            "total": 68634.0,
+            "taxable": 60609.0,
+            "municipal": 8024.0
+          },
+          "commodity": 11599.0
+        },
+        {
+          "date": "10/31/2025",
+          "total_flows": 77746.0,
+          "equity": {
+            "total": 3861.0,
+            "domestic": -12770.0,
+            "world": 16631.0
+          },
+          "hybrid": -6971.0,
+          "bond": {
+            "total": 74174.0,
+            "taxable": 63782.0,
+            "municipal": 10392.0
+          },
+          "commodity": 6681.0
+        },
+        {
+          "date": "11/30/2025",
+          "total_flows": 67051.0,
+          "equity": {
+            "total": 20632.0,
+            "domestic": 2185.0,
+            "world": 18447.0
+          },
+          "hybrid": -8819.0,
+          "bond": {
+            "total": 53009.0,
+            "taxable": 47267.0,
+            "municipal": 5742.0
+          },
+          "commodity": 2229.0
+        },
+        {
+          "date": "12/31/2025",
+          "total_flows": 86769.0,
+          "equity": {
+            "total": 31772.0,
+            "domestic": 19301.0,
+            "world": 12471.0
+          },
+          "hybrid": -8373.0,
+          "bond": {
+            "total": 53250.0,
+            "taxable": 46761.0,
+            "municipal": 6489.0
+          },
+          "commodity": 10119.0
+        },
+        {
+          "date": "01/31/2026",
+          "total_flows": 104118.0,
+          "equity": {
+            "total": 7619.0,
+            "domestic": -36797.0,
+            "world": 44417.0
+          },
+          "hybrid": -5306.0,
+          "bond": {
+            "total": 96945.0,
+            "taxable": 82162.0,
+            "municipal": 14783.0
+          },
+          "commodity": 4859.0
+        },
+        {
+          "date": "02/28/2026",
+          "total_flows": 151228.0,
+          "equity": {
+            "total": 41033.0,
+            "domestic": 2808.0,
+            "world": 38225.0
+          },
+          "hybrid": -2140.0,
+          "bond": {
+            "total": 104839.0,
+            "taxable": 93873.0,
+            "municipal": 10967.0
+          },
+          "commodity": 7496.0
+        },
+        {
+          "date": "03/31/2026",
+          "total_flows": 37512.0,
+          "equity": {
+            "total": 22172.0,
+            "domestic": 9183.0,
+            "world": 12989.0
+          },
+          "hybrid": -10668.0,
+          "bond": {
+            "total": 36888.0,
+            "taxable": 31533.0,
+            "municipal": 5354.0
+          },
+          "commodity": -10879.0
+        },
+        {
+          "date": "04/30/2026",
+          "total_flows": 102273.0,
+          "equity": {
+            "total": 61739.0,
+            "domestic": 37458.0,
+            "world": 24281.0
+          },
+          "hybrid": -4632.0,
+          "bond": {
+            "total": 45787.0,
+            "taxable": 39867.0,
+            "municipal": 5921.0
+          },
+          "commodity": -622.0
+        }
+      ],
+      "weekly": [
+        {
+          "date": "04/29/2026",
+          "total_flows": 8467.0,
+          "equity": {
+            "total": -5066.0,
+            "domestic": -7347.0,
+            "world": 2281.0
+          },
+          "hybrid": -810.0,
+          "bond": {
+            "total": 15682.0,
+            "taxable": 13429.0,
+            "municipal": 2252.0
+          },
+          "commodity": -1339.0
+        },
+        {
+          "date": "05/06/2026",
+          "total_flows": 8874.0,
+          "equity": {
+            "total": -13008.0,
+            "domestic": -8168.0,
+            "world": -4839.0
+          },
+          "hybrid": -1930.0,
+          "bond": {
+            "total": 23981.0,
+            "taxable": 21606.0,
+            "municipal": 2375.0
+          },
+          "commodity": -170.0
+        },
+        {
+          "date": "05/13/2026",
+          "total_flows": 38884.0,
+          "equity": {
+            "total": 13274.0,
+            "domestic": 10826.0,
+            "world": 2448.0
+          },
+          "hybrid": -1402.0,
+          "bond": {
+            "total": 25056.0,
+            "taxable": 22099.0,
+            "municipal": 2957.0
+          },
+          "commodity": 1956.0
+        },
+        {
+          "date": "05/20/2026",
+          "total_flows": 15195.0,
+          "equity": {
+            "total": -13268.0,
+            "domestic": -11744.0,
+            "world": -1524.0
+          },
+          "hybrid": -1270.0,
+          "bond": {
+            "total": 29663.0,
+            "taxable": 26290.0,
+            "municipal": 3374.0
+          },
+          "commodity": 70.0
+        },
+        {
+          "date": "05/27/2026",
+          "total_flows": 15641.0,
+          "equity": {
+            "total": -2214.0,
+            "domestic": -1575.0,
+            "world": -640.0
+          },
+          "hybrid": -1529.0,
+          "bond": {
+            "total": 19471.0,
+            "taxable": 14803.0,
+            "municipal": 4668.0
+          },
+          "commodity": -87.0
+        }
+      ]
+    },
+    "mf_flows": {
+      "source": "ICI - Long-Term Mutual Fund Net New Cash Flow",
+      "unit": "millions_USD",
+      "monthly": [
+        {
+          "date": "01/31/2024",
+          "total_long_term": -20567.0,
+          "equity": {
+            "total": -44924.0,
+            "domestic": {
+              "total": -39251.0,
+              "large_cap": -12721.0,
+              "mid_cap": -5140.0,
+              "small_cap": -4167.0,
+              "multi_cap": -15848.0,
+              "other": -1375.0
+            },
+            "world": {
+              "total": -5673.0,
+              "developed_markets": -6921.0,
+              "emerging_markets": 1248.0
+            }
+          },
+          "hybrid": -8263.0,
+          "bond": {
+            "total": 32619.0,
+            "taxable": {
+              "total": 26422.0,
+              "investment_grade": 10760.0,
+              "high_yield": 1555.0,
+              "government": 2126.0,
+              "multisector": 6645.0,
+              "global": 5337.0
+            },
+            "municipal": 6197.0
+          }
+        },
+        {
+          "date": "2/29/2024",
+          "total_long_term": -2979.0,
+          "equity": {
+            "total": -31769.0,
+            "domestic": {
+              "total": -29152.0,
+              "large_cap": -7873.0,
+              "mid_cap": -4855.0,
+              "small_cap": -2366.0,
+              "multi_cap": -12938.0,
+              "other": -1120.0
+            },
+            "world": {
+              "total": -2616.0,
+              "developed_markets": -3486.0,
+              "emerging_markets": 870.0
+            }
+          },
+          "hybrid": -8744.0,
+          "bond": {
+            "total": 37534.0,
+            "taxable": {
+              "total": 34613.0,
+              "investment_grade": 15484.0,
+              "high_yield": 1436.0,
+              "government": 2939.0,
+              "multisector": 8837.0,
+              "global": 5917.0
+            },
+            "municipal": 2920.0
+          }
+        },
+        {
+          "date": "3/31/2024",
+          "total_long_term": -24952.0,
+          "equity": {
+            "total": -43792.0,
+            "domestic": {
+              "total": -31787.0,
+              "large_cap": -10517.0,
+              "mid_cap": -3833.0,
+              "small_cap": -2231.0,
+              "multi_cap": -12988.0,
+              "other": -2218.0
+            },
+            "world": {
+              "total": -12005.0,
+              "developed_markets": -9937.0,
+              "emerging_markets": -2068.0
+            }
+          },
+          "hybrid": -7776.0,
+          "bond": {
+            "total": 26617.0,
+            "taxable": {
+              "total": 24103.0,
+              "investment_grade": 13427.0,
+              "high_yield": 783.0,
+              "government": 1793.0,
+              "multisector": 5150.0,
+              "global": 2951.0
+            },
+            "municipal": 2514.0
+          }
+        },
+        {
+          "date": "4/30/2024",
+          "total_long_term": -64921.0,
+          "equity": {
+            "total": -59751.0,
+            "domestic": {
+              "total": -46979.0,
+              "large_cap": -20554.0,
+              "mid_cap": -5856.0,
+              "small_cap": -5402.0,
+              "multi_cap": -13361.0,
+              "other": -1806.0
+            },
+            "world": {
+              "total": -12772.0,
+              "developed_markets": -11308.0,
+              "emerging_markets": -1464.0
+            }
+          },
+          "hybrid": -13066.0,
+          "bond": {
+            "total": 7896.0,
+            "taxable": {
+              "total": 8807.0,
+              "investment_grade": 7686.0,
+              "high_yield": -1390.0,
+              "government": -1453.0,
+              "multisector": 3721.0,
+              "global": 242.0
+            },
+            "municipal": -910.0
+          }
+        },
+        {
+          "date": "5/31/2024",
+          "total_long_term": -41067.0,
+          "equity": {
+            "total": -40868.0,
+            "domestic": {
+              "total": -31688.0,
+              "large_cap": -8274.0,
+              "mid_cap": -5778.0,
+              "small_cap": -3587.0,
+              "multi_cap": -11807.0,
+              "other": -2244.0
+            },
+            "world": {
+              "total": -9179.0,
+              "developed_markets": -6762.0,
+              "emerging_markets": -2418.0
+            }
+          },
+          "hybrid": -7991.0,
+          "bond": {
+            "total": 7792.0,
+            "taxable": {
+              "total": 6643.0,
+              "investment_grade": -1726.0,
+              "high_yield": 2298.0,
+              "government": -472.0,
+              "multisector": 4189.0,
+              "global": 2353.0
+            },
+            "municipal": 1149.0
+          }
+        },
+        {
+          "date": "6/30/2024",
+          "total_long_term": -54376.0,
+          "equity": {
+            "total": -38822.0,
+            "domestic": {
+              "total": -37049.0,
+              "large_cap": -13948.0,
+              "mid_cap": -3991.0,
+              "small_cap": -1837.0,
+              "multi_cap": -14864.0,
+              "other": -2409.0
+            },
+            "world": {
+              "total": -1773.0,
+              "developed_markets": -3409.0,
+              "emerging_markets": 1635.0
+            }
+          },
+          "hybrid": -9298.0,
+          "bond": {
+            "total": -6256.0,
+            "taxable": {
+              "total": -5746.0,
+              "investment_grade": -6905.0,
+              "high_yield": -754.0,
+              "government": -404.0,
+              "multisector": 1687.0,
+              "global": 630.0
+            },
+            "municipal": -510.0
+          }
+        },
+        {
+          "date": "7/31/2024",
+          "total_long_term": -57812.0,
+          "equity": {
+            "total": -61319.0,
+            "domestic": {
+              "total": -51164.0,
+              "large_cap": -23602.0,
+              "mid_cap": -4274.0,
+              "small_cap": -5069.0,
+              "multi_cap": -15348.0,
+              "other": -2871.0
+            },
+            "world": {
+              "total": -10155.0,
+              "developed_markets": -9076.0,
+              "emerging_markets": -1079.0
+            }
+          },
+          "hybrid": -10105.0,
+          "bond": {
+            "total": 13612.0,
+            "taxable": {
+              "total": 11166.0,
+              "investment_grade": 247.0,
+              "high_yield": 2068.0,
+              "government": 98.0,
+              "multisector": 4449.0,
+              "global": 4304.0
+            },
+            "municipal": 2446.0
+          }
+        },
+        {
+          "date": "8/31/2024",
+          "total_long_term": -52537.0,
+          "equity": {
+            "total": -47623.0,
+            "domestic": {
+              "total": -37918.0,
+              "large_cap": -14203.0,
+              "mid_cap": -3182.0,
+              "small_cap": -5518.0,
+              "multi_cap": -11639.0,
+              "other": -3376.0
+            },
+            "world": {
+              "total": -9704.0,
+              "developed_markets": -8348.0,
+              "emerging_markets": -1357.0
+            }
+          },
+          "hybrid": -8798.0,
+          "bond": {
+            "total": 3884.0,
+            "taxable": {
+              "total": -362.0,
+              "investment_grade": -5116.0,
+              "high_yield": -734.0,
+              "government": 733.0,
+              "multisector": 5987.0,
+              "global": -1232.0
+            },
+            "municipal": 4246.0
+          }
+        },
+        {
+          "date": "9/30/2024",
+          "total_long_term": -40079.0,
+          "equity": {
+            "total": -46958.0,
+            "domestic": {
+              "total": -35825.0,
+              "large_cap": -14742.0,
+              "mid_cap": -5414.0,
+              "small_cap": -3650.0,
+              "multi_cap": -10963.0,
+              "other": -1056.0
+            },
+            "world": {
+              "total": -11133.0,
+              "developed_markets": -10085.0,
+              "emerging_markets": -1048.0
+            }
+          },
+          "hybrid": -9660.0,
+          "bond": {
+            "total": 16538.0,
+            "taxable": {
+              "total": 11654.0,
+              "investment_grade": 2982.0,
+              "high_yield": 1165.0,
+              "government": -2016.0,
+              "multisector": 8378.0,
+              "global": 1145.0
+            },
+            "municipal": 4884.0
+          }
+        },
+        {
+          "date": "10/31/2024",
+          "total_long_term": -57241.0,
+          "equity": {
+            "total": -82490.0,
+            "domestic": {
+              "total": -68057.0,
+              "large_cap": -34570.0,
+              "mid_cap": -7925.0,
+              "small_cap": -6248.0,
+              "multi_cap": -18013.0,
+              "other": -1301.0
+            },
+            "world": {
+              "total": -14433.0,
+              "developed_markets": -9940.0,
+              "emerging_markets": -4493.0
+            }
+          },
+          "hybrid": -8866.0,
+          "bond": {
+            "total": 34114.0,
+            "taxable": {
+              "total": 28529.0,
+              "investment_grade": 20264.0,
+              "high_yield": 1202.0,
+              "government": -1305.0,
+              "multisector": 5282.0,
+              "global": 3087.0
+            },
+            "municipal": 5585.0
+          }
+        },
+        {
+          "date": "11/30/2024",
+          "total_long_term": -53737.0,
+          "equity": {
+            "total": -55778.0,
+            "domestic": {
+              "total": -54247.0,
+              "large_cap": -26012.0,
+              "mid_cap": -5468.0,
+              "small_cap": -3669.0,
+              "multi_cap": -18683.0,
+              "other": -416.0
+            },
+            "world": {
+              "total": -1531.0,
+              "developed_markets": -1128.0,
+              "emerging_markets": -403.0
+            }
+          },
+          "hybrid": -12285.0,
+          "bond": {
+            "total": 14326.0,
+            "taxable": {
+              "total": 11388.0,
+              "investment_grade": 3759.0,
+              "high_yield": 806.0,
+              "government": 23.0,
+              "multisector": 4327.0,
+              "global": 2472.0
+            },
+            "municipal": 2939.0
+          }
+        },
+        {
+          "date": "12/31/2024",
+          "total_long_term": -97897.0,
+          "equity": {
+            "total": -94328.0,
+            "domestic": {
+              "total": -76559.0,
+              "large_cap": -33241.0,
+              "mid_cap": -8510.0,
+              "small_cap": -5621.0,
+              "multi_cap": -26803.0,
+              "other": -2384.0
+            },
+            "world": {
+              "total": -17769.0,
+              "developed_markets": -13130.0,
+              "emerging_markets": -4638.0
+            }
+          },
+          "hybrid": -10168.0,
+          "bond": {
+            "total": 6599.0,
+            "taxable": {
+              "total": 8608.0,
+              "investment_grade": 6060.0,
+              "high_yield": 152.0,
+              "government": -310.0,
+              "multisector": 1724.0,
+              "global": 982.0
+            },
+            "municipal": -2009.0
+          }
+        },
+        {
+          "date": "1/31/2025",
+          "total_long_term": -61676.0,
+          "equity": {
+            "total": -61654.0,
+            "domestic": {
+              "total": -48676.0,
+              "large_cap": -18280.0,
+              "mid_cap": -7264.0,
+              "small_cap": -5397.0,
+              "multi_cap": -15648.0,
+              "other": -2086.0
+            },
+            "world": {
+              "total": -12978.0,
+              "developed_markets": -11507.0,
+              "emerging_markets": -1470.0
+            }
+          },
+          "hybrid": -8612.0,
+          "bond": {
+            "total": 8590.0,
+            "taxable": {
+              "total": 4914.0,
+              "investment_grade": -3203.0,
+              "high_yield": 3040.0,
+              "government": 421.0,
+              "multisector": 3922.0,
+              "global": 734.0
+            },
+            "municipal": 3677.0
+          }
+        },
+        {
+          "date": "2/28/2025",
+          "total_long_term": -48050.0,
+          "equity": {
+            "total": -55465.0,
+            "domestic": {
+              "total": -39429.0,
+              "large_cap": -18146.0,
+              "mid_cap": -2803.0,
+              "small_cap": -4657.0,
+              "multi_cap": -10928.0,
+              "other": -2895.0
+            },
+            "world": {
+              "total": -16037.0,
+              "developed_markets": -12830.0,
+              "emerging_markets": -3207.0
+            }
+          },
+          "hybrid": -7018.0,
+          "bond": {
+            "total": 14433.0,
+            "taxable": {
+              "total": 11985.0,
+              "investment_grade": 2640.0,
+              "high_yield": 3559.0,
+              "government": 689.0,
+              "multisector": 2899.0,
+              "global": 2199.0
+            },
+            "municipal": 2448.0
+          }
+        },
+        {
+          "date": "3/31/2025",
+          "total_long_term": -86550.0,
+          "equity": {
+            "total": -66451.0,
+            "domestic": {
+              "total": -45997.0,
+              "large_cap": -20750.0,
+              "mid_cap": -5254.0,
+              "small_cap": -3707.0,
+              "multi_cap": -11088.0,
+              "other": -5197.0
+            },
+            "world": {
+              "total": -20454.0,
+              "developed_markets": -16649.0,
+              "emerging_markets": -3805.0
+            }
+          },
+          "hybrid": -12667.0,
+          "bond": {
+            "total": -7432.0,
+            "taxable": {
+              "total": -7190.0,
+              "investment_grade": -11719.0,
+              "high_yield": -2167.0,
+              "government": -5085.0,
+              "multisector": 13874.0,
+              "global": -2094.0
+            },
+            "municipal": -241.0
+          }
+        },
+        {
+          "date": "4/30/2025",
+          "total_long_term": -118412.0,
+          "equity": {
+            "total": -38844.0,
+            "domestic": {
+              "total": -21250.0,
+              "large_cap": -708.0,
+              "mid_cap": -5720.0,
+              "small_cap": -4258.0,
+              "multi_cap": -7753.0,
+              "other": -2810.0
+            },
+            "world": {
+              "total": -17594.0,
+              "developed_markets": -13642.0,
+              "emerging_markets": -3952.0
+            }
+          },
+          "hybrid": -13930.0,
+          "bond": {
+            "total": -65638.0,
+            "taxable": {
+              "total": -56874.0,
+              "investment_grade": -32508.0,
+              "high_yield": -10961.0,
+              "government": -4469.0,
+              "multisector": -4264.0,
+              "global": -4672.0
+            },
+            "municipal": -8764.0
+          }
+        },
+        {
+          "date": "5/31/2025",
+          "total_long_term": -42300.0,
+          "equity": {
+            "total": -56922.0,
+            "domestic": {
+              "total": -41979.0,
+              "large_cap": -21772.0,
+              "mid_cap": -4628.0,
+              "small_cap": -5439.0,
+              "multi_cap": -8792.0,
+              "other": -1348.0
+            },
+            "world": {
+              "total": -14943.0,
+              "developed_markets": -11573.0,
+              "emerging_markets": -3370.0
+            }
+          },
+          "hybrid": -6563.0,
+          "bond": {
+            "total": 21186.0,
+            "taxable": {
+              "total": 16400.0,
+              "investment_grade": 3883.0,
+              "high_yield": 1221.0,
+              "government": 3269.0,
+              "multisector": 4964.0,
+              "global": 3064.0
+            },
+            "municipal": 4786.0
+          }
+        },
+        {
+          "date": "6/30/2025",
+          "total_long_term": -67765.0,
+          "equity": {
+            "total": -74860.0,
+            "domestic": {
+              "total": -61649.0,
+              "large_cap": -23319.0,
+              "mid_cap": -7897.0,
+              "small_cap": -6958.0,
+              "multi_cap": -20709.0,
+              "other": -2766.0
+            },
+            "world": {
+              "total": -13211.0,
+              "developed_markets": -11305.0,
+              "emerging_markets": -1906.0
+            }
+          },
+          "hybrid": -7068.0,
+          "bond": {
+            "total": 14162.0,
+            "taxable": {
+              "total": 11834.0,
+              "investment_grade": 7841.0,
+              "high_yield": 592.0,
+              "government": -2791.0,
+              "multisector": 3140.0,
+              "global": 3052.0
+            },
+            "municipal": 2328.0
+          }
+        },
+        {
+          "date": "7/31/2025",
+          "total_long_term": -335974.0,
+          "equity": {
+            "total": -367171.0,
+            "domestic": {
+              "total": -357449.0,
+              "large_cap": -286149.0,
+              "mid_cap": -43750.0,
+              "small_cap": -8783.0,
+              "multi_cap": -16916.0,
+              "other": -1852.0
+            },
+            "world": {
+              "total": -9723.0,
+              "developed_markets": -6457.0,
+              "emerging_markets": -3266.0
+            }
+          },
+          "hybrid": -5622.0,
+          "bond": {
+            "total": 36820.0,
+            "taxable": {
+              "total": 32967.0,
+              "investment_grade": 17008.0,
+              "high_yield": 197.0,
+              "government": 3403.0,
+              "multisector": 6983.0,
+              "global": 5376.0
+            },
+            "municipal": 3853.0
+          }
+        },
+        {
+          "date": "8/31/2025",
+          "total_long_term": -64136.0,
+          "equity": {
+            "total": -74023.0,
+            "domestic": {
+              "total": -64845.0,
+              "large_cap": -26501.0,
+              "mid_cap": -6144.0,
+              "small_cap": -8563.0,
+              "multi_cap": -21461.0,
+              "other": -2175.0
+            },
+            "world": {
+              "total": -9178.0,
+              "developed_markets": -7268.0,
+              "emerging_markets": -1910.0
+            }
+          },
+          "hybrid": -6510.0,
+          "bond": {
+            "total": 16397.0,
+            "taxable": {
+              "total": 15907.0,
+              "investment_grade": 5587.0,
+              "high_yield": -523.0,
+              "government": -705.0,
+              "multisector": 9079.0,
+              "global": 2469.0
+            },
+            "municipal": 489.0
+          }
+        },
+        {
+          "date": "9/30/2025",
+          "total_long_term": -70997.0,
+          "equity": {
+            "total": -93683.0,
+            "domestic": {
+              "total": -78826.0,
+              "large_cap": -45297.0,
+              "mid_cap": -7603.0,
+              "small_cap": -8136.0,
+              "multi_cap": -15802.0,
+              "other": -1987.0
+            },
+            "world": {
+              "total": -14858.0,
+              "developed_markets": -12148.0,
+              "emerging_markets": -2710.0
+            }
+          },
+          "hybrid": -5696.0,
+          "bond": {
+            "total": 28382.0,
+            "taxable": {
+              "total": 23507.0,
+              "investment_grade": 12287.0,
+              "high_yield": -1.0,
+              "government": 604.0,
+              "multisector": 6442.0,
+              "global": 4175.0
+            },
+            "municipal": 4874.0
+          }
+        },
+        {
+          "date": "10/31/2025",
+          "total_long_term": -104094.0,
+          "equity": {
+            "total": -116613.0,
+            "domestic": {
+              "total": -104213.0,
+              "large_cap": -50470.0,
+              "mid_cap": -9406.0,
+              "small_cap": -7598.0,
+              "multi_cap": -34509.0,
+              "other": -2231.0
+            },
+            "world": {
+              "total": -12399.0,
+              "developed_markets": -10122.0,
+              "emerging_markets": -2277.0
+            }
+          },
+          "hybrid": -7504.0,
+          "bond": {
+            "total": 20023.0,
+            "taxable": {
+              "total": 20506.0,
+              "investment_grade": 13188.0,
+              "high_yield": -3396.0,
+              "government": 2035.0,
+              "multisector": 6230.0,
+              "global": 2449.0
+            },
+            "municipal": -483.0
+          }
+        },
+        {
+          "date": "11/30/2025",
+          "total_long_term": -80978.0,
+          "equity": {
+            "total": -80412.0,
+            "domestic": {
+              "total": -73142.0,
+              "large_cap": -34956.0,
+              "mid_cap": -7995.0,
+              "small_cap": -7680.0,
+              "multi_cap": -19344.0,
+              "other": -3167.0
+            },
+            "world": {
+              "total": -7270.0,
+              "developed_markets": -5783.0,
+              "emerging_markets": -1486.0
+            }
+          },
+          "hybrid": -8205.0,
+          "bond": {
+            "total": 7639.0,
+            "taxable": {
+              "total": 7396.0,
+              "investment_grade": 976.0,
+              "high_yield": -2559.0,
+              "government": 1138.0,
+              "multisector": 4757.0,
+              "global": 3083.0
+            },
+            "municipal": 244.0
+          }
+        },
+        {
+          "date": "12/31/2025",
+          "total_long_term": -142655.0,
+          "equity": {
+            "total": -148794.0,
+            "domestic": {
+              "total": -114840.0,
+              "large_cap": -58118.0,
+              "mid_cap": -11154.0,
+              "small_cap": -8827.0,
+              "multi_cap": -33108.0,
+              "other": -3633.0
+            },
+            "world": {
+              "total": -33954.0,
+              "developed_markets": -29772.0,
+              "emerging_markets": -4182.0
+            }
+          },
+          "hybrid": -8761.0,
+          "bond": {
+            "total": 14901.0,
+            "taxable": {
+              "total": 13477.0,
+              "investment_grade": 6210.0,
+              "high_yield": -2864.0,
+              "government": 1198.0,
+              "multisector": 5520.0,
+              "global": 3413.0
+            },
+            "municipal": 1424.0
+          }
+        },
+        {
+          "date": "1/31/2026",
+          "total_long_term": -48479.0,
+          "equity": {
+            "total": -84148.0,
+            "domestic": {
+              "total": -63138.0,
+              "large_cap": -29147.0,
+              "mid_cap": -7863.0,
+              "small_cap": -7093.0,
+              "multi_cap": -17616.0,
+              "other": -1418.0
+            },
+            "world": {
+              "total": -21010.0,
+              "developed_markets": -17184.0,
+              "emerging_markets": -3827.0
+            }
+          },
+          "hybrid": -5865.0,
+          "bond": {
+            "total": 41534.0,
+            "taxable": {
+              "total": 36631.0,
+              "investment_grade": 18146.0,
+              "high_yield": -1116.0,
+              "government": 1471.0,
+              "multisector": 8381.0,
+              "global": 9749.0
+            },
+            "municipal": 4903.0
+          }
+        },
+        {
+          "date": "2/28/2026",
+          "total_long_term": -33483.0,
+          "equity": {
+            "total": -64092.0,
+            "domestic": {
+              "total": -45694.0,
+              "large_cap": -20228.0,
+              "mid_cap": -6319.0,
+              "small_cap": -4726.0,
+              "multi_cap": -12899.0,
+              "other": -1522.0
+            },
+            "world": {
+              "total": -18398.0,
+              "developed_markets": -16153.0,
+              "emerging_markets": -2245.0
+            }
+          },
+          "hybrid": -3172.0,
+          "bond": {
+            "total": 33782.0,
+            "taxable": {
+              "total": 24802.0,
+              "investment_grade": 8935.0,
+              "high_yield": -2196.0,
+              "government": 1273.0,
+              "multisector": 7995.0,
+              "global": 8795.0
+            },
+            "municipal": 8980.0
+          }
+        },
+        {
+          "date": "3/31/2026",
+          "total_long_term": -72740.0,
+          "equity": {
+            "total": -50200.0,
+            "domestic": {
+              "total": -38428.0,
+              "large_cap": -20091.0,
+              "mid_cap": -9135.0,
+              "small_cap": -7946.0,
+              "multi_cap": 934.0,
+              "other": -2189.0
+            },
+            "world": {
+              "total": -11772.0,
+              "developed_markets": -10423.0,
+              "emerging_markets": -1349.0
+            }
+          },
+          "hybrid": -11042.0,
+          "bond": {
+            "total": -11498.0,
+            "taxable": {
+              "total": -12562.0,
+              "investment_grade": -8310.0,
+              "high_yield": -5208.0,
+              "government": -1456.0,
+              "multisector": 545.0,
+              "global": 1867.0
+            },
+            "municipal": 1063.0
+          }
+        },
+        {
+          "date": "4/30/2026",
+          "total_long_term": -62630.0,
+          "equity": {
+            "total": -69485.0,
+            "domestic": {
+              "total": -65652.0,
+              "large_cap": -32879.0,
+              "mid_cap": -6049.0,
+              "small_cap": -5666.0,
+              "multi_cap": -16948.0,
+              "other": -4109.0
+            },
+            "world": {
+              "total": -3833.0,
+              "developed_markets": -8330.0,
+              "emerging_markets": 4497.0
+            }
+          },
+          "hybrid": -5719.0,
+          "bond": {
+            "total": 12574.0,
+            "taxable": {
+              "total": 10823.0,
+              "investment_grade": 1906.0,
+              "high_yield": 2527.0,
+              "government": -2697.0,
+              "multisector": 1860.0,
+              "global": 7227.0
+            },
+            "municipal": 1751.0
+          }
+        }
+      ],
+      "weekly": [
+        {
+          "date": "4/29/2026",
+          "total_long_term": -16911.0,
+          "equity": {
+            "total": -24086.0,
+            "domestic": {
+              "total": -22183.0,
+              "large_cap": -11720.0,
+              "mid_cap": -1079.0,
+              "small_cap": -844.0,
+              "multi_cap": -7385.0,
+              "other": -1155.0
+            },
+            "world": {
+              "total": -1902.0,
+              "developed_markets": -4520.0,
+              "emerging_markets": 2618.0
+            }
+          },
+          "hybrid": -1254.0,
+          "bond": {
+            "total": 8429.0,
+            "taxable": {
+              "total": 7068.0,
+              "investment_grade": 1556.0,
+              "high_yield": 976.0,
+              "government": 923.0,
+              "multisector": 1469.0,
+              "global": 2143.0
+            },
+            "municipal": 1361.0
+          }
+        },
+        {
+          "date": "5/6/2026",
+          "total_long_term": -21382.0,
+          "equity": {
+            "total": -32622.0,
+            "domestic": {
+              "total": -28074.0,
+              "large_cap": -14627.0,
+              "mid_cap": -3000.0,
+              "small_cap": -1779.0,
+              "multi_cap": -8499.0,
+              "other": -169.0
+            },
+            "world": {
+              "total": -4547.0,
+              "developed_markets": -5406.0,
+              "emerging_markets": 858.0
+            }
+          },
+          "hybrid": -2111.0,
+          "bond": {
+            "total": 13351.0,
+            "taxable": {
+              "total": 12265.0,
+              "investment_grade": 6334.0,
+              "high_yield": -2415.0,
+              "government": 3593.0,
+              "multisector": 2722.0,
+              "global": 2030.0
+            },
+            "municipal": 1086.0
+          }
+        },
+        {
+          "date": "5/13/2026",
+          "total_long_term": -18719.0,
+          "equity": {
+            "total": -29587.0,
+            "domestic": {
+              "total": -22978.0,
+              "large_cap": -14704.0,
+              "mid_cap": -2531.0,
+              "small_cap": -923.0,
+              "multi_cap": -4462.0,
+              "other": -357.0
+            },
+            "world": {
+              "total": -6609.0,
+              "developed_markets": -4357.0,
+              "emerging_markets": -2252.0
+            }
+          },
+          "hybrid": -1690.0,
+          "bond": {
+            "total": 12558.0,
+            "taxable": {
+              "total": 10658.0,
+              "investment_grade": 5613.0,
+              "high_yield": 302.0,
+              "government": 915.0,
+              "multisector": 1683.0,
+              "global": 2145.0
+            },
+            "municipal": 1900.0
+          }
+        },
+        {
+          "date": "5/20/2026",
+          "total_long_term": -17355.0,
+          "equity": {
+            "total": -29419.0,
+            "domestic": {
+              "total": -24726.0,
+              "large_cap": -16442.0,
+              "mid_cap": -2996.0,
+              "small_cap": -1522.0,
+              "multi_cap": -3504.0,
+              "other": -262.0
+            },
+            "world": {
+              "total": -4693.0,
+              "developed_markets": -3046.0,
+              "emerging_markets": -1647.0
+            }
+          },
+          "hybrid": -1327.0,
+          "bond": {
+            "total": 13391.0,
+            "taxable": {
+              "total": 11450.0,
+              "investment_grade": 6146.0,
+              "high_yield": 220.0,
+              "government": 900.0,
+              "multisector": 1732.0,
+              "global": 2453.0
+            },
+            "municipal": 1941.0
+          }
+        },
+        {
+          "date": "5/27/2026",
+          "total_long_term": -13967.0,
+          "equity": {
+            "total": -16506.0,
+            "domestic": {
+              "total": -12996.0,
+              "large_cap": -6223.0,
+              "mid_cap": -1305.0,
+              "small_cap": -1218.0,
+              "multi_cap": -3536.0,
+              "other": -713.0
+            },
+            "world": {
+              "total": -3510.0,
+              "developed_markets": -3111.0,
+              "emerging_markets": -399.0
+            }
+          },
+          "hybrid": -1693.0,
+          "bond": {
+            "total": 4233.0,
+            "taxable": {
+              "total": 2107.0,
+              "investment_grade": 1074.0,
+              "high_yield": 10.0,
+              "government": 161.0,
+              "multisector": -256.0,
+              "global": 1119.0
+            },
+            "municipal": 2125.0
+          }
+        }
+      ]
+    },
+    "mm_assets": {
+      "source": "ICI - Weekly Money Market Fund Assets",
+      "unit": "millions_USD",
+      "weekly": [
+        {
+          "date": "6/3/2026",
+          "total_all": {
+            "total": {
+              "classes": null,
+              "tna": null
+            },
+            "tax_exempt": {
+              "classes": null,
+              "tna": null
+            },
+            "government": {
+              "total": {
+                "classes": null,
+                "tna": null
+              },
+              "treasury_repo": {
+                "classes": null,
+                "tna": null
+              },
+              "treasury_agency": {
+                "classes": null,
+                "tna": null
+              }
+            },
+            "prime": {
+              "classes": null,
+              "tna": null
+            }
+          },
+          "institutional": {
+            "total": {
+              "classes": null,
+              "tna": null
+            },
+            "tax_exempt": {
+              "classes": null,
+              "tna": null
+            },
+            "government": {
+              "total": {
+                "classes": null,
+                "tna": null
+              },
+              "treasury_repo": {
+                "classes": null,
+                "tna": null
+              },
+              "treasury_agency": {
+                "classes": null,
+                "tna": null
+              }
+            },
+            "prime": {
+              "classes": null,
+              "tna": null
+            }
+          },
+          "retail": {
+            "total": {
+              "classes": null,
+              "tna": null
+            },
+            "tax_exempt": {
+              "classes": null,
+              "tna": null
+            },
+            "government": {
+              "total": {
+                "classes": null,
+                "tna": null
+              },
+              "treasury_repo": {
+                "classes": null,
+                "tna": null
+              },
+              "treasury_agency": {
+                "classes": null,
+                "tna": null
+              }
+            },
+            "prime": {
+              "classes": null,
+              "tna": null
+            }
+          }
+        },
+        {
+          "date": "01/21/2026",
+          "total_all": {
+            "total": {
+              "classes": 968,
+              "tna": 7698516.0
+            },
+            "tax_exempt": {
+              "classes": 128,
+              "tna": 145226.0
+            },
+            "government": {
+              "total": {
+                "classes": 717,
+                "tna": 6318161.0
+              },
+              "treasury_repo": {
+                "classes": 273,
+                "tna": 2261214.0
+              },
+              "treasury_agency": {
+                "classes": 444,
+                "tna": 4056947.0
+              }
+            },
+            "prime": {
+              "classes": 123,
+              "tna": 1235129.0
+            }
+          },
+          "institutional": {
+            "total": {
+              "classes": 495,
+              "tna": 4623682.0
+            },
+            "tax_exempt": {
+              "classes": 23,
+              "tna": 13739.0
+            },
+            "government": {
+              "total": {
+                "classes": 438,
+                "tna": 4374808.0
+              },
+              "treasury_repo": {
+                "classes": 217,
+                "tna": 1857142.0
+              },
+              "treasury_agency": {
+                "classes": 221,
+                "tna": 2517666.0
+              }
+            },
+            "prime": {
+              "classes": 34,
+              "tna": 235134.0
+            }
+          },
+          "retail": {
+            "total": {
+              "classes": 473,
+              "tna": 3074835.0
+            },
+            "tax_exempt": {
+              "classes": 105,
+              "tna": 131487.0
+            },
+            "government": {
+              "total": {
+                "classes": 279,
+                "tna": 1943353.0
+              },
+              "treasury_repo": {
+                "classes": 56,
+                "tna": 404072.0
+              },
+              "treasury_agency": {
+                "classes": 223,
+                "tna": 1539281.0
+              }
+            },
+            "prime": {
+              "classes": 89,
+              "tna": 999995.0
+            }
+          }
+        },
+        {
+          "date": "01/28/2026",
+          "total_all": {
+            "total": {
+              "classes": 968,
+              "tna": 7711573.0
+            },
+            "tax_exempt": {
+              "classes": 128,
+              "tna": 142255.0
+            },
+            "government": {
+              "total": {
+                "classes": 717,
+                "tna": 6329532.0
+              },
+              "treasury_repo": {
+                "classes": 273,
+                "tna": 2245095.0
+              },
+              "treasury_agency": {
+                "classes": 444,
+                "tna": 4084437.0
+              }
+            },
+            "prime": {
+              "classes": 123,
+              "tna": 1239786.0
+            }
+          },
+          "institutional": {
+            "total": {
+              "classes": 495,
+              "tna": 4645807.0
+            },
+            "tax_exempt": {
+              "classes": 23,
+              "tna": 13200.0
+            },
+            "government": {
+              "total": {
+                "classes": 438,
+                "tna": 4392496.0
+              },
+              "treasury_repo": {
+                "classes": 217,
+                "tna": 1841679.0
+              },
+              "treasury_agency": {
+                "classes": 221,
+                "tna": 2550818.0
+              }
+            },
+            "prime": {
+              "classes": 34,
+              "tna": 240110.0
+            }
+          },
+          "retail": {
+            "total": {
+              "classes": 473,
+              "tna": 3065767.0
+            },
+            "tax_exempt": {
+              "classes": 105,
+              "tna": 129055.0
+            },
+            "government": {
+              "total": {
+                "classes": 279,
+                "tna": 1937035.0
+              },
+              "treasury_repo": {
+                "classes": 56,
+                "tna": 403416.0
+              },
+              "treasury_agency": {
+                "classes": 223,
+                "tna": 1533619.0
+              }
+            },
+            "prime": {
+              "classes": 89,
+              "tna": 999676.0
+            }
+          }
+        },
+        {
+          "date": "02/04/2026",
+          "total_all": {
+            "total": {
+              "classes": 970,
+              "tna": 7796589.0
+            },
+            "tax_exempt": {
+              "classes": 128,
+              "tna": 142667.0
+            },
+            "government": {
+              "total": {
+                "classes": 719,
+                "tna": 6410585.0
+              },
+              "treasury_repo": {
+                "classes": 275,
+                "tna": 2258321.0
+              },
+              "treasury_agency": {
+                "classes": 444,
+                "tna": 4152264.0
+              }
+            },
+            "prime": {
+              "classes": 123,
+              "tna": 1243337.0
+            }
+          },
+          "institutional": {
+            "total": {
+              "classes": 497,
+              "tna": 4719347.0
+            },
+            "tax_exempt": {
+              "classes": 23,
+              "tna": 13533.0
+            },
+            "government": {
+              "total": {
+                "classes": 440,
+                "tna": 4463110.0
+              },
+              "treasury_repo": {
+                "classes": 219,
+                "tna": 1852983.0
+              },
+              "treasury_agency": {
+                "classes": 221,
+                "tna": 2610126.0
+              }
+            },
+            "prime": {
+              "classes": 34,
+              "tna": 242704.0
+            }
+          },
+          "retail": {
+            "total": {
+              "classes": 473,
+              "tna": 3077242.0
+            },
+            "tax_exempt": {
+              "classes": 105,
+              "tna": 129134.0
+            },
+            "government": {
+              "total": {
+                "classes": 279,
+                "tna": 1947475.0
+              },
+              "treasury_repo": {
+                "classes": 56,
+                "tna": 405338.0
+              },
+              "treasury_agency": {
+                "classes": 223,
+                "tna": 1542138.0
+              }
+            },
+            "prime": {
+              "classes": 89,
+              "tna": 1000633.0
+            }
+          }
+        },
+        {
+          "date": "02/11/2026",
+          "total_all": {
+            "total": {
+              "classes": 970,
+              "tna": 7773887.0
+            },
+            "tax_exempt": {
+              "classes": 128,
+              "tna": 142110.0
+            },
+            "government": {
+              "total": {
+                "classes": 719,
+                "tna": 6388410.0
+              },
+              "treasury_repo": {
+                "classes": 275,
+                "tna": 2264477.0
+              },
+              "treasury_agency": {
+                "classes": 444,
+                "tna": 4123933.0
+              }
+            },
+            "prime": {
+              "classes": 123,
+              "tna": 1243368.0
+            }
+          },
+          "institutional": {
+            "total": {
+              "classes": 497,
+              "tna": 4694290.0
+            },
+            "tax_exempt": {
+              "classes": 23,
+              "tna": 12944.0
+            },
+            "government": {
+              "total": {
+                "classes": 440,
+                "tna": 4439647.0
+              },
+              "treasury_repo": {
+                "classes": 219,
+                "tna": 1857718.0
+              },
+              "treasury_agency": {
+                "classes": 221,
+                "tna": 2581929.0
+              }
+            },
+            "prime": {
+              "classes": 34,
+              "tna": 241699.0
+            }
+          },
+          "retail": {
+            "total": {
+              "classes": 473,
+              "tna": 3079597.0
+            },
+            "tax_exempt": {
+              "classes": 105,
+              "tna": 129165.0
+            },
+            "government": {
+              "total": {
+                "classes": 279,
+                "tna": 1948763.0
+              },
+              "treasury_repo": {
+                "classes": 56,
+                "tna": 406759.0
+              },
+              "treasury_agency": {
+                "classes": 223,
+                "tna": 1542004.0
+              }
+            },
+            "prime": {
+              "classes": 89,
+              "tna": 1001669.0
+            }
+          }
+        },
+        {
+          "date": "02/18/2026",
+          "total_all": {
+            "total": {
+              "classes": 969,
+              "tna": 7791016.0
+            },
+            "tax_exempt": {
+              "classes": 128,
+              "tna": 144074.0
+            },
+            "government": {
+              "total": {
+                "classes": 718,
+                "tna": 6405181.0
+              },
+              "treasury_repo": {
+                "classes": 274,
+                "tna": 2270129.0
+              },
+              "treasury_agency": {
+                "classes": 444,
+                "tna": 4135052.0
+              }
+            },
+            "prime": {
+              "classes": 123,
+              "tna": 1241761.0
+            }
+          },
+          "institutional": {
+            "total": {
+              "classes": 496,
+              "tna": 4708858.0
+            },
+            "tax_exempt": {
+              "classes": 23,
+              "tna": 13420.0
+            },
+            "government": {
+              "total": {
+                "classes": 439,
+                "tna": 4454349.0
+              },
+              "treasury_repo": {
+                "classes": 218,
+                "tna": 1862614.0
+              },
+              "treasury_agency": {
+                "classes": 221,
+                "tna": 2591735.0
+              }
+            },
+            "prime": {
+              "classes": 34,
+              "tna": 241089.0
+            }
+          },
+          "retail": {
+            "total": {
+              "classes": 473,
+              "tna": 3082159.0
+            },
+            "tax_exempt": {
+              "classes": 105,
+              "tna": 130654.0
+            },
+            "government": {
+              "total": {
+                "classes": 279,
+                "tna": 1950832.0
+              },
+              "treasury_repo": {
+                "classes": 56,
+                "tna": 407515.0
+              },
+              "treasury_agency": {
+                "classes": 223,
+                "tna": 1543317.0
+              }
+            },
+            "prime": {
+              "classes": 89,
+              "tna": 1000672.0
+            }
+          }
+        },
+        {
+          "date": "02/25/2026",
+          "total_all": {
+            "total": {
+              "classes": 969,
+              "tna": 7796723.0
+            },
+            "tax_exempt": {
+              "classes": 128,
+              "tna": 144160.0
+            },
+            "government": {
+              "total": {
+                "classes": 718,
+                "tna": 6411767.0
+              },
+              "treasury_repo": {
+                "classes": 274,
+                "tna": 2280426.0
+              },
+              "treasury_agency": {
+                "classes": 444,
+                "tna": 4131341.0
+              }
+            },
+            "prime": {
+              "classes": 123,
+              "tna": 1240796.0
+            }
+          },
+          "institutional": {
+            "total": {
+              "classes": 496,
+              "tna": 4724894.0
+            },
+            "tax_exempt": {
+              "classes": 23,
+              "tna": 13572.0
+            },
+            "government": {
+              "total": {
+                "classes": 439,
+                "tna": 4469253.0
+              },
+              "treasury_repo": {
+                "classes": 218,
+                "tna": 1873531.0
+              },
+              "treasury_agency": {
+                "classes": 221,
+                "tna": 2595722.0
+              }
+            },
+            "prime": {
+              "classes": 34,
+              "tna": 242070.0
+            }
+          },
+          "retail": {
+            "total": {
+              "classes": 473,
+              "tna": 3071829.0
+            },
+            "tax_exempt": {
+              "classes": 105,
+              "tna": 130588.0
+            },
+            "government": {
+              "total": {
+                "classes": 279,
+                "tna": 1942515.0
+              },
+              "treasury_repo": {
+                "classes": 56,
+                "tna": 406895.0
+              },
+              "treasury_agency": {
+                "classes": 223,
+                "tna": 1535619.0
+              }
+            },
+            "prime": {
+              "classes": 89,
+              "tna": 998726.0
+            }
+          }
+        },
+        {
+          "date": "03/04/2026",
+          "total_all": {
+            "total": {
+              "classes": 969,
+              "tna": 7816829.0
+            },
+            "tax_exempt": {
+              "classes": 128,
+              "tna": 142177.0
+            },
+            "government": {
+              "total": {
+                "classes": 718,
+                "tna": 6430450.0
+              },
+              "treasury_repo": {
+                "classes": 274,
+                "tna": 2294348.0
+              },
+              "treasury_agency": {
+                "classes": 444,
+                "tna": 4136101.0
+              }
+            },
+            "prime": {
+              "classes": 123,
+              "tna": 1244202.0
+            }
+          },
+          "institutional": {
+            "total": {
+              "classes": 496,
+              "tna": 4734955.0
+            },
+            "tax_exempt": {
+              "classes": 23,
+              "tna": 13206.0
+            },
+            "government": {
+              "total": {
+                "classes": 439,
+                "tna": 4478697.0
+              },
+              "treasury_repo": {
+                "classes": 218,
+                "tna": 1886299.0
+              },
+              "treasury_agency": {
+                "classes": 221,
+                "tna": 2592398.0
+              }
+            },
+            "prime": {
+              "classes": 34,
+              "tna": 243051.0
+            }
+          },
+          "retail": {
+            "total": {
+              "classes": 473,
+              "tna": 3081874.0
+            },
+            "tax_exempt": {
+              "classes": 105,
+              "tna": 128971.0
+            },
+            "government": {
+              "total": {
+                "classes": 279,
+                "tna": 1951752.0
+              },
+              "treasury_repo": {
+                "classes": 56,
+                "tna": 408049.0
+              },
+              "treasury_agency": {
+                "classes": 223,
+                "tna": 1543703.0
+              }
+            },
+            "prime": {
+              "classes": 89,
+              "tna": 1001151.0
+            }
+          }
+        },
+        {
+          "date": "03/11/2026",
+          "total_all": {
+            "total": {
+              "classes": 974,
+              "tna": 7822003.0
+            },
+            "tax_exempt": {
+              "classes": 128,
+              "tna": 141618.0
+            },
+            "government": {
+              "total": {
+                "classes": 718,
+                "tna": 6433123.0
+              },
+              "treasury_repo": {
+                "classes": 274,
+                "tna": 2310349.0
+              },
+              "treasury_agency": {
+                "classes": 444,
+                "tna": 4122774.0
+              }
+            },
+            "prime": {
+              "classes": 128,
+              "tna": 1247262.0
+            }
+          },
+          "institutional": {
+            "total": {
+              "classes": 501,
+              "tna": 4729556.0
+            },
+            "tax_exempt": {
+              "classes": 23,
+              "tna": 13062.0
+            },
+            "government": {
+              "total": {
+                "classes": 439,
+                "tna": 4473990.0
+              },
+              "treasury_repo": {
+                "classes": 218,
+                "tna": 1900436.0
+              },
+              "treasury_agency": {
+                "classes": 221,
+                "tna": 2573554.0
+              }
+            },
+            "prime": {
+              "classes": 39,
+              "tna": 242503.0
+            }
+          },
+          "retail": {
+            "total": {
+              "classes": 473,
+              "tna": 3092448.0
+            },
+            "tax_exempt": {
+              "classes": 105,
+              "tna": 128556.0
+            },
+            "government": {
+              "total": {
+                "classes": 279,
+                "tna": 1959133.0
+              },
+              "treasury_repo": {
+                "classes": 56,
+                "tna": 409913.0
+              },
+              "treasury_agency": {
+                "classes": 223,
+                "tna": 1549219.0
+              }
+            },
+            "prime": {
+              "classes": 89,
+              "tna": 1004759.0
+            }
+          }
+        },
+        {
+          "date": "03/18/2026",
+          "total_all": {
+            "total": {
+              "classes": 975,
+              "tna": 7861106.0
+            },
+            "tax_exempt": {
+              "classes": 128,
+              "tna": 143138.0
+            },
+            "government": {
+              "total": {
+                "classes": 719,
+                "tna": 6474103.0
+              },
+              "treasury_repo": {
+                "classes": 275,
+                "tna": 2316862.0
+              },
+              "treasury_agency": {
+                "classes": 444,
+                "tna": 4157241.0
+              }
+            },
+            "prime": {
+              "classes": 128,
+              "tna": 1243866.0
+            }
+          },
+          "institutional": {
+            "total": {
+              "classes": 502,
+              "tna": 4757751.0
+            },
+            "tax_exempt": {
+              "classes": 23,
+              "tna": 13388.0
+            },
+            "government": {
+              "total": {
+                "classes": 440,
+                "tna": 4507154.0
+              },
+              "treasury_repo": {
+                "classes": 219,
+                "tna": 1905625.0
+              },
+              "treasury_agency": {
+                "classes": 221,
+                "tna": 2601528.0
+              }
+            },
+            "prime": {
+              "classes": 39,
+              "tna": 237209.0
+            }
+          },
+          "retail": {
+            "total": {
+              "classes": 473,
+              "tna": 3103355.0
+            },
+            "tax_exempt": {
+              "classes": 105,
+              "tna": 129749.0
+            },
+            "government": {
+              "total": {
+                "classes": 279,
+                "tna": 1966949.0
+              },
+              "treasury_repo": {
+                "classes": 56,
+                "tna": 411236.0
+              },
+              "treasury_agency": {
+                "classes": 223,
+                "tna": 1555713.0
+              }
+            },
+            "prime": {
+              "classes": 89,
+              "tna": 1006657.0
+            }
+          }
+        },
+        {
+          "date": "03/25/2026",
+          "total_all": {
+            "total": {
+              "classes": 975,
+              "tna": 7808477.0
+            },
+            "tax_exempt": {
+              "classes": 128,
+              "tna": 144106.0
+            },
+            "government": {
+              "total": {
+                "classes": 719,
+                "tna": 6416240.0
+              },
+              "treasury_repo": {
+                "classes": 275,
+                "tna": 2305467.0
+              },
+              "treasury_agency": {
+                "classes": 444,
+                "tna": 4110773.0
+              }
+            },
+            "prime": {
+              "classes": 128,
+              "tna": 1248132.0
+            }
+          },
+          "institutional": {
+            "total": {
+              "classes": 502,
+              "tna": 4698711.0
+            },
+            "tax_exempt": {
+              "classes": 23,
+              "tna": 13135.0
+            },
+            "government": {
+              "total": {
+                "classes": 440,
+                "tna": 4443909.0
+              },
+              "treasury_repo": {
+                "classes": 219,
+                "tna": 1892433.0
+              },
+              "treasury_agency": {
+                "classes": 221,
+                "tna": 2551476.0
+              }
+            },
+            "prime": {
+              "classes": 39,
+              "tna": 241667.0
+            }
+          },
+          "retail": {
+            "total": {
+              "classes": 473,
+              "tna": 3109767.0
+            },
+            "tax_exempt": {
+              "classes": 105,
+              "tna": 130971.0
+            },
+            "government": {
+              "total": {
+                "classes": 279,
+                "tna": 1972331.0
+              },
+              "treasury_repo": {
+                "classes": 56,
+                "tna": 413035.0
+              },
+              "treasury_agency": {
+                "classes": 223,
+                "tna": 1559296.0
+              }
+            },
+            "prime": {
+              "classes": 89,
+              "tna": 1006465.0
+            }
+          }
+        },
+        {
+          "date": "04/01/2026",
+          "total_all": {
+            "total": {
+              "classes": 975,
+              "tna": 7814486.0
+            },
+            "tax_exempt": {
+              "classes": 128,
+              "tna": 146103.0
+            },
+            "government": {
+              "total": {
+                "classes": 719,
+                "tna": 6422047.0
+              },
+              "treasury_repo": {
+                "classes": 275,
+                "tna": 2319059.0
+              },
+              "treasury_agency": {
+                "classes": 444,
+                "tna": 4102988.0
+              }
+            },
+            "prime": {
+              "classes": 128,
+              "tna": 1246337.0
+            }
+          },
+          "institutional": {
+            "total": {
+              "classes": 502,
+              "tna": 4697448.0
+            },
+            "tax_exempt": {
+              "classes": 23,
+              "tna": 13871.0
+            },
+            "government": {
+              "total": {
+                "classes": 440,
+                "tna": 4446076.0
+              },
+              "treasury_repo": {
+                "classes": 219,
+                "tna": 1903864.0
+              },
+              "treasury_agency": {
+                "classes": 221,
+                "tna": 2542212.0
+              }
+            },
+            "prime": {
+              "classes": 39,
+              "tna": 237501.0
+            }
+          },
+          "retail": {
+            "total": {
+              "classes": 473,
+              "tna": 3117038.0
+            },
+            "tax_exempt": {
+              "classes": 105,
+              "tna": 132232.0
+            },
+            "government": {
+              "total": {
+                "classes": 279,
+                "tna": 1975971.0
+              },
+              "treasury_repo": {
+                "classes": 56,
+                "tna": 415195.0
+              },
+              "treasury_agency": {
+                "classes": 223,
+                "tna": 1560776.0
+              }
+            },
+            "prime": {
+              "classes": 89,
+              "tna": 1008835.0
+            }
+          }
+        },
+        {
+          "date": "04/08/2026",
+          "total_all": {
+            "total": {
+              "classes": 975,
+              "tna": 7823016.0
+            },
+            "tax_exempt": {
+              "classes": 128,
+              "tna": 145325.0
+            },
+            "government": {
+              "total": {
+                "classes": 719,
+                "tna": 6432293.0
+              },
+              "treasury_repo": {
+                "classes": 275,
+                "tna": 2315703.0
+              },
+              "treasury_agency": {
+                "classes": 444,
+                "tna": 4116590.0
+              }
+            },
+            "prime": {
+              "classes": 128,
+              "tna": 1245397.0
+            }
+          },
+          "institutional": {
+            "total": {
+              "classes": 502,
+              "tna": 4711266.0
+            },
+            "tax_exempt": {
+              "classes": 23,
+              "tna": 13223.0
+            },
+            "government": {
+              "total": {
+                "classes": 440,
+                "tna": 4458710.0
+              },
+              "treasury_repo": {
+                "classes": 219,
+                "tna": 1901586.0
+              },
+              "treasury_agency": {
+                "classes": 221,
+                "tna": 2557125.0
+              }
+            },
+            "prime": {
+              "classes": 39,
+              "tna": 239333.0
+            }
+          },
+          "retail": {
+            "total": {
+              "classes": 473,
+              "tna": 3111750.0
+            },
+            "tax_exempt": {
+              "classes": 105,
+              "tna": 132103.0
+            },
+            "government": {
+              "total": {
+                "classes": 279,
+                "tna": 1973583.0
+              },
+              "treasury_repo": {
+                "classes": 56,
+                "tna": 414117.0
+              },
+              "treasury_agency": {
+                "classes": 223,
+                "tna": 1559466.0
+              }
+            },
+            "prime": {
+              "classes": 89,
+              "tna": 1006064.0
+            }
+          }
+        },
+        {
+          "date": "04/15/2026",
+          "total_all": {
+            "total": {
+              "classes": 977,
+              "tna": 7647481.0
+            },
+            "tax_exempt": {
+              "classes": 128,
+              "tna": 141090.0
+            },
+            "government": {
+              "total": {
+                "classes": 721,
+                "tna": 6277689.0
+              },
+              "treasury_repo": {
+                "classes": 275,
+                "tna": 2276097.0
+              },
+              "treasury_agency": {
+                "classes": 446,
+                "tna": 4001592.0
+              }
+            },
+            "prime": {
+              "classes": 128,
+              "tna": 1228702.0
+            }
+          },
+          "institutional": {
+            "total": {
+              "classes": 504,
+              "tna": 4573811.0
+            },
+            "tax_exempt": {
+              "classes": 23,
+              "tna": 12060.0
+            },
+            "government": {
+              "total": {
+                "classes": 442,
+                "tna": 4322312.0
+              },
+              "treasury_repo": {
+                "classes": 219,
+                "tna": 1869714.0
+              },
+              "treasury_agency": {
+                "classes": 223,
+                "tna": 2452598.0
+              }
+            },
+            "prime": {
+              "classes": 39,
+              "tna": 239439.0
+            }
+          },
+          "retail": {
+            "total": {
+              "classes": 473,
+              "tna": 3073670.0
+            },
+            "tax_exempt": {
+              "classes": 105,
+              "tna": 129030.0
+            },
+            "government": {
+              "total": {
+                "classes": 279,
+                "tna": 1955377.0
+              },
+              "treasury_repo": {
+                "classes": 56,
+                "tna": 406382.0
+              },
+              "treasury_agency": {
+                "classes": 223,
+                "tna": 1548994.0
+              }
+            },
+            "prime": {
+              "classes": 89,
+              "tna": 989263.0
+            }
+          }
+        },
+        {
+          "date": "04/22/2026",
+          "total_all": {
+            "total": {
+              "classes": 977,
+              "tna": 7642412.0
+            },
+            "tax_exempt": {
+              "classes": 128,
+              "tna": 142440.0
+            },
+            "government": {
+              "total": {
+                "classes": 721,
+                "tna": 6273922.0
+              },
+              "treasury_repo": {
+                "classes": 275,
+                "tna": 2270939.0
+              },
+              "treasury_agency": {
+                "classes": 446,
+                "tna": 4002983.0
+              }
+            },
+            "prime": {
+              "classes": 128,
+              "tna": 1226050.0
+            }
+          },
+          "institutional": {
+            "total": {
+              "classes": 504,
+              "tna": 4572758.0
+            },
+            "tax_exempt": {
+              "classes": 23,
+              "tna": 12361.0
+            },
+            "government": {
+              "total": {
+                "classes": 442,
+                "tna": 4320876.0
+              },
+              "treasury_repo": {
+                "classes": 219,
+                "tna": 1864651.0
+              },
+              "treasury_agency": {
+                "classes": 223,
+                "tna": 2456225.0
+              }
+            },
+            "prime": {
+              "classes": 39,
+              "tna": 239521.0
+            }
+          },
+          "retail": {
+            "total": {
+              "classes": 473,
+              "tna": 3069654.0
+            },
+            "tax_exempt": {
+              "classes": 105,
+              "tna": 130079.0
+            },
+            "government": {
+              "total": {
+                "classes": 279,
+                "tna": 1953046.0
+              },
+              "treasury_repo": {
+                "classes": 56,
+                "tna": 406288.0
+              },
+              "treasury_agency": {
+                "classes": 223,
+                "tna": 1546758.0
+              }
+            },
+            "prime": {
+              "classes": 89,
+              "tna": 986529.0
+            }
+          }
+        },
+        {
+          "date": "04/29/2026",
+          "total_all": {
+            "total": {
+              "classes": 980,
+              "tna": 7632248.0
+            },
+            "tax_exempt": {
+              "classes": 128,
+              "tna": 144702.0
+            },
+            "government": {
+              "total": {
+                "classes": 724,
+                "tna": 6266725.0
+              },
+              "treasury_repo": {
+                "classes": 277,
+                "tna": 2269239.0
+              },
+              "treasury_agency": {
+                "classes": 447,
+                "tna": 3997486.0
+              }
+            },
+            "prime": {
+              "classes": 128,
+              "tna": 1220822.0
+            }
+          },
+          "institutional": {
+            "total": {
+              "classes": 507,
+              "tna": 4567032.0
+            },
+            "tax_exempt": {
+              "classes": 23,
+              "tna": 12519.0
+            },
+            "government": {
+              "total": {
+                "classes": 445,
+                "tna": 4318631.0
+              },
+              "treasury_repo": {
+                "classes": 221,
+                "tna": 1865162.0
+              },
+              "treasury_agency": {
+                "classes": 224,
+                "tna": 2453469.0
+              }
+            },
+            "prime": {
+              "classes": 39,
+              "tna": 235882.0
+            }
+          },
+          "retail": {
+            "total": {
+              "classes": 473,
+              "tna": 3065217.0
+            },
+            "tax_exempt": {
+              "classes": 105,
+              "tna": 132183.0
+            },
+            "government": {
+              "total": {
+                "classes": 279,
+                "tna": 1948094.0
+              },
+              "treasury_repo": {
+                "classes": 56,
+                "tna": 404077.0
+              },
+              "treasury_agency": {
+                "classes": 223,
+                "tna": 1544017.0
+              }
+            },
+            "prime": {
+              "classes": 89,
+              "tna": 984940.0
+            }
+          }
+        },
+        {
+          "date": "05/06/2026",
+          "total_all": {
+            "total": {
+              "classes": 980,
+              "tna": 7753419.0
+            },
+            "tax_exempt": {
+              "classes": 128,
+              "tna": 148830.0
+            },
+            "government": {
+              "total": {
+                "classes": 724,
+                "tna": 6374746.0
+              },
+              "treasury_repo": {
+                "classes": 277,
+                "tna": 2309682.0
+              },
+              "treasury_agency": {
+                "classes": 447,
+                "tna": 4065064.0
+              }
+            },
+            "prime": {
+              "classes": 128,
+              "tna": 1229843.0
+            }
+          },
+          "institutional": {
+            "total": {
+              "classes": 507,
+              "tna": 4669115.0
+            },
+            "tax_exempt": {
+              "classes": 23,
+              "tna": 13337.0
+            },
+            "government": {
+              "total": {
+                "classes": 445,
+                "tna": 4413051.0
+              },
+              "treasury_repo": {
+                "classes": 221,
+                "tna": 1901991.0
+              },
+              "treasury_agency": {
+                "classes": 224,
+                "tna": 2511060.0
+              }
+            },
+            "prime": {
+              "classes": 39,
+              "tna": 242727.0
+            }
+          },
+          "retail": {
+            "total": {
+              "classes": 473,
+              "tna": 3084304.0
+            },
+            "tax_exempt": {
+              "classes": 105,
+              "tna": 135494.0
+            },
+            "government": {
+              "total": {
+                "classes": 279,
+                "tna": 1961694.0
+              },
+              "treasury_repo": {
+                "classes": 56,
+                "tna": 407691.0
+              },
+              "treasury_agency": {
+                "classes": 223,
+                "tna": 1554004.0
+              }
+            },
+            "prime": {
+              "classes": 89,
+              "tna": 987116.0
+            }
+          }
+        },
+        {
+          "date": "05/13/2026",
+          "total_all": {
+            "total": {
+              "classes": 980,
+              "tna": 7754520.0
+            },
+            "tax_exempt": {
+              "classes": 128,
+              "tna": 150096.0
+            },
+            "government": {
+              "total": {
+                "classes": 724,
+                "tna": 6378660.0
+              },
+              "treasury_repo": {
+                "classes": 277,
+                "tna": 2308486.0
+              },
+              "treasury_agency": {
+                "classes": 447,
+                "tna": 4070175.0
+              }
+            },
+            "prime": {
+              "classes": 128,
+              "tna": 1225763.0
+            }
+          },
+          "institutional": {
+            "total": {
+              "classes": 507,
+              "tna": 4669938.0
+            },
+            "tax_exempt": {
+              "classes": 23,
+              "tna": 13423.0
+            },
+            "government": {
+              "total": {
+                "classes": 445,
+                "tna": 4417714.0
+              },
+              "treasury_repo": {
+                "classes": 221,
+                "tna": 1901726.0
+              },
+              "treasury_agency": {
+                "classes": 224,
+                "tna": 2515988.0
+              }
+            },
+            "prime": {
+              "classes": 39,
+              "tna": 238801.0
+            }
+          },
+          "retail": {
+            "total": {
+              "classes": 473,
+              "tna": 3084582.0
+            },
+            "tax_exempt": {
+              "classes": 105,
+              "tna": 136673.0
+            },
+            "government": {
+              "total": {
+                "classes": 279,
+                "tna": 1960946.0
+              },
+              "treasury_repo": {
+                "classes": 56,
+                "tna": 406759.0
+              },
+              "treasury_agency": {
+                "classes": 223,
+                "tna": 1554187.0
+              }
+            },
+            "prime": {
+              "classes": 89,
+              "tna": 986962.0
+            }
+          }
+        },
+        {
+          "date": "05/20/2026",
+          "total_all": {
+            "total": {
+              "classes": 980,
+              "tna": 7771401.0
+            },
+            "tax_exempt": {
+              "classes": 128,
+              "tna": 149687.0
+            },
+            "government": {
+              "total": {
+                "classes": 724,
+                "tna": 6395005.0
+              },
+              "treasury_repo": {
+                "classes": 277,
+                "tna": 2337493.0
+              },
+              "treasury_agency": {
+                "classes": 447,
+                "tna": 4057512.0
+              }
+            },
+            "prime": {
+              "classes": 128,
+              "tna": 1226709.0
+            }
+          },
+          "institutional": {
+            "total": {
+              "classes": 507,
+              "tna": 4682777.0
+            },
+            "tax_exempt": {
+              "classes": 23,
+              "tna": 13287.0
+            },
+            "government": {
+              "total": {
+                "classes": 445,
+                "tna": 4431092.0
+              },
+              "treasury_repo": {
+                "classes": 221,
+                "tna": 1928105.0
+              },
+              "treasury_agency": {
+                "classes": 224,
+                "tna": 2502987.0
+              }
+            },
+            "prime": {
+              "classes": 39,
+              "tna": 238397.0
+            }
+          },
+          "retail": {
+            "total": {
+              "classes": 473,
+              "tna": 3088624.0
+            },
+            "tax_exempt": {
+              "classes": 105,
+              "tna": 136399.0
+            },
+            "government": {
+              "total": {
+                "classes": 279,
+                "tna": 1963913.0
+              },
+              "treasury_repo": {
+                "classes": 56,
+                "tna": 409388.0
+              },
+              "treasury_agency": {
+                "classes": 223,
+                "tna": 1554525.0
+              }
+            },
+            "prime": {
+              "classes": 89,
+              "tna": 988312.0
+            }
+          }
+        },
+        {
+          "date": "05/27/2026",
+          "total_all": {
+            "total": {
+              "classes": 983,
+              "tna": 7784789.0
+            },
+            "tax_exempt": {
+              "classes": 128,
+              "tna": 147871.0
+            },
+            "government": {
+              "total": {
+                "classes": 727,
+                "tna": 6407380.0
+              },
+              "treasury_repo": {
+                "classes": 278,
+                "tna": 2352555.0
+              },
+              "treasury_agency": {
+                "classes": 449,
+                "tna": 4054824.0
+              }
+            },
+            "prime": {
+              "classes": 128,
+              "tna": 1229539.0
+            }
+          },
+          "institutional": {
+            "total": {
+              "classes": 508,
+              "tna": 4692139.0
+            },
+            "tax_exempt": {
+              "classes": 23,
+              "tna": 12954.0
+            },
+            "government": {
+              "total": {
+                "classes": 446,
+                "tna": 4438204.0
+              },
+              "treasury_repo": {
+                "classes": 221,
+                "tna": 1941400.0
+              },
+              "treasury_agency": {
+                "classes": 225,
+                "tna": 2496805.0
+              }
+            },
+            "prime": {
+              "classes": 39,
+              "tna": 240981.0
+            }
+          },
+          "retail": {
+            "total": {
+              "classes": 475,
+              "tna": 3092650.0
+            },
+            "tax_exempt": {
+              "classes": 105,
+              "tna": 134916.0
+            },
+            "government": {
+              "total": {
+                "classes": 281,
+                "tna": 1969175.0
+              },
+              "treasury_repo": {
+                "classes": 57,
+                "tna": 411156.0
+              },
+              "treasury_agency": {
+                "classes": 224,
+                "tna": 1558020.0
+              }
+            },
+            "prime": {
+              "classes": 89,
+              "tna": 988558.0
+            }
+          }
+        },
+        {
+          "date": "06/03/2026",
+          "total_all": {
+            "total": {
+              "classes": 983,
+              "tna": 7894036.0
+            },
+            "tax_exempt": {
+              "classes": 128,
+              "tna": 146193.0
+            },
+            "government": {
+              "total": {
+                "classes": 727,
+                "tna": 6510341.0
+              },
+              "treasury_repo": {
+                "classes": 278,
+                "tna": 2378900.0
+              },
+              "treasury_agency": {
+                "classes": 449,
+                "tna": 4131440.0
+              }
+            },
+            "prime": {
+              "classes": 128,
+              "tna": 1237502.0
+            }
+          },
+          "institutional": {
+            "total": {
+              "classes": 508,
+              "tna": 4793287.0
+            },
+            "tax_exempt": {
+              "classes": 23,
+              "tna": 13125.0
+            },
+            "government": {
+              "total": {
+                "classes": 446,
+                "tna": 4534221.0
+              },
+              "treasury_repo": {
+                "classes": 221,
+                "tna": 1966534.0
+              },
+              "treasury_agency": {
+                "classes": 225,
+                "tna": 2567687.0
+              }
+            },
+            "prime": {
+              "classes": 39,
+              "tna": 245941.0
+            }
+          },
+          "retail": {
+            "total": {
+              "classes": 475,
+              "tna": 3100749.0
+            },
+            "tax_exempt": {
+              "classes": 105,
+              "tna": 133068.0
+            },
+            "government": {
+              "total": {
+                "classes": 281,
+                "tna": 1976120.0
+              },
+              "treasury_repo": {
+                "classes": 57,
+                "tna": 412367.0
+              },
+              "treasury_agency": {
+                "classes": 224,
+                "tna": 1563753.0
+              }
+            },
+            "prime": {
+              "classes": 89,
+              "tna": 991561.0
+            }
+          }
+        }
+      ]
+    },
+    "etf_estimated_flows": [
+      {
+        "date": "04/29/2026",
+        "etf_estimated_flows": 25378.0,
+        "combined_flows": 8467.0,
+        "mutual_fund_flows": -16911.0
+      },
+      {
+        "date": "05/06/2026",
+        "etf_estimated_flows": 30256.0,
+        "combined_flows": 8874.0,
+        "mutual_fund_flows": -21382.0
+      },
+      {
+        "date": "05/13/2026",
+        "etf_estimated_flows": 57603.0,
+        "combined_flows": 38884.0,
+        "mutual_fund_flows": -18719.0
+      },
+      {
+        "date": "05/20/2026",
+        "etf_estimated_flows": 32550.0,
+        "combined_flows": 15195.0,
+        "mutual_fund_flows": -17355.0
+      },
+      {
+        "date": "05/27/2026",
+        "etf_estimated_flows": 29608.0,
+        "combined_flows": 15641.0,
+        "mutual_fund_flows": -13967.0
+      }
+    ]
+  }
+}
