@@ -1,78 +1,108 @@
 {
-  "generated_at": "2026-06-09T13:20:00Z",
+  "generated_at": "2026-06-10T02:00:00Z",
   "lead": {
-    "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90",
-    "headline": "WTI Below $90 While Iran Tolls Hormuz, Israel Strikes Beirut — Markets Price Demand Destruction Over War",
-    "they_say": "Geopolitical risk premium is collapsing. Markets price a ceasefire deal, demand destruction from stagflation, or weekend war premium unwind. Consensus: Iran-Israel is contained tit-for-tat, oil spike was noise.",
-    "reality": "Oil dropped 2% to sub-$90 while three escalation vectors accelerated: (1) Iran monetizing Hormuz at $1.5-2M/tanker, (2) Israel auto-triggered Beirut strikes on any Hezbollah rocket, (3) Ben-Gvir proposed civilian abduction in cabinet. This is a first-order contradiction — oil and war risk are decoupling in opposite directions.",
-    "thesis": "The gap between market pricing (demand destruction) and geopolitical reality (multi-front war escalation) is at maximum width. One Hezbollah rocket gaps oil $95+ instantly. Sub-$88 break confirms stagflation dominance. The binary resolves before US close.",
-    "actors": "Iran (Supreme National Security Council), Israel (IDF, Ben-Gvir, Netanyahu), Hezbollah, OPEC+, Federal Reserve (Warsh), US ADP",
-    "horizon": "24-72 hours (binary: Hezbollah rocket or NFP Friday)",
+    "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+    "headline": "Iran Shoots Down US Apache Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+    "they_say": "The US is a diplomatic backstop and mediator in the Iran conflict. The Strait of Hormuz blockade is a shipping disruption, not a battlefield. Trump's rhetoric is performative — previous threats resulted in measured responses. Markets priced contained tit-for-tat.",
+    "reality": "A US Apache helicopter was shot down over the Strait of Hormuz — the world's most critical oil chokepoint. Trump declared the US 'must respond.' The White House was claiming 'progress' on Iran deal at 13:55 UTC. The EIA's Hormuz timeline (blockade through Q3 2026) published at 14:35 was obsolete by 15:00. The US just became a direct belligerent.",
+    "thesis": "The gap between market pricing (contained conflict, US as mediator) and geopolitical reality (US Apache shot down, 'must respond' from the President) is at maximum width. Hormuz risk premium reprices from theoretical to concrete. Oil gaps $95+ on any US retaliation announcement.",
+    "actors": "Trump, Iran (Supreme National Security Council), US Central Command, EIA",
+    "horizon": "24-72 hours",
     "confidence": "high",
-    "invalidation_trigger": "Hezbollah rocket into Israel = oil $95+ bullish. Sub-$88 hold through US session = demand collapse/dovish confirmation.",
+    "invalidation_trigger": "NYT or Pentagon confirms Apache crash (not shootdown) with no hostile fire — market reversal. Limited US retaliation (cyber only) caps oil spike at $92.",
     "paradigm_pillar": "multi_pillar",
     "paradigm_implications": [
-      "Oil and geopolitical risk decoupling = the most actionable market dislocation today",
-      "Stagflation confirmed by ADP +29K + 3rd month rising inflation expectations traps the Fed",
-      "Ben-Gvir auto-escalation mechanism raises Hezbollah trigger probability structurally"
+      "Direct US-Iran military engagement is structural — not a skirmish, not contained",
+      "Hormuz blockade ends by military outcome, not diplomacy — timeline binary",
+      "EIA demand downgrade vs supply disruption creates bilateral oil setup"
     ],
-    "capital_flow_implication": "Capital bifurcates: short energy on demand destruction, long gold/TLT on stagflation, own oil call tail protection for Hezbollah trigger. Bilateral positioning required — this resolves violently one way.",
-    "portfolio_implication": "Bilateral: own $95 OTM oil calls (lottery on Hezbollah trigger) + short oil on $88 break. Long TLT, ZN on rate cut repricing. Long GLD as stagflation + geopolitical hybrid. Long VIX for tail. Fade any directional conviction — the contradiction is unresolved."
+    "capital_flow_implication": "Capital flees equities into commodities and gold. $5.0B commodities inflow identified by quant telemetry. Energy sector gets bid. SPX selling accelerates as geopolitical risk premium reprices upward.",
+    "portfolio_implication": "Long WTI, GLD immediately. Short SPX on escalation premium repricing. Long VIX as tail. Do not short oil — the US retaliation binary is unresolved and the first strike gaps oil $95+. Hormuz is now a military chokepoint, not a diplomatic one.",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strait_of_Hormuz.jpg"
   },
   "stories": [
     {
-      "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90",
-      "headline": "WTI Below $90 While War Escalates on 3 Fronts — Most Contradictory Signal in Markets",
-      "they_say": "War premium unravelling. Ceasefire imminent per Trump. Demand destruction from stagflation overwhelms supply risk.",
-      "reality": "Oil -2% while Iran tolls Hormuz, Israel auto-triggers Beirut, Ben-Gvir floats civilian abduction. Three fronts. Market disconnected from reality.",
+      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+      "headline": "Iran Shoots Down US Apache Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+      "they_say": "The US is a diplomatic backstop in the Iran conflict. Markets priced contained tit-for-tat. Trump's 'must respond' is performative — previous threats were measured.",
+      "reality": "A US Apache was shot down over Hormuz. Trump said 'must respond.' White House was claiming deal progress at 13:55 UTC. The conflict just transformed: the US is now a direct belligerent.",
       "sector": "geopolitics",
       "paradigm_pillar": "multi_pillar",
-      "paradigm_implications": ["Binary resolution: Hezbollah rocket = oil $95+, sub-$88 = stagflation confirms", "Oil-geopolitics decoupling is the signal of the day"],
-      "portfolio_implication": "Own both tails: $95 OTM oil calls + short oil sub-$88. Long TLT, GLD, VIX. Do not pick direction.",
+      "paradigm_implications": [
+        "Direct US-Iran military engagement is structural, not a skirmish",
+        "Hormuz blockade now resolves by military outcome, not diplomacy"
+      ],
+      "portfolio_implication": "Long WTI, GLD immediately. Short SPX. Long VIX. Do not short oil — US retaliation unresolved and the first strike gaps oil $95+.",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strait_of_Hormuz.jpg"
     },
     {
-      "story_id": "n21_macro__adp_29k_stagflation_signal",
-      "headline": "ADP +29K Confirms Labor Cracking — Stagflation Is Here",
-      "they_say": "Labor market remains resilient. ADP is noisy, NFP will tell the real story. Inflation is transitory per Bessent.",
-      "reality": "ADP printed +29K, below prior +35.7K. US 1-year consumer inflation expectations rose 3rd month straight. Combination = textbook stagflation. Fed trapped.",
-      "sector": "macro",
-      "paradigm_pillar": "multi_pillar",
-      "paradigm_implications": ["Rate cut repricing begins if NFP confirms weakness Friday", "Gold rallies on stagflation as inflation hedge + rate cut expectation hybrid"],
-      "portfolio_implication": "Long TLT, ZN on rate cut repricing. Long GLD as inflation + geopolitical hybrid. Short financials (KRE).",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Federal_Reserve_Building.jpg"
-    },
-    {
-      "story_id": "n21_multi_pillar__ben_gvir_abduct_civilians",
-      "headline": "Ben-Gvir Proposes Abducting Lebanese Civilians in Cabinet — Far-Right Escalation",
-      "they_say": "Ben-Gvir is one minister posturing. Cabinet will reject. Just noise.",
-      "reality": "Proposal made in cabinet session, not a tweet. Combined with automatic Beirut strike trigger, the escalation floor with Lebanon has structurally risen. Hezbollah rocket probability just increased.",
+      "story_id": "n21_multi_pillar__eia_drops_bombshell_hormuz_timeline__blockade_persists_thro",
+      "headline": "EIA Drops Bombshell: Hormuz Blockade Through Q3 2026 — Obsolete 25 Minutes Later",
+      "they_say": "EIA models assume diplomatic end to blockade. The timeline was the most important oil data point of the session until the Apache shootdown.",
+      "reality": "EIA published Hormuz timeline projecting blockade through Q3 2026 at 14:35 UTC. Apache shot down at ~15:00 UTC. The diplomatic assumption just collapsed. Military resolution could end the blockade faster — or total war extends it.",
       "sector": "geopolitics",
       "paradigm_pillar": "multi_pillar",
-      "paradigm_implications": ["Besiegement mentality normalizes atrocity-adjacent policy proposals", "Hezbollah has less incentive to show restraint against this government"],
-      "portfolio_implication": "Long VIX, GLD as tail hedge. Not a tradable event in isolation but raises Hezbollah trigger probability.",
+      "paradigm_implications": [
+        "Hormuz timeline is now binary: military end (fast) or total war (slow)",
+        "EIA will revise next week — the window for trading the gap is now"
+      ],
+      "portfolio_implication": "Long WTI on timeline collapse. The EIA will revise higher — position before the revision.",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_the_United_States_Department_of_Energy.svg"
+    },
+    {
+      "story_id": "n21_multi_pillar__ukraine_assassinates_russian_colonel_missile_supply_chief",
+      "headline": "Ukraine Assassinates Russian Colonel (Missile Supply Chief) in Moscow",
+      "they_say": "One-off 'terrorist acts' per Russia. Ukraine war is frozen/slogging with no market-moving developments. Assassination dismissed as insignificant.",
+      "reality": "The HEAD of Russian missile/artillery ammo supply was assassinated 200m from last year's general assassination site. Systematic Ukrainian deep-cover operation inside Moscow targeting military logistics command. This degrades Russian artillery sustainability.",
+      "sector": "geopolitics",
+      "paradigm_pillar": "eu_fragmentation",
+      "paradigm_implications": [
+        "Ukrainian deep-cover operations in Moscow are systematic, not one-off",
+        "Russian artillery logistics degradation accelerates frontline shifts"
+      ],
+      "portfolio_implication": "Short RSX. Long European defense (EADF, Rheinmetall). Contracts awarded before this escalatory signal get premium.",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/General_Staff_Building_Moscow.jpg"
+    },
+    {
+      "story_id": "n21_multi_pillar__israel_orders_full_evacuation_of_tyre__cabinet_authorizes_a",
+      "headline": "Israel Orders Full Evacuation of Tyre — Cabinet Authorizes All-Out Lebanon War",
+      "they_say": "Israel conducting 'precision campaign' against Hezbollah. Limited ground ops. Diplomatic off-ramp exists with US mediation.",
+      "reality": "Full evacuation of Tyre ordered. Cabinet authorized all-out war. Combined with automatic Beirut strike trigger on any Hezbollah rocket and Ben-Gvir's cabinet abduction proposal — this is now a ground war, not a precision campaign.",
+      "sector": "geopolitics",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Lebanon front escalates from 'limited ops' to 'total war'",
+        "Hezbollah rocket trigger probability rises — auto-strike mechanism active"
+      ],
+      "portfolio_implication": "Long VIX, GLD as tail hedge in multi-front escalation. Not a standalone trade but compounds other geopolitical positions.",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Israel.svg"
     },
     {
-      "story_id": "n21_china_ascendancy__breaking_eu_proposes_biggest_sanctions_package",
-      "headline": "EU Proposes Biggest Sanctions Package in 2 Years — 90 Banks, LNG Tanker Ban",
-      "they_say": "Sanctions have limited effect. EU enforcement gap means Russia adapts. Just another package.",
-      "reality": "90 banks, 11 crypto platforms, LNG tanker ban, 170+ positions. Structural tightening. Crypto ban may accelerate Russian BTC demand as capital flight route.",
-      "sector": "geopolitics",
-      "paradigm_pillar": "china_ascendancy",
-      "paradigm_implications": ["Russian financial isolation deepens structurally", "Crypto ban may be contrarian bullish for BTC — sanctions evasion demand"],
-      "portfolio_implication": "Short RSX/MOEX. Long European gas (NG, TTF). Contrarian long BTC on sanctions evasion thesis.",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/European_Commission.svg"
+      "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t",
+      "headline": "Anthropic Releases Claude Fable Today at 2x Opus Pricing — AI Economy Accelerates",
+      "they_say": "Standard product segmentation. Market already priced AI model release cadence. Another model release is not a catalyst.",
+      "reality": "Claude Fable releasing 'today' is earlier than any analyst expected. Mythos-class rollout assumed weeks/months of safety testing. Pricing at 2x Opus = premium enterprise product, not discount. 'Today' means the catalyst is within hours.",
+      "sector": "tech",
+      "paradigm_pillar": "abundance_tech",
+      "paradigm_implications": [
+        "Frontier AI accelerating faster than consensus priced",
+        "Anthropic rushing to beat OpenAI's next release"
+      ],
+      "portfolio_implication": "Long AI-crypto tokens (FET, RNDR, TAO). Long NVDA at next US equity open. Premium enterprise AI pricing creates margin expansion narrative.",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthropic_logo.svg"
     },
     {
-      "story_id": "n21_blockchain_agentic__blackrock_transferring_btc",
-      "headline": "BlackRock Transfers BTC to Exchanges — Distribution Signal Beneath the Surface",
-      "they_say": "Institutions stacking BTC. ETF inflows are bullish. BlackRock transfer is just custodial rebalancing.",
-      "reality": "BlackRock routing BTC to exchanges likely means client sell orders being filled. Real supply hitting books. Pattern: when BlackRock sends to exchanges, price sees short-term pressure.",
+      "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
+      "headline": "Strategy/MSTR Resumes Bitcoin Buying Spree — Halts Market Panic",
+      "they_say": "BTC sell-off is brutal. Shorts target MSTR. Institutions capitulating. Panic selling continues.",
+      "reality": "Strategy (MicroStrategy) resumed buying. World's largest corporate BTC holder accumulating at $58K support. Buying spree halted market panic. Shorts targeting MSTR face capitulation risk if buying continues.",
       "sector": "crypto",
       "paradigm_pillar": "blockchain_agentic",
-      "paradigm_implications": ["Institutions sell into strength, retail panics, then accumulation at $58K support", "EU sanctions ban may create contrarian BTC bid from Russia"],
-      "portfolio_implication": "Short BTC short-term (1-4h). Long puts ($48-50K strikes). Use sanctions dip for accumulation if $58K holds.",
+      "paradigm_implications": [
+        "Corporate BTC accumulation continues despite panic — signals institutional conviction",
+        "MSTR shorts face asymmetric risk if buying spree continues"
+      ],
+      "portfolio_implication": "Long BTC with $58K invalidation. Short MSTR puts. EU sanctions-ban creates contrarian bid for BTC as capital flight route.",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_logo.svg"
     }
   ]

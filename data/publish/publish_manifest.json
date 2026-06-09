@@ -1,16 +1,15 @@
 {
-  "generated_at": "2026-06-09T13:20:00Z",
-  "cycle": 11,
-  "platforms": {
-    "telegram": true,
-    "reddit": false,
-    "website": true
-  },
-  "lead_story": "WTI Below $90 While War Escalates on 3 Fronts — Oil-Geopolitics Decoupling Is the Signal",
-  "frame": "contradiction",
-  "human_detail_id": "HD-017",
+  "version": 1,
+  "cycle_number": 13,
+  "generated_at": "2026-06-10T02:00:00Z",
+  "lead_story": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+  "lead_headline": "Iran Shoots Down US Apache Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+  "frame": "velocity",
+  "human_detail_ids": ["HD-019"],
   "asset_claims_count": 4,
-  "website_stories_count": 5,
-  "next_scheduled_cycle": "2026-06-09T21:20:00Z",
-  "live_site_status": "confirmed (HTTP 200)"
+  "website_stories_count": 6,
+  "telegram_word_count": 96,
+  "reddit_word_count": 0,
+  "commit_message": "editorial cycle 13: US Apache shot down over Hormuz — velocity frame — US becomes direct belligerent",
+  "quality_gate_status": "pending"
 }

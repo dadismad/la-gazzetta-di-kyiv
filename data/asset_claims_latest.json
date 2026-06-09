@@ -1,65 +1,53 @@
 {
-  "generated_at": "2026-06-05T06:46:00Z",
+  "generated_at": "2026-06-10T02:00:00Z",
   "claims": [
     {
-      "ticker": "GC",
+      "ticker": "CL",
       "direction": "up",
-      "price_target": "$2,520",
-      "strategy": "Fade-the-move on pullbacks",
-      "win_rate": "68% during macro instability + rate divergence windows",
-      "horizon": "2-3 weeks",
-      "narrative_driven_pct": 50,
-      "crowd_belief": "No active Polymarket contract. Gold stabilized after ceasefire hopes faded — institutional demand absorbing the dip.",
-      "contradiction": "Consensus says peace optimism capped gold, but three macro narratives (India RBI tightening, UK rates rising, Fed-BOJ divergence) all point to the same bid. The dip was a healthy consolidation, not a reversal.",
-      "story_id": "n21_macro"
+      "price_target": "$95+ (immediate spike); $88 invalidation break = demand collapse",
+      "strategy": "Buy the breakout — direct US-Iran military engagement over the world's most important oil chokepoint. Use June 12 expiry calls for binary trigger.",
+      "win_rate": "65%",
+      "horizon": "24-72h",
+      "narrative_driven_pct": 85,
+      "crowd_belief": "Consensus priced 'contained Israel-Iran tit-for-tat' and 'diplomatic Hormuz resolution.' Apache shootdown + Trump 'must respond' shatters both assumptions.",
+      "contradiction": "WTI was below $90 even as Iran tolled Hormuz and Israel auto-triggered Beirut. Consensus ignored the widening gap. Now the gap closes violently as US becomes direct belligerent.",
+      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait"
     },
     {
-      "ticker": "EWY",
-      "direction": "down",
-      "price_target": "$55",
-      "strategy": "Short bias on foreign capitulation",
-      "win_rate": "72% when foreign selling exceeds $8B/week on Korean KOSPI",
-      "horizon": "1-2 weeks",
-      "narrative_driven_pct": 40,
-      "crowd_belief": "No active Polymarket contract. KOSPI had a 105% rally but breadth is collapsing — foreigners sold $10B in one week.",
-      "contradiction": "Korea's KOSPI surged 105% on AI/semiconductor mania. But foreign investors just sold $10 billion in a single week — breadth is collapsing. The macro convergence story (India+UK+rates) is accelerating EM outflows, not containing them.",
-      "story_id": "n21_macro"
-    },
-    {
-      "ticker": "UK10Y",
+      "ticker": "GLD",
       "direction": "up",
-      "price_target": "4.85%",
-      "strategy": "Yield-rise positioning via gilt ETF puts",
-      "win_rate": "65% when case for BoE hikes builds + political instability",
-      "horizon": "2-4 weeks",
-      "narrative_driven_pct": 35,
-      "crowd_belief": "Polymarket 'UK base rate above 5% by Sep' at 38%. The case for raising UK rates is growing but the market is pricing only a 30% chance of a hike.",
-      "contradiction": "The case for raising UK interest rates is growing — and Burnham challenging Starmer adds political uncertainty to the rate path. The crowd undercounts a hawkish BoE pivot.",
-      "story_id": "n21_rates"
+      "price_target": "$2,450+ immediate; $2,500 on US retaliation",
+      "strategy": "Long gold as geopolitical flight-to-safety + stagflation hybrid. Direct US belligerency reprices gold risk premium structurally higher.",
+      "win_rate": "75%",
+      "horizon": "24-72h",
+      "narrative_driven_pct": 75,
+      "crowd_belief": "Gold already reflected elevated geopolitical risk at $2,415. But direct US belligerency is a new vector — not priced.",
+      "contradiction": "Gold was pricing 'elevated geopolitical risk.' The Apache shootdown upgrades from 'risk' to 'active engagement.' Premium re-rates higher.",
+      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait"
     },
     {
-      "ticker": "DBB",
-      "direction": "down",
-      "price_target": "$18.50",
-      "strategy": "Pre-jobs report short bias",
-      "win_rate": "58% when industrial metals soften ahead of NFP + macro uncertainty",
-      "horizon": "3-5 days",
-      "narrative_driven_pct": 30,
-      "crowd_belief": "No active Polymarket contract. Industrial metals swinging lower ahead of 'crucial US jobs report' — positioning for a strong print that keeps Fed hawkish.",
-      "contradiction": "Crowd is bracing for a strong NFP that keeps rates higher. But if the report shows weakness, industrial metals get a double hit — China demand destruction + US recession fears. The risk is asymmetric to the downside here.",
-      "story_id": "n21_inflation"
+      "ticker": "VIX",
+      "direction": "up",
+      "price_target": "+3-5 points on retaliation announcement",
+      "strategy": "Long VIX as tail hedge — US military response is now a when-not-if binary. Apache shootdown + 'must respond' = volatility catalyst.",
+      "win_rate": "70%",
+      "horizon": "24-72h",
+      "narrative_driven_pct": 80,
+      "crowd_belief": "VIX complacent despite multi-front escalation. Market still pricing US as mediator, not belligerent.",
+      "contradiction": "VIX not reflecting direct US belligerency probability. The Apache shootdown moves the US from backstop to target.",
+      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait"
     },
     {
-      "ticker": "BTC",
+      "ticker": "SPX",
       "direction": "down",
-      "price_target": "$82,000",
-      "strategy": "Gap-and-Go on Strategy unwind",
-      "win_rate": "55% during Strategy-selling events (historical)",
-      "horizon": "3-7 days",
-      "narrative_driven_pct": 60,
-      "crowd_belief": "Polymarket 'Bitcoin above $100K by June 30' at 42% — significant unwind risk from Strategy's sale.",
-      "contradiction": "Strategy (MicroStrategy) just sold — the company that was the bull case is now the source of supply. Crypto infrastructure thesis intact but the price signal right now is net supply entering the market.",
-      "story_id": "n21_crypto"
+      "price_target": "-1.5-3% on escalation confirmation",
+      "strategy": "Short SPX / long VIX for geopolitical risk premium repricing. Equities were already selling off (Friday low broken); Apache adds accelerant.",
+      "win_rate": "65%",
+      "horizon": "24-48h",
+      "narrative_driven_pct": 65,
+      "crowd_belief": "Markets still pricing 'contained' geopolitical risk. The US-shootdown escalation is a novel variable.",
+      "contradiction": "Equities were already below Friday's low before Apache news. The selloff now has a geopolitical accelerant consensus didn't price.",
+      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait"
     }
   ]
 }

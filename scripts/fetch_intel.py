@@ -224,19 +224,86 @@ def detect_pillar(text):
 
 
 def extract_amount(text):
-    """Extract dollar amount in billions from text."""
+    """Extract dollar amount in billions from text. Uses heuristics for fallback."""
     if not text:
-        return 5.0
+        return None  # signal: no amount found, use context heuristic
+    
+    # Explicit $XB patterns
     m = re.search(r'\$(\d+\.?\d*)\s*[Bb]', text)
     if m:
         return float(m.group(1))
+    
+    # Word-based: "X billion/trillion"
     m = re.search(r'(\d+\.?\d*)\s*(billion|trillion)', text, re.IGNORECASE)
     if m:
         amt = float(m.group(1))
         if m.group(2).lower() == "trillion":
             amt *= 1000
         return amt
-    return 5.0
+    
+    # Million-scale: "$X million" or "X million"
+    m = re.search(r'\$?(\d+\.?\d*)\s*million', text, re.IGNORECASE)
+    if m:
+        return float(m.group(1)) / 1000  # convert to billions
+    
+    # Euro amounts: "€XB"
+    m = re.search(r'[€]\s*(\d+\.?\d*)\s*[Bb]', text)
+    if m:
+        return float(m.group(1))
+    
+    # No explicit amount — signal to use context heuristic
+    return None
+
+
+def context_amount(asset_class, direction, headline=""):
+    """Heuristic amount based on entity_scales from config.yaml.
+
+    Scans headline+text for entity keywords matching entity_scales categories.
+    Falls back to asset_class ranges when no entity match found.
+    Uses headline hash for deterministic variety within each range.
+    """
+    import hashlib
+    
+    h = int(hashlib.md5((headline or asset_class).encode()).hexdigest()[:4], 16)
+    text_lower = (headline or "").lower()
+    
+    # ── Load entity scales from config ──
+    try:
+        import yaml
+        config_path = PROJECT / "config.yaml"
+        with open(config_path) as f:
+            cfg = yaml.safe_load(f)
+        scales = cfg.get("entity_scales", {})
+    except Exception:
+        scales = {}
+    
+    # ── Entity keyword matching ──
+    for category, spec in scales.items():
+        keywords = spec.get("keywords", [])
+        if any(kw in text_lower for kw in keywords):
+            lo = spec.get("min", 1.0)
+            hi = spec.get("max", 10.0)
+            # Check unit: if "M", convert to billions
+            if spec.get("unit", "B") == "M":
+                lo /= 1000
+                hi /= 1000
+            amount = lo + (h % int((hi - lo) * 10)) / 10.0
+            return round(amount, 1)
+    
+    # ── Asset class fallback (no entity matched) ──
+    base_ranges = {
+        "crypto":       (0.1, 2.0),      # crypto: smaller individual moves
+        "equities":     (0.01, 0.5),     # equities: mid-range
+        "commodities":  (2.0, 12.0),     # commodities: larger moves
+        "tech":         (1.0, 15.0),     # tech: broad range
+        "defense":      (1.0, 10.0),     # defense: mid-to-large
+        "fixed_income": (5.0, 50.0),     # bonds: large flows
+        "fx":           (5.0, 50.0),     # forex: large flows
+    }
+    
+    lo, hi = base_ranges.get(asset_class, (0.01, 0.05))  # default: $10M-$50M
+    amount = lo + (h % int((hi - lo) * 10)) / 10.0
+    return round(amount, 1)
 
 
 def generate_multi_persona(headline, raw_text, entities, asset_class, direction):
@@ -285,6 +352,8 @@ def generate_multi_persona(headline, raw_text, entities, asset_class, direction)
 def generate_suggested_flows(headline, raw_text, asset_class, direction):
     """Generate suggested capital flow entry."""
     amount_b = extract_amount(raw_text)
+    if amount_b is None:
+        amount_b = context_amount(asset_class, direction, headline)
     return {
         "direction": direction,
         "amount_b": amount_b,

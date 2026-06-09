@@ -97,7 +97,7 @@ def compile_stories(conn):
     doc = {
         "generated_at": generated_at,
         "lead": lead,
-        "stories": stories,
+        "stories": stories[1:] if lead else stories,  # exclude lead from array (prevents double-render)
     }
 
     # Write data/stories.json

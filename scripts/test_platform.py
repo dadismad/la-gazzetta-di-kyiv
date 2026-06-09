@@ -193,6 +193,71 @@ def test_flow_data_integrity():
     check(isinstance(flows_data.get("aggregate_confidence"), (int, float)),
           f"flows.json: aggregate_confidence={flows_data.get('aggregate_confidence')}")
 
+    # ── Distribution test: fail if >80% of linked stories have identical amounts ──
+    from collections import Counter
+    amounts_list = []
+    for story in stories:
+        impacted = story.get("impacted_flows", [])
+        if impacted:
+            amt = story.get("capital_flow", {}).get("amount_b", 0)
+            amounts_list.append(amt)
+    if amounts_list:
+        dist = Counter(amounts_list)
+        most_common_amt, most_common_count = dist.most_common(1)[0]
+        uniformity_pct = most_common_count / len(amounts_list) * 100
+        # Also count how many are at the hardcoded $5.0B default specifically
+        at_5b = dist.get(5.0, 0)
+        at_5b_pct = at_5b / len(amounts_list) * 100 if amounts_list else 0
+        check(uniformity_pct <= 80,
+              f"Flow distribution: {len(dist)} unique values, ${most_common_amt}B appears {most_common_count}/{len(amounts_list)} ({uniformity_pct:.0f}%)"
+              f" — EXCEEDS 80% uniformity threshold")
+        check(at_5b_pct <= 20,
+              f"Default $5.0B prevalence: {at_5b}/{len(amounts_list)} ({at_5b_pct:.0f}%)"
+              f" — EXCEEDS 20% default tolerance")
+        if uniformity_pct <= 80 and at_5b_pct <= 20:
+            check(True, f"Flow distribution: {len(dist)} unique values across {len(amounts_list)} stories, "
+                  f"max cluster at {uniformity_pct:.0f}%, $5B default at {at_5b_pct:.0f}% ✓")
+
+    # ── Duplicate check: no two stories share same slug or headline ──
+    from collections import Counter as Ct2
+    slugs = [s.get("slug", s.get("story_id", "")[:80]) for s in stories]
+    slug_dupes = {k: v for k, v in Ct2(slugs).items() if v > 1}
+    check(len(slug_dupes) == 0,
+          f"Duplicate slugs: {len(slug_dupes)} slug(s) appear multiple times"
+          + (f" — {list(slug_dupes.keys())[:3]}" if slug_dupes else ""))
+
+    headlines_norm = [(s.get("headline", "") or "")[:80].lower().strip() for s in stories]
+    hl_dupes = {k: v for k, v in Ct2(headlines_norm).items() if v > 1}
+    check(len(hl_dupes) == 0,
+          f"Duplicate headlines: {len(hl_dupes)} headline(s) appear multiple times"
+          + (f" — {list(hl_dupes.keys())[:3]}" if hl_dupes else ""))
+
+    # ── Scale check: central bank stories must be in billions, mutual funds in millions ──
+    scale_violations = 0
+    for story in stories:
+        cf = story.get("capital_flow", {})
+        amt = cf.get("amount_b", 0)
+        headline = (story.get("headline", "") or "").lower()
+        body = (story.get("they_say", "") + story.get("reality", "")).lower()
+        combined = headline + " " + body
+
+        # Central banks / Fed / ECB → must be ≥ $1B
+        if any(kw in combined for kw in ["fed ", "federal reserve", "ecb", "central bank",
+                                          "powell", "lagarde", "imf", "monetary policy"]):
+            if amt < 1.0:
+                scale_violations += 1
+                check(False, f"Scale violation: '{headline[:60]}' mentions central bank but amount=${amt}B (< $1B)")
+
+        # Mutual funds / small-cap / ETF → must be ≤ $2B
+        if any(kw in combined for kw in ["mutual fund", "small-cap", "tiny", "retail fund",
+                                          "pension fund", "index fund"]):
+            if amt > 2.0:
+                scale_violations += 1
+                check(False, f"Scale violation: '{headline[:60]}' mentions small fund but amount=${amt}B (> $2B)")
+
+    if scale_violations == 0:
+        check(True, f"Entity scale check: 0 violations (central banks ≥$1B, small funds ≤$2B) ✓")
+
 
 # ═══════════════════════════════════════════════════════
 # TEST ROUND 3: HTML Structure & Stylesheet Links
