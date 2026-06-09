@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T21:41:40.337386+00:00",
+  "generated_at": "2026-06-09T22:47:52.033121+00:00",
   "lead": {
     "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
     "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
@@ -1837,161 +1837,246 @@
       "generated_at": "2026-06-09T13:03:26.472079+00:00"
     },
     {
-      "story_id": "n21_multi_pillar__us_retaliatory_airstrikes_on_iran_qeshm_island_hit_gps_jamming_tehran",
-      "headline": "BREAKING: US Launches Retaliatory Airstrikes on Iran — Qeshm Island Hit, GPS Jamming Over Tehran, Iran Army on Full Combat Alert",
-      "sector": "commodities",
+      "story_id": "n21_multi_pillar__ukraine_280_drones_strike_st_petersburg_pmef",
+      "headline": "Ukraine Launches 280-Drone Blitz on St. Petersburg During Putin's PMEF — 'Bad Situation,' Pro-Russian Channel Admits",
+      "sector": "defense",
       "pillar": "multi_pillar",
       "paradigm_pillar": "multi_pillar",
       "paradigm_implications": [
-        "Oil at $88.70 WTI is NOT pricing active US-Iran combat. This is the most consequential mispricing in global markets right now. US airstrikes on Iranian air defense and radar sites at Qeshm Island escalate from proxy confrontation to direct kinetic exchange. The Strait of Hormuz blockade is now backstopped by live fire between the two nations. Iran's 'decisive response' promise introduces binary tail risk for oil. Trump's simultaneous messaging ('helicopter wasn't a big deal' vs launching sustained airstrikes) creates confusion that suppresses the risk premium the market SHOULD be pricing. WTI target $92-95 on Asian open repricing."
+        "Ukraine has crossed a threshold — 280-drone salvos hitting St. Petersburg during Putin's flagship economic forum demonstrates deep-strike capability that invalidates the 'frozen conflict' narrative markets still price",
+        "EU 21st sanctions package (coordinating June 10) gains urgency — Europe must respond to Ukraine proving it can reach any Russian city while US is distracted by Iran airstrikes",
+        "Russia's budget deficit at 6.01T rubles (2.6% of GDP), oil/gas revenues down 29.8% — the cost of defending against deep strikes at scale compounds Russia's structural decay"
       ],
-      "they_say": "US military launched calibrated retaliatory airstrikes against Iranian air defense systems and radar sites near the Strait of Hormuz at approximately 21:19 UTC on June 9. Trump described the response as 'very strong, very powerful.' Qeshm Island was hit by 6 explosions from fighter jet projectiles. GPS jamming is active over Tehran. Iran's army is on full combat alert. Iran's Tasnim agency: 'Iran will respond decisively to American aggression.' US refueling planes over the Middle East indicate sustained operations. This follows Iran shooting down a US Apache helicopter over Hormuz earlier in the session. The market treats this as 'calibrated retaliation' — oil barely reacting (+$0.50).",
-      "reality": "Oil at $88.70 WTI with ACTIVE US-Iran combat ongoing is a $3-5/bbl mispricing. API crude inventories already showed -9.119M draw vs -3.4M expected (bullish supply tightness BEFORE the strikes). Gold flat at $4,284 despite war escalation — Citi cut 3-month gold forecast to $4,000. Iran threatens 'decisive response' which could escalate further. Trump's dual messaging ('not a big deal' vs 'very strong, very powerful') creates noise that suppresses the premium. US-Iran airstrikes are not being priced as a live firefight. The EIA's Hormuz timeline (blockade through Q3 2026) now looks optimistic with active US-Iran combat.",
-      "thesis": "AGGRESSIVE LONG OIL — Brent at $91.83 with active US strikes on Iran is structurally mispriced. WTI target $92-95 within Asian open repricing. LONG defense primes (LMT, RTX, NOC) — sustained Middle East conflict benefits them directly. LONG shipping — record supertanker orders + Hormuz closure = tanker rates spiking. Gold divergence from war risk is anomalous but regime-shift signal.",
-      "actors": ["United States", "Iran", "Trump", "IRGC", "Pentagon"],
+      "they_say": "Ukraine war is a frozen attritional slog. Markets price zero Ukraine risk premium in global assets. Russia's defensive lines hold, Western aid is political theater. Pro-Russian channels project Russian superiority and Ukrainian desperation. Consensus views St. Petersburg as untouchable — Putin's city, 900km from the front.",
+      "reality": "Ukraine launched ~280 drones attacking Russia and occupied territories in a single night. Melitopol (occupied Zaporizhzhia) hit — power grid knocked out. St. Petersburg and Leningrad Oblast hit during PMEF (St. Petersburg International Economic Forum) — Putin's Davos. Targets: Military unit 81263 (naval mine-torpedo base), Fock Physics Research Institute in Petrodvorets, Kronstadt cadet corps. Sochi also under drone attack. Most critically: ASupersharij — a pro-Russian channel — posts at 22:01 UTC: 'This is serious. Not a fake. Discussing in private. Bad situation.' This uncharacteristically grave tone from a source that normally projects Russian invincibility is the signal. Russia burning budget while defending the homeland at scale while fighting in Ukraine is not sustainable.",
+      "thesis": "LONG defense primes (European: Rheinmetall, Thales; US: LMT, GD) — the demonstration effect of 280-drone salvos hitting St. Petersburg will accelerate European re-armament. LONG uranium/nuclear (URA) — Zaporizhzhia nuclear safety risk rises with expanded drone operations. SHORT RSX (Russia ETF) — budget deficit + revenue collapse + deep-strike vulnerability creates compounding negative pressure on Russian assets.",
+      "actors": [
+        "Zelensky",
+        "Putin",
+        "EU Council",
+        "NATO"
+      ],
       "horizon": "24-72h",
-      "confidence": "high",
-      "tier": "BREAKING",
-      "actionable_trade": "LONG WTI/Brent crude oil aggressively. The gap between market pricing and actual US-Iran kinetic engagement will close in Asian session. Long 2x-3x levered oil ETFs (UCO, GUSH). Long defense primes (LMT, RTX, NOC) — replenishment cycle + sustained engagement.",
-      "contradiction_score": 85,
-      "invalidation_trigger": "Confirmed ceasefire announcement between US and Iran. Iran refrains from retaliatory response. Both sides agree to de-escalation framework within 24 hours.",
-      "portfolio_implication": "Oil at $88.70 WTI with active US-Iran combat is not pricing live fire. Asian open will reprice. Long oil, defense, and shipping. Gold divergence from war is a regime shift signal — risk-on rotation despite geopolitical noise.",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "LONG defense European/US, SHORT RSX, LONG narrative content for Gazzetta. The 280-drone salvo is a new chapter — Ukraine's drone industry maturation transforms the war's geometry.",
+      "contradiction_score": 70,
+      "invalidation_trigger": "Russia demonstrates effective counter-drone shield that degrades future salvos below threshold; St. Petersburg damage assessment shows minimal military impact",
+      "portfolio_implication": "Ukraine's drone industry maturation is the most compelling underdog story of the war — from kitchen-table enthusiasts to 280-drone salvos hitting Russia's second city. For Bet&Benefit: if IAEA flags Zaporizhzhia risk amid expanded drone operations, uranium/nuclear safety gets a bid. EU sanctions package June 10 provides RSX pressure catalyst. Russian budget data shows structural decay — slow-burn short thesis.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 12.0,
-        "asset_class": "commodities",
-        "projected": "Oil repricing of $3-5/bbl on Asian open = $12-20B notional commodity flow. Defense sector catching a bid on sustained Middle East engagement premium.",
-        "pace_multiplier": 2.0,
-        "confidence_pct": 85,
-        "confidence_level": "high",
-        "claim": "$12.0B inflow commodities (oil repricing + defense)",
-        "confidence": "85%"
+        "amount_b": 5.0,
+        "denomination": "USD",
+        "asset_class": "defense",
+        "pace": "moderate",
+        "projected": "European defense primes and US defense contractors benefit from the structural re-armament signal. The demonstration that Ukraine can strike any Russian city at scale forces European capitals to accelerate defense spending.",
+        "confidence": "65%",
+        "positioning": "LONG European defense (Rheinmetall, Thales), LONG US defense (LMT, GD), SHORT RSX"
       },
-      "capital_flow_implication": "Oil at $88.70 WTI is mispriced by $5+. Expect gap up in Asian session with $3-5/bbl repricing. Defense stocks gap up pre-market. Gold breakdown confirms risk-on rotation despite geopolitical noise.",
-      "evidence": ["source: telegram_intel", "source: @MonitoringSituation", "source: @markettwits", "source: @ethanlevins"],
+      "capital_flow_implication": "Defense sector inflows structural; Russian assets face compounding headwinds from budget decay and deep-strike vulnerability",
+      "evidence": [
+        "source: Telegram Intel — ASupersharij 22:01 UTC June 9 — 'bad situation' admission",
+        "source: Telegram Intel — ~280 drones reported at 20:46 UTC June 9",
+        "source: Telegram Intel — St. Petersburg and Leningrad Oblast hit during PMEF",
+        "source: Telegram Intel — Melitopol blackout from drone attack 21:04 UTC",
+        "source: Telegram Intel — Russia budget deficit 6.01T rubles, oil/gas revenues down 29.8%"
+      ],
       "source": "telegram_intel",
       "generated_at": "2026-06-10T00:00:00+00:00",
       "freshness": "breaking",
+      "image_url": "",
       "entity_tags": {
-        "assets": ["WTI", "BRENT", "XAU", "SPX", "VIX"],
-        "geographies": ["Iran", "USA", "Strait of Hormuz", "Qeshm Island", "Tehran"],
-        "actors": ["Trump", "Pentagon", "IRGC", "Iranian Military"],
-        "instruments": ["futures", "options", "ETFs"]
+        "assets": [
+          "RSX",
+          "URA",
+          "LMT",
+          "GD",
+          "Rheinmetall"
+        ],
+        "geographies": [
+          "Russia",
+          "Ukraine",
+          "St. Petersburg",
+          "Melitopol",
+          "Sochi"
+        ],
+        "actors": [
+          "Zelensky",
+          "Putin",
+          "EU Council"
+        ],
+        "instruments": [
+          "ETF",
+          "futures"
+        ]
       },
       "time_decay": {
-        "half_life_hours": 24.0,
+        "half_life_hours": 36.0,
         "decay_curve": "exponential",
         "current_freshness": 1.0,
         "hours_elapsed": 0.0,
-        "renewal_triggers": ["new_intel", "price_breach", "flow_confirmation"]
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
       },
-      "impacted_flows": ["flow_n21_multi_pillar__us_retaliatory_airstrikes_on_iran_qeshm_island_hit_gps_jamming_tehran"],
+      "impacted_flows": [],
       "associated_positions": [],
       "multi_persona": {
         "c_suite": {
-          "headline": "BREAKING: US Launches Retaliatory Airstrikes on Iran — Qeshm Island Hit, GPS Jamming Over Tehran",
-          "body": "Structural assessment: US-Iran are now in direct kinetic conflict. The existing Apache shootdown story was the trigger — this is the response. Oil at $88.70 is structurally mispriced given active airstrikes. Iran's promise of 'decisive response' introduces binary tail risk. US refueling planes over Middle East indicate sustained operations, not a one-off strike. This is the most consequential geopolitical escalation since the Hormuz blockade began. Policy implication: energy hedging is now a board-level priority.",
-          "implication": "Board-level: immediate oil/energy hedging required. Defense sector structural beneficiary. Monitor for Iranian retaliation which would reprice oil $5+ higher."
+          "headline": "Ukraine Launches 280-Drone Blitz on St. Petersburg During Putin's PMEF",
+          "body": "Structural assessment: Ukraine has crossed a deep-strike threshold. 280-drone salvos hitting St. Petersburg during Putin's Davos is not just military action — it's a political humiliation that changes the war's geometry. The EU's 21st sanctions package (June 10) gains urgency as Europe confronts a Ukraine that can reach any Russian city while US attention is divided by Iran airstrikes. Russia's budget deficit at 6.01T rubles (2.6% of GDP) with oil/gas revenues down 29.8% means the cost of homeland defense at scale is compounding structural decay. Capital repositioning of $5.0B identified in defense. Policy implication: European defense spending acceleration is now inevitable.",
+          "implication": "Board-level: defense exposure requires structural long position. Russia-linked assets should be reduced."
         },
         "quant": {
-          "headline": "OIL signal: AGGRESSIVE LONG — $5/bbl mispricing on active US-Iran combat",
-          "body": "Raw telemetry — US airstrikes on Iran active 40+ min. Oil at $88.70 WTI. API crude draw -9.119M. Supply already tight BEFORE strikes. Brent at $91.83 with active combat is structurally mispriced. Expect $3-5/bbl repricing in Asian open. Correlation regime: oil-gold divergence is anomalous — gold flat at $4,284 despite war escalation.",
+          "headline": "DEFENSE flow: $5.0B inflow",
+          "body": "Raw telemetry — defense $5.0B inflow. Ukraine drone industry maturation is structural, not cyclical. Correlation regime: Ukraine deep-strike capability decouples from Middle East conflict. Watch European defense ETF flows for confirmation.",
           "metrics": {
-            "flow_velocity": 0.85,
-            "correlation_coeff": 0.45,
-            "z_score": 2.1
+            "flow_direction": "inflow",
+            "asset_class": "defense",
+            "geographies": [
+              "Europe",
+              "USA",
+              "Ukraine"
+            ]
           }
         },
         "degen": {
-          "headline": "🟢 AGGRESSIVE LONG OIL",
-          "body": "Directional: AGGRESSIVE LONG. Flow: $12B+. Entry zone: $88.70 WTI / $91.83 Brent. Stop: $85 WTI (-4%). Target: $95 WTI (+7%). Conviction: HIGH. Catalyst: US airstrikes on Iran active + API crude draw -9.119M + Iran threatens retaliation.",
+          "headline": "🟢 LONG DEFENSE — Structural re-armament signal",
+          "body": "Directional: LONG. Thesis: Ukraine 280-drone strike on St. Petersburg during PMEF proves deep-strike capability that accelerates European re-armament. Position: LMT, GD, Rheinmetall. Conviction: MEDIUM. Catalyst: EU sanctions package June 10, IAEA Zaporizhzhia risk.",
           "signal": {
             "direction": "LONG",
-            "entry_zone": "market ($88.70 WTI)",
-            "stop_level": "$85.00",
-            "target": "$95.00",
-            "conviction": "HIGH"
+            "entry_zone": "current",
+            "stop_level": "-8%",
+            "target": "+15-20% on defense basket",
+            "conviction": "MEDIUM"
           }
         }
+      },
+      "extremum": {
+        "scenario": "Ukraine sustains 200+ drone salvos weekly, degrading Russian air defense networks and forcing ground force re-deployment from Ukraine fronts to homeland protection — Russia loses offensive capability in Donbas within 60 days",
+        "probability": "15%",
+        "market_impact": "SHORT RSX -30%; LONG European defense +25%; oil risk premium elevated on multi-front war dynamic"
       }
     },
     {
-      "story_id": "n21_abundance_tech__spacex_ipo_250b_demand_oversubscribed_books_close_june_10",
-      "headline": "SpaceX IPO Draws $250B Demand vs $75B Raise — 3.3x Oversubscribed, Books Close Wednesday, IPO June 12",
-      "sector": "technology",
+      "story_id": "n21_abundance_tech__spacex_ipo_250b_demand_listing_june_12",
+      "headline": "SpaceX IPO Draws $250B Investor Demand for $75B Raise — 3.3x Oversubscribed as S&P Sells Off, Abundance vs Austerity Divergence",
+      "sector": "space",
       "pillar": "abundance_tech",
       "paradigm_pillar": "abundance_tech",
       "paradigm_implications": [
-        "SpaceX at $1.8T+ valuation would be larger than Tesla. $250B demand for a $75B raise = 3.3x oversubscribed — biggest IPO in history. Starlink 10.3M subscribers generating $11.4B revenue is the cash cow. FY2025 revenue $18.7B but operating loss $2.6B. Q1 2026 net loss $4.28B on $4.69B revenue — hyper-growth narrative at nosebleed valuation. India suspended Starlink permits over national security — regulatory friction emerging. MicroStrategy buying BTC instead of high-conviction tech names suggests smart money caution on peak valuations. The contradiction: overwhelming institutional demand vs deteriorating unit economics. First-day pop near-certain given 3.3x oversubscription. This validates the space economy investment thesis and the abundance_tech pillar — capital is flooding into frontier technology infrastructure."
+        "Record $250B demand for a single offering while S&P sells off -1.2% signals capital rotation out of passive indexed exposure into concentrated frontier tech bets — a regime shift, not an anomaly",
+        "SpaceX listing at $1.8T+ valuation on Nasdaq June 12 creates a new 'space anchor' for the asset class — expect sympathy flows into ARKX, RKLB, and space-adjacent names",
+        "The divergence between SpaceX demand (abundance/acceleration) and broad market selloff (geopolitical austerity) is the defining capital allocation signal of June 2026"
       ],
-      "they_say": "Biggest IPO in history. 3.3x oversubscribed. Institutional demand overwhelming. $1.8T+ valuation. Starlink is the cash cow. First-day pop is guaranteed. SpaceX IPO books close Wednesday June 10 post-close. IPO date set for June 12 on Nasdaq. Filing shows: Elon Musk 85.1% voting power, 12.3% Class A / 93.6% Class B. FY2025 revenue $18.7B, Starlink 10.3M subscribers ($11.4B rev), AI revenue $3.2B, Q1 2026 rev $4.69B.",
-      "reality": "SpaceX losing $4.28B in Q1 2026 alone. At $1.8T, SpaceX would be larger than Tesla. India suspended Starlink permits over national security concerns. Operating loss $2.6B in FY2025 — this is a hyper-growth narrative IPO at extreme valuation. Q1 net loss nearly equals Q1 revenue ($4.28B loss on $4.69B rev). MicroStrategy buying BTC instead of high-conviction tech — smart money signaling caution on peak valuations. However, 3.3x oversubscription demonstrates that the market is pricing frontier technology at a premium to fundamentals. This is characteristic of the abundance_tech regime — capital allocates to transformational infrastructure regardless of current profitability.",
-      "thesis": "BUY SPCX at IPO open June 12 — first-day pop near-certain given 3.3x oversubscription. The SpaceX IPO is a capital market signal: frontier technology infrastructure (space, AI compute, satellite) is absorbing massive institutional capital. This validates the abundance_tech pillar thesis. Long satellite/space adjacents: ASTS, GSAT, IRDM. First-day follow-through boosts entire space sector. The India Starlink block is short-term noise — long-term AI compute narrative adds structural growth overlay.",
-      "actors": ["SpaceX", "Elon Musk", "Nasdaq", "Starlink", "SEC"],
-      "horizon": "24-72h",
+      "they_say": "SpaceX IPO is just another mega-cap tech listing. $250B demand in a frothy private market doesn't translate to public market performance. The S&P selloff is about Iran, not about tech sentiment. SpaceX is a one-off moonshot that says nothing about broader market health.",
+      "reality": "SpaceX has drawn MORE THAN $250 BILLION of investor demand against a $75B raise target — 3.3x oversubscribed. The offering closes Wednesday June 10 (TODAY) and lists Friday June 12 under ticker SPCX on Nasdaq. This demand materialized DURING a session where S&P broke below Friday's low (-1.2%), Nasdaq -2%, and the US launched airstrikes on Iran. The message: institutional capital is NOT broadly risk-off — it is selectively allocating away from passive indices into concentrated frontier technology bets. This is a capital rotation signal, not a risk-off signal. SpaceX at $1.8T+ would be the 7th largest US company by market cap at listing — equal to Meta's entire market cap. The $250B demand number is 10x the average US IPO year ($25B) competing for a single name.",
+      "thesis": "LONG space-adjacent equities (ARKX, RKLB, IRDM) on sympathy flows into the asset class ahead of June 12 listing. LONG NDX as a proxy for mega-cap tech concentration — if SpaceX can pull $250B, the Magnificent 7 bid is intact. The broader implication: capital is signaling it trusts frontier technology (space, AI, fusion) over passive beta in a fragmented geopolitical world. This is an abundance_tech pillar confirmation.",
+      "actors": [
+        "SpaceX",
+        "Elon Musk",
+        "Nasdaq",
+        "Institutional Investors"
+      ],
+      "horizon": "72h-1w",
       "confidence": "high",
-      "tier": "BREAKING",
-      "actionable_trade": "LONG SPCX at IPO open June 12 — first-day pop near-certain. Pre-IPO via ARKX (Space ETF) or direct allocation. Long satellite/space adjacents: ASTS, GSAT. First-day follow-through boosts entire space sector.",
-      "contradiction_score": 72,
-      "invalidation_trigger": "SpaceX delays IPO, books undersubscribed, or valuation markdown. Regulatory block from SEC or CFIUS review. Major market dislocation before June 12 that reprices risk appetite.",
-      "portfolio_implication": "SpaceX IPO is the largest capital event in market history. 3.3x oversubscription is a read-through for frontier technology risk appetite. Long space/satellite ecosystem. The capital flow validates the abundance_tech paradigm at scale.",
+      "tier": "DEVELOPING",
+      "actionable_trade": "LONG ARKX, RKLB, IRDM ahead of Friday listing. The $250B demand number is a signal that the space economy has crossed from speculation to institutional conviction. NDX longs as proxy. The divergence between SpaceX demand and SPY selloff is the trade setup.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "SpaceX cuts IPO size or delays listing; first-day trading shows weak public demand despite oversubscribed book; S&P continues bleeding >5% eroding risk appetite",
+      "portfolio_implication": "The SpaceX IPO demand is THE single strongest signal that frontier technology capital allocation is decoupling from broad macro sentiment. $250B chasing one name while S&P breaks support is a regime divergence. For Gazzetta: 'While America bombs Iran, investors bet trillions on going to Mars — the ultimate abundance vs austerity frame.' Books close today (June 10) — the window to position ahead of Friday's listing is closing.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 75.0,
-        "asset_class": "equities",
-        "projected": "$75B raise with $250B demand = $175B in unfilled orders seeking space/satellite exposure. Adjacent sector spillover into ASTS, GSAT, IRDM, and broader space economy.",
-        "pace_multiplier": 3.3,
-        "confidence_pct": 90,
-        "confidence_level": "high",
-        "claim": "$75.0B inflow equities (SpaceX IPO)",
-        "confidence": "90%"
+        "amount_b": 250.0,
+        "denomination": "USD",
+        "asset_class": "space equity",
+        "pace": "rapid",
+        "projected": "$250B demand concentrated into single name creates spillover into broader space economy names (ARKX, RKLB, IRDM). Expect $5-10B in sympathy flows into space-adjacent ETFs and names ahead of June 12 listing.",
+        "confidence": "85%",
+        "positioning": "LONG ARKX, RKLB, IRDM. LONG NDX as mega-cap tech proxy. Use any dip as entry — the demand signal is clear."
       },
-      "capital_flow_implication": "$75B raise is the largest IPO in history. $250B total demand indicates structural capital rotation into frontier technology infrastructure. The 3.3x oversubscription is a risk-on signal that contradicts broader equity market weakness and geopolitical turmoil — institutional capital is bifurcating between risk-off (geopolitics) and risk-on (frontier tech deployment).",
-      "evidence": ["source: telegram_intel", "source: @trad_fin", "source: @infinityhedge", "source: @markettwits"],
+      "capital_flow_implication": "$250B seeking one name is not a bubble signal — it's a capital rotation signal from passive indexing into concentrated frontier tech. This is bullish for space economy asset class creation.",
+      "evidence": [
+        "source: Telegram Intel — trad_fin June 9 post: 'SpaceX IPO has drawn more than $250B of investor demand vs $75B raise target'",
+        "source: Telegram Intel — infinityhedge: 'SpaceX files for Nasdaq IPO >$1.8T, June 12 listing'",
+        "source: Telegram Intel — markettwits 15:19: 'SpaceX IPO massively oversubscribed'"
+      ],
       "source": "telegram_intel",
       "generated_at": "2026-06-10T00:00:00+00:00",
       "freshness": "breaking",
+      "image_url": "",
       "entity_tags": {
-        "assets": ["SPCX", "ASTS", "GSAT", "IRDM", "ARKX", "NVDA"],
-        "geographies": ["USA", "India", "Global"],
-        "actors": ["SpaceX", "Elon Musk", "Starlink", "SEC", "Nasdaq"],
-        "instruments": ["IPO", "equity", "ETF"]
+        "assets": [
+          "SPCX",
+          "ARKX",
+          "RKLB",
+          "IRDM",
+          "NDX",
+          "SPX"
+        ],
+        "geographies": [
+          "USA",
+          "global"
+        ],
+        "actors": [
+          "SpaceX",
+          "Elon Musk",
+          "Nasdaq"
+        ],
+        "instruments": [
+          "IPO",
+          "ETF"
+        ]
       },
       "time_decay": {
         "half_life_hours": 48.0,
         "decay_curve": "exponential",
         "current_freshness": 1.0,
         "hours_elapsed": 0.0,
-        "renewal_triggers": ["new_intel", "price_breach", "ipo_pricing", "first_day_trading"]
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "listing_event"
+        ]
       },
-      "impacted_flows": ["flow_n21_abundance_tech__spacex_ipo_250b_demand_oversubscribed_books_close_june_10"],
+      "impacted_flows": [],
       "associated_positions": [],
       "multi_persona": {
         "c_suite": {
-          "headline": "SpaceX IPO Draws $250B Demand vs $75B Raise — 3.3x Oversubscribed",
-          "body": "Structural assessment: The largest IPO in history is 3.3x oversubscribed with $250B in demand. Elon Musk controls 85.1% voting power. Starlink's 10.3M subscribers ($11.4B rev) provide the cash flow anchor. AI revenue at $3.2B adds growth vector. The IPO validates SpaceX as the most valuable private company in history at $1.8T+. Policy implication: space economy is absorbing institutional capital at unprecedented scale. India's Starlink suspension is a regulatory speed bump, not a structural headwind.",
-          "implication": "Board-level: space/satellite sector re-rating imminent. First-day pop creates spillover for public space equities. Long-term structural capital rotation into frontier technology infrastructure."
+          "headline": "SpaceX IPO Draws $250B Demand — Abundance Signal During Broad Market Selloff",
+          "body": "Structural assessment: $250B chasing SpaceX's $75B raise (3.3x oversubscribed) while S&P sells off -1.2% during US airstrikes on Iran is the single clearest signal of capital rotation from passive beta into frontier technology. This is not a risk-on/risk-off story — it's a capital allocation regime change. SpaceX listing at $1.8T on Nasdaq June 12 creates a permanent 'space anchor' asset class. Capital repositioning of $250B concentrated into one offering. Policy implication: expect accelerated space economy infrastructure investment as institutional conviction solidifies.",
+          "implication": "Board-level: space economy exposure is no longer speculative — allocate 2-5% of innovation portfolio to space-adjacent assets ahead of listing."
         },
         "quant": {
-          "headline": "SPACE sector: $75B IPO inflow — STRONG BUY signal",
-          "body": "Raw telemetry — SpaceX IPO 3.3x oversubscribed. $250B demand for $75B raise. $1.8T+ valuation. Starlink $11.4B revenue at 10.3M subscribers. Q1 net loss $4.28B on $4.69B rev. Unit economics deteriorating but front-running frontier infrastructure demand. Correlation regime: decoupled from broader equity selloff — institutional capital bifurcating between risk-off (geopolitics) and risk-on (frontier tech).",
+          "headline": "SPACE ECONOMY flow: $250B demand signal",
+          "body": "Raw telemetry — space equity $250B demand concentration. This is a structural capital rotation signal from passive indexing to concentrated frontier tech. Correlation regime: space names decoupling from SPY. Watch ARKX flows and SPCX grey market pricing for confirmation of $1.8T+ valuation.",
           "metrics": {
-            "flow_velocity": 3.3,
-            "correlation_coeff": -0.15,
-            "z_score": 2.8
+            "flow_direction": "inflow",
+            "asset_class": "space equity",
+            "geographies": [
+              "USA",
+              "global"
+            ]
           }
         },
         "degen": {
-          "headline": "🟢 LONG SPCX, ASTS, GSAT",
-          "body": "Directional: LONG. Flow: $75B. Entry zone: IPO open June 12. Stop: -10% from IPO price. Target: +20-30% first-day gain. Conviction: HIGH. Catalyst: 3.3x oversubscribed, biggest IPO in history, space economy validation.",
+          "headline": "🟢 LONG SPACE — $250B demand signal ahead of June 12 listing",
+          "body": "Directional: LONG. Thesis: SpaceX $250B demand during broad market selloff is a capital rotation signal. Position: ARKX, RKLB, IRDM. Conviction: HIGH. Entry: current. Target: +10-15% into listing week. Stop: -8%.",
           "signal": {
             "direction": "LONG",
-            "entry_zone": "IPO open (June 12)",
-            "stop_level": "-10% from IPO price",
-            "target": "+20-30% first-day",
+            "entry_zone": "current",
+            "stop_level": "-8%",
+            "target": "+10-15% before June 12",
             "conviction": "HIGH"
           }
         }
+      },
+      "extremum": {
+        "scenario": "SpaceX lists at $2T+ market cap, becomes top-5 US company by day one. Creates a 'space multiplier' effect — every VC with space exposure re-rates their portfolio 3x. RKLB and other public space names rally 30%+ on sympathy within two weeks.",
+        "probability": "20%",
+        "market_impact": "ARKX +25%, RKLB +40%, NDX +3% on tech sentiment boost; capital flow into frontier tech accelerates away from passive indices"
       }
     }
   ]
