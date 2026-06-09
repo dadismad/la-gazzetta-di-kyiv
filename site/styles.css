@@ -301,6 +301,115 @@ body {
   color: var(--green);
 }
 .teaser-item .teaser-badge-sell { color: var(--red); }
+/* v2.0: Flow category cards */
+.teaser-cat {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px !important;
+  border-left: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+.teaser-cat:hover { border-left-color: var(--gold); }
+.teaser-cat-icon { font-size: 16px; flex-shrink: 0; }
+.teaser-cat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  min-width: 80px;
+}
+.teaser-cat-dir {
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--sans);
+}
+.teaser-cat-dir.inflow { color: var(--green); }
+.teaser-cat-dir.outflow { color: var(--red); }
+.teaser-cat-vel {
+  font-size: 10px;
+  color: var(--ink-muted);
+  font-family: var(--sans);
+}
+/* v2.0: Hero hook indicators */
+.hero-indicators {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.hero-ind {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--divider);
+  text-decoration: none;
+  min-width: 90px;
+  transition: border-color 0.2s;
+}
+.hero-ind:hover { border-color: var(--gold); }
+.hero-ind-value {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--sans);
+  color: var(--ink);
+  line-height: 1.2;
+}
+.hero-ind-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-muted);
+  margin-top: 2px;
+  font-family: var(--sans);
+}
+
+/* v2.0: Services utility grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+.svc-card {
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--divider);
+  text-decoration: none;
+  transition: border-color 0.2s;
+  gap: 4px;
+}
+.svc-card:hover { border-color: var(--gold); }
+.svc-icon { font-size: 22px; }
+.svc-persona {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  font-family: var(--sans);
+  font-weight: 600;
+}
+.svc-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  font-family: var(--serif);
+}
+.svc-desc {
+  font-size: 11px;
+  color: var(--ink-muted);
+  line-height: 1.4;
+}
+
+.teaser-cat-count {
+  font-size: 10px;
+  color: var(--ink-muted);
+  margin-left: auto;
+}
+
 /* v2.0: Triangulation — linked flows/positions */
 .teaser-linked {
   font-size: 9px;

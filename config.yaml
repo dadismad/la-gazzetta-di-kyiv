@@ -99,3 +99,21 @@ features:
   generate_sitemap: true
   run_validation: true
   decay_stories: false  # disabled until scoring logic is reviewed
+
+# Flow categories for front-page aggregation
+flow_categories:
+  sovereign:
+    label: "Sovereign Flows"
+    asset_classes: ["fixed_income", "fx"]
+    description: "Central bank reserves, treasury repositioning, sovereign wealth"
+    icon: "🏛"
+  systemic:
+    label: "Systemic Liquidity"
+    asset_classes: ["equities", "commodities"]
+    description: "Institutional rotation, index rebalancing, macro hedging"
+    icon: "⚡"
+  speculative:
+    label: "Speculative Arbitrage"
+    asset_classes: ["crypto", "defense", "tech"]
+    description: "High-velocity positioning, divergence bets, narrative-driven"
+    icon: "🎯"

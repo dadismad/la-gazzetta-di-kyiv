@@ -330,9 +330,42 @@ async function fetchFlows() {
     tsEl.textContent = 'updated ' + formatTimeAgo(data.generated_at);
     tsEl.title = data.generated_at;
   }
+  // Populate hero indicators
+  updateHeroIndicators(data);
   // Re-apply i18n to dynamically rendered flow items (v22.18)
   if (window.i18n && window.i18n.applyTranslations) window.i18n.applyTranslations();
   return true;
+}
+
+// ── v2.0: Hero indicator updates ──
+function updateHeroIndicators(flowsData) {
+  if (!flowsData || !flowsData.flows) return;
+  // Contradictions: flows with confidence < 70%
+  const contradictions = flowsData.flows.filter(f => f.confidence_pct && f.confidence_pct < 70).length;
+  const contraEl = document.getElementById('heroContradictions');
+  if (contraEl) {
+    contraEl.querySelector('.hero-ind-value').textContent = contradictions;
+    contraEl.querySelector('.hero-ind-value').style.color = contradictions >= 2 ? '#DC2626' : 'var(--ink)';
+  }
+  // Top velocity: highest pace_multiplier across flows
+  let topVel = 0, topCat = '';
+  flowsData.flows.forEach(f => {
+    if ((f.pace_multiplier || 1) > topVel) {
+      topVel = f.pace_multiplier || 1;
+      topCat = f.asset_class || '';
+    }
+  });
+  const velEl = document.getElementById('heroTopVelocity');
+  if (velEl) {
+    velEl.querySelector('.hero-ind-value').textContent = `${topVel.toFixed(1)}×`;
+    velEl.title = `Highest velocity: ${topCat}`;
+  }
+  // Freshness: from generated_at
+  const freshEl = document.getElementById('heroFreshness');
+  if (freshEl && flowsData.generated_at) {
+    freshEl.querySelector('.hero-ind-value').textContent = formatTimeAgo(flowsData.generated_at);
+    freshEl.title = flowsData.generated_at;
+  }
 }
 
 // ── Position label: institutional jargon → varied retail insight ──
@@ -2049,27 +2082,64 @@ async function populateTeasers() {
     }
   } catch(e) { console.error("populateTeasers:", e); }
 
-  // Flows teaser
+  // Flows teaser — v2.0: Category-based aggregation
   try {
     const flowsData = await getJSON(getFlowsPath(), null);
     if (flowsData && flowsData.flows) {
       const el = document.getElementById('flowsTeaserContent');
       const subEl = document.getElementById('teaserFlowSub');
       if (el) {
-        const items = flowsData.flows.slice(0, 6);
-        el.innerHTML = items.map(f => {
-          const cls = f.direction === 'outflow' ? 'outflow' : '';
-          return `<a href="./flows.html" class="teaser-item"><span class="teaser-amount ${cls}">$${f.amount_b}B ${f.direction === 'inflow' ? '↑' : '↓'}</span>${f.asset_class} — ${(f.headline || '').replace(/^\$[\d.]+B\s*[↑↓]\s*/, '')}</a>`;
-        }).join('');
+        // Flow category definitions
+        const CATEGORIES = {
+          sovereign: { label: 'Sovereign', icon: '🏛', classes: ['fixed_income', 'fx'], desc: 'Central bank reserves, sovereign wealth' },
+          systemic: { label: 'Systemic Liquidity', icon: '⚡', classes: ['equities', 'commodities'], desc: 'Institutional rotation, macro hedging' },
+          speculative: { label: 'Speculative', icon: '🎯', classes: ['crypto', 'defense', 'tech'], desc: 'High-velocity positioning, divergence bets' }
+        };
+        // Aggregate flows into categories
+        const cats = {};
+        flowsData.flows.forEach(f => {
+          const ac = f.asset_class || '';
+          for (const [key, cat] of Object.entries(CATEGORIES)) {
+            if (cat.classes.includes(ac)) {
+              if (!cats[key]) cats[key] = { inflows: 0, outflows: 0, total_b: 0, count: 0, pace_sum: 0 };
+              const c = cats[key];
+              if (f.direction === 'inflow') c.inflows += f.amount_b || 0;
+              else c.outflows += f.amount_b || 0;
+              c.total_b += f.amount_b || 0;
+              c.count++;
+              c.pace_sum += f.pace_multiplier || 1;
+              break;
+            }
+          }
+        });
+        // Render category cards
+        const catEntries = Object.entries(cats);
+        if (catEntries.length) {
+          el.innerHTML = catEntries.map(([key, c]) => {
+            const cat = CATEGORIES[key];
+            const net = c.inflows - c.outflows;
+            const dir = net >= 0 ? '▲' : '▼';
+            const dirClass = net >= 0 ? 'inflow' : 'outflow';
+            const avgVel = c.count ? (c.pace_sum / c.count).toFixed(1) : '1.0';
+            return `<a href="./flow-nodes.html" class="teaser-item teaser-cat">
+              <span class="teaser-cat-icon">${cat.icon}</span>
+              <span class="teaser-cat-label">${cat.label}</span>
+              <span class="teaser-cat-dir ${dirClass}">${dir} $${Math.abs(net).toFixed(1)}B</span>
+              <span class="teaser-cat-vel">⚡ ${avgVel}×</span>
+              <span class="teaser-cat-count">${c.count} flows</span>
+            </a>`;
+          }).join('');
+        } else {
+          el.innerHTML = '<a href="./flows.html" class="teaser-item">Flow categories loading — view full dashboard →</a>';
+        }
+        // Aggregate badge
         if (subEl) {
-          const inflows = flowsData.flows.filter(f => f.direction === 'inflow').length;
-          const outflows = flowsData.flows.filter(f => f.direction === 'outflow').length;
-          const aggDir = flowsData.aggregate_direction || "neutral";
+          const totalFlows = flowsData.flows.length;
+          const aggDir = flowsData.aggregate_direction || 'neutral';
           const aggPct = flowsData.aggregate_confidence || 0;
-          const badgeLabel = aggDir === "bullish" ? "BULLISH" : aggDir === "bearish" ? "BEARISH" : "NEUTRAL";
-          const badgeColor = aggDir === "bullish" ? "#059669" : aggDir === "bearish" ? "#DC2626" : "var(--ink-muted)";
-          const badgeClass = aggDir === "bullish" ? "bullish" : aggDir === "bearish" ? "bearish" : "neutral";
-          subEl.innerHTML = `${inflows} in · ${outflows} out · <span class="flow-aggregate-badge ${badgeClass}">${badgeLabel} ${aggPct}%</span>`;
+          const badgeLabel = aggDir === 'bullish' ? 'BULLISH' : aggDir === 'bearish' ? 'BEARISH' : 'NEUTRAL';
+          const badgeClass = aggDir === 'bullish' ? 'bullish' : aggDir === 'bearish' ? 'bearish' : 'neutral';
+          subEl.innerHTML = `${totalFlows} flows · ${catEntries.length} categories · <span class="flow-aggregate-badge ${badgeClass}">${badgeLabel} ${aggPct}%</span>`;
         }
       }
     }
