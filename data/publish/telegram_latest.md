@@ -1,10 +1,10 @@
-Iran just turned Hormuz into a toll road: $1.5-2M per tanker. Israel bombs Beirut's southern suburbs — first time this campaign. Two-front escalation the market hasn't connected.
+WTI below $90 (-2%) — oil collapsing INTO the biggest Middle East crisis since 1973. Iran tolls Hormuz. Israel auto-triggers Beirut strikes. Ben-Gvir proposes abducting civilians.
 
-$75-100M/day extracted from global oil. Tether accepted. This is structural, not a skirmish.
+Markets price demand destruction over supply risk. ADP +29K confirms stagflation. But one Hezbollah rocket gaps oil $95+ instantly — shorts caught offside.
 
-• Long crude (CL), tanker shipping (STNG/FRO), gold (GLD) — Sunday gap +$3-8/bbl
-• Fade OPEC+ 188k bpd — rounding error versus Hormuz toll
+• Own both tails: sub-$88 = short oil; $95 OTM calls for Hezbollah trigger
+• Long gold (GLD), long bonds (TLT) on stagflation confirmation
 
-¹ Iran charges $1.5-2M per Hormuz transit, accepts Tether (source: Mehr News/ethanlevins)
+¹ WTI -2% at 12:40 UTC June 9 — oil sold off while escalation accelerated across 3 fronts (source: @markettwits)
 
-Continuity: pureciclismo.github.io/gazzetta-di-kyiv/ | Next trigger: CME Sunday open
+Continuity: pureciclismo.github.io/gazzetta-di-kyiv/ | Next trigger: Hezbollah rocket / NFP Friday June 12

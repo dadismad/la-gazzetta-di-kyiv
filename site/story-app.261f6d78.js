@@ -36,6 +36,18 @@
     } catch { return ts; }
   }
 
+  function formatTimeAgo(isoString) {
+    if (!isoString) return '';
+    const diff = Date.now() - new Date(isoString).getTime();
+    const mins = Math.floor(diff / 60000);
+    if (mins < 1) return 'just now';
+    if (mins < 60) return mins + 'm ago';
+    const hours = Math.floor(mins / 60);
+    if (hours < 24) return hours + 'h ago';
+    const days = Math.floor(hours / 24);
+    return days + 'd ago';
+  }
+
   function tensionBadge(score) {
     const s = score || 0;
     if (s >= 67) return { cls: 'contradicted', label: window.i18n ? i18n.t('tension_max','MAX TENSION') : 'MAX TENSION' };
@@ -49,7 +61,7 @@
     const tension = tensionBadge(story.contradiction_score || 0);
     const category = t('sector_' + (story.sector || 'markets').toLowerCase(), (story.sector || 'MARKETS').toUpperCase());
     const severity = (story.severity || 'HIGH').toUpperCase();
-    const date = formatDate(story.timestamp || story.date || story.generated_at);
+    const date = formatDate(story.timestamp || story.date || story.generated_at || dataGenAt);
 
     const photo = story.photo || (cf.asset_class ? `./media/${cf.asset_class}.jpg` : '');
     const headline = story.headline || story.title || '';
@@ -81,7 +93,7 @@
         <div class="intel-meta">
           <span class="intel-category">${category}</span>
           <span class="intel-severity severity-${severity.toLowerCase()}">${t('severity_' + severity.toLowerCase(), severity)}</span>
-          <time class="intel-date">${date}</time>
+          <time class="intel-date" datetime="${story.generated_at || story.timestamp || story.date || dataGenAt}" title="${date}">${formatTimeAgo(story.generated_at || story.timestamp || story.date || dataGenAt)}</time>
           <span class="tier-badge ${tension.cls}">${tension.label} <span class="tier-score">${story.contradiction_score || 0}/100</span></span>
         </div>
         <h1 class="intel-headline">${headline}</h1>
@@ -124,10 +136,12 @@
         </div>
       </section>
 
+      ${extremum ? `
       <section class="intel-extremum">
         <h2 class="intel-section-label extremum-label">${t('extremum', 'EXTREMUM')}</h2>
         <div class="intel-extremum-content">${typeof extremum === 'object' ? (extremum.type + ': ' + (extremum.description || '').slice(0, 200)) : extremum}</div>
       </section>
+      ` : ''}
 
       <div class="intel-share">
         <button onclick="copyStoryLink()" class="share-btn" title="${t('share_copy', 'Copy link')}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
@@ -180,6 +194,7 @@
     }
 
     const stories = data.stories || [];
+    const dataGenAt = data.generated_at || '';
     const allStories = data.lead ? [data.lead, ...stories] : stories;
     const story = findStory(data, storyId);
 

@@ -49,7 +49,7 @@
     const tension = tensionBadge(story.contradiction_score || 0);
     const category = t('sector_' + (story.sector || 'markets').toLowerCase(), (story.sector || 'MARKETS').toUpperCase());
     const severity = (story.severity || 'HIGH').toUpperCase();
-    const date = formatDate(story.timestamp || story.date || story.generated_at);
+    const date = formatDate(story.timestamp || story.date || story.generated_at || dataGenAt);
 
     const photo = story.photo || (cf.asset_class ? `./media/${cf.asset_class}.jpg` : '');
     const headline = story.headline || story.title || '';
@@ -180,6 +180,7 @@
     }
 
     const stories = data.stories || [];
+    const dataGenAt = data.generated_at || '';
     const allStories = data.lead ? [data.lead, ...stories] : stories;
     const story = findStory(data, storyId);
 

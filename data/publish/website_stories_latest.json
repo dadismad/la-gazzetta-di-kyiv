@@ -1,45 +1,45 @@
 {
-  "generated_at": "2026-06-07T22:30:00Z",
+  "generated_at": "2026-06-09T13:20:00Z",
   "stories": [
     {
-      "headline": "Iran Turns Hormuz Into Toll Road — $1.5-2M Per Tanker. Israel Bombs Beirut.",
-      "thesis": "Iran unilaterally monetizes the Strait of Hormuz at $1.5-2M per tanker transit, accepting Tether. Israel strikes Beirut's southern suburbs — first time in this campaign. Two independent escalation vectors converge into a systemic geopolitical crisis the market has not connected. OPEC+'s 188k bpd increase is noise vs. this structural change.",
+      "headline": "WTI Drops Below $90 (-2%) While War Escalates Across 3 Fronts — Most Contradictory Signal in Markets Today",
+      "thesis": "Oil collapsing 2% while Iran tolls Hormuz ($1.5-2M/ship), Israel auto-triggers Beirut strikes, and Ben-Gvir floats civilian abduction. Markets pricing demand destruction over supply risk. ADP +29K confirms stagflation. This is a binary resolution point: Hezbollah rocket = $95+, sub-$88 = demand collapse.",
       "sector": "geopolitics",
-      "source_count": 6,
-      "setup_id": "n21_multi_pillar__iran_hormuz_toll_beirut_strikes",
+      "source_count": 8,
+      "setup_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strait_of_Hormuz.jpg"
     },
     {
-      "headline": "China Extends Maritime Patrols East of Taiwan While US Is Distracted by Middle East",
-      "thesis": "Beijing launched maritime enforcement east of Taiwan with named time/place/legal basis for the first time. Classic strategic opportunism: advance claims while US is locked into Iran-Lebanon multi-front war. No vessel boarded yet but structural shift in enforcement posture.",
-      "sector": "geopolitics",
+      "headline": "US ADP +29K — Labor Market Cracking as Inflation Expectations Rise 3rd Month. Stagflation Confirmed.",
+      "thesis": "ADP printed +29K jobs, well below prior +35.7K. US 1-year consumer inflation expectations rose 3rd straight month. Textbook stagflation: weakening labor + sticky inflation = Fed trapped. First hard data point confirming stagflation thesis.",
+      "sector": "macro",
       "source_count": 5,
-      "setup_id": "n21_china_ascendancy__china_maritime_enforcement_east_of_taiwan",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Republic_of_China_(Taiwan)_and_disputed_territories_in_the_South_China_Sea.png"
+      "setup_id": "n21_macro__adp_29k_stagflation_signal",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Federal_Reserve_Building.jpg"
     },
     {
-      "headline": "Bitcoin Tests $61K — 200-Week MA Is Last Line as Saylor Sells, ETFs Bleed",
-      "thesis": "BTC drops 5.5% to $61.3K. Strategy sells $2.5M — 'never sell' narrative dead. $11.5B unrealized loss. ETF outflows at record. Iran accepting Tether for Hormuz is a bullish counterweight but short-term risk-off dominates crypto alongside broader markets.",
-      "sector": "crypto",
-      "source_count": 8,
-      "setup_id": "n21_blockchain_agentic__bitcoin_free_fall_saylor_liquidates_etfs_bleed",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_logo.svg"
+      "headline": "Israeli Minister Ben-Gvir Urges Cabinet to Abduct Lebanese Civilians — Far-Right Escalation Signal",
+      "thesis": "Ben-Gvir proposed abducting Lebanese women and children as psychological warfare against Hezbollah — in a cabinet session, not a tweet. Combined with automatic Beirut strike trigger, the escalation floor with Lebanon has structurally risen. Raises probability of Hezbollah rocket trigger firing.",
+      "sector": "geopolitics",
+      "source_count": 4,
+      "setup_id": "n21_multi_pillar__ben_gvir_abduct_civilians",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Israel.svg"
     },
     {
-      "headline": "Google Signs $920M/Month AI Compute Deal With SpaceX — IPO 2x at $75B",
-      "thesis": "Google locked in $920M/month AI compute with SpaceX. SpaceX loses $0.91 per dollar of revenue ($4.28B loss on $4.69B Q1). $1.8T+ valuation vs. real revenue. IPO June 12 faces risk-off headwinds from geopolitical escalation.",
-      "sector": "tech",
-      "source_count": 7,
-      "setup_id": "n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX_Logo.svg"
+      "headline": "EU Proposes Biggest Sanctions Package in 2 Years — 90 Banks, 11 Crypto Platforms, LNG Tanker Ban",
+      "thesis": "EU targets 90 banks, 11 crypto platforms, LNG tanker ban, 170+ sanctioned positions. Structural tightening of Russia's financial isolation. Crypto ban may accelerate Russian BTC demand as capital flight into non-sanctionable assets.",
+      "sector": "geopolitics",
+      "source_count": 6,
+      "setup_id": "n21_china_ascendancy__breaking_eu_proposes_biggest_sanctions_package",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/European_Commission.svg"
     },
     {
-      "headline": "Monero Faces Systemic Crisis — Zcash Bug Researcher Now Audits XMR",
-      "thesis": "The researcher who found Zcash's Orchard bug now targets Monero. Privacy coins cannot prove absence of cryptographic bugs. XMR has no transparent fallback — if a bug exists, the coin is unrecoverable. Binary event risk.",
+      "headline": "BlackRock Transferring BTC to Exchanges for Client Sales — Distribution Signal Beneath the Surface",
+      "thesis": "BlackRock routing BTC to exchanges likely means ETF/OTC desks filling sell orders. Real supply hitting order books. Short-term BTC bearish — institutions sell into strength, retail panics. $58K support is key level.",
       "sector": "crypto",
       "source_count": 4,
-      "setup_id": "n21_blockchain_agentic__zcash_researcher_audits_monero_xmr_volatility",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Monero_Logo.svg"
+      "setup_id": "n21_blockchain_agentic__blackrock_transferring_btc",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_logo.svg"
     }
   ]
 }

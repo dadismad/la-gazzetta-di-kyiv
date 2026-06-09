@@ -1,15 +1,16 @@
 {
-  "generated_at": "2026-06-07T22:30:00Z",
-  "cycle": 10,
-  "lead_story": "n21_multi_pillar__iran_hormuz_toll_beirut_strikes",
-  "lead_headline": "Iran Charges $1.5-2M Per Tanker for Hormuz Transit, Israel Bombs Beirut — Two-Front Escalation Reshapes Global Risk",
-  "frame": "convergence",
-  "platforms_updated": {
+  "generated_at": "2026-06-09T13:20:00Z",
+  "cycle": 11,
+  "platforms": {
     "telegram": true,
     "reddit": false,
-    "website_stories": true,
-    "asset_claims": true
+    "website": true
   },
-  "pipeline_ok": true,
-  "quality_gate": "PENDING"
+  "lead_story": "WTI Below $90 While War Escalates on 3 Fronts — Oil-Geopolitics Decoupling Is the Signal",
+  "frame": "contradiction",
+  "human_detail_id": "HD-017",
+  "asset_claims_count": 4,
+  "website_stories_count": 5,
+  "next_scheduled_cycle": "2026-06-09T21:20:00Z",
+  "live_site_status": "confirmed (HTTP 200)"
 }

@@ -1,65 +1,53 @@
 {
-  "generated_at": "2026-06-07T22:30:00Z",
+  "generated_at": "2026-06-09T13:20:00Z",
   "claims": [
     {
       "ticker": "CL",
-      "direction": "up",
-      "price_target": "$3-8/bbl structural premium at Sunday CME open — target $75-80/bbl",
-      "strategy": "Long crude — fade-the-move on Sunday gap (65% win rate for geopolitical structural changes). OPEC+ 188k bpd dip is an additional entry opportunity.",
+      "direction": "bilateral",
+      "price_target": "$88 break = short oil; $95+ on Hezbollah trigger",
+      "strategy": "Own both tails — OTM $95 calls (June 12 expiry, ~$0.30-0.50 premium) as lottery on Hezbollah trigger; short oil if sub-$88 confirms demand collapse",
       "win_rate": "65%",
       "horizon": "24-72h",
       "narrative_driven_pct": 85,
-      "crowd_belief": "Markets price Iran as 'contained skirmishing.' Polymarket has no active contract for Hormuz toll scenario. OPEC+ increase seen as bearish.",
-      "contradiction": "The $1.5-2M/tanker toll is NOT a skirmish — it's a structural change in global oil transit cost that the market has zero history pricing. OPEC+'s 188k bpd is a rounding error vs. daily Hormuz toll revenue extraction.",
-      "story_id": "n21_multi_pillar__iran_hormuz_toll_beirut_strikes"
-    },
-    {
-      "ticker": "STNG",
-      "direction": "up",
-      "price_target": "+10-20% on shipping rate re-pricing as Hormuz risk premium loads into contracts",
-      "strategy": "Long tanker shipping — Hormuz toll turns into war risk premium for shipping lines. Every tanker that transits Hormuz now carries a $1.5-2M cost that gets passed to cargo rates.",
-      "win_rate": "70%",
-      "horizon": "24-72h",
-      "narrative_driven_pct": 80,
-      "crowd_belief": "Tanker rates not yet pricing Hormuz structural change. Shipping analysts still focused on OPEC+ supply dynamics.",
-      "contradiction": "The Hormuz toll is a direct transfer from global oil trade to Iran. Tanker companies that transit Hormuz will either pay (cost passed to rates) or divert around Africa (massively higher cost). Either path = tanker rate spike.",
-      "story_id": "n21_multi_pillar__iran_hormuz_toll_beirut_strikes"
+      "crowd_belief": "Markets pricing demand destruction (stagflation) over supply risk (Iran-Hormuz). ADP +29K confirms weakening labor. Consensus says war premium is unwinding.",
+      "contradiction": "Oil dropping 2% while Iran tolls Hormuz, Israel auto-triggers Beirut, and Ben-Gvir floats civilian abduction is a first-order anomaly. The contradiction is unresolved — one Hezbollah rocket gaps oil $95+ catching shorts offside.",
+      "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90"
     },
     {
       "ticker": "GLD",
       "direction": "up",
-      "price_target": "$2,500+ (3.5% from $2,415)",
-      "strategy": "Long gold as geopolitical hedge — multi-front escalation (Hormuz toll + Beirut strikes + Kuwait strikes + Taiwan patrol) creates compounding safe-haven demand.",
+      "price_target": "$2,500+ (stagflation confirm)",
+      "strategy": "Long gold as stagflation hedge — weak ADP + weakening labor + rising inflation expectations = Fed trapped. Gold benefits from both geopolitical risk premium and inflation hedge demand.",
       "win_rate": "75%",
       "horizon": "24-72h",
       "narrative_driven_pct": 70,
-      "crowd_belief": "Gold at $2,415 reflects elevated Middle East risk, but the escalation has gone from one front to three (Iran-Kuwait, Iran-Hormuz, Israel-Beirut). This compounding is not priced.",
-      "contradiction": "Each front independently justifies gold — combined they create a safe-haven demand spike that exceeds any single-front pricing. Gold remains the cleanest cross-theater geopolitical hedge.",
-      "story_id": "n21_multi_pillar__iran_hormuz_toll_beirut_strikes"
-    },
-    {
-      "ticker": "TSM",
-      "direction": "down",
-      "price_target": "-3-5% at Monday Asia open if Taiwan tension escalates",
-      "strategy": "Short / put options — China extended maritime patrols east of Taiwan while US is Middle East-distracted. Strategic opportunism thesis.",
-      "win_rate": "60%",
-      "horizon": "24-72h",
-      "narrative_driven_pct": 75,
-      "crowd_belief": "Markets focused on Middle East entirely. Taiwan risk premium near zero. Consensus: 'China won't invade Taiwan this cycle.'",
-      "contradiction": "China extends patrols east of Taiwan exactly when US is locked into a multi-front Middle East war — textbook strategic opportunism. The Taiwan risk premium is underpriced vs. reality.",
-      "story_id": "n21_china_ascendancy__china_maritime_enforcement_east_of_taiwan"
+      "crowd_belief": "Gold at $2,415 reflects elevated geopolitical risk. But stagflation confirmation (ADP +29K + 3rd month inflation expectations rise) is a new vector not yet priced.",
+      "contradiction": "The stagflation vector is new — markets were pricing rate hikes, not cuts. If NFP Friday confirms ADP weakness, gold rallies on rate cut repricing + inflation hedge demand compounding.",
+      "story_id": "n21_macro__adp_29k_stagflation_signal"
     },
     {
       "ticker": "TLT",
-      "direction": "down",
-      "price_target": "Yields spike 10-15bp on stagflation repricing",
-      "strategy": "Short duration bonds — oil spike feeds inflation expectations, Fed less likely to cut. Stagflation regime favors commodities over bonds.",
+      "direction": "up",
+      "price_target": "Yields -5-10bps on rate cut repricing",
+      "strategy": "Long duration bonds (TLT, ZN) — ADP +29K starts the clock on rate cut expectations. If NFP Friday confirms, aggressive curve steepening.",
       "win_rate": "65%",
-      "horizon": "24-72h",
+      "horizon": "24-72h (through NFP Friday)",
       "narrative_driven_pct": 60,
-      "crowd_belief": "Markets fully priced Fed rate hike by end-2026. 2-year real yields at Trump-era highs. But oil structural change from Hormuz toll compounds already-hawkish bond pricing.",
-      "contradiction": "The market has priced a rate hike but NOT the compounding effect of a structural oil cost increase on inflation expectations. The bond selloff has further to go.",
-      "story_id": "n21_multi_pillar__iran_hormuz_toll_beirut_strikes"
+      "crowd_belief": "2Y yields at year-highs pricing rate hikes. ADP +29K is the first crack in that thesis. Market consensus still pricing hikes.",
+      "contradiction": "ADP is noisy but directional trend (weakening labor + rising inflation expectations) is structurally bullish for bonds. If NFP confirms, rate hike expectations unwind violently.",
+      "story_id": "n21_macro__adp_29k_stagflation_signal"
+    },
+    {
+      "ticker": "VIX",
+      "direction": "up",
+      "price_target": "+2-3 points on binary escalation trigger",
+      "strategy": "Long VIX as tail hedge — Ben-Gvir proposal + automatic Beirut strike trigger = Hezbollah rocket event could fire at any time with zero diplomatic warning.",
+      "win_rate": "70%",
+      "horizon": "24-72h",
+      "narrative_driven_pct": 80,
+      "crowd_belief": "VIX complacent despite multi-front escalation. Markets not pricing Hezbollah rocket trigger probability.",
+      "contradiction": "The automatic Beirut strike mechanism means escalation is now a binary trigger, not a decision. Any rogue faction in Lebanon can start the next escalation cycle. VIX is underpricing this tail risk.",
+      "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90"
     }
   ]
 }

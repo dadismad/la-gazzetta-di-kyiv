@@ -255,7 +255,7 @@ function anchorRowHTML(a) {
       <div class="asset-trade">
         <span class="${pillClass}">${i18n.t(a.bias.toLowerCase(), a.bias)}</span>
         <span class="asset-zone">${a.entry} → ${a.target}</span>
-        <span class="asset-stop" title="Volatility-adjusted: ${a.stop_atr_mult}×${atrPct}% ATR from entry">Stop ${a.stop || '—'} · ${a.stop_atr_mult}×ATR</span>
+        <span class="asset-stop" title="Volatility-adjusted: ${a.stop_atr_mult}×${atrPct}% ATR from entry">Stop ${a.stop} · ${a.stop_atr_mult}×ATR</span>
         <span class="${badgeClass}">${i18n.t("conviction_"+a.conviction, a.conviction)}</span>
       </div>
     </div>`;
@@ -310,16 +310,15 @@ async function fetchFlows() {
   if (!data || !data.flows) return false;
   CAPITAL_FLOWS_DATA = data.flows;
   GLOSSARY = data.glossary || {};
-  if (data.generated_at) { window._flowsGeneratedAt = data.generated_at; if (!window._storiesGeneratedAt) window._storiesGeneratedAt = data.generated_at; }  // v22.37: also set stories timestamp for signal freshness fallback
+  if (data.generated_at) window._flowsGeneratedAt = data.generated_at;  // v22.35: for time badges
   renderCapitalFlows();
   renderFlowInsight(data);  // v22.31: sector aggregation + lead insight
   renderMarketRegime();     // v22.34: Mike Green top 3 retail indicators
   renderDivergenceMeter();  // v22.35: Cross-product signal overlay
   // v22.35: Update signal freshness from stories data
   const sfEl = byId('signalFreshness');
-  if (sfEl) {
-    const signalTime = window._storiesGeneratedAt || window._flowsGeneratedAt || data.generated_at;
-    if (signalTime) sfEl.textContent = 'updated ' + formatTimeAgo(signalTime);
+  if (sfEl && window._storiesGeneratedAt) {
+    sfEl.textContent = formatTimeAgo(window._storiesGeneratedAt);
   }
   renderGlossaryTooltips();
   updateHeroConfidence(data.aggregate_confidence, data.aggregate_confidence_label, data.aggregate_direction);
@@ -622,9 +621,8 @@ function updateHeroConfidence(pct, label, direction) {
   // Both focus group personas couldn't find the confidence — it was hidden in tooltip
   const badge = direction === 'bullish' ? 'BULLISH' : direction === 'bearish' ? 'BEARISH' : 'NEUTRAL';
   const color = direction === 'bullish' ? 'var(--green)' : direction === 'bearish' ? 'var(--red)' : 'var(--ink-muted)';
-  const tierLabel = pct >= 80 ? 'Strong conviction' : pct >= 60 ? 'Moderate conviction' : 'Weak signal';
-  el.innerHTML = `<div><span style="color:${color};font-weight:700;font-size:inherit;">${pct}% ${badge}</span></div><div style="font-size:9px;color:var(--ink-muted);margin-top:1px;">${tierLabel}</div>`;
-  el.title = `Flow confidence: ${pct}% (${label}). Based on: flow magnitude, pace, institutional positioning, contradiction score, source quality.`;
+  el.innerHTML = `<span style="color:${color};font-weight:700;font-size:inherit;">${pct}% ${badge}</span>`;
+  el.title = `${pct}% flow conviction — ${direction} (${label})`;
   el.style.color = color;
   // Label stays clean — data-i18n handles it
 }
@@ -1375,7 +1373,7 @@ function getCumulative(key, fallback) {
 }
 
 function setCumulative(key, val) {
-  try { localStorage.setItem('gazzetta_' + key, JSON.stringify(val)); } catch(e) { console.error("localStorage:", e); }
+  try { localStorage.setItem('gazzetta_' + key, JSON.stringify(val)); } catch(e) {}
 }
 
 function updateCumulativeStats() {
@@ -1450,7 +1448,7 @@ function getTrackRecord() {
 }
 
 function saveTrackRecord(records) {
-  try { localStorage.setItem(TRACK_RECORD_KEY, JSON.stringify(records)); } catch(e) { console.error("localStorage:", e); }
+  try { localStorage.setItem(TRACK_RECORD_KEY, JSON.stringify(records)); } catch(e) {}
 }
 
 function snapshotPredictions() {
@@ -1846,7 +1844,7 @@ function copyShareLink(card) {
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(text).then(() => showToast('✓ Link copied')).catch(() => {});
   } else {
-    try { document.execCommand('copy'); showToast('✓ Link copied'); } catch(e) { console.error("localStorage:", e); }
+    try { document.execCommand('copy'); showToast('✓ Link copied'); } catch(e) {}
   }
 }
 
@@ -2024,7 +2022,7 @@ async function populateTeasers() {
         if (countEl) countEl.textContent = items.length + ' stories';
       }
     }
-  } catch(e) { console.error("populateTeasers:", e); }
+  } catch(e) {}
 
   // Flows teaser
   try {
@@ -2050,7 +2048,7 @@ async function populateTeasers() {
         }
       }
     }
-  } catch(e) { console.error("populateTeasers:", e); }
+  } catch(e) {}
 
   // Trades teaser
   try {
@@ -2066,7 +2064,7 @@ async function populateTeasers() {
         if (subEl) subEl.textContent = `${ANCHOR_ASSETS.length} positions`;
       }
     }
-  } catch(e) { console.error("populateTeasers:", e); }
+  } catch(e) {}
 
   // Signal teaser
   setTimeout(() => {
@@ -2082,7 +2080,7 @@ async function populateTeasers() {
         }).join('');
         if (subEl) subEl.textContent = `${signalCards.length} signals`;
       }
-    } catch(e) { console.error("populateTeasers:", e); }
+    } catch(e) {}
   }, 3000);
 
   // Track teaser
@@ -2095,7 +2093,7 @@ async function populateTeasers() {
       el.innerHTML = `<span class="teaser-item">${text.slice(0, 120)}</span>`;
       if (subEl) subEl.textContent = 'Performance summary';
     }
-  } catch(e) { console.error("populateTeasers:", e); }
+  } catch(e) {}
 
   // Re-apply i18n
   if (window.i18n && window.i18n.applyTranslations) window.i18n.applyTranslations();

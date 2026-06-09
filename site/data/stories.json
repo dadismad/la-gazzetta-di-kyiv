@@ -1,43 +1,265 @@
 {
-  "generated_at": "2026-06-07T13:25:44.306428+00:00",
+  "generated_at": "2026-06-09T13:19:52.966182+00:00",
   "lead": {
-    "story_id": "n21_multi_pillar__israel_launches_full_ground_operations_in_lebanon__hezbolla",
-    "headline": "ISRAEL LAUNCHES FULL GROUND OPERATIONS IN LEBANON — HEZBOLLAH DESTROYING IDF TANKS",
+    "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+    "headline": "CRITICAL CONTRADICTION: WTI Drops Below $90 (-2%) Despite Israel-Iran War, Hormuz Toll, Beirut Bombing — Risk Premium Collapsing",
     "sector": "commodities",
     "pillar": "multi_pillar",
     "paradigm_pillar": "multi_pillar",
     "paradigm_implications": [
-      "Defense contractors: Israel will need resupply, US defense stocks re-rate on sustained Middle East engagement. Oil: Lebanon escalation keeps a floor under oil prices even if OPEC+ tries to cap them. G"
+      "Asymmetric oil optionality is the play. Own June 12 $95 calls (cost: ~$0.30-0.50) as lottery tickets on the Hezbollah trigger. Core short oil via $SCO if demand narrative dominates. Do NOT pick a dire"
     ],
-    "they_say": "Limited Israeli incursion to create buffer zone. Hezbollah degraded enough to not pose strategic threat. Diplomacy will contain it.",
-    "reality": "Israeli military leader is publicly saying full occupation is necessary — this is not a limited operation. Netanyahu appears to want escalation (per US officials). Hezbollah is actively destroying Israeli armor on live TV, rebutting the 'degraded' narrative. This is a multi-front escalation (Lebanon + Iran + Hormuz) that the market is not connecting as a single systemic risk.",
-    "thesis": "LONG defense stocks (RTX, LMT, NOC, GD). LONG oil (second derivative through Iran/Hormuz connection). SHORT Israeli shekel (ILS). LONG gold as geopolitical hedge.",
+    "they_say": "Geopolitical risk premium is collapsing. Markets are pricing either: (a) an Iran ceasefire/deal is genuinely imminent (Trump declared 'imminent' 37 times per CNN), (b) demand destruction fears from stagflation (ADP +29K, weak sentiment, rising inflation expectations) are overwhelming supply risk, or (c) weekend war premium is being unwound. The consensus read: markets believe the diplomatic off-ramp is real, and Iran-Israel is a contained tit-for-tat, not a full war. This is the single most important contradiction in markets right now.",
+    "reality": "Oil dropping 2% while Iran bombs and Hormuz is weaponized is a FIRST-ORDER anomaly. If the Iran deal falls through or Hezbollah fires a rocket into Israel triggering the automatic Beirut response, oil will gap $3-5 higher instantly, catching shorts offside. Alternatively: if oil holds below $90 through US session, it confirms demand/stagflation is the dominant narrative — which is itself bearish for equities but bullish for bonds. The contradiction is unresolved.",
+    "thesis": "BILATERAL — (A) SHORT oil into further downside if <$88 breaks = demand collapse confirmation. (B) BUY OTM oil calls (strike $95, June 12 expiry) for the asymmetric upside if Lebanon/Hezbollah trigger fires. The risk-reward on oil optionality is extreme right now: downside capped by OPEC+ support ne",
     "actors": [],
     "horizon": "24-72h",
     "confidence": "medium",
-    "tier": "ALIGNED",
-    "actionable_trade": "LONG defense stocks (RTX, LMT, NOC, GD). LONG oil (second derivative through Iran/Hormuz connection). SHORT Israeli shekel (ILS). LONG gold as geopolitical hedge.",
-    "contradiction_score": 52,
+    "tier": "DEVELOPING",
+    "actionable_trade": "BILATERAL — (A) SHORT oil into further downside if <$88 breaks = demand collapse confirmation. (B) BUY OTM oil calls (strike $95, June 12 expiry) for the asymmetric upside if Lebanon/Hezbollah trigger fires. The risk-reward on oil optionality is extreme right now: downside capped by OPEC+ support ne",
+    "contradiction_score": 65,
     "invalidation_trigger": "Narrative reversal or event resolution",
-    "portfolio_implication": "Defense contractors: Israel will need resupply, US defense stocks re-rate on sustained Middle East engagement. Oil: Lebanon escalation keeps a floor under oil prices even if OPEC+ tries to cap them. Gold: geopolitical risk premium rises.",
+    "portfolio_implication": "Asymmetric oil optionality is the play. Own June 12 $95 calls (cost: ~$0.30-0.50) as lottery tickets on the Hezbollah trigger. Core short oil via $SCO if demand narrative dominates. Do NOT pick a directional side — the contradiction is too sharp. Own both tails and let the market resolve.",
     "capital_flow": {
-      "direction": "inflow",
-      "amount_b": 5.0,
+      "direction": "outflow",
+      "amount_b": 88.0,
       "asset_class": "commodities",
-      "projected": "Defense contractors: Israel will need resupply, US defense stocks re-rate on sustained Middle East engagement. Oil: Lebanon escalation keeps a floor under oil prices even if OPEC+ tries to cap them.…",
+      "projected": "Asymmetric oil optionality is the play. Own June 12 $95 calls (cost: ~$0.30-0.50) as lottery tickets on the Hezbollah trigger. Core short oil via $SCO if demand narrative dominates. Do NOT pick a…",
       "pace_multiplier": 1.0,
       "confidence_pct": 75,
       "confidence_level": "medium",
-      "claim": "$5.0B ↑ commodities",
+      "claim": "$88.0B ↓ commodities",
       "confidence": "75%"
     },
-    "capital_flow_implication": "LONG defense stocks (RTX, LMT, NOC, GD). LONG oil (second derivative through Iran/Hormuz connection). SHORT Israeli shekel (ILS). LONG gold as geopolitical hedge.",
+    "capital_flow_implication": "BILATERAL — (A) SHORT oil into further downside if <$88 breaks = demand collapse confirmation. (B) BUY OTM oil calls (strike $95, June 12 expiry) for the asymmetric upside if Lebanon/Hezbollah trigger fires. The risk-reward on oil optionality is extreme right now: downside capped by OPEC+ support ne",
     "evidence": [],
     "source": "telegram_intel",
-    "generated_at": "2026-06-07T12:25:48.811774+00:00",
+    "generated_at": "2026-06-09T13:03:26.471529+00:00",
     "freshness": "breaking"
   },
   "stories": [
+    {
+      "story_id": "n21_multi_pillar__israel_launches_full_ground_operations_in_lebanon__hezbolla",
+      "headline": "ISRAEL LAUNCHES FULL GROUND OPERATIONS IN LEBANON — HEZBOLLAH DESTROYING IDF TANKS",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Defense contractors: Israel will need resupply, US defense stocks re-rate on sustained Middle East engagement. Oil: Lebanon escalation keeps a floor under oil prices even if OPEC+ tries to cap them. G"
+      ],
+      "they_say": "Limited Israeli incursion to create buffer zone. Hezbollah degraded enough to not pose strategic threat. Diplomacy will contain it.",
+      "reality": "Israeli military leader is publicly saying full occupation is necessary — this is not a limited operation. Netanyahu appears to want escalation (per US officials). Hezbollah is actively destroying Israeli armor on live TV, rebutting the 'degraded' narrative. This is a multi-front escalation (Lebanon + Iran + Hormuz) that the market is not connecting as a single systemic risk.",
+      "thesis": "LONG defense stocks (RTX, LMT, NOC, GD). LONG oil (second derivative through Iran/Hormuz connection). SHORT Israeli shekel (ILS). LONG gold as geopolitical hedge.",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "LONG defense stocks (RTX, LMT, NOC, GD). LONG oil (second derivative through Iran/Hormuz connection). SHORT Israeli shekel (ILS). LONG gold as geopolitical hedge.",
+      "contradiction_score": 52,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Defense contractors: Israel will need resupply, US defense stocks re-rate on sustained Middle East engagement. Oil: Lebanon escalation keeps a floor under oil prices even if OPEC+ tries to cap them. Gold: geopolitical risk premium rises.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Defense contractors: Israel will need resupply, US defense stocks re-rate on sustained Middle East engagement. Oil: Lebanon escalation keeps a floor under oil prices even if OPEC+ tries to cap them.…",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$5.0B ↑ commodities",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "LONG defense stocks (RTX, LMT, NOC, GD). LONG oil (second derivative through Iran/Hormuz connection). SHORT Israeli shekel (ILS). LONG gold as geopolitical hedge.",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-07T12:25:48.811774+00:00",
+      "freshness": "developing"
+    },
+    {
+      "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
+      "headline": "Israeli Minister Ben-Gvir Urges Cabinet to Abduct Lebanese Women and Children as Psychological Warfare — Far-Right Escalation Signal",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Gold and VIX as structural hedges. This isn't a tradeable event in isolation, but it raises the tail probability of a Lebanon escalation event. Own optionality, not direction."
+      ],
+      "they_say": "Ben-Gvir is testing the Overton window — floating atrocity-level tactics to normalize incremental escalation. Even if the cabinet rejects this, the very proposal signals that Israeli far-right considers civilian hostage-taking a legitimate negotiating tool. This has immediate implications: (1) ICC/war crimes risk for Israeli leadership skyrockets, (2) Hezbollah propaganda victory — 'Israel openly admits it targets civilians,' (3) US/European diplomatic distancing accelerates (Trump warning 'you'll be on your own very soon' fits this pattern). The strategic effect: Israel is isolating itself internationally while escalating militarily.",
+      "reality": "Ben-Gvir is one minister — this may not reflect cabinet consensus or be adopted. The automatic Beirut strike trigger (earlier cabinet decision) is the real escalation mechanism, not this proposal. Ben-Gvir's statements are often theatrical posturing. However, the fact that he made this proposal in a cabinet session, not a tweet, suggests seriousness. Even rejected, the proposal poisons the well for any ceasefire negotiations — who negotiates with a government that considers abducting your children?",
+      "thesis": "LONG gold ($GLD), LONG VIX, SHORT Israeli shekel ($ILS), LONG WTI oil on escalation risk. The Ben-Gvir signal increases the probability of the Hezbollah rocket trigger firing — because Hezbollah will find it harder to show restraint against a government that openly discusses abducting their civilian",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "LONG gold ($GLD), LONG VIX, SHORT Israeli shekel ($ILS), LONG WTI oil on escalation risk. The Ben-Gvir signal increases the probability of the Hezbollah rocket trigger firing — because Hezbollah will find it harder to show restraint against a government that openly discusses abducting their civilian",
+      "contradiction_score": 60,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Gold and VIX as structural hedges. This isn't a tradeable event in isolation, but it raises the tail probability of a Lebanon escalation event. Own optionality, not direction.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Gold and VIX as structural hedges. This isn't a tradeable event in isolation, but it raises the tail probability of a Lebanon escalation event. Own optionality, not direction.",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$5.0B ↑ commodities",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "LONG gold ($GLD), LONG VIX, SHORT Israeli shekel ($ILS), LONG WTI oil on escalation risk. The Ben-Gvir signal increases the probability of the Hezbollah rocket trigger firing — because Hezbollah will find it harder to show restraint against a government that openly discusses abducting their civilian",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T13:03:26.472043+00:00",
+      "freshness": "breaking"
+    },
+    {
+      "story_id": "n21_multi_pillar__us_adp_nonfarm_29k_vs_35_7k_prior__labor_market_cracking",
+      "headline": "US ADP Nonfarm +29K vs +35.7K Prior — Labor Market Cracking as Inflation Expectations Rise 3rd Month Straight",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Long duration (TLT) as the stagflation trade. Gold as the inflation hedge. Short financials as rate expectations repivot. If this is the start of a weak labor trend, the Fed is trapped — and that mean"
+      ],
+      "they_say": "The labor market is rolling over while inflation stays sticky. Fed Chair Warsh faces a no-win: rate cuts would feed inflation, rate hikes would crash employment. Markets are pricing a Fed hold in June (per RTRS survey at 11:06) but this ADP print starts the clock on cut expectations. Stagflation is the hardest macro environment for risk assets — equities sell off, bonds rally (rates lower), gold holds, commodities bifurcate. This ADP print is the first hard data point confirming the stagflation thesis.",
+      "reality": "ADP is notoriously volatile and often diverges from NFP. The prior month's NFP may tell a different story. But the directional trend (weakening) combined with rising inflation expectations is structurally bearish for risk. If NFP confirms weakness on Friday, the market reprices rate cuts aggressively — which would be USD-negative and gold-positive.",
+      "thesis": "LONG bonds (TLT, ZN), LONG gold (GLD), SHORT financials (rate cut = margin compression), SHORT small caps (labor cost pressure). If NFP confirms ADP weakness Friday = aggressive curve steepening.",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "LONG bonds (TLT, ZN), LONG gold (GLD), SHORT financials (rate cut = margin compression), SHORT small caps (labor cost pressure). If NFP confirms ADP weakness Friday = aggressive curve steepening.",
+      "contradiction_score": 59,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Long duration (TLT) as the stagflation trade. Gold as the inflation hedge. Short financials as rate expectations repivot. If this is the start of a weak labor trend, the Fed is trapped — and that means gold to new highs.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Long duration (TLT) as the stagflation trade. Gold as the inflation hedge. Short financials as rate expectations repivot. If this is the start of a weak labor trend, the Fed is trapped — and that…",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$5.0B ↑ commodities",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "LONG bonds (TLT, ZN), LONG gold (GLD), SHORT financials (rate cut = margin compression), SHORT small caps (labor cost pressure). If NFP confirms ADP weakness Friday = aggressive curve steepening.",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T13:03:26.471960+00:00",
+      "freshness": "breaking"
+    },
+    {
+      "story_id": "n21_multi_pillar__israel_cabinet_any_lebanon_rocket__automatic_beirut_strike",
+      "headline": "Israel Cabinet: Any Lebanon Rocket = Automatic Beirut Strike Without Approval — Escalation Switch Removed",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Structural long oil/gold. The 'automatic trigger' is a volatility cliff — traders should own optionality (VIX calls, OTM oil calls) for tail risk. If no trigger today, premium decays; but if it fires,"
+      ],
+      "they_say": "Israel has removed the human/political brake on escalation with Lebanon. Previously, each Beirut strike required cabinet-level approval. Now any Hezbollah rocket triggers automatic retaliation — dramatically increasing probability of a wider Israel-Hezbollah-Iran war. Trump's warning suggests US is distancing itself from Israeli operations. Hormuz Apache crash adds friction point — US military presence near Iran's chokepoint. Tyre evacuation order signals ground ops are expanding.",
+      "reality": "Hezbollah has shown restraint — no launches crossing into Israel were reported as of the cabinet statement. Asymmetric deterrence: Hezbollah knows any rocket triggers catastrophic retaliation. But rogue actors / smaller factions could fire and trigger the mechanism. Trump's warning may restrain Netanyahu, not embolden him.",
+      "thesis": "LONG WTI crude ($CL), LONG gold ($GLD), LONG defense ($LMT, $GD), LONG VIX futures. Conditional LONG on any Lebanon launch confirmation.",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "LONG WTI crude ($CL), LONG gold ($GLD), LONG defense ($LMT, $GD), LONG VIX futures. Conditional LONG on any Lebanon launch confirmation.",
+      "contradiction_score": 54,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Structural long oil/gold. The 'automatic trigger' is a volatility cliff — traders should own optionality (VIX calls, OTM oil calls) for tail risk. If no trigger today, premium decays; but if it fires, payoff is multi-standard-deviation.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Structural long oil/gold. The 'automatic trigger' is a volatility cliff — traders should own optionality (VIX calls, OTM oil calls) for tail risk. If no trigger today, premium decays; but if it…",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$5.0B ↑ commodities",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "LONG WTI crude ($CL), LONG gold ($GLD), LONG defense ($LMT, $GD), LONG VIX futures. Conditional LONG on any Lebanon launch confirmation.",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T12:39:30.660314+00:00",
+      "freshness": "breaking"
+    },
+    {
+      "story_id": "n21_blockchain_agentic__blackrock_transferring_btc_to_exchanges_for_client_sales__o",
+      "headline": "BlackRock Transferring BTC to Exchanges for Client Sales — On-Chain Distribution Signal",
+      "sector": "crypto",
+      "pillar": "blockchain_agentic",
+      "paradigm_pillar": "blockchain_agentic",
+      "paradigm_implications": [
+        "Short-term BTC bearish. Use EU sanctions crypto ban narrative as catalyst for BTC dip-buying if $58K area holds. Institutions sell into strength, retail panics, then accumulation."
+      ],
+      "they_say": "Institutional selling pressure — BlackRock routing BTC to exchanges means ETFs or OTC desks are filling sell orders for clients. This is real supply hitting order books, not speculative thesis. BTC near recent ranges with distribution happening beneath the surface. Market absorbs or rolls over — depends on demand depth.",
+      "reality": "Could be internal wallet rebalancing, not client selling. BlackRock transfers don't always mean imminent market sales — some go to custodial reorgs. But pattern recognition from prior instances: when BlackRock sends to exchanges, price typically sees short-term pressure within hours.",
+      "thesis": "SHORT BTC short-term (1-4h), LONG puts on BTC ($48K-$50K strikes). Hedge with SHORT MSTR.",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "SHORT BTC short-term (1-4h), LONG puts on BTC ($48K-$50K strikes). Hedge with SHORT MSTR.",
+      "contradiction_score": 53,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Short-term BTC bearish. Use EU sanctions crypto ban narrative as catalyst for BTC dip-buying if $58K area holds. Institutions sell into strength, retail panics, then accumulation.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "crypto",
+        "projected": "Short-term BTC bearish. Use EU sanctions crypto ban narrative as catalyst for BTC dip-buying if $58K area holds. Institutions sell into strength, retail panics, then accumulation.",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$5.0B ↑ crypto",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "SHORT BTC short-term (1-4h), LONG puts on BTC ($48K-$50K strikes). Hedge with SHORT MSTR.",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T12:39:30.660230+00:00",
+      "freshness": "breaking"
+    },
+    {
+      "story_id": "n21_china_ascendancy__breaking_eu_proposes_biggest_sanctions_package_in_2_years",
+      "headline": "BREAKING: EU Proposes Biggest Sanctions Package in 2 Years — 90 Banks, 11 Crypto Platforms, LNG Tanker Ban, 170+ Positions",
+      "sector": "commodities",
+      "pillar": "china_ascendancy",
+      "paradigm_pillar": "china_ascendancy",
+      "paradigm_implications": [
+        "SHORT RSX/MOEX on headline. LONG European gas — LNG supply tightening is constructive for $NG. Crypto ban accelerates Russian BTC demand (capital flight into non-sanctionable assets) — contrarian LONG"
+      ],
+      "they_say": "EU is tightening the financial noose — targeting not just traditional banking but also crypto as a sanctions evasion channel. LNG tanker ban hits Russia's ability to sustain gas exports (floating storage/transport). Port sanctions target the 'shadow fleet' routing Russian energy. This is structural tightening, not symbolic. Combined with US Iran focus, Russia faces increasing financial isolation. Markets have NOT fully priced this — Russian equity/crypto exposure re-rating imminent.",
+      "reality": "Enforcement gap remains — crypto P2P/tumbling still possible. 90 banks may overlap with already-sanctioned entities. LNG ban phased — existing contracts may have grandfathering. Hungary/Slovakia may water down package. But direction is unambiguous: maximalist escalation.",
+      "thesis": "SHORT Russian equities & ADRs, SHORT Russian-linked crypto (USDT/RUB premium), LONG European gas ($NG, $TTF), LONG defense ($LMT, $GD, Rheinmetall), SHORT tanker stocks exposed to Russian routes",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "SHORT Russian equities & ADRs, SHORT Russian-linked crypto (USDT/RUB premium), LONG European gas ($NG, $TTF), LONG defense ($LMT, $GD, Rheinmetall), SHORT tanker stocks exposed to Russian routes",
+      "contradiction_score": 53,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "SHORT RSX/MOEX on headline. LONG European gas — LNG supply tightening is constructive for $NG. Crypto ban accelerates Russian BTC demand (capital flight into non-sanctionable assets) — contrarian LONG BTC.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "SHORT RSX/MOEX on headline. LONG European gas — LNG supply tightening is constructive for $NG. Crypto ban accelerates Russian BTC demand (capital flight into non-sanctionable assets) — contrarian…",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$5.0B ↑ commodities",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "SHORT Russian equities & ADRs, SHORT Russian-linked crypto (USDT/RUB premium), LONG European gas ($NG, $TTF), LONG defense ($LMT, $GD, Rheinmetall), SHORT tanker stocks exposed to Russian routes",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T12:39:30.659597+00:00",
+      "freshness": "breaking"
+    },
     {
       "story_id": "n21_multi_pillar__opec_meets_today__188k_bpd_increase_approved_from_july_bu",
       "headline": "OPEC+ MEETS TODAY — 188K BPD INCREASE APPROVED FROM JULY, BUT IRAN'S HORMUZ TOLL MAKES OPEC+ DECISION IRRELEVANT",
@@ -65,13 +287,15 @@
         "projected": "Oil producers: every dip from OPEC+ noise is a buying opportunity for energy equities. Sovereign wealth funds in Gulf states: their revenue per barrel rises even with the small quota increase…",
         "pace_multiplier": 1.0,
         "confidence_pct": 75,
-        "confidence_level": "medium"
+        "confidence_level": "medium",
+        "claim": "$5.0B ↑ commodities",
+        "confidence": "75%"
       },
       "capital_flow_implication": "FADE any oil dip from OPEC+ announcement. The OPEC+ 188k bpd figure will be used as a headline to sell oil — that's the entry. BUY the dip: LONG WTI/Brent. The dominant vector is Iran's Hormuz toll + Beirut strikes, not OPEC's tiny quota increase. SHORT bonds (TLT, ZB) — stagflation trade. LONG infl",
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-07T13:25:44.306398+00:00",
-      "freshness": "breaking"
+      "freshness": "developing"
     },
     {
       "story_id": "n21_multi_pillar__israel_strikes_beirut_suburbs__explosion_in_beirut_idf_att",
@@ -100,13 +324,15 @@
         "projected": "Defense contractors: Israel emergency resupply + potential US re-engagement. Oil: multi-front Middle East war keeps floor under prices hard. Gold: safe haven demand spikes. Cyber sector…",
         "pace_multiplier": 1.0,
         "confidence_pct": 75,
-        "confidence_level": "medium"
+        "confidence_level": "medium",
+        "claim": "$5.0B ↑ commodities",
+        "confidence": "75%"
       },
       "capital_flow_implication": "LONG defense primes (RTX, LMT, NOC, GD) immediately — Israel-Hizbollah + Iran = sustained Two-front US re-supply. LONG oil (second derivative — Lebanon escalation destabilizes broader region, complicates Gulf security). LONG gold. SHORT Israeli shekel (ILS). SHORT TLSA/AAPL/tech into Monday — risk-o",
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-07T13:25:44.306329+00:00",
-      "freshness": "breaking"
+      "freshness": "developing"
     },
     {
       "story_id": "n21_multi_pillar__iran_begins_charging_ships_1_5-2m_per_transit_through_strai",
@@ -135,13 +361,15 @@
         "projected": "Oil producers: structural revenue uplift from elevated risk premium. US shale (Permian, Bakken) becomes more competitive as Hormuz transit becomes costly. Tanker owners: rate re-pricing as war risk…",
         "pace_multiplier": 1.0,
         "confidence_pct": 75,
-        "confidence_level": "medium"
+        "confidence_level": "medium",
+        "claim": "$5.0B ↑ commodities",
+        "confidence": "75%"
       },
       "capital_flow_implication": "LONG crude oil (CL, COIL) aggressively — this adds a $3-8/bbl structural risk premium overnight. LONG tanker/shipping equities (STNG, FRO, TNK) — rates will spike as Hormuz risk premium loads. LONG USO, XLE, XOM, CVX, OXY. LONG gold (GLD, IAU) as geopolitical hedge. LONG crypto exposure via COIN or ",
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-07T13:25:44.305960+00:00",
-      "freshness": "breaking"
+      "freshness": "developing"
     },
     {
       "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles",
@@ -172,7 +400,8 @@
         "asset_class": "equities",
         "claim": "$5.0B ↑ equities",
         "confidence": "65%"
-      }
+      },
+      "generated_at": "2026-06-09T13:03:26.472079+00:00"
     },
     {
       "story_id": "n21_china_ascendancy__opec_meeting_today__expected_to_approve_188k_bpd_productio",
@@ -209,7 +438,7 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-07T12:25:48.811717+00:00",
-      "freshness": "breaking"
+      "freshness": "developing"
     },
     {
       "story_id": "n21_multi_pillar__iran_launches_drones_toward_strait_of_hormuz__us_shoots_dow",
@@ -246,161 +475,7 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-07T12:25:48.811425+00:00",
-      "freshness": "breaking"
-    },
-    {
-      "story_id": "n21_china_ascendancy__china_maritime_enforcement_east_of_taiwan_strategic_opportunism",
-      "headline": "China Extends Maritime Patrols East of Taiwan While US Is Distracted by Middle East — Strategic Opportunism in Motion",
-      "sector": "geopolitics",
-      "paradigm_pillar": "china_ascendancy",
-      "paradigm_implications": [
-        "Taiwan semiconductor supply chain (TSM, SMH) faces binary risk if boarding/interdiction escalates. China's incremental regulatory layering east of Taiwan mirrors South China Sea 'lawfare' playbook — establish administrative control before physical enforcement. US capacity to respond is degraded by simultaneous Iran-Lebanon-Israel commitments. Japan-Philippines talks timing suggests Beijing is leveraging the US strategic distraction window."
-      ],
-      "they_say": "China's Maritime Safety Administration says this is routine maritime traffic law enforcement. No vessels boarded. Framed as administrative jurisdiction exercise within China's claimed exclusive economic zone. Not an escalation.",
-      "reality": "This is the FIRST time China has publicly named a specific time, place, and legal basis for maritime enforcement operations east of Taiwan. The transparency itself is the signal — Beijing is laying evidentiary and legal groundwork for future interdiction and boarding operations. The timing (coinciding with Japan-Philippines security talks while the US is locked into a multi-front Middle East war) is strategic opportunism by design. No boarding has occurred yet, but the regulatory infrastructure for it is now operational. This mirrors the South China Sea lawfare model: establish administrative jurisdiction first, enforce later.",
-      "thesis": "SHORT Taiwan semiconductor exposure (TSM, SMH) as asymmetric tail hedge — boarding event would trigger -5-10% gap at Asia open. LONG gold (GLD) as cross-Pacific hedge. LONG VIX as systemic hedge. If no boarding by +48h, fade the short. The structural shift is real but the timing of enforcement is uncertain.",
-      "actors": ["China Maritime Safety Administration", "PLA Navy", "Taiwan (ROC)", "Japan", "Philippines", "US Indo-Pacific Command"],
-      "horizon": "24-48h (Monday Asia open through Tuesday)",
-      "confidence": "medium",
-      "invalidation_trigger": "No boarding or interdiction within 72 hours. China announces completion of patrol and return to port. US announces additional naval presence in Taiwan Strait.",
-      "portfolio_implication": "Taiwan semiconductor supply chain (TSM, SMH) faces binary risk. Gold benefits from cross-Asia safe-haven demand. US defense sector (LMT, RTX) benefits if Taiwan reinforcement materializes. Asia-exposed equities (EWT, EEM) face risk premium widening.",
-      "capital_flow_implication": "SHORT Taiwan semis on asymmetric tail risk. LONG gold as cross-Pacific geopolitical hedge. LONG VIX for systemic risk.",
-      "image_url": "",
-      "capital_flow": {
-        "direction": "outflow",
-        "amount_b": 3.0,
-        "asset_class": "equities",
-        "projected": "Taiwan semis outflow if boarding occurs. Gold safe-haven inflow as hedge.",
-        "pace_multiplier": 0.8,
-        "confidence_pct": 65,
-        "confidence_level": "medium",
-        "claim": "$3.0B ↓ Taiwan equities (potential)",
-        "confidence": "65%"
-      },
-      "extremum": "",
-      "generated_at": "2026-06-07T13:59:06.876564+00:00",
-      "freshness": "background",
-      "source": "telegram_intel"
-    },
-    {
-      "story_id": "n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_ipo_at_risk",
-      "headline": "Google Signs $920M/Month AI Compute Deal With SpaceX — $75B IPO at 2x Valuation Amid Risk-Off Macro",
-      "sector": "tech",
-      "paradigm_pillar": "abundance_tech",
-      "paradigm_implications": [
-        "Space economy infrastructure (satellite compute hosting) crossing into AI compute market — SpaceX becomes a compute provider, not just a launch provider. AI compute commoditization continues: hyperscalers locking in non-traditional compute partners signals capacity constraints in traditional data centers. SpaceX's $4.28B quarterly loss on $4.69B revenue ($0.91 lost per dollar earned) makes the $1.8T+ implied valuation unsustainable without deep-pocketed anchor clients like Google. IPO timing (June 12) collides with risk-off macro from Middle East escalation — stagflation concerns will pressure growth/tech multiples."
-      ],
-      "they_say": "Google locking in $920M/month AI compute capacity from SpaceX is a bullish signal for the space economy and AI infrastructure. SpaceX's June 12 IPO is oversubscribed at $75B+. The deal validates SpaceX as a compute platform beyond launch.",
-      "reality": "SpaceX is losing $0.91 for every dollar of revenue ($4.28B loss on $4.69B in Q1). The Google deal ($11B annualized) barely covers the loss rate. At $1.8T+ implied total valuation on $4.69B quarterly revenue, this is a 96x quarterly revenue multiple — extreme even by tech standards. The IPO dates for June 12, right as: (A) Iran imposes $1.5-2M/tanker Hormuz toll driving oil prices higher; (B) Israel bombed Beirut crossing Iran's red line; (C) the Fed is signaling rates higher for longer through end-2026. Risk-off macro and a looming stagflation narrative are exactly the wrong conditions for a capital-intensive, pre-profitability IPO at a premium valuation. Google's desperation for compute capacity is real (AI arms race) but the deal economics don't rescue SpaceX's unit economics.",
-      "thesis": "CAUTIOUS on SpaceX IPO allocation — risk-off macro headwinds + extreme valuation + negative unit economics are a dangerous combination. The Google deal is a lifeline, not a turnaround. FADE any IPO pop. The AI compute demand is real but the vehicle (SpaceX) has structural profitability problems. LONG traditional AI compute infrastructure plays (AMZN/AWS, MSFT/Azure) as safer AI compute exposure.",
-      "actors": ["Google (Alphabet)", "SpaceX", "xAI", "Elon Musk", "IPO underwriters", "AI hyperscalers (AMZN, MSFT, GOOGL)"],
-      "horizon": "1-2 weeks (IPO June 12, macro risk-off window)",
-      "confidence": "medium",
-      "invalidation_trigger": "SpaceX demonstrates positive unit economics in next filing. Macro risk-off reverses (Iran de-escalation). IPO prices at or above $75B and holds.",
-      "portfolio_implication": "Avoid IPO allocation at $75B+ valuation. LONG established AI compute providers (MSFT, AMZN) on structural demand. SHORT if macro risk-off deepens further. The $11B Google deal does not fix the $4.28B quarterly loss.",
-      "capital_flow_implication": "Risk-off macro headwinds suppress demand for pre-profitability tech IPOs. Capital flows to AI compute incumbents (MSFT, AMZN, GOOGL) and away from unprofitable space infrastructure plays.",
-      "image_url": "",
-      "capital_flow": {
-        "direction": "outflow",
-        "amount_b": 2.0,
-        "asset_class": "equities",
-        "projected": "IPO demand dampened by risk-off macro. Capital rotating into established AI compute hyperscalers.",
-        "pace_multiplier": 0.6,
-        "confidence_pct": 60,
-        "confidence_level": "medium",
-        "claim": "$2.0B ↓ growth-tech IPO demand (potential)",
-        "confidence": "60%"
-      },
-      "extremum": "",
-      "generated_at": "2026-06-07T13:59:06.876564+00:00",
-      "freshness": "background",
-      "source": "telegram_intel"
-    },
-    {
-      "story_id": "n21_multi_pillar__eu_21st_sanctions_package_90_banks_11_crypto_lng_ban",
-      "headline": "EU PROPOSES BIGGEST SANCTIONS PACKAGE IN 2 YEARS — 90 BANKS, 11 CRYPTO PLATFORMS, LNG TANKER BAN — SANCTIONS EFFECTIVENESS NARRATIVE CONTRADICTED",
-      "sector": "geopolitics",
-      "pillar": "multi_pillar",
-      "paradigm_pillar": "multi_pillar",
-      "paradigm_implications": [
-        "EU structural unity is stronger than consensus admits — the 21st package is the most comprehensive in 2 years, directly contradicting the 'EU is fragmented/weak' narrative",
-        "Crypto regulation meets geopolitics — 11 platform ban signals EU is willing to use crypto enforcement as sanctions tool, reshaping regulatory landscape for DeFi and RWA tokenization",
-        "LNG tanker ban creates structural European gas supply tightening independent of Russian pipeline flows — constructive for European energy security stocks and US LNG exporters"
-      ],
-      "they_say": "Consensus says EU sanctions are increasingly ineffective, watered down by Hungary and Slovakia. EU seen as fragmented, unable to act decisively on Russia sanctions fatigue. Crypto industry claims regulatory uncertainty is the norm in Europe.",
-      "reality": "The EU Commission (von der Leyen/Kallas) proposed the largest sanctions package in 2 years — 90 Russian banks sanctioned, 11 crypto platforms banned from transactions, prohibition on selling LNG tankers to Russia, sanctions on ports trading Russian energy resources, seafood and metals restrictions, 170+ individuals and entities total. This is structural tightening, not symbolic window-dressing. The crypto platform ban is especially significant — it directly targets the primary sanctions evasion channel and signals EU willingness to confront the crypto industry head-on. The LNG tanker ban hits Russia's ability to sustain gas exports through floating storage and transport. Combined with the US focus on Iran and Hormuz, Russia faces coordinated Western financial warfare at maximum intensity. Markets have NOT fully priced this — particularly the LNG supply tightening which compounds existing European energy stress at a time when Middle East oil supply is also at risk.",
-      "thesis": "FADE the 'EU is weak/fragmented' narrative. This package is maximalist and comprehensive. SHORT Russian equities/ADRs (RSX, MOEX). LONG European gas (TTF, NG) — LNG tanker restrictions structurally tighten supply. SHORT tanker equities exposed to Russian routes. LONG defense contractors (LMT, GD, Rheinmetall) — sustained European rearmament cycle. The crypto platform ban creates a bullish signal for Bitcoin as Russian capital flees sanctioned platforms into non-sanctionable hard assets — contrarian LONG BTC.",
-      "actors": [
-        "EU Commission (von der Leyen, Kallas)",
-        "Russian financial system / Central Bank",
-        "Russian crypto users / sanctions evasion network",
-        "LNG tanker operators / shadow fleet",
-        "Western defense contractors (LMT, GD, Rheinmetall)"
-      ],
-      "horizon": "24-48h (EU Council deliberation and formal adoption vote this week)",
-      "confidence": "high",
-      "invalidation_trigger": "Hungary/Slovakia water down package significantly. EU delays adoption indefinitely. Russia demonstrates successful crypto circumvention at scale through decentralized P2P channels.",
-      "portfolio_implication": "Russian equities (RSX, MOEX) re-price downward -5-10% on adoption. European gas prices (TTF, NG) gain structural premium as LNG tanker availability tightens — constructive for US LNG exporters. Defense contractors benefit from sustained European rearmament spending trajectory. Crypto: Russian capital seeking non-sanctionable assets benefits Bitcoin as flight-to-safety from sanctioned platforms.",
-      "capital_flow": {
-        "direction": "outflow",
-        "amount_b": 3.0,
-        "asset_class": "equities",
-        "projected": "Russian equities outflow $3B+. European gas inflow $2B+ on supply tightening. Defense sector inflow $4B+ on rearmament cycle.",
-        "pace_multiplier": 1.0,
-        "confidence_pct": 75,
-        "confidence_level": "high",
-        "claim": "$3.0B \u2193 Russian equities, $4.0B \u2191 defense, $2.0B \u2191 European gas",
-        "confidence": "75%"
-      },
-      "capital_flow_implication": "SHORT Russian equities/ADRs. LONG European gas. SHORT Russian-exposed tanker stocks. LONG defense contractors. CONTRARIAN LONG BTC as Russian capital flight destination.",
-      "image_url": "",
-      "extremum": "",
-      "generated_at": "2026-06-09T12:30:00.000000+00:00",
-      "freshness": "breaking",
-      "source": "telegram_intel"
-    },
-    {
-      "story_id": "n21_multi_pillar__israel_automatic_beirut_strike_no_approval_needed",
-      "headline": "ISRAEL CABINET REMOVES ESCALATION BRAKES — ANY LEBANON ROCKET NOW TRIGGERS AUTOMATIC BEIRUT STRIKE WITHOUT POLITICAL APPROVAL",
-      "sector": "commodities",
-      "pillar": "multi_pillar",
-      "paradigm_pillar": "multi_pillar",
-      "paradigm_implications": [
-        "Middle East escalation now follows tripwire logic, not deliberative escalation — fundamentally changes risk modeling for oil, gold, and defense assets",
-        "US strategic distancing from Israel (Trump warning Netanyahu 'you will be on your own') creates multi-polar dynamic where Israel acts autonomously, increasing regional unpredictability",
-        "Hormuz toll + Lebanon tripwire + Iran ballistic strikes form a three-dimensional escalation matrix the market treats as separate but is fundamentally interconnected systemic risk"
-      ],
-      "they_say": "The Israel-Lebanon situation is being managed through calibrated escalation. Previous Beirut strikes required cabinet-level approval, providing a human/political brake on escalation. Trump is reportedly warning Netanyahu, keeping diplomatic channels open.",
-      "reality": "Israel's cabinet decision fundamentally changes the escalation architecture. Previously, each Beirut-bound strike needed political-level sign-off — a natural brake on uncontrolled escalation. Now ANY launch from Lebanon crossing into Israeli territory automatically triggers military response in Beirut with ZERO political approval required. The human buffer is entirely removed. This is compounded by: (A) Trump warning Netanyahu 'you will be on your own very soon' if attacks on Iran continue — suggesting US is distancing; (B) a US Apache helicopter crashed near the Strait of Hormuz yesterday; (C) IDF issued evacuation order for the entire city of Tyre, signaling ground operations are expanding north of the Litani River. The mechanism is now binary: one Hezbollah rocket (even from a rogue faction unaffiliated with Hezbollah) triggers automatic Beirut strike = cascading escalation. The market has NOT priced this structural shift in decision-making architecture — it's still modeling gradual, calibrated escalation, not a hair-trigger tripwire mechanism.",
-      "thesis": "Structural LONG oil and gold. The automatic trigger is a volatility cliff — any Hezbollah rocket triggers multi-standard-deviation oil/gold spike. OWN optionality — VIX calls, OTM oil calls for tail risk that pays asymmetrically. LONG defense primes (LMT, GD, RTX). Hezbollah has shown restraint in the hours after the decision but the mechanism remains active 24/7. Risk premium builds on oil/gold even without trigger event.",
-      "actors": [
-        "Israel Cabinet / Netanyahu",
-        "IDF",
-        "Hezbollah / rogue Lebanese factions",
-        "Trump Administration",
-        "Iran"
-      ],
-      "horizon": "Ongoing — mechanism structurally active. Trigger event probabilistic, not guaranteed — but premium builds regardless.",
-      "confidence": "medium",
-      "invalidation_trigger": "Israel reverses cabinet decision. Verified ceasefire with Lebanon monitored by third party. Hezbollah publicly and verifiably commits to no-launch posture with zero-crossing enforcement.",
-      "portfolio_implication": "Crude oil (WTI/CL, Brent/COIL) gains structural +$3-5/bbl risk premium. Gold (GLD) safe-haven demand spikes. Defense contractors (LMT, RTX, GD) re-rate on sustained multi-front US engagement. VIX futures long as asymmetric tail hedge against trigger event. Short duration bonds as stagflation cocktail (oil spike + rates higher for longer) intensifies.",
-      "capital_flow": {
-        "direction": "inflow",
-        "amount_b": 5.0,
-        "asset_class": "commodities",
-        "projected": "Oil risk premium structural +$3-5/bbl embedding $5B+ in energy sector valuation. Gold safe-haven +$2B+ inflow. Defense sector re-rate +$5B+ on sustained engagement probability.",
-        "pace_multiplier": 1.0,
-        "confidence_pct": 70,
-        "confidence_level": "medium",
-        "claim": "$5.0B \u2191 commodities (oil/gold), $5.0B \u2191 defense equities",
-        "confidence": "70%"
-      },
-      "capital_flow_implication": "Capital floods into oil, gold, defense, VIX as structural hedge. Risk premium on Middle East assets widens permanently. Any trigger event = gap moves in oil (+$3-5/bbl) and VIX spikes.",
-      "image_url": "",
-      "extremum": "",
-      "generated_at": "2026-06-09T12:30:00.000000+00:00",
-      "freshness": "breaking",
-      "source": "telegram_intel"
+      "freshness": "developing"
     }
   ]
 }
