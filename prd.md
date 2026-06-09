@@ -68,6 +68,87 @@ Market Data Fetch (4h) → fetch_cot.py, fetch_ici.py, fetch_fred.py → market_
 | Mobile-first | min tap target 44px, no min-width below 390px |
 | Cache policy | Hashed assets: immutable 1y · HTML: must-revalidate · JSON: no-store |
 
+## Semantic Triangulation Architecture (v2.0)
+
+```
+                    ┌──────────────────────────┐
+                    │   Telegram Intel Monitor  │
+                    │   (every 30m)             │
+                    └──────────┬───────────────┘
+                               │
+                               ▼
+                    ┌──────────────────────────┐
+                    │   intel_to_stories.py     │
+                    │   · Entity extraction     │
+                    │   · Auto-tagging          │
+                    │   · Time-decay computing  │
+                    │   · Multi-persona gen     │
+                    │   · Cross-referencing     │
+                    └──────────┬───────────────┘
+                               │
+              ┌────────────────┼────────────────┐
+              ▼                ▼                ▼
+     ┌────────────┐   ┌────────────┐   ┌────────────┐
+     │ stories    │   │ flows      │   │ positions  │
+     │ .json      │   │ .json      │   │ (future)   │
+     └─────┬──────┘   └─────┬──────┘   └─────┬──────┘
+           │                │                │
+           └────────┬───────┴────────┬───────┘
+                    │                │
+                    ▼                ▼
+           ┌──────────────────────────────┐
+           │   GRAPH CONTRACT             │
+           │   · impacted_flows ↕         │
+           │   · narrative_drivers ↕      │
+           │   · associated_positions     │
+           │   · linked_positions         │
+           └──────────────┬───────────────┘
+                          │
+                          ▼
+           ┌──────────────────────────────┐
+           │   UI TRIANGULATION           │
+           │   · Linked flows in teasers  │
+           │   · Time-decay freshness %   │
+           │   · Multi-persona tabs       │
+           │   · Flow Nodes ↔ Stories     │
+           └──────────────────────────────┘
+```
+
+### Triangulation Schema
+
+Every entity in the system declares its links:
+
+| Entity | Required Link | Field |
+|---|---|---|
+| Story | → Flows it impacts | `impacted_flows[]` |
+| Story | → Positions it generates | `associated_positions[]` |
+| Flow | → Stories driving it | `narrative_drivers[]` |
+| Flow | → Positions from it | `linked_positions[]` |
+| Position | → Story that generated it | `derived_from_stories[]` |
+| Position | → Flow that generated it | `derived_from_flows[]` |
+
+### Time-Decay Model
+
+```
+freshness = e^(-ln(2) × hours_elapsed / half_life)
+half_life = horizon_hours × confidence_bonus
+
+Horizon     Half-life    Confidence bonus
+1-6h        3h           high=1.5×, medium=1.0×, low=0.7×
+6-24h       12h
+24-72h      36h
+1w+         84h
+structural  720h (30d)
+```
+
+### Multi-Persona Output Blocks
+
+| Block | Target | Style |
+|---|---|---|
+| `c_suite` | Macro Horizon | Structural, policy, supply-chain implications |
+| `quant` | Telemetry Feed | Raw data, velocity, correlations, zero fluff |
+| `degen` | Action Trigger | Direction, entry/stop, conviction, emoji-rich |
+
 ## Quality Gates (Pre-Deploy)
 
 - [ ] refresh_context.py §4.5 passes — all critical HTML elements present

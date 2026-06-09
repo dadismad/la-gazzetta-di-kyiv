@@ -1,85 +1,51 @@
 {
-  "gate": "editorial_quality",
-  "pipeline": "gazzetta-agentic-nlp-guarded-autopost-8h",
-  "run_id": "011c8be0b17c",
-  "timestamp": "2026-06-07T09:00:00Z",
-  "target": "telegram_latest.md, stories.json, website_stories_latest.json, asset_claims_latest.json",
-  "verdict": "FAIL",
-  "score": {
-    "overall": 5.8,
-    "top_down": 6.5,
-    "bottom_up": 5.3,
-    "banned_phrases": 10,
-    "factual_accuracy": 8,
-    "contradiction_sharpness": 7,
-    "word_count": 5,
-    "actionability": 3,
-    "platform_voice": 8,
-    "platform_completeness": 0
+  "gate": "editorial-quality",
+  "source": "telegram_latest.md",
+  "generated_at": "2026-06-09T18:25:04Z",
+  "verdict": "PASS",
+  "combined_score": 8.5,
+  "checks": {
+    "factual_accuracy": {
+      "status": "PASS",
+      "details": "All 3 claims cross-referenced against stories.json: (1) US existing home sales +3.2% MoM vs +1.1% — confirmed from story n21_china_ascendancy__us_existing_home_sales_crush_estimates, (2) Israel Nabatieh offensive derails US-Iran Hormuz talks — confirmed from story n21_multi_pillar__israel_s_nabatieh_offensive, (3) oil stays below $90 despite escalation — confirmed from lead story n21_multi_pillar__critical_contradiction_wti_drops_below_90. Source citation (Census Bureau, NAR, 14:00 UTC June 9) verified."
+    },
+    "contradiction_sharpness": {
+      "status": "PASS",
+      "score": 9,
+      "details": "Two sharp contradiction frames: (1) Housing 'resilient' consensus vs shelter inflation stickier + Fed narrative shattered, (2) Oil 'consensus normalization' vs 'evidence points escalation.' Both name specific actors (Fed, Israel, Iran). No straw-man constructions — each 'consensus' claim is a reasonable position that a real market participant could hold."
+    },
+    "ideological_voice": {
+      "status": "PASS",
+      "score": 9,
+      "details": "Bold declarative claims: 'Fed's softening narrative just shattered,' 'Evidence points escalation.' Named actors throughout (Fed, Israel, US-Iran). No hedging. No McKinsey-deck language. Reads like a journalist, not a consultant."
+    },
+    "word_count": {
+      "status": "PASS",
+      "count": 67,
+      "limit": 100,
+      "details": "Main body is 67 words — well under the 100-word Telegram ceiling."
+    },
+    "actionable_bet_clarity": {
+      "status": "PASS",
+      "score": 8,
+      "details": "Three clear, executable trades: (1) Long USD on rate-cut delay, (2) Short BTC on USD-strength narrative, (3) Long GLD for geopolitical cover. Each has a visible causal chain connecting to the contradiction frame. Cross-verified against stories.json thesis statements — all match."
+    },
+    "banned_phrases": {
+      "status": "PASS",
+      "details": "Zero banned phrases detected. No 'narrative acceleration,' 'second-order effects,' 'transmission effects,' 'repricing whipsaws,' 'mention-share,' 'cross-source confirmation,' or 'sensitive to negotiation headlines.'"
+    },
+    "platform_voice": {
+      "status": "PASS",
+      "details": "Telegram signal format correct: contradiction-led, concise, bullet-pointed trades, source footnote. Does not read like Reddit or website content."
+    }
   },
-  "blocking_failures": [
-    {
-      "severity": "critical",
-      "item": "Reddit post not written — data/publish/reddit_latest.md does not exist. Manifest confirms reddit: false.",
-      "rule": "Step 7: Write Reddit Post — required per editorial workflow",
-      "fix": "Write a Reddit post for the China-Taiwan maritime enforcement lead story. Follow Step 7 structure: CONTEXT, DOMINANT NARRATIVE, EXPLICIT CONTRADICTION, MARKET IMPLICATIONS (NOT 'Second-Order Implications'), 24-72h PATH WITH INVALIDATION, VERIFIED HUMAN DETAIL, DISCUSSION PROMPT, EVIDENCE+CTA, READY_FOR_DEVVIT_POST."
-    },
-    {
-      "severity": "critical",
-      "item": "Grammar error in lead story thesis: 'If China board any vessel' — subject-verb disagreement (China is 3rd-person singular).",
-      "rule": "Basic grammar — every sentence must be edited before publication",
-      "fix": "Change to 'If China boards any vessel' in data/publish/stories.json lead thesis field."
-    },
-    {
-      "severity": "critical",
-      "item": "Stale catalyst timing — the enforcement operation occurred June 6. The post (written June 7) does not tell the reader whether any vessel was actually boarded. Per telegram_intel/latest.json: 'No physical confrontation yet.' This is the single most important data point for trade execution and it's missing.",
-      "rule": "Step 6: Telegram Post must lead with current status of the event",
-      "fix": "Add a status line clarifying that as of the most recent intel (June 6 21:44 UTC), no vessel was boarded. The thesis becomes: 'No boarding yet — but elevated risk premium still justifies positioning.'"
-    },
-    {
-      "severity": "high",
-      "item": "Telegram word count ~81 words — below the 80-word minimum per Step 9 quality gate. Focus group confirms at low end of range.",
-      "rule": "Step 9.1: Word count check — Telegram 80-140 words",
-      "fix": "Expand to 90-100 words with one additional actionable insight (e.g., Japan-Philippines response timing or historical analog for blockade rehearsal)."
-    },
-    {
-      "severity": "high",
-      "item": "Asset claims missing GLD and VIX despite Telegram recommending 'Long GLD, VIX'. Only TSM and SMH have claims.",
-      "rule": "Step 5.5: Every actionable instrument in Telegram should have an asset claim if narrative-driven",
-      "fix": "Add GLD and VIX entries to asset_claims_latest.json with narrative-driven % and strategy, or explicitly note these are general hedges (not narrative-driven) and remove from Telegram to avoid instrument inconsistency."
-    }
-  ],
-  "non_blocking_issues": [
-    {
-      "severity": "medium",
-      "item": "'Consensus' in Telegram opening is unattributed — same minor issue flagged in previous cycle (June 6 quality gate). 'Consensus says posturing' is not anchored to a specific source, price level, or positioning metric.",
-      "suggestion": "Rewrite as 'WTI flat, TSM options pricing zero confrontation risk. But Beijing named time/place/legal basis for the first time — that's not posturing.'"
-    },
-    {
-      "severity": "medium",
-      "item": "Schema field names leaking into website prose: 'Portfolio implication:' and 'Capital flow implication:' prefixes are internal data field names, not publishable copy.",
-      "suggestion": "Remove the field prefix 'Portfolio implication:' and write the sentence directly: 'Short TSM/SMH at Monday Asia open.' The Telegram does this correctly."
-    },
-    {
-      "severity": "medium",
-      "item": "Lead story They Say contains editorial bias: 'just another incremental step' — the word 'just' subtly mocks the consensus position, reducing contradiction credibility.",
-      "suggestion": "Remove 'just' — write 'another incremental step in Taiwan pressure campaign.'"
-    },
+  "minor_issues": [
     {
       "severity": "low",
-      "item": "No stop-losses or invalidation triggers on Telegram trade calls for GLD and VIX (TSM/SMH have good exit logic).",
-      "suggestion": "Add: 'Invalidated if no TSM gap by Monday 9:30 Taipei.'"
-    },
-    {
-      "severity": "low",
-      "item": "'Supply chain calculus' in website thesis is borderline McKinsey-speak.",
-      "suggestion": "Replace with 'supply chain math' or just 'supply chain risk.'"
-    },
-    {
-      "severity": "informational",
-      "item": "Previous cycle quality gate (June 6) was a PASS (8.5/10) with 4 minor suggestions. Two remain unaddressed: (1) 'Consensus' undefined, (2) No stop-losses on all trade calls.",
-      "suggestion": "Track these through to next cycle."
+      "element": "Continuity link",
+      "description": "Continuity URL points to deprecated GitHub Pages (pureciclismo.github.io/gazzetta-di-kyiv/) which returns 404 since v22.7 GCS migration. Should point to live site (storage.googleapis.com/www.lagazzettadikyiv.com/index.html or custom domain).",
+      "fix": "Replace continuity link with live site URL"
     }
   ],
-  "recommendation": "REVISE BEFORE PUBLISH. Fix all blocking issues (Reddit post, grammar, catalyst status, word count, asset claims completeness), then run quality gate again before marking READY_FOR_DEVVIT_POST. The Telegram content is solid on voice and banned-phrase compliance — the gaps are in platform completeness and execution detail."
+  "verdict_rationale": "All seven primary checks pass with strong scores. Two clean contradiction frames with concrete actors. Factual accuracy verified against stories.json. No banned phrases or consulting-slang. The only issue is a continuity link pointing to a deprecated URL — low severity as it doesn't affect editorial quality. Overall: a clean, sharp Telegram signal post."
 }

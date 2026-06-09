@@ -2019,7 +2019,24 @@ async function populateTeasers() {
           const cf = s.capital_flow || {};
           const amtHtml = cf.amount_b ? `<span class="teaser-amount">$${cf.amount_b}B</span>` : '';
           const headline = (s.headline || '').slice(0, 80);
-          return `<a href="./story.html?id=${s.story_id || s.id || ''}" class="teaser-item">${amtHtml}${headline}</a>`;
+          // v2.0: Show linked flows/positions if present
+          let linkedHtml = '';
+          if (s.impacted_flows && s.impacted_flows.length) {
+            linkedHtml += ` <span class="teaser-linked">↔ ${s.impacted_flows.length} flow${s.impacted_flows.length > 1 ? 's' : ''}</span>`;
+          }
+          if (s.associated_positions && s.associated_positions.length) {
+            linkedHtml += ` <span class="teaser-linked">⚡ ${s.associated_positions.length} bet${s.associated_positions.length > 1 ? 's' : ''}</span>`;
+          }
+          // Time-decay freshness indicator
+          const td = s.time_decay || {};
+          const fresh = td.current_freshness;
+          let freshHtml = '';
+          if (fresh !== undefined) {
+            const pct = Math.round(fresh * 100);
+            const cls = fresh > 0.8 ? 'freshness-recent' : fresh > 0.4 ? 'freshness-today' : 'freshness-stale';
+            freshHtml = ` <span class="freshness-ago ${cls}">${pct}%</span>`;
+          }
+          return `<a href="./story.html?id=${s.story_id || s.id || ''}" class="teaser-item">${amtHtml}${headline}${linkedHtml}${freshHtml}</a>`;
         }).join('');
         if (countEl) countEl.textContent = items.length + ' stories';
         // Story freshness timestamp

@@ -300,7 +300,22 @@ body {
   margin-right: 6px;
   color: var(--green);
 }
-.teaser-item .teaser-amount.outflow { color: var(--red); }
+.teaser-item .teaser-badge-sell { color: var(--red); }
+/* v2.0: Triangulation — linked flows/positions */
+.teaser-linked {
+  font-size: 9px;
+  opacity: 0.65;
+  margin-left: 6px;
+  font-family: var(--sans);
+  color: var(--gold);
+  white-space: nowrap;
+}
+.teaser-linked:hover { opacity: 1; }
+.teaser-item .freshness-ago {
+  font-size: 9px;
+  margin-left: 6px;
+  font-family: var(--sans);
+}
 .teaser-item .teaser-ticker {
   font-family: var(--sans);
   font-size: 9px;

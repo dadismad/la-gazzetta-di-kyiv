@@ -217,7 +217,35 @@ for page, checks in critical_elements.items():
         print(f"    {ok(f'{page}: all elements present')}")
         pages_ok += 1
 
-# 4.5c: Live product page 200 check
+# 4.5c: Orphan detection — no stories without linked flows
+orphan_warn = 0
+try:
+    stories_file = os.path.join(PROJECT, "data", "stories.json")
+    flows_file = os.path.join(PROJECT, "data", "flows.json")
+    if os.path.exists(stories_file) and os.path.exists(flows_file):
+        import json as _json
+        with open(stories_file) as f: stories_d = _json.load(f)
+        with open(flows_file) as f: flows_d = _json.load(f)
+        flow_ids = {f.get("id", "") for f in flows_d.get("flows", [])}
+        flow_ids.update({f.get("story_id", "") for f in flows_d.get("flows", [])})
+        orphan_stories = []
+        for s in stories_d.get("stories", []):
+            impacted = s.get("impacted_flows", [])
+            sid = s.get("story_id", "")
+            if not impacted:
+                # Check if there's a flow with matching story_id
+                flow_match = f"flow_{sid}" in flow_ids
+                if not flow_match:
+                    orphan_stories.append(sid)
+        if orphan_stories:
+            print(f"    {warn(f'{len(orphan_stories)} orphaned stories (no linked flows)')}")
+            orphan_warn = len(orphan_stories)
+        else:
+            print(f"    {ok('zero orphaned stories')}")
+except Exception as e:
+    print(f"    {warn(f'Orphan check skipped: {e}')}")
+
+# 4.5d: Live product page 200 check
 import urllib.request
 product_pages = [
     "flow-nodes.html",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T15:46:34.522979+00:00",
+  "generated_at": "2026-06-09T16:11:16.089837+00:00",
   "lead": {
     "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
     "headline": "CRITICAL CONTRADICTION: WTI Drops Below $90 (-2%) Despite Israel-Iran War, Hormuz Toll, Beirut Bombing — Risk Premium Collapsing",
@@ -38,6 +38,287 @@
     "freshness": "breaking"
   },
   "stories": [
+    {
+      "story_id": "n21_multi_pillar__kuwait_discussing_hormuz_bypass_via_saudi_uae_pipelines__ei",
+      "headline": "Kuwait Discussing Hormuz Bypass via Saudi/UAE Pipelines + EIA Raises WTI Forecast to $88.32 — Blockade Biting Structurally",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Oil futures long with multi-week horizon. The Kuwait pipeline story is a 'tell' — when a major OPEC producer starts planning alternative infrastructure around a blockade, it means the blockade is expe"
+      ],
+      "they_say": "The Hormuz blockade is proving economically effective — Kuwait, a major OPEC producer (2.7M bpd exporter), is actively seeking alternative export routes through Saudi/UAE pipeline infrastructure. This is the first concrete evidence that the blockade is materially altering oil trade flows for a Gulf state. The EIA raising its WTI forecast by $2.64 confirms official US government recognition of structurally higher oil prices driven by the blockade and broader Middle East risk. Record supertanker orders indicate the shipping market is pricing in a permanently elevated risk premium for Hormuz transit. This is structurally bullish for oil prices (WTI $85-90 range) and tanker rates. The blockade is the Trump administration's primary leverage in Iran negotiations — its demonstrated effectiveness strengthens the 'no deal without blockade relief' position.",
+      "reality": "White House claims 'progress' on Iran deal (@markettwits 13:55 UTC) — if a deal materializes, blockade relief would remove the structural oil bid. Kuwait pipeline talks may be contingency planning (due diligence), not an imminent operational shift. Supertanker orders reflect 3+ year delivery timelines — they signal long-term expectations, not current disruption. The EIA forecast, while bullish, is backward-looking on risk assumptions and may not fully capture the IDF Iran readiness reversal from today (which came after the EIA publication cycle). The US Apache crash near Hormuz could be a pretext for either escalation (blame Iran) or de-escalation (withdraw assets from risk). The blockade is a US policy tool — Trump could lift it at any time with a phone call.",
+      "thesis": "LONG oil (structural thesis), LONG tanker equities, PAIR short airlines/consumer discretionary for demand-destruction hedge",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "LONG oil (structural thesis), LONG tanker equities, PAIR short airlines/consumer discretionary for demand-destruction hedge",
+      "contradiction_score": 58,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Oil futures long with multi-week horizon. The Kuwait pipeline story is a 'tell' — when a major OPEC producer starts planning alternative infrastructure around a blockade, it means the blockade is expected to persist. This is a structural oil bid the market hasn't fully priced because most participan",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Oil futures long with multi-week horizon. The Kuwait pipeline story is a 'tell' — when a major OPEC producer starts planning alternative infrastructure around a blockade, it means the blockade is…",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 75,
+        "confidence_level": "medium"
+      },
+      "capital_flow_implication": "LONG oil (structural thesis), LONG tanker equities, PAIR short airlines/consumer discretionary for demand-destruction hedge",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T16:11:16.089438+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [
+          "WTI"
+        ],
+        "geographies": [
+          "Kuwait",
+          "Saudi Arabia",
+          "South Korea",
+          "UAE"
+        ],
+        "actors": [
+          "OPEC",
+          "UN"
+        ],
+        "instruments": [
+          "futures"
+        ]
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Kuwait Discussing Hormuz Bypass via Saudi/UAE Pipelines + EIA Raises WTI Forecast to $88.32 — Blockade Biting Structural",
+          "body": "Structural assessment: White House claims 'progress' on Iran deal (@markettwits 13:55 UTC) — if a deal materializes, blockade relief would remove the structural oil bid. Kuwait pipeline talks may be contingency planning (due diligence), not an imminent operational shift. Supertanker orders reflect 3+ year delivery timelin. Capital repositioning of $5.0B identified in commodities. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "implication": "Board-level risk: commodities exposure requires long hedge within 72h."
+        },
+        "quant": {
+          "headline": "COMMODITIES flow: $5.0B inflow",
+          "body": "Raw telemetry — commodities $5.0B inflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
+          "metrics": {
+            "flow_velocity": 0.21,
+            "correlation_coeff": 0.65,
+            "z_score": 0.5
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG COMMODITIES $5.0B",
+          "body": "Directional: LONG. Flow: $5.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: Kuwait Discussing Hormuz Bypass via Saudi/UAE Pipelines + EIA Raises WTI Forecas",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+10-15%",
+            "conviction": "MEDIUM"
+          }
+        }
+      }
+    },
+    {
+      "story_id": "n21_multi_pillar__idf_declares_readiness_to_immediately_resume_iran_operations",
+      "headline": "IDF Declares Readiness to Immediately Resume Iran Operations + Tyre Under Full Evacuation — Two-Front Escalation Active",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Position oil and gold longs into US close. The weekend de-escalation narrative is dead — the IDF Iran readiness statement reverses it. If Tyre evacuation means a ground operation is imminent, oil gets"
+      ],
+      "they_say": "Israel is now fighting a confirmed two-front escalation — Lebanon ground war is intensifying (Tyre evacuation = major operational escalation) while simultaneously re-declaring the Iran strike option. The IDF Iran readiness statement is a direct reversal of yesterday's de-escalation stance. This creates a coherent pattern: the 'ceasefire' was tactical, not strategic. Markets have been pricing Iran risk down after weekend de-escalation signals (Trump calling off Netanyahu, Israel 'holding fire') — this IDF statement is a reversal of that re-pricing. Oil risk premium is underpriced relative to the trajectory. The Tyre evacuation indicates a ground operation is imminent or underway.",
+      "reality": "White House simultaneously claims 'progress' on Iran deal (@markettwits 13:55 UTC in prior scrape) — diplomatic channel still actively open. Trump's warning to Netanyahu ('you'll be on your own') suggests the US is actively restraining Israel, which has historically succeeded (2019, 2021). The IDF readiness statement may be positioning for negotiations rather than actual strikes. Netanyahu is known for making escalatory statements that don't materialize. The cabinet's automatic-Beirut response tripwire creates a mechanism Hezbollah may deliberately avoid triggering. US Apache crash was isolated, crew rescued — not an escalation signal by itself. Axios reported yesterday that Trump wants to end the war, Netanyahu wants to resume it — the gap between US and Israeli objectives creates a ceiling on how far Israel can escalate without US support.",
+      "thesis": "LONG oil, LONG gold, LONG defense, SHORT risk assets exposed to Middle East",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "LONG oil, LONG gold, LONG defense, SHORT risk assets exposed to Middle East",
+      "contradiction_score": 57,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Position oil and gold longs into US close. The weekend de-escalation narrative is dead — the IDF Iran readiness statement reverses it. If Tyre evacuation means a ground operation is imminent, oil gets a fear bid into Wednesday. LMT/GD have been consolidating — multi-front escalation is their catalys",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Position oil and gold longs into US close. The weekend de-escalation narrative is dead — the IDF Iran readiness statement reverses it. If Tyre evacuation means a ground operation is imminent, oil…",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 75,
+        "confidence_level": "medium"
+      },
+      "capital_flow_implication": "LONG oil, LONG gold, LONG defense, SHORT risk assets exposed to Middle East",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T16:11:16.088918+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [
+          "ETH",
+          "SOL",
+          "WTI",
+          "XAU"
+        ],
+        "geographies": [
+          "Iran",
+          "Israel",
+          "Lebanon"
+        ],
+        "actors": [
+          "Hezbollah",
+          "IDF",
+          "Netanyahu",
+          "Trump",
+          "UN"
+        ],
+        "instruments": [
+          "options"
+        ]
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "IDF Declares Readiness to Immediately Resume Iran Operations + Tyre Under Full Evacuation — Two-Front Escalation Active",
+          "body": "Structural assessment: White House simultaneously claims 'progress' on Iran deal (@markettwits 13:55 UTC in prior scrape) — diplomatic channel still actively open. Trump's warning to Netanyahu ('you'll be on your own') suggests the US is actively restraining Israel, which has historically succeeded (2019, 2021). The IDF r. Capital repositioning of $5.0B identified in commodities. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "implication": "Board-level risk: commodities exposure requires long hedge within 72h."
+        },
+        "quant": {
+          "headline": "COMMODITIES flow: $5.0B inflow",
+          "body": "Raw telemetry — commodities $5.0B inflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
+          "metrics": {
+            "flow_velocity": 0.21,
+            "correlation_coeff": 0.65,
+            "z_score": 0.5
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG COMMODITIES $5.0B",
+          "body": "Directional: LONG. Flow: $5.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: IDF Declares Readiness to Immediately Resume Iran Operations + Tyre Under Full E",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+10-15%",
+            "conviction": "MEDIUM"
+          }
+        }
+      }
+    },
+    {
+      "story_id": "n21_multi_pillar__s_p_nasdaq_break_below_friday_s_low__live_breakdown_during",
+      "headline": "S&P/Nasdaq Break Below Friday's Low — LIVE Breakdown During US Trading",
+      "sector": "equities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Short SPY/QQQ for remainder of US session. If Friday low break holds through 21:00 UTC close, the gap-down open tomorrow is the momentum follow-through trade. VIX calls as hedge — if VIX breaches 20, "
+      ],
+      "they_say": "The selloff is attributed to accumulated geopolitical risk premium (Iran multi-front escalation, Israel-Lebanon ground war, Hormuz blockade persistence, Russia-Ukraine deep strikes) finally hitting a tipping point at a vulnerable technical level. The existing home sales beat (3.2% vs 1.1% est) pushed rate-cut expectations back, adding macro pressure. Consensus calls this an 'orderly pullback' but the Friday low break objectively changes the technical structure — if it holds through close, momentum shorts will accumulate.",
+      "reality": "No single catalyst means this could be algorithmic stop-loss cascades rather than genuine repricing. S&P was only ~2% off all-time highs before this break. SpaceX IPO is massively oversubscribed (markettwits 15:19), implying risk appetite in high-conviction tech names hasn't collapsed. Japan BOJ rate hike expectations (markettwits 14:49) may be contributing via yen carry trade unwinding. If this is purely positioning/technical, the dip could reverse just as fast — especially if a headline catalyst doesn't materialize.",
+      "thesis": "SHORT indices on Friday low breakdown, SCALP long if S&P reclaims Friday low within 30-60 min",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "SHORT indices on Friday low breakdown, SCALP long if S&P reclaims Friday low within 30-60 min",
+      "contradiction_score": 55,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Short SPY/QQQ for remainder of US session. If Friday low break holds through 21:00 UTC close, the gap-down open tomorrow is the momentum follow-through trade. VIX calls as hedge — if VIX breaches 20, panic options buying accelerates. Pair with oil longs for the stagflation hedge.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "equities",
+        "projected": "Short SPY/QQQ for remainder of US session. If Friday low break holds through 21:00 UTC close, the gap-down open tomorrow is the momentum follow-through trade. VIX calls as hedge — if VIX breaches…",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 75,
+        "confidence_level": "medium"
+      },
+      "capital_flow_implication": "SHORT indices on Friday low breakdown, SCALP long if S&P reclaims Friday low within 30-60 min",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T16:11:16.085777+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [
+          "NDX",
+          "SPX",
+          "VIX",
+          "WTI"
+        ],
+        "geographies": [],
+        "actors": [
+          "UN"
+        ],
+        "instruments": [
+          "options"
+        ]
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "S&P/Nasdaq Break Below Friday's Low — LIVE Breakdown During US Trading",
+          "body": "Structural assessment: No single catalyst means this could be algorithmic stop-loss cascades rather than genuine repricing. S&P was only ~2% off all-time highs before this break. SpaceX IPO is massively oversubscribed (markettwits 15:19), implying risk appetite in high-conviction tech names hasn't collapsed. Japan BOJ rat. Capital repositioning of $5.0B identified in equities. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "implication": "Board-level risk: equities exposure requires long hedge within 72h."
+        },
+        "quant": {
+          "headline": "EQUITIES flow: $5.0B inflow",
+          "body": "Raw telemetry — equities $5.0B inflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
+          "metrics": {
+            "flow_velocity": 0.21,
+            "correlation_coeff": 0.65,
+            "z_score": 0.5
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG EQUITIES $5.0B",
+          "body": "Directional: LONG. Flow: $5.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: S&P/Nasdaq Break Below Friday's Low — LIVE Breakdown During US Trading",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+10-15%",
+            "conviction": "MEDIUM"
+          }
+        }
+      }
+    },
     {
       "story_id": "n21_multi_pillar__ukraine_assassinates_russian_colonel_missile_supply_chief",
       "headline": "Ukraine Assassinates Russian Colonel (Missile Supply Chief) in Moscow — Zelensky Promises Massive Drone/Rocket Surge",
@@ -826,92 +1107,6 @@
       "source": "telegram_intel",
       "generated_at": "2026-06-07T12:25:48.811425+00:00",
       "freshness": "developing"
-    },
-    {
-      "story_id": "n21_eu_fragmentation__eu_migration_pact_june_12_deadline_fortress_europe",
-      "headline": "EU Migration Pact Goes Live June 12 — 21,000 Relocations, €420M Payments, Third-Country Deportation Centres Test Bloc Solidarity",
-      "sector": "geopolitics",
-      "pillar": "eu_fragmentation",
-      "paradigm_pillar": "eu_fragmentation",
-      "paradigm_implications": [
-        "Short EUR via EUR/USD if north-south implementation rift widens (Italy/Greece vs Germany/Netherlands). Long European defense/security contractors benefiting from border fortification budgets. Short EU periphery bonds (BTPs, Greek) if relocation quotas trigger political crises in receiving states."
-      ],
-      "they_say": "The EU Pact on Migration and Asylum, becoming fully operational June 12, 2026, is framed by Brussels as a 'common European solution' based on 'solidarity, responsibility, and respect of human rights.' Illegal border crossings fell 26% in 2025 compared to 2024 — the Commission cites this as proof the Pact works before it's even fully live. The 21,000 mandatory relocations and €420M contribution mechanism are presented as burden-sharing that preserves Schengen. Markets ignore EU migration policy as a slow-burn political issue, not a market-moving event.",
-      "reality": "The Pact is a FRACTURE mechanism disguised as a unity instrument. Three contradictions: (1) 'Solidarity' is compelled — member states must either relocate migrants or pay €20,000 per slot. This is a fine system, not solidarity, and will inflame north-south tensions. (2) The expanded 'safe country' list (Bangladesh, Colombia, Egypt, India, Morocco, Tunisia, Kosovo) explicitly fast-tracks deportations to nations with documented human rights abuses — Amnesty calls it a 'refugee protection crisis.' (3) Third-country deportation centres outside EU borders create a legal black hole that will face endless court challenges, paralysing the system. The June 12 deadline is arriving just as Europe faces a renewed migration surge from the Middle East crisis (Iran-Israel war, Lebanon ground operations, Hormuz blockade). The Pact's first real test will be simultaneous with a humanitarian crisis. If Italy or Greece refuse quotas, Schengen's future is directly threatened.",
-      "thesis": "SHORT EUR/USD — the Pact implementation will trigger north-south political crisis within 30 days as frontline states resist relocation quotas. LONG European border security stocks. SHORT EU periphery bonds (BTPs) on political risk premium. LONG gold as hedge against EU political instability. If Italy or Hungary openly defy the relocation mechanism, expect EUR -2% and periphery spread widening of 50-100bps.",
-      "actors": [],
-      "horizon": "3-30 days",
-      "confidence": "medium",
-      "tier": "DEVELOPING",
-      "actionable_trade": "SHORT EUR/USD — the Pact implementation will trigger north-south political crisis within 30 days. LONG European border security stocks. SHORT EU periphery bonds (BTPs) on political risk premium.",
-      "contradiction_score": 58,
-      "invalidation_trigger": "Narrative reversal or event resolution",
-      "portfolio_implication": "Short EUR via EUR/USD if north-south implementation rift widens (Italy/Greece vs Germany/Netherlands). Long European defense/security contractors benefiting from border fortification budgets. Short EU periphery bonds (BTPs, Greek) if relocation quotas trigger political crises in receiving states.",
-      "capital_flow": {
-        "claim": "$15.0B ↓ EUR/USD on political fragmentation risk",
-        "direction": "outflow",
-        "amount": 15.0,
-        "amount_b": 15.0,
-        "denomination": "USD",
-        "asset_class": "FX",
-        "pace": "gradual",
-        "pace_multiplier": 1.0,
-        "projected": "EUR/USD selloff if frontline states resist quotas. Expected 30-day move: 2-3% EUR depreciation against USD as political risk premium reprices.",
-        "confidence": "65%",
-        "confidence_pct": 65,
-        "confidence_level": "medium",
-        "positioning": "Short EUR/USD, long gold, short EU periphery bonds"
-      },
-      "capital_flow_implication": "SHORT EUR/USD, SHORT EU periphery bonds (BTPs), LONG gold",
-      "evidence": [],
-      "source": "web_search",
-      "generated_at": "2026-06-09T15:46:34.522679+00:00",
-      "freshness": "breaking",
-      "image_url": "",
-      "extremum": "Pillar: eu_fragmentation. This is the highest-contradiction EU story available — the Pact arrives as a unity tool during a fragmentation event (simultaneous Middle East crisis causing migration surge). If the mechanism triggers an open north-south breach, it validates the eu_fragmentation thesis at maximum velocity."
-    },
-    {
-      "story_id": "n21_dollar_decline__dollar_reserve_share_hits_30_year_low_brics_gold_surge",
-      "headline": "CONTRADICTION: Dollar Share of Global Reserves Hits 56.32% — Lowest Since IMF Tracking Began (1995), Yet Markets Price USD as Unassailable",
-      "sector": "macro",
-      "pillar": "dollar_decline",
-      "paradigm_pillar": "dollar_decline",
-      "paradigm_implications": [
-        "Long gold ($GLD, physical) as the primary beneficiary of reserve diversification — central bank buying is structural not cyclical. Long BTC as non-sovereign reserve asset alternative. Short USD index via DXY puts on 6-12 month horizon. Long BRICS currency basket proxies. Short US Treasury duration if foreign demand structurally declines — the 'exorbitant privilege' is being priced in, not priced out."
-      ],
-      "they_say": "The USD remains the world's dominant reserve currency with no viable competitor. The euro is structurally impaired (EU fragmentation), the yuan is not convertible or freely tradeable, and gold is too volatile to be a reserve asset. BTC is too small. The 'de-dollarization' narrative is overblown — the USD share decline from 72% (2001) to 56% is gradual, orderly, and simply reflects the natural diversification of a multi-polar world. Markets continue to price USD assets as the ultimate safe haven. DXY above 104. The Fed's rate advantage keeps capital flowing into USD.",
-      "reality": "Eight consecutive quarters of USD reserve decline is not noise — it's a TREND. IMF COFER data shows USD at 56.32% as of Q4 2025. Central banks bought 1,000+ tonnes of gold annually for THREE consecutive years — first time in history. BRICS nations accounting for 73% of purchases. Yuan-settled payments at all-time highs. BRICS is launching a gold-backed digital 'Unit' settlement instrument. The contradiction: markets treat this as a slow-burn academic debate while the actual diversification is accelerating beneath the surface. Central banks managing $12 trillion in reserves are quietly rotating. When the marginal buyer of US Treasuries (central banks) reduces demand, the funding cost of the US deficit rises — and THAT is the transmission mechanism that would shock markets. A 1% decline in foreign demand for Treasuries would require ~$200B in additional domestic absorption, pushing yields higher. This is a structural bearish thesis for long-duration Treasuries that the market is NOT pricing because reserve status feels permanent.",
-      "thesis": "LONG gold (GLD, PHYS, SGOL) — central bank buying creates persistent demand floor. The 1,000+ tonne/year pace is structural, driven by sanctions risk (Russia frozen reserves were a wake-up call). SHORT DXY on 6-12 month horizon — USD strength is cyclical (rate differential), weakening as Fed cuts. LONG BTC as non-sovereign reserve diversification beneficiary. SHORT TLT (long-duration Treasuries) on structural foreign demand erosion. The trigger for market repricing: any BRICS+ announcement of the 'Unit' settlement instrument, or a G7 nation publicly diversifying reserves.",
-      "actors": [],
-      "horizon": "6-12 months",
-      "confidence": "medium",
-      "tier": "ALIGNED",
-      "actionable_trade": "LONG gold (GLD, PHYS), SHORT DXY on 6-12 month horizon, LONG BTC, SHORT TLT on structural foreign demand erosion thesis",
-      "contradiction_score": 60,
-      "invalidation_trigger": "Narrative reversal or event resolution",
-      "portfolio_implication": "Long gold ($GLD, physical) as the primary beneficiary of reserve diversification — central bank buying is structural not cyclical. Long BTC as non-sovereign reserve asset alternative. Short USD index via DXY puts on 6-12 month horizon. Long BRICS currency basket proxies. Short US Treasury duration if foreign demand structurally declines.",
-      "capital_flow": {
-        "claim": "$200B+ structural rotation out of USD reserves annually, into gold and non-dollar assets",
-        "direction": "outflow",
-        "amount": 200.0,
-        "amount_b": 200.0,
-        "denomination": "USD",
-        "asset_class": "FX",
-        "pace": "gradual",
-        "pace_multiplier": 1.0,
-        "projected": "Central bank reserve diversification at $12T AUM — every 1% shift = $120B. At current trajectory, USD losing ~1.5-2% share annually implies $200B+ annual outflows from USD assets. Gold purchases of 1,000+ tonnes/year = ~$75B annual inflow into gold alone, excluding other asset classes.",
-        "confidence": "70%",
-        "confidence_pct": 70,
-        "confidence_level": "medium",
-        "positioning": "Long gold, long BTC, short DXY, short TLT"
-      },
-      "capital_flow_implication": "LONG gold, LONG BTC, SHORT DXY, SHORT TLT",
-      "evidence": [],
-      "source": "web_search",
-      "generated_at": "2026-06-09T15:46:34.522972+00:00",
-      "freshness": "developing",
-      "image_url": "",
-      "extremum": "Pillar: dollar_decline. The USD reserve share decline to 56.32% (30-year low) combined with record central bank gold buying (1,000+ tonnes x3 years) represents the strongest structural signal for the dollar_decline thesis. The market is pricing USD as permanently dominant — this is the gap. The transmission mechanism (Treasury funding) makes this market-relevant, not just academic."
     }
   ]
 }
