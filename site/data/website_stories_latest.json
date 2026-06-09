@@ -1,69 +1,45 @@
 {
-  "generated_at": "2026-06-05T15:46:00Z",
+  "generated_at": "2026-06-09T13:20:00Z",
   "stories": [
     {
-      "headline": "India RBI Faces Rate-Hike Test as Rupee Slides and Inflation Sticks",
-      "thesis": "India's central bank is caught between rate-hike pressure from sticky inflation and growth fears from a weakening rupee. Rate-hike bets build as pricey oil and weak rupee stoke inflation risks.",
-      "sector": "macro",
-      "source_count": 3,
-      "setup_id": "n21_macro",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/India_roadway_map.svg"
+      "headline": "WTI Drops Below $90 (-2%) While War Escalates Across 3 Fronts — Most Contradictory Signal in Markets Today",
+      "thesis": "Oil collapsing 2% while Iran tolls Hormuz ($1.5-2M/ship), Israel auto-triggers Beirut strikes, and Ben-Gvir floats civilian abduction. Markets pricing demand destruction over supply risk. ADP +29K confirms stagflation. This is a binary resolution point: Hezbollah rocket = $95+, sub-$88 = demand collapse.",
+      "sector": "geopolitics",
+      "source_count": 8,
+      "setup_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strait_of_Hormuz.jpg"
     },
     {
-      "headline": "Burnham Confirms Challenge to Replace Starmer as UK Prime Minister",
-      "thesis": "Andy Burnham declares his bid to replace Keir Starmer, injecting political uncertainty into a BoE already weighing rate hikes. UK gilt yields rise as the policy outlook grows murkier.",
+      "headline": "US ADP +29K — Labor Market Cracking as Inflation Expectations Rise 3rd Month. Stagflation Confirmed.",
+      "thesis": "ADP printed +29K jobs, well below prior +35.7K. US 1-year consumer inflation expectations rose 3rd straight month. Textbook stagflation: weakening labor + sticky inflation = Fed trapped. First hard data point confirming stagflation thesis.",
       "sector": "macro",
-      "source_count": 2,
-      "setup_id": "n21_macro",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Houses_of_Parliament_westminster.jpg"
+      "source_count": 5,
+      "setup_id": "n21_macro__adp_29k_stagflation_signal",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Federal_Reserve_Building.jpg"
     },
     {
-      "headline": "Tech Groups Monetise AI Hype by Selling Volatility — Broadcom Loses $285B",
-      "thesis": "AI infrastructure spending is accelerating but monetisation is shifting from compute rents to volatility harvesting. Broadcom's $285 billion rout signals company-specific risk in custom ASICs.",
-      "sector": "tech",
+      "headline": "Israeli Minister Ben-Gvir Urges Cabinet to Abduct Lebanese Civilians — Far-Right Escalation Signal",
+      "thesis": "Ben-Gvir proposed abducting Lebanese women and children as psychological warfare against Hezbollah — in a cabinet session, not a tweet. Combined with automatic Beirut strike trigger, the escalation floor with Lebanon has structurally risen. Raises probability of Hezbollah rocket trigger firing.",
+      "sector": "geopolitics",
       "source_count": 4,
-      "setup_id": "n21_ai",
-      "image_url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iBbuAJfuM8Jw/v3/1200x-1.png"
+      "setup_id": "n21_multi_pillar__ben_gvir_abduct_civilians",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Israel.svg"
     },
     {
-      "headline": "Bitcoin Tumbles After Strategy Sale Unnerves Crypto Traders",
-      "thesis": "Strategy (formerly MicroStrategy) sells Bitcoin holdings, flooding the market with supply and breaking the 'perma-accumulation' narrative. Bitcoin tests $82,000 support.",
+      "headline": "EU Proposes Biggest Sanctions Package in 2 Years — 90 Banks, 11 Crypto Platforms, LNG Tanker Ban",
+      "thesis": "EU targets 90 banks, 11 crypto platforms, LNG tanker ban, 170+ sanctioned positions. Structural tightening of Russia's financial isolation. Crypto ban may accelerate Russian BTC demand as capital flight into non-sanctionable assets.",
+      "sector": "geopolitics",
+      "source_count": 6,
+      "setup_id": "n21_china_ascendancy__breaking_eu_proposes_biggest_sanctions_package",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/European_Commission.svg"
+    },
+    {
+      "headline": "BlackRock Transferring BTC to Exchanges for Client Sales — Distribution Signal Beneath the Surface",
+      "thesis": "BlackRock routing BTC to exchanges likely means ETF/OTC desks filling sell orders. Real supply hitting order books. Short-term BTC bearish — institutions sell into strength, retail panics. $58K support is key level.",
       "sector": "crypto",
-      "source_count": 2,
-      "setup_id": "n21_crypto",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin%2C_Wroclaw_%28P1180334%29.jpg"
-    },
-    {
-      "headline": "US Plans Cuts to NATO Rapid Response Force as Cable Sabotage Probe Opens",
-      "thesis": "The US moves to reduce NATO's rapid response capability just as a deep-sea cable sabotage incident triggers the alliance's first collective response. European defense autonomy accelerates.",
-      "sector": "geopolitics",
-      "source_count": 3,
-      "setup_id": "n21_nato",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NATO_OTAN_north_atlantic_arc_zoom.svg"
-    },
-    {
-      "headline": "Gulf States and Ukraine Need Each Other as War Drags Into 2027",
-      "thesis": "Ukraine seeks Gulf investment for reconstruction while Gulf states need Ukrainian grain and energy transit leverage. Zelenskyy calls for face-to-face negotiations with Putin.",
-      "sector": "geopolitics",
-      "source_count": 3,
-      "setup_id": "n21_ukraine",
-      "image_url": "https://i.guim.co.uk/img/media/eacb316cc8ab8f7d2e2df3f31022f83d9c8e6812/313_190_1178_943/master/1178.jpg?width=700&quality=85&auto=format&fit=max&s=8a8f5ef8078dd8c51b126f508a7d94e9"
-    },
-    {
-      "headline": "Iran Deal Collapses in Public as Tehran Denies Uranium Transfer — Hormuz Stays Blocked",
-      "thesis": "The 'deal imminent' media narrative collapsed as Iran publicly denied uranium transfer, confirmed talks halted. Strait of Hormuz remains completely blocked. De-dollarization of oil trade accelerates as buyers seek non-dollar settlement routes.",
-      "sector": "geopolitics",
-      "source_count": 2,
-      "setup_id": "n21_dollar",
-      "image_url": ""
-    },
-    {
-      "headline": "Ukraine Black Sea War Spills Into NATO Waters as Drone Explodes at Romanian Port",
-      "thesis": "A Ukrainian Magura sea drone exploded at Romania's Constanta port (NATO member) after losing control to Russian EW jamming. The 'defensive war' framing collapses when Ukraine's weapons hit allied territory. Black Sea grain corridor threatened.",
-      "sector": "geopolitics",
-      "source_count": 2,
-      "setup_id": "n21_multi",
-      "image_url": ""
+      "source_count": 4,
+      "setup_id": "n21_blockchain_agentic__blackrock_transferring_btc",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_logo.svg"
     }
   ]
 }
