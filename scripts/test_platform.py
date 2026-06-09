@@ -193,6 +193,31 @@ def test_flow_data_integrity():
     check(isinstance(flows_data.get("aggregate_confidence"), (int, float)),
           f"flows.json: aggregate_confidence={flows_data.get('aggregate_confidence')}")
 
+    # ── Distribution test: fail if >80% of linked stories have identical amounts ──
+    from collections import Counter
+    amounts_list = []
+    for story in stories:
+        impacted = story.get("impacted_flows", [])
+        if impacted:
+            amt = story.get("capital_flow", {}).get("amount_b", 0)
+            amounts_list.append(amt)
+    if amounts_list:
+        dist = Counter(amounts_list)
+        most_common_amt, most_common_count = dist.most_common(1)[0]
+        uniformity_pct = most_common_count / len(amounts_list) * 100
+        # Also count how many are at the hardcoded $5.0B default specifically
+        at_5b = dist.get(5.0, 0)
+        at_5b_pct = at_5b / len(amounts_list) * 100 if amounts_list else 0
+        check(uniformity_pct <= 80,
+              f"Flow distribution: {len(dist)} unique values, ${most_common_amt}B appears {most_common_count}/{len(amounts_list)} ({uniformity_pct:.0f}%)"
+              f" — EXCEEDS 80% uniformity threshold")
+        check(at_5b_pct <= 20,
+              f"Default $5.0B prevalence: {at_5b}/{len(amounts_list)} ({at_5b_pct:.0f}%)"
+              f" — EXCEEDS 20% default tolerance")
+        if uniformity_pct <= 80 and at_5b_pct <= 20:
+            check(True, f"Flow distribution: {len(dist)} unique values across {len(amounts_list)} stories, "
+                  f"max cluster at {uniformity_pct:.0f}%, $5B default at {at_5b_pct:.0f}% ✓")
+
 
 # ═══════════════════════════════════════════════════════
 # TEST ROUND 3: HTML Structure & Stylesheet Links
