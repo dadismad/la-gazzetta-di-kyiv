@@ -38,20 +38,59 @@
 | Onboarding Overlay | — | — | ✓✓✓ |
 | Timestamp Freshness | ✓✓✓ | ✓✓✓ | ✓✓ |
 
-## Data Pipeline Architecture
+## Data Pipeline Architecture (v3.0 — SQLite-backed)
 
 ```
-Telegram Monitor (30m) → intel_to_stories.py → stories.json
-                                                    ↓
-                                           generate_flows.py → flows.json
-                                                    ↓
-Source Monitor (60m) → editorial writer → stories_in_play.json
-                                                    ↓
-                                           build_site.py → site/data/ + API
-                                                    ↓
-Market Data Fetch (4h) → fetch_cot.py, fetch_ici.py, fetch_fred.py → market_data/
-                                                    ↓
-                                           shipit.sh → GCS deploy
+                    ┌──────────────────────────────┐
+                    │   OSINT Collector (cron)      │
+                    │   fetch_intel.py              │
+                    │   RSS feeds → drafts table    │
+                    └──────────┬───────────────────┘
+                               │ pending_review
+                               ▼
+                    ┌──────────────────────────────┐
+                    │   Draft Approval Queue        │
+                    │   approve_draft.py --id N     │
+                    │   → stories + flows + links   │
+                    └──────────┬───────────────────┘
+                               │
+              ┌────────────────┼────────────────┐
+              ▼                ▼                ▼
+     ┌────────────┐   ┌────────────┐   ┌────────────┐
+     │ Telegram   │   │ RSS Feeds  │   │ Manual     │
+     │ Monitor    │   │ (ECB,etc)  │   │ Drafts     │
+     │ (30m)      │   │ (cron)     │   │            │
+     └─────┬──────┘   └─────┬──────┘   └─────┬──────┘
+           │                │                │
+           └────────┬───────┴────────┬───────┘
+                    │                │
+                    ▼                ▼
+           ┌──────────────────────────────┐
+           │   gazzetta.db (SQLite)       │
+           │   · stories (30)             │
+           │   · flows (12)               │
+           │   · drafts (70)              │
+           │   · story_flow_links (12)    │
+           └──────────────┬───────────────┘
+                          │
+                          ▼
+           ┌──────────────────────────────┐
+           │   db_to_json.py              │
+           │   SQL → stories.json         │
+           │   SQL → flows.json           │
+           └──────────────┬───────────────┘
+                          │
+                          ▼
+           ┌──────────────────────────────┐
+           │   build_site.py              │
+           │   data/ → site/data/ + API   │
+           └──────────────┬───────────────┘
+                          │
+                          ▼
+           ┌──────────────────────────────┐
+           │   shipit.sh                  │
+           │   hash → GCS deploy → git    │
+           └──────────────────────────────┘
 ```
 
 ## Design Contract
