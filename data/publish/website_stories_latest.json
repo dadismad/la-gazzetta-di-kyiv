@@ -1,44 +1,52 @@
 {
-  "generated_at": "2026-06-09T13:20:00Z",
+  "generated_at": "2026-06-10T02:00:00Z",
   "stories": [
     {
-      "headline": "WTI Drops Below $90 (-2%) While War Escalates Across 3 Fronts — Most Contradictory Signal in Markets Today",
-      "thesis": "Oil collapsing 2% while Iran tolls Hormuz ($1.5-2M/ship), Israel auto-triggers Beirut strikes, and Ben-Gvir floats civilian abduction. Markets pricing demand destruction over supply risk. ADP +29K confirms stagflation. This is a binary resolution point: Hezbollah rocket = $95+, sub-$88 = demand collapse.",
+      "headline": "Iran Shoots Down US Apache Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+      "thesis": "The US is now a direct belligerent in the Iran conflict, not a mediator. A US Apache helicopter was shot down over the Strait of Hormuz — the world's most critical oil chokepoint. Trump's immediate 'must respond' declaration transforms the market calculus. Hormuz risk premium reprices from theoretical to concrete.",
       "sector": "geopolitics",
-      "source_count": 8,
-      "setup_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90",
+      "source_count": 6,
+      "setup_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strait_of_Hormuz.jpg"
     },
     {
-      "headline": "US ADP +29K — Labor Market Cracking as Inflation Expectations Rise 3rd Month. Stagflation Confirmed.",
-      "thesis": "ADP printed +29K jobs, well below prior +35.7K. US 1-year consumer inflation expectations rose 3rd straight month. Textbook stagflation: weakening labor + sticky inflation = Fed trapped. First hard data point confirming stagflation thesis.",
-      "sector": "macro",
-      "source_count": 5,
-      "setup_id": "n21_macro__adp_29k_stagflation_signal",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Federal_Reserve_Building.jpg"
-    },
-    {
-      "headline": "Israeli Minister Ben-Gvir Urges Cabinet to Abduct Lebanese Civilians — Far-Right Escalation Signal",
-      "thesis": "Ben-Gvir proposed abducting Lebanese women and children as psychological warfare against Hezbollah — in a cabinet session, not a tweet. Combined with automatic Beirut strike trigger, the escalation floor with Lebanon has structurally risen. Raises probability of Hezbollah rocket trigger firing.",
+      "headline": "EIA Drops Bombshell: Hormuz Blockade Persists Through Q3 2026 — Obsolete Within 25 Minutes",
+      "thesis": "The EIA published a revised Hormuz blockade timeline projecting persistence through Q3 2026 with full recovery only in 2027. The Apache shootdown 25 minutes later rendered it optimistic. Military resolution could end the blockade faster — or total war could extend it further.",
       "sector": "geopolitics",
       "source_count": 4,
-      "setup_id": "n21_multi_pillar__ben_gvir_abduct_civilians",
+      "setup_id": "n21_multi_pillar__eia_drops_bombshell_hormuz_timeline__blockade_persists_thro",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_the_United_States_Department_of_Energy.svg"
+    },
+    {
+      "headline": "Ukraine Assassinates Russian Colonel (Missile Supply Chief) in Moscow",
+      "thesis": "The head of Russian missile/artillery ammunition supply was assassinated 200m from last year's general assassination site. This is not a one-off — it signals a systematic Ukrainian deep-cover operation inside Moscow targeting military logistics command.",
+      "sector": "geopolitics",
+      "source_count": 5,
+      "setup_id": "n21_multi_pillar__ukraine_assassinates_russian_colonel_missile_supply_chief",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/General_Staff_Building_Moscow.jpg"
+    },
+    {
+      "headline": "Israel Orders Full Evacuation of Tyre — Cabinet Authorizes All-Out Lebanon War",
+      "thesis": "Israel ordered the full evacuation of Tyre and authorized all-out war in Lebanon. Combined with the automatic Beirut strike trigger and Ben-Gvir's abduction proposal, the escalation floor with Lebanon just became a ceiling — this is now a ground war, not a precision campaign.",
+      "sector": "geopolitics",
+      "source_count": 6,
+      "setup_id": "n21_multi_pillar__israel_orders_full_evacuation_of_tyre__cabinet_authorizes_a",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Israel.svg"
     },
     {
-      "headline": "EU Proposes Biggest Sanctions Package in 2 Years — 90 Banks, 11 Crypto Platforms, LNG Tanker Ban",
-      "thesis": "EU targets 90 banks, 11 crypto platforms, LNG tanker ban, 170+ sanctioned positions. Structural tightening of Russia's financial isolation. Crypto ban may accelerate Russian BTC demand as capital flight into non-sanctionable assets.",
-      "sector": "geopolitics",
-      "source_count": 6,
-      "setup_id": "n21_china_ascendancy__breaking_eu_proposes_biggest_sanctions_package",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/European_Commission.svg"
+      "headline": "Anthropic Releases Claude Fable Today at 2x Opus Pricing — AI Economy Accelerates",
+      "thesis": "Anthropic is releasing Claude Fable (a safety-constrained version of its frontier Mythos model) earlier than any analyst expected. At 2x Opus pricing, it's a premium enterprise product — not a discount tier. The 'frontier AI accelerating' thesis just got validated hours before the drop.",
+      "sector": "tech",
+      "source_count": 4,
+      "setup_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthropic_logo.svg"
     },
     {
-      "headline": "BlackRock Transferring BTC to Exchanges for Client Sales — Distribution Signal Beneath the Surface",
-      "thesis": "BlackRock routing BTC to exchanges likely means ETF/OTC desks filling sell orders. Real supply hitting order books. Short-term BTC bearish — institutions sell into strength, retail panics. $58K support is key level.",
+      "headline": "Strategy/MSTR Resumes Bitcoin Buying Spree — Halts Market Panic",
+      "thesis": "Strategy (MicroStrategy) resumed its bitcoin buying spree, quelling market panic after the brutal sell-off. The accumulation by the world's largest corporate BTC holder signals institutional conviction at $58K support. Shorts targeting MSTR face a capitulation risk if the buying continues.",
       "sector": "crypto",
       "source_count": 4,
-      "setup_id": "n21_blockchain_agentic__blackrock_transferring_btc",
+      "setup_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_logo.svg"
     }
   ]

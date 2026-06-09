@@ -1,9 +1,9 @@
-US existing home sales just crushed estimates: +3.2% MoM vs +1.1%. Consensus calls it "resilient." Reality: shelter inflation just got stickier, rate-cut expectations just got pushed — and the Fed's softening narrative just shattered.
+BREAKING: Iran shot down a US Apache helicopter over the Strait of Hormuz. Trump declared US "must respond." Both crew rescued — but the conflict just transformed: the US is now a direct belligerent, not a mediator.
 
-While Israel's Nabatieh offensive derails US-Iran Hormuz talks (leaked docs confirmed), oil stays below $90. Consensus prices normalization. Evidence points escalation.
+The EIA's Hormuz blockade timeline through Q3 2026 — published 25 minutes before the shootdown — is now obsolete. Consensus priced containable escalation. Velocity says otherwise.
 
-• Long USD, short BTC on rate-cut delay. Long GLD for geopolitical cover.
+• Long WTI, GLD immediately. Short SPX. Hormuz risk premium reprices from theoretical to concrete within the hour.
 
-¹ Existing home sales +3.2% MoM, June 9 14:00 UTC print (source: Census Bureau, NAR)
+¹ EIA published Q3 2026 Hormuz timeline June 9 14:35 UTC — obsolete by 15:00 UTC after Apache shootdown confirmed (source: EIA)
 
-Continuity: pureciclismo.github.io/gazzetta-di-kyiv/ | Next trigger: NFP Friday June 12
+Continuity: pureciclismo.github.io/gazzetta-di-kyiv/ | Next trigger: US retaliation announcement within 24h

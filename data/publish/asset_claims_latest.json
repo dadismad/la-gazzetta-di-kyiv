@@ -1,53 +1,53 @@
 {
-  "generated_at": "2026-06-09T13:20:00Z",
+  "generated_at": "2026-06-10T02:00:00Z",
   "claims": [
     {
       "ticker": "CL",
-      "direction": "bilateral",
-      "price_target": "$88 break = short oil; $95+ on Hezbollah trigger",
-      "strategy": "Own both tails — OTM $95 calls (June 12 expiry, ~$0.30-0.50 premium) as lottery on Hezbollah trigger; short oil if sub-$88 confirms demand collapse",
+      "direction": "up",
+      "price_target": "$95+ (immediate spike); $88 invalidation break = demand collapse",
+      "strategy": "Buy the breakout — direct US-Iran military engagement over the world's most important oil chokepoint. Use June 12 expiry calls for binary trigger.",
       "win_rate": "65%",
       "horizon": "24-72h",
       "narrative_driven_pct": 85,
-      "crowd_belief": "Markets pricing demand destruction (stagflation) over supply risk (Iran-Hormuz). ADP +29K confirms weakening labor. Consensus says war premium is unwinding.",
-      "contradiction": "Oil dropping 2% while Iran tolls Hormuz, Israel auto-triggers Beirut, and Ben-Gvir floats civilian abduction is a first-order anomaly. The contradiction is unresolved — one Hezbollah rocket gaps oil $95+ catching shorts offside.",
-      "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90"
+      "crowd_belief": "Consensus priced 'contained Israel-Iran tit-for-tat' and 'diplomatic Hormuz resolution.' Apache shootdown + Trump 'must respond' shatters both assumptions.",
+      "contradiction": "WTI was below $90 even as Iran tolled Hormuz and Israel auto-triggered Beirut. Consensus ignored the widening gap. Now the gap closes violently as US becomes direct belligerent.",
+      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait"
     },
     {
       "ticker": "GLD",
       "direction": "up",
-      "price_target": "$2,500+ (stagflation confirm)",
-      "strategy": "Long gold as stagflation hedge — weak ADP + weakening labor + rising inflation expectations = Fed trapped. Gold benefits from both geopolitical risk premium and inflation hedge demand.",
+      "price_target": "$2,450+ immediate; $2,500 on US retaliation",
+      "strategy": "Long gold as geopolitical flight-to-safety + stagflation hybrid. Direct US belligerency reprices gold risk premium structurally higher.",
       "win_rate": "75%",
       "horizon": "24-72h",
-      "narrative_driven_pct": 70,
-      "crowd_belief": "Gold at $2,415 reflects elevated geopolitical risk. But stagflation confirmation (ADP +29K + 3rd month inflation expectations rise) is a new vector not yet priced.",
-      "contradiction": "The stagflation vector is new — markets were pricing rate hikes, not cuts. If NFP Friday confirms ADP weakness, gold rallies on rate cut repricing + inflation hedge demand compounding.",
-      "story_id": "n21_macro__adp_29k_stagflation_signal"
-    },
-    {
-      "ticker": "TLT",
-      "direction": "up",
-      "price_target": "Yields -5-10bps on rate cut repricing",
-      "strategy": "Long duration bonds (TLT, ZN) — ADP +29K starts the clock on rate cut expectations. If NFP Friday confirms, aggressive curve steepening.",
-      "win_rate": "65%",
-      "horizon": "24-72h (through NFP Friday)",
-      "narrative_driven_pct": 60,
-      "crowd_belief": "2Y yields at year-highs pricing rate hikes. ADP +29K is the first crack in that thesis. Market consensus still pricing hikes.",
-      "contradiction": "ADP is noisy but directional trend (weakening labor + rising inflation expectations) is structurally bullish for bonds. If NFP confirms, rate hike expectations unwind violently.",
-      "story_id": "n21_macro__adp_29k_stagflation_signal"
+      "narrative_driven_pct": 75,
+      "crowd_belief": "Gold already reflected elevated geopolitical risk at $2,415. But direct US belligerency is a new vector — not priced.",
+      "contradiction": "Gold was pricing 'elevated geopolitical risk.' The Apache shootdown upgrades from 'risk' to 'active engagement.' Premium re-rates higher.",
+      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait"
     },
     {
       "ticker": "VIX",
       "direction": "up",
-      "price_target": "+2-3 points on binary escalation trigger",
-      "strategy": "Long VIX as tail hedge — Ben-Gvir proposal + automatic Beirut strike trigger = Hezbollah rocket event could fire at any time with zero diplomatic warning.",
+      "price_target": "+3-5 points on retaliation announcement",
+      "strategy": "Long VIX as tail hedge — US military response is now a when-not-if binary. Apache shootdown + 'must respond' = volatility catalyst.",
       "win_rate": "70%",
       "horizon": "24-72h",
       "narrative_driven_pct": 80,
-      "crowd_belief": "VIX complacent despite multi-front escalation. Markets not pricing Hezbollah rocket trigger probability.",
-      "contradiction": "The automatic Beirut strike mechanism means escalation is now a binary trigger, not a decision. Any rogue faction in Lebanon can start the next escalation cycle. VIX is underpricing this tail risk.",
-      "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90"
+      "crowd_belief": "VIX complacent despite multi-front escalation. Market still pricing US as mediator, not belligerent.",
+      "contradiction": "VIX not reflecting direct US belligerency probability. The Apache shootdown moves the US from backstop to target.",
+      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait"
+    },
+    {
+      "ticker": "SPX",
+      "direction": "down",
+      "price_target": "-1.5-3% on escalation confirmation",
+      "strategy": "Short SPX / long VIX for geopolitical risk premium repricing. Equities were already selling off (Friday low broken); Apache adds accelerant.",
+      "win_rate": "65%",
+      "horizon": "24-48h",
+      "narrative_driven_pct": 65,
+      "crowd_belief": "Markets still pricing 'contained' geopolitical risk. The US-shootdown escalation is a novel variable.",
+      "contradiction": "Equities were already below Friday's low before Apache news. The selloff now has a geopolitical accelerant consensus didn't price.",
+      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait"
     }
   ]
 }

@@ -1,16 +1,16 @@
 # Gazzetta di Kyiv — Daily Brief
-**2026-06-07 06:00 UTC**
+**2026-06-09 17:28 UTC**
 
 ## Top Narratives
-- **Capital rotates out of China-exposed equities (H-shares, property bank exposure) into India trade-di** — Score: 2/40
-- **Institutional capital is rotating into space economy ETFs ahead of the SpaceX IPO, creating a struct** — Score: 0/40
-- **Capital rotates out of risk assets into energy and defense as a second Middle East conflict theater ** — Score: 0/40
-- **The White House AI summit + Warsh rate cut signal will trigger one of the largest mean-reversion flo** — Score: 0/40
-- **Capital rotates out of risk assets into crude oil, volatility, and gold as US-Iran conflict escalate** — Score: 0/40
+- **$30.0B ↑ equities** — Score: 0/40
+- **$30.0B ↑ equities** — Score: 0/40
+- **$27.0B ↑ equities, crypto, FX** — Score: 0/40
+- **$21.6B ↑ commodities** — Score: 0/40
+- **$21.6B ↑ commodities** — Score: 0/40
 
 ## Summary
 - 12 candidates scored
-- Top score: 2/40
+- Top score: 0/40
 - Pipeline: phase2 → phase3 → build_site
 
 ---

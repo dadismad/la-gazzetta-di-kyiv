@@ -1,43 +1,44 @@
 {
-  "timestamp": "2026-06-09T16:38:18.342920+00:00",
+  "timestamp": "2026-06-09T17:11:34.058127+00:00",
   "channels": {
     "trad_fin": {
       "total": 20,
-      "recent_30min": []
+      "recent_30min": [
+        {
+          "text": "*ANTHROPIC LAUNCHED CLAUDE FABLE 5, ITS MOST POWERFUL MODEL, TO THE GENERAL PUBLIC",
+          "date": "2026-06-09T17:00:20+00:00",
+          "post_id": "trad_fin/3523"
+        }
+      ]
     },
     "MonitoringSituation": {
       "total": 20,
       "recent_30min": [
         {
-          "text": "SOH Update: Still closed",
-          "date": "2026-06-09T16:08:58+00:00",
-          "post_id": "MonitoringSituation/5618"
-        },
-        {
-          "text": "EIA NOW ASSUMES OIL SHIPMENTS THROUGH STRAIT OF HORMUZ RESUME IN Q3 2026",
-          "date": "2026-06-09T16:13:09+00:00",
-          "post_id": "MonitoringSituation/5619"
-        },
-        {
-          "text": "EIA DOES NOT EXPECT STRAIT OF HORMUZ TRAFFIC TO RAMP UP TO PRE-IRAN WAR LEVEL UNTIL EARLY 2027",
-          "date": "2026-06-09T16:13:27+00:00",
-          "post_id": "MonitoringSituation/5620"
+          "text": "THE UNITED STATES MUST, OF NECESSITY, RESPOND TO THIS ATTACK.",
+          "date": "2026-06-09T16:44:04+00:00",
+          "post_id": "MonitoringSituation/5623"
         }
       ]
     },
     "ASupersharij": {
       "total": 15,
-      "recent_30min": [
-        {
-          "text": "Компромиссы, дух Анкориджа, но главное - когда говоришь про гибель Зеленского, то обязательно подчеркивай, что она будет не от рук ВС РФ. \n\nОт рук ВС РФ пусть менее достойные погибают. Набранные с улиц работяги, их не жалко. А Зеленский - вы что!?",
-          "date": "2026-06-09T16:12:47+00:00",
-          "post_id": "ASupersharij/55562"
-        }
-      ]
+      "recent_30min": []
     },
     "infinityhedge": {
       "total": 20,
-      "recent_30min": []
+      "recent_30min": [
+        {
+          "text": "ANTHROPIC RELEASES CLAUDE FABLE 5 (MYTHOS-CLASS MODEL)- INFINITYHEDGE",
+          "date": "2026-06-09T16:54:05+00:00",
+          "post_id": "infinityhedge/26679"
+        },
+        {
+          "text": "CLAUDE FABLE 5 AND MYTHOS 5 BENCHMARKS\n\nClaude Fable 5 is available everywhere today. Claude Mythos 5 is restricted to Glasswing partners.\n\nFable 5 and Mythos 5 are being offered at $10 per million input tokens and $50 per million output tokens\n\nMore here: https://www.anthropic.com/news/claude-fable-5-mythos-5",
+          "date": "2026-06-09T17:08:17+00:00",
+          "post_id": "infinityhedge/26680"
+        }
+      ]
     },
     "ethanlevins": {
       "total": 20,
@@ -47,14 +48,9 @@
       "total": 19,
       "recent_30min": [
         {
-          "text": "⚠️🇺🇸#акции #сша \nв акциях США возобновились продажи после вчерашней передышки",
-          "date": "2026-06-09T16:08:39+00:00",
-          "post_id": "markettwits/373476"
-        },
-        {
-          "text": "⚠️🛢#нефть #прогноз\nМинэнерго США теперь ожидает снижение мирового спроса на нефть в 2026г, ранее ожидало рост.",
-          "date": "2026-06-09T16:22:37+00:00",
-          "post_id": "markettwits/373477"
+          "text": "⚠️🇮🇷#иран #геополитика \nТрамп: США должны отреагировать на нападение Ирана на вертолет США в Ормузе\n\nТрамп пообещал ответ на сбитый вертолет Apache",
+          "date": "2026-06-09T16:41:42+00:00",
+          "post_id": "markettwits/373478"
         }
       ]
     }
