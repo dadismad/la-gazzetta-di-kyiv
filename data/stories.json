@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T17:28:41.754864+00:00",
+  "generated_at": "2026-06-09T17:34:30.749441+00:00",
   "lead": {
     "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
     "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
@@ -89,94 +89,6 @@
     }
   },
   "stories": [
-    {
-      "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
-      "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
-      "sector": "crypto",
-      "pillar": "blockchain_agentic",
-      "paradigm_pillar": "blockchain_agentic",
-      "paradigm_implications": [
-        "Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath &nbsp;&nbsp; CNBC    MicroStrategy’s STR"
-      ],
-      "they_say": "Source: reuters_business. Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath &nbsp;&nbsp; CNBC    MicroStrategy’s STRC Tracks Bitcoin Lower Again as Semi-Monthly Dividend Begins &nbsp;&nbsp; Yahoo Finance    Bitcoin S",
-      "reality": "Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath &nbsp;&nbsp; CNBC    MicroStrategy’s STRC Tracks Bitcoin Lower Again as Semi-Monthly Dividend Begins &nbsp;&nbsp; Yahoo Finance    Bitcoin S",
-      "thesis": "OSINT draft #58: Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
-      "actors": [],
-      "horizon": "24-72h",
-      "confidence": "low",
-      "tier": "DEVELOPING",
-      "actionable_trade": "OSINT signal: INFLOW crypto. Review before execution.",
-      "contradiction_score": 75,
-      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
-      "portfolio_implication": "Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath &nbsp;&nbsp; CNBC    MicroStrategy’s STR",
-      "capital_flow": {
-        "direction": "inflow",
-        "amount_b": 2.1,
-        "asset_class": "crypto",
-        "projected": "Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath &nbsp;&nbsp; CNBC    MicroStrategy’s STR",
-        "pace_multiplier": 1.0,
-        "confidence_pct": 50,
-        "confidence_level": "low",
-        "claim": "$2.1B inflow crypto",
-        "confidence": "50%"
-      },
-      "capital_flow_implication": "OSINT draft #58. Source: reuters_business.",
-      "evidence": [
-        "source: reuters_business",
-        "draft_id: 58"
-      ],
-      "source": "osint_reuters_business",
-      "generated_at": "2026-06-09T16:38:48.413433+00:00",
-      "freshness": "breaking",
-      "entity_tags": {
-        "assets": [],
-        "geographies": [],
-        "actors": [],
-        "instruments": []
-      },
-      "time_decay": {
-        "half_life_hours": 36.0,
-        "decay_curve": "exponential",
-        "current_freshness": 1.0,
-        "hours_elapsed": 0.0,
-        "renewal_triggers": [
-          "new_intel",
-          "price_breach",
-          "flow_confirmation"
-        ]
-      },
-      "impacted_flows": [
-        "flow_n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic"
-      ],
-      "associated_positions": [],
-      "multi_persona": {
-        "c_suite": {
-          "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
-          "body": "Structural assessment: Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath &nbsp;&nbsp; CNBC    MicroStrategy’s STRC Tracks Bitcoin Lower Again as Semi-Monthly Divid... Implicated assets: BTC. Regions: global. Monitor for policy or supply-chain cascades.",
-          "implication": "Board-level: crypto exposure review recommended. Directional bias: LONG."
-        },
-        "quant": {
-          "headline": "CRYPTO signal: LONG",
-          "body": "Raw telemetry — crypto flow detected from Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin ... Assets tagged: BTC. Correlation regime: TBD. Watch vol surface for confirmation.",
-          "metrics": {
-            "flow_direction": "inflow",
-            "asset_class": "crypto",
-            "geographies": []
-          }
-        },
-        "degen": {
-          "headline": "🟢 LONG BTC",
-          "body": "Directional: LONG. Asset: BTC. Context: Strategy resumes bitcoin buying spree, quelling market panic - Investing.com. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
-          "signal": {
-            "direction": "LONG",
-            "entry_zone": "awaiting review",
-            "stop_level": "TBD",
-            "target": "TBD",
-            "conviction": "LOW"
-          }
-        }
-      }
-    },
     {
       "story_id": "n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes",
       "headline": "This tiny mutual fund outperforms by backing the world’s best management teams - MarketWatch",

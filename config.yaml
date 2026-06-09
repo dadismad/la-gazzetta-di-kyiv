@@ -100,6 +100,47 @@ features:
   run_validation: true
   decay_stories: false  # disabled until scoring logic is reviewed
 
+# Entity scales for capital flow estimation (fallback when no explicit $ found)
+entity_scales:
+  central_banks:
+    min: 10.0
+    max: 150.0
+    unit: "B"
+    keywords: ["fed", "federal reserve", "ecb", "european central bank", "imf", "pboc",
+               "boj", "bank of japan", "boe", "bank of england", "bis", "central bank",
+               "powell", "lagarde", "monetary policy", "rate decision"]
+  megacorps:
+    min: 1.0
+    max: 15.0
+    unit: "B"
+    keywords: ["nvidia", "nvda", "oracle", "jpmorgan", "goldman", "microsoft", "apple",
+               "google", "alphabet", "amazon", "meta", "tesla", "microstrategy", "strategy",
+               "spacex", "openai", "anthropic", "blackrock", "vanguard", "fidelity"]
+  crypto_assets:
+    min: 0.1
+    max: 8.0
+    unit: "B"
+    keywords: ["bitcoin", "btc", "ethereum", "eth", "solana", "sol", "crypto", "token",
+               "defi", "stablecoin", "rwa", "blockchain", "mining", "hashrate"]
+  mutual_funds:
+    min: 0.01
+    max: 0.5
+    unit: "B"
+    keywords: ["mutual fund", "etf", "small-cap", "retail fund", "pension fund",
+               "index fund", "fund manager", "asset manager"]
+  sovereign_wealth:
+    min: 5.0
+    max: 50.0
+    unit: "B"
+    keywords: ["sovereign wealth", "swf", "norway fund", "adia", "temasek", "gic",
+               "saudi aramco", "qatar investment"]
+  defense_military:
+    min: 1.0
+    max: 20.0
+    unit: "B"
+    keywords: ["defense", "military", "nato", "pentagon", "missile", "weapons",
+               "arms deal", "fighter jet", "drone", "artillery"]
+
 # Flow categories for front-page aggregation
 flow_categories:
   sovereign:

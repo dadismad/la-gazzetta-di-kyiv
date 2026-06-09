@@ -88,6 +88,7 @@ def create_all_tables(conn):
     );
 
     -- Indexes for common query patterns
+    CREATE UNIQUE INDEX idx_stories_slug ON stories(slug);
     CREATE INDEX idx_stories_generated_at ON stories(generated_at);
     CREATE INDEX idx_stories_sector ON stories(sector);
     CREATE INDEX idx_stories_tier ON stories(tier);
@@ -144,6 +145,50 @@ def show_tables(conn):
             print(f"    {col[1]:24s} {col[2]:10s} {pk:4s} {nn}")
 
 
+def run_all_migrations(conn):
+    """Apply all pending migrations to existing DB."""
+    existing = {row[0] for row in conn.execute(
+        "SELECT name FROM sqlite_master WHERE type='table' OR type='index'"
+    ).fetchall()}
+
+    # Migration 1: drafts table
+    if "drafts" not in existing:
+        conn.execute("PRAGMA foreign_keys=ON")
+        conn.executescript("""
+            CREATE TABLE drafts (
+                id                   INTEGER PRIMARY KEY AUTOINCREMENT,
+                source               TEXT,
+                raw_content          TEXT,
+                suggested_headline   TEXT,
+                suggested_multi_persona TEXT,
+                suggested_flows      TEXT,
+                created_at           TEXT,
+                status               TEXT DEFAULT 'pending_review'
+            );
+            CREATE INDEX idx_drafts_status ON drafts(status);
+            CREATE INDEX idx_drafts_source ON drafts(source);
+        """)
+        conn.commit()
+        print("  ✓ drafts table added")
+
+    # Migration 2: unique slug index
+    if "idx_stories_slug" not in existing:
+        # First check for duplicate slugs and warn
+        dupes = conn.execute("""
+            SELECT slug, COUNT(*) FROM stories GROUP BY slug HAVING COUNT(*) > 1
+        """).fetchall()
+        if dupes:
+            print(f"  ⚠ {len(dupes)} duplicate slug(s) found — cannot create UNIQUE index")
+            for slug, cnt in dupes:
+                print(f"    slug='{slug[:50]}' appears {cnt} times")
+            return False
+        conn.execute("CREATE UNIQUE INDEX idx_stories_slug ON stories(slug)")
+        conn.commit()
+        print("  ✓ UNIQUE index on stories.slug created")
+    
+    return True
+
+
 def main():
     force = "--force" in sys.argv
     migrate = "--migrate" in sys.argv
@@ -155,7 +200,7 @@ def main():
             sys.exit(1)
         conn = sqlite3.connect(str(DB_PATH))
         try:
-            added = migrate_add_drafts(conn)
+            run_all_migrations(conn)
             show_tables(conn)
         finally:
             conn.close()

@@ -256,27 +256,52 @@ def extract_amount(text):
 
 
 def context_amount(asset_class, direction, headline=""):
-    """Heuristic amount based on asset class and story context when no explicit $ found.
-    
-    Returns a diversified default instead of flat $5.0B — prevents the sameness bug.
+    """Heuristic amount based on entity_scales from config.yaml.
+
+    Scans headline+text for entity keywords matching entity_scales categories.
+    Falls back to asset_class ranges when no entity match found.
+    Uses headline hash for deterministic variety within each range.
     """
     import hashlib
     
-    # Use headline hash for deterministic but varied amounts
     h = int(hashlib.md5((headline or asset_class).encode()).hexdigest()[:4], 16)
+    text_lower = (headline or "").lower()
     
+    # ── Load entity scales from config ──
+    try:
+        import yaml
+        config_path = PROJECT / "config.yaml"
+        with open(config_path) as f:
+            cfg = yaml.safe_load(f)
+        scales = cfg.get("entity_scales", {})
+    except Exception:
+        scales = {}
+    
+    # ── Entity keyword matching ──
+    for category, spec in scales.items():
+        keywords = spec.get("keywords", [])
+        if any(kw in text_lower for kw in keywords):
+            lo = spec.get("min", 1.0)
+            hi = spec.get("max", 10.0)
+            # Check unit: if "M", convert to billions
+            if spec.get("unit", "B") == "M":
+                lo /= 1000
+                hi /= 1000
+            amount = lo + (h % int((hi - lo) * 10)) / 10.0
+            return round(amount, 1)
+    
+    # ── Asset class fallback (no entity matched) ──
     base_ranges = {
-        "crypto":       (0.5, 8.0),     # crypto moves: $500M to $8B
-        "equities":     (1.0, 15.0),    # equity flows: $1B to $15B  
-        "commodities":  (2.0, 12.0),    # commodity flows: $2B to $12B
-        "tech":         (1.0, 20.0),    # tech sector: $1B to $20B
-        "defense":      (1.5, 10.0),    # defense: $1.5B to $10B
-        "fixed_income": (3.0, 25.0),    # bonds: $3B to $25B
-        "fx":           (5.0, 50.0),    # forex: $5B to $50B
+        "crypto":       (0.1, 2.0),      # crypto: smaller individual moves
+        "equities":     (0.01, 0.5),     # equities: mid-range
+        "commodities":  (2.0, 12.0),     # commodities: larger moves
+        "tech":         (1.0, 15.0),     # tech: broad range
+        "defense":      (1.0, 10.0),     # defense: mid-to-large
+        "fixed_income": (5.0, 50.0),     # bonds: large flows
+        "fx":           (5.0, 50.0),     # forex: large flows
     }
     
-    lo, hi = base_ranges.get(asset_class, (1.0, 10.0))
-    # Deterministic but varied: headline hash modulo range width
+    lo, hi = base_ranges.get(asset_class, (0.01, 0.05))  # default: $10M-$50M
     amount = lo + (h % int((hi - lo) * 10)) / 10.0
     return round(amount, 1)
 
