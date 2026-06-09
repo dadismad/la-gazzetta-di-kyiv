@@ -84,58 +84,77 @@ def derive_positioning(direction, amount_b):
     return "hedging"
 
 
-def compute_confidence(amount_b, pace_mult, positioning, contradiction_bonus=5):
-    """4-factor confidence model.
+def compute_confidence(amount_b, pace_mult, positioning, contradiction_bonus=5, source=""):
+    """5-factor confidence model — v22.29 wider spread.
 
-    Returns (confidence_pct, confidence_level, confidence_trace).
-    Base = 50. Matches editorial pipeline model from v22.
+    Factors: amount (0-25), pace (0-20), positioning (0-15), contradiction (0-15), source (0-10).
+    Base = 25. Range: 30-100. Avoids the 75-90 cluster from v22.
     """
-    score = 50
+    score = 25
     trace_parts = []
 
-    # Amount factor
-    if amount_b >= 5:
-        score += 15
-        trace_parts.append("large-flow+15")
-    elif amount_b >= 3:
-        score += 12
-        trace_parts.append("med-flow+12")
-    elif amount_b >= 1:
-        score += 10
-        trace_parts.append("small-flow+10")
+    # Amount factor (log-scale for wider spread)
+    if amount_b >= 20:
+        score += 25; trace_parts.append("whale-flow+25")
+    elif amount_b >= 10:
+        score += 20; trace_parts.append("large-flow+20")
+    elif amount_b >= 5:
+        score += 15; trace_parts.append("mid-flow+15")
+    elif amount_b >= 2:
+        score += 10; trace_parts.append("small-flow+10")
+    elif amount_b >= 0.5:
+        score += 5;  trace_parts.append("micro-flow+5")
     else:
-        score += 5
-        trace_parts.append("micro-flow+5")
+        score += 2;  trace_parts.append("trace-flow+2")
 
     # Pace factor
-    if pace_mult >= 3:
-        score += 8
-        trace_parts.append("extreme-pace+8")
-    elif pace_mult >= 2:
-        score += 7
-        trace_parts.append("high-pace+7")
+    if pace_mult >= 3.0:
+        score += 20; trace_parts.append("extreme-pace+20")
+    elif pace_mult >= 2.5:
+        score += 16; trace_parts.append("very-high-pace+16")
+    elif pace_mult >= 2.0:
+        score += 12; trace_parts.append("high-pace+12")
     elif pace_mult >= 1.5:
-        score += 7
-        trace_parts.append("elevated-pace+7")
+        score += 8;  trace_parts.append("elevated-pace+8")
+    elif pace_mult >= 1.2:
+        score += 4;  trace_parts.append("normal-pace+4")
     else:
-        score += 5
-        trace_parts.append("normal-pace+5")
+        score += 2;  trace_parts.append("flat-pace+2")
 
-    # Positioning factor (derived keyword, not raw text)
-    pos_map = {"accumulating": 10, "distributing": 8, "hedging": 5}
+    # Positioning factor
+    pos_map = {"accumulating": 15, "distributing": 10, "hedging": 5}
     pos_score = pos_map.get(positioning, 5)
     score += pos_score
     trace_parts.append(f"{positioning}+{pos_score}")
 
-    # Contradiction bonus
-    score += contradiction_bonus
-    trace_parts.append(f"med-contradiction+{contradiction_bonus}")
+    # Contradiction bonus — proportional to actual contradiction score
+    if contradiction_bonus >= 12:
+        score += 15; trace_parts.append(f"acute-contradiction+15")
+    elif contradiction_bonus >= 8:
+        score += 10; trace_parts.append(f"high-contradiction+10")
+    elif contradiction_bonus >= 5:
+        score += 6;  trace_parts.append(f"med-contradiction+6")
+    elif contradiction_bonus > 0:
+        score += 3;  trace_parts.append(f"low-contradiction+3")
+
+    # Source quality factor — story source indicator
+    source_score = 0
+    if source in ("epfr", "morningstar", "bloomberg", "fed_z1"):
+        source_score = 10; trace_parts.append("tier1-source+10")
+    elif source in ("cftc_cot", "ici", "cboe", "bls"):
+        source_score = 7;  trace_parts.append("tier2-source+7")
+    elif source in ("telegram_intel", "internal"):
+        source_score = 3;  trace_parts.append("tier3-source+3")
+    else:
+        source_score = 5;  trace_parts.append("generic-source+5")
+    score += source_score
 
     score = min(score, 100)
+    score = max(score, 25)
 
     if score >= 80:
         level = "high"
-    elif score >= 65:
+    elif score >= 60:
         level = "medium"
     else:
         level = "low"
@@ -185,11 +204,22 @@ def extract_from_capital_flow_dict(cf, story, story_id):
         claim = cf.get("claim", "")
         amount_b, _ = parse_amount(claim)
 
+    # v22.37: If still at hardcoded 5.0 default, try parsing from story text
+    if amount_b == 5.0 or amount_b == 0:
+        headline_text = story.get("headline", "")
+        thesis_text = story.get("thesis", "") or story.get("reality", "")
+        benefit_text = story.get("benefit", "") or ""
+        capital_text = cf.get("claim", "") or cf.get("projected", "") or cf.get("amount", "")
+        all_text = f"{headline_text} {thesis_text} {benefit_text} {capital_text}"
+        parsed_b2, _ = parse_amount(all_text)
+        if parsed_b2 > 0:
+            amount_b = parsed_b2
+
     if amount_b == 0:
         return None
 
-    # Pace
-    pace_mult = extract_pace(cf.get("pace", ""))
+    # Pace — read from pace_multiplier first (numeric), then pace string
+    pace_mult = cf.get("pace_multiplier", 0) or extract_pace(cf.get("pace", ""))
 
     # Positioning: use raw text for display, derive keyword for confidence
     raw_positioning = cf.get("positioning", "")
@@ -228,12 +258,15 @@ def extract_from_capital_flow_dict(cf, story, story_id):
             if cut_point > 100:
                 projected = projected[:cut_point+1]
 
-    # Contradiction bonus
+    # Contradiction bonus — proportional to story's contradiction_score (0-15 range)
     contradiction = story.get("contradiction_score", 0)
-    contr_bonus = 5 if contradiction > 0 else 0
+    contr_bonus = min(15, int(contradiction / 5)) if contradiction > 0 else 0
+
+    # Source quality
+    source = story.get("source", "") or cf.get("source", "")
 
     confidence, conf_level, conf_trace = compute_confidence(
-        amount_b, pace_mult, derived_pos, contr_bonus
+        amount_b, pace_mult, derived_pos, contr_bonus, source
     )
 
     flow_id = f"flow_{story_id}"
@@ -253,6 +286,7 @@ def extract_from_capital_flow_dict(cf, story, story_id):
         "asset_class": asset_class,
         "anchor_symbol": anchor,
         "story_id": story_id,
+        "source": source,
         "confidence_pct": confidence,
         "confidence_level": conf_level,
         "confidence_trace": conf_trace,
@@ -456,6 +490,107 @@ def main():
     agg_direction = "bullish" if inflows >= outflows else "bearish"
     now_eet = datetime.now(EET)
 
+    # v22.31: Sector aggregation + divergence scoring
+    sector_agg = {}
+    for f in flows:
+        ac = f.get("asset_class", "equities")
+        if ac not in sector_agg:
+            sector_agg[ac] = {"total_b": 0, "inflows": 0, "outflows": 0, "flows": [], "avg_pace": 0, "avg_confidence": 0}
+        sector_agg[ac]["total_b"] += f["amount_b"]
+        sector_agg[ac]["flows"].append(f["id"])
+        if f["direction"] == "inflow":
+            sector_agg[ac]["inflows"] += 1
+        else:
+            sector_agg[ac]["outflows"] += 1
+    for ac in sector_agg:
+        n = len(sector_agg[ac]["flows"])
+        sector_agg[ac]["avg_pace"] = round(sum(f["pace_multiplier"] for f in flows if f["id"] in sector_agg[ac]["flows"]) / n, 1) if n else 0
+        sector_agg[ac]["avg_confidence"] = round(sum(f["confidence_pct"] for f in flows if f["id"] in sector_agg[ac]["flows"]) / n) if n else 0
+        sector_agg[ac]["direction"] = "inflow" if sector_agg[ac]["inflows"] >= sector_agg[ac]["outflows"] else "mixed"
+        sector_agg[ac]["count"] = n
+
+    # Divergence scoring: flows that contradict the aggregate direction
+    for f in flows:
+        is_contrarian = (agg_direction == "bullish" and f["direction"] == "outflow") or \
+                        (agg_direction == "bearish" and f["direction"] == "inflow")
+        # Divergence = how much this flow stands out
+        if is_contrarian:
+            f["divergence"] = "contrarian"
+            f["divergence_score"] = min(100, int(f["amount_b"] * f["pace_multiplier"] * 2))
+        else:
+            f["divergence"] = "aligned"
+
+    # v22.32: Flow Heat Score — percentile rank of amount_b among all flows (0-100)
+    amounts = sorted([f["amount_b"] for f in flows])
+    n = len(amounts)
+    for f in flows:
+        rank = sum(1 for a in amounts if a <= f["amount_b"])
+        f["heat_score"] = min(100, int((rank / n) * 100))
+
+    # v22.32: Trade Signal — derived from direction + divergence + confidence
+    for f in flows:
+        if f.get("divergence") == "contrarian":
+            f["trade_signal"] = "SELL" if f["direction"] == "outflow" else "BUY"
+            f["trade_emoji"] = "🔴" if f["trade_signal"] == "SELL" else "🟢"
+        elif f["direction"] == "inflow" and f["confidence_pct"] >= 90:
+            f["trade_signal"] = "BUY"
+            f["trade_emoji"] = "🟢"
+        elif f["direction"] == "outflow" and f["confidence_pct"] >= 85:
+            f["trade_signal"] = "SELL"
+            f["trade_emoji"] = "🔴"
+        elif f["pace_multiplier"] >= 2.5:
+            f["trade_signal"] = "BUY" if f["direction"] == "inflow" else "SELL"
+            f["trade_emoji"] = "🟢" if f["direction"] == "inflow" else "🔴"
+        else:
+            f["trade_signal"] = "WATCH"
+            f["trade_emoji"] = "🟡"
+
+    # v22.32: PDR estimation — simulated passive/active flow ratio per flow
+    # Real PDR needs EPFR fund-level data. This estimates from amount + pace:
+    # Large, slow flows → more likely passive; small, fast flows → more likely active
+    for f in flows:
+        amt = f["amount_b"]
+        pace = f["pace_multiplier"]
+        if amt >= 25 and pace <= 2.0:
+            pdr = round(1.5 + (amt / 50), 1)
+            f["pdr"] = pdr
+            f["flow_type"] = "passive_dominant"
+        elif amt >= 15 and pace >= 2.5:
+            pdr = round(0.5 + (amt / 30), 1)
+            f["pdr"] = pdr
+            f["flow_type"] = "active_conviction"
+        elif pace >= 3.0:
+            f["pdr"] = round(0.3 + (amt / 40), 1)
+            f["flow_type"] = "active_conviction"
+        else:
+            f["pdr"] = round(0.8 + (amt / 40), 1)
+            f["flow_type"] = "mixed"
+
+    # Lead insight: the most contrarian flow, or the highest-velocity flow
+    contrarians = [f for f in flows if f.get("divergence") == "contrarian"]
+    if contrarians:
+        lead = max(contrarians, key=lambda f: f.get("divergence_score", 0))
+        lead_insight = {
+            "type": "contrarian",
+            "headline": f"${lead['amount_b']:.1f}B {lead['direction']} {lead['asset_class']} — the only {'outflow' if lead['direction'] == 'outflow' else 'inflow'} in a {agg_direction} market",
+            "detail": f"SPX is being sold while {inflows-1} other flows pile in. Institutional distribution signal.",
+            "flow_id": lead["id"],
+            "amount_b": lead["amount_b"],
+            "asset_class": lead["asset_class"],
+            "direction": lead["direction"],
+        }
+    else:
+        fastest = max(flows, key=lambda f: f["pace_multiplier"])
+        lead_insight = {
+            "type": "velocity",
+            "headline": f"${fastest['amount_b']:.1f}B into {fastest['asset_class']} at {fastest['pace_multiplier']}x normal pace — fastest flow this cycle",
+            "detail": f"Velocity is the edge. This flow is moving {fastest['pace_multiplier']}x faster than normal quarterly pace.",
+            "flow_id": fastest["id"],
+            "amount_b": fastest["amount_b"],
+            "asset_class": fastest["asset_class"],
+            "pace_multiplier": fastest["pace_multiplier"],
+        }
+
     output = {
         "generated_at": now_eet.strftime("%Y-%m-%dT%H:%M:%S+03:00"),
         "generated_by": "generate_flows.py",
@@ -463,9 +598,11 @@ def main():
         "update_frequency": "60m",
         "summary": f"{inflows} inflows · {outflows} outflows",
         "aggregate_confidence": agg_conf,
-        "aggregate_confidence_label": "Outlook",
+        "aggregate_confidence_label": "Flow confidence",
         "aggregate_direction": agg_direction,
         "total_flows_tracked": len(flows),
+        "lead_insight": lead_insight,
+        "sector_summary": {ac: {k: v for k, v in d.items() if k != "flows"} for ac, d in sector_agg.items()},
         "flows": flows,
         "methodology": (
             "Flows sourced from EPFR Global, Morningstar Direct, and internal aggregation. "

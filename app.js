@@ -9,14 +9,27 @@ const FLOWS_POLL_INTERVAL = 300000;
 // ── Story cache for flow→story cross-linking ──
 const STORIES_CACHE = {}; // story_id → {headline, dom_card}
 
-function byId(id) { return document.getElementById(id); }
+// Page-aware element resolver — prevents duplicate-ID bugs from hidden compatibility divs.
+function byId(id) {
+  const pp = document.querySelector('.product-page');
+  if (pp) { const el = pp.querySelector('#' + CSS.escape(id)); if (el) return el; }
+  return document.getElementById(id);
+}
+
+// AbortController for stale fetch cancellation
+let _fetchAC = null;
 
 async function getJSON(path, fallback) {
+  if (_fetchAC) { _fetchAC.abort(); }
+  _fetchAC = new AbortController();
   try {
-    const r = await fetch(`${path}?t=${Date.now()}`, { cache: 'no-store' });
+    const r = await fetch(`${path}?t=${Date.now()}`, { cache: 'no-store', signal: _fetchAC.signal });
     if (!r.ok) throw new Error(String(r.status));
     return await r.json();
-  } catch (e) { console.warn('Fetch:', path, e); return fallback; }
+  } catch (e) {
+    if (e.name === 'AbortError') { console.debug('Fetch aborted:', path); return fallback; }
+    console.warn('Fetch:', path, e); return fallback;
+  }
 }
 
 // ── Captured story set (accumulation — never remove old cards) ──
@@ -110,6 +123,16 @@ function formatTimeAgo(isoString) {
   const hours = Math.floor(mins / 60);
   if (hours < 24) return `${hours}${i18n.t('h_ago','h ago')}`;
   return `${Math.floor(hours / 24)}${i18n.t('d_ago','d ago')}`;
+}
+
+function freshnessClass(isoString) {
+  if (!isoString) return 'freshness-stale';
+  const diff = Date.now() - new Date(isoString).getTime();
+  const hours = diff / 3600000;
+  if (hours < 1) return 'freshness-recent';
+  if (hours < 6) return 'freshness-today';
+  if (hours < 24) return 'freshness-day';
+  return 'freshness-stale';
 }
 
 function formatTimestamp(isoString) {
@@ -232,7 +255,7 @@ function anchorRowHTML(a) {
       <div class="asset-trade">
         <span class="${pillClass}">${i18n.t(a.bias.toLowerCase(), a.bias)}</span>
         <span class="asset-zone">${a.entry} → ${a.target}</span>
-        <span class="asset-stop" title="Volatility-adjusted: ${a.stop_atr_mult}×${atrPct}% ATR from entry">Stop ${a.stop} · ${a.stop_atr_mult}×ATR</span>
+        <span class="asset-stop" title="Volatility-adjusted: ${a.stop_atr_mult}×${atrPct}% ATR from entry">Stop ${a.stop || '—'} · ${a.stop_atr_mult}×ATR</span>
         <span class="${badgeClass}">${i18n.t("conviction_"+a.conviction, a.conviction)}</span>
       </div>
     </div>`;
@@ -258,7 +281,7 @@ function renderPDR(elId) {
 }
 
 function renderAnchor() {
-  const el = byId('assetList');
+  const el = byId('assetList') || byId('anchorGrid');
   if (el) el.innerHTML = ANCHOR_ASSETS.map(anchorRowHTML).join('') + cryptoSignalHTML();
   renderPDR('pdrGauge');
   
@@ -280,16 +303,33 @@ function renderAnchor() {
 
 let CAPITAL_FLOWS_DATA = [];
 let GLOSSARY = {};
+let STORIES_DATA = [];
 
 async function fetchFlows() {
   const data = await getJSON(getFlowsPath(), null);
   if (!data || !data.flows) return false;
   CAPITAL_FLOWS_DATA = data.flows;
   GLOSSARY = data.glossary || {};
+  if (data.generated_at) { window._flowsGeneratedAt = data.generated_at; if (!window._storiesGeneratedAt) window._storiesGeneratedAt = data.generated_at; }  // v22.37: also set stories timestamp for signal freshness fallback
   renderCapitalFlows();
+  renderFlowInsight(data);  // v22.31: sector aggregation + lead insight
+  renderMarketRegime();     // v22.34: Mike Green top 3 retail indicators
+  renderDivergenceMeter();  // v22.35: Cross-product signal overlay
+  // v22.35: Update signal freshness from stories data
+  const sfEl = byId('signalFreshness');
+  if (sfEl) {
+    const signalTime = window._storiesGeneratedAt || window._flowsGeneratedAt || data.generated_at;
+    if (signalTime) sfEl.textContent = 'updated ' + formatTimeAgo(signalTime);
+  }
   renderGlossaryTooltips();
   updateHeroConfidence(data.aggregate_confidence, data.aggregate_confidence_label, data.aggregate_direction);
   updateMastheadFlows(data);
+  // Update flow freshness timestamp
+  const tsEl = byId('flowFreshness');
+  if (tsEl && data.generated_at) {
+    tsEl.textContent = 'updated ' + formatTimeAgo(data.generated_at);
+    tsEl.title = data.generated_at;
+  }
   // Re-apply i18n to dynamically rendered flow items (v22.18)
   if (window.i18n && window.i18n.applyTranslations) window.i18n.applyTranslations();
   return true;
@@ -326,6 +366,24 @@ function positionLabel(positioning) {
   return i18n.t(v.key, v.fallback);
 }
 
+// ── Source label mappings ──
+const SOURCE_LABELS = {
+  'epfr': 'EPFR Global (institutional fund flows)',
+  'morningstar': 'Morningstar Direct (mutual fund/ETF)',
+  'bloomberg': 'Bloomberg Terminal (market data)',
+  'fed_z1': 'Federal Reserve Z.1 (Flow of Funds)',
+  'cftc_cot': 'CFTC Commitments of Traders',
+  'ici': 'ICI Weekly Fund Flows',
+  'cboe': 'CBOE (VIX/options data)',
+  'bls': 'BLS Employment (age-cohort data)',
+  'telegram_intel': 'Open-source intelligence (Telegram)',
+  'internal': 'Internal editorial pipeline',
+};
+function sourceLabel(source) {
+  if (!source) return 'Open-source intelligence';
+  return SOURCE_LABELS[source] || source.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+
 // ── Aggregate duplicate flows (same headline+direction+amount) ──
 function aggregateFlows(flows) {
   const seen = new Map();
@@ -342,6 +400,79 @@ function aggregateFlows(flows) {
     }
   });
   return result;
+}
+
+// v22.34: Mike Green Market Regime — top 3 retail indicators
+function renderMarketRegime() {
+  const mr = byId('marketRegime');
+  if (!mr) return;
+  fetch('./data/market_regime.json', {cache: 'reload'})
+    .then(r => r.json())
+    .then(data => {
+      if (!data || !data.indicators) return;
+      data.indicators.forEach(ind => {
+        const name = ind.indicator;
+        let valueEl, subEl;
+        if (name === 'Money Flow') {
+          valueEl = byId('regimeMFValue'); subEl = byId('regimeMFSub');
+        } else if (name === 'Top Heavy') {
+          valueEl = byId('regimeTHValue'); subEl = byId('regimeTHSub');
+        } else if (name === 'Bond Fear') {
+          valueEl = byId('regimeBFValue'); subEl = byId('regimeBFSub');
+        }
+        if (!valueEl) return;
+        const direction = ind.direction || ind.level || '—';
+        const strength = ind.strength || ind.score || ind.concentration_pct || 0;
+        const color = direction === 'BULLISH' || direction === 'LOW' ? 'var(--green)' :
+                      direction === 'BEARISH' || direction === 'EXTREME' || direction === 'HIGH' ? 'var(--red)' :
+                      'var(--gold)';
+        valueEl.innerHTML = `<span style="color:${color};">${direction}</span> <span style="font-size:11px;color:var(--ink-muted);font-weight:400;">${strength}</span>`;
+        if (subEl) subEl.textContent = ind.description || ind.components ? ind.description : '';
+      });
+      // v22.35: add time badge to market regime
+      const tsEl = byId('regimeTimestamp');
+      if (tsEl && data.generated_at) {
+        tsEl.textContent = formatTimeAgo(data.generated_at);
+      }
+      mr.style.display = 'grid';
+    })
+    .catch(() => { if (mr) mr.style.display = 'none'; });
+}
+// v22.31: Render lead insight + sector summary from flows.json
+function renderFlowInsight(flowsData) {
+  // Lead insight
+  const li = flowsData.lead_insight;
+  const liEl = byId('flowLeadInsight');
+  if (liEl && li) {
+    liEl.style.display = 'block';
+    const isContrarian = li.type === 'contrarian';
+    liEl.style.background = isContrarian
+      ? 'linear-gradient(135deg,rgba(220,38,38,0.06),rgba(255,255,255,1))'
+      : 'linear-gradient(135deg,rgba(5,150,105,0.06),rgba(255,255,255,1))';
+    liEl.style.borderLeft = '3px solid ' + (isContrarian ? 'var(--red)' : 'var(--green)');
+    liEl.querySelector('.flow-lead-headline').textContent = li.headline;
+    liEl.querySelector('.flow-lead-detail').textContent = li.detail || '';
+    const label = liEl.querySelector('span');
+    if (label) label.textContent = isContrarian ? '⚠ Divergence Signal' : '⚡ Velocity Signal';
+    if (label) label.style.color = isContrarian ? 'var(--red)' : 'var(--green)';
+  } else if (liEl) {
+    liEl.style.display = 'none';
+  }
+
+  // Sector summary grid
+  const ss = flowsData.sector_summary;
+  const ssEl = byId('flowSectorGrid');
+  if (ssEl && ss) {
+    ssEl.innerHTML = Object.entries(ss).map(([sector, data]) => {
+      const arrow = data.direction === 'inflow' ? '↑' : '⇅';
+      const color = data.direction === 'inflow' ? 'var(--green)' : 'var(--ink-muted)';
+      return `<div class="sector-stat-box">
+        <div class="sector-stat-label">${sector}</div>
+        <div class="sector-stat-value" style="color:${color};">$${data.total_b.toFixed(1)}B ${arrow}</div>
+        <div class="sector-stat-sub">${data.count} flows · ${data.avg_pace}x pace · ${data.avg_confidence}% conf</div>
+      </div>`;
+    }).join('');
+  }
 }
 
 function renderCapitalFlows() {
@@ -362,17 +493,35 @@ function renderCapitalFlows() {
     const paceDisplay = f.pace_multiplier >= 1.5 ? `↑ ${f.pace_multiplier}×` : f.pace_multiplier <= 0.7 ? `↓ ${f.pace_multiplier}×` : `= ${f.pace_multiplier}×`;
     const catalystBadge = f.catalyst_count > 1 ? `<span class="catalyst-badge">${f.catalyst_count} ` + i18n.t('catalysts','catalysts') + `</span>` : '';
 
-    // v22.16: Retail-flattened — direction + sector + play only. % and pace in detail.
+    // v22.32: Trade signal emoji + heat score in collapsed view
     const playPill = anchorAsset
-      ? `<span class="flow-bet-pill-mini">${anchorAsset.symbol} ${anchorAsset.bias} · ${anchorAsset.conviction}</span>`
+      ? `<a href="./trades.html" class="flow-bet-pill-mini" style="text-decoration:none;" title="View trade idea for ${anchorAsset.symbol}">${anchorAsset.symbol} ${anchorAsset.bias} · ${anchorAsset.conviction}</a>`
       : '';
+    const tradeEmoji = f.trade_emoji || '';
+    const tradeSignal = f.trade_signal || '';
+    // Fix ⑥: Divergence — separate flow direction from trade direction
+    const flowIsOutflow = f.direction === 'outflow';
+    const tradeIsBuy = tradeSignal === 'BUY';
+    const divergenceWarn = (flowIsOutflow && tradeIsBuy) ? ' ⚠ contrarian' : (!flowIsOutflow && tradeSignal === 'SELL') ? ' ⚠ contrarian' : '';
+    
+    const heatScore = f.heat_score || 50;
+    const heatClass = heatScore >= 80 ? 'heat-extreme' : heatScore >= 60 ? 'heat-high' : heatScore >= 40 ? 'heat-moderate' : 'heat-low';
+    
+    // Fix ③: PDR mini badge in collapsed view
+    const pdr = f.pdr || 1.0;
+    const pdrClass = pdr >= 1.5 ? 'passive' : pdr <= 0.7 ? 'active' : 'mixed';
+    const pdrLabel = pdr >= 1.5 ? 'PASSIVE' : pdr <= 0.7 ? 'ACTIVE' : 'MIXED';
+    
     return `
     <div class="flow-row ${f.direction}" data-flow-story-id="${f.story_ids ? f.story_ids[0] : f.story_id}">
       <div class="flow-row-main">
+        <span class="flow-trade-signal" title="${tradeSignal}${divergenceWarn}" aria-label="${tradeSignal}">${tradeEmoji}</span>
         <span class="flow-amount">$${f.amount_b.toFixed(1)}B</span>
         <span class="flow-dir ${f.direction}">${dirArrow} ${dirLabel}</span>
         <span class="flow-asset">${f.asset_class || 'equities'}</span>
         ${playPill}
+        <span class="flow-pdr-mini ${pdrClass}" title="PDR ${pdr.toFixed(1)}x — ${pdrLabel} flow dominance">PDR ${pdr.toFixed(1)}x</span>
+        <span class="flow-heat ${heatClass}" title="Flow heat: ${heatScore}/100 (${heatScore>=80?'extreme':heatScore>=60?'high':heatScore>=40?'moderate':'low'})">${heatScore}</span>
         ${catalystBadge}
         <span class="flow-expand-hint">&#9660;</span>
       </div>
@@ -383,16 +532,25 @@ function renderCapitalFlows() {
         </div>
         <div class="flow-detail-section">
           <span class="flow-detail-label">CONVICTION</span>
-          <span class="flow-confidence-badge">${confPct}% ${f.confidence_level || ''}</span>
-          ${f.confidence_trace ? '<span class="flow-confidence-trace">' + f.confidence_trace.split(' > ').join(' + ') + '</span>' : ''}
+          <span class="flow-confidence-badge">${confPct > 80 ? '80-95' : confPct > 60 ? '60-80' : '50-65'}% ${f.confidence_level || ''}</span>
+          ${f.confidence_trace ? '<span class="flow-confidence-trace" title="Model components: ' + f.confidence_trace.replace(/>/g, '→') + '">' + f.confidence_trace.split(' > ').length + ' signals</span>' : ''}
         </div>
         <div class="flow-detail-section">
           <span class="flow-detail-label">LINKED STORY</span>
           <a href="./story.html?id=${f.story_ids ? f.story_ids[0] : f.story_id || ''}" class="flow-story-link">&rarr; View intelligence report</a>
+          ${f.story_ids && f.story_ids.length > 1 ? `<span class="flow-story-extra" style="font-size:9px;color:var(--ink-muted);margin-left:4px;">+${f.story_ids.length - 1} more</span>` : ''}
+        </div>
+        <div class="flow-detail-section">
+          <span class="flow-detail-label">DATA SOURCE</span>
+          <span class="flow-source-badge">${sourceLabel(f.source || 'telegram_intel')}</span>
         </div>
         <div class="flow-detail-section">
           <span class="flow-detail-label">POSITIONING</span>
           <span class="flow-positioning-detail">${f.positioning ? positionLabel(f.positioning) : 'No data'} &middot; ${paceDisplay} pace</span>
+        </div>
+        <div class="flow-detail-section">
+          <span class="flow-detail-label">PDR · FLOW TYPE</span>
+          <span class="flow-pdr-badge">PDR ${pdr.toFixed(1)}x · ${(f.flow_type||'mixed').replace('_',' ')} ${pdr >= 1.5 ? '· Index-driven (not active buying)' : pdr <= 0.7 ? '· Active conviction (follow)' : '· Mixed signal'}</span>
         </div>
       </div>
     </div>`;
@@ -402,7 +560,10 @@ function renderCapitalFlows() {
   if (sub) {
     const inflows = CAPITAL_FLOWS_DATA.filter(f => f.direction === 'inflow');
     const outflows = CAPITAL_FLOWS_DATA.filter(f => f.direction === 'outflow');
-    sub.textContent = `${inflows.length} ${i18n.t('flow_inflows','inflows')} · ${outflows.length} ${i18n.t('flow_outflows','outflows')}`;
+    // v22.35: time freshness badge on every product
+    const genTime = window._flowsGeneratedAt || '';
+    const ageStr = genTime ? formatTimeAgo(genTime) : '';
+    sub.innerHTML = `${inflows.length} ${i18n.t('flow_inflows','inflows')} · ${outflows.length} ${i18n.t('flow_outflows','outflows')}${ageStr ? ' · <span style="font-size:9px;color:var(--ink-muted);">' + ageStr + '</span>' : ''}`;
   }
 
   // Wire expand-on-click (v22.17)
@@ -457,13 +618,13 @@ function updateHeroConfidence(pct, label, direction) {
     el.style.color = '';
     return;
   }
-  // Directional conviction badge — retail-comprehensible (v22.16)
-  // Shows BULLISH/BEARISH as primary signal, percentage as secondary tooltip
+  // Directional conviction badge — % + direction visible (v22.28: degen+retail focus group)
+  // Both focus group personas couldn't find the confidence — it was hidden in tooltip
   const badge = direction === 'bullish' ? 'BULLISH' : direction === 'bearish' ? 'BEARISH' : 'NEUTRAL';
   const color = direction === 'bullish' ? 'var(--green)' : direction === 'bearish' ? 'var(--red)' : 'var(--ink-muted)';
-  el.innerHTML = `<span style="color:${color};font-weight:700;font-size:inherit;">${badge}</span>`;
-  el.title = `${pct}% conviction — ${direction}`;
-  // Color the outer span
+  const tierLabel = pct >= 80 ? 'Strong conviction' : pct >= 60 ? 'Moderate conviction' : 'Weak signal';
+  el.innerHTML = `<div><span style="color:${color};font-weight:700;font-size:inherit;">${pct}% ${badge}</span></div><div style="font-size:9px;color:var(--ink-muted);margin-top:1px;">${tierLabel}</div>`;
+  el.title = `Flow confidence: ${pct}% (${label}). Based on: flow magnitude, pace, institutional positioning, contradiction score, source quality.`;
   el.style.color = color;
   // Label stays clean — data-i18n handles it
 }
@@ -601,30 +762,135 @@ function computeTriangulation(story, flow, anchorAsset) {
   return { score: cappedScore, verdict, verdictCls, alignment, alignDetail, signals, anchorAsset, flowDir, betBias };
 }
 
+// v22.35: Cross-product divergence meter — Wall Street #1 request
+// Shows story signal × flow signal × trade signal = divergence score per asset
+function renderDivergenceMeter() {
+  const el = byId('divergenceMeter');
+  if (!el) return;
+  if (!ANCHOR_ASSETS.length || !CAPITAL_FLOWS_DATA.length) return;
+  
+  const rows = [];
+  ANCHOR_ASSETS.forEach(a => {
+    if (a.bias === 'WATCH') return; // Skip WATCH — no directional signal
+    
+    // Find matching flow(s)
+    const matchingFlows = CAPITAL_FLOWS_DATA.filter(f => {
+      const ac = (f.asset_class || '').toLowerCase();
+      const sym = a.symbol.toLowerCase();
+      if (sym === 'spx' && (ac.includes('equit') || ac.includes('sp'))) return true;
+      if (sym === 'brent' && (ac.includes('commodit') || ac.includes('oil') || ac.includes('energy'))) return true;
+      if (sym === 'nvda' && (ac.includes('tech') || ac.includes('semi'))) return true;
+      if (sym === 'gold' && (ac.includes('gold') || ac.includes('commodit'))) return true;
+      if (sym === 'btc' && ac.includes('crypto')) return true;
+      if (sym === 'dxy' && ac.includes('fx')) return true;
+      return false;
+    });
+    
+    // Count story signals matching this asset
+    const matchingStories = STORIES_DATA.filter(s => {
+      const h = (s.headline || '').toLowerCase();
+      const sym = a.symbol.toLowerCase();
+      if (sym === 'spx' && (h.includes('spx') || h.includes('s&p') || h.includes('equit'))) return true;
+      if (sym === 'brent' && (h.includes('oil') || h.includes('brent') || h.includes('crude') || h.includes('opec'))) return true;
+      if (sym === 'nvda' && (h.includes('nvda') || h.includes('nvidia') || h.includes('ai') || h.includes('chip'))) return true;
+      if (sym === 'gold' && h.includes('gold')) return true;
+      if (sym === 'btc' && (h.includes('btc') || h.includes('bitcoin') || h.includes('crypto'))) return true;
+      if (sym === 'dxy' && (h.includes('dollar') || h.includes('dxy'))) return true;
+      return false;
+    });
+    
+    const flowDir = matchingFlows.length ? (matchingFlows.filter(f => f.direction === 'inflow').length >= matchingFlows.filter(f => f.direction === 'outflow').length ? '↑' : '↓') : '—';
+    const storyBias = matchingStories.filter(s => {
+      const cf = s.capital_flow || {};
+      return cf.direction === 'inflow';
+    }).length >= matchingStories.filter(s => {
+      const cf = s.capital_flow || {};
+      return cf.direction === 'outflow';
+    }).length ? '↑' : '↓';
+    
+    const tradeDir = a.bias === 'BUY' ? '↑' : '↓';
+    
+    // Divergence: do all three agree?
+    const dirs = [flowDir, tradeDir];
+    if (matchingStories.length) dirs.unshift(storyBias);
+    const allSame = dirs.every(d => d === dirs[0] || d === '—');
+    const divergence = allSame ? 'ALIGNED' : dirs.filter(d => d !== '—').length >= 2 && !allSame ? 'DIVERGENT' : 'NEUTRAL';
+    const divColor = divergence === 'ALIGNED' ? 'var(--green)' : divergence === 'DIVERGENT' ? 'var(--red)' : 'var(--gold)';
+    
+    rows.push({
+      symbol: a.symbol,
+      storySignal: matchingStories.length ? storyBias : '—',
+      flowSignal: flowDir,
+      tradeSignal: tradeDir,
+      divergence,
+      divColor,
+      stories: matchingStories.length,
+      flows: matchingFlows.length,
+      conviction: a.conviction
+    });
+  });
+  
+  // Sort: divergent first, then by conviction
+  rows.sort((a,b) => {
+    if (a.divergence === 'DIVERGENT' && b.divergence !== 'DIVERGENT') return -1;
+    if (b.divergence === 'DIVERGENT' && a.divergence !== 'DIVERGENT') return 1;
+    return (a.conviction === 'HIGH' ? 0 : 1) - (b.conviction === 'HIGH' ? 0 : 1);
+  });
+  
+  el.innerHTML = `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--divider);margin-bottom:16px;">
+    ${rows.map(r => `
+      <div style="background:var(--white);padding:8px 10px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+          <span style="font-family:var(--sans);font-size:11px;font-weight:700;">${r.symbol}</span>
+          <span style="font-family:var(--sans);font-size:8px;font-weight:700;color:${r.divColor};text-transform:uppercase;">${r.divergence}</span>
+        </div>
+        <div style="display:flex;gap:8px;font-size:10px;font-family:var(--sans);color:var(--ink-muted);">
+          <span>Story ${r.storySignal} (${r.stories})</span>
+          <span>Flow ${r.flowSignal} (${r.flows})</span>
+          <span>Trade ${r.tradeSignal}</span>
+        </div>
+      </div>
+    `).join('')}
+  </div>`;
+}
+
 function renderTriangulation() {
-  const el = byId('triangulationList');
+  const el = byId('signalGrid') || byId('triangulationList');
   if (!el) return;
 
-  // Collect stories from the DOM
+  // Collect stories — prefer DOM cards, fall back to STORIES_DATA global
   const cards = document.querySelectorAll('.card[data-story-id]');
   const items = [];
-  cards.forEach(card => {
-    const sid = card.dataset.storyId;
-    const headline = card.querySelector('h3')?.textContent || '';
-    const flowItem = CAPITAL_FLOWS_DATA.find(f => f.story_id === sid);
-    // Build a minimal story object from card data
-    const story = {
-      story_id: sid,
-      headline: headline,
-      confidence: 'high', // default
-      they_say: card.querySelector('.con-they')?.textContent || '',
-      reality: card.querySelector('.con-real')?.textContent || '',
-      extremum: card.querySelector('.card-extremum')?.textContent || '',
-    };
-    const anchorAsset = matchAnchor(headline);
-    const tri = computeTriangulation(story, flowItem, anchorAsset);
-    items.push({ ...tri, headline, storyId: sid });
-  });
+
+  if (cards.length > 0) {
+    // DOM-based collection (index page / stories page)
+    cards.forEach(card => {
+      const sid = card.dataset.storyId;
+      const headline = card.querySelector('h3')?.textContent || '';
+      const flowItem = CAPITAL_FLOWS_DATA.find(f => f.story_id === sid);
+      const story = {
+        story_id: sid,
+        headline: headline,
+        confidence: 'medium',
+        they_say: card.querySelector('.con-they')?.textContent || '',
+        reality: card.querySelector('.con-real')?.textContent || '',
+        extremum: card.querySelector('.card-extremum')?.textContent || '',
+      };
+      const anchorAsset = matchAnchor(headline);
+      const tri = computeTriangulation(story, flowItem, anchorAsset);
+      items.push({ ...tri, headline, storyId: sid });
+    });
+  } else if (STORIES_DATA.length > 0) {
+    // STORIES_DATA fallback (signal page, product pages without DOM cards)
+    STORIES_DATA.forEach(story => {
+      const sid = story.story_id;
+      const headline = story.headline || '';
+      const flowItem = CAPITAL_FLOWS_DATA.find(f => f.story_id === sid);
+      const anchorAsset = matchAnchor(headline);
+      const tri = computeTriangulation(story, flowItem, anchorAsset);
+      items.push({ ...tri, headline, storyId: sid });
+    });
+  }
 
   if (items.length === 0) {
     el.innerHTML = '<div style="padding:12px;color:var(--ink-muted);font-style:italic;font-size:12px">' + i18n.t('stories_loading','Stories loading — triangulation will appear when cards are rendered.') + '</div>';
@@ -770,14 +1036,24 @@ function livingCardHTML(story, isLead) {
   }
   const cfClaim = cf ? `<div class="cf-claim">${cf.claim} — projected ${cf.projected} change at ${cf.confidence} confidence</div>` : '';
 
-  // Capital flow hint chip (tiny magnitude indicator for collapsed view)
+  // Capital flow connector chip — flow amount + trade position (v22.29)
   let cfHint = '';
   if (cf && cf.amount_b) {
   const hintDir = (cf.direction === 'outflow') ? '↓' : '↑';
   const hintAmt = cf.amount_b >= 1 ? `$${cf.amount_b.toFixed(1)}B` : `$${(cf.amount_b * 1000).toFixed(0)}M`;
   const hintColor = cf.direction === 'outflow' ? 'var(--red)' : 'var(--green)';
   const sectorHint = cf.asset_class ? ` ${cf.asset_class}` : '';
-  cfHint = `<span class="cf-hint" style="color:${hintColor}" title="Capital flowing ${cf.direction === 'outflow' ? 'out of' : 'into'} ${cf.asset_class || 'this sector'}">${hintAmt} ${hintDir}${sectorHint}</span>`;
+  // Find linked trade position from ANCHOR_ASSETS
+  let tradeHint = '';
+  const anchorSym = cf.anchor_symbol || matchAnchor(story.headline || '');
+  if (anchorSym) {
+    const anchorAsset = ANCHOR_ASSETS.find(a => a.symbol === anchorSym);
+    if (anchorAsset) {
+      const tradeColor = anchorAsset.bias === 'BUY' || anchorAsset.bias === 'LONG' ? 'var(--green)' : anchorAsset.bias === 'SELL' || anchorAsset.bias === 'SHORT' ? 'var(--red)' : 'var(--ink-muted)';
+      tradeHint = `<span style="color:${tradeColor};margin-left:4px;">→ ${anchorAsset.symbol} ${anchorAsset.bias} ${anchorAsset.conviction}</span>`;
+    }
+  }
+  cfHint = `<a href="./flows.html" class="cf-hint" style="color:${hintColor};text-decoration:none;" title="View in Capital Flows — ${cf.direction === 'outflow' ? 'out of' : 'into'} ${cf.asset_class || 'this sector'}">${hintAmt} ${hintDir}${sectorHint}${tradeHint}</a>`;
   }
 
   // Sector border-left class
@@ -790,6 +1066,14 @@ function livingCardHTML(story, isLead) {
     : '';
   const updatedAgo = story.last_updated
     ? `<span class="updated-ago">${formatTimeAgo(story.last_updated)}</span>`
+    : '';
+
+  // Freshness indicator — time-ago from generated_at, color-coded by recency
+  const freshnessAgo = story.generated_at
+    ? `<time class="freshness-ago ${freshnessClass(story.generated_at)}" datetime="${story.generated_at}" title="${new Date(story.generated_at).toLocaleString()}">${formatTimeAgo(story.generated_at)}</time>`
+    : '';
+  const breakingBadge = story.freshness === 'breaking'
+    ? '<span class="breaking-badge">BREAKING</span>'
     : '';
 
   // Extremum line
@@ -820,9 +1104,10 @@ function livingCardHTML(story, isLead) {
         <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:2px">
           ${sector ? `<span class="category-tag ${sector}">${SECTOR_LABELS[sector] ? SECTOR_LABELS[sector]() : sector}</span>` : ''}
           <span class="severity ${severity}">${severity === 'critical' ? i18n.t('severity_critical','CRITICAL') : severity === 'high' ? i18n.t('severity_high','HIGH') : i18n.t('severity_elevated','ELEVATED')}</span>
+          ${breakingBadge}
+          ${freshnessAgo}
           ${updateBadge}
           ${updatedAgo}
-          <time class="story-date" datetime="${story.generated_at || story.last_updated || ''}">${story.generated_at ? new Date(story.generated_at).toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'}) : ''}</time>
         </div>
         <div style="display:flex;align-items:flex-start;gap:6px">
           <h3 style="flex:1"><a href="./story.html?id=${story.story_id}" style="color:inherit;text-decoration:none">${story.headline}</a></h3>
@@ -1090,7 +1375,7 @@ function getCumulative(key, fallback) {
 }
 
 function setCumulative(key, val) {
-  try { localStorage.setItem('gazzetta_' + key, JSON.stringify(val)); } catch(e) {}
+  try { localStorage.setItem('gazzetta_' + key, JSON.stringify(val)); } catch(e) { console.error("localStorage:", e); }
 }
 
 function updateCumulativeStats() {
@@ -1165,7 +1450,7 @@ function getTrackRecord() {
 }
 
 function saveTrackRecord(records) {
-  try { localStorage.setItem(TRACK_RECORD_KEY, JSON.stringify(records)); } catch(e) {}
+  try { localStorage.setItem(TRACK_RECORD_KEY, JSON.stringify(records)); } catch(e) { console.error("localStorage:", e); }
 }
 
 function snapshotPredictions() {
@@ -1291,6 +1576,56 @@ function renderTrackRecord(targetId) {
   settlePredictions();
   const stats = computeTrackRecordStats();
 
+  // v22.35: Merge server-side track record with localStorage
+  fetch('./data/track_record.json', {cache: 'reload'})
+    .then(r => r.json())
+    .then(serverData => {
+      if (serverData && serverData.trades) {
+        const serverSettled = serverData.trades.filter(t => t.settled).length;
+        const serverOpen = serverData.trades.filter(t => !t.settled).length;
+        const serverTrades = serverData.trades.filter(t => t.settled && t.realized_pnl_pct !== undefined);
+        const serverWins = serverTrades.filter(t => t.realized_pnl_pct > 0);
+        const serverLosses = serverTrades.filter(t => t.realized_pnl_pct <= 0);
+        const totalTrades = serverTrades.length;
+        const winRate = totalTrades ? Math.round(serverWins.length / totalTrades * 100) : 0;
+        const totalPnL = serverTrades.reduce((s, t) => s + t.realized_pnl_pct, 0);
+        const avgWin = serverWins.length ? (serverWins.reduce((s,t) => s + t.realized_pnl_pct, 0) / serverWins.length) : 0;
+        const avgLoss = serverLosses.length ? (serverLosses.reduce((s,t) => s + t.realized_pnl_pct, 0) / serverLosses.length) : 0;
+        const expectancy = totalTrades ? (winRate/100 * avgWin + (1-winRate/100) * avgLoss) : 0;
+
+        // Merge: server data for settled, localStorage for open
+        const localOpen = stats.open || 0;
+        
+        el.innerHTML = `<div class="tr-active">
+          <div class="tr-grid">
+            <div class="tr-stat"><span class="tr-val">${totalTrades}</span><span class="tr-label">Bets Settled</span></div>
+            <div class="tr-stat"><span class="tr-val">${winRate}%</span><span class="tr-label">Win Rate</span></div>
+            <div class="tr-stat"><span class="tr-val">${totalPnL > 0 ? '+' : ''}${totalPnL.toFixed(1)}%</span><span class="tr-label">Total P&L</span></div>
+            <div class="tr-stat"><span class="tr-val">${expectancy > 0 ? '+' : ''}${expectancy.toFixed(1)}%</span><span class="tr-label">Expectancy</span></div>
+          </div>
+          <div class="tr-detail">
+            <span>Avg win: +${avgWin.toFixed(1)}%</span>
+            <span>Avg loss: ${avgLoss.toFixed(1)}%</span>
+            <span>Open: ${serverOpen + localOpen}</span>
+            <span>Last: ${serverTrades.length ? serverTrades.sort((a,b) => b.resolved_date.localeCompare(a.resolved_date))[0].resolved_date : '—'}</span>
+          </div>
+          ${serverData.trades.filter(t => t.settled).slice(0, 5).map(t => 
+            `<div class="tr-trade-row" style="font-size:10px;padding:4px 0;border-bottom:1px solid var(--divider);display:flex;justify-content:space-between;">
+              <span>${t.symbol} ${t.bias} · ${t.headline.slice(0,40)}...</span>
+              <span style="color:${t.realized_pnl_pct > 0 ? 'var(--green)' : 'var(--red)'};">${t.realized_pnl_pct > 0 ? '+' : ''}${t.realized_pnl_pct}%</span>
+            </div>`
+          ).join('')}
+          <div class="tr-methodology"><a href="capital.html">Full methodology →</a></div>`;
+      }
+    })
+    .catch(() => {
+      // Fallback: localStorage only
+      renderTrackRecordLocal(el, stats);
+    });
+}
+
+// v22.35: Fallback — localStorage-only rendering (no server data)
+function renderTrackRecordLocal(el, stats) {
   let html = '';
   if (stats.total === 0) {
     const openCount = stats.open || 0;
@@ -1301,10 +1636,10 @@ function renderTrackRecord(targetId) {
         <div class="tr-stat"><span class="tr-val">${openExposure}</span><span class="tr-label">Notional Exposure</span></div>
         <div class="tr-stat"><span class="tr-val">0</span><span class="tr-label">Settled</span></div>
       </div>
-      <div class="tr-empty" style="margin-top:8px">Positions snapshotted today. First settlements expected within 7 days as targets/stops hit.</div>
+      <div class="tr-empty" style="margin-top:8px">Positions snapshotted today. First settlements expected within 7 days.</div>
     </div>`;
   } else {
-    html = `
+    html = `<div class="tr-active">
       <div class="tr-grid">
         <div class="tr-stat"><span class="tr-val">${stats.total}</span><span class="tr-label">Bets Settled</span></div>
         <div class="tr-stat"><span class="tr-val">${stats.winRate}%</span><span class="tr-label">Win Rate</span></div>
@@ -1314,11 +1649,9 @@ function renderTrackRecord(targetId) {
       <div class="tr-detail">
         <span>Avg win: +${stats.avgWin}%</span>
         <span>Avg loss: ${stats.avgLoss}%</span>
-        <span>Open positions: ${stats.open}</span>
+        <span>Open: ${stats.open}</span>
       </div>`;
   }
-
-  // Methodology link
   html += `<div class="tr-methodology"><a href="capital.html">Full methodology →</a></div>`;
   el.innerHTML = html;
 }
@@ -1353,6 +1686,26 @@ function patchStoryCard(card, story) {
   const ago = card.querySelector('.updated-ago');
   if (ago && story.last_updated) {
     ago.textContent = formatTimeAgo(story.last_updated);
+  }
+
+  // Refresh freshness-ago display (time has passed since initial render)
+  const freshnessEl = card.querySelector('.freshness-ago');
+  if (freshnessEl && story.generated_at) {
+    freshnessEl.textContent = formatTimeAgo(story.generated_at);
+    freshnessEl.className = 'freshness-ago ' + freshnessClass(story.generated_at);
+  }
+  // Update / add breaking badge
+  const existingBreaking = card.querySelector('.breaking-badge');
+  if (story.freshness === 'breaking' && !existingBreaking) {
+    const metaRow = card.querySelector('.card-head > div:first-child');
+    if (metaRow) {
+      const severityEl = metaRow.querySelector('.severity');
+      if (severityEl) {
+        severityEl.insertAdjacentHTML('afterend', '<span class="breaking-badge">BREAKING</span>');
+      }
+    }
+  } else if (story.freshness !== 'breaking' && existingBreaking) {
+    existingBreaking.remove();
   }
 
   const headlineEl = card.querySelector('h3');
@@ -1493,7 +1846,7 @@ function copyShareLink(card) {
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(text).then(() => showToast('✓ Link copied')).catch(() => {});
   } else {
-    try { document.execCommand('copy'); showToast('✓ Link copied'); } catch(e) {}
+    try { document.execCommand('copy'); showToast('✓ Link copied'); } catch(e) { console.error("localStorage:", e); }
   }
 }
 
@@ -1559,8 +1912,8 @@ async function boot() {
   // Set masthead timestamp IMMEDIATELY (don't wait for async ops)
   updateMasthead();
 
-  // Fetch flows — only if flows container exists
-  if (byId('flowsList')) await fetchFlows();
+  // Fetch flows — always, regardless of page (drives hero confidence, flowFreshness, global state)
+  await fetchFlows();
 
   // Start flows polling (5 min cadence)
   setInterval(fetchFlows, FLOWS_POLL_INTERVAL);
@@ -1575,6 +1928,7 @@ async function boot() {
     const leadId = livingData.lead?.story_id;
     const stories = (livingData.stories || []).filter(s => s.story_id !== leadId);
     const all = [livingData.lead, ...stories, ...(livingData.archived_stories || [])].filter(Boolean);
+    STORIES_DATA = all;  // v22.30: global store
 
     const el = byId('newsCol');
     if (el) {
@@ -1615,6 +1969,7 @@ async function boot() {
   const leadId = data.lead.story_id;
   const filteredStories = (data.stories || []).filter(s => s.story_id !== leadId);
   const all = [data.lead, ...filteredStories].filter(Boolean);
+  STORIES_DATA = all;  // v22.30: global store for cross-page triangulation
 
   const el2 = byId('newsCol');
   if (el2) {
@@ -1630,57 +1985,16 @@ async function boot() {
   // Re-apply i18n to dynamically inserted DOM (v22.18)
   if (window.i18n && window.i18n.applyTranslations) window.i18n.applyTranslations();
 
-  // v22.18: Hints lobby — populate front page cards from summary.json
-  if (document.querySelector('.hints-lobby')) {
-    fetch('./api/v1/home/summary.json?t=' + Date.now(), {cache:'no-store'})
-      .then(r => r.json())
-      .then(d => {
-        if (d.stories) {
-          const sc = document.getElementById('hintStoriesCount');
-          const sl = document.getElementById('hintStoriesLatest');
-          if (sc) sc.textContent = d.stories.count + ' stories';
-          if (sl) sl.textContent = (d.stories.lead_headline || '').slice(0, 60) + '...';
-        }
-        if (d.flows) {
-          const fa = document.getElementById('hintFlowsAmount');
-          const fd = document.getElementById('hintFlowsDirection');
-          if (fa) fa.textContent = '$' + d.flows.total_b.toFixed(1) + 'B';
-          if (fd) {
-            const arrow = d.flows.direction === 'bullish' ? '↑' : '↓';
-            fd.textContent = arrow + ' ' + d.flows.inflows + ' inflows · ' + d.flows.outflows + ' outflows · ' + d.flows.confidence + '% confidence';
-          }
-        }
-        if (d.trades) {
-          const tc = document.getElementById('hintTradesCount');
-          const tt = document.getElementById('hintTradesTop');
-          if (tc) tc.textContent = d.trades.open_count + ' positions';
-          if (tt) tt.textContent = 'PDR ' + d.trades.pdr + ' · Top: ' + (d.trades.top_tickers || []).join(', ');
-        }
-        if (d.signal) {
-          const ss = document.getElementById('hintSignalScore');
-          const sd = document.getElementById('hintSignalDetail');
-          if (ss) ss.textContent = d.signal.highest_score + '/100';
-          if (sd) sd.textContent = d.signal.count + ' signals · ' + d.signal.max_conviction + ' max conviction';
-        }
-        if (d.track) {
-          const tr = document.getElementById('hintTrackRate');
-          const tt = document.getElementById('hintTrackTotal');
-          if (tr) tr.textContent = d.track.win_rate + '%';
-          if (tt) tt.textContent = 'Win rate · ' + d.track.total_trades + ' trades · +' + d.track.avg_return + '% avg';
-        }
-      })
-      .catch(() => {}); // Silent fail — cards show dashes
-  }
+  // v22.42: Homepage teasers are populated by populateTeasers() called via setTimeout below
+
   // v22.18: Mobile hint condensation — shorten subtitles on small screens
   if (window.innerWidth < 600 && document.querySelector('.hints-lobby')) {
     document.querySelectorAll('.hint-card-sub').forEach(el => {
       const text = el.textContent;
-      // Condense to ~60 chars max
       if (text.length > 60) {
         el.textContent = text.slice(0, 57).trim() + '...';
       }
     });
-    // Smaller value font on mobile
     document.querySelectorAll('.hint-card-value').forEach(el => {
       el.style.fontSize = '20px';
     });
@@ -1710,7 +2024,7 @@ async function populateTeasers() {
         if (countEl) countEl.textContent = items.length + ' stories';
       }
     }
-  } catch(e) {}
+  } catch(e) { console.error("populateTeasers:", e); }
 
   // Flows teaser
   try {
@@ -1727,11 +2041,16 @@ async function populateTeasers() {
         if (subEl) {
           const inflows = flowsData.flows.filter(f => f.direction === 'inflow').length;
           const outflows = flowsData.flows.filter(f => f.direction === 'outflow').length;
-          subEl.textContent = `${inflows} inflows · ${outflows} outflows · ${flowsData.aggregate_confidence}%`;
+          const aggDir = flowsData.aggregate_direction || "neutral";
+          const aggPct = flowsData.aggregate_confidence || 0;
+          const badgeLabel = aggDir === "bullish" ? "BULLISH" : aggDir === "bearish" ? "BEARISH" : "NEUTRAL";
+          const badgeColor = aggDir === "bullish" ? "#059669" : aggDir === "bearish" ? "#DC2626" : "var(--ink-muted)";
+          const badgeClass = aggDir === "bullish" ? "bullish" : aggDir === "bearish" ? "bearish" : "neutral";
+          subEl.innerHTML = `${inflows} in · ${outflows} out · <span class="flow-aggregate-badge ${badgeClass}">${badgeLabel} ${aggPct}%</span>`;
         }
       }
     }
-  } catch(e) {}
+  } catch(e) { console.error("populateTeasers:", e); }
 
   // Trades teaser
   try {
@@ -1747,7 +2066,7 @@ async function populateTeasers() {
         if (subEl) subEl.textContent = `${ANCHOR_ASSETS.length} positions`;
       }
     }
-  } catch(e) {}
+  } catch(e) { console.error("populateTeasers:", e); }
 
   // Signal teaser
   setTimeout(() => {
@@ -1763,7 +2082,7 @@ async function populateTeasers() {
         }).join('');
         if (subEl) subEl.textContent = `${signalCards.length} signals`;
       }
-    } catch(e) {}
+    } catch(e) { console.error("populateTeasers:", e); }
   }, 3000);
 
   // Track teaser
@@ -1776,7 +2095,7 @@ async function populateTeasers() {
       el.innerHTML = `<span class="teaser-item">${text.slice(0, 120)}</span>`;
       if (subEl) subEl.textContent = 'Performance summary';
     }
-  } catch(e) {}
+  } catch(e) { console.error("populateTeasers:", e); }
 
   // Re-apply i18n
   if (window.i18n && window.i18n.applyTranslations) window.i18n.applyTranslations();
