@@ -1,8 +1,37 @@
+# Python Virtual Environment
+.venv/
+venv/
+env/
 __pycache__/
 *.pyc
 *.pyo
+*.egg-info/
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
 .DS_Store
-data/reddit_ingest/
-data/phase2_scores.json
-data/phase3_daily_brief.md
-data/reddit_candidates.json
+Thumbs.db
+
+# Environment
+.env.local
+.env.*.local
+
+# Build artifacts (generated)
+site/styles.*.css
+site/app.*.js
+site/story-app.*.js
+site/i18n.*.js
+site/sector.*.js
+site/styles-modern.*.css
+site/build-manifest.json
+
+# Cron output (local)
+~/.hermes/cron/output/
