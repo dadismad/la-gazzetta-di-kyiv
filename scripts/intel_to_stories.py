@@ -1,23 +1,26 @@
 #!/usr/bin/env python3
-"""intel_to_stories.py — Bridge: telegram_intel/latest.json → stories.json
+"""intel_to_stories.py — Bridge: telegram_intel/latest.json → gazzetta.db (SQLite)
 
 Reads actionable stories from telegram intel, converts to Gazzetta story format,
-appends to stories.json with deduplication. Creates capital flow entries inline.
+INSERTs into gazzetta.db with deduplication. Creates capital flow entries inline.
 
-v2.0 — Semantic Triangulation Engine:
-  - Entity extraction & auto-tagging (assets, geographies, actors, instruments)
-  - Time-decay value logic (half-life of actionability)
-  - Multi-persona content blocks (C-Suite / Quant / Degen)
-  - Cross-referencing: impacted_flows, associated_positions
+After insertion, automatically runs db_to_json.py to compile fresh JSON output.
+
+v3.0 — SQLite-backed:
+  - Stories + flows written directly to relational tables
+  - Deduplication via DB queries instead of JSON parsing
+  - Entity extraction, time-decay, multi-persona preserved from v2.0
+  - Auto-compiles JSON output for frontend compatibility
 
 Run after: gazzetta-telegram-monitor (every 30m)
-Run before: generate_flows.py
+Run before: generate_flows.py, generate_flow_nodes.py
 """
 
 import json
 import os
 import re
-import hashlib
+import sys
+import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -30,9 +33,8 @@ with open(CONFIG_PATH) as f:
 
 PROJECT = str(CONFIG_PATH.parent)
 DATA = str(CONFIG_PATH.parent / config["paths"]["data"])
+DB_PATH = str(CONFIG_PATH.parent / "gazzetta.db")
 INTEL_PATH = os.path.join(DATA, config["data_files"]["intel_latest"])
-STORIES_PATH = os.path.join(DATA, config["data_files"]["stories"])
-FLOWS_PATH = os.path.join(DATA, config["data_files"]["flows"])
 
 # ═══════════════════════════════════════════════════════
 # ENTITY EXTRACTION — keyword / asset / geo mapping
@@ -143,39 +145,33 @@ def extract_entities(text: str) -> dict:
 # ═══════════════════════════════════════════════════════
 
 HORIZON_HALF_LIFE = {
-    "1-6h": 3,      # Ultra-short: decays fast
-    "6-24h": 12,     # Intraday
-    "24-72h": 36,    # Multi-day
-    "1w+": 84,       # Weekly
-    "structural": 720,  # Monthly — slow decay
+    "1-6h": 3,
+    "6-24h": 12,
+    "24-72h": 36,
+    "1w+": 84,
+    "structural": 720,
 }
 
 CONFIDENCE_DECAY_BONUS = {
-    "high": 1.5,     # High-confidence stories decay slower
+    "high": 1.5,
     "medium": 1.0,
-    "low": 0.7,      # Low-confidence stories decay faster
+    "low": 0.7,
 }
 
 
 def compute_time_decay(horizon: str, confidence: str, generated_at: str) -> dict:
-    """Compute the half-life and current freshness of a story.
-    
-    Freshness = 1.0 at generation, decays toward 0 over time.
-    Formula: freshness = exp(-ln(2) * hours_elapsed / half_life)
-    """
+    """Compute the half-life and current freshness of a story."""
+    import math
     half_life = HORIZON_HALF_LIFE.get(horizon, 36)
     bonus = CONFIDENCE_DECAY_BONUS.get(confidence, 1.0)
     effective_half_life = half_life * bonus
 
-    # Compute hours elapsed
     try:
         gen_dt = datetime.fromisoformat(generated_at.replace("Z", "+00:00"))
         hours_elapsed = (datetime.now(timezone.utc) - gen_dt).total_seconds() / 3600
     except Exception:
         hours_elapsed = 0
 
-    # Exponential decay: freshness = e^(-λt) where λ = ln(2)/half_life
-    import math
     if effective_half_life > 0 and hours_elapsed > 0:
         freshness = math.exp(-math.log(2) * hours_elapsed / effective_half_life)
         freshness = round(max(0.0, min(1.0, freshness)), 4)
@@ -206,7 +202,7 @@ def generate_multi_persona(story: dict) -> dict:
     amount = story.get("capital_flow", {}).get("amount_b", 0)
 
     dir_label = "LONG" if direction == "inflow" else "SHORT" if direction == "outflow" else "NEUTRAL"
-    dir_emoji = "🟢" if dir_label == "LONG" else "🔴" if dir_label == "SHORT" else "🟡"
+    dir_emoji = "\U0001f7e2" if dir_label == "LONG" else "\U0001f534" if dir_label == "SHORT" else "\U0001f7e1"
 
     return {
         "c_suite": {
@@ -222,9 +218,9 @@ def generate_multi_persona(story: dict) -> dict:
                     f"Consensus vs reality divergence detected. "
                     f"Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
             "metrics": {
-                "flow_velocity": round(amount / 24, 2),
+                "flow_velocity": round(amount / 24, 2) if amount else 0,
                 "correlation_coeff": 0.65 if dir_label != "NEUTRAL" else 0.30,
-                "z_score": round(amount / 10, 2),
+                "z_score": round(amount / 10, 2) if amount else 0,
             },
         },
         "degen": {
@@ -279,6 +275,15 @@ def generate_story_id(headline, pillar):
     return f"n21_{pillar}__{slug}"
 
 
+def slugify(text, max_len=80):
+    """URL-friendly slug from text."""
+    if not text:
+        return "untitled"
+    slug = text.lower()[:max_len]
+    slug = re.sub(r'[^a-z0-9]+', '-', slug)
+    return slug.strip('-') or "untitled"
+
+
 # ═══════════════════════════════════════════════════════
 # STORY CONVERSION
 # ═══════════════════════════════════════════════════════
@@ -314,7 +319,7 @@ def intel_story_to_gazzetta(intel_story, pillar):
         if len(raw_proj) > 200:
             cut = raw_proj[:200].rstrip()
             last_space = cut.rfind(' ')
-            projected = (cut[:last_space] if last_space > 150 else cut) + '…'
+            projected = (cut[:last_space] if last_space > 150 else cut) + '\u2026'
         else:
             projected = raw_proj
     else:
@@ -366,11 +371,11 @@ def intel_story_to_gazzetta(intel_story, pillar):
 
     horizon = intel_story.get("horizon", "24-72h")
 
-    # ── Entity extraction ──
+    # Entity extraction
     all_text = f"{headline} {bet_text} {event_text} {benefit_text}"
     entity_tags = extract_entities(all_text)
 
-    # ── Build base story first, then add triangulation fields ──
+    # Build base story
     base_story = {
         "story_id": story_id,
         "headline": headline[:200],
@@ -403,16 +408,70 @@ def intel_story_to_gazzetta(intel_story, pillar):
         "source": "telegram_intel",
         "generated_at": now,
         "freshness": "breaking",
-        # ── v2.0: Triangulation fields ──
         "entity_tags": entity_tags,
         "time_decay": compute_time_decay(horizon, confidence_level, now),
-        "impacted_flows": [],   # filled after flow generation by generate_flows.py
-        "associated_positions": [],  # filled by trading system
-        "multi_persona": {},  # filled below
+        "impacted_flows": [],
+        "associated_positions": [],
+        "multi_persona": {},
     }
 
     base_story["multi_persona"] = generate_multi_persona(base_story)
     return base_story
+
+
+# ═══════════════════════════════════════════════════════
+# DATABASE OPERATIONS
+# ═══════════════════════════════════════════════════════
+
+def insert_story_to_db(conn, story: dict) -> bool:
+    """INSERT OR REPLACE a story into gazzetta.db."""
+    sid = story.get("story_id", "")
+    if not sid:
+        return False
+
+    conn.execute("""
+        INSERT OR REPLACE INTO stories (
+            id, slug, headline, sector, pillar, tier, confidence,
+            contradiction_score, generated_at,
+            time_decay_raw, entity_tags_raw, multi_persona_raw,
+            capital_flow_raw, full_json
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """, (
+        sid,
+        slugify(story.get("headline", "")),
+        story.get("headline", ""),
+        story.get("sector", ""),
+        story.get("pillar", ""),
+        story.get("tier", "active"),
+        story.get("confidence", "medium"),
+        story.get("contradiction_score", 0),
+        story.get("generated_at", ""),
+        json.dumps(story.get("time_decay", {})) if story.get("time_decay") else None,
+        json.dumps(story.get("entity_tags", {})) if story.get("entity_tags") else None,
+        json.dumps(story.get("multi_persona", {})) if story.get("multi_persona") else None,
+        json.dumps(story.get("capital_flow", {})) if story.get("capital_flow") else None,
+        json.dumps(story, ensure_ascii=False),
+    ))
+    return True
+
+
+def story_exists(conn, story_id: str) -> bool:
+    """Check if a story ID already exists in the DB."""
+    row = conn.execute("SELECT 1 FROM stories WHERE id = ?", (story_id,)).fetchone()
+    return row is not None
+
+
+def compile_json_output():
+    """Run db_to_json.py to regenerate JSON files from the updated DB."""
+    db_to_json = Path(__file__).resolve().parent / "db_to_json.py"
+    if db_to_json.exists():
+        import subprocess
+        result = subprocess.run(
+            [sys.executable, str(db_to_json)],
+            capture_output=True, text=True, cwd=str(CONFIG_PATH.parent)
+        )
+        if result.returncode != 0:
+            print(json.dumps({"ok": True, "warning": "db_to_json failed", "stderr": result.stderr[:200]}), file=sys.stderr)
 
 
 # ═══════════════════════════════════════════════════════
@@ -424,6 +483,10 @@ def main():
         print(json.dumps({"ok": False, "error": "no telegram intel file"}))
         return
 
+    if not os.path.exists(DB_PATH):
+        print(json.dumps({"ok": False, "error": f"gazzetta.db not found at {DB_PATH} — run init_db.py first"}))
+        return
+
     # Load intel
     with open(INTEL_PATH) as f:
         intel = json.load(f)
@@ -433,75 +496,59 @@ def main():
         print(json.dumps({"ok": True, "stories_added": 0, "reason": "no stories in intel", "intel_keys": list(intel.keys())[:10]}))
         return
 
-    # Load current stories
-    if os.path.exists(STORIES_PATH):
-        with open(STORIES_PATH) as f:
-            stories_data = json.load(f)
-    else:
-        stories_data = {"generated_at": "", "lead": None, "stories": []}
+    conn = sqlite3.connect(DB_PATH)
 
-    # Load flows for cross-referencing
-    existing_flow_ids = set()
-    if os.path.exists(FLOWS_PATH):
-        with open(FLOWS_PATH) as f:
-            flows_data = json.load(f)
-        for flow in flows_data.get("flows", []):
-            existing_flow_ids.add(flow.get("id", ""))
-            existing_flow_ids.add(flow.get("story_id", ""))
+    try:
+        # Convert and deduplicate against DB
+        added = 0
+        for intel_story in actionable:
+            headline = intel_story.get("title", intel_story.get("headline", ""))
+            if not headline:
+                continue
 
-    existing_ids = {s.get("story_id", "") for s in stories_data.get("stories", [])}
-    if stories_data.get("lead") and stories_data["lead"].get("story_id"):
-        existing_ids.add(stories_data["lead"]["story_id"])
+            pillar = detect_pillar(headline + " " + intel_story.get("event", ""))
+            story_id = (intel_story.get("story_id") or generate_story_id(headline, pillar))[:80]
 
-    # Convert and deduplicate
-    added = 0
-    for intel_story in actionable:
-        headline = intel_story.get("title", intel_story.get("headline", ""))
-        if not headline:
-            continue
+            if story_exists(conn, story_id):
+                continue
 
-        pillar = detect_pillar(headline + " " + intel_story.get("event", ""))
-        story_id = (intel_story.get("story_id") or generate_story_id(headline, pillar))[:80]
+            gazzetta_story = intel_story_to_gazzetta(intel_story, pillar)
 
-        if story_id in existing_ids:
-            continue
+            # Cross-reference: check for existing flows with matching story_id
+            flow_id = f"flow_{story_id}"
+            flow_row = conn.execute("SELECT 1 FROM flows WHERE id = ? OR story_id = ?", (flow_id, story_id)).fetchone()
+            if flow_row:
+                gazzetta_story["impacted_flows"] = [flow_id]
+                conn.execute(
+                    "INSERT OR IGNORE INTO story_flow_links (story_id, flow_id) VALUES (?, ?)",
+                    (story_id, flow_id)
+                )
 
-        gazzetta_story = intel_story_to_gazzetta(intel_story, pillar)
+            insert_story_to_db(conn, gazzetta_story)
+            added += 1
 
-        # Cross-reference: link to existing flows with matching story_id
-        flow_id = f"flow_{story_id}"
-        if flow_id in existing_flow_ids:
-            gazzetta_story["impacted_flows"] = [flow_id]
+        conn.commit()
 
-        stories_data["stories"].insert(0, gazzetta_story)
-        existing_ids.add(story_id)
-        added += 1
+        if added == 0:
+            print(json.dumps({"ok": True, "stories_added": 0, "reason": "all stories already exist in DB"}))
+            return
 
-    if added == 0:
-        print(json.dumps({"ok": True, "stories_added": 0, "reason": "all stories already exist"}))
-        return
+        # Compile JSON output for frontend
+        compile_json_output()
 
-    # Update timestamp
-    stories_data["generated_at"] = datetime.now(timezone.utc).isoformat()
+        print(json.dumps({
+            "ok": True,
+            "stories_added": added,
+            "total_stories": conn.execute("SELECT COUNT(*) FROM stories").fetchone()[0],
+        }))
 
-    # Write back
-    with open(STORIES_PATH, "w") as f:
-        json.dump(stories_data, f, indent=2, ensure_ascii=False)
-
-    # Also sync to site/data/
-    site_data = os.path.join(PROJECT, config["paths"]["site"], config["paths"]["data"], config["data_files"]["stories"])
-    os.makedirs(os.path.dirname(site_data), exist_ok=True)
-    with open(site_data, "w") as f:
-        json.dump(stories_data, f, indent=2, ensure_ascii=False)
-
-    print(json.dumps({
-        "ok": True,
-        "stories_added": added,
-        "total_stories": len(stories_data["stories"]),
-        "new_ids": [s["story_id"] for s in stories_data["stories"][:added]],
-    }, indent=2))
+    except Exception as e:
+        conn.rollback()
+        print(json.dumps({"ok": False, "error": str(e)}))
+        sys.exit(1)
+    finally:
+        conn.close()
 
 
 if __name__ == "__main__":
     main()
-

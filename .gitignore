@@ -36,5 +36,8 @@ site/build-manifest.json
 # Safe-git backups
 .backup/
 
+# SQLite database (local source of truth)
+gazzetta.db
+
 # Cron output (local)
 ~/.hermes/cron/output/
