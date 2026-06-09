@@ -209,7 +209,7 @@ def main():
             continue
 
         pillar = detect_pillar(headline + " " + intel_story.get("event", ""))
-        story_id = intel_story.get("story_id") or generate_story_id(headline, pillar)
+        story_id = (intel_story.get("story_id") or generate_story_id(headline, pillar))[:80]  # v22.38: cap at 80 chars
 
         if story_id in existing_ids:
             continue

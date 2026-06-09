@@ -68,9 +68,9 @@ def build():
                 )
                 content = pattern_hashed.sub(new_attr, content)
         
+        if not DRY_RUN:
+            html_path.write_text(content)
         if content != original:
-            if not DRY_RUN:
-                html_path.write_text(content)
             print(f"  {html_path.name:30s} → rewritten")
     
     # Step 3: Write manifest

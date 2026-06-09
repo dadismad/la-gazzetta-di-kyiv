@@ -81,7 +81,12 @@ def parse_amount_from_cf(cf):
     return 0, "unknown"
 
 def extract_pace(cf):
-    """Extract pace multiplier from pacing text."""
+    """Extract pace multiplier from capital_flow dict field."""
+    # Try numeric pace_multiplier first (actual field name in stories.json)
+    pm = cf.get("pace_multiplier", 0)
+    if pm and pm > 0:
+        return float(pm)
+    # Fallback: parse pacing or pace string fields
     p = cf.get("pacing", "") or cf.get("pace", "")
     if not p: return 1.0
     m = re.search(r'(\d+\.?\d*)\s*x', str(p).lower())
@@ -161,10 +166,18 @@ def generate():
         # Accumulate node metrics
         for nid, ntype in [(source_id, source_type), (target_id, target_type)]:
             if nid not in nodes:
+                # v22.35: Fix label — distinguish inflow vs outflow
+                is_source = (nid == source_id)
+                asset_label = asset_class.replace(' ','-').lower()
+                if direction == 'inflow':
+                    label = f"{NTYPES[ntype]['label']} → {asset_class}"
+                else:
+                    # Outflow: source sends money out, target receives safety
+                    label = f"{NTYPES[ntype]['label']} {'→' if is_source else '←'} {asset_class}"
                 nodes[nid] = {
                     "id": nid,
                     "type": ntype,
-                    "label": f"{NTYPES[ntype]['label']} → {asset_class}",
+                    "label": label,
                     "total_inflow_b": 0,
                     "total_outflow_b": 0,
                     "flow_count": 0,

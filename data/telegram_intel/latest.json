@@ -1,77 +1,96 @@
 {
-  "fetched_at": "2026-06-07T10:21:30Z",
-  "horizon": "2-hour actionable window",
+  "scrape_time": "2026-06-09T13:55:30+00:00",
+  "model": "deepseek-v4-flash",
+  "horizon": "1-2 hours (European close → US pre-market → US open)",
+  "day_of_week": "Tuesday",
+  "market_state": "OPEN — Europe late-session (13:55 UTC), US pre-market. NASDAQ +1%, risk-on prevailing. Trade balance -$55.9B vs -$56.2B expected (slightly better). WTI still <$90.",
+  "channels_monitored": [
+    "@trad_fin",
+    "@MonitoringSituation",
+    "@ASupersharij",
+    "@infinityhedge",
+    "@ethanlevins",
+    "@markettwits"
+  ],
+  "channel_status": {
+    "@trad_fin": "STALE (11h ago) latest: 2026-06-09T02:44 — South Korea $350B US investment approved",
+    "@MonitoringSituation": "STALE (3.8h ago) latest: 2026-06-09T10:08 — Taiwan mulls AI chip export curbs to China",
+    "@ASupersharij": "ACTIVE — Russian-language Ukrainian political commentary (Paschinsky plea deal). Not market-moving.",
+    "@infinityhedge": "DEAD (1d+ ago) latest: 2026-06-08T12:00 — MicroStrategy BTC buy",
+    "@ethanlevins": "HOT (last: 13:34 UTC) — PRIMARY MIDDLE EAST + UKRAINE INTEL. Zatoka Bridge strike, Hezbollah infiltration follow-up",
+    "@markettwits": "HOT (last: 13:54 UTC) — Macro, commodities, Russia, crypto. NASDAQ +1%, JPMorgan bullish, Japan stablecoin, Starknet STRK20"
+  },
+  "summary_stats": {
+    "total_messages_scanned": 114,
+    "messages_last_30min": 15,
+    "messages_last_2h": 35,
+    "actionable_stories": 3,
+    "since_last_cycle": "30 min (13:23 → 13:55 UTC) — 11 new messages across channels"
+  },
   "stories": [
     {
-      "rank": 1,
-      "title": "OPEC+ Meeting TODAY (June 7) — 188k bpd Hike Expected as 149 S&P 500 Companies Flag Oil Pain",
-      "event": "OPEC+ meeting is happening TODAY with sources confirming expected agreement to raise production by 188,000 bpd from July. The decision is imminent — could drop within hours. Meanwhile FactSet reports 149 S&P 500 companies complained about high oil prices on earnings calls — a 5-year record high, signaling the oil pain has reached critical mass across the US economy. This directly pressures Trump to resolve Hormuz faster.",
-      "consensus_narrative": "188k bpd increase is modest (0.2% of global supply) and already priced in. Market expects a measured response that keeps oil anchored but doesn't crash it. OPEC+ seen as keeping powder dry for further increases if Hormuz stays blocked.",
-      "contradiction": "OPEC+ raising output while Strait of Hormuz remains blockaded creates a 'paper barrels' problem — the extra supply cannot physically transit the Strait. 149 companies complaining is a MASSIVE signal — this is not normal earnings chatter, it's an economic warning flare that puts the Fed and White House on notice. The 188k figure may be the floor, not the ceiling — if OPEC+ smells political desperation, they could go larger (300k+), which would crash oil 8-10%. Conversely, if they deliver less than 188k, oil rips higher as relief is denied. Saturday meeting = no US market influence, pure OPEC+ internal dynamics.",
-      "bet": "SHORT oil (USO, XLE) into the OPEC+ announcement. Asymmetry favors a sell-the-news setup at these levels. If 188k is confirmed without hawkish language, oil drops 3-5%. If 300k+ surprise, oil crashes 8-10%. Hedge with put spreads on USO. LONG airlines (DAL, AAL, UAL) as the most direct oil-pain beneficiaries. SHORT XLE vs LONG XRT (retail) as a pair trade on consumer fuel-cost relief. Horizon: next 2 hours — decision could drop any minute.",
-      "benefit": "Airlines (DAL, AAL, UAL) benefit from any oil decline. S&P 500 broad market (SPY) benefits if inflation fears ease. Crypto (BTC, ETH) gets a bid if risk-off reverses. Fed gets marginal breathing room on rate policy."
+      "id": "zatoka-bridge-strike-odesa-logistics-20260609",
+      "title": "RUSSIA TARGETS ZATOKA BRIDGE — ODESA PORT'S ONLY LAND LINK TO UKRAINE UNDER ATTACK",
+      "freshness": "13:34 UTC (21 min ago — just breaking)",
+      "source_channels": ["@ethanlevins"],
+      "event": "Russian forces struck the Zatoka Bridge in Odesa Oblast — the ONLY point within Ukraine connecting the southern part of Odesa Oblast (including the port of Odesa) to the rest of the country. The bridge was hit by 2 Iskander-M ballistic missiles, 3 Kh-59/59 cruise missiles, and 4 KAB glide-bombs in a coordinated multi-weapon strike. This is not a symbolic strike — it is a calculated logistics interdiction targeting Ukraine's grain export artery. If the bridge is significantly damaged, Odesa port becomes logistically isolated, with massive implications for Ukrainian grain exports and global wheat markets.",
+      "consensus_narrative": "Russia is conducting routine interdiction strikes on Ukrainian infrastructure. The Zatoka Bridge has been struck before and repaired. Markets have become desensitized to Russian infrastructure strikes — they are 'priced in' after 2+ years of war. Grain markets are focused on global supply (Brazil harvest, US planting) rather than single-bridge dynamics.",
+      "contradiction": "This is the FIRST time Russia has targeted ALL access points to southern Odesa with this level of coordinated precision (ballistic + cruise + glide bombs simultaneously). The Zatoka Bridge is uniquely critical — it's not one of many routes, it's the ONLY land connection. If this bridge is down, Odesa grain exports (Ukraine's primary export corridor) must rely entirely on the Danube River ports or the maritime corridor through the Black Sea — both of which face their own constraints and Houthi/insurance risks. Russia has been systematically degrading Ukraine's export capacity. This strike, if successful, would functionally reduce Ukraine's grain export capacity by 40-50%. Wheat futures ($WEAT, ZW) are NOT pricing this risk — Ukraine is still exporting ~5M tons/month via Odesa. A bridge collapse resets that math overnight.",
+      "bet": {
+        "direction": "LONG wheat ($WEAT, ZW futures) — if bridge damage is confirmed, +3-5% gap at US open. LONG $MOS, $CF (fertilizer — Ukraine is a major ammonia/fertilizer transit hub, logistics disruption impacts global fertilizer flows). SHORT Ukrainian Eurobonds (if accessible). The bridge strike is a supply-side shock for grains that markets are not pricing.",
+        "assets": ["$WEAT", "$ZW (CBOT Wheat futures)", "$MOS", "$CF", "Ukrainian Eurobonds (short)"],
+        "trigger": "Satellite imagery or Ukrainian official confirmation of bridge structural damage. Ukraine's Southern Defense Forces will likely assess and report within hours. If the bridge is impassable, expect wheat to gap at US open (14:30 UTC).",
+        "horizon": "Next 1-4 hours. US open at 14:30 UTC could see wheat gap if bridge damage is confirmed by then. Otherwise, the story builds into tomorrow.",
+        "confidence": "HIGH — 8/10. The strike used 9+ munitions across 3 different delivery systems on a single bridge. This is systematic destruction, not harassment. Russia clearly wants this bridge down."
+      },
+      "benefit": {
+        "Gazzetta di Kyiv": "FRAME: 'Russia Just Fired 9 Missiles at Ukraine's Grain Lifeline — Is the West Watching?' The Zatoka Bridge strike is not a battlefield story — it's a global food supply story. Ukraine produces 10% of global wheat trade. If Odesa goes offline, food prices surge globally, hitting the Global South hardest. Russia is weaponizing hunger. Frame this as: 'Putin's latest missile targets your breakfast — Ukraine's grain lifeline hangs by a thread.' Connect to Russia's broader strategy of economic attrition: sanctions evasion countermeasures (Urals discount widening @marketwits 13:11) AND physical destruction of export infrastructure. The Zatoka Bridge is the canary in the global food coal mine.",
+        "Bet&Benefit": "Long wheat, long fertilizers. The strike is real, coordinated, and strategically significant. If confirmed as successful, wheat gaps at US open. If bridge survives, minimal downside — grains are already cheap. Asymmetric upside."
+      },
+      "materiality_score": 9.0
     },
     {
-      "rank": 2,
-      "title": "Israel's Nabatieh Offensive — 'Earthquake That Topples Hezbollah' as IDF Tanks Burn on Live TV, Leaks Show It's Sabotaging US-Iran Hormuz Deal",
-      "event": "Israeli forces advancing on Nabatieh — the primary Hezbollah stronghold in southern Lebanon — with ground operations toward Metula, Kfar Tibnit, and Nabatieh al-Fawqa (ethanlevins, 08:59 UTC). Israeli media (Walla) citing military sources: 'The fall of Nabatieh would be an earthquake that topples Hezbollah' (09:26 UTC). Overnight, IDF tanks burned on live TV in Yohmor village (08:06 UTC) — 2 Merkava tanks hit. Hezbollah snipers killed an IDF soldier; another killed by friendly fire. IDF Egoz Recon officer died of wounds. Leaked US-Iran negotiation stick points (ethanlevins, June 6 18:12 UTC) explicitly cite 'Israeli actions in Lebanon violating ceasefire agreement' as a sticking point. Israel's Nabatieh offensive is directly sabotaging Trump's ability to reopen Hormuz — if Hezbollah falls, Iran loses its most powerful proxy and becomes MORE desperate, keeping Hormuz closed as leverage.",
-      "consensus_narrative": "Israel is grinding through southern Lebanon slowly. Hezbollah is putting up stiff resistance. Conflict is a costly stalemate that doesn't directly threaten oil flows. Markets have priced in the Israel-Lebanon front as contained — it's been ongoing for months without systemic market impact. Nabatieh is just another town.",
-      "contradiction": "Israeli sources calling Nabatieh's fall an 'earthquake that topples Hezbollah' is not normal military briefing language — this is existential framing. The leaked US-Iran documents show Israeli actions in Lebanon are directly straining the US-Iran talks that could reopen Hormuz. This means: the Nabatieh offensive is a direct threat to the oil-supply normalization narrative that markets are pricing. Three independent corroborations: (1) IDF tanks burning on live TV — not the 'surgical operation' narrative, (2) leaked negotiations showing Lebanon ops as a sticking point, (3) Walla explicitly stating this topples Hezbollah. Market is NOT pricing a Nabatieh-linked Hormuz derailment.",
-      "bet": "LONG oil (WTI, USO) — Nabatieh offensive increases odds of Iran-Israel proxy escalation, delaying Hormuz reopening. LONG defense (LMT, RTX, GD) — extended Middle East conflict. LONG gold (GLD) — geopolitical hedge. SHORT TLT (long-dated bonds) — extended conflict keeps inflation elevated. If Nabatieh falls in next 12-24 hours: expect Hezbollah rocket retaliation into northern Israel, potentially drawing Iran in directly. That's a $5+ WTI spike trigger.",
-      "benefit": "Defense stocks (LMT, RTX, NOC, GD) benefit from prolonged multi-front conflict. Energy majors (XOM, CVX, OXY) benefit from sustained high oil. Cybersecurity (PANW, CRWD) benefits from increased Iran-linked cyber activity. Gazzetta di Kyiv: frame as 'Three Wars, No Off-Ramp' — Iran, Lebanon, Ukraine connected under a distracted US administration."
+      "id": "wti-oil-contradiction-auto-beirut-20260609-v2",
+      "title": "OIL CONTRADICTION PERSISTS: WTI <$90 Despite Auto-Beirut Trigger Being Tested — No Retaliation Yet",
+      "freshness": "12:40-13:11 UTC (continuously updating)",
+      "source_channels": ["@markettwits", "@ethanlevins"],
+      "event": "WTI crude still below $90 (-2% from prior close). Hezbollah infiltrator incident at 13:10 did NOT trigger an Israeli airstrike on Beirut (as of 13:55 UTC — 45 minutes of elapsed time without retaliation). Key data: (1) Iraq/UAE pipeline alternative development (13:04 — structural, not near-term), (2) Urals discount widening (13:11 — demand-side weakness signal), (3) BofA 'too many red flags' in US stocks (12:51 — risk-off institutional sentiment), (4) NASDAQ +1% (13:44 — risk-on in tech, contradicting BofA). The auto-Beirut trigger was NOT fired — Israel likely assessed the Hezbollah ground infiltration did not meet the 'launch crossing into Israel' threshold for automatic retaliation. This is a near-miss de-escalation. NEW: US Apache crashed near Hormuz yesterday (crew rescued — ethanlevins 10:59) — minor but adds to the fog.",
+      "consensus_narrative": "The Hezbollah infiltration was a probe, not a trigger event. The auto-Beirut mechanism is for rocket/missile launches, not armed ground infiltrators. Israel chose restraint. The oil selloff is correct — there is no new escalation trigger. Demand fears (ADP +29K = stagflation signals, BofA red flags) dominate supply risk. NASDAQ +1% confirms risk-on rotation away from defensives and commodities. The auto-Beirut trigger is a paper tiger that Israel will only use for actual rocket attacks.",
+      "contradiction": "Israel not retaliating for the 13:10 infiltration is NOT the same as the auto-Beirut trigger being disarmed. The trigger is STILL LIVE. Hezbollah knows this and may attempt a rocket launch as 'revenge' for their fighter being killed — which would immediately trigger the automatic Beirut strike. Additionally, the Zatoka Bridge strike shows Russia is escalating its infrastructure war simultaneously. The oil market is pricing a Middle East status quo that is anything but stable. The Urals discount widening (13:11) signals Russia needs higher oil — Putin's budget breakeven is $85+. If Russia encourages Hezbollah escalation to spike oil (a well-documented strategic pattern), the auto-Beirut trigger fires, and oil explodes. The 45-minute window without retaliation is NOT de-escalation — it's the calm before a potential coordinated escalation. NASDAQ +1% suggests complacency, not conviction.",
+      "bet": {
+        "direction": "REDUCED OTM WTI CALL position (risk of time decay is rising since trigger hasn't fired in 45 min), but MAINTAIN core long gold ($GLD) as Middle East hedge. The Zatoka Bridge strike is the NEW primary trade — pivot from oil correlation to grain correlation. Oil remains an asymmetric tail but the probability of trigger firing in next 1-2h is declining. Keep small June 12 $95 calls as lottery tickets, reduce size by 50% from prior recommendation. The demand narrative is winning for oil right now.",
+        "assets": ["$WEAT (primary)", "$GLD (hedge)", "$CL June 12 $95 calls (REDUCE 50%)", "$USO (if forced to express oil thesis)", "$SCO (for pure demand-weakness scenario)"],
+        "trigger": "Watch for: (1) Hezbollah rocket into Israel = auto-Beirut trigger FIRES → buy oil immediately, (2) Confirmation of Zatoka Bridge structural damage → buy wheat, (3) Nothing happens → theta decay on oil calls, let them expire worthless.",
+        "horizon": "Next 1-2h / through US open. The auto-Beirut trigger is still live but probability of firing in this session is decreasing with each passing hour. The Zatoka Bridge is the NEW immediate trigger.",
+        "confidence": "MEDIUM — 6/10. The oil contradiction is 45 minutes old and hasn't resolved. The auto-Beirut trigger probability decays with time. Zatoka Bridge is the fresher, higher-conviction trade."
+      },
+      "benefit": {
+        "Gazzetta di Kyiv": "FRAME: 'Two-Front Escalation — Russia Hits Grain Bridge, Hezbollah Tests Israel's Red Line. Markets Sleep.' Ukraine's message: Russia is not just fighting Ukraine — it is systematically attacking global food supply and energy security simultaneously. The Zatoka Bridge strike and the Hezbollah auto-Beirut trigger are two fronts of the same axis (Russia-Iran-Hezbollah). Ukraine needs Western attention NOW because Russia is coordinating escalation across theaters. The US cannot manage a two-front crisis while the EU absorbs the costs.",
+        "Bet&Benefit": "The Zatoka Bridge trade > the oil tail trade right now. Pivot grain-ward. Keep small oil tail for the Hezbollah trigger, but conviction is shifting to wheat/food as the immediate actionable play."
+      },
+      "materiality_score": 7.5
     },
     {
-      "rank": 3,
-      "title": "HTX (Justin Sun) Delists Trump's WLFI and USD1 — Forced Conversion of User Funds Signals Potential Asian Exchange Crisis",
-      "event": "Justin Sun's HTX exchange abruptly halted trading of Trump's WLFI token and USD1 stablecoin, and forcibly converted all user USD1 balances to USDT without consent (markettwits, 08:54 UTC). World Liberty Financial (Trump's DeFi project) had previously deposited $8M into HTX in September 2025. This is a de facto delisting of Trump-branded crypto assets from one of the largest Asian exchanges. Crypto market already under pressure — BTC at ~$61K, MSTR unrealized loss at -$11.5B.",
-      "consensus_narrative": "HTX is complying with regulatory pressure or internal risk management. WLFI was a low-liquidity meme token, USD1 was a minor stablecoin. Market views this as a non-event for BTC/ETH — just a rug-pull on Trump-adjacent garbage tokens.",
-      "contradiction": "Forcibly converting user funds (USD1 -> USDT) without consent is an EXTRAORDINARY action. Exchanges do not do this unless under extreme duress — regulatory seizure, insolvency, or a hammer from Asian authorities. The timing during a crypto crash suggests either coordinated action or HTX-specific distress. If HTX is collapsing or under regulatory attack, contagion risk flows into Tron (TRX) — Justin Sun's $10B+ ecosystem. A TRX crash would be systemic for Asian crypto markets. Furthermore, Trump said 'TRUMP will never let crypto down' — his own token being delisted directly contradicts this. The forced conversion is the kind of event that triggers broader centralized exchange trust crisis.",
-      "bet": "SHORT TRX (Tron) — contagion from HTX delisting. If HTX is under regulatory/insolvency pressure, TRX is the next domino. LONG USDT — as flight to safety in stablecoin land. SHORT BTC (outright or via puts) — the delisting adds to already negative sentiment (Santiment shows local pessimism extremes). Go SHORT centralized exchange tokens (BNB, OKB) on the 'exchange trust crisis' thesis. All crypto trades 24/7 — this is immediately actionable.",
-      "benefit": "USDC (Circle) benefits from USD1 failure as competing stablecoin. Decentralized exchanges (UNI, SUSHI) benefit from trust flight from CEXs. Privacy coins see 'not your keys, not your coins' narrative boost — though ZEC just had its own network crisis. Hardware wallet narratives benefit from self-custody panic."
+      "id": "nasdaq-risk-on-vs-bofa-red-flags-20260609",
+      "title": "NASDAQ +1% vs BofA 'Too Many Red Flags' — Risk-On Divergence Creates Short Opportunity Into US Open",
+      "freshness": "12:51-13:48 UTC (last 65 min)",
+      "source_channels": ["@markettwits"],
+      "event": "NASDAQ composite is +1% (13:44 UTC) while simultaneously BofA strategists are warning 'too many red flags in US stocks' (12:51 UTC). JPMorgan counters by forecasting further SP500 growth this year (13:48 UTC). US trade balance slightly better than expected (-$55.9B vs -$56.2B). This creates a clear divergence between institutional caution (BofA) and price action (+1% NASDAQ). The risk-on move is happening into: (1) Auto-Beirut trigger still live, (2) Zatoka Bridge strike escalation, (3) Urals discount widening (Russia revenue pain = Putin more aggressive), (4) ADP +29K stagflation data still being digested. Tech is leading the rally despite multiple geopolitical flashpoints.",
+      "consensus_narrative": "US economy is resilient (trade balance beat, JPMorgan optimistic). Rate cuts are coming (traders pricing quarter-point cut by year-end). AI narrative (NVIDIA, Google, SpaceX IPO momentum) is driving tech higher regardless of geopolitics. Middle East and Ukraine are 'localized' — the US is not directly at war. Markets have learned to look through geopolitical noise since 2022. The BofA warning is a single voice against a bullish consensus — ignore it.",
+      "contradiction": "NASDAQ +1% into this level of geopolitical complexity is dangerous. Three simultaneous escalations (Hezbollah trigger, Zatoka Bridge, Urals discount = Russia revenue pressure) and markets are buying tech. This has the pattern of every major top since 2022 — geopolitical risk builds while markets rally, then a single trigger event causes a violent unwind. BofA's 'red flags' call at 12:51 may prove prescient. The auto-Beirut trigger and Zatoka Bridge are binary risks that could unwind the entire risk-on move in minutes. The positive JPMorgan call (13:48) smells like a contrarian top signal — when the consensus splits between 'cautious institutional' (BofA) and 'bullish price action' (JPM), the resolution is usually a spike in volatility.",
+      "bet": {
+        "direction": "SHORT NASDAQ / SHORT SPX via puts or $SQQQ (inverse QQQ). The risk-reward into US open favors the downside. Three geopolitical triggers are live and markets are ignoring all of them. If one fires (Hezbollah rocket, Zatoka confirmed destroyed, or a Russian retaliatory strike), tech sells off 2-3% in minutes. If nothing fires, theta decay on puts — controlled loss. Asymmetric bet against market complacency.",
+        "assets": ["$SQQQ (inverse NASDAQ)", "$SPY puts (weekly)", "$VIX calls (volatility hedge)"],
+        "trigger": "Any of the following before US open: (1) Confirmation of Zatoka Bridge destruction → sell NASDAQ, (2) Hezbollah rocket into Israel → sell everything, buy VIX, (3) Russian statement linking Ukraine strikes to new escalation → sell NASDAQ. If none fire by 14:30 UTC, reassess.",
+        "horizon": "Next 1-90 min / through US open (14:30 UTC). The binary risk window is the next 90 minutes.",
+        "confidence": "MEDIUM — 7/10. The setup is textbook: geopolitical risk is high, markets are rallying into it, contrarian warnings exist. But the market has been 'wrong' about geopolitical risk for 2+ years — it keeps rallying through crises. The edge is timing: the confluence of three live triggers is genuinely unusual."
+      },
+      "benefit": {
+        "Gazzetta di Kyiv": "FRAME: 'While Markets Party, Three Bombs Tick — Ukraine Says: We Told You So.' Gazzetta can frame this as: Western financial markets are in denial about the scale of escalation facing the world. Russia is destroying Ukraine's grain bridge, Hezbollah is testing Israel's automated retaliation mechanism, and oil is pricing for recession while Putin needs war premiums. Ukraine's message: 'Ignore the red flags at your own peril — the bill comes due when the triggers fire.' The BofA warning should be amplified: institutional money is nervous, and retail (NASDAQ rally) is complacent.",
+        "Bet&Benefit": "Short tech into US open, long VIX. The triggers are real, the complacency is real. Asymmetric bet on volatility realization. If nothing happens, small loss. If one trigger fires, large gain."
+      },
+      "materiality_score": 7.0
     }
   ],
-  "meta": {
-    "channels_scraped": ["trad_fin", "MonitoringSituation", "ASupersharij", "infinityhedge", "ethanlevins", "markettwits"],
-    "total_messages_analyzed": 114,
-    "scan_time_utc": "2026-06-07T10:21:30Z",
-    "channel_health": {
-      "@trad_fin": "STALE — last post June 5 22:54 UTC. No weekend coverage.",
-      "@MonitoringSituation": "MODERATE — last post June 7 06:39 UTC (opinion only). Last substantive post was China-Taiwan on June 6.",
-      "@ASupersharij": "ACTIVE — last post June 7 08:01 UTC. Ukraine war focus, Russian-language. Chongar bridge strike is notable.",
-      "@infinityhedge": "DEAD — last post June 3. No recent activity.",
-      "@ethanlevins": "HOT — continuous posting through 10:18 UTC. Best real-time source for Middle East escalation. Nabatieh coverage is comprehensive and time-sensitive.",
-      "@markettwits": "HOT — continuous posting through 10:21 UTC. Excellent breadth: OPEC+, crypto, macro, earnings. Most valuable channel this cycle for market-relevant intel."
-    },
-    "observations": [
-      "OPEC+ meeting TODAY (June 7) — 188k bpd hike expected; decision imminent within hours",
-      "149 S&P 500 companies complained about oil prices on earnings calls — 5-year high per FactSet",
-      "Israel advancing on Nabatieh — IDF sources call its fall 'earthquake that topples Hezbollah'",
-      "IDF tanks burning on live TV in Yohmor — 2 Merkava destroyed by Hezbollah overnight",
-      "Leaked US-Iran negotiation docs: Israeli Lebanon ops violating ceasefire, straining Hormuz deal",
-      "HTX (Justin Sun) delists WLFI and USD1, forcibly converts USD1 to USDT — extraordinary exchange action",
-      "Battle for Kozacha Lopan began — Russian Army entered northern outskirts (ethanlevins, 10:18 UTC)",
-      "Ukraine struck Chongar bridge on Crimea border (ASupersharij, 07:37 UTC)",
-      "~250 Ukrainian drones attacking Russia overnight (ASupersharij, June 6 20:17 UTC)",
-      "US real 2Y yields at Trump 2nd term highs — Fed speakers hinting at more inflation risk",
-      "AAPL WWDC26 tomorrow June 8 — historically bearish for AAPL on event day",
-      "Grayscale filed for spot Canton ETF (CC ETF) — institutional crypto expansion",
-      "Russian budget deficit expected to grow — Siluanov (markettwits, 10:17 UTC)",
-      "BTC global bottom formation signal — 10M+ coins going into loss territory (markettwits, 10:21 UTC)",
-      "Armenia elections underway — Russia warns Ukraine 2014-style path"
-    ],
-    "risk_flags": [
-      "OPEC+ decision could surprise — larger hike crashes oil, smaller hike sends oil higher. Decision imminent.",
-      "Nabatieh offensive directly threatens Hormuz reopening by sabotaging US-Iran talks",
-      "HTX forced conversion of USD1 signals potential exchange crisis in Asian crypto markets — trading NOW",
-      "Crypto at local pessimism extremes — Santiment data, MSTR at -$11.5B unrealized loss",
-      "Saturday trading: crypto and futures only venues until Monday open",
-      "Israel-Lebanon escalation is ACCELERATING, not stabilizing — overnight tank losses on live TV prove it"
-    ],
-    "channel_notes": {
-      "ethanlevins_active": true,
-      "markettwits_active": true,
-      "infinityhedge_dead": "No posts since June 3. Consider removing from watchlist.",
-      "trad_fin_weekend_stale": "Consistent pattern — no weekend coverage."
-    }
-  }
+  "meta_observation": "Tuesday June 9, 13:55 UTC. THIS CYCLE'S SHIFT: The Zatoka Bridge strike is the dominant NEW story — Russia targeting Ukraine's sole grain export land link with 9+ precision munitions is the most actionable event of the session. The auto-Beirut Hezbollah infiltration (13:10) did NOT trigger retaliation within 45 min — the oil contradiction decays as each minute passes without a Beirut strike, reducing near-term oil spike probability but keeping the trigger LIVE. The Urals discount widening confirms sanctions biting, but also means Putin has incentive to escalate elsewhere to lift oil. NASDAQ +1% into all this is the third story — risk-on complacency that could unwind violently if either geopolitical trigger fires. Fresh since last cycle (13:23 UTC): Zatoka Bridge strike (13:34), NASDAQ +1% (13:44), JPMorgan bullish call (13:48), Japan 3-bank yen stablecoin (13:41, structural), TON→GRAM (13:24, June 15), Starknet STRK20 (13:54). The watch window for the next 90 minutes through US open is the highest-risk period: three live triggers, a market that's complacently rallying, and a new Ukraine infrastructure story that could move grain markets independently."
 }

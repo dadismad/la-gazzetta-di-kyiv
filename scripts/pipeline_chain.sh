@@ -9,6 +9,9 @@ cd "$PROJECT"
 
 echo "=== PIPELINE CHAIN $(date '+%Y-%m-%d %H:%M:%S') ==="
 
+echo "[0.5/4] sync_publish_to_site (editorial writer → data/)..."
+python3 scripts/sync_publish_to_site.py
+
 echo "[1/4] intel_to_stories..."
 python3 scripts/intel_to_stories.py
 

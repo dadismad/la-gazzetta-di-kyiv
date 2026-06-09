@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-07T10:21:26.133327+00:00",
+  "timestamp": "2026-06-07T12:39:11.285143+00:00",
   "channels": {
     "trad_fin": {
       "total": 20,
@@ -7,10 +7,21 @@
     },
     "MonitoringSituation": {
       "total": 20,
-      "recent_30min": []
+      "recent_30min": [
+        {
+          "text": "INITIAL REPORTS OF AN EXPLOSION IN BEIRUT",
+          "date": "2026-06-07T12:16:03+00:00",
+          "post_id": "MonitoringSituation/5572"
+        },
+        {
+          "text": "ISRAELI ARMY: WE ARE ATTACKING AT THIS MOMENT AN INFRASTRUCTURE BELONGING TO HEZBOLLAH IN THE SOUTHERN SUBURBS",
+          "date": "2026-06-07T12:34:58+00:00",
+          "post_id": "MonitoringSituation/5573"
+        }
+      ]
     },
     "ASupersharij": {
-      "total": 14,
+      "total": 15,
       "recent_30min": []
     },
     "infinityhedge": {
@@ -19,28 +30,11 @@
     },
     "ethanlevins": {
       "total": 20,
-      "recent_30min": [
-        {
-          "text": "🇱🇧 🇮🇱 Front line near Nabatieh.\n\nThe Israeli capture of Nabatieh would be significant, but it’s still a while away. \n\nHezbollah would likely deploy hundreds of fighters to the city to defend, but Israel still has a few more villages to capture before a battle for the city. \n\nThis city falls above the Litani River, and is a significant Lebanese city. I honestly would be shocked if the IDF tried to take it, as they’d likely be forced to withdraw from Nabatieh in any peace/ceasefire arrangement.",
-          "date": "2026-06-07T10:05:23+00:00",
-          "post_id": "ethanlevins/3391"
-        },
-        {
-          "text": "🇷🇺 🇺🇦 Battle for Kozacha Lopan began after Russian Army entered in the first dachas north of the town.\n\n(This happens so much that I can’t spam everybody with these sort of alerts, but here’s one for the day)",
-          "date": "2026-06-07T10:18:01+00:00",
-          "post_id": "ethanlevins/3392"
-        }
-      ]
+      "recent_30min": []
     },
     "markettwits": {
       "total": 20,
-      "recent_30min": [
-        {
-          "text": "⚠️🇷🇺#бюджет #россия \nАнтон Силуанов ожидает роста дефицита бюджета из-за увеличения расходов — ВЕСТИ",
-          "date": "2026-06-07T10:17:51+00:00",
-          "post_id": "markettwits/373181"
-        }
-      ]
+      "recent_30min": []
     }
   }
 }

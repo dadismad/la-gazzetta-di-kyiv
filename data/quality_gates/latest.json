@@ -1,85 +1,9 @@
 {
-  "gate": "editorial_quality",
-  "pipeline": "gazzetta-agentic-nlp-guarded-autopost-8h",
-  "run_id": "011c8be0b17c",
-  "timestamp": "2026-06-07T09:00:00Z",
-  "target": "telegram_latest.md, stories.json, website_stories_latest.json, asset_claims_latest.json",
-  "verdict": "FAIL",
-  "score": {
-    "overall": 5.8,
-    "top_down": 6.5,
-    "bottom_up": 5.3,
-    "banned_phrases": 10,
-    "factual_accuracy": 8,
-    "contradiction_sharpness": 7,
-    "word_count": 5,
-    "actionability": 3,
-    "platform_voice": 8,
-    "platform_completeness": 0
-  },
-  "blocking_failures": [
-    {
-      "severity": "critical",
-      "item": "Reddit post not written — data/publish/reddit_latest.md does not exist. Manifest confirms reddit: false.",
-      "rule": "Step 7: Write Reddit Post — required per editorial workflow",
-      "fix": "Write a Reddit post for the China-Taiwan maritime enforcement lead story. Follow Step 7 structure: CONTEXT, DOMINANT NARRATIVE, EXPLICIT CONTRADICTION, MARKET IMPLICATIONS (NOT 'Second-Order Implications'), 24-72h PATH WITH INVALIDATION, VERIFIED HUMAN DETAIL, DISCUSSION PROMPT, EVIDENCE+CTA, READY_FOR_DEVVIT_POST."
-    },
-    {
-      "severity": "critical",
-      "item": "Grammar error in lead story thesis: 'If China board any vessel' — subject-verb disagreement (China is 3rd-person singular).",
-      "rule": "Basic grammar — every sentence must be edited before publication",
-      "fix": "Change to 'If China boards any vessel' in data/publish/stories.json lead thesis field."
-    },
-    {
-      "severity": "critical",
-      "item": "Stale catalyst timing — the enforcement operation occurred June 6. The post (written June 7) does not tell the reader whether any vessel was actually boarded. Per telegram_intel/latest.json: 'No physical confrontation yet.' This is the single most important data point for trade execution and it's missing.",
-      "rule": "Step 6: Telegram Post must lead with current status of the event",
-      "fix": "Add a status line clarifying that as of the most recent intel (June 6 21:44 UTC), no vessel was boarded. The thesis becomes: 'No boarding yet — but elevated risk premium still justifies positioning.'"
-    },
-    {
-      "severity": "high",
-      "item": "Telegram word count ~81 words — below the 80-word minimum per Step 9 quality gate. Focus group confirms at low end of range.",
-      "rule": "Step 9.1: Word count check — Telegram 80-140 words",
-      "fix": "Expand to 90-100 words with one additional actionable insight (e.g., Japan-Philippines response timing or historical analog for blockade rehearsal)."
-    },
-    {
-      "severity": "high",
-      "item": "Asset claims missing GLD and VIX despite Telegram recommending 'Long GLD, VIX'. Only TSM and SMH have claims.",
-      "rule": "Step 5.5: Every actionable instrument in Telegram should have an asset claim if narrative-driven",
-      "fix": "Add GLD and VIX entries to asset_claims_latest.json with narrative-driven % and strategy, or explicitly note these are general hedges (not narrative-driven) and remove from Telegram to avoid instrument inconsistency."
-    }
-  ],
-  "non_blocking_issues": [
-    {
-      "severity": "medium",
-      "item": "'Consensus' in Telegram opening is unattributed — same minor issue flagged in previous cycle (June 6 quality gate). 'Consensus says posturing' is not anchored to a specific source, price level, or positioning metric.",
-      "suggestion": "Rewrite as 'WTI flat, TSM options pricing zero confrontation risk. But Beijing named time/place/legal basis for the first time — that's not posturing.'"
-    },
-    {
-      "severity": "medium",
-      "item": "Schema field names leaking into website prose: 'Portfolio implication:' and 'Capital flow implication:' prefixes are internal data field names, not publishable copy.",
-      "suggestion": "Remove the field prefix 'Portfolio implication:' and write the sentence directly: 'Short TSM/SMH at Monday Asia open.' The Telegram does this correctly."
-    },
-    {
-      "severity": "medium",
-      "item": "Lead story They Say contains editorial bias: 'just another incremental step' — the word 'just' subtly mocks the consensus position, reducing contradiction credibility.",
-      "suggestion": "Remove 'just' — write 'another incremental step in Taiwan pressure campaign.'"
-    },
-    {
-      "severity": "low",
-      "item": "No stop-losses or invalidation triggers on Telegram trade calls for GLD and VIX (TSM/SMH have good exit logic).",
-      "suggestion": "Add: 'Invalidated if no TSM gap by Monday 9:30 Taipei.'"
-    },
-    {
-      "severity": "low",
-      "item": "'Supply chain calculus' in website thesis is borderline McKinsey-speak.",
-      "suggestion": "Replace with 'supply chain math' or just 'supply chain risk.'"
-    },
-    {
-      "severity": "informational",
-      "item": "Previous cycle quality gate (June 6) was a PASS (8.5/10) with 4 minor suggestions. Two remain unaddressed: (1) 'Consensus' undefined, (2) No stop-losses on all trade calls.",
-      "suggestion": "Track these through to next cycle."
-    }
-  ],
-  "recommendation": "REVISE BEFORE PUBLISH. Fix all blocking issues (Reddit post, grammar, catalyst status, word count, asset claims completeness), then run quality gate again before marking READY_FOR_DEVVIT_POST. The Telegram content is solid on voice and banned-phrase compliance — the gaps are in platform completeness and execution detail."
+  "timestamp": "2026-06-09T13:28:17Z",
+  "source": "ceo-overseer-fallback",
+  "gates": {
+    "stories": 12,
+    "flows": 5,
+    "pages": 22
+  }
 }
