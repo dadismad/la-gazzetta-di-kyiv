@@ -7,38 +7,39 @@
   <meta name="description" content="Node-based capital flow decomposition showing sources, destinations, and structural adjacencies across 6 node types: Governmental, Institutional, Corporate, Retail, Crypto, and Cross-border."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css"/>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='2' fill='%23111827'/><text x='16' y='24' text-anchor='middle' font-size='22' font-weight='bold' font-family='Georgia,serif' fill='%23D4AF37'>G</text></svg>"/>
   <style>
     /* ═══════════════════════════════════════════════
        CAPITAL FLOW NODES — Dual-Theme Command Center
-       Dark (default) + Light toggle. Frameless.
+       Light (default) + Dark toggle. Frameless.
        ═══════════════════════════════════════════════ */
     :root {
-      --cn-bg:          #0F172A;
-      --cn-card:        #1E293B;
-      --cn-text:        #E2E8F0;
-      --cn-muted:       #94A3B8;
-      --cn-dim:         #64748B;
-      --cn-divider:     rgba(255,255,255,0.08);
+      --cn-bg:          #F8FAFC;
+      --cn-card:        #FFFFFF;
+      --cn-text:        #1E293B;
+      --cn-muted:       #475569;
+      --cn-dim:         #94A3B8;
+      --cn-divider:     #E5E7EB;
       --cn-gold:        #B8860B;
-      --cn-blue:        #3B82F6;
+      --cn-blue:        #2563EB;
       --cn-amber:       #F59E0B;
       --cn-green:       #047857;
       --cn-violet:      #A78BFA;
       --cn-red:         #DC2626;
       --cn-sans:        'Inter', -apple-system, sans-serif;
       --cn-serif:       'Playfair Display', Georgia, serif;
+      --cn-body:        'Source Serif 4', Georgia, serif;
       --cn-mono:        'SF Mono', 'Courier New', monospace;
     }
-    .cn-light {
-      --cn-bg:          #F8FAFC;
-      --cn-card:        #FFFFFF;
-      --cn-text:        #1E293B;
-      --cn-muted:       #475569;
-      --cn-dim:         #94A3B8;
-      --cn-divider:     rgba(0,0,0,0.08);
+    .cn-dark {
+      --cn-bg:          #0F172A;
+      --cn-card:        #1E293B;
+      --cn-text:        #E2E8F0;
+      --cn-muted:       #94A3B8;
+      --cn-dim:         #64748B;
+      --cn-divider:     #E5E7EB;
       --cn-green:       #047857;
       --cn-red:         #DC2626;
     }
@@ -130,7 +131,6 @@
       display: inline-block;
       width: 5px;
       height: 5px;
-      border-radius: 50%;
       margin-right: 4px;
       vertical-align: middle;
     }
@@ -360,7 +360,7 @@
     .cn-legend-shape.inst       { background: var(--cn-blue); clip-path: polygon(50% 0%,100% 50%,50% 100%,0% 50%); }
     .cn-legend-shape.crypto     { background: var(--cn-amber); clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); }
     .cn-legend-shape.corp       { background: var(--cn-green); clip-path: polygon(15% 0%,85% 0%,100% 25%,100% 75%,85% 100%,15% 100%,0% 75%,0% 25%); }
-    .cn-legend-shape.retail     { background: var(--cn-violet); border-radius: 50%; }
+    .cn-legend-shape.retail     { background: var(--cn-violet); }
     .cn-legend-shape.xborder    { background: var(--cn-red); clip-path: polygon(50% 0%,85% 15%,100% 50%,85% 85%,50% 100%,15% 85%,0% 50%,15% 15%); }
 
     /* ── EDGE STYLES ── */
@@ -478,11 +478,11 @@
       <span class="cn-masthead-badge">Source→Destination Decomposition</span>
     </div>
     <div class="cn-masthead-right">
-      <span><span class="cn-dot active"></span><span id="cn-last-updated">—</span></span>
+      <span><span class="cn-dot active"></span><time id="cn-last-updated" datetime="">—</time></span>
       <span id="cn-total-tracked">$—B tracked</span>
       <span id="cn-node-count">— nodes</span>
       <span id="cn-edge-count">— edges</span>
-      <button class="cn-theme-btn" id="cn-theme-toggle" title="Toggle light/dark theme">☀</button>
+      <button class="cn-theme-btn" id="cn-theme-toggle" title="Toggle light/dark theme">☽</button>
     </div>
   </header>
 
@@ -833,6 +833,7 @@
 
       // Header stats
       document.getElementById('cn-last-updated').textContent = data.generated_at ? new Date(data.generated_at).toLocaleString() : '—';
+      document.getElementById('cn-last-updated').setAttribute('datetime', data.generated_at || '');
       document.getElementById('cn-total-tracked').textContent = fmtB(meta.total_flow_b||0) + ' tracked';
       document.getElementById('cn-node-count').textContent = (meta.total_nodes||nodes.length) + ' nodes';
       document.getElementById('cn-edge-count').textContent = (meta.total_edges||edges.length) + ' edges';
@@ -1129,8 +1130,8 @@
     const themeBtn = document.getElementById('cn-theme-toggle');
     themeBtn.addEventListener('click', () => {
       themeLight = !themeLight;
-      document.body.classList.toggle('cn-light', themeLight);
-      themeBtn.textContent = themeLight ? '☽' : '☀';
+      document.body.classList.toggle('cn-dark', themeLight);
+      themeBtn.textContent = themeLight ? '☀' : '☽';
     });
 
     /* ── INIT ── */

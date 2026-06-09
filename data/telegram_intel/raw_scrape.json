@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-09T14:27:52.342345+00:00",
+  "timestamp": "2026-06-09T16:38:18.342920+00:00",
   "channels": {
     "trad_fin": {
       "total": 20,
@@ -7,70 +7,54 @@
     },
     "MonitoringSituation": {
       "total": 20,
-      "recent_30min": []
+      "recent_30min": [
+        {
+          "text": "SOH Update: Still closed",
+          "date": "2026-06-09T16:08:58+00:00",
+          "post_id": "MonitoringSituation/5618"
+        },
+        {
+          "text": "EIA NOW ASSUMES OIL SHIPMENTS THROUGH STRAIT OF HORMUZ RESUME IN Q3 2026",
+          "date": "2026-06-09T16:13:09+00:00",
+          "post_id": "MonitoringSituation/5619"
+        },
+        {
+          "text": "EIA DOES NOT EXPECT STRAIT OF HORMUZ TRAFFIC TO RAMP UP TO PRE-IRAN WAR LEVEL UNTIL EARLY 2027",
+          "date": "2026-06-09T16:13:27+00:00",
+          "post_id": "MonitoringSituation/5620"
+        }
+      ]
     },
     "ASupersharij": {
       "total": 15,
       "recent_30min": [
         {
-          "text": "О том, как западные финансово-промышленные группы уже сейчас договариваются о распиле ресурсов Российской Федерации - в частном канале.\n\nТут надо внимательнейшим образом следить за реакцией российских властей, за предложениями о переговорах от российских властей, за перемещениями голубей мира типа Абрамовича. \n\nОчень-очень внимательно надо следить, ибо создаётся полнейшее впечатление, что как минимум часть российских властей готова сдать полностью весь дом ради сохранения своей квартиры.\n\nМы на пороге потрясающих событий.\n\nК слову, пока эти события не произошли, скорее всего, обычные рядовые граждане Российской Федерации прочувствуют в полной мере настоящую жесть, потому что Киев с партнёрами сейчас начнёт жестить. \n\nНе потому, что они такие злые, а потому что это выгодно. Чем выгодно - объяснил там.\n\nТут сеять зраду не буду.",
-          "date": "2026-06-09T14:20:31+00:00",
-          "post_id": "ASupersharij/55552"
+          "text": "Компромиссы, дух Анкориджа, но главное - когда говоришь про гибель Зеленского, то обязательно подчеркивай, что она будет не от рук ВС РФ. \n\nОт рук ВС РФ пусть менее достойные погибают. Набранные с улиц работяги, их не жалко. А Зеленский - вы что!?",
+          "date": "2026-06-09T16:12:47+00:00",
+          "post_id": "ASupersharij/55562"
         }
       ]
     },
     "infinityhedge": {
       "total": 20,
-      "recent_30min": [
-        {
-          "text": "*ANTHROPIC TO RELEASE CLAUDE FABLE, A NEW VERSION OF MYTHOS-CLASS MODEL, LATER TODAY ACCORDING TO PERSON WITH KNOWLEDGE OF RELEASE: THEINFORMATION \n\n*CLAUDE FABLE IS A NEUTERED VERSION OF MYTHOS WITH SAFEGUARDS TO PROTECT AGAINST MISUSE IN CYBERSECURITY HACKS OR CONSTRUCTION OF BIOWEAPONS, SOURCE SAYS\n\n*CLAUDE FABLE WILL BE ABOUT TWICE AS EXPENSIVE AS TODAY'S MOST ADVANCED CLAUDE OPUS MODELS\n\n*ANTHROPIC'S INITIAL MYTHOS PRICING SHARED IN APRIL LAUNCH BLOG POST WAS FIVE TIMES HIGHER THAN OPUS: INFINITYHEDGE",
-          "date": "2026-06-09T14:10:37+00:00",
-          "post_id": "infinityhedge/26678"
-        }
-      ]
+      "recent_30min": []
     },
     "ethanlevins": {
       "total": 20,
-      "recent_30min": [
-        {
-          "text": "🇷🇺 🇺🇦 Aftermath of overnight Russian Tornado-S rocket strikes on the city of Chuhuiv, Kharkiv Oblast.\n\n3 dead, 6 injured",
-          "date": "2026-06-09T13:59:01+00:00",
-          "post_id": "ethanlevins/3481"
-        },
-        {
-          "text": "🇵🇸 The IDF claims that they killed 3 members of the Palestinian Islamic Jihad in two separate targeted assassination strikes on the central Gaza Strip on Saturday.\n\nAccording to them, they killed Muhammad Atiya Hassan Abu Afesh, the Head of the PIJ's Engineering and Specializations unit, and Farhat Zuhair Farhat Harara, the Deputy Head of the PIJ's Engineering Directorate, in one strike.\n\nThe other strike reportedly killed Abdullah Allah Riad Masoud Qadum, the head of the PIJ's Northern Gaza anti-tank unit, who reportedly took part in many ATGM strikes against IDF forces during the war.",
-          "date": "2026-06-09T14:16:35+00:00",
-          "post_id": "ethanlevins/3482"
-        }
-      ]
+      "recent_30min": []
     },
     "markettwits": {
-      "total": 20,
+      "total": 19,
       "recent_30min": [
         {
-          "text": "❗️🇺🇸 #сша #экономика #отчетность \nСША - Existing Home Sales (май) = +3.2% м/м (ожид +1.1% / ранее +0.2%)",
-          "date": "2026-06-09T14:00:16+00:00",
-          "post_id": "markettwits/373449"
+          "text": "⚠️🇺🇸#акции #сша \nв акциях США возобновились продажи после вчерашней передышки",
+          "date": "2026-06-09T16:08:39+00:00",
+          "post_id": "markettwits/373476"
         },
         {
-          "text": "✴️#ENA #крипто \nEthena заключила партнерство с гигантом  Janus Henderson - будут впаривать клиентам токенизированные CLO (collateralized loan obligations )\n——————————\nсхема CLO это когда с балансов всех грешников-бизнесов собираются дерьмодолги, упаковываются в красивую обертку и продаются лошарам под видом очень качественного долгового инструмента с купленным высоким рейтингом.",
-          "date": "2026-06-09T14:04:49+00:00",
-          "post_id": "markettwits/373450"
-        },
-        {
-          "text": "✴️🇺🇸#трамп #крипто \nСемья Трампа уже получила прибыль в размере 2 300 000 000 долларов от своих крипто-проектов",
-          "date": "2026-06-09T14:07:48+00:00",
-          "post_id": "markettwits/373451"
-        },
-        {
-          "text": "💥✴️#ZEC = +80% c 5 июня",
-          "date": "2026-06-09T14:10:26+00:00",
-          "post_id": "markettwits/373452"
-        },
-        {
-          "text": "Сбер выпустил новый ЦФА с защитой капитала ✅.\n\nНовый цифровой финансовый актив привязан к индексу Мосбиржи — главному индикатору российского фондового рынка. В него входят акции крупнейших компаний страны: Сбера, «Газпрома», «Лукойла», «Роснефти» и других лидеров экономики.\n\nСейчас индекс Мосбиржи находится около отметки 2 600 пунктов. Аналитики считают, что к концу года он может вырасти до 3 300 пунктов.\n\nДаже при минимальном росте вы получаете доходность 19,1% годовых. При отрицательном сценарии вы защищены — сумма инвестиций возвращается в конце срока вне зависимости от значения базового актива.\n\nСрок инвестирования предполагается на 3 месяца, а выплаты по его окончании.\n\nМинимальная сумма — 1000р, а приобрести актив можно с 8 по 19 июня в СберБанк Онлайн\n\nНе является индивидуальной инвестиционной рекомендацией.\n\nВажно помнить:\nЦФА — продукт с высоким риском. Доход по ЦФА не гарантирован, ликвидность (возможность досрочного погашения) ограничена. Покупка ЦФА может привести к потере всех вложенных денег. Денежные средства, передаваемые в оплату ЦФА, и связанные с ЦФА риски не подлежат страхованию АСВ. Так что не забудьте прочитать риск-декларацию.",
-          "date": "2026-06-09T14:12:27+00:00",
-          "post_id": "markettwits/373453"
+          "text": "⚠️🛢#нефть #прогноз\nМинэнерго США теперь ожидает снижение мирового спроса на нефть в 2026г, ранее ожидало рост.",
+          "date": "2026-06-09T16:22:37+00:00",
+          "post_id": "markettwits/373477"
         }
       ]
     }

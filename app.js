@@ -321,6 +321,17 @@ async function fetchFlows() {
     const signalTime = window._storiesGeneratedAt || window._flowsGeneratedAt || data.generated_at;
     if (signalTime) sfEl.textContent = 'updated ' + formatTimeAgo(signalTime);
   }
+  // Update track/trade freshness
+  const tfEl = byId('trackFreshness');
+  if (tfEl && data.generated_at) {
+    tfEl.textContent = 'updated ' + formatTimeAgo(data.generated_at);
+    tfEl.title = data.generated_at;
+  }
+  const trfEl = byId('tradeFreshness');
+  if (trfEl && data.generated_at) {
+    trfEl.textContent = 'updated ' + formatTimeAgo(data.generated_at);
+    trfEl.title = data.generated_at;
+  }
   renderGlossaryTooltips();
   updateHeroConfidence(data.aggregate_confidence, data.aggregate_confidence_label, data.aggregate_direction);
   updateMastheadFlows(data);
