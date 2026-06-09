@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-07T10:47:41.915634+00:00",
-  "source": "Mike Green Framework — Gazzetta di Kyiv Market Regime Monitor",
+  "generated_at": "2026-06-09T14:12:52.470435Z",
+  "source": "Mike Green Framework \u2014 Gazzetta di Kyiv Market Regime Monitor",
   "indicators": [
     {
       "indicator": "Money Flow",
-      "description": "Passive + active flow momentum — are markets absorbing capital or bleeding?",
+      "description": "Passive + active flow momentum \u2014 are markets absorbing capital or bleeding?",
       "direction": "BULLISH",
       "strength": 55,
       "components": {
@@ -16,7 +16,7 @@
     },
     {
       "indicator": "Top Heavy",
-      "description": "Equity concentration risk — how top-heavy is the market?",
+      "description": "Equity concentration risk \u2014 how top-heavy is the market?",
       "level": "EXTREME",
       "concentration_pct": 45,
       "components": {
@@ -27,7 +27,7 @@
     },
     {
       "indicator": "Bond Fear",
-      "description": "Treasury volatility expectations — VIX for bonds.",
+      "description": "Treasury volatility expectations \u2014 VIX for bonds.",
       "level": "HIGH",
       "score": 100,
       "components": {

@@ -1,53 +1,65 @@
 {
-  "generated_at": "2026-06-09T13:20:00Z",
+  "generated_at": "2026-06-05T06:46:00Z",
   "claims": [
     {
-      "ticker": "CL",
-      "direction": "bilateral",
-      "price_target": "$88 break = short oil; $95+ on Hezbollah trigger",
-      "strategy": "Own both tails — OTM $95 calls (June 12 expiry, ~$0.30-0.50 premium) as lottery on Hezbollah trigger; short oil if sub-$88 confirms demand collapse",
-      "win_rate": "65%",
-      "horizon": "24-72h",
-      "narrative_driven_pct": 85,
-      "crowd_belief": "Markets pricing demand destruction (stagflation) over supply risk (Iran-Hormuz). ADP +29K confirms weakening labor. Consensus says war premium is unwinding.",
-      "contradiction": "Oil dropping 2% while Iran tolls Hormuz, Israel auto-triggers Beirut, and Ben-Gvir floats civilian abduction is a first-order anomaly. The contradiction is unresolved — one Hezbollah rocket gaps oil $95+ catching shorts offside.",
-      "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90"
+      "ticker": "GC",
+      "direction": "up",
+      "price_target": "$2,520",
+      "strategy": "Fade-the-move on pullbacks",
+      "win_rate": "68% during macro instability + rate divergence windows",
+      "horizon": "2-3 weeks",
+      "narrative_driven_pct": 50,
+      "crowd_belief": "No active Polymarket contract. Gold stabilized after ceasefire hopes faded — institutional demand absorbing the dip.",
+      "contradiction": "Consensus says peace optimism capped gold, but three macro narratives (India RBI tightening, UK rates rising, Fed-BOJ divergence) all point to the same bid. The dip was a healthy consolidation, not a reversal.",
+      "story_id": "n21_macro"
     },
     {
-      "ticker": "GLD",
-      "direction": "up",
-      "price_target": "$2,500+ (stagflation confirm)",
-      "strategy": "Long gold as stagflation hedge — weak ADP + weakening labor + rising inflation expectations = Fed trapped. Gold benefits from both geopolitical risk premium and inflation hedge demand.",
-      "win_rate": "75%",
-      "horizon": "24-72h",
-      "narrative_driven_pct": 70,
-      "crowd_belief": "Gold at $2,415 reflects elevated geopolitical risk. But stagflation confirmation (ADP +29K + 3rd month inflation expectations rise) is a new vector not yet priced.",
-      "contradiction": "The stagflation vector is new — markets were pricing rate hikes, not cuts. If NFP Friday confirms ADP weakness, gold rallies on rate cut repricing + inflation hedge demand compounding.",
-      "story_id": "n21_macro__adp_29k_stagflation_signal"
+      "ticker": "EWY",
+      "direction": "down",
+      "price_target": "$55",
+      "strategy": "Short bias on foreign capitulation",
+      "win_rate": "72% when foreign selling exceeds $8B/week on Korean KOSPI",
+      "horizon": "1-2 weeks",
+      "narrative_driven_pct": 40,
+      "crowd_belief": "No active Polymarket contract. KOSPI had a 105% rally but breadth is collapsing — foreigners sold $10B in one week.",
+      "contradiction": "Korea's KOSPI surged 105% on AI/semiconductor mania. But foreign investors just sold $10 billion in a single week — breadth is collapsing. The macro convergence story (India+UK+rates) is accelerating EM outflows, not containing them.",
+      "story_id": "n21_macro"
     },
     {
-      "ticker": "TLT",
+      "ticker": "UK10Y",
       "direction": "up",
-      "price_target": "Yields -5-10bps on rate cut repricing",
-      "strategy": "Long duration bonds (TLT, ZN) — ADP +29K starts the clock on rate cut expectations. If NFP Friday confirms, aggressive curve steepening.",
-      "win_rate": "65%",
-      "horizon": "24-72h (through NFP Friday)",
+      "price_target": "4.85%",
+      "strategy": "Yield-rise positioning via gilt ETF puts",
+      "win_rate": "65% when case for BoE hikes builds + political instability",
+      "horizon": "2-4 weeks",
+      "narrative_driven_pct": 35,
+      "crowd_belief": "Polymarket 'UK base rate above 5% by Sep' at 38%. The case for raising UK rates is growing but the market is pricing only a 30% chance of a hike.",
+      "contradiction": "The case for raising UK interest rates is growing — and Burnham challenging Starmer adds political uncertainty to the rate path. The crowd undercounts a hawkish BoE pivot.",
+      "story_id": "n21_rates"
+    },
+    {
+      "ticker": "DBB",
+      "direction": "down",
+      "price_target": "$18.50",
+      "strategy": "Pre-jobs report short bias",
+      "win_rate": "58% when industrial metals soften ahead of NFP + macro uncertainty",
+      "horizon": "3-5 days",
+      "narrative_driven_pct": 30,
+      "crowd_belief": "No active Polymarket contract. Industrial metals swinging lower ahead of 'crucial US jobs report' — positioning for a strong print that keeps Fed hawkish.",
+      "contradiction": "Crowd is bracing for a strong NFP that keeps rates higher. But if the report shows weakness, industrial metals get a double hit — China demand destruction + US recession fears. The risk is asymmetric to the downside here.",
+      "story_id": "n21_inflation"
+    },
+    {
+      "ticker": "BTC",
+      "direction": "down",
+      "price_target": "$82,000",
+      "strategy": "Gap-and-Go on Strategy unwind",
+      "win_rate": "55% during Strategy-selling events (historical)",
+      "horizon": "3-7 days",
       "narrative_driven_pct": 60,
-      "crowd_belief": "2Y yields at year-highs pricing rate hikes. ADP +29K is the first crack in that thesis. Market consensus still pricing hikes.",
-      "contradiction": "ADP is noisy but directional trend (weakening labor + rising inflation expectations) is structurally bullish for bonds. If NFP confirms, rate hike expectations unwind violently.",
-      "story_id": "n21_macro__adp_29k_stagflation_signal"
-    },
-    {
-      "ticker": "VIX",
-      "direction": "up",
-      "price_target": "+2-3 points on binary escalation trigger",
-      "strategy": "Long VIX as tail hedge — Ben-Gvir proposal + automatic Beirut strike trigger = Hezbollah rocket event could fire at any time with zero diplomatic warning.",
-      "win_rate": "70%",
-      "horizon": "24-72h",
-      "narrative_driven_pct": 80,
-      "crowd_belief": "VIX complacent despite multi-front escalation. Markets not pricing Hezbollah rocket trigger probability.",
-      "contradiction": "The automatic Beirut strike mechanism means escalation is now a binary trigger, not a decision. Any rogue faction in Lebanon can start the next escalation cycle. VIX is underpricing this tail risk.",
-      "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90"
+      "crowd_belief": "Polymarket 'Bitcoin above $100K by June 30' at 42% — significant unwind risk from Strategy's sale.",
+      "contradiction": "Strategy (MicroStrategy) just sold — the company that was the bull case is now the source of supply. Crypto infrastructure thesis intact but the price signal right now is net supply entering the market.",
+      "story_id": "n21_crypto"
     }
   ]
 }

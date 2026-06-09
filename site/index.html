@@ -7,10 +7,8 @@
   <meta name="description" content="Track capital flows, trade contradictions, and follow the money through 5 intelligence products."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="./data/stories.json" as="fetch" crossorigin="anonymous">
-  <link rel="preload" href="./data/flows.json" as="fetch" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.3755c776.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.3412707c.css"/>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='2' fill='%23111827'/><text x='16' y='24' text-anchor='middle' font-size='22' font-weight='bold' font-family='Georgia,serif' fill='%23D4AF37'>G</text></svg>"/>
 
   <link rel="canonical" href="https://www.lagazzettadikyiv.com/"/>
@@ -104,11 +102,6 @@
   </div>
   <div class="masthead-right">
     <span class="masthead-tagline" data-i18n="masthead_tagline">Capital moves markets. We track where it's going.</span>
-    <nav class="product-nav">
-      <a href="./stories.html" class="nav-link">Products</a>
-      <a href="./event-horizon.html" class="nav-link active">Horizon</a>
-      <a href="./flow-nodes.html" class="nav-link active">Flow Nodes</a>
-    </nav>
     <time class="masthead-meta" id="mastheadMeta" datetime="2026-06-06T15:00:00.000Z">—</time>
     <span class="lang-switcher">
       <button class="lang-switch active" data-lang="en" onclick="i18n.switchLang('en')" aria-label="English">EN</button>
@@ -118,7 +111,7 @@
 </header>
 
 
-<section class="hero">
+<section class="hero" style="padding:20px 16px 16px;">
   <div class="hero-content">
     <h1 class="hero-headline" data-i18n="hero_headline">The stories that move markets — before they move prices.</h1>
     <p class="hero-subtitle">
@@ -133,86 +126,85 @@
   <!-- v22.20: Collapsible product sections — headlines only, full content on dedicated pages -->
 
   <section class="container collapsible expanded" id="storiesTeaser">
-    <div class="container-header">
-      <span class="container-title" data-i18n="container_stories_title">Stories</span>
+    <div class="container-header" onclick="this.parentElement.classList.toggle('expanded')">
+      <span class="container-title">Stories</span>
       <span class="container-count" id="teaserStoryCount">—</span>
       <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
     </div>
-    <div class="container-desc" data-i18n="container_stories_desc">Narrative intelligence decoded — who benefits, who loses, what the money already priced in.</div>
+    <div class="container-desc">Narrative intelligence decoded — who benefits, who loses, what the money already priced in.</div>
     <div class="container-body" id="storiesTeaserBody">
       <div id="storiesTeaserContent" class="teaser-list"></div>
-      <a href="./stories.html" class="teaser-full-link" data-i18n="all_stories">All stories →</a>
+      <a href="./stories.html" class="teaser-full-link">All stories →</a>
     </div>
   </section>
 
   <section class="container collapsible" id="flowsTeaser">
-    <div class="container-header">
-      <span class="container-title" data-i18n="container_flows_title">Capital Flows</span>
+    <div class="container-header" onclick="this.parentElement.classList.toggle('expanded')">
+      <span class="container-title">Capital Flows</span>
       <span class="container-subtitle" id="teaserFlowSub">—</span>
-      <span class="flow-freshness" id="flowFreshness"></span>
       <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
     </div>
-    <div class="container-desc" data-i18n="container_flows_desc">Where the smart money is going — directional conviction, velocity, projected movement.</div>
+    <div class="container-desc">Where the smart money is going — directional conviction, velocity, projected movement.</div>
     <div class="container-body" id="flowsTeaserBody">
       <div id="flowsTeaserContent" class="teaser-list"></div>
-      <a href="./flows.html" class="teaser-full-link" data-i18n="full_flow_dashboard">Full flow dashboard →</a>
+      <a href="./flows.html" class="teaser-full-link">Full flow dashboard →</a>
     </div>
   </section>
 
   <section class="container collapsible" id="tradesTeaser">
-    <div class="container-header">
-      <span class="container-title" data-i18n="nav_trades">Trade Ideas</span>
+    <div class="container-header" onclick="this.parentElement.classList.toggle('expanded')">
+      <span class="container-title">Trade Ideas</span>
       <span class="container-subtitle" id="teaserTradeSub">—</span>
       <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
     </div>
-    <div class="container-desc" data-i18n="container_anchors_desc_prefix">Positions derived from flows and narrative intelligence — entry zones, stop levels, conviction.</div>
+    <div class="container-desc">Positions derived from flows and narrative intelligence — entry zones, stop levels, conviction.</div>
     <div class="container-body" id="tradesTeaserBody">
       <div id="tradesTeaserContent" class="teaser-list"></div>
-      <a href="./trades.html" class="teaser-full-link" data-i18n="all_trade_ideas">All trade ideas →</a>
+      <a href="./trades.html" class="teaser-full-link">All trade ideas →</a>
     </div>
   </section>
 
   <section class="container collapsible" id="signalTeaser">
-    <div class="container-header">
-      <span class="container-title" data-i18n="container_signal_title">The Signal</span>
+    <div class="container-header" onclick="this.parentElement.classList.toggle('expanded')">
+      <span class="container-title">The Signal</span>
       <span class="container-subtitle" id="teaserSignalSub">—</span>
       <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
     </div>
-    <div class="container-desc" data-i18n="container_signal_desc">Triangulation — stories × flows × trades. Divergence is the edge.</div>
+    <div class="container-desc">Triangulation — stories × flows × trades. Divergence is the edge.</div>
     <div class="container-body" id="signalTeaserBody">
       <div id="signalTeaserContent" class="teaser-list"></div>
-      <a href="./signal.html" class="teaser-full-link" data-i18n="full_signal_dashboard">Full signal dashboard →</a>
+      <a href="./signal.html" class="teaser-full-link">Full signal dashboard →</a>
     </div>
   </section>
 
   <section class="container collapsible" id="trackTeaser">
-    <div class="container-header">
-      <span class="container-title" data-i18n="container_track_title">Track Record</span>
+    <div class="container-header" onclick="this.parentElement.classList.toggle('expanded')">
+      <span class="container-title">Track Record</span>
       <span class="container-subtitle" id="teaserTrackSub">—</span>
       <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
     </div>
-    <div class="container-desc" data-i18n="container_track_desc">Verifiable bets — every prediction, every outcome, no cherry-picking.</div>
+    <div class="container-desc">Verifiable bets — every prediction, every outcome, no cherry-picking.</div>
     <div class="container-body" id="trackTeaserBody">
       <div id="trackTeaserContent" class="teaser-list"></div>
-      <a href="./track.html" class="teaser-full-link" data-i18n="full_track_record">Full track record →</a>
+      <a href="./track.html" class="teaser-full-link">Full track record →</a>
     </div>
   </section>
 </main>
 <footer class="footer">
-  <a href="./about.html" data-i18n="nav_about">About</a>
+  <a href="./about.html">About</a>
   <span>·</span>
   <a href="https://t.me/GazzettaDiKyiv">Telegram</a>
   <span>·</span>
   <a href="https://www.reddit.com/r/LaGazzettadiKyiv/">Reddit</a>
   <span>·</span>
-  <span data-i18n="footer_kyiv">Kyiv · Since 2025</span>
+  <span>Kyiv · Since 2025</span>
 </footer>
 
 <script src="./i18n.041121bb.js"></script>
 <script src="./app.017570a2.js"></script>
 
 <!-- Retail onboarding — first-visit tooltip (v22.16) -->
-<div id="onboardingOverlay" style="display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:white;padding:12px 18px;border-radius:0;font-family:Inter,system-ui;font-size:12px;line-height:1.5;z-index:9999;max-width:360px;box-shadow:none;cursor:pointer;" onclick="this.style.display='none';localStorage.setItem('gazzetta_onboarded','1');">
+<div id="onboardingOverlay" style="display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:white;padding:12px 18px;border-radius:4px;font-family:Inter,system-ui;font-size:12px;line-height:1.5;z-index:9999;max-width:360px;box-shadow:0 4px 24px rgba(0,0,0,0.3);cursor:pointer;" onclick="this.style.display='none';localStorage.setItem('gazzetta_onboarded','1');">
   <strong>Welcome to La Gazzetta di Kyiv</strong><br>
   We track where big money moves → decode why → show you how to position.<br>
   <span style="opacity:0.7;">Stories → Flows → Trades → Signal → Track Record.</span><br>
