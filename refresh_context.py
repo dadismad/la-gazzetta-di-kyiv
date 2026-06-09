@@ -5,6 +5,7 @@ Run at session start and after any significant change.
 """
 import json
 import os
+import re
 import sys
 import subprocess
 import time
@@ -168,6 +169,57 @@ if not drift and live_etag and live_etag != "missing":
             print(f"    {warn(f'Build manifest is {age_s/60:.0f}min old — may need rebuild')}")
     else:
         print(f"    {warn('No build-manifest.json — site/ may not be built')}")
+
+# ── §4.5: PRE-DEPLOY STRUCTURAL CHECK ──────────────
+print(f"\n{hdr('§4.5 PRE-DEPLOY CHECK')}")
+
+# 4.5a: Uncommitted changes warning
+dirty = run("git status --porcelain").stdout.strip()
+if dirty:
+    dirty_count = len(dirty.split("\n"))
+    print(f"    {warn(f'{dirty_count} uncommitted file(s) — run scripts/safe_git.py before destructive git ops')}")
+else:
+    print(f"    {ok('working tree clean')}")
+
+# 4.5b: Structural integrity of compiled HTML
+site_dir = os.path.join(PROJECT, "site")
+critical_elements = {
+    "index.html": [
+        ("hero section", r'<section[^>]*class="[^"]*hero[^"]*"'),
+        ("product nav", r'class="[^"]*product-nav[^"]*"'),
+        ("container collapsible (Stories)", r'id="storiesTeaser"'),
+        ("heroProductCount span", r'id="heroProductCount"'),
+        ("onboarding overlay", r'id="onboardingOverlay"'),
+    ],
+    "flow-nodes.html": [
+        ("flow-nodes page", r'flow-nodes'),
+    ],
+}
+pages_ok = 0
+pages_warn = 0
+for page, checks in critical_elements.items():
+    page_path = os.path.join(site_dir, page)
+    if not os.path.exists(page_path):
+        print(f"    {bad(f'MISSING PAGE: {page}')}")
+        pages_warn += 1
+        continue
+    with open(page_path) as f:
+        html = f.read()
+    page_ok = True
+    for name, pattern in checks:
+        if not re.search(pattern, html):
+            print(f"    {bad(f'MISSING in {page}: {name}')}")
+            pages_warn += 1
+            page_ok = False
+    if page_ok:
+        print(f"    {ok(f'{page}: all elements present')}")
+        pages_ok += 1
+
+if pages_warn > 0:
+    print(f"\n    {bad(f'PRE-DEPLOY BLOCKED: {pages_warn} element(s) missing. Fix before deploying.')}")
+    drift = True  # Block deploy
+else:
+    print(f"    {ok('All critical elements verified — deploy safe')}")
 
 # ── §5: SYSTEM TRUTH ───────────────────────────────
 print(f"\n{hdr('═══ CURRENT SYSTEM TRUTH ═══')}")

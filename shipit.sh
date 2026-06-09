@@ -25,7 +25,7 @@ echo ""
 echo "[2/7] Local sync — copy canonical sources → site/..."
 SYNC_FILES=(
   index.html about.html capital.html contacts.html cooperation.html
-  data.html event_horizon.html flows.html geopolitics.html markets.html
+  data.html event_horizon.html flows.html flow-nodes.html geopolitics.html markets.html
   ops.html pleasure.html privacy.html research.html signal.html
   stories.html story.html track.html trades.html
   variant-modern.html wealth.html
