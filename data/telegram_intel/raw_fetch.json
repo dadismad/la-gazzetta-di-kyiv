@@ -1,479 +1,598 @@
-{
-  "fetched_at": "2026-06-10T09:27:19.013562+00:00",
-  "channels": {
-    "trad_fin": [
+[
+  {
+    "channel": "trad_fin",
+    "error": null,
+    "messages": [
       {
-        "channel": "trad_fin",
-        "text": "*ANTHROPIC TESTING CONFIRMS MYTHOS SUCCESSFULLY EXPLOITED 18 OF 21 WINDOWS KERNEL BUGS DISCLOSED RECENTLY *ANTHROPIC RESEARCH SHOWS MYTHOS EXPLOITS WINDOWS KERNEL FLAWS AT A COST OF $2,000 EACH *ANTHROPIC'S MYTHOS MODEL CREATES WORKING CYBER EXPLOITS FROM PUBLIC VULNERABILITIES WITHIN 31 MINUTES *TRUMP ADMINISTRATION PLANS AI SECURITY EXECUTIVE ORDER TO MITIGATE RISING NATIONAL SECURITY CYBER RISKS",
-        "timestamp": "2026-06-08T17:00:39+00:00",
-        "views": "2.53K",
-        "type": "original"
+        "post_id": "trad_fin/3511",
+        "datetime_raw": "2026-06-08T17:00:39+00:00",
+        "text": "*ANTHROPIC TESTING CONFIRMS MYTHOS SUCCESSFULLY EXPLOITED 18 OF 21 WINDOWS KERNEL BUGS DISCLOSED RECENTLY*ANTHROPIC RESEARCH SHOWS MYTHOS EXPLOITS WINDOWS KERNEL FLAWS AT A COST OF $2,000 EACH*ANTHROPIC'S MYTHOS MODEL CREATES WORKING CYBER EXPLOITS FROM PUBLIC VULNERABILITIES WITHIN 31 MINUTES*TRUMP ADMINISTRATION PLANS AI SECURITY EXECUTIVE ORDER TO MITIGATE RISING NATIONAL SECURITY CYBER RISKS"
       },
       {
-        "channel": "trad_fin",
-        "text": "*TIM COOK SAYS WWDC ANNOUNCEMENTS WILL CENTER ON APPLE INTELLIGENCE AND SIRI - KEYNOTE $AAPL",
-        "timestamp": "2026-06-08T17:02:46+00:00",
-        "views": "2.21K",
-        "type": "original"
+        "post_id": "trad_fin/3512",
+        "datetime_raw": "2026-06-08T17:02:46+00:00",
+        "text": "*TIM COOK SAYS WWDC ANNOUNCEMENTS WILL CENTER ON APPLE INTELLIGENCE AND SIRI - KEYNOTE$AAPL"
       },
       {
-        "channel": "trad_fin",
-        "text": "*US JUDGE STRIKES DOWN PRESIDENT TRUMP'S $100,000 H-1B VISA FEE - COURT RULING",
-        "timestamp": "2026-06-08T17:20:23+00:00",
-        "views": "2.2K",
-        "type": "original"
+        "post_id": "trad_fin/3513",
+        "datetime_raw": "2026-06-08T17:20:23+00:00",
+        "text": "*US JUDGE STRIKES DOWN PRESIDENT TRUMP'S $100,000 H-1B VISA FEE - COURT RULING"
       },
       {
-        "channel": "trad_fin",
-        "text": "*APPLE SHARES SINK TO SESSION LOW DURING SIRI PRESENTATION $AAPL",
-        "timestamp": "2026-06-08T17:44:06+00:00",
-        "views": "2.3K",
-        "type": "original"
+        "post_id": "trad_fin/3514",
+        "datetime_raw": "2026-06-08T17:44:06+00:00",
+        "text": "*APPLE SHARES SINK TO SESSION LOW DURING SIRI PRESENTATION$AAPL"
       },
       {
-        "channel": "trad_fin",
-        "text": "*APPLE: SOME APPLE INTELLIGENCE FEATURES, INCLUDING IMAGE GENERATION, HAVE DAILY USAGE LIMITS- WWDC KEYNOTE $AAPL",
-        "timestamp": "2026-06-08T18:09:06+00:00",
-        "views": "2.36K",
-        "type": "original"
+        "post_id": "trad_fin/3515",
+        "datetime_raw": "2026-06-08T18:09:06+00:00",
+        "text": "*APPLE: SOME APPLE INTELLIGENCE FEATURES, INCLUDING IMAGE GENERATION, HAVE DAILY USAGE LIMITS- WWDC KEYNOTE$AAPL"
       },
       {
-        "channel": "trad_fin",
-        "text": "*WARREN: AMERICANS DESERVE ANSWERS FROM HUANG IN A PUBLIC FORUM *NVIDIA CEO SAYS HE'D BE HAPPY TO HOST WARREN TO TALK: NBC $NVDA",
-        "timestamp": "2026-06-08T19:38:52+00:00",
-        "views": "2.37K",
-        "type": "original"
+        "post_id": "trad_fin/3516",
+        "datetime_raw": "2026-06-08T19:38:52+00:00",
+        "text": "*WARREN: AMERICANS DESERVE ANSWERS FROM HUANG IN A PUBLIC FORUM*NVIDIA CEO SAYS HE'D BE HAPPY TO HOST WARREN TO TALK: NBC$NVDA"
       },
       {
-        "channel": "trad_fin",
-        "text": "*10 QUANTINUUM INSIDERS PURCHASE COMBINED $24.7M IN SHARES: FILINGS $QNT",
-        "timestamp": "2026-06-08T20:33:39+00:00",
-        "views": "2.46K",
-        "type": "original"
+        "post_id": "trad_fin/3517",
+        "datetime_raw": "2026-06-08T20:33:39+00:00",
+        "text": "*10 QUANTINUUM INSIDERS PURCHASE COMBINED $24.7M IN SHARES: FILINGS$QNT"
       },
       {
-        "channel": "trad_fin",
-        "text": "*OPENAI: CONFIDENTIAL SUBMISSION OF DRAFT S-1 TO THE SEC",
-        "timestamp": "2026-06-08T21:13:56+00:00",
-        "views": "3.49K",
-        "type": "original"
+        "post_id": "trad_fin/3518",
+        "datetime_raw": "2026-06-08T21:13:56+00:00",
+        "text": "*OPENAI: CONFIDENTIAL SUBMISSION OF DRAFT S-1 TO THE SEC"
       },
       {
-        "channel": "trad_fin",
-        "text": "*OPENAI: HAVE NOT DECIDED ON TIMING OF IPO YET",
-        "timestamp": "2026-06-08T21:14:43+00:00",
-        "views": "2.86K",
-        "type": "original"
+        "post_id": "trad_fin/3519",
+        "datetime_raw": "2026-06-08T21:14:43+00:00",
+        "text": "*OPENAI: HAVE NOT DECIDED ON TIMING OF IPO YET"
       },
       {
-        "channel": "trad_fin",
-        "text": "*SOUTH KOREA CABINET APPROVED $350 BILLION IN STRATEGIC U.S. INVESTMENTS UNDER BILATERAL TRADE DEAL *SOUTH KOREA WILL INVEST $200 BILLION IN STRATEGIC U.S. INDUSTRIES UNDER NEW \"COMMERCIAL REASONABLENESS\" CRITERIA *SOUTH KOREA COMMITTED $150 BILLION TO SHIPBUILDING COOPERATION TO SECURE FAVORABLE U.S. TARIFF TERMS",
-        "timestamp": "2026-06-09T02:44:59+00:00",
-        "views": "2.49K",
-        "type": "original"
+        "post_id": "trad_fin/3520",
+        "datetime_raw": "2026-06-09T02:44:59+00:00",
+        "text": "*SOUTH KOREA CABINET APPROVED $350 BILLION IN STRATEGIC U.S. INVESTMENTS UNDER BILATERAL TRADE DEAL*SOUTH KOREA WILL INVEST $200 BILLION IN STRATEGIC U.S. INDUSTRIES UNDER NEW \"COMMERCIAL REASONABLENESS\" CRITERIA*SOUTH KOREA COMMITTED $150 BILLION TO SHIPBUILDING COOPERATION TO SECURE FAVORABLE U.S. TARIFF TERMS"
       },
       {
-        "channel": "trad_fin",
-        "text": "*S&P AND NASDAQ BREAK BELOW FRIDAY'S LOW *S&P NOW DOWN 1.2%, NASDAQ DOWN 2%",
-        "timestamp": "2026-06-09T15:30:49+00:00",
-        "views": "3.26K",
-        "type": "original"
+        "post_id": "trad_fin/3521",
+        "datetime_raw": "2026-06-09T15:30:49+00:00",
+        "text": "*S&P AND NASDAQ BREAK BELOW FRIDAY'S LOW*S&P NOW DOWN 1.2%, NASDAQ DOWN 2%"
       },
       {
-        "channel": "trad_fin",
-        "text": "*TRUMP: IRANIANS SHOT DOWN US APACHE HELICOPTER OVER STRAIT OF HORMUZ *TRUMP: TWO PILOTS INVOLVED ARE SAFE AND UNINJURED *TRUMP: UNITED STATES MUST RESPOND TO ATTACK",
-        "timestamp": "2026-06-09T16:38:26+00:00",
-        "views": "6.24K",
-        "type": "original"
+        "post_id": "trad_fin/3522",
+        "datetime_raw": "2026-06-09T16:38:26+00:00",
+        "text": "*TRUMP: IRANIANS SHOT DOWN US APACHE HELICOPTER OVER STRAIT OF HORMUZ*TRUMP: TWO PILOTS INVOLVED ARE SAFE AND UNINJURED*TRUMP: UNITED STATES MUST RESPOND TO ATTACK"
       },
       {
-        "channel": "trad_fin",
-        "text": "*ANTHROPIC LAUNCHED CLAUDE FABLE 5, ITS MOST POWERFUL MODEL, TO THE GENERAL PUBLIC",
-        "timestamp": "2026-06-09T17:00:20+00:00",
-        "views": "2.45K",
-        "type": "original"
+        "post_id": "trad_fin/3523",
+        "datetime_raw": "2026-06-09T17:00:20+00:00",
+        "text": "*ANTHROPIC LAUNCHED CLAUDE FABLE 5, ITS MOST POWERFUL MODEL, TO THE GENERAL PUBLIC"
       },
       {
-        "channel": "trad_fin",
-        "text": "*US BELIEVES IRAN TO SETTLE ON 15-YR ENRICHMENT SUSPENSION: NYT",
-        "timestamp": "2026-06-09T17:22:46+00:00",
-        "views": "2.23K",
-        "type": "original"
+        "post_id": "trad_fin/3524",
+        "datetime_raw": "2026-06-09T17:22:46+00:00",
+        "text": "*US BELIEVES IRAN TO SETTLE ON 15-YR ENRICHMENT SUSPENSION: NYT"
       },
       {
-        "channel": "trad_fin",
-        "text": "*SPACEX IPO HAS DRAWN MORE THAN $250B OF INVESTOR DEMAND VS $75B RAISE TARGET",
-        "timestamp": "2026-06-09T18:30:42+00:00",
-        "views": "2.44K",
-        "type": "original"
+        "post_id": "trad_fin/3525",
+        "datetime_raw": "2026-06-09T18:30:42+00:00",
+        "text": "*SPACEX IPO HAS DRAWN MORE THAN $250B OF INVESTOR DEMAND VS $75B RAISE TARGET"
       },
       {
-        "channel": "trad_fin",
-        "text": "*KALSHI PLANS TO REQUIRE USERS DISCLOSE WHERE THEY WORK TO MAKE CERTAIN TRADES -- WSJ",
-        "timestamp": "2026-06-09T19:55:54+00:00",
-        "views": "1.88K",
-        "type": "original"
+        "post_id": "trad_fin/3526",
+        "datetime_raw": "2026-06-09T19:55:54+00:00",
+        "text": "*KALSHI PLANS TO REQUIRE USERS DISCLOSE WHERE THEY WORK TO MAKE CERTAIN TRADES -- WSJ"
       },
       {
-        "channel": "trad_fin",
-        "text": "*SOUTH KOREA FINANCE MINISTRY: TO CONDUCT INSPECTION ON SPECULATIVE TRADING, MARKET DISTURBING BEHAVIOUR IN FX MARKET",
-        "timestamp": "2026-06-10T00:00:27+00:00",
-        "views": "1.56K",
-        "type": "original"
+        "post_id": "trad_fin/3527",
+        "datetime_raw": "2026-06-10T00:00:27+00:00",
+        "text": "*SOUTH KOREA FINANCE MINISTRY: TO CONDUCT INSPECTION ON SPECULATIVE TRADING, MARKET DISTURBING BEHAVIOUR IN FX MARKET"
       },
       {
-        "channel": "trad_fin",
-        "text": "*US COMPLETES STRIKES IN RESPONSE TO IRAN’S ATTACK ON APACHE",
-        "timestamp": "2026-06-10T00:57:11+00:00",
-        "views": "1.43K",
-        "type": "original"
+        "post_id": "trad_fin/3528",
+        "datetime_raw": "2026-06-10T00:57:11+00:00",
+        "text": "*US COMPLETES STRIKES IN RESPONSE TO IRAN’S ATTACK ON APACHE"
       },
       {
-        "channel": "trad_fin",
-        "text": "*CENTCOM POSTS ABOUT MILITARY STRIKES ON IRAN, SIGNALING COMPLETION",
-        "timestamp": "2026-06-10T00:57:40+00:00",
-        "views": "1.48K",
-        "type": "original"
+        "post_id": "trad_fin/3529",
+        "datetime_raw": "2026-06-10T00:57:40+00:00",
+        "text": "*CENTCOM POSTS ABOUT MILITARY STRIKES ON IRAN, SIGNALING COMPLETION"
       },
       {
-        "channel": "trad_fin",
-        "text": "*BLACKROCK'S CHAN: TECH SELLOFF IS OPPORTUNITY TO GENERATE ALPHA",
-        "timestamp": "2026-06-10T02:09:42+00:00",
-        "views": "1.18K",
-        "type": "original"
+        "post_id": "trad_fin/3530",
+        "datetime_raw": "2026-06-10T02:09:42+00:00",
+        "text": "*BLACKROCK'S CHAN: TECH SELLOFF IS OPPORTUNITY TO GENERATE ALPHA"
       }
-    ],
-    "MonitoringSituation": [
+    ]
+  },
+  {
+    "channel": "MonitoringSituation",
+    "error": null,
+    "messages": [
       {
-        "channel": "MonitoringSituation",
-        "text": "INDONESIA RAISES PRICE OF WIDELY USED FUEL BY 32% IN THE FIRST INCREASE SINCE THE IRAN WAR BEGAN",
-        "timestamp": "2026-06-10T09:18:16+00:00",
-        "views": "360",
-        "type": "original"
+        "post_id": "MonitoringSituation/5622",
+        "datetime_raw": "2026-06-09T16:38:38+00:00",
+        "text": "THE UNITED STATES MUST, OF NECESSITY, RESPOND TO THIS ATTACK."
+      },
+      {
+        "post_id": "MonitoringSituation/5623",
+        "datetime_raw": "2026-06-09T16:44:04+00:00",
+        "text": "TRUMP SAID HELICOPTER INCIDENT \"WASN'T A BIG DEAL\""
+      },
+      {
+        "post_id": "MonitoringSituation/5624",
+        "datetime_raw": "2026-06-09T20:16:15+00:00",
+        "text": "In a phone call with The Wall Street Journal on Tuesday, Trump said the blockade was making Iran “very poor” and said he would keep it in place as long as necessary. He sought to play down the helicopter incident, saying that it “wasn’t a big deal” and stressing that “the pilot is fine.”"
+      },
+      {
+        "post_id": "MonitoringSituation/5625",
+        "datetime_raw": "2026-06-09T20:18:53+00:00",
+        "text": "IRIB: QESHM HIT BY 6 EXPLOSIONS REPORTEDLY FROM ENEMY FIGHTER JET PROJECTILES"
+      },
+      {
+        "post_id": "MonitoringSituation/5626",
+        "datetime_raw": "2026-06-09T21:33:54+00:00",
+        "text": "The US military launches fresh air- strikes against Iran hours after Trump vowed to retaliate for the shooting down of an Army helicopter"
+      },
+      {
+        "post_id": "MonitoringSituation/5627",
+        "datetime_raw": "2026-06-09T21:35:13+00:00",
+        "text": "IRAN WILL RESPOND DECISIVELY TO THE AMERICAN AGGRESSION, AS IT WARNED A FEW HOURS AGO: TASMIN"
+      },
+      {
+        "post_id": "MonitoringSituation/5628",
+        "datetime_raw": "2026-06-09T21:49:03+00:00",
+        "text": "Taiwan fired U.S. mobile missile launchers into the strategic waters directly facing China for the first time on Wednesday, sending a message of resolve to Beijing and Washington. “The best way to practice live firing is right in the area you’re supposed to defend\""
+      },
+      {
+        "post_id": "MonitoringSituation/5629",
+        "datetime_raw": "2026-06-10T06:53:05+00:00",
+        "text": "INDONESIA RAISES PRICE OF WIDELY USED FUEL BY 32% IN THE FIRST INCREASE SINCE THE IRAN WAR BEGAN"
+      },
+      {
+        "post_id": "MonitoringSituation/5630",
+        "datetime_raw": "2026-06-10T09:18:16+00:00",
+        "text": "UKMTO SAYS LOCAL AUTHORITIES HAVE REPORTED A TANKER HAS EXPERIENCED A FIRE IN THEIR ENGINE ROOM"
+      },
+      {
+        "post_id": "MonitoringSituation/5631",
+        "datetime_raw": "2026-06-10T09:40:18+00:00",
+        "text": "UKMTO SAYS VESSEL IS REPORTING 1 CASUALTY AND 2 CREW MEMBERS MISSING"
+      },
+      {
+        "post_id": "MonitoringSituation/5632",
+        "datetime_raw": "2026-06-10T09:40:25+00:00",
+        "text": "UKMTO SAYS IT RECEIVED REPORT OF INCIDENT 20NM NORTHEAST OF OMAN'S SOHAR"
+      },
+      {
+        "post_id": "MonitoringSituation/5633",
+        "datetime_raw": "2026-06-10T09:40:30+00:00",
+        "text": "IRAN’S MILITARY IS A COMPLETE AND TOTAL MESS. MUCH OF IT, LIKE THEIR NAVY AND AIR FORCE, DOESN’T EVEN EXIST ANYMORE - THEY HAVE BEEN COMPLETELY DEFEATED. IRAN IS ALL TALK AND NO ACTION. THE BULLY OF THE MIDDLE EAST IS DEAD THEY’VE TAKEN TOO LONG TO NEGOTIATE A DEAL THAT WOULD HAVE BEEN GREAT FOR THEM, NOW THEY WILL HAVE TO PAY THE PRICE: REALDONALDTRUMP"
+      },
+      {
+        "post_id": "MonitoringSituation/5634",
+        "datetime_raw": "2026-06-10T11:04:36+00:00",
+        "text": "TRUMP: NOW IRAN WILL HAVE TO PAY THE PRICE"
+      },
+      {
+        "post_id": "MonitoringSituation/5635",
+        "datetime_raw": "2026-06-10T11:05:03+00:00",
+        "text": "Trump right before market open:"
+      },
+      {
+        "post_id": "MonitoringSituation/5636",
+        "datetime_raw": "2026-06-10T11:22:59+00:00",
+        "text": "TRUMP SAYS HE IS CLOSE TO ORDERING NEW STRIKES AGAINST IRANIAN POWER PLANTS AND BRIDGES -FOX NEWS"
+      },
+      {
+        "post_id": "MonitoringSituation/5637",
+        "datetime_raw": "2026-06-10T11:25:31+00:00",
+        "text": "TRUMP TELLS FOX NEWS HE'LL KEEP GOING ON IRAN"
+      },
+      {
+        "post_id": "MonitoringSituation/5638",
+        "datetime_raw": "2026-06-10T11:28:21+00:00",
+        "text": "THE FAKE NEWS MEDIA REFUSES TO REPORT HOW EFFECTIVE THE U.S. NAVAL BLOCKADE IS, THE MOST SUCCESSFUL BLOCKADE IN THE HISTORY OF NAVAL WARFARE. NOTHING GETS THROUGH UNLESS WE WANT IT TO. IT IS A STEEL WALL! IRAN IS DOING ZERO BUSINESS, NOT PAYING THEIR MILITARY, OR ANY OF THEIR BILLS, AND QUICKLY BECOMING A FAILED NATION! LOTS OF OIL IS GETTING OUT. PRAISE BE TO ALLAH!: REALDONALDTRUMP"
+      },
+      {
+        "post_id": "MonitoringSituation/5639",
+        "datetime_raw": "2026-06-10T11:33:38+00:00",
+        "text": "ISRAEL SAID TO PREPARING STRIKING IRAN AGAIN"
+      },
+      {
+        "post_id": "MonitoringSituation/5640",
+        "datetime_raw": "2026-06-10T11:35:44+00:00",
+        "text": "\"PRAISE BE TO ALLAH!\""
       }
-    ],
-    "ASupersharij": [
+    ]
+  },
+  {
+    "channel": "ASupersharij",
+    "error": null,
+    "messages": [
       {
-        "channel": "ASupersharij",
-        "text": "Я не знаю ни одного, подчеркиваю - НИ ОДНОГО человека в Украине, кто его не ненавидел бы. Публично некоторые из них даже прославляют это ничтожество. В реальности, с близкими, «на кухне» - последними словами. Основные любители - выжившее из ума бабье на немецких пособиях да патриоты, выехавшие 20 лет назад.",
-        "timestamp": "2026-06-10T09:06:49+00:00",
-        "views": "106K",
-        "type": "original"
+        "post_id": "ASupersharij/55579",
+        "datetime_raw": "2026-06-10T04:02:50+00:00",
+        "text": "В Чебоксарах вновь атакован «ВНИИР-Прогресс».Предприятие является разработчиком и ключевым производителем помехозащищённых антенн спутниковой навигации семейства «Комета».После предыдущей атаки административное здание завода защитили сетками."
       },
       {
-        "channel": "ASupersharij",
-        "text": "После прилёта «Фламинго» по Чебоксарам я пробежался по каналам военкоров и блогеров Российской Федерации. Предпочтение отдавал тем, где пару месяцев были искромётные шутки и действительно хороший, едкий юмор по поводу моих предупреждений относительно «Фламинго». Я даже снял видео и разместил его на своём YouTube-канале всего несколько месяцев назад, где говорил о том, что, судя по увеличению закупок комплектующих, ракет скоро будет очень много. Кривые, косые, неточные - но если запустить 50 ракет и хотя бы 10 из них попадут в цели, будет очень больно. Сегодня я не вижу там ни шуток, ни искромётного юмора, ни подколок. Сегодня я вижу ярость, растерянность, злость и проклятия. Я как предвестник смерти. За что меня любить? Я тихонько сажусь у левого уха и говорю: «Ну что, ты приготовился?» Любить меня не за что. Но мои прогнозы точны. Скоро я ещё расскажу кое-что интересное - и про ракеты, и про многое другое.",
-        "timestamp": "2026-06-10T09:27:05+00:00",
-        "views": "1",
-        "type": "original"
+        "post_id": "ASupersharij/55585",
+        "datetime_raw": "2026-06-10T04:08:04+00:00",
+        "text": "Чебоксары после атаки."
+      },
+      {
+        "post_id": "ASupersharij/55586",
+        "datetime_raw": "2026-06-10T04:22:48+00:00",
+        "text": "США нанесли три волны ударов по Ирану.Целями атак стали иранские системы ПВО, наземные пункты управления и радары в районе Ормузского пролива.Взрывы были слышны в Кохестаке, Сирике, Джаске, Минабе, а также в портах Бендер-Аббас и Кешм.Катар, Кувейт и Бахрейн закрывали своё воздушное пространство.Центральное командование США заявило, что это был ответ на вчерашнее уничтожение американского вертолёта Apache.Американские источники утверждают, что новые удары должны послужить «предупредительным выстрелом» для Ирана, и выражают надежду, что они не сорвут переговоры.Иран заявил, что в ответ на американские атаки нанёс удары по нескольким базам США в регионе, в частности по объектам 5-го флота в Бахрейне и базе ВВС США в иорданском городе Аль-Азрак.США утверждают, что Иран выпустил четыре ракеты и несколько БПЛА по американским базам в Бахрейне, Кувейте и Иордании. Почти все цели были перехвачены."
+      },
+      {
+        "post_id": "ASupersharij/55588",
+        "datetime_raw": "2026-06-10T04:26:18+00:00",
+        "text": "Последствия атаки на «ВНИИР-Прогресс»."
+      },
+      {
+        "post_id": "ASupersharij/55589",
+        "datetime_raw": "2026-06-10T04:42:32+00:00",
+        "text": "Харьков за ночь атаковали 26 БПЛА.Под массированной атакой находился Холодногорский район. Ранены 4 человека.Одесса также была под ударом беспилотников, зафиксированы прилёты в два дома. Пострадали три человека."
+      },
+      {
+        "post_id": "ASupersharij/55590",
+        "datetime_raw": "2026-06-10T04:50:37+00:00",
+        "text": "Момент одного из прилетов по «ВНИИР-Прогресс» в Чебоксарах."
+      },
+      {
+        "post_id": "ASupersharij/55591",
+        "datetime_raw": "2026-06-10T07:38:38+00:00",
+        "text": "Любовь народная - кто камнем, кто ломом...Бусы ТЦК в Кривом Роге теперь ездят с решётками на всех окнах."
+      },
+      {
+        "post_id": "ASupersharij/55594",
+        "datetime_raw": "2026-06-10T08:52:54+00:00",
+        "text": "В Госдуме предлагают запретить депутатам и сенаторам иметь недвижимость за границей.Законопроектом предлагается включить в перечень оснований для досрочного прекращения полномочий приобретение или наличие у парламентария, его супруга и несовершеннолетних детей недвижимости за пределами РФ.Ещё одно основание — приобретение или наличие иностранного гражданства либо вида на жительство у супруга или несовершеннолетних детей сенатора или депутата.На фото - Госдума после принятия закона. Не примут, конечно."
+      },
+      {
+        "post_id": "ASupersharij/55595",
+        "datetime_raw": "2026-06-10T09:06:49+00:00",
+        "text": "Я не знаю ни одного, подчеркиваю - НИ ОДНОГО человека в Украине, кто его не ненавидел бы. Публично некоторые из них даже прославляют это ничтожество. В реальности, с близкими, «на кухне» - последними словами. Основные любители - выжившее из ума бабье на немецких пособиях да патриоты, выехавшие 20 лет назад."
+      },
+      {
+        "post_id": "ASupersharij/55596",
+        "datetime_raw": "2026-06-10T09:27:05+00:00",
+        "text": "После прилёта «Фламинго» по Чебоксарам я пробежался по каналам военкоров и блогеров Российской Федерации. Предпочтение отдавал тем, где пару месяцев были искромётные шутки и действительно хороший, едкий юмор по поводу моих предупреждений относительно «Фламинго».Я даже снял видео и разместил его на своём YouTube-канале всего несколько месяцев назад, где говорил о том, что, судя по увеличению закупок комплектующих, ракет скоро будет очень много. Кривые, косые, неточные - но если запустить 50 ракет и хотя бы 10 из них попадут в цели, будет очень больно.Сегодня я не вижу там ни шуток, ни искромётного юмора, ни подколок. Сегодня я вижу ярость, растерянность, злость и проклятия.Я как предвестник смерти. За что меня любить? Я тихонько сажусь у левого уха и говорю: «Ну что, ты приготовился?»Любить меня не за что. Но мои прогнозы точны.Скоро я ещё расскажу кое-что интересное - и про ракеты, и про многое другое."
+      },
+      {
+        "post_id": "ASupersharij/55597",
+        "datetime_raw": "2026-06-10T09:42:54+00:00",
+        "text": "Взрыв в авто вчера на улице Введенского в Москве был связан с попыткой убить сотрудника одного из научно-производственных предприятий.Несовершеннолетняя девушка по указанию кураторов забрала в тайнике взрывчатку, которую передала несовершеннолетнему парню. Он установил взрывное устройство на автомобиль, а также закрепил GPS-трекер.Мило."
+      },
+      {
+        "post_id": "ASupersharij/55598",
+        "datetime_raw": "2026-06-10T10:11:54+00:00",
+        "text": "Удары ВСУ по историческим объектам лишний раз подчеркивают правоту России в ее борьбе за российские регионы, — ПесковНу вот, подчеркнули правоту ударом по музеюА губернатор Севастополя Развожаев сказал, что Единственное, чего вы добились, - это в очередной раз показали всему миру своё истинное варварское лицо.Весь мир теперь увидел. Ужаснулся, поди. Еще надо добавить, что в очередной раз показали истинное лицо режима и в который раз продемонстрировали преступную сущность. Также опять подчеркнули свою античеловечность и аморальность и двигаются по пути эскалации."
+      },
+      {
+        "post_id": "ASupersharij/55599",
+        "datetime_raw": "2026-06-10T10:29:02+00:00",
+        "text": "Пропагандист Зеленского писающийся прокурор Иванов продолжает активно строить из себя воина, по которому летят все ракеты мира и все известные беспилотники, добивают же его КАБами. Все это происходит прямо в четырех километрах от Киева, рядом с городом Вишневым. Но он держится, скорее всего, он выживет. В отличие от не пропагандистов Зеленского, которые реально гибнут на линии боевого столкновения."
       }
-    ],
-    "infinityhedge": [
+    ]
+  },
+  {
+    "channel": "infinityhedge",
+    "error": null,
+    "messages": [
       {
-        "channel": "infinityhedge",
-        "text": "*US APRIL CONSUMER PRICES RISE 0.6% M/M; EST. +0.6% *US APRIL CONSUMER PRICES RISE 3.8% Y/Y; EST. +3.7% *US APRIL CORE CPI RISES 0.4% M/M; EST. +0.3% *US APRIL CORE CPI RISES 2.8% Y/Y; EST. +2.7%",
-        "timestamp": "2026-05-12T12:30:18+00:00",
-        "views": "14.8K",
-        "type": "original"
+        "post_id": "infinityhedge/26660",
+        "datetime_raw": "2026-05-18T11:04:48+00:00",
+        "text": "The Week Ahead: Start with AI and might end with War: INFINITYHEDGE Mon: * Nvidia CEO Jensen guest speaker at the Dell Technologies World annual convention in Las VegasTue:* Japan Q1 GDP* Google I/O annual developer conference begins* Trump expected to hold ​a ​Situation Room meeting with his ​top national security advisers to ​discuss the ​options for military ‌action ⁠regarding IranWed: * Nvidia earnings* FOMC minutes: (expected hawkish bias) Thu:* Samsung Electronics labor strike, nearly 45k of Samsung’s unionized workers plan to walk off the job for 18 days. If that happens, it will be the largest work stoppage in the history of the semiconductor industry, in their pursuit of 15% of the company’s operating profit for employee bonuses* Walmart earnings Fri:* Japan April CPI * Fed’s Waller speaks on the economic outlookTBA/Whole Week: - G-7 finance ministers & central bank governors meet in Paris, with the focus on global imbalances, trade tensions and FX policy, through May 19.- AI: these models could drop this week: Opus/Sonnet 4.8 or Mythos, GPT 5.6, Gemini 3.5/3.2, some big announcements from google coming for sure at least- U.S. military preparing for possible resumption of attacks against Iran this weekenedICYMI: - DAY 80 OF WAR: SOH still effectively closed: Elevated oil prices are putting pressure on longer-dated U.S. & Japan bond yields, Cuba is running out of food and fuel. Upward pressure on bond yields is building as oil prices remain elevated after the US & Iran rejected each other’s proposals to end the conflict, dimming prospects for a near-term resolution- Trump-Xi Summit ended without any major announcement as expected- Crypto: Senate Banking Committee advanced the Clarity Act, to the Senate floor with a bipartisan 15-9 vote on Thursday"
       },
       {
-        "channel": "infinityhedge",
-        "text": "The Week Ahead: Start with AI and might end with War: INFINITYHEDGE Mon: * Nvidia CEO Jensen guest speaker at the Dell Technologies World annual convention in Las Vegas Tue: * Japan Q1 GDP * Google I/O annual developer conference begins * Trump expected to hold ​a ​Situation Room meeting with his ​top national security advisers to ​discuss the ​options for military ‌action ⁠regarding Iran Wed: * Nvidia earnings * FOMC minutes: (expected hawkish bias) Thu: * Samsung Electronics labor strike, nearly 45k of Samsung’s unionized workers plan to walk off the job for 18 days. If that happens, it will be the largest work stoppage in the history of the semiconductor industry, in their pursuit of 15% of the company’s operating profit for employee bonuses * Walmart earnings Fri: * Japan April CPI * Fed’s Waller speaks on the economic outlook TBA/Whole Week: - G-7 finance ministers & central bank governors meet in Paris, with the focus on global imbalances, trade tensions and FX policy, through May 19. - AI: these models could drop this week: Opus/Sonnet 4.8 or Mythos, GPT 5.6, Gemini 3.5/3.2, some big announcements from google coming for sure at least - U.S. military preparing for possible resumption of attacks against Iran this weekened ICYMI: - DAY 80 OF WAR: SOH still effectively closed: Elevated oil prices are putting pressure on longer-dated U.S. & Japan bond yields, Cuba is running out of food and fuel. Upward pressure on bond yields is building as oil prices remain elevated after the US & Iran rejected each other’s proposals to end the conflict, dimming prospects for a near-term resolution - Trump-Xi Summit ended without any major announcement as expected - Crypto: Senate Banking Committee advanced the Clarity Act, to the Senate floor with a bipartisan 15-9 vote on Thursday",
-        "timestamp": "2026-05-18T11:04:48+00:00",
-        "views": "13.2K",
-        "type": "original"
+        "post_id": "infinityhedge/26661",
+        "datetime_raw": "2026-05-19T13:22:03+00:00",
+        "text": "US 30-YEAR YIELD RISES TO HIGHEST LEVEL SINCE 2007- INFINITYHEDGE"
       },
       {
-        "channel": "infinityhedge",
-        "text": "US 30-YEAR YIELD RISES TO HIGHEST LEVEL SINCE 2007- INFINITYHEDGE",
-        "timestamp": "2026-05-19T13:22:03+00:00",
-        "views": "12.6K",
-        "type": "original"
+        "post_id": "infinityhedge/26662",
+        "datetime_raw": "2026-05-20T20:20:45+00:00",
+        "text": "NVIDIA 1Q DATA CENTER REVENUE $75.2B, EST. $73.48BNVIDIA 1Q REV. $81.62B, EST. $79.19BNVIDIA 1Q DATA CENTER REVENUE $75.2B, EST. $73.48BNVIDIA ANNOUNCES $80 BLN ADDITIONAL SHARE REPURCHASE AUTHORIZATION AND INCREASES QTRLY DIVIDEND TO $0.25 PER SHARENVIDIA SEES 2Q REV. $89.18B TO $92.82B, EST. $87.36BNVIDIA SEES 2Q ADJ GROSS MARGIN 74.5% TO 75.5%NVIDIA: NO SHIPMENTS OF DATA CENTER HOPPER PRODUCTS TO CHINA OCCURRED DURING QUARTERNVIDIA: DON'T YET KNOW IF ANY IMPORTS WILL BE ALLOWED IN CHINA"
       },
       {
-        "channel": "infinityhedge",
-        "text": "NVIDIA 1Q DATA CENTER REVENUE $75.2B, EST. $73.48B NVIDIA 1Q REV. $81.62B, EST. $79.19B NVIDIA 1Q DATA CENTER REVENUE $75.2B, EST. $73.48B NVIDIA ANNOUNCES $80 BLN ADDITIONAL SHARE REPURCHASE AUTHORIZATION AND INCREASES QTRLY DIVIDEND TO $0.25 PER SHARE NVIDIA SEES 2Q REV. $89.18B TO $92.82B, EST. $87.36B NVIDIA SEES 2Q ADJ GROSS MARGIN 74.5% TO 75.5% NVIDIA: NO SHIPMENTS OF DATA CENTER HOPPER PRODUCTS TO CHINA OCCURRED DURING QUARTER NVIDIA: DON'T YET KNOW IF ANY IMPORTS WILL BE ALLOWED IN CHINA",
-        "timestamp": "2026-05-20T20:20:45+00:00",
-        "views": "13.7K",
-        "type": "original"
+        "post_id": "infinityhedge/26663",
+        "datetime_raw": "2026-05-20T20:42:07+00:00",
+        "text": "ANTHROPIC EXPECTS A 130% REVENUE SURGE TO $10.9 BILLION IN THE JUNE QUARTER AND ITS FIRST OPERATING PROFIT: WSJANTHROPIC GENERATED $4.8 BILLION IN SALES IN THE FIRST QUARTER"
       },
       {
-        "channel": "infinityhedge",
-        "text": "ANTHROPIC EXPECTS A 130% REVENUE SURGE TO $10.9 BILLION IN THE JUNE QUARTER AND ITS FIRST OPERATING PROFIT: WSJ ANTHROPIC GENERATED $4.8 BILLION IN SALES IN THE FIRST QUARTER",
-        "timestamp": "2026-05-20T20:42:07+00:00",
-        "views": "11.8K",
-        "type": "original"
+        "post_id": "infinityhedge/26664",
+        "datetime_raw": "2026-05-20T20:44:47+00:00",
+        "text": "ELON MUSK’S SPACEX FILES FOR NASDAQ IPO UNDER SYMBOL SPCXELON MUSK HAS COMBINED VOTING POWER OF 85.1%SPACEX: ELON MUSK OWNS 12.3% OF CLASS A SHARES, 93.6% OF CLASS B SHARESSPACEX SAYS STARLINK HAS ABOUT 10.3 MILLION SUBSCRIBER'SPACEX: ENTERED INTO A COMPUTE PACT WITH ANYSPHERESPACEX: ENTERED INTO AN OPTION PACT TO BUY CURSORSPACEX: AS OF MARCH 31, ~9.600 SATELLITES IN LOW-EARTH ORBITMUSK: TALKS UNDERWAY WITH OTHER FIRMS TO PROVIDE AI COMPUTING AS A SERVICE"
       },
       {
-        "channel": "infinityhedge",
-        "text": "ELON MUSK’S SPACEX FILES FOR NASDAQ IPO UNDER SYMBOL SPCX ELON MUSK HAS COMBINED VOTING POWER OF 85.1% SPACEX: ELON MUSK OWNS 12.3% OF CLASS A SHARES, 93.6% OF CLASS B SHARES SPACEX SAYS STARLINK HAS ABOUT 10.3 MILLION SUBSCRIBER' SPACEX: ENTERED INTO A COMPUTE PACT WITH ANYSPHERE SPACEX: ENTERED INTO AN OPTION PACT TO BUY CURSOR SPACEX: AS OF MARCH 31, ~9.600 SATELLITES IN LOW-EARTH ORBIT MUSK: TALKS UNDERWAY WITH OTHER FIRMS TO PROVIDE AI COMPUTING AS A SERVICE",
-        "timestamp": "2026-05-20T20:44:47+00:00",
-        "views": "27.3K",
-        "type": "original"
+        "post_id": "infinityhedge/26665",
+        "datetime_raw": "2026-05-20T20:47:08+00:00",
+        "text": "*SPACEX 1Q REVENUE $4.69B*SPACEX 1Q NET LOSS $4.28B*2024 REVENUE: $14B*2025 REVENUE: $18.7B"
       },
       {
-        "channel": "infinityhedge",
-        "text": "*SPACEX 1Q REVENUE $4.69B *SPACEX 1Q NET LOSS $4.28B *2024 REVENUE: $14B *2025 REVENUE: $18.7B",
-        "timestamp": "2026-05-20T20:47:08+00:00",
-        "views": "14.8K",
-        "type": "original"
+        "post_id": "infinityhedge/26667",
+        "datetime_raw": "2026-05-20T21:12:51+00:00",
+        "text": "SpaceX: The Biggest IPO in History- Ticker symbol: SPCX- Exchange: Nasdaq- Valuation: expected > $1.8 Trillion- Expected IPO date: June 12 - Raising: $80B+👉 FY 2025:- rev: $18.7B- Operating Loss: $2.6B- Starlink (Connectivity) rev: $11.4B- Space rev: $4.09B- AI rev: $3.2BFY2025 Capex:- AI: $12.7B - Starlink: $4.18B- Space: $3.83B- Total 2025 capex $20.7b vs $11.2b (2024)- xAI burned $6.4B on $3.2B in rev- SpaceX says it spent ~$3B on Starship in 2025 alone👉 Q1 2026: - rev: $4.7B- Operating Loss: $1.9B- Starlink rev: $3.26B- Space rev: $619M- AI rev: $818MQ1 2026 capex:- AI: $7.7B- Starlink: $1.3B- Space: $1B- Total: ~$10B{Est. 2026 capex $40b vs 20.7B (2025) vs $11.2b (2024)}- Anthropic to pay SpaceX $1.25B/month to rent capacity from both of its data centers called Colossus and Colossus II, through to May 2029. SpaceX said it expects to enter more of those types of agreements, as it has “sufficient capacity to provide compute for our own AI models.”- Musk controlled 85% of the voting power at SpaceX. Together with other board members and executives, insiders owned about 20% of the Class A shares and 94% of the Class B shares, giving them 86% of the combined voting power.- By the end of the decade, SpaceX aims to deploy the first modular orbital AI compute shells -- data centers in space -- and begin monetizing capacity through the sale of AI software and AI compute."
       },
       {
-        "channel": "infinityhedge",
-        "text": "SpaceX: The Biggest IPO in History - Ticker symbol: SPCX - Exchange: Nasdaq - Valuation: expected > $1.8 Trillion - Expected IPO date: June 12 - Raising: $80B+ 👉 FY 2025: - rev: $18.7B - Operating Loss: $2.6B - Starlink (Connectivity) rev: $11.4B - Space rev: $4.09B - AI rev: $3.2B FY2025 Capex: - AI: $12.7B - Starlink: $4.18B - Space: $3.83B - Total 2025 capex $20.7b vs $11.2b (2024) - xAI burned $6.4B on $3.2B in rev - SpaceX says it spent ~$3B on Starship in 2025 alone 👉 Q1 2026: - rev: $4.7B - Operating Loss: $1.9B - Starlink rev: $3.26B - Space rev: $619M - AI rev: $818M Q1 2026 capex: - AI: $7.7B - Starlink: $1.3B - Space: $1B - Total: ~$10B {Est. 2026 capex $40b vs 20.7B (2025) vs $11.2b (2024)} - Anthropic to pay SpaceX $1.25B/month to rent capacity from both of its data centers called Colossus and Colossus II, through to May 2029. SpaceX said it expects to enter more of those types of agreements, as it has “sufficient capacity to provide compute for our own AI models.” - Musk controlled 85% of the voting power at SpaceX. Together with other board members and executives, insiders owned about 20% of the Class A shares and 94% of the Class B shares, giving them 86% of the combined voting power. - By the end of the decade, SpaceX aims to deploy the first modular orbital AI compute shells -- data centers in space -- and begin monetizing capacity through the sale of AI software and AI compute.",
-        "timestamp": "2026-05-20T21:12:51+00:00",
-        "views": "26.6K",
-        "type": "original"
+        "post_id": "infinityhedge/26668",
+        "datetime_raw": "2026-05-22T14:13:37+00:00",
+        "text": "TRADERS FULLY PRICE QUARTER-POINT FED HIKE BY END OF 2026"
       },
       {
-        "channel": "infinityhedge",
-        "text": "TRADERS FULLY PRICE QUARTER-POINT FED HIKE BY END OF 2026",
-        "timestamp": "2026-05-22T14:13:37+00:00",
-        "views": "22.9K",
-        "type": "original"
+        "post_id": "infinityhedge/26669",
+        "datetime_raw": "2026-05-24T14:45:31+00:00",
+        "text": "MICHAEL SAYLOR: THIS WEEK WE BOUGHT BONDS, NOT BITCOIN - INFINITYHEDGE"
       },
       {
-        "channel": "infinityhedge",
-        "text": "MICHAEL SAYLOR: THIS WEEK WE BOUGHT BONDS, NOT BITCOIN - INFINITYHEDGE",
-        "timestamp": "2026-05-24T14:45:31+00:00",
-        "views": "38.1K",
-        "type": "original"
+        "post_id": "infinityhedge/26670",
+        "datetime_raw": "2026-05-27T22:43:43+00:00",
+        "text": "TRUMP: \"TRUMP” WILL NEVER LET CRYPTO DOWN!TRUMP: GENSLER AND THE “ANTI-CRYPTO ARMY” NEARLY DESTROYED THE AMERICAN CRYPTO INDUSTRY BY DRIVING BITCOIN, CRYPTO PERPETUALS, AND INNOVATION OFFSHORE, BUT “TRUMP” SAVED IT"
       },
       {
-        "channel": "infinityhedge",
-        "text": "TRUMP: \"TRUMP” WILL NEVER LET CRYPTO DOWN! TRUMP: GENSLER AND THE “ANTI-CRYPTO ARMY” NEARLY DESTROYED THE AMERICAN CRYPTO INDUSTRY BY DRIVING BITCOIN, CRYPTO PERPETUALS, AND INNOVATION OFFSHORE, BUT “TRUMP” SAVED IT",
-        "timestamp": "2026-05-27T22:43:43+00:00",
-        "views": "29.8K",
-        "type": "original"
+        "post_id": "infinityhedge/26671",
+        "datetime_raw": "2026-05-29T14:53:40+00:00",
+        "text": "TRUMP SAYS REMOVING NAVAL BLOCKADE - INFINITYHEDGETRUMP: MEETING NOW TO MAKE A FINAL DETERMINATION ON IRAN DEAL"
       },
       {
-        "channel": "infinityhedge",
-        "text": "TRUMP SAYS REMOVING NAVAL BLOCKADE - INFINITYHEDGE TRUMP: MEETING NOW TO MAKE A FINAL DETERMINATION ON IRAN DEAL",
-        "timestamp": "2026-05-29T14:53:40+00:00",
-        "views": "20.3K",
-        "type": "original"
+        "post_id": "infinityhedge/26672",
+        "datetime_raw": "2026-05-31T20:07:44+00:00",
+        "text": "HYPERLIQUID SURPASSES DOGECOIN TO BECOME THE 10TH LARGEST CRYPTO BY MARKET CAP - INFINITYHEDGE"
       },
       {
-        "channel": "infinityhedge",
-        "text": "HYPERLIQUID SURPASSES DOGECOIN TO BECOME THE 10TH LARGEST CRYPTO BY MARKET CAP - INFINITYHEDGE",
-        "timestamp": "2026-05-31T20:07:44+00:00",
-        "views": "35.8K",
-        "type": "original"
+        "post_id": "infinityhedge/26673",
+        "datetime_raw": "2026-06-01T16:14:48+00:00",
+        "text": "TRUMP: WE'LL KEEP THE BLOCKADE IN HORMUZ"
       },
       {
-        "channel": "infinityhedge",
-        "text": "TRUMP: WE'LL KEEP THE BLOCKADE IN HORMUZ",
-        "timestamp": "2026-06-01T16:14:48+00:00",
-        "views": "17.3K",
-        "type": "original"
+        "post_id": "infinityhedge/26674",
+        "datetime_raw": "2026-06-02T15:41:09+00:00",
+        "text": "PASSWORD MANAGER DASHLANE SAYS HACKERS STOLE SOME CUSTOMERS’ PASSWORD VAULTS: TECHCRUNCH- INFINITYHEDGEDASHLANE SAYS HACKERS BRUTE-FORCED COMPANY'S TWO-FACTOR AUTHENTICATION SYSTEM, GRANTING ACCESS TO ABOUT 20 CUSTOMER ACCOUNTS AND ALLOWING DOWNLOAD OF ENCRYPTED VAULTSDASHLANE SAYS THERE IS NO EVIDENCE OF COMPROMISE OF ITS OWN SYSTEMS, HAS NOT YET SAID HOW HACKERS DEFEATED TWO-FACTOR PROTECTIONS"
       },
       {
-        "channel": "infinityhedge",
-        "text": "PASSWORD MANAGER DASHLANE SAYS HACKERS STOLE SOME CUSTOMERS’ PASSWORD VAULTS: TECHCRUNCH- INFINITYHEDGE DASHLANE SAYS HACKERS BRUTE-FORCED COMPANY'S TWO-FACTOR AUTHENTICATION SYSTEM, GRANTING ACCESS TO ABOUT 20 CUSTOMER ACCOUNTS AND ALLOWING DOWNLOAD OF ENCRYPTED VAULTS DASHLANE SAYS THERE IS NO EVIDENCE OF COMPROMISE OF ITS OWN SYSTEMS, HAS NOT YET SAID HOW HACKERS DEFEATED TWO-FACTOR PROTECTIONS",
-        "timestamp": "2026-06-02T15:41:09+00:00",
-        "views": "16.4K",
-        "type": "original"
+        "post_id": "infinityhedge/26675",
+        "datetime_raw": "2026-06-03T09:29:05+00:00",
+        "text": "ZCASH NETWORK DOWN, NOT PRODUCED ANY BLOCK IN THE PAST 4 HOURS, ACCORDING TO MULTIPLE BLOCK EXPLORERS- INFINITYHEDGECONTEXT: ZCASH ECO COORDINATED A NETWORK UPGRADE DUE TO AN ORCHARD POOL SOUNDNESS VULNERABILITY, AND ORCHARD TXNS WERE TEMPORARILY SUSPENDED FOR ~24HRS WHILE UPGRADE WAS DEPLOYED AND ACTIVATEDUPDATE: XENU: MULTIPLE EXPLORERS ARE POINTED TO NON-UPDATED NODES HOWEVER THE THE FORK (NETWORK UPGRADE) HAS BEEN SLOPPY, AS THERE IS CURRENTLY NO WALLET FIX IMPLEMENTED EXCEPT FOR ZODL WALLET AND CAKE WALLET STILL NOT WORKINGHYPERUNIT: ZCASH IS CURRENTLY EXPERIENCING DEGRADED PROCESSING AND IS EXPECTED TO REMAIN IMPACTED FOR THE NEXT FEW HOURS, AS A RESULT OF THE RECENT NETWORK HARD FORKMetaDAO founder: a soundness bug is a greater existential risk to private chains than transparent chains because you can't necessarily fix it on a private chain immediately after it is exploited.....and no way of knowing for sure whether or not it has already been exploited."
       },
       {
-        "channel": "infinityhedge",
-        "text": "ZCASH NETWORK DOWN, NOT PRODUCED ANY BLOCK IN THE PAST 4 HOURS, ACCORDING TO MULTIPLE BLOCK EXPLORERS- INFINITYHEDGE CONTEXT: ZCASH ECO COORDINATED A NETWORK UPGRADE DUE TO AN ORCHARD POOL SOUNDNESS VULNERABILITY, AND ORCHARD TXNS WERE TEMPORARILY SUSPENDED FOR ~24HRS WHILE UPGRADE WAS DEPLOYED AND ACTIVATED UPDATE: XENU: MULTIPLE EXPLORERS ARE POINTED TO NON-UPDATED NODES HOWEVER THE THE FORK (NETWORK UPGRADE) HAS BEEN SLOPPY, AS THERE IS CURRENTLY NO WALLET FIX IMPLEMENTED EXCEPT FOR ZODL WALLET AND CAKE WALLET STILL NOT WORKING HYPERUNIT: ZCASH IS CURRENTLY EXPERIENCING DEGRADED PROCESSING AND IS EXPECTED TO REMAIN IMPACTED FOR THE NEXT FEW HOURS, AS A RESULT OF THE RECENT NETWORK HARD FORK MetaDAO founder: a soundness bug is a greater existential risk to private chains than transparent chains because you can't necessarily fix it on a private chain immediately after it is exploited.....and no way of knowing for sure whether or not it has already been exploited.",
-        "timestamp": "2026-06-03T09:29:05+00:00",
-        "views": "34.8K",
-        "type": "original"
+        "post_id": "infinityhedge/26676",
+        "datetime_raw": "2026-06-08T12:00:56+00:00",
+        "text": "MICROSTRATEGY ACQUIRED 1,550 BTC BETWEEN JUN 1 TO JUN 7 AT $65,332 PER BITCOIN FUNDED BY MSTR STOCK SALE: INFINITYHEDGE"
       },
       {
-        "channel": "infinityhedge",
-        "text": "MICROSTRATEGY ACQUIRED 1,550 BTC BETWEEN JUN 1 TO JUN 7 AT $65,332 PER BITCOIN FUNDED BY MSTR STOCK SALE: INFINITYHEDGE",
-        "timestamp": "2026-06-08T12:00:56+00:00",
-        "views": "10.7K",
-        "type": "original"
+        "post_id": "infinityhedge/26678",
+        "datetime_raw": "2026-06-09T14:10:37+00:00",
+        "text": "*ANTHROPIC TO RELEASE CLAUDE FABLE, A NEW VERSION OF MYTHOS-CLASS MODEL, LATER TODAY *CLAUDE FABLE IS A NEUTERED VERSION OF MYTHOS WITH SAFEGUARDS TO PROTECT AGAINST MISUSE IN CYBERSECURITY HACKS OR CONSTRUCTION OF BIOWEAPONS, SOURCE SAYS: THEINFORMATION*CLAUDE FABLE WILL BE ABOUT TWICE AS EXPENSIVE AS TODAY'S MOST ADVANCED CLAUDE OPUS MODELS*ANTHROPIC'S INITIAL MYTHOS PRICING SHARED IN APRIL LAUNCH BLOG POST WAS FIVE TIMES HIGHER THAN OPUS: INFINITYHEDGE"
       },
       {
-        "channel": "infinityhedge",
-        "text": "*ANTHROPIC TO RELEASE CLAUDE FABLE, A NEW VERSION OF MYTHOS-CLASS MODEL, LATER TODAY *CLAUDE FABLE IS A NEUTERED VERSION OF MYTHOS WITH SAFEGUARDS TO PROTECT AGAINST MISUSE IN CYBERSECURITY HACKS OR CONSTRUCTION OF BIOWEAPONS, SOURCE SAYS: THEINFORMATION *CLAUDE FABLE WILL BE ABOUT TWICE AS EXPENSIVE AS TODAY'S MOST ADVANCED CLAUDE OPUS MODELS *ANTHROPIC'S INITIAL MYTHOS PRICING SHARED IN APRIL LAUNCH BLOG POST WAS FIVE TIMES HIGHER THAN OPUS: INFINITYHEDGE",
-        "timestamp": "2026-06-09T14:10:37+00:00",
-        "views": "13.5K",
-        "type": "original"
+        "post_id": "infinityhedge/26679",
+        "datetime_raw": "2026-06-09T16:54:05+00:00",
+        "text": "ANTHROPIC RELEASES CLAUDE FABLE 5 (MYTHOS-CLASS MODEL)- INFINITYHEDGE"
       },
       {
-        "channel": "infinityhedge",
-        "text": "ANTHROPIC RELEASES CLAUDE FABLE 5 (MYTHOS-CLASS MODEL)- INFINITYHEDGE",
-        "timestamp": "2026-06-09T16:54:05+00:00",
-        "views": "12.4K",
-        "type": "original"
+        "post_id": "infinityhedge/26680",
+        "datetime_raw": "2026-06-09T17:08:17+00:00",
+        "text": "CLAUDE FABLE 5 AND MYTHOS 5 BENCHMARKSClaude Fable 5 is available everywhere today. Claude Mythos 5 is restricted to Glasswing partners.Fable 5 and Mythos 5 are being offered at $10 per million input tokens and $50 per million output tokensMore here: https://www.anthropic.com/news/claude-fable-5-mythos-5"
       },
       {
-        "channel": "infinityhedge",
-        "text": "CLAUDE FABLE 5 AND MYTHOS 5 BENCHMARKS Claude Fable 5 is available everywhere today. Claude Mythos 5 is restricted to Glasswing partners. Fable 5 and Mythos 5 are being offered at $10 per million input tokens and $50 per million output tokens More here: https://www.anthropic.com/news/claude-fable-5-mythos-5",
-        "timestamp": "2026-06-09T17:08:17+00:00",
-        "views": "8.12K",
-        "type": "original"
+        "post_id": "infinityhedge/26681",
+        "datetime_raw": "2026-06-10T11:33:57+00:00",
+        "text": "TRUMP: PRAISE BE TO ALLAH!"
       }
-    ],
-    "ethanlevins": [
+    ]
+  },
+  {
+    "channel": "ethanlevins",
+    "error": null,
+    "messages": [
       {
-        "channel": "ethanlevins",
-        "text": "🇮🇷 Confirmed 🚁 💥",
-        "timestamp": "2026-06-09T17:12:10+00:00",
-        "views": "7.21K",
-        "type": "original"
+        "post_id": "ethanlevins/3487",
+        "datetime_raw": "2026-06-09T17:22:07+00:00",
+        "text": "🇱🇧 1 hour ago Mount Rihan, southern Lebanon under attack"
       },
       {
-        "channel": "ethanlevins",
-        "text": "🇱🇧 The Lebanese Ministry of Health says that there have been 3,666 killed and 11,321 injured in IDF attacks since March 2.",
-        "timestamp": "2026-06-09T17:20:23+00:00",
-        "views": "6.95K",
-        "type": "original"
+        "post_id": "ethanlevins/3488",
+        "datetime_raw": "2026-06-09T18:29:45+00:00",
+        "text": "🇦🇪🇮🇷 At the request of the United States, the UAE delivered a plane carrying $3 Billion dollars in cash to Iran, in exchange for stopping its attacks on Israel – Kann"
       },
       {
-        "channel": "ethanlevins",
-        "text": "🇱🇧 1 hour ago Mount Rihan, southern Lebanon under attack",
-        "timestamp": "2026-06-09T17:22:07+00:00",
-        "views": "7.15K",
-        "type": "original"
+        "post_id": "ethanlevins/3489",
+        "datetime_raw": "2026-06-09T19:31:27+00:00",
+        "text": "🇮🇷 🇺🇸 American refueling planes are over the Middle East. We might be seeing a strike on Iran very soon."
       },
       {
-        "channel": "ethanlevins",
-        "text": "🇦🇪 🇮🇷 At the request of the United States, the UAE delivered a plane carrying $3 Billion dollars in cash to Iran, in exchange for stopping its attacks on Israel – Kann",
-        "timestamp": "2026-06-09T18:29:45+00:00",
-        "views": "7.18K",
-        "type": "original"
+        "post_id": "ethanlevins/3490",
+        "datetime_raw": "2026-06-09T19:37:57+00:00",
+        "text": "🇮🇷GPS signal interference has occurred in several areas of the Iranian capital, Tehran."
       },
       {
-        "channel": "ethanlevins",
-        "text": "🇮🇷 🇺🇸 American refueling planes are over the Middle East. We might be seeing a strike on Iran very soon.",
-        "timestamp": "2026-06-09T19:31:27+00:00",
-        "views": "6.96K",
-        "type": "original"
+        "post_id": "ethanlevins/3491",
+        "datetime_raw": "2026-06-09T19:40:18+00:00",
+        "text": "🇮🇷Iranian Deputy Foreign Minister to Al Jazeera: Iran is not behind the attack on the US Apache helicopter over the Strait of Hormuz"
       },
       {
-        "channel": "ethanlevins",
-        "text": "🇮🇷 GPS signal interference has occurred in several areas of the Iranian capital, Tehran.",
-        "timestamp": "2026-06-09T19:37:57+00:00",
-        "views": "6.77K",
-        "type": "original"
+        "post_id": "ethanlevins/3492",
+        "datetime_raw": "2026-06-09T19:52:48+00:00",
+        "text": "🇮🇶 Explosions heard in Najaf, Iraq"
       },
       {
-        "channel": "ethanlevins",
-        "text": "🇮🇷 Iranian Deputy Foreign Minister to Al Jazeera: Iran is not behind the attack on the US Apache helicopter over the Strait of Hormuz",
-        "timestamp": "2026-06-09T19:40:18+00:00",
-        "views": "6.84K",
-        "type": "original"
+        "post_id": "ethanlevins/3493",
+        "datetime_raw": "2026-06-09T20:08:36+00:00",
+        "text": "🇬🇧 Intense Anti-Immigration Protests have erupted in Belfast, Northern Ireland after the attempted beheading of a man by a Sudanese immigrant. The video shows the migrant on top of the bloodied man, where he begins to slice his throat off. This is where people step in and rush to help him, saving his life. This is a showcase of Britain’s failed immigration policies. Obviously, most immigrants are safe, good, and fine people. But the UK simply doesn’t “check” anyone, and has suffered from insane lunatics such as this guy getting into the country. It’s a government failure in the United Kingdom to protect its citizens."
       },
       {
-        "channel": "ethanlevins",
-        "text": "🇮🇶 Explosions heard in Najaf, Iraq",
-        "timestamp": "2026-06-09T19:52:48+00:00",
-        "views": "6.74K",
-        "type": "original"
+        "post_id": "ethanlevins/3494",
+        "datetime_raw": "2026-06-09T20:50:25+00:00",
+        "text": "🇱🇧 5 Israeli airstrikes on Nabatieh"
       },
       {
-        "channel": "ethanlevins",
-        "text": "🇬🇧 Intense Anti-Immigration Protests have erupted in Belfast, Northern Ireland after the attempted beheading of a man by a Sudanese immigrant. The video shows the migrant on top of the bloodied man, where he begins to slice his throat off. This is where people step in and rush to help him, saving his life. This is a showcase of Britain’s failed immigration policies. Obviously, most immigrants are safe, good, and fine people. But the UK simply doesn’t “check” anyone, and has suffered from insane lunatics such as this guy getting into the country. It’s a government failure in the United Kingdom to protect its citizens.",
-        "timestamp": "2026-06-09T20:08:36+00:00",
-        "views": "7.13K",
-        "type": "original"
+        "post_id": "ethanlevins/3495",
+        "datetime_raw": "2026-06-09T21:12:01+00:00",
+        "text": "🇱🇧 Hezbollah launches towards northern Israel, most intercepted"
       },
       {
-        "channel": "ethanlevins",
-        "text": "🇱🇧 5 Israeli airstrikes on Nabatieh",
-        "timestamp": "2026-06-09T20:50:25+00:00",
-        "views": "6.69K",
-        "type": "original"
+        "post_id": "ethanlevins/3496",
+        "datetime_raw": "2026-06-09T22:01:26+00:00",
+        "text": "🇾🇪 30 minutes ago Yemen launched a ballistic missile towards Israel, but it failed upon launch and crashed into the desert near the Saudi border"
       },
       {
-        "channel": "ethanlevins",
-        "text": "🇱🇧 Hezbollah launches towards northern Israel, most intercepted",
-        "timestamp": "2026-06-09T21:12:01+00:00",
-        "views": "6.56K",
-        "type": "original"
+        "post_id": "ethanlevins/3497",
+        "datetime_raw": "2026-06-10T05:11:37+00:00",
+        "text": "🇮🇷 🇺🇸 LAST NIGHT: Fox News reports that 20 different targets were attacked during the U.S. retaliatory strikes against Iran, and that the U.S. is prepared to respond to any Iranian retaliation."
       },
       {
-        "channel": "ethanlevins",
-        "text": "🇾🇪 30 minutes ago Yemen launched a ballistic missile towards Israel, but it failed upon launch and crashed into the desert near the Saudi border",
-        "timestamp": "2026-06-09T22:01:26+00:00",
-        "views": "6.28K",
-        "type": "original"
+        "post_id": "ethanlevins/3498",
+        "datetime_raw": "2026-06-10T05:13:23+00:00",
+        "text": "🇧🇭 🇯🇴 Iran retaliated with strikes against Bahrain and Jordan. It seems 5 missiles at Amman, Jordan all intercepted. Bahrain had many drones and missiles, with direct impacts on targets"
       },
       {
-        "channel": "ethanlevins",
-        "text": "🇮🇷 🇺🇸 LAST NIGHT: Fox News reports that 20 different targets were attacked during the U.S. retaliatory strikes against Iran, and that the U.S. is prepared to respond to any Iranian retaliation.",
-        "timestamp": "2026-06-10T05:11:37+00:00",
-        "views": "3.39K",
-        "type": "original"
+        "post_id": "ethanlevins/3499",
+        "datetime_raw": "2026-06-10T05:19:01+00:00",
+        "text": "🇺🇦 🇷🇺 Ukrainian FP-5 Flamingo cruise missiles struck the city of Cheboksary, Chuvashia Republic.Additional missiles are currently flying to the Ural Mountains towards the area of Tyumen Oblast."
       },
       {
-        "channel": "ethanlevins",
-        "text": "🇧🇭 🇯🇴 Iran retaliated with strikes against Bahrain and Jordan. It seems 5 missiles at Amman, Jordan all intercepted. Bahrain had many drones and missiles, with direct impacts on targets",
-        "timestamp": "2026-06-10T05:13:23+00:00",
-        "views": "3.36K",
-        "type": "original"
+        "post_id": "ethanlevins/3500",
+        "datetime_raw": "2026-06-10T05:28:01+00:00",
+        "text": "🇷🇺 🇺🇦 Yesterday evening and this morning, Russia attacked Kharkiv Oblast with at least 25 Geran-2 drones. Targets were hit in the Kholodnohirs'kyi District of Kharkiv City, north of Kharkiv City, the city of Balakliya, and the town of Pechenihy."
       },
       {
-        "channel": "ethanlevins",
-        "text": "🇺🇦 🇷🇺 Ukrainian FP-5 Flamingo cruise missiles struck the city of Cheboksary, Chuvashia Republic. Additional missiles are currently flying to the Ural Mountains towards the area of Tyumen Oblast.",
-        "timestamp": "2026-06-10T05:19:01+00:00",
-        "views": "3.28K",
-        "type": "original"
+        "post_id": "ethanlevins/3501",
+        "datetime_raw": "2026-06-10T05:37:01+00:00",
+        "text": "🇷🇺 🇺🇦 Also last night, Russia carried out a large-scale Geran-2 drone attack on Odesa involving at least 30 drones.Targets were hit near the Odesa Port and the Peresypskyi District."
       },
       {
-        "channel": "ethanlevins",
-        "text": "🇷🇺 🇺🇦 Yesterday evening and this morning, Russia attacked Kharkiv Oblast with at least 25 Geran-2 drones. Targets were hit in the Kholodnohirs'kyi District of Kharkiv City, north of Kharkiv City, the city of Balakliya, and the town of Pechenihy.",
-        "timestamp": "2026-06-10T05:28:01+00:00",
-        "views": "3.15K",
-        "type": "original"
+        "post_id": "ethanlevins/3502",
+        "datetime_raw": "2026-06-10T05:42:01+00:00",
+        "text": "🇵🇰 Reuters quotes a spokesperson for the Afghan Taliban movement: At least 13 people killed and 14 others injured as a result of Pakistani airstrikes"
       },
       {
-        "channel": "ethanlevins",
-        "text": "🇷🇺 🇺🇦 Also last night, Russia carried out a large-scale Geran-2 drone attack on Odesa involving at least 30 drones. Targets were hit near the Odesa Port and the Peresypskyi District.",
-        "timestamp": "2026-06-10T05:37:01+00:00",
-        "views": "3.08K",
-        "type": "original"
+        "post_id": "ethanlevins/3503",
+        "datetime_raw": "2026-06-10T05:56:01+00:00",
+        "text": "🇮🇷 🇺🇸 New York Times on US official: No physical damage was detected in US bases in the region due to the Iranian strikes"
       },
       {
-        "channel": "ethanlevins",
-        "text": "🇵🇰 Reuters quotes a spokesperson for the Afghan Taliban movement: At least 13 people killed and 14 others injured as a result of Pakistani airstrikes",
-        "timestamp": "2026-06-10T05:42:01+00:00",
-        "views": "3.03K",
-        "type": "original"
+        "post_id": "ethanlevins/3504",
+        "datetime_raw": "2026-06-10T06:07:01+00:00",
+        "text": "🇺🇦 🇷🇺 Direct Ukrainian cruise missile strike in Cheboksary, Russia"
       },
       {
-        "channel": "ethanlevins",
-        "text": "🇮🇷 🇺🇸 New York Times on US official: No physical damage was detected in US bases in the region due to the Iranian strikes",
-        "timestamp": "2026-06-10T05:56:01+00:00",
-        "views": "2.83K",
-        "type": "original"
+        "post_id": "ethanlevins/3505",
+        "datetime_raw": "2026-06-10T10:06:45+00:00",
+        "text": "🇷🇺 Senior Russian military official assassinated in car bomb near Moscow. His son posted a TikTok with his father's car, showing the license plate a few weeks ago."
       },
       {
-        "channel": "ethanlevins",
-        "text": "🇺🇦 🇷🇺 Direct Ukrainian cruise missile strike in Cheboksary, Russia",
-        "timestamp": "2026-06-10T06:07:01+00:00",
-        "views": "2.64K",
-        "type": "original"
+        "post_id": "ethanlevins/3506",
+        "datetime_raw": "2026-06-10T11:15:12+00:00",
+        "text": "🇱🇧 🇮🇱 Targeted Assassination in Saida, Lebanon"
       }
-    ],
-    "markettwits": [
+    ]
+  },
+  {
+    "channel": "markettwits",
+    "error": null,
+    "messages": [
       {
-        "channel": "markettwits",
-        "text": "⚠️ 🇺🇦 🇨🇦 #украина #геополитика #нато #канада Канада и Украина в мае подписали соглашение о производстве украинских дронов на территории Канады",
-        "timestamp": "2026-06-10T09:05:20+00:00",
-        "views": "15K",
-        "type": "original"
+        "post_id": "markettwits/373568",
+        "datetime_raw": "2026-06-10T10:29:08+00:00",
+        "text": "🛢#нефть #логистика #суэц BBG: Число нефтяных танкеров, пересекающих египетский Суэцкий канал, в апреле выросло почти на треть на фоне блокады Ормуза"
       },
       {
-        "channel": "markettwits",
-        "text": "⚠️ 🇹🇼 #тайвань #геополитика Тайвань в рамках учений в среду впервые провел боевые стрельбы из реактивной системы залпового огня HIMARS на западном побережье",
-        "timestamp": "2026-06-10T09:09:07+00:00",
-        "views": "11.8K",
-        "type": "original"
+        "post_id": "markettwits/373569",
+        "datetime_raw": "2026-06-10T10:35:56+00:00",
+        "text": "🌎#ии #долг #облигации #мир #прогноз Morgan прогнозирует, что объем мировой эмиссии долговых обязательств, связанных с ИИ, увеличится более чем вдвое по итогам 2026г"
       },
       {
-        "channel": "markettwits",
-        "text": "⚠️ 🇮🇷 #иран #геополитика Иран пересмотрит переговоры с США в свете последних событий -- IRNA",
-        "timestamp": "2026-06-10T09:24:35+00:00",
-        "views": "3.25K",
-        "type": "original"
+        "post_id": "markettwits/373570",
+        "datetime_raw": "2026-06-10T10:40:52+00:00",
+        "text": "✴️🇺🇸#прогнозы #сша #регулирование CFTC предложит новые правила для \"рынков прогнозов\", которые будут давать регуляторам право блокировать рынки, уязвимые для манипуляций — WSJ"
+      },
+      {
+        "post_id": "markettwits/373571",
+        "datetime_raw": "2026-06-10T10:49:53+00:00",
+        "text": "✴️#BTC #крипто #презентация Кол-во BTC \"в прибыли\" в % от общего предложения приближается к отметке 45% (т.е. уже более половины всех инвесторов сидят в убытках) отметка в 45% и ниже, исторически ассоциировалась с уровнями \"высокого стресса\" на рынке, что совпадало с формированием локального дна в BTC — презентация"
+      },
+      {
+        "post_id": "markettwits/373572",
+        "datetime_raw": "2026-06-10T10:52:29+00:00",
+        "text": "⚠️🛢🇮🇩#бензин #индонезия Индонезия повышает розничные цены на топливо RTRS: Indonesia raises price of widely used fuel by 32%, adds to cost-of-living concerns"
+      },
+      {
+        "post_id": "markettwits/373573",
+        "datetime_raw": "2026-06-10T10:54:11+00:00",
+        "text": "❗️🇪🇺🇷🇺#европа #россия #событие #украина #геополитика ЛАВРОВ: ПОСЛЫ ФРАНЦИИ, ГЕРМАНИИ И БРИТАНИИ ПРОСЯТСЯ НА ВСТРЕЧУ С МОИМ ЗАМЕСТИТЕЛЕМ, МЫ ВСТРЕТИМСЯ С НИМИ И ПОСЛУШАЕМ"
+      },
+      {
+        "post_id": "markettwits/373574",
+        "datetime_raw": "2026-06-10T10:57:34+00:00",
+        "text": "⚠️🇦🇲#армения #геополитика #нато Лавров: Армения начала активный диалог по военной линии и с НАТО, и с ЕС"
+      },
+      {
+        "post_id": "markettwits/373575",
+        "datetime_raw": "2026-06-10T10:59:06+00:00",
+        "text": "🇷🇺#RTKM #ии #россия Ростелеком создает открытый консорциум разработчиков для промышленного внедрения ИИ"
+      },
+      {
+        "post_id": "markettwits/373576",
+        "datetime_raw": "2026-06-10T11:00:21+00:00",
+        "text": "⚠️🇮🇷#иран #геополитика Галибаф: Иран решительно и быстро ответит на любую агрессию"
+      },
+      {
+        "post_id": "markettwits/373577",
+        "datetime_raw": "2026-06-10T11:04:43+00:00",
+        "text": "⚠️🇮🇷#иран #геополитика ТРАМП: Иран слишком долго тянул с заключением соглашения, которое было бы для них выгодным, теперь им придется за это заплатить!!!"
+      },
+      {
+        "post_id": "markettwits/373578",
+        "datetime_raw": "2026-06-10T11:08:03+00:00",
+        "text": "🇷🇺#офз #аукционМинфин разместил ОФЗ 26244 на 53.49 млрд руб при спросе 102.73 млрд руб средневзвешенная доходность – 14.84% годовых"
+      },
+      {
+        "post_id": "markettwits/373579",
+        "datetime_raw": "2026-06-10T11:15:57+00:00",
+        "text": "🛢🇯🇵🇷🇺#санкции #спг #россия #япония Kyodo: Япония почти согласовала с США исключения из санкций для поставок СПГ РФ"
+      },
+      {
+        "post_id": "markettwits/373580",
+        "datetime_raw": "2026-06-10T11:21:38+00:00",
+        "text": "⚠️🇺🇸#SMCI = -12% Super Micro Computer проведет допэмиссию на $7 млрд для финансирования ИИ-бизнеса"
+      },
+      {
+        "post_id": "markettwits/373581",
+        "datetime_raw": "2026-06-10T11:22:16+00:00",
+        "text": "🇮🇷#иран #геополитика Делегация Катара прибыла в Иран для переговоров о дипломатии с США - ISNA"
+      },
+      {
+        "post_id": "markettwits/373582",
+        "datetime_raw": "2026-06-10T11:23:48+00:00",
+        "text": "🚫🛢#нефть #омуз Генеральный директор Shell заявил, что события в Ормузском проливе привели к дефициту поставок нефти в 1,2 миллиарда баррелей"
+      },
+      {
+        "post_id": "markettwits/373583",
+        "datetime_raw": "2026-06-10T11:26:09+00:00",
+        "text": "⚠️🇮🇷#иран #геополитика ТРАМП ЗАЯВИЛ, ЧТО ОН БЛИЗОК К ТОМУ, ЧТОБЫ ОТДАТЬ ПРИКАЗ О НОВЫХ УДАРАХ ПО ИРАНСКИМ ЭЛЕКТРОСТАНЦИЯМ И МОСТАМТРАМП ЗАЯВИЛ, ЧТО ОН НЕ ОСТАНОВИТСЯ - FOX NEWS"
+      },
+      {
+        "post_id": "markettwits/373584",
+        "datetime_raw": "2026-06-10T11:35:19+00:00",
+        "text": "⚠️🇮🇷#иран #геополитика ТРАМП: Блокада работает. Иран не ведет никакой торговли. Много нефти уходит из страны. Слава Аллаху!"
+      },
+      {
+        "post_id": "markettwits/373585",
+        "datetime_raw": "2026-06-10T11:43:22+00:00",
+        "text": "🇷🇺#депозиты #россия Финуслуги: ставки по вкладам до года показали рост с начала мая"
+      },
+      {
+        "post_id": "markettwits/373586",
+        "datetime_raw": "2026-06-10T11:51:27+00:00",
+        "text": "🇺🇸🇯🇵#SBUX #ipoStarbucks рассматривает варианты продажи или IPO бизнеса в Японии — BBG"
+      },
+      {
+        "post_id": "markettwits/373587",
+        "datetime_raw": "2026-06-10T11:53:43+00:00",
+        "text": "⚠️🇺🇸#акции #сша #cot Трейдеры начали активно хеджироваться от падения SP500 в ближайшие недели — BBG"
       }
     ]
   }
-}
+]

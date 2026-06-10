@@ -1,0 +1,1184 @@
+     1|<!doctype html>
+     2|<html lang="en">
+     3|<head>
+  <base href="/">
+  <link rel="alternate" hreflang="en" href="/flow-nodes.html">
+  <link rel="alternate" hreflang="ru" href="/ru/flow-nodes.html">
+  <link rel="canonical" href="/ru/flow-nodes.html">
+     4|  <meta charset="utf-8"/>
+     5|  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+     6|  <title>Capital Flow Nodes — La Gazzetta di Kyiv</title>
+     7|  <meta name="description" content="Node-based capital flow decomposition showing sources, destinations, and structural adjacencies across 6 node types: Governmental, Institutional, Corporate, Retail, Crypto, and Cross-border."/>
+     8|  <link rel="preconnect" href="https://fonts.googleapis.com">
+     9|  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    10|  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    11|  <link rel="stylesheet" href="./styles.e910dae7.css"/>
+    12|  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='2' fill='%23111827'/><text x='16' y='24' text-anchor='middle' font-size='22' font-weight='bold' font-family='Georgia,serif' fill='%23D4AF37'>G</text></svg>"/>
+    13|  <style>
+    14|    /* ═══════════════════════════════════════════════
+    15|       CAPITAL FLOW NODES — Dual-Theme Command Center
+    16|       Dark (default) + Light toggle. Frameless.
+    17|       ═══════════════════════════════════════════════ */
+    18|    :root {
+    19|      --cn-bg:          #0F172A;
+    20|      --cn-card:        #1E293B;
+    21|      --cn-text:        #E2E8F0;
+    22|      --cn-muted:       #94A3B8;
+    23|      --cn-dim:         #64748B;
+    24|      --cn-divider:     rgba(255,255,255,0.08);
+    25|      --cn-gold:        #B8860B;
+    26|      --cn-blue:        #3B82F6;
+    27|      --cn-amber:       #F59E0B;
+    28|      --cn-green:       #047857;
+    29|      --cn-violet:      #A78BFA;
+    30|      --cn-red:         #DC2626;
+    31|      --cn-sans:        'Inter', -apple-system, sans-serif;
+    32|      --cn-serif:       'Playfair Display', Georgia, serif;
+    33|      --cn-mono:        'SF Mono', 'Courier New', monospace;
+    34|    }
+    35|    .cn-light {
+    36|      --cn-bg:          #F8FAFC;
+    37|      --cn-card:        #FFFFFF;
+    38|      --cn-text:        #1E293B;
+    39|      --cn-muted:       #475569;
+    40|      --cn-dim:         #94A3B8;
+    41|      --cn-divider:     rgba(0,0,0,0.08);
+    42|      --cn-green:       #047857;
+    43|      --cn-red:         #DC2626;
+    44|    }
+    45|
+    46|    * { box-sizing: border-box; margin: 0; padding: 0; }
+    47|
+    48|    body.cn-body {
+    49|      background: var(--cn-bg);
+    50|      color: var(--cn-text);
+    51|      font-family: var(--cn-sans);
+    52|      font-size: 13px;
+    53|      line-height: 1.5;
+    54|      -webkit-font-smoothing: antialiased;
+    55|      overflow-x: hidden;
+    56|      transition: background 0.3s, color 0.3s;
+    57|    }
+    58|
+    59|    /* ── PRODUCT NAV ── */
+    60|    .cn-nav {
+    61|      display: flex;
+    62|      align-items: center;
+    63|      gap: 16px;
+    64|      padding: 4px 18px;
+    65|      border-bottom: 1px solid var(--cn-divider);
+    66|      background: var(--cn-card);
+    67|      font-size: 11px;
+    68|      font-weight: 600;
+    69|      letter-spacing: 0.04em;
+    70|      text-transform: uppercase;
+    71|      overflow-x: auto;
+    72|    }
+    73|    .cn-nav a {
+    74|      color: var(--cn-dim);
+    75|      text-decoration: none;
+    76|      padding: 8px 0;
+    77|      border-bottom: 2px solid transparent;
+    78|      transition: color 0.15s, border-color 0.15s;
+    79|      white-space: nowrap;
+    80|      min-height: 36px;
+    81|      display: flex;
+    82|      align-items: center;
+    83|    }
+    84|    .cn-nav a:hover, .cn-nav a:active { color: var(--cn-text); }
+    85|    .cn-nav a.active { color: var(--cn-gold); border-bottom-color: var(--cn-gold); }
+    86|    .cn-nav-spacer { flex: 1; }
+    87|
+    88|    /* ── MASTHEAD ── */
+    89|    .cn-masthead {
+    90|      display: flex;
+    91|      align-items: center;
+    92|      justify-content: space-between;
+    93|      padding: 10px 18px;
+    94|      background: var(--cn-card);
+    95|      border-bottom: 1px solid var(--cn-divider);
+    96|      position: sticky;
+    97|      top: 0;
+    98|      z-index: 100;
+    99|    }
+   100|    .cn-masthead-left {
+   101|      display: flex;
+   102|      align-items: center;
+   103|      gap: 12px;
+   104|    }
+   105|    .cn-masthead-name {
+   106|      font-family: var(--cn-serif);
+   107|      font-size: 16px;
+   108|      font-weight: 600;
+   109|      color: var(--cn-gold);
+   110|      letter-spacing: 0.02em;
+   111|    }
+   112|    .cn-masthead-badge {
+   113|      font-size: 9px;
+   114|      font-weight: 700;
+   115|      text-transform: uppercase;
+   116|      letter-spacing: 0.12em;
+   117|      color: var(--cn-amber);
+   118|      border: 1px solid rgba(245,158,11,0.3);
+   119|      padding: 2px 8px;
+   120|    }
+   121|    .cn-masthead-right {
+   122|      display: flex;
+   123|      align-items: center;
+   124|      gap: 14px;
+   125|      font-size: 11px;
+   126|      color: var(--cn-muted);
+   127|    }
+   128|    .cn-masthead-right span { white-space: nowrap; }
+   129|    .cn-dot {
+   130|      display: inline-block;
+   131|      width: 5px;
+   132|      height: 5px;
+   133|      border-radius: 50%;
+   134|      margin-right: 4px;
+   135|      vertical-align: middle;
+   136|    }
+   137|    .cn-dot.active { background: var(--cn-green); animation: pulse-dot 1.5s ease-in-out infinite; }
+   138|    @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:.3} }
+   139|
+   140|    .cn-theme-btn {
+   141|      background: none;
+   142|      border: 1px solid var(--cn-divider);
+   143|      color: var(--cn-muted);
+   144|      cursor: pointer;
+   145|      font-size: 11px;
+   146|      padding: 4px 10px;
+   147|      font-family: var(--cn-sans);
+   148|      transition: color 0.15s, border-color 0.15s;
+   149|    }
+   150|    .cn-theme-btn:hover { color: var(--cn-text); border-color: var(--cn-dim); }
+   151|    .cn-kb-hint {
+   152|      font-size: 9px;
+   153|      color: var(--cn-dim);
+   154|      background: var(--cn-card);
+   155|      padding: 3px 8px;
+   156|      border: 1px solid var(--cn-divider);
+   157|    }
+   158|
+   159|    /* ── LAYOUT ── */
+   160|    .cn-flex {
+   161|      display: flex;
+   162|      gap: 0;
+   163|      min-height: calc(100vh - 100px);
+   164|    }
+   165|
+   166|    /* ── THESIS ── */
+   167|    .cn-thesis {
+   168|      padding: 14px 18px 10px;
+   169|      border-bottom: 1px solid var(--cn-divider);
+   170|    }
+   171|    .cn-thesis h1 {
+   172|      font-size: 18px;
+   173|      font-weight: 700;
+   174|      color: var(--cn-gold);
+   175|      letter-spacing: 0.04em;
+   176|      text-transform: uppercase;
+   177|      margin-bottom: 4px;
+   178|    }
+   179|    .cn-thesis p {
+   180|      font-size: 11px;
+   181|      line-height: 1.5;
+   182|      color: var(--cn-muted);
+   183|      max-width: 900px;
+   184|    }
+   185|
+   186|    /* ── GRAPH ── */
+   187|    #cn-graph-container {
+   188|      flex: 1;
+   189|      overflow: auto;
+   190|      position: relative;
+   191|    }
+   192|    #cn-graph-container svg {
+   193|      display: block;
+   194|      width: 100%;
+   195|      max-width: 1200px;
+   196|    }
+   197|
+   198|    /* ── EDGE LABELS ── */
+   199|    .cn-edge-label {
+   200|      font-family: var(--cn-sans);
+   201|      font-size: 8px;
+   202|      font-weight: 600;
+   203|      text-anchor: middle;
+   204|      pointer-events: none;
+   205|    }
+   206|    .cn-edge-label.inflow { fill: var(--cn-green); }
+   207|    .cn-edge-label.outflow { fill: var(--cn-red); }
+   208|
+   209|    /* ── INFO PANEL ── */
+   210|    #cn-info-panel {
+   211|      width: 0;
+   212|      overflow-y: auto;
+   213|      overflow-x: hidden;
+   214|      background: var(--cn-card);
+   215|      border-left: 1px solid var(--cn-divider);
+   216|      transition: width 0.2s ease;
+   217|      flex-shrink: 0;
+   218|    }
+   219|    #cn-info-panel.cn-panel-open { width: 340px; }
+   220|    .cn-panel-inner { padding: 16px 18px; min-width: 340px; }
+   221|    .cn-panel-header {
+   222|      display: flex;
+   223|      align-items: center;
+   224|      gap: 8px;
+   225|      margin-bottom: 8px;
+   226|      padding-bottom: 8px;
+   227|      border-bottom: 1px solid var(--cn-divider);
+   228|    }
+   229|    .cn-panel-name { font-size: 14px; font-weight: 700; }
+   230|    .cn-panel-type {
+   231|      font-size: 9px;
+   232|      font-weight: 700;
+   233|      text-transform: uppercase;
+   234|      letter-spacing: 0.1em;
+   235|    }
+   236|    .cn-panel-subtype {
+   237|      font-size: 10px;
+   238|      color: var(--cn-dim);
+   239|      margin-bottom: 8px;
+   240|      text-transform: capitalize;
+   241|    }
+   242|    .cn-panel-desc {
+   243|      font-size: 11px;
+   244|      color: var(--cn-muted);
+   245|      line-height: 1.5;
+   246|      margin-bottom: 10px;
+   247|    }
+   248|    .cn-panel-metric {
+   249|      display: flex;
+   250|      justify-content: space-between;
+   251|      align-items: center;
+   252|      padding: 4px 0;
+   253|      border-bottom: 1px solid var(--cn-divider);
+   254|      font-size: 11px;
+   255|    }
+   256|    .cn-panel-metric-label { color: var(--cn-dim); }
+   257|    .cn-panel-metric-value { color: var(--cn-text); font-weight: 600; }
+   258|    .cn-panel-delta { font-size: 10px; font-weight: 600; margin-left: 6px; }
+   259|    .cn-panel-delta.up { color: var(--cn-green); }
+   260|    .cn-panel-delta.down { color: var(--cn-red); }
+   261|    .cn-panel-section-title {
+   262|      font-size: 9px;
+   263|      font-weight: 700;
+   264|      text-transform: uppercase;
+   265|      letter-spacing: 0.1em;
+   266|      color: var(--cn-gold);
+   267|      margin: 14px 0 6px;
+   268|      padding-bottom: 4px;
+   269|      border-bottom: 1px solid var(--cn-divider);
+   270|    }
+   271|    .cn-panel-flow-item {
+   272|      display: flex;
+   273|      justify-content: space-between;
+   274|      align-items: center;
+   275|      padding: 3px 0;
+   276|      font-size: 10px;
+   277|    }
+   278|    .cn-panel-flow-type { color: var(--cn-muted); }
+   279|    .cn-panel-flow-amount { color: var(--cn-text); font-weight: 600; }
+   280|    .cn-panel-flow-amount.green { color: var(--cn-green); }
+   281|    .cn-panel-flow-amount.red { color: var(--cn-red); }
+   282|    .cn-panel-ds {
+   283|      font-size: 9px;
+   284|      color: var(--cn-dim);
+   285|      padding: 2px 0;
+   286|    }
+   287|    .cn-panel-link {
+   288|      color: var(--cn-gold);
+   289|      text-decoration: none;
+   290|      font-size: 10px;
+   291|      font-weight: 600;
+   292|    }
+   293|    .cn-panel-link:hover { text-decoration: underline; }
+   294|    .cn-panel-close {
+   295|      background: none;
+   296|      border: none;
+   297|      color: var(--cn-dim);
+   298|      cursor: pointer;
+   299|      font-size: 16px;
+   300|      padding: 2px 6px;
+   301|      margin-left: auto;
+   302|    }
+   303|    .cn-panel-close:hover { color: var(--cn-text); }
+   304|    #cn-panel-no-selection {
+   305|      padding: 24px 18px;
+   306|      color: var(--cn-dim);
+   307|      font-size: 11px;
+   308|      text-align: center;
+   309|      line-height: 1.6;
+   310|    }
+   311|
+   312|    /* ── SPARKLINE ── */
+   313|    .cn-sparkline-container {
+   314|      margin: 8px 0;
+   315|      padding: 6px 0;
+   316|      border-bottom: 1px solid var(--cn-divider);
+   317|    }
+   318|    .cn-sparkline-label {
+   319|      font-size: 9px;
+   320|      color: var(--cn-dim);
+   321|      margin-bottom: 4px;
+   322|    }
+   323|
+   324|    /* ── LEGEND ── */
+   325|    .cn-legend {
+   326|      display: flex;
+   327|      gap: 16px;
+   328|      padding: 10px 18px;
+   329|      border-top: 1px solid var(--cn-divider);
+   330|      flex-wrap: wrap;
+   331|    }
+   332|    .cn-legend-item {
+   333|      display: flex;
+   334|      align-items: center;
+   335|      gap: 5px;
+   336|      font-size: 10px;
+   337|      font-weight: 500;
+   338|      color: var(--cn-muted);
+   339|      text-transform: uppercase;
+   340|      letter-spacing: 0.05em;
+   341|      cursor: pointer;
+   342|      transition: color 0.15s;
+   343|    }
+   344|    .cn-legend-item:hover { color: var(--cn-text); }
+   345|    .cn-legend-item.active { color: var(--cn-text); }
+   346|    .cn-legend-item .key-hint {
+   347|      font-size: 8px;
+   348|      color: var(--cn-dim);
+   349|      border: 1px solid var(--cn-divider);
+   350|      padding: 1px 5px;
+   351|      margin-left: 3px;
+   352|    }
+   353|    .cn-legend-shape {
+   354|      display: inline-block;
+   355|      width: 12px;
+   356|      height: 12px;
+   357|      flex-shrink: 0;
+   358|    }
+   359|    .cn-legend-shape.gov        { background: var(--cn-gold); clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%); }
+   360|    .cn-legend-shape.inst       { background: var(--cn-blue); clip-path: polygon(50% 0%,100% 50%,50% 100%,0% 50%); }
+   361|    .cn-legend-shape.crypto     { background: var(--cn-amber); clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%); }
+   362|    .cn-legend-shape.corp       { background: var(--cn-green); clip-path: polygon(15% 0%,85% 0%,100% 25%,100% 75%,85% 100%,15% 100%,0% 75%,0% 25%); }
+   363|    .cn-legend-shape.retail     { background: var(--cn-violet); border-radius: 50%; }
+   364|    .cn-legend-shape.xborder    { background: var(--cn-red); clip-path: polygon(50% 0%,85% 15%,100% 50%,85% 85%,50% 100%,15% 85%,0% 50%,15% 15%); }
+   365|
+   366|    /* ── EDGE STYLES ── */
+   367|    .cn-edge { fill: none; transition: opacity 0.15s; }
+   368|    .cn-edge.inflow { stroke: var(--cn-green); }
+   369|    .cn-edge.outflow { stroke: var(--cn-red); }
+   370|    .cn-edge.low-conf { stroke-dasharray: 6,4; }
+   371|    .cn-edge-arrow { fill: none; }
+   372|    .cn-edge-arrow.inflow { fill: var(--cn-green); }
+   373|    .cn-edge-arrow.outflow { fill: var(--cn-red); }
+   374|    .cn-edge-arrow.low-conf { opacity: 0.5; }
+   375|
+   376|    .cn-node-group { cursor: pointer; }
+   377|    .cn-node-group:active .cn-node-shape,
+   378|    .cn-node-group.active .cn-node-shape { stroke-width: 2.5; }
+   379|    @media (hover: hover) {
+   380|      .cn-node-group:hover .cn-node-shape { stroke-width: 2.5; }
+   381|      .cn-nav a:hover { color: var(--cn-text); }
+   382|      .cn-legend-item:hover { color: var(--cn-text); }
+   383|      .cn-theme-btn:hover { color: var(--cn-text); border-color: var(--cn-dim); }
+   384|      .cn-panel-close:hover { color: var(--cn-text); }
+   385|    }
+   386|    .cn-node-label {
+   387|      font-family: var(--cn-sans);
+   388|      font-size: 10px;
+   389|      font-weight: 600;
+   390|      fill: var(--cn-text);
+   391|      text-anchor: middle;
+   392|      pointer-events: none;
+   393|    }
+   394|    .cn-node-amount {
+   395|      font-family: var(--cn-mono);
+   396|      font-size: 8px;
+   397|      font-weight: 500;
+   398|      fill: var(--cn-muted);
+   399|      text-anchor: middle;
+   400|      pointer-events: none;
+   401|    }
+   402|    .cn-node-sub {
+   403|      font-family: var(--cn-sans);
+   404|      font-size: 7px;
+   405|      fill: var(--cn-dim);
+   406|      text-anchor: middle;
+   407|      pointer-events: none;
+   408|    }
+   409|
+   410|    @media (max-width: 768px) {
+   411|      .cn-flex { flex-direction: column; }
+   412|      #cn-info-panel.cn-panel-open { width: 100%; max-height: 45vh; overflow-y: auto; }
+   413|      .cn-panel-inner { min-width: unset; padding: 12px 14px; }
+   414|      .cn-masthead-right span { font-size: 10px; }
+   415|      .cn-masthead-right { gap: 8px; flex-wrap: wrap; }
+   416|      .cn-masthead-badge { display: none; }
+   417|      .cn-thesis { padding: 10px 12px; }
+   418|      .cn-thesis h1 { font-size: 15px; }
+   419|      .cn-thesis p { font-size: 10px; }
+   420|      .cn-nav { gap: 8px; font-size: 10px; padding: 4px 10px; }
+   421|      .cn-nav a { padding: 6px 0; min-height: 36px; font-size: 10px; }
+   422|      .cn-kb-hint { display: none; }
+   423|      .cn-mobile-filters { display: flex; }
+   424|      #cn-graph-container svg { min-height: 400px; }
+   425|      .cn-node-label { font-size: 13px; }
+   426|      .cn-node-amount { font-size: 10px; }
+   427|      .cn-node-sub { font-size: 9px; }
+   428|      .cn-edge-label { font-size: 10px; }
+   429|      .cn-legend { gap: 10px; padding: 8px 10px; }
+   430|      .cn-legend-item { font-size: 10px; min-height: 36px; padding: 6px 0; }
+   431|      .cn-legend-shape { width: 14px; height: 14px; }
+   432|      .cn-panel-section-title { font-size: 10px; }
+   433|      .cn-panel-metric { font-size: 11px; }
+   434|      .cn-panel-link { font-size: 11px; }
+   435|      .cn-panel-close { min-width: 44px; min-height: 44px; font-size: 20px; }
+   436|      .cn-theme-btn { min-width: 40px; min-height: 36px; padding: 6px 12px; }
+   437|    }
+   438|    @media (max-width: 480px) {
+   439|      .cn-nav { gap: 6px; font-size: 9px; }
+   440|      .cn-nav a { padding: 5px 0; min-height: 30px; }
+   441|      .cn-masthead { padding: 8px 10px; }
+   442|      .cn-masthead-name { font-size: 13px; }
+   443|      .cn-legend { gap: 8px; padding: 6px 8px; }
+   444|      .cn-legend-item { font-size: 9px; min-height: 30px; }
+   445|      .cn-masthead-right { gap: 6px; }
+   446|    }
+   447|  </style>
+   448|</head>
+   449|<body class="cn-body">
+   450|  <!-- PRODUCT NAV -->
+   451|  <nav class="cn-nav">
+   452|    <a href="./">← Dashboard</a>
+   453|    <a href="./stories.html">Stories</a>
+   454|    <a href="./flows.html">Flows</a>
+   455|    <a href="./trades.html">Trades</a>
+   456|    <a href="./signal.html">Signal</a>
+   457|    <a href="./track.html">Track</a>
+   458|    <a href="./event-horizon.html">Horizon</a>
+   459|    <a href="./flow-nodes.html" class="active">Flow Nodes</a>
+   460|    <span class="cn-nav-spacer"></span>
+   461|    <span class="cn-kb-hint">Keys: 1-6 filter · Esc close · ←↑↓→ navigate</span>
+   462|  </nav>
+   463|  <!-- Mobile filter bar (hidden on desktop, visible ≤768px) -->
+   464|  <div class="cn-mobile-filters" style="display:none;gap:6px;padding:6px 10px;border-bottom:1px solid var(--cn-divider);overflow-x:auto;background:var(--cn-card);">
+   465|    <button class="cn-mf-btn" data-mf="gov" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-divider);background:var(--cn-bg);color:var(--cn-muted);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">Gov</button>
+   466|    <button class="cn-mf-btn" data-mf="institutional" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-divider);background:var(--cn-bg);color:var(--cn-muted);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">Inst</button>
+   467|    <button class="cn-mf-btn" data-mf="corporate" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-divider);background:var(--cn-bg);color:var(--cn-muted);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">Corp</button>
+   468|    <button class="cn-mf-btn" data-mf="retail" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-divider);background:var(--cn-bg);color:var(--cn-muted);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">Retail</button>
+   469|    <button class="cn-mf-btn" data-mf="crypto" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-divider);background:var(--cn-bg);color:var(--cn-amber);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">Crypto</button>
+   470|    <button class="cn-mf-btn" data-mf="cross_border" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-divider);background:var(--cn-bg);color:var(--cn-muted);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">X-Border</button>
+   471|    <button class="cn-mf-reset" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-gold);background:var(--cn-bg);color:var(--cn-gold);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">All</button>
+   472|  </div>
+   473|
+   474|  <!-- MASTHEAD -->
+   475|  <header class="cn-masthead">
+   476|    <div class="cn-masthead-left">
+   477|      <span class="cn-masthead-name">Capital Flow Nodes</span>
+   478|      <span class="cn-masthead-badge">Source→Destination Decomposition</span>
+   479|    </div>
+   480|    <div class="cn-masthead-right">
+   481|      <span><span class="cn-dot active"></span><span id="cn-last-updated">—</span></span>
+   482|      <span id="cn-total-tracked">$—B tracked</span>
+   483|      <span id="cn-node-count">— nodes</span>
+   484|      <span id="cn-edge-count">— edges</span>
+   485|      <button class="cn-theme-btn" id="cn-theme-toggle" title="Toggle light/dark theme">☀</button>
+   486|    </div>
+   487|  </header>
+   488|
+   489|  <!-- THESIS -->
+   490|  <div class="cn-thesis">
+   491|    <h1>Node-Based Capital Flow Decomposition</h1>
+   492|    <p>Capital does not move randomly. It flows through structural conduits — governmental policy levers, institutional intermediation, corporate treasuries, retail participation, crypto markets, and cross-border channels. Click any node to decompose its inflows and outflows with linked stories and trades. Edge width scales with flow amount; green = inflow, red = outflow. Dashed = low confidence (&lt;60%). <a href="./capital.html" style="color:var(--cn-gold);">Methodology →</a></p>
+   493|  </div>
+   494|
+   495|  <!-- FLEX LAYOUT -->
+   496|  <div class="cn-flex">
+   497|    <div id="cn-graph-container">
+   498|      <svg id="cn-graph" viewBox="0 0 1300 780" preserveAspectRatio="xMidYMid meet">
+   499|        <defs>
+   500|          <marker id="arrow-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+   501|            <path d="M0,0 L8,3 L0,6 Z" fill="var(--cn-green)"/>
+   502|          </marker>
+   503|          <marker id="arrow-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+   504|            <path d="M0,0 L8,3 L0,6 Z" fill="var(--cn-red)"/>
+   505|          </marker>
+   506|        </defs>
+   507|        <g id="cn-edges-layer"></g>
+   508|        <g id="cn-nodes-layer"></g>
+   509|      </svg>
+   510|    </div>
+   511|    <aside id="cn-info-panel">
+   512|      <div id="cn-panel-no-selection">Click a node to see its capital flow decomposition — sources, destinations, linked stories, and trades.</div>
+   513|      <div id="cn-panel-content" class="cn-panel-inner" style="display:none;">
+   514|        <div class="cn-panel-header">
+   515|          <span class="cn-panel-name" id="pn-name"></span>
+   516|          <span class="cn-panel-type" id="pn-type-badge"></span>
+   517|          <button class="cn-panel-close" id="pn-close" title="Close (Esc)">&times;</button>
+   518|        </div>
+   519|        <div class="cn-panel-subtype" id="pn-subtype"></div>
+   520|        <div class="cn-panel-desc" id="pn-desc"></div>
+   521|        <!-- Sparkline -->
+   522|        <div class="cn-sparkline-container" id="pn-sparkline-container" style="display:none;">
+   523|          <div class="cn-sparkline-label">Net flow trend (weekly snapshots · modeled from flow data)</div>
+   524|          <svg id="pn-sparkline" width="300" height="40"></svg>
+   525|        </div>
+   526|        <div class="cn-panel-metric">
+   527|          <span class="cn-panel-metric-label">Total Assets Tracked</span>
+   528|          <span><span class="cn-panel-metric-value" id="pn-assets">$—B</span><span class="cn-panel-delta" id="pn-assets-delta"></span></span>
+   529|        </div>
+   530|        <div class="cn-panel-metric">
+   531|          <span class="cn-panel-metric-label">Inflow Velocity</span>
+   532|          <span class="cn-panel-metric-value" id="pn-inflow-vel">—</span>
+   533|        </div>
+   534|        <div class="cn-panel-metric">
+   535|          <span class="cn-panel-metric-label">Outflow Velocity</span>
+   536|          <span class="cn-panel-metric-value" id="pn-outflow-vel">—</span>
+   537|        </div>
+   538|        <div class="cn-panel-metric">
+   539|          <span class="cn-panel-metric-label">Net Flow (Δ 7d)</span>
+   540|          <span><span class="cn-panel-metric-value" id="pn-net-flow">$—B</span><span class="cn-panel-delta" id="pn-net-delta"></span></span>
+   541|        </div>
+   542|        <div class="cn-panel-metric">
+   543|          <span class="cn-panel-metric-label">Data Confidence</span>
+   544|          <span class="cn-panel-metric-value" id="pn-confidence">—%</span>
+   545|        </div>
+   546|        <div class="cn-panel-section-title">Inflows (Sources)</div>
+   547|        <div id="pn-sources"></div>
+   548|        <div class="cn-panel-section-title">Outflows (Destinations)</div>
+   549|        <div id="pn-destinations"></div>
+   550|        <div class="cn-panel-section-title">Linked Stories</div>
+   551|        <div id="pn-stories"></div>
+   552|        <div class="cn-panel-section-title">Data Sources</div>
+   553|        <div id="pn-datasources"></div>
+   554|      </div>
+   555|    </aside>
+   556|  </div>
+   557|
+   558|  <!-- LEGEND -->
+   559|  <footer class="cn-legend" id="cn-legend">
+   560|    <div class="cn-legend-item" data-type="gov"><span class="cn-legend-shape gov"></span>Gov<span class="key-hint">1</span></div>
+   561|    <div class="cn-legend-item" data-type="institutional"><span class="cn-legend-shape inst"></span>Institutional<span class="key-hint">2</span></div>
+   562|    <div class="cn-legend-item" data-type="corporate"><span class="cn-legend-shape corp"></span>Corporate<span class="key-hint">3</span></div>
+   563|    <div class="cn-legend-item" data-type="retail"><span class="cn-legend-shape retail"></span>Retail<span class="key-hint">4</span></div>
+   564|    <div class="cn-legend-item" data-type="crypto"><span class="cn-legend-shape crypto"></span>Crypto<span class="key-hint">5</span></div>
+   565|    <div class="cn-legend-item" data-type="cross_border"><span class="cn-legend-shape xborder"></span>Cross-Border<span class="key-hint">6</span></div>
+   566|    <div class="cn-legend-item" style="cursor:default"><span style="display:inline-block;width:12px;height:2px;background:var(--cn-green);vertical-align:middle;"></span>Inflow</div>
+   567|    <div class="cn-legend-item" style="cursor:default"><span style="display:inline-block;width:12px;height:2px;background:var(--cn-red);vertical-align:middle;"></span>Outflow</div>
+   568|    <div class="cn-legend-item" style="cursor:default"><span style="display:inline-block;width:12px;height:2px;background:var(--cn-dim);border-bottom:2px dashed var(--cn-dim);vertical-align:middle;"></span>Low Conf</div>
+   569|  </footer>
+   570|
+   571|  <script>
+   572|  (function(){
+   573|    'use strict';
+   574|
+   575|    const DATA_URL = './data/flow_nodes.json';
+   576|    const $ = (s) => document.querySelector(s);
+   577|    const $$ = (s) => document.querySelectorAll(s);
+   578|
+   579|    const graphContainer = $('#cn-graph-container');
+   580|    const svg = $('#cn-graph');
+   581|    const edgesLayer = $('#cn-edges-layer');
+   582|    const nodesLayer = $('#cn-nodes-layer');
+   583|    const infoPanel = $('#cn-info-panel');
+   584|    const panelNoSel = $('#cn-panel-no-selection');
+   585|    const panelContent = $('#cn-panel-content');
+   586|    const legendItems = $$('.cn-legend-item[data-type]');
+   587|
+   588|    let data = null;
+   589|    let nodeMap = {};
+   590|    let activeNodeId = null;
+   591|    let edgeMap = {}; // source→target→edges
+   592|    let themeLight = false;
+   593|
+   594|    /* ── UTILITY ── */
+   595|    function fmtB(n) {
+   596|      if (n === undefined || n === null) return '—';
+   597|      if (Math.abs(n) >= 1000) return '$' + (n/1000).toFixed(1) + 'T';
+   598|      return '$' + Math.abs(n).toFixed(1) + 'B';
+   599|    }
+   600|    function fmtDelta(n) {
+   601|      if (!n || n === 0) return '';
+   602|      const sign = n > 0 ? '+' : '';
+   603|      const abs = Math.abs(n);
+   604|      const val = abs >= 1000 ? (abs/1000).toFixed(1)+'T' : abs.toFixed(1)+'B';
+   605|      return sign + '$' + val;
+   606|    }
+   607|    function typeColor(type) {
+   608|      const map = {'gov':'var(--cn-gold)','institutional':'var(--cn-blue)','crypto':'var(--cn-amber)','corporate':'var(--cn-green)','retail':'var(--cn-violet)','cross_border':'var(--cn-red)'};
+   609|      return map[type] || 'var(--cn-dim)';
+   610|    }
+   611|    function typeLabel(type) {
+   612|      const map = {'gov':'Governmental','institutional':'Institutional','crypto':'Crypto','corporate':'Corporate','retail':'Retail','cross_border':'Cross-Border'};
+   613|      return map[type] || type;
+   614|    }
+   615|    function subtypeLabel(s) {
+   616|      if (!s || s === 'NONE') return '';
+   617|      return s.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+   618|    }
+   619|
+   620|    /* ── NODE SHAPE PATHS ── */
+   621|    function getNodeShape(type, w, h) {
+   622|      const hw=w/2, hh=h/2;
+   623|      switch(type) {
+   624|        case 'gov': return `M${-hw},${-hh} L${hw},${-hh} L${hw},${hh} L${-hw},${hh} Z`;
+   625|        case 'institutional': return `M0,${-hh} L${hw},0 L0,${hh} L${-hw},0 Z`;
+   626|        case 'crypto': return `M0,${-hh} L${hw*.866},${-hh*.5} L${hw*.866},${hh*.5} L0,${hh} L${-hw*.866},${hh*.5} L${-hw*.866},${-hh*.5} Z`;
+   627|        case 'corporate': const r=6; return `M${-hw+r},${-hh} L${hw-r},${-hh} Q${hw},${-hh} ${hw},${-hh+r} L${hw},${hh-r} Q${hw},${hh} ${hw-r},${hh} L${-hw+r},${hh} Q${-hw},${hh} ${-hw},${hh-r} L${-hw},${-hh+r} Q${-hw},${-hh} ${-hw+r},${-hh} Z`;
+   628|        case 'retail': return `M0,${-hh} A${hw},${hh} 0 1,1 0,${hh} A${hw},${hh} 0 1,1 0,${-hh} Z`;
+   629|        case 'cross_border': return `M${-hw*.7},${-hh} L${hw*.7},${-hh} L${hw},0 L${hw*.7},${hh} L${-hw*.7},${hh} L${-hw},0 Z`;
+   630|        default: return `M${-hw},${-hh} L${hw},${-hh} L${hw},${hh} L${-hw},${hh} Z`;
+   631|      }
+   632|    }
+   633|
+   634|    /* ── LAYOUT ── */
+   635|    function computeLayout(nodes, edges) {
+   636|      const typeOrder = ['gov','institutional','corporate','retail','crypto','cross_border'];
+   637|      const columnWidth = 170;
+   638|      const marginX = 70;
+   639|      const marginY = 100;
+   640|      const nodeW = 120;
+   641|      const nodeH = 70;
+   642|
+   643|      const byType = {};
+   644|      typeOrder.forEach(t => byType[t] = []);
+   645|      nodes.forEach(n => {
+   646|        const t = n.type;
+   647|        if (byType[t]) byType[t].push(n);
+   648|        else byType[t] = [n];
+   649|      });
+   650|      Object.keys(byType).forEach(t => {
+   651|        byType[t].sort((a,b) => ((b.metrics.total_assets_b||b.metrics.net_flow_b)||0) - ((a.metrics.total_assets_b||a.metrics.net_flow_b)||0));
+   652|      });
+   653|
+   654|      let maxCount = 0;
+   655|      Object.values(byType).forEach(arr => { if(arr.length>maxCount) maxCount=arr.length; });
+   656|      const svgW = Math.max(typeOrder.length * columnWidth + marginX*2, 1200);
+   657|      const svgH = 740;
+   658|      const rowHeight = Math.min((svgH-marginY*2)/Math.max(maxCount,1), 80);
+   659|      const positions = {};
+   660|
+   661|      typeOrder.forEach((t, ci) => {
+   662|        const arr = byType[t] || [];
+   663|        const cx = marginX + ci*columnWidth + columnWidth/2;
+   664|        const colStart = (svgH - arr.length*rowHeight)/2;
+   665|        arr.forEach((node, ri) => {
+   666|          positions[node.id] = {x:cx, y:colStart + ri*rowHeight + rowHeight/2, w:nodeW, h:nodeH, type:t};
+   667|        });
+   668|      });
+   669|      return {positions, svgW, svgH};
+   670|    }
+   671|
+   672|    /* ── EDGE LABEL MIDPOINT ── */
+   673|    function edgeMidpoint(sx,sy,ex,ey,cpOffsetX) {
+   674|      // Cubic bezier midpoint at t=0.5
+   675|      const p1x = sx + cpOffsetX, p1y = sy;
+   676|      const p2x = ex - cpOffsetX, p2y = ey;
+   677|      const mx = 0.125*sx + 0.375*p1x + 0.375*p2x + 0.125*ex;
+   678|      const my = 0.125*sy + 0.375*p1y + 0.375*p2y + 0.125*ey;
+   679|      const angle = Math.atan2(ey-sy, ex-sx) * 180 / Math.PI;
+   680|      return {mx, my, angle};
+   681|    }
+   682|
+   683|    /* ── RENDER ── */
+   684|    function render(data) {
+   685|      const {nodes, edges, summary} = data;
+   686|      const meta = summary || {};
+   687|      const {positions, svgW, svgH} = computeLayout(nodes, edges);
+   688|      svg.setAttribute('viewBox', `0 0 ${svgW} ${svgH+30}`);
+   689|
+   690|      edgesLayer.innerHTML = '';
+   691|      nodesLayer.innerHTML = '';
+   692|      nodeMap = {};
+   693|      edgeMap = {};
+   694|
+   695|      nodes.forEach(n => {
+   696|        nodeMap[n.id] = {...n, pos: positions[n.id]};
+   697|        if (!edgeMap[n.id]) edgeMap[n.id] = {in:[], out:[]};
+   698|      });
+   699|
+   700|      // Build edge index
+   701|      edges.forEach(e => {
+   702|        if (!edgeMap[e.source]) edgeMap[e.source] = {in:[], out:[]};
+   703|        if (!edgeMap[e.target]) edgeMap[e.target] = {in:[], out:[]};
+   704|        edgeMap[e.target].in.push(e);  // flows INTO target
+   705|        edgeMap[e.source].out.push(e); // flows OUT of source
+   706|      });
+   707|
+   708|      // Edge overlap tracking
+   709|      const edgeCounts = {};
+   710|      edges.forEach(e => {
+   711|        const key = e.source < e.target ? `${e.source}->${e.target}` : `${e.target}->${e.source}`;
+   712|        edgeCounts[key] = (edgeCounts[key]||0) + 1;
+   713|      });
+   714|      const edgeIdx = {};
+   715|      edges.forEach(e => {
+   716|        const key = e.source < e.target ? `${e.source}->${e.target}` : `${e.target}->${e.source}`;
+   717|        edgeIdx[key] = (edgeIdx[key]||0) + 1;
+   718|      });
+   719|
+   720|      edges.forEach((e, i) => {
+   721|        const src = nodeMap[e.source];
+   722|        const dst = nodeMap[e.target];
+   723|        if (!src || !dst) return;
+   724|
+   725|        const sp = src.pos, dp = dst.pos;
+   726|        const dx = dp.x - sp.x, dy = dp.y - sp.y;
+   727|        const cpOffsetX = Math.abs(dx)*0.4;
+   728|        const key = e.source < e.target ? `${e.source}->${e.target}` : `${e.target}->${e.source}`;
+   729|        const totalParallel = edgeCounts[key]||1;
+   730|        const idx = (edgeIdx[key]||1) - 1;
+   731|        const vOffset = (idx - (totalParallel-1)/2)*12;
+   732|
+   733|        const sx = sp.x + sp.w/2;
+   734|        const sy = sp.y + vOffset;
+   735|        const ex = dp.x - dp.w/2;
+   736|        const ey = dp.y + vOffset;
+   737|        const pathD = `M${sx},${sy} C${sx+cpOffsetX},${sy} ${ex-cpOffsetX},${ey} ${ex},${ey}`;
+   738|
+   739|        const isOutflow = e.direction === 'outflow';
+   740|        const isLowConf = (e.confidence_pct||50) < 60;
+   741|        const lineWidth = Math.max(1, Math.min(8, (e.amount_b||0)/45));
+   742|        const cls = `cn-edge ${isOutflow?'outflow':'inflow'} ${isLowConf?'low-conf':''}`;
+   743|        const edgeId = `edge-${i}`;
+   744|
+   745|        // Path
+   746|        const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+   747|        path.setAttribute('d', pathD);
+   748|        path.setAttribute('class', cls);
+   749|        path.setAttribute('stroke-width', lineWidth);
+   750|        path.setAttribute('opacity', 0.55);
+   751|        path.setAttribute('id', edgeId);
+   752|        path.setAttribute('data-source', e.source);
+   753|        path.setAttribute('data-target', e.target);
+   754|        path.setAttribute('data-amount', e.amount_b);
+   755|        path.setAttribute('data-direction', e.direction);
+   756|        edgesLayer.appendChild(path);
+   757|
+   758|        // Arrowhead
+   759|        const arrow = document.createElementNS('http://www.w3.org/2000/svg','polygon');
+   760|        const arrowSize = Math.max(4, Math.min(10, lineWidth*2));
+   761|        const angle = Math.atan2(ey-sy, ex-sx);
+   762|        const a1x = ex - arrowSize*Math.cos(angle-0.4);
+   763|        const a1y = ey - arrowSize*Math.sin(angle-0.4);
+   764|        const a2x = ex - arrowSize*Math.cos(angle+0.4);
+   765|        const a2y = ey - arrowSize*Math.sin(angle+0.4);
+   766|        arrow.setAttribute('points', `${ex},${ey} ${a1x},${a1y} ${a2x},${a2y}`);
+   767|        arrow.setAttribute('class', `cn-edge-arrow ${isOutflow?'outflow':'inflow'} ${isLowConf?'low-conf':''}`);
+   768|        arrow.setAttribute('opacity', 0.55);
+   769|        arrow.setAttribute('data-edge-id', edgeId);
+   770|        edgesLayer.appendChild(arrow);
+   771|
+   772|        // Edge label
+   773|        const {mx, my, angle: labelAngle} = edgeMidpoint(sx,sy,ex,ey,cpOffsetX);
+   774|        const labelAmount = fmtB(e.amount_b);
+   775|        const direction = isOutflow ? '↓' : '↑';
+   776|        const labelText = `${labelAmount} ${direction}`;
+   777|        const label = document.createElementNS('http://www.w3.org/2000/svg','text');
+   778|        label.setAttribute('x', mx);
+   779|        label.setAttribute('y', my);
+   780|        label.setAttribute('class', `cn-edge-label ${isOutflow?'outflow':'inflow'}`);
+   781|        label.setAttribute('transform', `rotate(${labelAngle},${mx},${my})`);
+   782|        label.setAttribute('data-edge-id', edgeId);
+   783|        label.textContent = labelText;
+   784|        edgesLayer.appendChild(label);
+   785|      });
+   786|
+   787|      // Render nodes
+   788|      nodes.forEach(node => {
+   789|        const p = positions[node.id];
+   790|        if (!p) return;
+   791|        const g = document.createElementNS('http://www.w3.org/2000/svg','g');
+   792|        g.setAttribute('class','cn-node-group');
+   793|        g.setAttribute('data-node-id', node.id);
+   794|        g.setAttribute('data-type', node.type);
+   795|        g.setAttribute('transform', `translate(${p.x},${p.y})`);
+   796|
+   797|        const nodeSize = node.metrics.total_assets_b || node.metrics.net_flow_b || Math.abs(node.metrics.total_inflow_b||0);
+   798|        const scaledW = Math.max(80, Math.min(170, nodeSize/28));
+   799|        const scaledH = Math.max(48, Math.min(85, scaledW*0.55));
+   800|        p.w = scaledW; p.h = scaledH;
+   801|
+   802|        const shape = document.createElementNS('http://www.w3.org/2000/svg','path');
+   803|        shape.setAttribute('d', getNodeShape(node.type, scaledW, scaledH));
+   804|        shape.setAttribute('class','cn-node-shape');
+   805|        shape.setAttribute('fill','var(--cn-card)');
+   806|        shape.setAttribute('stroke', typeColor(node.type));
+   807|        shape.setAttribute('stroke-width','1.5');
+   808|        g.appendChild(shape);
+   809|
+   810|        const lbl = document.createElementNS('http://www.w3.org/2000/svg','text');
+   811|        lbl.setAttribute('class','cn-node-label');
+   812|        lbl.setAttribute('y',-4);
+   813|        lbl.textContent = node.label;
+   814|        g.appendChild(lbl);
+   815|
+   816|        const amt = document.createElementNS('http://www.w3.org/2000/svg','text');
+   817|        amt.setAttribute('class','cn-node-amount');
+   818|        amt.setAttribute('y',10);
+   819|        amt.textContent = fmtB(node.metrics.total_assets_b || node.metrics.net_flow_b || 0);
+   820|        g.appendChild(amt);
+   821|
+   822|        const sub = document.createElementNS('http://www.w3.org/2000/svg','text');
+   823|        sub.setAttribute('class','cn-node-sub');
+   824|        sub.setAttribute('y',22);
+   825|        sub.textContent = subtypeLabel(node.subtype) || typeLabel(node.type);
+   826|        g.appendChild(sub);
+   827|
+   828|        g.addEventListener('mouseenter', () => showNodeInfo(node.id));
+   829|        g.addEventListener('mouseleave', () => { if(activeNodeId !== node.id) hideEdgeHighlight(); });
+   830|        g.addEventListener('click', () => showNodeInfo(node.id));
+   831|        nodesLayer.appendChild(g);
+   832|      });
+   833|
+   834|      // Header stats
+   835|      document.getElementById('cn-last-updated').textContent = data.generated_at ? new Date(data.generated_at).toLocaleString() : '—';
+   836|      document.getElementById('cn-total-tracked').textContent = fmtB(meta.total_flow_b||0) + ' tracked';
+   837|      document.getElementById('cn-node-count').textContent = (meta.total_nodes||nodes.length) + ' nodes';
+   838|      document.getElementById('cn-edge-count').textContent = (meta.total_edges||edges.length) + ' edges';
+   839|    }
+   840|
+   841|    /* ── MINI SPARKLINE ── */
+   842|    function renderSparkline(history) {
+   843|      const container = document.getElementById('pn-sparkline-container');
+   844|      const svgEl = document.getElementById('pn-sparkline');
+   845|      if (!history || history.length < 2) { container.style.display = 'none'; return; }
+   846|      container.style.display = 'block';
+   847|
+   848|      const vals = history.map(h => h.value);
+   849|      const min = Math.min(...vals), max = Math.max(...vals);
+   850|      const range = max - min || 1;
+   851|      const w = 300, h = 40, pad = 4;
+   852|      const points = vals.map((v,i) => {
+   853|        const x = pad + (i/(vals.length-1))*(w-2*pad);
+   854|        const y = h - pad - ((v-min)/range)*(h-2*pad);
+   855|        return `${x},${y}`;
+   856|      }).join(' ');
+   857|
+   858|      const lastVal = vals[vals.length-1];
+   859|      const firstVal = vals[0];
+   860|      const trend = lastVal >= firstVal ? 'var(--cn-green)' : 'var(--cn-red)';
+   861|
+   862|      svgEl.innerHTML = `
+   863|        <polyline points="${points}" fill="none" stroke="${trend}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+   864|        <circle cx="${pad + (vals.length-1)/(vals.length-1)*(w-2*pad)}" cy="${h-pad-((lastVal-min)/range)*(h-2*pad)}" r="2.5" fill="${trend}"/>
+   865|      `;
+   866|    }
+   867|
+   868|    /* ── INFO PANEL ── */
+   869|    function showNodeInfo(nodeId) {
+   870|      const node = nodeMap[nodeId];
+   871|      if (!node) return;
+   872|
+   873|      activeNodeId = nodeId;
+   874|
+   875|      // Highlight
+   876|      $$('.cn-node-group').forEach(el => el.classList.remove('active'));
+   877|      const activeEl = document.querySelector(`.cn-node-group[data-node-id="${nodeId}"]`);
+   878|      if (activeEl) activeEl.classList.add('active');
+   879|
+   880|      // Highlight connected edges and their labels
+   881|      const connectedEdgeIds = new Set();
+   882|      (data.edges||[]).forEach((e,i) => {
+   883|        if (e.source === nodeId || e.target === nodeId) connectedEdgeIds.add(`edge-${i}`);
+   884|      });
+   885|      document.querySelectorAll('.cn-edge,.cn-edge-arrow,.cn-edge-label').forEach(el => {
+   886|        const eid = el.getAttribute('data-edge-id') || el.id;
+   887|        if (connectedEdgeIds.has(eid)) el.setAttribute('opacity','1.0');
+   888|        else el.setAttribute('opacity','0.10');
+   889|      });
+   890|
+   891|      // Panel
+   892|      panelNoSel.style.display = 'none';
+   893|      panelContent.style.display = 'block';
+   894|      infoPanel.classList.add('cn-panel-open');
+   895|
+   896|      document.getElementById('pn-name').textContent = node.label;
+   897|      document.getElementById('pn-name').style.color = typeColor(node.type);
+   898|      document.getElementById('pn-type-badge').textContent = typeLabel(node.type);
+   899|      document.getElementById('pn-type-badge').style.color = typeColor(node.type);
+   900|      document.getElementById('pn-subtype').textContent = subtypeLabel(node.subtype);
+   901|      document.getElementById('pn-desc').textContent = node.description || '';
+   902|
+   903|      const totalAssets = node.metrics.total_assets_b || node.metrics.net_flow_b || 0;
+   904|      document.getElementById('pn-assets').textContent = fmtB(Math.abs(totalAssets));
+   905|      document.getElementById('pn-inflow-vel').textContent = (node.metrics.inflow_velocity||'—').toUpperCase();
+   906|      document.getElementById('pn-outflow-vel').textContent = (node.metrics.outflow_velocity||'—').toUpperCase();
+   907|
+   908|      // Net flow with delta
+   909|      const netFlow = (node.metrics.net_flow_b || (node.metrics.total_inflow_b||0) - (node.metrics.total_outflow_b||0));
+   910|      document.getElementById('pn-net-flow').textContent = fmtB(netFlow);
+   911|      const deltaWeek = node.metrics.delta_week_b;
+   912|      const deltaEl = document.getElementById('pn-net-delta');
+   913|      if (deltaWeek) {
+   914|        deltaEl.textContent = (deltaWeek>0?'↑':'↓') + ' ' + fmtB(deltaWeek) + ' vs 7d';
+   915|        deltaEl.className = 'cn-panel-delta ' + (deltaWeek>0?'up':'down');
+   916|      } else { deltaEl.textContent = ''; }
+   917|      // Assets delta
+   918|      const assetsDeltaEl = document.getElementById('pn-assets-delta');
+   919|      const assetsDelta = node.metrics.delta_month_b;
+   920|      if (assetsDelta) {
+   921|        assetsDeltaEl.textContent = (assetsDelta>0?'↑':'↓') + ' ' + fmtB(assetsDelta) + ' vs 30d';
+   922|        assetsDeltaEl.className = 'cn-panel-delta ' + (assetsDelta>0?'up':'down');
+   923|      } else { assetsDeltaEl.textContent = ''; }
+   924|
+   925|      document.getElementById('pn-confidence').textContent = (node.metrics.confidence_pct||'—') + '%';
+   926|
+   927|      // Sparkline from history
+   928|      renderSparkline(node.history || data.history?.[nodeId]);
+   929|
+   930|      // SOURCES — derived from edges where this node is TARGET (money flows IN)
+   931|      const srcEl = document.getElementById('pn-sources');
+   932|      srcEl.innerHTML = '';
+   933|      const inflows = (edgeMap[nodeId]?.in || []).filter(e => e.direction === 'inflow' || e.target === nodeId);
+   934|      // Also include outflow edges where source→this node (money being pulled from elsewhere)
+   935|      const allInflows = [...new Set([...inflows])];
+   936|      if (allInflows.length > 0) {
+   937|        const grouped = {};
+   938|        allInflows.forEach(e => {
+   939|          const srcNode = nodeMap[e.source];
+   940|          const key = srcNode ? srcNode.label : e.source;
+   941|          if (!grouped[key]) grouped[key] = {amount:0, count:0, edges:[]};
+   942|          grouped[key].amount += e.amount_b||0;
+   943|          grouped[key].count++;
+   944|          grouped[key].edges.push(e);
+   945|        });
+   946|        Object.entries(grouped).forEach(([name, g]) => {
+   947|          const div = document.createElement('div');
+   948|          div.className = 'cn-panel-flow-item';
+   949|          const srcType = nodeMap[g.edges[0]?.source]?.type || '';
+   950|          div.innerHTML = `<span class="cn-panel-flow-type">← ${name}</span><span class="cn-panel-flow-amount green">${fmtB(g.amount)}</span>`;
+   951|          srcEl.appendChild(div);
+   952|          if (g.edges[0]?.asset_class) {
+   953|            const ac = document.createElement('div');
+   954|            ac.className = 'cn-panel-ds';
+   955|            ac.textContent = g.edges.map(e=>e.asset_class).filter(Boolean).join(', ');
+   956|            srcEl.appendChild(ac);
+   957|          }
+   958|        });
+   959|      } else {
+   960|        srcEl.innerHTML = '<div style="color:var(--cn-dim);font-size:10px;">No source data tracked</div>';
+   961|      }
+   962|
+   963|      // DESTINATIONS — derived from edges where this node is SOURCE (money flows OUT)
+   964|      const dstEl = document.getElementById('pn-destinations');
+   965|      dstEl.innerHTML = '';
+   966|      const outflows = (edgeMap[nodeId]?.out || []).filter(e => e.direction === 'outflow' || e.source === nodeId);
+   967|      if (outflows.length > 0) {
+   968|        const grouped = {};
+   969|        outflows.forEach(e => {
+   970|          const dstNode = nodeMap[e.target];
+   971|          const key = dstNode ? dstNode.label : e.target;
+   972|          if (!grouped[key]) grouped[key] = {amount:0, count:0, edges:[]};
+   973|          grouped[key].amount += e.amount_b||0;
+   974|          grouped[key].count++;
+   975|          grouped[key].edges.push(e);
+   976|        });
+   977|        Object.entries(grouped).forEach(([name, g]) => {
+   978|          const div = document.createElement('div');
+   979|          div.className = 'cn-panel-flow-item';
+   980|          div.innerHTML = `<span class="cn-panel-flow-type">→ ${name}</span><span class="cn-panel-flow-amount red">${fmtB(g.amount)}</span>`;
+   981|          dstEl.appendChild(div);
+   982|          if (g.edges[0]?.asset_class) {
+   983|            const ac = document.createElement('div');
+   984|            ac.className = 'cn-panel-ds';
+   985|            ac.textContent = g.edges.map(e=>e.asset_class).filter(Boolean).join(', ');
+   986|            dstEl.appendChild(ac);
+   987|          }
+   988|        });
+   989|      } else {
+   990|        dstEl.innerHTML = '<div style="color:var(--cn-dim);font-size:10px;">No destination data tracked</div>';
+   991|      }
+   992|
+   993|      // LINKED STORIES — from edge story_ids
+   994|      const storiesEl = document.getElementById('pn-stories');
+   995|      storiesEl.innerHTML = '';
+   996|      const allEdges = [...(edgeMap[nodeId]?.in||[]), ...(edgeMap[nodeId]?.out||[])];
+   997|      const seenStories = new Set();
+   998|      allEdges.forEach(e => {
+   999|        if (e.story_id && !seenStories.has(e.story_id)) {
+  1000|          seenStories.add(e.story_id);
+  1001|          const div = document.createElement('div');
+  1002|          div.style.cssText = 'padding:3px 0;font-size:10px;';
+  1003|          const headline = e.headline || 'Linked story';
+  1004|          div.innerHTML = `<a class="cn-panel-link" href="./story.html?id=${e.story_id}" target="_blank">${headline.substring(0,70)}${headline.length>70?'…':''}</a>`;
+  1005|          storiesEl.appendChild(div);
+  1006|        }
+  1007|      });
+  1008|      if (seenStories.size === 0) {
+  1009|        storiesEl.innerHTML = '<div style="color:var(--cn-dim);font-size:10px;">No stories linked</div>';
+  1010|      }
+  1011|
+  1012|      // DATA SOURCES
+  1013|      const dsEl = document.getElementById('pn-datasources');
+  1014|      dsEl.innerHTML = '';
+  1015|      const sources = [...new Set(allEdges.map(e => e.data_source).filter(Boolean))];
+  1016|      if (sources.length > 0) {
+  1017|        sources.forEach(ds => {
+  1018|          const div = document.createElement('div');
+  1019|          div.className = 'cn-panel-ds';
+  1020|          div.textContent = '📄 ' + ds;
+  1021|          dsEl.appendChild(div);
+  1022|        });
+  1023|      } else if (node.data_sources) {
+  1024|        node.data_sources.forEach(ds => {
+  1025|          const div = document.createElement('div');
+  1026|          div.className = 'cn-panel-ds';
+  1027|          div.textContent = '📄 ' + ds;
+  1028|          dsEl.appendChild(div);
+  1029|        });
+  1030|      } else {
+  1031|        dsEl.innerHTML = '<div style="color:var(--cn-dim);font-size:10px;">No data sources recorded</div>';
+  1032|      }
+  1033|    }
+  1034|
+  1035|    function hideEdgeHighlight() {
+  1036|      document.querySelectorAll('.cn-edge,.cn-edge-arrow,.cn-edge-label').forEach(el => {
+  1037|        el.setAttribute('opacity', 0.55);
+  1038|      });
+  1039|    }
+  1040|
+  1041|    /* ── CLOSE PANEL ── */
+  1042|    function closePanel() {
+  1043|      infoPanel.classList.remove('cn-panel-open');
+  1044|      panelContent.style.display = 'none';
+  1045|      panelNoSel.style.display = 'block';
+  1046|      $$('.cn-node-group').forEach(el => el.classList.remove('active'));
+  1047|      hideEdgeHighlight();
+  1048|      activeNodeId = null;
+  1049|    }
+  1050|    document.getElementById('pn-close').addEventListener('click', closePanel);
+  1051|
+  1052|    /* ── LEGEND FILTER ── */
+  1053|    let activeFilter = null;
+  1054|    legendItems.forEach((item, idx) => {
+  1055|      item.addEventListener('click', () => {
+  1056|        const type = item.getAttribute('data-type');
+  1057|        if (activeFilter === type) {
+  1058|          activeFilter = null;
+  1059|          item.classList.remove('active');
+  1060|          $$('.cn-node-group').forEach(el => el.style.opacity = '1');
+  1061|          hideEdgeHighlight();
+  1062|        } else {
+  1063|          legendItems.forEach(li => li.classList.remove('active'));
+  1064|          item.classList.add('active');
+  1065|          activeFilter = type;
+  1066|          $$('.cn-node-group').forEach(el => {
+  1067|            el.style.opacity = el.getAttribute('data-type') === type ? '1' : '0.15';
+  1068|          });
+  1069|          document.querySelectorAll('.cn-edge,.cn-edge-arrow,.cn-edge-label').forEach(el => {
+  1070|            const src = el.getAttribute('data-source');
+  1071|            const tgt = el.getAttribute('data-target');
+  1072|            if (!src) return;
+  1073|            const srcNode = nodeMap[src];
+  1074|            const tgtNode = nodeMap[tgt];
+  1075|            if ((srcNode&&srcNode.type===type) || (tgtNode&&tgtNode.type===type)) {
+  1076|              el.setAttribute('opacity', '0.8');
+  1077|            } else {
+  1078|              el.setAttribute('opacity', '0.06');
+  1079|            }
+  1080|          });
+  1081|        }
+  1082|      });
+  1083|    });
+  1084|
+  1085|    /* ── KEYBOARD SHORTCUTS ── */
+  1086|    const TYPE_KEYS = {'1':'gov','2':'institutional','3':'corporate','4':'retail','5':'crypto','6':'cross_border'};
+  1087|    document.addEventListener('keydown', e => {
+  1088|      // Don't intercept when typing in inputs
+  1089|      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  1090|
+  1091|      // 1-6: Filter by type
+  1092|      if (TYPE_KEYS[e.key]) {
+  1093|        const type = TYPE_KEYS[e.key];
+  1094|        const item = document.querySelector(`.cn-legend-item[data-type="${type}"]`);
+  1095|        if (item) item.click();
+  1096|        return;
+  1097|      }
+  1098|
+  1099|      // Escape: Close panel
+  1100|      if (e.key === 'Escape') { closePanel(); return; }
+  1101|
+  1102|      // Arrow keys: Navigate nodes
+  1103|      if (activeNodeId && ['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.key)) {
+  1104|        e.preventDefault();
+  1105|        const nodeIds = Object.keys(nodeMap);
+  1106|        const idx = nodeIds.indexOf(activeNodeId);
+  1107|        const types = Object.values(nodeMap).map(n => n.type);
+  1108|        let nextIdx = idx;
+  1109|        if (e.key === 'ArrowDown' || e.key === 'ArrowRight') nextIdx = (idx + 1) % nodeIds.length;
+  1110|        if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') nextIdx = (idx - 1 + nodeIds.length) % nodeIds.length;
+  1111|        if (nextIdx !== idx && nodeIds[nextIdx]) {
+  1112|          showNodeInfo(nodeIds[nextIdx]);
+  1113|          // Scroll panel to top
+  1114|          infoPanel.scrollTop = 0;
+  1115|        }
+  1116|        return;
+  1117|      }
+  1118|
+  1119|      // 0: Reset filter
+  1120|      if (e.key === '0') {
+  1121|        if (activeFilter) {
+  1122|          const activeItem = document.querySelector('.cn-legend-item.active');
+  1123|          if (activeItem) activeItem.click();
+  1124|        }
+  1125|      }
+  1126|    });
+  1127|
+  1128|    /* ── THEME TOGGLE ── */
+  1129|    const themeBtn = document.getElementById('cn-theme-toggle');
+  1130|    themeBtn.addEventListener('click', () => {
+  1131|      themeLight = !themeLight;
+  1132|      document.body.classList.toggle('cn-light', themeLight);
+  1133|      themeBtn.textContent = themeLight ? '☽' : '☀';
+  1134|    });
+  1135|
+  1136|    /* ── INIT ── */
+  1137|    function init() {
+  1138|      fetch(DATA_URL)
+  1139|        .then(r => { if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+  1140|        .then(d => {
+  1141|          data = d;
+  1142|          render(d);
+  1143|        })
+  1144|        .catch(err => {
+  1145|          console.error('Flow nodes fetch failed:', err);
+  1146|          document.getElementById('cn-graph-container').innerHTML =
+  1147|            '<div style="padding:40px;text-align:center;color:var(--cn-red);">' +
+  1148|            '<p style="font-size:16px;font-weight:700;">⚠ Failed to load capital flow data</p>' +
+  1149|            '<p style="font-size:12px;color:var(--cn-dim);margin-top:6px;">' + err.message + '</p>' +
+  1150|            '<p style="font-size:11px;color:var(--cn-dim);margin-top:4px;">Ensure ./data/flow_nodes.json is accessible.</p></div>';
+  1151|        });
+  1152|    }
+  1153|
+  1154|    /* ── MOBILE FILTER BUTTONS ── */
+  1155|    document.querySelectorAll('.cn-mf-btn').forEach(btn => {
+  1156|      btn.addEventListener('click', () => {
+  1157|        const type = btn.getAttribute('data-mf');
+  1158|        const legendItem = document.querySelector(`.cn-legend-item[data-type="${type}"]`);
+  1159|        if (legendItem) legendItem.click();
+  1160|        // Highlight active mobile button
+  1161|        document.querySelectorAll('.cn-mf-btn').forEach(b => b.style.borderColor = 'var(--cn-divider)');
+  1162|        btn.style.borderColor = typeColor(type);
+  1163|      });
+  1164|    });
+  1165|    document.querySelector('.cn-mf-reset').addEventListener('click', () => {
+  1166|      if (activeFilter) {
+  1167|        const activeItem = document.querySelector('.cn-legend-item.active');
+  1168|        if (activeItem) activeItem.click();
+  1169|      }
+  1170|      document.querySelectorAll('.cn-mf-btn').forEach(b => b.style.borderColor = 'var(--cn-divider)');
+  1171|    });
+  1172|
+  1173|    if (document.readyState === 'loading') {
+  1174|      document.addEventListener('DOMContentLoaded', init);
+  1175|    } else { init(); }
+  1176|  })();
+  1177|  </script>
+  1178|</body>
+  1179|</html>
+  1180|

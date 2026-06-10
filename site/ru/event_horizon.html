@@ -1,0 +1,1224 @@
+     1|<!doctype html>
+     2|<html lang="en">
+     3|<head>
+  <base href="/">
+  <link rel="alternate" hreflang="en" href="/event_horizon.html">
+  <link rel="alternate" hreflang="ru" href="/ru/event_horizon.html">
+  <link rel="canonical" href="/ru/event_horizon.html">
+     4|  <meta charset="utf-8"/>
+     5|  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+     6|  <title>Event Horizon — La Gazzetta di Kyiv</title>
+     7|  <meta name="description" content="Geopolitical chokepoint intelligence — the collision point between economic statecraft pressure events and capital market reactions. What the pros see, for every trader."/>
+     8|  <link rel="preconnect" href="https://fonts.googleapis.com">
+     9|  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    10|  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+    11|  <link rel="stylesheet" href="./styles.e910dae7.css"/>
+    12|  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='2' fill='%23111827'/><text x='16' y='24' text-anchor='middle' font-size='22' font-weight='bold' font-family='Georgia,serif' fill='%23D4AF37'>G</text></svg>"/>
+    13|
+    14|  <link rel="canonical" href="https://www.lagazzettadikyiv.com/event_horizon.html"/>
+    15|  <link rel="alternate" hreflang="en" href="https://www.lagazzettadikyiv.com/event_horizon.html"/>
+    16|  <link rel="alternate" hreflang="x-default" href="https://www.lagazzettadikyiv.com/event_horizon.html"/>
+    17|  <meta property="og:title" content="Event Horizon — Geopolitical Chokepoint Intelligence"/>
+    18|  <meta property="og:description" content="Monitor the collision point between geopolitical pressure events and capital market reactions. The professional desk's view, distilled."/>
+    19|  <meta property="og:url" content="https://www.lagazzettadikyiv.com/event_horizon.html"/>
+    20|  <meta property="og:type" content="website"/>
+    21|  <meta property="og:site_name" content="La Gazzetta di Kyiv"/>
+    22|  <meta name="twitter:card" content="summary"/>
+    23|  <meta name="twitter:title" content="Event Horizon — Chokepoint Intelligence"/>
+    24|  <meta name="twitter:description" content="Monitor geopolitical pressure events and capital market reactions. The professional desk's view, distilled for every trader."/>
+    25|
+    26|  <style>
+    27|    /* ═══════════════════════════════════════════════
+    28|       EVENT HORIZON — Dark Command Center Theme
+    29|       Overrides main site white for war-room aesthetic
+    30|       ═══════════════════════════════════════════════ */
+    31|    :root {
+    32|      --eh-bg: #0F172A;
+    33|      --eh-card: #1E293B;
+    34|      --eh-card-border: #334155;
+    35|      --eh-text: #E2E8F0;
+    36|      --eh-text-muted: #94A3B8;
+    37|      --eh-text-dim: #64748B;
+    38|      --eh-gold: #D4AF37;
+    39|      --eh-green: #10B981;
+    40|      --eh-red: #EF4444;
+    41|      --eh-amber: #F59E0B;
+    42|      --eh-blue: #3B82F6;
+    43|      --eh-divider: rgba(255,255,255,0.08);
+    44|    }
+    45|
+    46|    body.eh-body {
+    47|      background: var(--eh-bg);
+    48|      color: var(--eh-text);
+    49|      font-family: var(--body);
+    50|    }
+    51|
+    52|    /* Page header */
+    53|    .eh-masthead {
+    54|      display: flex;
+    55|      align-items: center;
+    56|      justify-content: space-between;
+    57|      padding: 8px 18px;
+    58|      background: rgba(15,23,42,0.95);
+    59|      border-bottom: 1px solid var(--eh-divider);
+    60|      position: sticky;
+    61|      top: 0;
+    62|      z-index: 100;
+    63|      backdrop-filter: blur(8px);
+    64|    }
+    65|    .eh-masthead-left {
+    66|      display: flex;
+    67|      align-items: center;
+    68|      gap: 12px;
+    69|    }
+    70|    .eh-masthead-name {
+    71|      font-family: var(--display);
+    72|      font-size: 15px;
+    73|      font-weight: 600;
+    74|      color: var(--eh-gold);
+    75|      letter-spacing: 0.02em;
+    76|    }
+    77|    .eh-masthead-badge {
+    78|      font-family: var(--sans);
+    79|      font-size: 9px;
+    80|      font-weight: 700;
+    81|      text-transform: uppercase;
+    82|      letter-spacing: 0.12em;
+    83|      color: var(--eh-amber);
+    84|      border: 1px solid rgba(245,158,11,0.3);
+    85|      padding: 2px 8px;
+    86|      border-radius: 2px;
+    87|    }
+    88|    .eh-masthead-right {
+    89|      display: flex;
+    90|      align-items: center;
+    91|      gap: 14px;
+    92|    }
+    93|    .eh-masthead-right a {
+    94|      font-family: var(--sans);
+    95|      font-size: 11px;
+    96|      color: var(--eh-text-muted);
+    97|      text-decoration: none;
+    98|    }
+    99|    .eh-masthead-right a:hover {
+   100|      color: var(--eh-gold);
+   101|    }
+   102|
+   103|    /* Main container */
+   104|    .eh-container {
+   105|      max-width: 1200px;
+   106|      margin: 0 auto;
+   107|      padding: 16px 18px 48px;
+   108|    }
+   109|
+   110|    /* Thesis statement */
+   111|    .eh-thesis {
+   112|      padding: 20px 0 24px;
+   113|      border-bottom: 1px solid var(--eh-divider);
+   114|      margin-bottom: 24px;
+   115|    }
+   116|    .eh-thesis h1 {
+   117|      font-family: var(--sans);
+   118|      font-size: 20px;
+   119|      font-weight: 700;
+   120|      color: var(--eh-gold);
+   121|      letter-spacing: 0.05em;
+   122|      text-transform: uppercase;
+   123|      margin-bottom: 8px;
+   124|    }
+   125|    .eh-thesis p {
+   126|      font-family: var(--body);
+   127|      font-size: 13px;
+   128|      line-height: 1.7;
+   129|      color: var(--eh-text-muted);
+   130|      max-width: 780px;
+   131|    }
+   132|    .eh-thesis strong {
+   133|      color: var(--eh-text);
+   134|    }
+   135|
+   136|    /* SECTION HEADERS */
+   137|    .eh-section-title {
+   138|      font-family: var(--sans);
+   139|      font-size: 11px;
+   140|      font-weight: 700;
+   141|      text-transform: uppercase;
+   142|      letter-spacing: 0.12em;
+   143|      color: var(--eh-gold);
+   144|      margin: 28px 0 14px;
+   145|      display: flex;
+   146|      align-items: center;
+   147|      gap: 10px;
+   148|    }
+   149|    .eh-section-title::after {
+   150|      content: '';
+   151|      flex: 1;
+   152|      height: 1px;
+   153|      background: var(--eh-divider);
+   154|    }
+   155|
+   156|    /* ═══ SECTION 1: BAROMETER ═══ */
+   157|    .eh-barometer-wrap {
+   158|      background: var(--eh-card);
+   159|      border: 1px solid var(--eh-card-border);
+   160|      border-radius: 4px;
+   161|      padding: 24px 28px 28px;
+   162|      margin-bottom: 20px;
+   163|      position: relative;
+   164|    }
+   165|    .eh-barometer-header {
+   166|      display: flex;
+   167|      justify-content: space-between;
+   168|      align-items: center;
+   169|      margin-bottom: 16px;
+   170|    }
+   171|    .eh-barometer-label {
+   172|      font-family: var(--sans);
+   173|      font-size: 10px;
+   174|      font-weight: 600;
+   175|      text-transform: uppercase;
+   176|      letter-spacing: 0.08em;
+   177|      color: var(--eh-text-muted);
+   178|    }
+   179|    .eh-barometer-value {
+   180|      font-family: var(--sans);
+   181|      font-size: 13px;
+   182|      font-weight: 700;
+   183|      padding: 3px 12px;
+   184|      border-radius: 2px;
+   185|    }
+   186|    .eh-barometer-value.low { background: rgba(16,185,129,0.15); color: var(--eh-green); }
+   187|    .eh-barometer-value.elevated { background: rgba(245,158,11,0.15); color: var(--eh-amber); }
+   188|    .eh-barometer-value.high { background: rgba(239,68,68,0.15); color: var(--eh-red); }
+   189|    .eh-barometer-value.critical { background: rgba(239,68,68,0.25); color: var(--eh-red); }
+   190|
+   191|    /* Gauge */
+   192|    .eh-gauge {
+   193|      position: relative;
+   194|      height: 24px;
+   195|      background: linear-gradient(to right, #10B981, #F59E0B 35%, #F97316 55%, #EF4444 75%, #7F1D1D 92%);
+   196|      border-radius: 12px;
+   197|      overflow: visible;
+   198|      margin: 4px 0 14px;
+   199|    }
+   200|    .eh-gauge-needle {
+   201|      position: absolute;
+   202|      top: -6px;
+   203|      width: 3px;
+   204|      height: 36px;
+   205|      background: #E2E8F0;
+   206|      border-radius: 2px;
+   207|      transform: translateX(-50%);
+   208|      transition: left 1.5s ease-out;
+   209|      box-shadow: 0 0 8px rgba(226,232,240,0.5);
+   210|      z-index: 2;
+   211|    }
+   212|    .eh-gauge-needle::after {
+   213|      content: '';
+   214|      position: absolute;
+   215|      top: -5px;
+   216|      left: 50%;
+   217|      transform: translateX(-50%);
+   218|      width: 8px;
+   219|      height: 8px;
+   220|      background: #E2E8F0;
+   221|      border-radius: 50%;
+   222|      box-shadow: 0 0 6px rgba(226,232,240,0.6);
+   223|    }
+   224|    .eh-gauge-labels {
+   225|      display: flex;
+   226|      justify-content: space-between;
+   227|      font-family: var(--sans);
+   228|      font-size: 8px;
+   229|      font-weight: 600;
+   230|      text-transform: uppercase;
+   231|      letter-spacing: 0.04em;
+   232|      color: var(--eh-text-dim);
+   233|      margin-top: 6px;
+   234|    }
+   235|    .eh-barometer-components {
+   236|      display: grid;
+   237|      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+   238|      gap: 8px;
+   239|      margin-top: 16px;
+   240|    }
+   241|    .eh-barometer-comp {
+   242|      text-align: center;
+   243|      padding: 6px;
+   244|      background: rgba(255,255,255,0.03);
+   245|      border-radius: 3px;
+   246|    }
+   247|    .eh-barometer-comp-label {
+   248|      font-family: var(--sans);
+   249|      font-size: 8px;
+   250|      text-transform: uppercase;
+   251|      letter-spacing: 0.06em;
+   252|      color: var(--eh-text-dim);
+   253|    }
+   254|    .eh-barometer-comp-value {
+   255|      font-family: 'SF Mono', 'Courier New', monospace;
+   256|      font-size: 13px;
+   257|      font-weight: 700;
+   258|      color: var(--eh-text);
+   259|      margin-top: 2px;
+   260|    }
+   261|
+   262|    /* ═══ SECTION 2: CHOKEPOINT GRID ═══ */
+   263|    .eh-chokepoint-grid {
+   264|      display: grid;
+   265|      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+   266|      gap: 12px;
+   267|      margin-bottom: 12px;
+   268|    }
+   269|    .eh-chokepoint-card {
+   270|      background: var(--eh-card);
+   271|      border: 1px solid var(--eh-card-border);
+   272|      border-left: 3px solid var(--eh-text-dim);
+   273|      border-radius: 3px;
+   274|      padding: 14px 16px;
+   275|      transition: border-color 0.2s;
+   276|    }
+   277|    .eh-chokepoint-card.watch { border-left-color: var(--eh-text-dim); }
+   278|    .eh-chokepoint-card.monitor { border-left-color: var(--eh-blue); }
+   279|    .eh-chokepoint-card.caution { border-left-color: var(--eh-amber); }
+   280|    .eh-chokepoint-card.active { border-left-color: var(--eh-red); }
+   281|    .eh-chokepoint-card.crisis { border-left-color: #7F1D1D; }
+   282|
+   283|    .eh-cp-header {
+   284|      display: flex;
+   285|      justify-content: space-between;
+   286|      align-items: flex-start;
+   287|      margin-bottom: 6px;
+   288|    }
+   289|    .eh-cp-name {
+   290|      font-family: var(--sans);
+   291|      font-size: 12px;
+   292|      font-weight: 600;
+   293|      color: var(--eh-text);
+   294|      line-height: 1.3;
+   295|      flex: 1;
+   296|      margin-right: 8px;
+   297|    }
+   298|    .eh-cp-badge {
+   299|      font-family: var(--sans);
+   300|      font-size: 8px;
+   301|      font-weight: 700;
+   302|      text-transform: uppercase;
+   303|      letter-spacing: 0.06em;
+   304|      padding: 2px 6px;
+   305|      border-radius: 2px;
+   306|      white-space: nowrap;
+   307|    }
+   308|    .eh-cp-badge.financial { background: rgba(59,130,246,0.15); color: var(--eh-blue); }
+   309|    .eh-cp-badge.technology { background: rgba(139,92,246,0.15); color: #A78BFA; }
+   310|    .eh-cp-badge.energy { background: rgba(245,158,11,0.15); color: var(--eh-amber); }
+   311|    .eh-cp-badge.supply-chain { background: rgba(16,185,129,0.15); color: var(--eh-green); }
+   312|    .eh-cp-badge.sanctions { background: rgba(239,68,68,0.15); color: var(--eh-red); }
+   313|
+   314|    .eh-cp-status {
+   315|      font-family: var(--sans);
+   316|      font-size: 9px;
+   317|      color: var(--eh-text-muted);
+   318|      margin-bottom: 6px;
+   319|    }
+   320|    .eh-cp-status .pulse {
+   321|      display: inline-block;
+   322|      width: 6px;
+   323|      height: 6px;
+   324|      border-radius: 50%;
+   325|      margin-right: 4px;
+   326|      animation: pulse-dot 1.5s ease-in-out infinite;
+   327|    }
+   328|    .eh-cp-status .pulse.esc { background: var(--eh-amber); }
+   329|    .eh-cp-status .pulse.active { background: var(--eh-red); }
+   330|    .eh-cp-status .pulse.new { background: var(--eh-green); }
+   331|
+   332|    @keyframes pulse-dot {
+   333|      0%, 100% { opacity: 1; }
+   334|      50% { opacity: 0.4; }
+   335|    }
+   336|
+   337|    .eh-cp-meta {
+   338|      display: flex;
+   339|      gap: 12px;
+   340|      font-family: var(--sans);
+   341|      font-size: 9px;
+   342|      color: var(--eh-text-dim);
+   343|      margin-top: 8px;
+   344|    }
+   345|    .eh-cp-impact {
+   346|      font-family: 'SF Mono', 'Courier New', monospace;
+   347|      font-size: 11px;
+   348|      font-weight: 600;
+   349|      color: var(--eh-amber);
+   350|    }
+   351|
+   352|    /* ═══ SECTION 3: TRANSMISSION MATRIX ═══ */
+   353|    .eh-matrix-wrap {
+   354|      overflow-x: auto;
+   355|      margin-bottom: 12px;
+   356|    }
+   357|    .eh-matrix {
+   358|      border-collapse: collapse;
+   359|      font-family: var(--sans);
+   360|      font-size: 10px;
+   361|      width: 100%;
+   362|      min-width: 600px;
+   363|    }
+   364|    .eh-matrix th {
+   365|      text-align: left;
+   366|      padding: 8px 10px;
+   367|      font-weight: 600;
+   368|      color: var(--eh-text-muted);
+   369|      border-bottom: 1px solid var(--eh-divider);
+   370|      background: rgba(255,255,255,0.02);
+   371|    }
+   372|    .eh-matrix th:first-child {
+   373|      position: sticky;
+   374|      left: 0;
+   375|      background: var(--eh-bg);
+   376|      z-index: 1;
+   377|    }
+   378|    .eh-matrix td {
+   379|      padding: 8px 10px;
+   380|      border-bottom: 1px solid var(--eh-divider);
+   381|      color: var(--eh-text);
+   382|    }
+   383|    .eh-matrix td:first-child {
+   384|      font-weight: 600;
+   385|      color: var(--eh-gold);
+   386|      position: sticky;
+   387|      left: 0;
+   388|      background: var(--eh-bg);
+   389|      z-index: 1;
+   390|      white-space: nowrap;
+   391|    }
+   392|    .eh-matrix-cell {
+   393|      text-align: center;
+   394|      font-size: 14px;
+   395|    }
+   396|    .eh-matrix-cell.up { color: var(--eh-green); }
+   397|    .eh-matrix-cell.down { color: var(--eh-red); }
+   398|    .eh-matrix-cell.neutral { color: var(--eh-text-dim); }
+   399|    .eh-matrix-cell .intensity-1 { opacity: 0.4; }
+   400|    .eh-matrix-cell .intensity-2 { opacity: 0.7; }
+   401|    .eh-matrix-cell .intensity-3 { opacity: 1; }
+   402|
+   403|    /* ═══ SECTION 4: TIMELINE ═══ */
+   404|    .eh-timeline {
+   405|      margin-bottom: 12px;
+   406|    }
+   407|    .eh-timeline-item {
+   408|      display: flex;
+   409|      gap: 14px;
+   410|      padding: 12px 0;
+   411|      border-bottom: 1px solid var(--eh-divider);
+   412|    }
+   413|    .eh-timeline-item:last-child { border-bottom: none; }
+   414|    .eh-timeline-time {
+   415|      font-family: 'SF Mono', monospace;
+   416|      font-size: 10px;
+   417|      color: var(--eh-text-dim);
+   418|      min-width: 60px;
+   419|      flex-shrink: 0;
+   420|      padding-top: 1px;
+   421|    }
+   422|    .eh-timeline-body {
+   423|      flex: 1;
+   424|    }
+   425|    .eh-timeline-flag { font-size: 16px; margin-right: 6px; }
+   426|    .eh-timeline-desc {
+   427|      font-family: var(--body);
+   428|      font-size: 12px;
+   429|      line-height: 1.5;
+   430|      color: var(--eh-text);
+   431|    }
+   432|    .eh-timeline-impacts {
+   433|      display: flex;
+   434|      flex-wrap: wrap;
+   435|      gap: 6px;
+   436|      margin-top: 6px;
+   437|    }
+   438|    .eh-timeline-impact {
+   439|      background: rgba(255,255,255,0.04);
+   440|      padding: 2px 8px;
+   441|      border-radius: 2px;
+   442|      font-family: 'SF Mono', monospace;
+   443|      font-size: 10px;
+   444|    }
+   445|    .eh-timeline-impact .asset { color: var(--eh-text-muted); }
+   446|    .eh-timeline-impact .change.up { color: var(--eh-green); }
+   447|    .eh-timeline-impact .change.down { color: var(--eh-red); }
+   448|    .eh-timeline-source {
+   449|      font-family: var(--sans);
+   450|      font-size: 9px;
+   451|      color: var(--eh-text-dim);
+   452|      margin-top: 4px;
+   453|    }
+   454|    .eh-timeline-source a { color: var(--eh-blue); text-decoration: none; }
+   455|    .eh-timeline-source a:hover { text-decoration: underline; }
+   456|
+   457|    /* ═══ SECTION 5: PRO MONITOR ═══ */
+   458|    .eh-pro-monitor {
+   459|      display: grid;
+   460|      grid-template-columns: 1fr 1fr;
+   461|      gap: 12px;
+   462|      margin-bottom: 12px;
+   463|    }
+   464|    .eh-pro-panel {
+   465|      background: var(--eh-card);
+   466|      border: 1px solid var(--eh-card-border);
+   467|      border-radius: 3px;
+   468|      padding: 14px 16px;
+   469|    }
+   470|    .eh-pro-panel-title {
+   471|      font-family: var(--sans);
+   472|      font-size: 9px;
+   473|      font-weight: 700;
+   474|      text-transform: uppercase;
+   475|      letter-spacing: 0.1em;
+   476|      color: var(--eh-text-dim);
+   477|      margin-bottom: 10px;
+   478|      padding-bottom: 6px;
+   479|      border-bottom: 1px solid var(--eh-divider);
+   480|    }
+   481|
+   482|    /* Alert feed */
+   483|    .eh-alert-item {
+   484|      display: flex;
+   485|      gap: 8px;
+   486|      padding: 6px 0;
+   487|      border-bottom: 1px solid rgba(255,255,255,0.04);
+   488|      font-size: 11px;
+   489|      line-height: 1.4;
+   490|    }
+   491|    .eh-alert-item:last-child { border-bottom: none; }
+   492|    .eh-alert-severity {
+   493|      flex-shrink: 0;
+   494|      width: 8px;
+   495|      height: 8px;
+   496|      border-radius: 50%;
+   497|      margin-top: 4px;
+   498|    }
+   499|    .eh-alert-severity.info { background: var(--eh-blue); }
+   500|    .eh-alert-severity.warning { background: var(--eh-amber); }
+   501|    .eh-alert-severity.critical { background: var(--eh-red); animation: pulse-dot 1.5s ease-in-out infinite; }
+   502|    .eh-alert-text { flex: 1; }
+   503|    .eh-alert-time {
+   504|      font-family: 'SF Mono', monospace;
+   505|      font-size: 9px;
+   506|      color: var(--eh-text-dim);
+   507|      flex-shrink: 0;
+   508|    }
+   509|
+   510|    /* Price impact */
+   511|    .eh-price-row {
+   512|      display: flex;
+   513|      justify-content: space-between;
+   514|      align-items: center;
+   515|      padding: 5px 0;
+   516|      border-bottom: 1px solid rgba(255,255,255,0.03);
+   517|      font-size: 11px;
+   518|    }
+   519|    .eh-price-row:last-child { border-bottom: none; }
+   520|    .eh-price-ticker {
+   521|      font-family: 'SF Mono', monospace;
+   522|      font-weight: 600;
+   523|      color: var(--eh-gold);
+   524|      min-width: 48px;
+   525|    }
+   526|    .eh-price-name {
+   527|      color: var(--eh-text-muted);
+   528|      flex: 1;
+   529|      margin-left: 8px;
+   530|    }
+   531|    .eh-price-change {
+   532|      font-family: 'SF Mono', monospace;
+   533|      font-weight: 600;
+   534|      min-width: 50px;
+   535|      text-align: right;
+   536|    }
+   537|    .eh-price-change.up { color: var(--eh-green); }
+   538|    .eh-price-change.down { color: var(--eh-red); }
+   539|    .eh-price-exposure {
+   540|      font-family: 'SF Mono', monospace;
+   541|      font-size: 9px;
+   542|      color: var(--eh-text-dim);
+   543|      min-width: 28px;
+   544|      text-align: right;
+   545|    }
+   546|
+   547|    /* Scenario runbook */
+   548|    .eh-scenario-card {
+   549|      padding: 10px;
+   550|      background: rgba(255,255,255,0.02);
+   551|      border-radius: 3px;
+   552|      margin-bottom: 8px;
+   553|    }
+   554|    .eh-scenario-card:last-child { margin-bottom: 0; }
+   555|    .eh-scenario-trigger {
+   556|      font-family: var(--sans);
+   557|      font-size: 10px;
+   558|      font-weight: 600;
+   559|      color: var(--eh-amber);
+   560|      margin-bottom: 4px;
+   561|    }
+   562|    .eh-scenario-moves {
+   563|      font-family: 'SF Mono', monospace;
+   564|      font-size: 10px;
+   565|      color: var(--eh-text-muted);
+   566|      line-height: 1.5;
+   567|      margin-bottom: 4px;
+   568|    }
+   569|    .eh-scenario-trade {
+   570|      font-family: var(--sans);
+   571|      font-size: 10px;
+   572|      color: var(--eh-gold);
+   573|    }
+   574|    .eh-scenario-conviction {
+   575|      font-family: var(--sans);
+   576|      font-size: 8px;
+   577|      font-weight: 700;
+   578|      text-transform: uppercase;
+   579|      letter-spacing: 0.08em;
+   580|      margin-top: 4px;
+   581|    }
+   582|    .eh-scenario-conviction.high { color: var(--eh-green); }
+   583|    .eh-scenario-conviction.med { color: var(--eh-amber); }
+   584|
+   585|    /* Risk barometer */
+   586|    .eh-risk-grid {
+   587|      display: grid;
+   588|      grid-template-columns: 1fr 1fr;
+   589|      gap: 6px;
+   590|    }
+   591|    .eh-risk-item {
+   592|      padding: 8px;
+   593|      background: rgba(255,255,255,0.02);
+   594|      border-radius: 2px;
+   595|      text-align: center;
+   596|    }
+   597|    .eh-risk-label {
+   598|      font-family: var(--sans);
+   599|      font-size: 8px;
+   600|      text-transform: uppercase;
+   601|      letter-spacing: 0.06em;
+   602|      color: var(--eh-text-dim);
+   603|    }
+   604|    .eh-risk-value {
+   605|      font-family: 'SF Mono', monospace;
+   606|      font-size: 15px;
+   607|      font-weight: 700;
+   608|      color: var(--eh-text);
+   609|      margin-top: 2px;
+   610|    }
+   611|    .eh-risk-value.positive { color: var(--eh-green); }
+   612|    .eh-risk-value.negative { color: var(--eh-red); }
+   613|    .eh-risk-value.warning { color: var(--eh-amber); }
+   614|
+   615|    /* ═══ SECTION 6: CONVICTION IMPOSER ═══ */
+   616|    .eh-conviction {
+   617|      background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, rgba(212,175,55,0.02) 100%);
+   618|      border: 1px solid rgba(212,175,55,0.2);
+   619|      border-radius: 4px;
+   620|      padding: 24px 28px;
+   621|      margin-top: 20px;
+   622|    }
+   623|    .eh-conviction-title {
+   624|      font-family: var(--sans);
+   625|      font-size: 14px;
+   626|      font-weight: 700;
+   627|      color: var(--eh-gold);
+   628|      text-transform: uppercase;
+   629|      letter-spacing: 0.08em;
+   630|      margin-bottom: 10px;
+   631|    }
+   632|    .eh-conviction-summary {
+   633|      font-family: var(--body);
+   634|      font-size: 13px;
+   635|      line-height: 1.7;
+   636|      color: var(--eh-text-muted);
+   637|      max-width: 680px;
+   638|      margin-bottom: 16px;
+   639|    }
+   640|    .eh-conviction-actions {
+   641|      display: grid;
+   642|      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+   643|      gap: 12px;
+   644|    }
+   645|    .eh-conviction-action {
+   646|      background: rgba(255,255,255,0.03);
+   647|      border: 1px solid var(--eh-card-border);
+   648|      border-radius: 3px;
+   649|      padding: 14px 16px;
+   650|    }
+   651|    .eh-conviction-action .direction {
+   652|      font-family: var(--sans);
+   653|      font-size: 9px;
+   654|      font-weight: 700;
+   655|      text-transform: uppercase;
+   656|      letter-spacing: 0.08em;
+   657|    }
+   658|    .eh-conviction-action .direction.long { color: var(--eh-green); }
+   659|    .eh-conviction-action .direction.short { color: var(--eh-red); }
+   660|    .eh-conviction-action .asset {
+   661|      font-family: 'SF Mono', monospace;
+   662|      font-size: 16px;
+   663|      font-weight: 700;
+   664|      color: var(--eh-gold);
+   665|      margin: 4px 0;
+   666|    }
+   667|    .eh-conviction-action .entry {
+   668|      font-family: var(--sans);
+   669|      font-size: 10px;
+   670|      color: var(--eh-text-muted);
+   671|    }
+   672|    .eh-conviction-action .conviction-label {
+   673|      font-family: var(--sans);
+   674|      font-size: 9px;
+   675|      font-weight: 700;
+   676|      margin-top: 6px;
+   677|    }
+   678|    .eh-conviction-action .conviction-label.high { color: var(--eh-green); }
+   679|
+   680|    .eh-cta {
+   681|      margin-top: 16px;
+   682|      text-align: center;
+   683|    }
+   684|    .eh-cta a {
+   685|      display: inline-block;
+   686|      font-family: var(--sans);
+   687|      font-size: 11px;
+   688|      font-weight: 600;
+   689|      color: var(--eh-bg);
+   690|      background: var(--eh-gold);
+   691|      padding: 8px 20px;
+   692|      border-radius: 3px;
+   693|      text-decoration: none;
+   694|      letter-spacing: 0.04em;
+   695|      transition: opacity 0.2s;
+   696|    }
+   697|    .eh-cta a:hover { opacity: 0.85; }
+   698|
+   699|    /* Loading state */
+   700|    .eh-loading {
+   701|      text-align: center;
+   702|      padding: 60px 20px;
+   703|      font-family: var(--sans);
+   704|      font-size: 12px;
+   705|      color: var(--eh-text-dim);
+   706|    }
+   707|    .eh-loading .spinner {
+   708|      display: inline-block;
+   709|      width: 24px;
+   710|      height: 24px;
+   711|      border: 2px solid var(--eh-divider);
+   712|      border-top-color: var(--eh-gold);
+   713|      border-radius: 50%;
+   714|      animation: spin 0.8s linear infinite;
+   715|      margin-bottom: 12px;
+   716|    }
+   717|    @keyframes spin { to { transform: rotate(360deg); } }
+   718|
+   719|    /* Error state */
+   720|    .eh-error {
+   721|      text-align: center;
+   722|      padding: 40px 20px;
+   723|      font-family: var(--sans);
+   724|      font-size: 12px;
+   725|      color: var(--eh-red);
+   726|    }
+   727|
+   728|    /* Responsive */
+   729|    @media (max-width: 800px) {
+   730|      .eh-pro-monitor { grid-template-columns: 1fr; }
+   731|      .eh-chokepoint-grid { grid-template-columns: 1fr; }
+   732|      .eh-barometer-components { grid-template-columns: repeat(3, 1fr); }
+   733|      .eh-container { padding: 12px 12px 36px; }
+   734|    }
+   735|    @media (max-width: 480px) {
+   736|      .eh-barometer-components { grid-template-columns: repeat(2, 1fr); }
+   737|      .eh-conviction-actions { grid-template-columns: 1fr; }
+   738|      .eh-thesis h1 { font-size: 16px; }
+   739|    }
+   740|  </style>
+   741|</head>
+   742|<body class="eh-body">
+   743|
+   744|<!-- ═══ MASTHEAD ═══ -->
+   745|<header class="eh-masthead">
+   746|  <div class="eh-masthead-left">
+   747|    <a href="./" style="text-decoration:none;display:flex;align-items:center;gap:8px;">
+   748|      <span class="eh-masthead-name">Gazzetta di Kyiv</span>
+   749|    </a>
+   750|    <span class="eh-masthead-badge">Event Horizon</span>
+   751|  </div>
+   752|  <div class="eh-masthead-right">
+   753|    <a href="./stories.html">Stories</a>
+   754|    <a href="./flows.html">Flows</a>
+   755|    <a href="./trades.html">Trades</a>
+   756|    <a href="./signal.html">Signal</a>
+   757|    <a href="./track.html">Track</a>
+   758|  </div>
+   759|</header>
+   760|
+   761|<!-- ═══ MAIN ═══ -->
+   762|<main class="eh-container">
+   763|
+   764|  <!-- Thesis -->
+   765|  <div class="eh-thesis">
+   766|    <h1>Event Horizon</h1>
+   767|    <p><strong>Professional trading desks monitor geopolitical chokepoints</strong> — financial pressure points where government decisions create immediate, measurable market dislocations. This page shows you what the pros see: the collision between geopolitical pressure events and capital market reactions. You don\'t need a Bloomberg terminal. You need conviction.</p>
+   768|  </div>
+   769|
+   770|  <!-- Loading state -->
+   771|  <div id="ehLoading" class="eh-loading">
+   772|    <div class="spinner"></div>
+   773|    <div>Loading event horizon data...</div>
+   774|  </div>
+   775|
+   776|  <!-- Error state -->
+   777|  <div id="ehError" class="eh-error" style="display:none;"></div>
+   778|
+   779|  <!-- All content rendered here -->
+   780|  <div id="ehContent" style="display:none;">
+   781|
+   782|    <!-- SECTION 1: Barometer -->
+   783|    <div class="eh-section-title">Geopolitical Pressure Barometer</div>
+   784|    <div class="eh-barometer-wrap" id="ehBarometer"></div>
+   785|
+   786|    <!-- SECTION 2: Chokepoints -->
+   787|    <div class="eh-section-title">Active Chokepoints</div>
+   788|    <div class="eh-chokepoint-grid" id="ehChokepoints"></div>
+   789|
+   790|    <!-- SECTION 3: Transmission Matrix -->
+   791|    <div class="eh-section-title">Transmission Matrix — Events → Assets</div>
+   792|    <div class="eh-matrix-wrap" id="ehMatrix"></div>
+   793|
+   794|    <!-- SECTION 4: Timeline -->
+   795|    <div class="eh-section-title">Event Timeline — The Waterfall</div>
+   796|    <div class="eh-timeline" id="ehTimeline"></div>
+   797|
+   798|    <!-- SECTION 5: Pro Monitor -->
+   799|    <div class="eh-section-title">The Pros\' Monitor</div>
+   800|    <div class="eh-pro-monitor" id="ehProMonitor"></div>
+   801|
+   802|    <!-- SECTION 6: Conviction Imposer -->
+   803|    <div class="eh-conviction" id="ehConviction"></div>
+   804|
+   805|  </div>
+   806|
+   807|</main>
+   808|
+   809|<script>
+   810|// ═══════════════════════════════════════════════
+   811|// EVENT HORIZON — Data Fetch & Render
+   812|// ═══════════════════════════════════════════════
+   813|
+   814|(function() {
+   815|  const DATA_PATH = './data/event_horizon.json';
+   816|
+   817|  // Live price sources (free tiers)
+   818|  const PRICE_SOURCES = {
+   819|    'ES=F': { fn: 'fetchYahoo', symbol: 'ES=F' },
+   820|    'BZ=F': { fn: 'fetchYahoo', symbol: 'BZ=F' },
+   821|    'GC=F': { fn: 'fetchYahoo', symbol: 'GC=F' },
+   822|    'CL=F': { fn: 'fetchYahoo', symbol: 'CL=F' },
+   823|    'DX-Y.NYB': { fn: 'fetchYahoo', symbol: 'DX-Y.NYB' },
+   824|    'EURUSD=X': { fn: 'fetchYahoo', symbol: 'EURUSD=X' },
+   825|    'JPYUSD=X': { fn: 'fetchYahoo', symbol: 'JPYUSD=X' },
+   826|    '^VIX': { fn: 'fetchYahoo', symbol: '^VIX' },
+   827|    'ZN=F': { fn: 'fetchYahoo', symbol: 'ZN=F' },
+   828|    'BTC-USD': { fn: 'fetchCoinGecko', symbol: 'bitcoin' },
+   829|    'GLD': { fn: 'fetchYahoo', symbol: 'GLD' },
+   830|    'USO': { fn: 'fetchYahoo', symbol: 'USO' }
+   831|  };
+   832|
+   833|  function byId(id) { return document.getElementById(id); }
+   834|
+   835|  // Fetch JSON
+   836|  async function getJSON(path, fallback) {
+   837|    try {
+   838|      const r = await fetch(path + '?t=' + Date.now(), { cache: 'no-store' });
+   839|      if (!r.ok) throw new Error('HTTP ' + r.status);
+   840|      return await r.json();
+   841|    } catch (e) {
+   842|      console.warn('Fetch error:', path, e);
+   843|      return fallback;
+   844|    }
+   845|  }
+   846|
+   847|  // Fetch live price from Yahoo Finance (uses corsproxy.io free tier)
+   848|  async function fetchYahooPrice(symbol) {
+   849|    try {
+   850|      const url = 'https://query1.finance.yahoo.com/v8/finance/chart/' + encodeURIComponent(symbol) + '?interval=1d&range=1d';
+   851|      const r = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' } });
+   852|      if (!r.ok) return null;
+   853|      const data = await r.json();
+   854|      const result = data.chart.result[0];
+   855|      const meta = result.meta;
+   856|      const quotes = result.indicators.quote[0];
+   857|      const idx = quotes.close.length - 1;
+   858|      const close = quotes.close[idx];
+   859|      const prevClose = meta.previousClose || close;
+   860|      const change = ((close - prevClose) / prevClose) * 100;
+   861|      return { price: close, change: change };
+   862|    } catch (e) {
+   863|      console.warn('Yahoo fetch failed for', symbol, e);
+   864|      return null;
+   865|    }
+   866|  }
+   867|
+   868|  // Fetch from CoinGecko (free, no key needed)
+   869|  async function fetchCoinGeckoPrice(id) {
+   870|    try {
+   871|      const url = 'https://api.coingecko.com/api/v3/simple/price?ids=' + id + '&vs_currencies=usd&include_24hr_change=true';
+   872|      const r = await fetch(url);
+   873|      if (!r.ok) return null;
+   874|      const data = await r.json();
+   875|      return { price: data[id].usd, change: data[id].usd_24h_change };
+   876|    } catch (e) {
+   877|      console.warn('CoinGecko fetch failed for', id, e);
+   878|      return null;
+   879|    }
+   880|  }
+   881|
+   882|  async function fetchPrices() {
+   883|    const prices = {};
+   884|    const entries = Object.entries(PRICE_SOURCES);
+   885|    // Fetch in parallel with concurrency limit
+   886|    const batchSize = 6;
+   887|    for (let i = 0; i < entries.length; i += batchSize) {
+   888|      const batch = entries.slice(i, i + batchSize);
+   889|      const results = await Promise.allSettled(batch.map(async ([key, src]) => {
+   890|        let result;
+   891|        if (src.fn === 'fetchYahoo') result = await fetchYahooPrice(src.symbol);
+   892|        else if (src.fn === 'fetchCoinGecko') result = await fetchCoinGeckoPrice(src.symbol);
+   893|        if (result) prices[key] = result;
+   894|      }));
+   895|    }
+   896|    return prices;
+   897|  }
+   898|
+   899|  // ── Renderers ──
+   900|
+   901|  function renderBarometer(data) {
+   902|    const baro = data.barometer || {};
+   903|    const score = baro.score || 0;
+   904|    let label = 'Low';
+   905|    let cls = 'low';
+   906|    if (score >= 80) { label = 'Critical'; cls = 'critical'; }
+   907|    else if (score >= 65) { label = 'High'; cls = 'high'; }
+   908|    else if (score >= 45) { label = 'Elevated'; cls = 'elevated'; }
+   909|
+   910|    const needleLeft = Math.min(Math.max(score, 2), 98);
+   911|
+   912|    let compsHtml = '';
+   913|    const comps = baro.components || {};
+   914|    const compLabels = {
+   915|      active_sanctions: 'Active Sanctions',
+   916|      executive_orders_30d: 'Exec Orders (30d)',
+   917|      diplomatic_tension_score: 'Diplomatic Tension',
+   918|      energy_volatility_7d: 'Energy Vol (7d)',
+   919|      cds_spread_bps: 'CDS Spread (bps)'
+   920|    };
+   921|    Object.entries(compLabels).forEach(([key, label]) => {
+   922|      if (comps[key] !== undefined) {
+   923|        compsHtml += '<div class="eh-barometer-comp">'
+   924|          + '<div class="eh-barometer-comp-label">' + label + '</div>'
+   925|          + '<div class="eh-barometer-comp-value">' + comps[key] + '</div>'
+   926|          + '</div>';
+   927|      }
+   928|    });
+   929|
+   930|    byId('ehBarometer').innerHTML = ''
+   931|      + '<div class="eh-barometer-header">'
+   932|      + '  <div class="eh-barometer-label">Aggregate Geopolitical Pressure</div>'
+   933|      + '  <div class="eh-barometer-value ' + cls + '">' + score + ' — ' + label + '</div>'
+   934|      + '</div>'
+   935|      + '<div class="eh-gauge">'
+   936|      + '  <div class="eh-gauge-needle" style="left:' + needleLeft + '%;"></div>'
+   937|      + '</div>'
+   938|      + '<div class="eh-gauge-labels">'
+   939|      + '  <span>Low</span><span>Elevated</span><span>High</span><span>Critical</span><span>Crisis</span>'
+   940|      + '</div>'
+   941|      + '<div class="eh-barometer-components">' + compsHtml + '</div>';
+   942|  }
+   943|
+   944|  function renderChokepoints(data) {
+   945|    const cps = data.chokepoints || [];
+   946|    if (!cps.length) {
+   947|      byId('ehChokepoints').innerHTML = '<div style="color:var(--eh-text-dim);font-size:12px;">No active chokepoints.</div>';
+   948|      return;
+   949|    }
+   950|    let html = '';
+   951|    cps.forEach(cp => {
+   952|      const alertLevel = cp.alert_level || 'watch';
+   953|      const statusHtml = cp.status === 'escalating' || cp.status === 'active'
+   954|        ? '<span class="pulse ' + cp.status + '"></span>' + cp.status
+   955|        : cp.status;
+   956|      html += '<div class="eh-chokepoint-card ' + alertLevel + '">'
+   957|        + '  <div class="eh-cp-header">'
+   958|        + '    <div class="eh-cp-name">' + (cp.name || 'Unknown') + '</div>'
+   959|        + '    <div class="eh-cp-badge ' + (cp.category || 'sanctions') + '">' + (cp.category || 'Sanctions') + '</div>'
+   960|        + '  </div>'
+   961|        + '  <div class="eh-cp-status">' + statusHtml + '</div>'
+   962|        + '  <div style="font-size:10px;color:var(--eh-text-muted);line-height:1.5;">' + (cp.description || '') + '</div>'
+   963|        + '  <div class="eh-cp-meta">'
+   964|        + '    <span>Target: ' + (cp.target_asset || '—') + '</span>'
+   965|        + '    <span class="eh-cp-impact">Impact: ' + (cp.price_impact_pct ? (cp.price_impact_pct > 0 ? '+' : '') + cp.price_impact_pct + '%' : '—') + '</span>'
+   966|        + '  </div>'
+   967|        + '</div>';
+   968|    });
+   969|    byId('ehChokepoints').innerHTML = html;
+   970|  }
+   971|
+   972|  function renderMatrix(data) {
+   973|    const matrix = data.transmission_matrix || [];
+   974|    if (!matrix.length) {
+   975|      byId('ehMatrix').innerHTML = '<div style="color:var(--eh-text-dim);font-size:12px;">No transmission data.</div>';
+   976|      return;
+   977|    }
+   978|
+   979|    // Collect all unique asset tickers
+   980|    const allAssets = [];
+   981|    const seen = new Set();
+   982|    matrix.forEach(row => {
+   983|      (row.assets || []).forEach(a => {
+   984|        if (!seen.has(a.ticker)) {
+   985|          seen.add(a.ticker);
+   986|          allAssets.push(a);
+   987|        }
+   988|      });
+   989|    });
+   990|
+   991|    let html = '<table class="eh-matrix"><thead><tr><th>Event</th>';
+   992|    allAssets.forEach(a => {
+   993|      html += '<th style="text-align:center;">' + a.ticker + '</th>';
+   994|    });
+   995|    html += '</tr></thead><tbody>';
+   996|
+   997|    matrix.forEach(row => {
+   998|      html += '<tr><td>' + (row.event_id || 'Event') + '</td>';
+   999|      const assetMap = {};
+  1000|      (row.assets || []).forEach(a => { assetMap[a.ticker] = a; });
+  1001|      allAssets.forEach(a => {
+  1002|        const cell = assetMap[a.ticker];
+  1003|        if (cell) {
+  1004|          const dirClass = cell.direction === 'up' ? 'up' : cell.direction === 'down' ? 'down' : 'neutral';
+  1005|          const intensity = cell.intensity || 1;
+  1006|          const arrows = cell.direction === 'up' ? '↑' : cell.direction === 'down' ? '↓' : '↔';
+  1007|          const arrowStr = arrows.repeat(Math.min(intensity, 3));
+  1008|          html += '<td class="eh-matrix-cell ' + dirClass + '"><span class="intensity-' + intensity + '">' + arrowStr + '</span></td>';
+  1009|        } else {
+  1010|          html += '<td class="eh-matrix-cell neutral"><span style="opacity:0.2;">—</span></td>';
+  1011|        }
+  1012|      });
+  1013|      html += '</tr>';
+  1014|    });
+  1015|
+  1016|    html += '</tbody></table>';
+  1017|    byId('ehMatrix').innerHTML = html;
+  1018|  }
+  1019|
+  1020|  function renderTimeline(data) {
+  1021|    const events = data.events || [];
+  1022|    if (!events.length) {
+  1023|      byId('ehTimeline').innerHTML = '<div style="color:var(--eh-text-dim);font-size:12px;">No recent events.</div>';
+  1024|      return;
+  1025|    }
+  1026|    let html = '';
+  1027|    events.forEach(ev => {
+  1028|      const impacts = (ev.impacts || []).map(imp => {
+  1029|        const chgClass = (imp.change || '').startsWith('+') ? 'up' : (imp.change || '').startsWith('-') ? 'down' : '';
+  1030|        return '<span class="eh-timeline-impact"><span class="asset">' + (imp.asset || '') + '</span> <span class="change ' + chgClass + '">' + (imp.change || '') + '</span> <span style="color:var(--eh-text-dim);">(' + (imp.timespan || '') + ')</span></span>';
+  1031|      }).join('');
+  1032|
+  1033|      html += '<div class="eh-timeline-item">'
+  1034|        + '  <div class="eh-timeline-time">' + (ev.relative || '') + '</div>'
+  1035|        + '  <div class="eh-timeline-body">'
+  1036|        + '    <div class="eh-timeline-desc"><span class="eh-timeline-flag">' + (ev.flag || '') + '</span>' + (ev.description || '') + '</div>'
+  1037|        + '    <div class="eh-timeline-impacts">' + impacts + '</div>'
+  1038|        + '    <div class="eh-timeline-source">Source: <a href="' + (ev.source || '#') + '" target="_blank" rel="noopener">' + (ev.source ? ev.source.split('/').slice(0,3).join('/') : '') + '</a></div>'
+  1039|        + '  </div>'
+  1040|        + '</div>';
+  1041|    });
+  1042|    byId('ehTimeline').innerHTML = html;
+  1043|  }
+  1044|
+  1045|  function renderProMonitor(data, prices) {
+  1046|    const alerts = data.alerts || [];
+  1047|    const scenarios = data.scenarios || [];
+  1048|
+  1049|    // LEFT: Alert Feed
+  1050|    let alertsHtml = '<div class="eh-pro-panel"><div class="eh-pro-panel-title">Alert Feed</div>';
+  1051|    if (!alerts.length) {
+  1052|      alertsHtml += '<div style="font-size:11px;color:var(--eh-text-dim);">No recent alerts.</div>';
+  1053|    } else {
+  1054|      alerts.slice(0, 15).forEach(a => {
+  1055|        const sev = a.severity || 'info';
+  1056|        alertsHtml += '<div class="eh-alert-item">'
+  1057|          + '  <div class="eh-alert-severity ' + sev + '"></div>'
+  1058|          + '  <div class="eh-alert-text">' + (a.headline || '') + '</div>'
+  1059|          + '  <div class="eh-alert-time">' + (a.relative || '') + '</div>'
+  1060|          + '</div>';
+  1061|      });
+  1062|    }
+  1063|    alertsHtml += '</div>';
+  1064|
+  1065|    // CENTER-RIGHT: Scenario Runbook
+  1066|    let scenariosHtml = '<div class="eh-pro-panel"><div class="eh-pro-panel-title">Scenario Runbook</div>';
+  1067|    if (!scenarios.length) {
+  1068|      scenariosHtml += '<div style="font-size:11px;color:var(--eh-text-dim);">No active scenarios.</div>';
+  1069|    } else {
+  1070|      scenarios.slice(0, 5).forEach(s => {
+  1071|        const convClass = (s.conviction || 'med').toLowerCase();
+  1072|        scenariosHtml += '<div class="eh-scenario-card">'
+  1073|          + '  <div class="eh-scenario-trigger">If: ' + (s.trigger || '') + '</div>'
+  1074|          + '  <div class="eh-scenario-moves">Expected: ' + (s.expected_moves || '') + '</div>'
+  1075|          + '  <div class="eh-scenario-trade">Trade: ' + (s.trade_suggestion || '') + '</div>'
+  1076|          + '  <div class="eh-scenario-conviction ' + convClass + '">' + s.conviction + ' CONVICTION</div>'
+  1077|          + '</div>';
+  1078|      });
+  1079|    }
+  1080|    scenariosHtml += '</div>';
+  1081|
+  1082|    // CENTER-LEFT: Price Impact (with live data)
+  1083|    let priceHtml = '<div class="eh-pro-panel"><div class="eh-pro-panel-title">Price Impact — Chokepoint-Sensitive Assets</div>';
+  1084|    const priceAssets = [
+  1085|      { ticker: 'BZ=F', name: 'Brent Crude', exp: 95 },
+  1086|      { ticker: 'GC=F', name: 'Gold', exp: 80 },
+  1087|      { ticker: 'DX-Y.NYB', name: 'Dollar Index', exp: 75 },
+  1088|      { ticker: 'ES=F', name: 'S&P 500', exp: 60 },
+  1089|      { ticker: 'CL=F', name: 'WTI Crude', exp: 90 },
+  1090|      { ticker: 'ZN=F', name: '10Y Treasury', exp: 65 },
+  1091|      { ticker: 'EURUSD=X', name: 'EUR/USD', exp: 55 },
+  1092|      { ticker: 'BTC-USD', name: 'Bitcoin', exp: 45 },
+  1093|      { ticker: '^VIX', name: 'VIX', exp: 70 },
+  1094|      { ticker: 'GLD', name: 'Gold ETF', exp: 80 },
+  1095|      { ticker: 'USO', name: 'Oil ETF', exp: 88 }
+  1096|    ];
+  1097|
+  1098|    priceAssets.forEach(pa => {
+  1099|      const p = prices[pa.ticker];
+  1100|      const chg = p ? p.change : null;
+  1101|      const chgStr = chg !== null ? (chg > 0 ? '+' : '') + chg.toFixed(2) + '%' : '—';
+  1102|      const chgClass = chg !== null ? (chg > 0 ? 'up' : chg < 0 ? 'down' : '') : '';
+  1103|      priceHtml += '<div class="eh-price-row">'
+  1104|        + '  <div class="eh-price-ticker">' + pa.ticker + '</div>'
+  1105|        + '  <div class="eh-price-name">' + pa.name + '</div>'
+  1106|        + '  <div class="eh-price-change ' + chgClass + '">' + chgStr + '</div>'
+  1107|        + '  <div class="eh-price-exposure">' + pa.exp + '</div>'
+  1108|        + '</div>';
+  1109|    });
+  1110|    priceHtml += '</div>';
+  1111|
+  1112|    // RIGHT: Risk Barometer
+  1113|    const getPrice = (ticker) => prices[ticker];
+  1114|    const vix = getPrice('^VIX');
+  1115|    const gold = getPrice('GC=F');
+  1116|    const dxy = getPrice('DX-Y.NYB');
+  1117|
+  1118|    let riskHtml = '<div class="eh-pro-panel"><div class="eh-pro-panel-title">Risk Barometer</div>'
+  1119|      + '<div class="eh-risk-grid">'
+  1120|      + '  <div class="eh-risk-item">'
+  1121|      + '    <div class="eh-risk-label">VIX</div>'
+  1122|      + '    <div class="eh-risk-value ' + (vix && vix.price > 25 ? 'negative' : 'positive') + '">' + (vix ? vix.price.toFixed(2) : '—') + '</div>'
+  1123|      + '  </div>'
+  1124|      + '  <div class="eh-risk-item">'
+  1125|      + '    <div class="eh-risk-label">Gold / $</div>'
+  1126|      + '    <div class="eh-risk-value">' + (gold ? '$' + gold.price.toFixed(0) : '—') + '</div>'
+  1127|      + '  </div>'
+  1128|      + '  <div class="eh-risk-item">'
+  1129|      + '    <div class="eh-risk-label">DXY</div>'
+  1130|      + '    <div class="eh-risk-value ' + (dxy && dxy.price > 104 ? 'warning' : '') + '">' + (dxy ? dxy.price.toFixed(2) : '—') + '</div>'
+  1131|      + '  </div>'
+  1132|      + '  <div class="eh-risk-item">'
+  1133|      + '    <div class="eh-risk-label">Brent</div>'
+  1134|      + '    <div class="eh-risk-value"></div>'
+  1135|      + '  </div>'
+  1136|      + '</div></div>';
+  1137|
+  1138|    byId('ehProMonitor').innerHTML = alertsHtml + priceHtml + scenariosHtml + riskHtml;
+  1139|  }
+  1140|
+  1141|  function renderConviction(data) {
+  1142|    const scenarios = data.scenarios || [];
+  1143|    const meta = data._meta || {};
+  1144|    const baro = data.barometer || {};
+  1145|
+  1146|    let signalText = 'Chokepoint pressure is currently ';
+  1147|    const score = baro.score || 0;
+  1148|    if (score >= 65) signalText += 'HIGH — ';
+  1149|    else if (score >= 45) signalText += 'ELEVATED — ';
+  1150|    else signalText += 'LOW — ';
+  1151|
+  1152|    signalText += (meta.event_count || 0) + ' active events across ' + (meta.chokepoint_count || 0) + ' chokepoint categories. ';
+  1153|    if (score >= 65) signalText += 'Position defensively: overweight energy, gold, USD; underweight EM, risk assets exposed to sanction targets.';
+  1154|    else if (score >= 45) signalText += 'Watch for escalation triggers. Maintain hedge positions.';
+  1155|    else signalText += 'Opportunistic environment. Monitor for new sanction packages and diplomatic shifts.';
+  1156|
+  1157|    let actionsHtml = '';
+  1158|    const tradeScenarios = scenarios.filter(s => s.trade_suggestion && s.conviction);
+  1159|    tradeScenarios.slice(0, 3).forEach(s => {
+  1160|      const isLong = (s.trade_suggestion || '').toLowerCase().includes('long');
+  1161|      const dir = isLong ? 'long' : 'short';
+  1162|      const convClass = (s.conviction || 'med').toLowerCase();
+  1163|      actionsHtml += '<div class="eh-conviction-action">'
+  1164|        + '  <div class="direction ' + dir + '">' + (isLong ? '▲ LONG' : '▼ SHORT') + '</div>'
+  1165|        + '  <div class="asset">' + (s.trade_suggestion || '').replace('LONG ', '').replace('SHORT ', '').split(',')[0] + '</div>'
+  1166|        + '  <div class="entry">' + (s.expected_moves || '') + '</div>'
+  1167|        + '  <div class="conviction-label ' + convClass + '">' + s.conviction + ' CONVICTION</div>'
+  1168|        + '</div>';
+  1169|    });
+  1170|
+  1171|    byId('ehConviction').innerHTML = ''
+  1172|      + '<div class="eh-conviction-title">The Signal — What This Means for Your Portfolio</div>'
+  1173|      + '<div class="eh-conviction-summary">' + signalText + '</div>'
+  1174|      + '<div class="eh-conviction-actions">' + actionsHtml + '</div>'
+  1175|      + '<div class="eh-cta"><a href="https://t.me/GazzettaDiKyiv" target="_blank" rel="noopener">Get Real-Time Chokepoint Alerts → Telegram</a></div>';
+  1176|  }
+  1177|
+  1178|  // ── Main Init ──
+  1179|  async function init() {
+  1180|    const loading = byId('ehLoading');
+  1181|    const content = byId('ehContent');
+  1182|    const error = byId('ehError');
+  1183|
+  1184|    // Fetch data
+  1185|    const data = await getJSON(DATA_PATH, null);
+  1186|    if (!data) {
+  1187|      loading.style.display = 'none';
+  1188|      error.style.display = 'block';
+  1189|      error.textContent = 'Failed to load event horizon data. The data pipeline may not have produced a recent snapshot.';
+  1190|      return;
+  1191|    }
+  1192|
+  1193|    // Fetch live prices in background
+  1194|    const prices = await fetchPrices();
+  1195|
+  1196|    // Render all sections
+  1197|    renderBarometer(data);
+  1198|    renderChokepoints(data);
+  1199|    renderMatrix(data);
+  1200|    renderTimeline(data);
+  1201|    renderProMonitor(data, prices);
+  1202|    renderConviction(data);
+  1203|
+  1204|    // Show content
+  1205|    loading.style.display = 'none';
+  1206|    content.style.display = 'block';
+  1207|  }
+  1208|
+  1209|  // Boot on DOM ready
+  1210|  if (document.readyState === 'loading') {
+  1211|    document.addEventListener('DOMContentLoaded', init);
+  1212|  } else {
+  1213|    init();
+  1214|  }
+  1215|})();
+  1216|</script>
+  1217|
+  1218|</body>
+  1219|</html>
+  1220|
