@@ -2898,3 +2898,64 @@ body {
 @media (max-width: 768px) {
   .gate-overlay .gate-cta { font-size: 14px; padding: 12px 24px; width: 80%; text-align: center; }
 }
+
+/* ═══════════════ AUTO-INTERLINKING — Related Stories & Flows ═══════════════ */
+.intel-related {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--divider, #E5E7EB);
+}
+.intel-related .intel-section-label {
+  font-size: 13px;
+  margin-bottom: 16px;
+  color: var(--ink-muted, #6B7280);
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.related-card {
+  display: block;
+  padding: 14px;
+  border: 1px solid var(--divider, #E5E7EB);
+  text-decoration: none;
+  color: var(--ink, #111827);
+  background: var(--white, #FFFFFF);
+  transition: background 0.15s;
+}
+.related-card:hover {
+  background: #F9FAFB;
+}
+.related-sector {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold-dark, #8B6914);
+  margin-bottom: 6px;
+}
+.related-headline {
+  display: block;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+.related-amount {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ink, #111827);
+  margin-bottom: 4px;
+}
+.related-meta {
+  display: block;
+  font-size: 11px;
+  color: var(--ink-muted, #6B7280);
+}
+@media (max-width: 768px) {
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+}

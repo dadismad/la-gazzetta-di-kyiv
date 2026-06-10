@@ -126,6 +126,7 @@
       '<h2 class="intel-section-label extremum-label">' + t('extremum', 'EXTREMUM') + '</h2>',
       '<div class="intel-extremum-content">' + (typeof extremum === 'object' ? (extremum.type + ': ' + (extremum.description || '').slice(0, 200)) : extremum) + '</div>',
       '</section>',
+      renderRelated(story),
       '<div class="intel-share">',
       '<button onclick="copyStoryLink()" class="share-btn" title="' + t('share_copy', 'Copy link') + '"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>',
       '<button onclick="shareTo(\'x\')" class="share-btn" title="' + t('share_x', 'Share on X') + '"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46L20 4"/></svg></button>',
@@ -134,6 +135,47 @@
       '</div>',
       '</article>'
     ].join('\n');
+  }
+
+  function renderRelated(story) {
+    var t = window.i18n ? function(k, fb) { return i18n.t(k, fb); } : function(k, fb) { return fb; };
+    var html = '';
+    
+    // Related Stories
+    var related = story.related_stories || [];
+    if (related.length) {
+      html += '<section class="intel-related">';
+      html += '<h2 class="intel-section-label">' + t('related_stories', 'RELATED STORIES') + '</h2>';
+      html += '<div class="related-grid">';
+      for (var i = 0; i < related.length; i++) {
+        var rs = related[i];
+        html += '<a href="./story.html?id=' + rs.story_id + '" class="related-card">';
+        html += '<span class="related-sector">' + (rs.sector || '') + '</span>';
+        html += '<span class="related-headline">' + (rs.headline || '').substring(0, 80) + '</span>';
+        html += '</a>';
+      }
+      html += '</div></section>';
+    }
+    
+    // Related Flows
+    var flows = story.related_flows || [];
+    if (flows.length) {
+      html += '<section class="intel-related">';
+      html += '<h2 class="intel-section-label">' + t('related_flows', 'RELATED FLOWS') + '</h2>';
+      html += '<div class="related-grid">';
+      for (var j = 0; j < flows.length; j++) {
+        var rf = flows[j];
+        var paceStr = rf.pace_multiplier ? rf.pace_multiplier.toFixed(1) + '\u00d7' : '';
+        html += '<a href="./flows.html" class="related-card flow-related">';
+        html += '<span class="related-sector">' + (rf.asset_class || '') + '</span>';
+        html += '<span class="related-amount">' + (rf.amount_formatted || '') + ' ' + (rf.direction || '') + '</span>';
+        html += '<span class="related-meta">' + (rf.confidence_pct || 0) + '% confidence' + (paceStr ? ' \u00b7 ' + paceStr : '') + '</span>';
+        html += '</a>';
+      }
+      html += '</div></section>';
+    }
+    
+    return html;
   }
 
   function buildNav(storyId, allStories, currentIdx) {

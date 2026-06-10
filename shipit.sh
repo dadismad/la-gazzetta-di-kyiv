@@ -47,6 +47,11 @@ else
 fi
 echo ""
 
+# ═══ Stage 1.1: build_related_links — auto-interlinking engine ═══
+echo "── Stage 1.1: build_related_links ──"
+$PYTHON "$PROJECT/scripts/build_related_links.py" || echo "  ⚠ Related links skipped (non-critical)"
+echo "  ✓ Story→story & story→flow links generated"
+
 # ═══ Stage 1.2: analyze_narratives — synthesize 3 Core Market Narratives ═══
 echo "── Stage 1.2: analyze_narratives ──"
 $PYTHON "$PROJECT/ops/analyze_narratives_v2.py" || echo "  ⚠ Narratives skipped (API unavailable — using fallback)"
