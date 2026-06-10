@@ -127,14 +127,14 @@
     <span class="masthead-tagline" data-i18n="masthead_tagline">Capital moves markets. We track where it's going.</span>
     <nav class="product-nav">
       <span class="nav-group-label">INTEL</span>
-      <a href="./stories.html" class="nav-link">Stories</a>
-      <a href="./flows.html" class="nav-link">Flows</a>
-      <a href="./event_horizon.html" class="nav-link">Horizon</a>
-      <a href="./flow-nodes.html" class="nav-link">Nodes</a>
+      <a href="./stories.html" class="nav-link"><span data-i18n="nav_stories">Stories</span></a>
+      <a href="./flows.html" class="nav-link"><span data-i18n="nav_flows">Flows</span></a>
+      <a href="./event_horizon.html" class="nav-link"><span data-i18n="nav_horizon">Horizon</span></a>
+      <a href="./flow-nodes.html" class="nav-link"><span data-i18n="nav_nodes">Nodes</span></a>
       <span class="nav-group-label">ALPHA</span>
-      <a href="./signal.html" class="nav-link">Signal</a>
-      <a href="./trades.html" class="nav-link">Trades</a>
-      <a href="./track.html" class="nav-link">Track</a>
+      <a href="./signal.html" class="nav-link"><span data-i18n="nav_signal">Signal</span></a>
+      <a href="./trades.html" class="nav-link"><span data-i18n="nav_trades">Trades</span></a>
+      <a href="./track.html" class="nav-link"><span data-i18n="nav_track">Track</span></a>
     </nav>
     <time class="masthead-meta" id="mastheadMeta" datetime="2026-06-06T15:00:00.000Z">—</time>
     <span class="lang-switcher">
@@ -175,25 +175,37 @@
 
   <aside class="col-alpha" id="colAlpha">
     <div class="side-section">
-      <div class="side-section-label">TRADE HOOKS</div>
+      <div class="side-section-label" data-i18n="side_trade_hooks">TRADE HOOKS</div>
       <div class="side-hooks" id="sideHooks">
-        <div class="side-hook-item"><span class="side-hook-symbol">—</span><span class="side-hook-dir">—</span><span class="side-hook-conv">—</span></div>
-        <div class="side-hook-item"><span class="side-hook-symbol">—</span><span class="side-hook-dir">—</span><span class="side-hook-conv">—</span></div>
-        <div class="side-hook-item"><span class="side-hook-symbol">—</span><span class="side-hook-dir">—</span><span class="side-hook-conv">—</span></div>
+<div class="side-hook-item" onclick="location.href='./flows.html'">
+          <span class="side-hook-symbol">CRYPTO</span>
+          <span class="side-hook-dir bearish">↓ OUT</span>
+          <span class="side-hook-conv">50%</span>
+        </div>
+<div class="side-hook-item" onclick="location.href='./flows.html'">
+          <span class="side-hook-symbol">CRYPTO</span>
+          <span class="side-hook-dir bullish">↑ INF</span>
+          <span class="side-hook-conv">75%</span>
+        </div>
+<div class="side-hook-item" onclick="location.href='./flows.html'">
+          <span class="side-hook-symbol">TECH</span>
+          <span class="side-hook-dir bullish">↑ INF</span>
+          <span class="side-hook-conv">50%</span>
+        </div>
       </div>
     </div>
     <div class="side-section">
-      <div class="side-section-label">TOP VELOCITY</div>
+      <div class="side-section-label" data-i18n="side_top_velocity">TOP VELOCITY</div>
       <a href="./flow-nodes.html" class="side-velocity" id="sideVelocity">
-        <span class="side-vel-value">—</span>
-        <span class="side-vel-desc">No accelerating flows</span>
+        <span class="side-vel-value">2.4×</span>
+        <span class="side-vel-desc">$4.8B outflow crypto</span>
       </a>
     </div>
     <div class="side-section">
-      <div class="side-section-label">SENTIMENT</div>
+      <div class="side-section-label" data-i18n="side_sentiment">SENTIMENT</div>
       <div class="side-sentiment" id="sideSentiment">
-        <span class="side-sent-value">—</span>
-        <span class="side-sent-label">Loading…</span>
+        <span class="side-sent-value bullish">75%</span>
+        <span class="side-sent-label">Inflow ratio · 9/12</span>
       </div>
     </div>
   </aside>
@@ -205,8 +217,8 @@
   <!-- INTEL LAYER — Reality: Analysis supported or contradicted by capital flows -->
   <!-- ═══════════════════════════════════════════════ -->
   <div class="layer-header intel-header">
-    <span class="layer-label">INTEL</span>
-    <span class="layer-desc">What's happening — and where the money is actually going.</span>
+    <span class="layer-label" data-i18n="layer_intel">INTEL</span>
+    <span class="layer-desc" data-i18n="layer_intel_desc">What's happening — and where the money is actually going.</span>
   </div>
 
   <section class="container collapsible expanded" id="storiesTeaser">
@@ -255,8 +267,8 @@
   <!-- ALPHA LAYER — Execution: Strategic bets following or fading the intel -->
   <!-- ═══════════════════════════════════════════════ -->
   <div class="layer-header alpha-header">
-    <span class="layer-label">ALPHA</span>
-    <span class="layer-desc">Strategic positioning derived from the intel — where to act.</span>
+    <span class="layer-label" data-i18n="layer_alpha">ALPHA</span>
+    <span class="layer-desc" data-i18n="layer_alpha_desc">Strategic positioning derived from the intel — where to act.</span>
   </div>
 
   <section class="container collapsible" id="signalTeaser">
@@ -316,7 +328,20 @@
   </div>
   <aside class="col-context" id="colContext">
     <div class="side-section">
-      <div class="side-section-label">FRESHNESS</div>
+      <div class="side-section-label" data-i18n="side_freshness">FRESHNESS</div>
+      <div class="side-freshness" id="sideFreshness">
+        <div class="fresh-item"><span class="fresh-dot stories-dot"></span><span>Stories</span><span class="fresh-age" id="freshStories">—</span></div>
+        <div class="fresh-item"><span class="fresh-dot flows-dot"></span><span>Flows</span><span class="fresh-age" id="freshFlows">—</span></div>
+      </div>
+      <div class="side-section-label" style="margin-top:10px;" data-i18n="side_flow_sectors">FLOW SECTORS</div>
+      <div class="side-freshness">
+        <div class="fresh-item"><span class="fresh-dot" style="background:#059669"></span><span>crypto</span><span class="fresh-age">$318.4B</span></div>
+<div class="fresh-item"><span class="fresh-dot" style="background:#059669"></span><span>commodities</span><span class="fresh-age">$92.2B</span></div>
+<div class="fresh-item"><span class="fresh-dot" style="background:#059669"></span><span>tech</span><span class="fresh-age">$49.7B</span></div>
+<div class="fresh-item"><span class="fresh-dot" style="background:#DC2626"></span><span>defense</span><span class="fresh-age">$6.5B</span></div>
+<div class="fresh-item"><span class="fresh-dot" style="background:#059669"></span><span>equities</span><span class="fresh-age">$3.5B</span></div>
+
+      </div>
       <div class="side-freshness" id="sideFreshness">
         <div class="fresh-item"><span class="fresh-dot stories-dot"></span><span>Stories</span><span class="fresh-age" id="freshStories">—</span></div>
         <div class="fresh-item"><span class="fresh-dot flows-dot"></span><span>Flows</span><span class="fresh-age" id="freshFlows">—</span></div>
@@ -325,7 +350,7 @@
       </div>
     </div>
     <div class="side-section">
-      <div class="side-section-label">NAVIGATE</div>
+      <div class="side-section-label" data-i18n="side_navigate">NAVIGATE</div>
       <nav class="side-breadcrumbs">
         <a href="./event_horizon.html" class="side-bc-link">→ Horizon <span class="side-bc-desc">Geopolitical chokepoints</span></a>
         <a href="./flow-nodes.html" class="side-bc-link">→ Flow Nodes <span class="side-bc-desc">Capital network graph</span></a>
@@ -334,7 +359,7 @@
       </nav>
     </div>
     <div class="side-section">
-      <div class="side-section-label">GAZZETTA</div>
+      <div class="side-section-label" data-i18n="side_gazzetta">GAZZETTA</div>
       <nav class="side-meta-links">
         <a href="./about.html">About</a>
         <a href="./capital.html">Methodology</a>
@@ -408,6 +433,21 @@
     try{var sd=JSON.parse(localStorage.getItem('gazzetta_signal_data')||'{}');sf('freshSignal',sd);}catch(e){}
   }
   setTimeout(populateSides,1000);
+})();
+</script>
+
+
+<script>
+/* v23.6: Mobile hint expander — tap asset icon to reveal hook + flow */
+(function(){
+  if (window.innerWidth > 768) return;
+  document.addEventListener('click', function(e){
+    var chip = e.target.closest('.meta-chip');
+    if (!chip) return;
+    chip.classList.toggle('expanded');
+    var detail = chip.querySelector('.meta-chip-detail');
+    if (detail) detail.classList.toggle('visible');
+  });
 })();
 </script>
 

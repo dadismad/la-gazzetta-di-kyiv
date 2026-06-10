@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T13:14:44.605746+00:00",
+  "generated_at": "2026-06-10T13:27:07.062203+00:00",
   "total_signals": 35,
   "aggregate_score": 63,
   "signals": [
@@ -45,7 +45,7 @@
       "contradiction": 22,
       "event_strength": 15,
       "asset_class": "commodities",
-      "direction": "inflow"
+      "direction": "outflow"
     },
     {
       "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
@@ -67,7 +67,7 @@
       "contradiction": 22,
       "event_strength": 15,
       "asset_class": "commodities",
-      "direction": "inflow"
+      "direction": "outflow"
     },
     {
       "story_id": "n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
@@ -89,7 +89,7 @@
       "contradiction": 15,
       "event_strength": 15,
       "asset_class": "commodities",
-      "direction": "inflow"
+      "direction": "outflow"
     },
     {
       "story_id": "n21_multi_pillar__ukraine_assassinates_russian_colonel_missile_supply_chief",
@@ -100,7 +100,7 @@
       "contradiction": 15,
       "event_strength": 15,
       "asset_class": "commodities",
-      "direction": "inflow"
+      "direction": "outflow"
     },
     {
       "story_id": "n21_blockchain_agentic__blackrock_transferring_btc_to_exchanges_for_client_sales__o",
@@ -122,7 +122,7 @@
       "contradiction": 15,
       "event_strength": 15,
       "asset_class": "commodities",
-      "direction": "inflow"
+      "direction": "outflow"
     },
     {
       "story_id": "n21_abundance_tech__btc_crash__worst_week_since_ftx_collapse_microstrategy_bou",
@@ -166,7 +166,7 @@
       "contradiction": 15,
       "event_strength": 15,
       "asset_class": "commodities",
-      "direction": "inflow"
+      "direction": "outflow"
     }
   ]
 }
