@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-06-10T12:46:01.762089+00:00",
+  "healthy": true,
+  "results": {
+    "ssl": {
+      "ok": true,
+      "expiry": "Sep  4 11:19:08 2026 GMT",
+      "raw": "notAfter=Sep  4 11:19:08 2026 GMT"
+    },
+    "reachability": {
+      "ok": true,
+      "status": 200,
+      "etag": "\"d6b909874de475549891015afef1ae12\"",
+      "last_modified": "Wed, 10 Jun 2026 12:11:11 GMT",
+      "content_type": "text/html"
+    },
+    "anti_lying": {
+      "ok": true,
+      "issues": []
+    },
+    "gcs": {
+      "ok": true,
+      "mb_used": 4.41,
+      "pct_free_tier": 0.09
+    }
+  }
+}

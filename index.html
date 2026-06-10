@@ -1,295 +1,458 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>La Gazzetta di Kyiv — Capital Flow Intelligence</title>
-  <meta name="description" content="Track capital flows, trade contradictions, and follow the money through 5 intelligence products."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="./data/stories.json" as="fetch" crossorigin="anonymous">
-  <link rel="preload" href="./data/flows.json" as="fetch" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+     1|     1|<!doctype html>
+     2|     2|<html lang="en">
+     3|     3|<head>
+     4|     4|  <meta charset="utf-8"/>
+     5|     5|  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+     6|     6|  <title>La Gazzetta di Kyiv — Capital Flow Intelligence</title>
+     7|     7|  <meta name="description" content="Track capital flows, trade contradictions, and follow the money through 5 intelligence products."/>
+     8|     8|  <link rel="preconnect" href="https://fonts.googleapis.com">
+     9|     9|  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    10|    10|  <link rel="preload" href="./data/stories.json" as="fetch" crossorigin="anonymous">
+    11|    11|  <link rel="preload" href="./data/flows.json" as="fetch" crossorigin="anonymous">
+    12|    12|  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+    13|    13|  
+  <style>
+    /* v23.5: Mobile progressive disclosure — interactive chips, context hooks, <details> */
+    .card-context-hook {
+      font-family: var(--body); font-size: 12px; font-style: italic;
+      color: var(--ink-light); margin: 6px 0; line-height: 1.4;
+      display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card-context-hook.expanded { -webkit-line-clamp: unset; }
+    .meta-chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0; }
+    .meta-chip {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 2px 8px; border: 1px solid #E5E7EB;
+      font-family: var(--sans); font-size: 10px; font-weight: 600;
+      color: var(--ink-muted); background: #FFFFFF;
+      cursor: pointer; transition: border-color 0.15s, color 0.15s;
+    }
+    .meta-chip:hover { border-color: var(--gold); color: var(--ink); }
+    .meta-chip.expanded { border-color: var(--gold); background: #FFFDF5; color: var(--ink); }
+    .meta-chip-icon { font-size: 12px; flex-shrink: 0; }
+    .meta-chip-detail { display: none; font-size: 10px; font-weight: 400; color: var(--ink-light); margin-top: 4px; padding: 6px 8px; background: #F9FAFB; border-left: 2px solid var(--gold); }
+    .meta-chip-detail.visible { display: block; }
+    
+    /* <details> for technical metrics */
+    .tech-metrics { margin: 8px 0; }
+    .tech-metrics summary {
+      font-family: var(--sans); font-size: 10px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--ink-muted); cursor: pointer; padding: 4px 0;
+      list-style: none;
+    }
+    .tech-metrics summary::-webkit-details-marker { display: none; }
+    .tech-metrics summary::before { content: '+ '; font-weight: 700; color: var(--gold); }
+    .tech-metrics[open] summary::before { content: '− '; }
+    .tech-metrics-content { padding: 8px 0 8px 12px; font-family: var(--sans); font-size: 11px; color: var(--ink-light); border-left: 1px solid #E5E7EB; }
+    
+    /* One-sentence hook styling */
+    .story-hook-line {
+      font-family: var(--body); font-size: 13px; font-style: italic;
+      color: var(--ink-light); line-height: 1.5;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+      overflow: hidden; margin: 4px 0 8px;
+    }
+    @media (max-width: 600px) {
+      .meta-chips { gap: 4px; }
+      .meta-chip { font-size: 9px; padding: 2px 6px; }
+      .story-hook-line { font-size: 12px; -webkit-line-clamp: 1; }
+    }
+  </style>
+
   <link rel="stylesheet" href="./styles.75fe1a1e.css"/>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='2' fill='%23111827'/><text x='16' y='24' text-anchor='middle' font-size='22' font-weight='bold' font-family='Georgia,serif' fill='%23D4AF37'>G</text></svg>"/>
-
-  <link rel="canonical" href="https://www.lagazzettadikyiv.com/"/>
-  <link rel="alternate" hreflang="en" href="https://www.lagazzettadikyiv.com/"/>
-  <link rel="alternate" hreflang="ru" href="https://www.lagazzettadikyiv.com/ru/"/>
-  <link rel="alternate" hreflang="x-default" href="https://www.lagazzettadikyiv.com/"/>
-  <meta property="og:title" content="La Gazzetta di Kyiv — Capital Flow Intelligence"/>
-  <meta property="og:description" content="Track capital flows, trade contradictions, and follow the money through 5 intelligence products."/>
-  <meta property="og:url" content="https://www.lagazzettadikyiv.com/"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:site_name" content="La Gazzetta di Kyiv"/>
-  <meta name="twitter:card" content="summary"/>
-  <meta name="twitter:title" content="La Gazzetta di Kyiv — Capital Flow Intelligence"/>
-  <meta name="twitter:description" content="Track capital flows, trade contradictions, and follow the money through 5 intelligence products."/>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "La Gazzetta di Kyiv",
-    "url": "https://www.lagazzettadikyiv.com/",
-    "description": "Contradiction-first narrative intelligence. Capital flow analysis, trade ideas, and verifiable predictions.",
-    "sameAs": [
-      "https://t.me/GazzettaDiKyiv",
-      "https://www.reddit.com/r/LaGazzettadiKyiv/"
-    ]
-  }
-  </script>
-
-</head>
-<body>
-
-<header class="masthead">
-  <div class="masthead-left">
-    <span class="masthead-bulava" title="Crossed bulavas — Hetman's maces" aria-hidden="true">
-      <svg viewBox="0 0 14 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Handle shaft -->
-        <line x1="7" y1="18" x2="7" y2="35" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <!-- Handle bands -->
-        <rect x="3" y="21" width="8" height="2" rx="1" fill="currentColor" opacity="0.5"/>
-        <rect x="3.5" y="27" width="7" height="1.5" rx="0.75" fill="currentColor" opacity="0.4"/>
-        <!-- Pommel -->
-        <rect x="2" y="34" width="10" height="3" rx="1.5" fill="currentColor" opacity="0.4"/>
-        <!-- Neck -->
-        <line x1="7" y1="14" x2="7" y2="18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <!-- Collar -->
-        <rect x="2" y="13" width="10" height="2" rx="1" fill="currentColor" opacity="0.5"/>
-        <!-- Head sphere -->
-        <circle cx="7" cy="8" r="5.5" stroke="currentColor" stroke-width="1.6"/>
-        <circle cx="7" cy="8" r="2.5" fill="currentColor" opacity="0.25"/>
-        <!-- Ornamental band -->
-        <line x1="3" y1="8" x2="11" y2="8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-        <!-- Spike -->
-        <line x1="7" y1="2.5" x2="7" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        <!-- Finial -->
-        <circle cx="7" cy="1.5" r="1.5" fill="currentColor"/>
-      </svg>
-      <svg viewBox="0 0 14 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <line x1="7" y1="18" x2="7" y2="35" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <rect x="3" y="21" width="8" height="2" rx="1" fill="currentColor" opacity="0.5"/>
-        <rect x="3.5" y="27" width="7" height="1.5" rx="0.75" fill="currentColor" opacity="0.4"/>
-        <rect x="2" y="34" width="10" height="3" rx="1.5" fill="currentColor" opacity="0.4"/>
-        <line x1="7" y1="14" x2="7" y2="18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <rect x="2" y="13" width="10" height="2" rx="1" fill="currentColor" opacity="0.5"/>
-        <circle cx="7" cy="8" r="5.5" stroke="currentColor" stroke-width="1.6"/>
-        <circle cx="7" cy="8" r="2.5" fill="currentColor" opacity="0.25"/>
-        <line x1="3" y1="8" x2="11" y2="8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-        <line x1="7" y1="2.5" x2="7" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        <circle cx="7" cy="1.5" r="1.5" fill="currentColor"/>
-      </svg>
-    </span>
-    <span class="masthead-name">La Gazzetta di Kyiv</span>
-    <span class="masthead-caduceus" title="Caduceus — commerce, flow, intelligence" aria-hidden="true">
-      <svg viewBox="0 0 20 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Staff -->
-        <line x1="10" y1="8" x2="10" y2="36" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <!-- Staff base -->
-        <circle cx="10" cy="36" r="2.5" fill="currentColor" opacity="0.35"/>
-        <!-- Left wing -->
-        <path d="M10 8 Q4 2 2 6 Q4 10 10 10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
-        <!-- Right wing -->
-        <path d="M10 8 Q16 2 18 6 Q16 10 10 10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
-        <!-- Left serpent -->
-        <path d="M3 14 Q6 12 10 16 Q14 20 10 24 Q6 28 10 32 Q14 36 17 34" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-        <!-- Right serpent -->
-        <path d="M17 14 Q14 12 10 16 Q6 20 10 24 Q14 28 10 32 Q6 36 3 34" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-        <!-- Serpent heads -->
-        <circle cx="3" cy="14" r="1.3" fill="currentColor" opacity="0.5"/>
-        <circle cx="17" cy="14" r="1.3" fill="currentColor" opacity="0.5"/>
-      </svg>
-    </span>
-  </div>
-  <div class="masthead-right">
-    <span class="masthead-tagline" data-i18n="masthead_tagline">Capital moves markets. We track where it's going.</span>
-    <nav class="product-nav">
-      <span class="nav-group-label">INTEL</span>
-      <a href="./stories.html" class="nav-link">Stories</a>
-      <a href="./flows.html" class="nav-link">Flows</a>
-      <a href="./event_horizon.html" class="nav-link">Horizon</a>
-      <a href="./flow-nodes.html" class="nav-link">Nodes</a>
-      <span class="nav-group-label">ALPHA</span>
-      <a href="./signal.html" class="nav-link">Signal</a>
-      <a href="./trades.html" class="nav-link">Trades</a>
-      <a href="./track.html" class="nav-link">Track</a>
-    </nav>
-    <time class="masthead-meta" id="mastheadMeta" datetime="2026-06-06T15:00:00.000Z">—</time>
-    <span class="lang-switcher">
-      <button class="lang-switch active" data-lang="en" onclick="i18n.switchLang('en')" aria-label="English">EN</button>
-      <button class="lang-switch" data-lang="ru" onclick="i18n.switchLang('ru')" aria-label="Русский">RU</button>
-    </span>
-  </div>
-</header>
-
-
-<section class="hero">
-  <div class="hero-content">
-    <h1 class="hero-headline" data-i18n="hero_headline">The stories that move markets — before they move prices.</h1>
-    <p class="hero-subtitle">
-      <span data-i18n="hero_subtitle_p1">Track capital flows, trade the contradictions, and follow the money through</span>
-      <span id="heroProductCount">—</span>
-      <span data-i18n="hero_subtitle_p2">intelligence products — from narrative reports to verifiable bets.</span>
-    </p>
-    <!-- v2.0: Hero hook indicators -->
-    <div class="hero-indicators" id="heroIndicators">
-      <a href="./signal.html" class="hero-ind" id="heroContradictions" title="Active narrative-to-data divergences">
-        <span class="hero-ind-value">—</span>
-        <span class="hero-ind-label">Contradictions</span>
-      </a>
-      <a href="./flow-nodes.html" class="hero-ind" id="heroTopVelocity" title="Highest-momentum capital flow category">
-        <span class="hero-ind-value">—</span>
-        <span class="hero-ind-label">Top Velocity</span>
-      </a>
-      <a href="./flows.html" class="hero-ind" id="heroFreshness" title="Last system data refresh">
-        <span class="hero-ind-value">—</span>
-        <span class="hero-ind-label">Freshness</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<main class="hints-lobby">
-
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- INTEL LAYER — Reality: Analysis supported or contradicted by capital flows -->
-  <!-- ═══════════════════════════════════════════════ -->
-  <div class="layer-header intel-header">
-    <span class="layer-label">INTEL</span>
-    <span class="layer-desc">What's happening — and where the money is actually going.</span>
-  </div>
-
-  <section class="container collapsible expanded" id="storiesTeaser">
-    <div class="container-header">
-      <span class="container-title" data-i18n="container_stories_title">Stories</span>
-      <span class="container-count" id="teaserStoryCount">—</span>
-      <span class="flow-freshness" id="storyFreshness"></span>
-      <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-    </div>
-    <div class="container-desc" data-i18n="container_stories_desc">Narrative intelligence decoded — who benefits, who loses, what the money already priced in.</div>
-    <div class="container-body" id="storiesTeaserBody">
-      <div id="storiesTeaserContent" class="teaser-list"></div>
-      <a href="./stories.html" class="teaser-full-link" data-i18n="all_stories">All stories →</a>
-    </div>
-  </section>
-
-  <section class="container collapsible" id="flowsTeaser">
-    <div class="container-header">
-      <span class="container-title" data-i18n="container_flows_title">Capital Flows</span>
-      <span class="container-subtitle" id="teaserFlowSub">—</span>
-      <span class="flow-freshness" id="flowFreshness"></span>
-      <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-    </div>
-    <div class="container-desc" data-i18n="container_flows_desc">Where the smart money is going — directional conviction, velocity, projected movement.</div>
-    <div class="container-body" id="flowsTeaserBody">
-      <div id="flowsTeaserContent" class="teaser-list"></div>
-      <a href="./flows.html" class="teaser-full-link" data-i18n="full_flow_dashboard">Full flow dashboard →</a>
-    </div>
-  </section>
-
-  <section class="container collapsible" id="tradesTeaser">
-    <div class="container-header">
-      <span class="container-title" data-i18n="nav_trades">Trade Ideas</span>
-      <span class="container-subtitle" id="teaserTradeSub">—</span>
-      <span class="flow-freshness" id="tradeFreshness"></span>
-      <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-    </div>
-    <div class="container-desc" data-i18n="container_anchors_desc_prefix">Positions derived from flows and narrative intelligence — entry zones, stop levels, conviction.</div>
-    <div class="container-body" id="tradesTeaserBody">
-      <div id="tradesTeaserContent" class="teaser-list"></div>
-      <a href="./trades.html" class="teaser-full-link" data-i18n="all_trade_ideas">All trade ideas →</a>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════ -->
-  <!-- ALPHA LAYER — Execution: Strategic bets following or fading the intel -->
-  <!-- ═══════════════════════════════════════════════ -->
-  <div class="layer-header alpha-header">
-    <span class="layer-label">ALPHA</span>
-    <span class="layer-desc">Strategic positioning derived from the intel — where to act.</span>
-  </div>
-
-  <section class="container collapsible" id="signalTeaser">
-    <div class="container-header">
-      <span class="container-title" data-i18n="container_signal_title">The Signal</span>
-      <span class="container-subtitle" id="teaserSignalSub">—</span>
-      <span class="flow-freshness" id="signalFreshness"></span>
-      <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-    </div>
-    <div class="container-desc" data-i18n="container_signal_desc">Triangulation — stories × flows × trades. Divergence is the edge.</div>
-    <div class="container-body" id="signalTeaserBody">
-      <div id="signalTeaserContent" class="teaser-list"></div>
-      <a href="./signal.html" class="teaser-full-link" data-i18n="full_signal_dashboard">Full signal dashboard →</a>
-    </div>
-  </section>
-
-  <section class="container collapsible" id="trackTeaser">
-    <div class="container-header">
-      <span class="container-title" data-i18n="container_track_title">Track Record</span>
-      <span class="container-subtitle" id="teaserTrackSub">—</span>
-      <span class="flow-freshness" id="trackFreshness"></span>
-      <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
-    </div>
-    <div class="container-desc" data-i18n="container_track_desc">Verifiable bets — every prediction, every outcome, no cherry-picking.</div>
-    <div class="container-body" id="trackTeaserBody">
-      <div id="trackTeaserContent" class="teaser-list"></div>
-      <a href="./track.html" class="teaser-full-link" data-i18n="full_track_record">Full track record →</a>
-    </div>
-  </section>
-
-  <!-- v2.0: Services Utility Grid — persona-driven value props -->
-  <section class="container" id="servicesGrid" style="background:transparent;border:none;">
-    <div class="container-header">
-      <span class="container-title">How We Serve You</span>
-    </div>
-    <div class="container-body">
-      <div class="services-grid">
-        <a href="./stories.html" class="svc-card" id="svcCSuite">
-          <span class="svc-persona">C-SUITE</span>
-          <span class="svc-title">Macro Horizon</span>
-          <span class="svc-desc">Structural policy shifts, supply-chain bottlenecks, regulatory implications. Board-ready context for capital allocators.</span>
-        </a>
-        <a href="./flow-nodes.html" class="svc-card" id="svcQuant">
-          <span class="svc-persona">QUANTITATIVE</span>
-          <span class="svc-title">Flow Telemetry</span>
-          <span class="svc-desc">Capital velocity differentials, correlation coefficients, heat scores. Low-latency raw data. Zero narrative fluff.</span>
-        </a>
-        <a href="./trades.html" class="svc-card" id="svcTrader">
-          <span class="svc-persona">EXECUTION</span>
-          <span class="svc-title">Action Triggers</span>
-          <span class="svc-desc">Directional bias, entry/stop levels, conviction ratings with ATR-derived stops. Ultra-concise, trade-ready.</span>
-        </a>
-      </div>
-    </div>
-  </section>
-</main>
-<footer class="footer">
-  <a href="./about.html" data-i18n="nav_about">About</a>
-  <span>·</span>
-  <a href="https://t.me/GazzettaDiKyiv">Telegram</a>
-  <span>·</span>
-  <a href="https://www.reddit.com/r/LaGazzettadiKyiv/">Reddit</a>
-  <span>·</span>
-  <span data-i18n="footer_kyiv">Kyiv · Since 2025</span>
-</footer>
-
-<script src="./i18n.041121bb.js"></script>
-<script src="./app.2d0b5f18.js"></script>
-
-<!-- Retail onboarding — first-visit tooltip (v22.16) -->
-<div id="onboardingOverlay" style="display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:white;padding:12px 18px;border-radius:0;font-family:Inter,system-ui;font-size:12px;line-height:1.5;z-index:9999;max-width:360px;box-shadow:none;cursor:pointer;" onclick="this.style.display='none';localStorage.setItem('gazzetta_onboarded','1');">
-  <strong>Welcome to La Gazzetta di Kyiv</strong><br>
-  We track where big money moves → decode why → show you how to position.<br>
-  <span style="opacity:0.7;">Stories → Flows → Trades → Signal → Track Record.</span><br>
-  <span style="font-size:10px;opacity:0.5;">Tap anywhere to dismiss</span>
-</div>
+    14|    14|  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='2' fill='%23111827'/><text x='16' y='24' text-anchor='middle' font-size='22' font-weight='bold' font-family='Georgia,serif' fill='%23D4AF37'>G</text></svg>"/>
+    15|    15|
+    16|    16|  <link rel="canonical" href="https://www.lagazzettadikyiv.com/"/>
+    17|    17|  <link rel="alternate" hreflang="en" href="https://www.lagazzettadikyiv.com/"/>
+    18|    18|  <link rel="alternate" hreflang="ru" href="https://www.lagazzettadikyiv.com/ru/"/>
+    19|    19|  <link rel="alternate" hreflang="x-default" href="https://www.lagazzettadikyiv.com/"/>
+    20|    20|  <meta property="og:title" content="La Gazzetta di Kyiv — Capital Flow Intelligence"/>
+    21|    21|  <meta property="og:description" content="Track capital flows, trade contradictions, and follow the money through 5 intelligence products."/>
+    22|    22|  <meta property="og:url" content="https://www.lagazzettadikyiv.com/"/>
+    23|    23|  <meta property="og:type" content="website"/>
+    24|    24|  <meta property="og:site_name" content="La Gazzetta di Kyiv"/>
+    25|    25|  <meta name="twitter:card" content="summary"/>
+    26|    26|  <meta name="twitter:title" content="La Gazzetta di Kyiv — Capital Flow Intelligence"/>
+    27|    27|  <meta name="twitter:description" content="Track capital flows, trade contradictions, and follow the money through 5 intelligence products."/>
+    28|    28|  <script type="application/ld+json">
+    29|    29|  {
+    30|    30|    "@context": "https://schema.org",
+    31|    31|    "@type": "Organization",
+    32|    32|    "name": "La Gazzetta di Kyiv",
+    33|    33|    "url": "https://www.lagazzettadikyiv.com/",
+    34|    34|    "description": "Contradiction-first narrative intelligence. Capital flow analysis, trade ideas, and verifiable predictions.",
+    35|    35|    "sameAs": [
+    36|    36|      "https://t.me/GazzettaDiKyiv",
+    37|    37|      "https://www.reddit.com/r/LaGazzettadiKyiv/"
+    38|    38|    ]
+    39|    39|  }
+    40|    40|  </script>
+    41|    41|
+    42|    42|</head>
+    43|    43|<body>
+    44|    44|
+    45|    45|<header class="masthead">
+    46|    46|  <div class="masthead-left">
+    47|    47|    <span class="masthead-bulava" title="Crossed bulavas — Hetman's maces" aria-hidden="true">
+    48|    48|      <svg viewBox="0 0 14 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+    49|    49|        <!-- Handle shaft -->
+    50|    50|        <line x1="7" y1="18" x2="7" y2="35" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    51|    51|        <!-- Handle bands -->
+    52|    52|        <rect x="3" y="21" width="8" height="2" rx="1" fill="currentColor" opacity="0.5"/>
+    53|    53|        <rect x="3.5" y="27" width="7" height="1.5" rx="0.75" fill="currentColor" opacity="0.4"/>
+    54|    54|        <!-- Pommel -->
+    55|    55|        <rect x="2" y="34" width="10" height="3" rx="1.5" fill="currentColor" opacity="0.4"/>
+    56|    56|        <!-- Neck -->
+    57|    57|        <line x1="7" y1="14" x2="7" y2="18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    58|    58|        <!-- Collar -->
+    59|    59|        <rect x="2" y="13" width="10" height="2" rx="1" fill="currentColor" opacity="0.5"/>
+    60|    60|        <!-- Head sphere -->
+    61|    61|        <circle cx="7" cy="8" r="5.5" stroke="currentColor" stroke-width="1.6"/>
+    62|    62|        <circle cx="7" cy="8" r="2.5" fill="currentColor" opacity="0.25"/>
+    63|    63|        <!-- Ornamental band -->
+    64|    64|        <line x1="3" y1="8" x2="11" y2="8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+    65|    65|        <!-- Spike -->
+    66|    66|        <line x1="7" y1="2.5" x2="7" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    67|    67|        <!-- Finial -->
+    68|    68|        <circle cx="7" cy="1.5" r="1.5" fill="currentColor"/>
+    69|    69|      </svg>
+    70|    70|      <svg viewBox="0 0 14 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+    71|    71|        <line x1="7" y1="18" x2="7" y2="35" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    72|    72|        <rect x="3" y="21" width="8" height="2" rx="1" fill="currentColor" opacity="0.5"/>
+    73|    73|        <rect x="3.5" y="27" width="7" height="1.5" rx="0.75" fill="currentColor" opacity="0.4"/>
+    74|    74|        <rect x="2" y="34" width="10" height="3" rx="1.5" fill="currentColor" opacity="0.4"/>
+    75|    75|        <line x1="7" y1="14" x2="7" y2="18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    76|    76|        <rect x="2" y="13" width="10" height="2" rx="1" fill="currentColor" opacity="0.5"/>
+    77|    77|        <circle cx="7" cy="8" r="5.5" stroke="currentColor" stroke-width="1.6"/>
+    78|    78|        <circle cx="7" cy="8" r="2.5" fill="currentColor" opacity="0.25"/>
+    79|    79|        <line x1="3" y1="8" x2="11" y2="8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+    80|    80|        <line x1="7" y1="2.5" x2="7" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    81|    81|        <circle cx="7" cy="1.5" r="1.5" fill="currentColor"/>
+    82|    82|      </svg>
+    83|    83|    </span>
+    84|    84|    <span class="masthead-name">La Gazzetta di Kyiv</span>
+    85|    85|    <span class="masthead-caduceus" title="Caduceus — commerce, flow, intelligence" aria-hidden="true">
+    86|    86|      <svg viewBox="0 0 20 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    87|    87|        <!-- Staff -->
+    88|    88|        <line x1="10" y1="8" x2="10" y2="36" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    89|    89|        <!-- Staff base -->
+    90|    90|        <circle cx="10" cy="36" r="2.5" fill="currentColor" opacity="0.35"/>
+    91|    91|        <!-- Left wing -->
+    92|    92|        <path d="M10 8 Q4 2 2 6 Q4 10 10 10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    93|    93|        <!-- Right wing -->
+    94|    94|        <path d="M10 8 Q16 2 18 6 Q16 10 10 10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    95|    95|        <!-- Left serpent -->
+    96|    96|        <path d="M3 14 Q6 12 10 16 Q14 20 10 24 Q6 28 10 32 Q14 36 17 34" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+    97|    97|        <!-- Right serpent -->
+    98|    98|        <path d="M17 14 Q14 12 10 16 Q6 20 10 24 Q14 28 10 32 Q6 36 3 34" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+    99|    99|        <!-- Serpent heads -->
+   100|   100|        <circle cx="3" cy="14" r="1.3" fill="currentColor" opacity="0.5"/>
+   101|   101|        <circle cx="17" cy="14" r="1.3" fill="currentColor" opacity="0.5"/>
+   102|   102|      </svg>
+   103|   103|    </span>
+   104|   104|  </div>
+   105|   105|  <div class="masthead-right">
+   106|   106|    <span class="masthead-tagline" data-i18n="masthead_tagline">Capital moves markets. We track where it's going.</span>
+   107|   107|    <nav class="product-nav">
+   108|   108|      <span class="nav-group-label">INTEL</span>
+   109|   109|      <a href="./stories.html" class="nav-link">Stories</a>
+   110|   110|      <a href="./flows.html" class="nav-link">Flows</a>
+   111|   111|      <a href="./event_horizon.html" class="nav-link">Horizon</a>
+   112|   112|      <a href="./flow-nodes.html" class="nav-link">Nodes</a>
+   113|   113|      <span class="nav-group-label">ALPHA</span>
+   114|   114|      <a href="./signal.html" class="nav-link">Signal</a>
+   115|   115|      <a href="./trades.html" class="nav-link">Trades</a>
+   116|   116|      <a href="./track.html" class="nav-link">Track</a>
+   117|   117|    </nav>
+   118|   118|    <time class="masthead-meta" id="mastheadMeta" datetime="2026-06-06T15:00:00.000Z">—</time>
+   119|   119|    <span class="lang-switcher">
+   120|   120|      <button class="lang-switch active" data-lang="en" onclick="i18n.switchLang('en')" aria-label="English">EN</button>
+   121|   121|      <button class="lang-switch" data-lang="ru" onclick="i18n.switchLang('ru')" aria-label="Русский">RU</button>
+   122|   122|    </span>
+   123|   123|  </div>
+   124|   124|</header>
+   125|   125|
+   126|   126|
+   127|   127|<section class="hero">
+   128|   128|  <div class="hero-content">
+   129|   129|    <h1 class="hero-headline" data-i18n="hero_headline">The stories that move markets — before they move prices.</h1>
+   130|   130|    <p class="hero-subtitle">
+   131|   131|      <span data-i18n="hero_subtitle_p1">Track capital flows, trade the contradictions, and follow the money through</span>
+   132|   132|      <span id="heroProductCount">—</span>
+   133|   133|      <span data-i18n="hero_subtitle_p2">intelligence products — from narrative reports to verifiable bets.</span>
+   134|   134|    </p>
+   135|   135|    <!-- v2.0: Hero hook indicators -->
+   136|   136|    <div class="hero-indicators" id="heroIndicators">
+   137|   137|      <a href="./signal.html" class="hero-ind" id="heroContradictions" title="Active narrative-to-data divergences">
+   138|   138|        <span class="hero-ind-value">—</span>
+   139|   139|        <span class="hero-ind-label">Contradictions</span>
+   140|   140|      </a>
+   141|   141|      <a href="./flow-nodes.html" class="hero-ind" id="heroTopVelocity" title="Highest-momentum capital flow category">
+   142|   142|        <span class="hero-ind-value">—</span>
+   143|   143|        <span class="hero-ind-label">Top Velocity</span>
+   144|   144|      </a>
+   145|   145|      <a href="./flows.html" class="hero-ind" id="heroFreshness" title="Last system data refresh">
+   146|   146|        <span class="hero-ind-value">—</span>
+   147|   147|        <span class="hero-ind-label">Freshness</span>
+   148|   148|      </a>
+   149|   149|    </div>
+   150|   150|  </div>
+   151|   151|</section>
+   152|   152|
+   153|   153|<main class="hints-lobby">
+   154|
+   155|  <!-- ═══════════════════════════════════════════════════════ -->
+   156|  <!-- COLUMN A: ALPHA — Real-time signals, hooks, velocity  (21%) -->
+   157|  <!-- ═══════════════════════════════════════════════════════ -->
+   158|  <aside class="col-alpha" id="colAlpha">
+   159|    <div class="side-section">
+   160|      <div class="side-section-label">TRADE HOOKS</div>
+   161|      <div class="side-hooks" id="sideHooks">
+   162|        <div class="side-hook-item">
+   163|          <span class="side-hook-symbol">—</span>
+   164|          <span class="side-hook-dir">—</span>
+   165|          <span class="side-hook-conv">—</span>
+   166|        </div>
+   167|        <div class="side-hook-item">
+   168|          <span class="side-hook-symbol">—</span>
+   169|          <span class="side-hook-dir">—</span>
+   170|          <span class="side-hook-conv">—</span>
+   171|        </div>
+   172|        <div class="side-hook-item">
+   173|          <span class="side-hook-symbol">—</span>
+   174|          <span class="side-hook-dir">—</span>
+   175|          <span class="side-hook-conv">—</span>
+   176|        </div>
+   177|      </div>
+   178|    </div>
+   179|    <div class="side-section">
+   180|      <div class="side-section-label">TOP VELOCITY</div>
+   181|      <a href="./flow-nodes.html" class="side-velocity" id="sideVelocity">
+   182|        <span class="side-vel-value">—</span>
+   183|        <span class="side-vel-desc">No accelerating flows</span>
+   184|      </a>
+   185|    </div>
+   186|    <div class="side-section">
+   187|      <div class="side-section-label">SENTIMENT</div>
+   188|      <div class="side-sentiment" id="sideSentiment">
+   189|        <span class="side-sent-value">—</span>
+   190|        <span class="side-sent-label">Loading…</span>
+   191|      </div>
+   192|    </div>
+   193|  </aside>
+   194|
+   195|  <!-- ═══════════════════════════════════════════════════════ -->
+   196|  <!-- COLUMN B: INTEL — Main thread: Stories + Analysis (61%) -->
+   197|  <!-- ═══════════════════════════════════════════════════════ -->
+   198|  <div class="col-intel" id="colIntel">
+   199|   154|
+   200|   155|  <!-- ═══════════════════════════════════════════════ -->
+   201|   156|  <!-- INTEL LAYER — Reality: Analysis supported or contradicted by capital flows -->
+   202|   157|  <!-- ═══════════════════════════════════════════════ -->
+   203|   158|  <div class="layer-header intel-header">
+   204|   159|    <span class="layer-label">INTEL</span>
+   205|   160|    <span class="layer-desc">What's happening — and where the money is actually going.</span>
+   206|   161|  </div>
+   207|   162|
+   208|   163|  <section class="container collapsible expanded" id="storiesTeaser">
+   209|   164|    <div class="container-header">
+   210|   165|      <span class="container-title" data-i18n="container_stories_title">Stories</span>
+   211|   166|      <span class="container-count" id="teaserStoryCount">—</span>
+   212|   167|      <span class="flow-freshness" id="storyFreshness"></span>
+   213|   168|      <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+   214|   169|    </div>
+   215|   170|    <div class="container-desc" data-i18n="container_stories_desc">Narrative intelligence decoded — who benefits, who loses, what the money already priced in.</div>
+   216|   171|    <div class="container-body" id="storiesTeaserBody">
+   217|   172|      <div id="storiesTeaserContent" class="teaser-list"></div>
+   218|   173|      <a href="./stories.html" class="teaser-full-link" data-i18n="all_stories">All stories →</a>
+   219|   174|    </div>
+   220|   175|  </section>
+   221|   176|
+   222|   177|  <section class="container collapsible" id="flowsTeaser">
+   223|   178|    <div class="container-header">
+   224|   179|      <span class="container-title" data-i18n="container_flows_title">Capital Flows</span>
+   225|   180|      <span class="container-subtitle" id="teaserFlowSub">—</span>
+   226|   181|      <span class="flow-freshness" id="flowFreshness"></span>
+   227|   182|      <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+   228|   183|    </div>
+   229|   184|    <div class="container-desc" data-i18n="container_flows_desc">Where the smart money is going — directional conviction, velocity, projected movement.</div>
+   230|   185|    <div class="container-body" id="flowsTeaserBody">
+   231|   186|      <div id="flowsTeaserContent" class="teaser-list"></div>
+   232|   187|      <a href="./flows.html" class="teaser-full-link" data-i18n="full_flow_dashboard">Full flow dashboard →</a>
+   233|   188|    </div>
+   234|   189|  </section>
+   235|   190|
+   236|   191|  <section class="container collapsible" id="tradesTeaser">
+   237|   192|    <div class="container-header">
+   238|   193|      <span class="container-title" data-i18n="nav_trades">Trade Ideas</span>
+   239|   194|      <span class="container-subtitle" id="teaserTradeSub">—</span>
+   240|   195|      <span class="flow-freshness" id="tradeFreshness"></span>
+   241|   196|      <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+   242|   197|    </div>
+   243|   198|    <div class="container-desc" data-i18n="container_anchors_desc_prefix">Positions derived from flows and narrative intelligence — entry zones, stop levels, conviction.</div>
+   244|   199|    <div class="container-body" id="tradesTeaserBody">
+   245|   200|      <div id="tradesTeaserContent" class="teaser-list"></div>
+   246|   201|      <a href="./trades.html" class="teaser-full-link" data-i18n="all_trade_ideas">All trade ideas →</a>
+   247|   202|    </div>
+   248|   203|  </section>
+   249|   204|
+   250|   205|  <!-- ═══════════════════════════════════════════════ -->
+   251|   206|  <!-- ALPHA LAYER — Execution: Strategic bets following or fading the intel -->
+   252|   207|  <!-- ═══════════════════════════════════════════════ -->
+   253|   208|  <div class="layer-header alpha-header">
+   254|   209|    <span class="layer-label">ALPHA</span>
+   255|   210|    <span class="layer-desc">Strategic positioning derived from the intel — where to act.</span>
+   256|   211|  </div>
+   257|   212|
+   258|   213|  <section class="container collapsible" id="signalTeaser">
+   259|   214|    <div class="container-header">
+   260|   215|      <span class="container-title" data-i18n="container_signal_title">The Signal</span>
+   261|   216|      <span class="container-subtitle" id="teaserSignalSub">—</span>
+   262|   217|      <span class="flow-freshness" id="signalFreshness"></span>
+   263|   218|      <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+   264|   219|    </div>
+   265|   220|    <div class="container-desc" data-i18n="container_signal_desc">Triangulation — stories × flows × trades. Divergence is the edge.</div>
+   266|   221|    <div class="container-body" id="signalTeaserBody">
+   267|   222|      <div id="signalTeaserContent" class="teaser-list"></div>
+   268|   223|      <a href="./signal.html" class="teaser-full-link" data-i18n="full_signal_dashboard">Full signal dashboard →</a>
+   269|   224|    </div>
+   270|   225|  </section>
+   271|   226|
+   272|   227|  <section class="container collapsible" id="trackTeaser">
+   273|   228|    <div class="container-header">
+   274|   229|      <span class="container-title" data-i18n="container_track_title">Track Record</span>
+   275|   230|      <span class="container-subtitle" id="teaserTrackSub">—</span>
+   276|   231|      <span class="flow-freshness" id="trackFreshness"></span>
+   277|   232|      <span class="container-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+   278|   233|    </div>
+   279|   234|    <div class="container-desc" data-i18n="container_track_desc">Verifiable bets — every prediction, every outcome, no cherry-picking.</div>
+   280|   235|    <div class="container-body" id="trackTeaserBody">
+   281|   236|      <div id="trackTeaserContent" class="teaser-list"></div>
+   282|   237|      <a href="./track.html" class="teaser-full-link" data-i18n="full_track_record">Full track record →</a>
+   283|   238|    </div>
+   284|   239|  </section>
+   285|   240|
+   286|   241|  <!-- v2.0: Services Utility Grid — persona-driven value props -->
+   287|   242|  <section class="container" id="servicesGrid" style="background:transparent;border:none;">
+   288|   243|    <div class="container-header">
+   289|   244|      <span class="container-title">How We Serve You</span>
+   290|   245|    </div>
+   291|   246|    <div class="container-body">
+   292|   247|      <div class="services-grid">
+   293|   248|        <a href="./stories.html" class="svc-card" id="svcCSuite">
+   294|   249|          <span class="svc-persona">C-SUITE</span>
+   295|   250|          <span class="svc-title">Macro Horizon</span>
+   296|   251|          <span class="svc-desc">Structural policy shifts, supply-chain bottlenecks, regulatory implications. Board-ready context for capital allocators.</span>
+   297|   252|        </a>
+   298|   253|        <a href="./flow-nodes.html" class="svc-card" id="svcQuant">
+   299|   254|          <span class="svc-persona">QUANTITATIVE</span>
+   300|   255|          <span class="svc-title">Flow Telemetry</span>
+   301|   256|          <span class="svc-desc">Capital velocity differentials, correlation coefficients, heat scores. Low-latency raw data. Zero narrative fluff.</span>
+   302|   257|        </a>
+   303|   258|        <a href="./trades.html" class="svc-card" id="svcTrader">
+   304|   259|          <span class="svc-persona">EXECUTION</span>
+   305|   260|          <span class="svc-title">Action Triggers</span>
+   306|   261|          <span class="svc-desc">Directional bias, entry/stop levels, conviction ratings with ATR-derived stops. Ultra-concise, trade-ready.</span>
+   307|   262|        </a>
+   308|   263|      </div>
+   309|   264|    </div>
+   310|   265|  </section>
+   311|   266|</main>
+   312|   267|<footer class="footer">
+   313|   268|  <a href="./about.html" data-i18n="nav_about">About</a>
+   314|   269|  <span>·</span>
+   315|   270|  <a href="https://t.me/GazzettaDiKyiv">Telegram</a>
+   316|   271|  <span>·</span>
+   317|   272|  <a href="https://www.reddit.com/r/LaGazzettadiKyiv/">Reddit</a>
+   318|   273|  <span>·</span>
+   319|   274|  <span data-i18n="footer_kyiv">Kyiv · Since 2025</span>
+   320|   275|</footer>
+   321|   276|
+   322|   277|<script src="./i18n.041121bb.js"></script>
+   323|   278|<script src="./app.2d0b5f18.js"></script>
+   324|   279|
+   325|   280|<!-- Retail onboarding — first-visit tooltip (v22.16) -->
+   326|   281|<div id="onboardingOverlay" style="display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:white;padding:12px 18px;border-radius:0;font-family:Inter,system-ui;font-size:12px;line-height:1.5;z-index:9999;max-width:360px;box-shadow:none;cursor:pointer;" onclick="this.style.display='none';localStorage.setItem('gazzetta_onboarded','1');">
+   327|   282|  <strong>Welcome to La Gazzetta di Kyiv</strong><br>
+   328|   283|  We track where big money moves → decode why → show you how to position.<br>
+   329|   284|  <span style="opacity:0.7;">Stories → Flows → Trades → Signal → Track Record.</span><br>
+   330|   285|  <span style="font-size:10px;opacity:0.5;">Tap anywhere to dismiss</span>
+   331|   286|</div>
+   332|   287|<script>
+   333|   288|(function(){
+   334|   289|  if (!localStorage.getItem('gazzetta_onboarded')) {
+   335|   290|    setTimeout(function(){ document.getElementById('onboardingOverlay').style.display='block'; }, 1500);
+   336|   291|  }
+   337|   292|})();
+   338|   293|</script>
+   339|   294|
+<!-- v23.5: Side-column populator — populates Col A and Col C from flow data -->
 <script>
 (function(){
-  if (!localStorage.getItem('gazzetta_onboarded')) {
-    setTimeout(function(){ document.getElementById('onboardingOverlay').style.display='block'; }, 1500);
+  var MAX_WAIT = 15000, waited = 0;
+  function populateSides() {
+    var fd = window.CAPITAL_FLOWS_DATA;
+    if (!fd || !fd.flows || !fd.flows.length) { if (waited < MAX_WAIT) { waited += 500; setTimeout(populateSides, 500); } return; }
+    
+    var flows = fd.flows;
+    
+    // ── TRADE HOOKS (top 3 flows by pace) ──
+    var sorted = flows.slice().sort(function(a,b){ return (b.pace_multiplier||1)-(a.pace_multiplier||1); });
+    var hooks = document.querySelectorAll('.side-hook-item');
+    sorted.slice(0,3).forEach(function(f,i){
+      if (!hooks[i]) return;
+      var symbol = hooks[i].querySelector('.side-hook-symbol');
+      var dir = hooks[i].querySelector('.side-hook-dir');
+      var conv = hooks[i].querySelector('.side-hook-conv');
+      if (symbol) symbol.textContent = (f.asset_class||'').toUpperCase().slice(0,8) || f.symbol || '—';
+      if (dir) { dir.textContent = (f.direction||'').toUpperCase(); dir.className = 'side-hook-dir ' + (f.direction==='inflow'?'bullish':'bearish'); }
+      if (conv) conv.textContent = (f.confidence_pct||'') + '%';
+      hooks[i].onclick = function(){ window.location.href = './flows.html'; };
+    });
+    
+    // ── TOP VELOCITY ──
+    var top = sorted[0];
+    var velVal = document.querySelector('#sideVelocity .side-vel-value');
+    var velDesc = document.querySelector('#sideVelocity .side-vel-desc');
+    if (velVal && top) { velVal.textContent = (top.pace_multiplier||1).toFixed(1) + '×'; }
+    if (velDesc && top) { velDesc.textContent = '$' + (top.amount_b||'?' ) + 'B ' + (top.direction||'') + ' ' + (top.asset_class||''); }
+    
+    // ── SENTIMENT ──
+    var inflow = flows.filter(function(f){ return f.direction === 'inflow'; });
+    var pct = flows.length ? Math.round(inflow.length / flows.length * 100) : 50;
+    var sentVal = document.querySelector('#sideSentiment .side-sent-value');
+    var sentLabel = document.querySelector('#sideSentiment .side-sent-label');
+    if (sentVal) {
+      sentVal.textContent = pct + '%';
+      sentVal.className = 'side-sent-value ' + (pct >= 70 ? 'bullish' : pct <= 30 ? 'bearish' : 'neutral');
+    }
+    if (sentLabel) sentLabel.textContent = 'Inflow ratio · ' + inflow.length + '/' + flows.length;
+    
+    // ── FRESHNESS ──
+    function setFresh(id, data) {
+      var el = document.getElementById(id);
+      if (!el || !data || !data.generated_at) return;
+      var ms = Date.now() - new Date(data.generated_at).getTime();
+      var m = Math.floor(ms/60000);
+      el.textContent = m < 60 ? m + 'm ago' : Math.floor(m/60) + 'h ago';
+    }
+    setFresh('freshStories', fd);
+    setFresh('freshFlows', fd);
+    
+    // Trades and Signal freshness from localStorage
+    try {
+      var td = JSON.parse(localStorage.getItem('gazzetta_trades_data')||'{}');
+      setFresh('freshTrades', td);
+      var sd = JSON.parse(localStorage.getItem('gazzetta_signal_data')||'{}');
+      setFresh('freshSignal', sd);
+    } catch(e) {}
   }
+  setTimeout(populateSides, 1000);
 })();
 </script>
+
 </body>
-</html>
+   340|   295|</html>
+   341|   296|

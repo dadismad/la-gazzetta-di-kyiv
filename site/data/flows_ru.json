@@ -4,50 +4,48 @@
   "next_update": "2026-06-07T09:51:57+03:00",
   "update_frequency": "60m",
   "summary": "11 inflows · 1 outflows",
-  "aggregate_confidence": 91,
-  "aggregate_confidence_label": "Flow confidence",
+  "aggregate_confidence": 85,
+  "aggregate_confidence_label": "Outlook",
   "aggregate_direction": "bullish",
   "total_flows_tracked": 12,
   "flows": [
     {
       "id": "flow_n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai__i",
       "headline": "$80.0B ↑ equities",
-      "amount_b": 30.0,
-      "projected": "+$16.0B",
-      "pace_multiplier": 2.0,
+      "amount_b": 80.0,
+      "projected": "The IPO pop is the fastest trade with the most defined catalyst. June 12 is 6 days away. If demand is 2x supply at $75B, the opening pop could be 20-40%. NVDA benefits structurally — every hyperscaler",
+      "pace_multiplier": 1.0,
       "direction": "inflow",
       "positioning": "accumulating",
       "asset_class": "equities",
       "anchor_symbol": "SPX",
       "story_id": "n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai__i",
-      "confidence_pct": 90,
+      "confidence_pct": 85,
       "confidence_level": "high",
-      "confidence_trace": "whale-flow+25 > high-pace+12 > accumulating+15 > high-contradiction+10 > tier3-source+3",
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
       "flow_sources": [
         "government",
         "corporate"
-      ],
-      "source": "telegram_intel"
+      ]
     },
     {
       "id": "flow_n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai",
       "headline": "$80.0B ↑ equities",
-      "amount_b": 20.0,
-      "projected": "+$16.0B",
-      "pace_multiplier": 2.0,
+      "amount_b": 80.0,
+      "projected": "The IPO pop is the fastest immediate trade. June 12 is 6 days away — this is a known catalyst with a defined timeline. If demand is 2x supply at $75B, the opening pop could be 20-40%.",
+      "pace_multiplier": 1.0,
       "direction": "inflow",
       "positioning": "accumulating",
       "asset_class": "equities",
       "anchor_symbol": "SPX",
       "story_id": "n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai",
-      "confidence_pct": 90,
+      "confidence_pct": 85,
       "confidence_level": "high",
-      "confidence_trace": "whale-flow+25 > high-pace+12 > accumulating+15 > high-contradiction+10 > tier3-source+3",
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
       "flow_sources": [
         "government",
         "corporate"
-      ],
-      "source": "telegram_intel"
+      ]
     },
     {
       "id": "flow_n21_abundance__space_etf_mainstream",
@@ -93,64 +91,61 @@
     {
       "id": "flow_n21_multi__us_iran_overnight_strikes",
       "headline": "$10.0B ↑ defense",
-      "amount_b": 16.2,
-      "projected": "+$2.0B",
-      "pace_multiplier": 3.0,
+      "amount_b": 10.0,
+      "projected": "WTI $78→$83-86 (+6-10%), VIX +10-15%, gold +2-3%, SPX -2-3% at Monday open, Brent $82→$88-91",
+      "pace_multiplier": 1.0,
       "direction": "inflow",
       "positioning": "accumulating",
       "asset_class": "defense",
       "anchor_symbol": "BRENT",
       "story_id": "n21_multi__us_iran_overnight_strikes",
-      "confidence_pct": 100,
+      "confidence_pct": 85,
       "confidence_level": "high",
-      "confidence_trace": "large-flow+20 > extreme-pace+20 > accumulating+15 > acute-contradiction+15 > generic-source+5",
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
       "flow_sources": [
         "government",
         "corporate",
         "banking",
         "retail"
-      ],
-      "source": "Telegram Intel Monitor (@trad_fin, @monitoringsituation), CENTCOM statements, Mehr News, Reuters"
+      ]
     },
     {
       "id": "flow_n21_abundance_tech__spacex_ipo_demand_2x_supply__75b_offering_oversibscribed",
       "headline": "$8.0B ↑ equities",
-      "amount_b": 30.0,
-      "projected": "+$1.6B",
-      "pace_multiplier": 2.0,
+      "amount_b": 8.0,
+      "projected": "Capital flow tracked — direction forming",
+      "pace_multiplier": 1.0,
       "direction": "inflow",
       "positioning": "accumulating",
       "asset_class": "equities",
       "anchor_symbol": "SPX",
       "story_id": "n21_abundance_tech__spacex_ipo_demand_2x_supply__75b_offering_oversibscribed",
-      "confidence_pct": 90,
+      "confidence_pct": 85,
       "confidence_level": "high",
-      "confidence_trace": "whale-flow+25 > high-pace+12 > accumulating+15 > high-contradiction+10 > tier3-source+3",
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
       "flow_sources": [
         "institutional",
         "corporate",
         "retail"
-      ],
-      "source": "telegram_intel"
+      ]
     },
     {
       "id": "flow_n21_ai__trump_whitehouse_ai_summit_warsh",
       "headline": "$6.5B ↑ tech",
-      "amount_b": 27.0,
-      "projected": "+$1.3B",
-      "pace_multiplier": 1.8,
+      "amount_b": 6.5,
+      "projected": "NVDA +6-10%, QQQ from -3% to +0-2% (3-5% swing), BTC $60K→$63-66K, DXY -0.8-1.2%",
+      "pace_multiplier": 1.0,
       "direction": "inflow",
       "positioning": "accumulating",
       "asset_class": "tech",
       "anchor_symbol": "NVDA",
       "story_id": "n21_ai__trump_whitehouse_ai_summit_warsh",
-      "confidence_pct": 88,
+      "confidence_pct": 85,
       "confidence_level": "high",
-      "confidence_trace": "whale-flow+25 > elevated-pace+8 > accumulating+15 > high-contradiction+10 > generic-source+5",
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
       "flow_sources": [
         "government"
-      ],
-      "source": "BBC News, Telegram Intel Monitor (@trad_fin, @ethanlevins), NYT Business section"
+      ]
     },
     {
       "id": "flow_n21_china_ascendancy__china_launches_maritime_enforcement_operation_east_of_taiwan",
@@ -173,41 +168,39 @@
     {
       "id": "flow_n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles__regional_war",
       "headline": "$5.0B ↑ commodities",
-      "amount_b": 21.6,
-      "projected": "+$10-15",
-      "pace_multiplier": 2.0,
+      "amount_b": 5.0,
+      "projected": "Oil is the highest-conviction 48h play. Kuwait being directly struck changes the calculus entirely. At Sunday futures open, oil could gap +$10-15/bbl.",
+      "pace_multiplier": 1.0,
       "direction": "inflow",
       "positioning": "accumulating",
       "asset_class": "commodities",
       "anchor_symbol": "BRENT",
       "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles__regional_war",
-      "confidence_pct": 95,
+      "confidence_pct": 85,
       "confidence_level": "high",
-      "confidence_trace": "whale-flow+25 > high-pace+12 > accumulating+15 > acute-contradiction+15 > tier3-source+3",
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
       "flow_sources": [
         "retail"
-      ],
-      "source": "telegram_intel"
+      ]
     },
     {
       "id": "flow_n21_multi_pillar__israel-lebanon_conflict_deepening__full_occupation_publicly",
       "headline": "$5.0B ↑ commodities",
-      "amount_b": 16.8,
-      "projected": "+$1.0B",
-      "pace_multiplier": 2.5,
+      "amount_b": 5.0,
+      "projected": "Broad Middle East conflict hedge (gold + oil) for weekend carry. Market underestimates spillover risk. If Iran-US talks officially break AND Israel announces full Lebanon occupation simultaneously,…",
+      "pace_multiplier": 1.0,
       "direction": "inflow",
       "positioning": "accumulating",
       "asset_class": "commodities",
       "anchor_symbol": "BRENT",
       "story_id": "n21_multi_pillar__israel-lebanon_conflict_deepening__full_occupation_publicly",
-      "confidence_pct": 89,
+      "confidence_pct": 85,
       "confidence_level": "high",
-      "confidence_trace": "large-flow+20 > very-high-pace+16 > accumulating+15 > high-contradiction+10 > tier3-source+3",
+      "confidence_trace": "large-flow+15 > normal-pace+5 > accumulating+10 > med-contradiction+5",
       "flow_sources": [
         "funds",
         "retail"
-      ],
-      "source": "telegram_intel"
+      ]
     },
     {
       "id": "flow_n21_blockchain_agentic__ukraine_hits_st_petersburg_with_250_drones_during_pmef__m",

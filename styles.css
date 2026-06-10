@@ -454,8 +454,171 @@ body {
 
 .product-page .container-body { max-height: none !important; overflow: visible !important; }
 
-/* v22.18: Hints lobby */
-.hints-lobby { max-width: 1000px; margin: 0 auto; padding: 20px; }
+/* v23.5: Hints lobby — 3-column Golden Ratio grid (φ=1.618 → 21%|61%|18%) */
+.hints-lobby {
+  display: grid;
+  grid-template-columns: 21fr 61fr 18fr;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 24px;
+  align-items: start;
+}
+
+/* ── COLUMN A: ALPHA sidebar (21%) ── */
+.col-alpha {
+  position: sticky;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── COLUMN B: INTEL main thread (61%) ── */
+.col-intel {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── COLUMN C: CONTEXT/META sidebar (18%) ── */
+.col-context {
+  position: sticky;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Side Section (shared by Col A + Col C) ── */
+.side-section {
+  border: 1px solid #E5E7EB;
+  background: #FFFFFF;
+  padding: 14px 16px;
+}
+.side-section-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #F3F4F6;
+}
+
+/* ── Trade Hooks (Col A) ── */
+.side-hooks { display: flex; flex-direction: column; gap: 6px; }
+.side-hook-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 8px; background: #F9FAFB;
+  font-family: var(--sans); font-size: 11px;
+  cursor: pointer; transition: background 0.15s;
+}
+.side-hook-item:hover { background: #F3F4F6; }
+.side-hook-symbol { font-weight: 700; color: var(--ink); min-width: 40px; }
+.side-hook-dir { font-size: 10px; font-weight: 600; }
+.side-hook-dir.bullish { color: #059669; }
+.side-hook-dir.bearish { color: #DC2626; }
+.side-hook-conv { font-size: 9px; color: var(--ink-muted); margin-left: auto; }
+
+/* ── Top Velocity (Col A) ── */
+.side-velocity {
+  display: block; text-decoration: none;
+  padding: 10px 12px; background: linear-gradient(135deg, #FFF7ED, #FFFBEB);
+  border: 1px solid #FDE68A;
+  transition: border-color 0.15s;
+}
+.side-velocity:hover { border-color: #F59E0B; }
+.side-vel-value {
+  display: block; font-family: var(--display); font-size: 24px;
+  font-weight: 600; color: #B45309;
+}
+.side-vel-desc {
+  display: block; font-family: var(--sans); font-size: 10px;
+  color: var(--ink-muted); margin-top: 2px;
+}
+
+/* ── Sentiment Gauge (Col A) ── */
+.side-sentiment {
+  text-align: center; padding: 10px 0;
+}
+.side-sent-value {
+  display: block; font-family: var(--display); font-size: 28px;
+  font-weight: 600; line-height: 1;
+}
+.side-sent-label {
+  display: block; font-family: var(--sans); font-size: 10px;
+  color: var(--ink-muted); margin-top: 4px;
+}
+.side-sent-value.bullish { color: #059669; }
+.side-sent-value.bearish { color: #DC2626; }
+.side-sent-value.neutral { color: var(--ink-muted); }
+
+/* ── Freshness Tracker (Col C) ── */
+.side-freshness { display: flex; flex-direction: column; gap: 6px; }
+.fresh-item {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--sans); font-size: 11px;
+}
+.fresh-dot {
+  width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
+}
+.fresh-dot.stories-dot { background: #059669; }
+.fresh-dot.flows-dot { background: #1D4ED8; }
+.fresh-dot.trades-dot { background: #B8860B; }
+.fresh-dot.signal-dot { background: #7C3AED; }
+.fresh-age { font-size: 9px; color: var(--ink-muted); margin-left: auto; }
+
+/* ── Breadcrumb links (Col C) ── */
+.side-breadcrumbs { display: flex; flex-direction: column; gap: 4px; }
+.side-bc-link {
+  display: block; padding: 6px 8px; text-decoration: none;
+  font-family: var(--sans); font-size: 11px; font-weight: 600;
+  color: var(--ink); border-left: 2px solid transparent;
+  transition: border-color 0.15s, background 0.15s;
+}
+.side-bc-link:hover { border-left-color: var(--gold); background: #F9FAFB; }
+.side-bc-desc {
+  display: block; font-family: var(--body); font-size: 10px;
+  font-weight: 400; color: var(--ink-muted);
+}
+
+/* ── Meta links (Col C) ── */
+.side-meta-links { display: flex; flex-direction: column; gap: 2px; }
+.side-meta-links a {
+  font-family: var(--sans); font-size: 10px; color: var(--ink-muted);
+  text-decoration: none; padding: 3px 0;
+}
+.side-meta-links a:hover { color: var(--ink); }
+
+/* ── Mobile: collapse to single column ── */
+@media (max-width: 1100px) {
+  .hints-lobby {
+    grid-template-columns: 1fr;
+    max-width: 1000px;
+    gap: 12px;
+  }
+  .col-alpha, .col-context {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10px;
+  }
+  .side-section { padding: 10px 12px; }
+}
+
+@media (max-width: 600px) {
+  .hints-lobby { padding: 12px; gap: 10px; }
+  .col-alpha, .col-context {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .side-vel-value { font-size: 20px; }
+  .side-sent-value { font-size: 22px; }
+}
+
 /* v22.18: Sophisticated hint cards — money, players, contracts, hooks */
 .flow-sector-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; margin-bottom: 16px; }
 .sector-stat-box { background: var(--white); border: 1px solid var(--divider); padding: 10px 12px; text-align: center; }

@@ -92,13 +92,12 @@ def test_no_poison_values(quick=False):
             html = f.read()
 
         for forbidden, label in FORBIDDEN:
-            # Check only in body content, skip script/style tags
-            body_match = re.search(r'<body[^>]*>(.*?)</body>', html, re.DOTALL)
-            content = body_match.group(1) if body_match else html
-            # Strip script and style tags
-            content = re.sub(r'<(script|style)[^>]*>.*?</\1>', '', content, flags=re.DOTALL)
-            # Strip HTML tags
-            content = re.sub(r'<[^>]+>', ' ', content)
+            # Use BeautifulSoup to extract text (auto-strips script/style tags)
+            soup = BeautifulSoup(html, 'html.parser')
+            # Remove script and style elements
+            for tag in soup.find_all(['script', 'style']):
+                tag.decompose()
+            content = soup.get_text()
 
             # Use word-boundary match for NaN (avoid false positives like "financial")
             if forbidden == "NaN":
