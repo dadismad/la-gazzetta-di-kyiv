@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-06-10T17:08:51.722174+00:00",
+  "generated_at": "2026-06-10T17:10:32.405667+00:00",
   "story_count": 15,
   "model": "deepseek-chat",
   "narratives": [
     {
-      "title": "Geopolitical Escalation and Supply Disruption",
+      "title": "Geopolitical Escalation Spiral",
       "strength": "DOMINANT",
       "direction": "Risk-Off",
-      "summary": "Capital is fleeing risk assets as multi-front conflicts (US-Iran, Israel-Hezbollah, Ukraine-Russia) intensify, with the Strait of Hormuz blockade persisting through Q3 2026 per EIA. The shooting down of a US Apache helicopter and Iran's retaliation falsify the 'one-and-done' thesis, driving oil prices higher and equity selloffs.",
+      "summary": "Capital is fleeing risk assets as the US-Iran conflict escalates with active kinetic exchanges, an Apache shootdown, and a prolonged Hormuz blockade. Simultaneous Ukraine-Russia deep strikes and Israel's two-front war amplify the risk premium, driving flows into safe havens and commodities.",
       "key_stories": 8,
-      "trade_implication": "Long crude oil and defense stocks; short S&P 500 and emerging market equities exposed to energy import costs."
+      "trade_implication": "Long crude oil and gold; short equities, particularly S&P 500 and emerging market currencies exposed to energy imports."
     },
     {
-      "title": "Institutional Crypto Adoption Diverges",
+      "title": "Hormuz Blockade Structural Impact",
+      "strength": "STRONG",
+      "direction": "Neutral-to-Bullish",
+      "summary": "The EIA's extended blockade timeline through Q3 2026 and Kuwait's pipeline bypass discussions confirm a structural oil supply disruption. Capital is rotating into energy equities and infrastructure plays, while inflation expectations rise, pressuring bonds.",
+      "key_stories": 4,
+      "trade_implication": "Long energy sector ETFs and WTI futures; short long-duration Treasuries on sticky inflation."
+    },
+    {
+      "title": "Institutional Crypto Adoption Surge",
       "strength": "BUILDING",
       "direction": "Neutral-to-Bullish",
-      "summary": "Despite BTC's crash amid macro risk-off, institutional flows into crypto infrastructure continue, as evidenced by Janus Henderson's $300B+ partnership with Ethena for tokenized CLOs and MicroStrategy's dip-buying. This signals a structural shift where capital separates crypto from pure risk assets.",
+      "summary": "Despite BTC's risk-off selloff, institutional flows into crypto are accelerating, evidenced by Janus Henderson's tokenized CLO partnership with Ethena and MicroStrategy's dip buying. This signals a decoupling from macro risk in favor of long-term blockchain infrastructure plays.",
       "key_stories": 3,
-      "trade_implication": "Accumulate Bitcoin on dips via futures or spot ETFs; long ENA token on partnership news."
-    },
-    {
-      "title": "Sticky Inflation and Fed Policy Dilemma",
-      "strength": "MODERATE",
-      "direction": "Neutral-to-Bearish",
-      "summary": "Strong housing data (+3.2% MoM existing home sales) contradicts the Fed's softening narrative, suggesting inflation may remain sticky. Capital is pricing in higher-for-longer rates, pressuring rate-sensitive sectors and supporting the dollar.",
-      "key_stories": 2,
-      "trade_implication": "Short long-duration Treasuries (TLT); long USD vs. JPY and EUR."
+      "trade_implication": "Accumulate BTC on dips and buy ENA tokens; long crypto-exposed equities like MicroStrategy."
     }
   ]
 }
