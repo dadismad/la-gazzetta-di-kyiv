@@ -47,6 +47,13 @@ else
 fi
 echo ""
 
+# ═══ Stage 1.5: enrich — add capital_flow + generated_at to editorial stories ═══
+echo "── Stage 1.5: enrich ──"
+$PYTHON "$PROJECT/scripts/enrich_editorial_stories.py" || true
+$PYTHON "$PROJECT/scripts/ensure_generated_at.py" || true
+echo "  ✓ Stories enriched with capital_flow + generated_at"
+echo ""
+
 # ═══ Stage 2: build_site — sync data + API endpoints ═══
 echo "── Stage 2: build_site ──"
 $PYTHON "$PROJECT/scripts/build_site.py"

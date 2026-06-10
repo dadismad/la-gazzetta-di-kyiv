@@ -33,7 +33,19 @@
         "EIA revising Q3 2026 forecast — the gap between demand projection and supply disruption widens"
       ],
       "portfolio_implication": "Long WTI, GLD immediately. Long VIX calls. Do not short oil — strike is binary and unresolved.",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strait_of_Hormuz.jpg"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strait_of_Hormuz.jpg",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 12.0,
+        "asset_class": "commodities",
+        "projected": "Long WTI, GLD immediately. Long VIX calls. Do not short oil — strike is binary and unresolved.",
+        "pace_multiplier": 1.5,
+        "confidence_pct": 65,
+        "confidence_level": "medium",
+        "claim": "$12.0B inflow commodities",
+        "confidence": "65%"
+      },
+      "generated_at": "2026-06-10T12:00:00Z"
     },
     {
       "story_id": "n21_macro",
@@ -47,7 +59,19 @@
         "Supertanker ordering boom mirrors 2008 — peak-cycle behavior before a glut"
       ],
       "portfolio_implication": "Long Korean shipbuilders (HD Hyundai Heavy) on orderbook momentum. Short Baltic Dry forwards — glut cycle being set up.",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_South_Korea.svg"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_South_Korea.svg",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 350.0,
+        "asset_class": "tech",
+        "projected": "Long Korean shipbuilders (HD Hyundai Heavy) on orderbook momentum. Short Baltic Dry forwards — glut cycle being set up.",
+        "pace_multiplier": 1.5,
+        "confidence_pct": 65,
+        "confidence_level": "medium",
+        "claim": "$350.0B inflow tech",
+        "confidence": "65%"
+      },
+      "generated_at": "2026-06-10T12:00:00Z"
     },
     {
       "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t",
@@ -61,7 +85,19 @@
         "Premium enterprise AI pricing creates margin expansion narrative"
       ],
       "portfolio_implication": "Long AI-crypto tokens (FET, RNDR, TAO). Long NVDA at next US equity open.",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthropic_logo.svg"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthropic_logo.svg",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 3.5,
+        "asset_class": "crypto",
+        "projected": "Long AI-crypto tokens (FET, RNDR, TAO). Long NVDA at next US equity open.",
+        "pace_multiplier": 1.5,
+        "confidence_pct": 65,
+        "confidence_level": "medium",
+        "claim": "$3.5B inflow crypto",
+        "confidence": "65%"
+      },
+      "generated_at": "2026-06-10T12:00:00Z"
     },
     {
       "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
@@ -75,7 +111,19 @@
         "MSTR shorts face asymmetric risk if buying spree continues"
       ],
       "portfolio_implication": "Long BTC with $58K invalidation. Short MSTR puts.",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_logo.svg"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_logo.svg",
+      "capital_flow": {
+        "direction": "outflow",
+        "amount_b": 3.5,
+        "asset_class": "crypto",
+        "projected": "Long BTC with $58K invalidation. Short MSTR puts.",
+        "pace_multiplier": 1.5,
+        "confidence_pct": 65,
+        "confidence_level": "medium",
+        "claim": "$3.5B outflow crypto",
+        "confidence": "65%"
+      },
+      "generated_at": "2026-06-10T12:00:00Z"
     },
     {
       "story_id": "n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai",
@@ -89,7 +137,19 @@
         "India's Starlink block signals regulatory pushback on Musk's empire"
       ],
       "portfolio_implication": "Long SPCX at IPO if pricing isn't ridiculous. Watch India block resolution as catalyst.",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX_Dragon_2_approach_to_ISS_1.jpg"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX_Dragon_2_approach_to_ISS_1.jpg",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 1800.0,
+        "asset_class": "crypto",
+        "projected": "Long SPCX at IPO if pricing isn't ridiculous. Watch India block resolution as catalyst.",
+        "pace_multiplier": 1.5,
+        "confidence_pct": 65,
+        "confidence_level": "medium",
+        "claim": "$1800.0B inflow crypto",
+        "confidence": "65%"
+      },
+      "generated_at": "2026-06-10T12:00:00Z"
     }
   ]
 }
