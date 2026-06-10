@@ -66,7 +66,14 @@ echo "  ✓ site/data/ synced, API endpoints generated"
 echo ""
 
 # ═══ Stage 2.5: test_platform — automated UI & data integrity gate ═══
-echo "── Stage 2.5: test_platform ──"
+echo "
+# ═══ Stage 2.2: generate broadcasts ═══
+echo "── Stage 2.2: generate_broadcasts ──"
+$PYTHON "$PROJECT/scripts/generate_broadcasts.py" || true
+echo "  ✓ Distribution broadcasts generated"
+echo ""
+
+# ═── Stage 2.5: test_platform ──"
 if $PYTHON "$PROJECT/scripts/test_platform.py"; then
     echo "  ✓ All tests passed"
 else

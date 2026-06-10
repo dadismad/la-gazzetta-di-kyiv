@@ -6,6 +6,24 @@ function getDataPath() { return DATA_BASE + (window.i18n && i18n.lang === 'ru' ?
 function getFlowsPath() { return FLOWS_BASE + (window.i18n && i18n.lang === 'ru' ? '_ru' : '') + '.json'; }
 const FLOWS_POLL_INTERVAL = 300000;
 
+// ═══════════════ v23.8: Gazzetta Namespace ═══════════════
+window.Gazzetta = window.Gazzetta || {};
+Gazzetta.State = {};
+Gazzetta.UI = {};
+Gazzetta.Data = {};
+
+// Export key globals into namespace for external modules
+Gazzetta.Data.getJSON = getJSON;
+Gazzetta.Data.getDataPath = getDataPath;
+Gazzetta.Data.getFlowsPath = getFlowsPath;
+Gazzetta.UI.byId = byId;
+Gazzetta.State.capturedStoryIds = capturedStoryIds;
+Gazzetta.State.STORIES_CACHE = STORIES_CACHE;
+
+// Backward compat: monitor for leaks
+Gazzetta._initTime = Date.now();
+
+
 // ── Story cache for flow→story cross-linking ──
 const STORIES_CACHE = {}; // story_id → {headline, dom_card}
 

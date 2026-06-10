@@ -38,6 +38,7 @@ def compile_stories(conn):
                 WHEN 'SETTLING'   THEN 3
                 ELSE 4
             END,
+            CASE WHEN json_extract(full_json, '$.capital_flow.contradiction_flag') IS NOT NULL THEN 0 ELSE 1 END,
             contradiction_score DESC,
             generated_at DESC
     """).fetchall()
@@ -193,6 +194,54 @@ def compile_flows(conn):
         json.dump(doc, f, indent=2, ensure_ascii=False)
 
     print(f"  ✓ flows.json — {len(flows)} flows, aggregate confidence: {avg_conf}%")
+
+    
+    # ── v23.8: Asymmetric Signal Engine ──
+    # Compare Narrative (Story direction) vs Telemetry (Flow direction)
+    # If they diverge, flag as CRITICAL CONTRADICTION
+    # Load stories from compiled JSON
+    stories_path = DATA / "stories.json"
+    all_stories = []
+    if stories_path.exists():
+        with open(stories_path) as f:
+            sd = json.load(f)
+        if sd.get("lead"):
+            all_stories.append(sd["lead"])
+        all_stories.extend(sd.get("stories", []))
+    
+    contradictions_detected = 0
+    for story in all_stories:
+        cf = story.get("capital_flow", {})
+        narrative_dir = cf.get("direction", "")
+        if not narrative_dir:
+            continue
+        
+        # Find linked flows
+        impacted = story.get("impacted_flows", [])
+        if not impacted:
+            continue
+        
+        # Compare: if story says inflow but linked flows are outflow → contradiction
+        linked_flow_dirs = []
+        for fid in impacted:
+            for fl in flows:
+                if fl.get("id") == fid:
+                    linked_flow_dirs.append(fl.get("direction", ""))
+        
+        if linked_flow_dirs:
+            # If majority of flows oppose the narrative direction → contradiction
+            opposite = sum(1 for d in linked_flow_dirs if d != narrative_dir and d != "neutral")
+            if opposite >= len(linked_flow_dirs) / 2:
+                # Flag as critical contradiction
+                if cf.get("confidence_pct", 50) < 80:
+                    cf["confidence_pct"] = min(cf.get("confidence_pct", 50) - 10, 40)
+                    cf["contradiction_flag"] = "NARRATIVE_VS_FLOW_DIVERGENCE"
+                    cf["contradiction_detail"] = f"Narrative says {narrative_dir} but {opposite}/{len(linked_flow_dirs)} linked flows show opposite direction"
+                    story["capital_flow"] = cf
+                    contradictions_detected += 1
+    
+    if contradictions_detected:
+        print(f"  ⚡ Asymmetric Signal: {contradictions_detected} narrative-flow contradictions detected")
 
     return len(flows)
 

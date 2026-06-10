@@ -2843,3 +2843,16 @@ body {
 .alpha-header .layer-label { font-weight: 900 !important; letter-spacing: 0.16em !important; }
 .side-velocity { background: linear-gradient(135deg, #FFFDF5, #FFFBEB) !important; border-color: #D4AF37 !important; }
 .side-vel-value { color: #B8860B !important; text-shadow: 0 1px 0 rgba(212,175,55,0.2); }
+
+/* v23.8: Final polish — 44px touch targets, gold mobile buttons */
+@media (max-width: 768px) {
+  .card-expand-btn { min-height: 44px; display: inline-flex; align-items: center; padding: 8px 12px; font-size: 12px; }
+  .product-nav a { min-height: 44px; display: inline-flex; align-items: center; padding: 8px 14px; }
+  .nav-group-label { min-height: 36px; display: inline-flex; align-items: center; }
+  /* Gold accent for Signal/Trades in mobile nav */
+  .product-nav a[href="./signal.html"],
+  .product-nav a[href="./trades.html"] { border-color: #D4AF37; color: #B8860B; font-weight: 800; }
+  
+  /* FLOW SECTORS expander */
+  .fresh-item { min-height: 36px; display: flex; align-items: center; }
+}

@@ -157,7 +157,14 @@
     document.title = (allStories[currentIdx].headline || 'Story') + ' — La Gazzetta di Kyiv';
   }
 
-  async function init() {
+  async 
+// ═══════════════ v23.8: Gazzetta Namespace ═══════════════
+window.Gazzetta = window.Gazzetta || {};
+Gazzetta.Story = {};
+Gazzetta.Story.init = init;
+Gazzetta.Story.renderIntelReport = renderIntelReport;
+
+function init() {
     // Wait for i18n
     if (window.i18n && !window.i18n._ready) {
       await new Promise(r => { window.addEventListener('i18nReady', r, { once: true }); });
@@ -216,3 +223,7 @@
     init();
   }
 })();
+
+
+// Export to namespace after definition
+if (typeof Gazzetta !== "undefined") { Gazzetta.Story.loaded = true; }
