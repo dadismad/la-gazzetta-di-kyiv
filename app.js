@@ -17,9 +17,6 @@ Gazzetta.Data.getJSON = getJSON;
 Gazzetta.Data.getDataPath = getDataPath;
 Gazzetta.Data.getFlowsPath = getFlowsPath;
 Gazzetta.UI.byId = byId;
-Gazzetta.State.capturedStoryIds = capturedStoryIds;
-Gazzetta.State.STORIES_CACHE = STORIES_CACHE;
-
 // Backward compat: monitor for leaks
 Gazzetta._initTime = Date.now();
 
@@ -53,6 +50,8 @@ async function getJSON(path, fallback) {
 
 // ── Captured story set (accumulation — never remove old cards) ──
 let capturedStoryIds = new Set();
+Gazzetta.State.capturedStoryIds = capturedStoryIds;
+Gazzetta.State.STORIES_CACHE = STORIES_CACHE;
 
 // ── Sector photos ──
 const SECTOR_PHOTOS = {
