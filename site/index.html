@@ -156,6 +156,10 @@
       <a href="./signal.html" class="nav-link"><span data-i18n="nav_signal">Signal</span></a>
       <a href="./trades.html" class="nav-link"><span data-i18n="nav_trades">Trades</span></a>
       <a href="./track.html" class="nav-link"><span data-i18n="nav_track">Track</span></a>
+      <span class="nav-group-label">ABOUT</span>
+      <a href="./methodology.html" class="nav-link"><span data-i18n="methodology">METHODOLOGY</span></a>
+      <a href="./sources.html" class="nav-link"><span data-i18n="sources">SOURCES</span></a>
+      <a href="./about.html" class="nav-link"><span data-i18n="nav_about">About</span></a>
     </nav>
     <time class="masthead-meta" id="mastheadMeta" datetime="2026-06-06T15:00:00.000Z">—</time>
     <span class="lang-switcher">
@@ -241,6 +245,19 @@
         <span class="side-vel-value">2.4×</span>
         <span class="side-vel-desc">$4.8B outflow crypto</span>
       </a>
+    </div>
+    <!-- ═══ v23.18: ASYMMETRY GAUGE DIAL ═══ -->
+    <div class="side-section">
+      <div class="side-section-label" data-i18n="asymmetry_label">ASYMMETRY</div>
+      <div class="asymmetry-gauge" id="asymmetryGauge">
+        <svg viewBox="0 0 120 70" class="gauge-svg">
+          <path d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#E5E7EB" stroke-width="8" stroke-linecap="round"/>
+          <path id="gaugeArc" d="M 10 65 A 50 50 0 0 1 110 65" fill="none" stroke="#B8860B" stroke-width="8" stroke-linecap="round" stroke-dasharray="0 157" stroke-dashoffset="0"/>
+          <circle id="gaugeNeedle" cx="60" cy="65" r="3" fill="#DC2626"/>
+          <text x="60" y="32" text-anchor="middle" font-family="var(--mono)" font-size="18" font-weight="900" fill="var(--ink)" id="gaugeValue">58</text>
+          <text x="60" y="46" text-anchor="middle" font-family="var(--sans)" font-size="8" fill="var(--ink-muted)" id="gaugeLabel">MODERATE</text>
+        </svg>
+      </div>
     </div>
     <div class="side-section">
       <div class="side-section-label" data-i18n="side_sentiment">SENTIMENT</div>
@@ -425,13 +442,25 @@
         <a href="./trades.html" class="side-bc-link">→ All Trades <span class="side-bc-desc">Position dashboard</span></a>
       </nav>
     </div>
+    <!-- ═══ v23.18: TRUST FRAMEWORK ═══ -->
+    <div class="side-section">
+      <div class="side-section-label" data-i18n="trust_framework">TRUST FRAMEWORK</div>
+      <div class="side-freshness">
+        <div class="fresh-item"><span class="fresh-dot" style="background:#059669"></span><span data-i18n="183_assertions">183 assertions</span><span class="fresh-age" style="color:#059669">✓ PASSING</span></div>
+        <div class="fresh-item"><span class="fresh-dot" style="background:var(--gold)"></span><span data-i18n="live_vm">Cloud Brain</span><span class="fresh-age" style="color:#059669">RUNNING</span></div>
+        <div class="fresh-item"><span class="fresh-dot" style="background:var(--gold)"></span><span data-i18n="eeat_expertise">Expertise</span><span class="fresh-age">Mathematical</span></div>
+        <div class="fresh-item"><span class="fresh-dot" style="background:var(--gold)"></span><span data-i18n="eeat_authority">Authority</span><span class="fresh-age">Source-cited</span></div>
+        <div class="fresh-item"><span class="fresh-dot" style="background:#059669"></span><span data-i18n="eeat_trust">Trust</span><span class="fresh-age" style="color:#059669">Verified</span></div>
+      </div>
+      <a href="./methodology.html" style="font-size:10px;color:var(--blue);font-family:var(--sans);text-decoration:none;">View full methodology →</a>
+      <a href="./sources.html" style="font-size:10px;color:var(--blue);font-family:var(--sans);text-decoration:none;margin-left:8px;">View sources →</a>
+    </div>
     <div class="side-section">
       <div class="side-section-label" data-i18n="side_gazzetta">GAZZETTA</div>
       <nav class="side-meta-links">
         <a href="./about.html">About</a>
-        <a href="./capital.html">Methodology</a>
-        <a href="./data.html">Data Sources</a>
-        <a href="./privacy.html">Privacy</a>
+        <a href="./methodology.html">Methodology</a>
+        <a href="./sources.html">Sources</a>
         <a href="./terms.html">Terms</a>
       </nav>
     </div>

@@ -224,6 +224,14 @@ body {
 .sparkline-bar.falling { background: #DC2626; }
 .sparkline-bar.flat    { background: #6B7280; }
 
+/* ── v23.18: Asymmetry Gauge Dial ── */
+.asymmetry-gauge {
+  text-align: center; padding: 6px 0;
+}
+.gauge-svg {
+  width: 100%; max-width: 140px; height: auto;
+}
+
 /* ── Hero Section ── */
 .hero {
   text-align: center;
@@ -2966,3 +2974,54 @@ body {
 @media (max-width: 768px) {
   .gate-overlay .gate-cta { font-size: 14px; padding: 12px 24px; width: 80%; text-align: center; }
 }
+
+/* ── v23.18: Mobile Shadow UI ── */
+@media (max-width: 768px) {
+  /* Large high-contrast metric cards */
+  .mobile-metric {
+    display: flex; flex-direction: column; align-items: center;
+    padding: 12px 8px; min-width: 80px;
+    border: 1px solid var(--divider);
+  }
+  .mobile-metric .metric-value {
+    font-family: var(--mono); font-size: 22px; font-weight: 900;
+    color: var(--ink); line-height: 1.2;
+  }
+  .mobile-metric .metric-hint {
+    font-family: var(--sans); font-size: 9px;
+    color: var(--ink-muted); opacity: 0.4; /* ghost text */
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-top: 2px;
+  }
+  /* Expandable anchor on tap */
+  .metric-expandable { cursor: pointer; }
+  .metric-expandable .alpha-hook {
+    font-family: var(--body); font-size: 13px; font-style: italic;
+    color: var(--gold); max-height: 0; overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .metric-expandable.expanded .alpha-hook { max-height: 80px; }
+  /* Horizontal slider with fluid scroll-snap */
+  .product-nav {
+    display: flex; flex-wrap: nowrap; overflow-x: auto;
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+    gap: 0; padding: 4px 0;
+  }
+  .product-nav .nav-link {
+    scroll-snap-align: start; flex-shrink: 0;
+    padding: 6px 12px; white-space: nowrap;
+  }
+  .product-nav .nav-group-label {
+    scroll-snap-align: start; flex-shrink: 0;
+    padding: 6px 8px; font-size: 9px;
+  }
+}
+
+/* ── v23.18: Interlinking — View in Horizon/Nodes ── */
+.story-interlink {
+  display: inline-block; font-family: var(--mono); font-size: 9px;
+  font-weight: 600; padding: 2px 8px; margin-left: 6px;
+  border: 1px solid var(--divider); color: var(--ink-muted);
+  text-decoration: none; transition: all 0.2s;
+}
+.story-interlink:hover { border-color: var(--gold); color: var(--gold); }

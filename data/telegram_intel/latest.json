@@ -1,54 +1,94 @@
 {
-  "scrape_time": "2026-06-10T18:55:00Z",
-  "analysis_model": "deepseek-v4-flash",
-  "time_horizon": "1-2 hours",
+  "scan_time": "2026-06-10T16:33:00Z",
+  "model": "deepseek-v4-flash",
+  "channels_monitored": [
+    "@trad_fin",
+    "@MonitoringSituation",
+    "@ASupersharij",
+    "@infinityhedge",
+    "@ethanlevins",
+    "@markettwits"
+  ],
   "stories": [
     {
-      "rank": 1,
-      "event": "Trump announces renewed military strikes on Iran — 'WILL BE ATTACKING IRAN HARD' / 'Today we will strike Iran hard again'",
-      "sources": ["trad_fin", "MonitoringSituation", "markettwits", "ethanlevins", "infinityhedge"],
-      "timeline": "Breaking 15:48-15:55 UTC. US strikes already completed overnight (20 targets). Trump now threatening second wave targeting power plants and bridges. Israel also preparing strikes on Iran.",
-      "consensus_narrative": "Escalation-de-escalation whiplash. Iran shot down US Apache over Hormuz → US retaliatory strikes overnight → Iran struck Bahrain/Jordan → Trump now threatens 'hard' attacks on infrastructure. But simultaneously says 'they just need to sign the paper' and deal is 'fully negotiated'. Market reading: volatility spike, but traders expect de-escalation before US close.",
-      "contradiction": "Trump flipped from 'strikes completed' (00:57 UTC) to 'will attack hard again' (15:48 UTC) within 15 hours. Parallel messaging: (a) 'deal is done / just needs signing' vs (b) 'going to hit them again today'. Iran's military 'doesn't exist anymore' per Trump, yet Iran struck Bahrain/Jordan successfully. Biggest contradiction: the deal that Trump says is 'fully negotiated' is somehow simultaneous with renewed bombing.",
-      "bet": "SHORT oil/energy into the threat spike, target fade within 2 hours. Every prior Iran escalation under Trump has faded within the same session once 'deal is close' narrative re-emerges. If WTI spikes above $78 on headline, short. If Trump goes live on Fox with more threats, wait 15 min for peak, then position for fade. The 'Praise Be To Allah' signal from Trump (infinityhedge/26681) confirms he's oscillating back toward resolution. Also: short volatility (UVXY) into US close — VIX spike is a sell.",
-      "benefit": "Oil spike fade: WTI likely to settle back to $74-76 range within 2 hours as deal narrative reasserts. Iran deal completion would drop oil $5-8/bbl. If Trump instead follows through with infrastructure strikes (bridges/power plants) — genuine escalation, not bluff — then long oil, short equities, long defense (RTX, LMT). Watch for: Trump signing Secure America Act (15:20 UTC) could be the venue for announcement.",
-      "confidence": 75,
-      "market_impact_potential": "HIGH",
-      "expiry": "2026-06-10T21:00:00Z"
+      "priority": "CRITICAL",
+      "title": "B-52 BOMBER VECTORING MIDDLE EAST — TRANSPONDER OFF",
+      "sources": ["@MonitoringSituation"],
+      "timestamp": "2026-06-10T16:23:06Z",
+      "event": "KAN News reporter: a B-52 strategic American bomber detected on flight tracking sites heading from the US base in Sicily towards the Middle East. The plane turned off its transmitter — flight path unknown. This is a nuclear-capable strategic bomber, not a tactical asset.",
+      "context_timeline": "Earlier today (15:45-15:56 UTC): Trump press conference — alternates between 'will attack Iran hard' / 'going to hit them again hard today' and 'the deal is fully negotiated, they just need to sign' / 'want peace for the world'. At 15:51 UTC: Israeli jets over southern Lebanon and Bekaa. 16:15 UTC: Trump says US seized 22 Iranian oil ships in covert night operations.",
+      "consensus": "Market pricing Trump's Iran rhetoric as bluster. S&P down ~1.2% on the day. Oil elevated but not spiking. CPI data (12:30 UTC) was in-line — no Fed surprise. The consensus narrative: 'Deal is close, this is negotiating theater.'",
+      "contradiction": "A B-52 with transponder off heading from Sicily to the Middle East is NOT negotiating theater. B-52s are strategic bombers — they deploy to strike, not to intimidate. Turning off the transponder means operational security for a real mission. Combined with Trump's own words ('not going to say whether going to knock out bridges, power plants'), Israeli jets over Lebanon, and the admission of seizing 22 oil tankers — the US is executing a multi-axis escalation. The B-52 transponder-off is the tell the market is missing.",
+      "bet": {
+        "position": "LONG WTI crude, LONG VIX, SHORT SPY/QQQ",
+        "instrument": "CL (WTI futures), VIX futures/options, SPY/QQQ puts",
+        "entry": "Immediate — B-52 signal is 10 min old",
+        "target_window": "1-2 hours",
+        "rationale": "When the B-52 vector becomes public market knowledge (it's already being reported), oil spikes $3-5/bbl, equities dump 2-3%, VIX surges. The consensus is positioned for a deal — this breaks that thesis."
+      },
+      "benefit": {
+        "oil_directional": "+4% to +7% on WTI in 1-2 hours",
+        "equity_directional": "SPY -2% to -3.5%, QQQ -3% to -5%",
+        "vix_directional": "VIX from ~22 to 30+",
+        "volume_impact": "VERY HIGH — cross-asset flight to safety, oil volume surge on supply disruption premium"
+      }
     },
     {
-      "rank": 2,
-      "event": "US May CPI in-line headline but core M/M below expectations (+0.2% vs +0.3% est) — inflation at 3-year high, bond traders price Fed hike by end-2026",
-      "sources": ["infinityhedge", "markettwits"],
-      "timeline": "Released ~12:30 UTC June 10. Data now fully digested.",
-      "consensus_narrative": "Headline CPI +4.2% Y/Y at 3-year high confirms inflation is sticky. Core M/M softer than expected (+0.2% vs +0.3%) gives Fed cover to hold — but bond market still pricing a hike by Dec 2026. Beef prices at all-time highs in US retail are the visceral inflation signal.",
-      "contradiction": "Core CPI softening vs headline sticky. Bond market prices hike (hawkish) but weaker core suggests no urgency. Putin claims Russia inflation is under control and key rate can be cut — opposite macro regime. The 'soft core' print gives risk assets a bid while bond vigilantes keep long-end yields elevated.",
-      "bet": "LONG Nasdaq / QQQ on the core miss. If bonds don't sell off further and core trend is softening, tech can rally on 'peak hawkishness' thesis. The S&P and Nasdaq were down 1.2% and 2% yesterday (June 9) — today's CPI gives dip-buyers a catalyst. BlackRock explicitly called tech selloff 'opportunity to generate alpha'.",
-      "benefit": "QQQ recovery toward prior resistance levels. NVDA remains the macro proxy — AI trade intact (Anthropic Claude Fable 5 released, SpaceX IPO Friday, OpenAI files S-1). Tech positioning: long NVDA, ANTH (if public), MSTR (MicroStrategy bought 1,550 BTC last week). Hard asset inflation (beef prices) suggests consumer staples can also run.",
-      "confidence": 70,
-      "market_impact_potential": "MEDIUM",
-      "expiry": "2026-06-11T12:00:00Z"
+      "priority": "HIGH",
+      "title": "IRAN OIL FLOW NORMALIZING — 2M BPD MOVING vs MARKET NARRATIVE OF TOTAL BLOCKADE",
+      "sources": ["@MonitoringSituation", "@ethanlevins"],
+      "timestamp": "2026-06-10T14:40:16Z",
+      "event": "Rapidan Energy Group reports ~2 million barrels/day of oil and related products now flowing out of the Persian Gulf. Over the weekend off Oman, 16 tankers clustered to transfer millions of barrels of stranded oil. Trump admitted seizing 22 Iranian ships in covert operations. Iran struck Bahrain and Jordan with missiles/drones in retaliation (05:13 UTC). US strikes hit Iran in response to Apache shoot-down (01:00 UTC).",
+      "consensus": "Iran is crippled by the blockade. 'Nothing gets through.' Iran is a failed state. The Hormuz blockade is 'the most successful in naval history.' Oil premium is justified by supply disruption.",
+      "contradiction": "2M bpd is flowing — that's not a total blockade. 16 tankers cluster-trading off Oman means the secondary market is functioning. Trump bragging about seizing ships while 2M bpd flows means either: (a) the blockade is leaky and oil is getting through via non-Iranian Gulf producers, or (b) Iran is selling through intermediaries. Either way the 'total blockade' narrative is propaganda, not fact. If the market realizes supply is flowing, the oil risk premium deflates. But simultaneously — B-52 heading to theater means new strikes, which re-inflates it. Net: extreme oil vol, direction depends on which story dominates next.",
+      "bet": {
+        "position": "LONG oil vol (options straddle), directionally LONG crude",
+        "instrument": "WTI weekly options straddle, CL futures",
+        "entry": "Immediate — vol is cheap relative to binary event risk",
+        "target_window": "1-2 hours",
+        "rationale": "Two contradictory forces on oil (flow normalization + escalation). The straddle captures whichever breaks first. If B-52 strikes happen: oil explodes higher. If deal announced: oil dumps. Directional bias LONG because escalation risk dominates."
+      },
+      "benefit": {
+        "vol_directional": "Oil implied vol +10-15 points in 1-2 hours",
+        "oil_directional_on_escalation": "+$4-7/bbl on confirmed B-52 strike mission",
+        "oil_directional_on_deal": "-$3-5/bbl if 'deal signed' headline hits",
+        "volume_impact": "EXTREME — binary event on oil, gamma squeeze potential"
+      }
     },
     {
-      "rank": 3,
-      "event": "SpaceX IPO on Nasdaq (SPCX) scheduled June 12 — $250B+ demand against $75B raise target — biggest IPO in history",
-      "sources": ["trad_fin", "infinityhedge"],
-      "timeline": "Filing confirmed. IPO date June 12 (Friday this week). 1Q rev $4.69B, net loss $4.28B. $18.7B FY2025 revenue. Starlink 10.3M subscribers.",
-      "consensus_narrative": "SpaceX IPO is the marquee event of 2026. $1.8T+ expected valuation. $250B in demand vs $75B raise — massively oversubscribed. Elon Musk has 85.1% voting power. Symbol SPCX on Nasdaq. This is compressing AI/space/crypto narratives into one instrument.",
-      "contradiction": "Valuation at $1.8T on $18.7B revenue (~96x sales) vs operating loss of $2.6B. Retail demand is euphoric, institutional allocation will dominate. The net loss in Q1 ($4.28B) against revenue growth trajectory creates a wedge — this is a narrative-driven, not fundamentals-driven, IPO. Also: Trump mentioned 'public will become very rich from AI action' — could be a catalyst for the broader AI/tech complex pre-IPO.",
-      "bet": "LONG SPCX-related proxies: if you can't get IPO allocation, positions in satellite/space-adjacent stocks (ASTS, IRDM) and crypto (Starlink/connectivity angle). The Musk/Trump alignment adds a political premium. Watch for: Trump mentioning SpaceX/SPCX in his Iran press availability — would be a massive brand awareness pump.",
-      "benefit": "Pre-IPO positioning: long ASTS, long BTC (MicroStrategy bought 1,550 BTC last week, Saylor positioning for crypto-financed SpaceX play). The $250B demand signal makes this the liquidity event of the year — expect correlated asset pumps into Friday.",
-      "confidence": 80,
-      "market_impact_potential": "HIGH",
-      "expiry": "2026-06-13T00:00:00Z"
+      "priority": "MEDIUM",
+      "title": "ISRAEL-LEBANON — JETS OVER BEKAA + LEBANON AIRSTRIKES",
+      "sources": ["@ethanlevins", "@MonitoringSituation"],
+      "timestamp": "2026-06-10T15:51:05Z",
+      "event": "Israeli jets over southern Lebanon and the Bekaa Valley area. IAF launched airstrike in Bekaa Valley (15:23 UTC). Earlier (Jun 7 previous cycle): IDF Tyre evacuation, Nabatieh push. This was flagged as expanding front risk previously.",
+      "consensus": "Israel-Lebanon front is a sideshow to Iran. Market barely pricing it.",
+      "contradiction": "If the US is about to bomb Iran hard (B-52, Trump statements), Israel opening a Lebanon front simultaneously creates a TWO-FRONT escalation in 24 hours. Iran's proxies (Hezbollah) are already engaged. A B-52 strike on Iran + Israeli ground op in Lebanon = regional war, not contained strikes. The 'sideshow' narrative breaks if both happen.",
+      "bet": {
+        "position": "LONG VIX, LONG oil, LONG gold",
+        "instrument": "VIX calls, GLD, USO",
+        "entry": "Accumulate on any dip",
+        "target_window": "2-4 hours",
+        "rationale": "Two-front escalation risk is underpriced. If B-52 mission confirmed + Israel hits Lebanon simultaneously, it's a regional war premium repricing."
+      },
+      "benefit": {
+        "vix_directional": "VIX 28-35 on multi-front confirmation",
+        "gold_directional": "+2-4% on safe haven surge",
+        "volume_impact": "HIGH — gold breaking out on geopolitical risk premium"
+      }
     }
   ],
-  "monitoring_channels": {
-    "@trad_fin": {"messages_fetched": 20, "last_message": "2026-06-10T15:54:48Z", "status": "ok"},
-    "@MonitoringSituation": {"messages_fetched": 20, "last_message": "2026-06-10T15:56:21Z", "status": "ok"},
-    "@ASupersharij": {"messages_fetched": 16, "last_message": "2026-06-10T15:12:27Z", "status": "ok"},
-    "@infinityhedge": {"messages_fetched": 20, "last_message": "2026-06-10T12:30:20Z", "status": "ok"},
-    "@ethanlevins": {"messages_fetched": 20, "last_message": "2026-06-10T15:51:05Z", "status": "ok"},
-    "@markettwits": {"messages_fetched": 20, "last_message": "2026-06-10T15:55:51Z", "status": "ok"}
-  }
+  "stale_ignored": [
+    "Claude Fable 5 / Mythos 5 launch — priced in yesterday, not 2-hr actionable",
+    "SpaceX IPO demand >$250B — June 12 catalyst, not immediate",
+    "South Korea $350B US investment — structural, not event-driven 2-hr",
+    "CPI inline — no Fed reaction function change",
+    "Ukraine-Russia drone strikes on Cheboksary, Kharkiv, Odesa — ongoing, no new 2-hr catalyst"
+  ],
+  "watch_next_30min": [
+    "B-52 landing location / airbase identification in Middle East",
+    "CENTCOM confirmation of new strike orders on Iran",
+    "Any Israel-Lebanon ground incursion reports",
+    "Peskov / Kremlin reaction to US-Iran escalation",
+    "Oil futures volume spike at US afternoon close"
+  ]
 }
