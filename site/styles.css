@@ -188,7 +188,7 @@ body {
   display: inline-block; animation: ticker-scroll 60s linear infinite;
 }
 .ticker-track:hover { animation-play-state: paused; }
-.ticker-item {
+.ticker-item { color: #475569; /* v23.22: desaturated slate to fit Gazzetta palette */
   padding: 0 18px; display: inline-block;
 }
 .ticker-item.price-up { color: #059669; }
@@ -541,6 +541,12 @@ body {
 
 /* v23.21: Mobile Progressive Discovery — expandable teaser badges */
 @media (max-width: 768px) {
+  /* v23.22: Mobile Progressive Disclosure — Headline-only containers */
+  .container-desc { display: none; }
+  .container.collapsible .container-desc { display: none; }
+  .container-subtitle, .flow-freshness { font-size: 9px; }
+  /* Telemetry chip — compact stat inline */
+  .teaser-amount { display: inline !important; font-size: 10px; padding: 1px 5px; background: #F8FAFC; border: 1px solid #E5E7EB; }
   .teaser-item { position: relative; }
   .teaser-item .teaser-amount, .teaser-item .prob-badge, .teaser-item .teaser-linked,
   .teaser-item .freshness-ago { display: none; }

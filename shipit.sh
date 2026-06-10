@@ -90,6 +90,29 @@ else
 fi
 echo ""
 
+# ═══ Stage 2.6: RU Sync Gate — Atomic Twin enforcement (v23.22) ═══
+echo "── Stage 2.6: ru_sync_gate ──"
+RU_MISSING=0
+for f in about.html capital.html data.html methodology.html sources.html terms.html robots.txt sitemap.xml; do
+  if [ ! -f "$PROJECT/site/ru/$f" ]; then
+    echo "  ✗ MISSING: ru/$f — copying from en/"
+    cp "$PROJECT/site/$f" "$PROJECT/site/ru/$f" 2>/dev/null || true
+    RU_MISSING=$((RU_MISSING + 1))
+  fi
+done
+EN_COUNT=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories.json')); print(len([d.get('lead')]+d.get('stories',[])))" 2>/dev/null || echo 0)
+RU_COUNT=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories_ru.json')); print(len([d.get('lead')]+d.get('stories',[])))" 2>/dev/null || echo 0)
+if [ "$RU_COUNT" -lt "$EN_COUNT" ]; then
+  echo "  ⚠ RU stories ($RU_COUNT) < EN stories ($EN_COUNT) — running translate_content.py"
+  $PYTHON "$PROJECT/scripts/translate_content.py" 2>/dev/null || echo "  ⚠ Translation failed — check DeepSeek API key"
+  RU_COUNT_NEW=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories_ru.json')); print(len([d.get('lead')]+d.get('stories',[])))" 2>/dev/null || echo 0)
+  if [ "$RU_COUNT_NEW" -lt "$EN_COUNT" ]; then
+    echo "  ✗ CRITICAL: RU sync failed ($RU_COUNT_NEW < $EN_COUNT). Aborting deploy."
+    exit 1
+  fi
+fi
+echo "  ✓ RU sync gate passed: $RU_COUNT stories, $RU_MISSING files copied"
+
 # ═══ Stage 3: hash assets ═══
 echo "── Stage 3: hash assets ──"
 $PYTHON "$PROJECT/scripts/build_hashed_assets.py"

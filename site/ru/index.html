@@ -144,7 +144,7 @@
     </span>
   </div>
   <div class="masthead-right">
-    <span class="masthead-tagline" data-i18n="masthead_tagline">Capital moves markets. We track where it's going.</span>
+    <span class="masthead-tagline" style="color:#475569;font-size:12px;margin-left:auto;font-style:italic;font-family:var(--body)">Capital moves markets. We track where it's going.</span>
     <nav class="product-nav">
       <span class="nav-group-label">INTEL</span>
       <a href="./stories.html" class="nav-link"><span data-i18n="nav_stories">Stories</span></a>
@@ -476,14 +476,26 @@
     var fd=window.CAPITAL_FLOWS_DATA;
     if(!fd||!fd.flows||!fd.flows.length){if(waited<MAX_WAIT){waited+=500;setTimeout(populateSides,500);}return;}
     var flows=fd.flows,sorted=flows.slice().sort(function(a,b){return(b.pace_multiplier||1)-(a.pace_multiplier||1);});
-    var hooks=document.querySelectorAll('.side-hook-item');
+    // v23.22: Trade Hook Divergence Format — Bridgewater/BlackRock institutional tone
+    // "CRYPTO [DIVERGENT] — Price Lags Sentiment 8.2%"
+    var marketPrices = (window.MARKET_PRICES || {prices:{}}).prices || {};
     sorted.slice(0,3).forEach(function(f,i){
       if(!hooks[i])return;
-      hooks[i].querySelector('.side-hook-symbol').textContent=(f.asset_class||'').toUpperCase().slice(0,8)||'—';
-      hooks[i].querySelector('.side-hook-dir').textContent=(f.direction||'').toUpperCase();
-      hooks[i].querySelector('.side-hook-dir').className='side-hook-dir '+(f.direction==='inflow'?'bullish':'bearish');
-      hooks[i].querySelector('.side-hook-conv').textContent=(f.confidence_pct||'')+'%';
+      var ac = (f.asset_class||'equities').toLowerCase();
+      hooks[i].querySelector('.side-hook-symbol').textContent = ac.toUpperCase().slice(0,6);
+      // Compute divergence: sentiment_direction * confidence vs actual price delta
+      var priceDelta = (marketPrices[ac]||{}).change_pct || 0;
+      var sentimentSig = f.direction==='inflow' ? 1 : -1;
+      var gap = Math.abs(sentimentSig * (f.confidence_pct||50)/100 - priceDelta/10);
+      var gapPct = (gap * 10).toFixed(1);
+      var divLabel = gap > 0.5 ? 'DIVERGENT' : gap > 0.25 ? 'LAGGING' : 'ALIGNED';
+      var divColor = gap > 0.5 ? '#DC2626' : gap > 0.25 ? '#D97706' : '#059669';
+      hooks[i].querySelector('.side-hook-dir').innerHTML = '<span style="color:'+divColor+';font-weight:700">['+divLabel+']</span>';
+      hooks[i].querySelector('.side-hook-dir').className = 'side-hook-dir';
+      hooks[i].querySelector('.side-hook-conv').textContent = 'Δ '+gapPct+'%';
       hooks[i].onclick=function(){location.href='./flows.html';};
+      // Store market prices reference for this session
+      hooks[i].setAttribute('title', (f.headline||'').slice(0,80));
     });
     var top=sorted[0];
     var velVal=document.querySelector('#sideVelocity .side-vel-value');

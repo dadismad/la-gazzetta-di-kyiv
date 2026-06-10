@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-06-10T17:10:57Z",
+  "scan_time": "2026-06-10T18:10:00Z",
   "model": "deepseek-v4-flash",
   "channels_monitored": [
     "@trad_fin",
@@ -9,103 +9,114 @@
     "@ethanlevins",
     "@markettwits"
   ],
+  "scan_window": "Last 30 min (17:40-18:10 UTC) with context from last 4h",
   "market_context": {
-    "wti_crude": "$90.89 (+3.05% from prev close $88.20)",
-    "brent": "$93.78 (+2.55% from $91.45)",
-    "spy": "$729.07 (-1.08% from $737.05)",
-    "vix": "21.91 (prev close 18.92, +15.8%)",
-    "gold": "$4,146.60 (prev close $4,286.40, -3.3%)",
-    "note": "Oil already spiking on B-52 news. Gold dropping suggests liquidation for margin/cash — unusual given geopolitical risk. VIX surging confirms fear repricing."
+    "wti_crude": "$90.52 (+2.6% from prev close $88.20, down from $91.56 at 17:45 scan)",
+    "brent": "$93.67 (+2.4% from $91.45, down from $93.78 at 17:45)",
+    "spy": "$731.05 (-0.81% from $737.05, up from $728.36 at 17:45)",
+    "vix": "N/A after-hours — last print ~$21.62 range",
+    "gold": "$4,142.20 (-3.36% from prev close $4,286.40, holding above $4,131 from 17:45)",
+    "bitcoin": "$61,911 (+0.39% from prev close $61,672, range-bound)"
   },
   "stories": [
     {
       "priority": "CRITICAL",
-      "title": "US STRIKES HIT IRANIAN CIVILIAN WATER INFRASTRUCTURE — 20,000 WITHOUT WATER",
+      "title": "ISRAELI DEFENSE MINISTER: PREPARED TO CARRY OUT STRIKES INSIDE IRANIAN TERRITORY — US PLANES AIRBORNE, DRONES OVER TEHRAN",
       "sources": ["@ethanlevins"],
-      "timestamp": "2026-06-10T17:04:17Z",
-      "event": "US military strikes reportedly hit drinking water storage tanks in the Bamani district of Sirik county, Hormozgan province, Iran. 20,000 people are now without potable water. This is the first confirmed report of strikes hitting civilian water infrastructure in Iran.",
-      "context_timeline": "Ongoing escalation sequence: 15:45-15:56 UTC — Trump alternates between 'will attack Iran hard' / 'hit them again hard today' and 'deal is fully negotiated, just need to sign'. 15:51 UTC — Israeli jets over southern Lebanon and Bekaa. 16:15 UTC — Trump says US seized 22 Iranian oil ships in covert ops. 16:23 UTC — B-52 strategic bomber detected from Sicily heading Middle East, transponder off. 16:59 UTC — French soldier killed in Lebanon training accident. 17:04 UTC — US strikes confirmed hitting civilian water infrastructure in Hormozgan.",
-      "consensus": "Market pricing this as 'limited military strikes' / 'negotiating leverage theater'. SPY -1.08%. Oil +3% but not spiking parabolic. Consensus narrative: 'Both sides have off-ramps, deal gets signed this week.' VIX at 21.91 is elevated but not panic (was 18.92 prev close).",
-      "contradiction": "Hitting civilian WATER STORAGE TANKS is not 'limited strikes on military targets'. This is infrastructure warfare — the same playbook used against civilian power grids and water in other theaters. 20,000 civilians without water is a humanitarian escalation that will generate global headlines. Combined with a B-52 nuclear-capable bomber vectoring east with transponder off: this is a deliberate escalation narrative, not negotiation theater. The market consensus is WRONG. This is not a contained conflict — the US is systematically degrading Iranian civilian infrastructure.",
+      "timestamp": "2026-06-10T18:06:31Z",
+      "event": "Israeli Defense Minister formally announces: 'Prepared to carry out strikes inside Iranian territory' (18:06 UTC). This is the highest-level Israeli authorization signal yet — a sitting defense minister declaring readiness for sovereign Iranian territory strikes. Compounds with: (a) 17:56 UTC — 'Possibility of strike on Iran is high, American planes airborne and transponders off. Drones over Tehran.' (b) 17:19 UTC — Israeli Broadcasting Authority: 'Preparing for resumption of war, awaiting US green light.' (c) 16:23 UTC — B-52 strategic bomber from Sicily toward Middle East, transponder off. This is not rhetoric — it is operational signaling.",
+      "context_timeline": "15:48 — Trump: 'Will be attacking Iran hard' (trad_fin, MonitoringSituation). 15:51 — Trump: 'Going to hit them again hard today' (markettwits). 16:15 — Trump: 'We took 22 ships, no lights, no radar' (ethanlevins). 16:23 — B-52 vectoring Middle East from Sicily (MonitoringSituation). 17:04 — US strikes hit water infrastructure, 20,000 without water in Hormozgan (ethanlevins). 17:19 — Israeli Broadcasting Authority: preparing for war, awaiting US green light (ethanlevins). 17:36 — Iranian President acknowledges 'vital infrastructure targeting' (ethanlevins). 17:51 — Trump announces 100M barrels freed through Hormuz (trad_fin). 17:56 — US planes airborne, drones over Tehran (ethanlevins). 18:06 — Israeli Defense Minister: prepared to strike inside Iran (ethanlevins).",
+      "consensus_narrative": "Oil has faded from $91.56 to $90.52 since 17:45. SPY recovered from $728.36 to $731.05. Market is fading the escalation — reading Trump's 100M barrels Hormuz announcement as a de-escalation signal (oil supply returning = bullish for equities, bearish for oil). VIX implied at ~$21 — markets pricing geopolitical noise, not war. Consensus: 'Trump wants a deal, the 100M barrels signal is him taking a victory lap and de-escalating.'",
+      "contradiction": "The market is reading the Hormuz 100M barrels story as a DE-ESCALATION signal. But look at what happened IN THE SAME 15 MINUTES: Trump announces oil relief (17:51), AND the US has planes airborne with transponders off + drones over Tehran (17:56), AND the Israeli Defense Minister formally announces readiness to strike Iranian territory (18:06). The oil announcement is a cover for the military operation. 'We got the oil out, now we can strike without supply shock.' That is the REAL read. The market fading oil from $91.56 to $90.52 on 'supply relief' is a TRAP if the Israel-US strikes on Iran begin within 2 hours. Additionally: Israeli media reported at 17:46 that 'Trump not interested in full-scale war' — this looks like a planted narrative to suppress VIX before a strike window. The disinformation campaign is active.",
       "bet": {
-        "position": "LONG WTI crude, LONG VIX, SHORT SPY/QQQ, scale into GOLD on dip",
-        "instrument": "CL futures, VIX calls (weekly), SPY puts, GLD",
-        "entry": "Immediate — water infrastructure strike is 6 min old, markets haven't priced it yet",
-        "target_window": "1-2 hours",
-        "rationale": "The water strike is the escalation tell the market has been dismissing. When this hits mainstream news (water crisis narrative = emotional multiplier), the risk premium reprices. Oil targets $94-96 WTI. SPY targets $720-715. VIX targets 25-28. Gold dip to $4,100-4,150 is buying opportunity, not signal — likely margin liquidation creating artificial discount."
+        "position": "LONG WTI crude into close — the oil fade is a trap. Israeli Defense Minister + drones over Tehran + B-52 vectoring is a strike package, not negotiation theater.",
+        "instrument": "CL futures (overnight hold), WTI weekly call spreads $93-96 strikes, SPY puts $728-725 overnight hold",
+        "entry": "Immediate — Israeli Defense Minister statement is 4 min old. Oil at $90.52 is the entry before the gap.",
+        "target_window": "1-2 hours / overnight into US equity open June 11",
+        "rationale": "The pattern is identical to the Feb 2022 Russia-Ukraine pre-invasion playbook: (1) official explicitly says 'prepared to strike' (Israeli DM > Putin's 'military exercises'), (2) US military assets quietly reposition (B-52, drones over Tehran), (3) market fades the headline as noise, (4) strike happens during market off-hours. Oil gaps +3-5% at next open. SPY gaps down 1-2%. VIX reprices to 25+. Gold anomaly (-3.36%) either means margin liquidation (bearish) or the biggest dip-buying opportunity in months (bullish). The Hormuz 100M barrels story is a setup — the oil is already out, so striking Iran now costs less in supply terms."
       },
       "benefit": {
-        "oil_directional": "WTI $94-96/bbl (+4-6% from current) in 1-2 hours",
-        "equity_directional": "SPY -2% to -3% from current ($715-720 range)",
-        "vix_directional": "VIX from 21.91 to 26-30 on escalation confirmation",
-        "gold_directional": "Gold discount buying opportunity — current -3.3% anomaly likely margin/forced selling, rebound to $4,250+ within 2-4 hours",
-        "volume_impact": "VERY HIGH — water infrastructure strike is a humanitarian narrative that mainstream media will amplify. Cross-asset repricing."
-      }
+        "oil_directional": "WTI $93-96/bbl (+3-6% from current $90.52) within 1-2 hours on confirmed Israel-US strikes on Iran. If Hormuz oil flow is secured, the capped to $96. If Hormuz flow is disrupted mid-strikes, WTI to $98-100.",
+        "equity_directional": "SPY $722-725 (-0.8% to -1.2%) overnight if strikes confirmed. Financials and consumer discretionary lead downside. Defense stocks inverted bid.",
+        "vix_directional": "VIX 24-27 from ~21.6 on confirmed Israeli-Iran strikes. Options premium repricing of two-front Middle East war.",
+        "gold_directional": "Gold $4,142 — the -3.36% selloff is anomalous during geopolitical escalation. Two theories: (a) margin liquidation from commodity longs covering, (b) algorithmic de-risking. If strikes happen, gold rebounds to $4,200-4,250 within 4 hours. BUY on dip to $4,100.",
+        "crypto_directional": "Bitcoin $61,911 — range-bound, not pricing geopolitical risk. If equity selloff deepens, BTC follows SPY correlation lower to $59,000-60,000. Only a 'digital gold' narrative shift re-prices BTC higher.",
+        "volume_impact": "EXTREME — Israeli Defense Minister formal strike announcement + US airborne assets + B-52 + drones over Tehran = the highest-conviction escalation setup since the Feb 2022 Russia-Ukraine invasion. Markets are not pricing this. Oil is the cleanest play — fade the fade."
+      },
+      "freshness_minutes": 4,
+      "materiality_score": 9.8
+    },
+    {
+      "priority": "CRITICAL",
+      "title": "TRUMP ANNOUNCES 100 MILLION BARRELS FREED THROUGH STRAIT OF HORMUZ — OIL SUPPLY RELIEF VS MILITARY COVER STORY",
+      "sources": ["@trad_fin", "@MonitoringSituation", "@markettwits", "@ethanlevins"],
+      "timestamp": "2026-06-10T17:51:01Z",
+      "event": "Trump: 'In the past month, I directed our Great U.S. Military to execute a secret mission to support Oil Tankers through the Strait of Hormuz. Today I am pleased to announce this effort has resulted in more than 100 MILLION Barrels of oil reaching open market. UNITED STATES CONTROLS STRAIT OF HORMUZ, NOT IRAN.' ETHANLEVINS context (16:15 UTC): 'We have been taking out millions of barrels of oil. Nobody knows it. We took 22 ships the other night, late at night, with no lights because they have no radar.' MONITORINGSITUATION (14:40 UTC): '16 tankers off Oman transferred millions of barrels. About 2 million barrels/day of oil flowing out of the Gulf.'",
+      "consensus_narrative": "OIL BULLISH NARRATIVE IS COLLAPSING — market read this as a supply-side breakthrough that negates the Hormuz blockade threat. Oil faded from $91.56 to $90.52 in 20 minutes following this announcement. Consensus: 'Supply is coming through, the blockade is broken, oil spike capped at $92.' Equities bid on lower oil = lower inflation = no Fed hike. This is THE narrative shift driving the SPY recovery from $728 to $731.",
+      "contradiction": "The 100M barrels announcement is NOT a de-escalation signal — it is a PRECAUTIONARY BATTLEFIELD PREPARATION. You don't secure the oil supply route BEFORE launching strikes; you do it BECAUSE you know strikes are coming and you want to insulate the global economy from the supply shock. This is classic military logic: secure logistics, then strike. The 100M barrels = strategic oil reserve being dumped into the market to front-run the supply disruption from Iran strikes. Look at the sequencing: (1) 100M barrels announced (17:51), (2) US planes airborne transponders off (17:56), (3) Israeli DM ready to strike Iran (18:06). The oil is the preparation, not the conclusion. Markets reading this wrong = setup for max pain squeeze higher in oil.",
+      "bet": {
+        "position": "COUNTER-CONSENSUS LONG oil. The market is fading oil on 'supply relief' but the relief is actually a military preparation signal for strikes that will disrupt supply in the short term regardless.",
+        "instrument": "WTI futures long, $93-96 call spreads weekly, Brent-WTI spread (Brent has tighter Iran correlation)",
+        "entry": "Oil fading to $90.52 — buy the fade. This is a 2-hour window before strike confirmation reprices $3-5 higher.",
+        "target_window": "1-4 hours / overnight",
+        "rationale": "If the strikes are confirmed within 2 hours (Israeli DM statement + US airborne assets suggests <2h window), oil gaps +3-5% at next open regardless of the 100M barrels. The 100M barrels only caps the mid-term supply shortage (next 2-3 weeks), it does NOT prevent a +$3-5 spot spike from immediate supply disruption fears. In Feb 2022, the US released SPR oil BEFORE the invasion — oil still spiked +8% on the invasion day itself. Same pattern here."
+      },
+      "benefit": {
+        "oil_directional": "WTI $93-96 if strikes confirmed by next US session open. The 100M barrels is the ceiling — it caps the move at ~$96-97, but it doesn't prevent the $3-5 spike from the event itself.",
+        "equity_directional": "If oil spikes on strikes despite the 100M barrels signal, equities sell off harder because the 'supply relief = no inflation' thesis collapses. SPY goes to $720-722.",
+        "gold_directional": "Gold — the critical question. If gold continues selling off while oil spikes, that confirms margin liquidation. If gold bounces with oil, that confirms safe-haven demand and $4,200 is the target.",
+        "volume_impact": "EXTREME — this is a narrative war. The market has taken the wrong side of the trade. The 100M barrels is not the de-escalation catalyst markets think it is. It is the strike preparation signal."
+      },
+      "freshness_minutes": 19,
+      "materiality_score": 9.5
     },
     {
       "priority": "HIGH",
-      "title": "B-52 STRATEGIC BOMBER VECTOR MIDDLE EAST — TRANSPONDER OFF — STILL UNRESOLVED (47 MIN OLD)",
-      "sources": ["@MonitoringSituation"],
-      "timestamp": "2026-06-10T16:23:06Z",
-      "event": "KAN News reporter: B-52 strategic American bomber detected on flight tracking heading from US base in Sicily toward the Middle East. Plane turned off transmitter — flight path unknown. Nuclear-capable strategic bomber. Still no confirmation of landing location or mission outcome as of 17:10 UTC.",
-      "consensus": "Market pricing: 'B-52 is standard deterrence posture, not a strike mission.' Oil up but not parabolic. The B-52 news is being dismissed as saber-rattling.",
-      "contradiction": "47 minutes have passed. The B-52 either landed at an undisclosed location in the Middle East (operational security) or has already conducted/joined a strike package. Combined with the confirmed water infrastructure strike at 17:04 UTC — the B-52 was NOT deterrence. It was mission-ready ordnance heading to theater. The fact that its landing hasn't been announced means it's either still airborne on a mission or parked at a secured base for follow-on strikes. Either way, the 'deterrence' narrative is dead.",
+      "title": "S&P AND NASDAQ BREAK BELOW FRIDAY'S LOW — TECHNICAL BREAKDOWN CONFIRMED + CPI INFLATION AT 3-YEAR HIGH",
+      "sources": ["@trad_fin", "@infinityhedge", "@markettwits"],
+      "timestamp": "2026-06-10T15:30:49Z",
+      "event": "S&P and NASDAQ broke below Friday's low intraday (15:30 UTC). S&P now down 1.2%, NASDAQ down 2%. Combined with US May CPI: +0.5% M/M (in line), Core +0.2% M/M (below 0.3% est), Y/Y 4.2% (headline) and 2.9% (core) — all in line. But inflation is at a 3-year high, bond traders still pricing a Fed hike in 2026. BlackRock's Chan says 'Tech selloff is opportunity to generate alpha' (02:09 UTC — significantly earlier). DXY attempting to consolidate at multi-year support.",
+      "consensus_narrative": "Equities are breaking down on (a) geopolitical risk (Iran), (b) inflation persistence (3-year high CPI), (c) Fed hike risk. The technical breakdown below Friday's low is significant. Consensus: 'Risk-off until we get clarity on Iran deal and Fed path.' BlackRock calling the dip a buying opportunity is contrarian cheerleading, not a signal.",
+      "contradiction": "The technical breakdown is real but the CAUSE is what matters. If the SPY $731 close holds and the Iran situation de-escalates (which markets are currently pricing as the base case), the break below Friday's low is a false breakdown. BUT — if the Israel-Iran strike package launches (as the 17:56-18:06 data suggests), then the breakdown acceleration target is $720-715. The contradiction is in the vol regime: VIX at ~$21 is NOT pricing war. If strikes happen, VIX repricing alone pushes SPY to $720 even without fundamental damage. The technical breakdown + war event = 3-4% downside from current levels.",
       "bet": {
-        "position": "Maintain LONG crude, LONG VIX — the B-52 is the nuclear escalation umbrella that the water strike was conducted under",
-        "instrument": "Hold CL longs, add WTI weekly call spreads ($95-100 strikes)",
-        "entry": "Already positioned — add to position on any pullback",
-        "target_window": "1-2 hours (B-52 confirmation window)",
-        "rationale": "If the B-52 conducted strikes (or is still airborne for imminent strikes), the escalation premium re-rates sharply. Nuclear-capable bomber in theater raises the stakes beyond anything currently priced."
+        "position": "SHORT SPY/QQQ into close and overnight — technical breakdown + escalation catalyst = downside acceleration",
+        "instrument": "SPY puts $728-725 (overnight hold), QQQ puts $490-485",
+        "entry": "SPY $731 — enter short on the technical breakdown confirmed. If Israel-Iran strikes break overnight, gap down to $722-725 at US open.",
+        "target_window": "Overnight through June 11 US open",
+        "rationale": "The technical breakdown below Friday's low is a structural shift. The last time SPY broke below a weekly low on geopolitical escalation was Oct 7 2023 (Hamas attack) — SPY dropped 3% in 3 days post-break. Same pattern here: technical breakdown + war escalation = mean reversion to 50-day MA at $720-715."
       },
       "benefit": {
-        "oil_contingent": "If B-52 strike mission confirmed + water infrastructure: WTI breaches $95 within minutes",
-        "equity_contingent": "SPY acceleration to -2.5% intraday",
-        "vix_contingent": "VIX 25+ if B-52 delivered ordnance",
-        "volume_impact": "EXTREME on B-52 confirmation — unmatched by any other catalyst in the current setup"
-      }
-    },
-    {
-      "priority": "MEDIUM",
-      "title": "FRENCH SOLDIER KILLED IN LEBANON — TRAINING ACCIDENT DURING HEIGHTENED TENSIONS",
-      "sources": ["@ethanlevins"],
-      "timestamp": "2026-06-10T16:59:45Z",
-      "event": "French Private First Class Florian Gillet of the 8th RPIMa died in Lebanon from accidental gunfire during training preparation. He was part of an operational partnership mission for the Lebanese Armed Forces. This occurs while Israeli jets are actively over southern Lebanon and the Bekaa Valley.",
-      "consensus": "Not market-relevant — training accident, no political implications.",
-      "contradiction": "A French soldier dying in Lebanon — even accidentally — during a period where Israeli jets are bombing Lebanese territory (Bekaa strike at 15:23 UTC) and French forces are training with the Lebanese military creates a layered diplomatic risk. France already has complex relations in Lebanon (UNIFIL mandate, historical ties, large diaspora). A French service member's death, even accidental, during an active Israeli bombing campaign will draw French parliamentary scrutiny. Macron's government is already fragile — this could force political statements or diplomatic demarches that alter the multi-front calculus. Not a market mover directly, but a compounding risk factor.",
-      "bet": {
-        "position": "None direct — monitor for French political response in next 24 hours",
-        "instrument": "Watch EUR/USD, French bond spreads for reaction",
-        "entry": "N/A — informational only",
-        "target_window": "24 hours",
-        "rationale": "If France recalls or reduces its Lebanon mission, it signals NATO fracture on Middle East policy. Lower probability but high impact on EUR if it escalates."
+        "equity_directional": "SPY $722-725 if strikes confirmed. $715-720 if Iranian retaliation includes Hormuz disruption escalation.",
+        "sector_rotations": "Defense ($LMT, $GD, $RTX) and energy ($XLE) inverse to tech. Tech is the primary downside driver (NASDAQ -2% vs S&P -1.2%). Stay short tech, stay long energy.",
+        "vol_impact": "VIX repricing from ~$21 to $25+ is the primary profit channel on SPY puts. Pure vol plays (VIX calls, VIX futures) outperform directional shorts.",
+        "volume_impact": "HIGH — technical breakdown + macro (CPI) + geopolitical (Israel-Iran) is a triple catalyst. Multi-asset vol expansion likely."
       },
-      "benefit": {
-        "direct_market_impact": "LOW — no immediate tradeable signal",
-        "second_order": "If France makes diplomatic statement on Israel-Lebanon, adds to multi-front complexity premium",
-        "volume_impact": "LOW — institutional awareness but no immediate positioning trigger"
-      }
+      "freshness_minutes": 159,
+      "materiality_score": 8.5
     }
   ],
   "stale_ignored": [
-    "US CPI May inline at 4.2% Y/Y — already priced, no Fed reaction change",
-    "Putin signaling Russian rate cuts — Russia domestic, not 2-hr event-driven for global markets",
-    "Roblox unblocked in Russia — not 2-hr actionable",
-    "SpaceX IPO demand >$250B — June 12 catalyst, not immediate",
-    "Anthropic Claude Fable 5 launch — priced in yesterday",
-    "South Korea $350B investment — structural, not 2-hr event",
-    "Ukraine-Russia drone/missile strikes on Cheboksary, Kharkiv, Odesa — ongoing baseline, no new catalyst",
-    "Russian inflation May 0.17% vs 0.22% est — slightly below, no market-moving divergence",
-    "OPEC production at lowest since 2000 — structural bullish oil, already priced",
-    "US beef prices record high — inflation narrative priced, not 2-hr event",
-    "Russian MoD supply officer assassinated — internal security issue, not market-moving 2-hr"
+    "SpaceX IPO $250B demand — June 12 catalyst, not immediate (trad_fin)",
+    "Anthropic Claude Fable 5 launch — AI product news, not 2h actionable (trad_fin, infinityhedge)",
+    "South Korea $350B US investment — structural, no immediate trigger (trad_fin)",
+    "Kalshi requiring workplace disclosure — regulatory news, slow burn (trad_fin)",
+    "Russia CPI May 0.17% vs 0.22% est — Russian domestic, no 2h FX trade (markettwits)",
+    "Russia drone strike on Zatoka Bridge — baseline Ukraine war ops (ethanlevins)",
+    "French soldier killed in Lebanon (16:59) — tragic but not tradeable signal",
+    "Beef prices record high in US — inflation confirmation, no new signal (markettwits)",
+    "Roblox unblocked in Russia — irrelevant (markettwits)",
+    "DXY consolidation at multi-year support — technical, no catalyst yet (markettwits)",
+    "MicroStrategy 1,550 BTC bought @ $65,332 — stale, 2 days old (infinityhedge)",
+    "ZCASH network down — crypto-specific, not macro (infinityhedge)"
   ],
   "watch_next_30min": [
-    "B-52 landing location / airbase identification in Middle East",
-    "CENTCOM or Pentagon confirmation of water infrastructure strike",
-    "Any Iranian retaliation announcement or missile launch",
-    "Israel-Lebanon escalation (ground incursion reports)",
-    "Oil futures after-hours volume spike",
-    "Gold price — watch for reversal from current -3.3% anomaly (margin-selling thesis test)",
-    "VIX futures — if 22.5 breaks, VIX gamma squeeze begins targeting 25+"
+    "Israeli security cabinet emergency session announcement — any formal war authorization",
+    "Iranian air defense activity reports or airspace closure",
+    "CENTCOM social media activity (pre-strike comms blackout or post-strike confirmation)",
+    "B-52 landing confirmation in Middle East theater",
+    "WTI crude after-hours — any move above $91.50 signals the fade was wrong",
+    "Gold — $4,100 hold or break. Hold = buying opportunity. Break = margin liquidation accelerating",
+    "Any Hormuz Strait shipping disruption reports (tanker AIS data)",
+    "DXY — if USD strengthens on safe haven, oil rally capped. If USD weakens (de-dollarization theme), oil rally amplified."
   ]
 }
