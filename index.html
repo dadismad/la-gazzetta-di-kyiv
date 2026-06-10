@@ -105,9 +105,15 @@
   <div class="masthead-right">
     <span class="masthead-tagline" data-i18n="masthead_tagline">Capital moves markets. We track where it's going.</span>
     <nav class="product-nav">
-      <a href="./stories.html" class="nav-link">Products</a>
-      <a href="./event-horizon.html" class="nav-link active">Horizon</a>
-      <a href="./flow-nodes.html" class="nav-link active">Flow Nodes</a>
+      <span class="nav-group-label">INTEL</span>
+      <a href="./stories.html" class="nav-link">Stories</a>
+      <a href="./flows.html" class="nav-link">Flows</a>
+      <a href="./event_horizon.html" class="nav-link">Horizon</a>
+      <a href="./flow-nodes.html" class="nav-link">Nodes</a>
+      <span class="nav-group-label">ALPHA</span>
+      <a href="./signal.html" class="nav-link">Signal</a>
+      <a href="./trades.html" class="nav-link">Trades</a>
+      <a href="./track.html" class="nav-link">Track</a>
     </nav>
     <time class="masthead-meta" id="mastheadMeta" datetime="2026-06-06T15:00:00.000Z">—</time>
     <span class="lang-switcher">
@@ -145,7 +151,14 @@
 </section>
 
 <main class="hints-lobby">
-  <!-- v22.20: Collapsible product sections — headlines only, full content on dedicated pages -->
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- INTEL LAYER — Reality: Analysis supported or contradicted by capital flows -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="layer-header intel-header">
+    <span class="layer-label">INTEL</span>
+    <span class="layer-desc">What's happening — and where the money is actually going.</span>
+  </div>
 
   <section class="container collapsible expanded" id="storiesTeaser">
     <div class="container-header">
@@ -189,6 +202,14 @@
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- ALPHA LAYER — Execution: Strategic bets following or fading the intel -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="layer-header alpha-header">
+    <span class="layer-label">ALPHA</span>
+    <span class="layer-desc">Strategic positioning derived from the intel — where to act.</span>
+  </div>
+
   <section class="container collapsible" id="signalTeaser">
     <div class="container-header">
       <span class="container-title" data-i18n="container_signal_title">The Signal</span>
@@ -225,22 +246,19 @@
     <div class="container-body">
       <div class="services-grid">
         <a href="./stories.html" class="svc-card" id="svcCSuite">
-          <span class="svc-icon">🏛</span>
-          <span class="svc-persona">C-Suite</span>
+          <span class="svc-persona">C-SUITE</span>
           <span class="svc-title">Macro Horizon</span>
-          <span class="svc-desc">Anticipate regulatory headwinds, spot supply-chain dislocations before they hit earnings, align capital allocation with structural policy shifts. Board-level briefings with actionable scenario triggers — not just context, conviction.</span>
+          <span class="svc-desc">Structural policy shifts, supply-chain bottlenecks, regulatory implications. Board-ready context for capital allocators.</span>
         </a>
         <a href="./flow-nodes.html" class="svc-card" id="svcQuant">
-          <span class="svc-icon">⚡</span>
-          <span class="svc-persona">Quant</span>
+          <span class="svc-persona">QUANTITATIVE</span>
           <span class="svc-title">Flow Telemetry</span>
-          <span class="svc-desc">Ingest raw flow telemetry into your models — velocity differentials, correlation matrices, anomaly scores. Clean, low-latency data feeds optimized for quantitative pipelines. Build alpha on signal, not stories.</span>
+          <span class="svc-desc">Capital velocity differentials, correlation coefficients, heat scores. Low-latency raw data. Zero narrative fluff.</span>
         </a>
         <a href="./trades.html" class="svc-card" id="svcTrader">
-          <span class="svc-icon">🎯</span>
-          <span class="svc-persona">Trader</span>
+          <span class="svc-persona">EXECUTION</span>
           <span class="svc-title">Action Triggers</span>
-          <span class="svc-desc">Actionable directional bias with precise entry zones, volatility-adjusted stops, and conviction ratings. Divergence alerts fire when narrative breaks from price — position before the crowd.</span>
+          <span class="svc-desc">Directional bias, entry/stop levels, conviction ratings with ATR-derived stops. Ultra-concise, trade-ready.</span>
         </a>
       </div>
     </div>

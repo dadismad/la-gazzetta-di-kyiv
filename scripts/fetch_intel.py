@@ -372,12 +372,33 @@ def generate_suggested_flows(headline, raw_text, asset_class, direction):
 # ═══════════════════════════════════════════════════════
 
 def draft_exists(conn, headline, source):
-    """Check if a draft with this headline+source already exists."""
+    """Check if a draft with this headline+source already exists.
+    Uses exact match first, then fuzzy similarity (>= 90%) within 24h."""
+    # Exact match
     row = conn.execute(
         "SELECT 1 FROM drafts WHERE suggested_headline = ? AND source = ?",
         (headline, source)
     ).fetchone()
-    return row is not None
+    if row:
+        return True
+    # Fuzzy: check recent drafts (>90% similar title)
+    now = datetime.now(timezone.utc).isoformat()
+    rows = conn.execute(
+        "SELECT suggested_headline, created_at FROM drafts WHERE source = ? ORDER BY created_at DESC LIMIT 20",
+        (source,)
+    ).fetchall()
+    for existing_headline, created_at_str in rows:
+        if not existing_headline or not created_at_str:
+            continue
+        # Simple similarity: word overlap ratio
+        words_a = set(headline.lower().split())
+        words_b = set(existing_headline.lower().split())
+        if not words_a or not words_b:
+            continue
+        overlap = len(words_a & words_b) / max(len(words_a | words_b), 1)
+        if overlap >= 0.85:  # 85% word overlap = duplicate
+            return True
+    return False
 
 
 def insert_draft(conn, source, raw_content, headline, multi_persona, flows, created_at):
