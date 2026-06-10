@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-10T05:14:14.248232+00:00",
+  "timestamp": "2026-06-10T07:41:45.111450+00:00",
   "timezone": "UTC",
   "channels": {
     "trad_fin": [
@@ -106,11 +106,6 @@
     ],
     "MonitoringSituation": [
       {
-        "text": "(weekend love taps over\nMarket about to open)",
-        "date": "2026-06-08T10:36:41+00:00",
-        "post_id": "MonitoringSituation/5609"
-      },
-      {
         "text": "Houthis declare a ban on Israeli ships in the Red Sea (not new from previous status quo aka just reiterating)",
         "date": "2026-06-08T10:41:42+00:00",
         "post_id": "MonitoringSituation/5610"
@@ -204,19 +199,14 @@
         "text": "IRAN WILL RESPOND DECISIVELY TO THE AMERICAN AGGRESSION, AS IT WARNED A FEW HOURS AGO: TASMIN",
         "date": "2026-06-09T21:49:03+00:00",
         "post_id": "MonitoringSituation/5628"
+      },
+      {
+        "text": "TAIWAN MULLS CURBS ON AI CHIP EXPORTS TO CHINA TO ALIGN WITH US",
+        "date": "2026-06-10T06:53:05+00:00",
+        "post_id": "MonitoringSituation/5629"
       }
     ],
     "ASupersharij": [
-      {
-        "text": "Около 280 БПЛА летят атаковать РФ и неподконтрольные территории.\n\nВ данный момент идёт массированная атака БПЛА на Мелитополь Запорожской области.",
-        "date": "2026-06-09T20:46:54+00:00",
-        "post_id": "ASupersharij/55571"
-      },
-      {
-        "text": "В Мелитополе после атаки пропал свет.",
-        "date": "2026-06-09T21:04:27+00:00",
-        "post_id": "ASupersharij/55572"
-      },
       {
         "text": "Это всерьез. Не фейк. В частном обсуждаем. \n\nПлохо дело",
         "date": "2026-06-09T22:01:49+00:00",
@@ -261,6 +251,11 @@
         "text": "Момент одного из прилетов по «ВНИИР-Прогресс» в Чебоксарах.",
         "date": "2026-06-10T04:50:37+00:00",
         "post_id": "ASupersharij/55590"
+      },
+      {
+        "text": "Любовь народная - кто камнем, кто ломом...\n\nБусы ТЦК в Кривом Роге теперь ездят с решётками на всех окнах.",
+        "date": "2026-06-10T07:38:38+00:00",
+        "post_id": "ASupersharij/55591"
       }
     ],
     "infinityhedge": [
@@ -367,36 +362,6 @@
     ],
     "ethanlevins": [
       {
-        "text": "🇷🇺 Russian Geran-2 drones attacked targets in the town of Dmytrivka, eastern Dnipropetrovsk Oblast, this morning.",
-        "date": "2026-06-09T13:18:01+00:00",
-        "post_id": "ethanlevins/3479"
-      },
-      {
-        "text": "🇺🇦 🇷🇺 Yesterday's Russian strikes on Odesa Oblast targeted the Zatoka Bridge - the only point within Ukraine connecting the southern part of Odesa Oblast to the rest of the country. \n\nThe bridge was struck by at least 2 Iskander-M ballistic missiles, 3 Kh-59/59 cruise missiles, 4 KAB glide-bombs, and several Geran-2 drones.\n\nNASA FIRMS data recorded large fires burning at the bridge following the strikes.",
-        "date": "2026-06-09T13:34:01+00:00",
-        "post_id": "ethanlevins/3480"
-      },
-      {
-        "text": "🇷🇺 🇺🇦 Aftermath of overnight Russian Tornado-S rocket strikes on the city of Chuhuiv, Kharkiv Oblast.\n\n3 dead, 6 injured",
-        "date": "2026-06-09T13:59:01+00:00",
-        "post_id": "ethanlevins/3481"
-      },
-      {
-        "text": "🇵🇸 The IDF claims that they killed 3 members of the Palestinian Islamic Jihad in two separate targeted assassination strikes on the central Gaza Strip on Saturday.\n\nAccording to them, they killed Muhammad Atiya Hassan Abu Afesh, the Head of the PIJ's Engineering and Specializations unit, and Farhat Zuhair Farhat Harara, the Deputy Head of the PIJ's Engineering Directorate, in one strike.\n\nThe other strike reportedly killed Abdullah Allah Riad Masoud Qadum, the head of the PIJ's Northern Gaza anti-tank unit, who reportedly took part in many ATGM strikes against IDF forces during the war.",
-        "date": "2026-06-09T14:16:35+00:00",
-        "post_id": "ethanlevins/3482"
-      },
-      {
-        "text": "🇱🇧 Hezbollah released footage showing an ATGM strike on an Israeli Merkava tank near the historic Beaufort Castle in southern Lebanon.",
-        "date": "2026-06-09T14:36:37+00:00",
-        "post_id": "ethanlevins/3483"
-      },
-      {
-        "text": "🇱🇧 This week, the strongest Israeli air strikes have taken place in Tyre. \n\nThe entire city has been ordered to evacuate as airstrikes continue hourly.",
-        "date": "2026-06-09T14:58:01+00:00",
-        "post_id": "ethanlevins/3484"
-      },
-      {
         "text": "🇮🇷 Confirmed 🚁 💥",
         "date": "2026-06-09T17:12:10+00:00",
         "post_id": "ethanlevins/3485"
@@ -465,108 +430,138 @@
         "text": "🇧🇭 🇯🇴 Iran retaliated with strikes against Bahrain and Jordan. \n\nIt seems 5 missiles at Amman, Jordan all intercepted. \n\nBahrain had many drones and missiles, with direct impacts on targets",
         "date": "2026-06-10T05:13:23+00:00",
         "post_id": "ethanlevins/3498"
+      },
+      {
+        "text": "🇺🇦 🇷🇺 Ukrainian FP-5 Flamingo cruise missiles struck the city of Cheboksary, Chuvashia Republic.\n\nAdditional missiles are currently flying to the Ural Mountains towards the area of Tyumen Oblast.",
+        "date": "2026-06-10T05:19:01+00:00",
+        "post_id": "ethanlevins/3499"
+      },
+      {
+        "text": "🇷🇺 🇺🇦 Yesterday evening and this morning, Russia attacked Kharkiv Oblast with at least 25 Geran-2 drones. \n\nTargets were hit in the Kholodnohirs'kyi District of Kharkiv City, north of Kharkiv City, the city of Balakliya, and the town of Pechenihy.",
+        "date": "2026-06-10T05:28:01+00:00",
+        "post_id": "ethanlevins/3500"
+      },
+      {
+        "text": "🇷🇺 🇺🇦 Also last night, Russia carried out a large-scale Geran-2 drone attack on Odesa involving at least 30 drones.\n\nTargets were hit near the Odesa Port and the Peresypskyi District.",
+        "date": "2026-06-10T05:37:01+00:00",
+        "post_id": "ethanlevins/3501"
+      },
+      {
+        "text": "🇵🇰 Reuters quotes a spokesperson for the Afghan Taliban movement: At least 13 people killed and 14 others injured as a result of Pakistani airstrikes",
+        "date": "2026-06-10T05:42:01+00:00",
+        "post_id": "ethanlevins/3502"
+      },
+      {
+        "text": "🇮🇷 🇺🇸 New York Times on US official: No physical damage was detected in US bases in the region due to the Iranian strikes",
+        "date": "2026-06-10T05:56:01+00:00",
+        "post_id": "ethanlevins/3503"
+      },
+      {
+        "text": "🇺🇦 🇷🇺 Direct Ukrainian cruise missile strike in Cheboksary, Russia",
+        "date": "2026-06-10T06:07:01+00:00",
+        "post_id": "ethanlevins/3504"
       }
     ],
     "markettwits": [
       {
-        "text": "⚠️🇮🇷#иран #геополитика \nСообщается, что на юге Ирана слышна новая серия взрывов. Возможно, удар возмездия Трампа за сбитый вертолет.",
-        "date": "2026-06-09T21:18:22+00:00",
-        "post_id": "markettwits/373496"
+        "text": "🇪🇺#европа #геополитика #макро \nУрсула фон дер Ляйен намерена консолидировать контроль над оборонной политикой ЕС —  Politico",
+        "date": "2026-06-10T06:16:00+00:00",
+        "post_id": "markettwits/373530"
       },
       {
-        "text": "🔥⚠️🇮🇷#иран #геополитика \nСША заявили об ударе возмездия по Ирану за сбитый вертолет",
-        "date": "2026-06-09T21:19:45+00:00",
-        "post_id": "markettwits/373497"
+        "text": "❗️🇺🇸#SPCX #ipo\nКнига заявок на IPO SpaceX переподписана  в 4 раза — RTRS \n\nстарт торгов акциями SPCX на Nasdaq запланирован на 12 июня",
+        "date": "2026-06-10T06:27:30+00:00",
+        "post_id": "markettwits/373531"
       },
       {
-        "text": "🔥⚠️🇮🇷#иран #геополитика \nТРАМП: ОТВЕТ ИРАНУ \"ОЧЕНЬ СИЛЬНЫЙ, ОЧЕНЬ МОЩНЫЙ’ — ABC NEWS\n\n«Это ответ на то, что они сделали с нашим вертолетом прошлой ночью» — Трамп\n\nудары США по Ирану продолжаются уже 40 мин\n\nAxios: США нанесли удары по нескольким иранским системам противовоздушной обороны и радарам вблизи Ормузского пролива.",
-        "date": "2026-06-09T21:37:44+00:00",
-        "post_id": "markettwits/373498"
+        "text": "⚠️🇮🇷#иран #геополитика \nИран призвал военных США покинуть страны Ближнего Востока\n\nМИД Ирана призвал страны региона не предоставлять США территорию для атак",
+        "date": "2026-06-10T06:30:10+00:00",
+        "post_id": "markettwits/373532"
       },
       {
-        "text": "⚠️🇮🇷#иран #геополитика \nИРАН РЕШИТЕЛЬНО ОТВЕТИТ НА АМЕРИКАНСКУЮ АГРЕССИЮ, О ЧЕМ ОН ПРЕДУПРЕЖДАЛ РАНЕЕ — TASNIM",
-        "date": "2026-06-09T21:50:47+00:00",
-        "post_id": "markettwits/373499"
+        "text": "⚠️🌎#авиа #бензин \nFT: авиакомпании могут сократить число рейсов зимой из-за роста цен на топливо",
+        "date": "2026-06-10T06:31:12+00:00",
+        "post_id": "markettwits/373533"
       },
       {
-        "text": "📬 mt в max 🗓КАЛЕНДАРЬ НА СЕГОДНЯ — 2026.06.10\n\n🇯🇵Япония - проминфляция PPI (май) - 02:50мск\n🇨🇳КНР - потребинфляция CPI (май) - 04:30мск\n🇺🇸США - потребинфляция CPI (май) - 15:30мск\n🇨🇦Канада - ставка ЦБ - 16:45мск\n🇨🇦пресс-конф ЦБ Канады - 17:30мск\n🛢нефть США - запасы EIA - 17:30мск  \n🇷🇺РФ - потребинфляция CPI - 19:00мск\n🇺🇸США - федеральный бюджет (май) - 21:00мск\n\n🇪🇺🇷🇺постпреды ЕС начнут согласовывать 21-ый пакет санкций против России\n\n🇷🇺Минфин РФ  проведет аукционы по размещению ОФЗ 26244 и 26228\n\n🇷🇺ГОСА по дивидендам: #ALRS #ABIO #SELG \n\n🇷🇺последний день с дивидендами: #SVAV \n\n🇷🇺#MGTS начинается сбор заявок на выкуп MGTSp - подробнее \n\n🇷🇺#UGLD будут объявлены итоги аукциона по продаже ЮГК \n\nпопсовые отчетности: \n🇺🇸#CHWY Chewy - 14:05мск\n🇺🇸#ORCL Oracle - 23:05мск",
-        "date": "2026-06-10T03:45:54+00:00",
-        "post_id": "markettwits/373500"
+        "text": "🇨🇳🇪🇺#авто #nev #китай #европа \nBYD потратит 2 млрд евро на разработку 5-минутных зарядных устройств в Европе — FT \n\nКитайский BYD пытается активно заходить на рынок электромобилей в Европе",
+        "date": "2026-06-10T06:34:03+00:00",
+        "post_id": "markettwits/373534"
       },
       {
-        "text": "🌎#markets",
-        "date": "2026-06-10T03:48:38+00:00",
-        "post_id": "markettwits/373502"
+        "text": "🇷🇺#russia #today \nРЕНТВ: во всем виноват Чубайс - теперь официально",
+        "date": "2026-06-10T06:34:49+00:00",
+        "post_id": "markettwits/373535"
       },
       {
-        "text": "🌎#fx \nUSDCNY = 6.77\nUSDTRUB = 74.6",
-        "date": "2026-06-10T03:50:05+00:00",
-        "post_id": "markettwits/373503"
+        "text": "✴️#крипто #обзор \nSantiment: сильные токены на слабом рынке: #CC #BEAT #WLD",
+        "date": "2026-06-10T06:37:25+00:00",
+        "post_id": "markettwits/373536"
       },
       {
-        "text": "⚠️🇮🇷#иран #геополитика \nСША объявили о завершении ударов по Ирану. Армия США провела три волны ударов по Ирану. \n\n«Силы нанесли удары по иранским объектам ПВО, наземным пунктам управления и радиолокационным станциям вблизи Ормузского пролива, используя высокоточные боеприпасы с истребителей ВВС и ВМС США» — CENTCOM \n\nИран заявил, что в ответ атаковал несколько американских баз в регионе. США заявили, что перехватили почти все выпущенные Ираном баллистические ракеты и БПЛА.\n\nГлава МИД Ирана Арагчи заявил, что ни одна атака США не останется без ответа.",
-        "date": "2026-06-10T03:58:37+00:00",
-        "post_id": "markettwits/373504"
+        "text": "✴️#BTC #cot #крипто \nФизики продолжают покупать BTC на падении, киты наоборот - не спешат..  — Santiment",
+        "date": "2026-06-10T06:38:57+00:00",
+        "post_id": "markettwits/373537"
       },
       {
-        "text": "🇺🇦#впк #украина \nУкраина создает дешевую альтернативу ракетам Patriot — FT",
-        "date": "2026-06-10T04:03:15+00:00",
-        "post_id": "markettwits/373505"
+        "text": "🛢🇷🇺🇰🇿🇺🇿#газ #россия #казахстан #узбекистан \nКазахстан готов увеличить транзит российского газа в Узбекистан — глава Минэнерго",
+        "date": "2026-06-10T06:44:54+00:00",
+        "post_id": "markettwits/373538"
       },
       {
-        "text": "⚠️✴️#BTC #cot #крипто \nОттоки из спотовых BTC ETF продолжаются и идут уже 16 дней подряд — данные SoSoValue\n\nBTC < $62 000",
-        "date": "2026-06-10T04:07:17+00:00",
-        "post_id": "markettwits/373506"
+        "text": "🇷🇺#MGNT #мессенджеры #россия \nРитейлер Магнит начал внедрять собственный корпоративный мессенджер Tag в компаниях-партнерах. Первой компанией, которая переходит в Tag, стала «Группа Астра» - разработчик инфраструктурного ПО",
+        "date": "2026-06-10T06:47:56+00:00",
+        "post_id": "markettwits/373539"
       },
       {
-        "text": "⚠️🌕#золото #серебро \nна азиатской сессии продолжаются распродажи в золоте и серебре",
-        "date": "2026-06-10T04:08:41+00:00",
-        "post_id": "markettwits/373507"
+        "text": "❌🇷🇺#SPBE #дивиденд \nСД СПБ БИРЖА: ДИВИДЕНДЫ 2025Г\n\n НЕ ВЫПЛАЧИВАТЬ\n\nГОСА - 30 июня",
+        "date": "2026-06-10T06:50:23+00:00",
+        "post_id": "markettwits/373540"
       },
       {
-        "text": "⚠️🇯🇵#дкп #япония #опрос #прогноз \nБанк Японии повысит ключевую ставку до 1,0% в июне и до 1,25% к концу года — аналитики, опрос RTRS",
-        "date": "2026-06-10T04:10:28+00:00",
-        "post_id": "markettwits/373508"
+        "text": "❌🇷🇺#UGLD \n Третий аукцион по продаже активов ЮГК не состоялся — Ъ",
+        "date": "2026-06-10T06:53:13+00:00",
+        "post_id": "markettwits/373541"
       },
       {
-        "text": "❗️🇯🇵 #fx #япония #JPY\nЯпонская йена более чем отыграла обратно все интервенции ЦБ\n\nтрейдеры ожидают новых интервенций, если повышение ставки в июне не поможет",
-        "date": "2026-06-10T04:12:10+00:00",
-        "post_id": "markettwits/373509"
+        "text": "⚠️🇺🇸#недвижимость #сша \nЗначительный рост числа просрочек по ипотечным кредитам и случаев изъятия заложенного имущества является тревожным признаком — USA Today",
+        "date": "2026-06-10T06:58:01+00:00",
+        "post_id": "markettwits/373542"
       },
       {
-        "text": "❗️🇯🇵#япония #инфляция #отчетность \nЯпония - проминфляция PPI (май) \nм/м = +0.9% (ранее +2.8%)\nг/г = +6.3% (ранее +5.3%)\n\n⚠️проминфляция в Японии продолжает ускоряться г/г",
-        "date": "2026-06-10T04:16:39+00:00",
-        "post_id": "markettwits/373510"
+        "text": "🇷🇺#LENT #торги \n16 июня - Московская биржа начинает торги фьючерсами на акции Ленты",
+        "date": "2026-06-10T07:01:02+00:00",
+        "post_id": "markettwits/373543"
       },
       {
-        "text": "❗️🇨🇳#инфляция #китай #отчетность \nКНР - ПОТРЕБИНФЛЯЦИЯ CPI (МАЙ)\nм/м = -0.1% (ожид -0.2% / ранее +0.3%)\nг/г = +1.2% (ожид +0.9% / ранее +1.2%)\n\nКНР - ПРОМИНФЛЯЦИЯ РPI (май)\nг/г = +3.9% (ожид +3.9% / ранее +2.8%)\n\nпотребинфляция в КНР продолжает расти г/г (ранее Китай боролся с постоянной дефляцией), проминфляция ускорилась до максимума за 4 года",
-        "date": "2026-06-10T04:20:39+00:00",
-        "post_id": "markettwits/373511"
+        "text": "⚠️✴️#BTC #крипто \nBTC переживает худшую неделю со времен краха биржи FTX",
+        "date": "2026-06-10T07:05:23+00:00",
+        "post_id": "markettwits/373544"
       },
       {
-        "text": "⚠️🌕#золото #прогноз \nЗолото может упасть еще на 20% к сентябрю — Citi\n\nGold could slump another 20% by September, says Citi",
-        "date": "2026-06-10T04:31:02+00:00",
-        "post_id": "markettwits/373512"
+        "text": "⚠️🇺🇸#SPCX #ipo \nФьючерсы на акции SpaceX (SPCX) на рынке pre-IPO на бирже Hyperliquid упали на 27% за 3 недели торгов после запуска, но коитровки все еще выше запланированной цены IPO $135/акц",
+        "date": "2026-06-10T07:24:12+00:00",
+        "post_id": "markettwits/373545"
       },
       {
-        "text": "🌕🇷🇺#SYSY \n«Сусуманзолото» расширяет добычу в Магаданской области — Ъ",
-        "date": "2026-06-10T04:37:25+00:00",
-        "post_id": "markettwits/373513"
+        "text": "⚠️🇪🇺🇷🇺#санкции #россия \nПослы ЕС начали обсуждать 21-й пакет санкций против России",
+        "date": "2026-06-10T07:25:08+00:00",
+        "post_id": "markettwits/373546"
       },
       {
-        "text": "🇷🇺#RGSS #VTBR \nРосгосстрах готовят к продаже, считают эксперты. Акционеры решили закрыть убыток прошлых лет на 118 млрд руб. — Ъ\n\nранее в ВТБ говорили, что планируют продать \"Росгосстрах\" с прибылью",
-        "date": "2026-06-10T04:41:13+00:00",
-        "post_id": "markettwits/373514"
+        "text": "🇷🇺🇧🇷#авиа #россия #бразилия \nРоссия и Бразилия обсуждают запуск прямого авиасообщения — посол - Известия",
+        "date": "2026-06-10T07:30:01+00:00",
+        "post_id": "markettwits/373547"
       },
       {
-        "text": "✴️#квант #хак #BTC #крипто \nКвантовые компьютеры взломают банки раньше, чем взломают BTC — Тим Дрейпер \n\nмиллиардер и ранний инвестор в Tesla и BTC считает, что страхи по поводу квантового взлома BTC сильно преувеличены",
-        "date": "2026-06-10T04:46:39+00:00",
-        "post_id": "markettwits/373515"
+        "text": "⚠️🇷🇺#акции #россия \n\nIMOEX < 2500\nIMOEX > 2500",
+        "date": "2026-06-10T07:32:49+00:00",
+        "post_id": "markettwits/373548"
       },
       {
-        "text": "🇷🇺#авто #россия #KMAZ\n«Москвич» планирует заняться выпуском гибридных автомобилей — Ъ",
-        "date": "2026-06-10T05:10:16+00:00",
-        "post_id": "markettwits/373516"
+        "text": "🇨🇳#авто #китай #отчетность \nКитай в январе - мае нарастил экспорт авто на 63% г/г — CPCA",
+        "date": "2026-06-10T07:41:37+00:00",
+        "post_id": "markettwits/373549"
       }
     ]
   }

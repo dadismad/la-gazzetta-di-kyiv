@@ -476,7 +476,7 @@ body {
 }
 .hint-card:hover { 
   border-left-color: var(--ink);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  box-shadow: none;
   transform: translateY(-2px);
 }
 .hint-card.stories { border-left-color: #2563EB; }

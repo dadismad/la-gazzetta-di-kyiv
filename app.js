@@ -27,6 +27,7 @@ async function getJSON(path, fallback) {
     if (!r.ok) throw new Error(String(r.status));
     return await r.json();
   } catch (e) {
+    console.error('Gazzetta fetch error:', e);
     if (e.name === 'AbortError') { console.debug('Fetch aborted:', path); return fallback; }
     console.warn('Fetch:', path, e); return fallback;
   }
@@ -2254,6 +2255,7 @@ function scheduleTriangulation() {
       attempts++;
       if (attempts < 10) setTimeout(tryRender, 300);
     } catch(e) {
+      console.error('Gazzetta triangulation error:', e);
       console.warn('Triangulation error, retrying:', e);
       attempts++;
       if (attempts < 10) setTimeout(tryRender, 300);

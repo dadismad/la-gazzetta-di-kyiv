@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T07:37:46.933030+00:00",
+  "generated_at": "2026-06-10T07:53:17.442046+00:00",
   "lead": {
     "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
     "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
@@ -934,6 +934,105 @@
       }
     },
     {
+      "story_id": "n21_multi_pillar__ukraine_fp-5_flamingo_missiles_strike_cheboksary__second_st",
+      "headline": "UKRAINE FP-5 FLAMINGO MISSILES STRIKE CHEBOKSARY — SECOND Strike on VNIIR-Progress, Samara Refinery Hit, Tyumen Missiles In-Flight, GRAU Colonel Assassinated",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Gazzetta di Kyiv FRONT PAGE: 'KYIV STRIKES 600KM INSIDE RUSSIA — FP-5 Hits Cheboksary Again, Samara Refinery Burning, Tyumen Next. GRAU Artillery Chief Dead in Moscow.' Bet&Benefit: Natgas long on Rus"
+      ],
+      "they_say": "Ukraine-Russia war grinding attrition. Western attention consumed by US-Iran war. Deep strikes into Russia called 'symbolic' by mainstream. Russian official media downplays. War fatigue narrative dominates.",
+      "reality": "Cheboksary is NOT symbolic — it's industrial deep Russia 600km from front. Striking VNIIR-Progress TWICE in days demonstrates systematic degradation of Russian precision-strike navigation capability — directly impacts effectiveness of Russian glide bombs and cruise missiles. Samara refinery strike targets Russian domestic fuel supply — potential gasoline crisis. Tyumen missiles targeting oil production HEARTLAND — DIRECT energy market impact if successful. This is COORDINATED multi-axis campaign (Cheboksary + Samara + Tyumen + Moscow assassination + 280 UAVs across front). Ukraine SEES the US-Iran conflict as the window of maximum opportunity and is ACCELERATING operations — not sustaining. GRAU colonel assassination disrupts Czar-class artillery supply chain. EU discussing 21st sanctions package while Russia's infrastructure burns is asymmetric warfare thesis in action.",
+      "thesis": "LONG natgas (TTF) — Russian oil/gas infrastructure under systematic attack risk premium. LONG European defense (Rheinmetall, KNDS, Saab, Leonardo). SHORT RSX/Russian equities. LONG Ukrainian war bonds on demonstrated operational momentum. SHORT ruble. The Iran distraction is real — Putin cannot coun",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "LONG natgas (TTF) — Russian oil/gas infrastructure under systematic attack risk premium. LONG European defense (Rheinmetall, KNDS, Saab, Leonardo). SHORT RSX/Russian equities. LONG Ukrainian war bonds on demonstrated operational momentum. SHORT ruble. The Iran distraction is real — Putin cannot coun",
+      "contradiction_score": 55,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Gazzetta di Kyiv FRONT PAGE: 'KYIV STRIKES 600KM INSIDE RUSSIA — FP-5 Hits Cheboksary Again, Samara Refinery Burning, Tyumen Next. GRAU Artillery Chief Dead in Moscow.' Bet&Benefit: Natgas long on Russian infrastructure disruption. Rheinmetall/European defense. The strategic story: Ukraine exploits ",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Gazzetta di Kyiv FRONT PAGE: 'KYIV STRIKES 600KM INSIDE RUSSIA — FP-5 Hits Cheboksary Again, Samara Refinery Burning, Tyumen Next. GRAU Artillery Chief Dead in Moscow.' Bet&Benefit: Natgas long on…",
+        "pace_multiplier": 1.7,
+        "confidence_pct": 75,
+        "confidence_level": "medium"
+      },
+      "capital_flow_implication": "LONG natgas (TTF) — Russian oil/gas infrastructure under systematic attack risk premium. LONG European defense (Rheinmetall, KNDS, Saab, Leonardo). SHORT RSX/Russian equities. LONG Ukrainian war bonds on demonstrated operational momentum. SHORT ruble. The Iran distraction is real — Putin cannot coun",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-10T07:51:32.209906+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [
+          "EUR",
+          "NG",
+          "WTI"
+        ],
+        "geographies": [
+          "Brazil",
+          "EU",
+          "Iran",
+          "Russia",
+          "UK",
+          "Ukraine"
+        ],
+        "actors": [
+          "Putin",
+          "SEC",
+          "UN",
+          "Xi Jinping"
+        ],
+        "instruments": [
+          "bonds"
+        ]
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "UKRAINE FP-5 FLAMINGO MISSILES STRIKE CHEBOKSARY — SECOND Strike on VNIIR-Progress, Samara Refinery Hit, Tyumen Missiles",
+          "body": "Structural assessment: Cheboksary is NOT symbolic — it's industrial deep Russia 600km from front. Striking VNIIR-Progress TWICE in days demonstrates systematic degradation of Russian precision-strike navigation capability — directly impacts effectiveness of Russian glide bombs and cruise missiles. Samara refinery strike t. Capital repositioning of $5.0B identified in commodities. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "implication": "Board-level risk: commodities exposure requires long hedge within 72h."
+        },
+        "quant": {
+          "headline": "COMMODITIES flow: $5.0B inflow",
+          "body": "Raw telemetry — commodities $5.0B inflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
+          "metrics": {
+            "flow_velocity": 0.21,
+            "correlation_coeff": 0.65,
+            "z_score": 0.5
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG COMMODITIES $5.0B",
+          "body": "Directional: LONG. Flow: $5.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: UKRAINE FP-5 FLAMINGO MISSILES STRIKE CHEBOKSARY — SECOND Strike on VNIIR-Progre",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+10-15%",
+            "conviction": "MEDIUM"
+          }
+        }
+      }
+    },
+    {
       "story_id": "n21_multi_pillar__eia_drops_bombshell_hormuz_timeline__blockade_persists_thro",
       "headline": "EIA Drops Bombshell Hormuz Timeline — Blockade Persists Through Q3 2026, Full Recovery Only in 2027",
       "sector": "commodities",
@@ -1444,6 +1543,196 @@
       "source": "telegram_intel",
       "generated_at": "2026-06-07T12:25:48.811774+00:00",
       "freshness": "developing"
+    },
+    {
+      "story_id": "n21_abundance_tech__btc_crash__worst_week_since_ftx_collapse_microstrategy_bou",
+      "headline": "BTC CRASH — Worst Week Since FTX Collapse, MicroStrategy Bought $65K Dip, Whales Hold",
+      "sector": "crypto",
+      "pillar": "abundance_tech",
+      "paradigm_pillar": "abundance_tech",
+      "paradigm_implications": [
+        "Gazzetta di Kyiv: 'BTC CRASHES Worst Week Since FTX — Digital Gold Thesis Tested by Real War.' Bet&Benefit: Asymmetric BTC long at $65K support. Ukraine crypto donation angle — volatility creates dono"
+      ],
+      "they_say": "BTC sells off with risk assets due to geopolitical escalation. Institutions de-risking ahead of wider Middle East conflict. SPCX IPO absorbing crypto liquidity. CME crypto futures good for adoption, bad for near-term price. 'Correlation with equities = no safe haven.'",
+      "reality": "This is macro risk-off, NOT crypto-specific — fundamentals (MSTR accumulation, retail dip-buying, CME institutional on-ramp) are BULLISH. MicroStrategy buying $65K is resistance floor. Whales holding not selling is the opposite of capitulation. SPCX June 12 listing is a known event already priced — 4x oversubscribed suggests institutional demand is enormous, not contraction. If US-Iran escalation triggers dollar weakness from defense spending blowout, BTC flips from 'risk-off sell' to 'flight-from-fiat hedge.' CME crypto index futures launch is structurally bullish long-term. South Korea FX inspection indicates capital controls risk, could push Korean crypto premium (kimchi premium expansion). Worst week since FTX at $65K support creates maximum asymmetry for a bounce.",
+      "thesis": "LONG BTC at $63-65K zone — MicroStrategy's $65K is the floor. SHORT if $63K breaks with volume. Selective altcoin longs on Santiment strong signals (CC, BEAT, WLD). Watch SPCX IPO June 12 for liquidity rotation. CME crypto index futures = structural institutional adoption catalyst. Kimchi premium pl",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "LONG BTC at $63-65K zone — MicroStrategy's $65K is the floor. SHORT if $63K breaks with volume. Selective altcoin longs on Santiment strong signals (CC, BEAT, WLD). Watch SPCX IPO June 12 for liquidity rotation. CME crypto index futures = structural institutional adoption catalyst. Kimchi premium pl",
+      "contradiction_score": 50,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Gazzetta di Kyiv: 'BTC CRASHES Worst Week Since FTX — Digital Gold Thesis Tested by Real War.' Bet&Benefit: Asymmetric BTC long at $65K support. Ukraine crypto donation angle — volatility creates donor opportunity. If BTC decouples from equities on dollar-weakening narrative, massive upside.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 250.0,
+        "asset_class": "crypto",
+        "projected": "Gazzetta di Kyiv: 'BTC CRASHES Worst Week Since FTX — Digital Gold Thesis Tested by Real War.' Bet&Benefit: Asymmetric BTC long at $65K support. Ukraine crypto donation angle — volatility creates…",
+        "pace_multiplier": 2.3,
+        "confidence_pct": 75,
+        "confidence_level": "medium"
+      },
+      "capital_flow_implication": "LONG BTC at $63-65K zone — MicroStrategy's $65K is the floor. SHORT if $63K breaks with volume. Selective altcoin longs on Santiment strong signals (CC, BEAT, WLD). Watch SPCX IPO June 12 for liquidity rotation. CME crypto index futures = structural institutional adoption catalyst. Kimchi premium pl",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-10T07:51:32.209445+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [
+          "BTC",
+          "XAU"
+        ],
+        "geographies": [
+          "Iran",
+          "South Korea",
+          "UK",
+          "Ukraine"
+        ],
+        "actors": [
+          "UN"
+        ],
+        "instruments": [
+          "futures"
+        ]
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "BTC CRASH — Worst Week Since FTX Collapse, MicroStrategy Bought $65K Dip, Whales Hold",
+          "body": "Structural assessment: This is macro risk-off, NOT crypto-specific — fundamentals (MSTR accumulation, retail dip-buying, CME institutional on-ramp) are BULLISH. MicroStrategy buying $65K is resistance floor. Whales holding not selling is the opposite of capitulation. SPCX June 12 listing is a known event already priced — . Capital repositioning of $250.0B identified in crypto. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "implication": "Board-level risk: crypto exposure requires long hedge within 72h."
+        },
+        "quant": {
+          "headline": "CRYPTO flow: $250.0B inflow",
+          "body": "Raw telemetry — crypto $250.0B inflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
+          "metrics": {
+            "flow_velocity": 10.42,
+            "correlation_coeff": 0.65,
+            "z_score": 25.0
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG CRYPTO $250.0B",
+          "body": "Directional: LONG. Flow: $250.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: BTC CRASH — Worst Week Since FTX Collapse, MicroStrategy Bought $65K Dip, Whales",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+10-15%",
+            "conviction": "MEDIUM"
+          }
+        }
+      }
+    },
+    {
+      "story_id": "n21_multi_pillar__us-iran_active_kinetic_exchange__20_us_targets_struck_in_ir",
+      "headline": "US-IRAN ACTIVE KINETIC EXCHANGE — 20 US Targets Struck in Iran, IRGC Retaliates Bahrain/Jordan, Iran Demands US Leave Middle East",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Gazzetta di Kyiv: 'HOT WAR — US Bombs 20 Iranian Targets, IRGC Strikes Bahrain, Hormuz in Flames.' Bet&Benefit: OIL UP aggressive long, tight stop at $88 Brent. Defense calls. LNG long per MS outlook."
+      ],
+      "they_say": "Narrative pushed by US officials and market consensus: controlled tit-for-tat, both sides done. Trump said Apache incident 'wasn't a big deal.' NYT cites US official: 'no physical damage detected at US bases.' US officials hope strikes serve as 'warning shot' preserving negotiation track. EIA pricing in Hormuz normalization by Q3. Market trading Brent below $90 as if risk is fading.",
+      "reality": "Iran ALREADY retaliated — falsifying the 'one-and-done' thesis. IRGC explicitly warned of further strikes. Iran's maximalist demand for US expulsion from Middle East fundamentally escalates the framework beyond Hormuz. Iran's Deputy Foreign Minister denying Apache shootdown suggests non-state actors Iran CANNOT control may be operating — making de-escalation impossible. Regional governments (Qatar, Kuwait, Bahrain) closed airspace — they treated this as MAJOR escalation. Iran oil exports already collapsed to 209k bpd (6-year low). Brent at $88-90 with active kinetic conflict between US and Iran is historically disconnected — fair risk premium is $95-100+. EIA's Hormuz Q3 resumption assumption is pure modeling fantasy given active hostilities.",
+      "thesis": "LONG crude (CL, Brent, COIL) — Brent at $88.32 EIA forecast with active war is mispriced. LONG defense (LMT, GD, NOC, RTX). LONG LNG (Morgan Stanley 3-year high outlook). LONG tanker rates (record new supertanker orders confirm supply chain repricing). SHORT Iranian-exposed equities, SHORT airlines ",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "LONG crude (CL, Brent, COIL) — Brent at $88.32 EIA forecast with active war is mispriced. LONG defense (LMT, GD, NOC, RTX). LONG LNG (Morgan Stanley 3-year high outlook). LONG tanker rates (record new supertanker orders confirm supply chain repricing). SHORT Iranian-exposed equities, SHORT airlines ",
+      "contradiction_score": 50,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Gazzetta di Kyiv: 'HOT WAR — US Bombs 20 Iranian Targets, IRGC Strikes Bahrain, Hormuz in Flames.' Bet&Benefit: OIL UP aggressive long, tight stop at $88 Brent. Defense calls. LNG long per MS outlook. Ukraine angle: US two-front vulnerability — Russia exploits distraction, Kyiv accelerates deep stri",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Gazzetta di Kyiv: 'HOT WAR — US Bombs 20 Iranian Targets, IRGC Strikes Bahrain, Hormuz in Flames.' Bet&Benefit: OIL UP aggressive long, tight stop at $88 Brent. Defense calls. LNG long per MS…",
+        "pace_multiplier": 1.7,
+        "confidence_pct": 75,
+        "confidence_level": "medium"
+      },
+      "capital_flow_implication": "LONG crude (CL, Brent, COIL) — Brent at $88.32 EIA forecast with active war is mispriced. LONG defense (LMT, GD, NOC, RTX). LONG LNG (Morgan Stanley 3-year high outlook). LONG tanker rates (record new supertanker orders confirm supply chain repricing). SHORT Iranian-exposed equities, SHORT airlines ",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-10T07:51:32.201616+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [
+          "BRENT",
+          "BTC",
+          "WTI"
+        ],
+        "geographies": [
+          "Iran",
+          "Kuwait",
+          "Qatar",
+          "Russia",
+          "UK",
+          "Ukraine"
+        ],
+        "actors": [
+          "Morgan Stanley",
+          "UN"
+        ],
+        "instruments": [
+          "options"
+        ]
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "US-IRAN ACTIVE KINETIC EXCHANGE — 20 US Targets Struck in Iran, IRGC Retaliates Bahrain/Jordan, Iran Demands US Leave Mi",
+          "body": "Structural assessment: Iran ALREADY retaliated — falsifying the 'one-and-done' thesis. IRGC explicitly warned of further strikes. Iran's maximalist demand for US expulsion from Middle East fundamentally escalates the framework beyond Hormuz. Iran's Deputy Foreign Minister denying Apache shootdown suggests non-state actors. Capital repositioning of $5.0B identified in commodities. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "implication": "Board-level risk: commodities exposure requires long hedge within 72h."
+        },
+        "quant": {
+          "headline": "COMMODITIES flow: $5.0B inflow",
+          "body": "Raw telemetry — commodities $5.0B inflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
+          "metrics": {
+            "flow_velocity": 0.21,
+            "correlation_coeff": 0.65,
+            "z_score": 0.5
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG COMMODITIES $5.0B",
+          "body": "Directional: LONG. Flow: $5.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: US-IRAN ACTIVE KINETIC EXCHANGE — 20 US Targets Struck in Iran, IRGC Retaliates ",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+10-15%",
+            "conviction": "MEDIUM"
+          }
+        }
+      }
     },
     {
       "story_id": "n21_multi_pillar__us_stock_selling_resumed__friday_low_break_confirmed_and_no",
