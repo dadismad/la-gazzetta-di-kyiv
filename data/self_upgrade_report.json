@@ -1,0 +1,670 @@
+{
+  "generated_at": "2026-06-10T14:19:36.575039+00:00",
+  "summary": {
+    "total_issues": 92,
+    "by_severity": {
+      "MEDIUM": 90,
+      "HIGH": 1,
+      "LOW": 1
+    },
+    "by_pattern": {
+      "console_log_shipping": 4,
+      "magic_number": 55,
+      "inline_style": 20,
+      "unused_i18n": 9,
+      "file_too_large": 2,
+      "empty_catch": 1,
+      "unused_i18n_keys": 1
+    }
+  },
+  "issues": [
+    {
+      "file": "story-app.js",
+      "pattern": "console_log_shipping",
+      "severity": "MEDIUM",
+      "count": 1,
+      "description": "Console logging in production code — should use structured logging or remove"
+    },
+    {
+      "file": "story-app.js",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 2,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "sector.js",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 3,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "sector.js",
+      "pattern": "inline_style",
+      "severity": "MEDIUM",
+      "count": 10,
+      "description": "Inline style — use CSS class instead"
+    },
+    {
+      "file": "app.js",
+      "pattern": "console_log_shipping",
+      "severity": "MEDIUM",
+      "count": 12,
+      "description": "Console logging in production code — should use structured logging or remove"
+    },
+    {
+      "file": "app.js",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 162,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "app.js",
+      "pattern": "inline_style",
+      "severity": "MEDIUM",
+      "count": 26,
+      "description": "Inline style — use CSS class instead"
+    },
+    {
+      "file": "app.js",
+      "pattern": "unused_i18n",
+      "severity": "MEDIUM",
+      "count": 1,
+      "description": "Check if i18n key exists in locale files"
+    },
+    {
+      "file": "app.js",
+      "pattern": "file_too_large",
+      "severity": "MEDIUM",
+      "description": "File is 2291 lines — consider splitting into modules",
+      "count": 2291
+    },
+    {
+      "file": "contacts.html",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 1,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "ops.html",
+      "pattern": "inline_style",
+      "severity": "MEDIUM",
+      "count": 4,
+      "description": "Inline style — use CSS class instead"
+    },
+    {
+      "file": "index.html",
+      "pattern": "empty_catch",
+      "severity": "HIGH",
+      "count": 2,
+      "description": "Empty catch block — swallows errors silently"
+    },
+    {
+      "file": "index.html",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 42,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "index.html",
+      "pattern": "inline_style",
+      "severity": "MEDIUM",
+      "count": 26,
+      "description": "Inline style — use CSS class instead"
+    },
+    {
+      "file": "index.html",
+      "pattern": "unused_i18n",
+      "severity": "MEDIUM",
+      "count": 50,
+      "description": "Check if i18n key exists in locale files"
+    },
+    {
+      "file": "flow-nodes.html",
+      "pattern": "console_log_shipping",
+      "severity": "MEDIUM",
+      "count": 1,
+      "description": "Console logging in production code — should use structured logging or remove"
+    },
+    {
+      "file": "flow-nodes.html",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 1144,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "flow-nodes.html",
+      "pattern": "inline_style",
+      "severity": "MEDIUM",
+      "count": 26,
+      "description": "Inline style — use CSS class instead"
+    },
+    {
+      "file": "markets.html",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 8,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "markets.html",
+      "pattern": "inline_style",
+      "severity": "MEDIUM",
+      "count": 1,
+      "description": "Inline style — use CSS class instead"
+    },
+    {
+      "file": "track.html",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 17,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "track.html",
+      "pattern": "inline_style",
+      "severity": "MEDIUM",
+      "count": 6,
+      "description": "Inline style — use CSS class instead"
+    },
+    {
+      "file": "track.html",
+      "pattern": "unused_i18n",
+      "severity": "MEDIUM",
+      "count": 8,
+      "description": "Check if i18n key exists in locale files"
+    },
+    {
+      "file": "about.html",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 21,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "about.html",
+      "pattern": "inline_style",
+      "severity": "MEDIUM",
+      "count": 21,
+      "description": "Inline style — use CSS class instead"
+    },
+    {
+      "file": "variant-modern.html",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 6,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "research.html",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 1,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "research.html",
+      "pattern": "inline_style",
+      "severity": "MEDIUM",
+      "count": 3,
+      "description": "Inline style — use CSS class instead"
+    },
+    {
+      "file": "capital.html",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 6,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "capital.html",
+      "pattern": "inline_style",
+      "severity": "MEDIUM",
+      "count": 17,
+      "description": "Inline style — use CSS class instead"
+    },
+    {
+      "file": "terms.html",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 2,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "story.html",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 15,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "story.html",
+      "pattern": "inline_style",
+      "severity": "MEDIUM",
+      "count": 5,
+      "description": "Inline style — use CSS class instead"
+    },
+    {
+      "file": "story.html",
+      "pattern": "unused_i18n",
+      "severity": "MEDIUM",
+      "count": 4,
+      "description": "Check if i18n key exists in locale files"
+    },
+    {
+      "file": "data.html",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 33,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "data.html",
+      "pattern": "inline_style",
+      "severity": "MEDIUM",
+      "count": 59,
+      "description": "Inline style — use CSS class instead"
+    },
+    {
+      "file": "stories.html",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 17,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "stories.html",
+      "pattern": "inline_style",
+      "severity": "MEDIUM",
+      "count": 6,
+      "description": "Inline style — use CSS class instead"
+    },
+    {
+      "file": "stories.html",
+      "pattern": "unused_i18n",
+      "severity": "MEDIUM",
+      "count": 7,
+      "description": "Check if i18n key exists in locale files"
+    },
+    {
+      "file": "pleasure.html",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 8,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "pleasure.html",
+      "pattern": "inline_style",
+      "severity": "MEDIUM",
+      "count": 1,
+      "description": "Inline style — use CSS class instead"
+    },
+    {
+      "file": "flows.html",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 29,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "flows.html",
+      "pattern": "inline_style",
+      "severity": "MEDIUM",
+      "count": 27,
+      "description": "Inline style — use CSS class instead"
+    },
+    {
+      "file": "flows.html",
+      "pattern": "unused_i18n",
+      "severity": "MEDIUM",
+      "count": 10,
+      "description": "Check if i18n key exists in locale files"
+    },
+    {
+      "file": "event_horizon.html",
+      "pattern": "console_log_shipping",
+      "severity": "MEDIUM",
+      "count": 3,
+      "description": "Console logging in production code — should use structured logging or remove"
+    },
+    {
+      "file": "event_horizon.html",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 1152,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "event_horizon.html",
+      "pattern": "inline_style",
+      "severity": "MEDIUM",
+      "count": 13,
+      "description": "Inline style — use CSS class instead"
+    },
+    {
+      "file": "wealth.html",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 8,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "wealth.html",
+      "pattern": "inline_style",
+      "severity": "MEDIUM",
+      "count": 1,
+      "description": "Inline style — use CSS class instead"
+    },
+    {
+      "file": "geopolitics.html",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 9,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "geopolitics.html",
+      "pattern": "inline_style",
+      "severity": "MEDIUM",
+      "count": 1,
+      "description": "Inline style — use CSS class instead"
+    },
+    {
+      "file": "privacy.html",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 5,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "signal.html",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 17,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "signal.html",
+      "pattern": "inline_style",
+      "severity": "MEDIUM",
+      "count": 8,
+      "description": "Inline style — use CSS class instead"
+    },
+    {
+      "file": "signal.html",
+      "pattern": "unused_i18n",
+      "severity": "MEDIUM",
+      "count": 10,
+      "description": "Check if i18n key exists in locale files"
+    },
+    {
+      "file": "trades.html",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 17,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "trades.html",
+      "pattern": "inline_style",
+      "severity": "MEDIUM",
+      "count": 9,
+      "description": "Inline style — use CSS class instead"
+    },
+    {
+      "file": "trades.html",
+      "pattern": "unused_i18n",
+      "severity": "MEDIUM",
+      "count": 13,
+      "description": "Check if i18n key exists in locale files"
+    },
+    {
+      "file": "styles.css",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 282,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "styles.css",
+      "pattern": "file_too_large",
+      "severity": "MEDIUM",
+      "description": "File is 2884 lines — consider splitting into modules",
+      "count": 2884
+    },
+    {
+      "file": "scripts/intel_to_stories.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 17,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/approve_draft.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 11,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/translate_content.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 3,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/enrich_editorial_stories.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 3,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/generate_broadcasts.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 7,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/db_to_json.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 3,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/enrich_stories.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 4,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/gcp_monitor.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 14,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/gazzetta_pipeline_audit.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 1,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/generate_signal_api.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 2,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/marketing_bot.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 4,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/parse_feedback.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 1,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/generate_trades_api.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 11,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/validate_i18n.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 3,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/validate_i18n.py",
+      "pattern": "unused_i18n",
+      "severity": "MEDIUM",
+      "count": 2,
+      "description": "Check if i18n key exists in locale files"
+    },
+    {
+      "file": "scripts/build_site.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 1,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/devvit_ingest.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 1,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/fetch_intel.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 9,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/devvit_only_pipeline.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 5,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/phase3_daily_brief.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 1,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/scrape_telegram.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 5,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/test_platform.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 5,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/phase2_scoring.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 1,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/generate_flow_nodes.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 3,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/generate_flows.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 10,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/self_upgrade.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 3,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/validate_stories.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 1,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/debug_flows.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 3,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/generate_sitemap.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 1,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/fetch_market_data.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 4,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "scripts/decay_stories.py",
+      "pattern": "magic_number",
+      "severity": "MEDIUM",
+      "count": 6,
+      "description": "Magic number — use named constant"
+    },
+    {
+      "file": "i18n_ru.json",
+      "pattern": "unused_i18n_keys",
+      "severity": "LOW",
+      "description": "15 unused keys in RU locale (bloat)",
+      "count": 15
+    }
+  ],
+  "recommendations": [
+    "Replace empty catch blocks with structured error logging: `catch(e) { logError('module', e); }`",
+    "Split large files (>2000 lines) into modules: UI, Data, State already exist — extend the pattern"
+  ]
+}
