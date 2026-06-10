@@ -92,6 +92,12 @@ const SECTOR_LABELS = {
   pleasure: () => i18n.t('sector_pleasure','PLEASURE'),
 };
 
+// ── v23.1: Asset class badges (color-coded) ──
+const ASSET_BADGE_LABELS = {
+  fx: 'FX', equities: 'EQUITIES', commodities: 'COMMODITIES',
+  crypto: 'CRYPTO', fixed_income: 'SOVEREIGN', defense: 'DEFENSE', tech: 'TECH',
+};
+
 // ═══════════════════════════════════════════════════════════════
 // COLLAPSIBLE CONTAINERS
 // ═══════════════════════════════════════════════════════════════
@@ -1147,6 +1153,7 @@ function livingCardHTML(story, isLead) {
       <div class="card-head">
         ${cfClaim}
         <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:2px">
+          ${cf && cf.asset_class ? `<span class="asset-badge ${cf.asset_class}">${ASSET_BADGE_LABELS[cf.asset_class] || cf.asset_class.toUpperCase()}</span>` : ''}
           ${sector ? `<span class="category-tag ${sector}">${SECTOR_LABELS[sector] ? SECTOR_LABELS[sector]() : sector}</span>` : ''}
           <span class="severity ${severity}">${severity === 'critical' ? i18n.t('severity_critical','CRITICAL') : severity === 'high' ? i18n.t('severity_high','HIGH') : i18n.t('severity_elevated','ELEVATED')}</span>
           ${breakingBadge}

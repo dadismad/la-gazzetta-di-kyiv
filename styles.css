@@ -2574,3 +2574,29 @@ body {
   color: var(--ink-light);
 }
 /* ═══ END v23.0 ═══ */
+
+/* ═══ v23.1: Asset Class Badges — Bloomberg-standard color coding ═══ */
+.asset-badge {
+  font-family: var(--sans);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border: 1px solid;
+  display: inline-flex;
+  align-items: center;
+}
+.asset-badge.fx            { color: #1D4ED8; border-color: #1D4ED8; background: rgba(29,78,216,0.06); }
+.asset-badge.equities      { color: #059669; border-color: #059669; background: rgba(5,150,105,0.06); }
+.asset-badge.commodities   { color: #B8860B; border-color: #B8860B; background: rgba(184,134,11,0.06); }
+.asset-badge.crypto        { color: #7C3AED; border-color: #7C3AED; background: rgba(124,58,237,0.06); }
+.asset-badge.fixed_income  { color: #DC2626; border-color: #DC2626; background: rgba(220,38,38,0.06); }
+.asset-badge.defense       { color: #B45309; border-color: #B45309; background: rgba(180,83,9,0.06); }
+.asset-badge.tech          { color: #0891B2; border-color: #0891B2; background: rgba(8,145,178,0.06); }
+
+/* ═══ v23.1: Intel vs Alpha global accent distinction ═══ */
+.intel-accent { color: var(--ink); border-left-color: var(--ink); }
+.alpha-accent { color: var(--gold); border-left-color: var(--gold); }
+.layer-header.intel-header .layer-label { background: #0F172A; color: #FFF; }
+.layer-header.alpha-header .layer-label { background: #B8860B; color: #FFF; }

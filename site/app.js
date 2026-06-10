@@ -27,6 +27,7 @@ async function getJSON(path, fallback) {
     if (!r.ok) throw new Error(String(r.status));
     return await r.json();
   } catch (e) {
+    console.error('Gazzetta fetch error:', e);
     if (e.name === 'AbortError') { console.debug('Fetch aborted:', path); return fallback; }
     console.warn('Fetch:', path, e); return fallback;
   }
@@ -89,6 +90,12 @@ const SECTOR_LABELS = {
   macro: () => i18n.t('sector_macro','MACRO'),
   wealth: () => i18n.t('sector_wealth','WEALTH'),
   pleasure: () => i18n.t('sector_pleasure','PLEASURE'),
+};
+
+// ── v23.1: Asset class badges (color-coded) ──
+const ASSET_BADGE_LABELS = {
+  fx: 'FX', equities: 'EQUITIES', commodities: 'COMMODITIES',
+  crypto: 'CRYPTO', fixed_income: 'SOVEREIGN', defense: 'DEFENSE', tech: 'TECH',
 };
 
 // ═══════════════════════════════════════════════════════════════
@@ -320,6 +327,17 @@ async function fetchFlows() {
   if (sfEl) {
     const signalTime = window._storiesGeneratedAt || window._flowsGeneratedAt || data.generated_at;
     if (signalTime) sfEl.textContent = 'updated ' + formatTimeAgo(signalTime);
+  }
+  // Update track/trade freshness
+  const tfEl = byId('trackFreshness');
+  if (tfEl && data.generated_at) {
+    tfEl.textContent = 'updated ' + formatTimeAgo(data.generated_at);
+    tfEl.title = data.generated_at;
+  }
+  const trfEl = byId('tradeFreshness');
+  if (trfEl && data.generated_at) {
+    trfEl.textContent = 'updated ' + formatTimeAgo(data.generated_at);
+    trfEl.title = data.generated_at;
   }
   renderGlossaryTooltips();
   updateHeroConfidence(data.aggregate_confidence, data.aggregate_confidence_label, data.aggregate_direction);
@@ -1135,6 +1153,7 @@ function livingCardHTML(story, isLead) {
       <div class="card-head">
         ${cfClaim}
         <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:2px">
+          ${cf && cf.asset_class ? `<span class="asset-badge ${cf.asset_class}">${ASSET_BADGE_LABELS[cf.asset_class] || cf.asset_class.toUpperCase()}</span>` : ''}
           ${sector ? `<span class="category-tag ${sector}">${SECTOR_LABELS[sector] ? SECTOR_LABELS[sector]() : sector}</span>` : ''}
           <span class="severity ${severity}">${severity === 'critical' ? i18n.t('severity_critical','CRITICAL') : severity === 'high' ? i18n.t('severity_high','HIGH') : i18n.t('severity_elevated','ELEVATED')}</span>
           ${breakingBadge}
@@ -2243,6 +2262,7 @@ function scheduleTriangulation() {
       attempts++;
       if (attempts < 10) setTimeout(tryRender, 300);
     } catch(e) {
+      console.error('Gazzetta triangulation error:', e);
       console.warn('Triangulation error, retrying:', e);
       attempts++;
       if (attempts < 10) setTimeout(tryRender, 300);
