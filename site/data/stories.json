@@ -63,12 +63,12 @@
     "multi_persona": {
       "c_suite": {
         "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
-        "body": "Structural assessment: Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath &nbsp;&nbsp; CNBC    MicroStrategy’s STRC Tracks Bitcoin Lower Again as Semi-Monthly Divid... Implicated assets: BTC. Regions: global. Monitor for policy or supply-chain cascades.",
+        "body": "Structural assessment: Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath &nbsp;&nbsp; CNBC    MicroStrategy’s STRC Tracks Bitcoin Lower Again as Semi-Monthly Dividend Begins &nbsp;&nbsp; Yahoo Finance    Bitcoin S",
         "implication": "Board-level: crypto exposure review recommended. Directional bias: LONG."
       },
       "quant": {
         "headline": "CRYPTO signal: LONG",
-        "body": "Raw telemetry — crypto flow detected from Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin ... Assets tagged: BTC. Correlation regime: TBD. Watch vol surface for confirmation.",
+        "body": "Raw telemetry — crypto flow detected from Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath &nbsp;&nbsp; CNBC    MicroStrategy ... Assets tagged: BTC. Correlation regime: TBD. Watch vol surface for confirmation.",
         "metrics": {
           "flow_direction": "inflow",
           "asset_class": "crypto",
@@ -91,16 +91,16 @@
   "stories": [
     {
       "story_id": "n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes",
-      "headline": "This tiny mutual fund outperforms by backing the world’s best management teams - MarketWatch",
+      "headline": "This tiny mutual fund outperforms by backing the world's best management teams - MarketWatch",
       "sector": "equities",
       "pillar": "multi_pillar",
       "paradigm_pillar": "multi_pillar",
       "paradigm_implications": [
-        "This tiny mutual fund outperforms by backing the world’s best management teams &nbsp;&nbsp; MarketWatch"
+        "This tiny mutual fund outperforms by backing the world's best management teams &nbsp;&nbsp; MarketWatch"
       ],
-      "they_say": "Source: reuters_business. This tiny mutual fund outperforms by backing the world’s best management teams &nbsp;&nbsp; MarketWatch",
-      "reality": "This tiny mutual fund outperforms by backing the world’s best management teams &nbsp;&nbsp; MarketWatch",
-      "thesis": "OSINT draft #21: This tiny mutual fund outperforms by backing the world’s best management teams - MarketWatch",
+      "they_say": "Source: reuters_business. This tiny mutual fund outperforms by backing the world's best management teams &nbsp;&nbsp; MarketWatch",
+      "reality": "This tiny mutual fund outperforms by backing the world's best management teams &nbsp;&nbsp; MarketWatch",
+      "thesis": "OSINT draft #21: This tiny mutual fund outperforms by backing the world's best management teams - MarketWatch",
       "actors": [],
       "horizon": "24-72h",
       "confidence": "low",
@@ -108,12 +108,12 @@
       "actionable_trade": "OSINT signal: NEUTRAL equities. Review before execution.",
       "contradiction_score": 75,
       "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
-      "portfolio_implication": "This tiny mutual fund outperforms by backing the world’s best management teams &nbsp;&nbsp; MarketWatch",
+      "portfolio_implication": "This tiny mutual fund outperforms by backing the world's best management teams &nbsp;&nbsp; MarketWatch",
       "capital_flow": {
         "direction": "inflow",
         "amount_b": 0.8,
         "asset_class": "equities",
-        "projected": "This tiny mutual fund outperforms by backing the world’s best management teams &nbsp;&nbsp; MarketWatch",
+        "projected": "This tiny mutual fund outperforms by backing the world's best management teams &nbsp;&nbsp; MarketWatch",
         "pace_multiplier": 1.8,
         "confidence_pct": 50,
         "confidence_level": "low",
@@ -151,13 +151,13 @@
       "associated_positions": [],
       "multi_persona": {
         "c_suite": {
-          "headline": "This tiny mutual fund outperforms by backing the world’s best management teams - MarketWatch",
-          "body": "Structural assessment: This tiny mutual fund outperforms by backing the world’s best management teams &nbsp;&nbsp; MarketWatch... Implicated assets: equities. Regions: global. Monitor for policy or supply-chain cascades.",
+          "headline": "This tiny mutual fund outperforms by backing the world's best management teams - MarketWatch",
+          "body": "Structural assessment: This tiny mutual fund outperforms by backing the world's best management teams &nbsp;&nbsp; MarketWatch... Implicated assets: equities. Regions: global. Monitor for policy or supply-chain cascades.",
           "implication": "Board-level: equities exposure review recommended. Directional bias: WATCH."
         },
         "quant": {
           "headline": "EQUITIES signal: WATCH",
-          "body": "Raw telemetry — equities flow detected from This tiny mutual fund outperforms by backing the world’s best management teams &nbsp;&nbsp; MarketWatch... Assets tagged: equities. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "body": "Raw telemetry — equities flow detected from This tiny mutual fund outperforms by backing the world's best management teams &nbsp;&nbsp; MarketWatch... Assets tagged: equities. Correlation regime: TBD. Watch vol surface for confirmation.",
           "metrics": {
             "flow_direction": "neutral",
             "asset_class": "equities",
@@ -166,7 +166,7 @@
         },
         "degen": {
           "headline": "🟡 WATCH equities",
-          "body": "Directional: WATCH. Asset: equities. Context: This tiny mutual fund outperforms by backing the world’s best management teams -. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "body": "Directional: WATCH. Asset: equities. Context: This tiny mutual fund outperforms by backing the world's best management teams -. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
           "signal": {
             "direction": "WATCH",
             "entry_zone": "awaiting review",
@@ -278,10 +278,10 @@
       "pillar": "china_ascendancy",
       "paradigm_pillar": "china_ascendancy",
       "paradigm_implications": [
-        "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin’s Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; "
+        "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin's Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; "
       ],
-      "they_say": "Source: reuters_business. Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin’s Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; Bloomberg    Mapping the Market: Bitcoin teetering on brink of further losses &nbsp;&nbsp; Reuters  ",
-      "reality": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin’s Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; Bloomberg    Mapping the Market: Bitcoin teetering on brink of further losses &nbsp;&nbsp; Reuters  ",
+      "they_say": "Source: reuters_business. Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin's Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; Bloomberg    Mapping the Market: Bitcoin teetering on brink of further losses &nbsp;&nbsp; Reuters  ",
+      "reality": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin's Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; Bloomberg    Mapping the Market: Bitcoin teetering on brink of further losses &nbsp;&nbsp; Reuters  ",
       "thesis": "OSINT draft #66: Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet - CNBC",
       "actors": [],
       "horizon": "24-72h",
@@ -290,12 +290,12 @@
       "actionable_trade": "OSINT signal: OUTFLOW crypto. Review before execution.",
       "contradiction_score": 75,
       "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
-      "portfolio_implication": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin’s Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; ",
+      "portfolio_implication": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin's Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; ",
       "capital_flow": {
         "direction": "outflow",
         "amount_b": 4.8,
         "asset_class": "crypto",
-        "projected": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin’s Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; ",
+        "projected": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin's Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; ",
         "pace_multiplier": 2.4,
         "confidence_pct": 50,
         "confidence_level": "low",
@@ -334,12 +334,12 @@
       "multi_persona": {
         "c_suite": {
           "headline": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet - CNBC",
-          "body": "Structural assessment: Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin’s Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; Bloomberg    Mapping the Market: Bitcoin teetering... Implicated assets: BTC. Regions: EU. Monitor for policy or supply-chain cascades.",
+          "body": "Structural assessment: Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin's Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; Bloomberg    Mapping the Market: Bitcoin teetering... Implicated assets: BTC. Regions: EU. Monitor for policy or supply-chain cascades.",
           "implication": "Board-level: crypto exposure review recommended. Directional bias: SHORT."
         },
         "quant": {
           "headline": "CRYPTO signal: SHORT",
-          "body": "Raw telemetry — crypto flow detected from Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin’s Worst Week Since ... Assets tagged: BTC. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "body": "Raw telemetry — crypto flow detected from Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin's Worst Week Since ... Assets tagged: BTC. Correlation regime: TBD. Watch vol surface for confirmation.",
           "metrics": {
             "flow_direction": "outflow",
             "asset_class": "crypto",
@@ -824,7 +824,7 @@
       "multi_persona": {
         "c_suite": {
           "headline": "Kuwait Discussing Hormuz Bypass via Saudi/UAE Pipelines + EIA Raises WTI Forecast to $88.32 — Blockade Biting Structural",
-          "body": "Structural assessment: White House claims 'progress' on Iran deal (@markettwits 13:55 UTC) — if a deal materializes, blockade relief would remove the structural oil bid. Kuwait pipeline talks may be contingency planning (due diligence), not an imminent operational shift. Supertanker orders reflect 3+ year delivery timelin. Capital repositioning of $5.0B identified in commodities. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "body": "Structural assessment: White House claims 'progress' on Iran deal (@markettwits 13:55 UTC) — if a deal materializes, blockade relief would remove the structural oil bid. Kuwait pipeline talks may be contingency planning (due diligence), not an imminent operational shift. Supertanker orders reflect 3+ year delivery timelines — they signal long-term expectations, not current disruption. The US Apache crash near Hormuz could be a pretext for either escalation (blame Iran) or de-escalation (withdraw assets from risk). The blockade is a US policy tool — Trump could lift it at any time with a phone call.",
           "implication": "Board-level risk: commodities exposure requires long hedge within 72h."
         },
         "quant": {
@@ -2217,6 +2217,164 @@
       "impacted_flows": [
         "flow_n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1"
       ]
+    },
+    {
+      "story_id": "n21_multi_pillar__ukraine_russia_logistics_war_drone_supply_lines_tipping_point",
+      "headline": "UKRAINE-RUSSIA LOGISTICS WAR REACHES CRITICAL TIPPING POINT — Both Sides Destroying Supply Routes, Neither Can Defend Against Drones",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "The drone war has broken supply lines — Russia is destroying every bridge to Odesa (Zatoka Bridge strike confirmed 13:40 UTC), starving Ukraine of grain export revenue. Ukraine is severing every road to Crimea, starving Russia's Southern Military District. Neither side can defend against precision drone strikes on fixed infrastructure. This is a strategic revolution in warfare with direct commodity market consequences."
+      ],
+      "they_say": "This is the normal attrition of a grinding war. Both sides take losses, both sides adapt. The front line hasn't moved significantly. The drone war is a tactical nuisance, not a strategic shift. Neither side is about to collapse logistically — reserves are deep enough to sustain operations.",
+      "reality": "Three reasons this IS a strategic shift: (1) 'Neither side has found a way to defend' is not normal attrition — it is a fundamental tactical revolution where precision strike costs have dropped below the cost of defending fixed infrastructure. Bridges and highways cannot be armored. (2) The Odesa bridges are Ukraine's grain export lifeline — if Russia systematically destroys every bridge over the Dnister estuary, Ukraine's agricultural exports (10%+ of global wheat trade) are blocked from Black Sea ports. This is economic warfare with direct market consequences. (3) The Crimea highway strikes isolate the peninsula from Russian ground logistics — if the Kerch Bridge and highway corridors are both interdicted, Crimea's 2M+ population and Russian Southern Military District become dependent on unsustainable sea/air resupply.",
+      "thesis": "LONG wheat/grain futures (ODESA EXPORT DISRUPTION) — bridges block truck/rail access to Ukraine's ports. LONG global food inflation. LONG defense/drone warfare plays (KTOS, RCAT, UAVS) — the 'can't defend against drones' thesis validates drone supremacy over traditional air defense. LONG gold as geopolitical hedge. The Zatoka Bridge strike (13:40 UTC) may be the opening salvo of a coordinated Russian bridge campaign.",
+      "actors": [
+        "Putin",
+        "Zelensky",
+        "Russian MOD",
+        "Ukrainian MOD"
+      ],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "LONG wheat futures ($ZW) — systematic destruction of Odesa bridges blocks Ukraine's grain exports. LONG corn futures ($ZC) — same Odesa-logistics thesis. LONG drone warfare ETFs — battlefield validation of drone supremacy thesis. LONG gold ($GLD) — broader geopolitical risk premium.",
+      "contradiction_score": 65,
+      "invalidation_trigger": "Ukraine demonstrates ability to repair/replace bridges faster than Russia can destroy them. Russia halts bridge campaign. Drone defense countermeasure deployed effectively by either side.",
+      "portfolio_implication": "Wheat is the overlooked trade — the market is focused on US-Iran (CPI, strikes, de-escalation) but the Ukraine logistics war has direct commodity implications. Ukraine's Odesa exports are the marginal global grain supply. If Russia systematically destroys the bridges, wheat spikes. Buy December wheat futures on any dip. Defense drone plays benefit from the 'nobody can defend' thesis being validated in real combat.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 12.5,
+        "asset_class": "commodities",
+        "projected": "Systematic destruction of Odesa bridges would block 10%+ of global wheat trade — grain futures will front-run the supply disruption before export volumes actually drop.",
+        "pace_multiplier": 2.0,
+        "confidence_pct": 70,
+        "confidence_level": "medium",
+        "claim": "$12.5B inflow commodities (wheat/corn futures + drone defense)"
+      },
+      "capital_flow_implication": "LONG wheat/grain futures — Odesa bridge destruction is a structural supply disruption for global grain markets. LONG drone warfare equities — battlefield validation drives defense procurement. LONG gold — geopolitical premium as Ukraine war enters new destructive phase with no off-ramp.",
+      "evidence": [
+        "source: @ethanlevins (13:47 UTC)",
+        "source: Zatoka Bridge strike confirmed (13:40 UTC)",
+        "source: Putin signals 'need to activate negotiations' (13:41 UTC)"
+      ],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-10T13:50:00+00:00",
+      "freshness": "breaking",
+      "image_url": "",
+      "extremum": "The marginal cost of destroying a bridge with a FPV drone has dropped below the cost of repairing it — this is the inflection point where the defender can never win the infrastructure war",
+      "entity_tags": {
+        "assets": [
+          "WHEAT",
+          "CORN",
+          "XAU"
+        ],
+        "geographies": [
+          "Ukraine",
+          "Russia",
+          "Odesa",
+          "Crimea"
+        ],
+        "actors": [
+          "Putin",
+          "Zelensky"
+        ],
+        "instruments": [
+          "futures"
+        ]
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_bridge_strike",
+          "grain_price_breach",
+          "drone_defense_development"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_multi_pillar__ukraine_russia_logistics_war_drone_supply_lines_tipping_point"
+      ],
+      "associated_positions": []
+    },
+    {
+      "story_id": "n21_blockchain_agentic__chainlink_fifa_2026_world_cup_oracle",
+      "headline": "CHAINLINK (LINK) NAMED OFFICIAL ORACLE PROVIDER FOR 2026 FIFA WORLD CUP PREDICTION MARKETS — Institutional Adoption Breakthrough",
+      "sector": "crypto",
+      "pillar": "blockchain_agentic",
+      "paradigm_pillar": "blockchain_agentic",
+      "paradigm_implications": [
+        "FIFA choosing Chainlink over any centralized alternative (Google, AWS, Bloomberg) validates the decentralized oracle thesis at the highest level of global sports governance. The World Cup starts in ~2 weeks — billions in betting volume will flow through Chainlink-secured contracts. This opens the door for Chainlink to be the standard oracle for major global event contracts on regulated platforms."
+      ],
+      "they_say": "Bullish for Chainlink — real-world oracle adoption with the world's largest sporting event. But limited direct financial impact: oracle fees are small relative to LINK market cap. This is branding and positioning, not a revenue catalyst.",
+      "reality": "Three contradictions: (1) FIFA has had corruption scandals around every major event — official designation doesn't guarantee volume if regulators crack down on World Cup prediction markets. (2) Chainlink already serves Polymarket — the FIFA designation adds compliance/marketing boost but doesn't change the technical value proposition. (3) The crypto market is risk-off (Nasdaq -1%, BlackRock BTC/ETH selling) — a World Cup oracle announcement in a macro-negative session may not get the price response it deserves. The real test is whether LINK can sustain any announcement-day pump through a macro-negative tape.",
+      "thesis": "LONG LINK (narrative/positioning play) on the most mainstream institutional adoption signal Chainlink has ever received. FIFA's legal/compliance framework approving Chainlink for regulated prediction markets is a stronger validation signal than previous B2B partnerships (Swift, Google Cloud, DTCC). LONG prediction market ecosystem (Polymarket, Kalshi). Contrarian LONG BTC/ETH — if LINK rallies while BTC holds, it signals crypto decoupling from equities.",
+      "actors": [
+        "FIFA",
+        "Chainlink Labs"
+      ],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "BUY LINK on any intraday dip. The World Cup narrative runs for 2+ months — multiple news cycles (opening match, knockout stages, final) where Chainlink's role gets mentioned in mainstream media. Accumulate ahead of the tournament, sell into World Cup hype peak in late July.",
+      "contradiction_score": 60,
+      "invalidation_trigger": "Regulators ban World Cup prediction markets in major jurisdictions. FIFA contract turns out to be non-exclusive or marketing-only. LINK fails to rally on the news, confirming macro dominance.",
+      "portfolio_implication": "LINK is the trade. FIFA choosing Chainlink over centralized alternatives validates decentralized oracle thesis at global governance level. The World Cup prediction market volume (billions in betting flow) will be settled by LINK oracles. Position for World Cup narrative that runs through July. sUSDe and RWA tokenization thesis gets a cross-validation boost from institutional oracle adoption.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 3.5,
+        "asset_class": "crypto",
+        "projected": "Institutional adoption narrative attracts capital to LINK and the broader RWA/oracle ecosystem. FIFA World Cup is the single largest sporting event globally — billions in prediction market volume will use Chainlink infrastructure.",
+        "pace_multiplier": 1.8,
+        "confidence_pct": 65,
+        "confidence_level": "medium",
+        "claim": "$3.5B inflow crypto (LINK + prediction market ecosystem)"
+      },
+      "capital_flow_implication": "LONG LINK on adoption thesis. LONG prediction market ecosystem (Polymarket-related protocols). Contrarian LONG crypto on decoupling signal — if LINK rallies through a risk-off Nasdaq session, that is a strong decoupling signal.",
+      "evidence": [
+        "source: @markettwits (13:48 UTC)",
+        "source: FIFA official designation announcement"
+      ],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-10T13:50:00+00:00",
+      "freshness": "breaking",
+      "image_url": "",
+      "extremum": "The largest sporting event on earth just chose a decentralized blockchain oracle over every centralized alternative — the zero-to-one moment for decentralized infrastructure at global scale",
+      "entity_tags": {
+        "assets": [
+          "LINK",
+          "BTC",
+          "ETH"
+        ],
+        "geographies": [
+          "Global"
+        ],
+        "actors": [
+          "FIFA",
+          "Chainlink"
+        ],
+        "instruments": [
+          "spot"
+        ]
+      },
+      "time_decay": {
+        "half_life_hours": 72.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "world_cup_start",
+          "new_prediction_market_partnership",
+          "link_price_breach"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_blockchain_agentic__chainlink_fifa_2026_world_cup_oracle"
+      ],
+      "associated_positions": []
     }
   ]
 }
