@@ -1405,7 +1405,9 @@
           "flow_confirmation"
         ]
       },
-      "impacted_flows": [],
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ],
       "associated_positions": [],
       "multi_persona": {
         "c_suite": {
@@ -1438,7 +1440,7 @@
     },
     {
       "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
-      "headline": "关键矛盾：WTI跌破90美元（-2%），尽管以色列-伊朗战争、霍尔木兹海峡通行费、贝鲁特爆炸事件持续——风险溢价正在崩溃",
+      "headline": "关键矛盾：尽管以色列-伊朗战争、霍尔木兹海峡通行费飙升及贝鲁特爆炸事件持续发酵，WTI原油仍跌破90美元（跌幅2%）——风险溢价正在瓦解",
       "sector": "commodities",
       "pillar": "multi_pillar",
       "paradigm_pillar": "multi_pillar",
@@ -1520,7 +1522,7 @@
     },
     {
       "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
-      "headline": "以色列部长本-格维尔敦促内阁绑架黎巴嫩妇女儿童作为心理战手段——极右翼升级信号",
+      "headline": "**Перевод на русский язык (профессиональный финансово-аналитический тон):**\n\nИзраильский министр Бен-Гвир призывает кабинет похищать ливанских женщин и детей в рамках психологической войны — сигнал эскалации со стороны ультраправых сил.",
       "sector": "commodities",
       "pillar": "multi_pillar",
       "paradigm_pillar": "multi_pillar",
@@ -1554,11 +1556,14 @@
       "source": "telegram_intel",
       "generated_at": "2026-06-09T13:03:26.472043+00:00",
       "freshness": "breaking",
-      "summary": ""
+      "summary": "",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ]
     },
     {
       "story_id": "n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
-      "headline": "OPEC+ Meeting TODAY (June 7) — 188k bpd Hike Expected as 149 S&P 500 Companies Flag Oil Pain [RU pending]",
+      "headline": "OPEC+会议今日（6月7日）——预计每日增产18.8万桶，标普500指数中149家公司警示油价压力",
       "sector": "commodities",
       "pillar": "multi_pillar",
       "paradigm_pillar": "multi_pillar",
@@ -1594,11 +1599,12 @@
       "freshness": "breaking",
       "impacted_flows": [
         "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149"
-      ]
+      ],
+      "summary": ""
     },
     {
       "story_id": "n21_multi_pillar__us_adp_nonfarm_29k_vs_35_7k_prior__labor_market_cracking",
-      "headline": "US ADP Nonfarm +29K vs +35.7K Prior — Labor Market Cracking as Inflation Expectations Rise 3rd Month Straight [RU pending]",
+      "headline": "**Перевод на русский язык (профессиональный финансовый стиль):**\n\n**Число занятых в несельскохозяйственном секторе США по данным ADP составило +29 тыс. против +35,7 тыс. ранее — рынок труда демонстрирует ослабление на фоне роста инфляционных ожиданий третий месяц подряд.**",
       "sector": "commodities",
       "pillar": "multi_pillar",
       "paradigm_pillar": "multi_pillar",
@@ -1631,11 +1637,15 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-09T13:03:26.471960+00:00",
-      "freshness": "breaking"
+      "freshness": "breaking",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ],
+      "summary": ""
     },
     {
       "story_id": "n21_multi_pillar__kuwait_discussing_hormuz_bypass_via_saudi_uae_pipelines__ei",
-      "headline": "Kuwait Discussing Hormuz Bypass via Saudi/UAE Pipelines + EIA Raises WTI Forecast to $88.32 — Blockade Biting Structurally [RU pending]",
+      "headline": "**Профессиональный финансовый перевод:**\n\nКувейт обсуждает возможность обхода Ормузского пролива через трубопроводы Саудовской Аравии и ОАЭ + EIA повышает прогноз по WTI до $88,32 — структурное воздействие блокады усиливается.",
       "sector": "commodities",
       "pillar": "multi_pillar",
       "paradigm_pillar": "multi_pillar",
@@ -1696,7 +1706,9 @@
           "flow_confirmation"
         ]
       },
-      "impacted_flows": [],
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ],
       "associated_positions": [],
       "multi_persona": {
         "c_suite": {
@@ -1724,7 +1736,8 @@
             "conviction": "MEDIUM"
           }
         }
-      }
+      },
+      "summary": ""
     },
     {
       "story_id": "n21_multi_pillar__idf_declares_readiness_to_immediately_resume_iran_operations",
@@ -1794,7 +1807,9 @@
           "flow_confirmation"
         ]
       },
-      "impacted_flows": [],
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ],
       "associated_positions": [],
       "multi_persona": {
         "c_suite": {
@@ -1893,7 +1908,9 @@
           "flow_confirmation"
         ]
       },
-      "impacted_flows": [],
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ],
       "associated_positions": [],
       "multi_persona": {
         "c_suite": {
@@ -1983,7 +2000,9 @@
           "flow_confirmation"
         ]
       },
-      "impacted_flows": [],
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ],
       "associated_positions": [],
       "multi_persona": {
         "c_suite": {
@@ -2073,7 +2092,9 @@
           "flow_confirmation"
         ]
       },
-      "impacted_flows": [],
+      "impacted_flows": [
+        "flow_n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1"
+      ],
       "associated_positions": [],
       "multi_persona": {
         "c_suite": {
@@ -2178,7 +2199,10 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-07T13:25:44.305960+00:00",
-      "freshness": "developing"
+      "freshness": "developing",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ]
     },
     {
       "story_id": "n21_multi_pillar__ukraine_assassinates_russian_colonel_missile_supply_chief",
@@ -2213,7 +2237,10 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-09T15:25:35.438908+00:00",
-      "freshness": "breaking"
+      "freshness": "breaking",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ]
     },
     {
       "story_id": "n21_multi_pillar__israel_cabinet_any_lebanon_rocket__automatic_beirut_strike",
@@ -2250,7 +2277,10 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-09T12:39:30.660314+00:00",
-      "freshness": "breaking"
+      "freshness": "breaking",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ]
     },
     {
       "story_id": "n21_multi_pillar__idf_declares_readiness_to_immediately_resume_operations_agai",
@@ -2285,7 +2315,10 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-09T15:25:35.438303+00:00",
-      "freshness": "breaking"
+      "freshness": "breaking",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ]
     },
     {
       "story_id": "n21_blockchain_agentic__blackrock_transferring_btc_to_exchanges_for_client_sales__o",
@@ -2322,7 +2355,10 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-09T12:39:30.660230+00:00",
-      "freshness": "breaking"
+      "freshness": "breaking",
+      "impacted_flows": [
+        "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for"
+      ]
     },
     {
       "story_id": "n21_china_ascendancy__breaking_eu_proposes_biggest_sanctions_package_in_2_years",
@@ -2359,7 +2395,10 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-09T12:39:30.659597+00:00",
-      "freshness": "breaking"
+      "freshness": "breaking",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ]
     },
     {
       "story_id": "n21_multi_pillar__israel_strikes_beirut_suburbs__explosion_in_beirut_idf_att",
@@ -2396,7 +2435,10 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-07T13:25:44.306329+00:00",
-      "freshness": "developing"
+      "freshness": "developing",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ]
     },
     {
       "story_id": "n21_multi_pillar__israel_launches_full_ground_operations_in_lebanon__hezbolla",
@@ -2433,7 +2475,10 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-07T12:25:48.811774+00:00",
-      "freshness": "developing"
+      "freshness": "developing",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ]
     },
     {
       "story_id": "n21_abundance_tech__btc_crash__worst_week_since_ftx_collapse_microstrategy_bou",
@@ -2498,7 +2543,9 @@
           "flow_confirmation"
         ]
       },
-      "impacted_flows": [],
+      "impacted_flows": [
+        "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for"
+      ],
       "associated_positions": [],
       "multi_persona": {
         "c_suite": {
@@ -2595,7 +2642,9 @@
           "flow_confirmation"
         ]
       },
-      "impacted_flows": [],
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ],
       "associated_positions": [],
       "multi_persona": {
         "c_suite": {
@@ -2688,7 +2737,9 @@
           "flow_confirmation"
         ]
       },
-      "impacted_flows": [],
+      "impacted_flows": [
+        "flow_n21_multi_pillar__israel_s_nabatieh_offensive__earthquake_that_topples_hezbo"
+      ],
       "associated_positions": [],
       "multi_persona": {
         "c_suite": {
@@ -2873,7 +2924,10 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-07T13:25:44.306398+00:00",
-      "freshness": "developing"
+      "freshness": "developing",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ]
     },
     {
       "story_id": "n21_multi_pillar__israel_orders_full_evacuation_of_tyre__cabinet_authorizes_a",
@@ -2908,7 +2962,10 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-09T15:25:35.438787+00:00",
-      "freshness": "breaking"
+      "freshness": "breaking",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ]
     },
     {
       "story_id": "n21_china_ascendancy__opec_meeting_today__expected_to_approve_188k_bpd_productio",
@@ -2945,7 +3002,10 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-07T12:25:48.811717+00:00",
-      "freshness": "developing"
+      "freshness": "developing",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ]
     },
     {
       "story_id": "n21_multi_pillar__iran_launches_drones_toward_strait_of_hormuz__us_shoots_dow",
@@ -2982,7 +3042,10 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-07T12:25:48.811425+00:00",
-      "freshness": "developing"
+      "freshness": "developing",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ]
     },
     {
       "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles",
@@ -3020,7 +3083,10 @@
         "claim": "$5.0B ↑ equities",
         "confidence": "65%"
       },
-      "generated_at": "2026-06-09T13:03:26.472079+00:00"
+      "generated_at": "2026-06-09T13:03:26.472079+00:00",
+      "impacted_flows": [
+        "flow_n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1"
+      ]
     }
   ],
   "language": "ru"
