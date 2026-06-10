@@ -51,8 +51,14 @@ body {
 
 /* ── Masthead ── */
 .masthead {
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
   padding: 6px 14px;
   background: #FFFFFF;
@@ -61,12 +67,22 @@ body {
   top: 0;
   z-index: 100;
   gap: 8px;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 .masthead-left {
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
   align-items: center;
   gap: 10px;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 .masthead-bulava {
   position: relative;
@@ -255,7 +271,7 @@ body {
 }
 
 /* v22.18: Product navigation */
-.product-nav { display: flex; gap: 12px; align-items: center; margin: 0 12px; }
+.product-nav { display: -webkit-box; display: -webkit-flex; display: flex; gap: 12px; -webkit-box-align: center; -webkit-align-items: center; align-items: center; margin: 2px 0 0 6px; -webkit-flex-wrap: wrap; flex-wrap: wrap; }
 .nav-link {
   font-size: 10px;
   opacity: 0.7;

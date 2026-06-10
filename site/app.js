@@ -20,6 +20,43 @@ Gazzetta.UI.byId = byId;
 // Backward compat: monitor for leaks
 Gazzetta._initTime = Date.now();
 
+// ═══════════════════════════════════════════════════════════════
+// Global Click Delegation — all interactive elements use data-action
+// Survives DOM refreshes without re-binding. No onclick in HTML.
+// ═══════════════════════════════════════════════════════════════
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('[data-action]');
+  if (!btn) return;
+  const action = btn.getAttribute('data-action');
+  const card = btn.closest('.card') || btn.closest('.side-hook-item');
+
+  switch(action) {
+    case 'copy-link':
+      if (typeof copyShareLink === 'function') copyShareLink(card);
+      break;
+    case 'share-x':
+      if (typeof shareToX === 'function') shareToX(card);
+      break;
+    case 'share-facebook':
+      if (typeof shareToFacebook === 'function') shareToFacebook(card);
+      break;
+    case 'share-telegram':
+      if (typeof shareToTelegram === 'function') shareToTelegram(card);
+      break;
+    case 'share-reddit':
+      if (typeof shareToReddit === 'function') shareToReddit(card);
+      break;
+    case 'nav-flows':
+      window.location.href = (window.i18n && i18n.lang === 'ru') ? './flows.html?lang=ru' : './flows.html';
+      break;
+    case 'lang-en':
+      if (window.i18n && i18n.switchLang) i18n.switchLang('en');
+      break;
+    case 'lang-ru':
+      if (window.i18n && i18n.switchLang) i18n.switchLang('ru');
+      break;
+  }
+});
 
 // ── Story cache for flow→story cross-linking ──
 const STORIES_CACHE = {}; // story_id → {headline, dom_card}
@@ -115,26 +152,6 @@ const ASSET_BADGE_LABELS = {
   crypto: 'CRYPTO', fixed_income: 'SOVEREIGN', defense: 'DEFENSE', tech: 'TECH',
 };
 
-// v23.21: Asset Class Icons — institutional color tokens for teaser cards
-const ASSET_ICONS = {
-  fx: { symbol: '💱', color: '#B8860B', label: 'FX' },
-  commodities: { symbol: '🛢', color: '#059669', label: 'COMMODITIES' },
-  crypto: { symbol: '₿', color: '#DC2626', label: 'CRYPTO' },
-  equities: { symbol: '📈', color: '#2563EB', label: 'EQUITIES' },
-  fixed_income: { symbol: '🏛', color: '#6D28D9', label: 'SOVEREIGN' },
-  defense: { symbol: '🛡', color: '#374151', label: 'DEFENSE' },
-  tech: { symbol: '⚙', color: '#7C3AED', label: 'TECH' },
-  spx: { symbol: '📊', color: '#2563EB', label: 'SPX' },
-  btc: { symbol: '₿', color: '#F59E0B', label: 'BTC' },
-  oil: { symbol: '🛢', color: '#DC2626', label: 'OIL' },
-  gold: { symbol: '🥇', color: '#B8860B', label: 'GOLD' },
-  bonds: { symbol: '📜', color: '#6D28D9', label: 'BONDS' },
-};
-function assetIcon(ac) {
-  const a = ASSET_ICONS[(ac || '').toLowerCase()] || ASSET_ICONS['equities'];
-  return `<span class="asset-icon" style="color:${a.color}" title="${a.label}">${a.symbol}</span>`;
-}
-
 // ═══════════════════════════════════════════════════════════════
 // COLLAPSIBLE CONTAINERS
 // ═══════════════════════════════════════════════════════════════
@@ -169,82 +186,6 @@ function formatTimeAgo(isoString) {
   return `${Math.floor(hours / 24)}${i18n.t('d_ago','d ago')}`;
 }
 
-// ═══ v23.18: TICKER TAPE, PROBABILITY BADGES, SPARKLINES ═══
-
-function buildTicker(storiesData, flowsData) {
-  const items = [];
-  const spacer = '<span class="ticker-item spacer">│</span>';
-  
-  // Live prices from TICKER_SYMBOLS (yfinance-backed)
-  const tickers = [
-    { sym: 'BTC', price: '67,200', change: '+0.9%', dir: 'up' },
-    { sym: 'SPX', price: '5,840', change: '+0.4%', dir: 'up' },
-    { sym: 'GOLD', price: '2,410', change: '+0.6%', dir: 'up' },
-    { sym: 'WTI', price: '74.20', change: '+2.1%', dir: 'up' },
-    { sym: 'DXY', price: '104.30', change: '-0.2%', dir: 'down' },
-    { sym: 'QQQ', price: '462', change: '-0.3%', dir: 'down' },
-    { sym: 'ETH', price: '3,850', change: '+2.1%', dir: 'up' },
-  ];
-  tickers.forEach(t => {
-    const cls = t.dir === 'up' ? 'price-up' : 'price-down';
-    items.push(`<span class="ticker-item ${cls}">${t.sym} ${t.price} ${t.change}</span>`);
-  });
-  items.push(spacer);
-  
-  // Top 3 Asymmetry Scores from stories
-  const allStories = storiesData || [];
-  const scored = allStories
-    .filter(s => s && s.asymmetry_score)
-    .sort((a, b) => b.asymmetry_score - a.asymmetry_score)
-    .slice(0, 3);
-  scored.forEach(s => {
-    const cat = (s.capital_flow || {}).asset_class || 'MACRO';
-    items.push(`<span class="ticker-item asymmetry">${cat.toUpperCase()} ASYMMETRY: ${s.asymmetry_score}</span>`);
-    items.push(spacer);
-  });
-  
-  // Latest contradiction alert
-  const contradictions = allStories.filter(s => s && s.contradiction_score >= 55);
-  if (contradictions.length) {
-    const top = contradictions[0];
-    const h = (top.headline || '').slice(0, 60);
-    items.push(`<span class="ticker-item contradiction">⚠ ${h}...</span>`);
-  }
-  
-  // Duplicate for seamless loop
-  return items.join('') + spacer + items.join('');
-}
-
-function renderTicker() {
-  const track = document.getElementById('tickerTrack');
-  if (!track) return;
-  const stories = window._gazzettaStories || [];
-  track.innerHTML = buildTicker(stories);
-}
-
-// Probability badge HTML — gold for ALPHA (≥85%)
-function probBadge(story) {
-  const prob = story.conviction_probability || story.conviction_prob;
-  if (!prob) return '';
-  const tier = prob >= 85 ? 'alpha' : prob >= 75 ? 'high' : 'moderate';
-  return `<span class="prob-badge ${tier}">${prob}%</span>`;
-}
-
-// Sparkline SVG bars from velocity values
-function sparklineHTML(values, label) {
-  if (!values || !values.length) return '';
-  const max = Math.max(...values, 1);
-  const bars = values.map((v, i) => {
-    const h = Math.max(2, (v / max) * 18);
-    const prev = i > 0 ? values[i-1] : v;
-    let cls = 'flat';
-    if (v > prev * 1.05) cls = 'rising';
-    else if (v < prev * 0.95) cls = 'falling';
-    return `<span class="sparkline-bar ${cls}" style="height:${h.toFixed(0)}px" title="${label} #${i+1}: ${v.toFixed(1)}×"></span>`;
-  }).join('');
-  return `<span class="sparkline-wrap" title="${label} velocity trend">${bars}</span>`;
-}
-
 function freshnessClass(isoString) {
   if (!isoString) return 'freshness-stale';
   const diff = Date.now() - new Date(isoString).getTime();
@@ -253,55 +194,6 @@ function freshnessClass(isoString) {
   if (hours < 6) return 'freshness-today';
   if (hours < 24) return 'freshness-day';
   return 'freshness-stale';
-}
-
-// ── v23.17: Market Correlation Freshness ──
-// Compares story age against price movement. If stories are fresh but
-// asymmetry scores are low → DORMANT. If contradiction detected → CRITICAL.
-function marketCorrelationLabel(stories, flowsData) {
-  if (!stories || !stories.length) return 'DORMANT';
-  
-  // Find stories with asymmetry data from the last 6 hours
-  const recent = stories.filter(s => {
-    if (!s) return false;
-    const ts = s.generated_at || s.timestamp;
-    if (!ts) return false;
-    return (Date.now() - new Date(ts).getTime()) < 6 * 3600000;
-  });
-  
-  if (!recent.length) return 'DORMANT';
-  
-  // Check asymmetry scores
-  const scores = recent.map(s => s.asymmetry_score || 0);
-  const maxScore = Math.max(...scores);
-  const avgScore = scores.reduce((a,b) => a+b, 0) / scores.length;
-  
-  // Check for price-narrative contradiction
-  const contradictions = recent.filter(s => {
-    const diag = s.asymmetry_diagnostic;
-    if (!diag) return false;
-    const sentiment = diag.sentiment || 0;
-    const priceDelta = diag.price_delta || 0;
-    return (sentiment > 0 && priceDelta < -0.1) || (sentiment < 0 && priceDelta > 0.1);
-  });
-  
-  if (contradictions.length >= 2 || maxScore >= 65) return 'CRITICAL';
-  if (avgScore >= 35) return 'ACTIVE';
-  return 'DORMANT';
-}
-
-function freshnessLabel(isoString, stories, flowsData) {
-  const timeClass = freshnessClass(isoString);
-  const corr = marketCorrelationLabel(stories, flowsData);
-  
-  if (corr === 'CRITICAL') return { text: 'CRITICAL — Price contradicting narrative', cls: 'freshness-critical' };
-  if (corr === 'ACTIVE') return { text: 'Active — Market confirming thesis', cls: 'freshness-active' };
-  
-  const hours = isoString ? (Date.now() - new Date(isoString).getTime()) / 3600000 : 99;
-  if (hours < 1) return { text: 'Live — just now', cls: 'freshness-recent' };
-  if (hours < 6) return { text: `Recent — ${Math.round(hours)}h ago`, cls: 'freshness-today' };
-  if (hours < 24) return { text: `Today — ${Math.round(hours)}h ago`, cls: 'freshness-day' };
-  return { text: 'Dormant — awaiting catalyst', cls: 'freshness-stale' };
 }
 
 function formatTimestamp(isoString) {
@@ -414,21 +306,6 @@ function anchorRowHTML(a) {
   const pillClass = a.bias === 'BUY' ? 'anchor-pill buy' : a.bias === 'SELL' ? 'anchor-pill sell' : 'anchor-pill watch';
   const badgeClass = a.conviction === 'HIGH' ? 'anchor-badge high' : a.conviction === 'MED' ? 'anchor-badge med' : 'anchor-badge low';
   const atrPct = (a.atr_pct * 100).toFixed(1);
-  
-  // ── v23.17: R:R Ratio — calculated from entry/target/stop ──
-  const entryVal = parseFloat(String(a.entry).replace(/,/g, ''));
-  const targetVal = parseFloat(String(a.target).replace(/,/g, ''));
-  const stopVal = a.stop ? parseFloat(a.stop) : (a.bias === 'SELL' ? entryVal * (1 + a.atr_pct * a.stop_atr_mult) : entryVal * (1 - a.atr_pct * a.stop_atr_mult));
-  const risk = Math.abs(entryVal - stopVal);
-  const reward = Math.abs(targetVal - entryVal);
-  const rr = risk > 0 ? reward / risk : 0;
-  a._rr = rr; // store for filtering
-  
-  if (rr < 2.0) return null; // HIDE: doesn't meet quality threshold
-  
-  const rrClass = rr >= 3.5 ? 'rr-elite' : rr >= 2.5 ? 'rr-strong' : 'rr-viable';
-  const rrDisplay = rr.toFixed(1) + ':1';
-  
   return `
     <div class="asset-row">
       <div class="asset-info">
@@ -440,7 +317,6 @@ function anchorRowHTML(a) {
         <span class="${pillClass}">${i18n.t(a.bias.toLowerCase(), a.bias)}</span>
         <span class="asset-zone">${a.entry} → ${a.target}</span>
         <span class="asset-stop" title="Volatility-adjusted: ${a.stop_atr_mult}×${atrPct}% ATR from entry">Stop ${a.stop || '—'} · ${a.stop_atr_mult}×ATR</span>
-        <span class="asset-rr ${rrClass}" title="Risk/Reward: reward ÷ risk">R:R ${rrDisplay}</span>
         <span class="${badgeClass}">${i18n.t("conviction_"+a.conviction, a.conviction)}</span>
       </div>
     </div>`;
@@ -467,14 +343,12 @@ function renderPDR(elId) {
 
 function renderAnchor() {
   const el = byId('assetList') || byId('anchorGrid');
-  if (el) {
-    const rows = ANCHOR_ASSETS.map(anchorRowHTML).filter(r => r !== null);
-    el.innerHTML = rows.join('') + cryptoSignalHTML();
-    // Update dynamic count (excludes R:R < 2.0 filtered hooks)
-    const anchorCount = byId('anchorCount');
-    if (anchorCount) anchorCount.textContent = String(rows.length);
-  }
+  if (el) el.innerHTML = ANCHOR_ASSETS.map(anchorRowHTML).join('') + cryptoSignalHTML();
   renderPDR('pdrGauge');
+  
+  // Update container description with dynamic asset count
+  const anchorCount = byId('anchorCount');
+  if (anchorCount) anchorCount.textContent = String(ANCHOR_ASSETS.length);
   
   // Data freshness note — anchor prices are reference points, not live
   const freshnessEl = byId('anchorFreshness');
@@ -522,6 +396,7 @@ async function fetchFlows() {
   renderGlossaryTooltips();
   updateHeroConfidence(data.aggregate_confidence, data.aggregate_confidence_label, data.aggregate_direction);
   updateMastheadFlows(data);
+  updateTradeHooks(data);
   // Update flow freshness timestamp
   const tsEl = byId('flowFreshness');
   if (tsEl && data.generated_at) {
@@ -538,35 +413,30 @@ async function fetchFlows() {
 // ── v2.0: Hero indicator updates ──
 function updateHeroIndicators(flowsData) {
   if (!flowsData || !flowsData.flows) return;
-  // Divergence gauge: number of contradicted flows (confidence < 70%)
-  const divergences = flowsData.flows.filter(f => f.confidence_pct && f.confidence_pct < 70).length;
-  const divEl = document.getElementById('heroDivergence');
-  if (divEl) {
-    divEl.querySelector('.hero-ind-value').textContent = divergences;
-    divEl.querySelector('.hero-ind-value').style.color = divergences >= 2 ? '#DC2626' : 'var(--ink)';
+  // Contradictions: flows with confidence < 70%
+  const contradictions = flowsData.flows.filter(f => f.confidence_pct && f.confidence_pct < 70).length;
+  const contraEl = document.getElementById('heroContradictions');
+  if (contraEl) {
+    contraEl.querySelector('.hero-ind-value').textContent = contradictions;
+    contraEl.querySelector('.hero-ind-value').style.color = contradictions >= 2 ? '#DC2626' : 'var(--ink)';
   }
-  // Asymmetry gauge dial: update arc + value from max asymmetry score
-  const storiesData = window._gazzettaStories || [];
-  let maxAsym = 0, asymTier = 'LOW';
-  storiesData.forEach(s => { if (s && s.asymmetry_score > maxAsym) { maxAsym = s.asymmetry_score; asymTier = s.asymmetry_tier || 'LOW'; } });
-  const gaugeArc = document.getElementById('heroGaugeArc');
-  const gaugeVal = document.getElementById('heroGaugeValue');
-  const gaugeLbl = document.getElementById('heroGaugeLabel');
-  if (gaugeArc && gaugeVal) {
-    const circumference = 132; // arc length
-    const dash = (maxAsym / 100) * circumference;
-    gaugeArc.setAttribute('stroke-dasharray', `${dash} ${circumference}`);
-    gaugeArc.setAttribute('stroke', maxAsym >= 65 ? '#DC2626' : maxAsym >= 40 ? '#B8860B' : '#6B7280');
-    gaugeVal.textContent = maxAsym || '—';
-    gaugeLbl.textContent = asymTier === 'MAX ASYMMETRY' ? 'MAX' : asymTier === 'HIGH ASYMMETRY' ? 'HIGH' : asymTier === 'MODERATE' ? 'MODERATE' : 'LOW';
+  // Top velocity: highest pace_multiplier across flows
+  let topVel = 0, topCat = '';
+  flowsData.flows.forEach(f => {
+    if ((f.pace_multiplier || 1) > topVel) {
+      topVel = f.pace_multiplier || 1;
+      topCat = f.asset_class || '';
+    }
+  });
+  const velEl = document.getElementById('heroTopVelocity');
+  if (velEl) {
+    velEl.querySelector('.hero-ind-value').textContent = `${topVel.toFixed(1)}×`;
+    velEl.title = `Highest velocity: ${topCat}`;
   }
-  // Freshness 2.0: market correlation (v23.17)
+  // Freshness: from generated_at
   const freshEl = document.getElementById('heroFreshness');
   if (freshEl && flowsData.generated_at) {
-    const storiesData = window._gazzettaStories || [];
-    const label = freshnessLabel(flowsData.generated_at, storiesData, flowsData);
-    freshEl.querySelector('.hero-ind-value').textContent = label.text;
-    freshEl.className = 'hero-ind ' + label.cls;
+    freshEl.querySelector('.hero-ind-value').textContent = formatTimeAgo(flowsData.generated_at);
     freshEl.title = flowsData.generated_at;
   }
 }
@@ -873,6 +743,102 @@ function updateMastheadFlows(flowsData) {
     total.textContent = `$${totalB.toFixed(1)}B`;
   }
   // NOTE: heroStoryCount is updated by updateCumulativeStats — do NOT set it here
+}
+
+// ═══════════════════════════════════════════════════════════════
+// TRADE HOOKS — Price/Narrative Divergence Format (v23.22)
+// Replaces percentage-based hooks with divergence gap scores.
+// Gap = |sentiment direction × conviction − actual price delta|
+// > 0.5 = [DIVERGENT] red, > 0.25 = [LAGGING] amber, ≤ 0.25 = [ALIGNED] green
+// ═══════════════════════════════════════════════════════════════
+
+function computeDivergence(flowDirection, flowConfidence, priceDeltaPct) {
+  // Normalize: direction as ±1, confidence as 0-1
+  const dirSign = (flowDirection === 'outflow' || flowDirection === 'bearish') ? -1 : 1;
+  const conf = Math.min(1, Math.max(0, (flowConfidence || 0.5)));
+  // Narrative force = direction × confidence
+  const narrativeForce = dirSign * conf;
+  // Price delta normalized to -1..1 range (|delta|/100)
+  const priceForce = Math.max(-1, Math.min(1, (priceDeltaPct || 0) / 100));
+  // Divergence gap = absolute difference
+  const gap = Math.abs(narrativeForce - priceForce);
+  return { gap, narrativeForce, priceForce };
+}
+
+function getDivergenceLabel(gap) {
+  if (gap > 0.5) return 'DIVERGENT';
+  if (gap > 0.25) return 'LAGGING';
+  return 'ALIGNED';
+}
+
+function getDivergenceColor(gap) {
+  if (gap > 0.5) return '#DC2626';   // Red — high divergence, opportunity
+  if (gap > 0.25) return '#D97706';  // Amber — moderate
+  return '#059669';                   // Green — aligned
+}
+
+function updateTradeHooks(flowsData) {
+  if (!flowsData || !flowsData.flows) return;
+
+  // Get top 3 flows by velocity for trade hooks
+  const candidates = [...flowsData.flows]
+    .filter(f => f.amount_b && f.amount_b > 0)
+    .sort((a, b) => (b.pace_multiplier || 1) - (a.pace_multiplier || 1))
+    .slice(0, 3);
+
+  // Market price deltas from ticker map (global, populated by updateTickers)
+  const priceMap = window._lastTickerMap || {};
+
+  for (let i = 0; i < 3; i++) {
+    const symEl = document.getElementById('hook' + i + 'Symbol');
+    const labelEl = document.getElementById('hook' + i + 'Label');
+    const gapEl = document.getElementById('hook' + i + 'Gap');
+    if (!symEl || !labelEl || !gapEl) continue;
+
+    const flow = candidates[i];
+    if (!flow) {
+      symEl.textContent = '—';
+      labelEl.textContent = '';
+      gapEl.textContent = '';
+      continue;
+    }
+
+    const symbol = (flow.asset_class || '---').toUpperCase().slice(0, 8);
+    const direction = flow.net_direction || flow.direction || 'inflow';
+    const dirArrow = direction === 'outflow' ? '↓' : '↑';
+    const dirLabel = direction === 'outflow' ? 'OUT' : 'IN';
+    const confidence = flow.confidence_pct ? flow.confidence_pct / 100 : 0.6;
+
+    // Get price delta for this asset class
+    const priceTicker = priceMap[symbol.toLowerCase()];
+    const priceDelta = priceTicker ? priceTicker.change_pct : 0;
+
+    const { gap } = computeDivergence(direction, confidence, priceDelta);
+    const gapPct = (gap * 100).toFixed(1);
+    const divLabel = getDivergenceLabel(gap);
+    const color = getDivergenceColor(gap);
+
+    symEl.textContent = symbol;
+    labelEl.innerHTML = `${dirArrow} ${dirLabel} <span style="color:${color};font-weight:700">[${divLabel}]</span>`;
+    gapEl.textContent = `Δ ${gapPct}%`;
+    gapEl.style.color = color;
+  }
+
+  // Update SENTIMENT section with aggregate divergence
+  const sentValue = document.getElementById('sideSentValue');
+  const sentLabel = document.getElementById('sideSentLabel');
+  if (sentValue && sentLabel && flowsData.flows) {
+    const totalConf = flowsData.aggregate_confidence || 0.6;
+    const aggDir = flowsData.aggregate_direction === 'outflow' ? -1 : 1;
+    const avgGap = flowsData.flows.reduce((s, f) => {
+      const d = computeDivergence(f.net_direction || f.direction || 'inflow', (f.confidence_pct || 60) / 100, 0);
+      return s + d.gap;
+    }, 0) / Math.max(1, flowsData.flows.length);
+    const gapRounded = (avgGap * 100).toFixed(0);
+    sentValue.textContent = gapRounded + '%';
+    sentValue.style.color = getDivergenceColor(avgGap);
+    sentLabel.textContent = 'Divergence · ' + flowsData.flows.length + ' flows';
+  }
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -2119,20 +2085,6 @@ function shareToReddit(card) {
 // ═══════════════════════════════════════════════════════════════
 
 async function boot() {
-  // v23.20: Event delegation — handles all share buttons + interlinks
-  document.addEventListener('click', function(e) {
-    const btn = e.target.closest('[data-action]');
-    if (!btn) return;
-    const action = btn.getAttribute('data-action');
-    const card = btn.closest('.card') || btn.closest('.story-card');
-    switch(action) {
-      case 'copy-link': copyShareLink(card); break;
-      case 'share-x': shareToX(card); break;
-      case 'share-facebook': shareToFacebook(card); break;
-      case 'share-telegram': shareToTelegram(card); break;
-      case 'share-reddit': shareToReddit(card); break;
-    }
-  });
   // Wait for i18n translations to finish loading before rendering
   if (window.i18n && !window.i18n._ready) {
     await new Promise(resolve => {
@@ -2262,9 +2214,6 @@ async function populateTeasers() {
   try {
     const storiesData = await getJSON(getDataPath(), null);
     if (storiesData && storiesData.stories) {
-      // v23.17: Store for freshness correlation
-      window._gazzettaStories = [storiesData.lead, ...storiesData.stories].filter(Boolean);
-      renderTicker();  // v23.18: populate ticker tape after stories load
       const el = document.getElementById('storiesTeaserContent');
       const countEl = document.getElementById('teaserStoryCount');
       if (el) {
@@ -2272,7 +2221,6 @@ async function populateTeasers() {
         el.innerHTML = items.map(s => {
           const cf = s.capital_flow || {};
           const amtHtml = cf.amount_b ? `<span class="teaser-amount">$${cf.amount_b}B</span>` : '';
-          const probHtml = probBadge(s);  // v23.18: conviction probability badge
           const headline = (s.headline || '').slice(0, 80);
           // v2.0: Show linked flows/positions if present
           let linkedHtml = '';
@@ -2291,9 +2239,7 @@ async function populateTeasers() {
             const cls = fresh > 0.8 ? 'freshness-recent' : fresh > 0.4 ? 'freshness-today' : 'freshness-stale';
             freshHtml = ` <span class="freshness-ago ${cls}">${pct}%</span>`;
           }
-                    const cf2 = s.capital_flow || {};
-          const iconHtml = cf2.asset_class ? assetIcon(cf2.asset_class) : '';
-          return `<a href="./story.html?id=${s.story_id || s.id || ''}" class="teaser-item">${iconHtml}${probHtml}${amtHtml}${headline}${linkedHtml}${freshHtml}</a>`;
+          return `<a href="./story.html?id=${s.story_id || s.id || ''}" class="teaser-item">${amtHtml}${headline}${linkedHtml}${freshHtml}</a>`;
         }).join('');
         if (countEl) countEl.textContent = items.length + ' stories';
         // Story freshness timestamp

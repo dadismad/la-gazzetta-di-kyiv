@@ -142,9 +142,6 @@
         <circle cx="17" cy="14" r="1.3" fill="currentColor" opacity="0.5"/>
       </svg>
     </span>
-  </div>
-  <div class="masthead-right">
-    <span class="masthead-tagline" style="color:#475569;font-size:12px;margin-left:auto;font-style:italic;font-family:var(--body)">Capital moves markets. We track where it's going.</span>
     <nav class="product-nav">
       <span class="nav-group-label">INTEL</span>
       <a href="./stories.html" class="nav-link"><span data-i18n="nav_stories">Stories</span></a>
@@ -156,10 +153,13 @@
       <a href="./trades.html" class="nav-link"><span data-i18n="nav_trades">Trades</span></a>
       <a href="./track.html" class="nav-link"><span data-i18n="nav_track">Track</span></a>
     </nav>
+  </div>
+  <div class="masthead-right">
+    <span class="masthead-tagline" style="color:#475569;font-size:12px;margin-left:auto;font-style:italic;font-family:var(--body)">Капитал движет рынками. Мы отслеживаем, куда он направляется.</span>
     <time class="masthead-meta" id="mastheadMeta" datetime="2026-06-06T15:00:00.000Z">—</time>
     <span class="lang-switcher">
-      <button class="lang-switch active" data-lang="en" onclick="i18n.switchLang('en')" aria-label="English">EN</button>
-      <button class="lang-switch" data-lang="ru" onclick="i18n.switchLang('ru')" aria-label="Русский">RU</button>
+      <button class="lang-switch active" data-lang="en" data-action="lang-en" aria-label="English">EN</button>
+      <button class="lang-switch" data-lang="ru" data-action="lang-ru" aria-label="Русский">RU</button>
     </span>
   </div>
 </header>
@@ -197,20 +197,20 @@
     <div class="side-section">
       <div class="side-section-label" data-i18n="side_trade_hooks">TRADE HOOKS</div>
       <div class="side-hooks" id="sideHooks">
-<div class="side-hook-item" onclick="location.href='./flows.html'">
-          <span class="side-hook-symbol">CRYPTO</span>
-          <span class="side-hook-dir bearish">↓ OUT</span>
-          <span class="side-hook-conv">50%</span>
+        <div class="side-hook-item" data-action="nav-flows">
+          <span class="side-hook-symbol" id="hook0Symbol">—</span>
+          <span class="side-hook-label" id="hook0Label">—</span>
+          <span class="side-hook-gap" id="hook0Gap">—</span>
         </div>
-<div class="side-hook-item" onclick="location.href='./flows.html'">
-          <span class="side-hook-symbol">CRYPTO</span>
-          <span class="side-hook-dir bullish">↑ INF</span>
-          <span class="side-hook-conv">75%</span>
+        <div class="side-hook-item" data-action="nav-flows">
+          <span class="side-hook-symbol" id="hook1Symbol">—</span>
+          <span class="side-hook-label" id="hook1Label">—</span>
+          <span class="side-hook-gap" id="hook1Gap">—</span>
         </div>
-<div class="side-hook-item" onclick="location.href='./flows.html'">
-          <span class="side-hook-symbol">TECH</span>
-          <span class="side-hook-dir bullish">↑ INF</span>
-          <span class="side-hook-conv">50%</span>
+        <div class="side-hook-item" data-action="nav-flows">
+          <span class="side-hook-symbol" id="hook2Symbol">—</span>
+          <span class="side-hook-label" id="hook2Label">—</span>
+          <span class="side-hook-gap" id="hook2Gap">—</span>
         </div>
       </div>
     </div>
@@ -237,8 +237,8 @@
     <div class="side-section">
       <div class="side-section-label" data-i18n="side_sentiment">SENTIMENT</div>
       <div class="side-sentiment" id="sideSentiment">
-        <span class="side-sent-value bullish">75%</span>
-        <span class="side-sent-label">Inflow ratio · 9/12</span>
+        <span class="side-sent-value bullish" id="sideSentValue">—</span>
+        <span class="side-sent-label" id="sideSentLabel">Дивергенция · —</span>
       </div>
     </div>
   </aside>

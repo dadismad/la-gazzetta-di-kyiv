@@ -29,34 +29,12 @@
   --display: 'Playfair Display', Georgia, serif;
   --body:    'Source Serif 4', Georgia, serif;
   --sans:    'Inter', -apple-system, sans-serif;
-  --mono:    'JetBrains Mono', 'Roboto Mono', 'Courier New', monospace;
 
   --φ: 1.618;
   --φ-sm: calc(1rem / var(--φ));
   --φ-md: 1.618rem;
   --φ-lg: calc(1rem * var(--φ) * var(--φ));
   --φ-xl: calc(1rem * var(--φ) * var(--φ) * var(--φ));
-}
-
-/* ── v23.16 MOBILE COMPATIBILITY ──
-   Vendor prefixes for older iOS Safari (8-14), Android Browser,
-   and IE10/11. Full autoprefixer pass recommended for build pipeline. */
-@supports not (display: grid) {
-  /* Grid fallback for IE11 / old Edge */
-  .product-grid, .teaser-list, .flow-sector-grid,
-  .side-hooks, .side-freshness, .side-tickers {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-@supports not (display: flex) {
-  /* Ancient browser fallback */
-  .product-nav, .teaser-list, .side-hooks,
-  .side-freshness, .masthead-inner {
-    display: block;
-  }
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -73,8 +51,14 @@ body {
 
 /* ── Masthead ── */
 .masthead {
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
   padding: 6px 14px;
   background: #FFFFFF;
@@ -83,12 +67,22 @@ body {
   top: 0;
   z-index: 100;
   gap: 8px;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 .masthead-left {
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
   align-items: center;
   gap: 10px;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 .masthead-bulava {
   position: relative;
@@ -173,63 +167,6 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   white-space: nowrap;
-}
-
-/* ── v23.18: Live Ticker Tape ── */
-.ticker-tape { color: #64748B; /* v23.22: deeper slate, supports not distracts */
-  width: 100%; max-width: 1000px; margin: 4px auto 0;
-  background: #0F172A; color: #E2E8F0; overflow: hidden;
-  font-family: var(--mono); font-size: 11px; line-height: 1.6;
-  padding: 4px 0; white-space: nowrap;
-  border-top: 1px solid rgba(184,134,11,0.3);
-  border-bottom: 1px solid rgba(184,134,11,0.3);
-}
-.ticker-track {
-  display: inline-block; animation: ticker-scroll 60s linear infinite;
-}
-.ticker-track:hover { animation-play-state: paused; }
-.ticker-item { color: #64748B; /* v23.22: match ticker tape */ /* v23.22: desaturated slate to fit Gazzetta palette */
-  padding: 0 18px; display: inline-block;
-}
-.ticker-item.price-up { color: #059669; }
-.ticker-item.price-down { color: #DC2626; }
-.ticker-item.asymmetry { color: #B8860B; font-weight: 700; }
-.ticker-item.contradiction { color: #DC2626; font-weight: 700; background: rgba(220,38,38,0.1); padding: 1px 12px; }
-.ticker-item.spacer { color: rgba(184,134,11,0.4); padding: 0 2px; }
-@keyframes ticker-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* ── v23.18: Conviction Probability Badge ── */
-.prob-badge {
-  font-family: var(--mono); font-size: 10px; font-weight: 700;
-  padding: 1px 5px; margin-right: 4px; white-space: nowrap;
-  border: 1px solid;
-}
-.prob-badge.alpha { color: #B8860B; border-color: #B8860B; background: rgba(184,134,11,0.08); }
-.prob-badge.high  { color: #2563EB; border-color: #2563EB; background: rgba(37,99,235,0.06); }
-.prob-badge.moderate { color: #6B7280; border-color: #9CA3AF; }
-
-/* ── v23.18: Sparklines ── */
-.sparkline-wrap {
-  display: inline-flex; align-items: flex-end; gap: 1px;
-  height: 20px; margin-left: 6px; vertical-align: middle;
-}
-.sparkline-bar {
-  width: 4px; min-height: 2px; background: #B8860B;
-  border-radius: 1px; transition: height 0.3s ease;
-}
-.sparkline-bar.rising  { background: #059669; }
-.sparkline-bar.falling { background: #DC2626; }
-.sparkline-bar.flat    { background: #6B7280; }
-
-/* ── v23.18: Asymmetry Gauge Dial ── */
-.asymmetry-gauge {
-  text-align: center; padding: 6px 0;
-}
-.gauge-svg {
-  width: 100%; max-width: 140px; height: auto;
 }
 
 /* ── Hero Section ── */
@@ -334,7 +271,7 @@ body {
 }
 
 /* v22.18: Product navigation */
-.product-nav { display: flex; gap: 12px; align-items: center; margin: 0 12px; }
+.product-nav { display: -webkit-box; display: -webkit-flex; display: flex; gap: 12px; -webkit-box-align: center; -webkit-align-items: center; align-items: center; margin: 2px 0 0 6px; -webkit-flex-wrap: wrap; flex-wrap: wrap; }
 .nav-link {
   font-size: 10px;
   opacity: 0.7;
@@ -527,39 +464,6 @@ body {
 }
 .teaser-full-link:hover { text-decoration: underline; }
 
-
-/* v23.21: Track Record proof-point */
-.track-proof-stat { display:flex; flex-direction:column; align-items:flex-start; gap:2px; min-width:100px; }
-.track-proof-value { font-family: var(--mono); font-size: 28px; font-weight: 900; }
-.track-proof-label { font-family: var(--sans); font-size: 9px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-muted); }
-
-/* v23.21: Probability Badge inline */
-.prob-badge-inline { display:inline-block; padding:1px 5px; border-radius:2px; font-family:var(--mono); font-size:9px; font-weight:700; margin-left:4px; }
-.prob-badge-inline.alpha { background:rgba(184,134,11,0.12); color:#B8860B; }
-.prob-badge-inline.high { background:rgba(37,99,235,0.10); color:#2563EB; }
-.prob-badge-inline.moderate { background:rgba(107,114,128,0.10); color:#6B7280; }
-
-/* v23.21: Mobile Progressive Discovery — expandable teaser badges */
-@media (max-width: 768px) {
-  /* v23.22: Mobile Progressive Disclosure — Headline-only containers */
-  .container-desc { display: none; }
-  .container.collapsible .container-desc { display: none; }
-  .container-subtitle, .flow-freshness { font-size: 9px; }
-  /* Telemetry chip — compact stat inline */
-  .teaser-amount { display: inline !important; font-size: 10px; padding: 1px 5px; background: #F8FAFC; border: 1px solid #E5E7EB; }
-  .teaser-item { position: relative; }
-  .teaser-item .teaser-amount, .teaser-item .prob-badge, .teaser-item .teaser-linked,
-  .teaser-item .freshness-ago { display: none; }
-  .teaser-item.expanded .teaser-amount, .teaser-item.expanded .prob-badge,
-  .teaser-item.expanded .teaser-linked, .teaser-item.expanded .freshness-ago { display: inline; }
-  .teaser-item .asset-icon { font-size: 16px; margin-right: 6px; }
-  .teaser-item::after { content: '▸'; position:absolute; right:8px; top:50%; transform:translateY(-50%); font-size:10px; color:var(--ink-muted); }
-  .teaser-item.expanded::after { content: '▾'; }
-  .track-proof-stat { min-width: 70px; }
-  .track-proof-value { font-size: 22px !important; }
-  /* Horizontal slider 20px gap */
-  .product-nav-mobile { gap: 20px; padding: 0 20px; }
-}
 
 /* v23.6: Mobile product nav — horizontal scroll slider */
 @media (max-width: 768px) {
@@ -1658,14 +1562,6 @@ body {
 .anchor-pill.watch { background: var(--gold-light); color: var(--gold); }
 .asset-zone { color: var(--ink); }
 .asset-stop  { color: var(--red); font-size: 9px; }
-.asset-rr {
-  font-size: 9px; font-weight: 700; padding: 1px 5px;
-  border: 1px solid; margin-left: 2px; white-space: nowrap;
-  font-family: var(--mono, 'JetBrains Mono', 'Courier New', monospace);
-}
-.asset-rr.rr-elite   { color: #059669; border-color: #059669; background: rgba(5,150,105,0.08); }
-.asset-rr.rr-strong  { color: #2563EB; border-color: #2563EB; background: rgba(37,99,235,0.08); }
-.asset-rr.rr-viable  { color: #6B7280; border-color: #9CA3AF; background: rgba(107,114,128,0.06); }
 .anchor-badge {
   font-size: 10px;
   font-weight: 700;
@@ -2114,11 +2010,6 @@ body {
 .freshness-ago.freshness-today { color: var(--gold); }
 .freshness-ago.freshness-day { color: var(--ink-muted); }
 .freshness-ago.freshness-stale { color: var(--ink-muted); opacity: 0.6; }
-/* v23.17: Market correlation freshness */
-.hero-ind.freshness-critical { border-color: #DC2626; background: rgba(220,38,38,0.06); }
-.hero-ind.freshness-critical .hero-ind-value { color: #DC2626; font-weight: 900; }
-.hero-ind.freshness-active { border-color: #059669; background: rgba(5,150,105,0.06); }
-.hero-ind.freshness-active .hero-ind-value { color: #059669; }
 
 /* ── Breaking news badge (pulsing red) ── */
 .breaking-badge {
@@ -3007,54 +2898,3 @@ body {
 @media (max-width: 768px) {
   .gate-overlay .gate-cta { font-size: 14px; padding: 12px 24px; width: 80%; text-align: center; }
 }
-
-/* ── v23.18: Mobile Shadow UI ── */
-@media (max-width: 768px) {
-  /* Large high-contrast metric cards */
-  .mobile-metric {
-    display: flex; flex-direction: column; align-items: center;
-    padding: 12px 8px; min-width: 80px;
-    border: 1px solid var(--divider);
-  }
-  .mobile-metric .metric-value {
-    font-family: var(--mono); font-size: 22px; font-weight: 900;
-    color: var(--ink); line-height: 1.2;
-  }
-  .mobile-metric .metric-hint {
-    font-family: var(--sans); font-size: 9px;
-    color: var(--ink-muted); opacity: 0.4; /* ghost text */
-    text-transform: uppercase; letter-spacing: 0.08em;
-    margin-top: 2px;
-  }
-  /* Expandable anchor on tap */
-  .metric-expandable { cursor: pointer; }
-  .metric-expandable .alpha-hook {
-    font-family: var(--body); font-size: 13px; font-style: italic;
-    color: var(--gold); max-height: 0; overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-  .metric-expandable.expanded .alpha-hook { max-height: 80px; }
-  /* Horizontal slider with fluid scroll-snap */
-  .product-nav {
-    display: flex; flex-wrap: nowrap; overflow-x: auto;
-    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
-    gap: 0; padding: 4px 0;
-  }
-  .product-nav .nav-link {
-    scroll-snap-align: start; flex-shrink: 0;
-    padding: 6px 12px; white-space: nowrap;
-  }
-  .product-nav .nav-group-label {
-    scroll-snap-align: start; flex-shrink: 0;
-    padding: 6px 8px; font-size: 9px;
-  }
-}
-
-/* ── v23.18: Interlinking — View in Horizon/Nodes ── */
-.story-interlink {
-  display: inline-block; font-family: var(--mono); font-size: 9px;
-  font-weight: 600; padding: 2px 8px; margin-left: 6px;
-  border: 1px solid var(--divider); color: var(--ink-muted);
-  text-decoration: none; transition: all 0.2s;
-}
-.story-interlink:hover { border-color: var(--gold); color: var(--gold); }

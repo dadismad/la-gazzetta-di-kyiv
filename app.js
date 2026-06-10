@@ -20,6 +20,43 @@ Gazzetta.UI.byId = byId;
 // Backward compat: monitor for leaks
 Gazzetta._initTime = Date.now();
 
+// ═══════════════════════════════════════════════════════════════
+// Global Click Delegation — all interactive elements use data-action
+// Survives DOM refreshes without re-binding. No onclick in HTML.
+// ═══════════════════════════════════════════════════════════════
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('[data-action]');
+  if (!btn) return;
+  const action = btn.getAttribute('data-action');
+  const card = btn.closest('.card') || btn.closest('.side-hook-item');
+
+  switch(action) {
+    case 'copy-link':
+      if (typeof copyShareLink === 'function') copyShareLink(card);
+      break;
+    case 'share-x':
+      if (typeof shareToX === 'function') shareToX(card);
+      break;
+    case 'share-facebook':
+      if (typeof shareToFacebook === 'function') shareToFacebook(card);
+      break;
+    case 'share-telegram':
+      if (typeof shareToTelegram === 'function') shareToTelegram(card);
+      break;
+    case 'share-reddit':
+      if (typeof shareToReddit === 'function') shareToReddit(card);
+      break;
+    case 'nav-flows':
+      window.location.href = (window.i18n && i18n.lang === 'ru') ? './flows.html?lang=ru' : './flows.html';
+      break;
+    case 'lang-en':
+      if (window.i18n && i18n.switchLang) i18n.switchLang('en');
+      break;
+    case 'lang-ru':
+      if (window.i18n && i18n.switchLang) i18n.switchLang('ru');
+      break;
+  }
+});
 
 // ── Story cache for flow→story cross-linking ──
 const STORIES_CACHE = {}; // story_id → {headline, dom_card}
@@ -359,6 +396,7 @@ async function fetchFlows() {
   renderGlossaryTooltips();
   updateHeroConfidence(data.aggregate_confidence, data.aggregate_confidence_label, data.aggregate_direction);
   updateMastheadFlows(data);
+  updateTradeHooks(data);
   // Update flow freshness timestamp
   const tsEl = byId('flowFreshness');
   if (tsEl && data.generated_at) {
@@ -705,6 +743,102 @@ function updateMastheadFlows(flowsData) {
     total.textContent = `$${totalB.toFixed(1)}B`;
   }
   // NOTE: heroStoryCount is updated by updateCumulativeStats — do NOT set it here
+}
+
+// ═══════════════════════════════════════════════════════════════
+// TRADE HOOKS — Price/Narrative Divergence Format (v23.22)
+// Replaces percentage-based hooks with divergence gap scores.
+// Gap = |sentiment direction × conviction − actual price delta|
+// > 0.5 = [DIVERGENT] red, > 0.25 = [LAGGING] amber, ≤ 0.25 = [ALIGNED] green
+// ═══════════════════════════════════════════════════════════════
+
+function computeDivergence(flowDirection, flowConfidence, priceDeltaPct) {
+  // Normalize: direction as ±1, confidence as 0-1
+  const dirSign = (flowDirection === 'outflow' || flowDirection === 'bearish') ? -1 : 1;
+  const conf = Math.min(1, Math.max(0, (flowConfidence || 0.5)));
+  // Narrative force = direction × confidence
+  const narrativeForce = dirSign * conf;
+  // Price delta normalized to -1..1 range (|delta|/100)
+  const priceForce = Math.max(-1, Math.min(1, (priceDeltaPct || 0) / 100));
+  // Divergence gap = absolute difference
+  const gap = Math.abs(narrativeForce - priceForce);
+  return { gap, narrativeForce, priceForce };
+}
+
+function getDivergenceLabel(gap) {
+  if (gap > 0.5) return 'DIVERGENT';
+  if (gap > 0.25) return 'LAGGING';
+  return 'ALIGNED';
+}
+
+function getDivergenceColor(gap) {
+  if (gap > 0.5) return '#DC2626';   // Red — high divergence, opportunity
+  if (gap > 0.25) return '#D97706';  // Amber — moderate
+  return '#059669';                   // Green — aligned
+}
+
+function updateTradeHooks(flowsData) {
+  if (!flowsData || !flowsData.flows) return;
+
+  // Get top 3 flows by velocity for trade hooks
+  const candidates = [...flowsData.flows]
+    .filter(f => f.amount_b && f.amount_b > 0)
+    .sort((a, b) => (b.pace_multiplier || 1) - (a.pace_multiplier || 1))
+    .slice(0, 3);
+
+  // Market price deltas from ticker map (global, populated by updateTickers)
+  const priceMap = window._lastTickerMap || {};
+
+  for (let i = 0; i < 3; i++) {
+    const symEl = document.getElementById('hook' + i + 'Symbol');
+    const labelEl = document.getElementById('hook' + i + 'Label');
+    const gapEl = document.getElementById('hook' + i + 'Gap');
+    if (!symEl || !labelEl || !gapEl) continue;
+
+    const flow = candidates[i];
+    if (!flow) {
+      symEl.textContent = '—';
+      labelEl.textContent = '';
+      gapEl.textContent = '';
+      continue;
+    }
+
+    const symbol = (flow.asset_class || '---').toUpperCase().slice(0, 8);
+    const direction = flow.net_direction || flow.direction || 'inflow';
+    const dirArrow = direction === 'outflow' ? '↓' : '↑';
+    const dirLabel = direction === 'outflow' ? 'OUT' : 'IN';
+    const confidence = flow.confidence_pct ? flow.confidence_pct / 100 : 0.6;
+
+    // Get price delta for this asset class
+    const priceTicker = priceMap[symbol.toLowerCase()];
+    const priceDelta = priceTicker ? priceTicker.change_pct : 0;
+
+    const { gap } = computeDivergence(direction, confidence, priceDelta);
+    const gapPct = (gap * 100).toFixed(1);
+    const divLabel = getDivergenceLabel(gap);
+    const color = getDivergenceColor(gap);
+
+    symEl.textContent = symbol;
+    labelEl.innerHTML = `${dirArrow} ${dirLabel} <span style="color:${color};font-weight:700">[${divLabel}]</span>`;
+    gapEl.textContent = `Δ ${gapPct}%`;
+    gapEl.style.color = color;
+  }
+
+  // Update SENTIMENT section with aggregate divergence
+  const sentValue = document.getElementById('sideSentValue');
+  const sentLabel = document.getElementById('sideSentLabel');
+  if (sentValue && sentLabel && flowsData.flows) {
+    const totalConf = flowsData.aggregate_confidence || 0.6;
+    const aggDir = flowsData.aggregate_direction === 'outflow' ? -1 : 1;
+    const avgGap = flowsData.flows.reduce((s, f) => {
+      const d = computeDivergence(f.net_direction || f.direction || 'inflow', (f.confidence_pct || 60) / 100, 0);
+      return s + d.gap;
+    }, 0) / Math.max(1, flowsData.flows.length);
+    const gapRounded = (avgGap * 100).toFixed(0);
+    sentValue.textContent = gapRounded + '%';
+    sentValue.style.color = getDivergenceColor(avgGap);
+    sentLabel.textContent = 'Divergence · ' + flowsData.flows.length + ' flows';
+  }
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -1201,19 +1335,19 @@ function livingCardHTML(story, isLead) {
         ${extremumHTML}
         <a href="./story.html?id=${story.story_id}" class="intel-report-link" data-i18n="story_full_report">Full intelligence report →</a>
         <div class="share-row">
-          <button class="share-btn copy-link" title="${i18n.t('share_copy','Copy link')}" onclick="copyShareLink(this.closest('.card'))">
+          <button class="share-btn copy-link" title="${i18n.t('share_copy','Copy link')}" data-action="copy-link">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
           </button>
-          <button class="share-btn share-x" title="${i18n.t('share_x','Share on X')}" onclick="shareToX(this.closest('.card'))">
+          <button class="share-btn share-x" title="${i18n.t('share_x','Share on X')}" data-action="share-x">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7.5 7.5L4 19"/><path d="M20 4l-7.5 7.5L20 19"/></svg>
           </button>
-          <button class="share-btn share-facebook" title="${i18n.t('share_facebook','Share on Facebook')}" onclick="shareToFacebook(this.closest('.card'))">
+          <button class="share-btn share-facebook" title="${i18n.t('share_facebook','Share on Facebook')}" data-action="share-facebook">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           </button>
-          <button class="share-btn share-telegram" title="${i18n.t('share_telegram','Share on Telegram')}" onclick="shareToTelegram(this.closest('.card'))">
+          <button class="share-btn share-telegram" title="${i18n.t('share_telegram','Share on Telegram')}" data-action="share-telegram">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           </button>
-          <button class="share-btn share-reddit" title="${i18n.t('share_reddit','Share on Reddit')}" onclick="shareToReddit(this.closest('.card'))">
+          <button class="share-btn share-reddit" title="${i18n.t('share_reddit','Share on Reddit')}" data-action="share-reddit">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8s-4-1-8 2"/><path d="M8 16s4 1 8-2"/><circle cx="9" cy="9" r="0.5" fill="currentColor"/><circle cx="15" cy="9" r="0.5" fill="currentColor"/></svg>
           </button>
         </div>
