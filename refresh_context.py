@@ -249,7 +249,7 @@ except Exception as e:
 import urllib.request
 product_pages = [
     "flow-nodes.html",
-    "event-horizon.html",
+    "event_horizon.html",
     "stories.html",
     "flows.html",
     "signal.html",
