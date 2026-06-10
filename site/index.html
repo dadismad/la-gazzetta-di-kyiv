@@ -392,7 +392,20 @@
         <div class="fresh-item"><span class="fresh-dot flows-dot"></span><span>Flows</span><span class="fresh-age" id="freshFlows">—</span></div>
         <div class="fresh-item"><span class="fresh-dot trades-dot"></span><span>Trades</span><span class="fresh-age" id="freshTrades">—</span></div>
         <div class="fresh-item"><span class="fresh-dot signal-dot"></span><span>Signal</span><span class="fresh-age" id="freshSignal">—</span></div>
+      
+    <div class="side-section">
+      <div class="side-section-label" style="margin-top:10px;">LIVE CORRELATIONS</div>
+      <div class="side-freshness" id="correlationMatrix">
+        <div class="fresh-item"><span class="fresh-dot" style="background:var(--gold)"></span><span>Oil/Gold</span><span class="fresh-age" style="color:#DC2626">-0.90</span></div>
+        <div class="fresh-item"><span class="fresh-dot" style="background:var(--gold)"></span><span>BTC/Gold</span><span class="fresh-age" style="color:#DC2626">-0.72</span></div>
+        <div class="fresh-item"><span class="fresh-dot" style="background:var(--gold)"></span><span>Oil/DXY</span><span class="fresh-age" style="color:#DC2626">-0.72</span></div>
+        <div class="fresh-item"><span class="fresh-dot" style="background:var(--gold)"></span><span>Bonds/Eq.</span><span class="fresh-age" style="color:#DC2626">-0.54</span></div>
+        <div class="fresh-item"><span class="fresh-dot" style="background:var(--gold)"></span><span>BTC/SPX</span><span class="fresh-age" style="color:#DC2626">-0.56</span></div>
+        <div class="fresh-item"><span class="fresh-dot" style="background:var(--gold)"></span><span>Gold/DXY</span><span class="fresh-age" style="color:#059669">+0.69</span></div>
       </div>
+      <div style="font-size:8px;opacity:0.4;margin-top:4px;">Directional proxy from 24h Δ · full rolling corr requires 30+ data points</div>
+    </div>
+</div>
     </div>
     <div class="side-section">
       <div class="side-section-label" data-i18n="side_navigate">NAVIGATE</div>
@@ -429,56 +442,7 @@
 <script src="./i18n.041121bb.js"></script>
 <script src="./app.05931117.js"></script>
 
-<!-- Retail onboarding — first-visit tooltip (v22.16) -->
-<div id="onboardingOverlay" style="display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:white;padding:12px 18px;border-radius:0;font-family:Inter,system-ui;font-size:12px;line-height:1.5;z-index:9999;max-width:360px;box-shadow:none;cursor:pointer;" onclick="this.style.display='none';localStorage.setItem('gazzetta_onboarded','1');">
-  <strong>Welcome to La Gazzetta di Kyiv</strong><br>
-  We track where big money moves → decode why → show you how to position.<br>
-  <span style="opacity:0.7;">Stories → Flows → Trades → Signal → Track Record.</span><br>
-  <span style="font-size:10px;opacity:0.5;">Tap anywhere to dismiss</span>
-</div>
-<script>
-(function(){
-  if (!localStorage.getItem('gazzetta_onboarded')) {
-    setTimeout(function(){ document.getElementById('onboardingOverlay').style.display='block'; }, 1500);
-  }
-})();
-</script>
 
-<script>
-(function(){
-  var MAX_WAIT=15000,waited=0;
-  function populateSides(){
-    var fd=window.CAPITAL_FLOWS_DATA;
-    if(!fd||!fd.flows||!fd.flows.length){if(waited<MAX_WAIT){waited+=500;setTimeout(populateSides,500);}return;}
-    var flows=fd.flows,sorted=flows.slice().sort(function(a,b){return(b.pace_multiplier||1)-(a.pace_multiplier||1);});
-    var hooks=document.querySelectorAll('.side-hook-item');
-    sorted.slice(0,3).forEach(function(f,i){
-      if(!hooks[i])return;
-      hooks[i].querySelector('.side-hook-symbol').textContent=(f.asset_class||'').toUpperCase().slice(0,8)||'—';
-      hooks[i].querySelector('.side-hook-dir').textContent=(f.direction||'').toUpperCase();
-      hooks[i].querySelector('.side-hook-dir').className='side-hook-dir '+(f.direction==='inflow'?'bullish':'bearish');
-      hooks[i].querySelector('.side-hook-conv').textContent=(f.confidence_pct||'')+'%';
-      hooks[i].onclick=function(){location.href='./flows.html';};
-    });
-    var top=sorted[0];
-    var velVal=document.querySelector('#sideVelocity .side-vel-value');
-    if(velVal&&top){velVal.textContent=(top.pace_multiplier||1).toFixed(1)+'×';}
-    var velDesc=document.querySelector('#sideVelocity .side-vel-desc');
-    if(velDesc&&top){velDesc.textContent='$'+(top.amount_b||'?')+'B '+(top.direction||'')+' '+((top.asset_class||''));}
-    var inflow=flows.filter(function(f){return f.direction==='inflow';});
-    var pct=flows.length?Math.round(inflow.length/flows.length*100):50;
-    var sv=document.querySelector('#sideSentiment .side-sent-value');
-    if(sv){sv.textContent=pct+'%';sv.className='side-sent-value '+(pct>=70?'bullish':pct<=30?'bearish':'neutral');}
-    var sl=document.querySelector('#sideSentiment .side-sent-label');
-    if(sl)sl.textContent='Inflow ratio · '+inflow.length+'/'+flows.length;
-    function sf(id,data){var el=document.getElementById(id);if(!el||!data||!data.generated_at)return;var m=Math.floor((Date.now()-new Date(data.generated_at).getTime())/60000);el.textContent=m<60?m+'m ago':Math.floor(m/60)+'h ago';}
-    sf('freshStories',fd);sf('freshFlows',fd);
-    try{var td=JSON.parse(localStorage.getItem('gazzetta_trades_data')||'{}');sf('freshTrades',td);}catch(e){}
-    try{var sd=JSON.parse(localStorage.getItem('gazzetta_signal_data')||'{}');sf('freshSignal',sd);}catch(e){}
-  }
-  setTimeout(populateSides,1000);
-})();
-</script>
 
 
 <script>

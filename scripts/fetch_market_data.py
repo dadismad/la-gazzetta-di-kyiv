@@ -59,23 +59,58 @@ def fetch_24h_change(ticker_symbol):
 
 def compute_asymmetry_score(narrative_direction, price_direction, narrative_confidence, price_change_pct):
     """
-    Asymmetry Score (0-100): How much the narrative disagrees with price action.
+    Asymmetry Score (0-100) — Mathematical Delta Formula v2.0
     
-    - If narrative says "inflow/bullish" but price is DOWN → high asymmetry
-    - If narrative says "outflow/bearish" but price is UP → high asymmetry
-    - If both agree → low asymmetry
+    Score = (NarrativeSentiment [-1 to 1] - PriceActionVelocity [-1 to 1]) * 50
+    
+    NarrativeSentiment: derived from direction + confidence
+      - inflow/bullish → +confidence/100
+      - outflow/bearish → -confidence/100
+      - neutral → 0
+    
+    PriceActionVelocity: price change % mapped to [-1, 1] via tanh normalization
+      - velocity = tanh(change_pct / 5)  — 5% change ≈ ±0.76, 10% ≈ ±0.96
+    
+    Interpretation:
+      >= 80: MAX ASYMMETRY (massive contradiction — institutional edge)
+      >= 60: HIGH ASYMMETRY (significant divergence — trade opportunity)
+      >= 40: MODERATE (some misalignment)
+      < 40:  LOW (market and narrative aligned)
     """
-    price_up = price_direction == "up"
+    import math
+    
+    # Narrative sentiment: [-1, 1]
     narrative_bullish = narrative_direction in ("inflow", "bullish")
+    narrative_bearish = narrative_direction in ("outflow", "bearish")
+    conf_factor = max(narrative_confidence, 50) / 100.0  # floor at 0.5
     
-    if narrative_bullish == price_up:
-        # Agreement: low asymmetry
-        base = max(0, 30 - abs(price_change_pct) * 3)
+    if narrative_bullish:
+        narrative_sentiment = conf_factor  # 0.5 to 1.0
+    elif narrative_bearish:
+        narrative_sentiment = -conf_factor  # -0.5 to -1.0
     else:
-        # Contradiction: high asymmetry
-        base = 50 + abs(price_change_pct) * 5 + (100 - narrative_confidence) * 0.3
+        narrative_sentiment = 0.0
     
-    return min(100, max(0, round(base)))
+    # Price action velocity: [-1, 1] using tanh normalization
+    # tanh(x/5): 1%→0.20, 2%→0.38, 5%→0.76, 10%→0.96
+    price_velocity = math.tanh(price_change_pct / 5.0)
+    
+    # Raw delta * 50 → 0-100 scale
+    raw_score = (narrative_sentiment - price_velocity) * 50
+    score = abs(raw_score)  # Absolute value — contradiction magnitude matters
+    
+    # Cap at 100
+    score = min(100, max(0, round(score)))
+    
+    # Diagnostic trace (for Math Sanity Check)
+    diag = {
+        "narrative_sentiment": round(narrative_sentiment, 3),
+        "price_velocity": round(price_velocity, 3),
+        "raw_delta": round(raw_score, 1),
+        "formula": f"({'%.2f' % narrative_sentiment} - {'%.2f' % price_velocity}) * 50 = |{'%.1f' % raw_score}| = {score}"
+    }
+    
+    return score, diag
 
 def main():
     print("═══ Market Data Fetcher ═══\n")
@@ -102,7 +137,7 @@ def main():
             confidence = flow.get("confidence_pct", 50)
             
             price_data = prices.get(ac, {})
-            score = compute_asymmetry_score(
+            score, diag = compute_asymmetry_score(
                 direction,
                 price_data.get("direction", "neutral"),
                 confidence,
@@ -115,6 +150,7 @@ def main():
                 "price_direction": price_data.get("direction", "neutral"),
                 "price_change_pct": price_data.get("change_pct", 0),
                 "asymmetry_score": score,
+                "diagnostic_trace": diag,
                 "signal": "MAX ASYMMETRY" if score >= 80 else "HIGH ASYMMETRY" if score >= 60 else "MODERATE" if score >= 40 else "LOW ASYMMETRY",
             }
         

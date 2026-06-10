@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-06-10T14:46:21.411246+00:00",
+  "pairs": [
+    {
+      "pair": "BTC/Gold",
+      "correlation": -0.72,
+      "direction": "negative",
+      "asset1": "BTC",
+      "asset1_change": 0.4,
+      "asset2": "GOLD",
+      "asset2_change": -1.9
+    },
+    {
+      "pair": "Oil/DXY",
+      "correlation": -0.72,
+      "direction": "negative",
+      "asset1": "OIL",
+      "asset1_change": 2.1,
+      "asset2": "DXY",
+      "asset2_change": -0.1
+    },
+    {
+      "pair": "BTC/SPX",
+      "correlation": -0.56,
+      "direction": "negative",
+      "asset1": "BTC",
+      "asset1_change": 0.4,
+      "asset2": "SPX",
+      "asset2_change": -0.2
+    },
+    {
+      "pair": "Gold/DXY",
+      "correlation": 0.69,
+      "direction": "positive",
+      "asset1": "GOLD",
+      "asset1_change": -1.9,
+      "asset2": "DXY",
+      "asset2_change": -0.1
+    },
+    {
+      "pair": "Bonds/Equities",
+      "correlation": -0.54,
+      "direction": "negative",
+      "asset1": "TLT",
+      "asset1_change": 0.2,
+      "asset2": "SPX",
+      "asset2_change": -0.2
+    },
+    {
+      "pair": "Oil/Gold",
+      "correlation": -0.9,
+      "direction": "negative",
+      "asset1": "OIL",
+      "asset1_change": 2.1,
+      "asset2": "GOLD",
+      "asset2_change": -1.9
+    }
+  ]
+}

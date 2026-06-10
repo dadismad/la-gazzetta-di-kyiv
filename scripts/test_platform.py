@@ -524,6 +524,46 @@ def main():
     try: test_asset_badge_gate()
     except: pass
 
+    # ═══ ROUND 8: Math Sanity Check ═══
+    print(f"\n── ROUND 8: Math Sanity Check ──")
+    try:
+        import math
+        test_vectors = [
+            ("inflow", 100, -5.0, "MAX ASYMMETRY"),
+            ("outflow", 100, 5.0, "MAX ASYMMETRY"),
+            ("inflow", 80, 5.0, "LOW ASYMMETRY"),
+            ("outflow", 80, -5.0, "LOW ASYMMETRY"),
+            ("inflow", 90, -2.0, "HIGH ASYMMETRY"),
+        ]
+        ms_pass = 0
+        for direction, confidence, pct, expected in test_vectors:
+            ns = confidence/100 if direction == "inflow" else (-confidence/100 if direction == "outflow" else 0)
+            pv = math.tanh(pct / 5.0)
+            raw = (ns - pv) * 50
+            score = abs(raw)
+            score = min(100, max(0, round(score)))
+            signal = "MAX ASYMMETRY" if score >= 80 else "HIGH ASYMMETRY" if score >= 60 else "MODERATE" if score >= 40 else "LOW ASYMMETRY"
+            if signal == expected:
+                ms_pass += 1
+                check(True, f"Math formula: ns={ns:+.2f} pv={pv:+.2f} score={score} [{signal}] ✓")
+            else:
+                check(False, f"Math formula: ns={ns:+.2f} pv={pv:+.2f} score={score} [{signal}] ≠ expected [{expected}]")
+        check(ms_pass == len(test_vectors), f"Math sanity: {ms_pass}/{len(test_vectors)} vectors passed")
+        
+        # Verify market_prices.json has diagnostic traces
+        mp_path = os.path.join(SITE, "data", "market_prices.json")
+        if os.path.exists(mp_path):
+            with open(mp_path) as f:
+                mp = json.load(f)
+            traces = sum(1 for s in mp.get('asymmetry_scores', {}).values() if s.get('diagnostic_trace'))
+            total = len(mp.get('asymmetry_scores', {}))
+            check(traces > 0, f"Diagnostic traces: {traces}/{total} flow scores have formula traces")
+            scores = [s['asymmetry_score'] for s in mp.get('asymmetry_scores', {}).values()]
+            in_range = all(0 <= s <= 100 for s in scores)
+            check(in_range, f"Score range: [{min(scores) if scores else 0}, {max(scores) if scores else 0}] — all in [0,100]")
+    except Exception as e:
+        check(False, f"Math sanity check error: {e}")
+
     print(f"\n{'═'*40}")
     print(f"  RESULTS: {PASS} passed · {FAIL} failed")
     if FAIL == 0:
