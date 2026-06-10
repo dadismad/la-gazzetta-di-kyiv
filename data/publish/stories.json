@@ -1,109 +1,95 @@
 {
-  "generated_at": "2026-06-10T02:00:00Z",
+  "generated_at": "2026-06-10T12:00:00Z",
   "lead": {
     "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
-    "headline": "Iran Shoots Down US Apache Over Strait of Hormuz — Trump Declares US 'Must Respond'",
-    "they_say": "The US is a diplomatic backstop and mediator in the Iran conflict. The Strait of Hormuz blockade is a shipping disruption, not a battlefield. Trump's rhetoric is performative — previous threats resulted in measured responses. Markets priced contained tit-for-tat.",
-    "reality": "A US Apache helicopter was shot down over the Strait of Hormuz — the world's most critical oil chokepoint. Trump declared the US 'must respond.' The White House was claiming 'progress' on Iran deal at 13:55 UTC. The EIA's Hormuz timeline (blockade through Q3 2026) published at 14:35 was obsolete by 15:00. The US just became a direct belligerent.",
-    "thesis": "The gap between market pricing (contained conflict, US as mediator) and geopolitical reality (US Apache shot down, 'must respond' from the President) is at maximum width. Hormuz risk premium reprices from theoretical to concrete. Oil gaps $95+ on any US retaliation announcement.",
-    "actors": "Trump, Iran (Supreme National Security Council), US Central Command, EIA",
-    "horizon": "24-72 hours",
+    "headline": "US Refueling Planes Over Middle East, GPS Jammed in Tehran — Strike Window Opens",
+    "they_say": "Vance says Iran deal will 'definitely be reached before midterms.' Markets price diplomacy — oil below $90, VIX below 17. Consensus believes the diplomatic off-ramp is real and Iran-Israel is contained tit-for-tat, not a full war.",
+    "reality": "US refueling aircraft positioned over the Middle East. GPS interference confirmed in multiple areas of Tehran. Iran's army on full combat alert. Israel declared readiness to strike Iran. The pre-strike posture is confirmed — only timing is unknown.",
+    "thesis": "The gap between market pricing (contained conflict, diplomatic resolution) and military signals (refueling planes, GPS jamming, combat alert) is at maximum width. If a strike hits before Asian open, oil gaps $5-8, VIX spikes above 20, gold rallies. If diplomacy wins, oil fades below $85. The bilateral is unresolved.",
+    "actors": "Trump, Iran Supreme National Security Council, US Central Command, VP Vance",
+    "horizon": "0-12 hours",
     "confidence": "high",
-    "invalidation_trigger": "NYT or Pentagon confirms Apache crash (not shootdown) with no hostile fire — market reversal. Limited US retaliation (cyber only) caps oil spike at $92.",
+    "invalidation_trigger": "US Confirms diplomatic breakthrough with verified Iran deal announcement. Refueling planes return to base. GPS interference ceases.",
     "paradigm_pillar": "multi_pillar",
     "paradigm_implications": [
-      "Direct US-Iran military engagement is structural — not a skirmish, not contained",
-      "Hormuz blockade ends by military outcome, not diplomacy — timeline binary",
-      "EIA demand downgrade vs supply disruption creates bilateral oil setup"
+      "Direct US-Iran military engagement is structural, not a skirmish — the blockade resolves by military outcome",
+      "EIA demand downgrade vs supply disruption creates bilateral oil setup — asymmetric optionality",
+      "Diplomatic track running in parallel with military preparations signals US negotiating weakness"
     ],
-    "capital_flow_implication": "Capital flees equities into commodities and gold. $5.0B commodities inflow identified by quant telemetry. Energy sector gets bid. SPX selling accelerates as geopolitical risk premium reprices upward.",
-    "portfolio_implication": "Long WTI, GLD immediately. Short SPX on escalation premium repricing. Long VIX as tail. Do not short oil — the US retaliation binary is unresolved and the first strike gaps oil $95+. Hormuz is now a military chokepoint, not a diplomatic one.",
+    "capital_flow_implication": "Capital on hold between equities and commodities — $5.0B commodities inflow already detected. If strike hits, capital rotates out of equities into energy, gold, vol. SPX selling accelerates.",
+    "portfolio_implication": "Long WTI, GLD immediately. Short SPX on escalation premium repricing if strike hits. Long VIX calls as tail. Do not short oil unilaterally — the US retaliation binary is unresolved and the first strike gaps oil $95+.",
     "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strait_of_Hormuz.jpg"
   },
   "stories": [
     {
       "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
-      "headline": "Iran Shoots Down US Apache Over Strait of Hormuz — Trump Declares US 'Must Respond'",
-      "they_say": "The US is a diplomatic backstop in the Iran conflict. Markets priced contained tit-for-tat. Trump's 'must respond' is performative — previous threats were measured.",
-      "reality": "A US Apache was shot down over Hormuz. Trump said 'must respond.' White House was claiming deal progress at 13:55 UTC. The conflict just transformed: the US is now a direct belligerent.",
+      "headline": "US Refueling Planes Over Middle East, GPS Jammed in Tehran — Strike Window Opens",
+      "they_say": "Vance says deal before midterms. Markets price diplomatic resolution. Oil below $90, VIX below 17 — contained conflict priced in.",
+      "reality": "US refueling aircraft over MEA. GPS jammed in Tehran. Iran on combat alert. Israel ready to strike Iran. Pre-strike posture confirmed.",
       "sector": "geopolitics",
       "paradigm_pillar": "multi_pillar",
       "paradigm_implications": [
-        "Direct US-Iran military engagement is structural, not a skirmish",
-        "Hormuz blockade now resolves by military outcome, not diplomacy"
+        "US-Iran kinetic engagement transforms Hormuz blockade from diplomatic to military timeline",
+        "EIA revising Q3 2026 forecast — the gap between demand projection and supply disruption widens"
       ],
-      "portfolio_implication": "Long WTI, GLD immediately. Short SPX. Long VIX. Do not short oil — US retaliation unresolved and the first strike gaps oil $95+.",
+      "portfolio_implication": "Long WTI, GLD immediately. Long VIX calls. Do not short oil — strike is binary and unresolved.",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strait_of_Hormuz.jpg"
     },
     {
-      "story_id": "n21_multi_pillar__eia_drops_bombshell_hormuz_timeline__blockade_persists_thro",
-      "headline": "EIA Drops Bombshell: Hormuz Blockade Through Q3 2026 — Obsolete 25 Minutes Later",
-      "they_say": "EIA models assume diplomatic end to blockade. The timeline was the most important oil data point of the session until the Apache shootdown.",
-      "reality": "EIA published Hormuz timeline projecting blockade through Q3 2026 at 14:35 UTC. Apache shot down at ~15:00 UTC. The diplomatic assumption just collapsed. Military resolution could end the blockade faster — or total war extends it.",
-      "sector": "geopolitics",
-      "paradigm_pillar": "multi_pillar",
+      "story_id": "n21_macro",
+      "headline": "South Korea Commits $350B to US — Pays Protection Money for Tariff Relief",
+      "they_say": "Korea is investing in US industrial base as a strategic partnership. Normal trade diversification.",
+      "reality": "$350B is ~20% of Korea's GDP. $200B in strategic US industries, $150B shipbuilding. Protection payment for tariff escape — a template for all US allies.",
+      "sector": "macro",
+      "paradigm_pillar": "china_ascendancy",
       "paradigm_implications": [
-        "Hormuz timeline is now binary: military end (fast) or total war (slow)",
-        "EIA will revise next week — the window for trading the gap is now"
+        "Allies buying tariff relief with hard cash sets a dangerous precedent",
+        "Supertanker ordering boom mirrors 2008 — peak-cycle behavior before a glut"
       ],
-      "portfolio_implication": "Long WTI on timeline collapse. The EIA will revise higher — position before the revision.",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_the_United_States_Department_of_Energy.svg"
-    },
-    {
-      "story_id": "n21_multi_pillar__ukraine_assassinates_russian_colonel_missile_supply_chief",
-      "headline": "Ukraine Assassinates Russian Colonel (Missile Supply Chief) in Moscow",
-      "they_say": "One-off 'terrorist acts' per Russia. Ukraine war is frozen/slogging with no market-moving developments. Assassination dismissed as insignificant.",
-      "reality": "The HEAD of Russian missile/artillery ammo supply was assassinated 200m from last year's general assassination site. Systematic Ukrainian deep-cover operation inside Moscow targeting military logistics command. This degrades Russian artillery sustainability.",
-      "sector": "geopolitics",
-      "paradigm_pillar": "eu_fragmentation",
-      "paradigm_implications": [
-        "Ukrainian deep-cover operations in Moscow are systematic, not one-off",
-        "Russian artillery logistics degradation accelerates frontline shifts"
-      ],
-      "portfolio_implication": "Short RSX. Long European defense (EADF, Rheinmetall). Contracts awarded before this escalatory signal get premium.",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/General_Staff_Building_Moscow.jpg"
-    },
-    {
-      "story_id": "n21_multi_pillar__israel_orders_full_evacuation_of_tyre__cabinet_authorizes_a",
-      "headline": "Israel Orders Full Evacuation of Tyre — Cabinet Authorizes All-Out Lebanon War",
-      "they_say": "Israel conducting 'precision campaign' against Hezbollah. Limited ground ops. Diplomatic off-ramp exists with US mediation.",
-      "reality": "Full evacuation of Tyre ordered. Cabinet authorized all-out war. Combined with automatic Beirut strike trigger on any Hezbollah rocket and Ben-Gvir's cabinet abduction proposal — this is now a ground war, not a precision campaign.",
-      "sector": "geopolitics",
-      "paradigm_pillar": "multi_pillar",
-      "paradigm_implications": [
-        "Lebanon front escalates from 'limited ops' to 'total war'",
-        "Hezbollah rocket trigger probability rises — auto-strike mechanism active"
-      ],
-      "portfolio_implication": "Long VIX, GLD as tail hedge in multi-front escalation. Not a standalone trade but compounds other geopolitical positions.",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Israel.svg"
+      "portfolio_implication": "Long Korean shipbuilders (HD Hyundai Heavy) on orderbook momentum. Short Baltic Dry forwards — glut cycle being set up.",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_South_Korea.svg"
     },
     {
       "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t",
-      "headline": "Anthropic Releases Claude Fable Today at 2x Opus Pricing — AI Economy Accelerates",
-      "they_say": "Standard product segmentation. Market already priced AI model release cadence. Another model release is not a catalyst.",
-      "reality": "Claude Fable releasing 'today' is earlier than any analyst expected. Mythos-class rollout assumed weeks/months of safety testing. Pricing at 2x Opus = premium enterprise product, not discount. 'Today' means the catalyst is within hours.",
+      "headline": "Anthropic Releases Claude Fable at 2x Opus Pricing — AI Competition Accelerates",
+      "they_say": "Standard product segmentation. Another model release is not a catalyst.",
+      "reality": "Claude Fable released 'today' — earlier than any analyst expected. Premium pricing at 2x Opus. Anthropic rushing to beat OpenAI's next release.",
       "sector": "tech",
       "paradigm_pillar": "abundance_tech",
       "paradigm_implications": [
         "Frontier AI accelerating faster than consensus priced",
-        "Anthropic rushing to beat OpenAI's next release"
+        "Premium enterprise AI pricing creates margin expansion narrative"
       ],
-      "portfolio_implication": "Long AI-crypto tokens (FET, RNDR, TAO). Long NVDA at next US equity open. Premium enterprise AI pricing creates margin expansion narrative.",
+      "portfolio_implication": "Long AI-crypto tokens (FET, RNDR, TAO). Long NVDA at next US equity open.",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthropic_logo.svg"
     },
     {
       "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
-      "headline": "Strategy/MSTR Resumes Bitcoin Buying Spree — Halts Market Panic",
-      "they_say": "BTC sell-off is brutal. Shorts target MSTR. Institutions capitulating. Panic selling continues.",
-      "reality": "Strategy (MicroStrategy) resumed buying. World's largest corporate BTC holder accumulating at $58K support. Buying spree halted market panic. Shorts targeting MSTR face capitulation risk if buying continues.",
+      "headline": "Strategy Resumes Bitcoin Buying Spree — Halts Market Panic at $58K Support",
+      "they_say": "BTC sell-off is brutal. Shorts target MSTR. Institutions capitulating.",
+      "reality": "Strategy (MicroStrategy) resumed buying at $58K. World's largest corporate BTC holder. Buying spree halted panic. Shorts face capitulation risk.",
       "sector": "crypto",
       "paradigm_pillar": "blockchain_agentic",
       "paradigm_implications": [
         "Corporate BTC accumulation continues despite panic — signals institutional conviction",
         "MSTR shorts face asymmetric risk if buying spree continues"
       ],
-      "portfolio_implication": "Long BTC with $58K invalidation. Short MSTR puts. EU sanctions-ban creates contrarian bid for BTC as capital flight route.",
+      "portfolio_implication": "Long BTC with $58K invalidation. Short MSTR puts.",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_logo.svg"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai",
+      "headline": "SpaceX IPO June 12 — 2 Days Away, $1.8T Valuation, OpenAI S-1 Filed",
+      "they_say": "Biggest IPO in history is 2 days out. Normal market event.",
+      "reality": "SpaceX at $1.8T+ is 96x 2025 revenue — Q1 loss of $4.28B on $4.69B revenue. OpenAI S-1 confidential filing. Dual IPO wave defines 2026 capital markets.",
+      "sector": "tech",
+      "paradigm_pillar": "abundance_tech",
+      "paradigm_implications": [
+        "AI infrastructure capex cycle ($40B/yr at SpaceX alone) is the through-line",
+        "India's Starlink block signals regulatory pushback on Musk's empire"
+      ],
+      "portfolio_implication": "Long SPCX at IPO if pricing isn't ridiculous. Watch India block resolution as catalyst.",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX_Dragon_2_approach_to_ISS_1.jpg"
     }
   ]
 }

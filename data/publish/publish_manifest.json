@@ -1,15 +1,21 @@
 {
-  "version": 1,
-  "cycle_number": 13,
-  "generated_at": "2026-06-10T02:00:00Z",
-  "lead_story": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
-  "lead_headline": "Iran Shoots Down US Apache Over Strait of Hormuz — Trump Declares US 'Must Respond'",
-  "frame": "velocity",
-  "human_detail_ids": ["HD-019"],
-  "asset_claims_count": 4,
-  "website_stories_count": 6,
-  "telegram_word_count": 96,
-  "reddit_word_count": 0,
-  "commit_message": "editorial cycle 13: US Apache shot down over Hormuz — velocity frame — US becomes direct belligerent",
-  "quality_gate_status": "pending"
+  "generated_at": "2026-06-10T12:00:00Z",
+  "cycle_number": 18,
+  "published": {
+    "telegram": true,
+    "reddit": false,
+    "website_stories": true,
+    "asset_claims": true
+  },
+  "lead_topic": "us_iran_strike_window_refueling_planes_gps_tehran_combat_alert",
+  "frame": "contradiction",
+  "files": {
+    "telegram": "data/publish/telegram_latest.md",
+    "website_stories": "data/publish/website_stories_latest.json",
+    "stories": "data/publish/stories.json",
+    "asset_claims": "data/publish/asset_claims_latest.json"
+  },
+  "word_count": {
+    "telegram": 96
+  }
 }

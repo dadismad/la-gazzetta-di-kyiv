@@ -1,9 +1,10 @@
-BREAKING: Iran shot down a US Apache over the Strait of Hormuz. Trump: "must respond." Both crew rescued — but the US just became a direct belligerent, not a mediator.
+US refueling planes over Middle East, GPS jammed in Tehran — Iran on full combat alert. Apache shootdown was 24h ago, no strike yet. But the pre-strike posture is confirmed.
 
-The EIA's Hormuz timeline through Q3 2026 — published 25 min before the shootdown — is now obsolete. Consensus priced containable escalation. Velocity says otherwise.
+Contradiction: Vance says deal "before midterms." Markets price diplomacy — oil below $90. Military signals say strike window is open.
 
-• Long WTI, GLD. Short SPX. Hormuz risk premium reprices from theoretical to concrete.
+• Long WTI, GLD — if strike hits, oil gaps $95+
+• Long VIX calls — vol asymmetry widens
 
-¹ EIA timeline June 9 14:35 UTC — obsolete by 15:00 after Apache shootdown (source: EIA)
+¹ US refueling aircraft positioned over Middle East, GPS interference in Tehran, Iran army on full combat alert (source: ethanlevins/3489-90, markettwits/373486)
 
-Continuity: pureciclismo.github.io/gazzetta-di-kyiv/ | Next trigger: US retaliation within 24h
+Continuity: gazzetta-di-kyiv.com | Next trigger: US retaliation window (0-12h)
