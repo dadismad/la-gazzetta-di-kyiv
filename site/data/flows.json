@@ -1,12 +1,32 @@
 {
-  "generated_at": "2026-06-10T10:49:45.877138+00:00",
+  "generated_at": "2026-06-10T10:52:32.968348+00:00",
   "generated_by": "db_to_json.py",
   "next_update": "",
   "update_frequency": "60m",
   "summary": "9 inflows · 3 outflows",
   "aggregate_confidence": 64,
-  "aggregate_confidence_label": "Flow confidence",
+  "aggregate_confidence_label": "Flow Sentiment",
   "aggregate_direction": "bullish",
+  "sentiment_meter": {
+    "inflow_ratio": 75,
+    "outflow_ratio": 25,
+    "total_inflows_b": 9,
+    "total_outflows_b": 3,
+    "net_flow_b": 6,
+    "scale": "systemic"
+  },
+  "contextual_scale": {
+    "speculative": {
+      "min_b": 0.01,
+      "max_b": 2.0,
+      "description": "Speculative capital flows ($10M–$2B)"
+    },
+    "systemic": {
+      "min_b": 2.0,
+      "max_b": 500.0,
+      "description": "Systemic institutional flows ($2B–$500B)"
+    }
+  },
   "total_flows_tracked": 12,
   "lead_insight": {
     "id": "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",

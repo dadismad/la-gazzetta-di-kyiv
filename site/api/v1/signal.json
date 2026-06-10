@@ -1,0 +1,172 @@
+{
+  "generated_at": "2026-06-10T10:52:33.034962+00:00",
+  "total_signals": 35,
+  "aggregate_score": 63,
+  "signals": [
+    {
+      "story_id": "n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired",
+      "headline": "All the Ways Europe Is Ditching American Technology - WIRED",
+      "score": 80,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 35,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "defense",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai",
+      "headline": "Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates - WSJ",
+      "score": 80,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 35,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "defense",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela",
+      "headline": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish be",
+      "score": 75,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 30,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "crypto",
+      "direction": "outflow"
+    },
+    {
+      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+      "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Resp",
+      "score": 72,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 35,
+      "contradiction": 22,
+      "event_strength": 15,
+      "asset_class": "commodities",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+      "headline": "CRITICAL CONTRADICTION: WTI Drops Below $90 (-2%) Despite Israel-Iran War, Hormuz Toll, Beirut Bombi",
+      "score": 69,
+      "tier": "MODERATE",
+      "flow_alignment": 32,
+      "contradiction": 22,
+      "event_strength": 15,
+      "asset_class": "commodities",
+      "direction": "outflow"
+    },
+    {
+      "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
+      "headline": "Israeli Minister Ben-Gvir Urges Cabinet to Abduct Lebanese Women and Children as Psychological Warfa",
+      "score": 69,
+      "tier": "MODERATE",
+      "flow_alignment": 32,
+      "contradiction": 22,
+      "event_strength": 15,
+      "asset_class": "commodities",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
+      "headline": "Ethena (ENA) Partners with Janus Henderson ($300B+ AUM) for Tokenized CLOs — Institutional DeFi Brea",
+      "score": 65,
+      "tier": "MODERATE",
+      "flow_alignment": 35,
+      "contradiction": 15,
+      "event_strength": 15,
+      "asset_class": "crypto",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_multi_pillar__iran_begins_charging_ships_1_5-2m_per_transit_through_strai",
+      "headline": "IRAN BEGINS CHARGING SHIPS $1.5-2M PER TRANSIT THROUGH STRAIT OF HORMUZ — TURNS GEOPOLITICAL RISK IN",
+      "score": 65,
+      "tier": "MODERATE",
+      "flow_alignment": 35,
+      "contradiction": 15,
+      "event_strength": 15,
+      "asset_class": "commodities",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_multi_pillar__ukraine_assassinates_russian_colonel_missile_supply_chief",
+      "headline": "Ukraine Assassinates Russian Colonel (Missile Supply Chief) in Moscow — Zelensky Promises Massive Dr",
+      "score": 65,
+      "tier": "MODERATE",
+      "flow_alignment": 35,
+      "contradiction": 15,
+      "event_strength": 15,
+      "asset_class": "commodities",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_blockchain_agentic__blackrock_transferring_btc_to_exchanges_for_client_sales__o",
+      "headline": "BlackRock Transferring BTC to Exchanges for Client Sales — On-Chain Distribution Signal",
+      "score": 65,
+      "tier": "MODERATE",
+      "flow_alignment": 35,
+      "contradiction": 15,
+      "event_strength": 15,
+      "asset_class": "crypto",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_china_ascendancy__breaking_eu_proposes_biggest_sanctions_package_in_2_years",
+      "headline": "BREAKING: EU Proposes Biggest Sanctions Package in 2 Years — 90 Banks, 11 Crypto Platforms, LNG Tank",
+      "score": 65,
+      "tier": "MODERATE",
+      "flow_alignment": 35,
+      "contradiction": 15,
+      "event_strength": 15,
+      "asset_class": "commodities",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_abundance_tech__btc_crash__worst_week_since_ftx_collapse_microstrategy_bou",
+      "headline": "BTC CRASH — Worst Week Since FTX Collapse, MicroStrategy Bought $65K Dip, Whales Hold",
+      "score": 65,
+      "tier": "MODERATE",
+      "flow_alignment": 35,
+      "contradiction": 15,
+      "event_strength": 15,
+      "asset_class": "crypto",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes",
+      "headline": "This tiny mutual fund outperforms by backing the world’s best management teams - MarketWatch",
+      "score": 62,
+      "tier": "MODERATE",
+      "flow_alignment": 17,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "equities",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1",
+      "headline": "US Existing Home Sales Crush Estimates — +3.2% MoM vs +1.1% Expected (3x Beat)",
+      "score": 62,
+      "tier": "MODERATE",
+      "flow_alignment": 25,
+      "contradiction": 22,
+      "event_strength": 15,
+      "asset_class": "crypto",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_multi_pillar__us_adp_nonfarm_29k_vs_35_7k_prior__labor_market_cracking",
+      "headline": "US ADP Nonfarm +29K vs +35.7K Prior — Labor Market Cracking as Inflation Expectations Rise 3rd Month",
+      "score": 62,
+      "tier": "MODERATE",
+      "flow_alignment": 32,
+      "contradiction": 15,
+      "event_strength": 15,
+      "asset_class": "commodities",
+      "direction": "inflow"
+    }
+  ]
+}

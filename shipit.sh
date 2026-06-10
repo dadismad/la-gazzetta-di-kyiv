@@ -52,6 +52,11 @@ echo "── Stage 1.5: enrich ──"
 $PYTHON "$PROJECT/scripts/enrich_editorial_stories.py" || true
 $PYTHON "$PROJECT/scripts/ensure_generated_at.py" || true
 echo "  ✓ Stories enriched with capital_flow + generated_at"
+
+# v23.0: Generate API endpoints for Signal + Trades
+$PYTHON "$PROJECT/scripts/generate_signal_api.py" || true
+$PYTHON "$PROJECT/scripts/generate_trades_api.py" || true
+echo "  ✓ Signal + Trades API endpoints generated"
 echo ""
 
 # ═══ Stage 2: build_site — sync data + API endpoints ═══
