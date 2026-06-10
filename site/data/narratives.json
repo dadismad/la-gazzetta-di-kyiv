@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-06-10T19:54:29.267054+00:00",
+  "generated_at": "2026-06-10T19:55:16.589017+00:00",
   "story_count": 15,
   "model": "deepseek-chat",
   "narratives": [
     {
-      "title": "Geopolitical Escalation Unfolds",
+      "title": "Geopolitical Escalation Fuels Risk-Off",
       "strength": "DOMINANT",
       "direction": "Risk-Off",
-      "summary": "Capital is fleeing risk assets as multi-front conflicts escalate: US-Iran kinetic exchange, Israel-Lebanon ground war, and deep strikes into Russia. The market consensus underestimates the persistence and breadth of these conflicts, driving safe-haven flows.",
+      "summary": "Capital is fleeing risk assets as multiple geopolitical flashpoints—Iran-US kinetic exchanges, Israel multi-front escalation, and Ukraine deep strikes—signal sustained conflict. The market consensus underestimates escalation persistence, driving flows into safe havens and commodities.",
       "key_stories": 8,
       "trade_implication": "Long gold, short S&P 500 futures; hedge with VIX calls."
     },
     {
-      "title": "Oil Supply Disruption Bites",
+      "title": "Oil Supply Disruption Premiums",
       "strength": "STRONG",
       "direction": "Neutral-to-Bullish",
-      "summary": "The Strait of Hormuz blockade persists through Q3 2026 per EIA, and Kuwait seeks bypass pipelines. Despite diplomatic talk, physical oil supply is structurally constrained, pushing WTI forecasts higher and benefiting energy equities.",
+      "summary": "Capital is rotating into oil and energy assets as the Hormuz blockade persists through Q3 2026, SPR releases signal bullish supply tightness, and pipeline bypass discussions indicate structural disruption. Markets misread SPR as bearish, but actual flows show accumulation.",
       "key_stories": 5,
-      "trade_implication": "Long WTI crude futures and energy sector ETFs; short consumer discretionary."
+      "trade_implication": "Long WTI crude futures and energy sector ETFs; short refined product spreads."
     },
     {
-      "title": "Diplomatic Off-Ramp in Play",
+      "title": "Crypto as Macro Risk Proxy",
       "strength": "MODERATE",
-      "direction": "Neutral",
-      "summary": "White House claims progress on Iran deal and US Ambassador signals Lebanon ceasefire, creating a potential diplomatic resolution. Markets are split between pricing in escalation and a fragile status quo, leading to choppy, two-way flows.",
-      "key_stories": 4,
-      "trade_implication": "Buy put spreads on oil for a potential downside if deal materializes; stay neutral on equities."
+      "direction": "Risk-Off",
+      "summary": "Bitcoin's crash mirrors broad risk-off moves, not crypto-specific weakness, as institutional de-risking and whale accumulation indicate a macro-driven selloff. Capital flows show dip-buying by long-term holders, suggesting a floor near $65K.",
+      "key_stories": 2,
+      "trade_implication": "Accumulate Bitcoin on dips via futures; hedge with put spreads."
     }
   ]
 }
