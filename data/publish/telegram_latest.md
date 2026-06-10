@@ -1,9 +1,12 @@
-BREAKING: Iran shot down a US Apache over the Strait of Hormuz. Trump: "must respond." Both crew rescued — but the US just became a direct belligerent, not a mediator.
+South Korea paid $350B — 20% of GDP — for tariff relief. They call it "investment." Reality: protection payment.
 
-The EIA's Hormuz timeline through Q3 2026 — published 25 min before the shootdown — is now obsolete. Consensus priced containable escalation. Velocity says otherwise.
+EU unveils tech sovereignty package: "We want to be sure nobody has a kill switch." The kill switch is American.
 
-• Long WTI, GLD. Short SPX. Hormuz risk premium reprices from theoretical to concrete.
+Consensus: alliance solidarity. Reality: allies pay tribute or build exits.
 
-¹ EIA timeline June 9 14:35 UTC — obsolete by 15:00 after Apache shootdown (source: EIA)
+• Long HD Hyundai Heavy — Korean shipbuilder orderbook
+• Long ASML — EU sovereignty capex structural
 
-Continuity: pureciclismo.github.io/gazzetta-di-kyiv/ | Next trigger: US retaliation within 24h
+¹ $350B = ~20% of Korea's GDP. $200B US industries + $150B shipbuilding. (source: Reuters)
+
+Continuity: www.lagazzettadikyiv.com | Next trigger: SpaceX IPO June 12; OpenAI S-1 pricing

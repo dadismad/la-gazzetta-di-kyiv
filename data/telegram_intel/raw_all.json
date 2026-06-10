@@ -1,43 +1,8 @@
 {
-  "timestamp": "2026-06-09T17:11:37.346495+00:00",
+  "timestamp": "2026-06-10T10:48:04.298591+00:00",
   "timezone": "UTC",
   "channels": {
     "trad_fin": [
-      {
-        "text": "*NETANYAHU TO MAKE STATEMENT TO PRESS AT 6:15PM ISRAEL TIME, 11:15AM EST",
-        "date": "2026-06-08T14:51:20+00:00",
-        "post_id": "trad_fin/3504"
-      },
-      {
-        "text": "*CFTC SCRAPS PLAN TO SHARE OFFICE SPACE WITH SEC\n\n*CFTC TO EXTEND CURRENT WASHINGTON LEASE FOR ANOTHER FIVE YEARS",
-        "date": "2026-06-08T14:53:30+00:00",
-        "post_id": "trad_fin/3505"
-      },
-      {
-        "text": "*SITUATIONAL AWARENESS'S ASSETS HAVE JUMPED TO ABOUT $20B, SOURCES SAY -- WSJ\n\n*SITUATIONAL AWARENESS GAINED ABOUT 270% THIS YEAR THROUGH MAY, SOURCE SAYS -- WSJ\n\n*ANTHROPIC INVESTMENT NOW ABOUT 20% OF SITUATIONAL'S ASSETS, SOURCE SAYS -- WSJ",
-        "date": "2026-06-08T15:00:28+00:00",
-        "post_id": "trad_fin/3506"
-      },
-      {
-        "text": "*ISRAEL'S NETANYAHU SAYS IRAN AND HEZBOLLAH ARE WEAKER THAN EVER BUT THE WAR WITH THEM 'HAS NOT YET ENDED'",
-        "date": "2026-06-08T15:17:55+00:00",
-        "post_id": "trad_fin/3507"
-      },
-      {
-        "text": "*ISRAEL PM NETANYAHU: ISRAEL HOLDING FIRE IN IRAN FOR NOW",
-        "date": "2026-06-08T15:18:35+00:00",
-        "post_id": "trad_fin/3508"
-      },
-      {
-        "text": "*SPACEX IS SAID TO PLAN CLOSING IPO BOOKS WEDNESDAY POST-CLOSE\n\n*SPACEX'S NASDAQ IPO IS SAID TO BE WELL OVERSUBSCRIBED",
-        "date": "2026-06-08T15:48:32+00:00",
-        "post_id": "trad_fin/3509"
-      },
-      {
-        "text": "*PENTAGON PUBLISHES LIST OF “CHINESE MILITARY COMPANIES”\n\n*ALIBABA GROUP NAMED IN PENTAGON NOTICE ON MILITARY FIRMS IN US\n\n$BABA",
-        "date": "2026-06-08T16:33:23+00:00",
-        "post_id": "trad_fin/3510"
-      },
       {
         "text": "*ANTHROPIC TESTING CONFIRMS MYTHOS SUCCESSFULLY EXPLOITED 18 OF 21 WINDOWS KERNEL BUGS DISCLOSED RECENTLY\n\n*ANTHROPIC RESEARCH SHOWS MYTHOS EXPLOITS WINDOWS KERNEL FLAWS AT A COST OF $2,000 EACH\n\n*ANTHROPIC'S MYTHOS MODEL CREATES WORKING CYBER EXPLOITS FROM PUBLIC VULNERABILITIES WITHIN 31 MINUTES\n\n*TRUMP ADMINISTRATION PLANS AI SECURITY EXECUTIVE ORDER TO MITIGATE RISING NATIONAL SECURITY CYBER RISKS",
         "date": "2026-06-08T17:00:39+00:00",
@@ -102,59 +67,44 @@
         "text": "*ANTHROPIC LAUNCHED CLAUDE FABLE 5, ITS MOST POWERFUL MODEL, TO THE GENERAL PUBLIC",
         "date": "2026-06-09T17:00:20+00:00",
         "post_id": "trad_fin/3523"
+      },
+      {
+        "text": "*US BELIEVES IRAN TO SETTLE ON 15-YR ENRICHMENT SUSPENSION: NYT",
+        "date": "2026-06-09T17:22:46+00:00",
+        "post_id": "trad_fin/3524"
+      },
+      {
+        "text": "*SPACEX IPO HAS DRAWN MORE THAN $250B OF INVESTOR DEMAND VS $75B RAISE TARGET",
+        "date": "2026-06-09T18:30:42+00:00",
+        "post_id": "trad_fin/3525"
+      },
+      {
+        "text": "*KALSHI PLANS TO REQUIRE USERS DISCLOSE WHERE THEY WORK TO MAKE CERTAIN TRADES -- WSJ",
+        "date": "2026-06-09T19:55:54+00:00",
+        "post_id": "trad_fin/3526"
+      },
+      {
+        "text": "*SOUTH KOREA FINANCE MINISTRY: TO CONDUCT INSPECTION ON SPECULATIVE TRADING, MARKET DISTURBING BEHAVIOUR IN FX MARKET",
+        "date": "2026-06-10T00:00:27+00:00",
+        "post_id": "trad_fin/3527"
+      },
+      {
+        "text": "*US COMPLETES STRIKES IN RESPONSE TO IRAN’S ATTACK ON APACHE",
+        "date": "2026-06-10T00:57:11+00:00",
+        "post_id": "trad_fin/3528"
+      },
+      {
+        "text": "*CENTCOM POSTS ABOUT MILITARY STRIKES ON IRAN, SIGNALING COMPLETION",
+        "date": "2026-06-10T00:57:40+00:00",
+        "post_id": "trad_fin/3529"
+      },
+      {
+        "text": "*BLACKROCK'S CHAN: TECH SELLOFF IS OPPORTUNITY TO GENERATE ALPHA",
+        "date": "2026-06-10T02:09:42+00:00",
+        "post_id": "trad_fin/3530"
       }
     ],
     "MonitoringSituation": [
-      {
-        "text": "Timeline so far: \n\n- Israel attacked Hezbollah in Beirut following Iranian warnings that Iran would respond. \n\n- Iran launched ~30 ballistic missiles towards Israel so far\n\n- Trump said Iran’s strikes not going to have any impact on the deal\n\n- Trump said he told Netanyahu to not retaliate (trump trying to distance himself here publicly for politics)\n\n- Israel launched retaliatory airstrikes against petrochemical plants and air defences in Iran \n\n- Houthis launched at least one ballistic missile from Yemen towards Israel. \n\n- Houthis declare a ban on Israeli ships in the Red Sea (not new from previous status quo aka just reiterating)\n\n- IRGC responded to Israel's attack on petrochemical plant by launching missile on similar plant in Haifa\n\n(so overall both sides exchanged some love taps for the love of the game)",
-        "date": "2026-06-08T07:44:53+00:00",
-        "post_id": "MonitoringSituation/5604"
-      },
-      {
-        "text": "ATLEAST ONE EXPLOSION IN TEHRAN",
-        "date": "2026-06-08T08:15:31+00:00",
-        "post_id": "MonitoringSituation/5605"
-      },
-      {
-        "text": "TWO EXPLOSIONS IN ISFAHAN",
-        "date": "2026-06-08T08:17:04+00:00",
-        "post_id": "MonitoringSituation/5606"
-      },
-      {
-        "text": "Trump: Israel and Iran must immediately stop “shooting.”",
-        "date": "2026-06-08T09:39:02+00:00",
-        "post_id": "MonitoringSituation/5607"
-      },
-      {
-        "text": "Trump: Both sides, Israel and Iran, are looking to do an immediate CEASEFIRE! Final negotiations on “Peace” are proceeding, subject to ignorance or stupidity getting in its way. The Blockade will remain in place, and in full force and effect, until a “Final Deal” is reached. Things should move quickly. Thank you for your attention to this matter!",
-        "date": "2026-06-08T10:34:50+00:00",
-        "post_id": "MonitoringSituation/5608"
-      },
-      {
-        "text": "(weekend love taps over\nMarket about to open)",
-        "date": "2026-06-08T10:36:41+00:00",
-        "post_id": "MonitoringSituation/5609"
-      },
-      {
-        "text": "Houthis declare a ban on Israeli ships in the Red Sea (not new from previous status quo aka just reiterating)",
-        "date": "2026-06-08T10:41:42+00:00",
-        "post_id": "MonitoringSituation/5610"
-      },
-      {
-        "text": "Israel is stopping the attacks in Iran. The attacks in southern Lebanon will continue in full force in the coming days.",
-        "date": "2026-06-08T12:22:05+00:00",
-        "post_id": "MonitoringSituation/5611"
-      },
-      {
-        "text": "The world’s shipowners have placed orders for a record number of new oil supertankers, surpassing a boom back in 2008 that ultimately led to a glut and a collapse in rates\n\nA ship that’s 10 years old currently costs about $115 million, the most since 2008",
-        "date": "2026-06-08T16:40:48+00:00",
-        "post_id": "MonitoringSituation/5612"
-      },
-      {
-        "text": "South Korean shipowner, with backing from MSC Mediterranean, has been snapping up tankers at sky-high prices in recent months\n\nTf Koreans are everywhere from AI to Oil)",
-        "date": "2026-06-08T16:42:18+00:00",
-        "post_id": "MonitoringSituation/5613"
-      },
       {
         "text": "CNN: TRUMP HAS DECLARED AN IRAN DEAL 'IMMINENT' 37 TIMES, YET NO AGREEMENT HAS BEEN REACHED\n\n(Trump (probably) says We are just selling \"deal imminent\" to willing buyers at their common sense market price)",
         "date": "2026-06-09T08:09:18+00:00",
@@ -204,83 +154,123 @@
         "text": "THE UNITED STATES MUST, OF NECESSITY, RESPOND TO THIS ATTACK.",
         "date": "2026-06-09T16:44:04+00:00",
         "post_id": "MonitoringSituation/5623"
+      },
+      {
+        "text": "TRUMP SAID HELICOPTER INCIDENT \"WASN'T A BIG DEAL\"",
+        "date": "2026-06-09T20:16:15+00:00",
+        "post_id": "MonitoringSituation/5624"
+      },
+      {
+        "text": "In a phone call with The Wall Street Journal on Tuesday, Trump said the blockade was making Iran “very poor” and said he would keep it in place as long as necessary. He sought to play down the helicopter incident, saying that it “wasn’t a big deal” and stressing that “the pilot is fine.”",
+        "date": "2026-06-09T20:18:53+00:00",
+        "post_id": "MonitoringSituation/5625"
+      },
+      {
+        "text": "IRIB: QESHM HIT BY 6 EXPLOSIONS REPORTEDLY FROM ENEMY FIGHTER JET PROJECTILES",
+        "date": "2026-06-09T21:33:54+00:00",
+        "post_id": "MonitoringSituation/5626"
+      },
+      {
+        "text": "The US military launches fresh air- strikes against Iran hours after Trump vowed to retaliate for the shooting down of an Army helicopter",
+        "date": "2026-06-09T21:35:13+00:00",
+        "post_id": "MonitoringSituation/5627"
+      },
+      {
+        "text": "IRAN WILL RESPOND DECISIVELY TO THE AMERICAN AGGRESSION, AS IT WARNED A FEW HOURS AGO: TASMIN",
+        "date": "2026-06-09T21:49:03+00:00",
+        "post_id": "MonitoringSituation/5628"
+      },
+      {
+        "text": "TAIWAN MULLS CURBS ON AI CHIP EXPORTS TO CHINA TO ALIGN WITH US",
+        "date": "2026-06-10T06:53:05+00:00",
+        "post_id": "MonitoringSituation/5629"
+      },
+      {
+        "text": "INDONESIA RAISES PRICE OF WIDELY USED FUEL BY 32% IN THE FIRST INCREASE SINCE THE IRAN WAR BEGAN",
+        "date": "2026-06-10T09:18:16+00:00",
+        "post_id": "MonitoringSituation/5630"
+      },
+      {
+        "text": "UKMTO SAYS LOCAL AUTHORITIES HAVE REPORTED A TANKER HAS EXPERIENCED A FIRE IN THEIR ENGINE ROOM",
+        "date": "2026-06-10T09:40:18+00:00",
+        "post_id": "MonitoringSituation/5631"
+      },
+      {
+        "text": "UKMTO SAYS VESSEL IS REPORTING 1 CASUALTY AND 2 CREW MEMBERS MISSING",
+        "date": "2026-06-10T09:40:25+00:00",
+        "post_id": "MonitoringSituation/5632"
+      },
+      {
+        "text": "UKMTO SAYS IT RECEIVED REPORT OF INCIDENT 20NM NORTHEAST OF OMAN'S SOHAR",
+        "date": "2026-06-10T09:40:30+00:00",
+        "post_id": "MonitoringSituation/5633"
       }
     ],
     "ASupersharij": [
       {
-        "text": "А ведь вы не заметили, что в Лондоне прошел чемпионат Европы по хлопанью по спинам. \n\nПобедила Украина, на втором месте разместились Франция и Германия. \n\nНа третьем месте разместилась Великобритания.",
-        "date": "2026-06-09T08:40:19+00:00",
-        "post_id": "ASupersharij/55544"
+        "text": "В Чебоксарах вновь атакован «ВНИИР-Прогресс».\n\nПредприятие является разработчиком и ключевым производителем помехозащищённых антенн спутниковой навигации семейства «Комета».\n\nПосле предыдущей атаки административное здание завода защитили сетками.",
+        "date": "2026-06-10T04:02:50+00:00",
+        "post_id": "ASupersharij/55579"
       },
       {
-        "text": "Прямо сегодня на заседании Национального антитеррористического комитета.\n\nТеперь можно еще одно заседание провести и открыть еще несколько переговорных площадок для обсуждения ситуации",
-        "date": "2026-06-09T09:28:49+00:00",
-        "post_id": "ASupersharij/55545"
+        "text": "Чебоксары после атаки.",
+        "date": "2026-06-10T04:08:04+00:00",
+        "post_id": "ASupersharij/55585"
       },
       {
-        "text": "Имеющий госизмену Нестор Шуфрич уже участвует в заседании Комитета по вопросам свободы слова Верховной Рады.",
-        "date": "2026-06-09T09:30:22+00:00",
-        "post_id": "ASupersharij/55547"
+        "text": "США нанесли три волны ударов по Ирану.\n\nЦелями атак стали иранские системы ПВО, наземные пункты управления и радары в районе Ормузского пролива.\n\nВзрывы были слышны в Кохестаке, Сирике, Джаске, Минабе, а также в портах Бендер-Аббас и Кешм.\n\nКатар, Кувейт и Бахрейн закрывали своё воздушное пространство.\n\nЦентральное командование США заявило, что это был ответ на вчерашнее уничтожение американского вертолёта Apache.\n\nАмериканские источники утверждают, что новые удары должны послужить «предупредительным выстрелом» для Ирана, и выражают надежду, что они не сорвут переговоры.\n\nИран заявил, что в ответ на американские атаки нанёс удары по нескольким базам США в регионе, в частности по объектам 5-го флота в Бахрейне и базе ВВС США в иорданском городе Аль-Азрак.\n\nСША утверждают, что Иран выпустил четыре ракеты и несколько БПЛА по американским базам в Бахрейне, Кувейте и Иордании. Почти все цели были перехвачены.",
+        "date": "2026-06-10T04:22:48+00:00",
+        "post_id": "ASupersharij/55586"
       },
       {
-        "text": "После того, как я в соцсети Х подробно описал попытку моего убийства осенью 2025 года, под статус притащили пару десятков украинских ботов и почему-то олимпийского спортсмена без олимпийских наград Гераскевича. \n\nОн уже и по таким заказам отрабатывает. \n\nВсе они дружно начали заявлять, что я очень неважен. \n\nС этим я совершенно согласен. \n\nИменно из-за моей особой неважности СБУ проводила спецоперацию по похищению человека, на которого была зарегистрирована моя партия. \n\nИз-за особой неважности операции по внедрению кротов в партию курировались на уровне начальников Управления СБУ и замов Главы. \n\nИ партию запретили ввиду ее неважности. \n\nИз-за моей особой неважности на меня за три года заведено 14 (!) уголовных производств. \n\nИз-за моей крайней неважности Генпрокуратура Украины отправила запрос на мою экстрадицию через неделю после начала войны, пытаясь получить меня «под шумок». \n\nМоя особая неважность вызвала несколько покушений на меня на территории Испании: забросанный бутылками с коктейлями Молотова дом, попытка расстрела на улице, подготовка моего убийства возле суда города Вендрель, которая сейчас расследуется уже, наконец, на высшем уровне. \n\nА вот здесь на фотографиях мы видим одну неважную посылку, которую разминирует испанская полиция на пляже, оцепив весь периметр лентами ввиду неважности ее содержимого. \n\nЯ еще очень многого не рассказываю о том, как этот долбанутый Киев пытался достать меня на территории Европы. \n\nПытался и пытается. \n\nИ если так горит задница у Зеленского и остальной мрази, которая его окружает, я согласен и дальше оставаться таким же неважным🤪",
-        "date": "2026-06-09T11:40:03+00:00",
-        "post_id": "ASupersharij/55548"
+        "text": "Последствия атаки на «ВНИИР-Прогресс».",
+        "date": "2026-06-10T04:26:18+00:00",
+        "post_id": "ASupersharij/55588"
       },
       {
-        "text": "Так понятно же, что происходит.",
-        "date": "2026-06-09T12:24:37+00:00",
-        "post_id": "ASupersharij/55550"
+        "text": "Харьков за ночь атаковали 26 БПЛА.\n\nПод массированной атакой находился Холодногорский район. \nРанены 4 человека.\n\nОдесса также была под ударом беспилотников, зафиксированы прилёты в два дома. \nПострадали три человека.",
+        "date": "2026-06-10T04:42:32+00:00",
+        "post_id": "ASupersharij/55589"
       },
       {
-        "text": "Сергей Пашинский пошёл на сделку со следствием по делу о хищении у украинской армии топлива на миллиард гривен («нефть Курченко»).\n\nВ рамках сделки с прокурором Пашинский выторговал для себя более мягкие статьи. \n\nОн признал себя виновным в создании преступной организации и злоупотреблении служебным положением.\n\nПри этом из дела исчезло обвинение в присвоении государственного имущества в особо крупных размерах.\n\nТаким образом, патриот, государственник и герой Революции достоинства сидеть не будет. \n\nА государственный изменник с приговором в 15 лет тюрьмы в этом дырявом подобии государства - Шарий, заливший на ютуб видео с критикой Светлейшего.",
-        "date": "2026-06-09T13:02:57+00:00",
-        "post_id": "ASupersharij/55551"
+        "text": "Момент одного из прилетов по «ВНИИР-Прогресс» в Чебоксарах.",
+        "date": "2026-06-10T04:50:37+00:00",
+        "post_id": "ASupersharij/55590"
       },
       {
-        "text": "О том, как западные финансово-промышленные группы уже сейчас договариваются о распиле ресурсов Российской Федерации - в частном канале.\n\nТут надо внимательнейшим образом следить за реакцией российских властей, за предложениями о переговорах от российских властей, за перемещениями голубей мира типа Абрамовича. \n\nОчень-очень внимательно надо следить, ибо создаётся полнейшее впечатление, что как минимум часть российских властей готова сдать полностью весь дом ради сохранения своей квартиры.\n\nМы на пороге потрясающих событий.\n\nК слову, пока эти события не произошли, скорее всего, обычные рядовые граждане Российской Федерации прочувствуют в полной мере настоящую жесть, потому что Киев с партнёрами сейчас начнёт жестить. \n\nНе потому, что они такие злые, а потому что это выгодно. Чем выгодно - объяснил там.\n\nТут сеять зраду не буду.",
-        "date": "2026-06-09T14:20:31+00:00",
-        "post_id": "ASupersharij/55552"
+        "text": "Любовь народная - кто камнем, кто ломом...\n\nБусы ТЦК в Кривом Роге теперь ездят с решётками на всех окнах.",
+        "date": "2026-06-10T07:38:38+00:00",
+        "post_id": "ASupersharij/55591"
       },
       {
-        "text": "Ну вообще по моей информации, подорванному не 62, а 57, и он не генерал, а полковник. А так все верно.",
-        "date": "2026-06-09T14:34:41+00:00",
-        "post_id": "ASupersharij/55553"
+        "text": "В Госдуме предлагают запретить депутатам и сенаторам иметь недвижимость за границей.\n\nЗаконопроектом предлагается включить в перечень оснований для досрочного прекращения полномочий приобретение или наличие у парламентария, его супруга и несовершеннолетних детей недвижимости за пределами РФ.\n\nЕщё одно основание — приобретение или наличие иностранного гражданства либо вида на жительство у супруга или несовершеннолетних детей сенатора или депутата.\n\nНа фото - Госдума после принятия закона. \n\nНе примут, конечно.",
+        "date": "2026-06-10T08:52:54+00:00",
+        "post_id": "ASupersharij/55594"
       },
       {
-        "text": "Даю первым правдивую информацию. \n\nДавыдов Дамир Рафаильевич\n\nПолковник, начальник управления поставки ракет и артиллерийских боеприпасов, в/ч 64176 - Главное ракетно-артиллерийское управление министерства обороны РФ.\n\nМолчание о фигуре убитого на протяжении 16 часов говорит о многом…",
-        "date": "2026-06-09T14:40:00+00:00",
-        "post_id": "ASupersharij/55554"
+        "text": "Я не знаю ни одного, подчеркиваю - НИ ОДНОГО человека в Украине, кто его не ненавидел бы. \n\nПублично некоторые из них даже прославляют это ничтожество. В реальности, с близкими, «на кухне» - последними словами. \n\nОсновные любители - выжившее из ума бабье на немецких пособиях да патриоты, выехавшие 20 лет назад.",
+        "date": "2026-06-10T09:06:49+00:00",
+        "post_id": "ASupersharij/55595"
       },
       {
-        "text": "Впрочем, туда же за 300 метров заезжал по делам родственным и генерал, начальник кое-чего важного, зам кое-кого вот уже 7 лет. \n\nТам же он посещал некий завод. \n\nЕму реально 62. И он реально генерал-лейтенант. \n\nНо должность слишком большая, чтобы вот так просто ликвидировали, потому не верится… \n\nКто же из них?",
-        "date": "2026-06-09T15:04:54+00:00",
-        "post_id": "ASupersharij/55555"
+        "text": "После прилёта «Фламинго» по Чебоксарам я пробежался по каналам военкоров и блогеров Российской Федерации. \n\nПредпочтение отдавал тем, где пару месяцев были искромётные шутки и действительно хороший, едкий юмор по поводу моих предупреждений относительно «Фламинго».\n\nЯ даже снял видео и разместил его на своём YouTube-канале всего несколько месяцев назад, где говорил о том, что, судя по увеличению закупок комплектующих, ракет скоро будет очень много. \n\nКривые, косые, неточные - но если запустить 50 ракет и хотя бы 10 из них попадут в цели, будет очень больно.\n\nСегодня я не вижу там ни шуток, ни искромётного юмора, ни подколок. \n\nСегодня я вижу ярость, растерянность, злость и проклятия.\n\nЯ как предвестник смерти. За что меня любить? \n\nЯ тихонько сажусь у левого уха и говорю: «Ну что, ты приготовился?»\n\nЛюбить меня не за что. Но мои прогнозы точны.\n\nСкоро я ещё расскажу кое-что интересное - и про ракеты, и про многое другое.",
+        "date": "2026-06-10T09:27:05+00:00",
+        "post_id": "ASupersharij/55596"
       },
       {
-        "text": "На юго-западе Москвы тем временем еще один взрыв в автомобиле. \n\nВсе случилось на парковке на улице Введенского в районе Коньково.",
-        "date": "2026-06-09T15:12:47+00:00",
-        "post_id": "ASupersharij/55556"
+        "text": "Взрыв в авто вчера на улице Введенского в Москве был связан с попыткой убить сотрудника одного из научно-производственных предприятий.\n\nНесовершеннолетняя девушка по указанию кураторов забрала в тайнике взрывчатку, которую передала несовершеннолетнему парню. \n\nОн установил взрывное устройство на автомобиль, а также закрепил GPS-трекер.\n\nМило.",
+        "date": "2026-06-10T09:42:54+00:00",
+        "post_id": "ASupersharij/55597"
       },
       {
-        "text": "Кадры с места взрыва в Москве.",
-        "date": "2026-06-09T15:17:25+00:00",
-        "post_id": "ASupersharij/55557"
+        "text": "Удары ВСУ по историческим объектам лишний раз подчеркивают правоту России в ее борьбе за российские регионы\n, — Песков\n\nНу вот, подчеркнули правоту ударом по музею\n\nА губернатор Севастополя Развожаев сказал, что \n\nЕдинственное, чего вы добились, - это в очередной раз показали всему миру своё истинное варварское лицо.\n\nВесь мир теперь увидел. Ужаснулся, поди. \n\nЕще надо добавить, что в очередной раз показали истинное лицо режима и в который раз продемонстрировали преступную сущность. \n\nТакже опять подчеркнули свою античеловечность и аморальность и двигаются по пути эскалации.",
+        "date": "2026-06-10T10:11:54+00:00",
+        "post_id": "ASupersharij/55598"
       },
       {
-        "text": "По нашим наблюдениям с места, электричка китайская взорвалась, это ничего удивительного и террористического",
-        "date": "2026-06-09T15:21:46+00:00",
-        "post_id": "ASupersharij/55560"
-      },
-      {
-        "text": "Оптимизма из Анапы",
-        "date": "2026-06-09T15:29:23+00:00",
-        "post_id": "ASupersharij/55561"
-      },
-      {
-        "text": "Компромиссы, дух Анкориджа, но главное - когда говоришь про гибель Зеленского, то обязательно подчеркивай, что она будет не от рук ВС РФ. \n\nОт рук ВС РФ пусть менее достойные погибают. Набранные с улиц работяги, их не жалко. А Зеленский - вы что!?",
-        "date": "2026-06-09T16:12:47+00:00",
-        "post_id": "ASupersharij/55562"
+        "text": "Пропагандист Зеленского писающийся прокурор Иванов продолжает активно строить из себя воина, по которому летят все ракеты мира и все известные беспилотники, добивают же его КАБами. \n\nВсе это происходит прямо в четырех километрах от Киева, рядом с городом Вишневым. \n\nНо он держится, скорее всего, он выживет. \n\nВ отличие от не пропагандистов Зеленского, которые реально гибнут на линии боевого столкновения.",
+        "date": "2026-06-10T10:29:02+00:00",
+        "post_id": "ASupersharij/55599"
       }
     ],
     "infinityhedge": [
@@ -387,201 +377,206 @@
     ],
     "ethanlevins": [
       {
-        "text": "🇮🇷 Iran announces an end of military operations against Israel",
-        "date": "2026-06-08T11:21:12+00:00",
-        "post_id": "ethanlevins/3465"
+        "text": "🇱🇧 The Lebanese Ministry of Health says that there have been 3,666 killed and 11,321 injured in IDF attacks since March 2.",
+        "date": "2026-06-09T17:20:23+00:00",
+        "post_id": "ethanlevins/3486"
       },
       {
-        "text": "🇮🇶 🇮🇷 Iranian drone strikes against Pro-US militias in Northern Iraq",
-        "date": "2026-06-08T12:37:14+00:00",
-        "post_id": "ethanlevins/3466"
+        "text": "🇱🇧 1 hour ago Mount Rihan, southern Lebanon under attack",
+        "date": "2026-06-09T17:22:07+00:00",
+        "post_id": "ethanlevins/3487"
       },
       {
-        "text": "🇮🇱🇱🇧Israel is now striking southern Lebanon (Tyre)\n\nRocket sirens are also sounding in northern Israel amid incoming Hezbollah rocket fire.",
-        "date": "2026-06-08T13:00:03+00:00",
-        "post_id": "ethanlevins/3467"
+        "text": "🇦🇪🇮🇷 At the request of the United States, the UAE delivered a plane carrying $3 Billion dollars in cash to Iran, in exchange for stopping its attacks on Israel – Kann",
+        "date": "2026-06-09T18:29:45+00:00",
+        "post_id": "ethanlevins/3488"
       },
       {
-        "text": "🇱🇧The US Ambassador to Lebanon, following his meeting with Nabih Berri: There will be a ceasefire",
-        "date": "2026-06-08T13:20:56+00:00",
-        "post_id": "ethanlevins/3468"
+        "text": "🇮🇷 🇺🇸 American refueling planes are over the Middle East. \n\nWe might be seeing a strike on Iran very soon.",
+        "date": "2026-06-09T19:31:27+00:00",
+        "post_id": "ethanlevins/3489"
       },
       {
-        "text": "🇱🇧 🇮🇱 Israeli airstrikes continue almost hourly on Tyre, Lebanon",
-        "date": "2026-06-08T14:24:59+00:00",
-        "post_id": "ethanlevins/3469"
+        "text": "🇮🇷GPS signal interference has occurred in several areas of the Iranian capital, Tehran.",
+        "date": "2026-06-09T19:37:57+00:00",
+        "post_id": "ethanlevins/3490"
       },
       {
-        "text": "🇮🇱🇺🇸 Trump told Netanyahu in calls over the past 24 hours that he “should be very careful” about his actions, warning that Israel could “very soon be left alone against Iran,” Axios reports.",
-        "date": "2026-06-08T17:55:37+00:00",
-        "post_id": "ethanlevins/3470"
+        "text": "🇮🇷Iranian Deputy Foreign Minister to Al Jazeera: Iran is not behind the attack on the US Apache helicopter over the Strait of Hormuz",
+        "date": "2026-06-09T19:40:18+00:00",
+        "post_id": "ethanlevins/3491"
       },
       {
-        "text": "🇾🇪 🇮🇱 Houthi missile intercepted over Israel",
-        "date": "2026-06-08T19:57:29+00:00",
-        "post_id": "ethanlevins/3471"
+        "text": "🇮🇶 Explosions heard in Najaf, Iraq",
+        "date": "2026-06-09T19:52:48+00:00",
+        "post_id": "ethanlevins/3492"
       },
       {
-        "text": "🇱🇧 Following a new wave of airstrikes, the IDF issued an evacuation order for the entire city of Tyre, southern Lebanon, including the Christian quarter and the surrounding refugee camps.",
-        "date": "2026-06-09T07:08:00+00:00",
-        "post_id": "ethanlevins/3472"
+        "text": "🇬🇧 Intense Anti-Immigration Protests have erupted in Belfast, Northern Ireland after the attempted beheading of a man by a Sudanese immigrant. \n\nThe video shows the migrant on top of the bloodied man, where he begins to slice his throat off. This is where people step in and rush to help him, saving his life. \n\nThis is a showcase of Britain’s failed immigration policies. Obviously, most immigrants are safe, good, and fine people. \n\nBut the UK simply doesn’t “check” anyone, and has suffered from insane lunatics such as this guy getting into the country. \n\nIt’s a government failure in the United Kingdom to protect its citizens.",
+        "date": "2026-06-09T20:08:36+00:00",
+        "post_id": "ethanlevins/3493"
       },
       {
-        "text": "🇮🇷🇺🇲New York Times: A U.S. Army AH-64 Apache attack helicopter crashed near the Strait of Hormuz yesterday, with the crew successfully rescued",
-        "date": "2026-06-09T10:59:39+00:00",
-        "post_id": "ethanlevins/3473"
+        "text": "🇱🇧 5 Israeli airstrikes on Nabatieh",
+        "date": "2026-06-09T20:50:25+00:00",
+        "post_id": "ethanlevins/3494"
       },
       {
-        "text": "🇮🇱🇺🇲Trump reportedly warned Netanyahu “you will be on your own very soon” if attacks on Iran continue.",
-        "date": "2026-06-09T11:10:42+00:00",
-        "post_id": "ethanlevins/3474"
+        "text": "🇱🇧 Hezbollah launches towards northern Israel, most intercepted",
+        "date": "2026-06-09T21:12:01+00:00",
+        "post_id": "ethanlevins/3495"
       },
       {
-        "text": "🇮🇱 🇱🇧 Israel cabinet decision: \nAny launch from Lebanon that crosses into the territory of the State of Israel will result in a response with an attack in Beirut without special approval from the political echelon.\nAs of this moment, no launches crossing into Israel have been reported since yesterday morning",
-        "date": "2026-06-09T11:18:37+00:00",
-        "post_id": "ethanlevins/3475"
+        "text": "🇾🇪 30 minutes ago Yemen launched a ballistic missile towards Israel, but it failed upon launch and crashed into the desert near the Saudi border",
+        "date": "2026-06-09T22:01:26+00:00",
+        "post_id": "ethanlevins/3496"
       },
       {
-        "text": "🇱🇧Israeli minister Itamar Ben-Gvir urged the political-security cabinet to abduct and imprison Lebanese women and children as a psychological warfare tactic to pressure Hezbollah.",
-        "date": "2026-06-09T12:16:44+00:00",
-        "post_id": "ethanlevins/3476"
+        "text": "🇮🇷 🇺🇸 LAST NIGHT: Fox News reports that 20 different targets were attacked during the U.S. retaliatory strikes against Iran, and that the U.S. is prepared to respond to any Iranian retaliation.",
+        "date": "2026-06-10T05:11:37+00:00",
+        "post_id": "ethanlevins/3497"
       },
       {
-        "text": "🇮🇱 🇱🇧 The IDF killed an armed man who fired at them in the Lebanese border area in the Upper Galilee.",
-        "date": "2026-06-09T13:10:16+00:00",
-        "post_id": "ethanlevins/3477"
+        "text": "🇧🇭 🇯🇴 Iran retaliated with strikes against Bahrain and Jordan. \n\nIt seems 5 missiles at Amman, Jordan all intercepted. \n\nBahrain had many drones and missiles, with direct impacts on targets",
+        "date": "2026-06-10T05:13:23+00:00",
+        "post_id": "ethanlevins/3498"
       },
       {
-        "text": "🇱🇧 🇮🇱 Israeli media report an unusual incident, where a Hezbollah fighter was able to infiltrate up to the Israeli border and open fire on IDF soldiers.\n\nAccording to them, the militant was killed, while Israeli forces suffered no casualties. (This is about the previous post)",
-        "date": "2026-06-09T13:11:11+00:00",
-        "post_id": "ethanlevins/3478"
+        "text": "🇺🇦 🇷🇺 Ukrainian FP-5 Flamingo cruise missiles struck the city of Cheboksary, Chuvashia Republic.\n\nAdditional missiles are currently flying to the Ural Mountains towards the area of Tyumen Oblast.",
+        "date": "2026-06-10T05:19:01+00:00",
+        "post_id": "ethanlevins/3499"
       },
       {
-        "text": "🇷🇺 Russian Geran-2 drones attacked targets in the town of Dmytrivka, eastern Dnipropetrovsk Oblast, this morning.",
-        "date": "2026-06-09T13:18:01+00:00",
-        "post_id": "ethanlevins/3479"
+        "text": "🇷🇺 🇺🇦 Yesterday evening and this morning, Russia attacked Kharkiv Oblast with at least 25 Geran-2 drones. \n\nTargets were hit in the Kholodnohirs'kyi District of Kharkiv City, north of Kharkiv City, the city of Balakliya, and the town of Pechenihy.",
+        "date": "2026-06-10T05:28:01+00:00",
+        "post_id": "ethanlevins/3500"
       },
       {
-        "text": "🇺🇦 🇷🇺 Yesterday's Russian strikes on Odesa Oblast targeted the Zatoka Bridge - the only point within Ukraine connecting the southern part of Odesa Oblast to the rest of the country. \n\nThe bridge was struck by at least 2 Iskander-M ballistic missiles, 3 Kh-59/59 cruise missiles, 4 KAB glide-bombs, and several Geran-2 drones.\n\nNASA FIRMS data recorded large fires burning at the bridge following the strikes.",
-        "date": "2026-06-09T13:34:01+00:00",
-        "post_id": "ethanlevins/3480"
+        "text": "🇷🇺 🇺🇦 Also last night, Russia carried out a large-scale Geran-2 drone attack on Odesa involving at least 30 drones.\n\nTargets were hit near the Odesa Port and the Peresypskyi District.",
+        "date": "2026-06-10T05:37:01+00:00",
+        "post_id": "ethanlevins/3501"
       },
       {
-        "text": "🇷🇺 🇺🇦 Aftermath of overnight Russian Tornado-S rocket strikes on the city of Chuhuiv, Kharkiv Oblast.\n\n3 dead, 6 injured",
-        "date": "2026-06-09T13:59:01+00:00",
-        "post_id": "ethanlevins/3481"
+        "text": "🇵🇰 Reuters quotes a spokesperson for the Afghan Taliban movement: At least 13 people killed and 14 others injured as a result of Pakistani airstrikes",
+        "date": "2026-06-10T05:42:01+00:00",
+        "post_id": "ethanlevins/3502"
       },
       {
-        "text": "🇵🇸 The IDF claims that they killed 3 members of the Palestinian Islamic Jihad in two separate targeted assassination strikes on the central Gaza Strip on Saturday.\n\nAccording to them, they killed Muhammad Atiya Hassan Abu Afesh, the Head of the PIJ's Engineering and Specializations unit, and Farhat Zuhair Farhat Harara, the Deputy Head of the PIJ's Engineering Directorate, in one strike.\n\nThe other strike reportedly killed Abdullah Allah Riad Masoud Qadum, the head of the PIJ's Northern Gaza anti-tank unit, who reportedly took part in many ATGM strikes against IDF forces during the war.",
-        "date": "2026-06-09T14:16:35+00:00",
-        "post_id": "ethanlevins/3482"
+        "text": "🇮🇷 🇺🇸 New York Times on US official: No physical damage was detected in US bases in the region due to the Iranian strikes",
+        "date": "2026-06-10T05:56:01+00:00",
+        "post_id": "ethanlevins/3503"
       },
       {
-        "text": "🇱🇧 Hezbollah released footage showing an ATGM strike on an Israeli Merkava tank near the historic Beaufort Castle in southern Lebanon.",
-        "date": "2026-06-09T14:36:37+00:00",
-        "post_id": "ethanlevins/3483"
+        "text": "🇺🇦 🇷🇺 Direct Ukrainian cruise missile strike in Cheboksary, Russia",
+        "date": "2026-06-10T06:07:01+00:00",
+        "post_id": "ethanlevins/3504"
       },
       {
-        "text": "🇱🇧 This week, the strongest Israeli air strikes have taken place in Tyre. \n\nThe entire city has been ordered to evacuate as airstrikes continue hourly.",
-        "date": "2026-06-09T14:58:01+00:00",
-        "post_id": "ethanlevins/3484"
+        "text": "🇷🇺 Senior Russian military official assassinated in car bomb near Moscow. His son posted a TikTok with his father's car, showing the license plate a few weeks ago.",
+        "date": "2026-06-10T10:06:45+00:00",
+        "post_id": "ethanlevins/3505"
       }
     ],
     "markettwits": [
       {
-        "text": "⚠️🇺🇦#украина #геополитика \nЗЕЛЕНСКИЙ ЗАЯВИЛ, ЧТО УКРАИНА ЗНАЧИТЕЛЬНО НАРАСТИТ КОЛ-ВО БЕСПИЛОТНИКОВ И РАКЕТ, КОТОРЫЕ БУДУТ ЗАПУСКАТЬСЯ ПО РОССИИ",
-        "date": "2026-06-09T14:49:18+00:00",
-        "post_id": "markettwits/373459"
+        "text": "💥🇹🇼#TSM #отчетность \nПродажи TSMC в мае выросли на 30% \n\nдрайвер все тот же -  устойчивый спрос на ИИ-чипы",
+        "date": "2026-06-10T08:23:49+00:00",
+        "post_id": "markettwits/373551"
       },
       {
-        "text": "❗️🇷🇺#UGLD\nЗАЯВКА ОДНОГО ПРЕТЕНДЕНТА-ФИЗЛИЦА НА УЧАСТИЕ В АУКЦИОНЕ ПО ЮГК ОТКЛОНЕНА ИЗ-ЗА ОТСУТСТВИЯ ПОДТВЕРЖДЕНИЯ ВНЕСЕНИЯ ЗАДАТКА - ГИС \"ТОРГИ",
-        "date": "2026-06-09T14:52:11+00:00",
-        "post_id": "markettwits/373460"
+        "text": "⚠️🇺🇦#украина #геополитика \nЗеленский заявил, что Украина продолжит применять санкции дронами и ракетами Фламинго против российских военных объектов и нефтяной промышленности",
+        "date": "2026-06-10T08:26:59+00:00",
+        "post_id": "markettwits/373552"
       },
       {
-        "text": "⚠️🇮🇷#иран #геополитика \nАрмия обороны Израиля объявила о своей готовности немедленно возобновить военные  операции против Ирана.",
-        "date": "2026-06-09T14:54:43+00:00",
-        "post_id": "markettwits/373461"
+        "text": "🇨🇳#BABA \nAnt International рассматривает возможность привлечения 1 миллиарда долларов для стимулирования роста",
+        "date": "2026-06-10T08:30:18+00:00",
+        "post_id": "markettwits/373553"
       },
       {
-        "text": "⚠️🇷🇺#UGLD \nНА ОЧЕРЕДНЫЕ ТОРГИ ПО ЮГК БЫЛА ПОДАНА ОДНА ЗАЯВКА, ПРЕТЕНДЕНТ НЕ ДОПУЩЕН - ИЗВЕЩЕНИЕ - ТАСС",
-        "date": "2026-06-09T14:56:24+00:00",
-        "post_id": "markettwits/373462"
+        "text": "⚠️🇩🇪#германия #экономика #прогноз \nНемецкий исследовательский институт DIW снизил прогноз роста экономики Германии на 2026 год до 0,5% с ранее прогнозировавшихся 1,0%\n\nDIW предупреждает, что шок цен на энергоносители, вызванный войной в Иране, повышает риск сползания Германии в техническую рецессию в этом году",
+        "date": "2026-06-10T08:32:31+00:00",
+        "post_id": "markettwits/373554"
       },
       {
-        "text": "🇺🇸#STAR \nBlackRock запускает STAR ETF, который будет ходить за корзиной акций из \"космического\" сектора",
-        "date": "2026-06-09T14:57:43+00:00",
-        "post_id": "markettwits/373463"
+        "text": "🇮🇱#израиль #выборы \nПартия \"Ликуд\" заявила, что Нетаньяху будет баллотироваться на предстоящих выборах",
+        "date": "2026-06-10T08:41:58+00:00",
+        "post_id": "markettwits/373555"
       },
       {
-        "text": "🇬🇧#BP \nBP сообщила, что разделится на 2 компании - сырьевую и производственную",
-        "date": "2026-06-09T14:57:56+00:00",
-        "post_id": "markettwits/373464"
+        "text": "⚠️🇪🇺🇬🇪🇷🇺#санкции #россия \nЕС требует от Грузии ввести санкции против России в обмен на сохранение безвиза",
+        "date": "2026-06-10T08:42:53+00:00",
+        "post_id": "markettwits/373556"
       },
       {
-        "text": "🇨🇳#nev #китай #макро \nBYD прогнозирует, что уже в ближайшее время 80% продаж автомобилей в Китае будут приходиться на электромобили",
-        "date": "2026-06-09T15:06:01+00:00",
-        "post_id": "markettwits/373465"
+        "text": "⚠️🇺🇦🇨🇦#украина #геополитика #нато #канада\nКанада и Украина в мае подписали соглашение о производстве украинских дронов на территории Канады",
+        "date": "2026-06-10T09:05:20+00:00",
+        "post_id": "markettwits/373557"
       },
       {
-        "text": "⚠️🇺🇦#украина #нато #геополитика \nУкраина и Латвия подписали соглашение по беспилотникам",
-        "date": "2026-06-09T15:09:33+00:00",
-        "post_id": "markettwits/373466"
+        "text": "⚠️🇹🇼#тайвань #геополитика \nТайвань в рамках учений в среду впервые провел боевые стрельбы из реактивной системы залпового огня HIMARS на западном побережье",
+        "date": "2026-06-10T09:09:07+00:00",
+        "post_id": "markettwits/373558"
       },
       {
-        "text": "❗️🇺🇸#SPCX #ipo\nКнига заявок на IPO SpaceX переподписана  в несколько раз",
-        "date": "2026-06-09T15:19:06+00:00",
-        "post_id": "markettwits/373467"
+        "text": "⚠️🇮🇷#иран #геополитика \nИран пересмотрит переговоры с США в свете последних событий -- IRNA",
+        "date": "2026-06-10T09:24:35+00:00",
+        "post_id": "markettwits/373559"
       },
       {
-        "text": "🇷🇺#акции #облигации #fx #россия #обзор \nВ акциях основными нетто-покупателями\nна вторичных биржевых торгах\nв мае остались розничные\nинвесторы. Крупнейшими неттопродавцами были НФО.\n\nКрупнейшими нетто-покупателями\nкорпоративных облигаций\nна первичных и вторичных\nбиржевых торгах в мае стали\nНФО в рамках доверительного\nуправления и за счет собственных\nсредств. \n\nКрупнейшими нетто-продавцами\nза месяц на вторичном рынке\nОФЗ остаются СЗКО\n\nВ условиях высоких цен\nна нефть совокупный\nобъем продаж валюты\nнефинансовыми компаниями\nв мае, как и месяцем ранее,\nостался на высоком уровне.\n\nобзор ЦБ",
-        "date": "2026-06-09T15:37:09+00:00",
-        "post_id": "markettwits/373468"
+        "text": "🇺🇸#акции #сша #прогноз \nGoldman ждет роста SP500 до 8000 к концу 2026г",
+        "date": "2026-06-10T09:40:27+00:00",
+        "post_id": "markettwits/373560"
       },
       {
-        "text": "🇺🇸#BA #отчетность \nBoeing мае поставила 60 коммерческих самолетов - отчет",
-        "date": "2026-06-09T15:47:14+00:00",
-        "post_id": "markettwits/373469"
+        "text": "🇷🇺#экономика #россия \nПутин обсудит сегодня с правительством меры по восстановлению инвестиционной активности - Песков - ТАСС",
+        "date": "2026-06-10T09:49:55+00:00",
+        "post_id": "markettwits/373561"
       },
       {
-        "text": "⚠️✴️#BTC #крипто \nСамым убыточным активом в рублях в мае и с начала года оказался BTC \n\nобзор ЦБ",
-        "date": "2026-06-09T15:51:51+00:00",
-        "post_id": "markettwits/373470"
+        "text": "✴️#крипто #cot \nОбъемы торгов фьючерсами на крипту резко выросли  с начала июня на текущем падении",
+        "date": "2026-06-10T10:02:08+00:00",
+        "post_id": "markettwits/373562"
       },
       {
-        "text": "⚠️🇹🇼#тайвань #геополитика \nТайвань проводит учения по отражению атаки со стороны Китая",
-        "date": "2026-06-09T15:57:47+00:00",
-        "post_id": "markettwits/373472"
+        "text": "❗️🇷🇺#банки #россия \nБанк России предлагает увеличить требования к минимальному размеру капитала банков с универсальной лицензией с 1 млрд до 3 млрд рублей и банков с базовой лицензией – с 0,3 млрд до 1 млрд рублей. Требования к минимальному размеру капитала банков не менялись с момента их установления в 2018 году. За это время масштабы банковского бизнеса существенно выросли, операции усложнились, появилась потребность в больших инвестициях в информационные технологии.\n\nрелиз",
+        "date": "2026-06-10T10:03:33+00:00",
+        "post_id": "markettwits/373563"
       },
       {
-        "text": "🇷🇺#дкп #россия #обзор \nРОСТ ПОТРЕБИТЕЛЬСКИХ ЦЕН СИЛЬНО ЗАМЕДЛИЛСЯ В АПРЕЛЕ И, ВЕРОЯТНО, ОСТАЛСЯ НИЗКИМ В МАЕ. ЗНАЧИТЕЛЬНЫЙ ВКЛАД В ЭТО ВНЕСЛИ ВРЕМЕННЫЕ ФАКТОРЫ. ДАЛЬНЕЙШЕЕ СНИЖЕНИЕ ИНФЛЯЦИИ И ЕЕ СТАБИЛИЗАЦИЯ НА ЦЕЛИ ВБЛИЗИ 4% ТРЕБУЮТ ПОДДЕРЖАНИЯ ЖЕСТКИХ ДЕНЕЖНО-КРЕДИТНЫХ УСЛОВИЙ. — ЦБ\n\nрелиз",
-        "date": "2026-06-09T16:02:09+00:00",
-        "post_id": "markettwits/373473"
+        "text": "🇷🇺#ALRS \nАЛРОСА приняла Программу продвижения природных бриллиантов до 2030 г",
+        "date": "2026-06-10T10:07:25+00:00",
+        "post_id": "markettwits/373564"
       },
       {
-        "text": "⚠️🇮🇷#иран #геополитика \nИран ускорит производство оружия — IRNA",
-        "date": "2026-06-09T16:05:57+00:00",
-        "post_id": "markettwits/373474"
+        "text": "🇮🇳#индия #нерезы \nBBG: Индия обдумывает дальнейшие шаги по привлечению иностранных инвестиций в страну",
+        "date": "2026-06-10T10:09:39+00:00",
+        "post_id": "markettwits/373565"
       },
       {
-        "text": "⚠️🛢#нефть \n\nBRENT < $90",
-        "date": "2026-06-09T16:06:33+00:00",
-        "post_id": "markettwits/373475"
+        "text": "✴️🇷🇺#крипто #регулирование #россия \nЗаконопроект о налоговом регулировании цифровых валют и цифровых прав принят в I чтении — Минфин",
+        "date": "2026-06-10T10:10:45+00:00",
+        "post_id": "markettwits/373566"
       },
       {
-        "text": "⚠️🇺🇸#акции #сша \nв акциях США возобновились продажи после вчерашней передышки",
-        "date": "2026-06-09T16:08:39+00:00",
-        "post_id": "markettwits/373476"
+        "text": "❗️🇷🇺#нерезы #россия #рынки \nЗападные инвесторы вновь обратили внимание на российские активы из-за больших скидок из-за санкций — EUReporter\n\nWESTERN INVESTORS EYE RUSSIAN ASSETS AGAIN AS SANCTIONS DISCOUNTS PERSIST",
+        "date": "2026-06-10T10:18:39+00:00",
+        "post_id": "markettwits/373567"
       },
       {
-        "text": "⚠️🛢#нефть #прогноз\nМинэнерго США теперь ожидает снижение мирового спроса на нефть в 2026г, ранее ожидало рост.",
-        "date": "2026-06-09T16:22:37+00:00",
-        "post_id": "markettwits/373477"
+        "text": "🛢#нефть #логистика #суэц \nBBG: Число нефтяных танкеров, пересекающих египетский Суэцкий канал, в апреле выросло почти на треть на фоне блокады Ормуза",
+        "date": "2026-06-10T10:29:08+00:00",
+        "post_id": "markettwits/373568"
       },
       {
-        "text": "⚠️🇮🇷#иран #геополитика \nТрамп: США должны отреагировать на нападение Ирана на вертолет США в Ормузе\n\nТрамп пообещал ответ на сбитый вертолет Apache",
-        "date": "2026-06-09T16:41:42+00:00",
-        "post_id": "markettwits/373478"
+        "text": "🌎#ии #долг #облигации #мир #прогноз \nMorgan прогнозирует, что объем мировой эмиссии долговых обязательств, связанных с ИИ, увеличится более чем вдвое по итогам 2026г",
+        "date": "2026-06-10T10:35:56+00:00",
+        "post_id": "markettwits/373569"
+      },
+      {
+        "text": "✴️🇺🇸#прогнозы #сша #регулирование \nCFTC предложит новые правила для \"рынков прогнозов\", которые будут давать регуляторам право блокировать рынки, уязвимые для манипуляций — WSJ",
+        "date": "2026-06-10T10:40:52+00:00",
+        "post_id": "markettwits/373570"
       }
     ]
   }

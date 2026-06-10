@@ -1,194 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Main pages -->
   <url>
-    <loc>https://www.lagazzettadikyiv.com</loc>
-    <lastmod>2026-06-06</lastmod>
+    <loc>https://www.lagazzettadikyiv.com/</loc>
     <changefreq>hourly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lagazzettadikyiv.com/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.lagazzettadikyiv.com/ru/"/>
   </url>
   <url>
     <loc>https://www.lagazzettadikyiv.com/stories.html</loc>
-    <lastmod>2026-06-06</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.lagazzettadikyiv.com/stories.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.lagazzettadikyiv.com/ru/stories/"/>
   </url>
   <url>
     <loc>https://www.lagazzettadikyiv.com/flows.html</loc>
-    <lastmod>2026-06-06</lastmod>
     <changefreq>hourly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.lagazzettadikyiv.com/flows.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.lagazzettadikyiv.com/ru/flows/"/>
-  </url>
-  <url>
-    <loc>https://www.lagazzettadikyiv.com/trades.html</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.lagazzettadikyiv.com/trades.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.lagazzettadikyiv.com/ru/trades/"/>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.lagazzettadikyiv.com/signal.html</loc>
-    <lastmod>2026-06-06</lastmod>
     <changefreq>hourly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.lagazzettadikyiv.com/signal.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.lagazzettadikyiv.com/ru/signal/"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lagazzettadikyiv.com/trades.html</loc>
+    <changefreq>hourly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.lagazzettadikyiv.com/track.html</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.lagazzettadikyiv.com/track.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.lagazzettadikyiv.com/ru/track/"/>
+    <changefreq>hourly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.lagazzettadikyiv.com/story.html</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.lagazzettadikyiv.com/story.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.lagazzettadikyiv.com/ru/story/"/>
+    <loc>https://www.lagazzettadikyiv.com/event_horizon.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://www.lagazzettadikyiv.com/flow-nodes.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Trust pages -->
   <url>
     <loc>https://www.lagazzettadikyiv.com/capital.html</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.lagazzettadikyiv.com/capital.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.lagazzettadikyiv.com/ru/capital/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lagazzettadikyiv.com/data.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.lagazzettadikyiv.com/about.html</loc>
-    <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.lagazzettadikyiv.com/about.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.lagazzettadikyiv.com/ru/about/"/>
   </url>
   <url>
-    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles__regional_war</loc>
-    <lastmod>2026-06-06</lastmod>
+    <loc>https://www.lagazzettadikyiv.com/privacy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.lagazzettadikyiv.com/terms.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.lagazzettadikyiv.com/contacts.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <!-- Russian pages -->
+  <url>
+    <loc>https://www.lagazzettadikyiv.com/ru/</loc>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.lagazzettadikyiv.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.lagazzettadikyiv.com/"/>
+  </url>
+  <url>
+    <loc>https://www.lagazzettadikyiv.com/ru/stories.html</loc>
+    <changefreq>hourly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lagazzettadikyiv.com/ru/flows.html</loc>
+    <changefreq>hourly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic</loc>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_china_ascendancy__zcash_soundness_researcher_now_audits_monero__xmr_intraday</loc>
-    <lastmod>2026-06-06</lastmod>
+    <loc>https://www.lagazzettadikyiv.com/ru/story.html?id=n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes</loc>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_china_ascendancy__zcash_soundness_bug_researcher_now_targets_monero__xmr_-10</loc>
-    <lastmod>2026-06-06</lastmod>
+    <loc>https://www.lagazzettadikyiv.com/ru/story.html?id=n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired</loc>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai__i</loc>
-    <lastmod>2026-06-06</lastmod>
+    <loc>https://www.lagazzettadikyiv.com/ru/story.html?id=n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela</loc>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_china_ascendancy__zcash_soundness_bug_researcher_now_audits_monero__xmr_-10</loc>
-    <lastmod>2026-06-06</lastmod>
+    <loc>https://www.lagazzettadikyiv.com/ru/story.html?id=n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai</loc>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles__gulf_war_wid</loc>
-    <lastmod>2026-06-06</lastmod>
+    <loc>https://www.lagazzettadikyiv.com/ru/story.html?id=n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai</loc>
     <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_blockchain_agentic__bitcoin_free_fall__saylor_liquidates_etfs_bleed_200-week</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_abundance_tech__google_signs_920m_month_ai_compute_deal_with_spacex_xai</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_multi_pillar__us_strikes_iranian_naval_bases__hormuz_escalation_intensifi</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_abundance_tech__spacex_ipo_demand_2x_supply__75b_offering_oversibscribed</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_multi_pillar__iran-bahrain_missile_attack__hormuz_escalation_continues</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lagazzettadikyiv.com/story.html?id=ai_rotation_crypto_20260605</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_abundance__space_etf_mainstream</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_multi__lebanon_ceasefire_dead_oman_oil</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_ai__trump_whitehouse_ai_summit_warsh</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_multi__us_iran_overnight_strikes</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_multi__ukraine_300_drone_wave</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_china__chip_boom_property_crisis</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_dollar_decline__india_rbi_proposes_brics_digital_currency_link_erupee_pilot</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.lagazzettadikyiv.com/story.html?id=n21_eu_fragmentation__eu_migration_deal_balkans_detention_germany_rejects_schengen</loc>
-    <lastmod>2026-06-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
 </urlset>

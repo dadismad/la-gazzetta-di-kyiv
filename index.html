@@ -10,6 +10,26 @@
   <link rel="preload" href="./data/stories.json" as="fetch" crossorigin="anonymous">
   <link rel="preload" href="./data/flows.json" as="fetch" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+    /* v23.5: Mobile progressive disclosure — interactive chips, context hooks, <details> */
+    .card-context-hook { font-family: var(--body); font-size: 12px; font-style: italic; color: var(--ink-light); margin: 6px 0; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+    .card-context-hook.expanded { -webkit-line-clamp: unset; }
+    .meta-chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0; }
+    .meta-chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border: 1px solid #E5E7EB; font-family: var(--sans); font-size: 10px; font-weight: 600; color: var(--ink-muted); background: #FFFFFF; cursor: pointer; transition: border-color 0.15s, color 0.15s; }
+    .meta-chip:hover { border-color: var(--gold); color: var(--ink); }
+    .meta-chip.expanded { border-color: var(--gold); background: #FFFDF5; color: var(--ink); }
+    .meta-chip-detail { display: none; font-size: 10px; font-weight: 400; color: var(--ink-light); margin-top: 4px; padding: 6px 8px; background: #F9FAFB; border-left: 2px solid var(--gold); }
+    .meta-chip-detail.visible { display: block; }
+    .tech-metrics { margin: 8px 0; }
+    .tech-metrics summary { font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); cursor: pointer; padding: 4px 0; list-style: none; }
+    .tech-metrics summary::-webkit-details-marker { display: none; }
+    .tech-metrics summary::before { content: '+ '; font-weight: 700; color: var(--gold); }
+    .tech-metrics[open] summary::before { content: '− '; }
+    .tech-metrics-content { padding: 8px 0 8px 12px; font-family: var(--sans); font-size: 11px; color: var(--ink-light); border-left: 1px solid #E5E7EB; }
+    .story-hook-line { font-family: var(--body); font-size: 13px; font-style: italic; color: var(--ink-light); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin: 4px 0 8px; }
+    @media (max-width: 600px) { .meta-chips { gap: 4px; } .meta-chip { font-size: 9px; padding: 2px 6px; } .story-hook-line { font-size: 12px; -webkit-line-clamp: 1; } }
+  </style>
+
   <link rel="stylesheet" href="./styles.75fe1a1e.css"/>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='2' fill='%23111827'/><text x='16' y='24' text-anchor='middle' font-size='22' font-weight='bold' font-family='Georgia,serif' fill='%23D4AF37'>G</text></svg>"/>
 
@@ -38,6 +58,26 @@
     ]
   }
   </script>
+
+
+<style>
+/* v23.7: Mobile progressive disclosure — details expander */
+@media (max-width: 768px) {
+  .card-multi-persona { display: none; }
+  .card-multi-persona.expanded { display: block; }
+  .card-tech-metrics { display: none; }
+  .card-tech-metrics.expanded { display: block; }
+  .card-expand-btn {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-family: var(--sans); font-size: 10px; font-weight: 700;
+    color: var(--gold); cursor: pointer; padding: 4px 0;
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .card-expand-btn::after { content: ' ▼'; font-size: 8px; }
+  .card-expand-btn.open::after { content: ' ▲'; }
+  .asset-badge { font-size: 11px !important; padding: 3px 8px !important; }
+}
+</style>
 
 </head>
 <body>
@@ -105,9 +145,15 @@
   <div class="masthead-right">
     <span class="masthead-tagline" data-i18n="masthead_tagline">Capital moves markets. We track where it's going.</span>
     <nav class="product-nav">
-      <a href="./stories.html" class="nav-link">Products</a>
-      <a href="./event-horizon.html" class="nav-link active">Horizon</a>
-      <a href="./flow-nodes.html" class="nav-link active">Flow Nodes</a>
+      <span class="nav-group-label">INTEL</span>
+      <a href="./stories.html" class="nav-link"><span data-i18n="nav_stories">Stories</span></a>
+      <a href="./flows.html" class="nav-link"><span data-i18n="nav_flows">Flows</span></a>
+      <a href="./event_horizon.html" class="nav-link"><span data-i18n="nav_horizon">Horizon</span></a>
+      <a href="./flow-nodes.html" class="nav-link"><span data-i18n="nav_nodes">Nodes</span></a>
+      <span class="nav-group-label">ALPHA</span>
+      <a href="./signal.html" class="nav-link"><span data-i18n="nav_signal">Signal</span></a>
+      <a href="./trades.html" class="nav-link"><span data-i18n="nav_trades">Trades</span></a>
+      <a href="./track.html" class="nav-link"><span data-i18n="nav_track">Track</span></a>
     </nav>
     <time class="masthead-meta" id="mastheadMeta" datetime="2026-06-06T15:00:00.000Z">—</time>
     <span class="lang-switcher">
@@ -130,22 +176,82 @@
     <div class="hero-indicators" id="heroIndicators">
       <a href="./signal.html" class="hero-ind" id="heroContradictions" title="Active narrative-to-data divergences">
         <span class="hero-ind-value">—</span>
-        <span class="hero-ind-label">Contradictions</span>
+        <span class="hero-ind-label" data-i18n="hero_contradictions">Contradictions</span>
       </a>
       <a href="./flow-nodes.html" class="hero-ind" id="heroTopVelocity" title="Highest-momentum capital flow category">
         <span class="hero-ind-value">—</span>
-        <span class="hero-ind-label">Top Velocity</span>
+        <span class="hero-ind-label" data-i18n="hero_top_velocity">Top Velocity</span>
       </a>
       <a href="./flows.html" class="hero-ind" id="heroFreshness" title="Last system data refresh">
         <span class="hero-ind-value">—</span>
-        <span class="hero-ind-label">Freshness</span>
+        <span class="hero-ind-label" data-i18n="hero_freshness">Freshness</span>
       </a>
     </div>
   </div>
 </section>
 
 <main class="hints-lobby">
-  <!-- v22.20: Collapsible product sections — headlines only, full content on dedicated pages -->
+
+  <aside class="col-alpha" id="colAlpha">
+    <div class="side-section">
+      <div class="side-section-label" data-i18n="side_trade_hooks">TRADE HOOKS</div>
+      <div class="side-hooks" id="sideHooks">
+<div class="side-hook-item" onclick="location.href='./flows.html'">
+          <span class="side-hook-symbol">CRYPTO</span>
+          <span class="side-hook-dir bearish">↓ OUT</span>
+          <span class="side-hook-conv">50%</span>
+        </div>
+<div class="side-hook-item" onclick="location.href='./flows.html'">
+          <span class="side-hook-symbol">CRYPTO</span>
+          <span class="side-hook-dir bullish">↑ INF</span>
+          <span class="side-hook-conv">75%</span>
+        </div>
+<div class="side-hook-item" onclick="location.href='./flows.html'">
+          <span class="side-hook-symbol">TECH</span>
+          <span class="side-hook-dir bullish">↑ INF</span>
+          <span class="side-hook-conv">50%</span>
+        </div>
+      </div>
+    </div>
+    <div class="side-section alpha-gated" id="signalGate">
+      <div class="side-section-label" data-i18n="side_signal_gate">FULL SIGNAL</div>
+      <div class="gate-overlay">
+        <span class="gate-hint">Entry zones & stop levels are gated</span>
+        <a href="https://t.me/GazzettaDiKyiv" class="gate-cta" target="_blank" rel="noopener">🔓 Unlock Full Signal →</a>
+      </div>
+      <div class="gated-content">
+        <div class="side-hooks">
+          <div class="side-hook-item"><span class="side-hook-symbol">SPX</span><span class="side-hook-dir bullish">↑ LONG</span><span class="side-hook-conv">Entry $735</span></div>
+          <div class="side-hook-item"><span class="side-hook-symbol">BTC</span><span class="side-hook-dir bullish">↑ LONG</span><span class="side-hook-conv">Stop $58K</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="side-section">
+      <div class="side-section-label" data-i18n="side_top_velocity">TOP VELOCITY</div>
+      <a href="./flow-nodes.html" class="side-velocity" id="sideVelocity">
+        <span class="side-vel-value">2.4×</span>
+        <span class="side-vel-desc">$4.8B outflow crypto</span>
+      </a>
+    </div>
+    <div class="side-section">
+      <div class="side-section-label" data-i18n="side_sentiment">SENTIMENT</div>
+      <div class="side-sentiment" id="sideSentiment">
+        <span class="side-sent-value bullish">75%</span>
+        <span class="side-sent-label">Inflow ratio · 9/12</span>
+      </div>
+    </div>
+  </aside>
+  <div class="col-intel" id="colIntel">
+
+
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- INTEL LAYER — Reality: Analysis supported or contradicted by capital flows -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="layer-header intel-header">
+    <span class="layer-label" data-i18n="layer_intel">INTEL</span>
+    <span class="layer-desc" data-i18n="layer_intel_desc">What's happening — and where the money is actually going.</span>
+  </div>
 
   <section class="container collapsible expanded" id="storiesTeaser">
     <div class="container-header">
@@ -189,6 +295,14 @@
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- ALPHA LAYER — Execution: Strategic bets following or fading the intel -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="layer-header alpha-header">
+    <span class="layer-label" data-i18n="layer_alpha">ALPHA</span>
+    <span class="layer-desc" data-i18n="layer_alpha_desc">Strategic positioning derived from the intel — where to act.</span>
+  </div>
+
   <section class="container collapsible" id="signalTeaser">
     <div class="container-header">
       <span class="container-title" data-i18n="container_signal_title">The Signal</span>
@@ -225,26 +339,95 @@
     <div class="container-body">
       <div class="services-grid">
         <a href="./stories.html" class="svc-card" id="svcCSuite">
-          <span class="svc-icon">🏛</span>
-          <span class="svc-persona">C-Suite</span>
-          <span class="svc-title">Macro Horizon</span>
-          <span class="svc-desc">Anticipate regulatory headwinds, spot supply-chain dislocations before they hit earnings, align capital allocation with structural policy shifts. Board-level briefings with actionable scenario triggers — not just context, conviction.</span>
+          <span class="svc-persona" data-i18n="svc_csuite">C-SUITE</span>
+          <span class="svc-title" data-i18n="svc_macro_horizon">Macro Horizon</span>
+          <span class="svc-desc">Structural policy shifts, supply-chain bottlenecks, regulatory implications. Board-ready context for capital allocators.</span>
         </a>
         <a href="./flow-nodes.html" class="svc-card" id="svcQuant">
-          <span class="svc-icon">⚡</span>
-          <span class="svc-persona">Quant</span>
-          <span class="svc-title">Flow Telemetry</span>
-          <span class="svc-desc">Ingest raw flow telemetry into your models — velocity differentials, correlation matrices, anomaly scores. Clean, low-latency data feeds optimized for quantitative pipelines. Build alpha on signal, not stories.</span>
+          <span class="svc-persona" data-i18n="svc_quant">QUANTITATIVE</span>
+          <span class="svc-title" data-i18n="svc_flow_telemetry">Flow Telemetry</span>
+          <span class="svc-desc">Capital velocity differentials, correlation coefficients, heat scores. Low-latency raw data. Zero narrative fluff.</span>
         </a>
         <a href="./trades.html" class="svc-card" id="svcTrader">
-          <span class="svc-icon">🎯</span>
-          <span class="svc-persona">Trader</span>
-          <span class="svc-title">Action Triggers</span>
-          <span class="svc-desc">Actionable directional bias with precise entry zones, volatility-adjusted stops, and conviction ratings. Divergence alerts fire when narrative breaks from price — position before the crowd.</span>
+          <span class="svc-persona" data-i18n="svc_execution">EXECUTION</span>
+          <span class="svc-title" data-i18n="svc_action_triggers">Action Triggers</span>
+          <span class="svc-desc">Directional bias, entry/stop levels, conviction ratings with ATR-derived stops. Ultra-concise, trade-ready.</span>
         </a>
       </div>
     </div>
   </section>
+
+  </div>
+  <aside class="col-context" id="colContext">
+    <div class="side-section">
+      <div class="side-section-label" data-i18n="side_freshness">FRESHNESS</div>
+      <div class="side-freshness" id="sideFreshness">
+        <div class="fresh-item"><span class="fresh-dot stories-dot"></span><span>Stories</span><span class="fresh-age" id="freshStories">—</span></div>
+        <div class="fresh-item"><span class="fresh-dot flows-dot"></span><span>Flows</span><span class="fresh-age" id="freshFlows">—</span></div>
+      </div>
+      <div class="side-section">
+      <div class="side-section-label" data-i18n="side_live_tickers">LIVE TICKERS</div>
+      <div class="side-freshness">
+<div class="fresh-item"><span class="fresh-dot" style="background:#059669"></span><span>CL=F</span><span class="fresh-age" style="color:#059669">↑ +1.3%</span></div>
+<div class="fresh-item"><span class="fresh-dot" style="background:#059669"></span><span>BTC-USD</span><span class="fresh-age" style="color:#059669">↑ +0.9%</span></div>
+<div class="fresh-item"><span class="fresh-dot" style="background:#DC2626"></span><span>ITA</span><span class="fresh-age" style="color:#DC2626">↓ -0.1%</span></div>
+<div class="fresh-item"><span class="fresh-dot" style="background:#DC2626"></span><span>SPY</span><span class="fresh-age" style="color:#DC2626">↓ -0.2%</span></div>
+<div class="fresh-item"><span class="fresh-dot" style="background:#059669"></span><span>TLT</span><span class="fresh-age" style="color:#059669">↑ +0.1%</span></div>
+<div class="fresh-item"><span class="fresh-dot" style="background:#DC2626"></span><span>UUP</span><span class="fresh-age" style="color:#DC2626">↓ -0.2%</span></div>
+<div class="fresh-item"><span class="fresh-dot" style="background:#DC2626"></span><span>GC=F</span><span class="fresh-age" style="color:#DC2626">↓ -1.7%</span></div>
+<div class="fresh-item"><span class="fresh-dot" style="background:#DC2626"></span><span>QQQ</span><span class="fresh-age" style="color:#DC2626">↓ -0.3%</span></div>
+      </div>
+    </div>
+    <div class="side-section-label" style="margin-top:10px;" data-i18n="side_flow_sectors">FLOW SECTORS</div>
+      <div class="side-freshness">
+        <div class="fresh-item"><span class="fresh-dot" style="background:#059669"></span><span>crypto</span><span class="fresh-age">$318.4B</span></div>
+<div class="fresh-item"><span class="fresh-dot" style="background:#059669"></span><span>commodities</span><span class="fresh-age">$92.2B</span></div>
+<div class="fresh-item"><span class="fresh-dot" style="background:#059669"></span><span>tech</span><span class="fresh-age">$49.7B</span></div>
+<div class="fresh-item"><span class="fresh-dot" style="background:#DC2626"></span><span>defense</span><span class="fresh-age">$6.5B</span></div>
+<div class="fresh-item"><span class="fresh-dot" style="background:#059669"></span><span>equities</span><span class="fresh-age">$3.5B</span></div>
+
+      </div>
+      <div class="side-freshness" id="sideFreshness">
+        <div class="fresh-item"><span class="fresh-dot stories-dot"></span><span>Stories</span><span class="fresh-age" id="freshStories">—</span></div>
+        <div class="fresh-item"><span class="fresh-dot flows-dot"></span><span>Flows</span><span class="fresh-age" id="freshFlows">—</span></div>
+        <div class="fresh-item"><span class="fresh-dot trades-dot"></span><span>Trades</span><span class="fresh-age" id="freshTrades">—</span></div>
+        <div class="fresh-item"><span class="fresh-dot signal-dot"></span><span>Signal</span><span class="fresh-age" id="freshSignal">—</span></div>
+      
+    <div class="side-section">
+      <div class="side-section-label" style="margin-top:10px;">LIVE CORRELATIONS</div>
+      <div class="side-freshness" id="correlationMatrix">
+        <div class="fresh-item"><span class="fresh-dot" style="background:var(--gold)"></span><span>Oil/Gold</span><span class="fresh-age" style="color:#DC2626">-0.90</span></div>
+        <div class="fresh-item"><span class="fresh-dot" style="background:var(--gold)"></span><span>BTC/Gold</span><span class="fresh-age" style="color:#DC2626">-0.72</span></div>
+        <div class="fresh-item"><span class="fresh-dot" style="background:var(--gold)"></span><span>Oil/DXY</span><span class="fresh-age" style="color:#DC2626">-0.72</span></div>
+        <div class="fresh-item"><span class="fresh-dot" style="background:var(--gold)"></span><span>Bonds/Eq.</span><span class="fresh-age" style="color:#DC2626">-0.54</span></div>
+        <div class="fresh-item"><span class="fresh-dot" style="background:var(--gold)"></span><span>BTC/SPX</span><span class="fresh-age" style="color:#DC2626">-0.56</span></div>
+        <div class="fresh-item"><span class="fresh-dot" style="background:var(--gold)"></span><span>Gold/DXY</span><span class="fresh-age" style="color:#059669">+0.69</span></div>
+      </div>
+      <div style="font-size:8px;opacity:0.4;margin-top:4px;">Directional proxy from 24h Δ · full rolling corr requires 30+ data points</div>
+    </div>
+</div>
+    </div>
+    <div class="side-section">
+      <div class="side-section-label" data-i18n="side_navigate">NAVIGATE</div>
+      <nav class="side-breadcrumbs">
+        <a href="./event_horizon.html" class="side-bc-link">→ Horizon <span class="side-bc-desc">Geopolitical chokepoints</span></a>
+        <a href="./flow-nodes.html" class="side-bc-link">→ Flow Nodes <span class="side-bc-desc">Capital network graph</span></a>
+        <a href="./stories.html" class="side-bc-link">→ All Stories <span class="side-bc-desc">Full intel feed</span></a>
+        <a href="./trades.html" class="side-bc-link">→ All Trades <span class="side-bc-desc">Position dashboard</span></a>
+      </nav>
+    </div>
+    <div class="side-section">
+      <div class="side-section-label" data-i18n="side_gazzetta">GAZZETTA</div>
+      <nav class="side-meta-links">
+        <a href="./about.html">About</a>
+        <a href="./capital.html">Methodology</a>
+        <a href="./data.html">Data Sources</a>
+        <a href="./privacy.html">Privacy</a>
+        <a href="./terms.html">Terms</a>
+      </nav>
+    </div>
+  </aside>
+
 </main>
 <footer class="footer">
   <a href="./about.html" data-i18n="nav_about">About</a>
@@ -259,19 +442,22 @@
 <script src="./i18n.041121bb.js"></script>
 <script src="./app.2d0b5f18.js"></script>
 
-<!-- Retail onboarding — first-visit tooltip (v22.16) -->
-<div id="onboardingOverlay" style="display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:white;padding:12px 18px;border-radius:0;font-family:Inter,system-ui;font-size:12px;line-height:1.5;z-index:9999;max-width:360px;box-shadow:none;cursor:pointer;" onclick="this.style.display='none';localStorage.setItem('gazzetta_onboarded','1');">
-  <strong>Welcome to La Gazzetta di Kyiv</strong><br>
-  We track where big money moves → decode why → show you how to position.<br>
-  <span style="opacity:0.7;">Stories → Flows → Trades → Signal → Track Record.</span><br>
-  <span style="font-size:10px;opacity:0.5;">Tap anywhere to dismiss</span>
-</div>
+
+
+
 <script>
+/* v23.6: Mobile hint expander — tap asset icon to reveal hook + flow */
 (function(){
-  if (!localStorage.getItem('gazzetta_onboarded')) {
-    setTimeout(function(){ document.getElementById('onboardingOverlay').style.display='block'; }, 1500);
-  }
+  if (window.innerWidth > 768) return;
+  document.addEventListener('click', function(e){
+    var chip = e.target.closest('.meta-chip');
+    if (!chip) return;
+    chip.classList.toggle('expanded');
+    var detail = chip.querySelector('.meta-chip-detail');
+    if (detail) detail.classList.toggle('visible');
+  });
 })();
 </script>
+
 </body>
 </html>

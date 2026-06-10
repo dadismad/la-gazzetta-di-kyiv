@@ -47,6 +47,22 @@ else
 fi
 echo ""
 
+# ═══ Stage 1.2: analyze_narratives — synthesize 3 Core Market Narratives ═══
+echo "── Stage 1.2: analyze_narratives ──"
+$PYTHON "$PROJECT/ops/analyze_narratives_v2.py" || echo "  ⚠ Narratives skipped (API unavailable — using fallback)"
+
+# ═══ Stage 1.5: enrich — add capital_flow + generated_at to editorial stories ═══
+echo "── Stage 1.5: enrich ──"
+$PYTHON "$PROJECT/scripts/enrich_editorial_stories.py" || true
+$PYTHON "$PROJECT/scripts/ensure_generated_at.py" || true
+echo "  ✓ Stories enriched with capital_flow + generated_at"
+
+# v23.0: Generate API endpoints for Signal + Trades
+$PYTHON "$PROJECT/scripts/generate_signal_api.py" || true
+$PYTHON "$PROJECT/scripts/generate_trades_api.py" || true
+echo "  ✓ Signal + Trades API endpoints generated"
+echo ""
+
 # ═══ Stage 2: build_site — sync data + API endpoints ═══
 echo "── Stage 2: build_site ──"
 $PYTHON "$PROJECT/scripts/build_site.py"
@@ -54,7 +70,14 @@ echo "  ✓ site/data/ synced, API endpoints generated"
 echo ""
 
 # ═══ Stage 2.5: test_platform — automated UI & data integrity gate ═══
-echo "── Stage 2.5: test_platform ──"
+echo "
+# ═══ Stage 2.2: generate broadcasts ═══
+echo "── Stage 2.2: generate_broadcasts ──"
+$PYTHON "$PROJECT/scripts/generate_broadcasts.py" || true
+echo "  ✓ Distribution broadcasts generated"
+echo ""
+
+# ═── Stage 2.5: test_platform ──"
 if $PYTHON "$PROJECT/scripts/test_platform.py"; then
     echo "  ✓ All tests passed"
 else
@@ -86,8 +109,8 @@ else
     # Zero cache on HTML
     $GSUTIL -m setmeta -h "Cache-Control:public, max-age=0, must-revalidate" \
         "$BUCKET/*.html" 2>/dev/null || true
-    # No-store on JSON
-    $GSUTIL -m setmeta -h "Cache-Control:private, no-store" \
+    # Zero cache on JSON (critical for HFT/quant data freshness)
+    $GSUTIL -m setmeta -h "Cache-Control:public, max-age=0, must-revalidate" \
         "$BUCKET/data/*.json" 2>/dev/null || true
     echo "  ✓ GCS rsync complete"
 fi

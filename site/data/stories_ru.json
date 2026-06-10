@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T05:53:45.063099+00:00",
+  "generated_at": "2026-06-10T13:36:47.783250+00:00",
   "lead": {
     "story_id": "n21_china_ascendancy__china_launches_maritime_enforcement_operation_east_of_taiwan",
     "headline": "Китай начинает морскую правоохранительную операцию к востоку от Тайваня — 46 минут назад",
@@ -22,10 +22,10 @@
     "portfolio_implication": "Открыть короткую позицию по фьючерсам на полупроводники перед рынком в воскресенье вечером. Если Китай до открытия в понедельник досмотрит какое-либо судно, гарантирован гэп вниз. Опционы TSM с экспирацией в понедельник — купить пут. Без досмотра сама повышенная премия за риск — это краткосрочный фейд.",
     "capital_flow": {
       "direction": "inflow",
-      "amount_b": 9.6,
+      "amount_b": 5.0,
       "asset_class": "commodities",
-      "projected": "+$1.9B",
-      "pace_multiplier": 2.5,
+      "projected": "Открыть короткую позицию по фьючерсам на полупроводники перед рынком в воскресенье вечером. Если Китай до открытия в понедельник досмотрит какое-либо судно, гарантирован гэп вниз. Опционы TSM с экспирацией в понедельник — купить пут. Без досмотра…",
+      "pace_multiplier": 1.0,
       "confidence_pct": 75,
       "confidence_level": "medium",
       "claim": "$5.0B ↑ commodities",
@@ -59,13 +59,13 @@
       "portfolio_implication": "Нефть — самый уверенный ход на 48 часов. Прямой удар по Кувейту полностью меняет расчеты. При открытии фьючерсов в воскресенье нефть может дать гэп +$10-15/барр. Дипломатический выход, который рынки закладывали в цены (надежды на прекращение огня), был прямо отвергнут Ираном. Фьючерсы на VIX будут закладывать гэп вниз в понедельник. BTC на $",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 21.6,
+        "amount_b": 5.0,
         "asset_class": "commodities",
-        "projected": "+$10-15",
-        "pace_multiplier": 2.0,
+        "projected": "Нефть — самый уверенный ход на 48 часов. Прямой удар по Кувейту полностью меняет расчеты. При открытии фьючерсов в воскресенье нефть может дать гэп +$10-15/барр. Дипломатический выход, который рынки закладывали в цены (н",
+        "pace_multiplier": 1.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$21.6B ↑ commodities",
+        "claim": "$5.0B ↑ commodities",
         "confidence": "75%"
       },
       "capital_flow_implication": "Long oil (USO, XLE, XOM, CVX) — Kuwait missiles raise supply disruption probability to maximum. Hormuz blockade (~20M bbl/day). Long VIX futures — gap-up Sunday evening. Short SPY/QQQ — NASDAQ already -4.68% in correction. Long defense (LMT, GD, NOC). Long gold (GLD). Short-term: Long natural gas (U",
@@ -97,13 +97,13 @@
       "portfolio_implication": "Хедж на широкий ближневосточный конфликт (золото + нефть) на выходные. Рынок недооценивает риск перекидывания. Если переговоры Ирана и США официально прервутся И Израиль одновременно объявит о полной оккупации Ливана, это будет движение по нефти на несколько стандартных отклонений.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 16.8,
+        "amount_b": 5.0,
         "asset_class": "commodities",
-        "projected": "+$1.0B",
-        "pace_multiplier": 2.5,
+        "projected": "Хедж на случай широкомасштабного конфликта на Ближнем Востоке (золото + нефть) для удержания позиций на выходные. Рынок недооценивает риск перекидывания конфликта. Если переговоры между Ираном и США официально сорвутся И Израиль одновременно объявит о полной оккупации Ливана,…",
+        "pace_multiplier": 1.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$16.8B ↑ commodities",
+        "claim": "$5.0B ↑ commodities",
         "confidence": "75%"
       },
       "capital_flow_implication": "LONG oil (broader ME risk), LONG gold, LONG defense (Israel-specific $ISRA ETF if accessible)",
@@ -134,13 +134,13 @@
       "portfolio_implication": "Нарратив — это главный продукт здесь — это материал для первой полосы Gazzetta di Kyiv. Для Bet&Benefit: если инцидент с МАГАТЭ на Запорожской АЭС перерастет в радиологическое событие, уран/акции компаний по ядерной безопасности получат поддержку. Данные российского бюджета — это медвежий тезис для RSX, который будет разворачиваться постепенно.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 7.2,
+        "amount_b": 5.0,
         "asset_class": "commodities",
-        "projected": "+$1.0B",
-        "pace_multiplier": 2.5,
+        "projected": "Нарратив — это главный продукт здесь — это материал для первой полосы Gazzetta di Kyiv. Для Bet&Benefit: если инцидент с МАГАТЭ на Запорожской АЭС перерастет в радиологическое событие, уран/акции компаний по ядерной безопасности…",
+        "pace_multiplier": 1.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$7.2B ↑ commodities",
+        "claim": "$5.0B ↑ commodities",
         "confidence": "75%"
       },
       "capital_flow_implication": "LONG defense/nuclear security (Zaporizhzhia incident), LONG Ukrainian war bonds if risk-on, SHORT Russian assets",
@@ -171,13 +171,13 @@
       "portfolio_implication": "Длинные позиции по сырой нефти к открытию CME в воскресенье. Если нарратив о disruption в Ормузском проливе усилится (радар уже поражен), WTI выше $85 вполне вероятно. Оборонные акции (LMT, GD) получают попутный ветер от многофронтового конфликта. Если голосование в Палате представителей получит поддержку в Сенате, USD ослабнет = сырьевые товары получат поддержку.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 14.4,
+        "amount_b": 5.0,
         "asset_class": "commodities",
-        "projected": "+$1.0B",
-        "pace_multiplier": 2.5,
+        "projected": "Длинные позиции по сырой нефти к открытию CME в воскресенье. Если нарратив о disruption в Ормузском проливе усилится (радар уже поражен), WTI выше $85 вполне вероятно. Оборонные акции (LMT, GD) получают попутный ветер от многофронтового конфликта. Если…",
+        "pace_multiplier": 1.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$14.4B ↑ commodities",
+        "claim": "$5.0B ↑ commodities",
         "confidence": "75%"
       },
       "capital_flow_implication": "LONG oil, LONG gold, LONG defense",
@@ -207,13 +207,13 @@
       "portfolio_implication": "XMR short имеет downside 2-3x, если будет найден баг, но восстановление с $110.40 до $118.70 предполагает, что первоначальные панические продавцы были поглощены. Соотношение риск/доходность полностью зависит от сроков следующего обновления исследователя. Это бинарное событие — либо аудит ничего не находит (XMR растет), либо находит что-то (XMR падает).",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 6.5,
+        "amount_b": 5.0,
         "asset_class": "crypto",
-        "projected": "+$1.0B",
-        "pace_multiplier": 2.0,
+        "projected": "XMR short имеет downside 2-3x, если будет найден баг, но восстановление с $110.40 до $118.70 предполагает, что первоначальные панические продавцы были поглощены. Соотношение риск/доходность полностью зависит от сроков следующего исследователя.",
+        "pace_multiplier": 1.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$6.5B ↑ crypto",
+        "claim": "$5.0B ↑ crypto",
         "confidence": "75%"
       },
       "capital_flow_implication": "Short XMR with tight stop — price recovered to $118.70 from $110.40 lows. If researcher publishes findings, downside to $60-80 is realistic. If researcher finds nothing, XMR could rally back above $130. Asymmetric short if you can position before the next researcher update. Pair with long BTC — capi",
@@ -244,13 +244,13 @@
       "portfolio_implication": "Short XMR — это сделка с асимметричным upside 2-5x. Рыночная капитализация XMR ~$3B. Если исследователь найдет баг корректности — а учитывая, что у Zcash он был, вероятность нетривиальна — XMR может упасть на 50-80% за часы. Даже объявления о начале аудита достаточно, чтобы сохранять давление. BTC выигрывает как",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 6.5,
+        "amount_b": 5.0,
         "asset_class": "crypto",
-        "projected": "+$50-80",
-        "pace_multiplier": 2.0,
+        "projected": "Short XMR — это сделка с асимметричным upside 2-5x. Рыночная капитализация XMR ~$3B. Если исследователь найдет баг корректности — а учитывая, что у Zcash он был, вероятность нетривиальна — XMR может упасть на 50-80% за часы.",
+        "pace_multiplier": 1.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$6.5B ↑ crypto",
+        "claim": "$5.0B ↑ crypto",
         "confidence": "75%"
       },
       "capital_flow_implication": "Short XMR perpetuals (perps/futures) — cascade already underway. Short ZEC — continued selling pressure as trust evaporates. Long BTC — capital rotation from alt/privacy into BTC as 'safe haven' crypto. Long stables (USDT/USDC) — exit liquidity for privacy coin holders.",
@@ -281,13 +281,13 @@
       "portfolio_implication": "Рост IPO — самая быстрая сделка с наиболее определенным катализатором. 12 июня — через 6 дней. Если спрос в 2 раза превышает предложение при $75B, начальный рост может составить 20-40%. NVDA выигрывает структурно — каждая сделка гиперскейлера по GPU заполняет книгу заказов на кварталы вперед. Но обратите внимание на NAV: при рынках в режиме риск-офф (",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 30.0,
+        "amount_b": 80.0,
         "asset_class": "equities",
-        "projected": "+$16.0B",
-        "pace_multiplier": 2.0,
+        "projected": "Рост IPO — самая быстрая сделка с наиболее определенным катализатором. 12 июня — через 6 дней. Если спрос в 2 раза превышает предложение при $75B, начальный рост может составить 20-40%. NVDA выигрывает структурно — каждый гиперскейлер",
+        "pace_multiplier": 1.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$30.0B ↑ equities",
+        "claim": "$80.0B ↑ equities",
         "confidence": "75%"
       },
       "capital_flow_implication": "Long SPCX at IPO — momentum will carry first week higher on scarcity and oversubscription. Long NVDA — 110K GPUs per deal, every hyperscaler deal means more GPU orders. Long GOOGL — compute capacity secured. Long AI infrastructure (SMCI, VRT, ANET). Short-term: the risk-off tape could mute IPO pop —",
@@ -318,13 +318,13 @@
       "portfolio_implication": "Short XMR имеет асимметричный потенциал снижения в 2-5 раз. Рыночная капитализация XMR ~$3 млрд. Если исследователь найдет ошибку в обоснованности — а учитывая, что у Zcash такая была, вероятность нетривиальна — XMR может упасть на 50-80% за часы. Даже без обнаружения ошибки, объявление аудита достаточно, чтобы сохранять давление продаж. Круглосуточный крипто",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 6.5,
+        "amount_b": 5.0,
         "asset_class": "crypto",
-        "projected": "+$50-80",
-        "pace_multiplier": 2.0,
+        "projected": "Short XMR имеет асимметричный потенциал снижения в 2-5 раз. Рыночная капитализация XMR ~$3 млрд. Если исследователь найдет ошибку в обоснованности — а учитывая, что у Zcash такая была, вероятность нетривиальна — XMR может упасть на 50-80% за часы. Даже",
+        "pace_multiplier": 1.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$6.5B ↑ crypto",
+        "claim": "$5.0B ↑ crypto",
         "confidence": "75%"
       },
       "capital_flow_implication": "Short XMR perpetuals — cascade already underway at -10%. Short ZEC — continued selling pressure as trust evaporates. Long BTC — capital rotation from privacy coins into BTC as 'safe haven' crypto. Long USDT/USDC — exit liquidity for privacy coin holders exiting into stables.",
@@ -355,13 +355,13 @@
       "portfolio_implication": "Нефть — ставка с наивысшей уверенностью. Удар по Кувейту 7 иранскими ракетами меняет расклад — это больше не прокси-война США и Ирана, это региональная война. Кувейт является ключевым производителем ОПЕК и важным союзником США. Если эскалация продолжится в выходные, нефть +$10-15/барр. при открытии фьючерсов в воскресенье",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 21.6,
+        "amount_b": 5.0,
         "asset_class": "commodities",
-        "projected": "+$1.0B",
-        "pace_multiplier": 2.0,
+        "projected": "Нефть — ставка с наивысшей уверенностью. Удар по Кувейту 7 иранскими ракетами меняет расклад — это больше не прокси-война США и Ирана, это региональная война. Кувейт является ключевым производителем ОПЕК",
+        "pace_multiplier": 1.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$21.6B ↑ commodities",
+        "claim": "$5.0B ↑ commodities",
         "confidence": "75%"
       },
       "capital_flow_implication": "Long oil (USO, XLE, XOM, CVX) — Kuwait is a major US ally getting hit directly. Hormuz blockade (~20M bbl/day) + now missiles hitting Gulf states = supply disruption probability has never been higher. Long VIX/UVXY — futures will gap up Sunday evening. Short SPY/QQQ — NASDAQ already -4.68% in correc",
@@ -388,13 +388,13 @@
       "portfolio_implication": "Денежные средства/стейблкоины показывают лучшую доходность. Если BTC упадет ниже 200-недельной MA, это спровоцирует мультиактивную девериджинг, которая перекинется на акции (уже видно — NDX -3%, SPX -1.7% в пятницу). Разворачивание арбитража конвертируемых облигаций MSTR добавляет понижательное давление. Единственный бычий угол: это капитуляция, и дна",
       "capital_flow": {
         "direction": "outflow",
-        "amount_b": 6.5,
+        "amount_b": 11.5,
         "asset_class": "crypto",
-        "projected": "+$2.3B",
-        "pace_multiplier": 2.0,
+        "projected": "Денежные средства/стейблкоины показывают лучшую доходность. Если BTC упадет ниже 200-недельной MA, это спровоцирует мультиактивную девериджинг, которая перекинется на акции (уже видно — NDX -3%, SPX -1.7% в пятницу). Конвертируемые облигации MSTR",
+        "pace_multiplier": 1.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$6.5B ↓ crypto",
+        "claim": "$11.5B ↓ crypto",
         "confidence": "75%"
       },
       "capital_flow_implication": "SHORT BTC aggressively. Short MSTR (the leverage unwind is just beginning). Short COIN, MARA, CLSK. If BTC breaks 200-week MA (~$61K), next stop is $55K and the liquidation cascade accelerates. Buy June/July BTC put options. Short ETH/BTC ratio continues to decline. For the brave: SHORT Hyperliquid ",
@@ -436,13 +436,13 @@
       "portfolio_implication": "IPO-скачок — это самая быстрая краткосрочная сделка. 12 июня через 6 дней — это известный катализатор с определенными сроками. Если спрос в 2 раза превышает предложение при $75B, открытие может подскочить на 20-40%. NVDA выигрывает структурно — каждая сделка с GPU гиперскейлеров заполняет книгу заказов на кварталы вперед.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 20.0,
+        "amount_b": 80.0,
         "asset_class": "equities",
-        "projected": "+$16.0B",
-        "pace_multiplier": 2.0,
+        "projected": "IPO-скачок — это самая быстрая краткосрочная сделка. 12 июня через 6 дней — это известный катализатор с определенными сроками. Если спрос в 2 раза превышает предложение при $75B, открытие может подскочить на 20-40%. NVDA выигрывает ст",
+        "pace_multiplier": 1.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$20.0B ↑ equities",
+        "claim": "$80.0B ↑ equities",
         "confidence": "75%"
       },
       "capital_flow_implication": "Long SPCX at/before IPO — momentum will carry it higher in first week. Long NVDA — 110K GPUs per deal, every hyperscaler deal means more GPU orders. Long GOOGL — compute capacity secured. Long AI infrastructure (SMCI, VRT, ANET).",
@@ -473,13 +473,13 @@
       "portfolio_implication": "Нефть — сделка с наивысшей уверенностью. Через Ормуз проходит ~20 млн барр./день. Любое прямое попадание по иранским радарам/судоходству увеличивает вероятность более масштабного прорыва блокады. Если Иран в ответ заминирует пролив, нефть +$10-15/барр. за ночь. Гэп вниз фьючерсов S&P при открытии в воскресенье — это установка.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 14.4,
+        "amount_b": 5.0,
         "asset_class": "commodities",
-        "projected": "+$1.0B",
-        "pace_multiplier": 2.0,
+        "projected": "Нефть — сделка с наивысшей уверенностью. Через Ормуз проходит ~20 млн барр./день. Любое прямое попадание по иранским радарам/судоходству увеличивает вероятность более масштабного прорыва блокады. Если Иран в ответ заминирует пролив, неф",
+        "pace_multiplier": 1.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$14.4B ↑ commodities",
+        "claim": "$5.0B ↑ commodities",
         "confidence": "75%"
       },
       "capital_flow_implication": "Long oil (USO, XLE, XOM/CVX) — Hormuz closure + active strikes = supply shock. Long VIX/UVXY — risk-off spike incoming. Short SPY/QQQ/QQQ — NASDAQ already in correction territory. Long defense (LMT, GD, NOC). Long gold (GLD) — geopolitical panic bid.",
@@ -504,14 +504,14 @@
       "contradiction_score": 58,
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 30.0,
+        "amount_b": 8.0,
         "asset_class": "equities",
         "pace": "accelerating",
-        "projected": "+$1.6B",
-        "pace_multiplier": 2.0,
+        "projected": "Поток капитала отслежен — направление формируется",
+        "pace_multiplier": 1.0,
         "confidence_pct": 65,
         "confidence_level": "medium",
-        "claim": "$30.0B ↑ equities",
+        "claim": "$8.0B ↑ equities",
         "confidence": "65%"
       },
       "capital_flow_implication": "BUY SPCX at IPO allocation if possible — the supply/demand imbalance guarantees a first-day pop. The reference to QNT opening +13% and then dipping below IPO is instructive: buy the IPO, take profits day 1-2. For 1-2 week horizon: LONG ASTS, GSAT, RKLB (SpaceX-adjacent satellite plays). LONG ANET (data center infrastructure — SpaceX's AI capex story benefits the whole buildout chain). The broader AI infrastructure theme (NVDA, MRVL joining S&P 500) is supported.",
@@ -548,13 +548,13 @@
       "portfolio_implication": "Energy sector outperforms all others. Safe-haven assets (gold, USD, CHF) bid. Commodity supercycle thesis strengthened. Fertilizer prices rising (Hormuz closure impacts urea shipments — bullish for $MOS, $CF, $NTR). Broad risk-off means TLT (long-duration bonds) may find a bid as flight-to-safety ov",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 14.4,
+        "amount_b": 5.0,
         "asset_class": "commodities",
-        "projected": "+$1.0B",
-        "pace_multiplier": 2.0,
+        "projected": "Energy sector outperforms all others. Safe-haven assets (gold, USD, CHF) bid. Commodity supercycle thesis strengthened. Fertilizer prices rising (Hormuz closure impacts urea shipments — bullish for $M",
+        "pace_multiplier": 1.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$14.4B ↑ commodities",
+        "claim": "$5.0B ↑ commodities",
         "confidence": "75%"
       },
       "capital_flow_implication": "LONG OIL/ENERGY. Brent crude gaps up on Monday Asia open — targeting $95+ as Sechin (Rosneft) projects $95-96 if Hormuz restrictions lift (implying much higher if they don't). Buy WTI futures, XLE, OIH, XOM, CVX. Brent $90 calls. SHORT AIRLINES (JETS, AAL, DAL) as fuel costs surge. GOLD LONG (GLD, I",
@@ -601,13 +601,13 @@
       "freshness": "developing",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 18.0,
-        "projected": "+$1.0B",
-        "pace_multiplier": 3.3,
+        "amount_b": 5.0,
+        "projected": "Capital flow tracked — direction forming",
+        "pace_multiplier": 1.0,
         "confidence_pct": 65,
         "confidence_level": "medium",
         "asset_class": "equities",
-        "claim": "$18.0B ↑ equities",
+        "claim": "$5.0B ↑ equities",
         "confidence": "65%"
       },
       "contradiction_score": 52,
@@ -631,17 +631,17 @@
       "portfolio_implication": "Portfolio implication: accumulate space ETFs (WARP, UFO, ROKT) before the SpaceX IPO liquidity event re-rates the entire sector. The space economy trades at a fraction of AI multiples despite comparable TAM ($1.8T by 2040 per multiple forecasts). The macro chaos (Iran, Zaporizhzhia) creates a perfect entry point — institutional capital rotating into space is uncorrelated with the oil/rates chaos t",
       "image_url": "",
       "capital_flow": {
-        "claim": "$3.3B ↑ equities, ETFs, venture",
+        "claim": "Institutional capital is rotating into space economy ETFs ahead of the SpaceX IPO, creating a structural bid that is orthogonal to the macro chaos consuming terrestrial markets.",
         "direction": "inflow",
         "amount": "$3.3B ETF AUM, $500M+ monthly inflow rate, $10-20B anticipated for SpaceX IPO",
         "denomination": "USD",
         "asset_class": "equities, ETFs, venture",
         "pace": "moderate and accelerating — monthly inflow growth of 15-20% as new ETF products come online",
-        "projected": "+$1.5B",
+        "projected": "Space ETF AUM could reach $10B by end of 2026 if SpaceX IPO materializes; space index re-rating of +20-30% in 6 months",
         "confidence": "high",
         "positioning": "long WARP, UFO, ROKT; long SpaceX pre-IPO vehicles (DST Global, Fidelity); long PLD Space and Rocket Lab on European/NASA contract catalysts",
-        "amount_b": 3.3,
-        "pace_multiplier": 1.3,
+        "amount_b": 15.0,
+        "pace_multiplier": 1.0,
         "confidence_pct": 65,
         "confidence_level": "medium"
       },
@@ -677,17 +677,17 @@
       "portfolio_implication": "Последствия для портфеля: LONG WTI crude (+4-7%) и USO; LONG оборонные компании (LMT, GD, RTX) на фоне эскалации на нескольких театрах; LONG VIX (+10-15%) по мере переоценки волатильности вверх; LONG акции нефтяных танкеров (Stena, Frontline) из-за сбоев на маршрутах поставок. SHORT израильский шекель, поскольку война на два фронта (Газа/Ливан) напрягает фискальные возможности. Тройной катализатор (срыв перемирия + удар по Оману + угроза IRGC) еще не учтен в ценах.",
       "image_url": "",
       "capital_flow": {
-        "claim": "$5.4B ↑ commodities, equities, FX",
+        "claim": "Capital rotates out of risk assets into energy and defense as a second Middle East conflict theater (Lebanon) compounds the Iran/Hormuz supply risk, with Oman port disruption adding a direct supply-side catalyst.",
         "direction": "inflow",
         "amount": "$3-5B estimated flow into crude futures and energy equities in the 24-48 hour window following dual-ceasefire-dead + Oman headlines",
         "denomination": "USD",
         "asset_class": "commodities, equities, FX",
         "pace": "rapid — within 2-4 hours of Asian open repricing Friday's news gap",
-        "projected": "+$0.8B",
+        "projected": "WTI $78→$83-85, Brent $82→$87-89, оборонные акции +3-5%, VIX +10-15%, израильский шекель -1.5-2.5%",
         "confidence": "very high",
-        "positioning": "long WTI crude futures/ETFs, long US defense primes, long VIX, short ILS",
-        "amount_b": 5.4,
-        "pace_multiplier": 3.3,
+        "positioning": "long фьючерсы/ETF на WTI crude, long американские оборонные компании, long VIX, short ILS",
+        "amount_b": 4.0,
+        "pace_multiplier": 1.0,
         "confidence_pct": 65,
         "confidence_level": "medium"
       },
@@ -723,17 +723,17 @@
       "portfolio_implication": "Последствия для портфеля: LONG NVDA (+6-10%), LONG PLTR (+5-8%), LONG MSTR/BTC (+5-7%) на двойном катализаторе снижения ставок и ИИ. LONG QQQ для рычажного разворота индекса. LONG SPY (+1.5-3%). Токены ИИ (FET/RENDER/TAO +8-15%). SHORT DXY (-1%) на фоне переоценки голубиной позиции Уорша с нуля. LONG BTC на уровне $60K с поддержкой 200-недельной MA с целью $63-66K. Два самых мощных катализатора Q3 2026 года передаются",
       "image_url": "",
       "capital_flow": {
-        "claim": "$27.0B ↑ equities, crypto, FX",
+        "claim": "The White House AI summit + Warsh rate cut signal will trigger one of the largest mean-reversion flows in tech equities of 2026, as short interest accumulated during the Friday -3% NASDAQ bleed is trapped and forced to cover.",
         "direction": "inflow",
         "amount": "$5-8B estimated rotation out of cash and short positions into AI mega-caps within 48 hours of White House AI meeting confirmation",
         "denomination": "USD",
         "asset_class": "equities, crypto, FX",
         "pace": "rapid — 2-4 hour reversal on Monday open + continued flows as meeting date is confirmed",
-        "projected": "+$1.3B",
+        "projected": "NVDA +6-10%, QQQ от -3% до +0-2% (колебание 3-5%), BTC $60K→$63-66K, DXY -0.8-1.2%",
         "confidence": "very high",
         "positioning": "long NVDA, PLTR, MSTR, QQQ; long BTC spot; short DXY",
-        "amount_b": 27.0,
-        "pace_multiplier": 1.8,
+        "amount_b": 6.5,
+        "pace_multiplier": 1.0,
         "confidence_pct": 65,
         "confidence_level": "medium"
       },
@@ -770,17 +770,17 @@
       "portfolio_implication": "Последствия для портфеля: LONG WTI crude агрессивно (+8-12%) в воскресенье вечером на предрыночной торговле — удары по радарам США + удар по военно-морской базе + взрыв в Бендер-Аббасе + возможный остров Харк = минимум $5-8/барр. разрыв. LONG фьючерсы на VIX — пятничное падение Nasdaq на -3% было позиционированием; фактическая эскалация войны вызывает реальный шок волатильности. LONG золото (GLD) — безопасное убежище возвращается, так как премия за деэскалацию оказалась преждевременной. SHORT SPY/NQ",
       "image_url": "",
       "capital_flow": {
-        "claim": "$16.2B ↑ commodities, equities, derivatives",
+        "claim": "Capital rotates out of risk assets into crude oil, volatility, and gold as US-Iran conflict escalates from contained blockade to direct kinetic warfare on Iranian soil — a step-change the market has not priced.",
         "direction": "inflow",
         "amount": "$8-12B estimated oil futures/options volume at Sunday night open; $5-10B additional into gold and vol products",
         "denomination": "USD",
         "asset_class": "commodities, equities, derivatives",
         "pace": "rapid — within 2 hours of Sunday night oil open, cascading through US equity pre-market",
-        "projected": "+$2.0B",
+        "projected": "WTI $78→$83-86 (+6-10%), VIX +10-15%, золото +2-3%, SPX -2-3% на открытии понедельника, Brent $82→$88-91",
         "confidence": "very high",
-        "positioning": "long WTI crude futures, long VIX, long gold (GLD), long USO calls, short SPY",
-        "amount_b": 16.2,
-        "pace_multiplier": 3.0,
+        "positioning": "long фьючерсы на WTI crude, long VIX, long золото (GLD), long коллы USO, short SPY",
+        "amount_b": 10.0,
+        "pace_multiplier": 1.0,
         "confidence_pct": 65,
         "confidence_level": "medium"
       },
@@ -817,17 +817,17 @@
       "portfolio_implication": "Вывод для портфеля: LONG Bitcoin (BTC) — двойная эскалация за выходные (США-Иран + Украина) создает бегство в несуверенные средства сбережения. BTC на уровне 61.3K с 200-недельной скользящей средней на уровне 55-50K в качестве дна — панические покупки на геополитике в выходные могут отвязать BTC от корреляции с акциями. LONG VIX — эскалация на Украине в дополнение к США-Иран = двойной удар по волатильности в понедельник. SHORT пшеницы (WEAT) на откате роста — зерновой коридор...",
       "image_url": "",
       "capital_flow": {
-        "claim": "$19.4B ↑ crypto, equities, derivatives",
+        "claim": "Capital rotates out of risk assets and into non-sovereign stores of value (BTC) and defense equities as the largest drone wave of the Ukraine war combines with US-Iran escalation to create a dual-crisis weekend that breaks safe-haven correlations.",
         "direction": "inflow",
         "amount": "$2-4B estimated weekend BTC volume above normal Sunday lull; $1-2B in defense equity positioning ahead of Monday open",
         "denomination": "USD, EUR",
         "asset_class": "crypto, equities, derivatives",
         "pace": "moderate over weekend crypto trading, accelerating Monday open when equities repricing hits",
-        "projected": "+$0.6B",
+        "projected": "BTC +3-5% отскок за выходные с 61.3K до 63-65K на панике из-за эскалации; VIX +8-12% на открытии в понедельник; акции европейской обороны +2-4%.",
         "confidence": "high",
-        "positioning": "long BTC spot, long VIX, long European defense (Rheinmetall, Thales, SAAB), short wheat on spike",
-        "amount_b": 19.4,
-        "pace_multiplier": 3.0,
+        "positioning": "long BTC spot, long VIX, long европейской обороны (Rheinmetall, Thales, SAAB), short пшеницы на пике.",
+        "amount_b": 3.0,
+        "pace_multiplier": 1.0,
         "confidence_pct": 65,
         "confidence_level": "medium"
       },
@@ -870,17 +870,17 @@
       "source_url": "https://www.bloomberg.com/news/articles/2026-06-05/ipos-huawei-plan-add-to-china-s-900-billion-chip-stock-boom",
       "generated_at": "2026-06-06T10:23:00+00:00",
       "capital_flow": {
-        "claim": "$12.0B ↑ equities",
+        "claim": "Capital rotates out of China-exposed equities (H-shares, property bank exposure) into India trade-diversion plays and gold as the $900B semiconductor rally is revealed as liquidity-driven decoupling from real economy contraction.",
         "direction": "inflow",
         "amount": "$3-5B estimated rotation from China-facing funds to India/ASEAN over 2-4 weeks as institutional allocators reprice China exposure",
         "denomination": "USD",
         "asset_class": "equities, commodities",
         "pace": "moderate — structural repricing over weeks rather than hours as property contagion data accumulates",
-        "projected": "+$1.5B",
+        "projected": "FXI -3-5% за 2 недели, INDA +2-4%, золото +1-2% на ротации китайских домохозяйств, акции китайских банков -5-8% в случае ускорения дефолтов девелоперов.",
         "confidence": "medium",
-        "positioning": "short FXI, long INDA, long GLD, short China bank exposure",
-        "amount_b": 12.0,
-        "pace_multiplier": 1.5,
+        "positioning": "short FXI, long INDA, long GLD, short экспозиции к китайским банкам.",
+        "amount_b": 4.0,
+        "pace_multiplier": 1.0,
         "confidence_pct": 65,
         "confidence_level": "medium"
       },
@@ -915,13 +915,13 @@
       "portfolio_implication": "Золото и BTC являются асимметричными бенефициарами инфраструктуры цифровых валют БРИКС — физическое золото как резервный хедж, BTC как несуверенная сеть. Акции Индии выигрывают от стратегического позиционирования. Доллар сталкивается со структурным встречным ветром, который усиливается с каждым объявлением об инфраструктуре, независимо от того, происходит ли 'дедолларизация' в каком-либо громком смысле.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 5.0,
+        "amount_b": 3.0,
         "asset_class": "commodities",
-        "projected": "+$0.3B",
-        "pace_multiplier": 1.5,
+        "projected": "Покупки золота центробанками продолжаются рекордными темпами по мере строительства инфраструктуры CBDC БРИКС — оценочно $2-3 млрд/мес структурного спроса на золото только от центробанков БРИКС. Приток капитала в акции Индии ускоряется, поскольку иностранный капитал оценивает стратегическую премию Индии за хеджирование.",
+        "pace_multiplier": 1.0,
         "confidence_pct": 65,
         "confidence_level": "medium",
-        "claim": "$5.0B ↑ commodities",
+        "claim": "$3.0B ↑ commodities (gold) + emerging market equities rotation",
         "confidence": "65%"
       },
       "capital_flow_implication": "Long gold as BRICS central banks accelerate reserve diversification ahead of CBDC interoperability. Long India equities as strategic beneficiary of multipolar financial architecture. Short DXY on structural de-dollarization infrastructure timeline.",
@@ -955,13 +955,13 @@
       "portfolio_implication": "EUR/USD снижается, так как defiance Германии в отношении Шенгена сигнализирует об ослаблении институциональной сплоченности ЕС в ядре. Золото выигрывает от спроса на safe-haven на фоне ускорения политической фрагментации ЕС — медленно развивающийся кризис, который рынки недооценивают по сравнению с заголовочными рисками. Европейские финансовые компании сталкиваются со структурными встречными ветрами из-за трения на внутренних границах, что подрывает эффективность трансграничного банкинга. Оборонный",
       "capital_flow": {
         "direction": "outflow",
-        "amount_b": 18.0,
+        "amount_b": 2.5,
         "asset_class": "FX",
-        "projected": "+$0.2B",
-        "pace_multiplier": 1.5,
+        "projected": "EUR/USD смещается с текущего уровня ~1.08 к 1.04-1.05 в течение 3-6 месяцев по мере роста премии за институциональную фрагментацию ЕС. Золото получает дополнительные европейские safe-haven потоки, оцениваемые в $1-2 млрд/мес. Европейские финансовые акции отстают от американских/азиатских аналогов на 5-8%.",
+        "pace_multiplier": 0.7,
         "confidence_pct": 60,
         "confidence_level": "medium",
-        "claim": "$18.0B ↓ FX",
+        "claim": "$2.5B ↓ EUR/USD + European financials rotation to gold",
         "confidence": "60%"
       },
       "capital_flow_implication": "Short EUR/USD on institutional fragmentation premium. Long gold as European safe-haven rotation accelerates. Underweight EU financials on internal border friction impairing cross-border banking economics.",
@@ -971,6 +971,2216 @@
       "generated_at": "2026-06-06T18:28:18.701220+00:00",
       "freshness": "active",
       "tier": "DEVELOPING"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes",
+      "headline": "Этот крошечный взаимный фонд превосходит рынок, поддерживая лучшие управленческие команды мира - MarketWatch",
+      "sector": "equities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "This tiny mutual fund outperforms by backing the world’s best management teams &nbsp;&nbsp; MarketWatch"
+      ],
+      "they_say": "Источник: reuters_business. Этот крошечный взаимный фонд показывает лучшие результаты, поддерживая лучшие управленческие команды мира &nbsp;&nbsp; MarketWatch",
+      "reality": "Этот крошечный взаимный фонд превосходит рынок, поддерживая лучшие управленческие команды мира &nbsp;&nbsp; MarketWatch",
+      "thesis": "OSINT draft #21: This tiny mutual fund outperforms by backing the world’s best management teams - MarketWatch",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL equities. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "This tiny mutual fund outperforms by backing the world’s best management teams &nbsp;&nbsp; MarketWatch",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 0.8,
+        "asset_class": "equities",
+        "projected": "This tiny mutual fund outperforms by backing the world’s best management teams &nbsp;&nbsp; MarketWatch",
+        "pace_multiplier": 1.8,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$0.8B inflow equities",
+        "confidence": "50%"
+      },
+      "capital_flow_implication": "OSINT draft #21. Source: reuters_business.",
+      "evidence": [
+        "source: reuters_business",
+        "draft_id: 21"
+      ],
+      "source": "osint_reuters_business",
+      "generated_at": "2026-06-09T16:38:48.413174+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "This tiny mutual fund outperforms by backing the world’s best management teams - MarketWatch",
+          "body": "Structural assessment: This tiny mutual fund outperforms by backing the world’s best management teams &nbsp;&nbsp; MarketWatch... Implicated assets: equities. Regions: global. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: equities exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "EQUITIES signal: WATCH",
+          "body": "Raw telemetry — equities flow detected from This tiny mutual fund outperforms by backing the world’s best management teams &nbsp;&nbsp; MarketWatch... Assets tagged: equities. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "equities",
+            "geographies": []
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH equities",
+          "body": "Directional: WATCH. Asset: equities. Context: This tiny mutual fund outperforms by backing the world’s best management teams -. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "summary": ""
+    },
+    {
+      "story_id": "n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired",
+      "headline": "Все способы, которыми Европа отказывается от американских технологий - WIRED",
+      "sector": "defense",
+      "pillar": "china_ascendancy",
+      "paradigm_pillar": "china_ascendancy",
+      "paradigm_implications": [
+        "All the Ways Europe Is Ditching American Technology &nbsp;&nbsp; WIRED    ASML chief warns EU against directing chip supplies &nbsp;&nbsp; Financial Times    Europe unveils tech sovereignty package am"
+      ],
+      "they_say": "Источник: reuters_business. Все способы, которыми Европа отказывается от американских технологий &nbsp;&nbsp; WIRED    Глава ASML предупреждает ЕС о недопустимости управления поставками чипов &nbsp;&nbsp; Financial Times    Европа представляет пакет мер по технологическому суверенитету на фоне растущих опасений по поводу зависимости от технологий США: «Мы хотим быть уверены, что ни у кого нет аварийного выключателя» &nbsp;",
+      "reality": "Все способы, которыми Европа отказывается от американских технологий &nbsp;&nbsp; WIRED  \nГлава ASML предупреждает ЕС о направлении поставок чипов &nbsp;&nbsp; Financial Times  \nЕвропа представляет пакет технологического суверенитета на фоне растущих опасений по поводу зависимости от технологий США: «Мы хотим быть уверены, что ни у кого нет аварийного выключателя»",
+      "thesis": "OSINT draft #67: All the Ways Europe Is Ditching American Technology - WIRED",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: INFLOW defense. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "All the Ways Europe Is Ditching American Technology &nbsp;&nbsp; WIRED    ASML chief warns EU against directing chip supplies &nbsp;&nbsp; Financial Times    Europe unveils tech sovereignty package am",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 34.0,
+        "asset_class": "defense",
+        "projected": "All the Ways Europe Is Ditching American Technology &nbsp;&nbsp; WIRED    ASML chief warns EU against directing chip supplies &nbsp;&nbsp; Financial Times    Europe unveils tech sovereignty package am",
+        "pace_multiplier": 2.2,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$34.0B inflow defense",
+        "confidence": "50%"
+      },
+      "capital_flow_implication": "OSINT draft #67. Source: reuters_business.",
+      "evidence": [
+        "source: reuters_business",
+        "draft_id: 67"
+      ],
+      "source": "osint_reuters_business",
+      "generated_at": "2026-06-09T16:38:48.412894+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "All the Ways Europe Is Ditching American Technology - WIRED",
+          "body": "Structural assessment: All the Ways Europe Is Ditching American Technology &nbsp;&nbsp; WIRED    ASML chief warns EU against directing chip supplies &nbsp;&nbsp; Financial Times    Europe unveils tech sovereignty package amid growing concerns over reliance on U.S. tech: 'W... Implicated assets: EUR. Regions: Australia, Canada, EU. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: defense exposure review recommended. Directional bias: LONG."
+        },
+        "quant": {
+          "headline": "DEFENSE signal: LONG",
+          "body": "Raw telemetry — defense flow detected from All the Ways Europe Is Ditching American Technology &nbsp;&nbsp; WIRED    ASML chief warns EU against directing chip supplies &nbsp;&nbsp; Financial T... Assets tagged: EUR. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "inflow",
+            "asset_class": "defense",
+            "geographies": [
+              "Australia",
+              "Canada",
+              "EU",
+              "Japan",
+              "USA"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG EUR",
+          "body": "Directional: LONG. Asset: EUR. Context: All the Ways Europe Is Ditching American Technology - WIRED. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "summary": ""
+    },
+    {
+      "story_id": "n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela",
+      "headline": "Брутальная распродажа биткоина вызвала всплеск торговли связанными акциями, включая одну крупную бычью ставку - CNBC",
+      "sector": "crypto",
+      "pillar": "china_ascendancy",
+      "paradigm_pillar": "china_ascendancy",
+      "paradigm_implications": [
+        "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin’s Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; "
+      ],
+      "they_say": "Источник: reuters_business. Жестокое падение биткоина вызвало всплеск торговли связанными акциями, включая одну крупную бычью ставку &nbsp;&nbsp; CNBC    Худшая неделя биткоина с момента краха FTX может сигнализировать о дальнейшей боли &nbsp;&nbsp; Bloomberg    Карта рынка: Биткоин балансирует на грани дальнейших потерь &nbsp;&nbsp; Reuters",
+      "reality": "Жесткая распродажа биткоина вызвала всплеск торговли связанными акциями, включая одну крупную бычью ставку &nbsp;&nbsp; CNBC    Худшая неделя биткоина с краха FTX может сигнализировать о дальнейшей боли &nbsp;&nbsp; Bloomberg    Карта рынка: Биткоин балансирует на грани дальнейших потерь &nbsp;&nbsp; Reuters",
+      "thesis": "OSINT draft #66: Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet - CNBC",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: OUTFLOW crypto. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin’s Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; ",
+      "capital_flow": {
+        "direction": "outflow",
+        "amount_b": 4.8,
+        "asset_class": "crypto",
+        "projected": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin’s Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; ",
+        "pace_multiplier": 2.4,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$4.8B outflow crypto",
+        "confidence": "50%"
+      },
+      "capital_flow_implication": "OSINT draft #66. Source: reuters_business.",
+      "evidence": [
+        "source: reuters_business",
+        "draft_id: 66"
+      ],
+      "source": "osint_reuters_business",
+      "generated_at": "2026-06-09T16:38:48.412745+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet - CNBC",
+          "body": "Structural assessment: Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin’s Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; Bloomberg    Mapping the Market: Bitcoin teetering... Implicated assets: BTC. Regions: EU. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: crypto exposure review recommended. Directional bias: SHORT."
+        },
+        "quant": {
+          "headline": "CRYPTO signal: SHORT",
+          "body": "Raw telemetry — crypto flow detected from Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin’s Worst Week Since ... Assets tagged: BTC. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "outflow",
+            "asset_class": "crypto",
+            "geographies": [
+              "EU"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🔴 SHORT BTC",
+          "body": "Directional: SHORT. Asset: BTC. Context: Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, includin. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "SHORT",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "summary": ""
+    },
+    {
+      "story_id": "n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai",
+      "headline": "Фондовый рынок сегодня: Nasdaq, Dow открылись ростом; IPO SpaceX, OpenAI в центре внимания — Обновления в реальном времени - WSJ",
+      "sector": "defense",
+      "pillar": "abundance_tech",
+      "paradigm_pillar": "abundance_tech",
+      "paradigm_implications": [
+        "Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates &nbsp;&nbsp; WSJ    Stock Market Today: Dow, S&amp;P 500, Nasdaq Open Up; Micron, Marvell, Intel, Nvidia, More "
+      ],
+      "they_say": "Источник: reuters_business. Фондовый рынок сегодня: Nasdaq, Dow открылись ростом; IPO SpaceX и OpenAI в фокусе — обновления в реальном времени &nbsp;&nbsp; WSJ    Фондовый рынок сегодня: Dow, S&P 500, Nasdaq открылись ростом; Micron, Marvell, Intel, Nvidia и другие движущие силы &nbsp;&nbsp; Barron's    Акции технологических компаний снижаются в поздней утренней торговле под давлением",
+      "reality": "Фондовый рынок сегодня: Nasdaq, Dow открылись ростом; IPO SpaceX и OpenAI в центре внимания — обновления в реальном времени &nbsp;&nbsp; WSJ    Фондовый рынок сегодня: Dow, S&amp;P 500, Nasdaq открылись на подъеме; Micron, Marvell, Intel, Nvidia и другие движущие силы &nbsp;&nbsp; Barron's    Акции технологических компаний снижаются к середине утренних торгов под давлением",
+      "thesis": "OSINT draft #70: Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates - WSJ",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: OUTFLOW defense. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates &nbsp;&nbsp; WSJ    Stock Market Today: Dow, S&amp;P 500, Nasdaq Open Up; Micron, Marvell, Intel, Nvidia, More ",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 12.5,
+        "asset_class": "defense",
+        "projected": "Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates &nbsp;&nbsp; WSJ    Stock Market Today: Dow, S&amp;P 500, Nasdaq Open Up; Micron, Marvell, Intel, Nvidia, More ",
+        "pace_multiplier": 2.2,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$12.5B inflow defense",
+        "confidence": "50%"
+      },
+      "capital_flow_implication": "OSINT draft #70. Source: reuters_business.",
+      "evidence": [
+        "source: reuters_business",
+        "draft_id: 70"
+      ],
+      "source": "osint_reuters_business",
+      "generated_at": "2026-06-09T16:38:48.411370+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates - WSJ",
+          "body": "Structural assessment: Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates &nbsp;&nbsp; WSJ    Stock Market Today: Dow, S&amp;P 500, Nasdaq Open Up; Micron, Marvell, Intel, Nvidia, More Movers &nbsp;&nbsp; Barron's    Technology stocks ... Implicated assets: NDX, NVDA, OpenAI. Regions: global. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: defense exposure review recommended. Directional bias: SHORT."
+        },
+        "quant": {
+          "headline": "DEFENSE signal: SHORT",
+          "body": "Raw telemetry — defense flow detected from Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates &nbsp;&nbsp; WSJ    Stock Market Today: Dow, S&amp;P 500, Nas... Assets tagged: NDX, NVDA, OpenAI. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "outflow",
+            "asset_class": "defense",
+            "geographies": []
+          }
+        },
+        "degen": {
+          "headline": "🔴 SHORT NDX, NVDA, OpenAI",
+          "body": "Directional: SHORT. Asset: NDX, NVDA, OpenAI. Context: Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "SHORT",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "summary": ""
+    },
+    {
+      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+      "headline": "СРОЧНО: Иран сбил американский вертолет Apache над Ормузским проливом — Трамп заявляет, что США «должны ответить»",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Oil longs are the single highest-conviction trade of the session. Direct US-Iran military engagement over the world's most important oil chokepoint is the definition of a binary bullish oil catalyst. "
+      ],
+      "they_say": "Это самое значительное обострение иранского конфликта на сегодняшний день. Американский вертолет был СБИТ — не в результате аварии или столкновения — и президент Соединенных Штатов публично заявил, что США «должны ответить». Местоположение в Ормузском проливе не случайно — это эпицентр американской блокады Ирана. Это событие меняет рыночную логику: ранее рынки воспринимали иранский конфликт как противостояние Израиля и Ирана, где США выступали в роли гаранта/посредника. Теперь США стали прямым участником.",
+      "reality": "Согласно Трампу, «Апач» был «сбит» — однако независимого подтверждения обстоятельств нет. Ранее NYT сообщала об этом как об «аварии» с эвакуацией экипажа. Если версия о сбитии является предлогом для эскалации, а не подтверждённым враждебным актом, реакция рынка может измениться после прояснения ситуации. Иран может заявить, что это был предупредительный выстрел или случайность. Трамп известен эскалацией риторики, которая не всегда переходит в действия — его фраза «мы должны ответить» дословно совпадает с предыдущими заявлениями.",
+      "thesis": "LONG oil/gold aggressively; SHORT equities on escalation risk premium repricing",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "LONG oil/gold aggressively; SHORT equities on escalation risk premium repricing",
+      "contradiction_score": 65,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Oil longs are the single highest-conviction trade of the session. Direct US-Iran military engagement over the world's most important oil chokepoint is the definition of a binary bullish oil catalyst. Go long WTI/Brent futures, USO, XLE, OIH hard into close. Pair with gold (GLD) for the flight-to-saf",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Oil longs are the single highest-conviction trade of the session. Direct US-Iran military engagement over the world's most important oil chokepoint is the definition of a binary bullish oil…",
+        "pace_multiplier": 2.3,
+        "confidence_pct": 75,
+        "confidence_level": "medium"
+      },
+      "capital_flow_implication": "LONG oil/gold aggressively; SHORT equities on escalation risk premium repricing",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T17:28:41.730363+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [
+          "BRENT",
+          "ETH",
+          "SPX",
+          "VIX",
+          "WTI",
+          "XAU"
+        ],
+        "geographies": [
+          "Iran",
+          "Israel",
+          "USA"
+        ],
+        "actors": [
+          "Trump",
+          "UN",
+          "Xi Jinping"
+        ],
+        "instruments": [
+          "futures",
+          "options"
+        ]
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+          "body": "Structural assessment: The Apache was 'shot down' according to Trump — but no independent confirmation of the circumstances exists. The NYT earlier reported it as a 'crash' with crew rescued. If the shootdown narrative is pre-text for escalation rather than a verified hostile act, the market reaction could reverse on clar. Capital repositioning of $5.0B identified in commodities. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "implication": "Board-level risk: commodities exposure requires long hedge within 72h."
+        },
+        "quant": {
+          "headline": "COMMODITIES flow: $5.0B inflow",
+          "body": "Raw telemetry — commodities $5.0B inflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
+          "metrics": {
+            "flow_velocity": 0.21,
+            "correlation_coeff": 0.65,
+            "z_score": 0.5
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG COMMODITIES $5.0B",
+          "body": "Directional: LONG. Flow: $5.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump De",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+10-15%",
+            "conviction": "MEDIUM"
+          }
+        }
+      },
+      "summary": ""
+    },
+    {
+      "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+      "headline": "КРИТИЧЕСКОЕ ПРОТИВОРЕЧИЕ: WTI упал ниже $90 (-2%), несмотря на войну Израиля и Ирана, пошлины в Ормузе, взрыв в Бейруте — премия за риск рушится",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Asymmetric oil optionality is the play. Own June 12 $95 calls (cost: ~$0.30-0.50) as lottery tickets on the Hezbollah trigger. Core short oil via $SCO if demand narrative dominates. Do NOT pick a dire"
+      ],
+      "they_say": "Вот перевод финансового текста на русский язык с сохранением чисел, символов и имён собственных:\n\n**Геополитическая премия за риск резко снижается.** Рынки закладывают в цены либо: (a) прекращение огня/сделку с Ираном, которая действительно близка (Трамп объявил о «неминуемости» 37 раз, по данным CNN), (b) опасения разрушения спроса из-за стагфляции (ADP +29K, слабые настроения, растущие инфляционные ожидания) перевешивают риск предложения, либо (c) происходит сворачивание «выходной» премии за военный риск. Консенсусное прочтение: рынки считают, что дипломатический выход",
+      "reality": "Вот перевод финансового текста на русский язык (числа, символы и имена сохранены):\n\nНефть падает на 2% на фоне бомбардировок Ирана и превращения Ормуза в оружие — это АНОМАЛИЯ ПЕРВОГО ПОРЯДКА. Если сделка с Ираном сорвётся или «Хезболла» запустит ракету в Израиль, что спровоцирует автоматический ответ Бейрута, нефть мгновенно подскочит на $3-5, застав шортистов врасплох. Альтернативный сценарий: если нефть удержится ниже $90 в ходе американской сессии, это подтвердит, что доминирующим нарративом является спрос/стагфляция — что само по себе медвежий сигнал.",
+      "thesis": "BILATERAL — (A) SHORT oil into further downside if <$88 breaks = demand collapse confirmation. (B) BUY OTM oil calls (strike $95, June 12 expiry) for the asymmetric upside if Lebanon/Hezbollah trigger fires. The risk-reward on oil optionality is extreme right now: downside capped by OPEC+ support ne",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "BILATERAL — (A) SHORT oil into further downside if <$88 breaks = demand collapse confirmation. (B) BUY OTM oil calls (strike $95, June 12 expiry) for the asymmetric upside if Lebanon/Hezbollah trigger fires. The risk-reward on oil optionality is extreme right now: downside capped by OPEC+ support ne",
+      "contradiction_score": 65,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Asymmetric oil optionality is the play. Own June 12 $95 calls (cost: ~$0.30-0.50) as lottery tickets on the Hezbollah trigger. Core short oil via $SCO if demand narrative dominates. Do NOT pick a directional side — the contradiction is too sharp. Own both tails and let the market resolve.",
+      "capital_flow": {
+        "direction": "outflow",
+        "amount_b": 88.0,
+        "asset_class": "commodities",
+        "projected": "Asymmetric oil optionality is the play. Own June 12 $95 calls (cost: ~$0.30-0.50) as lottery tickets on the Hezbollah trigger. Core short oil via $SCO if demand narrative dominates. Do NOT pick a…",
+        "pace_multiplier": 1.9,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$88.0B outflow commodities",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "BILATERAL — (A) SHORT oil into further downside if <$88 breaks = demand collapse confirmation. (B) BUY OTM oil calls (strike $95, June 12 expiry) for the asymmetric upside if Lebanon/Hezbollah trigger fires. The risk-reward on oil optionality is extreme right now: downside capped by OPEC+ support ne",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T13:03:26.471529+00:00",
+      "freshness": "breaking",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ],
+      "summary": ""
+    },
+    {
+      "story_id": "n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1",
+      "headline": "**Перевод финансового текста на русский язык. Числа, символы, имена без изменений:**\n\n**Продажи существующих домов в США значительно превзошли прогнозы: +3,2% м/м против ожидаемых +1,1% (превышение в 3 раза)**",
+      "sector": "crypto",
+      "pillar": "china_ascendancy",
+      "paradigm_pillar": "china_ascendancy",
+      "paradigm_implications": [
+        "USD longs benefit from delayed rate cuts. Energy/inflation hedges (gold, oil) could dip on USD strength — buy the dip for geopolitical premium. Gazzetta di Kyiv: frame as 'US economy too hot for comfo"
+      ],
+      "they_say": "Вот перевод финансового текста на русский язык (числа, символы и имена сохранены):\n\nРынок жилья устойчив. Превышение прогнозов позитивно для нарратива экономического роста. Риск-аппетит для акций. Вероятность рецессии снижается. У ФРС есть пространство для сохранения ставок без обрушения рынка жилья.",
+      "reality": "Вот перевод финансового текста на русский язык (числа, символы и имена сохранены):\n\n**Рост рынка жилья на самом деле вреден для нарратива ФРС о смягчении политики. Более сильный рынок жилья = более устойчивая инфляция на жильё = ставки остаются высокими дольше = встречный ветер для чувствительных к ставкам активов. Рост продаж на вторичном рынке жилья при ограниченном предложении нового жилья означает, что цены продолжат расти, удерживая индекс потребительских цен на жильё (CPI) на повышенном уровне. Для криптовалют (BTC): это укрепляет доллар США в краткосрочной перспективе, так как вероятность снижения ставок**",
+      "thesis": "SHORT BTC into the USD-strength narrative. If housing beat pushes rate-cut expectations further out, BTC faces a USD headwind. BTC at ~$61K is below key moving averages — housing beat adds pressure. LONG USD (via DXY or USD pairs) if the initial reaction hasn't fully played out. SHORT TLT (long bond",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "SHORT BTC into the USD-strength narrative. If housing beat pushes rate-cut expectations further out, BTC faces a USD headwind. BTC at ~$61K is below key moving averages — housing beat adds pressure. LONG USD (via DXY or USD pairs) if the initial reaction hasn't fully played out. SHORT TLT (long bond",
+      "contradiction_score": 63,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "USD longs benefit from delayed rate cuts. Energy/inflation hedges (gold, oil) could dip on USD strength — buy the dip for geopolitical premium. Gazzetta di Kyiv: frame as 'US economy too hot for comfort — Fed pinned, Ukraine aid gets harder budget fight.'",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 2.7,
+        "asset_class": "crypto",
+        "projected": "USD longs benefit from delayed rate cuts. Energy/inflation hedges (gold, oil) could dip on USD strength — buy the dip for geopolitical premium. Gazzetta di Kyiv: frame as 'US economy too hot for…",
+        "pace_multiplier": 2.2,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$2.7B inflow crypto",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "SHORT BTC into the USD-strength narrative. If housing beat pushes rate-cut expectations further out, BTC faces a USD headwind. BTC at ~$61K is below key moving averages — housing beat adds pressure. LONG USD (via DXY or USD pairs) if the initial reaction hasn't fully played out. SHORT TLT (long bond",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T14:33:23.628060+00:00",
+      "freshness": "breaking",
+      "impacted_flows": [
+        "flow_n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1"
+      ],
+      "summary": ""
+    },
+    {
+      "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
+      "headline": "**Перевод на русский язык (профессиональный финансово-аналитический тон):**\n\nИзраильский министр Бен-Гвир призывает кабинет похищать ливанских женщин и детей в рамках психологической войны — сигнал эскалации со стороны ультраправых сил.",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Gold and VIX as structural hedges. This isn't a tradeable event in isolation, but it raises the tail probability of a Lebanon escalation event. Own optionality, not direction."
+      ],
+      "they_say": "Бен-Гвир проверяет окно Овертона — озвучивает тактики уровня зверств, чтобы нормализовать поэтапную эскалацию. Даже если кабинет отвергнет это, сам факт предложения сигнализирует: израильские ультраправые считают захват гражданских заложников легитимным инструментом переговоров. Это имеет немедленные последствия: (1) риск для израильского руководства по линии МУС/военных преступлений резко возрастает, (2) пропагандистская победа «Хезболлы» — «Израиль открыто",
+      "reality": "Here is the Russian translation of the provided financial/political text, keeping numbers, symbols, and names unchanged:\n\nБен-Гвир — всего лишь один министр; это может не отражать консенсус кабинета министров или не быть принято. Автоматический триггер удара по Бейруту (более раннее решение кабинета) является реальным механизмом эскалации, а не данное предложение. Заявления Бен-Гвира часто являются театральным позерством. Однако тот факт, что он сделал это предложение на заседании кабинета, а не в твите, указывает на серьезность. Даже если предложение будет отклонено, оно отравляет атмосферу для",
+      "thesis": "LONG gold ($GLD), LONG VIX, SHORT Israeli shekel ($ILS), LONG WTI oil on escalation risk. The Ben-Gvir signal increases the probability of the Hezbollah rocket trigger firing — because Hezbollah will find it harder to show restraint against a government that openly discusses abducting their civilian",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "LONG gold ($GLD), LONG VIX, SHORT Israeli shekel ($ILS), LONG WTI oil on escalation risk. The Ben-Gvir signal increases the probability of the Hezbollah rocket trigger firing — because Hezbollah will find it harder to show restraint against a government that openly discusses abducting their civilian",
+      "contradiction_score": 60,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Gold and VIX as structural hedges. This isn't a tradeable event in isolation, but it raises the tail probability of a Lebanon escalation event. Own optionality, not direction.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Gold and VIX as structural hedges. This isn't a tradeable event in isolation, but it raises the tail probability of a Lebanon escalation event. Own optionality, not direction.",
+        "pace_multiplier": 1.8,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$5.0B ↑ commodities",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "LONG gold ($GLD), LONG VIX, SHORT Israeli shekel ($ILS), LONG WTI oil on escalation risk. The Ben-Gvir signal increases the probability of the Hezbollah rocket trigger firing — because Hezbollah will find it harder to show restraint against a government that openly discusses abducting their civilian",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T13:03:26.472043+00:00",
+      "freshness": "breaking",
+      "summary": "",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ]
+    },
+    {
+      "story_id": "n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+      "headline": "OPEC+ заседание СЕГОДНЯ (7 июня) — ожидается увеличение добычи на 188 тыс. баррелей в сутки, так как 149 компаний из индекса S&P 500 сигнализируют о негативном влиянии цен на нефть.",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Airlines (DAL, AAL, UAL) benefit from any oil decline. S&P 500 broad market (SPY) benefits if inflation fears ease. Crypto (BTC, ETH) gets a bid if risk-off reverses. Fed gets marginal breathing room "
+      ],
+      "they_say": "Увеличение на 188 тыс. баррелей в сутки является скромным (0,2% мирового предложения) и уже учтено в ценах. Рынок ожидает сдержанной реакции, которая удержит нефть на плаву, но не вызовет обвала. ОПЕК+, как полагают, сохраняет резерв для дальнейшего наращивания, если Ормуз останется заблокированным.",
+      "reality": "ОПЕК+ наращивает добычу, в то время как Ормузский пролив остаётся заблокированным, что создаёт проблему «бумажных баррелей» — дополнительные объёмы поставок физически не могут пройти через пролив. Жалобы 149 компаний — это МАСШТАБНЫЙ сигнал: это не обычные разговоры о доходах, а экономический предупредительный сигнал, который ставит в известность ФРС и Белый дом. Показатель в 188 тыс. может быть нижней, а не верхней границей — если ОПЕК+ почувствует политическую безысходность...",
+      "thesis": "SHORT oil (USO, XLE) into the OPEC+ announcement. Asymmetry favors a sell-the-news setup at these levels. If 188k is confirmed without hawkish language, oil drops 3-5%. If 300k+ surprise, oil crashes 8-10%. Hedge with put spreads on USO. LONG airlines (DAL, AAL, UAL) as the most direct oil-pain bene",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "SHORT oil (USO, XLE) into the OPEC+ announcement. Asymmetry favors a sell-the-news setup at these levels. If 188k is confirmed without hawkish language, oil drops 3-5%. If 300k+ surprise, oil crashes 8-10%. Hedge with put spreads on USO. LONG airlines (DAL, AAL, UAL) as the most direct oil-pain bene",
+      "contradiction_score": 59,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Airlines (DAL, AAL, UAL) benefit from any oil decline. S&P 500 broad market (SPY) benefits if inflation fears ease. Crypto (BTC, ETH) gets a bid if risk-off reverses. Fed gets marginal breathing room on rate policy.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 4.2,
+        "asset_class": "commodities",
+        "projected": "Airlines (DAL, AAL, UAL) benefit from any oil decline. S&P 500 broad market (SPY) benefits if inflation fears ease. Crypto (BTC, ETH) gets a bid if risk-off reverses. Fed gets marginal breathing…",
+        "pace_multiplier": 2.2,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$4.2B inflow commodities",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "SHORT oil (USO, XLE) into the OPEC+ announcement. Asymmetry favors a sell-the-news setup at these levels. If 188k is confirmed without hawkish language, oil drops 3-5%. If 300k+ surprise, oil crashes 8-10%. Hedge with put spreads on USO. LONG airlines (DAL, AAL, UAL) as the most direct oil-pain bene",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T14:21:56.798049+00:00",
+      "freshness": "breaking",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149"
+      ],
+      "summary": ""
+    },
+    {
+      "story_id": "n21_multi_pillar__us_adp_nonfarm_29k_vs_35_7k_prior__labor_market_cracking",
+      "headline": "**Перевод на русский язык (профессиональный финансовый стиль):**\n\n**Число занятых в несельскохозяйственном секторе США по данным ADP составило +29 тыс. против +35,7 тыс. ранее — рынок труда демонстрирует ослабление на фоне роста инфляционных ожиданий третий месяц подряд.**",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Long duration (TLT) as the stagflation trade. Gold as the inflation hedge. Short financials as rate expectations repivot. If this is the start of a weak labor trend, the Fed is trapped — and that mean"
+      ],
+      "they_say": "The labor market is rolling over while inflation stays sticky. Fed Chair Warsh faces a no-win: rate cuts would feed inflation, rate hikes would crash employment. Markets are pricing a Fed hold in June (per RTRS survey at 11:06) but this ADP print starts the clock on cut expectations. Stagflation is the hardest macro environment for risk assets — equities sell off, bonds rally (rates lower), gold holds, commodities bifurcate. This ADP print is the first hard data point confirming the stagflation thesis.",
+      "reality": "ADP is notoriously volatile and often diverges from NFP. The prior month's NFP may tell a different story. But the directional trend (weakening) combined with rising inflation expectations is structurally bearish for risk. If NFP confirms weakness on Friday, the market reprices rate cuts aggressively — which would be USD-negative and gold-positive.",
+      "thesis": "LONG bonds (TLT, ZN), LONG gold (GLD), SHORT financials (rate cut = margin compression), SHORT small caps (labor cost pressure). If NFP confirms ADP weakness Friday = aggressive curve steepening.",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "LONG bonds (TLT, ZN), LONG gold (GLD), SHORT financials (rate cut = margin compression), SHORT small caps (labor cost pressure). If NFP confirms ADP weakness Friday = aggressive curve steepening.",
+      "contradiction_score": 59,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Long duration (TLT) as the stagflation trade. Gold as the inflation hedge. Short financials as rate expectations repivot. If this is the start of a weak labor trend, the Fed is trapped — and that means gold to new highs.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Long duration (TLT) as the stagflation trade. Gold as the inflation hedge. Short financials as rate expectations repivot. If this is the start of a weak labor trend, the Fed is trapped — and that…",
+        "pace_multiplier": 1.8,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$5.0B ↑ commodities",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "LONG bonds (TLT, ZN), LONG gold (GLD), SHORT financials (rate cut = margin compression), SHORT small caps (labor cost pressure). If NFP confirms ADP weakness Friday = aggressive curve steepening.",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T13:03:26.471960+00:00",
+      "freshness": "breaking",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ],
+      "summary": ""
+    },
+    {
+      "story_id": "n21_multi_pillar__kuwait_discussing_hormuz_bypass_via_saudi_uae_pipelines__ei",
+      "headline": "**Профессиональный финансовый перевод:**\n\nКувейт обсуждает возможность обхода Ормузского пролива через трубопроводы Саудовской Аравии и ОАЭ + EIA повышает прогноз по WTI до $88,32 — структурное воздействие блокады усиливается.",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Oil futures long with multi-week horizon. The Kuwait pipeline story is a 'tell' — when a major OPEC producer starts planning alternative infrastructure around a blockade, it means the blockade is expe"
+      ],
+      "they_say": "The Hormuz blockade is proving economically effective — Kuwait, a major OPEC producer (2.7M bpd exporter), is actively seeking alternative export routes through Saudi/UAE pipeline infrastructure. This is the first concrete evidence that the blockade is materially altering oil trade flows for a Gulf state. The EIA raising its WTI forecast by $2.64 confirms official US government recognition of structurally higher oil prices driven by the blockade and broader Middle East risk. Record supertanker orders indicate the shipping market is pricing in a permanently elevated risk premium for Hormuz transit. This is structurally bullish for oil prices (WTI $85-90 range) and tanker rates. The blockade is the Trump administration's primary leverage in Iran negotiations — its demonstrated effectiveness strengthens the 'no deal without blockade relief' position.",
+      "reality": "White House claims 'progress' on Iran deal (@markettwits 13:55 UTC) — if a deal materializes, blockade relief would remove the structural oil bid. Kuwait pipeline talks may be contingency planning (due diligence), not an imminent operational shift. Supertanker orders reflect 3+ year delivery timelines — they signal long-term expectations, not current disruption. The EIA forecast, while bullish, is backward-looking on risk assumptions and may not fully capture the IDF Iran readiness reversal from today (which came after the EIA publication cycle). The US Apache crash near Hormuz could be a pretext for either escalation (blame Iran) or de-escalation (withdraw assets from risk). The blockade is a US policy tool — Trump could lift it at any time with a phone call.",
+      "thesis": "LONG oil (structural thesis), LONG tanker equities, PAIR short airlines/consumer discretionary for demand-destruction hedge",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "LONG oil (structural thesis), LONG tanker equities, PAIR short airlines/consumer discretionary for demand-destruction hedge",
+      "contradiction_score": 58,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Oil futures long with multi-week horizon. The Kuwait pipeline story is a 'tell' — when a major OPEC producer starts planning alternative infrastructure around a blockade, it means the blockade is expected to persist. This is a structural oil bid the market hasn't fully priced because most participan",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Oil futures long with multi-week horizon. The Kuwait pipeline story is a 'tell' — when a major OPEC producer starts planning alternative infrastructure around a blockade, it means the blockade is…",
+        "pace_multiplier": 1.8,
+        "confidence_pct": 75,
+        "confidence_level": "medium"
+      },
+      "capital_flow_implication": "LONG oil (structural thesis), LONG tanker equities, PAIR short airlines/consumer discretionary for demand-destruction hedge",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T16:11:16.089438+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [
+          "WTI"
+        ],
+        "geographies": [
+          "Kuwait",
+          "Saudi Arabia",
+          "South Korea",
+          "UAE"
+        ],
+        "actors": [
+          "OPEC",
+          "UN"
+        ],
+        "instruments": [
+          "futures"
+        ]
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Kuwait Discussing Hormuz Bypass via Saudi/UAE Pipelines + EIA Raises WTI Forecast to $88.32 — Blockade Biting Structural",
+          "body": "Structural assessment: White House claims 'progress' on Iran deal (@markettwits 13:55 UTC) — if a deal materializes, blockade relief would remove the structural oil bid. Kuwait pipeline talks may be contingency planning (due diligence), not an imminent operational shift. Supertanker orders reflect 3+ year delivery timelin. Capital repositioning of $5.0B identified in commodities. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "implication": "Board-level risk: commodities exposure requires long hedge within 72h."
+        },
+        "quant": {
+          "headline": "COMMODITIES flow: $5.0B inflow",
+          "body": "Raw telemetry — commodities $5.0B inflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
+          "metrics": {
+            "flow_velocity": 0.21,
+            "correlation_coeff": 0.65,
+            "z_score": 0.5
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG COMMODITIES $5.0B",
+          "body": "Directional: LONG. Flow: $5.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: Kuwait Discussing Hormuz Bypass via Saudi/UAE Pipelines + EIA Raises WTI Forecas",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+10-15%",
+            "conviction": "MEDIUM"
+          }
+        }
+      },
+      "summary": ""
+    },
+    {
+      "story_id": "n21_multi_pillar__idf_declares_readiness_to_immediately_resume_iran_operations",
+      "headline": "IDF заявляет о готовности немедленно возобновить операции против Ирана + Тир под полной эвакуацией — активная эскалация на двух фронтах",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Position oil and gold longs into US close. The weekend de-escalation narrative is dead — the IDF Iran readiness statement reverses it. If Tyre evacuation means a ground operation is imminent, oil gets"
+      ],
+      "they_say": "Израиль в настоящее время ведет подтвержденную эскалацию на два фронта — наземная война в Ливане усиливается (эвакуация Тира = значительное оперативное обострение), при этом одновременно вновь заявляется опция удара по Ирану. Заявление ЦАХАЛ о готовности к действиям против Ирана представляет собой прямой разворот от вчерашней позиции деэскалации. Это формирует последовательную картину: «прекращение огня» было тактическим, а не стратегическим. Рынки уже закладывали сценарий с Ираном.",
+      "reality": "Белый дом одновременно заявляет о «прогрессе» по сделке с Ираном (@markettwits 13:55 UTC в предыдущем сборе данных) — дипломатический канал остаётся активно открытым. Предупреждение Трампа в адрес Нетаньяху («вы останетесь сами по себе») указывает на то, что США активно сдерживают Израиль, что исторически удавалось (2019, 2021). Заявление о готовности ЦАХАЛ может быть направлено на укрепление переговорных позиций, а не на реальные удары. Нетаньяху известен...",
+      "thesis": "LONG oil, LONG gold, LONG defense, SHORT risk assets exposed to Middle East",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "LONG oil, LONG gold, LONG defense, SHORT risk assets exposed to Middle East",
+      "contradiction_score": 57,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Position oil and gold longs into US close. The weekend de-escalation narrative is dead — the IDF Iran readiness statement reverses it. If Tyre evacuation means a ground operation is imminent, oil gets a fear bid into Wednesday. LMT/GD have been consolidating — multi-front escalation is their catalys",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Position oil and gold longs into US close. The weekend de-escalation narrative is dead — the IDF Iran readiness statement reverses it. If Tyre evacuation means a ground operation is imminent, oil…",
+        "pace_multiplier": 1.8,
+        "confidence_pct": 75,
+        "confidence_level": "medium"
+      },
+      "capital_flow_implication": "LONG oil, LONG gold, LONG defense, SHORT risk assets exposed to Middle East",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T16:11:16.088918+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [
+          "ETH",
+          "SOL",
+          "WTI",
+          "XAU"
+        ],
+        "geographies": [
+          "Iran",
+          "Israel",
+          "Lebanon"
+        ],
+        "actors": [
+          "Hezbollah",
+          "IDF",
+          "Netanyahu",
+          "Trump",
+          "UN"
+        ],
+        "instruments": [
+          "options"
+        ]
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "IDF Declares Readiness to Immediately Resume Iran Operations + Tyre Under Full Evacuation — Two-Front Escalation Active",
+          "body": "Structural assessment: White House simultaneously claims 'progress' on Iran deal (@markettwits 13:55 UTC in prior scrape) — diplomatic channel still actively open. Trump's warning to Netanyahu ('you'll be on your own') suggests the US is actively restraining Israel, which has historically succeeded (2019, 2021). The IDF r. Capital repositioning of $5.0B identified in commodities. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "implication": "Board-level risk: commodities exposure requires long hedge within 72h."
+        },
+        "quant": {
+          "headline": "COMMODITIES flow: $5.0B inflow",
+          "body": "Raw telemetry — commodities $5.0B inflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
+          "metrics": {
+            "flow_velocity": 0.21,
+            "correlation_coeff": 0.65,
+            "z_score": 0.5
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG COMMODITIES $5.0B",
+          "body": "Directional: LONG. Flow: $5.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: IDF Declares Readiness to Immediately Resume Iran Operations + Tyre Under Full E",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+10-15%",
+            "conviction": "MEDIUM"
+          }
+        }
+      }
+    },
+    {
+      "story_id": "n21_multi_pillar__ukraine_fp-5_flamingo_missiles_strike_cheboksary__second_st",
+      "headline": "УКРАИНА: УДАР РАКЕТАМИ FP-5 FLAMINGO ПО ЧЕБОКСАРАМ — ВТОРОЙ УДАР ПО ВНИИР-ПРОГРЕСС, ПОРАЖЕНИЕ САМАРСКОГО НПЗ, РАКЕТЫ В ПОЛЁТЕ НА ТЮМЕНЬ, УБИТ ПОЛКОВНИК ГРАУ",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Gazzetta di Kyiv FRONT PAGE: 'KYIV STRIKES 600KM INSIDE RUSSIA — FP-5 Hits Cheboksary Again, Samara Refinery Burning, Tyumen Next. GRAU Artillery Chief Dead in Moscow.' Bet&Benefit: Natgas long on Rus"
+      ],
+      "they_say": "Украинско-российская война перешла в фазу изнурительного противостояния. Внимание Запада поглощено конфликтом между США и Ираном. Глубокие удары по территории России мейнстрим называет «символическими». Официальные российские СМИ преуменьшают их значение. Доминирует нарратив о «военной усталости».",
+      "reality": "Чебоксары — НЕ символическая цель, это промышленный центр в глубине России, в 600 км от линии фронта. Двойной удар по ВНИИР-Прогресс за несколько дней демонстрирует системную деградацию российских возможностей высокоточного навигационного обеспечения ударов — напрямую влияет на эффективность российских планирующих бомб и крылатых ракет. Удар по Самарскому НПЗ нацелен на внутреннее топливоснабжение России — потенциальный бензиновый кризис. Удары по Тюмени нацелены на добычу нефти.",
+      "thesis": "LONG natgas (TTF) — Russian oil/gas infrastructure under systematic attack risk premium. LONG European defense (Rheinmetall, KNDS, Saab, Leonardo). SHORT RSX/Russian equities. LONG Ukrainian war bonds on demonstrated operational momentum. SHORT ruble. The Iran distraction is real — Putin cannot coun",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "LONG natgas (TTF) — Russian oil/gas infrastructure under systematic attack risk premium. LONG European defense (Rheinmetall, KNDS, Saab, Leonardo). SHORT RSX/Russian equities. LONG Ukrainian war bonds on demonstrated operational momentum. SHORT ruble. The Iran distraction is real — Putin cannot coun",
+      "contradiction_score": 55,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Gazzetta di Kyiv FRONT PAGE: 'KYIV STRIKES 600KM INSIDE RUSSIA — FP-5 Hits Cheboksary Again, Samara Refinery Burning, Tyumen Next. GRAU Artillery Chief Dead in Moscow.' Bet&Benefit: Natgas long on Russian infrastructure disruption. Rheinmetall/European defense. The strategic story: Ukraine exploits ",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Gazzetta di Kyiv FRONT PAGE: 'KYIV STRIKES 600KM INSIDE RUSSIA — FP-5 Hits Cheboksary Again, Samara Refinery Burning, Tyumen Next. GRAU Artillery Chief Dead in Moscow.' Bet&Benefit: Natgas long on…",
+        "pace_multiplier": 1.7,
+        "confidence_pct": 75,
+        "confidence_level": "medium"
+      },
+      "capital_flow_implication": "LONG natgas (TTF) — Russian oil/gas infrastructure under systematic attack risk premium. LONG European defense (Rheinmetall, KNDS, Saab, Leonardo). SHORT RSX/Russian equities. LONG Ukrainian war bonds on demonstrated operational momentum. SHORT ruble. The Iran distraction is real — Putin cannot coun",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-10T07:51:32.209906+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [
+          "EUR",
+          "NG",
+          "WTI"
+        ],
+        "geographies": [
+          "Brazil",
+          "EU",
+          "Iran",
+          "Russia",
+          "UK",
+          "Ukraine"
+        ],
+        "actors": [
+          "Putin",
+          "SEC",
+          "UN",
+          "Xi Jinping"
+        ],
+        "instruments": [
+          "bonds"
+        ]
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "UKRAINE FP-5 FLAMINGO MISSILES STRIKE CHEBOKSARY — SECOND Strike on VNIIR-Progress, Samara Refinery Hit, Tyumen Missiles",
+          "body": "Structural assessment: Cheboksary is NOT symbolic — it's industrial deep Russia 600km from front. Striking VNIIR-Progress TWICE in days demonstrates systematic degradation of Russian precision-strike navigation capability — directly impacts effectiveness of Russian glide bombs and cruise missiles. Samara refinery strike t. Capital repositioning of $5.0B identified in commodities. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "implication": "Board-level risk: commodities exposure requires long hedge within 72h."
+        },
+        "quant": {
+          "headline": "COMMODITIES flow: $5.0B inflow",
+          "body": "Raw telemetry — commodities $5.0B inflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
+          "metrics": {
+            "flow_velocity": 0.21,
+            "correlation_coeff": 0.65,
+            "z_score": 0.5
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG COMMODITIES $5.0B",
+          "body": "Directional: LONG. Flow: $5.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: UKRAINE FP-5 FLAMINGO MISSILES STRIKE CHEBOKSARY — SECOND Strike on VNIIR-Progre",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+10-15%",
+            "conviction": "MEDIUM"
+          }
+        }
+      }
+    },
+    {
+      "story_id": "n21_multi_pillar__eia_drops_bombshell_hormuz_timeline__blockade_persists_thro",
+      "headline": "EIA публикует сенсационный прогноз по срокам блокировки Ормуза — ограничения сохранятся до III квартала 2026 года, полное восстановление ожидается лишь в 2027 году.",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "The EIA Apache-confirmed oil bid is the highest-conviction trade. Do not overthink the demand downgrade — supply disruption dominates in the short term. Pair oil longs with gold for the geopolitical f"
+      ],
+      "they_say": "Перевод (профессиональный тон финансового аналитика):\n\nВременной сценарий EIA по Ормузу уже был самым важным нефтяным показателем сессии. Теперь он получил дополнительный импульс в результате сбития Apache. EIA исходило из дипломатического завершения блокады — это предположение только что было разрушено прямым военным инцидентом между США и Ираном. Прогноз EIA по WTI на уровне $88.32 теперь является НИЖНЕЙ ГРАНИЦЕЙ, а не потолком. Понижение спроса перекрывается эскалацией перебоев в поставках.",
+      "reality": "Если США ответят подавляющей силой, и блокада завершится быстрее (военное решение вместо дипломатического), нефть может резко взлететь, а затем обвалиться по мере открытия пролива. Разрушение спроса из-за устойчивой цены на нефть выше $90 — реально: EIA уже снизило свой прогноз спроса. Рост цен на нефть = снижение потребительских расходов = риск рецессии. ФРС может быть вынуждена снижать ставки на фоне нефтяного шока, что носит дезинфляционный характер.",
+      "thesis": "LONG oil — EIA timeline + Apache shootdown = structural supply disruption bid reinforced",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "LONG oil — EIA timeline + Apache shootdown = structural supply disruption bid reinforced",
+      "contradiction_score": 55,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "The EIA Apache-confirmed oil bid is the highest-conviction trade. Do not overthink the demand downgrade — supply disruption dominates in the short term. Pair oil longs with gold for the geopolitical flight-to-safety bid that is just beginning to price.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "The EIA Apache-confirmed oil bid is the highest-conviction trade. Do not overthink the demand downgrade — supply disruption dominates in the short term. Pair oil longs with gold for the geopolitical…",
+        "pace_multiplier": 1.7,
+        "confidence_pct": 75,
+        "confidence_level": "medium"
+      },
+      "capital_flow_implication": "LONG oil — EIA timeline + Apache shootdown = structural supply disruption bid reinforced",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T17:28:41.731287+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [
+          "SOL",
+          "WTI",
+          "XAU"
+        ],
+        "geographies": [
+          "Iran"
+        ],
+        "actors": [
+          "Ethena",
+          "UN"
+        ],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "EIA Drops Bombshell Hormuz Timeline — Blockade Persists Through Q3 2026, Full Recovery Only in 2027",
+          "body": "Structural assessment: If the US responds with overwhelming force and the blockade ends faster (military resolution instead of diplomatic), oil could spike then collapse as the Strait reopens. The demand destruction from sustained $90+ oil is real — the EIA already cut its demand forecast. Higher oil = lower consumer spen. Capital repositioning of $5.0B identified in commodities. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "implication": "Board-level risk: commodities exposure requires long hedge within 72h."
+        },
+        "quant": {
+          "headline": "COMMODITIES flow: $5.0B inflow",
+          "body": "Raw telemetry — commodities $5.0B inflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
+          "metrics": {
+            "flow_velocity": 0.21,
+            "correlation_coeff": 0.65,
+            "z_score": 0.5
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG COMMODITIES $5.0B",
+          "body": "Directional: LONG. Flow: $5.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: EIA Drops Bombshell Hormuz Timeline — Blockade Persists Through Q3 2026, Full Re",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+10-15%",
+            "conviction": "MEDIUM"
+          }
+        }
+      }
+    },
+    {
+      "story_id": "n21_multi_pillar__s_p_nasdaq_break_below_friday_s_low__live_breakdown_during",
+      "headline": "S&P/Nasdaq пробили минимум пятницы — прямой разбор во время торгов в США",
+      "sector": "equities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Short SPY/QQQ for remainder of US session. If Friday low break holds through 21:00 UTC close, the gap-down open tomorrow is the momentum follow-through trade. VIX calls as hedge — if VIX breaches 20, "
+      ],
+      "they_say": "Продажи обусловлены накопленной премией за геополитический риск (многофронтовая эскалация Ирана, наземная война Израиля и Ливана, сохранение блокады Ормуза, глубокие удары России и Украины), которая наконец достигла критической точки на уязвимом техническом уровне. Показатель продаж на вторичном рынке жилья, превысивший прогнозы (3,2% против ожидаемых 1,1%), отодвинул ожидания снижения ставок, добавив макроэкономическое давление. Консенсус называет это «упорядоченной коррекцией», но",
+      "reality": "Отсутствие единого катализатора указывает на возможные каскадные срабатывания алгоритмических стоп-лоссов, а не на реальную переоценку активов. До этого прорыва индекс S&P находился всего на ~2% ниже исторических максимумов. IPO SpaceX значительно переподписано (markettwits 15:19), что свидетельствует о сохранении аппетита к риску в высококонвикционных технологических бумагах. Ожидания повышения ставки Банком Японии (markettwits 14:49) могут оказывать влияние через разворот сделок кэрри-трейд с иеной. Если это i",
+      "thesis": "SHORT indices on Friday low breakdown, SCALP long if S&P reclaims Friday low within 30-60 min",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "SHORT indices on Friday low breakdown, SCALP long if S&P reclaims Friday low within 30-60 min",
+      "contradiction_score": 55,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Short SPY/QQQ for remainder of US session. If Friday low break holds through 21:00 UTC close, the gap-down open tomorrow is the momentum follow-through trade. VIX calls as hedge — if VIX breaches 20, panic options buying accelerates. Pair with oil longs for the stagflation hedge.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "equities",
+        "projected": "Short SPY/QQQ for remainder of US session. If Friday low break holds through 21:00 UTC close, the gap-down open tomorrow is the momentum follow-through trade. VIX calls as hedge — if VIX breaches…",
+        "pace_multiplier": 1.5,
+        "confidence_pct": 75,
+        "confidence_level": "medium"
+      },
+      "capital_flow_implication": "SHORT indices on Friday low breakdown, SCALP long if S&P reclaims Friday low within 30-60 min",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T16:11:16.085777+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [
+          "NDX",
+          "SPX",
+          "VIX",
+          "WTI"
+        ],
+        "geographies": [],
+        "actors": [
+          "UN"
+        ],
+        "instruments": [
+          "options"
+        ]
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "S&P/Nasdaq Break Below Friday's Low — LIVE Breakdown During US Trading",
+          "body": "Structural assessment: No single catalyst means this could be algorithmic stop-loss cascades rather than genuine repricing. S&P was only ~2% off all-time highs before this break. SpaceX IPO is massively oversubscribed (markettwits 15:19), implying risk appetite in high-conviction tech names hasn't collapsed. Japan BOJ rat. Capital repositioning of $5.0B identified in equities. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "implication": "Board-level risk: equities exposure requires long hedge within 72h."
+        },
+        "quant": {
+          "headline": "EQUITIES flow: $5.0B inflow",
+          "body": "Raw telemetry — equities $5.0B inflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
+          "metrics": {
+            "flow_velocity": 0.21,
+            "correlation_coeff": 0.65,
+            "z_score": 0.5
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG EQUITIES $5.0B",
+          "body": "Directional: LONG. Flow: $5.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: S&P/Nasdaq Break Below Friday's Low — LIVE Breakdown During US Trading",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+10-15%",
+            "conviction": "MEDIUM"
+          }
+        }
+      }
+    },
+    {
+      "story_id": "n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
+      "headline": "Ethena (ENA) заключает партнерство с Janus Henderson (AUM более $300 млрд) по токенизированным CLO — прорыв в институциональном DeFi",
+      "sector": "crypto",
+      "pillar": "blockchain_agentic",
+      "paradigm_pillar": "blockchain_agentic",
+      "paradigm_implications": [
+        "ENA token directly benefits from TVL growth narrative. sUSDe (Ethena's yield-bearing stablecoin) becomes more attractive with institutional credit products available. The entire RWA (Real World Assets"
+      ],
+      "they_say": "Еще одно партнерство криптовалютного и институционального секторов. Ethena представляет собой развивающийся протокол DeFi, однако токенизация CLO остается нишевой. Рынки воспримут это как незначительный эксперимент — Janus Henderson тестирует небольшое распределение. Держатели ENA скептически оценивают кредитный риск CLO в условиях потенциальной рецессии.",
+      "reality": "Janus Henderson, управляющий активами на сумму более $300 млрд, не является партнером для «мелкого эксперимента» — это один из 50 крупнейших глобальных управляющих активами. Основная концепция Ethena заключается в предоставлении институциональной доходной инфраструктуры в ончейне, и подтверждение этого со стороны Janus Henderson через токенизацию CLO является значимым сигналом. CLO представляют собой именно тот класс высокодоходных и низковолатильных активов, который необходим для масштабирования DeFi-протоколов доходности. Выбор времени также заслуживает внимания.",
+      "thesis": "LONG ENA (Ethena token). This partnership is THE missing piece for institutional DeFi adoption — a top asset manager distributing tokenized credit through Ethena's rails. ENA trades 24/7 on crypto exchanges. Target: re-test recent highs. SHORT traditional CLO ETFs (if available) as tokenized competi",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "LONG ENA (Ethena token). This partnership is THE missing piece for institutional DeFi adoption — a top asset manager distributing tokenized credit through Ethena's rails. ENA trades 24/7 on crypto exchanges. Target: re-test recent highs. SHORT traditional CLO ETFs (if available) as tokenized competi",
+      "contradiction_score": 55,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "ENA token directly benefits from TVL growth narrative. sUSDe (Ethena's yield-bearing stablecoin) becomes more attractive with institutional credit products available. The entire RWA (Real World Assets) tokenization thesis gets validated — other RWA tokens (ONDO, MKR, CFG) could see sympathy bids. Ga",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 300.0,
+        "asset_class": "crypto",
+        "projected": "ENA token directly benefits from TVL growth narrative. sUSDe (Ethena's yield-bearing stablecoin) becomes more attractive with institutional credit products available. The entire RWA (Real World…",
+        "pace_multiplier": 2.0,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$300.0B inflow crypto",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "LONG ENA (Ethena token). This partnership is THE missing piece for institutional DeFi adoption — a top asset manager distributing tokenized credit through Ethena's rails. ENA trades 24/7 on crypto exchanges. Target: re-test recent highs. SHORT traditional CLO ETFs (if available) as tokenized competi",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T14:33:23.628890+00:00",
+      "freshness": "breaking",
+      "impacted_flows": [
+        "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for"
+      ]
+    },
+    {
+      "story_id": "n21_multi_pillar__iran_begins_charging_ships_1_5-2m_per_transit_through_strai",
+      "headline": "ИРАН НАЧИНАЕТ ВЗИМАТЬ С СУДОВ $1,5–2 МЛН ЗА КАЖДЫЙ ТРАНЗИТ ЧЕРЕЗ ОРМУЗСКИЙ ПРОЛИВ — ПРЕВРАЩАЯ ГЕОПОЛИТИЧЕСКИЙ РИСК В ИСТОЧНИК ДОХОДА",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Oil producers: structural revenue uplift from elevated risk premium. US shale (Permian, Bakken) becomes more competitive as Hormuz transit becomes costly. Tanker owners: rate re-pricing as war risk pr"
+      ],
+      "they_say": "Рынок по-прежнему в значительной степени оценивает ситуацию вокруг Ирана и Ормузского пролива как «сдерживаемые стычки» — несколько сбитых дронов, некоторые санкции. Предыдущий анализ (7 июня, 09:50) отмечал эту самоуспокоенность. С тех пор Иран перешел от военной демонстрации силы к прямому экономическому изъятию. Рынок еще не заложил в цены сбор в размере $1,5–2 млн за танкер с потока нефти объемом ~17 млн баррелей в сутки.",
+      "reality": "Это не стычка. Иран в одностороннем порядке ввел налог на глобальный транзит нефти через международный водный путь. Функционально это эквивалентно блокаде — с той лишь разницей, что Иран монетизирует ее, а не останавливает. Если 50 танкеров в сутки проходят транзитом по $1,5–2 млн каждый, Иран извлекает $75–100 млн в день. Рынок НИКОГДА не сталкивался с таким ранее. Если судоходные линии откажутся платить и перенаправят маршруты (вокруг Африки), стоимость...",
+      "thesis": "LONG crude oil (CL, COIL) aggressively — this adds a $3-8/bbl structural risk premium overnight. LONG tanker/shipping equities (STNG, FRO, TNK) — rates will spike as Hormuz risk premium loads. LONG USO, XLE, XOM, CVX, OXY. LONG gold (GLD, IAU) as geopolitical hedge. LONG crypto exposure via COIN or ",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "LONG crude oil (CL, COIL) aggressively — this adds a $3-8/bbl structural risk premium overnight. LONG tanker/shipping equities (STNG, FRO, TNK) — rates will spike as Hormuz risk premium loads. LONG USO, XLE, XOM, CVX, OXY. LONG gold (GLD, IAU) as geopolitical hedge. LONG crypto exposure via COIN or ",
+      "contradiction_score": 55,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Oil producers: structural revenue uplift from elevated risk premium. US shale (Permian, Bakken) becomes more competitive as Hormuz transit becomes costly. Tanker owners: rate re-pricing as war risk premium loads into shipping contracts. Gold: safe haven flows. Crypto: Iran accepting Tether for Hormu",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Oil producers: structural revenue uplift from elevated risk premium. US shale (Permian, Bakken) becomes more competitive as Hormuz transit becomes costly. Tanker owners: rate re-pricing as war risk…",
+        "pace_multiplier": 2.1,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$5.0B ↑ commodities",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "LONG crude oil (CL, COIL) aggressively — this adds a $3-8/bbl structural risk premium overnight. LONG tanker/shipping equities (STNG, FRO, TNK) — rates will spike as Hormuz risk premium loads. LONG USO, XLE, XOM, CVX, OXY. LONG gold (GLD, IAU) as geopolitical hedge. LONG crypto exposure via COIN or ",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-07T13:25:44.305960+00:00",
+      "freshness": "developing",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ]
+    },
+    {
+      "story_id": "n21_multi_pillar__ukraine_assassinates_russian_colonel_missile_supply_chief",
+      "headline": "Украина ликвидирует российского полковника (начальника снабжения ракетами) в Москве — Зеленский обещает массированную волну дронов и ракет",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "This is primarily a Gazzetta content play — compelling narrative, visual (car bomb in Moscow suburb), connects to Zelensky announcement. For Bet&Benefit: if this pattern continues (weekly Moscow assas"
+      ],
+      "they_say": "Консенсус рассматривает данные события как разовые «террористические акты» (в российской трактовке). Рынки воспринимают украинский конфликт как замороженный/затяжной, без значимых для рынка изменений. Покушение оценивается как несущественное для боеспособности России. Обещание Зеленского нарастить удары дронами считается декларативным.",
+      "reality": "Убийство начальника снабжения ракетно-артиллерийскими боеприпасами — это фактически высокоприоритетная логистическая цель; данные цели не являются случайными. Местоположение (200 метров от места убийства генерала в прошлом году) указывает на систематический характер нацеливания на российских офицеров военной логистики в Москве. Выбор времени, совпадающий с заседанием СНГ по борьбе с терроризмом, максимально усиливает политическое унижение. Рост числа беспилотных атак со стороны Зеленского + свежие",
+      "thesis": "SHORT RSX (Russia ETF), LONG defense (European: $EADF, $Rheinmetall if tradeable), LONG uranium/nuclear safety",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "SHORT RSX (Russia ETF), LONG defense (European: $EADF, $Rheinmetall if tradeable), LONG uranium/nuclear safety",
+      "contradiction_score": 54,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "This is primarily a Gazzetta content play — compelling narrative, visual (car bomb in Moscow suburb), connects to Zelensky announcement. For Bet&Benefit: if this pattern continues (weekly Moscow assassinations of military logistics officers), Russian war sustainability comes into question — that's a",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "This is primarily a Gazzetta content play — compelling narrative, visual (car bomb in Moscow suburb), connects to Zelensky announcement. For Bet&Benefit: if this pattern continues (weekly Moscow…",
+        "pace_multiplier": 2.1,
+        "confidence_pct": 75,
+        "confidence_level": "medium"
+      },
+      "capital_flow_implication": "SHORT RSX (Russia ETF), LONG defense (European: $EADF, $Rheinmetall if tradeable), LONG uranium/nuclear safety",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T15:25:35.438908+00:00",
+      "freshness": "breaking",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ],
+      "summary": ""
+    },
+    {
+      "story_id": "n21_multi_pillar__israel_cabinet_any_lebanon_rocket__automatic_beirut_strike",
+      "headline": "Израильский кабинет: Любая ракета из Ливана = автоматический удар по Бейруту без утверждения — переключатель эскалации удалён",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Structural long oil/gold. The 'automatic trigger' is a volatility cliff — traders should own optionality (VIX calls, OTM oil calls) for tail risk. If no trigger today, premium decays; but if it fires,"
+      ],
+      "they_say": "Израиль снял человеческий/политический тормоз на эскалацию с Ливаном. Ранее каждый удар по Бейруту требовал одобрения на уровне кабинета министров. Теперь любая ракета «Хезболлы» запускает автоматическое возмездие — что резко повышает вероятность более масштабной войны между Израилем, «Хезболлой» и Ираном. Предупреждение Трампа указывает на дистанцирование США от израильских операций. Крушение «Апача» в Ормузском проливе добавляет точку трения — американские военные пре",
+      "reality": "«Хезболла» проявила сдержанность — по состоянию на момент заявления кабинета министров не было зафиксировано пусков в сторону Израиля. Асимметричное сдерживание: «Хезболла» понимает, что любой запуск ракеты спровоцирует катастрофический ответ. Однако неконтролируемые игроки / более мелкие группировки могут открыть огонь и запустить этот механизм. Предупреждение Трампа может сдерживать Нетаньяху, а не подстрекать его.",
+      "thesis": "LONG WTI crude ($CL), LONG gold ($GLD), LONG defense ($LMT, $GD), LONG VIX futures. Conditional LONG on any Lebanon launch confirmation.",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "LONG WTI crude ($CL), LONG gold ($GLD), LONG defense ($LMT, $GD), LONG VIX futures. Conditional LONG on any Lebanon launch confirmation.",
+      "contradiction_score": 54,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Structural long oil/gold. The 'automatic trigger' is a volatility cliff — traders should own optionality (VIX calls, OTM oil calls) for tail risk. If no trigger today, premium decays; but if it fires, payoff is multi-standard-deviation.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Structural long oil/gold. The 'automatic trigger' is a volatility cliff — traders should own optionality (VIX calls, OTM oil calls) for tail risk. If no trigger today, premium decays; but if it…",
+        "pace_multiplier": 1.7,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$5.0B ↑ commodities",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "LONG WTI crude ($CL), LONG gold ($GLD), LONG defense ($LMT, $GD), LONG VIX futures. Conditional LONG on any Lebanon launch confirmation.",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T12:39:30.660314+00:00",
+      "freshness": "breaking",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ],
+      "summary": ""
+    },
+    {
+      "story_id": "n21_multi_pillar__idf_declares_readiness_to_immediately_resume_operations_agai",
+      "headline": "Армия обороны Израиля заявляет о готовности немедленно возобновить операции против Ирана — Кувейт ищет обходной путь для трубопровода в Ормузском проливе",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "BUY WTI futures or USO calls with today's expiry or tomorrow. Kuwait pipeline deal confirmation = oil stays bid above $80 on structural premium. IDF readiness declaration alone may not move the needle"
+      ],
+      "they_say": "Иранская сделка всё чаще воспринимается как дипломатическая миража. Рынки закладывают хрупкий статус-кво — без новых ударов, блокада продолжается, переговоры буксуют. Заявление ЦАХАЛ о готовности трактуется как демонстрация позиции, а не как неизбежные действия. Нефть учитывает блокаду, но НЕ закладывает второй раунд прямых столкновений между Израилем и Ираном.",
+      "reality": "Белый дом продолжает заявлять о «прогрессе» — существует активный дипломатический трек, и Трамп неоднократно публично сдерживал Нетаньяху. Обсуждения обходного маршрута трубопровода Кувейта указывают на то, что государства Персидского залива готовятся к ДЛИТЕЛЬНОЙ блокаде, а не к немедленной войне. Крушение американского вертолета Apache у Ормуза может быть связано с технической неисправностью, а не с враждебными действиями. Рынок, вероятно, верно интерпретирует это как «театр эскалации», а не реальную эскалацию.",
+      "thesis": "LONG oil (WTI/CL), LONG tanker/shipping equities, LONG defense",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "LONG oil (WTI/CL), LONG tanker/shipping equities, LONG defense",
+      "contradiction_score": 53,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "BUY WTI futures or USO calls with today's expiry or tomorrow. Kuwait pipeline deal confirmation = oil stays bid above $80 on structural premium. IDF readiness declaration alone may not move the needle but any Israeli action in the next 2 hours = immediate spike. The asymmetric payoff is strongly in ",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "BUY WTI futures or USO calls with today's expiry or tomorrow. Kuwait pipeline deal confirmation = oil stays bid above $80 on structural premium. IDF readiness declaration alone may not move the…",
+        "pace_multiplier": 1.7,
+        "confidence_pct": 75,
+        "confidence_level": "medium"
+      },
+      "capital_flow_implication": "LONG oil (WTI/CL), LONG tanker/shipping equities, LONG defense",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T15:25:35.438303+00:00",
+      "freshness": "breaking",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ],
+      "summary": ""
+    },
+    {
+      "story_id": "n21_blockchain_agentic__blackrock_transferring_btc_to_exchanges_for_client_sales__o",
+      "headline": "BlackRock переводит BTC на биржи для продаж клиентам — сигнал ончейн-распределения",
+      "sector": "crypto",
+      "pillar": "blockchain_agentic",
+      "paradigm_pillar": "blockchain_agentic",
+      "paradigm_implications": [
+        "Short-term BTC bearish. Use EU sanctions crypto ban narrative as catalyst for BTC dip-buying if $58K area holds. Institutions sell into strength, retail panics, then accumulation."
+      ],
+      "they_say": "Институциональное давление продавцов — маршрутизация BTC на биржи со стороны BlackRock означает, что ETF или внебиржевые площадки исполняют ордера на продажу для клиентов. Это реальное предложение, поступающее в книги заявок, а не спекулятивная гипотеза. BTC находится вблизи недавних диапазонов, при этом распределение происходит под поверхностью. Рынок либо поглощает, либо разворачивается — всё зависит от глубины спроса.",
+      "reality": "Возможна внутренняя перебалансировка кошелька, а не продажа со стороны клиентов. Переводы BlackRock не всегда означают неминуемые рыночные продажи — часть из них направляется на реорганизацию кастодиальных счетов. Однако анализ предыдущих случаев показывает: когда BlackRock отправляет средства на биржи, цена обычно испытывает краткосрочное давление в течение нескольких часов.",
+      "thesis": "SHORT BTC short-term (1-4h), LONG puts on BTC ($48K-$50K strikes). Hedge with SHORT MSTR.",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "SHORT BTC short-term (1-4h), LONG puts on BTC ($48K-$50K strikes). Hedge with SHORT MSTR.",
+      "contradiction_score": 53,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Short-term BTC bearish. Use EU sanctions crypto ban narrative as catalyst for BTC dip-buying if $58K area holds. Institutions sell into strength, retail panics, then accumulation.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "crypto",
+        "projected": "Short-term BTC bearish. Use EU sanctions crypto ban narrative as catalyst for BTC dip-buying if $58K area holds. Institutions sell into strength, retail panics, then accumulation.",
+        "pace_multiplier": 2.0,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$5.0B ↑ crypto",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "SHORT BTC short-term (1-4h), LONG puts on BTC ($48K-$50K strikes). Hedge with SHORT MSTR.",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T12:39:30.660230+00:00",
+      "freshness": "breaking",
+      "impacted_flows": [
+        "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for"
+      ]
+    },
+    {
+      "story_id": "n21_china_ascendancy__breaking_eu_proposes_biggest_sanctions_package_in_2_years",
+      "headline": "СРОЧНО: ЕС предлагает крупнейший за 2 года пакет санкций — 90 банков, 11 криптоплатформ, запрет на танкеры СПГ, более 170 позиций",
+      "sector": "commodities",
+      "pillar": "china_ascendancy",
+      "paradigm_pillar": "china_ascendancy",
+      "paradigm_implications": [
+        "SHORT RSX/MOEX on headline. LONG European gas — LNG supply tightening is constructive for $NG. Crypto ban accelerates Russian BTC demand (capital flight into non-sanctionable assets) — contrarian LONG"
+      ],
+      "they_say": "ЕС затягивает финансовую удавку — под удар попадает не только традиционный банкинг, но и криптовалюта как канал ухода от санкций. Запрет на танкеры СПГ подрывает способность России поддерживать экспорт газа (плавучее хранение/транспортировка). Санкции против портов нацелены на «теневой флот», перевозящий российские энергоносители. Это структурное ужесточение, а не символическое. В сочетании с фокусом США на Иране Россия сталкивается с растущей финансовой изоляцией.",
+      "reality": "Пробел в правоприменении сохраняется — криптовалютные P2P-операции и миксеры остаются возможными. 90 банков могут пересекаться с уже находящимися под санкциями организациями. Запрет на СПГ вводится поэтапно — по существующим контрактам возможно применение «дедушкиной оговорки». Венгрия/Словакия могут ослабить пакет. Однако направление недвусмысленно: максималистская эскалация.",
+      "thesis": "SHORT Russian equities & ADRs, SHORT Russian-linked crypto (USDT/RUB premium), LONG European gas ($NG, $TTF), LONG defense ($LMT, $GD, Rheinmetall), SHORT tanker stocks exposed to Russian routes",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "SHORT Russian equities & ADRs, SHORT Russian-linked crypto (USDT/RUB premium), LONG European gas ($NG, $TTF), LONG defense ($LMT, $GD, Rheinmetall), SHORT tanker stocks exposed to Russian routes",
+      "contradiction_score": 53,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "SHORT RSX/MOEX on headline. LONG European gas — LNG supply tightening is constructive for $NG. Crypto ban accelerates Russian BTC demand (capital flight into non-sanctionable assets) — contrarian LONG BTC.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "SHORT RSX/MOEX on headline. LONG European gas — LNG supply tightening is constructive for $NG. Crypto ban accelerates Russian BTC demand (capital flight into non-sanctionable assets) — contrarian…",
+        "pace_multiplier": 2.4,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$5.0B ↑ commodities",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "SHORT Russian equities & ADRs, SHORT Russian-linked crypto (USDT/RUB premium), LONG European gas ($NG, $TTF), LONG defense ($LMT, $GD, Rheinmetall), SHORT tanker stocks exposed to Russian routes",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T12:39:30.659597+00:00",
+      "freshness": "breaking",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ]
+    },
+    {
+      "story_id": "n21_multi_pillar__israel_strikes_beirut_suburbs__explosion_in_beirut_idf_att",
+      "headline": "ИЗРАИЛЬ НАНОСИТ УДАРЫ ПО ПРИГОРОДАМ БЕЙРУТА — ВЗРЫВ В БЕЙРУТЕ, ЦАХАЛ АТАКУЕТ ИНФРАСТРУКТУРУ «ХЕЗБОЛЛЫ» В РАЙОНЕ ДАХИЯ",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Defense contractors: Israel emergency resupply + potential US re-engagement. Oil: multi-front Middle East war keeps floor under prices hard. Gold: safe haven demand spikes. Cyber sector (Israel-linked"
+      ],
+      "they_say": "有限以色列入侵以在利塔尼河以南建立缓冲区。贝鲁特袭击被视为传递信号，而非升级为全面战争。",
+      "reality": "Удар по Дахие (южному пригороду Бейрута) НЕ является операцией по созданию буферной зоны. Это первый раз, когда израильские бомбы поражают непосредственно территорию Бейрута в рамках данной кампании. Это кардинально расширяет географию конфликта — от приграничной зоны до столицы Ливана. «Хезболла» будет вынуждена ответить ракетными обстрелами вглубь Израиля. Предупреждение об эвакуации для Тира — крупного прибрежного города — сигнализирует о намерении ЦАХАЛ…",
+      "thesis": "LONG defense primes (RTX, LMT, NOC, GD) immediately — Israel-Hizbollah + Iran = sustained Two-front US re-supply. LONG oil (second derivative — Lebanon escalation destabilizes broader region, complicates Gulf security). LONG gold. SHORT Israeli shekel (ILS). SHORT TLSA/AAPL/tech into Monday — risk-o",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "LONG defense primes (RTX, LMT, NOC, GD) immediately — Israel-Hizbollah + Iran = sustained Two-front US re-supply. LONG oil (second derivative — Lebanon escalation destabilizes broader region, complicates Gulf security). LONG gold. SHORT Israeli shekel (ILS). SHORT TLSA/AAPL/tech into Monday — risk-o",
+      "contradiction_score": 53,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Defense contractors: Israel emergency resupply + potential US re-engagement. Oil: multi-front Middle East war keeps floor under prices hard. Gold: safe haven demand spikes. Cyber sector (Israel-linked cyber firms): CBR, cyber-security stocks re-rate. Energy (oil): Strait toll + Beirut strikes = doub",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Defense contractors: Israel emergency resupply + potential US re-engagement. Oil: multi-front Middle East war keeps floor under prices hard. Gold: safe haven demand spikes. Cyber sector…",
+        "pace_multiplier": 1.7,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$5.0B ↑ commodities",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "LONG defense primes (RTX, LMT, NOC, GD) immediately — Israel-Hizbollah + Iran = sustained Two-front US re-supply. LONG oil (second derivative — Lebanon escalation destabilizes broader region, complicates Gulf security). LONG gold. SHORT Israeli shekel (ILS). SHORT TLSA/AAPL/tech into Monday — risk-o",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-07T13:25:44.306329+00:00",
+      "freshness": "developing",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ]
+    },
+    {
+      "story_id": "n21_multi_pillar__israel_launches_full_ground_operations_in_lebanon__hezbolla",
+      "headline": "ИЗРАИЛЬ НАЧИНАЕТ ПОЛНОМАСШТАБНУЮ НАЗЕМНУЮ ОПЕРАЦИЮ В ЛИВАНЕ — ХЕЗБОЛЛА УНИЧТОЖАЕТ ТАНКИ ЦАХАЛ",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Defense contractors: Israel will need resupply, US defense stocks re-rate on sustained Middle East engagement. Oil: Lebanon escalation keeps a floor under oil prices even if OPEC+ tries to cap them. G"
+      ],
+      "they_say": "有限的以色列入侵以建立缓冲区。真主党已被削弱至不足以构成战略威胁。外交手段将对其加以遏制。",
+      "reality": "Израильский военный руководитель публично заявляет о необходимости полной оккупации — это не ограниченная операция. Нетаньяху, по данным американских чиновников, стремится к эскалации. «Хезболла» в прямом эфире уничтожает израильскую бронетехнику, опровергая нарратив о её «ослаблении». Это многофронтовая эскалация (Ливан + Иран + Ормуз), которую рынок пока не воспринимает как единый системный риск.",
+      "thesis": "LONG defense stocks (RTX, LMT, NOC, GD). LONG oil (second derivative through Iran/Hormuz connection). SHORT Israeli shekel (ILS). LONG gold as geopolitical hedge.",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "LONG defense stocks (RTX, LMT, NOC, GD). LONG oil (second derivative through Iran/Hormuz connection). SHORT Israeli shekel (ILS). LONG gold as geopolitical hedge.",
+      "contradiction_score": 52,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Defense contractors: Israel will need resupply, US defense stocks re-rate on sustained Middle East engagement. Oil: Lebanon escalation keeps a floor under oil prices even if OPEC+ tries to cap them. Gold: geopolitical risk premium rises.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Defense contractors: Israel will need resupply, US defense stocks re-rate on sustained Middle East engagement. Oil: Lebanon escalation keeps a floor under oil prices even if OPEC+ tries to cap them.…",
+        "pace_multiplier": 1.7,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$5.0B ↑ commodities",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "LONG defense stocks (RTX, LMT, NOC, GD). LONG oil (second derivative through Iran/Hormuz connection). SHORT Israeli shekel (ILS). LONG gold as geopolitical hedge.",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-07T12:25:48.811774+00:00",
+      "freshness": "developing",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ]
+    },
+    {
+      "story_id": "n21_abundance_tech__btc_crash__worst_week_since_ftx_collapse_microstrategy_bou",
+      "headline": "BTC CRASH — Худшая неделя со времен краха FTX, MicroStrategy купила на просадке до $65K, киты удерживают позиции",
+      "sector": "crypto",
+      "pillar": "abundance_tech",
+      "paradigm_pillar": "abundance_tech",
+      "paradigm_implications": [
+        "Gazzetta di Kyiv: 'BTC CRASHES Worst Week Since FTX — Digital Gold Thesis Tested by Real War.' Bet&Benefit: Asymmetric BTC long at $65K support. Ukraine crypto donation angle — volatility creates dono"
+      ],
+      "they_say": "Биткоин снижается вместе с рисковыми активами на фоне эскалации геополитической напряжённости. Институциональные инвесторы сокращают риски в преддверии расширения конфликта на Ближнем Востоке. IPO SPCX отвлекает ликвидность из криптовалют. Фьючерсы на криптовалюты CME полезны для принятия, но негативны для краткосрочной цены. «Корреляция с акциями = отсутствие защитного актива».",
+      "reality": "Это макро-риск-офф, а не крипто-специфичный фактор — фундаментальные показатели (накопление MSTR, покупка розничными инвесторами на просадках, институциональный вход через CME) являются БЫЧЬИМИ. Покупка MicroStrategy на уровне $65K формирует уровень поддержки. Удержание позиций китами без продажи — это противоположность капитуляции. Листинг SPCX 12 июня — известное событие, уже заложенное в цены: 4-кратная переподписка указывает на огромный институциональный спрос, а не на его сокращение. Если эскалация между США и Ираном...",
+      "thesis": "LONG BTC at $63-65K zone — MicroStrategy's $65K is the floor. SHORT if $63K breaks with volume. Selective altcoin longs on Santiment strong signals (CC, BEAT, WLD). Watch SPCX IPO June 12 for liquidity rotation. CME crypto index futures = structural institutional adoption catalyst. Kimchi premium pl",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "LONG BTC at $63-65K zone — MicroStrategy's $65K is the floor. SHORT if $63K breaks with volume. Selective altcoin longs on Santiment strong signals (CC, BEAT, WLD). Watch SPCX IPO June 12 for liquidity rotation. CME crypto index futures = structural institutional adoption catalyst. Kimchi premium pl",
+      "contradiction_score": 50,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Gazzetta di Kyiv: 'BTC CRASHES Worst Week Since FTX — Digital Gold Thesis Tested by Real War.' Bet&Benefit: Asymmetric BTC long at $65K support. Ukraine crypto donation angle — volatility creates donor opportunity. If BTC decouples from equities on dollar-weakening narrative, massive upside.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 250.0,
+        "asset_class": "crypto",
+        "projected": "Gazzetta di Kyiv: 'BTC CRASHES Worst Week Since FTX — Digital Gold Thesis Tested by Real War.' Bet&Benefit: Asymmetric BTC long at $65K support. Ukraine crypto donation angle — volatility creates…",
+        "pace_multiplier": 2.3,
+        "confidence_pct": 75,
+        "confidence_level": "medium"
+      },
+      "capital_flow_implication": "LONG BTC at $63-65K zone — MicroStrategy's $65K is the floor. SHORT if $63K breaks with volume. Selective altcoin longs on Santiment strong signals (CC, BEAT, WLD). Watch SPCX IPO June 12 for liquidity rotation. CME crypto index futures = structural institutional adoption catalyst. Kimchi premium pl",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-10T07:51:32.209445+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [
+          "BTC",
+          "XAU"
+        ],
+        "geographies": [
+          "Iran",
+          "South Korea",
+          "UK",
+          "Ukraine"
+        ],
+        "actors": [
+          "UN"
+        ],
+        "instruments": [
+          "futures"
+        ]
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "BTC CRASH — Worst Week Since FTX Collapse, MicroStrategy Bought $65K Dip, Whales Hold",
+          "body": "Structural assessment: This is macro risk-off, NOT crypto-specific — fundamentals (MSTR accumulation, retail dip-buying, CME institutional on-ramp) are BULLISH. MicroStrategy buying $65K is resistance floor. Whales holding not selling is the opposite of capitulation. SPCX June 12 listing is a known event already priced — . Capital repositioning of $250.0B identified in crypto. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "implication": "Board-level risk: crypto exposure requires long hedge within 72h."
+        },
+        "quant": {
+          "headline": "CRYPTO flow: $250.0B inflow",
+          "body": "Raw telemetry — crypto $250.0B inflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
+          "metrics": {
+            "flow_velocity": 10.42,
+            "correlation_coeff": 0.65,
+            "z_score": 25.0
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG CRYPTO $250.0B",
+          "body": "Directional: LONG. Flow: $250.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: BTC CRASH — Worst Week Since FTX Collapse, MicroStrategy Bought $65K Dip, Whales",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+10-15%",
+            "conviction": "MEDIUM"
+          }
+        }
+      }
+    },
+    {
+      "story_id": "n21_multi_pillar__us-iran_active_kinetic_exchange__20_us_targets_struck_in_ir",
+      "headline": "Американо-иранский активный кинетический обмен — 20 целей США поражены в Иране, КСИР наносит ответный удар по Бахрейну/Иордании, Иран требует вывода США с Ближнего Востока",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Gazzetta di Kyiv: 'HOT WAR — US Bombs 20 Iranian Targets, IRGC Strikes Bahrain, Hormuz in Flames.' Bet&Benefit: OIL UP aggressive long, tight stop at $88 Brent. Defense calls. LNG long per MS outlook."
+      ],
+      "they_say": "Перевод в профессиональном тоне финансового аналитика:\n\nНарратив, продвигаемый официальными лицами США и рыночным консенсусом: контролируемые ответные меры, обе стороны завершили обмен ударами. Трамп заявил, что инцидент с Apache «не был чем-то серьёзным». NYT со ссылкой на представителя США: «физических повреждений на американских базах не обнаружено». Официальные лица США надеются, что удары послужат «предупредительным выстрелом», сохраняя возможность переговорного трека. EIA закладывает нормализацию ситуации в Ормузском проливе к III кварталу. Рынок торгует Brent ниже $90, как будто риск исчезает.",
+      "reality": "Иран УЖЕ нанёс ответный удар — опровергнув тезис «один раз и готово». КСИР прямо предупредил о дальнейших ударах. Максималистское требование Ирана о вытеснении США с Ближнего Востока принципиально расширяет рамки конфликта за пределы Ормуза. Заместитель министра иностранных дел Ирана, отрицающий факт сбития «Апача», указывает на возможные действия негосударственных субъектов, которых Тегеран НЕ МОЖЕТ контролировать — что делает деэскалацию невозможной. Региональные правительства (Катар",
+      "thesis": "LONG crude (CL, Brent, COIL) — Brent at $88.32 EIA forecast with active war is mispriced. LONG defense (LMT, GD, NOC, RTX). LONG LNG (Morgan Stanley 3-year high outlook). LONG tanker rates (record new supertanker orders confirm supply chain repricing). SHORT Iranian-exposed equities, SHORT airlines ",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "LONG crude (CL, Brent, COIL) — Brent at $88.32 EIA forecast with active war is mispriced. LONG defense (LMT, GD, NOC, RTX). LONG LNG (Morgan Stanley 3-year high outlook). LONG tanker rates (record new supertanker orders confirm supply chain repricing). SHORT Iranian-exposed equities, SHORT airlines ",
+      "contradiction_score": 50,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Gazzetta di Kyiv: 'HOT WAR — US Bombs 20 Iranian Targets, IRGC Strikes Bahrain, Hormuz in Flames.' Bet&Benefit: OIL UP aggressive long, tight stop at $88 Brent. Defense calls. LNG long per MS outlook. Ukraine angle: US two-front vulnerability — Russia exploits distraction, Kyiv accelerates deep stri",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Gazzetta di Kyiv: 'HOT WAR — US Bombs 20 Iranian Targets, IRGC Strikes Bahrain, Hormuz in Flames.' Bet&Benefit: OIL UP aggressive long, tight stop at $88 Brent. Defense calls. LNG long per MS…",
+        "pace_multiplier": 1.7,
+        "confidence_pct": 75,
+        "confidence_level": "medium"
+      },
+      "capital_flow_implication": "LONG crude (CL, Brent, COIL) — Brent at $88.32 EIA forecast with active war is mispriced. LONG defense (LMT, GD, NOC, RTX). LONG LNG (Morgan Stanley 3-year high outlook). LONG tanker rates (record new supertanker orders confirm supply chain repricing). SHORT Iranian-exposed equities, SHORT airlines ",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-10T07:51:32.201616+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [
+          "BRENT",
+          "BTC",
+          "WTI"
+        ],
+        "geographies": [
+          "Iran",
+          "Kuwait",
+          "Qatar",
+          "Russia",
+          "UK",
+          "Ukraine"
+        ],
+        "actors": [
+          "Morgan Stanley",
+          "UN"
+        ],
+        "instruments": [
+          "options"
+        ]
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "US-IRAN ACTIVE KINETIC EXCHANGE — 20 US Targets Struck in Iran, IRGC Retaliates Bahrain/Jordan, Iran Demands US Leave Mi",
+          "body": "Structural assessment: Iran ALREADY retaliated — falsifying the 'one-and-done' thesis. IRGC explicitly warned of further strikes. Iran's maximalist demand for US expulsion from Middle East fundamentally escalates the framework beyond Hormuz. Iran's Deputy Foreign Minister denying Apache shootdown suggests non-state actors. Capital repositioning of $5.0B identified in commodities. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "implication": "Board-level risk: commodities exposure requires long hedge within 72h."
+        },
+        "quant": {
+          "headline": "COMMODITIES flow: $5.0B inflow",
+          "body": "Raw telemetry — commodities $5.0B inflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
+          "metrics": {
+            "flow_velocity": 0.21,
+            "correlation_coeff": 0.65,
+            "z_score": 0.5
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG COMMODITIES $5.0B",
+          "body": "Directional: LONG. Flow: $5.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: US-IRAN ACTIVE KINETIC EXCHANGE — 20 US Targets Struck in Iran, IRGC Retaliates ",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+10-15%",
+            "conviction": "MEDIUM"
+          }
+        }
+      }
+    },
+    {
+      "story_id": "n21_multi_pillar__us_stock_selling_resumed__friday_low_break_confirmed_and_no",
+      "headline": "Продажи акций США возобновились — пробой пятничного минимума подтверждён и теперь ускорился из-за эскалации после сбития Apache.",
+      "sector": "defense",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Short SPY/QQQ with the Apache catalyst is cleaner than the pre-existing 'no catalyst' short. The risk-reward is asymmetric to downside into close because no US response has been announced yet — the un"
+      ],
+      "they_say": "Сбитие Apache переводит распродажу акций из категории «загадочного технического сбоя» в разряд «события, вызванного катализатором неприятия риска». Ранее трейдеры не могли определить триггер — что затрудняло уверенное открытие коротких позиций. Теперь триггер абсолютно ясен: прямое военное столкновение США и Ирана. Поддержка S&P на уровне минимума пятницы (~5320) только что пробита. Следующая поддержка — минимум мая (~5250). Если VIX пробьет отметку 20...",
+      "reality": "Индекс S&P 500 снизился всего на ~1,2% на фоне начала военного конфликта с участием США — это НЕ паническая распродажа. Если бы обвал должен был перерасти в крах, он бы уже произошёл. Тот факт, что снижение остаётся контролируемым, указывает на ожидания рынков ограниченного ответа США (крылатые ракеты, а не наземная война). IPO SpaceX «значительно переподписано» и закрывается в среду — институциональный аппетит к риску по бумагам с высокой степенью уверенности не ослаб.",
+      "thesis": "SHORT indices on escalation risk repricing; ready to cover on any response confirmation if it's measured",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "SHORT indices on escalation risk repricing; ready to cover on any response confirmation if it's measured",
+      "contradiction_score": 50,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Short SPY/QQQ with the Apache catalyst is cleaner than the pre-existing 'no catalyst' short. The risk-reward is asymmetric to downside into close because no US response has been announced yet — the uncertainty premium cuts against risk assets. Cover immediately on any measured response announcement.",
+      "capital_flow": {
+        "direction": "outflow",
+        "amount_b": 5.0,
+        "asset_class": "defense",
+        "projected": "Short SPY/QQQ with the Apache catalyst is cleaner than the pre-existing 'no catalyst' short. The risk-reward is asymmetric to downside into close because no US response has been announced yet — the…",
+        "pace_multiplier": 1.8,
+        "confidence_pct": 75,
+        "confidence_level": "medium"
+      },
+      "capital_flow_implication": "SHORT indices on escalation risk repricing; ready to cover on any response confirmation if it's measured",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T17:28:41.731622+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [
+          "NDX",
+          "SPX",
+          "VIX"
+        ],
+        "geographies": [
+          "Iran",
+          "USA"
+        ],
+        "actors": [
+          "UN",
+          "Xi Jinping"
+        ],
+        "instruments": [
+          "options"
+        ]
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_multi_pillar__israel_s_nabatieh_offensive__earthquake_that_topples_hezbo"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "US Stock Selling Resumed — Friday Low Break Confirmed and Now Accelerated by Apache Shootdown Escalation",
+          "body": "Structural assessment: The S&P 500 is still only down ~1.2% on a US military confrontation breaking out — this is NOT a panic sell. If the selloff was going to crash, it would have already. The fact that it's controlled suggests markets expect a limited US response (cruise missiles, not ground war). SpaceX IPO is 'well ov. Capital repositioning of $5.0B identified in defense. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "implication": "Board-level risk: defense exposure requires short hedge within 72h."
+        },
+        "quant": {
+          "headline": "DEFENSE flow: $5.0B outflow",
+          "body": "Raw telemetry — defense $5.0B outflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
+          "metrics": {
+            "flow_velocity": 0.21,
+            "correlation_coeff": 0.65,
+            "z_score": 0.5
+          }
+        },
+        "degen": {
+          "headline": "🔴 SHORT DEFENSE $5.0B",
+          "body": "Directional: SHORT. Flow: $5.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: US Stock Selling Resumed — Friday Low Break Confirmed and Now Accelerated by Apa",
+          "signal": {
+            "direction": "SHORT",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+10-15%",
+            "conviction": "MEDIUM"
+          }
+        }
+      },
+      "summary": ""
+    },
+    {
+      "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t",
+      "headline": "Anthropic выпускает 'Claude Fable' (кастрированный Mythos) позднее сегодня — ценообразование на уровне 2x Opus, выход AI-модели в течение нескольких часов.",
+      "sector": "crypto",
+      "pillar": "china_ascendancy",
+      "paradigm_pillar": "china_ascendancy",
+      "paradigm_implications": [
+        "AI infrastructure tokens (RNDR for compute, TAO for decentralized ML) benefit most. FET (Fetch.ai) as the broadest AI-crypto proxy. NVDA benefits at the next US equity open from the AI model prolifera"
+      ],
+      "they_say": "Anthropic выпускает более безопасную, соответствующую нормативным требованиям версию своей передовой модели, чтобы привлечь корпоративных клиентов, которым нужен продвинутый ИИ без рисков в области биобезопасности и кибербезопасности. Стандартная сегментация продукта. Рынок уже заложил в цены темпы выпуска моделей ИИ — очередной релиз модели не является катализатором.",
+      "reality": "Запуск Claude Fable «сегодня» (вторник, 9 июня) происходит раньше ожидаемого — рынок предполагал, что развёртывание модели класса Mythos займёт недели, если не месяцы тестирования безопасности. Тот факт, что Anthropic выпускает ЛЮБУЮ версию Mythos так быстро, указывает на одно из двух: (1) компания спешит выйти на рынок, чтобы опередить следующий релиз OpenAI, или (2) «кастрированная» версия прошла проверки безопасности быстрее, чем предполагалось.",
+      "thesis": "LONG AI-crypto tokens (FET, RNDR, TAO, AGIX) on the 'frontier AI accelerating' narrative. The release of Claude Fable within hours validates the thesis that AI capability is accelerating faster than the market prices. SHORT OpenAI-competitive tokens if any exist — Anthropic leapfrogging. LONG NVIDIA",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "LONG AI-crypto tokens (FET, RNDR, TAO, AGIX) on the 'frontier AI accelerating' narrative. The release of Claude Fable within hours validates the thesis that AI capability is accelerating faster than the market prices. SHORT OpenAI-competitive tokens if any exist — Anthropic leapfrogging. LONG NVIDIA",
+      "contradiction_score": 50,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "AI infrastructure tokens (RNDR for compute, TAO for decentralized ML) benefit most. FET (Fetch.ai) as the broadest AI-crypto proxy. NVDA benefits at the next US equity open from the AI model proliferation narrative. Gazzetta di Kyiv: connect to Ukraine's growing drone/AI warfare industry — 'while An",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 3.2,
+        "asset_class": "crypto",
+        "projected": "AI infrastructure tokens (RNDR for compute, TAO for decentralized ML) benefit most. FET (Fetch.ai) as the broadest AI-crypto proxy. NVDA benefits at the next US equity open from the AI model…",
+        "pace_multiplier": 2.0,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$3.2B inflow crypto",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "LONG AI-crypto tokens (FET, RNDR, TAO, AGIX) on the 'frontier AI accelerating' narrative. The release of Claude Fable within hours validates the thesis that AI capability is accelerating faster than the market prices. SHORT OpenAI-competitive tokens if any exist — Anthropic leapfrogging. LONG NVIDIA",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T14:33:23.628736+00:00",
+      "freshness": "breaking",
+      "impacted_flows": [
+        "flow_n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t"
+      ]
+    },
+    {
+      "story_id": "n21_multi_pillar__israel_s_nabatieh_offensive__earthquake_that_topples_hezbo",
+      "headline": "Перевод (профессиональный финансовый аналитик):\n\nНаступление Израиля в Набатии — «землетрясение, свергающее «Хезболлу»»: танки ЦАХАЛ горят в прямом эфире, утечки указывают на срыв сделки США и Ирана по Ормузу.",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Defense stocks (LMT, RTX, NOC, GD) benefit from prolonged multi-front conflict. Energy majors (XOM, CVX, OXY) benefit from sustained high oil. Cybersecurity (PANW, CRWD) benefits from increased Iran-l"
+      ],
+      "they_say": "Израиль медленно продвигается через южный Ливан. «Хезболла» оказывает жесткое сопротивление. Конфликт представляет собой затратную позиционную войну, которая напрямую не угрожает потокам нефти. Рынки уже заложили в цены израильско-ливанский фронт как локализованный — он продолжается месяцами без системного влияния на рынки. Набатия — всего лишь очередной город.",
+      "reality": "Израильские источники называют падение Набатии «землетрясением, которое свергает «Хезболлу» — это не стандартная военно-брифинговая лексика, а экзистенциальная формулировка. Утекшие американо-иранские документы показывают, что действия Израиля в Ливане напрямую осложняют переговоры США и Ирана, которые могут вновь открыть Ормуз. Это означает: наступление на Набатию представляет прямую угрозу нарративу о нормализации поставок нефти, который закладывается рынками в цены.",
+      "thesis": "LONG oil (WTI, USO) — Nabatieh offensive increases odds of Iran-Israel proxy escalation, delaying Hormuz reopening. LONG defense (LMT, RTX, GD) — extended Middle East conflict. LONG gold (GLD) — geopolitical hedge. SHORT TLT (long-dated bonds) — extended conflict keeps inflation elevated. If Nabatie",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "LONG oil (WTI, USO) — Nabatieh offensive increases odds of Iran-Israel proxy escalation, delaying Hormuz reopening. LONG defense (LMT, RTX, GD) — extended Middle East conflict. LONG gold (GLD) — geopolitical hedge. SHORT TLT (long-dated bonds) — extended conflict keeps inflation elevated. If Nabatie",
+      "contradiction_score": 50,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Defense stocks (LMT, RTX, NOC, GD) benefit from prolonged multi-front conflict. Energy majors (XOM, CVX, OXY) benefit from sustained high oil. Cybersecurity (PANW, CRWD) benefits from increased Iran-linked cyber activity. Gazzetta di Kyiv: frame as 'Three Wars, No Off-Ramp' — Iran, Lebanon, Ukraine ",
+      "capital_flow": {
+        "direction": "outflow",
+        "amount_b": 6.5,
+        "asset_class": "commodities",
+        "projected": "Defense stocks (LMT, RTX, NOC, GD) benefit from prolonged multi-front conflict. Energy majors (XOM, CVX, OXY) benefit from sustained high oil. Cybersecurity (PANW, CRWD) benefits from increased…",
+        "pace_multiplier": 1.7,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$6.5B outflow commodities",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "LONG oil (WTI, USO) — Nabatieh offensive increases odds of Iran-Israel proxy escalation, delaying Hormuz reopening. LONG defense (LMT, RTX, GD) — extended Middle East conflict. LONG gold (GLD) — geopolitical hedge. SHORT TLT (long-dated bonds) — extended conflict keeps inflation elevated. If Nabatie",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T14:21:56.798569+00:00",
+      "freshness": "breaking",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__israel_s_nabatieh_offensive__earthquake_that_topples_hezbo"
+      ]
+    },
+    {
+      "story_id": "n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv",
+      "headline": "HTX (Джастин Сан) делистит WLFI и USD1 Трампа — принудительная конвертация средств пользователей сигнализирует о потенциальном кризисе азиатских бирж",
+      "sector": "crypto",
+      "pillar": "blockchain_agentic",
+      "paradigm_pillar": "blockchain_agentic",
+      "paradigm_implications": [
+        "USDC (Circle) benefits from USD1 failure as competing stablecoin. Decentralized exchanges (UNI, SUSHI) benefit from trust flight from CEXs. Privacy coins see 'not your keys, not your coins' narrative "
+      ],
+      "they_say": "HTX соблюдает регуляторное давление или требования внутреннего риск-менеджмента. WLFI представлял собой низколиквидный мем-токен, USD1 — незначительный стейблкоин. Рынок расценивает это как незначительное событие для BTC/ETH — всего лишь «ковровый вытягивание» (rug-pull) по мусорным токенам, связанным с Трампом.",
+      "reality": "Принудительная конвертация средств пользователей (USD1 → USDT) без согласия является ЧРЕЗВЫЧАЙНОЙ мерой. Биржи не прибегают к этому иначе как в условиях крайнего давления — изъятие регуляторами, неплатёжеспособность или жёсткие меры со стороны азиатских властей. Выбор времени на фоне обвала крипторынка указывает либо на скоординированные действия, либо на специфические проблемы HTX. Если HTX рушится или подвергается регуляторной атаке, риск заражения переходит на Tron (TRX) — Justi",
+      "thesis": "SHORT TRX (Tron) — contagion from HTX delisting. If HTX is under regulatory/insolvency pressure, TRX is the next domino. LONG USDT — as flight to safety in stablecoin land. SHORT BTC (outright or via puts) — the delisting adds to already negative sentiment (Santiment shows local pessimism extremes).",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "SHORT TRX (Tron) — contagion from HTX delisting. If HTX is under regulatory/insolvency pressure, TRX is the next domino. LONG USDT — as flight to safety in stablecoin land. SHORT BTC (outright or via puts) — the delisting adds to already negative sentiment (Santiment shows local pessimism extremes).",
+      "contradiction_score": 49,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "USDC (Circle) benefits from USD1 failure as competing stablecoin. Decentralized exchanges (UNI, SUSHI) benefit from trust flight from CEXs. Privacy coins see 'not your keys, not your coins' narrative boost — though ZEC just had its own network crisis. Hardware wallet narratives benefit from self-cus",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 11.5,
+        "asset_class": "crypto",
+        "projected": "USDC (Circle) benefits from USD1 failure as competing stablecoin. Decentralized exchanges (UNI, SUSHI) benefit from trust flight from CEXs. Privacy coins see 'not your keys, not your coins'…",
+        "pace_multiplier": 2.3,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$11.5B inflow crypto",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "SHORT TRX (Tron) — contagion from HTX delisting. If HTX is under regulatory/insolvency pressure, TRX is the next domino. LONG USDT — as flight to safety in stablecoin land. SHORT BTC (outright or via puts) — the delisting adds to already negative sentiment (Santiment shows local pessimism extremes).",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T14:21:56.798676+00:00",
+      "freshness": "breaking",
+      "impacted_flows": [
+        "flow_n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv"
+      ]
+    },
+    {
+      "story_id": "n21_multi_pillar__opec_meets_today__188k_bpd_increase_approved_from_july_bu",
+      "headline": "Сегодня состоится заседание ОПЕК+ — утверждено увеличение добычи на 188 тыс. баррелей в сутки с июля, однако пошлина Ирана в Ормузском проливе делает решение ОПЕК+ неактуальным.",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Oil producers: every dip from OPEC+ noise is a buying opportunity for energy equities. Sovereign wealth funds in Gulf states: their revenue per barrel rises even with the small quota increase because "
+      ],
+      "they_say": "ОПЕК+ увеличивает добычу на 188 тыс. баррелей в сутки — это умеренно медвежий сигнал для нефти. Картель реагирует на высокие цены наращиванием предложения. Рынки могут расценить это как попытку ОПЕК сдержать рост цен на нефть.",
+      "reality": "Увеличение добычи ОПЕК+ на 188 тыс. баррелей в сутки полностью нивелируется односторонним «налогом» Ирана на проход через Ормузский пролив. Сбор в размере $1,5–2 млн с каждого танкера при транзите около 17 млн баррелей в сутки представляет собой фактическое ограничение предложения — он повышает стоимость каждого барреля, проходящего через Ормуз. «Рост предложения» со стороны ОПЕК+ (~0,2% мирового спроса) является статистической погрешностью по сравнению с: (A) превращением транзита через Ормуз в платную трассу; (B) ударом Израиля по Бейруту (премия за эскалационный риск).",
+      "thesis": "FADE any oil dip from OPEC+ announcement. The OPEC+ 188k bpd figure will be used as a headline to sell oil — that's the entry. BUY the dip: LONG WTI/Brent. The dominant vector is Iran's Hormuz toll + Beirut strikes, not OPEC's tiny quota increase. SHORT bonds (TLT, ZB) — stagflation trade. LONG infl",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "FADE any oil dip from OPEC+ announcement. The OPEC+ 188k bpd figure will be used as a headline to sell oil — that's the entry. BUY the dip: LONG WTI/Brent. The dominant vector is Iran's Hormuz toll + Beirut strikes, not OPEC's tiny quota increase. SHORT bonds (TLT, ZB) — stagflation trade. LONG infl",
+      "contradiction_score": 49,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Oil producers: every dip from OPEC+ noise is a buying opportunity for energy equities. Sovereign wealth funds in Gulf states: their revenue per barrel rises even with the small quota increase because price per barrel is supported. US Treasury: higher oil revenue = higher tax receipts from energy sec",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Oil producers: every dip from OPEC+ noise is a buying opportunity for energy equities. Sovereign wealth funds in Gulf states: their revenue per barrel rises even with the small quota increase…",
+        "pace_multiplier": 1.7,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$5.0B ↑ commodities",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "FADE any oil dip from OPEC+ announcement. The OPEC+ 188k bpd figure will be used as a headline to sell oil — that's the entry. BUY the dip: LONG WTI/Brent. The dominant vector is Iran's Hormuz toll + Beirut strikes, not OPEC's tiny quota increase. SHORT bonds (TLT, ZB) — stagflation trade. LONG infl",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-07T13:25:44.306398+00:00",
+      "freshness": "developing",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ]
+    },
+    {
+      "story_id": "n21_multi_pillar__israel_orders_full_evacuation_of_tyre__cabinet_authorizes_a",
+      "headline": "Израиль приказал провести полную эвакуацию Тира — кабинет министров санкционировал автоматический ответный удар по Бейруту",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Gold calls intraday. VIX calls if available (VIX is low currently — this explosion of volatility would catch most short-vol strategies flat-footed). The auto-retaliation mechanism is a genuine escalat"
+      ],
+      "they_say": "В мейнстримных сводках это подаётся как «продолжающиеся пограничные столкновения» — с приуменьшением структурной эскалации. Политика автоматического ответного удара означает: любая ракета «Хезболлы» через границу = немедленный удар Израиля по Бейруту. Это формирует механический сценарий эскалации, при котором ни одной из сторон не требуется принимать осознанное решение об обострении — оно уже предварительно санкционировано. Рынки не учитывают этот риск корректно.",
+      "reality": "Посол США заявляет: «Перемирие будет достигнуто» — дипломатический выход существует. Танковый удар «Хезболлы» может быть демонстрацией силы перед согласованием условий. Эвакуация ЦАХАЛ из Тира может быть тактикой максимального давления перед принятием сделки. Политика автоматического ответного удара может быть направлена на СНИЖЕНИЕ стимулов для запусков со стороны «Хезболлы» (взаимное гарантированное уничтожение на уровне городов).",
+      "thesis": "LONG oil (same thesis as Story 1 — compounding), LONG gold, SHORT Israel equities, LONG VIX",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "LONG oil (same thesis as Story 1 — compounding), LONG gold, SHORT Israel equities, LONG VIX",
+      "contradiction_score": 48,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Gold calls intraday. VIX calls if available (VIX is low currently — this explosion of volatility would catch most short-vol strategies flat-footed). The auto-retaliation mechanism is a genuine escalation innovation that markets haven't priced. If you want a high-beta trade: short Israeli shekel via ",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Gold calls intraday. VIX calls if available (VIX is low currently — this explosion of volatility would catch most short-vol strategies flat-footed). The auto-retaliation mechanism is a genuine…",
+        "pace_multiplier": 1.7,
+        "confidence_pct": 75,
+        "confidence_level": "medium"
+      },
+      "capital_flow_implication": "LONG oil (same thesis as Story 1 — compounding), LONG gold, SHORT Israel equities, LONG VIX",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-09T15:25:35.438787+00:00",
+      "freshness": "breaking",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ],
+      "summary": ""
+    },
+    {
+      "story_id": "n21_china_ascendancy__opec_meeting_today__expected_to_approve_188k_bpd_productio",
+      "headline": "ОПЕК+ СЕГОДНЯ ПРОВОДИТ ЗАСЕДАНИЕ — ОЖИДАЕТСЯ ОДОБРЕНИЕ УВЕЛИЧЕНИЯ ДОБЫЧИ НА 188 ТЫС. БАРРЕЛЕЙ В СУТКИ НАЧИНАЯ С ИЮЛЯ",
+      "sector": "commodities",
+      "pillar": "china_ascendancy",
+      "paradigm_pillar": "china_ascendancy",
+      "paradigm_implications": [
+        "Oil producers (Saudi Arabia, Russia, US shale) benefit from elevated prices regardless of the OPEC+ quota increase. Energy sector earnings revision upward."
+      ],
+      "they_say": "Увеличение добычи ОПЕК+ (+188 тыс. барр./сут. с июля) является умеренно негативным для нефти и рассматривается как прагматичная реакция на рост цен. Рынок воспринимает это как негативный сигнал предложения.",
+      "reality": "Увеличение на 188 тыс. баррелей в сутки меркнет на фоне рисков, связанных с Ормузским проливом. Один день перебоев в Ормузе выведет с рынка более 15 млн баррелей в сутки. Скромное повышение ОПЕК+ — это погрешность на фоне геополитического хвостового риска. «Жалобы на высокие цены на нефть» от 149 компаний из индекса S&P 500 сигнализируют о встроенном инфляционном давлении, которое не решит прирост в +188 тыс. баррелей в сутки.",
+      "thesis": "Ignore the OPEC+ increase as noise. The dominant vector is Hormuz + Iran + Israel-Lebanon escalation. LONG oil regardless of OPEC+ announcement. Use any dip from the OPEC+ announcement as an entry point.",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "Ignore the OPEC+ increase as noise. The dominant vector is Hormuz + Iran + Israel-Lebanon escalation. LONG oil regardless of OPEC+ announcement. Use any dip from the OPEC+ announcement as an entry point.",
+      "contradiction_score": 47,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Oil producers (Saudi Arabia, Russia, US shale) benefit from elevated prices regardless of the OPEC+ quota increase. Energy sector earnings revision upward.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Oil producers (Saudi Arabia, Russia, US shale) benefit from elevated prices regardless of the OPEC+ quota increase. Energy sector earnings revision upward.",
+        "pace_multiplier": 1.7,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$5.0B ↑ commodities",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "Ignore the OPEC+ increase as noise. The dominant vector is Hormuz + Iran + Israel-Lebanon escalation. LONG oil regardless of OPEC+ announcement. Use any dip from the OPEC+ announcement as an entry point.",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-07T12:25:48.811717+00:00",
+      "freshness": "developing",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ]
+    },
+    {
+      "story_id": "n21_multi_pillar__iran_launches_drones_toward_strait_of_hormuz__us_shoots_dow",
+      "headline": "ИРАН ЗАПУСКАЕТ БЕСПИЛОТНИКИ В НАПРАВЛЕНИИ ОРМУЗСКОГО ПРОЛИВА — США СБИВАЮТ 4",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Oil producers and energy exporters benefit from $5-10/bbl risk premium immediately. Defense contractors (RTX, LMT, NOC) benefit from extended Middle East engagement. Maritime/insurance sector re-rates"
+      ],
+      "they_say": "Рыночный консенсус оценивает это как сдерживаемые столкновения — дипломатические каналы остаются открытыми, военные действия ограничены, Иран не блокирует Ормуз напрямую. Трейдеры не закладывают в цены полный риск закрытия Ормуза.",
+      "reality": "Голосование в Палате представителей носит рекомендательный характер, Трамп ввел НОВЫЕ санкции, Хаменеи отказывается от встречи, а Иран прямо увязывает суверенитет над Ормузским проливом с переговорами. Разрыв между рыночным благодушием и реальным риском эскалации значителен. Любой удар по танкеру или минирование пролива спровоцирует нефтяную панику.",
+      "thesis": "AGGRESSIVE LONG crude oil (WTI/CL, Brent/COIL), LONG USO/XLE, LONG energy majors (XOM, CVX, COP, OXY). Consider OTM oil call spreads (July +$5 strike). Short volatility via VIX futures if you think this is noise; long VIX calls if you think it escalates.",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "ALIGNED",
+      "actionable_trade": "AGGRESSIVE LONG crude oil (WTI/CL, Brent/COIL), LONG USO/XLE, LONG energy majors (XOM, CVX, COP, OXY). Consider OTM oil call spreads (July +$5 strike). Short volatility via VIX futures if you think this is noise; long VIX calls if you think it escalates.",
+      "contradiction_score": 47,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "Oil producers and energy exporters benefit from $5-10/bbl risk premium immediately. Defense contractors (RTX, LMT, NOC) benefit from extended Middle East engagement. Maritime/insurance sector re-rates higher on Hormuz risk.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "Oil producers and energy exporters benefit from $5-10/bbl risk premium immediately. Defense contractors (RTX, LMT, NOC) benefit from extended Middle East engagement. Maritime/insurance sector…",
+        "pace_multiplier": 1.7,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "claim": "$5.0B ↑ commodities",
+        "confidence": "75%"
+      },
+      "capital_flow_implication": "AGGRESSIVE LONG crude oil (WTI/CL, Brent/COIL), LONG USO/XLE, LONG energy majors (XOM, CVX, COP, OXY). Consider OTM oil call spreads (July +$5 strike). Short volatility via VIX futures if you think this is noise; long VIX calls if you think it escalates.",
+      "evidence": [],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-07T12:25:48.811425+00:00",
+      "freshness": "developing",
+      "impacted_flows": [
+        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
+      ]
+    },
+    {
+      "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles",
+      "headline": "Иран наносит удар по Кувейту 7 баллистическими ракетами — региональная война расширяется, дипломатический трек противоречит кинетической активности",
+      "they_say": "Консенсус указывает на то, что дипломатический выход из ситуации открыт. Уиткофф и Кушнер посетили Ок-Ридж для переговоров по ядерной программе. Палата представителей проголосовала 215–208 за прекращение войны. Трамп заявляет, что «готов к действиям», как только боевые действия прекратятся. Рынки заложили в цены прекращение огня, которое должно было материализоваться со дня на день.",
+      "reality": "Иран нанёс удар по Кувейту семью баллистическими ракетами — крупный производитель ОПЕК и союзник США получил прямое попадание. Ормузский пролив остаётся полностью блокированным. Иран категорически отрицает существование какой-либо сделки по передаче урана, заявляя, что ядерное досье отложено. Дипломатические шаги и военные действия одновременно движутся в противоположных направлениях. Нетаньяху намерен возобновить войну с Ираном на фоне развала режима прекращения огня в Ливане.",
+      "thesis": "The gap between diplomatic theater and kinetic reality is at its widest in this conflict. Every missile that lands makes the diplomatic track less credible. Oil supply disruption probability is maximal — Kuwait is inside the war zone now.",
+      "actors": [
+        "Iran",
+        "Kuwait",
+        "US (Trump, Witkoff, Kushner)",
+        "Israel (Netanyahu)",
+        "Hezbollah"
+      ],
+      "horizon": "24-72 hours",
+      "confidence": "high",
+      "invalidation_trigger": "Iran agrees to uranium framework in verified talks. Hormuz blockade lifted. US announces ceasefire with verified withdrawal zones.",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Iran-Gulf war is no longer a US-Iran proxy — it's a direct regional war hitting OPEC producers",
+        "Israel-Lebanon second front strains US military capacity — Netanyahu wants Iran war resumed while IDF bleeds in Lebanon"
+      ],
+      "capital_flow_implication": "Capital floods into oil, gold, defense, and VIX ahead of Sunday open. Out of equities exposed to Gulf supply chains and airlines.",
+      "portfolio_implication": "Long WTI crude (USO/XLE) — $5-8/bbl gap at Sunday CME open. Long gold (GLD) at $2,415 as geopolitical hedge. Long VIX futures — weekend carry on escalation risk. Short airlines (DAL, UAL) — jet fuel spike + demand destruction. Invalidate if Iran signals verified talks within 24h.",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strait_of_Hormuz.jpg",
+      "freshness": "background",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 5.0,
+        "projected": "Capital flow tracked — direction forming",
+        "pace_multiplier": 1.2,
+        "confidence_pct": 65,
+        "confidence_level": "medium",
+        "asset_class": "equities",
+        "claim": "$5.0B ↑ equities",
+        "confidence": "65%"
+      },
+      "generated_at": "2026-06-09T13:03:26.472079+00:00",
+      "impacted_flows": [
+        "flow_n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1"
+      ],
+      "summary": ""
+    },
+    {
+      "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
+      "headline": "Стратегия возобновляет серию покупок биткоина, подавляя панику на рынке — Investing.com",
+      "sector": "crypto",
+      "pillar": "blockchain_agentic",
+      "paradigm_pillar": "blockchain_agentic",
+      "paradigm_implications": [
+        "Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath &nbsp;&nbsp; CNBC    MicroStrategy’s STR"
+      ],
+      "they_say": "Источник: reuters_business. Стратегия возобновляет скупку биткоина, подавляя панику на рынке &nbsp;&nbsp; Investing.com    Крипто-бунт против Strategy: Шортисты нацелились на 'MSTR' в кровавой бане биткоина &nbsp;&nbsp; CNBC    STRC от MicroStrategy снова следует за снижением биткоина с началом полумесячных дивидендных выплат &nbsp;&nbsp; Yahoo Finance    Bitcoin S",
+      "reality": "Стратегия возобновляет агрессивную скупку биткоина, подавляя панику на рынке &nbsp;&nbsp; Investing.com  \nКрипто-бунт против Strategy: Шортисты нацелились на 'MSTR' на фоне кровавой бани биткоина &nbsp;&nbsp; CNBC  \nMicroStrategy: STRC вновь следует за снижением биткоина на фоне начала полумесячных дивидендных выплат &nbsp;&nbsp; Yahoo Finance  \nBitcoin S",
+      "thesis": "OSINT draft #58: Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: INFLOW crypto. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath &nbsp;&nbsp; CNBC    MicroStrategy’s STR",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 2.1,
+        "asset_class": "crypto",
+        "projected": "Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath &nbsp;&nbsp; CNBC    MicroStrategy’s STR",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$2.1B inflow crypto",
+        "confidence": "50%"
+      },
+      "capital_flow_implication": "OSINT draft #58. Source: reuters_business.",
+      "evidence": [
+        "source: reuters_business",
+        "draft_id: 58"
+      ],
+      "source": "osint_reuters_business",
+      "generated_at": "2026-06-09T16:38:48.413433+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
+          "body": "Structural assessment: Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath &nbsp;&nbsp; CNBC    MicroStrategy’s STRC Tracks Bitcoin Lower Again as Semi-Monthly Divid... Implicated assets: BTC. Regions: global. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: crypto exposure review recommended. Directional bias: LONG."
+        },
+        "quant": {
+          "headline": "CRYPTO signal: LONG",
+          "body": "Raw telemetry — crypto flow detected from Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin ... Assets tagged: BTC. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "inflow",
+            "asset_class": "crypto",
+            "geographies": []
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG BTC",
+          "body": "Directional: LONG. Asset: BTC. Context: Strategy resumes bitcoin buying spree, quelling market panic - Investing.com. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      }
     }
   ],
   "language": "ru"

@@ -36,12 +36,19 @@ async function getJSON(path, fallback) {
 
 function short(s, n) { const v = String(s||'').trim(); return v.length>n ? v.slice(0,n-1)+'…' : v; }
 
+// Normalize to array: handle string (comma-separated), array, null, undefined
+function _arr(v) {
+  if (Array.isArray(v)) return v;
+  if (typeof v === 'string' && v.trim()) return v.split(',').map(s => s.trim());
+  return [];
+}
+
 function matchesSector(setup) {
   const id = (setup.setup_id || setup.title || '').toLowerCase();
   const title = (setup.title || '').toLowerCase();
   const thesis = (setup.thesis || '').toLowerCase();
-  const tags = (setup.asset_tags || []).map(t => t.toLowerCase());
-  const actors = (setup.actors || []).map(a => a.toLowerCase());
+  const tags = _arr(setup.asset_tags).map(t => String(t).toLowerCase());
+  const actors = _arr(setup.actors).map(a => String(a).toLowerCase());
   const all = [id, title, thesis, ...tags, ...actors].join(' ');
   return KEYWORDS.some(k => all.includes(k));
 }

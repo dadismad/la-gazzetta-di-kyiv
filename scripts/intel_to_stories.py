@@ -371,6 +371,32 @@ def intel_story_to_gazzetta(intel_story, pillar):
 
     horizon = intel_story.get("horizon", "24-72h")
 
+    # ── v22.45: Pace derivation from story content (was hardcoded 1.0) ──
+    # Urgency keywords in headline/bet score higher pace
+    urgency_keywords = [
+        "breaking", "urgent", "flash", "alert", "crash", "spike",
+        "plunge", "surge", "rout", "panic", "soar", "tumble",
+        "crisis", "emergency", "imminent", "warning", "red alert"
+    ]
+    text_combined = f"{headline} {bet_text} {event_text}".lower()
+    urgency_hits = sum(1 for k in urgency_keywords if k in text_combined)
+    # Horizon-based base pace: shorter horizon = higher velocity
+    horizon_base = {
+        "1-6h": 3.0, "6-24h": 2.2, "24-72h": 1.5,
+        "1w+": 1.1, "structural": 0.8
+    }.get(horizon, 1.3)
+    # Contradiction multiplier: high contradiction = capital moves faster
+    contra_mult = 1.0 + (contradiction_score - 50) * 0.01 if contradiction_score > 50 else 1.0
+    # Urgency bonus: each urgency keyword adds 0.3
+    urgency_bonus = urgency_hits * 0.3
+    # Asset-class velocity modifier
+    asset_velocity = {
+        "crypto": 1.3, "defense": 1.2, "commodities": 1.1,
+        "equities": 0.95, "fixed_income": 0.8, "fx": 0.9, "tech": 1.1
+    }.get(asset_class, 1.0)
+    pace_mult = round((horizon_base + urgency_bonus) * contra_mult * asset_velocity, 1)
+    pace_mult = max(0.5, min(5.0, pace_mult))  # Clamp to sensible range
+
     # Entity extraction
     all_text = f"{headline} {bet_text} {event_text} {benefit_text}"
     entity_tags = extract_entities(all_text)
@@ -399,7 +425,7 @@ def intel_story_to_gazzetta(intel_story, pillar):
             "amount_b": amount_b,
             "asset_class": asset_class,
             "projected": projected,
-            "pace_multiplier": 1.0,
+            "pace_multiplier": pace_mult,
             "confidence_pct": conf,
             "confidence_level": confidence_level,
         },
