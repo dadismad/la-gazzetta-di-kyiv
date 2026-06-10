@@ -559,7 +559,7 @@ function renderMarketRegime() {
       }
       mr.style.display = 'grid';
     })
-    .catch(() => { if (mr) mr.style.display = 'none'; });
+    .catch((e) => { console.error("Market prices fetch failed:", e); if (mr) mr.style.display = 'none'; });
 }
 // v22.31: Render lead insight + sector summary from flows.json
 function renderFlowInsight(flowsData) {
@@ -1468,6 +1468,7 @@ function wireCardDelegation() {
           timelineEl.dataset.loaded = 'true';
         }
       } catch (err) {
+        console.error("Timeline fetch failed:", err);
         timelineEl.innerHTML = '<div class="timeline-empty">' + i18n.t('could_not_load','Could not load timeline.') + '</div>';
         timelineEl.dataset.loaded = 'true';
       }
@@ -1847,7 +1848,8 @@ function renderTrackRecord(targetId) {
           <div class="tr-methodology"><a href="capital.html">Full methodology →</a></div>`;
       }
     })
-    .catch(() => {
+    .catch((e) => {
+      console.error("Track record fetch failed:", e);
       // Fallback: localStorage only
       renderTrackRecordLocal(el, stats);
     });
@@ -2400,7 +2402,8 @@ async function populateTeasers() {
             el.innerHTML = items.join('');
             if (subEl) subEl.textContent = `${flowsData.flows.length} flows · ${contradictions.length} contradictions`;
           }
-        }).catch(() => {
+        }).catch((e) => {
+          console.error("Signal triangulation fetch failed:", e);
           el.innerHTML = '<div class="teaser-item">Signal triangulation loading — stories × flows × trades.</div>';
           if (subEl) subEl.textContent = 'Awaiting data';
         });
