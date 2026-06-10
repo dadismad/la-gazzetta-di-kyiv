@@ -1,12 +1,12 @@
 # Gazzetta di Kyiv — Daily Brief
-**2026-06-09 17:28 UTC**
+**2026-06-10 06:02 UTC**
 
 ## Top Narratives
-- **$30.0B ↑ equities** — Score: 0/40
-- **$30.0B ↑ equities** — Score: 0/40
-- **$27.0B ↑ equities, crypto, FX** — Score: 0/40
-- **$21.6B ↑ commodities** — Score: 0/40
-- **$21.6B ↑ commodities** — Score: 0/40
+- **** — Score: 0/40
+- **$88.0B ↓ commodities** — Score: 0/40
+- **$34.0B inflow tech** — Score: 0/40
+- **$12.5B inflow tech** — Score: 0/40
+- **** — Score: 0/40
 
 ## Summary
 - 12 candidates scored

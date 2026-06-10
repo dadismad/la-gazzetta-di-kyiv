@@ -1,138 +1,52 @@
 {
-  "scrape_time": "2026-06-09T17:11:54+00:00",
-  "model": "deepseek-v4-flash",
-  "horizon": "1-2 hours",
-  "day_of_week": "Tuesday (US markets OPEN — ~3.8h remaining in session, close 21:00 UTC)",
-  "channels_monitored": ["@trad_fin", "@MonitoringSituation", "@ASupersharij", "@infinityhedge", "@ethanlevins", "@markettwits"],
-  "channel_status": {
-    "@trad_fin": "HOT — 2 messages in 30min (latest: 2026-06-09T17:00) incl. Trump Apache shootdown announcement",
-    "@MonitoringSituation": "HOT — 1 message in 30min (latest: 2026-06-09T16:44) — Trump 'must respond' statement",
-    "@ASupersharij": "COLD — no new messages in 30min (latest: 2026-06-09T16:12)",
-    "@infinityhedge": "WARM — 2 messages in 30min (latest: 2026-06-09T17:08) — Claude Fable 5 release (non-actionable)",
-    "@ethanlevins": "COLD — no new messages in 30min (latest: 2026-06-09T14:58)",
-    "@markettwits": "HOT — 1 message in 30min (latest: 2026-06-09T16:41) — Trump promises response to Apache shootdown"
-  },
-  "fresh_messages_30min": {
-    "@trad_fin": [
-      {"text": "*TRUMP: IRANIANS SHOT DOWN US APACHE HELICOPTER OVER STRAIT OF HORMUZ | *TRUMP: TWO PILOTS INVOLVED ARE SAFE AND UNINJURED | *TRUMP: UNITED STATES MUST RESPOND TO ATTACK", "date": "2026-06-09T16:38:26+00:00"},
-      {"text": "*ANTHROPIC LAUNCHED CLAUDE FABLE 5, ITS MOST POWERFUL MODEL, TO THE GENERAL PUBLIC", "date": "2026-06-09T17:00:20+00:00"}
-    ],
-    "@MonitoringSituation": [
-      {"text": "THE UNITED STATES MUST, OF NECESSITY, RESPOND TO THIS ATTACK.", "date": "2026-06-09T16:44:04+00:00"}
-    ],
-    "@ASupersharij": [],
-    "@infinityhedge": [
-      {"text": "ANTHROPIC RELEASES CLAUDE FABLE 5 (MYTHOS-CLASS MODEL)- INFINITYHEDGE", "date": "2026-06-09T16:54:05+00:00"},
-      {"text": "CLAUDE FABLE 5 AND MYTHOS 5 BENCHMARKS\n\nClaude Fable 5 is available everywhere today. Claude Mythos 5 is restricted to Glasswing partners.\n\nFable 5 and Mythos 5 are being offered at $10 per million input tokens and $50 per million output tokens\n\nMore here: https://www.anthropic.com/news/claude-fable-5-mythos-5", "date": "2026-06-09T17:08:17+00:00"}
-    ],
-    "@ethanlevins": [],
-    "@markettwits": [
-      {"text": "⚠️🇮🇷#иран #геополитика \nТрамп: США должны отреагировать на нападение Ирана на вертолет США в Ормузе\n\nТрамп пообещал ответ на сбитый вертолет Apache", "date": "2026-06-09T16:41:42+00:00"}
-    ]
-  },
-  "summary_stats": {
-    "total_messages_scanned": 114,
-    "messages_last_30min": 6,
-    "messages_last_2h": 43,
-    "actionable_stories_identified": 3
-  },
-  "stories": [
+  "scraped_at": "2026-06-10T05:49:45+00:00",
+  "total_messages": 102,
+  "channels_monitored": ["trad_fin", "MonitoringSituation", "ASupersharij", "infinityhedge", "ethanlevins", "markettwits"],
+  "actionable_stories": [
     {
-      "id": "us-apache-shot-down-hormuz-trump-retaliation-20260609",
-      "title": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
-      "freshness": "33 min ago (16:38 UTC) — JUST BROKEN, market still processing",
-      "source_channels": ["@trad_fin", "@MonitoringSituation", "@markettwits"],
-      "event": "At 16:38 UTC, Trump announced via official statement that Iran shot down a US Army AH-64 Apache attack helicopter over the Strait of Hormuz. Two pilots were rescued safely. Trump stated twice — at 16:38 and 16:44 UTC — that 'THE UNITED STATES MUST, OF NECESSITY, RESPOND TO THIS ATTACK.' @markettwits (16:41 UTC) confirmed Trump 'promised a response' to the downed Apache. The Apache was reportedly on patrol over the Strait of Hormuz — the same chokepoint where the US maintains a naval blockade against Iran. @ethanlevins had reported the Apache crash earlier in the day (10:59 UTC) citing NYT saying it 'crashed' — now confirmed as shot down by Iran. This is the first direct US military casualty event involving Iran in this conflict cycle. The Apache shootdown transforms the Iran crisis from a US-backed Israeli operation into a direct US-Iran military confrontation.",
-      "consensus_narrative": "This is the single most consequential escalation of the Iran conflict to date. A US helicopter was SHOT DOWN — not an accident, not a collision — and the President of the United States has publicly declared the US 'must respond.' The Strait of Hormuz location is not coincidental — it's the epicenter of the US blockade against Iran. This event transforms the market calculus: previously, markets saw the Iran conflict as Israel vs Iran with the US as a backstop/mediator. Now the US is a direct belligerent. The risk premium for oil, gold, and defense stocks just repriced upward. For equities, the Apache shootdown accelerates the pre-existing selloff — geopolitical risk premium that was 'theoretical' at 15:30 is now concretely priced as US forces are directly under attack. The EIA's Hormuz timeline (blockade through Q3 2026) published just 25 minutes before this news now looks optimistic — if the US is now in active military engagement with Iran over the Strait, the blockade doesn't end until the military outcome is decided. Trump's 'must respond' language leaves zero ambiguity about imminent US retaliation.",
-      "contradiction": "The Apache was 'shot down' according to Trump — but no independent confirmation of the circumstances exists. The NYT earlier reported it as a 'crash' with crew rescued. If the shootdown narrative is pre-text for escalation rather than a verified hostile act, the market reaction could reverse on clarification. Iran may claim it was a warning shot or accidental. Trump is known for escalating rhetoric that doesn't always materialize into action — his 'must respond' is identical language to previous threats that resulted in measured responses. The EIA's simultaneous demand downgrade for oil creates a ceiling — if US retaliation is limited (e.g., cyber, diplomatic), oil spikes and fades. The White House was simultaneously claiming 'progress' on Iran deal at 13:55 UTC — the diplomatic track hasn't been formally abandoned despite the Apache shootdown. The rescue of both pilots without casualties means this isn't a loss-of-life trigger — the military response calculus is different from a fatality event.",
-      "bet": {
-        "direction": "LONG oil/gold aggressively; SHORT equities on escalation risk premium repricing",
-        "assets": ["$USO", "$CL (WTI Crude)", "$BNO (Brent)", "$XLE", "$OIH", "$GLD", "$SPY puts", "$QQQ puts", "$VIX calls", "$LMT", "$GD"],
-        "trigger": "The Apache shootdown + Trump 'must respond' statement is already live. Oil should gap-bid immediately as markets price direct US-Iran military confrontation over the Strait of Hormuz. WTI should test $88-90 range (EIA's forecast) within the session. VIX should rip as equity risk premium reprices. Key trigger: any confirmation of US military response (airstrikes, naval movement, troop deployment) before 21:00 UTC close will send oil $3-5 higher and equities 2-3% lower. If Trump announces a measured response (diplomatic, sanctions-only) the spike fades and equity shorts cover. Monitor @MonitoringSituation and @trad_fin for US response confirmation.",
-        "horizon": "Next 2 hours through US close — oil position has multi-week structural tail, equity shorts are tactical into close",
-        "confidence": "HIGH on oil/gold (direct US-Iran military confrontation is the most bullish catalyst for oil prices), MEDIUM on equity shorts (Apache story accelerates existing selloff but reversal on measured response is asymmetric risk)"
-      },
-      "benefit": {
-        "Gazzetta di Kyiv": "FRAME: 'The war just found America. Iran shot down a US Apache over the Strait of Hormuz. Trump says the US must respond. The blockade that Washington designed as a coercive economic instrument against Iran just became a shooting war. Ukraine has been saying for three years: when you design escalation as policy, you eventually get escalation as reality. The Strait of Hormuz is now a combat zone — and the US military is the direct target, not the backstop. This changes everything about the global war map.' Angle: 'The EIA published a timeline assuming peaceful Hormuz resolution by Q3 2026 — 25 minutes later, Iran shot down a US helicopter. The planning assumption was wrong within the same news cycle. Ukraine has watched Western planning assumptions fail for three years — from sanctions timelines to counteroffensive schedules to F-16 delivery dates. The lesson: war doesn't follow forecasts.'",
-        "Bet&Benefit": "Oil longs are the single highest-conviction trade of the session. Direct US-Iran military engagement over the world's most important oil chokepoint is the definition of a binary bullish oil catalyst. Go long WTI/Brent futures, USO, XLE, OIH hard into close. Pair with gold (GLD) for the flight-to-safety bid and defense primes (LMT, GD) for the military spending repricing. Equity shorts from the pre-existing selloff are reinforced — the Apache shootdown adds escalation risk premium that was absent at 15:30 when the S&P broke Friday's low. VIX calls are the asymmetric tail bet — if VIX breaks above 20, the gamma squeeze accelerates selling. The asymmetric risk is a limited US response — if Trump fires a few cruise missiles and declares 'mission accomplished,' oil spikes and fades. Position size accordingly, but do not be flat oil into the US response window (next 2-24 hours)."
-      },
-      "materiality_score": 10.0
+      "rank": 1,
+      "headline": "Iran-US Active Military Exchange — Retaliatory Strikes Underway Across Middle East",
+      "event": "US completed strikes on 20+ targets inside Iran in response to Iran shooting down a US Apache helicopter over Strait of Hormuz. Iran retaliated within hours, launching missiles and drones at US military assets in Bahrain (with confirmed direct impacts), Kuwait, and Jordan. IRGC warned of 'massive response' if attacked again. This is an active shooting conflict between US and Iran — not a proxy, not a threat — kinetic strikes both ways.",
+      "consensus_narrative": "Market consensus is treating this as 'controlled escalation' — CNN reports US still hopes for negotiations; Trump downplayed the Apache incident as 'wasn't a big deal'. The narrative is that both sides are signaling they want de-escalation after a round of tit-for-tat. EIA assumes Hormuz shipments resume Q3 2026.",
+      "contradiction": "Iran already retaliated — the 'one and done' thesis is broken. IRGC explicitly warned of further strikes if US hits again. Iran's Deputy Foreign Minister denied responsibility for the Apache shootdown, suggesting the attack was from non-state actors Iran can't control — meaning Iran may NOT be able to de-escalate even if it wants to. The Strait of Hormuz remains a live flashpoint. Oil exports already collapsed to 209k bpd (6-yr low) — the economic damage is already priced into physical supply.",
+      "bet": "LONG crude futures (CL, COIL) — Brent breaches $95 within 2 hours. LONG defense (LMT, GD, NOC). SHORT Iranian-exposed equities. LONG tanker rates (no one wants to transit Hormuz). The EIA assuming 'resumption in Q3' is overly optimistic — position for prolonged disruption.",
+      "benefit": "Gazzetta di Kyiv leads with 'US-IRAN HOT WAR: Strikes, Retaliation, and the Strait of Hormuz in Flames'. Bet&Benefit positions: OIL UP aggressive long with tight stop at $88 Brent. Defense sector call. Crypto plays as flight from fiat if escalation widens. Ukraine benefits from US distraction in the Gulf — Russia may exploit this window.",
+      "source_channels": ["ethanlevins", "markettwits", "trad_fin", "MonitoringSituation"],
+      "recency_minutes": "3-38 min ago",
+      "market_horizon": "1-2 hours — pre-market reaction in Asian session, US futures will reprice at open"
     },
     {
-      "id": "eia-hormuz-timeline-q3-2026-closure-20260609",
-      "title": "EIA Drops Bombshell Hormuz Timeline — Blockade Persists Through Q3 2026, Full Recovery Only in 2027",
-      "freshness": "58 min ago (16:13 UTC) — NOW OVERLAID BY APACHE SHOOTDOWN — structurally MORE bullish than standalone",
-      "source_channels": ["@MonitoringSituation", "@markettwits"],
-      "event": "The EIA (US Energy Information Administration) released two bombshell assumptions in its Short-Term Energy Outlook: (1) it now ASSUMES Strait of Hormuz oil shipments resume in Q3 2026 — meaning the US government forecasts the blockade persists at minimum another 3-6 months; (2) even after resumption, traffic won't ramp to pre-Iran-war levels until early 2027. This is the first time the US government's energy forecasting arm has published an explicit timeline for the blockade's duration. Simultaneously, the EIA lowered its global oil demand forecast for 2026 — previously expected growth, now expects decline. Yet the EIA's WTI price forecast still rose to $88.32/bbl from $85.68. RE-CONTEXTUALIZED by Apache shootdown: the EIA's assumption of a negotiated end to the blockade in Q3 2026 is based on a diplomatic resolution scenario. The Apache shootdown makes diplomatic resolution LESS likely, extending the blockade timeline further.",
-      "consensus_narrative": "The EIA Hormuz timeline was already the most important oil data point of the session. Now it's been supercharged by the Apache shootdown. The EIA assumed a diplomatic end to the blockade — that assumption just got blown up by a direct US-Iran military incident. The EIA's WTI forecast of $88.32 is now the FLOOR, not the ceiling. The demand downgrade is overwhelmed by the supply disruption escalation. For equity markets, the Apache shootdown confirms and accelerates the pre-existing momentum breakdown.",
-      "contradiction": "If the US responds with overwhelming force and the blockade ends faster (military resolution instead of diplomatic), oil could spike then collapse as the Strait reopens. The demand destruction from sustained $90+ oil is real — the EIA already cut its demand forecast. Higher oil = lower consumer spending = recession risk. The Fed may be forced to cut rates into an oil shock, which is disinflationary in the demand channel but inflationary in the supply channel. This is the stagflation scenario markets haven't priced.",
-      "bet": {
-        "direction": "LONG oil — EIA timeline + Apache shootdown = structural supply disruption bid reinforced",
-        "assets": ["$USO", "$CL (WTI Crude)", "$BNO (Brent)", "$XLE", "$TNK", "$STNG (tanker rates beneficiary)"],
-        "trigger": "The Apache shootdown is the catalyst that breaks the EIA's diplomatic resolution assumption. Oil should repriced upward from the EIA's $88.32 WTI forecast toward $90-95 within the next 2 hours as the market incorporates direct US-Iran military confrontation risk. Key level: WTI $88 breach confirms the repricing. Hold through close for gap-open Wednesday.",
-        "horizon": "Next 2 hours through US close; multi-week structural tail on supply disruption",
-        "confidence": "VERY HIGH — dual confirmation of supply disruption thesis (EIA official forecast + direct US-Iran military escalation)"
-      },
-      "benefit": {
-        "Gazzetta di Kyiv": "REFRAME: 'The EIA assumed Hormuz opens in Q3 2026 via diplomacy. Iran just shot down a US helicopter. The planning assumption lasted 25 minutes. Ukraine has watched Western planning assumptions fail for three years — from sanctions timelines to counteroffensive schedules to F-16 delivery dates. The lesson: war doesn't follow forecasts. The blockade that was supposed to pressure Iran into a deal is now the battlefield where US troops are getting shot at. The Strait of Hormuz is not a policy tool — it's a combat zone.'",
-        "Bet&Benefit": "The EIA Apache-confirmed oil bid is the highest-conviction trade. Do not overthink the demand downgrade — supply disruption dominates in the short term. Pair oil longs with gold for the geopolitical flight-to-safety bid that is just beginning to price."
-      },
-      "materiality_score": 9.5
+      "rank": 2,
+      "headline": "Iranian Oil Exports Collapse to 209k bpd — Russia Rushes to Fill China Void",
+      "event": "Iranian oil exports crashed to 209,000 barrels per day in May — the lowest in 6 years (Vortexa Analytics). Simultaneously, analysts surveyed by Izvestia say Russia can increase oil exports to China by 25% in 2026 to replace lost Iranian barrels. Russia's Q1 2026 oil exports to China were already up 31% y/y. The US naval blockade/strikes on Iran are physically throttling supply out of the Gulf.",
+      "consensus_narrative": "The EIA still forecasts WTI at $88.32 for 2026 (up from $85.68) and assumes Hormuz shipping resumes in Q3. The consensus view is that Russia will smoothly replace Iranian supply, limiting oil price upside.",
+      "contradiction": "Russia is already near capacity — 25% increase to China implies redirecting from other buyers, creating supply gaps elsewhere. Russian crude is not the same grade as Iranian heavy sour — Chinese refineries will need costly adjustments. Meanwhile, the US blockade plus active bombing of Iran makes a Q3 Hormuz resumption fantasy. The real supply loss is 1.5-2M bpd from Iran alone, and Russia CAN'T fully cover that.",
+      "bet": "LONG Brent/WTI with conviction — $88 EIA estimate is too low. Target $98-105 if Hormuz stays hot. LONG US oil producers (OXY, COP, XOM). LONG clean tanker rates (Russian route is longer). SHORT Chinese refinery margins (input cost squeeze). LONG uranium as Russia-focused energy trade diversifies supply chains.",
+      "benefit": "Gazzetta di Kyiv: 'Iran Exports at 6-Year Low — Oil Shock Reverberates Through Global Markets'. Bet&Benefit: Energy supercycle narrative — buy oil stocks and oil etfs. Ukraine angle: Russia gets richer selling more oil to China = more war funding = Ukraine needs more Western aid.",
+      "source_channels": ["markettwits", "MonitoringSituation"],
+      "recency_minutes": "22-27 min ago",
+      "market_horizon": "1-2 hours — oil already pricing, WTI/HO/CL moves accelerating into US session"
     },
     {
-      "id": "us-equity-selloff-continues-friday-low-break-20260609",
-      "title": "US Stock Selling Resumed — Friday Low Break Confirmed and Now Accelerated by Apache Shootdown Escalation",
-      "freshness": "63 min ago (16:08 UTC) — Apache shootdown at 16:38 adds escalatory fuel",
-      "source_channels": ["@markettwits", "@trad_fin"],
-      "event": "@markettwits reported at 16:08 UTC: US stocks resumed selling after Monday's respite. S&P down 1.2%, Nasdaq down 2%. At 16:38 UTC, the Apache shootdown news broke — this adds a direct US-Iran military confrontation catalyst to a selloff that previously had NO single headline driver. The selloff was positioning-driven and technical (death by a thousand cuts). NOW it has a catalyst. S&P breaking Friday low is the first lower-low formation since the Iran escalation began. SPX down 1.2% was pre-Apache — expect another 1-2% leg down into close as the escalation risk premium reprices.",
-      "consensus_narrative": "The Apache shootdown transforms the equity selloff from a 'mystery technical breakdown' into a 'catalyst-driven risk-off event.' Previously, traders couldn't identify the trigger — making it hard to short with conviction. Now there is a crystal-clear trigger: direct US-Iran military confrontation. S&P support at Friday low (~5320) just broke. Next support is the May low (~5250). If VIX breaches 20, the cascade accelerates into close. The Apache story is fresh enough that positioning hasn't fully adjusted — the bulk of the repricing happens in the next 2 hours.",
-      "contradiction": "The S&P 500 is still only down ~1.2% on a US military confrontation breaking out — this is NOT a panic sell. If the selloff was going to crash, it would have already. The fact that it's controlled suggests markets expect a limited US response (cruise missiles, not ground war). SpaceX IPO is 'well oversubscribed' and closes Wednesday — institutional risk appetite for high-conviction names hasn't collapsed. BlackRock is launching new ETFs. If Trump's response is genuinely limited, the dip gets bought aggressively given positioning was already short from the Friday low break.",
-      "bet": {
-        "direction": "SHORT indices on escalation risk repricing; ready to cover on any response confirmation if it's measured",
-        "assets": ["$SPY puts (delta 0.30-0.40, 0-3 DTE)", "$QQQ puts", "$SDS (UltraPro Short S&P 500)", "$VIX calls"],
-        "trigger": "The Apache shootdown is live. S&P will test next support at May low (~5250) within the session if VIX breaches 20. Key reversal trigger: any US response that is diplomatically framed (e.g., 'proportionate retaliation' or 'we will respond through diplomatic channels') would cause short covering. Monitor @MonitoringSituation, @trad_fin for the exact wording of the US response. If Trump authorizes strikes, short positions gain. If he defers, cover fast.",
-        "horizon": "Next 2 hours through US close; monitoring for US response announcement",
-        "confidence": "MEDIUM-HIGH on short continuation — the Apache shootdown gives the selloff a catalyst it previously lacked, but the controlled selling suggests the market is not panicking. The asymmetry is tilted toward further downside until the US response is known.",
-        "key_levels": "S&P 5250 (May low, next support), Nasdaq 18900 (May low), VIX 20 (cascade trigger)"
-      },
-      "benefit": {
-        "Gazzetta di Kyiv": "UPDATE: 'What was a 'mystery selloff' now has a name: Hormuz. The S&P broke Friday's low on accumulated geopolitical risk without a catalyst. Then Iran shot down a US helicopter. Now the selloff has a headline. Markets went from 'can't identify the risk' to 'the risk is a US-Iran shooting war over the world's most important oil chokepoint' in 30 minutes. This is how geopolitical escalation works — it accelerates faster than any model can price.'",
-        "Bet&Benefit": "Short SPY/QQQ with the Apache catalyst is cleaner than the pre-existing 'no catalyst' short. The risk-reward is asymmetric to downside into close because no US response has been announced yet — the uncertainty premium cuts against risk assets. Cover immediately on any measured response announcement. VIX calls are portfolio insurance, not a core position."
-      },
-      "materiality_score": 8.5
+      "rank": 3,
+      "headline": "Ukraine Strikes Deep Into Russia — FP-5 Flamingo Missiles Hit Cheboksary, Targeting Urals",
+      "event": "Ukrainian FP-5 Flamingo cruise missiles struck Cheboksary in the Chuvashia Republic (Volga region, ~600km east of Moscow). Additional missiles are inbound toward Tyumen Oblast in the Urals. This is among the deepest Ukrainian strikes into Russian territory to date. Separately, Russia hit Kharkiv with 25 Geran-2 drones and Odesa with 30 drones — large-scale reciprocal drone/missile barrages.",
+      "consensus_narrative": "Ukraine-Russia war is in a grinding attrition phase, slowly escalating but not breaking any new paradigms. Western attention is consumed by Iran-US conflict. Ukraine's deep strikes are seen as symbolic/political signaling rather than war-changing operations.",
+      "contradiction": "Striking Cheboksary (Volga region) and targeting Tyumen (Urals) is NOT symbolic — these are industrial/energy infrastructure regions. FP-5 Flamingo is a Ukrainian-designed long-range cruise missile with 1,000+ km range being used in combat. If Ukraine can consistently hit targets 600-1,500km inside Russia, it changes Russian logistics calculus. Tyumen is a major oil-producing region — hitting there would have direct energy market impact. AND this is concurrent with Iran-US war — Russia is now fighting on two emotional fronts (Ukraine + its Iranian proxy commitments).",
+      "bet": "LONG Ukrainian reconstruction/defense names. LONG natural gas (UA strikes could target Russian gas infrastructure). LONG defense primes (RTX, GD). SHORT Russian ruble/RSX. The Iran distraction gives Ukraine operational room — this pattern will continue.",
+      "benefit": "Gazzetta di Kyiv front page: 'KYIV STRIKES 600KM INSIDE RUSSIA — FP-5 Missiles Hit Cheboksary, Urals Next'. Bet&Benefit: Buy Ukrainian defense bonds / Rheinmetall. Natural gas call as Russian infrastructure risk reprices. NOTE: Iran story is bigger for markets in T+2h but Ukraine deep strike is the most important strategic development for the war itself.",
+      "source_channels": ["ethanlevins", "ASupersharij"],
+      "recency_minutes": "30 min ago (still in-flight for Tyumen)",
+      "market_horizon": "2-4 hours — gas markets will watch for Tyumen reports. Defense sector repricing."
     }
   ],
-  "stories_considered_but_dropped": [
-    {
-      "story": "Anthropic Launched Claude Fable 5 (@trad_fin 17:00, @infinityhedge 16:54-17:08)",
-      "reason": "AI product launch. Not geopolitical. Irrelevant to Gazzetta di Kyiv / Bet&Benefit mandate."
-    },
-    {
-      "story": "ASupersharij Zelensky Death Narrative Disinformation Prep (16:12 UTC)",
-      "reason": "Russian propaganda content. Non-actionable for 1-2h markets. Monitor for future developments but not actionable now versus the Apache shootdown."
-    },
-    {
-      "story": "Brent Crude Below $90 (@markettwits 16:06, @MonitoringSituation 16:07)",
-      "reason": "Pre-Apache data point. Brent below $90 was a short-term dip but the Apache shootdown will push it back above $90 aggressively. Overtaken by events."
-    },
-    {
-      "story": "Taiwan Military Drills (@markettwits 15:57)",
-      "reason": "Routine drills. Not new escalate trigger. Irrelevant compared to Apache shootdown."
-    }
+  "alerts": [
+    "ACTIVE US-IRAN KINETIC CONFLICT — both sides have struck each other's territory in the last 2 hours",
+    "IRAN OIL EXPORTS AT 6-YEAR LOW — 209k bpd is 90%+ below pre-blockade levels",
+    "UKRAINE HITS CHEBOKSARY — deepest strike into Russia, missiles still airborne toward Urals",
+    "CME LAUNCHES CRYPTO INDEX FUTURES — institutional crypto milestone (lower priority for T+2h)",
+    "CHINA CPI ABOVE CONSENSUS (+1.2% vs +0.9% expected) — inflationary pressure in China rising",
+    "JAPAN PPI HITS 6.3% Y/Y — BOJ rate hike to 1.0% likely this month"
   ],
-  "story_hierarchy": {
-    "primary": {
-      "title": "BREAKING: Iran Shoots Down US Apache — Trump Declares US 'Must Respond'",
-      "why": "Direct US-Iran military confrontation over the Strait of Hormuz. The defining escalation event of the session. Transforms the oil/equity/gold macro picture instantly. Materiality score: 10/10."
-    },
-    "secondary": {
-      "title": "EIA Hormuz Timeline — Blockade Structural Through Q3 2026 (NOW Supercharged by Apache Shootdown)",
-      "why": "The EIA's diplomatic-resolution assumption just got invalidated by direct US-Iran military engagement. Oil bid reinforced structurally. EIA's $88.32 WTI forecast is now the floor."
-    },
-    "tertiary": {
-      "title": "US Equity Selloff Gains Catalyst — Apache Shootdown Turns 'Mystery' Breakdown Into Catalyst-Driven Risk-Off",
-      "why": "The pre-existing S&P Friday low break now has a clear escalation driver. Expect 1-2% further downside into close. VIX cascade risk if 20 breaks."
-    }
-  },
-  "meta_observation": "Tuesday June 9, 17:11 UTC. THIS IS THE DEFINING SCOPE OF THE SESSION. At 16:38 UTC, Trump announced Iran shot down a US Apache helicopter over the Strait of Hormuz and the US 'must, of necessity, respond.' This transforms everything. The EIA Hormuz timeline (blockade through Q3 2026) published 25 minutes prior now looks optimistic — its diplomatic resolution assumption just got invalidated. The pre-existing equity selloff (S&P broke Friday low, selling resumed at 16:08) now has a concrete geopolitical catalyst instead of being a 'mystery breakdown.' For Bet&Benefit: (1) OIL LONGS are the highest-conviction trade — direct US-Iran military confrontation over the world's most important oil chokepoint is the most bullish catalyst for oil prices. Go long WTI/Brent, USO, XLE, OIH aggressively. (2) GOLD LONGS for flight-to-safety — the Apache shootdown triggers safe-haven flows that were absent from the pre-existing equity selloff. (3) EQUITY SHORTS are reinforced — the Apache catalyst gives the selloff legitimacy and a clear trigger for further downside. (4) VIX CALLS for tail protection — if VIX breaks 20, gamma cascade accelerates selling into close. The key unknown: the SCOPE of the US response. A limited cruise missile strike = oil spikes and fades. A wider military engagement = oil to $95+, equities crash 3-5%. Monitor @MonitoringSituation, @trad_fin, @markettwits for the US response announcement, which could come at any moment. For Gazzetta di Kyiv: the lead is the Apache shootdown — 'The war found America. Iran shot down a US helicopter over Hormuz. Trump says the US must respond. The blockade designed as economic coercion became a shooting war in 25 minutes. Ukraine has been saying this for three years: escalation as policy becomes escalation as reality.'"
+  "all_messages": []
 }

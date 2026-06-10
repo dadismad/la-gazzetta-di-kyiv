@@ -1,51 +1,145 @@
 {
   "gate": "editorial-quality",
-  "source": "telegram_latest.md",
-  "generated_at": "2026-06-09T18:25:04Z",
-  "verdict": "PASS",
-  "combined_score": 8.5,
+  "source": "telegram_latest.md, stories.json, website_stories_latest.json, asset_claims_latest.json",
+  "generated_at": "2026-06-10T12:15:00Z",
+  "cycle_number": 18,
+  "verdict": "FAIL",
+  "combined_score": 5.2,
+  "top_down_avg": 5.0,
+  "bottom_up_avg": 5.3,
   "checks": {
-    "factual_accuracy": {
-      "status": "PASS",
-      "details": "All 3 claims cross-referenced against stories.json: (1) US existing home sales +3.2% MoM vs +1.1% — confirmed from story n21_china_ascendancy__us_existing_home_sales_crush_estimates, (2) Israel Nabatieh offensive derails US-Iran Hormuz talks — confirmed from story n21_multi_pillar__israel_s_nabatieh_offensive, (3) oil stays below $90 despite escalation — confirmed from lead story n21_multi_pillar__critical_contradiction_wti_drops_below_90. Source citation (Census Bureau, NAR, 14:00 UTC June 9) verified."
-    },
-    "contradiction_sharpness": {
-      "status": "PASS",
-      "score": 9,
-      "details": "Two sharp contradiction frames: (1) Housing 'resilient' consensus vs shelter inflation stickier + Fed narrative shattered, (2) Oil 'consensus normalization' vs 'evidence points escalation.' Both name specific actors (Fed, Israel, Iran). No straw-man constructions — each 'consensus' claim is a reasonable position that a real market participant could hold."
-    },
-    "ideological_voice": {
-      "status": "PASS",
-      "score": 9,
-      "details": "Bold declarative claims: 'Fed's softening narrative just shattered,' 'Evidence points escalation.' Named actors throughout (Fed, Israel, US-Iran). No hedging. No McKinsey-deck language. Reads like a journalist, not a consultant."
-    },
     "word_count": {
       "status": "PASS",
-      "count": 67,
-      "limit": 100,
-      "details": "Main body is 67 words — well under the 100-word Telegram ceiling."
+      "count": 96,
+      "limit": "80-140",
+      "details": "96 words \u2014 within target range."
     },
-    "actionable_bet_clarity": {
+    "grammar": {
       "status": "PASS",
-      "score": 8,
-      "details": "Three clear, executable trades: (1) Long USD on rate-cut delay, (2) Short BTC on USD-strength narrative, (3) Long GLD for geopolitical cover. Each has a visible causal chain connecting to the contradiction frame. Cross-verified against stories.json thesis statements — all match."
+      "details": "No grammar errors detected. Subject-verb agreement correct everywhere."
     },
     "banned_phrases": {
       "status": "PASS",
-      "details": "Zero banned phrases detected. No 'narrative acceleration,' 'second-order effects,' 'transmission effects,' 'repricing whipsaws,' 'mention-share,' 'cross-source confirmation,' or 'sensitive to negotiation headlines.'"
+      "details": "Zero banned phrases detected."
     },
-    "platform_voice": {
+    "ideological_voice": {
       "status": "PASS",
-      "details": "Telegram signal format correct: contradiction-led, concise, bullet-pointed trades, source footnote. Does not read like Reddit or website content."
+      "score": 8,
+      "details": "Sharp, declarative voice. Named actors (Vance, Iran SNSC, US CENTCOM). Contradiction frame well-executed."
+    },
+    "factual_accuracy": {
+      "status": "PASS",
+      "score": 6,
+      "details": "Core claims consistent with story data but primary sources are social media handles without verifiable links."
+    },
+    "contradiction_sharpness": {
+      "status": "PASS",
+      "score": 7,
+      "details": "Clear falsifiable contradiction between Vance deal-talk and military signals. 'They Say' bundles 3 distinct positions."
+    },
+    "evidence_sourcing": {
+      "status": "WARN",
+      "score": 4,
+      "details": "Sources: ethanlevins/3489-90, markettwits/373486 \u2014 social media handles, no visible links."
+    },
+    "freshness": {
+      "status": "FAIL",
+      "details": "Lead topic identical to last_lead_topic, back-to-back in topic_history. Sliding '0-12h' trigger window across multiple cycles."
+    },
+    "status_line": {
+      "status": "PASS",
+      "details": "'Apache shootdown was 24h ago, no strike yet' answers the key question. Would benefit from explicit STATUS: format."
+    },
+    "human_detail_freshness": {
+      "status": "PASS",
+      "score": 5,
+      "details": "HD-023 IS new to this cycle but its content duplicates the Telegram lede."
+    },
+    "cross_platform_consistency": {
+      "status": "PASS",
+      "details": "Source files consistent on Iran lead theme."
+    },
+    "cross_platform_price_stop": {
+      "status": "PASS",
+      "details": "All tickers directionally consistent across Telegram and asset_claims."
+    },
+    "all_trades_same_direction": {
+      "status": "WARN",
+      "details": "All 3 claims same-direction (long WTI/GLD/VIX). No hedge for diplomacy scenario."
+    },
+    "continuity_link": {
+      "status": "FAIL",
+      "severity": "BLOCKING",
+      "details": "gazzetta-di-kyiv.com does NOT resolve. Same class of failure as previous QG \u2014 compound error."
+    },
+    "site_deployment": {
+      "status": "FAIL",
+      "severity": "BLOCKING",
+      "details": "build_site.py NOT run. Deployed site shows stale BTC lead, contradicts Telegram thesis."
+    },
+    "cross_cycle_fix_tracking": {
+      "status": "FAIL",
+      "details": "Previous QG flagged continuity URL deprecated GitHub Pages \u2192 changed to ANOTHER broken domain. Fix not verified."
+    },
+    "asset_claim_grounding": {
+      "status": "PASS",
+      "details": "All 3 tickers (CL, GLD, VIX) map to Apache shootdown story. No orphaned instruments."
+    },
+    "invalidation_trigger": {
+      "status": "PASS",
+      "details": "Concrete, falsifiable invalidation triggers provided."
     }
   },
-  "minor_issues": [
+  "blocking_failures": [
+    "Continuity link gazzetta-di-kyiv.com does not resolve (DNS dead) \u2014 same failure class as previous cycle",
+    "build_site.py not run \u2014 deployed site has stale content contradicting Telegram thesis",
+    "Same lead topic repeated back-to-back against editorial policy"
+  ],
+  "fixes_required": [
+    {
+      "severity": "critical",
+      "element": "continuity_link",
+      "description": "Continuity URL points to non-existent domain",
+      "fix": "Replace with www.lagazzettadikyiv.com in telegram_latest.md"
+    },
+    {
+      "severity": "critical",
+      "element": "site_deployment",
+      "description": "build_site.py not run",
+      "fix": "Run: python3 scripts/build_site.py, verify site data fresh"
+    },
+    {
+      "severity": "high",
+      "element": "topic_freshness",
+      "description": "Same lead topic back-to-back",
+      "fix": "Rotate lead topic next cycle"
+    },
+    {
+      "severity": "medium",
+      "element": "trigger_window",
+      "description": "'0-12h' sliding window across cycles",
+      "fix": "Replace with specific catalyst trigger"
+    },
     {
       "severity": "low",
-      "element": "Continuity link",
-      "description": "Continuity URL points to deprecated GitHub Pages (pureciclismo.github.io/gazzetta-di-kyiv/) which returns 404 since v22.7 GCS migration. Should point to live site (storage.googleapis.com/www.lagazzettadikyiv.com/index.html or custom domain).",
-      "fix": "Replace continuity link with live site URL"
+      "element": "sourcing",
+      "description": "Social media handles as primary source",
+      "fix": "Include flight radar/GPS jam map/official statement references"
     }
   ],
-  "verdict_rationale": "All seven primary checks pass with strong scores. Two clean contradiction frames with concrete actors. Factual accuracy verified against stories.json. No banned phrases or consulting-slang. The only issue is a continuity link pointing to a deprecated URL — low severity as it doesn't affect editorial quality. Overall: a clean, sharp Telegram signal post."
+  "focus_group_scores": {
+    "skeptical_journalist": {
+      "top_down": 5,
+      "bottom_up": 4
+    },
+    "busy_professional": {
+      "top_down": 3,
+      "bottom_up": 4
+    },
+    "chief_editor": {
+      "top_down": 7,
+      "bottom_up": 8
+    }
+  },
+  "verdict_rationale": "Combined score 5.2/10 (FAIL < 6.0). 3 BLOCKING failures: (1) continuity link dead DNS \u2014 same failure as previous QG showing compounding cross-cycle error, (2) build_site.py not run leaving stale deployed content, (3) same lead topic repeated back-to-back. Content writing quality is acceptable but delivery chain is catastrophically broken."
 }

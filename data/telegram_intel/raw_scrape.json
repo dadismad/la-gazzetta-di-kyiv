@@ -1,56 +1,55 @@
 {
-  "timestamp": "2026-06-09T17:11:34.058127+00:00",
+  "timestamp": "2026-06-10T05:14:10.146675+00:00",
   "channels": {
     "trad_fin": {
       "total": 20,
-      "recent_30min": [
-        {
-          "text": "*ANTHROPIC LAUNCHED CLAUDE FABLE 5, ITS MOST POWERFUL MODEL, TO THE GENERAL PUBLIC",
-          "date": "2026-06-09T17:00:20+00:00",
-          "post_id": "trad_fin/3523"
-        }
-      ]
+      "recent_30min": []
     },
     "MonitoringSituation": {
       "total": 20,
-      "recent_30min": [
-        {
-          "text": "THE UNITED STATES MUST, OF NECESSITY, RESPOND TO THIS ATTACK.",
-          "date": "2026-06-09T16:44:04+00:00",
-          "post_id": "MonitoringSituation/5623"
-        }
-      ]
+      "recent_30min": []
     },
     "ASupersharij": {
-      "total": 15,
-      "recent_30min": []
+      "total": 11,
+      "recent_30min": [
+        {
+          "text": "Момент одного из прилетов по «ВНИИР-Прогресс» в Чебоксарах.",
+          "date": "2026-06-10T04:50:37+00:00",
+          "post_id": "ASupersharij/55590"
+        }
+      ]
     },
     "infinityhedge": {
       "total": 20,
-      "recent_30min": [
-        {
-          "text": "ANTHROPIC RELEASES CLAUDE FABLE 5 (MYTHOS-CLASS MODEL)- INFINITYHEDGE",
-          "date": "2026-06-09T16:54:05+00:00",
-          "post_id": "infinityhedge/26679"
-        },
-        {
-          "text": "CLAUDE FABLE 5 AND MYTHOS 5 BENCHMARKS\n\nClaude Fable 5 is available everywhere today. Claude Mythos 5 is restricted to Glasswing partners.\n\nFable 5 and Mythos 5 are being offered at $10 per million input tokens and $50 per million output tokens\n\nMore here: https://www.anthropic.com/news/claude-fable-5-mythos-5",
-          "date": "2026-06-09T17:08:17+00:00",
-          "post_id": "infinityhedge/26680"
-        }
-      ]
+      "recent_30min": []
     },
     "ethanlevins": {
       "total": 20,
-      "recent_30min": []
-    },
-    "markettwits": {
-      "total": 19,
       "recent_30min": [
         {
-          "text": "⚠️🇮🇷#иран #геополитика \nТрамп: США должны отреагировать на нападение Ирана на вертолет США в Ормузе\n\nТрамп пообещал ответ на сбитый вертолет Apache",
-          "date": "2026-06-09T16:41:42+00:00",
-          "post_id": "markettwits/373478"
+          "text": "🇮🇷 🇺🇸 LAST NIGHT: Fox News reports that 20 different targets were attacked during the U.S. retaliatory strikes against Iran, and that the U.S. is prepared to respond to any Iranian retaliation.",
+          "date": "2026-06-10T05:11:37+00:00",
+          "post_id": "ethanlevins/3497"
+        },
+        {
+          "text": "🇧🇭 🇯🇴 Iran retaliated with strikes against Bahrain and Jordan. \n\nIt seems 5 missiles at Amman, Jordan all intercepted. \n\nBahrain had many drones and missiles, with direct impacts on targets",
+          "date": "2026-06-10T05:13:23+00:00",
+          "post_id": "ethanlevins/3498"
+        }
+      ]
+    },
+    "markettwits": {
+      "total": 20,
+      "recent_30min": [
+        {
+          "text": "✴️#квант #хак #BTC #крипто \nКвантовые компьютеры взломают банки раньше, чем взломают BTC — Тим Дрейпер \n\nмиллиардер и ранний инвестор в Tesla и BTC считает, что страхи по поводу квантового взлома BTC сильно преувеличены",
+          "date": "2026-06-10T04:46:39+00:00",
+          "post_id": "markettwits/373515"
+        },
+        {
+          "text": "🇷🇺#авто #россия #KMAZ\n«Москвич» планирует заняться выпуском гибридных автомобилей — Ъ",
+          "date": "2026-06-10T05:10:16+00:00",
+          "post_id": "markettwits/373516"
         }
       ]
     }
