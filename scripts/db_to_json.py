@@ -240,10 +240,21 @@ def compile_flows(conn):
     print(f"  ✓ flows.json — {len(flows)} flows, aggregate confidence: {avg_conf}%")
 
     
-    # ── v23.8: Asymmetric Signal Engine ──
-    # Compare Narrative (Story direction) vs Telemetry (Flow direction)
-    # If they diverge, flag as CRITICAL CONTRADICTION
-    # Load stories from compiled JSON
+    # ── v23.13: Per-Story Asymmetry Score (Price-Narrative Delta) ──
+    # Computes Score = ABS(Sentiment - PriceDelta) * 50 for every story
+    # Uses cached market_prices.json from fetch_market_data.py
+    import math
+    market_path = DATA / "market_prices.json"
+    market_prices = {}
+    if market_path.exists():
+        try:
+            with open(market_path) as f:
+                market_data = json.load(f)
+            market_prices = market_data.get("prices", {})
+        except Exception:
+            pass
+    
+    # Load compiled stories for asymmetry computation
     stories_path = DATA / "stories.json"
     all_stories = []
     if stories_path.exists():
@@ -253,39 +264,103 @@ def compile_flows(conn):
             all_stories.append(sd["lead"])
         all_stories.extend(sd.get("stories", []))
     
-    contradictions_detected = 0
+    asymmetry_detected = 0
+    high_asymmetry_count = 0
+    
     for story in all_stories:
         cf = story.get("capital_flow", {})
-        narrative_dir = cf.get("direction", "")
-        if not narrative_dir:
+        ac = cf.get("asset_class", "")
+        direction = cf.get("direction", "neutral")
+        confidence = cf.get("confidence_pct", 50)
+        
+        if not ac or not direction or direction == "neutral":
             continue
         
-        # Find linked flows
-        impacted = story.get("impacted_flows", [])
-        if not impacted:
-            continue
+        # Narrative sentiment: -1 to 1
+        if direction == "inflow":
+            sentiment = confidence / 100.0
+        else:
+            sentiment = -confidence / 100.0
         
-        # Compare: if story says inflow but linked flows are outflow → contradiction
-        linked_flow_dirs = []
-        for fid in impacted:
-            for fl in flows:
-                if fl.get("id") == fid:
-                    linked_flow_dirs.append(fl.get("direction", ""))
+        # Price delta from cached market data
+        price_data = market_prices.get(ac, {})
+        price_change = price_data.get("change_pct", 0)
+        price_delta = math.tanh(price_change / 5.0)
         
-        if linked_flow_dirs:
-            # If majority of flows oppose the narrative direction → contradiction
-            opposite = sum(1 for d in linked_flow_dirs if d != narrative_dir and d != "neutral")
-            if opposite >= len(linked_flow_dirs) / 2:
-                # Flag as critical contradiction
-                if cf.get("confidence_pct", 50) < 80:
-                    cf["confidence_pct"] = min(cf.get("confidence_pct", 50) - 10, 40)
-                    cf["contradiction_flag"] = "NARRATIVE_VS_FLOW_DIVERGENCE"
-                    cf["contradiction_detail"] = f"Narrative says {narrative_dir} but {opposite}/{len(linked_flow_dirs)} linked flows show opposite direction"
-                    story["capital_flow"] = cf
-                    contradictions_detected += 1
+        # Asymmetry Score = ABS(Sentiment - PriceDelta) * 50
+        raw_score = (sentiment - price_delta) * 50
+        asymmetry_score = abs(raw_score)
+        asymmetry_score = min(100, max(0, round(asymmetry_score)))
+        
+        if asymmetry_score >= 80:
+            tier = "MAX ASYMMETRY"
+        elif asymmetry_score >= 65:
+            tier = "HIGH ASYMMETRY"
+        elif asymmetry_score >= 40:
+            tier = "MODERATE"
+        else:
+            tier = "LOW ASYMMETRY"
+        
+        story["asymmetry_score"] = asymmetry_score
+        story["asymmetry_tier"] = tier
+        story["asymmetry_diagnostic"] = {
+            "sentiment": round(sentiment, 3),
+            "price_delta": round(price_delta, 3),
+            "price_change_pct": price_change,
+            "formula": f"ABS(({sentiment:.2f} - {price_delta:.2f}) * 50) = {asymmetry_score}",
+            "ticker": price_data.get("ticker", "?"),
+            "ticker_price": price_data.get("price"),
+        }
+        
+        # v23.13: Revenue-Grade Strategic Recommendation for high asymmetry (>65)
+        if asymmetry_score >= 65:
+            headline = (story.get("headline") or "")[:80]
+            play = story.get("portfolio_implication") or story.get("actionable_trade") or ""
+            
+            # Compute R:R ratio from entry/target/stop if available
+            rr_ratio = "N/A"
+            entry_val = cf.get("entry")
+            target_val = cf.get("target")
+            stop_val = cf.get("stop")
+            if entry_val and target_val and stop_val:
+                try:
+                    risk = abs(float(str(entry_val).replace(",","")) - float(str(stop_val).replace(",","")))
+                    reward = abs(float(str(target_val).replace(",","")) - float(str(entry_val).replace(",","")))
+                    if risk > 0:
+                        rr_ratio = f"{reward/risk:.1f}:1"
+                except Exception:
+                    pass
+            
+            # Trade trigger from direction + price contradiction
+            if direction == "inflow" and price_change < 0:
+                trigger = f"Bullish narrative contradicts {price_change:+.1f}% price drop — long entry on reversal above support"
+            elif direction == "outflow" and price_change > 0:
+                trigger = f"Bearish narrative contradicts {price_change:+.1f}% price rise — short entry on breakdown below resistance"
+            elif direction == "inflow":
+                trigger = f"Position long on {ac} strength — narrative and price aligned bullish"
+            else:
+                trigger = f"Position short on {ac} weakness — narrative and price aligned bearish"
+            
+            story["strategic_recommendation"] = {
+                "tier": tier,
+                "bias": "LONG" if direction == "inflow" else "SHORT",
+                "asset_class": ac,
+                "asymmetry_score": asymmetry_score,
+                "risk_reward_ratio": rr_ratio,
+                "trade_trigger": trigger,
+                "rationale": (play if isinstance(play, str) else str(play))[:200],
+                "horizon": story.get("horizon", "24-72h"),
+                "capital_at_stake": f"${cf.get('amount_b', 0)}B",
+                "gated": True,
+            }
+            high_asymmetry_count += 1
+        
+        asymmetry_detected += 1
     
-    if contradictions_detected:
-        print(f"  ⚡ Asymmetric Signal: {contradictions_detected} narrative-flow contradictions detected")
+    if asymmetry_detected:
+        print(f"  ⚡ Asymmetry Scores: {asymmetry_detected} stories computed, {high_asymmetry_count} HIGH+ stories")
+    
+    contradiction_detected = asymmetry_detected  # backward compat
 
     return len(flows)
 

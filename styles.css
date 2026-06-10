@@ -2836,7 +2836,7 @@ body {
 .alpha-accent { color: var(--gold); border-left-color: var(--gold); }
 .layer-header.intel-header .layer-label { background: #0F172A; color: #FFF; }
 .layer-header.alpha-header .layer-desc { color: #B8860B; }
-.alpha-header .layer-label { background: #B8860B; color: #FFF; }
+.alpha-header .layer-label { background: #B8860B; color: #FFF; font-family: 'JetBrains Mono', 'Roboto Mono', 'Courier New', monospace !important; }
 
 /* v23.7: Alpha layer gold accent boost */
 .alpha-header { border-left-width: 3px !important; }
