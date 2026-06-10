@@ -2856,3 +2856,29 @@ body {
   /* FLOW SECTORS expander */
   .fresh-item { min-height: 36px; display: flex; align-items: center; }
 }
+
+/* v23.9: Alpha Lead-Gen Gate — blur entry/stop data, unlock CTA */
+.alpha-gated { position: relative; }
+.alpha-gated .gated-content { filter: blur(6px); user-select: none; pointer-events: none; opacity: 0.4; }
+.alpha-gated .gate-overlay {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px;
+  background: rgba(255,255,255,0.85); z-index: 2;
+}
+.gate-overlay .gate-cta {
+  font-family: var(--sans); font-size: 12px; font-weight: 700;
+  color: #FFFFFF; background: linear-gradient(135deg, #B8860B, #D4AF37);
+  padding: 10px 20px; border: none; cursor: pointer;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  text-decoration: none; min-height: 44px; display: inline-flex; align-items: center;
+}
+.gate-overlay .gate-cta:hover { background: linear-gradient(135deg, #9A6B09, #C4A030); }
+.gate-overlay .gate-hint {
+  font-family: var(--body); font-size: 11px; font-style: italic;
+  color: var(--ink-muted); text-align: center;
+}
+
+/* Mobile: full-width gate */
+@media (max-width: 768px) {
+  .gate-overlay .gate-cta { font-size: 14px; padding: 12px 24px; width: 80%; text-align: center; }
+}

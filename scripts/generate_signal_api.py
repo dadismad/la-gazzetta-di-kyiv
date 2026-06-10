@@ -142,6 +142,23 @@ def main():
     }
 
     out_path = OUT_DIR / "signal.json"
+    
+    # ── v23.9: Inject Asymmetry Scores from market data ──
+    market_path = PROJECT_ROOT / "data" / "market_prices.json"
+    if market_path.exists():
+        try:
+            market_data = json.loads(market_path.read_text())
+            asym_scores = market_data.get("asymmetry_scores", {})
+            high_asym = [v for v in asym_scores.values() if v.get("asymmetry_score", 0) >= 60]
+            if high_asym:
+                output["asymmetry"] = {
+                    "high_count": len(high_asym),
+                    "top_scores": sorted(high_asym, key=lambda x: x.get("asymmetry_score", 0), reverse=True)[:5],
+                    "aggregate_asymmetry": round(sum(v.get("asymmetry_score", 0) for v in high_asym) / len(high_asym)),
+                }
+        except Exception as e:
+            pass
+    
     out_path.write_text(json.dumps(output, indent=2, ensure_ascii=False))
     print(f"✓ signal.json: {len(signals[:15])} signals, aggregate={output['aggregate_score']}")
 

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T13:43:21.156427+00:00",
+  "generated_at": "2026-06-10T13:53:32.303199+00:00",
   "total_signals": 35,
   "aggregate_score": 63,
   "signals": [
@@ -168,5 +168,56 @@
       "asset_class": "commodities",
       "direction": "outflow"
     }
-  ]
+  ],
+  "asymmetry": {
+    "high_count": 6,
+    "top_scores": [
+      {
+        "flow_id": "flow_n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela",
+        "asset_class": "crypto",
+        "narrative_direction": "outflow",
+        "price_direction": "up",
+        "price_change_pct": 0.93,
+        "asymmetry_score": 70,
+        "signal": "HIGH ASYMMETRY"
+      },
+      {
+        "flow_id": "flow_n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired",
+        "asset_class": "tech",
+        "narrative_direction": "inflow",
+        "price_direction": "down",
+        "price_change_pct": -0.27,
+        "asymmetry_score": 66,
+        "signal": "HIGH ASYMMETRY"
+      },
+      {
+        "flow_id": "flow_n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai",
+        "asset_class": "tech",
+        "narrative_direction": "inflow",
+        "price_direction": "down",
+        "price_change_pct": -0.27,
+        "asymmetry_score": 66,
+        "signal": "HIGH ASYMMETRY"
+      },
+      {
+        "flow_id": "flow_n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes",
+        "asset_class": "equities",
+        "narrative_direction": "inflow",
+        "price_direction": "down",
+        "price_change_pct": -0.23,
+        "asymmetry_score": 66,
+        "signal": "HIGH ASYMMETRY"
+      },
+      {
+        "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+        "asset_class": "commodities",
+        "narrative_direction": "outflow",
+        "price_direction": "up",
+        "price_change_pct": 1.29,
+        "asymmetry_score": 62,
+        "signal": "HIGH ASYMMETRY"
+      }
+    ],
+    "aggregate_asymmetry": 65
+  }
 }
