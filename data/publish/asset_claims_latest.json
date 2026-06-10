@@ -1,41 +1,53 @@
 {
-  "generated_at": "2026-06-10T13:00:00Z",
+  "generated_at": "2026-06-10T14:00:00Z",
   "claims": [
     {
-      "ticker": "ASML",
+      "ticker": "NVDA",
       "direction": "up",
-      "price_target": "€850+ on EU tech sovereignty capex cycle",
-      "strategy": "Core long — EU chip sovereignty requires ASML lithography regardless of export restrictions",
-      "win_rate": "65% (EU sovereignty capex is multi-year, not cyclical)",
+      "price_target": "+15-20% on AI capex cycle expansion",
+      "strategy": "Core long — every new frontier model launch expands the AI compute demand layer",
+      "win_rate": "70% (AI capex cycle has multi-year visibility)",
       "horizon": "3-6 months",
       "narrative_driven_pct": 55,
-      "crowd_belief": "Consensus sees ASML as China-export-risk stock. EU sovereignty bid is underappreciated demand driver.",
-      "contradiction": "ASML is priced as a China story but its growth driver for 2026-2028 is European defense/tech sovereignty capex. The market is looking at the wrong geography.",
-      "story_id": "n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired"
+      "crowd_belief": "Consensus prices NVDA for AI data center growth but underprices the pace of frontier model releases driving incremental demand",
+      "contradiction": "Each new frontier model (Claude Fable, GPT-5) requires exponentially more compute — but market prices NVDA as if the current demand base is the ceiling",
+      "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t"
     },
     {
-      "ticker": "EADSF",
+      "ticker": "SMH",
       "direction": "up",
-      "price_target": "€210+ on European defense spending acceleration",
-      "strategy": "Core long — European defense/tech sovereignty is a structural multi-year bid",
-      "win_rate": "70% (European defense budgets rising across all NATO members)",
-      "horizon": "6-12 months",
-      "narrative_driven_pct": 60,
-      "crowd_belief": "Defense stocks priced for US spending cycle. European sovereign defense bid is additive and largely unpriced.",
-      "contradiction": "EU defense inflow ($34B) is structural, not cyclical — driven by US trust erosion, not threat perception. This repricing has years to run.",
-      "story_id": "n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired"
+      "price_target": "+10% on semiconductor cycle AI demand layer",
+      "strategy": "Core long — AI chip demand expands semiconductor cycle duration",
+      "win_rate": "60% (AI extends semi cycle by 2-3 quarters)",
+      "horizon": "3-6 months",
+      "narrative_driven_pct": 45,
+      "crowd_belief": "Semiconductor cycle viewed as peaking. AI demand layer is structural and additive to traditional cycle.",
+      "contradiction": "Traditional semi cycle would be peaking, but AI demand layer adds 2-3 quarters of expansion that consensus hasn't repriced",
+      "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t"
     },
     {
-      "ticker": "QQQ",
-      "direction": "down",
-      "price_target": "-8% on EU revenue exposure repricing",
-      "strategy": "Short US big tech on EU sovereignty headwind — pair with long EU defense/tech",
-      "win_rate": "55% (EU is 20-30% of US big tech revenue; sovereignty push is a multi-year de-rating)",
-      "horizon": "3-6 months",
-      "narrative_driven_pct": 40,
-      "crowd_belief": "Magnificent 7 earnings driven by AI capex. EU sovereign push seen as noise, not structural.",
-      "contradiction": "If EU systematically replaces US cloud/chip infrastructure, the revenue hit compounds over 3-5 years. Markets are discounting a 1-year impact but it's a structural multiple de-rating.",
-      "story_id": "n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired"
+      "ticker": "FET",
+      "direction": "up",
+      "price_target": "+25-35% on AI-crypto narrative coupling",
+      "strategy": "Event-driven — AI acceleration narrative flows through to AI-crypto tokens",
+      "win_rate": "55% (narrative-driven, high beta to AI newsflow)",
+      "horizon": "1-3 months",
+      "narrative_driven_pct": 75,
+      "crowd_belief": "AI-crypto tokens seen as disconnected from frontier AI model releases",
+      "contradiction": "Anthropic and OpenAI model releases increase demand for decentralized AI compute — FET/TAO benefit from same narrative tailwind as NVDA but at 10x beta",
+      "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t"
+    },
+    {
+      "ticker": "TAO",
+      "direction": "up",
+      "price_target": "+30-40% on decentralized AI compute narrative",
+      "strategy": "Event-driven — Bittensor network benefits from AI compute decentralization thesis",
+      "win_rate": "50% (high beta, narrative-driven token)",
+      "horizon": "1-3 months",
+      "narrative_driven_pct": 80,
+      "crowd_belief": "TAO is uncorrelated with frontier AI model releases",
+      "contradiction": "Claude Fable and GPT-5 drive demand for decentralized inference compute — TAO's Bittensor network is the primary venue for that, underpriced by consensus",
+      "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t"
     }
   ]
 }

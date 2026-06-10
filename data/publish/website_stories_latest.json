@@ -1,53 +1,45 @@
 {
-  "generated_at": "2026-06-10T12:00:00Z",
+  "generated_at": "2026-06-10T14:00:00Z",
   "stories": [
     {
-      "headline": "US Refueling Planes Over Middle East, GPS Jammed in Tehran — Strike Window Opens",
-      "thesis": "US refueling aircraft positioned over Middle East. GPS interference confirmed in Tehran. Iran on full combat alert. The Apache shootdown was 24h ago — no strike yet, but pre-strike posture is confirmed.",
-      "sector": "geopolitics",
-      "source_count": 5,
-      "setup_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strait_of_Hormuz.jpg"
-    },
-    {
-      "headline": "Vance Says Iran Deal 'Before Midterms' as US Prepares Strikes — Contradiction at Maximum",
-      "thesis": "VP Vance claims Iran deal is imminent. Markets price diplomatic resolution — oil below $90, VIX below 17. But US refueling planes are airborne and GPS is jammed in Tehran. The gap between consensus and reality widens.",
-      "sector": "geopolitics",
-      "source_count": 4,
-      "setup_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strait_of_Hormuz.jpg"
-    },
-    {
-      "headline": "South Korea Commits $350B to US — Pays Protection Money for Tariff Relief",
-      "thesis": "South Korea approved $350B in strategic US investments. $200B in strategic industries, $150B for shipbuilding. A template for allies: invest in US industrial base or face tariffs.",
-      "sector": "macro",
-      "source_count": 3,
-      "setup_id": "n21_macro",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_South_Korea.svg"
-    },
-    {
-      "headline": "Anthropic Releases Claude Fable at 2x Opus Pricing — AI Competition Accelerates",
-      "thesis": "Anthropic released Claude Fable today — earlier than any analyst expected. Premium enterprise pricing at 2x Opus. Margin expansion narrative for frontier AI companies.",
+      "headline": "Anthropic Drops Claude Fable at 2x Opus Pricing — AI Race Accelerates",
+      "thesis": "Anthropic released Claude Fable today — earlier than any analyst expected, at 2x Opus pricing. Premium enterprise AI pricing is here. OpenAI filed S-1 same week.",
       "sector": "tech",
-      "source_count": 3,
+      "source_count": 4,
       "setup_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthropic_logo.svg"
     },
     {
-      "headline": "Strategy Resumes Bitcoin Buying Spree — Halts Market Panic at $58K Support",
-      "thesis": "MicroStrategy resumed Bitcoin accumulation at $58K support. World's largest corporate BTC holder buying halted the panic. Shorts targeting MSTR face capitulation risk.",
+      "headline": "SpaceX IPO 2 Days Out — $1.8T Valuation on 91% Loss Margin",
+      "thesis": "SpaceX lists June 12 at $1.8T+ valuation, raising $80B+. Q1 loss of $4.28B on $4.69B revenue — 96x revenue. OpenAI S-1 filed alongside. Defining capital markets moment of 2026.",
+      "sector": "tech",
+      "source_count": 4,
+      "setup_id": "n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX_Dragon_2_approach_to_ISS_1.jpg"
+    },
+    {
+      "headline": "Strategy Resumes Bitcoin Buying at $58K — Halts Panic, Shorts Squeezed",
+      "thesis": "MicroStrategy resumed BTC accumulation at $58K support — the world's largest corporate BTC holder halted the sell-off. Shorts targeting MSTR face capitulation risk.",
       "sector": "crypto",
       "source_count": 3,
       "setup_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_logo.svg"
     },
     {
-      "headline": "SpaceX IPO June 12 — 2 Days Away, $1.8T Valuation, OpenAI S-1 Filed",
-      "thesis": "SpaceX to list on Nasdaq under SPCX at $1.8T+ valuation, raising $80B+. OpenAI confidentially filed S-1. Both at 96x+ revenue — defining capital markets event of 2026.",
-      "sector": "tech",
-      "source_count": 4,
-      "setup_id": "n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX_Dragon_2_approach_to_ISS_1.jpg"
+      "headline": "South Korea Commits $350B to US — Protection Payment for Tariff Relief",
+      "thesis": "South Korea approved $350B (~20% GDP) in US strategic investments. $200B in strategic industries, $150B shipbuilding. Template for allies: pay or face tariffs.",
+      "sector": "macro",
+      "source_count": 3,
+      "setup_id": "n21_macro",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_South_Korea.svg"
+    },
+    {
+      "headline": "Europe Ditches American Tech — 'Nobody Has a Kill Switch'",
+      "thesis": "EU unveils tech sovereignty package with explicit motive: eliminate US control over chip/cloud supply chains. $34B defense/tech inflow projected. ASML chief warns against directing supplies.",
+      "sector": "defense",
+      "source_count": 3,
+      "setup_id": "n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/EU_flag.svg"
     }
   ]
 }

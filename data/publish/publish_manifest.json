@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-06-10T12:00:00Z",
-  "cycle_number": 18,
+  "generated_at": "2026-06-10T14:00:00Z",
+  "cycle_number": 21,
   "published": {
     "telegram": true,
     "reddit": false,
     "website_stories": true,
     "asset_claims": true
   },
-  "lead_topic": "us_iran_strike_window_refueling_planes_gps_tehran_combat_alert",
-  "frame": "contradiction",
+  "lead_topic": "anthropic_claude_fable_2x_opus_pricing_ai_velocity",
+  "frame": "velocity",
   "files": {
     "telegram": "data/publish/telegram_latest.md",
     "website_stories": "data/publish/website_stories_latest.json",
@@ -16,6 +16,6 @@
     "asset_claims": "data/publish/asset_claims_latest.json"
   },
   "word_count": {
-    "telegram": 96
+    "telegram": 88
   }
 }

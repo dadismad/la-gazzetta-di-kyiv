@@ -1,60 +1,122 @@
 {
-  "fetched_at": "2026-06-10T09:27:19Z",
-  "analysis_timestamp": "2026-06-10T09:28:00Z",
+  "scrape_time": "2026-06-10T10:10:13Z",
   "model": "deepseek-v4-flash",
-  "top_stories": [
+  "horizon": "1-2 hours",
+  "time_context": "Wednesday June 10, 10:10 UTC — US equity futures closed (CME overnight), Asia session open (Tokyo/Hong Kong/Shanghai active), European session opening. Crypto 24/7 liquid.",
+  "channels_monitored": [
+    "@trad_fin",
+    "@MonitoringSituation",
+    "@ASupersharij",
+    "@infinityhedge",
+    "@ethanlevins",
+    "@markettwits"
+  ],
+  "channel_status": {
+    "@trad_fin": "HOT — posts within last 2h. US strikes on Iran complete, CENTCOM confirmation.",
+    "@MonitoringSituation": "HOT — active geopolitical feed. Iran escalation details, tanker fire near Oman, Indonesia fuel price hike.",
+    "@ASupersharij": "HOT — Ukraine strikes on Russia (Cheboksary, Samara refinery), Russia strikes on Kharkiv/Odesa, detailed Iran escalation coverage.",
+    "@infinityhedge": "HOT — Claude Fable 5 launch, MicroStrategy BTC purchase. Active today.",
+    "@ethanlevins": "HOT — most active for Iran-US military exchange minute-by-minute, Ukraine deep strikes, Lebanon-Israel.",
+    "@markettwits": "HOT — Asia tech selloff, TSMC sales, Taiwan HIMARS test fire, Germany recession warning, Iran talks re-evaluation."
+  },
+  "summary_stats": {
+    "total_messages_scanned": 111,
+    "messages_last_30min": 18,
+    "messages_last_2h": 42,
+    "actionable_stories_identified": 3
+  },
+  "stories": [
     {
+      "id": "us-iran-hot-war-escalation-20260610",
       "rank": 1,
-      "title": "US-IRAN STRIKE CYCLE GOES ACTIVE — RETALIATION UNDERWAY",
-      "event": "US struck 20 Iranian targets overnight (CENTCOM confirmed). Iran retaliated with missile/drone strikes on Bahrain and Jordan. Iran's foreign ministry announced reconsideration of nuclear talks with US. Strait of Hormuz blockade maintained by US. Indonesia raised fuel 32% — first increase since Iran war began — confirming oil supply stress spilling into EM.",
-      "consensus_narrative": "Escalation is 'contained' — both sides messaging de-escalation (US says damage minimal, Iran says no US bases hit). Markets pricing this as another round of 'measured response' that fizzles. Oil already elevated at $95-100, bonds pricing Fed hike by year-end.",
-      "contradiction": "The escalation chain is accelerating, not cooling: Apache shootdown → US strikes → Iran hits Bahrain/Jordan → Iran walks away from talks. Each round widens the theater. Indonesia fuel shock is a leading indicator that EM supply chains are fracturing. If Iran blockades Hormuz for real, oil goes to $140+. The 'contained' narrative is complacent.",
-      "bet": "LONG oil (WTI/Brent) and energy equities (XLE). SHORT EM FX and EM equity ETFs (EEM). LONG VIX futures / short S&P futures (SPX). LONG defense primes (LMT, GD, NOC) — Taiwan HIMARS drills confirm theater expansion. If Hormuz escalates further, add SHORT USD/JPY (risk-off), LONG gold.",
-      "benefit": "Oil breaks $105 intraday within 1-2 hours on Iran walking from talks. VIX spikes +15-20%. Defense names gap up on Taiwan drills + US strikes. EM currencies (TRY, ZAR, INR) sell off 1-2% as Indonesia fuel shock cascades expectations."
+      "materiality_score": 10,
+      "title": "US-IRAN DIRECT MILITARY EXCHANGE — Apaches Shot Down, 20+ US Strikes, Iranian Retaliation on Bahrain/Jordan",
+      "freshness": "Active — latest reports within last 60 minutes. Escalation still unfolding.",
+      "source_channels": [
+        "@trad_fin",
+        "@MonitoringSituation",
+        "@ASupersharij",
+        "@ethanlevins",
+        "@markettwits"
+      ],
+      "event": "Overnight escalation cascade: (1) Iran shot down US Apache helicopter over Strait of Hormuz on June 9. (2) Trump declared US 'must respond.' (3) US launched 3 waves of strikes hitting 20+ targets — Iranian air defense systems, ground command centers, radars in Qeshm Island, Bandar Abbas, Jask, Minab, Sirik, Kohastak areas. (4) Iran retaliated with 4+ ballistic missiles and multiple drones targeting US 5th Fleet in Bahrain and Al-Azraq Air Base in Jordan. (5) Most Iranian munitions intercepted, but direct impacts on targets in Bahrain confirmed. (6) CENTCOM confirmed strikes complete. (7) Iran announced it 'will review negotiations with US in light of latest events' (IRNA). (8) EIA updated: Strait of Hormuz shipments resume Q3 2026, but won't reach pre-war levels until early 2027. (9) Indonesia raised fuel prices 32% due to Iran war. (10) US believes Iran to settle on 15-year enrichment suspension (NYT) — but military escalation contradicts this narrative. (11) Tanker fire reported 20nm NE of Oman's Sohar — 1 casualty, 2 missing.",
+      "consensus_narrative": "This is no longer a 'contained conflict' — it is now a direct US-Iran military exchange with active tit-for-tat strikes. Markets are pricing this as 'contained' based on (a) Trump downplaying Apache shootdown as 'not a big deal,' (b) US strikes being described as 'warning shots' not escalation, (c) EIA assuming Hormuz resumes Q3. But the military logic is now running ahead of the diplomatic logic — Iran already hit Bahrain/Jordan, and Qeshm Island (IRIB confirms 6 explosions) was struck. The next Iranian response is the open question.",
+      "contradiction": "Markets see contained retaliation — US struck military targets, Iran struck back with minimal casualties, both sides can claim victory and de-escalate. BUT: (1) Iran explicitly revising negotiations with US — diplomatic off-ramp narrowing. (2) UAE delivered $3B cash to Iran to stop attacks on Israel — if Iran needed bribing to halt, they weren't stopping voluntarily. (3) Tanker fire 20nm off Oman could be war-related — if it escalates maritime insurance premiums spike. (4) Indonesia raising fuel 32% shows real-world economic contagion from Hormuz closure already hitting emerging markets. The consensus 'contained' narrative is dangerously complacent.",
+      "bet": {
+        "direction": "LONG oil, LONG gold, LONG defense, SHORT risk-on equities (especially Asia tech exposed to oil/energy shock)",
+        "assets": [
+          "WTI crude ($CL) — CME opens Sunday evening, already positioned for gap-up",
+          "Brent ($BNO/UKOIL) — Brent already dropped below $90 on June 9, this is a buying opportunity",
+          "Gold ($GLD) — geopolitical risk premium bid",
+          "Defense ($LMT, $GD, $NOC) — multi-front conflict narrative",
+          "SPY/Nasdaq puts or inverse ETFs",
+          "Cryptocurrencies — risk-off, BTC under pressure, but history shows crypto bids on Iran/Israel escalation (flight from fiat risk)"
+        ],
+        "trigger": "Next Iranian retaliation (missiles toward US bases or Hormuz tanker incident) = WTI $5+ spike immediate. Iran officially walking away from negotiations = sustained oil bid above $90. Indonesia fuel hike contagion to other EM oil importers.",
+        "horizon": "Next 1-2 hours (Asia session now open, oil trading live) through CME open Sunday evening",
+        "confidence": "HIGH — multiple corroborating channels, confirmed military exchange, clear escalation pattern. The only question is next Iranian move."
+      },
+      "benefit": {
+        "Gazzetta di Kyiv": "FRONT PAGE: 'Hormuz Inferno — America Is Now at War With Iran. The Strait Is Closed, Oil Is Spiking, and the World Is Choosing Sides.' Frame: 'While Russia bleeds in Ukraine, Iran has pulled America into an open-ended Middle Eastern war. Putin's strategy: stretch the US across three theaters (Ukraine, Iran, Taiwan) until something breaks.' Second frame: 'Indonesia just raised fuel 32% — the Iran war is now taxing the Global South. Energy shock is the new sanctions.' Third frame: 'EIA says Hormuz stays closed until 2027. Plan accordingly.'",
+        "Bet&Benefit": "Oil longs are the highest-conviction trade. US strikes on Iran + Iranian retaliation + Hormuz closure + EIA confirming no quick resolution = structural oil bid. Gold for portfolio hedge. Defense stocks for multi-front conflict premium. For crypto: if Iran-US war goes hot, BTC sees initial selloff (risk-off) then rally (flight to non-sovereign store of value) — the sequence matters. Position for volatility. Short Asia tech (SoftBank already -8%) as energy cost shock compounds growth concerns."
+      }
     },
     {
+      "id": "taiwan-himars-west-coast-20260610",
       "rank": 2,
-      "title": "TAIWAN FIRES HIMARS FROM WEST COAST FOR FIRST TIME — EXISTENTIAL ESCALATION",
-      "event": "Taiwan conducted live-fire HIMARS drills on the western coast for the first time in history (June 10). This places strike capacity directly across from mainland China — a dramatic tactical shift from previous east-coast-only exercises.",
-      "consensus_narrative": "Routine annual exercise. Taiwan has had HIMARS since 2024. China will issue a protest, nothing more. The market doesn't care — Taiwan Semiconductor earnings still strong, tech selloff is about AI rotation not geopolitics.",
-      "contradiction": "First-time west coast HIMARS drills are NOT routine. They signal Taiwan is preparing for cross-strait denial operations — this changes the deterrence calculus fundamentally. China's reaction function has been unpredictable (see: 2022 Pelosi visit drills). If China responds with live-fire drills inside Taiwan's ADIZ or around the median line, semi supply chains panic. Taiwan's bourse (TAIEX) and TSMC ADR (TSM) are exposed.",
-      "bet": "BUY put spreads on TSM/TSM-ADR expiring this week. SHORT Taiwan dollar (TWD) vs USD. LONG U.S. defense (LMT, RTX, GD) — Taiwan HIMARS = more U.S. arms sales. If China escalates, BUY calls on semiconductor onshoring beneficiaries (INTC, MU, ON).",
-      "benefit": "TSM -3-5% intraday if China fires missiles near Taiwan. LMT/NOC +2% on accelerated arms sales narrative. Onshoring semi names (INTC, ON) benefit from 'Taiwan risk premium' widening."
+      "materiality_score": 8.5,
+      "title": "Taiwan Fires HIMARS Into Taiwan Strait — First Live-Fire West Coast Drills, Missile Launchers Aimed at China",
+      "freshness": "Latest report 1 hour ago (09:09 UTC from @markettwits). Full story from @MonitoringSituation 12h ago.",
+      "source_channels": ["@MonitoringSituation", "@markettwits"],
+      "event": "Taiwan conducted first-ever live-fire drills using US-supplied HIMARS (High Mobility Artillery Rocket Systems) from the west coast of the island — targeting waters directly facing mainland China. This is a major departure from previous drills held on east coast or controlled areas. 'The best way to practice live firing is right in the area you're supposed to defend' — Taiwan statement. This comes as: (1) China announced maritime enforcement operation east of Taiwan on June 6 — establishing 'traffic enforcement' zone. (2) Taiwan mulls curbs on AI chip exports to China to align with US. (3) TSMC May sales up 30% driven by AI chip demand. (4) Asia tech selloff (SoftBank -8%, tracking Wall Street losses).",
+      "consensus_narrative": "Markets treating Taiwan HIMARS test as symbolic / drill within Taiwan's territorial waters. TSMC 30% sales growth dominating narrative. The Asia tech selloff attributed to Nasdaq weakness, not Taiwan-China risk. Consensus view: 'routine drill, nothing new.'",
+      "contradiction": "This is the FIRST time Taiwan has deployed HIMARS — a strike weapon with 300km range — from the west coast, directly aimed at the Taiwan Strait and Chinese coastal targets. The language ('where you're supposed to defend') is explicitly confrontational, not defensive. Combined with China's June 6 maritime enforcement operation announcement — which establishes legal basis for boarding/interdicting vessels 'east of Taiwan' — the two events form a pattern: China expanding administrative control, Taiwan expanding military deterrence. Markets are completely missing this pattern and focusing on TSMC sales growth.",
+      "bet": {
+        "direction": "SHORT Taiwan equities/semis, LONG gold. But timing depends on China's response — China has not yet reacted to HIMARS test. Once they do, TSM will gap down.",
+        "assets": [
+          "$TSM puts (Monday expiry preferred)",
+          "$SMH (semiconductor ETF short)",
+          "EWT (Taiwan ETF short)",
+          "$GLD long (geopolitical hedge)",
+          "$VIX calls or futures"
+        ],
+        "trigger": "Chinese official statement condemning Taiwan HIMARS test + announcing counter-measures = 3-5% TSM gap down. China boarding a vessel in east Taiwan enforcement zone = 5-8% TSM gap down.",
+        "horizon": "Next 24-48 hours / China reaction expected within 12-24 hours. Monday Asia open is the event horizon.",
+        "confidence": "MEDIUM-HIGH — pattern is real (China enforcement zone + Taiwan HIMARS = direct military posturing), but markets are ignoring it. The bet is on a catalyst (China reacts)."
+      },
+      "benefit": {
+        "Gazzetta di Kyiv": "Frame: 'Taiwan Just Aimed Missiles at China — and Markets Are Watching TSMC Earnings.' Connect to Ukraine: 'Taiwan is doing what Ukraine wishes it could — preparing to defend its coastline with Western weapons before the invasion. China's maritime enforcement zone is a blockade rehearsal, just as Russia's Black Sea fleet drills preceded the 2022 invasion.' The semiconductor supply chain angle: TSMC 30% revenue growth is the bull case, but a Taiwan blockade is the extinction-level event for global chip supply.",
+        "Bet&Benefit": "The gap risk on TSM is asymmetric — 30% sales growth is priced in, a Taiwan blockade is not. Friday close → Monday open for TSM is the highest-risk window. Buy TSM puts for Monday expiry now while IV is low. If China stays quiet, theta decay is manageable. If China escalates, payout is 5-8x."
+      }
     },
     {
+      "id": "ukraine-flamingo-deep-strikes-20260610",
       "rank": 3,
-      "title": "UKRAINE STRIKES CHEBOKSARY WITH FLAMINGO MISSILES — RUSSIAN HOME FRONT WAR EXPANDS",
-      "event": "Ukraine struck Cheboksary (Chuvashia Republic, ~600km from Ukraine border) with FP-5 Flamingo cruise missiles overnight. Additional missiles inbound toward Tyumen Oblast (Urals). Russia responded with mass Geran-2 drone attacks on Kharkiv and Odesa (55+ drones combined). Canada signed a deal to manufacture Ukrainian drones on Canadian soil.",
-      "consensus_narrative": "Ukraine is striking deeper into Russia but these are pinpricks — incapable of changing the war's trajectory. Russia will continue grinding forward. War fatigue is settling in. No market impact beyond elevated gas prices.",
-      "contradiction": "The strike range is expanding: Cheboksary is deep in the Volga region. The Canada drone deal means Ukraine can produce weapons outside its borders, bypassing infrastructure risk. Russia is burning through Geran-2 at ~55-60 drones per night — that's $5-7M/night in Iranian-supplied ordinance. If Ukraine starts hitting Russian oil/gas infrastructure at this range (Tyumen is in the oil heartland), energy markets will reprice. The Canada deal also signals NATO is moving toward industrial defense integration.",
-      "bet": "LONG defense ETFs (ITA, PPA). LONG uranium (URA) — Russia-Ukraine energy infrastructure war supports nuclear as 'secure' baseload. SHORT European gas (TTF futures) on any Ukraine hit to Russian pipelines → supply disruption risk. BUY wheat/corn futures — Black Sea corridor risk.",
-      "benefit": "Defense ETFs up 1-2% intraday on Canada deal + Ukraine deep strikes. Uranium names (CCJ, UEC) benefit from nuclear security narrative. TTF gas pops 5-8% if Tyumen oil infrastructure hit confirmed."
+      "materiality_score": 7.5,
+      "title": "Ukraine Hits Samara Refinery + Cheboksary Defense Plant — Flamingo Missiles Strike 1,000+ km Into Russia While Iran War Diverts US Attention",
+      "freshness": "Active — latest strikes within last 2 hours (03:53-09:42 UTC today)",
+      "source_channels": ["@ASupersharij", "@ethanlevins", "@markettwits"],
+      "event": "Ukraine launched coordinated deep-strike campaign overnight using FP-5 Flamingo cruise missiles: (1) Kuibyshev Refinery in Samara (Rosneft, major fuel producer, Euro-5 diesel/gasoline) hit. (2) VNIIR-Progress in Cheboksary hit again — manufacturer of Kometa anti-jamming satellite navigation antennas for Russian military systems. (3) Zelensky publicly stated Ukraine will continue strikes on Russian military and oil industry using drones and Flamingo missiles. (4) Senior Russian military official assassinated in car bomb near Moscow. (5) Russia retaliates: 26 Geran-2 drones on Kharkiv, 30 on Odesa, hitting port areas. (6) EU discussing 21st sanctions package against Russia. (7) Canada-Ukraine signed agreement to produce Ukrainian drones on Canadian soil. (8) Russia's budget deficit at 6.01T rubles, oil/gas revenues down 29.8% — budget bleeding accelerates.",
+      "consensus_narrative": "Ukraine deep strikes are 'escalation before negotiations' — Putin rejected peace talks, Zelensky hit harder. The Flamingo missile program is Ukraine's indigenous deep-strike capability. Consensus: this is tactical positioning ahead of potential ceasefire talks, not a strategic shift. Markets: Russia-Iran war linkage — while US is striking Iran, Ukraine is hitting Russia harder, exploiting divide in US attention.",
+      "contradiction": "The narrative of 'tactical positioning' underestimates the strategic shift. (a) Ukraine is now systematically targeting Russian oil refining — Samara refinery is deep in rear territory, 1,000+ km from border. (b) Cheboksary VNIIR-Progress is a defense electronics plant — this is industrial warfare, not just 'retaliation.' (c) The Flamingo missile (250km range, subsonic cruise) is mass-produced and stockpiled — Zelensky's public statement that Ukraine will 'continue' suggests this is a sustained campaign, not one-off. (d) Critical context: Putin rejected peace talks with Zelensky same day, telling army to 'work.' Ushakov says US prioritizing Iran over Ukraine — Ukraine is acting more aggressively BECAUSE US attention is diverted to Iran. This is Ukraine making battlefield facts before American focus permanently shifts away.",
+      "bet": {
+        "direction": "LONG defense (European defense plays, missile producers), SHORT Russian assets (RSX), LONG nuclear security if Zaporizhzhia infrastructure threatened",
+        "assets": [
+          "$GD (General Dynamics)",
+          "$LMT (Lockheed Martin)",
+          "European defense ETFs ($EUDF)",
+          "$RSX short (Russia ETF)",
+          "$URA (uranium/nuclear — Zaporizhzhia risk bid)"
+        ],
+        "trigger": "Russia retaliates against Ukrainian energy grid = European natgas spike. Systematic Flamingo strikes on Russian refineries continue weekly = Russian fuel export capacity declines, global diesel spreads widen. Zelensky statement confirms sustained campaign.",
+        "horizon": "This week (Monday-Friday). Flamingo campaign is now confirmed as sustained strategy.",
+        "confidence": "HIGH for Gazzetta narrative, MEDIUM for direct liquid market impact. The Russia budget bleed data (29.8% oil/gas revenue drop + 6T ruble deficit) is a slow-burn short RSX thesis."
+      },
+      "benefit": {
+        "Gazzetta di Kyiv": "PRIMARY FRAME: 'Ukraine Is Burning Russia's Oil Money While America Fights Iran. Putin Rejected Peace — So Zelensky Brought the War to Samara.' The Flamingo missile — designed by Ukrainian engineers, built in secret, launched from trucks — is an extraordinary David-vs-Goliath tech narrative. Second frame: 'Russia's budget is bleeding 6 trillion rubles at 30% oil/gas revenue decline. The oil war is working.' Third frame: 'Canada will build Ukrainian drones. The Western defense industrial base is finally moving.' Fourth frame: 'Putin told his army to 'work' — and Ukraine bombed his refineries. This is the new reality of the war.'",
+        "Bet&Benefit": "The Flamingo campaign is a Gazzetta content goldmine — Ukraine systematically hitting Russian oil infrastructure is a strategic story that needs telling. For Bet&Benefit: if Russia retaliates hard against Ukrainian energy, European natgas ($NG) and heating oil spike — position accordingly. Russian budget data is a real short thesis on RSX if oil prices stay capped by US/Iran disruption or fall."
+      }
     }
   ],
-  "raw_data": {
-    "channels_scraped": ["trad_fin", "MonitoringSituation", "ASupersharij", "infinityhedge", "ethanlevins", "markettwits"],
-    "messages_fetched": {
-      "trad_fin": 20,
-      "MonitoringSituation": 1,
-      "ASupersharij": 2,
-      "infinityhedge": 19,
-      "ethanlevins": 20,
-      "markettwits": 3
-    }
-  },
-  "market_context": {
-    "sp500": "Broke below Friday's low, down 1.2%",
-    "nasdaq": "Down 2%, tech selloff accelerating",
-    "us_30y_yield": "Highest since 2007",
-    "fed_pricing": "Traders fully price quarter-point hike by end of 2026",
-    "oil": "Elevated on Hormuz blockade, Indonesia fuel +32% first Iran-war increase",
-    "bitcoin": "MSTR bought 1,550 BTC at $65,332 (Jun 1-7)",
-    "crypto": "Hyperliquid passed Dogecoin as #10 crypto by market cap"
-  },
-  "positioning_signals": {
-    "aggressive_long": ["XLE", "LMT", "NOC", "GD", "RTX", "USO", "GLD", "CCJ", "UEC"],
-    "aggressive_short": ["EEM", "TWD", "TSM", "SPX", "QQQ", "EM_FX"],
-    "defensive_hedge": ["VIX_calls", "gold", "USD", "short_TY"]
-  },
-  "expiry_horizon": "Intraday to 2-hour window — these are event-driven positioning stories that resolve or accelerate within the next 1-2 trading sessions"
+  "meta_observation": "Wednesday June 10, 10:10 UTC. This is the most consequential 24-hour period in geopolitical markets since the initial Iran war breakout. THE STORY IS NOW US-IRAN DIRECT COMBAT — yesterday's Apache shootdown, overnight US strikes on 20+ Iranian targets, and Iranian retaliation against Bahrain/Jordan bases mean the conflict has escalated past 'contained' into active exchange. Markets are in Asia session (Tokyo/Hong Kong/Shanghai open) and pricing this as a contained retaliation cycle — but the diplomatic off-ramp is narrowing (Iran reviewing negotiations, UAE cash payment suggests real escalation risk). The Brent/WTI disconnect (Brent below $90 despite active US-Iran strikes) is the biggest mispricing in global markets. Second-order effects: Taiwan HIMARS test (markets distracted by Iran, missing a major Taiwan Strait escalation), Indonesia fuel hike 32% (EM contagion starting), Germany DIW cutting GDP forecast to 0.5% citing Iran war energy shock (European recession risk rising). Crypto: futures volumes surging on drop, BTC testing levels where bottoms historically form ($57-58K range). Bitcoin narrative remains bearish near-term (risk-off on Iran war) but structurally bullish on fiat debasement from war spending. SpaceX IPO demand ($250B) shows liquidity still abundant. The highest-conviction actionable themes: (1) Oil is structurally underpriced given Hormuz closure + active US-Iran strikes, (2) Taiwan Strait risk is underpriced by markets focused on TSMC earnings, (3) Ukraine Flamingo campaign is a sustained strategic shift that markets haven't priced but Gazzetta can own the narrative on."
 }

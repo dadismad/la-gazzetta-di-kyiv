@@ -1,53 +1,53 @@
 {
-  "generated_at": "2026-06-10T02:00:00Z",
+  "generated_at": "2026-06-10T14:00:00Z",
   "claims": [
     {
-      "ticker": "CL",
+      "ticker": "NVDA",
       "direction": "up",
-      "price_target": "$95+ (immediate spike); $88 invalidation break = demand collapse",
-      "strategy": "Buy the breakout — direct US-Iran military engagement over the world's most important oil chokepoint. Use June 12 expiry calls for binary trigger.",
-      "win_rate": "65%",
-      "horizon": "24-72h",
-      "narrative_driven_pct": 85,
-      "crowd_belief": "Consensus priced 'contained Israel-Iran tit-for-tat' and 'diplomatic Hormuz resolution.' Apache shootdown + Trump 'must respond' shatters both assumptions.",
-      "contradiction": "WTI was below $90 even as Iran tolled Hormuz and Israel auto-triggered Beirut. Consensus ignored the widening gap. Now the gap closes violently as US becomes direct belligerent.",
-      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait"
+      "price_target": "+15-20% on AI capex cycle expansion",
+      "strategy": "Core long — every new frontier model launch expands the AI compute demand layer",
+      "win_rate": "70% (AI capex cycle has multi-year visibility)",
+      "horizon": "3-6 months",
+      "narrative_driven_pct": 55,
+      "crowd_belief": "Consensus prices NVDA for AI data center growth but underprices the pace of frontier model releases driving incremental demand",
+      "contradiction": "Each new frontier model (Claude Fable, GPT-5) requires exponentially more compute — but market prices NVDA as if the current demand base is the ceiling",
+      "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t"
     },
     {
-      "ticker": "GLD",
+      "ticker": "SMH",
       "direction": "up",
-      "price_target": "$2,450+ immediate; $2,500 on US retaliation",
-      "strategy": "Long gold as geopolitical flight-to-safety + stagflation hybrid. Direct US belligerency reprices gold risk premium structurally higher.",
-      "win_rate": "75%",
-      "horizon": "24-72h",
+      "price_target": "+10% on semiconductor cycle AI demand layer",
+      "strategy": "Core long — AI chip demand expands semiconductor cycle duration",
+      "win_rate": "60% (AI extends semi cycle by 2-3 quarters)",
+      "horizon": "3-6 months",
+      "narrative_driven_pct": 45,
+      "crowd_belief": "Semiconductor cycle viewed as peaking. AI demand layer is structural and additive to traditional cycle.",
+      "contradiction": "Traditional semi cycle would be peaking, but AI demand layer adds 2-3 quarters of expansion that consensus hasn't repriced",
+      "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t"
+    },
+    {
+      "ticker": "FET",
+      "direction": "up",
+      "price_target": "+25-35% on AI-crypto narrative coupling",
+      "strategy": "Event-driven — AI acceleration narrative flows through to AI-crypto tokens",
+      "win_rate": "55% (narrative-driven, high beta to AI newsflow)",
+      "horizon": "1-3 months",
       "narrative_driven_pct": 75,
-      "crowd_belief": "Gold already reflected elevated geopolitical risk at $2,415. But direct US belligerency is a new vector — not priced.",
-      "contradiction": "Gold was pricing 'elevated geopolitical risk.' The Apache shootdown upgrades from 'risk' to 'active engagement.' Premium re-rates higher.",
-      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait"
+      "crowd_belief": "AI-crypto tokens seen as disconnected from frontier AI model releases",
+      "contradiction": "Anthropic and OpenAI model releases increase demand for decentralized AI compute — FET/TAO benefit from same narrative tailwind as NVDA but at 10x beta",
+      "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t"
     },
     {
-      "ticker": "VIX",
+      "ticker": "TAO",
       "direction": "up",
-      "price_target": "+3-5 points on retaliation announcement",
-      "strategy": "Long VIX as tail hedge — US military response is now a when-not-if binary. Apache shootdown + 'must respond' = volatility catalyst.",
-      "win_rate": "70%",
-      "horizon": "24-72h",
+      "price_target": "+30-40% on decentralized AI compute narrative",
+      "strategy": "Event-driven — Bittensor network benefits from AI compute decentralization thesis",
+      "win_rate": "50% (high beta, narrative-driven token)",
+      "horizon": "1-3 months",
       "narrative_driven_pct": 80,
-      "crowd_belief": "VIX complacent despite multi-front escalation. Market still pricing US as mediator, not belligerent.",
-      "contradiction": "VIX not reflecting direct US belligerency probability. The Apache shootdown moves the US from backstop to target.",
-      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait"
-    },
-    {
-      "ticker": "SPX",
-      "direction": "down",
-      "price_target": "-1.5-3% on escalation confirmation",
-      "strategy": "Short SPX / long VIX for geopolitical risk premium repricing. Equities were already selling off (Friday low broken); Apache adds accelerant.",
-      "win_rate": "65%",
-      "horizon": "24-48h",
-      "narrative_driven_pct": 65,
-      "crowd_belief": "Markets still pricing 'contained' geopolitical risk. The US-shootdown escalation is a novel variable.",
-      "contradiction": "Equities were already below Friday's low before Apache news. The selloff now has a geopolitical accelerant consensus didn't price.",
-      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait"
+      "crowd_belief": "TAO is uncorrelated with frontier AI model releases",
+      "contradiction": "Claude Fable and GPT-5 drive demand for decentralized inference compute — TAO's Bittensor network is the primary venue for that, underpriced by consensus",
+      "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t"
     }
   ]
 }

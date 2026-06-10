@@ -1,14 +1,12 @@
-Strike window LIVE. US refueling planes over Middle East. GPS jammed in Tehran. Iran on combat alert.
+Anthropic drops Claude Fable today — 2x Opus pricing, earlier than any analyst expected.
 
-Vance says "deal before midterms." Oil at $88. VIX at 16. Markets price peace. Pentagon prepares war.
+Premium AI pricing signals margin expansion, not commoditization. Frontier competition accelerating. OpenAI S-1 filed same week. The AI hardware demand layer just got thicker.
 
-If strike hits before Asian open: oil gaps $95+, VIX>20. If diplomacy wins: oil fades $85.
+• Long NVDA, SMH — AI capex broadens
+• Long FET, TAO — AI-crypto token exposure
 
-• Long WTI, GLD into the window
-• Short SPX on escalation
+¹ SpaceX lost $4.28B on $4.69B revenue in Q1 2026 — 91% loss margin at $1.8T IPO 2 days out. (source: Reuters)
 
-Human detail: South Korea just paid $350B (~20% of GDP) to US for tariff relief — protection payment, not partnership.
+Continuity: www.lagazzettadikyiv.com | Next trigger: SpaceX IPO June 12; OpenAI S-1 pricing
 
-Continuity: lagazzettadikyiv.com | Next trigger: US CENTCOM statement due 18:00 UTC
-
-Full briefing: lagazzettadikyiv.com
+Full briefing: www.lagazzettadikyiv.com

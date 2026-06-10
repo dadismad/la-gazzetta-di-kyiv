@@ -1,155 +1,96 @@
 {
-  "generated_at": "2026-06-10T12:00:00Z",
+  "generated_at": "2026-06-10T14:00:00Z",
   "lead": {
-    "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
-    "headline": "US Refueling Planes Over Middle East, GPS Jammed in Tehran — Strike Window Opens",
-    "they_say": "Vance says Iran deal will 'definitely be reached before midterms.' Markets price diplomacy — oil below $90, VIX below 17. Consensus believes the diplomatic off-ramp is real and Iran-Israel is contained tit-for-tat, not a full war.",
-    "reality": "US refueling aircraft positioned over the Middle East. GPS interference confirmed in multiple areas of Tehran. Iran's army on full combat alert. Israel declared readiness to strike Iran. The pre-strike posture is confirmed — only timing is unknown.",
-    "thesis": "The gap between market pricing (contained conflict, diplomatic resolution) and military signals (refueling planes, GPS jamming, combat alert) is at maximum width. If a strike hits before Asian open, oil gaps $5-8, VIX spikes above 20, gold rallies. If diplomacy wins, oil fades below $85. The bilateral is unresolved.",
-    "actors": "Trump, Iran Supreme National Security Council, US Central Command, VP Vance",
-    "horizon": "0-12 hours",
+    "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t",
+    "headline": "Anthropic Drops Claude Fable at 2x Opus Pricing — AI Competition Accelerates",
+    "they_say": "Consensus analysts expected Claude Fable in late Q3 2026 as a modest incremental upgrade at standard pricing. AI model releases are routine — no material catalyst for markets.",
+    "reality": "Anthropic released Claude Fable today — earlier than any analyst expected — at 2x Opus pricing. OpenAI filed S-1 confidentially same week. Frontier AI competition is accelerating, not steady-state.",
+    "thesis": "The gap between consensus timing expectations (late Q3) and actual release (June 10) signals an accelerating frontier AI race. Premium enterprise pricing at 2x Opus refutes commoditization fears — margins expand, not compress. Every new model launch expands the AI compute demand layer, benefiting NVDA and the semiconductor cycle.",
+    "actors": "Anthropic, OpenAI, Sam Altman, Dario Amodei",
+    "horizon": "24-72 hours",
     "confidence": "high",
-    "invalidation_trigger": "US Confirms diplomatic breakthrough with verified Iran deal announcement. Refueling planes return to base. GPS interference ceases.",
-    "paradigm_pillar": "multi_pillar",
+    "invalidation_trigger": "OpenAI delays GPT-5 release. Anthropic reports lower-than-expected Claude Fable adoption. NVDA guidance misses on next earnings.",
+    "paradigm_pillar": "abundance_tech",
     "paradigm_implications": [
-      "Direct US-Iran military engagement is structural, not a skirmish — the blockade resolves by military outcome",
-      "EIA demand downgrade vs supply disruption creates bilateral oil setup — asymmetric optionality",
-      "Diplomatic track running in parallel with military preparations signals US negotiating weakness"
+      "Frontier AI pricing power refutes the commoditization narrative — margins expand for leaders",
+      "Accelerating model releases compress competitive timelines for all AI companies",
+      "Hardware demand layer thickens with each frontier model — NVDA/SMH benefit structurally"
     ],
-    "capital_flow_implication": "Capital on hold between equities and commodities — $5.0B commodities inflow already detected. If strike hits, capital rotates out of equities into energy, gold, vol. SPX selling accelerates.",
-    "portfolio_implication": "Long WTI, GLD immediately. Short SPX on escalation premium repricing if strike hits. Long VIX calls as tail. Do not short oil unilaterally — the US retaliation binary is unresolved and the first strike gaps oil $95+.",
-    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strait_of_Hormuz.jpg"
+    "capital_flow_implication": "Capital rotates into AI infrastructure: NVDA, SMH, and AI-crypto tokens benefit from narrative-driven inflows. Premium AI pricing enables margin expansion stories across the stack.",
+    "portfolio_implication": "Long NVDA, SMH at next open — AI capex cycle extends with each model launch. Long FET, TAO for AI-crypto narrative coupling. Short AI-detractor sectors lacking moats.",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthropic_logo.svg"
   },
   "stories": [
     {
-      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
-      "headline": "US Refueling Planes Over Middle East, GPS Jammed in Tehran — Strike Window Opens",
-      "they_say": "Vance says deal before midterms. Markets price diplomatic resolution. Oil below $90, VIX below 17 — contained conflict priced in.",
-      "reality": "US refueling aircraft over MEA. GPS jammed in Tehran. Iran on combat alert. Israel ready to strike Iran. Pre-strike posture confirmed.",
-      "sector": "geopolitics",
-      "paradigm_pillar": "multi_pillar",
-      "paradigm_implications": [
-        "US-Iran kinetic engagement transforms Hormuz blockade from diplomatic to military timeline",
-        "EIA revising Q3 2026 forecast — the gap between demand projection and supply disruption widens"
-      ],
-      "portfolio_implication": "Long WTI, GLD immediately. Long VIX calls. Do not short oil — strike is binary and unresolved.",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strait_of_Hormuz.jpg",
-      "capital_flow": {
-        "direction": "inflow",
-        "amount_b": 12.0,
-        "asset_class": "commodities",
-        "projected": "Long WTI, GLD immediately. Long VIX calls. Do not short oil — strike is binary and unresolved.",
-        "pace_multiplier": 1.5,
-        "confidence_pct": 65,
-        "confidence_level": "medium",
-        "claim": "$12.0B inflow commodities",
-        "confidence": "65%"
-      },
-      "generated_at": "2026-06-10T12:00:00Z"
-    },
-    {
-      "story_id": "n21_macro",
-      "headline": "South Korea Commits $350B to US — Pays Protection Money for Tariff Relief",
-      "they_say": "Korea is investing in US industrial base as a strategic partnership. Normal trade diversification.",
-      "reality": "$350B is ~20% of Korea's GDP. $200B in strategic US industries, $150B shipbuilding. Protection payment for tariff escape — a template for all US allies.",
-      "sector": "macro",
-      "paradigm_pillar": "china_ascendancy",
-      "paradigm_implications": [
-        "Allies buying tariff relief with hard cash sets a dangerous precedent",
-        "Supertanker ordering boom mirrors 2008 — peak-cycle behavior before a glut"
-      ],
-      "portfolio_implication": "Long Korean shipbuilders (HD Hyundai Heavy) on orderbook momentum. Short Baltic Dry forwards — glut cycle being set up.",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_South_Korea.svg",
-      "capital_flow": {
-        "direction": "inflow",
-        "amount_b": 350.0,
-        "asset_class": "tech",
-        "projected": "Long Korean shipbuilders (HD Hyundai Heavy) on orderbook momentum. Short Baltic Dry forwards — glut cycle being set up.",
-        "pace_multiplier": 1.5,
-        "confidence_pct": 65,
-        "confidence_level": "medium",
-        "claim": "$350.0B inflow tech",
-        "confidence": "65%"
-      },
-      "generated_at": "2026-06-10T12:00:00Z"
-    },
-    {
       "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t",
-      "headline": "Anthropic Releases Claude Fable at 2x Opus Pricing — AI Competition Accelerates",
-      "they_say": "Standard product segmentation. Another model release is not a catalyst.",
-      "reality": "Claude Fable released 'today' — earlier than any analyst expected. Premium pricing at 2x Opus. Anthropic rushing to beat OpenAI's next release.",
+      "headline": "Anthropic Drops Claude Fable at 2x Opus Pricing — AI Competition Accelerates",
+      "they_say": "Analysts expected Claude Fable in late Q3 at standard pricing. Model releases are routine — no catalyst.",
+      "reality": "Anthropic released Claude Fable today — earlier than expected — at 2x Opus pricing. OpenAI S-1 same week. Frontier race is accelerating.",
       "sector": "tech",
       "paradigm_pillar": "abundance_tech",
       "paradigm_implications": [
-        "Frontier AI accelerating faster than consensus priced",
-        "Premium enterprise AI pricing creates margin expansion narrative"
+        "Premium AI pricing refutes commoditization",
+        "Model race accelerates — compress timelines",
+        "Hardware demand layer expands with each launch"
       ],
-      "portfolio_implication": "Long AI-crypto tokens (FET, RNDR, TAO). Long NVDA at next US equity open.",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthropic_logo.svg",
-      "capital_flow": {
-        "direction": "inflow",
-        "amount_b": 3.5,
-        "asset_class": "crypto",
-        "projected": "Long AI-crypto tokens (FET, RNDR, TAO). Long NVDA at next US equity open.",
-        "pace_multiplier": 1.5,
-        "confidence_pct": 65,
-        "confidence_level": "medium",
-        "claim": "$3.5B inflow crypto",
-        "confidence": "65%"
-      },
-      "generated_at": "2026-06-10T12:00:00Z"
-    },
-    {
-      "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
-      "headline": "Strategy Resumes Bitcoin Buying Spree — Halts Market Panic at $58K Support",
-      "they_say": "BTC sell-off is brutal. Shorts target MSTR. Institutions capitulating.",
-      "reality": "Strategy (MicroStrategy) resumed buying at $58K. World's largest corporate BTC holder. Buying spree halted panic. Shorts face capitulation risk.",
-      "sector": "crypto",
-      "paradigm_pillar": "blockchain_agentic",
-      "paradigm_implications": [
-        "Corporate BTC accumulation continues despite panic — signals institutional conviction",
-        "MSTR shorts face asymmetric risk if buying spree continues"
-      ],
-      "portfolio_implication": "Long BTC with $58K invalidation. Short MSTR puts.",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_logo.svg",
-      "capital_flow": {
-        "direction": "outflow",
-        "amount_b": 3.5,
-        "asset_class": "crypto",
-        "projected": "Long BTC with $58K invalidation. Short MSTR puts.",
-        "pace_multiplier": 1.5,
-        "confidence_pct": 65,
-        "confidence_level": "medium",
-        "claim": "$3.5B outflow crypto",
-        "confidence": "65%"
-      },
-      "generated_at": "2026-06-10T12:00:00Z"
+      "portfolio_implication": "Long NVDA, SMH — AI capex extends with each model launch. Long FET, TAO for AI-crypto coupling.",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthropic_logo.svg"
     },
     {
       "story_id": "n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai",
-      "headline": "SpaceX IPO June 12 — 2 Days Away, $1.8T Valuation, OpenAI S-1 Filed",
-      "they_say": "Biggest IPO in history is 2 days out. Normal market event.",
-      "reality": "SpaceX at $1.8T+ is 96x 2025 revenue — Q1 loss of $4.28B on $4.69B revenue. OpenAI S-1 confidential filing. Dual IPO wave defines 2026 capital markets.",
+      "headline": "SpaceX IPO June 12 — $1.8T at 96x Revenue, 91% Loss Margin",
+      "they_say": "Biggest IPO in history is 2 days out. Normal market event in a hot capital markets environment.",
+      "reality": "SpaceX at $1.8T+ is 96x 2025 revenue with Q1 loss of $4.28B on $4.69B revenue. OpenAI S-1 filed same week. Dual IPO wave defines 2026 capital markets — $80B+ capital raise at a 91% loss margin.",
       "sector": "tech",
       "paradigm_pillar": "abundance_tech",
       "paradigm_implications": [
-        "AI infrastructure capex cycle ($40B/yr at SpaceX alone) is the through-line",
-        "India's Starlink block signals regulatory pushback on Musk's empire"
+        "AI infrastructure capex cycle ($40B/yr at SpaceX alone) is the through-line connecting both IPOs",
+        "At 96x revenue, the IPO market is pricing a future that hasn't arrived yet — risk of correction"
       ],
-      "portfolio_implication": "Long SPCX at IPO if pricing isn't ridiculous. Watch India block resolution as catalyst.",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX_Dragon_2_approach_to_ISS_1.jpg",
-      "capital_flow": {
-        "direction": "inflow",
-        "amount_b": 1800.0,
-        "asset_class": "crypto",
-        "projected": "Long SPCX at IPO if pricing isn't ridiculous. Watch India block resolution as catalyst.",
-        "pace_multiplier": 1.5,
-        "confidence_pct": 65,
-        "confidence_level": "medium",
-        "claim": "$1800.0B inflow crypto",
-        "confidence": "65%"
-      },
-      "generated_at": "2026-06-10T12:00:00Z"
+      "portfolio_implication": "Long SPCX at IPO if pricing isn't ridiculous. Monitor India Starlink block resolution as regulatory catalyst.",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX_Dragon_2_approach_to_ISS_1.jpg"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
+      "headline": "Strategy Resumes Bitcoin Buying at $58K — Halts Market Panic",
+      "they_say": "BTC sell-off is brutal. Shorts target MSTR. Institutions capitulating to panic selling.",
+      "reality": "Strategy (MicroStrategy) resumed buying at $58K — the world's largest corporate BTC holder. Buying spree halted the panic. Shorts targeting MSTR face capitulation risk as the bid returns.",
+      "sector": "crypto",
+      "paradigm_pillar": "blockchain_agentic",
+      "paradigm_implications": [
+        "Corporate BTC accumulation continues despite sell-off — institutional conviction intact",
+        "MSTR shorts face asymmetric risk if buying spree resumes — potential short squeeze"
+      ],
+      "portfolio_implication": "Long BTC with $58K invalidation. Short MSTR puts to capture squeeze premium.",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_logo.svg"
+    },
+    {
+      "story_id": "n21_macro",
+      "headline": "South Korea Commits $350B to US — Protection Payment for Tariff Relief",
+      "they_say": "Korea is investing in the US industrial base as a strategic partnership. Normal trade diversification.",
+      "reality": "$350B is ~20% of Korea's GDP. $200B in strategic US industries, $150B shipbuilding. A protection payment for tariff escape — sets a template for all US allies.",
+      "sector": "macro",
+      "paradigm_pillar": "china_ascendancy",
+      "paradigm_implications": [
+        "Allies can buy tariff relief with hard cash — precedent hollows out trade negotiation credibility",
+        "Supertanker ordering boom mirrors 2008 — peak-cycle behavior before a glut"
+      ],
+      "portfolio_implication": "Long Korean shipbuilders (HD Hyundai Heavy) on orderbook momentum. Short Baltic Dry forwards — glut cycle being set up.",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_South_Korea.svg"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired",
+      "headline": "Europe Ditches American Tech — 'We Want to Be Sure Nobody Has a Kill Switch'",
+      "they_say": "Standard diversification. US-Europe tech alliance is intact. Regulatory noise, not structural decoupling.",
+      "reality": "EU unveils tech sovereignty package with explicit motive: eliminate US control over chip/cloud supply chains. Official stated: 'We want to be sure nobody has a kill switch.' $34B defense/tech inflow projected. ASML chief Fouquet warns against directing chip supplies.",
+      "sector": "defense",
+      "paradigm_pillar": "eu_fragmentation",
+      "paradigm_implications": [
+        "EU systematically building alternatives to US tech infrastructure — 'kill switch' quote is the most explicit decoupling signal yet",
+        "ASML caught between EU sovereignty demands and its own export-restricted business model"
+      ],
+      "portfolio_implication": "Long ASML — EU sovereignty capex requires lithography regardless of restrictions. Long EADSF — European defense spending is structural, not cyclical.",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/EU_flag.svg"
     }
   ]
 }
