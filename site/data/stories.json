@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T07:30:00+00:00",
+  "generated_at": "2026-06-10T05:20:07.901264+00:00",
   "lead": {
     "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
     "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
@@ -1837,176 +1837,185 @@
       "generated_at": "2026-06-09T13:03:26.472079+00:00"
     },
     {
-      "story_id": "n21_china_ascendancy__china_breaks_deflation_cpi_ppi_surge_reflation",
-      "headline": "CHINA BREAKS DEFLATION — CPI BEATS (+1.2% y/y vs +0.9% Expected), PPI AT 4-YEAR HIGH (+3.9%) — Global Reflation Trade Activates",
-      "sector": "macro",
-      "pillar": "china_ascendancy",
-      "paradigm_pillar": "china_ascendancy",
+      "story_id": "n21_multi_pillar__us_strikes_20_iran_iran_retaliates_hits_bahrain_kinetic_war",
+      "headline": "US Strikes 20+ Targets Inside Iran — Iran Retaliates Hitting US Assets in Bahrain, Kuwait, Jordan: Full Kinetic War",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
       "paradigm_implications": [
-        "China is exiting its multi-year deflationary cycle — CPI beat confirms consumer demand recovery is underway",
-        "PPI at 4-year high signals industrial activity accelerating — commodity demand is real, bullish for EM equities and industrial metals",
-        "Japan PPI +6.3% y/y (beat) adds to global reflation picture; BOJ hike to 1.0% is priced for June meeting",
-        "The China reflation + West stagflation under oil shock disconnect is the buried story"
+        "The Apache shootdown was the trigger, but the retaliation cycle has now completed: US struck 20+ targets inside Iran, Iran retaliated with missiles/drones hitting US assets in Bahrain (confirmed impacts), Kuwait, and Jordan. This is no longer 'controlled escalation' — it is an active, confirmed kinetic exchange across three countries.",
+        "IRGC explicitly warned of 'massive response' to further strikes. Iran's Deputy Foreign Minister denied responsibility for the Apache incident, claiming non-state actors — meaning Iran may NOT be able to de-escalate even if it wants to.",
+        "The EIA's timeline assumption of Hormuz resumption in Q3 2026 is now fantasy. Oil exports already collapsed to 209k bpd (6-year low per Vortexa).",
+        "The consensus narrative of 'one and done' is broken. This is the most significant US-Iran military engagement since the Persian Gulf War."
       ],
-      "they_say": "China May CPI released at 01:30 UTC: m/m -0.1% (vs -0.2% expected), y/y +1.2% (vs +0.9% expected — BEAT). PPI y/y +3.9% (highest in 4 years, vs +2.8% prior). Japan PPI y/y +6.3% (prev +5.3%). BOJ expected to hike to 1.0% in June. Analysts frame this as the long-awaited 'reflation-lite' — China's recovery is real but not overheating. Consensus calls it bullish for EM equities, copper, and China-sensitive commodities. The narrative: China is decoupling from the West's Iran-induced stagflation, making it the cleanest reflation trade available.",
-      "reality": "China CPI at +1.2% y/y is still well below the PBOC's 3% target — this is 'reflation-lite,' not overheating. The PPI (+3.9%) vs CPI (+1.2%) spread means margins are being squeezed at the producer level — input costs rising faster than consumer prices is a profit compression signal for Chinese industry. With Brent below $90 and Hormuz closed, PPI may reflect supply-side constraints from oil, not genuine demand strength. The BOJ hiking while China reflates creates a 'wrong-way' dynamic for Yen crosses. The core question: is this demand-led recovery or cost-push inflation from energy? China is 55% of global copper demand, so if this is genuine, copper gets a structural bid.",
-      "thesis": "LONG copper/industrial metals on China reflation thesis. LONG CNH — CPI beat reduces urgency for PBOC easing. LONG China-exposed EM equities (FXI, EWH) for Asian session — CPI beat + PPI high is the 'Goldilocks' reflation print. The asymmetric: if PPI is cost-push (oil), industrial metals fade and SHORT Chinese equities; if demand-led, the reflation trade has legs for Q3.",
-      "actors": ["PBOC", "State Council", "BOJ"],
+      "they_say": "Market consensus treats this as 'controlled escalation' — CNN reports US still hopes for negotiations; Trump downplayed the Apache incident as 'wasn't a big deal'. The narrative is that both sides want de-escalation after a round of tit-for-tat. EIA assumes Hormuz shipments resume Q3 2026. Markets are pricing the Apache shootdown but NOT the completed retaliation cycle.",
+      "reality": "Iran already retaliated — the 'one and done' thesis is broken. US confirmed hits on US military assets in Bahrain (direct impacts), Kuwait, and Jordan. IRGC warned of further strikes if US hits again. Iran's Deputy Foreign Minister denied responsibility for the Apache shootdown, suggesting the attack was from non-state actors Iran can't control — meaning Iran may not be able to de-escalate even if it wants to. The Strait of Hormuz remains a live flashpoint. Oil exports already collapsed to 209k bpd (6-yr low). This is the widest gap between diplomatic theater and kinetic reality since the conflict began.",
+      "thesis": "LONG crude futures (CL, COIL) — Brent breaches $95 within hours. LONG defense (LMT, GD, NOC). SHORT Iranian-exposed equities. LONG tanker rates. The EIA assuming 'resumption in Q3' is overly optimistic — position for prolonged disruption. LONG gold (GLD) as flight to safety.",
+      "actors": ["IRGC", "Trump", "Biden administration", "IRNA", "Vortexa Analytics"],
       "horizon": "24-72h",
-      "confidence": "medium",
+      "confidence": "high",
       "tier": "BREAKING",
-      "invalidation_trigger": "Next China data print shows deflation returning. PBOC cuts rates aggressively. PPI rolls over on falling commodity prices.",
-      "portfolio_implication": "LONG copper/industrial metals on China reflation thesis. LONG CNH. LONG China-exposed EM equities. Asymmetric trade: if demand-led recovery confirmed, copper is the best proxy for global reflation.",
-      "capital_flow": {
-        "claim": "Institutional capital rotating into China-exposed EM equities and base metals",
-        "direction": "inflow",
-        "amount_b": 8.5,
-        "denomination": "USD",
-        "asset_class": "commodities",
-        "pace": "accelerating",
-        "projected": "$8.5B inflow into EM/commodities",
-        "confidence": 70,
-        "positioning": "LONG copper, LONG CNH, LONG FXI"
-      },
-      "capital_flow_implication": "LONG copper/industrial metals, LONG CNH. The PPI-CPI spread divergence is the key risk — if it widens, it's cost-push inflation, not demand recovery, and the trade reverses.",
+      "actionable_trade": "LONG crude futures (CL, COIL) — Brent targets $95+. LONG defense primes (LMT, GD, NOC, RTX). LONG tanker/shipping equities (STNG, FRO). LONG gold (GLD). SHORT equities exposed to Gulf supply chains.",
+      "contradiction_score": 85,
+      "invalidation_trigger": "Verified ceasefire agreement between US and Iran. Confirmed withdrawal of US naval forces from Gulf. Iran signals it can de-escalate.",
+      "portfolio_implication": "Oil longs are the single highest-conviction trade of the session. Direct US-Iran military engagement over the world's most important oil chokepoint is the definition of a binary bullish oil catalyst. Pair with gold for flight-to-safety. Defense sector re-rates structurally.",
       "image_url": "",
+      "freshness": "breaking",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 8.0,
+        "asset_class": "commodities",
+        "projected": "Oil spike to $95+ Brent within hours. Defense sector inflow of $3-5B. Gold inflow as safe haven.",
+        "pace_multiplier": 1.5,
+        "confidence_pct": 85,
+        "confidence_level": "high",
+        "claim": "$8.0B inflow commodities — oil spike + defense + gold",
+        "confidence": "85%"
+      },
+      "capital_flow_implication": "LONG crude, defense, gold. SHORT equities exposed to Middle East supply chains. Asymmetric oil optionality is extreme — own calls.",
       "evidence": [
-        "markettwits/373511 (04:20 UTC): China CPI y/y +1.2% vs +0.9% expected",
-        "markettwits/373511 (04:20 UTC): China PPI +3.9% y/y — highest in 4 years",
-        "markettwits/373510 (04:16 UTC): Japan PPI y/y +6.3%, accelerating",
-        "markettwits/373508 (04:10 UTC): Analysts expect BOJ hike to 1.0% in June"
+        "source: telegram_intel (ethanlevins, markettwits, trad_fin, MonitoringSituation)",
+        "US completed strikes on 20+ targets inside Iran confirmed",
+        "Iran retaliated with missiles/drones hitting Bahrain (confirmed impacts), Kuwait, Jordan",
+        "IRGC warned 'massive response' to further strikes",
+        "Iran oil exports collapsed to 209k bpd — 6-year low (Vortexa)"
       ],
       "source": "telegram_intel",
-      "generated_at": "2026-06-10T04:45:00+00:00",
-      "freshness": "breaking",
+      "generated_at": "2026-06-10T05:49:45+00:00",
       "entity_tags": {
-        "assets": ["COPPER", "CNH", "FXI", "EWH"],
-        "geographies": ["China", "Japan"],
-        "actors": ["PBOC", "BOJ"],
-        "instruments": ["futures", "etf"]
+        "assets": ["BRENT", "WTI", "XAU", "SPX", "VIX"],
+        "geographies": ["Iran", "USA", "Bahrain", "Kuwait", "Jordan", "Strait of Hormuz"],
+        "actors": ["IRGC", "Trump", "IRNA"],
+        "instruments": ["futures", "options"]
       },
       "time_decay": {
-        "half_life_hours": 48.0,
+        "half_life_hours": 24.0,
         "decay_curve": "exponential",
         "current_freshness": 1.0,
         "hours_elapsed": 0.0,
-        "renewal_triggers": ["new_intel", "price_breach", "flow_confirmation"]
+        "renewal_triggers": ["new_intel", "price_breach", "ceasefire_announcement"]
       },
-      "impacted_flows": [],
+      "impacted_flows": [
+        "flow_n21_multi_pillar__us_strikes_20_iran_iran_retaliates_hits_bahrain_kinetic_war"
+      ],
       "associated_positions": [],
       "multi_persona": {
         "c_suite": {
-          "headline": "CHINA BREAKS DEFLATION — CPI BEATS, PPI AT 4-YEAR HIGH",
-          "body": "Structural assessment: China CPI beat (+1.2% y/y vs +0.9% expected) and PPI at 4-year high (+3.9%) signal China is exiting its multi-year deflation cycle. This has major implications for global asset allocation — if China demand is recovering, commodity demand gets a structural boost. However, the PPI-CPI spread (producer margin squeeze) suggests cost-push from oil, not genuine demand. Board-level: increase EM/commodities allocation with China-specific exposure (FXI, COPPER).",
-          "implication": "Board-level: China reflation warrants EM overweight. Monitor PBOC policy response."
+          "headline": "US-IRAN FULL KINETIC WAR — 20+ US Strikes, Iran Retaliates Across 3 Countries",
+          "body": "Structural assessment: The Apache shootdown escalated to full kinetic exchange. US struck 20+ targets inside Iran. Iran retaliated hitting US assets in Bahrain (confirmed), Kuwait, Jordan. This is the most significant US-Iran military engagement since the Persian Gulf War. Oil exports already collapsed to 209k bpd. Capital repositioning of $8.0B+ identified in commodities. Policy implication: oil at $95+ Brent within hours.",
+          "implication": "Board-level risk: structural oil long required. Hedge equities with gold and defense."
         },
         "quant": {
-          "headline": "EM/COMMODITIES signal: LONG",
-          "body": "China CPI beat (+1.2% y/y) + PPI 4-year high (+3.9%) = reflation regime break. Key metric: PPI-CPI spread at 2.7pp — if this widens further, it confirms cost-push (bearish Chinese equities). If spread narrows on CPI acceleration, it's genuine demand recovery. Watch copper (China=55% of global demand) and CNH for confirmation.",
+          "headline": "COMMODITIES flow: $8.0B inflow — OIL/GOLD/DEFENSE",
+          "body": "Raw telemetry — commodities $8.0B inflow detected. Consensus vs reality divergence: markets pricing 'controlled escalation' while active multi-country kinetic exchange is underway. Correlation regime: risk-off. Watch WTI-Brent spread for physical disruption confirmation.",
           "metrics": {
             "flow_direction": "inflow",
             "asset_class": "commodities",
-            "geographies": ["China", "Japan", "EM"],
-            "key_spread": "PPI-CPI: 2.7pp"
+            "geographies": ["Iran", "USA", "Bahrain", "Kuwait", "Jordan"]
           }
         },
         "degen": {
-          "headline": "🟢 LONG COPPER/FXI/CNH",
-          "body": "Directional: LONG. Assets: COPPER, FXI, CNH. Entry zone: current Asian session. Stop: -3% on copper, -5% on FXI. Target: copper +8%, FXI +12%, CNH +2%. Conviction: MEDIUM. Catalyst: China CPI beat + PPI 4-year high = reflation trade activate. Risk: if this is cost-push from oil (Hormuz), the trade fades fast.",
+          "headline": "🟢 LONG OIL/GOLD/DEFENSE",
+          "body": "Directional: LONG. Assets: WTI, BRENT, GLD, LMT, GD, NOC. Conviction: HIGH. Entry: market. Stop: -5% from entry on oil, -3% on gold. Target: +15-20% on oil, +10% on defense.",
           "signal": {
             "direction": "LONG",
-            "entry_zone": "current Asian session",
-            "stop_level": "-3% copper, -5% FXI",
-            "target": "copper +8%, FXI +12%, CNH +2%",
-            "conviction": "MEDIUM"
+            "entry_zone": "market",
+            "stop_level": "-5% oil, -3% gold",
+            "target": "+15-20% oil, +10% defense",
+            "conviction": "HIGH"
           }
         }
       }
     },
     {
-      "story_id": "n21_dollar_decline__gold_safe_haven_fails_during_us_iran_war",
-      "headline": "GOLD FAILS THE WAR TEST — Safe Haven Collapses During Active US-Iran Military Exchange, Citi Warns 20% Further Downside",
-      "sector": "commodities",
-      "pillar": "dollar_decline",
-      "paradigm_pillar": "dollar_decline",
+      "story_id": "n21_multi_pillar__ukraine_fp5_flamingo_hits_cheboksary_600km_into_russia",
+      "headline": "Ukraine Strikes 600km Inside Russia With FP-5 Flamingo Missiles — Cheboksary Hit, Urals Targeted Next",
+      "sector": "defense",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
       "paradigm_implications": [
-        "Gold is failing as a safe haven during a live US-Iran military exchange — the most extreme stress test for the de-dollarization thesis",
-        "If gold cannot hold a bid when the US is bombing Iran (3 waves confirmed by CENTCOM) and Iran retaliates, the 'gold as reserve alternative' narrative is structurally challenged",
-        "Citi cutting 3-month gold forecast from $4000 to ~$3200 (implied -20% further downside) validates institutional de-rating of gold's safe haven premium",
-        "The 'sell the news' on geopolitics pattern — if safe haven fails during maximum tension, when does it work?"
+        "Ukraine struck Cheboksary (Volga region, ~600km east of Moscow) with indigenous FP-5 Flamingo cruise missiles — among the deepest Ukrainian strikes into Russia to date.",
+        "Missiles still airborne toward Tyumen Oblast in the Urals — a major oil-producing region. FP-5 Flamingo has 1,000+ km range, Ukrainian-designed and combat-proven.",
+        "This is NOT symbolic — hitting industrial/energy infrastructure changes Russian logistics and energy calculus. Tyumen is the heart of Russia's oil production.",
+        "Concurrent with US-Iran war — Russia now fights on two emotional fronts (Ukraine + Iranian proxy commitments). Ukraine exploits the US distraction window.",
+        "Stagflationary: disrupted Russian energy exports = higher global energy prices = inflation pressure on Europe."
       ],
-      "they_say": "Gold and silver are being aggressively sold on the Asian session open despite active US-Iran military strikes (CENTCOM confirmed 3 waves at 03:58 UTC, Iran retaliated with ballistic missiles). BTC ETF outflows continue for 16th straight day — BTC below $62K. Citi cuts 3-month gold forecast to ~$3200 from $4000, sees 20% further downside by September. Wintermute says 'no crypto capital inflows yet — too early for BTC bottom.' Markets are pricing the 'calibrated exchange' as de-escalation — both sides delivered face-saving blows and will step back.",
-      "reality": "Gold selling during a live US-Iran military exchange is EXTREME behavior. If this is 'sell the news' on a Middle East war, gold's safe haven premium is structurally broken. The contradiction: if Iran launches a second wave (Iran said 'no attack unanswered'), gold shorts get crushed. BTC ETF outflows for 16 consecutive days is unprecedented. BTC below $62K is near MicroStrategy's average purchase price ($65K+) — creating a potential value floor. Wintermute's 'no inflows' call is backward-looking — BTC bottoms when outflows slow first, then reverse. The real contradiction: the safe haven that SHOULD be bid is being SOLD at the exact moment of maximum geopolitical tension. This challenges the dollar_decline thesis — if gold can't serve as a reserve alternative during a crisis, what replaces the dollar?",
-      "thesis": "AGGRESSIVE long gold if it finds a floor above $2800 during Asian session — if gold can't bounce with the Iran story live, it won't bounce anywhere. The play: buy gold on this dip with defined risk. SHORT BTC until ETF outflows show at least one day of reversal — 16 days is a regime, not a blip. The asymmetric: long gold calls expiring Friday — if Iran launches second wave, gold +$100 bid reappears instantly. The consensus is 'de-escalation,' positioning is short gold — that's the squeeze setup.",
-      "actors": ["CENTCOM", "Iran", "Citi", "Wintermute"],
+      "they_say": "Ukraine-Russia war is in a grinding attrition phase, slowly escalating but not breaking any new paradigms. Western attention is consumed by Iran-US conflict. Ukraine's deep strikes are seen as symbolic/political signaling rather than war-changing operations.",
+      "reality": "Striking Cheboksary (Volga region) and targeting Tyumen (Urals) is NOT symbolic — these are industrial/energy infrastructure regions. FP-5 Flamingo is a Ukrainian-designed long-range cruise missile with 1,000+ km range being used in combat at scale. If Ukraine can consistently hit targets 600-1,500km inside Russia, it changes Russian logistics calculus. Tyumen is a major oil-producing region — hitting there would have direct energy market impact. AND this is concurrent with Iran-US war — Russia is now fighting on two fronts while its Iranian proxy commitments strain resources. Ukraine's own long-range strike capability means no Russian city is safe — this negates Russia's traditional sanctuary advantage.",
+      "thesis": "LONG Ukrainian reconstruction/defense names. LONG natural gas (UA strikes could target Russian gas infrastructure). LONG defense primes (RTX, LMT, GD, NOC). SHORT Russian ruble/RSX. The Iran distraction gives Ukraine operational room — this pattern will continue. LONG Rheinmetall as European defense proxy.",
+      "actors": ["Zelensky", "Ukraine MOD", "Russian MOD", "Tyumen Oblast"],
       "horizon": "24-72h",
-      "confidence": "medium",
+      "confidence": "high",
       "tier": "BREAKING",
-      "invalidation_trigger": "Gold bounces above $3200 on Iran escalation. Citi reverses forecast. BTC ETF outflows slow to zero.",
-      "portfolio_implication": "LONG gold on this dip with defined stop — the asymmetry favors a squeeze if Iran retaliates again. LONG gold calls expiring Friday for tail risk. SHORT BTC until ETF flow reversal. The gold/Iran disconnect is the trade of the day.",
-      "capital_flow": {
-        "claim": "Safe haven capital exiting gold during peak geopolitical tension — regime change in risk management",
-        "direction": "outflow",
-        "amount_b": 12.0,
-        "denomination": "USD",
-        "asset_class": "commodities",
-        "pace": "accelerating",
-        "projected": "$12B outflow from gold as safe haven premium deflates",
-        "confidence": 70,
-        "positioning": "LONG gold on dip (contrarian), SHORT BTC, LONG gold calls for tail"
-      },
-      "capital_flow_implication": "The safe haven thesis is breaking in real-time. If gold can't rally during a US-Iran war, it challenges the fundamental premise of the dollar_decline paradigm. Gazzetta frame: 'When safe havens stop being safe — the paradox that threatens the de-dollarization narrative.'",
+      "actionable_trade": "LONG European defense (Rheinmetall, Thales). LONG natural gas ($NG, TTF futures). LONG Ukrainian reconstruction proxies. SHORT RSX (Russia ETF). SHORT Russian ruble.",
+      "contradiction_score": 78,
+      "invalidation_trigger": "Russia demonstrates effective countermeasures against FP-5 Flamingo. Confirmation Tyumen strikes failed. Diplomatic ceasefire agreed.",
+      "portfolio_implication": "Natural gas call as Russian infrastructure risk reprices. Defense sector re-rates structurally on two-front war paradigm. Ukraine reconstruction bonds become tradeable thesis. Iran story is bigger for oil markets T+2h, but Ukraine deep strike is the most important strategic development for the war itself.",
       "image_url": "",
+      "freshness": "breaking",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 4.0,
+        "asset_class": "defense",
+        "projected": "European defense inflow $2-3B, natural gas futures up 5-8%, Ukrainian war bonds re-rate.",
+        "pace_multiplier": 1.3,
+        "confidence_pct": 80,
+        "confidence_level": "high",
+        "claim": "$4.0B inflow defense/gas — Ukraine deep strike capability paradigm shift",
+        "confidence": "80%"
+      },
+      "capital_flow_implication": "LONG European defense, natural gas, Ukrainian reconstruction names. SHORT Russian exposure. The war paradigm has shifted — Ukraine now holds deep-strike cards.",
       "evidence": [
-        "markettwits/373507 (04:08 UTC): Gold/silver selling on Asian session",
-        "markettwits/373512 (04:31 UTC): Citi says gold could fall 20% more by September",
-        "markettwits/373506 (04:07 UTC): BTC ETF outflows 16 days straight, BTC < $62K",
-        "markettwits/373494 (20:38 UTC June 9): Wintermute says no capital inflows yet",
-        "markettwits/373504 (03:58 UTC): US strikes complete, Iran retaliated"
+        "source: telegram_intel (ethanlevins, ASupersharij)",
+        "FP-5 Flamingo missiles hit Cheboksary, Chuvashia Republic (~600km east of Moscow)",
+        "Additional missiles inbound toward Tyumen Oblast, Urals",
+        "Russia hit Kharkiv with 25 Geran-2 drones, Odesa with 30 drones — reciprocal barrage",
+        "FP-5 Flamingo: Ukrainian-designed, 1,000+ km range cruise missile in combat use",
+        "Timing concurrent with US-Iran war — Russia distracted on two fronts"
       ],
       "source": "telegram_intel",
-      "generated_at": "2026-06-10T04:45:00+00:00",
-      "freshness": "breaking",
+      "generated_at": "2026-06-10T05:49:45+00:00",
       "entity_tags": {
-        "assets": ["XAU", "XAG", "BTC", "GLD"],
-        "geographies": ["Iran", "USA", "Middle East"],
-        "actors": ["CENTCOM", "Citi", "Wintermute"],
-        "instruments": ["futures", "options", "etf"]
+        "assets": ["NG", "TTF", "RSX", "RUB"],
+        "geographies": ["Ukraine", "Russia", "Cheboksary", "Tyumen", "Chuvashia", "Urals"],
+        "actors": ["Zelensky", "Ukraine MOD", "Russian MOD"],
+        "instruments": ["futures", "ETFs", "bonds"]
       },
       "time_decay": {
         "half_life_hours": 36.0,
         "decay_curve": "exponential",
         "current_freshness": 1.0,
         "hours_elapsed": 0.0,
-        "renewal_triggers": ["new_intel", "price_breach", "flow_confirmation"]
+        "renewal_triggers": ["new_intel", "tyumen_confirmation", "ceasefire"]
       },
-      "impacted_flows": [],
+      "impacted_flows": [
+        "flow_n21_multi_pillar__ukraine_fp5_flamingo_hits_cheboksary_600km_into_russia"
+      ],
       "associated_positions": [],
       "multi_persona": {
         "c_suite": {
-          "headline": "GOLD FAILS THE WAR TEST — Safe Haven Collapse During US-Iran War",
-          "body": "Structural assessment: Gold is being aggressively sold during a live US-Iran military exchange (CENTCOM confirmed 3 waves, Iran retaliated). Citi cuts gold forecast 20%. If gold can't rally when the US bombs Iran, the de-dollarization thesis faces its most existential challenge yet — what replaces the dollar if gold doesn't work either? Board-level: reassess gold allocation. The gold/Iran disconnect is the most important contradiction in markets.",
-          "implication": "Board-level: gold safe haven premium is under structural review. Reduce gold allocation on rallies, not dips."
+          "headline": "UKRAINE STRIKES 600KM INSIDE RUSSIA — FP-5 Flamingo Hits Cheboksary, Urals Next",
+          "body": "Structural assessment: Ukraine now has operational deep-strike capability with indigenous 1,000+ km range FP-5 Flamingo cruise missiles. Cheboksary (Volga region) confirmed hit. Missiles still airborne toward Tyumen (oil-producing Urals). This changes Russian logistics and energy calculus. Capital repositioning of $4.0B identified in defense/gas. Policy implication: Russian oil/gas infrastructure risk reprices.",
+          "implication": "Board-level: long European defense, short Russian exposure. Natural gas hedge recommended."
         },
         "quant": {
-          "headline": "GOLD signal: CONTRARIAN LONG / STRUCTURAL WATCH",
-          "body": "Gold selling during active US-Iran war is 3-sigma behavior. Key metric: gold failed to hold $2800 support despite maximum geopolitical tension. Citi cut to $3200 implies de-rating of safe haven premium. If gold can't bounce from here with the Iran story live, the structural bid is broken. Watch for second wave of Iranian retaliation as squeeze trigger.",
+          "headline": "DEFENSE flow: $4.0B inflow — UKRAINE DEEP STRIKE",
+          "body": "Raw telemetry — defense/natural gas $4.0B inflow detected. Consensus vs reality divergence: grinding attrition vs. paradigm-shifting deep strike capability. Correlation regime: risk-off for Russian assets, risk-on for European defense.",
           "metrics": {
-            "flow_direction": "outflow",
-            "asset_class": "commodities",
-            "geographies": ["Iran", "USA"],
-            "key_level": "Gold $2800 support"
+            "flow_direction": "inflow",
+            "asset_class": "defense",
+            "geographies": ["Ukraine", "Russia", "Europe"]
           }
         },
         "degen": {
-          "headline": "🟢 BUY GOLD DIP (CONTRARIAN) — BUT RESIZE POSITION",
-          "body": "Directional: LONG. Asset: GLD/XAU. Entry zone: near $2800. Stop: -3% ($2720). Target: +5% ($2940). Conviction: LOW-MEDIUM. Context: gold failing during a war is bearish for safe haven narrative, BUT positioning is extremely short. If Iran launches second wave, gold squeezes +$100. Asymmetric trade: buy Friday expiry calls on gold for tail risk. Conviction reduced — safe haven paradigm is breaking.",
+          "headline": "🟢 LONG DEFENSE/GAS",
+          "body": "Directional: LONG. Assets: NG, TTF, Rheinmetall, Thales. Conviction: HIGH. Entry: market. Stop: -5%. Target: +12-18% gas, +8-12% defense. Thesis: Ukraine deep strike = Russian energy infrastructure risk repriced.",
           "signal": {
-            "direction": "LONG (contrarian)",
-            "entry_zone": "~$2800",
-            "stop_level": "-3% ($2720)",
-            "target": "+5% ($2940)",
-            "conviction": "LOW-MEDIUM"
+            "direction": "LONG",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+12-18% gas, +8-12% defense",
+            "conviction": "HIGH"
           }
         }
       }
