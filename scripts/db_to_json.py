@@ -445,6 +445,33 @@ def compile_flows(conn):
                 json.dump(sd, f, indent=2, ensure_ascii=False)
             print(f"  ✓ Asymmetry scores written back to stories.json")
     
+    # Write asymmetry summary to market_prices.json for test_platform.py verification
+    market_path = DATA / "market_prices.json"
+    try:
+        mp_data = {}
+        if market_path.exists():
+            with open(market_path) as f:
+                mp_data = json.load(f)
+        mp_data["asymmetry_scores"] = {}
+        for story in all_stories:
+            sid = story.get("story_id", "")
+            if sid and story.get("asymmetry_diagnostic"):
+                mp_data["asymmetry_scores"][sid] = {
+                    "asymmetry_score": story.get("asymmetry_score", 0),
+                    "asymmetry_tier": story.get("asymmetry_tier", ""),
+                    "diagnostic_trace": story["asymmetry_diagnostic"].get("formula", ""),
+                }
+        with open(market_path, "w") as f:
+            json.dump(mp_data, f, indent=2, ensure_ascii=False)
+        # Also sync to site/data/
+        site_mp = SITE_DATA / "market_prices.json"
+        site_mp.parent.mkdir(parents=True, exist_ok=True)
+        with open(site_mp, "w") as f:
+            json.dump(mp_data, f, indent=2, ensure_ascii=False)
+        print(f"  ✓ Asymmetry scores synced to market_prices.json ({len(mp_data['asymmetry_scores'])} stories)")
+    except Exception as e:
+        print(f"  ⚠ Asymmetry sync to market_prices.json failed: {e}")
+    
     contradiction_detected = asymmetry_detected  # backward compat
 
     return len(flows)

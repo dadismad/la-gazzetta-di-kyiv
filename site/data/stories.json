@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T20:32:30.376145+00:00",
+  "generated_at": "2026-06-10T20:41:16.886250+00:00",
   "lead": {
     "story_id": "n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work",
     "headline": "Israeli occupation troops abduct two Lebanese municipal workers",
@@ -111,7 +111,77 @@
       "formula": "ABS((0.50 - -0.03) * 50) = 26",
       "ticker": "QQQ",
       "ticker_price": 706.76
-    }
+    },
+    "related_stories": [
+      {
+        "story_id": "n21_osint__the_cradle__nuking_iran_why_israel_and_the_us_gain_nothing_from_crossin",
+        "headline": "Nuking Iran: Why Israel and the US gain nothing from crossing the ultimate red line",
+        "sector": "crypto",
+        "score": 5,
+        "shared_tags": [
+          "actors",
+          "assets",
+          "geographies",
+          "inflow",
+          "instruments"
+        ]
+      },
+      {
+        "story_id": "n21_osint__the_cradle__tehran_launches_regional_counterattack_on_washington_039_s",
+        "headline": "Tehran launches regional counterattack on Washington&#039;s assets after new US strikes",
+        "sector": "tech",
+        "score": 5,
+        "shared_tags": [
+          "actors",
+          "assets",
+          "geographies",
+          "instruments",
+          "tech"
+        ]
+      },
+      {
+        "story_id": "n21_osint__the_cradle__pakistan_says_israel_derailed_us_iran_peace_deal_described_a",
+        "headline": "Pakistan says Israel derailed US–Iran peace deal described as &#039;inches away&#039;: Report",
+        "sector": "tech",
+        "score": 5,
+        "shared_tags": [
+          "actors",
+          "assets",
+          "geographies",
+          "instruments",
+          "tech"
+        ]
+      }
+    ],
+    "related_flows": [
+      {
+        "flow_id": "flow_n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired",
+        "asset_class": "tech",
+        "direction": "inflow",
+        "amount_formatted": "",
+        "confidence_pct": 50,
+        "pace_multiplier": 2.2,
+        "score": 3
+      },
+      {
+        "flow_id": "flow_n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work",
+        "asset_class": "tech",
+        "direction": "inflow",
+        "amount_formatted": "",
+        "confidence_pct": 50,
+        "pace_multiplier": 1.0,
+        "score": 3
+      },
+      {
+        "flow_id": "flow_n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai",
+        "asset_class": "tech",
+        "direction": "inflow",
+        "amount_formatted": "",
+        "confidence_pct": 50,
+        "pace_multiplier": 2.2,
+        "score": 3
+      }
+    ]
   },
   "stories": [
     {
@@ -215,7 +285,77 @@
         "horizon": "24-72h",
         "action": "Position for defense neutral exposure. Iranian reports from April said the alleged mission to rescue a downed US pilot during the war was actually an attempt to find and steal the uranium",
         "gated": true
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "headline": "Most Israelis oppose Netanyahu&#039;s re-election as Trump says PM &#039;may quit politics&#039;",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__iran_to_pursue__039_war_and_diplomacy_039_simultaneously",
+          "headline": "Iran to pursue &#039;war and diplomacy&#039; simultaneously: Ghalibaf",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__israel_used_jordanian_airspace_to_bomb_iran_report",
+          "headline": "Israel used Jordanian airspace to bomb Iran: Report",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__imprison_their_women_and_children__supremacist_israeli_min",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_osint__the_cradle__christian_village_in_occupied_west_bank_goes_up_in_flames_af",
@@ -318,7 +458,77 @@
         "horizon": "24-72h",
         "action": "Position for crypto neutral exposure. The pogrom carried out by Jewish settlers is part of a state-backed campaign of ethnic cleansing and displacement aimed at annexing the occupied Palestinian territory",
         "gated": true
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "headline": "IAEA passes anti-Iran resolution, demands Tehran reveal location of enriched uranium",
+          "sector": "defense",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__russia_discusses_reformatting_military_presence_in_syria_a",
+          "headline": "Russia discusses ‘reformatting’ military presence in Syria as ties ‘develop actively’",
+          "sector": "commodities",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "headline": "UK court grants Allianz permission to sue pro-Palestine activists for nearly $400,000",
+          "sector": "equities",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__christian_village_in_occupied_west_bank_goes_up_in_flames_af",
+          "asset_class": "crypto",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 2.0,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 75,
+          "pace_multiplier": 2.3,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_osint__the_cradle__russia_discusses_reformatting_military_presence_in_syria_a",
@@ -422,7 +632,77 @@
         "horizon": "24-72h",
         "action": "Position for commodities neutral exposure. Moscow has been supplying Syria with oil, and recently unveiled plans for a new goods distribution hub at Tartous Port",
         "gated": true
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "headline": "The energy shock that could accelerate a multipolar world",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "headline": "IAEA passes anti-Iran resolution, demands Tehran reveal location of enriched uranium",
+          "sector": "defense",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__christian_village_in_occupied_west_bank_goes_up_in_flames_af",
+          "headline": "Christian village in occupied West Bank goes up in flames after large-scale attack by Israeli settlers",
+          "sector": "crypto",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__russia_discusses_reformatting_military_presence_in_syria_a",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
@@ -525,7 +805,77 @@
         "horizon": "24-72h",
         "action": "Position for equities neutral exposure. Damages would be collected from the activists’ future earnings and savings, a move described as an ‘intimidatory fear tactic’",
         "gated": true
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__lebanese_army_chief_meets_top_pakistani_officials_amid_us-ba",
+          "headline": "Lebanese army chief meets top Pakistani officials amid US-backed Israeli escalation",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__wave_of_mass_displacement_hits_lebanon_039_s_tyre_as_israel",
+          "headline": "Wave of mass displacement hits Lebanon&#039;s Tyre as Israeli massacres continue",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__over_one_third_of_labour_mps_call_on_london_to_ban_trade_wit",
+          "headline": "Over one third of Labour MPs call on London to ban trade with illegal West Bank settlements",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__us_seeking__039_precise_info_039_on_iran_039_s_enriched",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__eu_sanctions_iranian_officials_irgc_unit_over_hormuz_restri",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
@@ -628,7 +978,77 @@
         "horizon": "24-72h",
         "action": "Position for defense neutral exposure. Trump continues to call the premier a 'wartime prime minister' as Netanyahu faces ongoing internal opposition and a long-delayed corruption trial",
         "gated": true
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "headline": "IAEA passes anti-Iran resolution, demands Tehran reveal location of enriched uranium",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__iran_to_pursue__039_war_and_diplomacy_039_simultaneously",
+          "headline": "Iran to pursue &#039;war and diplomacy&#039; simultaneously: Ghalibaf",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__israel_used_jordanian_airspace_to_bomb_iran_report",
+          "headline": "Israel used Jordanian airspace to bomb Iran: Report",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__imprison_their_women_and_children__supremacist_israeli_min",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_osint__the_cradle__nuking_iran_why_israel_and_the_us_gain_nothing_from_crossin",
@@ -744,7 +1164,77 @@
         "formula": "ABS((0.50 - 0.08) * 50) = 21",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
+          "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
+          "sector": "crypto",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_abundance_tech__btc_crash__worst_week_since_ftx_collapse_microstrategy_bou",
+          "headline": "BTC CRASH — Worst Week Since FTX Collapse, MicroStrategy Bought $65K Dip, Whales Hold",
+          "sector": "crypto",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work",
+          "headline": "Israeli occupation troops abduct two Lebanese municipal workers",
+          "sector": "tech",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "inflow",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 2.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 75,
+          "pace_multiplier": 2.3,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_osint__the_cradle__tehran_launches_regional_counterattack_on_washington_039_s",
@@ -848,7 +1338,77 @@
         "horizon": "24-72h",
         "action": "Position for tech neutral exposure. The IRGC said it struck US jet hangars and other ‘important targets’ at the Muwaffaq Salti Base in Jordan, as part of attacks that also targeted the US Fifth Fleet in Bahrain",
         "gated": true
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__pakistan_says_israel_derailed_us_iran_peace_deal_described_a",
+          "headline": "Pakistan says Israel derailed US–Iran peace deal described as &#039;inches away&#039;: Report",
+          "sector": "tech",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__irgc_declares_new_regional_security_belt_extending_from_horm",
+          "headline": "IRGC declares new regional security belt extending from Hormuz to Red Sea",
+          "sector": "tech",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work",
+          "headline": "Israeli occupation troops abduct two Lebanese municipal workers",
+          "sector": "tech",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "tech"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__pakistan_says_israel_derailed_us_iran_peace_deal_described_a",
+          "asset_class": "tech",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__irgc_declares_new_regional_security_belt_extending_from_horm",
+          "asset_class": "tech",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__tehran_launches_regional_counterattack_on_washington_039_s",
+          "asset_class": "tech",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_osint__the_cradle__pakistan_says_israel_derailed_us_iran_peace_deal_described_a",
@@ -953,7 +1513,77 @@
         "horizon": "24-72h",
         "action": "Position for tech neutral exposure. Continued Israeli violations in Lebanon and Gaza are the 'main obstacle' to lasting peace, mediators say",
         "gated": true
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__tehran_launches_regional_counterattack_on_washington_039_s",
+          "headline": "Tehran launches regional counterattack on Washington&#039;s assets after new US strikes",
+          "sector": "tech",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__irgc_declares_new_regional_security_belt_extending_from_horm",
+          "headline": "IRGC declares new regional security belt extending from Hormuz to Red Sea",
+          "sector": "tech",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work",
+          "headline": "Israeli occupation troops abduct two Lebanese municipal workers",
+          "sector": "tech",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "tech"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__pakistan_says_israel_derailed_us_iran_peace_deal_described_a",
+          "asset_class": "tech",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__irgc_declares_new_regional_security_belt_extending_from_horm",
+          "asset_class": "tech",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__tehran_launches_regional_counterattack_on_washington_039_s",
+          "asset_class": "tech",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_osint__the_cradle__iran_to_pursue__039_war_and_diplomacy_039_simultaneously",
@@ -1058,7 +1688,77 @@
         "horizon": "24-72h",
         "action": "Position for defense neutral exposure. Satellite imagery has revealed that Iran’s latest strike on Israel, carried out in defense of Lebanon, damaged a key Israeli air base",
         "gated": true
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "headline": "IAEA passes anti-Iran resolution, demands Tehran reveal location of enriched uranium",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "headline": "Most Israelis oppose Netanyahu&#039;s re-election as Trump says PM &#039;may quit politics&#039;",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__israel_used_jordanian_airspace_to_bomb_iran_report",
+          "headline": "Israel used Jordanian airspace to bomb Iran: Report",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__imprison_their_women_and_children__supremacist_israeli_min",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_osint__the_cradle__israel_used_jordanian_airspace_to_bomb_iran_report",
@@ -1162,7 +1862,77 @@
         "horizon": "24-72h",
         "action": "Position for defense neutral exposure. Jordan has been serving as a ‘key hub’ for US and Israeli attacks on Iran since the beginning of the war in February",
         "gated": true
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "headline": "IAEA passes anti-Iran resolution, demands Tehran reveal location of enriched uranium",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "headline": "Most Israelis oppose Netanyahu&#039;s re-election as Trump says PM &#039;may quit politics&#039;",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__iran_to_pursue__039_war_and_diplomacy_039_simultaneously",
+          "headline": "Iran to pursue &#039;war and diplomacy&#039; simultaneously: Ghalibaf",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__imprison_their_women_and_children__supremacist_israeli_min",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_osint__the_cradle__lebanese_army_chief_meets_top_pakistani_officials_amid_us-ba",
@@ -1268,7 +2038,77 @@
         "horizon": "24-72h",
         "action": "Position for equities neutral exposure. The visit comes as Beirut continues to insist that the situation in Lebanon is not linked to negotiations between Tehran and Washington",
         "gated": true
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "headline": "UK court grants Allianz permission to sue pro-Palestine activists for nearly $400,000",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__wave_of_mass_displacement_hits_lebanon_039_s_tyre_as_israel",
+          "headline": "Wave of mass displacement hits Lebanon&#039;s Tyre as Israeli massacres continue",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__over_one_third_of_labour_mps_call_on_london_to_ban_trade_wit",
+          "headline": "Over one third of Labour MPs call on London to ban trade with illegal West Bank settlements",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__us_seeking__039_precise_info_039_on_iran_039_s_enriched",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__eu_sanctions_iranian_officials_irgc_unit_over_hormuz_restri",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
@@ -1372,7 +2212,77 @@
         "horizon": "24-72h",
         "action": "Position for commodities neutral exposure. The disruption of Persian Gulf energy flows is driving inflation, economic turmoil, and a global realignment that favors China and Russia.",
         "gated": true
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__russia_discusses_reformatting_military_presence_in_syria_a",
+          "headline": "Russia discusses ‘reformatting’ military presence in Syria as ties ‘develop actively’",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "headline": "IAEA passes anti-Iran resolution, demands Tehran reveal location of enriched uranium",
+          "sector": "defense",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__christian_village_in_occupied_west_bank_goes_up_in_flames_af",
+          "headline": "Christian village in occupied West Bank goes up in flames after large-scale attack by Israeli settlers",
+          "sector": "crypto",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__russia_discusses_reformatting_military_presence_in_syria_a",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_osint__the_cradle__irgc_declares_new_regional_security_belt_extending_from_horm",
@@ -1475,7 +2385,77 @@
         "horizon": "24-72h",
         "action": "Position for tech neutral exposure. The Axis of Resistance recently adopted a proactive strategic posture after repeated peace pledges failed to halt US-Israeli aggression",
         "gated": true
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__tehran_launches_regional_counterattack_on_washington_039_s",
+          "headline": "Tehran launches regional counterattack on Washington&#039;s assets after new US strikes",
+          "sector": "tech",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__pakistan_says_israel_derailed_us_iran_peace_deal_described_a",
+          "headline": "Pakistan says Israel derailed US–Iran peace deal described as &#039;inches away&#039;: Report",
+          "sector": "tech",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work",
+          "headline": "Israeli occupation troops abduct two Lebanese municipal workers",
+          "sector": "tech",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "tech"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__pakistan_says_israel_derailed_us_iran_peace_deal_described_a",
+          "asset_class": "tech",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__irgc_declares_new_regional_security_belt_extending_from_horm",
+          "asset_class": "tech",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__tehran_launches_regional_counterattack_on_washington_039_s",
+          "asset_class": "tech",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_osint__the_cradle__imprison_their_women_and_children__supremacist_israeli_min",
@@ -1579,7 +2559,77 @@
         "horizon": "24-72h",
         "action": "Position for defense neutral exposure. Dozens of Lebanese prisoners have been behind bars in Israeli jails since the 2024 war on Lebanon",
         "gated": true
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "headline": "IAEA passes anti-Iran resolution, demands Tehran reveal location of enriched uranium",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "headline": "Most Israelis oppose Netanyahu&#039;s re-election as Trump says PM &#039;may quit politics&#039;",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__iran_to_pursue__039_war_and_diplomacy_039_simultaneously",
+          "headline": "Iran to pursue &#039;war and diplomacy&#039; simultaneously: Ghalibaf",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__imprison_their_women_and_children__supremacist_israeli_min",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_osint__the_cradle__wave_of_mass_displacement_hits_lebanon_039_s_tyre_as_israel",
@@ -1683,7 +2733,77 @@
         "horizon": "24-72h",
         "action": "Position for equities neutral exposure. Israeli strikes on Tyre’s Masaken al-Shaabiya area killed nine people and injured over two dozen on Tuesday",
         "gated": true
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "headline": "UK court grants Allianz permission to sue pro-Palestine activists for nearly $400,000",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__lebanese_army_chief_meets_top_pakistani_officials_amid_us-ba",
+          "headline": "Lebanese army chief meets top Pakistani officials amid US-backed Israeli escalation",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__over_one_third_of_labour_mps_call_on_london_to_ban_trade_wit",
+          "headline": "Over one third of Labour MPs call on London to ban trade with illegal West Bank settlements",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__us_seeking__039_precise_info_039_on_iran_039_s_enriched",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__eu_sanctions_iranian_officials_irgc_unit_over_hormuz_restri",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_osint__the_cradle__over_one_third_of_labour_mps_call_on_london_to_ban_trade_wit",
@@ -1795,7 +2915,77 @@
         "horizon": "24-72h",
         "action": "Position for equities neutral exposure. The British lawmakers decried explicit Israeli threats to depopulate a Palestinian Bedouin village to expand the E1 settlement bloc",
         "gated": true
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "headline": "UK court grants Allianz permission to sue pro-Palestine activists for nearly $400,000",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__lebanese_army_chief_meets_top_pakistani_officials_amid_us-ba",
+          "headline": "Lebanese army chief meets top Pakistani officials amid US-backed Israeli escalation",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__wave_of_mass_displacement_hits_lebanon_039_s_tyre_as_israel",
+          "headline": "Wave of mass displacement hits Lebanon&#039;s Tyre as Israeli massacres continue",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__us_seeking__039_precise_info_039_on_iran_039_s_enriched",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__eu_sanctions_iranian_officials_irgc_unit_over_hormuz_restri",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_osint__the_cradle__us_seeking__039_precise_info_039_on_iran_039_s_enriched",
@@ -1900,7 +3090,77 @@
         "horizon": "24-72h",
         "action": "Position for equities neutral exposure. Tehran has repeatedly accused the IAEA of passing along sensitive information to Israel, and has condemned the agency’s requests for access to nuclear sites bombed by Washington",
         "gated": true
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "headline": "UK court grants Allianz permission to sue pro-Palestine activists for nearly $400,000",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__lebanese_army_chief_meets_top_pakistani_officials_amid_us-ba",
+          "headline": "Lebanese army chief meets top Pakistani officials amid US-backed Israeli escalation",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__wave_of_mass_displacement_hits_lebanon_039_s_tyre_as_israel",
+          "headline": "Wave of mass displacement hits Lebanon&#039;s Tyre as Israeli massacres continue",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__us_seeking__039_precise_info_039_on_iran_039_s_enriched",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__eu_sanctions_iranian_officials_irgc_unit_over_hormuz_restri",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_osint__the_cradle__eu_sanctions_iranian_officials_irgc_unit_over_hormuz_restri",
@@ -2004,7 +3264,77 @@
         "horizon": "24-72h",
         "action": "Position for equities neutral exposure. The measures come in response to Tehran restricting transit for hostile states through the strategic waterway",
         "gated": true
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "headline": "UK court grants Allianz permission to sue pro-Palestine activists for nearly $400,000",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__lebanese_army_chief_meets_top_pakistani_officials_amid_us-ba",
+          "headline": "Lebanese army chief meets top Pakistani officials amid US-backed Israeli escalation",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__wave_of_mass_displacement_hits_lebanon_039_s_tyre_as_israel",
+          "headline": "Wave of mass displacement hits Lebanon&#039;s Tyre as Israeli massacres continue",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__us_seeking__039_precise_info_039_on_iran_039_s_enriched",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__eu_sanctions_iranian_officials_irgc_unit_over_hormuz_restri",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_osint__the_cradle__iran_vows_response_to_israeli_violations_in_south_lebanon_w",
@@ -2117,7 +3447,77 @@
         "horizon": "24-72h",
         "action": "Position for equities neutral exposure. Tehran says it is drawing new red lines in the conflict after retaliating directly to Israel's bombing of Beirut on Sunday",
         "gated": true
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "headline": "UK court grants Allianz permission to sue pro-Palestine activists for nearly $400,000",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__lebanese_army_chief_meets_top_pakistani_officials_amid_us-ba",
+          "headline": "Lebanese army chief meets top Pakistani officials amid US-backed Israeli escalation",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__wave_of_mass_displacement_hits_lebanon_039_s_tyre_as_israel",
+          "headline": "Wave of mass displacement hits Lebanon&#039;s Tyre as Israeli massacres continue",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__us_seeking__039_precise_info_039_on_iran_039_s_enriched",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__eu_sanctions_iranian_officials_irgc_unit_over_hormuz_restri",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
@@ -2228,7 +3628,77 @@
         "formula": "ABS((0.50 - 0.08) * 50) = 21",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__nuking_iran_why_israel_and_the_us_gain_nothing_from_crossin",
+          "headline": "Nuking Iran: Why Israel and the US gain nothing from crossing the ultimate red line",
+          "sector": "crypto",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_abundance_tech__btc_crash__worst_week_since_ftx_collapse_microstrategy_bou",
+          "headline": "BTC CRASH — Worst Week Since FTX Collapse, MicroStrategy Bought $65K Dip, Whales Hold",
+          "sector": "crypto",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work",
+          "headline": "Israeli occupation troops abduct two Lebanese municipal workers",
+          "sector": "tech",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "inflow",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 2.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 75,
+          "pace_multiplier": 2.3,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes",
@@ -2339,7 +3809,77 @@
         "formula": "ABS((0.50 - -0.05) * 50) = 27",
         "ticker": "SPY",
         "ticker_price": 735.35
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__s_p_nasdaq_break_below_friday_s_low__live_breakdown_during",
+          "headline": "S&P/Nasdaq Break Below Friday's Low — LIVE Breakdown During US Trading",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work",
+          "headline": "Israeli occupation troops abduct two Lebanese municipal workers",
+          "sector": "tech",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "inflow",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "headline": "UK court grants Allianz permission to sue pro-Palestine activists for nearly $400,000",
+          "sector": "equities",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1",
+          "asset_class": "equities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 75,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes",
+          "asset_class": "equities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.8,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__us_seeking__039_precise_info_039_on_iran_039_s_enriched",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired",
@@ -2456,7 +3996,77 @@
         "formula": "ABS((0.50 - -0.19) * 50) = 34",
         "ticker": "ITA",
         "ticker_price": 228.29
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai",
+          "headline": "Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates - WSJ",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work",
+          "headline": "Israeli occupation troops abduct two Lebanese municipal workers",
+          "sector": "tech",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "inflow",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "headline": "IAEA passes anti-Iran resolution, demands Tehran reveal location of enriched uranium",
+          "sector": "defense",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__imprison_their_women_and_children__supremacist_israeli_min",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__israel_s_nabatieh_offensive__earthquake_that_topples_hezbo",
+          "asset_class": "defense",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 1.7,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela",
@@ -2569,7 +4179,77 @@
         "formula": "ABS((-0.50 - 0.08) * 50) = 29",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__us-israel_strike_package_on_iran__assets_airborne_strike_w",
+          "headline": "US-ISRAEL STRIKE PACKAGE ON IRAN — ASSETS AIRBORNE, STRIKE WINDOW OPEN AT 21:17 UTC",
+          "sector": "crypto",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__iran_parliament__war_won_t_be_limited_to_the_region__asym",
+          "headline": "IRAN PARLIAMENT: 'WAR WON'T BE LIMITED TO THE REGION' — ASYMMETRIC ESCALATION THREAT",
+          "sector": "crypto",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__christian_village_in_occupied_west_bank_goes_up_in_flames_af",
+          "headline": "Christian village in occupied West Bank goes up in flames after large-scale attack by Israeli settlers",
+          "sector": "crypto",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela",
+          "asset_class": "crypto",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 2.4,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 2.0,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 75,
+          "pace_multiplier": 2.3,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai",
@@ -2680,7 +4360,77 @@
         "formula": "ABS((0.50 - -0.19) * 50) = 34",
         "ticker": "ITA",
         "ticker_price": 228.29
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired",
+          "headline": "All the Ways Europe Is Ditching American Technology - WIRED",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work",
+          "headline": "Israeli occupation troops abduct two Lebanese municipal workers",
+          "sector": "tech",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "inflow",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "headline": "IAEA passes anti-Iran resolution, demands Tehran reveal location of enriched uranium",
+          "sector": "defense",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__imprison_their_women_and_children__supremacist_israeli_min",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__israel_s_nabatieh_offensive__earthquake_that_topples_hezbo",
+          "asset_class": "defense",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 1.7,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
@@ -2814,7 +4564,77 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__kuwait_discussing_hormuz_bypass_via_saudi_uae_pipelines__ei",
+          "headline": "Kuwait Discussing Hormuz Bypass via Saudi/UAE Pipelines + EIA Raises WTI Forecast to $88.32 — Blockade Biting Structurally",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__idf_declares_readiness_to_immediately_resume_iran_operations",
+          "headline": "IDF Declares Readiness to Immediately Resume Iran Operations + Tyre Under Full Evacuation — Two-Front Escalation Active",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__ukraine_fp-5_flamingo_missiles_strike_cheboksary__second_st",
+          "headline": "UKRAINE FP-5 FLAMINGO MISSILES STRIKE CHEBOKSARY — SECOND Strike on VNIIR-Progress, Samara Refinery Hit, Tyumen Missiles In-Flight, GRAU Colonel Assassinated",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "asset_class": "commodities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
@@ -2901,7 +4721,67 @@
         "formula": "ABS((-0.75 - 0.40) * 50) = 58",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__us_doe_releases_40m_barrels_from_strategic_petroleum_reserve",
+          "headline": "US DOE RELEASES 40M BARRELS FROM STRATEGIC PETROLEUM RESERVE — PRE-STRIKE SUPPLY PRE-POSITIONING",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "outflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__israel_s_nabatieh_offensive__earthquake_that_topples_hezbo",
+          "headline": "Israel's Nabatieh Offensive — 'Earthquake That Topples Hezbollah' as IDF Tanks Burn on Live TV, Leaks Show It's Sabotaging US-Iran Hormuz Deal",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "outflow"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__russia_discusses_reformatting_military_presence_in_syria_a",
+          "headline": "Russia discusses ‘reformatting’ military presence in Syria as ties ‘develop actively’",
+          "sector": "commodities",
+          "score": 1,
+          "shared_tags": [
+            "commodities"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__russia_discusses_reformatting_military_presence_in_syria_a",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1",
@@ -2988,7 +4868,68 @@
         "formula": "ABS((0.75 - 0.08) * 50) = 34",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__nuking_iran_why_israel_and_the_us_gain_nothing_from_crossin",
+          "headline": "Nuking Iran: Why Israel and the US gain nothing from crossing the ultimate red line",
+          "sector": "crypto",
+          "score": 2,
+          "shared_tags": [
+            "crypto",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
+          "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
+          "sector": "crypto",
+          "score": 2,
+          "shared_tags": [
+            "crypto",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
+          "headline": "Ethena (ENA) Partners with Janus Henderson ($300B+ AUM) for Tokenized CLOs — Institutional DeFi Breakthrough",
+          "sector": "crypto",
+          "score": 2,
+          "shared_tags": [
+            "crypto",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 2.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 75,
+          "pace_multiplier": 2.3,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__us_doe_releases_40m_barrels_from_strategic_petroleum_reserve",
@@ -3104,7 +5045,77 @@
         "formula": "ABS((-0.75 - 0.40) * 50) = 58",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__russia_discusses_reformatting_military_presence_in_syria_a",
+          "headline": "Russia discusses ‘reformatting’ military presence in Syria as ties ‘develop actively’",
+          "sector": "commodities",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "headline": "The energy shock that could accelerate a multipolar world",
+          "sector": "commodities",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela",
+          "headline": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet - CNBC",
+          "sector": "crypto",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "outflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__russia_discusses_reformatting_military_presence_in_syria_a",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
@@ -3199,7 +5210,68 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+          "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "headline": "OPEC+ Meeting TODAY (June 7) — 188k bpd Hike Expected as 149 S&P 500 Companies Flag Oil Pain",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__us_adp_nonfarm_29k_vs_35_7k_prior__labor_market_cracking",
+          "headline": "US ADP Nonfarm +29K vs +35.7K Prior — Labor Market Cracking as Inflation Expectations Rise 3rd Month Straight",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "asset_class": "commodities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
@@ -3286,7 +5358,68 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+          "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
+          "headline": "Israeli Minister Ben-Gvir Urges Cabinet to Abduct Lebanese Women and Children as Psychological Warfare — Far-Right Escalation Signal",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__us_adp_nonfarm_29k_vs_35_7k_prior__labor_market_cracking",
+          "headline": "US ADP Nonfarm +29K vs +35.7K Prior — Labor Market Cracking as Inflation Expectations Rise 3rd Month Straight",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "asset_class": "commodities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__us_adp_nonfarm_29k_vs_35_7k_prior__labor_market_cracking",
@@ -3381,7 +5514,68 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+          "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
+          "headline": "Israeli Minister Ben-Gvir Urges Cabinet to Abduct Lebanese Women and Children as Psychological Warfare — Far-Right Escalation Signal",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "headline": "OPEC+ Meeting TODAY (June 7) — 188k bpd Hike Expected as 149 S&P 500 Companies Flag Oil Pain",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "asset_class": "commodities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__us-israel_strike_package_on_iran__assets_airborne_strike_w",
@@ -3504,7 +5698,77 @@
         "formula": "ABS((-0.75 - 0.08) * 50) = 41",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela",
+          "headline": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet - CNBC",
+          "sector": "crypto",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__iran_parliament__war_won_t_be_limited_to_the_region__asym",
+          "headline": "IRAN PARLIAMENT: 'WAR WON'T BE LIMITED TO THE REGION' — ASYMMETRIC ESCALATION THREAT",
+          "sector": "crypto",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__christian_village_in_occupied_west_bank_goes_up_in_flames_af",
+          "headline": "Christian village in occupied West Bank goes up in flames after large-scale attack by Israeli settlers",
+          "sector": "crypto",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela",
+          "asset_class": "crypto",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 2.4,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 2.0,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 75,
+          "pace_multiplier": 2.3,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__kuwait_discussing_hormuz_bypass_via_saudi_uae_pipelines__ei",
@@ -3632,7 +5896,77 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+          "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__idf_declares_readiness_to_immediately_resume_iran_operations",
+          "headline": "IDF Declares Readiness to Immediately Resume Iran Operations + Tyre Under Full Evacuation — Two-Front Escalation Active",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__ukraine_fp-5_flamingo_missiles_strike_cheboksary__second_st",
+          "headline": "UKRAINE FP-5 FLAMINGO MISSILES STRIKE CHEBOKSARY — SECOND Strike on VNIIR-Progress, Samara Refinery Hit, Tyumen Missiles In-Flight, GRAU Colonel Assassinated",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "asset_class": "commodities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__idf_declares_readiness_to_immediately_resume_iran_operations",
@@ -3765,7 +6099,77 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+          "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__kuwait_discussing_hormuz_bypass_via_saudi_uae_pipelines__ei",
+          "headline": "Kuwait Discussing Hormuz Bypass via Saudi/UAE Pipelines + EIA Raises WTI Forecast to $88.32 — Blockade Biting Structurally",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__ukraine_fp-5_flamingo_missiles_strike_cheboksary__second_st",
+          "headline": "UKRAINE FP-5 FLAMINGO MISSILES STRIKE CHEBOKSARY — SECOND Strike on VNIIR-Progress, Samara Refinery Hit, Tyumen Missiles In-Flight, GRAU Colonel Assassinated",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "asset_class": "commodities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__iran_parliament__war_won_t_be_limited_to_the_region__asym",
@@ -3890,7 +6294,77 @@
         "formula": "ABS((-0.75 - 0.08) * 50) = 41",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela",
+          "headline": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet - CNBC",
+          "sector": "crypto",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__us-israel_strike_package_on_iran__assets_airborne_strike_w",
+          "headline": "US-ISRAEL STRIKE PACKAGE ON IRAN — ASSETS AIRBORNE, STRIKE WINDOW OPEN AT 21:17 UTC",
+          "sector": "crypto",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__christian_village_in_occupied_west_bank_goes_up_in_flames_af",
+          "headline": "Christian village in occupied West Bank goes up in flames after large-scale attack by Israeli settlers",
+          "sector": "crypto",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela",
+          "asset_class": "crypto",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 2.4,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 2.0,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 75,
+          "pace_multiplier": 2.3,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__ukraine_fp-5_flamingo_missiles_strike_cheboksary__second_st",
@@ -4024,7 +6498,77 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+          "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__kuwait_discussing_hormuz_bypass_via_saudi_uae_pipelines__ei",
+          "headline": "Kuwait Discussing Hormuz Bypass via Saudi/UAE Pipelines + EIA Raises WTI Forecast to $88.32 — Blockade Biting Structurally",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__idf_declares_readiness_to_immediately_resume_iran_operations",
+          "headline": "IDF Declares Readiness to Immediately Resume Iran Operations + Tyre Under Full Evacuation — Two-Front Escalation Active",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "asset_class": "commodities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__eia_drops_bombshell_hormuz_timeline__blockade_persists_thro",
@@ -4149,7 +6693,77 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+          "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__kuwait_discussing_hormuz_bypass_via_saudi_uae_pipelines__ei",
+          "headline": "Kuwait Discussing Hormuz Bypass via Saudi/UAE Pipelines + EIA Raises WTI Forecast to $88.32 — Blockade Biting Structurally",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__idf_declares_readiness_to_immediately_resume_iran_operations",
+          "headline": "IDF Declares Readiness to Immediately Resume Iran Operations + Tyre Under Full Evacuation — Two-Front Escalation Active",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "asset_class": "commodities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__s_p_nasdaq_break_below_friday_s_low__live_breakdown_during",
@@ -4274,7 +6888,77 @@
         "formula": "ABS((0.75 - -0.05) * 50) = 40",
         "ticker": "SPY",
         "ticker_price": 735.35
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes",
+          "headline": "This tiny mutual fund outperforms by backing the world’s best management teams - MarketWatch",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work",
+          "headline": "Israeli occupation troops abduct two Lebanese municipal workers",
+          "sector": "tech",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "inflow",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "headline": "UK court grants Allianz permission to sue pro-Palestine activists for nearly $400,000",
+          "sector": "equities",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1",
+          "asset_class": "equities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 75,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes",
+          "asset_class": "equities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.8,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__us_seeking__039_precise_info_039_on_iran_039_s_enriched",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
@@ -4361,7 +7045,68 @@
         "formula": "ABS((0.75 - 0.08) * 50) = 34",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__nuking_iran_why_israel_and_the_us_gain_nothing_from_crossin",
+          "headline": "Nuking Iran: Why Israel and the US gain nothing from crossing the ultimate red line",
+          "sector": "crypto",
+          "score": 2,
+          "shared_tags": [
+            "crypto",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
+          "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
+          "sector": "crypto",
+          "score": 2,
+          "shared_tags": [
+            "crypto",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1",
+          "headline": "US Existing Home Sales Crush Estimates — +3.2% MoM vs +1.1% Expected (3x Beat)",
+          "sector": "crypto",
+          "score": 2,
+          "shared_tags": [
+            "crypto",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 2.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 75,
+          "pace_multiplier": 2.3,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__iran_begins_charging_ships_1_5-2m_per_transit_through_strai",
@@ -4456,7 +7201,68 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+          "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
+          "headline": "Israeli Minister Ben-Gvir Urges Cabinet to Abduct Lebanese Women and Children as Psychological Warfare — Far-Right Escalation Signal",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "headline": "OPEC+ Meeting TODAY (June 7) — 188k bpd Hike Expected as 149 S&P 500 Companies Flag Oil Pain",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "asset_class": "commodities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__ukraine_assassinates_russian_colonel_missile_supply_chief",
@@ -4541,7 +7347,68 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+          "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
+          "headline": "Israeli Minister Ben-Gvir Urges Cabinet to Abduct Lebanese Women and Children as Psychological Warfare — Far-Right Escalation Signal",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "headline": "OPEC+ Meeting TODAY (June 7) — 188k bpd Hike Expected as 149 S&P 500 Companies Flag Oil Pain",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "asset_class": "commodities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__israel_cabinet_any_lebanon_rocket__automatic_beirut_strike",
@@ -4626,7 +7493,68 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+          "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
+          "headline": "Israeli Minister Ben-Gvir Urges Cabinet to Abduct Lebanese Women and Children as Psychological Warfare — Far-Right Escalation Signal",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "headline": "OPEC+ Meeting TODAY (June 7) — 188k bpd Hike Expected as 149 S&P 500 Companies Flag Oil Pain",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "asset_class": "commodities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__idf_declares_readiness_to_immediately_resume_operations_agai",
@@ -4711,7 +7639,68 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+          "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
+          "headline": "Israeli Minister Ben-Gvir Urges Cabinet to Abduct Lebanese Women and Children as Psychological Warfare — Far-Right Escalation Signal",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "headline": "OPEC+ Meeting TODAY (June 7) — 188k bpd Hike Expected as 149 S&P 500 Companies Flag Oil Pain",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "asset_class": "commodities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_blockchain_agentic__blackrock_transferring_btc_to_exchanges_for_client_sales__o",
@@ -4796,7 +7785,68 @@
         "formula": "ABS((0.75 - 0.08) * 50) = 34",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__nuking_iran_why_israel_and_the_us_gain_nothing_from_crossin",
+          "headline": "Nuking Iran: Why Israel and the US gain nothing from crossing the ultimate red line",
+          "sector": "crypto",
+          "score": 2,
+          "shared_tags": [
+            "crypto",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
+          "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
+          "sector": "crypto",
+          "score": 2,
+          "shared_tags": [
+            "crypto",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1",
+          "headline": "US Existing Home Sales Crush Estimates — +3.2% MoM vs +1.1% Expected (3x Beat)",
+          "sector": "crypto",
+          "score": 2,
+          "shared_tags": [
+            "crypto",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 2.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 75,
+          "pace_multiplier": 2.3,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_china_ascendancy__breaking_eu_proposes_biggest_sanctions_package_in_2_years",
@@ -4881,7 +7931,68 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+          "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
+          "headline": "Israeli Minister Ben-Gvir Urges Cabinet to Abduct Lebanese Women and Children as Psychological Warfare — Far-Right Escalation Signal",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "headline": "OPEC+ Meeting TODAY (June 7) — 188k bpd Hike Expected as 149 S&P 500 Companies Flag Oil Pain",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "asset_class": "commodities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__israel_strikes_beirut_suburbs__explosion_in_beirut_idf_att",
@@ -4966,7 +8077,68 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+          "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
+          "headline": "Israeli Minister Ben-Gvir Urges Cabinet to Abduct Lebanese Women and Children as Psychological Warfare — Far-Right Escalation Signal",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "headline": "OPEC+ Meeting TODAY (June 7) — 188k bpd Hike Expected as 149 S&P 500 Companies Flag Oil Pain",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "asset_class": "commodities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__israel_launches_full_ground_operations_in_lebanon__hezbolla",
@@ -5051,7 +8223,68 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+          "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
+          "headline": "Israeli Minister Ben-Gvir Urges Cabinet to Abduct Lebanese Women and Children as Psychological Warfare — Far-Right Escalation Signal",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "headline": "OPEC+ Meeting TODAY (June 7) — 188k bpd Hike Expected as 149 S&P 500 Companies Flag Oil Pain",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "asset_class": "commodities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_abundance_tech__btc_crash__worst_week_since_ftx_collapse_microstrategy_bou",
@@ -5161,7 +8394,77 @@
         "formula": "ABS((0.75 - 0.08) * 50) = 34",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__nuking_iran_why_israel_and_the_us_gain_nothing_from_crossin",
+          "headline": "Nuking Iran: Why Israel and the US gain nothing from crossing the ultimate red line",
+          "sector": "crypto",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
+          "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
+          "sector": "crypto",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work",
+          "headline": "Israeli occupation troops abduct two Lebanese municipal workers",
+          "sector": "tech",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "inflow",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 2.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 75,
+          "pace_multiplier": 2.3,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__us-iran_active_kinetic_exchange__20_us_targets_struck_in_ir",
@@ -5283,7 +8586,77 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+          "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__kuwait_discussing_hormuz_bypass_via_saudi_uae_pipelines__ei",
+          "headline": "Kuwait Discussing Hormuz Bypass via Saudi/UAE Pipelines + EIA Raises WTI Forecast to $88.32 — Blockade Biting Structurally",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__idf_declares_readiness_to_immediately_resume_iran_operations",
+          "headline": "IDF Declares Readiness to Immediately Resume Iran Operations + Tyre Under Full Evacuation — Two-Front Escalation Active",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "asset_class": "commodities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__us_stock_selling_resumed__friday_low_break_confirmed_and_no",
@@ -5401,7 +8774,77 @@
         "formula": "ABS((-0.75 - -0.19) * 50) = 28",
         "ticker": "ITA",
         "ticker_price": 228.29
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "headline": "IAEA passes anti-Iran resolution, demands Tehran reveal location of enriched uranium",
+          "sector": "defense",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "headline": "Most Israelis oppose Netanyahu&#039;s re-election as Trump says PM &#039;may quit politics&#039;",
+          "sector": "defense",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__iran_to_pursue__039_war_and_diplomacy_039_simultaneously",
+          "headline": "Iran to pursue &#039;war and diplomacy&#039; simultaneously: Ghalibaf",
+          "sector": "defense",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__israel_s_nabatieh_offensive__earthquake_that_topples_hezbo",
+          "asset_class": "defense",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 1.7,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__imprison_their_women_and_children__supremacist_israeli_min",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t",
@@ -5478,7 +8921,68 @@
         "formula": "ABS((0.75 - 0.08) * 50) = 34",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__nuking_iran_why_israel_and_the_us_gain_nothing_from_crossin",
+          "headline": "Nuking Iran: Why Israel and the US gain nothing from crossing the ultimate red line",
+          "sector": "crypto",
+          "score": 2,
+          "shared_tags": [
+            "crypto",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
+          "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
+          "sector": "crypto",
+          "score": 2,
+          "shared_tags": [
+            "crypto",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1",
+          "headline": "US Existing Home Sales Crush Estimates — +3.2% MoM vs +1.1% Expected (3x Beat)",
+          "sector": "crypto",
+          "score": 2,
+          "shared_tags": [
+            "crypto",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 2.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 75,
+          "pace_multiplier": 2.3,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__israel_s_nabatieh_offensive__earthquake_that_topples_hezbo",
@@ -5555,7 +9059,67 @@
         "formula": "ABS((-0.75 - 0.40) * 50) = 58",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "headline": "CRITICAL CONTRADICTION: WTI Drops Below $90 (-2%) Despite Israel-Iran War, Hormuz Toll, Beirut Bombing — Risk Premium Collapsing",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "outflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__us_doe_releases_40m_barrels_from_strategic_petroleum_reserve",
+          "headline": "US DOE RELEASES 40M BARRELS FROM STRATEGIC PETROLEUM RESERVE — PRE-STRIKE SUPPLY PRE-POSITIONING",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "outflow"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__russia_discusses_reformatting_military_presence_in_syria_a",
+          "headline": "Russia discusses ‘reformatting’ military presence in Syria as ties ‘develop actively’",
+          "sector": "commodities",
+          "score": 1,
+          "shared_tags": [
+            "commodities"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__russia_discusses_reformatting_military_presence_in_syria_a",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv",
@@ -5632,7 +9196,68 @@
         "formula": "ABS((0.75 - 0.08) * 50) = 34",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__nuking_iran_why_israel_and_the_us_gain_nothing_from_crossin",
+          "headline": "Nuking Iran: Why Israel and the US gain nothing from crossing the ultimate red line",
+          "sector": "crypto",
+          "score": 2,
+          "shared_tags": [
+            "crypto",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
+          "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
+          "sector": "crypto",
+          "score": 2,
+          "shared_tags": [
+            "crypto",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1",
+          "headline": "US Existing Home Sales Crush Estimates — +3.2% MoM vs +1.1% Expected (3x Beat)",
+          "sector": "crypto",
+          "score": 2,
+          "shared_tags": [
+            "crypto",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 2.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 75,
+          "pace_multiplier": 2.3,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__opec_meets_today__188k_bpd_increase_approved_from_july_bu",
@@ -5717,7 +9342,68 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+          "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
+          "headline": "Israeli Minister Ben-Gvir Urges Cabinet to Abduct Lebanese Women and Children as Psychological Warfare — Far-Right Escalation Signal",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "headline": "OPEC+ Meeting TODAY (June 7) — 188k bpd Hike Expected as 149 S&P 500 Companies Flag Oil Pain",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "asset_class": "commodities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__israel_orders_full_evacuation_of_tyre__cabinet_authorizes_a",
@@ -5802,7 +9488,68 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+          "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
+          "headline": "Israeli Minister Ben-Gvir Urges Cabinet to Abduct Lebanese Women and Children as Psychological Warfare — Far-Right Escalation Signal",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "headline": "OPEC+ Meeting TODAY (June 7) — 188k bpd Hike Expected as 149 S&P 500 Companies Flag Oil Pain",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "asset_class": "commodities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_china_ascendancy__opec_meeting_today__expected_to_approve_188k_bpd_productio",
@@ -5887,7 +9634,68 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+          "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
+          "headline": "Israeli Minister Ben-Gvir Urges Cabinet to Abduct Lebanese Women and Children as Psychological Warfare — Far-Right Escalation Signal",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "headline": "OPEC+ Meeting TODAY (June 7) — 188k bpd Hike Expected as 149 S&P 500 Companies Flag Oil Pain",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "asset_class": "commodities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__iran_launches_drones_toward_strait_of_hormuz__us_shoots_dow",
@@ -5972,7 +9780,68 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+          "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
+          "headline": "Israeli Minister Ben-Gvir Urges Cabinet to Abduct Lebanese Women and Children as Psychological Warfare — Far-Right Escalation Signal",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "headline": "OPEC+ Meeting TODAY (June 7) — 188k bpd Hike Expected as 149 S&P 500 Companies Flag Oil Pain",
+          "sector": "commodities",
+          "score": 2,
+          "shared_tags": [
+            "commodities",
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
+          "asset_class": "commodities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 70,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles",
@@ -6058,7 +9927,67 @@
         "formula": "ABS((0.65 - -0.05) * 50) = 35",
         "ticker": "SPY",
         "ticker_price": 735.35
-      }
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes",
+          "headline": "This tiny mutual fund outperforms by backing the world’s best management teams - MarketWatch",
+          "sector": "equities",
+          "score": 2,
+          "shared_tags": [
+            "equities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__s_p_nasdaq_break_below_friday_s_low__live_breakdown_during",
+          "headline": "S&P/Nasdaq Break Below Friday's Low — LIVE Breakdown During US Trading",
+          "sector": "equities",
+          "score": 2,
+          "shared_tags": [
+            "equities",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work",
+          "headline": "Israeli occupation troops abduct two Lebanese municipal workers",
+          "sector": "tech",
+          "score": 1,
+          "shared_tags": [
+            "inflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1",
+          "asset_class": "equities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 75,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes",
+          "asset_class": "equities",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.8,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__us_seeking__039_precise_info_039_on_iran_039_s_enriched",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
     }
   ]
 }

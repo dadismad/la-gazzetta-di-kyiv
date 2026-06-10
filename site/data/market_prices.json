@@ -1,25 +1,232 @@
 {
-  "generated_at": "2026-06-10T20:33:07.789868+00:00",
-  "assets": {
+  "generated_at": "2026-06-10T20:41:17.330502+00:00",
+  "prices": {
     "BTC": {
-      "price": 61777,
-      "change_24h": -0.35739908098632656,
+      "price": 61813,
+      "change_pct": -0.482492769149806,
       "source": "CoinGecko"
     },
     "ETH": {
-      "price": 1629.24,
-      "change_24h": -1.5777509562926346,
+      "price": 1629.63,
+      "change_pct": -1.8433173307139874,
       "source": "CoinGecko"
     },
     "SOL": {
-      "price": 63.5,
-      "change_24h": -2.8404161436473268,
+      "price": 63.47,
+      "change_pct": -3.0399154822830567,
       "source": "CoinGecko"
     },
     "XAU": {
-      "price": 4067.26,
-      "change_24h": -4.1554907035312425,
+      "price": 4067.49,
+      "change_pct": -4.194920858161687,
       "source": "CoinGecko"
+    }
+  },
+  "asymmetry_scores": {
+    "n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "n21_osint__the_cradle__nuking_iran_why_israel_and_the_us_gain_nothing_from_crossin": {
+      "asymmetry_score": 21,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.08) * 50) = 21"
+    },
+    "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic": {
+      "asymmetry_score": 21,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.08) * 50) = 21"
+    },
+    "n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes": {
+      "asymmetry_score": 27,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
+    },
+    "n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela": {
+      "asymmetry_score": 29,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((-0.50 - 0.08) * 50) = 29"
+    },
+    "n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait": {
+      "asymmetry_score": 17,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.40) * 50) = 17"
+    },
+    "n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is": {
+      "asymmetry_score": 58,
+      "asymmetry_tier": "MODERATE",
+      "diagnostic_trace": "ABS((-0.75 - 0.40) * 50) = 58"
+    },
+    "n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.08) * 50) = 34"
+    },
+    "n21_multi_pillar__us_doe_releases_40m_barrels_from_strategic_petroleum_reserve": {
+      "asymmetry_score": 58,
+      "asymmetry_tier": "MODERATE",
+      "diagnostic_trace": "ABS((-0.75 - 0.40) * 50) = 58"
+    },
+    "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w": {
+      "asymmetry_score": 17,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.40) * 50) = 17"
+    },
+    "n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149": {
+      "asymmetry_score": 17,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.40) * 50) = 17"
+    },
+    "n21_multi_pillar__us_adp_nonfarm_29k_vs_35_7k_prior__labor_market_cracking": {
+      "asymmetry_score": 17,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.40) * 50) = 17"
+    },
+    "n21_multi_pillar__us-israel_strike_package_on_iran__assets_airborne_strike_w": {
+      "asymmetry_score": 41,
+      "asymmetry_tier": "MODERATE",
+      "diagnostic_trace": "ABS((-0.75 - 0.08) * 50) = 41"
+    },
+    "n21_multi_pillar__kuwait_discussing_hormuz_bypass_via_saudi_uae_pipelines__ei": {
+      "asymmetry_score": 17,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.40) * 50) = 17"
+    },
+    "n21_multi_pillar__idf_declares_readiness_to_immediately_resume_iran_operations": {
+      "asymmetry_score": 17,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.40) * 50) = 17"
+    },
+    "n21_multi_pillar__iran_parliament__war_won_t_be_limited_to_the_region__asym": {
+      "asymmetry_score": 41,
+      "asymmetry_tier": "MODERATE",
+      "diagnostic_trace": "ABS((-0.75 - 0.08) * 50) = 41"
+    },
+    "n21_multi_pillar__ukraine_fp-5_flamingo_missiles_strike_cheboksary__second_st": {
+      "asymmetry_score": 17,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.40) * 50) = 17"
+    },
+    "n21_multi_pillar__eia_drops_bombshell_hormuz_timeline__blockade_persists_thro": {
+      "asymmetry_score": 17,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.40) * 50) = 17"
+    },
+    "n21_multi_pillar__s_p_nasdaq_break_below_friday_s_low__live_breakdown_during": {
+      "asymmetry_score": 40,
+      "asymmetry_tier": "MODERATE",
+      "diagnostic_trace": "ABS((0.75 - -0.05) * 50) = 40"
+    },
+    "n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.08) * 50) = 34"
+    },
+    "n21_multi_pillar__iran_begins_charging_ships_1_5-2m_per_transit_through_strai": {
+      "asymmetry_score": 17,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.40) * 50) = 17"
+    },
+    "n21_multi_pillar__ukraine_assassinates_russian_colonel_missile_supply_chief": {
+      "asymmetry_score": 17,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.40) * 50) = 17"
+    },
+    "n21_multi_pillar__israel_cabinet_any_lebanon_rocket__automatic_beirut_strike": {
+      "asymmetry_score": 17,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.40) * 50) = 17"
+    },
+    "n21_multi_pillar__idf_declares_readiness_to_immediately_resume_operations_agai": {
+      "asymmetry_score": 17,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.40) * 50) = 17"
+    },
+    "n21_blockchain_agentic__blackrock_transferring_btc_to_exchanges_for_client_sales__o": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.08) * 50) = 34"
+    },
+    "n21_china_ascendancy__breaking_eu_proposes_biggest_sanctions_package_in_2_years": {
+      "asymmetry_score": 17,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.40) * 50) = 17"
+    },
+    "n21_multi_pillar__israel_strikes_beirut_suburbs__explosion_in_beirut_idf_att": {
+      "asymmetry_score": 17,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.40) * 50) = 17"
+    },
+    "n21_multi_pillar__israel_launches_full_ground_operations_in_lebanon__hezbolla": {
+      "asymmetry_score": 17,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.40) * 50) = 17"
+    },
+    "n21_abundance_tech__btc_crash__worst_week_since_ftx_collapse_microstrategy_bou": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.08) * 50) = 34"
+    },
+    "n21_multi_pillar__us-iran_active_kinetic_exchange__20_us_targets_struck_in_ir": {
+      "asymmetry_score": 17,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.40) * 50) = 17"
+    },
+    "n21_multi_pillar__us_stock_selling_resumed__friday_low_break_confirmed_and_no": {
+      "asymmetry_score": 28,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((-0.75 - -0.19) * 50) = 28"
+    },
+    "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.08) * 50) = 34"
+    },
+    "n21_multi_pillar__israel_s_nabatieh_offensive__earthquake_that_topples_hezbo": {
+      "asymmetry_score": 58,
+      "asymmetry_tier": "MODERATE",
+      "diagnostic_trace": "ABS((-0.75 - 0.40) * 50) = 58"
+    },
+    "n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.08) * 50) = 34"
+    },
+    "n21_multi_pillar__opec_meets_today__188k_bpd_increase_approved_from_july_bu": {
+      "asymmetry_score": 17,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.40) * 50) = 17"
+    },
+    "n21_multi_pillar__israel_orders_full_evacuation_of_tyre__cabinet_authorizes_a": {
+      "asymmetry_score": 17,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.40) * 50) = 17"
+    },
+    "n21_china_ascendancy__opec_meeting_today__expected_to_approve_188k_bpd_productio": {
+      "asymmetry_score": 17,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.40) * 50) = 17"
+    },
+    "n21_multi_pillar__iran_launches_drones_toward_strait_of_hormuz__us_shoots_dow": {
+      "asymmetry_score": 17,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.75 - 0.40) * 50) = 17"
+    },
+    "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles": {
+      "asymmetry_score": 35,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.65 - -0.05) * 50) = 35"
     }
   },
   "total": 4
