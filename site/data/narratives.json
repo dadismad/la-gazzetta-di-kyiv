@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-06-10T18:18:02.613912+00:00",
+  "generated_at": "2026-06-10T18:27:38.280130+00:00",
   "story_count": 15,
   "model": "deepseek-chat",
   "narratives": [
     {
-      "title": "Geopolitical Escalation Unfolding",
+      "title": "Geopolitical Escalation Spiral",
       "strength": "DOMINANT",
       "direction": "Risk-Off",
-      "summary": "Capital is fleeing risk assets as multiple geopolitical fronts escalate simultaneously: US-Iran kinetic exchange, Israel two-front war, and Ukraine deep strikes into Russia. The EIA's Hormuz blockade timeline through 2027 and the Apache shootdown confirm the conflict is broadening, not de-escalating.",
+      "summary": "Capital is fleeing risk assets as the US-Iran conflict escalates beyond a one-off exchange, with Iran shooting down a US Apache and threatening further strikes, while Israel intensifies operations on two fronts. The EIA's extended Hormuz blockade timeline through 2026 compounds the risk, driving oil prices higher and reinforcing a defensive posture across equities and crypto.",
       "key_stories": 8,
-      "trade_implication": "Long crude oil and gold; short S&P 500 and emerging market equities; overweight defense stocks."
+      "trade_implication": "Long WTI crude oil futures and short S&P 500 index futures, hedging with gold or US Treasuries."
     },
     {
-      "title": "Hormuz Blockade Bites Structurally",
+      "title": "Hormuz Blockade Structural Impact",
       "strength": "STRONG",
       "direction": "Neutral-to-Bullish",
-      "summary": "Capital is rotating into energy assets as the Strait of Hormuz blockade persists, with Kuwait seeking pipeline bypasses and EIA raising WTI forecasts to $88.32. The structural disruption to oil supply is now priced in, but any diplomatic resolution could reverse flows quickly.",
+      "summary": "Capital is rotating into energy and commodity-linked assets as the Hormuz blockade persists structurally, with Kuwait seeking pipeline bypasses and the EIA raising WTI forecasts to $88.32. The blockade's economic bite is confirmed, but diplomatic off-ramps create uncertainty, keeping flows neutral-to-bullish rather than outright risk-on.",
       "key_stories": 4,
-      "trade_implication": "Long WTI crude futures and energy sector ETFs; short consumer discretionary and airlines; consider long volatility on oil options."
+      "trade_implication": "Buy energy sector ETFs and long-dated WTI futures, while shorting consumer discretionary stocks sensitive to oil prices."
     },
     {
       "title": "Institutional Crypto Adoption Accelerates",
-      "strength": "MODERATE",
-      "direction": "Neutral-to-Bullish",
-      "summary": "Despite BTC's risk-off selloff, capital is flowing into crypto infrastructure as Janus Henderson partners with Ethena for tokenized CLOs, signaling institutional DeFi breakthrough. This is a structural trend separate from macro risk-off, with whales accumulating and retail dip-buying.",
+      "strength": "BUILDING",
+      "direction": "Neutral",
+      "summary": "Despite a macro-driven BTC crash, capital is flowing into crypto infrastructure as institutional partnerships like Ethena with Janus Henderson signal long-term adoption. The selloff is not crypto-specific, and whale accumulation persists, but near-term risk-off sentiment caps upside, keeping flows neutral.",
       "key_stories": 3,
-      "trade_implication": "Accumulate BTC on dips; long ETH and select DeFi tokens like ENA; short-term hedge with put spreads on BTC due to macro headwinds."
+      "trade_implication": "Accumulate Bitcoin on dips via futures or ETFs, and buy Ethena (ENA) tokens on institutional partnership news, with a 6-month horizon."
     }
   ]
 }

@@ -176,7 +176,7 @@ body {
 }
 
 /* ── v23.18: Live Ticker Tape ── */
-.ticker-tape {
+.ticker-tape { color: #64748B; /* v23.22: deeper slate, supports not distracts */
   width: 100%; max-width: 1000px; margin: 4px auto 0;
   background: #0F172A; color: #E2E8F0; overflow: hidden;
   font-family: var(--mono); font-size: 11px; line-height: 1.6;
@@ -188,7 +188,7 @@ body {
   display: inline-block; animation: ticker-scroll 60s linear infinite;
 }
 .ticker-track:hover { animation-play-state: paused; }
-.ticker-item { color: #475569; /* v23.22: desaturated slate to fit Gazzetta palette */
+.ticker-item { color: #64748B; /* v23.22: match ticker tape */ /* v23.22: desaturated slate to fit Gazzetta palette */
   padding: 0 18px; display: inline-block;
 }
 .ticker-item.price-up { color: #059669; }

@@ -66,10 +66,23 @@ def compile_stories(conn):
             "full_json": fj,
         }
 
+    # ═══ v23.22: WAI — Compute sector totals from flow_by_id ═══
+    sector_totals = {}
+    for fid, fdata in flow_by_id.items():
+        cat = fdata.get("category", "")
+        if cat:
+            sector_totals[cat] = sector_totals.get(cat, 0) + float(fdata.get("amount_b", 0))
+    # Fallback: use individual flow if sector missing
+
     stories = []
+    seen_ids = set()  # v23.22: deduplication guard
     for sid, full_json_str in rows:
         if not full_json_str:
             continue
+        # v23.22: Deduplication — skip duplicate story IDs
+        if sid in seen_ids:
+            continue
+        seen_ids.add(sid)
         story = json.loads(full_json_str)
 
         # Inject resolved impacted_flows (IDs)
@@ -91,14 +104,17 @@ def compile_stories(conn):
                 if not cf.get("amount_b") or is_default_amount:
                     tier = story.get("tier", "ACTIVE")
                     pillar = story.get("pillar", "")
-                    flow_total = float(primary_flow["amount_b"])
+                    cat = primary_flow.get("category", "")
+                    flow_total = sector_totals.get(cat, float(primary_flow["amount_b"]))
+                    if flow_total <= 0:
+                        flow_total = float(primary_flow["amount_b"])
                     # --- Story-Level Scaling fractions ---
                     # PSV: Proportional Story Volume — tier maps to category fraction
                     tier_fractions = {
-                        "BREAKING":   0.18,   # Critical → 15-20%
-                        "DEVELOPING": 0.12,   # High → 8-14%
-                        "ACTIVE":     0.05,   # Moderate → 2-7%
-                        "SETTLING":   0.02,   # Background → 1-3%
+                        "BREAKING":   0.12,   # Sovereign → 10-15% of Sector
+                        "DEVELOPING": 0.08,   # Institutional → 5-10%
+                        "ACTIVE":     0.03,   # Speculative → 1-5%
+                        "SETTLING":   0.005,  # Retail/News → 0.1-1%
                     }
                     pillar_bonus = 1.15 if pillar in ("geoeconomic", "sovereign") else 1.0
                     base_fraction = tier_fractions.get(tier, 0.10)
