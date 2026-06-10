@@ -1193,30 +1193,16 @@
   1178|  </script>
   1179|<script src="./app.53c3d699.js"></script>
 <script>
-/* v23.21: Dynamic story linking for Flow Nodes */
+/* Dynamic story linking */
 (async function(){
   try {
-    const r = await fetch('./data/stories.json?t=' + Date.now(), {cache:'no-store'});
-    const data = await r.json();
-    const allStories = [data.lead, ...(data.stories||[])].filter(Boolean);
-    window.__gazzettaStories = allStories;
-    // Link node categories to stories by asset class
-    document.querySelectorAll('[data-node-type]').forEach(el => {
-      const nodeType = el.getAttribute('data-node-type');
-      const match = allStories.filter(s => {
-        const cf = s.capital_flow || {};
-        return (cf.asset_class || '').toLowerCase() === nodeType.toLowerCase();
-      });
-      if (match.length) {
-        el.style.cursor = 'pointer';
-        el.title = match.length + ' stories linked';
-        el.addEventListener('click', () => {
-          window.location.href = './stories.html';
-        });
-      }
+    var r = await fetch("./data/stories.json?t="+Date.now(),{cache:"no-store"});
+    var d = await r.json();
+    window.__gazzettaStories = [d.lead,...(d.stories||[])].filter(Boolean);
+    document.querySelectorAll("[data-node-type]").forEach(function(el){
+      el.style.cursor="pointer";el.title="Linked stories";el.onclick=function(){location.href="./stories.html";};
     });
-    console.log('Nodes: linked ' + allStories.length + ' stories to flow nodes');
-  } catch(e) { console.warn('Nodes story link:', e); }
+  }catch(e){}
 })();
 </script>
 </body>
