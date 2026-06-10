@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T20:36:08.848442+00:00",
+  "generated_at": "2026-06-10T20:42:31.168204+00:00",
   "story_count": 15,
   "model": "deepseek-chat",
   "narratives": [
@@ -7,25 +7,25 @@
       "title": "Geopolitical Escalation Risk-Off",
       "strength": "DOMINANT",
       "direction": "Risk-Off",
-      "summary": "Capital is fleeing risk assets as multi-front conflicts (Iran, Israel, Ukraine) escalate beyond controlled tit-for-tat. The shootdown of a US Apache and Iran's asymmetric retaliation threats confirm the market underestimated the probability of sustained conflict, driving flows into safe havens and commodities.",
+      "summary": "Capital is fleeing risk assets as multi-front conflicts (Iran, Israel, Ukraine) escalate beyond controlled tit-for-tat, with actual kinetic exchanges and supply chain threats (Hormuz blockade). The market consensus underestimates the persistence and structural nature of these disruptions, driving flows into safe havens.",
       "key_stories": 9,
-      "trade_implication": "Long WTI crude oil and gold; short S&P 500 and BTC; overweight US Treasuries."
+      "trade_implication": "Long VIX, short SPY/Nasdaq, long gold and short-dated Treasuries; underweight EM equities and oil-sensitive currencies."
     },
     {
-      "title": "Oil Supply Disruption Premium",
+      "title": "Oil Supply Shock Repricing",
       "strength": "STRONG",
       "direction": "Neutral-to-Bullish",
-      "summary": "Capital is pricing in a structural oil supply shock as the Strait of Hormuz blockade persists through Q3 2026 per EIA, with Kuwait seeking bypass pipelines. The US SPR release is misread as bearish but actually signals government preparation for sustained disruption, supporting crude prices.",
-      "key_stories": 5,
-      "trade_implication": "Long WTI and Brent futures; long energy equities; short refined product spreads."
+      "summary": "Capital is repricing oil higher as the Hormuz blockade persists through Q3 2026 per EIA, with SPR releases actually signaling supply tightness rather than bearishness. Kuwait's pipeline bypass talks and Iran's retaliation confirm structural disruption, but diplomatic tracks create two-way risk.",
+      "key_stories": 6,
+      "trade_implication": "Long WTI crude futures and energy equities; hedge with put spreads on oil if diplomatic progress materializes."
     },
     {
-      "title": "Diplomatic Off-Ramp Uncertainty",
-      "strength": "MODERATE",
-      "direction": "Neutral",
-      "summary": "Capital is torn between pricing in a potential Iran deal (White House signals progress) and the reality of active kinetic exchanges. This creates whipsaw risk in oil and equities as markets oscillate between escalation and de-escalation narratives.",
+      "title": "Defense Spending Acceleration",
+      "strength": "BUILDING",
+      "direction": "Neutral-to-Bullish",
+      "summary": "Capital is rotating into defense and aerospace as multiple theaters (Iran, Israel, Ukraine) demand sustained military operations and resupply. The assassination of Russian logistics chiefs and Israeli two-front readiness signal long-term procurement cycles, not one-off events.",
       "key_stories": 4,
-      "trade_implication": "Neutral on oil; long volatility via VIX calls; short USD/CHF on any deal headlines."
+      "trade_implication": "Long defense ETFs (e.g., ITA, PPA) and select prime contractors (LMT, NOC); short consumer discretionary exposed to geopolitical risk."
     }
   ]
 }

@@ -46,14 +46,20 @@ echo "  SHIPIT — Gazzetta di Kyiv Deploy"
 echo "══════════════════════════════════════"
 echo ""
 
-# ═══ Stage 0: Nuclear Clean — delete entire site/ before every build ═══
+# ═══ Stage 0: Nuclear Clean — delete generated dirs before every build ═══
 echo "── Stage 0: nuclear_clean ──"
-if [ -d "$PROJECT/site" ]; then
-    rm -rf "$PROJECT/site"
-    echo "  ✓ site/ deleted (nuclear clean)"
-else
-    echo "  ✓ site/ already clean"
-fi
+# Only delete generated directories — preserve HTML/CSS/JS sources in repo
+for dir in "$PROJECT/site/data" "$PROJECT/site/api" "$PROJECT/site/ru" "$PROJECT/site/media"; do
+    if [ -d "$dir" ]; then
+        rm -rf "$dir"
+        echo "  ✓ $(basename "$dir")/ deleted"
+    fi
+done
+# Also remove generated files
+rm -f "$PROJECT/site/build-manifest.json" "$PROJECT/site/deploy_report.txt" \
+      "$PROJECT/site/styles."*.css "$PROJECT/site/app."*.js "$PROJECT/site/story-app."*.js \
+      "$PROJECT/site/sector."*.js "$PROJECT/site/i18n."*.js "$PROJECT/site/styles-modern."*.css 2>/dev/null || true
+echo "  ✓ Hashed assets cleaned"
 # Recreate essential dirs
 mkdir -p "$PROJECT/site/data/en" "$PROJECT/site/data/ru" "$PROJECT/site/ru" "$PROJECT/site/api/v1/home"
 echo "  ✓ Essential directories recreated"
