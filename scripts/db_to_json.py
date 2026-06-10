@@ -99,6 +99,15 @@ def compile_stories(conn):
                     cf["confidence"] = f"{cf.get('confidence_pct', 50)}%"
                 story["capital_flow"] = cf
 
+        # v23.12: Source transparency label on every capital_flow
+        source = story.get("source", "")
+        cf = story.get("capital_flow", {})
+        if source and source.startswith("telegram_"):
+            cf["source_label"] = "[LIVE-DATA]"
+        else:
+            cf["source_label"] = "[CALC-EST]"
+        story["capital_flow"] = cf
+
         # v23.11: Strategic Recommendation for high-asymmetry stories (>55 contradiction)
         cs = story.get("contradiction_score", 0)
         if cs and isinstance(cs, (int, float)) and cs >= 55:

@@ -1,12 +1,11 @@
-South Korea paid $350B — 20% of GDP — for tariff relief. They call it "investment." Reality: protection payment.
+Trump just told Fox News he's "close to ordering new strikes against Iranian power plants and bridges." Not retracted. Netanyahu reaffirmed at 13:59 UTC.
 
-EU unveils tech sovereignty package: "We want to be sure nobody has a kill switch." The kill switch is American.
+Consensus: crisis de-escalating. Reality: infrastructure warfare threat + EIA crude -7.2M vs -3M expected + OPEC lowest since 2000. Triple oil supply crunch.
 
-Consensus: alliance solidarity. Reality: allies pay tribute or build exits.
+• Long WTI crude — structural deficit confirmed by physical data
+• Long defense (LMT, GD) — confirmed multi-front combat
+• Short NASDAQ — risk-off, no reversal catalyst
 
-• Long HD Hyundai Heavy — Korean shipbuilder orderbook
-• Long ASML — EU sovereignty capex structural
+¹ EIA: crude inventories -7.227M barrels vs -3M consensus (source: eia.gov/petroleum/supply/weekly/)
 
-¹ $350B = ~20% of Korea's GDP. $200B US industries + $150B shipbuilding. (source: Reuters)
-
-Continuity: www.lagazzettadikyiv.com | Next trigger: SpaceX IPO June 12; OpenAI S-1 pricing
+Continuity: www.lagazzettadikyiv.com | Next trigger: Trump Truth Social on Iran strikes or Israel preemptive action
