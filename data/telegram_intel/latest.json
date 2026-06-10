@@ -1,52 +1,62 @@
 {
-  "scraped_at": "2026-06-10T05:49:45+00:00",
-  "total_messages": 102,
+  "scraped_at": "2026-06-10T07:09:00+00:00",
+  "model": "deepseek-v4-flash",
+  "total_messages": 110,
   "channels_monitored": ["trad_fin", "MonitoringSituation", "ASupersharij", "infinityhedge", "ethanlevins", "markettwits"],
+  "channel_freshness": {
+    "@trad_fin": "Last msg 02:09 UTC — cold (~5h ago)",
+    "@MonitoringSituation": "Last msg 21:49 UTC June 9 — cold (~9h ago)",
+    "@ASupersharij": "Last msg 04:50 UTC — stale (~2h ago)",
+    "@infinityhedge": "Last msg 17:08 UTC June 9 — cold",
+    "@ethanlevins": "Last msg 06:07 UTC — warm (~1h ago)",
+    "@markettwits": "Last msg 07:05 UTC — hot (~4min ago)"
+  },
   "actionable_stories": [
     {
       "rank": 1,
-      "headline": "Iran-US Active Military Exchange — Retaliatory Strikes Underway Across Middle East",
-      "event": "US completed strikes on 20+ targets inside Iran in response to Iran shooting down a US Apache helicopter over Strait of Hormuz. Iran retaliated within hours, launching missiles and drones at US military assets in Bahrain (with confirmed direct impacts), Kuwait, and Jordan. IRGC warned of 'massive response' if attacked again. This is an active shooting conflict between US and Iran — not a proxy, not a threat — kinetic strikes both ways.",
-      "consensus_narrative": "Market consensus is treating this as 'controlled escalation' — CNN reports US still hopes for negotiations; Trump downplayed the Apache incident as 'wasn't a big deal'. The narrative is that both sides are signaling they want de-escalation after a round of tit-for-tat. EIA assumes Hormuz shipments resume Q3 2026.",
-      "contradiction": "Iran already retaliated — the 'one and done' thesis is broken. IRGC explicitly warned of further strikes if US hits again. Iran's Deputy Foreign Minister denied responsibility for the Apache shootdown, suggesting the attack was from non-state actors Iran can't control — meaning Iran may NOT be able to de-escalate even if it wants to. The Strait of Hormuz remains a live flashpoint. Oil exports already collapsed to 209k bpd (6-yr low) — the economic damage is already priced into physical supply.",
-      "bet": "LONG crude futures (CL, COIL) — Brent breaches $95 within 2 hours. LONG defense (LMT, GD, NOC). SHORT Iranian-exposed equities. LONG tanker rates (no one wants to transit Hormuz). The EIA assuming 'resumption in Q3' is overly optimistic — position for prolonged disruption.",
-      "benefit": "Gazzetta di Kyiv leads with 'US-IRAN HOT WAR: Strikes, Retaliation, and the Strait of Hormuz in Flames'. Bet&Benefit positions: OIL UP aggressive long with tight stop at $88 Brent. Defense sector call. Crypto plays as flight from fiat if escalation widens. Ukraine benefits from US distraction in the Gulf — Russia may exploit this window.",
-      "source_channels": ["ethanlevins", "markettwits", "trad_fin", "MonitoringSituation"],
-      "recency_minutes": "3-38 min ago",
-      "market_horizon": "1-2 hours — pre-market reaction in Asian session, US futures will reprice at open"
+      "headline": "US-IRAN ACTIVE EXCHANGE — 20+ Targets Struck in Iran, Retaliation Hits Bahrain/Kuwait/Jordan, IRGC Warns of 'Massive Response'",
+      "event": "US completed 3 waves of strikes on 20+ targets inside Iran — air defense systems, ground control nodes, radar sites in the Strait of Hormuz region (Goruk, Qeshm Island, Bandar Abbas, Sirik, Jask, Minab). Iran retaliated within hours launching missiles/drones at US bases in Bahrain (confirmed direct impacts on 5th Fleet assets), Kuwait (7 ballistic missiles intercepted), Jordan (5 missiles at Amman, intercepted). IRGC warns of 'massive response' if US strikes again. Iran called on US military to leave all Middle Eastern countries. Iran's Deputy Foreign Minister denied responsibility for the Apache shootdown — suggesting possible non-state actor provocation. NYT cites US official: 'no physical damage detected in US bases' — but Bahrain confirmed direct impacts. Qatar, Kuwait, Bahrain closed airspace during strikes. Fox News: US prepared to respond to any Iranian retaliation.",
+      "consensus_narrative": "Market consensus reads this as 'controlled tit-for-tat, both sides now done.' Trump downplayed Apache incident ('wasn't a big deal'). EIA assumes Hormuz resumes Q3 2026, full normalization early 2027. NYT reports no physical damage at US bases. US officials express hope strikes serve as 'warning shot' that won't derail negotiations. The narrative is: one-and-done, de-escalation is inevitable.",
+      "contradiction": "Iran already retaliated within hours — the 'one-and-done' thesis is falsified by observed events. IRGC explicitly warned of further strikes. Iran's Deputy Foreign Minister's denial of responsibility for Apache shootdown means Iran may NOT be able to control non-state actors operating in its territory — making de-escalation impossible. Iran's maximalist demand for US to leave the entire Middle East escalates the framework beyond Hormuz. Iran oil exports already collapsed to 209k bpd (6-yr low). Regional governments (Qatar, Kuwait, Bahrain) treated this as major escalation by closing airspace. The price action (Brent below $90) is completely disconnected from physical reality.",
+      "bet": "LONG crude (CL, COIL, Brent) — price disconnect from physical reality. Brent at $88-90 vs. justified $95-100+ risk premium within Asian session. LONG defense (LMT, GD, NOC, RTX). LONG LNG (Morgan Stanley forecasting 3-yr highs on Hormuz blockade). LONG tanker rates. SHORT Iranian-exposed equities. BTC as flight-from-fiat hedge if escalation continues — BTC at worst week since FTX collapse creates potential bounce setup.",
+      "benefit": "Gazzetta di Kyiv leads: 'US-IRAN HOT WAR: 20 Targets Struck, Retaliation Hits Gulf, Hormuz in Flames.' Bet&Benefit: OIL UP aggressive long with tight stop at $88 Brent. Defense sector calls. LNG long per Morgan Stanley 3-yr high outlook. Ukraine angle: US two-front conflict vulnerability — Russia exploits distraction.",
+      "source_channels": ["ethanlevins", "markettwits", "ASupersharij", "MonitoringSituation", "trad_fin"],
+      "recency_minutes": "2-8 hours — Iran retaliation confirmed with direct impacts on Bahrain",
+      "market_horizon": "T+0-2h — Asian session open, oil/gas futures repricing, defense sector"
     },
     {
       "rank": 2,
-      "headline": "Iranian Oil Exports Collapse to 209k bpd — Russia Rushes to Fill China Void",
-      "event": "Iranian oil exports crashed to 209,000 barrels per day in May — the lowest in 6 years (Vortexa Analytics). Simultaneously, analysts surveyed by Izvestia say Russia can increase oil exports to China by 25% in 2026 to replace lost Iranian barrels. Russia's Q1 2026 oil exports to China were already up 31% y/y. The US naval blockade/strikes on Iran are physically throttling supply out of the Gulf.",
-      "consensus_narrative": "The EIA still forecasts WTI at $88.32 for 2026 (up from $85.68) and assumes Hormuz shipping resumes in Q3. The consensus view is that Russia will smoothly replace Iranian supply, limiting oil price upside.",
-      "contradiction": "Russia is already near capacity — 25% increase to China implies redirecting from other buyers, creating supply gaps elsewhere. Russian crude is not the same grade as Iranian heavy sour — Chinese refineries will need costly adjustments. Meanwhile, the US blockade plus active bombing of Iran makes a Q3 Hormuz resumption fantasy. The real supply loss is 1.5-2M bpd from Iran alone, and Russia CAN'T fully cover that.",
-      "bet": "LONG Brent/WTI with conviction — $88 EIA estimate is too low. Target $98-105 if Hormuz stays hot. LONG US oil producers (OXY, COP, XOM). LONG clean tanker rates (Russian route is longer). SHORT Chinese refinery margins (input cost squeeze). LONG uranium as Russia-focused energy trade diversifies supply chains.",
-      "benefit": "Gazzetta di Kyiv: 'Iran Exports at 6-Year Low — Oil Shock Reverberates Through Global Markets'. Bet&Benefit: Energy supercycle narrative — buy oil stocks and oil etfs. Ukraine angle: Russia gets richer selling more oil to China = more war funding = Ukraine needs more Western aid.",
-      "source_channels": ["markettwits", "MonitoringSituation"],
-      "recency_minutes": "22-27 min ago",
-      "market_horizon": "1-2 hours — oil already pricing, WTI/HO/CL moves accelerating into US session"
+      "headline": "BTC CRASH — Worst Week Since FTX Collapse as Geopolitical Risk Reprices Everything",
+      "event": "Bitcoin experiencing its worst weekly drawdown since the FTX collapse (Nov 2022). @markettwits at 07:05 UTC: 'BTC переживает худшую неделю со времен краха биржи FTX.' This is concurrent with: US-Iran active kinetic conflict, CME launching crypto index futures (institutional crypto milestone), MicroStrategy purchased 1,550 BTC at $65,332 (June 1-7), Santiment reports retail continues buying the dip while whales hold. Physical buyers accumulating, whales not selling. The selloff is driven by macro risk-off, not crypto-specific fundamentals. SpaceX IPO (SPCX) listing June 12 — $250B demand vs $75B raise target — could absorb liquidity.",
+      "consensus_narrative": "BTC is a risk asset selling off with everything else due to geopolitical escalation. Institutions are de-risking ahead of potential wider Middle East conflict. The CME crypto index futures launch is 'good for adoption but bad for near-term price.'",
+      "contradiction": "This is NOT a crypto-specific event — it's macro risk-off. MicroStrategy buying at $65K while retail accumulates is the opposite of capitulation. The CME crypto index futures launch is an institutional on-ramp milestone. SpaceX IPO ($250B demand, 4x oversubscribed) creates liquidity competition. If US-Iran escalation continues, BTC could flip from 'risk-off sell' to 'flight-from-fiat hedge' — particularly if the dollar weakens from defense spending blowout. Santiment notes strong altcoin performers on weak market (CC, BEAT, WLD). The crash creates asymmetric upside if the geopolitical situation stabilizes or if BTC decouples from equities.",
+      "bet": "LONG BTC at dip with tight stop — MicroStrategy's $65K buy level is support. If US-Iran escalation triggers dollar weakness, BTC rips. SHORT if broader equity risk-off dominates. Altcoin selective longs on Santiment strong tokens (CC, BEAT, WLD). Watch for SPCX IPO June 12 as liquidity event. The CME crypto index futures launch is structurally bullish for institutional adoption.",
+      "benefit": "Gazzetta di Kyiv: 'BTC CRASHES Worst Week Since FTX — War Jitters or Capitulation?' Bet&Benefit: Asymmetric BTC long at $65K support. If Iran escalation accelerates, BTC as digital gold thesis test. Ukraine receives significant crypto donations — volatility creates donor opportunity.",
+      "source_channels": ["markettwits"],
+      "recency_minutes": "4 min ago — fresh signal",
+      "market_horizon": "T+1-4h — Asian crypto session, BTC testing $63-65K range"
     },
     {
       "rank": 3,
-      "headline": "Ukraine Strikes Deep Into Russia — FP-5 Flamingo Missiles Hit Cheboksary, Targeting Urals",
-      "event": "Ukrainian FP-5 Flamingo cruise missiles struck Cheboksary in the Chuvashia Republic (Volga region, ~600km east of Moscow). Additional missiles are inbound toward Tyumen Oblast in the Urals. This is among the deepest Ukrainian strikes into Russian territory to date. Separately, Russia hit Kharkiv with 25 Geran-2 drones and Odesa with 30 drones — large-scale reciprocal drone/missile barrages.",
-      "consensus_narrative": "Ukraine-Russia war is in a grinding attrition phase, slowly escalating but not breaking any new paradigms. Western attention is consumed by Iran-US conflict. Ukraine's deep strikes are seen as symbolic/political signaling rather than war-changing operations.",
-      "contradiction": "Striking Cheboksary (Volga region) and targeting Tyumen (Urals) is NOT symbolic — these are industrial/energy infrastructure regions. FP-5 Flamingo is a Ukrainian-designed long-range cruise missile with 1,000+ km range being used in combat. If Ukraine can consistently hit targets 600-1,500km inside Russia, it changes Russian logistics calculus. Tyumen is a major oil-producing region — hitting there would have direct energy market impact. AND this is concurrent with Iran-US war — Russia is now fighting on two emotional fronts (Ukraine + its Iranian proxy commitments).",
-      "bet": "LONG Ukrainian reconstruction/defense names. LONG natural gas (UA strikes could target Russian gas infrastructure). LONG defense primes (RTX, GD). SHORT Russian ruble/RSX. The Iran distraction gives Ukraine operational room — this pattern will continue.",
-      "benefit": "Gazzetta di Kyiv front page: 'KYIV STRIKES 600KM INSIDE RUSSIA — FP-5 Missiles Hit Cheboksary, Urals Next'. Bet&Benefit: Buy Ukrainian defense bonds / Rheinmetall. Natural gas call as Russian infrastructure risk reprices. NOTE: Iran story is bigger for markets in T+2h but Ukraine deep strike is the most important strategic development for the war itself.",
+      "headline": "UKRAINE FP-5 FLAMINGO MISSILES STRIKE CHEBOKSARY — Deepest Strike into Russia, VNIIR-Progress Plant Hit, Tyumen Missiles In-Flight",
+      "event": "Ukrainian FP-5 Flamingo cruise missiles struck Cheboksary, Chuvashia Republic (~600km east of Moscow) for the SECOND time. The VNIIR-Progress plant — developer and key manufacturer of jam-resistant satellite navigation antennas ('Kometa' family) for military use — was hit with confirmed direct impacts (video evidence posted). Additional missiles in-flight toward Tyumen Oblast in the Urals (major oil-producing region). ~280 Ukrainian UAVs attacked targets across Russia and occupied territories overnight. Samara's Kuibyshev Oil Refinery (Rosneft) was struck. Kharkiv hit by 25 Geran-2 drones, Odesa by 30 drones. Russia struck Zatoka Bridge (Odesa's only southern connection) with Iskander-M, Kh-59, KAB glide-bombs. Colonel Damir Davydov (GRAU chief of missile/artillery supply) assassinated in Moscow car bombing.",
+      "consensus_narrative": "Ukraine-Russia war in attrition phase. Western attention consumed by Iran-US conflict. Deep strikes seen as symbolic rather than war-changing. Russia downplays impact. Ukraine exploiting US distraction window is 'business as usual.'",
+      "contradiction": "Cheboksary is NOT symbolic — it's an industrial power center 600km from the front. Hitting VNIIR-Progress TWICE degrades Russian precision-strike navigation capability. Missiles inbound toward Tyumen (Urals oil region) target Russia's production heartland — DIRECT energy market impact if successful. This is a coordinated multi-axis campaign (Cheboksary + Samara refinery + Moscow car bombing of GRAU colonel + Tyumen missiles in-flight + 280 UAVs). Ukraine sees the US-Iran conflict as a window of opportunity and is exploiting it aggressively — strikes are accelerating, not symbolic. The GRAU colonel assassination disrupts Russian artillery supply chain.",
+      "bet": "LONG natgas (Russian oil infrastructure disruption risk). LONG defense primes (Rheinmetall, RTX, GD). SHORT RSX/Russia assets. The Iran distraction gives Ukraine operational room — war escalation premium repricing across European defense names.",
+      "benefit": "Gazzetta di Kyiv front page: 'KYIV STRIKES 600KM INSIDE RUSSIA — FP-5 Missiles Hit Cheboksary, Samara Refinery, Urals Next. GRAU Colonel Assassinated.' Bet&Benefit: Natural gas call on Russian infrastructure risk. Rheinmetall/European defense long. Ukraine exploiting US-Iran distraction is the bigger strategic development for the war.",
       "source_channels": ["ethanlevins", "ASupersharij"],
-      "recency_minutes": "30 min ago (still in-flight for Tyumen)",
-      "market_horizon": "2-4 hours — gas markets will watch for Tyumen reports. Defense sector repricing."
+      "recency_minutes": "1-2 hours — Tyumen missiles still in-flight, Cheboksary second strike confirmed",
+      "market_horizon": "T+2-4h — gas markets watch for Tyumen reports. Defense sector repricing underway."
     }
   ],
   "alerts": [
-    "ACTIVE US-IRAN KINETIC CONFLICT — both sides have struck each other's territory in the last 2 hours",
-    "IRAN OIL EXPORTS AT 6-YEAR LOW — 209k bpd is 90%+ below pre-blockade levels",
-    "UKRAINE HITS CHEBOKSARY — deepest strike into Russia, missiles still airborne toward Urals",
-    "CME LAUNCHES CRYPTO INDEX FUTURES — institutional crypto milestone (lower priority for T+2h)",
-    "CHINA CPI ABOVE CONSENSUS (+1.2% vs +0.9% expected) — inflationary pressure in China rising",
-    "JAPAN PPI HITS 6.3% Y/Y — BOJ rate hike to 1.0% likely this month"
-  ],
-  "all_messages": []
+    "ACTIVE US-IRAN KINETIC CONFLICT — 20+ US targets struck in Iran, IRGC retaliated against Bahrain (confirmed hits), Kuwait, Jordan. Both sides actively exchanging fire. Fox News: US prepared to respond.",
+    "IRAN OIL EXPORTS AT 6-YEAR LOW — 209k bpd, 90%+ below pre-blockade levels. Hormuz remains closed. Morgan Stanley: LNG to 3-year highs.",
+    "BTC WORST WEEK SINCE FTX — price testing $63-65K. MicroStrategy bought at $65K. Retail buying dip, whales holding. CME crypto index futures launch.",
+    "UKRAINE SECOND STRIKE ON CHEBOKSARY — VNIIR-Progress plant hit again. Samara refinery struck. Tyumen missiles in-flight. GRAU artillery chief assassinated in Moscow.",
+    "IRAN CALLS ON US TO LEAVE MIDDLE EAST — maximalist demand escalates conflict framework.",
+    "US MORTGAGE DELINQUENCIES SURGE — USA Today reports significant rise in defaults and foreclosures (bearish US consumer/RE).",
+    "SPACEX IPO 4x OVERSUBSCRIBED — trading starts June 12 on Nasdaq under SPCX. $250B+ demand vs $75B raise.",
+    "CME LAUNCHES CRYPTO INDEX FUTURES — institutional crypto milestone."
+  ]
 }
