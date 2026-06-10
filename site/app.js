@@ -1610,7 +1610,7 @@ function getCumulative(key, fallback) {
   try {
     const v = localStorage.getItem('gazzetta_' + key);
     return v ? JSON.parse(v) : fallback;
-  } catch(e) { return fallback; }
+  } catch(e) { console.warn('localStorage corrupt for', key, e); return fallback; }
 }
 
 function setCumulative(key, val) {
@@ -1685,7 +1685,7 @@ function getTrackRecord() {
   try {
     const v = localStorage.getItem(TRACK_RECORD_KEY);
     return v ? JSON.parse(v) : [];
-  } catch(e) { return []; }
+  } catch(e) { console.warn('localStorage track record corrupt:', e); return []; }
 }
 
 function saveTrackRecord(records) {

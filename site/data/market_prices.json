@@ -1,24 +1,24 @@
 {
-  "generated_at": "2026-06-10T20:54:18.836152+00:00",
+  "generated_at": "2026-06-10T20:57:26.992832+00:00",
   "prices": {
     "BTC": {
-      "price": 61698,
-      "change_pct": -0.5404120818986122,
+      "price": 61699,
+      "change_pct": -0.6055951166501163,
       "source": "CoinGecko"
     },
     "ETH": {
-      "price": 1626.49,
-      "change_pct": -1.8957144217497879,
+      "price": 1626.3,
+      "change_pct": -1.9419692306747627,
       "source": "CoinGecko"
     },
     "SOL": {
-      "price": 63.28,
-      "change_pct": -3.372130120614231,
+      "price": 63.25,
+      "change_pct": -3.4853046427081917,
       "source": "CoinGecko"
     },
     "XAU": {
-      "price": 4059.26,
-      "change_pct": -4.382850274916357,
+      "price": 4059.35,
+      "change_pct": -4.374693400432343,
       "source": "CoinGecko"
     }
   },
@@ -32,6 +32,11 @@
       "asymmetry_score": 21,
       "asymmetry_tier": "LOW ASYMMETRY",
       "diagnostic_trace": "ABS((0.50 - 0.08) * 50) = 21"
+    },
+    "n21_osint__the_cradle__pakistan_says_israel_derailed_us_iran_peace_deal_described_a": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
     },
     "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic": {
       "asymmetry_score": 21,
