@@ -236,6 +236,8 @@ def main():
 
         # 3) Copy to site/data/ for deployment
         if not data_only:
+            os.makedirs(str(SITE_DATA / "en"), exist_ok=True)
+            os.makedirs(str(SITE_DATA / "ru"), exist_ok=True)
             os.makedirs(str(SITE_DATA), exist_ok=True)
 
             for fname in ["stories.json", "flows.json"]:
@@ -245,6 +247,14 @@ def main():
                     dst.write_text(src.read_text())
                     print(f"  ✓ site/data/{fname} synced")
 
+            # Also sync to site/data/en/ and site/data/ru/
+            en_dst = SITE_DATA / "en" / fname
+            ru_dst = SITE_DATA / "ru" / fname
+            if (EN_DIR / fname).exists():
+                en_dst.write_text((EN_DIR / fname).read_text())
+            if (RU_DIR / fname).exists():
+                ru_dst.write_text((RU_DIR / fname).read_text())
+
             # Also sync RU files to site/data/
             for fname in ["stories_ru.json", "flows_ru.json"]:
                 src = DATA / fname
@@ -252,6 +262,14 @@ def main():
                 if src.exists():
                     dst.write_text(src.read_text())
                     print(f"  ✓ site/data/{fname} synced")
+
+            # Also sync to site/data/en/ and site/data/ru/
+            en_dst = SITE_DATA / "en" / fname
+            ru_dst = SITE_DATA / "ru" / fname
+            if (EN_DIR / fname).exists():
+                en_dst.write_text((EN_DIR / fname).read_text())
+            if (RU_DIR / fname).exists():
+                ru_dst.write_text((RU_DIR / fname).read_text())
 
             # Verify translation sync
             en_count = story_count
