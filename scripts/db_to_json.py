@@ -99,6 +99,30 @@ def compile_stories(conn):
                     cf["confidence"] = f"{cf.get('confidence_pct', 50)}%"
                 story["capital_flow"] = cf
 
+        # v23.11: Strategic Recommendation for high-asymmetry stories (>55 contradiction)
+        cs = story.get("contradiction_score", 0)
+        if cs and isinstance(cs, (int, float)) and cs >= 55:
+            cf = story.get("capital_flow", {})
+            ac = cf.get("asset_class", "macro")
+            direction = cf.get("direction", "neutral")
+            amount = cf.get("amount_b", 0)
+            headline = (story.get("headline") or "")[:80]
+            play = story.get("portfolio_implication") or story.get("actionable_trade") or "Monitor for directional break."
+
+            tier = "MAX CONVICTION" if cs >= 75 else ("HIGH CONVICTION" if cs >= 67 else "ELEVATED")
+            bias = "LONG" if direction == "inflow" else ("SHORT" if direction == "outflow" else "NEUTRAL")
+
+            story["strategic_recommendation"] = {
+                "tier": tier,
+                "bias": bias,
+                "asset_class": ac,
+                "capital_at_stake": f"${amount}B",
+                "rationale": play if isinstance(play, str) else str(play)[:200],
+                "horizon": story.get("horizon", "24-72h"),
+                "action": f"Position for {ac} {bias.lower()} exposure. {play if isinstance(play, str) else ''}"[:250],
+                "gated": True,  # Lead-gen gate signal
+            }
+
         # Ensure story_id is set
         story["story_id"] = sid
         stories.append(story)

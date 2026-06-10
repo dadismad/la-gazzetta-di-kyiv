@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T14:32:29.408880+00:00",
+  "generated_at": "2026-06-10T14:39:08.243399+00:00",
   "lead": {
     "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
     "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
@@ -101,6 +101,16 @@
           "conviction": "MEDIUM"
         }
       }
+    },
+    "strategic_recommendation": {
+      "tier": "ELEVATED",
+      "bias": "LONG",
+      "asset_class": "commodities",
+      "capital_at_stake": "$88.0B",
+      "rationale": "Oil longs are the single highest-conviction trade of the session. Direct US-Iran military engagement over the world's most important oil chokepoint is the definition of a binary bullish oil catalyst. Go long WTI/Brent futures, USO, XLE, OIH hard into close. Pair with gold (GLD) for the flight-to-saf",
+      "horizon": "24-72h",
+      "action": "Position for commodities long exposure. Oil longs are the single highest-conviction trade of the session. Direct US-Iran military engagement over the world's most important oil chokepoint is the definition of a binary bullish oil catalyst. Go long WT",
+      "gated": true
     }
   },
   "stories": [
@@ -142,7 +152,17 @@
       "freshness": "breaking",
       "impacted_flows": [
         "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
-      ]
+      ],
+      "strategic_recommendation": {
+        "tier": "ELEVATED",
+        "bias": "SHORT",
+        "asset_class": "commodities",
+        "capital_at_stake": "$88.0B",
+        "rationale": "Asymmetric oil optionality is the play. Own June 12 $95 calls (cost: ~$0.30-0.50) as lottery tickets on the Hezbollah trigger. Core short oil via $SCO if demand narrative dominates. Do NOT pick a directional side — the contradiction is too sharp. Own both tails and let the market resolve.",
+        "horizon": "24-72h",
+        "action": "Position for commodities short exposure. Asymmetric oil optionality is the play. Own June 12 $95 calls (cost: ~$0.30-0.50) as lottery tickets on the Hezbollah trigger. Core short oil via $SCO if demand narrative dominates. Do NOT pick a directional s",
+        "gated": true
+      }
     },
     {
       "story_id": "n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1",
@@ -182,7 +202,17 @@
       "freshness": "breaking",
       "impacted_flows": [
         "flow_n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1"
-      ]
+      ],
+      "strategic_recommendation": {
+        "tier": "ELEVATED",
+        "bias": "LONG",
+        "asset_class": "crypto",
+        "capital_at_stake": "$2.7B",
+        "rationale": "USD longs benefit from delayed rate cuts. Energy/inflation hedges (gold, oil) could dip on USD strength — buy the dip for geopolitical premium. Gazzetta di Kyiv: frame as 'US economy too hot for comfort — Fed pinned, Ukraine aid gets harder budget fight.'",
+        "horizon": "24-72h",
+        "action": "Position for crypto long exposure. USD longs benefit from delayed rate cuts. Energy/inflation hedges (gold, oil) could dip on USD strength — buy the dip for geopolitical premium. Gazzetta di Kyiv: frame as 'US economy too hot for comfort — Fed pinned",
+        "gated": true
+      }
     },
     {
       "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
@@ -222,7 +252,17 @@
       "freshness": "breaking",
       "impacted_flows": [
         "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
-      ]
+      ],
+      "strategic_recommendation": {
+        "tier": "ELEVATED",
+        "bias": "LONG",
+        "asset_class": "commodities",
+        "capital_at_stake": "$88.0B",
+        "rationale": "Gold and VIX as structural hedges. This isn't a tradeable event in isolation, but it raises the tail probability of a Lebanon escalation event. Own optionality, not direction.",
+        "horizon": "24-72h",
+        "action": "Position for commodities long exposure. Gold and VIX as structural hedges. This isn't a tradeable event in isolation, but it raises the tail probability of a Lebanon escalation event. Own optionality, not direction.",
+        "gated": true
+      }
     },
     {
       "story_id": "n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
@@ -262,7 +302,17 @@
       "freshness": "breaking",
       "impacted_flows": [
         "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149"
-      ]
+      ],
+      "strategic_recommendation": {
+        "tier": "ELEVATED",
+        "bias": "LONG",
+        "asset_class": "commodities",
+        "capital_at_stake": "$4.2B",
+        "rationale": "Airlines (DAL, AAL, UAL) benefit from any oil decline. S&P 500 broad market (SPY) benefits if inflation fears ease. Crypto (BTC, ETH) gets a bid if risk-off reverses. Fed gets marginal breathing room on rate policy.",
+        "horizon": "24-72h",
+        "action": "Position for commodities long exposure. Airlines (DAL, AAL, UAL) benefit from any oil decline. S&P 500 broad market (SPY) benefits if inflation fears ease. Crypto (BTC, ETH) gets a bid if risk-off reverses. Fed gets marginal breathing room on rate po",
+        "gated": true
+      }
     },
     {
       "story_id": "n21_multi_pillar__us_adp_nonfarm_29k_vs_35_7k_prior__labor_market_cracking",
@@ -302,7 +352,17 @@
       "freshness": "breaking",
       "impacted_flows": [
         "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
-      ]
+      ],
+      "strategic_recommendation": {
+        "tier": "ELEVATED",
+        "bias": "LONG",
+        "asset_class": "commodities",
+        "capital_at_stake": "$88.0B",
+        "rationale": "Long duration (TLT) as the stagflation trade. Gold as the inflation hedge. Short financials as rate expectations repivot. If this is the start of a weak labor trend, the Fed is trapped — and that means gold to new highs.",
+        "horizon": "24-72h",
+        "action": "Position for commodities long exposure. Long duration (TLT) as the stagflation trade. Gold as the inflation hedge. Short financials as rate expectations repivot. If this is the start of a weak labor trend, the Fed is trapped — and that means gold to ",
+        "gated": true
+      }
     },
     {
       "story_id": "n21_multi_pillar__kuwait_discussing_hormuz_bypass_via_saudi_uae_pipelines__ei",
@@ -399,6 +459,16 @@
             "conviction": "MEDIUM"
           }
         }
+      },
+      "strategic_recommendation": {
+        "tier": "ELEVATED",
+        "bias": "LONG",
+        "asset_class": "commodities",
+        "capital_at_stake": "$88.0B",
+        "rationale": "Oil futures long with multi-week horizon. The Kuwait pipeline story is a 'tell' — when a major OPEC producer starts planning alternative infrastructure around a blockade, it means the blockade is expected to persist. This is a structural oil bid the market hasn't fully priced because most participan",
+        "horizon": "24-72h",
+        "action": "Position for commodities long exposure. Oil futures long with multi-week horizon. The Kuwait pipeline story is a 'tell' — when a major OPEC producer starts planning alternative infrastructure around a blockade, it means the blockade is expected to pe",
+        "gated": true
       }
     },
     {
@@ -501,6 +571,16 @@
             "conviction": "MEDIUM"
           }
         }
+      },
+      "strategic_recommendation": {
+        "tier": "ELEVATED",
+        "bias": "LONG",
+        "asset_class": "commodities",
+        "capital_at_stake": "$88.0B",
+        "rationale": "Position oil and gold longs into US close. The weekend de-escalation narrative is dead — the IDF Iran readiness statement reverses it. If Tyre evacuation means a ground operation is imminent, oil gets a fear bid into Wednesday. LMT/GD have been consolidating — multi-front escalation is their catalys",
+        "horizon": "24-72h",
+        "action": "Position for commodities long exposure. Position oil and gold longs into US close. The weekend de-escalation narrative is dead — the IDF Iran readiness statement reverses it. If Tyre evacuation means a ground operation is imminent, oil gets a fear bi",
+        "gated": true
       }
     },
     {
@@ -604,6 +684,16 @@
             "conviction": "MEDIUM"
           }
         }
+      },
+      "strategic_recommendation": {
+        "tier": "ELEVATED",
+        "bias": "LONG",
+        "asset_class": "commodities",
+        "capital_at_stake": "$88.0B",
+        "rationale": "Gazzetta di Kyiv FRONT PAGE: 'KYIV STRIKES 600KM INSIDE RUSSIA — FP-5 Hits Cheboksary Again, Samara Refinery Burning, Tyumen Next. GRAU Artillery Chief Dead in Moscow.' Bet&Benefit: Natgas long on Russian infrastructure disruption. Rheinmetall/European defense. The strategic story: Ukraine exploits ",
+        "horizon": "24-72h",
+        "action": "Position for commodities long exposure. Gazzetta di Kyiv FRONT PAGE: 'KYIV STRIKES 600KM INSIDE RUSSIA — FP-5 Hits Cheboksary Again, Samara Refinery Burning, Tyumen Next. GRAU Artillery Chief Dead in Moscow.' Bet&Benefit: Natgas long on Russian infra",
+        "gated": true
       }
     },
     {
@@ -698,6 +788,16 @@
             "conviction": "MEDIUM"
           }
         }
+      },
+      "strategic_recommendation": {
+        "tier": "ELEVATED",
+        "bias": "LONG",
+        "asset_class": "commodities",
+        "capital_at_stake": "$88.0B",
+        "rationale": "The EIA Apache-confirmed oil bid is the highest-conviction trade. Do not overthink the demand downgrade — supply disruption dominates in the short term. Pair oil longs with gold for the geopolitical flight-to-safety bid that is just beginning to price.",
+        "horizon": "24-72h",
+        "action": "Position for commodities long exposure. The EIA Apache-confirmed oil bid is the highest-conviction trade. Do not overthink the demand downgrade — supply disruption dominates in the short term. Pair oil longs with gold for the geopolitical flight-to-s",
+        "gated": true
       }
     },
     {
@@ -792,6 +892,16 @@
             "conviction": "MEDIUM"
           }
         }
+      },
+      "strategic_recommendation": {
+        "tier": "ELEVATED",
+        "bias": "LONG",
+        "asset_class": "equities",
+        "capital_at_stake": "$2.7B",
+        "rationale": "Short SPY/QQQ for remainder of US session. If Friday low break holds through 21:00 UTC close, the gap-down open tomorrow is the momentum follow-through trade. VIX calls as hedge — if VIX breaches 20, panic options buying accelerates. Pair with oil longs for the stagflation hedge.",
+        "horizon": "24-72h",
+        "action": "Position for equities long exposure. Short SPY/QQQ for remainder of US session. If Friday low break holds through 21:00 UTC close, the gap-down open tomorrow is the momentum follow-through trade. VIX calls as hedge — if VIX breaches 20, panic options",
+        "gated": true
       }
     },
     {
@@ -832,7 +942,17 @@
       "freshness": "breaking",
       "impacted_flows": [
         "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for"
-      ]
+      ],
+      "strategic_recommendation": {
+        "tier": "ELEVATED",
+        "bias": "LONG",
+        "asset_class": "crypto",
+        "capital_at_stake": "$300.0B",
+        "rationale": "ENA token directly benefits from TVL growth narrative. sUSDe (Ethena's yield-bearing stablecoin) becomes more attractive with institutional credit products available. The entire RWA (Real World Assets) tokenization thesis gets validated — other RWA tokens (ONDO, MKR, CFG) could see sympathy bids. Ga",
+        "horizon": "24-72h",
+        "action": "Position for crypto long exposure. ENA token directly benefits from TVL growth narrative. sUSDe (Ethena's yield-bearing stablecoin) becomes more attractive with institutional credit products available. The entire RWA (Real World Assets) tokenization ",
+        "gated": true
+      }
     },
     {
       "story_id": "n21_multi_pillar__iran_begins_charging_ships_1_5-2m_per_transit_through_strai",
@@ -872,7 +992,17 @@
       "freshness": "developing",
       "impacted_flows": [
         "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
-      ]
+      ],
+      "strategic_recommendation": {
+        "tier": "ELEVATED",
+        "bias": "LONG",
+        "asset_class": "commodities",
+        "capital_at_stake": "$88.0B",
+        "rationale": "Oil producers: structural revenue uplift from elevated risk premium. US shale (Permian, Bakken) becomes more competitive as Hormuz transit becomes costly. Tanker owners: rate re-pricing as war risk premium loads into shipping contracts. Gold: safe haven flows. Crypto: Iran accepting Tether for Hormu",
+        "horizon": "24-72h",
+        "action": "Position for commodities long exposure. Oil producers: structural revenue uplift from elevated risk premium. US shale (Permian, Bakken) becomes more competitive as Hormuz transit becomes costly. Tanker owners: rate re-pricing as war risk premium load",
+        "gated": true
+      }
     },
     {
       "story_id": "n21_multi_pillar__ukraine_assassinates_russian_colonel_missile_supply_chief",

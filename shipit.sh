@@ -47,6 +47,10 @@ else
 fi
 echo ""
 
+# ═══ Stage 1.2: analyze_narratives — synthesize 3 Core Market Narratives ═══
+echo "── Stage 1.2: analyze_narratives ──"
+$PYTHON "$PROJECT/ops/analyze_narratives_v2.py" || echo "  ⚠ Narratives skipped (API unavailable — using fallback)"
+
 # ═══ Stage 1.5: enrich — add capital_flow + generated_at to editorial stories ═══
 echo "── Stage 1.5: enrich ──"
 $PYTHON "$PROJECT/scripts/enrich_editorial_stories.py" || true
@@ -105,8 +109,8 @@ else
     # Zero cache on HTML
     $GSUTIL -m setmeta -h "Cache-Control:public, max-age=0, must-revalidate" \
         "$BUCKET/*.html" 2>/dev/null || true
-    # No-store on JSON
-    $GSUTIL -m setmeta -h "Cache-Control:private, no-store" \
+    # Zero cache on JSON (critical for HFT/quant data freshness)
+    $GSUTIL -m setmeta -h "Cache-Control:public, max-age=0, must-revalidate" \
         "$BUCKET/data/*.json" 2>/dev/null || true
     echo "  ✓ GCS rsync complete"
 fi
