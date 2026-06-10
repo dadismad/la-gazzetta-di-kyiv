@@ -18,8 +18,8 @@ from collections import Counter
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DB_PATH = PROJECT_ROOT / "gazzetta.db"
-SITE_DATA = PROJECT_ROOT / "site" / "data"
-NARRATIVES_PATH = SITE_DATA / "narratives.json"
+DATA_DIR = PROJECT_ROOT / "data"
+NARRATIVES_PATH = DATA_DIR / "narratives.json"
 
 # ── Gemini API setup ──
 def get_deepseek_client():
@@ -231,7 +231,7 @@ def main():
     print(f"  Synthesizing narratives{' (dry run)' if dry_run else ' via AI'}...")
     result = synthesize_narratives(stories, dry_run=dry_run)
 
-    SITE_DATA.mkdir(parents=True, exist_ok=True)
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     with open(NARRATIVES_PATH, 'w') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
