@@ -32,7 +32,6 @@ TICKER_MAP = {
     "defense": "ITA",
     "tech": "QQQ",
     "gold": "GC=F",
-    "oil": "CL=F",
 }
 
 def fetch_24h_change(ticker_symbol):
