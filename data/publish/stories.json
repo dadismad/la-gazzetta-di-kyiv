@@ -34,7 +34,19 @@
         "Hardware demand layer expands with each launch"
       ],
       "portfolio_implication": "Long NVDA, SMH — AI capex extends with each model launch. Long FET, TAO for AI-crypto coupling.",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthropic_logo.svg"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthropic_logo.svg",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 3.5,
+        "asset_class": "crypto",
+        "projected": "Long NVDA, SMH — AI capex extends with each model launch. Long FET, TAO for AI-crypto coupling.",
+        "pace_multiplier": 1.5,
+        "confidence_pct": 65,
+        "confidence_level": "medium",
+        "claim": "$3.5B inflow crypto",
+        "confidence": "65%"
+      },
+      "generated_at": "2026-06-10T14:00:00Z"
     },
     {
       "story_id": "n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai",
@@ -48,7 +60,19 @@
         "At 96x revenue, the IPO market is pricing a future that hasn't arrived yet — risk of correction"
       ],
       "portfolio_implication": "Long SPCX at IPO if pricing isn't ridiculous. Monitor India Starlink block resolution as regulatory catalyst.",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX_Dragon_2_approach_to_ISS_1.jpg"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX_Dragon_2_approach_to_ISS_1.jpg",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 1800.0,
+        "asset_class": "crypto",
+        "projected": "Long SPCX at IPO if pricing isn't ridiculous. Monitor India Starlink block resolution as regulatory catalyst.",
+        "pace_multiplier": 1.5,
+        "confidence_pct": 65,
+        "confidence_level": "medium",
+        "claim": "$1800.0B inflow crypto",
+        "confidence": "65%"
+      },
+      "generated_at": "2026-06-10T14:00:00Z"
     },
     {
       "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
@@ -62,7 +86,19 @@
         "MSTR shorts face asymmetric risk if buying spree resumes — potential short squeeze"
       ],
       "portfolio_implication": "Long BTC with $58K invalidation. Short MSTR puts to capture squeeze premium.",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_logo.svg"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_logo.svg",
+      "capital_flow": {
+        "direction": "outflow",
+        "amount_b": 3.5,
+        "asset_class": "crypto",
+        "projected": "Long BTC with $58K invalidation. Short MSTR puts to capture squeeze premium.",
+        "pace_multiplier": 1.5,
+        "confidence_pct": 65,
+        "confidence_level": "medium",
+        "claim": "$3.5B outflow crypto",
+        "confidence": "65%"
+      },
+      "generated_at": "2026-06-10T14:00:00Z"
     },
     {
       "story_id": "n21_macro",
@@ -76,7 +112,19 @@
         "Supertanker ordering boom mirrors 2008 — peak-cycle behavior before a glut"
       ],
       "portfolio_implication": "Long Korean shipbuilders (HD Hyundai Heavy) on orderbook momentum. Short Baltic Dry forwards — glut cycle being set up.",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_South_Korea.svg"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_South_Korea.svg",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 350.0,
+        "asset_class": "tech",
+        "projected": "Long Korean shipbuilders (HD Hyundai Heavy) on orderbook momentum. Short Baltic Dry forwards — glut cycle being set up.",
+        "pace_multiplier": 1.5,
+        "confidence_pct": 65,
+        "confidence_level": "medium",
+        "claim": "$350.0B inflow tech",
+        "confidence": "65%"
+      },
+      "generated_at": "2026-06-10T14:00:00Z"
     },
     {
       "story_id": "n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired",
@@ -90,7 +138,19 @@
         "ASML caught between EU sovereignty demands and its own export-restricted business model"
       ],
       "portfolio_implication": "Long ASML — EU sovereignty capex requires lithography regardless of restrictions. Long EADSF — European defense spending is structural, not cyclical.",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/EU_flag.svg"
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/EU_flag.svg",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 8.0,
+        "asset_class": "defense",
+        "projected": "Long ASML — EU sovereignty capex requires lithography regardless of restrictions. Long EADSF — European defense spending is structural, not cyclical.",
+        "pace_multiplier": 1.5,
+        "confidence_pct": 65,
+        "confidence_level": "medium",
+        "claim": "$8.0B inflow defense",
+        "confidence": "65%"
+      },
+      "generated_at": "2026-06-10T14:00:00Z"
     }
   ]
 }
