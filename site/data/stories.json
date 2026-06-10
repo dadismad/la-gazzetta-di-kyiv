@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T11:18:08.762640+00:00",
+  "generated_at": "2026-06-10T14:51:00+00:00",
   "lead": {
     "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
     "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
@@ -2130,6 +2130,110 @@
         "confidence": "65%"
       },
       "generated_at": "2026-06-09T13:03:26.472079+00:00"
+    },
+    {
+      "story_id": "n21_multi_pillar__trump_flips_iran_will_pay_the_price",
+      "headline": "TRUMP FLIPS 180°: From 'Wasn't a Big Deal' to 'Iran Will Pay the Price' — Diplomatic Off-Ramp Collapses in Real Time",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Trump's policy pivot signals genuine escalation spiral — the US is now a direct belligerent, not a mediator",
+        "Iran Parliament Speaker Ghalibaf confirms: 'Iran will decisively and quickly respond to any aggression'",
+        "Indonesia raises fuel 32% as first EM contagion from Hormuz closure — supply chain shockwaves hitting Asia",
+        "UAE paid $3B cash to Iran to halt Israel attacks — reveals real level of Gulf state fear"
+      ],
+      "they_say": "Markets priced contained retaliation — both sides struck, both can claim victory. Brent below $90. Goldman published S&P 8000 target today. Consensus reads Trump's 'pay the price' as rhetorical theatre, not policy shift. Diplomatic backchannel assumed still open. The tanker fire off Oman dismissed as mechanical failure.",
+      "reality": "Trump just flipped 180° in public — 'wasn't a big deal' on June 9 → 'IRAN WILL PAY THE PRICE' on June 10 at 11:04 UTC. This is NOT theatre. Combined signals: (a) IRNA confirming Iran is 'reviewing negotiations' — diplomatic preparatory language for walking away; (b) Ghalibaf (Parliament Speaker) declaring decisive response — military leadership hardening, not softening; (c) UAE $3B bribe reveals Iran was not stopping voluntarily; (d) Indonesia fuel price hike is the first EM contagion victim of the Hormuz closure; (e) Tanker fire off Oman in the exact Hormuz transit corridor — 1 dead, 2 missing, UKMTO silent for 1h41m. The market is pricing contained noise; the data screams structural escalation.",
+      "thesis": "Trump's flip from dovish to hawkish is the most significant White House policy signal in 24 hours. Combined with Iran's military hardening and the unexplained tanker fire, the contained-narrative premium on oil is deeply mispriced. Buy oil, buy gold, short US risk-on equities.",
+      "actors": [
+        "US (Trump, Administration)",
+        "Iran (Khamenei, Ghalibaf, IRGC)",
+        "UAE",
+        "Indonesia",
+        "UKMTO"
+      ],
+      "horizon": "24-72h",
+      "confidence": "high",
+      "tier": "DEVELOPING",
+      "actionable_trade": "LONG crude oil (WTI/Brent) aggressively; LONG gold (GLD); SHORT SPY/QQQ; LONG defense (LMT, GD, NOC)",
+      "contradiction_score": 85,
+      "invalidation_trigger": "Iran returns to negotiations with verified framework. Trump issues de-escalation statement. UKMTO confirms tanker fire as mechanical.",
+      "portfolio_implication": "Brent sub-$90 with Hormuz closed AND Trump escalating rhetoric is historic mispricing. Iran announcing suspension of negotiations today would gap oil $5-8. The Trump flip alone should move oil $2-3 in the next hour. Gold benefits from geopolitical risk premium + war-driven fiat debasement. BTC at 45% supply-in-profit is historically a local bottom — medium-term crypto bid from fiat debasement narrative.",
+      "image_url": "",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 8.0,
+        "asset_class": "commodities",
+        "projected": "Oil inflows accelerate as Trump escalation reprices geopolitical risk premium. Expect $5-8B in institutional oil allocation rotation within 48h.",
+        "pace_multiplier": 2.5,
+        "confidence_pct": 80,
+        "confidence_level": "high",
+        "claim": "$8.0B ↑ commodities",
+        "confidence": "80%"
+      },
+      "capital_flow_implication": "Aggressive capital rotation into oil, gold, and defense. Out of consumer discretionary and airlines. Volatility bid returns as diplomatic track collapses in real time.",
+      "freshness": "breaking",
+      "source": "telegram_intel",
+      "generated_at": "2026-06-10T14:51:00+00:00",
+      "entity_tags": {
+        "assets": ["WTI", "BRENT", "XAU", "SPX", "VIX"],
+        "geographies": ["Iran", "USA", "UAE", "Indonesia", "Oman"],
+        "actors": ["Trump", "Ghalibaf", "Khamenei", "IRGC", "UKMTO"],
+        "instruments": ["CL", "BNO", "GLD", "SPY", "QQQ"]
+      }
+    },
+    {
+      "story_id": "n21_dollar_decline__japan_russia_lng_sanctions_exemption",
+      "headline": "Japan Nears US Agreement on Russian LNG Sanctions Exemption — First Major Crack in the Sanctions Architecture",
+      "sector": "commodities",
+      "pillar": "dollar_decline",
+      "paradigm_pillar": "dollar_decline",
+      "paradigm_implications": [
+        "First major breach in the Russia sanctions regime by America's closest Asian ally — sets precedent for European carveout demands",
+        "If Japan buys Russian LNG while sanctions target Russian energy revenue, the entire sanctions architecture is perforated",
+        "Russia's LNG revenue stream protected — funds Ukraine war continuation. Putin's divide-and-conquer playbook working",
+        "Germany's DIW already cut 2026 growth forecast to 0.5% due to Iran energy shock — Europe will demand same carveout",
+        "De-dollarization signal: dollar-denominated sanctions lose coercive power when allies defect under energy pressure"
+      ],
+      "they_say": "This is a limited, bilateral sanctions waiver — a niche diplomatic detail that doesn't change the broader sanctions regime. Japan is a special case due to geographic proximity to Sakhalin-2. Markets should ignore niche bilateral carveouts.",
+      "reality": "This is the FIRST major crack in the Russia sanctions wall — and it's America's closest Asian ally making the hole. Japan almost finalized a deal with the US to exempt Russian LNG imports from sanctions. Context: Hormuz closure makes Persian Gulf LNG unreliable; Russia's Sakhalin-2 is geographically closest; Japan's energy security calculus: better Russian gas than no gas. The signal is immediate: if Japan gets this exemption, Germany, Italy, and other European allies will demand the same treatment. DIW Germany just halved its 2026 growth forecast because of energy costs. The sanctions architecture that was supposed to defund Putin's war is now being perforated by energy reality. Alliance unity on sanctions is fraying — and this is exactly Putin's playbook.",
+      "thesis": "The Russia sanctions regime has its first verified crack. Japan's exemption sets a precedent that will trigger copycat demands from Europe. Russian energy revenue gets protected, which funds the Ukraine war. The dollar weapon of sanctions loses coercive power when allies defect under energy supply pressure — a direct de-dollarization signal.",
+      "actors": [
+        "Japan (Government, METI)",
+        "US (Treasury, State Department)",
+        "Russia (Gazprom, Sakhalin Energy)",
+        "EU (Germany, Italy, European Commission)"
+      ],
+      "horizon": "1-2 weeks",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "LONG natural gas futures ($NG) — Japan securing Russian supply relieves some global tightness; LONG Russian-facing asset exposure (limited, but sanctions architecture crack is positive for rerating); SHORT energy independence narratives",
+      "contradiction_score": 78,
+      "invalidation_trigger": "US publicly denies the exemption. Japan issues formal statement rejecting Sakhalin-2 imports. No copycat requests from European allies within 30 days.",
+      "portfolio_implication": "The sanctions architecture crack is medium-term positive for any Russia-facing asset. Russian asset discounts already attracting Western investor interest. Energy trade: Japan's exemption relieves some global natgas tightness — short-term mildly bearish $NG, bullish for Japanese utility stocks. Long-term bearish for the dollar-sanctions regime as coercive tool.",
+      "image_url": "",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 2.5,
+        "asset_class": "commodities",
+        "projected": "Capital flows toward Russian energy exposure on sanctions architecture crack narrative. Expect $2-3B in Russia-adjacent asset repricing within weeks.",
+        "pace_multiplier": 1.3,
+        "confidence_pct": 65,
+        "confidence_level": "medium",
+        "claim": "$2.5B ↑ commodities",
+        "confidence": "65%"
+      },
+      "capital_flow_implication": "Capital re-evaluates Russian asset discounts as sanctions architecture shows first cracks. European energy importers benefit from potential copycat exemptions. Dollar-denominated financial infrastructure faces structural headwind as sanctions lose enforcement power.",
+      "freshness": "developing",
+      "source": "telegram_intel",
+      "generated_at": "2026-06-10T14:51:00+00:00",
+      "entity_tags": {
+        "assets": ["NG", "LNG", "RUB", "EWJ"],
+        "geographies": ["Japan", "Russia", "USA", "Germany", "EU"],
+        "actors": ["Japan METI", "US Treasury", "Gazprom", "EU Commission"],
+        "instruments": ["Henry Hub", "JKM", "EWJ", "RSX"]
+      }
     }
   ]
 }
