@@ -2837,3 +2837,9 @@ body {
 .layer-header.intel-header .layer-label { background: #0F172A; color: #FFF; }
 .layer-header.alpha-header .layer-desc { color: #B8860B; }
 .alpha-header .layer-label { background: #B8860B; color: #FFF; }
+
+/* v23.7: Alpha layer gold accent boost */
+.alpha-header { border-left-width: 3px !important; }
+.alpha-header .layer-label { font-weight: 900 !important; letter-spacing: 0.16em !important; }
+.side-velocity { background: linear-gradient(135deg, #FFFDF5, #FFFBEB) !important; border-color: #D4AF37 !important; }
+.side-vel-value { color: #B8860B !important; text-shadow: 0 1px 0 rgba(212,175,55,0.2); }

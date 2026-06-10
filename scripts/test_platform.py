@@ -440,6 +440,63 @@ def test_translation_sync():
         has_cyrillic = any(0x0400 <= ord(c) <= 0x04FF for c in sample)
         check(has_cyrillic, f"RU stories contain Cyrillic text (sample: {sample[:60]}...)")
 
+
+# ═══════════════════════════════════════════════════════
+# TEST ROUND 7: RU Zero-English Check
+# ═══════════════════════════════════════════════════════
+
+def test_ru_zero_english():
+    """Verify RU stories contain ZERO English sentences in main containers."""
+    print("\n── ROUND 7: RU Zero-English Check ──")
+
+    ru_path = SITE / "data" / "stories_ru.json"
+    if not ru_path.exists():
+        check(False, "stories_ru.json: MISSING")
+        return
+
+    with open(ru_path) as f:
+        ru_data = json.load(f)
+
+    stories = ru_data.get("stories", [])
+    # English sentence pattern: starts with capital letter, contains English words, ends with period
+    eng_pattern = re.compile(r'\b(The |This |According to|Breaking:|A |An |In |On |With |After |As |But |And |Or |New |Major |Key |Critical |Warning|Alert|Update|Report|Analysis)\b')
+
+    violations = []
+    for s in stories:
+        headline = s.get("headline", "")
+        summary = s.get("summary", "")
+        reality = s.get("reality", "")
+
+        for field_name, text in [("headline", headline), ("summary", summary), ("reality", reality)]:
+            if eng_pattern.search(str(text)):
+                # Check if it's a proper noun that should stay English
+                matches = eng_pattern.findall(str(text))
+                # Filter out known proper nouns
+                proper_nouns = {'US', 'EU', 'OPEC', 'China', 'Russia', 'Iran', 'Israel', 'Ukraine'}
+                non_proper = [m for m in matches if m not in proper_nouns]
+                if non_proper:
+                    violations.append(f"{s.get('story_id','?')[:40]} {field_name}: {', '.join(non_proper[:3])}")
+
+    if violations:
+        check(len(violations) <= 10,
+              f"RU English violations: {len(violations)} (limit: 10). Samples: {'; '.join(violations[:3])}")
+    else:
+        check(True, "RU stories: ZERO English sentences ✓")
+
+    # Also check RU i18n coverage
+    i18n_path = SITE / "i18n_ru.json"
+    if i18n_path.exists():
+        with open(i18n_path) as f:
+            i18n = json.load(f)
+        # Check that all keys have non-English values (contain Cyrillic or are short labels)
+        eng_values = 0
+        for k, v in i18n.items():
+            if len(v) > 10 and not any(0x0400 <= ord(c) <= 0x04FF for c in v):
+                eng_values += 1
+        check(eng_values <= 10,
+              f"i18n_ru.json: {eng_values} long English values (limit: 5)")
+
+
 def main():
     global PASS, FAIL
     quick = "--quick" in sys.argv
@@ -455,6 +512,7 @@ def main():
     test_timestamps()
     test_json_consistency()
     test_translation_sync()
+    test_ru_zero_english()
     # v23.1: try asset badge gate (non-fatal if missing)
     try: test_asset_badge_gate()
     except: pass

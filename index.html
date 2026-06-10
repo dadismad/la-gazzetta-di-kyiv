@@ -59,6 +59,26 @@
   }
   </script>
 
+
+<style>
+/* v23.7: Mobile progressive disclosure — details expander */
+@media (max-width: 768px) {
+  .card-multi-persona { display: none; }
+  .card-multi-persona.expanded { display: block; }
+  .card-tech-metrics { display: none; }
+  .card-tech-metrics.expanded { display: block; }
+  .card-expand-btn {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-family: var(--sans); font-size: 10px; font-weight: 700;
+    color: var(--gold); cursor: pointer; padding: 4px 0;
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .card-expand-btn::after { content: ' ▼'; font-size: 8px; }
+  .card-expand-btn.open::after { content: ' ▲'; }
+  .asset-badge { font-size: 11px !important; padding: 3px 8px !important; }
+}
+</style>
+
 </head>
 <body>
 
@@ -156,15 +176,15 @@
     <div class="hero-indicators" id="heroIndicators">
       <a href="./signal.html" class="hero-ind" id="heroContradictions" title="Active narrative-to-data divergences">
         <span class="hero-ind-value">—</span>
-        <span class="hero-ind-label">Contradictions</span>
+        <span class="hero-ind-label" data-i18n="hero_contradictions">Contradictions</span>
       </a>
       <a href="./flow-nodes.html" class="hero-ind" id="heroTopVelocity" title="Highest-momentum capital flow category">
         <span class="hero-ind-value">—</span>
-        <span class="hero-ind-label">Top Velocity</span>
+        <span class="hero-ind-label" data-i18n="hero_top_velocity">Top Velocity</span>
       </a>
       <a href="./flows.html" class="hero-ind" id="heroFreshness" title="Last system data refresh">
         <span class="hero-ind-value">—</span>
-        <span class="hero-ind-label">Freshness</span>
+        <span class="hero-ind-label" data-i18n="hero_freshness">Freshness</span>
       </a>
     </div>
   </div>
@@ -306,18 +326,18 @@
     <div class="container-body">
       <div class="services-grid">
         <a href="./stories.html" class="svc-card" id="svcCSuite">
-          <span class="svc-persona">C-SUITE</span>
-          <span class="svc-title">Macro Horizon</span>
+          <span class="svc-persona" data-i18n="svc_csuite">C-SUITE</span>
+          <span class="svc-title" data-i18n="svc_macro_horizon">Macro Horizon</span>
           <span class="svc-desc">Structural policy shifts, supply-chain bottlenecks, regulatory implications. Board-ready context for capital allocators.</span>
         </a>
         <a href="./flow-nodes.html" class="svc-card" id="svcQuant">
-          <span class="svc-persona">QUANTITATIVE</span>
-          <span class="svc-title">Flow Telemetry</span>
+          <span class="svc-persona" data-i18n="svc_quant">QUANTITATIVE</span>
+          <span class="svc-title" data-i18n="svc_flow_telemetry">Flow Telemetry</span>
           <span class="svc-desc">Capital velocity differentials, correlation coefficients, heat scores. Low-latency raw data. Zero narrative fluff.</span>
         </a>
         <a href="./trades.html" class="svc-card" id="svcTrader">
-          <span class="svc-persona">EXECUTION</span>
-          <span class="svc-title">Action Triggers</span>
+          <span class="svc-persona" data-i18n="svc_execution">EXECUTION</span>
+          <span class="svc-title" data-i18n="svc_action_triggers">Action Triggers</span>
           <span class="svc-desc">Directional bias, entry/stop levels, conviction ratings with ATR-derived stops. Ultra-concise, trade-ready.</span>
         </a>
       </div>
