@@ -139,6 +139,20 @@ def compile_stories(conn):
             cf["source_label"] = "[CALC-EST]"
         story["capital_flow"] = cf
 
+        # v23.18: Conviction Probability — compute for existing DB stories
+        if not story.get("conviction_probability"):
+            cs_val = story.get("contradiction_score", 0)
+            conf_level = cf.get("confidence_level", "medium")
+            sources = story.get("evidence", [])
+            source_count = len(sources) if isinstance(sources, list) else 1
+            source_bonus = min((source_count - 1) * 5, 15)
+            freshness_bonus = 10 if story.get("freshness") == "breaking" else 5 if story.get("horizon") in ("1-6h", "6-24h") else 0
+            confidence_bonus = 10 if conf_level == "high" else (5 if conf_level == "medium" else 0)
+            contra_base = 50 + min((cs_val - 45) * 0.8, 35) if cs_val else 50
+            conviction_prob = min(95, max(50, round(contra_base + source_bonus + freshness_bonus + confidence_bonus)))
+            story["conviction_probability"] = conviction_prob
+            story["conviction_tier"] = "ALPHA" if conviction_prob >= 85 else ("HIGH" if conviction_prob >= 75 else ("MODERATE" if conviction_prob >= 60 else "BASELINE"))
+
         # v23.11: Strategic Recommendation for high-asymmetry stories (>55 contradiction)
         cs = story.get("contradiction_score", 0)
         if cs and isinstance(cs, (int, float)) and cs >= 55:

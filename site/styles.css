@@ -175,6 +175,55 @@ body {
   white-space: nowrap;
 }
 
+/* ── v23.18: Live Ticker Tape ── */
+.ticker-tape {
+  width: 100%; max-width: 1000px; margin: 4px auto 0;
+  background: #0F172A; color: #E2E8F0; overflow: hidden;
+  font-family: var(--mono); font-size: 11px; line-height: 1.6;
+  padding: 4px 0; white-space: nowrap;
+  border-top: 1px solid rgba(184,134,11,0.3);
+  border-bottom: 1px solid rgba(184,134,11,0.3);
+}
+.ticker-track {
+  display: inline-block; animation: ticker-scroll 60s linear infinite;
+}
+.ticker-track:hover { animation-play-state: paused; }
+.ticker-item {
+  padding: 0 18px; display: inline-block;
+}
+.ticker-item.price-up { color: #059669; }
+.ticker-item.price-down { color: #DC2626; }
+.ticker-item.asymmetry { color: #B8860B; font-weight: 700; }
+.ticker-item.contradiction { color: #DC2626; font-weight: 700; background: rgba(220,38,38,0.1); padding: 1px 12px; }
+.ticker-item.spacer { color: rgba(184,134,11,0.4); padding: 0 2px; }
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── v23.18: Conviction Probability Badge ── */
+.prob-badge {
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+  padding: 1px 5px; margin-right: 4px; white-space: nowrap;
+  border: 1px solid;
+}
+.prob-badge.alpha { color: #B8860B; border-color: #B8860B; background: rgba(184,134,11,0.08); }
+.prob-badge.high  { color: #2563EB; border-color: #2563EB; background: rgba(37,99,235,0.06); }
+.prob-badge.moderate { color: #6B7280; border-color: #9CA3AF; }
+
+/* ── v23.18: Sparklines ── */
+.sparkline-wrap {
+  display: inline-flex; align-items: flex-end; gap: 1px;
+  height: 20px; margin-left: 6px; vertical-align: middle;
+}
+.sparkline-bar {
+  width: 4px; min-height: 2px; background: #B8860B;
+  border-radius: 1px; transition: height 0.3s ease;
+}
+.sparkline-bar.rising  { background: #059669; }
+.sparkline-bar.falling { background: #DC2626; }
+.sparkline-bar.flat    { background: #6B7280; }
+
 /* ── Hero Section ── */
 .hero {
   text-align: center;

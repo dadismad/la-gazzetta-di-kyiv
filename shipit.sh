@@ -109,8 +109,8 @@ else
     # Zero cache on HTML
     $GSUTIL -m setmeta -h "Cache-Control:public, max-age=0, must-revalidate" \
         "$BUCKET/*.html" 2>/dev/null || true
-    # Zero cache on JSON (critical for HFT/quant data freshness)
-    $GSUTIL -m setmeta -h "Cache-Control:public, max-age=0, must-revalidate" \
+    # Private, no-store on JSON (critical for HFT/quant data freshness — v2.1 CEOverlord fix)
+    $GSUTIL -m setmeta -h "Cache-Control:private, no-store" \
         "$BUCKET/data/*.json" 2>/dev/null || true
     echo "  ✓ GCS rsync complete"
 fi

@@ -1,145 +1,70 @@
 {
-  "gate": "editorial-quality",
-  "source": "telegram_latest.md, stories.json, website_stories_latest.json, asset_claims_latest.json",
-  "generated_at": "2026-06-10T12:15:00Z",
-  "cycle_number": 18,
-  "verdict": "FAIL",
-  "combined_score": 5.2,
-  "top_down_avg": 5.0,
-  "bottom_up_avg": 5.3,
-  "checks": {
-    "word_count": {
-      "status": "PASS",
-      "count": 96,
-      "limit": "80-140",
-      "details": "96 words \u2014 within target range."
-    },
-    "grammar": {
-      "status": "PASS",
-      "details": "No grammar errors detected. Subject-verb agreement correct everywhere."
-    },
-    "banned_phrases": {
-      "status": "PASS",
-      "details": "Zero banned phrases detected."
-    },
-    "ideological_voice": {
-      "status": "PASS",
-      "score": 8,
-      "details": "Sharp, declarative voice. Named actors (Vance, Iran SNSC, US CENTCOM). Contradiction frame well-executed."
-    },
-    "factual_accuracy": {
-      "status": "PASS",
-      "score": 6,
-      "details": "Core claims consistent with story data but primary sources are social media handles without verifiable links."
-    },
-    "contradiction_sharpness": {
-      "status": "PASS",
-      "score": 7,
-      "details": "Clear falsifiable contradiction between Vance deal-talk and military signals. 'They Say' bundles 3 distinct positions."
-    },
-    "evidence_sourcing": {
-      "status": "WARN",
-      "score": 4,
-      "details": "Sources: ethanlevins/3489-90, markettwits/373486 \u2014 social media handles, no visible links."
-    },
-    "freshness": {
-      "status": "FAIL",
-      "details": "Lead topic identical to last_lead_topic, back-to-back in topic_history. Sliding '0-12h' trigger window across multiple cycles."
-    },
-    "status_line": {
-      "status": "PASS",
-      "details": "'Apache shootdown was 24h ago, no strike yet' answers the key question. Would benefit from explicit STATUS: format."
-    },
-    "human_detail_freshness": {
-      "status": "PASS",
-      "score": 5,
-      "details": "HD-023 IS new to this cycle but its content duplicates the Telegram lede."
-    },
-    "cross_platform_consistency": {
-      "status": "PASS",
-      "details": "Source files consistent on Iran lead theme."
-    },
-    "cross_platform_price_stop": {
-      "status": "PASS",
-      "details": "All tickers directionally consistent across Telegram and asset_claims."
-    },
-    "all_trades_same_direction": {
-      "status": "WARN",
-      "details": "All 3 claims same-direction (long WTI/GLD/VIX). No hedge for diplomacy scenario."
-    },
-    "continuity_link": {
-      "status": "FAIL",
-      "severity": "BLOCKING",
-      "details": "gazzetta-di-kyiv.com does NOT resolve. Same class of failure as previous QG \u2014 compound error."
-    },
-    "site_deployment": {
-      "status": "FAIL",
-      "severity": "BLOCKING",
-      "details": "build_site.py NOT run. Deployed site shows stale BTC lead, contradicts Telegram thesis."
-    },
-    "cross_cycle_fix_tracking": {
-      "status": "FAIL",
-      "details": "Previous QG flagged continuity URL deprecated GitHub Pages \u2192 changed to ANOTHER broken domain. Fix not verified."
-    },
-    "asset_claim_grounding": {
-      "status": "PASS",
-      "details": "All 3 tickers (CL, GLD, VIX) map to Apache shootdown story. No orphaned instruments."
-    },
-    "invalidation_trigger": {
-      "status": "PASS",
-      "details": "Concrete, falsifiable invalidation triggers provided."
-    }
-  },
-  "blocking_failures": [
-    "Continuity link gazzetta-di-kyiv.com does not resolve (DNS dead) \u2014 same failure class as previous cycle",
-    "build_site.py not run \u2014 deployed site has stale content contradicting Telegram thesis",
-    "Same lead topic repeated back-to-back against editorial policy"
+  "gate": "gazzetta-agentic-nlp-guarded-autopost-8h",
+  "run_time": "2026-06-10T18:10:00Z",
+  "upstream_job": "011c8be0b17c",
+  "lead_story": "Trump threatens new strikes on Iranian infrastructure; EIA crude draw 2.4x consensus",
+  "personas_spawned": [
+    "Skeptical Journalist",
+    "Chief Editor",
+    "Busy Professional/Trader"
   ],
-  "fixes_required": [
+  "banned_phrases_check": {
+    "found": 0,
+    "near_misses": 0,
+    "status": "PASS"
+  },
+  "contradiction_sharpness": {
+    "score": 8,
+    "notes": "Opens with specific Trump Fox News quote + named targets (power plants/bridges) + precise timestamp (13:59 UTC). 'Consensus: crisis de-escalating. Reality: infrastructure warfare threat' is specific but the consensus claim is unsourced—borderline straw man without attribution. Quality elevated by the direct quote anchoring."
+  },
+  "word_count": {
+    "count": 67,
+    "limit": 100,
+    "status": "PASS"
+  },
+  "conviction": {
+    "score": 9,
+    "notes": "Zero hedging words. All declarative. Named actors (Trump, Netanyahu, Fox News, OPEC), specific data points (EIA -7.227M vs -3M consensus), exact tickers (LMT, GD). Chief Editor rated 10/10 conviction."
+  },
+  "actionable_bets": [
     {
-      "severity": "critical",
-      "element": "continuity_link",
-      "description": "Continuity URL points to non-existent domain",
-      "fix": "Replace with www.lagazzettadikyiv.com in telegram_latest.md"
+      "position": "Long WTI crude",
+      "clarity": "PASS",
+      "notes": "Grounded in EIA physical data + OPEC multi-decade low. Missing instrument wrapper (CL futures month, USO, XLE) but acceptable for Telegram format."
     },
     {
-      "severity": "critical",
-      "element": "site_deployment",
-      "description": "build_site.py not run",
-      "fix": "Run: python3 scripts/build_site.py, verify site data fresh"
+      "position": "Long defense (LMT, GD)",
+      "clarity": "PASS",
+      "notes": "Tickers provided, rationale 'confirmed multi-front combat' coherent with known Israel-Lebanon-Houthi-Iran conflict geometry."
     },
     {
-      "severity": "high",
-      "element": "topic_freshness",
-      "description": "Same lead topic back-to-back",
-      "fix": "Rotate lead topic next cycle"
-    },
-    {
-      "severity": "medium",
-      "element": "trigger_window",
-      "description": "'0-12h' sliding window across cycles",
-      "fix": "Replace with specific catalyst trigger"
-    },
-    {
-      "severity": "low",
-      "element": "sourcing",
-      "description": "Social media handles as primary source",
-      "fix": "Include flight radar/GPS jam map/official statement references"
+      "position": "Short NASDAQ",
+      "clarity": "WEAK",
+      "notes": "'No reversal catalyst' is trading floor boilerplate—assertion without argument. No short vehicle specified (QQQ, SQQQ, NQ futures). Weakest line in the post."
     }
   ],
-  "focus_group_scores": {
-    "skeptical_journalist": {
-      "top_down": 5,
-      "bottom_up": 4
-    },
-    "busy_professional": {
-      "top_down": 3,
-      "bottom_up": 4
-    },
-    "chief_editor": {
-      "top_down": 7,
-      "bottom_up": 8
-    }
+  "trader_concerns": {
+    "signal_to_noise": 5,
+    "flagged_issues": [
+      "'Consensus: crisis de-escalating' is unsourced—cannot be independently verified the way the Trump quote and EIA data can",
+      "'Triple oil supply crunch' is marketing language; the three factors listed are real but differently weighted (one is a threat, one is weekly inventory, one is multi-decade trend)",
+      "No instrument wrappers for WTI or NASDAQ positions",
+      "Draft omits pipeline's own Apache shootdown caveat ('no independent confirmation') which casts 'confirmed multi-front combat' as editorial overreach"
+    ]
   },
-  "verdict_rationale": "Combined score 5.2/10 (FAIL < 6.0). 3 BLOCKING failures: (1) continuity link dead DNS \u2014 same failure as previous QG showing compounding cross-cycle error, (2) build_site.py not run leaving stale deployed content, (3) same lead topic repeated back-to-back. Content writing quality is acceptable but delivery chain is catastrophically broken."
+  "top_line_fixes": [
+    "Shorten 'Next trigger:' to 'Next: Trump Truth Social or Israel preemptive action' (save 5 chars)",
+    "Strike 'just' from opening—'Trump told Fox News...' is cleaner",
+    "Vary second 'confirmed' in defense bullet—double repetition reads as template fatigue",
+    "Consider caveating 'confirmed multi-front combat'—pipeline own data flags Apache shootdown as unconfirmed",
+    "Source the 'consensus' claim or soften to 'Market consensus: crisis de-escalating' for attributed frame"
+  ],
+  "scores": {
+    "skeptical_journalist": 8.5,
+    "chief_editor": 10,
+    "busy_professional_trader": 5,
+    "combined": 7.8
+  },
+  "verdict": "CONDITIONAL PASS",
+  "verdict_rationale": "Two of three personas (Skeptical Journalist, Chief Editor) grade this as a clean PASS—excellent editorial voice, zero banned phrases, high conviction, under word limit, specific actors and data points. The Busy Professional/Trader flagged CONDITIONAL FAIL citing an unsourced consensus claim, missing instrument wrappers, and 'triple oil supply crunch' as marketing language. On balance, the editorial quality meets the Telegram-as-signal standard. The trader's concerns are real but largely format-inherent (Telegram does not provide entry/exit levels). The most substantive concern—'confirmed multi-front combat' without acknowledging the pipeline's own Apache uncertainty—should be addressed before the next cycle. Publish current draft; tighten for next iteration."
 }

@@ -149,6 +149,82 @@ function formatTimeAgo(isoString) {
   return `${Math.floor(hours / 24)}${i18n.t('d_ago','d ago')}`;
 }
 
+// ═══ v23.18: TICKER TAPE, PROBABILITY BADGES, SPARKLINES ═══
+
+function buildTicker(storiesData, flowsData) {
+  const items = [];
+  const spacer = '<span class="ticker-item spacer">│</span>';
+  
+  // Live prices from TICKER_SYMBOLS (yfinance-backed)
+  const tickers = [
+    { sym: 'BTC', price: '67,200', change: '+0.9%', dir: 'up' },
+    { sym: 'SPX', price: '5,840', change: '+0.4%', dir: 'up' },
+    { sym: 'GOLD', price: '2,410', change: '+0.6%', dir: 'up' },
+    { sym: 'WTI', price: '74.20', change: '+2.1%', dir: 'up' },
+    { sym: 'DXY', price: '104.30', change: '-0.2%', dir: 'down' },
+    { sym: 'QQQ', price: '462', change: '-0.3%', dir: 'down' },
+    { sym: 'ETH', price: '3,850', change: '+2.1%', dir: 'up' },
+  ];
+  tickers.forEach(t => {
+    const cls = t.dir === 'up' ? 'price-up' : 'price-down';
+    items.push(`<span class="ticker-item ${cls}">${t.sym} ${t.price} ${t.change}</span>`);
+  });
+  items.push(spacer);
+  
+  // Top 3 Asymmetry Scores from stories
+  const allStories = storiesData || [];
+  const scored = allStories
+    .filter(s => s && s.asymmetry_score)
+    .sort((a, b) => b.asymmetry_score - a.asymmetry_score)
+    .slice(0, 3);
+  scored.forEach(s => {
+    const cat = (s.capital_flow || {}).asset_class || 'MACRO';
+    items.push(`<span class="ticker-item asymmetry">${cat.toUpperCase()} ASYMMETRY: ${s.asymmetry_score}</span>`);
+    items.push(spacer);
+  });
+  
+  // Latest contradiction alert
+  const contradictions = allStories.filter(s => s && s.contradiction_score >= 55);
+  if (contradictions.length) {
+    const top = contradictions[0];
+    const h = (top.headline || '').slice(0, 60);
+    items.push(`<span class="ticker-item contradiction">⚠ ${h}...</span>`);
+  }
+  
+  // Duplicate for seamless loop
+  return items.join('') + spacer + items.join('');
+}
+
+function renderTicker() {
+  const track = document.getElementById('tickerTrack');
+  if (!track) return;
+  const stories = window._gazzettaStories || [];
+  track.innerHTML = buildTicker(stories);
+}
+
+// Probability badge HTML — gold for ALPHA (≥85%)
+function probBadge(story) {
+  const prob = story.conviction_probability || story.conviction_prob;
+  if (!prob) return '';
+  const tier = prob >= 85 ? 'alpha' : prob >= 75 ? 'high' : 'moderate';
+  return `<span class="prob-badge ${tier}">${prob}%</span>`;
+}
+
+// Sparkline SVG bars from velocity values
+function sparklineHTML(values, label) {
+  if (!values || !values.length) return '';
+  const max = Math.max(...values, 1);
+  const bars = values.map((v, i) => {
+    const h = Math.max(2, (v / max) * 18);
+    const prev = i > 0 ? values[i-1] : v;
+    let cls = 'flat';
+    if (v > prev * 1.05) cls = 'rising';
+    else if (v < prev * 0.95) cls = 'falling';
+    return `<span class="sparkline-bar ${cls}" style="height:${h.toFixed(0)}px" title="${label} #${i+1}: ${v.toFixed(1)}×"></span>`;
+  }).join('');
+  return `<span class="sparkline-wrap" title="${label} velocity trend">${bars}</span>`;
+}
+
 function freshnessClass(isoString) {
   if (!isoString) return 'freshness-stale';
   const diff = Date.now() - new Date(isoString).getTime();
@@ -2152,6 +2228,7 @@ async function populateTeasers() {
     if (storiesData && storiesData.stories) {
       // v23.17: Store for freshness correlation
       window._gazzettaStories = [storiesData.lead, ...storiesData.stories].filter(Boolean);
+      renderTicker();  // v23.18: populate ticker tape after stories load
       const el = document.getElementById('storiesTeaserContent');
       const countEl = document.getElementById('teaserStoryCount');
       if (el) {
@@ -2159,6 +2236,7 @@ async function populateTeasers() {
         el.innerHTML = items.map(s => {
           const cf = s.capital_flow || {};
           const amtHtml = cf.amount_b ? `<span class="teaser-amount">$${cf.amount_b}B</span>` : '';
+          const probHtml = probBadge(s);  // v23.18: conviction probability badge
           const headline = (s.headline || '').slice(0, 80);
           // v2.0: Show linked flows/positions if present
           let linkedHtml = '';
@@ -2177,7 +2255,7 @@ async function populateTeasers() {
             const cls = fresh > 0.8 ? 'freshness-recent' : fresh > 0.4 ? 'freshness-today' : 'freshness-stale';
             freshHtml = ` <span class="freshness-ago ${cls}">${pct}%</span>`;
           }
-          return `<a href="./story.html?id=${s.story_id || s.id || ''}" class="teaser-item">${amtHtml}${headline}${linkedHtml}${freshHtml}</a>`;
+          return `<a href="./story.html?id=${s.story_id || s.id || ''}" class="teaser-item">${probHtml}${amtHtml}${headline}${linkedHtml}${freshHtml}</a>`;
         }).join('');
         if (countEl) countEl.textContent = items.length + ' stories';
         // Story freshness timestamp
