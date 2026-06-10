@@ -20,7 +20,7 @@
   "container_signal_title": "Альфа-Сигнал",
   "container_signal_subtitle": "Поток × Ставка × Событие",
   "container_signal_desc": "Триангуляция: интел-репорты × потоки × позиции. Дивергенция — это преимущество.",
-  "container_track_title": "Трек-Рекорд",
+  "container_track_title": "ТРЕК-РЕКОРД",
   "container_track_subtitle": "Проверяемые ставки",
   "container_track_desc": "Верифицируемые прогнозы — каждый вход, каждый исход, без предвзятости.",
   "footer_kyiv": "Киев · С 2025",
@@ -175,5 +175,17 @@
   "fresh_flows": "Потоки",
   "fresh_trades": "Позиции",
   "fresh_signal": "Сигнал",
-  "inflow_ratio": "Соотношение притоков"
+  "inflow_ratio": "Соотношение притоков",
+  "track_proof_title": "⚡ ИСТОРИЯ УСПЕШНЫХ СИГНАЛОВ",
+  "track_total_alpha": "Реализовано Альфа-Сигналов",
+  "track_win_rate": "Процент Успеха",
+  "track_success_velocity": "Скорость Успеха",
+  "track_full_link": "ПОЛНЫЙ ТРЕК-РЕКОРД →",
+  "diag_title": "ДИАГНОСТИКА СИСТЕМЫ",
+  "diag_verified": "Проверено",
+  "diag_calcs": "Расчётов",
+  "diag_ssl": "✓ ПОДТВЕРЖДЕНО",
+  "diag_cdn": "max-age=0",
+  "side_live_diag": "ДИАГНОСТИКА СИСТЕМЫ",
+  "side_live_corr": "КОРРЕЛЯЦИИ"
 }

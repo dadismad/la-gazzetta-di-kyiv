@@ -528,6 +528,33 @@ body {
 .teaser-full-link:hover { text-decoration: underline; }
 
 
+/* v23.21: Track Record proof-point */
+.track-proof-stat { display:flex; flex-direction:column; align-items:flex-start; gap:2px; min-width:100px; }
+.track-proof-value { font-family: var(--mono); font-size: 28px; font-weight: 900; }
+.track-proof-label { font-family: var(--sans); font-size: 9px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-muted); }
+
+/* v23.21: Probability Badge inline */
+.prob-badge-inline { display:inline-block; padding:1px 5px; border-radius:2px; font-family:var(--mono); font-size:9px; font-weight:700; margin-left:4px; }
+.prob-badge-inline.alpha { background:rgba(184,134,11,0.12); color:#B8860B; }
+.prob-badge-inline.high { background:rgba(37,99,235,0.10); color:#2563EB; }
+.prob-badge-inline.moderate { background:rgba(107,114,128,0.10); color:#6B7280; }
+
+/* v23.21: Mobile Progressive Discovery — expandable teaser badges */
+@media (max-width: 768px) {
+  .teaser-item { position: relative; }
+  .teaser-item .teaser-amount, .teaser-item .prob-badge, .teaser-item .teaser-linked,
+  .teaser-item .freshness-ago { display: none; }
+  .teaser-item.expanded .teaser-amount, .teaser-item.expanded .prob-badge,
+  .teaser-item.expanded .teaser-linked, .teaser-item.expanded .freshness-ago { display: inline; }
+  .teaser-item .asset-icon { font-size: 16px; margin-right: 6px; }
+  .teaser-item::after { content: '▸'; position:absolute; right:8px; top:50%; transform:translateY(-50%); font-size:10px; color:var(--ink-muted); }
+  .teaser-item.expanded::after { content: '▾'; }
+  .track-proof-stat { min-width: 70px; }
+  .track-proof-value { font-size: 22px !important; }
+  /* Horizontal slider 20px gap */
+  .product-nav-mobile { gap: 20px; padding: 0 20px; }
+}
+
 /* v23.6: Mobile product nav — horizontal scroll slider */
 @media (max-width: 768px) {
   .product-nav {

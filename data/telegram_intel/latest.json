@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-06-10T16:33:00Z",
+  "scan_time": "2026-06-10T17:10:57Z",
   "model": "deepseek-v4-flash",
   "channels_monitored": [
     "@trad_fin",
@@ -9,86 +9,103 @@
     "@ethanlevins",
     "@markettwits"
   ],
+  "market_context": {
+    "wti_crude": "$90.89 (+3.05% from prev close $88.20)",
+    "brent": "$93.78 (+2.55% from $91.45)",
+    "spy": "$729.07 (-1.08% from $737.05)",
+    "vix": "21.91 (prev close 18.92, +15.8%)",
+    "gold": "$4,146.60 (prev close $4,286.40, -3.3%)",
+    "note": "Oil already spiking on B-52 news. Gold dropping suggests liquidation for margin/cash — unusual given geopolitical risk. VIX surging confirms fear repricing."
+  },
   "stories": [
     {
       "priority": "CRITICAL",
-      "title": "B-52 BOMBER VECTORING MIDDLE EAST — TRANSPONDER OFF",
-      "sources": ["@MonitoringSituation"],
-      "timestamp": "2026-06-10T16:23:06Z",
-      "event": "KAN News reporter: a B-52 strategic American bomber detected on flight tracking sites heading from the US base in Sicily towards the Middle East. The plane turned off its transmitter — flight path unknown. This is a nuclear-capable strategic bomber, not a tactical asset.",
-      "context_timeline": "Earlier today (15:45-15:56 UTC): Trump press conference — alternates between 'will attack Iran hard' / 'going to hit them again hard today' and 'the deal is fully negotiated, they just need to sign' / 'want peace for the world'. At 15:51 UTC: Israeli jets over southern Lebanon and Bekaa. 16:15 UTC: Trump says US seized 22 Iranian oil ships in covert night operations.",
-      "consensus": "Market pricing Trump's Iran rhetoric as bluster. S&P down ~1.2% on the day. Oil elevated but not spiking. CPI data (12:30 UTC) was in-line — no Fed surprise. The consensus narrative: 'Deal is close, this is negotiating theater.'",
-      "contradiction": "A B-52 with transponder off heading from Sicily to the Middle East is NOT negotiating theater. B-52s are strategic bombers — they deploy to strike, not to intimidate. Turning off the transponder means operational security for a real mission. Combined with Trump's own words ('not going to say whether going to knock out bridges, power plants'), Israeli jets over Lebanon, and the admission of seizing 22 oil tankers — the US is executing a multi-axis escalation. The B-52 transponder-off is the tell the market is missing.",
+      "title": "US STRIKES HIT IRANIAN CIVILIAN WATER INFRASTRUCTURE — 20,000 WITHOUT WATER",
+      "sources": ["@ethanlevins"],
+      "timestamp": "2026-06-10T17:04:17Z",
+      "event": "US military strikes reportedly hit drinking water storage tanks in the Bamani district of Sirik county, Hormozgan province, Iran. 20,000 people are now without potable water. This is the first confirmed report of strikes hitting civilian water infrastructure in Iran.",
+      "context_timeline": "Ongoing escalation sequence: 15:45-15:56 UTC — Trump alternates between 'will attack Iran hard' / 'hit them again hard today' and 'deal is fully negotiated, just need to sign'. 15:51 UTC — Israeli jets over southern Lebanon and Bekaa. 16:15 UTC — Trump says US seized 22 Iranian oil ships in covert ops. 16:23 UTC — B-52 strategic bomber detected from Sicily heading Middle East, transponder off. 16:59 UTC — French soldier killed in Lebanon training accident. 17:04 UTC — US strikes confirmed hitting civilian water infrastructure in Hormozgan.",
+      "consensus": "Market pricing this as 'limited military strikes' / 'negotiating leverage theater'. SPY -1.08%. Oil +3% but not spiking parabolic. Consensus narrative: 'Both sides have off-ramps, deal gets signed this week.' VIX at 21.91 is elevated but not panic (was 18.92 prev close).",
+      "contradiction": "Hitting civilian WATER STORAGE TANKS is not 'limited strikes on military targets'. This is infrastructure warfare — the same playbook used against civilian power grids and water in other theaters. 20,000 civilians without water is a humanitarian escalation that will generate global headlines. Combined with a B-52 nuclear-capable bomber vectoring east with transponder off: this is a deliberate escalation narrative, not negotiation theater. The market consensus is WRONG. This is not a contained conflict — the US is systematically degrading Iranian civilian infrastructure.",
       "bet": {
-        "position": "LONG WTI crude, LONG VIX, SHORT SPY/QQQ",
-        "instrument": "CL (WTI futures), VIX futures/options, SPY/QQQ puts",
-        "entry": "Immediate — B-52 signal is 10 min old",
+        "position": "LONG WTI crude, LONG VIX, SHORT SPY/QQQ, scale into GOLD on dip",
+        "instrument": "CL futures, VIX calls (weekly), SPY puts, GLD",
+        "entry": "Immediate — water infrastructure strike is 6 min old, markets haven't priced it yet",
         "target_window": "1-2 hours",
-        "rationale": "When the B-52 vector becomes public market knowledge (it's already being reported), oil spikes $3-5/bbl, equities dump 2-3%, VIX surges. The consensus is positioned for a deal — this breaks that thesis."
+        "rationale": "The water strike is the escalation tell the market has been dismissing. When this hits mainstream news (water crisis narrative = emotional multiplier), the risk premium reprices. Oil targets $94-96 WTI. SPY targets $720-715. VIX targets 25-28. Gold dip to $4,100-4,150 is buying opportunity, not signal — likely margin liquidation creating artificial discount."
       },
       "benefit": {
-        "oil_directional": "+4% to +7% on WTI in 1-2 hours",
-        "equity_directional": "SPY -2% to -3.5%, QQQ -3% to -5%",
-        "vix_directional": "VIX from ~22 to 30+",
-        "volume_impact": "VERY HIGH — cross-asset flight to safety, oil volume surge on supply disruption premium"
+        "oil_directional": "WTI $94-96/bbl (+4-6% from current) in 1-2 hours",
+        "equity_directional": "SPY -2% to -3% from current ($715-720 range)",
+        "vix_directional": "VIX from 21.91 to 26-30 on escalation confirmation",
+        "gold_directional": "Gold discount buying opportunity — current -3.3% anomaly likely margin/forced selling, rebound to $4,250+ within 2-4 hours",
+        "volume_impact": "VERY HIGH — water infrastructure strike is a humanitarian narrative that mainstream media will amplify. Cross-asset repricing."
       }
     },
     {
       "priority": "HIGH",
-      "title": "IRAN OIL FLOW NORMALIZING — 2M BPD MOVING vs MARKET NARRATIVE OF TOTAL BLOCKADE",
-      "sources": ["@MonitoringSituation", "@ethanlevins"],
-      "timestamp": "2026-06-10T14:40:16Z",
-      "event": "Rapidan Energy Group reports ~2 million barrels/day of oil and related products now flowing out of the Persian Gulf. Over the weekend off Oman, 16 tankers clustered to transfer millions of barrels of stranded oil. Trump admitted seizing 22 Iranian ships in covert operations. Iran struck Bahrain and Jordan with missiles/drones in retaliation (05:13 UTC). US strikes hit Iran in response to Apache shoot-down (01:00 UTC).",
-      "consensus": "Iran is crippled by the blockade. 'Nothing gets through.' Iran is a failed state. The Hormuz blockade is 'the most successful in naval history.' Oil premium is justified by supply disruption.",
-      "contradiction": "2M bpd is flowing — that's not a total blockade. 16 tankers cluster-trading off Oman means the secondary market is functioning. Trump bragging about seizing ships while 2M bpd flows means either: (a) the blockade is leaky and oil is getting through via non-Iranian Gulf producers, or (b) Iran is selling through intermediaries. Either way the 'total blockade' narrative is propaganda, not fact. If the market realizes supply is flowing, the oil risk premium deflates. But simultaneously — B-52 heading to theater means new strikes, which re-inflates it. Net: extreme oil vol, direction depends on which story dominates next.",
+      "title": "B-52 STRATEGIC BOMBER VECTOR MIDDLE EAST — TRANSPONDER OFF — STILL UNRESOLVED (47 MIN OLD)",
+      "sources": ["@MonitoringSituation"],
+      "timestamp": "2026-06-10T16:23:06Z",
+      "event": "KAN News reporter: B-52 strategic American bomber detected on flight tracking heading from US base in Sicily toward the Middle East. Plane turned off transmitter — flight path unknown. Nuclear-capable strategic bomber. Still no confirmation of landing location or mission outcome as of 17:10 UTC.",
+      "consensus": "Market pricing: 'B-52 is standard deterrence posture, not a strike mission.' Oil up but not parabolic. The B-52 news is being dismissed as saber-rattling.",
+      "contradiction": "47 minutes have passed. The B-52 either landed at an undisclosed location in the Middle East (operational security) or has already conducted/joined a strike package. Combined with the confirmed water infrastructure strike at 17:04 UTC — the B-52 was NOT deterrence. It was mission-ready ordnance heading to theater. The fact that its landing hasn't been announced means it's either still airborne on a mission or parked at a secured base for follow-on strikes. Either way, the 'deterrence' narrative is dead.",
       "bet": {
-        "position": "LONG oil vol (options straddle), directionally LONG crude",
-        "instrument": "WTI weekly options straddle, CL futures",
-        "entry": "Immediate — vol is cheap relative to binary event risk",
-        "target_window": "1-2 hours",
-        "rationale": "Two contradictory forces on oil (flow normalization + escalation). The straddle captures whichever breaks first. If B-52 strikes happen: oil explodes higher. If deal announced: oil dumps. Directional bias LONG because escalation risk dominates."
+        "position": "Maintain LONG crude, LONG VIX — the B-52 is the nuclear escalation umbrella that the water strike was conducted under",
+        "instrument": "Hold CL longs, add WTI weekly call spreads ($95-100 strikes)",
+        "entry": "Already positioned — add to position on any pullback",
+        "target_window": "1-2 hours (B-52 confirmation window)",
+        "rationale": "If the B-52 conducted strikes (or is still airborne for imminent strikes), the escalation premium re-rates sharply. Nuclear-capable bomber in theater raises the stakes beyond anything currently priced."
       },
       "benefit": {
-        "vol_directional": "Oil implied vol +10-15 points in 1-2 hours",
-        "oil_directional_on_escalation": "+$4-7/bbl on confirmed B-52 strike mission",
-        "oil_directional_on_deal": "-$3-5/bbl if 'deal signed' headline hits",
-        "volume_impact": "EXTREME — binary event on oil, gamma squeeze potential"
+        "oil_contingent": "If B-52 strike mission confirmed + water infrastructure: WTI breaches $95 within minutes",
+        "equity_contingent": "SPY acceleration to -2.5% intraday",
+        "vix_contingent": "VIX 25+ if B-52 delivered ordnance",
+        "volume_impact": "EXTREME on B-52 confirmation — unmatched by any other catalyst in the current setup"
       }
     },
     {
       "priority": "MEDIUM",
-      "title": "ISRAEL-LEBANON — JETS OVER BEKAA + LEBANON AIRSTRIKES",
-      "sources": ["@ethanlevins", "@MonitoringSituation"],
-      "timestamp": "2026-06-10T15:51:05Z",
-      "event": "Israeli jets over southern Lebanon and the Bekaa Valley area. IAF launched airstrike in Bekaa Valley (15:23 UTC). Earlier (Jun 7 previous cycle): IDF Tyre evacuation, Nabatieh push. This was flagged as expanding front risk previously.",
-      "consensus": "Israel-Lebanon front is a sideshow to Iran. Market barely pricing it.",
-      "contradiction": "If the US is about to bomb Iran hard (B-52, Trump statements), Israel opening a Lebanon front simultaneously creates a TWO-FRONT escalation in 24 hours. Iran's proxies (Hezbollah) are already engaged. A B-52 strike on Iran + Israeli ground op in Lebanon = regional war, not contained strikes. The 'sideshow' narrative breaks if both happen.",
+      "title": "FRENCH SOLDIER KILLED IN LEBANON — TRAINING ACCIDENT DURING HEIGHTENED TENSIONS",
+      "sources": ["@ethanlevins"],
+      "timestamp": "2026-06-10T16:59:45Z",
+      "event": "French Private First Class Florian Gillet of the 8th RPIMa died in Lebanon from accidental gunfire during training preparation. He was part of an operational partnership mission for the Lebanese Armed Forces. This occurs while Israeli jets are actively over southern Lebanon and the Bekaa Valley.",
+      "consensus": "Not market-relevant — training accident, no political implications.",
+      "contradiction": "A French soldier dying in Lebanon — even accidentally — during a period where Israeli jets are bombing Lebanese territory (Bekaa strike at 15:23 UTC) and French forces are training with the Lebanese military creates a layered diplomatic risk. France already has complex relations in Lebanon (UNIFIL mandate, historical ties, large diaspora). A French service member's death, even accidental, during an active Israeli bombing campaign will draw French parliamentary scrutiny. Macron's government is already fragile — this could force political statements or diplomatic demarches that alter the multi-front calculus. Not a market mover directly, but a compounding risk factor.",
       "bet": {
-        "position": "LONG VIX, LONG oil, LONG gold",
-        "instrument": "VIX calls, GLD, USO",
-        "entry": "Accumulate on any dip",
-        "target_window": "2-4 hours",
-        "rationale": "Two-front escalation risk is underpriced. If B-52 mission confirmed + Israel hits Lebanon simultaneously, it's a regional war premium repricing."
+        "position": "None direct — monitor for French political response in next 24 hours",
+        "instrument": "Watch EUR/USD, French bond spreads for reaction",
+        "entry": "N/A — informational only",
+        "target_window": "24 hours",
+        "rationale": "If France recalls or reduces its Lebanon mission, it signals NATO fracture on Middle East policy. Lower probability but high impact on EUR if it escalates."
       },
       "benefit": {
-        "vix_directional": "VIX 28-35 on multi-front confirmation",
-        "gold_directional": "+2-4% on safe haven surge",
-        "volume_impact": "HIGH — gold breaking out on geopolitical risk premium"
+        "direct_market_impact": "LOW — no immediate tradeable signal",
+        "second_order": "If France makes diplomatic statement on Israel-Lebanon, adds to multi-front complexity premium",
+        "volume_impact": "LOW — institutional awareness but no immediate positioning trigger"
       }
     }
   ],
   "stale_ignored": [
-    "Claude Fable 5 / Mythos 5 launch — priced in yesterday, not 2-hr actionable",
+    "US CPI May inline at 4.2% Y/Y — already priced, no Fed reaction change",
+    "Putin signaling Russian rate cuts — Russia domestic, not 2-hr event-driven for global markets",
+    "Roblox unblocked in Russia — not 2-hr actionable",
     "SpaceX IPO demand >$250B — June 12 catalyst, not immediate",
-    "South Korea $350B US investment — structural, not event-driven 2-hr",
-    "CPI inline — no Fed reaction function change",
-    "Ukraine-Russia drone strikes on Cheboksary, Kharkiv, Odesa — ongoing, no new 2-hr catalyst"
+    "Anthropic Claude Fable 5 launch — priced in yesterday",
+    "South Korea $350B investment — structural, not 2-hr event",
+    "Ukraine-Russia drone/missile strikes on Cheboksary, Kharkiv, Odesa — ongoing baseline, no new catalyst",
+    "Russian inflation May 0.17% vs 0.22% est — slightly below, no market-moving divergence",
+    "OPEC production at lowest since 2000 — structural bullish oil, already priced",
+    "US beef prices record high — inflation narrative priced, not 2-hr event",
+    "Russian MoD supply officer assassinated — internal security issue, not market-moving 2-hr"
   ],
   "watch_next_30min": [
     "B-52 landing location / airbase identification in Middle East",
-    "CENTCOM confirmation of new strike orders on Iran",
-    "Any Israel-Lebanon ground incursion reports",
-    "Peskov / Kremlin reaction to US-Iran escalation",
-    "Oil futures volume spike at US afternoon close"
+    "CENTCOM or Pentagon confirmation of water infrastructure strike",
+    "Any Iranian retaliation announcement or missile launch",
+    "Israel-Lebanon escalation (ground incursion reports)",
+    "Oil futures after-hours volume spike",
+    "Gold price — watch for reversal from current -3.3% anomaly (margin-selling thesis test)",
+    "VIX futures — if 22.5 breaks, VIX gamma squeeze begins targeting 25+"
   ]
 }

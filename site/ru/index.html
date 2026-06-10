@@ -332,6 +332,31 @@
     </div>
   </section>
 
+  <!-- v23.21: Track Record Proof — Trust Machine -->
+  <section class="container" id="trackProof" style="background:linear-gradient(135deg,#FFFDF5,#FFFFFF);border:1px solid rgba(184,134,11,0.15);">
+    <div class="container-header">
+      <span class="container-title" style="color:var(--gold)">⚡ ИСТОРИЯ УСПЕШНЫХ СИГНАЛОВ</span>
+      <span class="container-subtitle" id="trackProofSub" style="font-family:var(--mono);font-size:11px;color:var(--ink-muted)">—</span>
+    </div>
+    <div class="container-body">
+      <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center;">
+        <div class="track-proof-stat">
+          <span class="track-proof-value" id="trackProofTotal" style="font-family:var(--mono);font-size:28px;font-weight:900;color:var(--gold)">—</span>
+          <span class="track-proof-label" style="font-family:var(--sans);font-size:9px;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-muted)">Реализовано Альфа-Сигналов</span>
+        </div>
+        <div class="track-proof-stat">
+          <span class="track-proof-value" id="trackProofWinRate" style="font-family:var(--mono);font-size:28px;font-weight:900;color:var(--ink)">—</span>
+          <span class="track-proof-label" style="font-family:var(--sans);font-size:9px;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-muted)">Процент Успеха</span>
+        </div>
+        <div class="track-proof-stat">
+          <span class="track-proof-value" id="trackProofVelocity" style="font-family:var(--mono);font-size:28px;font-weight:900;color:#059669">—</span>
+          <span class="track-proof-label" style="font-family:var(--sans);font-size:9px;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-muted)">Скорость Успеха</span>
+        </div>
+        <a href="./track.html" style="font-family:var(--sans);font-size:10px;font-weight:700;color:var(--gold);text-decoration:none;margin-left:auto;">ПОЛНЫЙ ТРЕК-РЕКОРД →</a>
+      </div>
+    </div>
+  </section>
+
   <!-- v2.0: Services Utility Grid — persona-driven value props -->
   <section class="container" id="servicesGrid" style="background:transparent;border:none;">
     <div class="container-header">
@@ -405,6 +430,16 @@
         <a href="./trades.html" class="side-bc-link"><span data-i18n="side_all_trades">→ All Trades</span> <span class="side-bc-desc" data-i18n="side_all_trades_desc">Position dashboard</span></a>
       </nav>
     </div>
+    <!-- v23.21: Live System Diagnostics -->
+    <div class="side-section">
+      <div class="side-section-label">ДИАГНОСТИКА СИСТЕМЫ</div>
+      <div class="side-freshness" id="liveDiagnostics">
+        <div class="fresh-item"><span class="fresh-dot" style="background:var(--gold)"></span><span>Проверено</span><span class="fresh-age" id="diagLastVerified" style="color:var(--gold)">—</span></div>
+        <div class="fresh-item"><span class="fresh-dot" style="background:#2563EB"></span><span>Расчётов</span><span class="fresh-age" id="diagCalcs" style="color:#2563EB">—</span></div>
+        <div class="fresh-item"><span class="fresh-dot" style="background:#059669"></span><span>SSL / ETag</span><span class="fresh-age" id="diagSSLEtag" style="color:#059669">✓ ПОДТВЕРЖДЕНО</span></div>
+        <div class="fresh-item"><span class="fresh-dot" style="background:#059669"></span><span>CDN Кэш</span><span class="fresh-age" id="diagCDN" style="color:#059669">max-age=0</span></div>
+      </div>
+    </div>
     <div class="side-section">
       <div class="side-section-label" data-i18n="side_gazzetta">GAZZETTA</div>
       <nav class="side-meta-links">
@@ -472,16 +507,31 @@
 
 
 <script>
-/* v23.6: Mobile hint expander — tap asset icon to reveal hook + flow */
+/* v23.21: Mobile Progressive Discovery — tap teaser card to expand hidden badges */
 (function(){
   if (window.innerWidth > 768) return;
+  // Expandable teaser cards
   document.addEventListener('click', function(e){
+    var teaser = e.target.closest('.teaser-item');
+    if (teaser) {
+      teaser.classList.toggle('expanded');
+      return;
+    }
+    // Legacy chip support
     var chip = e.target.closest('.meta-chip');
     if (!chip) return;
     chip.classList.toggle('expanded');
     var detail = chip.querySelector('.meta-chip-detail');
     if (detail) detail.classList.toggle('visible');
   });
+  // Snap-align horizontal slider with 20px padding
+  var slider = document.querySelector('.product-nav-mobile');
+  if (slider) {
+    slider.style.scrollSnapType = 'x mandatory';
+    slider.style.gap = '20px';
+    slider.style.padding = '0 20px';
+    slider.querySelectorAll('a').forEach(function(a){ a.style.scrollSnapAlign = 'start'; });
+  }
 })();
 </script>
 
