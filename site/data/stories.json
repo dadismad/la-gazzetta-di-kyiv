@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T08:37:30.707314+00:00",
+  "generated_at": "2026-06-10T10:04:15.915848+00:00",
   "lead": {
     "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
     "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
@@ -175,20 +175,6 @@
             "conviction": "LOW"
           }
         }
-      },
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
       }
     },
     {
@@ -283,20 +269,6 @@
             "conviction": "LOW"
           }
         }
-      },
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
       }
     },
     {
@@ -387,20 +359,6 @@
             "conviction": "LOW"
           }
         }
-      },
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
       }
     },
     {
@@ -488,20 +446,6 @@
             "target": "TBD",
             "conviction": "LOW"
           }
-        }
-      },
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
         }
       }
     },
@@ -602,20 +546,6 @@
             "conviction": "MEDIUM"
           }
         }
-      },
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
       }
     },
     {
@@ -656,21 +586,7 @@
       "freshness": "breaking",
       "impacted_flows": [
         "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
-      ],
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
+      ]
     },
     {
       "story_id": "n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1",
@@ -710,21 +626,7 @@
       "freshness": "breaking",
       "impacted_flows": [
         "flow_n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1"
-      ],
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
@@ -761,21 +663,7 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-09T13:03:26.472043+00:00",
-      "freshness": "breaking",
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
+      "freshness": "breaking"
     },
     {
       "story_id": "n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
@@ -815,21 +703,7 @@
       "freshness": "breaking",
       "impacted_flows": [
         "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149"
-      ],
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__us_adp_nonfarm_29k_vs_35_7k_prior__labor_market_cracking",
@@ -866,21 +740,7 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-09T13:03:26.471960+00:00",
-      "freshness": "breaking",
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
+      "freshness": "breaking"
     },
     {
       "story_id": "n21_multi_pillar__kuwait_discussing_hormuz_bypass_via_saudi_uae_pipelines__ei",
@@ -972,20 +832,6 @@
             "target": "+10-15%",
             "conviction": "MEDIUM"
           }
-        }
-      },
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
         }
       }
     },
@@ -1084,20 +930,6 @@
             "target": "+10-15%",
             "conviction": "MEDIUM"
           }
-        }
-      },
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
         }
       }
     },
@@ -1198,20 +1030,6 @@
             "conviction": "MEDIUM"
           }
         }
-      },
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
       }
     },
     {
@@ -1301,20 +1119,6 @@
             "target": "+10-15%",
             "conviction": "MEDIUM"
           }
-        }
-      },
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
         }
       }
     },
@@ -1406,20 +1210,6 @@
             "conviction": "MEDIUM"
           }
         }
-      },
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
       }
     },
     {
@@ -1460,21 +1250,7 @@
       "freshness": "breaking",
       "impacted_flows": [
         "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for"
-      ],
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__iran_begins_charging_ships_1_5-2m_per_transit_through_strai",
@@ -1511,21 +1287,7 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-07T13:25:44.305960+00:00",
-      "freshness": "developing",
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
+      "freshness": "developing"
     },
     {
       "story_id": "n21_multi_pillar__ukraine_assassinates_russian_colonel_missile_supply_chief",
@@ -1560,21 +1322,7 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-09T15:25:35.438908+00:00",
-      "freshness": "breaking",
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
+      "freshness": "breaking"
     },
     {
       "story_id": "n21_multi_pillar__israel_cabinet_any_lebanon_rocket__automatic_beirut_strike",
@@ -1611,21 +1359,7 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-09T12:39:30.660314+00:00",
-      "freshness": "breaking",
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
+      "freshness": "breaking"
     },
     {
       "story_id": "n21_multi_pillar__idf_declares_readiness_to_immediately_resume_operations_agai",
@@ -1660,21 +1394,7 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-09T15:25:35.438303+00:00",
-      "freshness": "breaking",
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
+      "freshness": "breaking"
     },
     {
       "story_id": "n21_blockchain_agentic__blackrock_transferring_btc_to_exchanges_for_client_sales__o",
@@ -1711,21 +1431,7 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-09T12:39:30.660230+00:00",
-      "freshness": "breaking",
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
+      "freshness": "breaking"
     },
     {
       "story_id": "n21_china_ascendancy__breaking_eu_proposes_biggest_sanctions_package_in_2_years",
@@ -1762,21 +1468,7 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-09T12:39:30.659597+00:00",
-      "freshness": "breaking",
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
+      "freshness": "breaking"
     },
     {
       "story_id": "n21_multi_pillar__israel_strikes_beirut_suburbs__explosion_in_beirut_idf_att",
@@ -1813,21 +1505,7 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-07T13:25:44.306329+00:00",
-      "freshness": "developing",
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
+      "freshness": "developing"
     },
     {
       "story_id": "n21_multi_pillar__israel_launches_full_ground_operations_in_lebanon__hezbolla",
@@ -1864,21 +1542,7 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-07T12:25:48.811774+00:00",
-      "freshness": "developing",
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
+      "freshness": "developing"
     },
     {
       "story_id": "n21_abundance_tech__btc_crash__worst_week_since_ftx_collapse_microstrategy_bou",
@@ -1970,20 +1634,6 @@
             "target": "+10-15%",
             "conviction": "MEDIUM"
           }
-        }
-      },
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
         }
       }
     },
@@ -2082,20 +1732,6 @@
             "conviction": "MEDIUM"
           }
         }
-      },
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
       }
     },
     {
@@ -2189,20 +1825,6 @@
             "conviction": "MEDIUM"
           }
         }
-      },
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
       }
     },
     {
@@ -2243,21 +1865,7 @@
       "freshness": "breaking",
       "impacted_flows": [
         "flow_n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t"
-      ],
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__israel_s_nabatieh_offensive__earthquake_that_topples_hezbo",
@@ -2297,21 +1905,7 @@
       "freshness": "breaking",
       "impacted_flows": [
         "flow_n21_multi_pillar__israel_s_nabatieh_offensive__earthquake_that_topples_hezbo"
-      ],
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
+      ]
     },
     {
       "story_id": "n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv",
@@ -2351,21 +1945,7 @@
       "freshness": "breaking",
       "impacted_flows": [
         "flow_n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv"
-      ],
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
+      ]
     },
     {
       "story_id": "n21_multi_pillar__opec_meets_today__188k_bpd_increase_approved_from_july_bu",
@@ -2402,21 +1982,7 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-07T13:25:44.306398+00:00",
-      "freshness": "developing",
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
+      "freshness": "developing"
     },
     {
       "story_id": "n21_multi_pillar__israel_orders_full_evacuation_of_tyre__cabinet_authorizes_a",
@@ -2451,21 +2017,7 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-09T15:25:35.438787+00:00",
-      "freshness": "breaking",
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
+      "freshness": "breaking"
     },
     {
       "story_id": "n21_china_ascendancy__opec_meeting_today__expected_to_approve_188k_bpd_productio",
@@ -2502,21 +2054,7 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-07T12:25:48.811717+00:00",
-      "freshness": "developing",
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
+      "freshness": "developing"
     },
     {
       "story_id": "n21_multi_pillar__iran_launches_drones_toward_strait_of_hormuz__us_shoots_dow",
@@ -2553,21 +2091,7 @@
       "evidence": [],
       "source": "telegram_intel",
       "generated_at": "2026-06-07T12:25:48.811425+00:00",
-      "freshness": "developing",
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
+      "freshness": "developing"
     },
     {
       "story_id": "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles",
@@ -2605,95 +2129,7 @@
         "claim": "$5.0B ↑ equities",
         "confidence": "65%"
       },
-      "generated_at": "2026-06-09T13:03:26.472079+00:00",
-      "market_regime": {
-        "Money Flow": {
-          "direction": "BULLISH",
-          "strength": 55
-        },
-        "Top Heavy": {
-          "direction": "EXTREME",
-          "strength": "N/A"
-        },
-        "Bond Fear": {
-          "direction": "HIGH",
-          "strength": 100
-        }
-      }
-    },
-    {
-      "story_id": "n21_abundance_tech__spacex_spcx_pre_ipo_futures_collapse_27_pct_ahead_of_june_12_listing",
-      "headline": "SpaceX SPCX Pre-IPO Futures Collapse 27% in 3 Weeks Ahead of June 12 Listing — $250B Demand vs Worst Macro Backdrop Since 2020",
-      "sector": "space",
-      "pillar": "abundance_tech",
-      "paradigm_pillar": "abundance_tech",
-      "paradigm_implications": [
-        "Space economy narratives face their first real macro stress test — the largest IPO in history debuts into an active US-Iran war, Asia tech bloodbath (SoftBank -8%), and 30Y yields at 2007 highs",
-        "If SPCX debuts flat or negative, it signals risk appetite exhaustion at the top of the market — a 'canary in the coal mine' for growth/narrative-driven valuations",
-        "SpaceX's $40B annual capex requires continuous capital markets access — a weak IPO reception could constrain Starlink and Starship timelines, preserving the launch bottleneck for competitors"
-      ],
-      "they_say": "Source: markettwits, infinityhedge, trad_fin. SpaceX IPO priced at $135/share for June 12 Nasdaq listing under ticker SPCX. Pre-IPO futures on Hyperliquid dropped 27% over 3 weeks of trading (peak to trough). Order book still 4x oversubscribed with $250B+ demand vs $75B raise target. Valuation expected >$1.8T. Financials: Q1 2026 rev $4.7B, operating loss $1.9B (burning cash). Musk has 85% voting control. Anthropic paying $1.25B/month for compute through 2029. 2025 net loss $2.6B on $18.7B revenue.",
-      "reality": "The 27% pre-IPO futures drawdown in 3 weeks is SEVERE — it suggests institutional demand is softening as the macro environment deteriorates rapidly (Iran war escalation, tech selloff, Fed hawkish, 30Y at 2007 highs). Operating losses are massive ($4.28B in Q1 alone — losing nearly a dollar for every dollar of revenue). This is a narrative/vision stock, not a value one — and narrative is getting crushed by macro reality. SpaceX is the market's 'animal spirits' proxy; a flat or negative IPO debut would be a major sentiment signal. The 4x oversubscribed figure may reflect price-insensitive retail demand allocations, not institutional conviction at $135.",
-      "thesis": "The timing works against SPCX. Iran war escalation + Asia tech crash + Fed rate hike risk + 30Y at 2007 highs = maximum headwind for a growth narrative IPO. Short pre-IPO futures or position for a subdued first day. If holding IPO allocation: sell day 1 spike into demand — do not hold. Long puts on SPCX as a macro hedge on narrative-driven equities.",
-      "actors": ["Elon Musk", "SpaceX", "Anthropic", "Nasdaq"],
-      "horizon": "24-72h",
-      "confidence": "medium",
-      "tier": "DEVELOPING",
-      "actionable_trade": "SHORT SPCX pre-IPO futures on Hyperliquid. If holding IPO allocation: SELL day 1. LONG puts on SPCX. The asymmetric trade: short the hype into the listing — macro environment is a headwind on every axis.",
-      "contradiction_score": 65,
-      "invalidation_trigger": "Nasdaq rallies 3%+ before June 12, reversing the risk-off regime. Iran announces verified ceasefire within 24 hours.",
-      "portfolio_implication": "Gazzetta di Kyiv: 'SpaceX Goes Public Into a War — The IPO That Breaks the Market's Animal Spirits.' Bet&Benefit: Short SPCX pre-IPO futures. The 27% drawdown is the market's first honest signal that animal spirits are fading. If SPCX debuts flat, growth/SPAC narratives enter a new regime of skepticism.",
-      "image_url": "",
-      "capital_flow": {
-        "claim": "$75.0B inflow equity (SPCX IPO raise)",
-        "direction": "inflow",
-        "amount": 75.0,
-        "denomination": "USD",
-        "asset_class": "equities",
-        "pace": "concentrated (June 12 listing)",
-        "projected": "If SPCX absorbs $75B in a risk-off environment, it crowds out other equity issuance for weeks. The opportunity cost of capital is massive — every dollar into SPCX is a dollar not available for secondary issuance or other IPOs.",
-        "confidence": "60%",
-        "positioning": "SHORT — the macro backdrop makes this a sell-the-news event. The $250B demand figure is misleading — much of it is price-insensitive allocations that may not convert to sustained holders."
-      },
-      "extremum": "The largest IPO in history debuting into an active US-Iran war, Asia tech crash, and 30Y yields at 2007 highs is the most extreme macro-IPO mismatch since Facebook's 2012 IPO (which also suffered from a macro headwind and lost 50% in months). If SPCX defies the macro and rallies, it would be the most bullish signal for animal spirits since the 2021 SPAC mania."
-    },
-    {
-      "story_id": "n21_china_ascendancy__byd_2b_euro_5_min_charger_push_eu_ev_infrastructure",
-      "headline": "BYD to Spend €2B on 5-Minute EV Charging Network in Europe — China's Industrial Playbook Goes Directly Into EU Heartland",
-      "sector": "automotive",
-      "pillar": "china_ascendancy",
-      "paradigm_pillar": "china_ascendancy",
-      "paradigm_implications": [
-        "BYD bypassing import tariffs by investing directly in European infrastructure — same playbook as Chinese solar manufacturing localization, now applied to EVs and charging",
-        "5-minute charging technology, if real, is a category-killer for range anxiety — the last psychological barrier to EV mass adoption in Europe falls, reshaping the competitive landscape against European OEMs",
-        "BYD charging network creates a 'BYD ecosystem' lock-in effect: BYD vehicles + BYD chargers + BYD batteries = vertical integration that European automakers cannot match without multi-year partnerships or JVs"
-      ],
-      "they_say": "Source: markettwits/Financial Times. BYD will spend €2B developing 5-minute EV charging infrastructure in Europe. Chinese automakers are aggressively entering the European EV market. BYD Chairman Wang Chuanfu says the rapid-charging network will 'eliminate range anxiety.' China auto exports up 63% YoY in Jan-May 2026 (CPCA data). Europe is simultaneously discussing the 21st sanctions package against Russia while opening infrastructure investment to Chinese firms.",
-      "reality": "BYD spending €2B on European charging infrastructure is a structural shift, not a small test. This directly competes with European charging networks (Ionity, Fastned, Shell Recharge) and creates a proprietary charging ecosystem for BYD — the EV equivalent of Tesla's Supercharger network but bankrolled by Chinese state-backed capital. The 5-minute charge claim, if technologically validated, leapfrogs current 20-30 minute fast charging standards. This is China's industrial playbook in action: first, dominate manufacturing (BYD already world's largest EV maker), then own the infrastructure layer. For EU policymakers, this is a dilemma: welcome Chinese green infrastructure investment or protect domestic charging companies? The contradiction with EU 21st sanctions package discussions (targeting Russia-linked firms) is sharp — the EU needs Chinese capital for its green transition but fears Chinese infrastructure dependency. Germany's DIW just cut 2026 GDP forecast to 0.5% citing Iran energy shock — Beijing offers both cheaper EVs and infrastructure capital that debt-constrained European governments cannot match.",
-      "thesis": "LONG BYD (if tradeable in your jurisdiction), LONG European EV supply chain stocks exposed to faster charging adoption (STLA, RACE). The 5-minute charge removes the primary consumer objection to EV adoption. SHORT legacy European charging network stocks (if tradeable) — BYD's €2B is a direct competitive threat. LONG battery tech (lithium, cobalt, nickel) on accelerated EV adoption timeline in Europe's largest auto market.",
-      "actors": ["BYD", "Wang Chuanfu", "EU Commission", "German auto industry"],
-      "horizon": "1-4 weeks",
-      "confidence": "medium",
-      "tier": "DEVELOPING",
-      "actionable_trade": "LONG BYD (overweight China EV champion). LONG European charging-adjacent infrastructure (copper, grid technology). SHORT European charging pure-plays — BYD's capital advantage is overwhelming. The asymmetric trade: if 5-minute charging delivers, it re-rates the entire European EV market.",
-      "contradiction_score": 58,
-      "invalidation_trigger": "BYD fails to demonstrate 5-minute charging in a verified public test within 90 days. EU imposes tariffs on Chinese charging equipment before deployment begins.",
-      "portfolio_implication": "Gazzetta di Kyiv: 'BYD's €2B Blitz — China Builds Europe's EV Future Faster Than Europe Can.' Bet&Benefit: This is the china_ascendancy thesis in concrete, investable form. BYD is doing what Huawei, CATL, and Xiaomi did in their sectors: win through execution speed and capital density. For EU fragmentation: the inability of European capital to match Chinese state-backed infrastructure spending is a structural weakness that compounds over time.",
-      "image_url": "",
-      "capital_flow": {
-        "claim": "€2.0B outflow China to EU (BYD charging infrastructure FDI)",
-        "direction": "outflow",
-        "amount": 2.0,
-        "denomination": "EUR",
-        "asset_class": "infrastructure",
-        "pace": "multi-year (2026-2029 deployment)",
-        "projected": "€2.0B is initial tranche — expect follow-on investment as charging network expands. BYD has access to Chinese state bank financing at rates European competitors cannot match. The EU's €2T+ green transition plan is increasingly dependent on Chinese capital and technology.",
-        "confidence": "65%",
-        "positioning": "LONG — this is early-stage of a structural China-into-Europe capital flow that reconfigures the European auto and energy infrastructure sectors."
-      },
-      "extremum": "BYD building Europe's 5-minute charging network while the EU discusses its 21st sanctions package against Russia and German GDP forecasts are cut to 0.5% is the most extreme illustration of China_ascendancy vs EU_fragmentation. A Chinese company solving Europe's charging infrastructure problem that European capital and industry cannot solve — this is the institutional inversion of 'Made in China 2025' becoming 'Built for Europe by China.'"
+      "generated_at": "2026-06-09T13:03:26.472079+00:00"
     }
-  ],
-  "enriched_at": "2026-06-10T09:00:20.774417Z",
-  "enriched_by": "enrich_market_data.py"
+  ]
 }

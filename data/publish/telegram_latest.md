@@ -1,10 +1,14 @@
-Europe unveils tech sovereignty package — "We want to be sure nobody has a kill switch." $34B defense inflow confirms the shift. ASML chief warns EU not to direct chip supplies.
+Strike window LIVE. US refueling planes over Middle East. GPS jammed in Tehran. Iran on combat alert.
 
-Divergence: consensus says "open markets." Reality: Europe walling off US tech because trust in the kill-switch guarantee is gone. The transatlantic tech marriage is ending.
+Vance says "deal before midterms." Oil at $88. VIX at 16. Markets price peace. Pentagon prepares war.
 
-• Long EU defense/tech (ASML, Thales, Airbus)
-• Short US big tech with EU revenue exposure
+If strike hits before Asian open: oil gaps $95+, VIX>20. If diplomacy wins: oil fades $85.
 
-¹ "We want to be sure nobody has a kill switch" — EU official at tech sovereignty launch (source: WIRED/FT)
+• Long WTI, GLD into the window
+• Short SPX on escalation
 
-Continuity: www.lagazzettadikyiv.com | Next trigger: EU Council vote on sovereignty package timelines
+Human detail: South Korea just paid $350B (~20% of GDP) to US for tariff relief — protection payment, not partnership.
+
+Continuity: lagazzettadikyiv.com | Next trigger: US CENTCOM statement due 18:00 UTC
+
+Full briefing: lagazzettadikyiv.com
