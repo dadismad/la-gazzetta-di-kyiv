@@ -1,10 +1,10 @@
-US refueling planes over Middle East, GPS jammed in Tehran — Iran on full combat alert. Apache shootdown was 24h ago, no strike yet. But the pre-strike posture is confirmed.
+Europe unveils tech sovereignty package — "We want to be sure nobody has a kill switch." $34B defense inflow confirms the shift. ASML chief warns EU not to direct chip supplies.
 
-Contradiction: Vance says deal "before midterms." Markets price diplomacy — oil below $90. Military signals say strike window is open.
+Divergence: consensus says "open markets." Reality: Europe walling off US tech because trust in the kill-switch guarantee is gone. The transatlantic tech marriage is ending.
 
-• Long WTI, GLD — if strike hits, oil gaps $95+
-• Long VIX calls — vol asymmetry widens
+• Long EU defense/tech (ASML, Thales, Airbus)
+• Short US big tech with EU revenue exposure
 
-¹ US refueling aircraft positioned over Middle East, GPS interference in Tehran, Iran army on full combat alert (source: ethanlevins/3489-90, markettwits/373486)
+¹ "We want to be sure nobody has a kill switch" — EU official at tech sovereignty launch (source: WIRED/FT)
 
-Continuity: gazzetta-di-kyiv.com | Next trigger: US retaliation window (0-12h)
+Continuity: www.lagazzettadikyiv.com | Next trigger: EU Council vote on sovereignty package timelines

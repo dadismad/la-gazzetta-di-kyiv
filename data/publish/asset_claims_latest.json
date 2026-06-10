@@ -1,41 +1,41 @@
 {
-  "generated_at": "2026-06-10T12:00:00Z",
+  "generated_at": "2026-06-10T13:00:00Z",
   "claims": [
     {
-      "ticker": "CL",
+      "ticker": "ASML",
       "direction": "up",
-      "price_target": "$95+ on US retaliation",
-      "strategy": "OTM call spread — asymmetric lottery on strike window",
-      "win_rate": "40% (high asymmetry — market pricing diplomacy vs. military signals diverging)",
-      "horizon": "0-12h",
-      "narrative_driven_pct": 85,
-      "crowd_belief": "Vance says Iran deal before midterms. Oil below $90 pricing diplomatic resolution. Polymarket 'US strike on Iran by July' at 18%.",
-      "contradiction": "US refueling planes positioned, GPS jammed in Tehran — markets price peace, military prepares war. The divergence between betting odds and physical posture IS the signal.",
-      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait"
+      "price_target": "€850+ on EU tech sovereignty capex cycle",
+      "strategy": "Core long — EU chip sovereignty requires ASML lithography regardless of export restrictions",
+      "win_rate": "65% (EU sovereignty capex is multi-year, not cyclical)",
+      "horizon": "3-6 months",
+      "narrative_driven_pct": 55,
+      "crowd_belief": "Consensus sees ASML as China-export-risk stock. EU sovereignty bid is underappreciated demand driver.",
+      "contradiction": "ASML is priced as a China story but its growth driver for 2026-2028 is European defense/tech sovereignty capex. The market is looking at the wrong geography.",
+      "story_id": "n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired"
     },
     {
-      "ticker": "GLD",
+      "ticker": "EADSF",
       "direction": "up",
-      "price_target": "New highs on kinetic escalation flight-to-safety",
-      "strategy": "Core long — structural hedge against US-Iran direct military engagement",
-      "win_rate": "70% (gold rallies in every US-Middle East kinetic engagement since 1990)",
-      "horizon": "24-72h",
-      "narrative_driven_pct": 65,
-      "crowd_belief": "Gold ETF flows flat. Citi cut 3-month forecast to $4000. Consensus says gold peaked.",
-      "contradiction": "Gold flat while US-Iran goes kinetic. The absence of move IS the setup. Citi downgrade is contrarian buy signal.",
-      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait"
+      "price_target": "€210+ on European defense spending acceleration",
+      "strategy": "Core long — European defense/tech sovereignty is a structural multi-year bid",
+      "win_rate": "70% (European defense budgets rising across all NATO members)",
+      "horizon": "6-12 months",
+      "narrative_driven_pct": 60,
+      "crowd_belief": "Defense stocks priced for US spending cycle. European sovereign defense bid is additive and largely unpriced.",
+      "contradiction": "EU defense inflow ($34B) is structural, not cyclical — driven by US trust erosion, not threat perception. This repricing has years to run.",
+      "story_id": "n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired"
     },
     {
-      "ticker": "VIX",
-      "direction": "up",
-      "price_target": "20+ on strike trigger",
-      "strategy": "Calls — general tail hedge for US-Iran kinetic escalation",
-      "win_rate": "60% (Apache shootdown + refueling planes = pre-strike VIX setup)",
-      "horizon": "0-24h",
-      "narrative_driven_pct": 75,
-      "crowd_belief": "VIX anchored below 17. Markets pricing contained tit-for-tat despite military pre-strike posture.",
-      "contradiction": "Implied vol pricing 'contained conflict' while US refueling planes are airborne and Iran is on combat alert.",
-      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait"
+      "ticker": "QQQ",
+      "direction": "down",
+      "price_target": "-8% on EU revenue exposure repricing",
+      "strategy": "Short US big tech on EU sovereignty headwind — pair with long EU defense/tech",
+      "win_rate": "55% (EU is 20-30% of US big tech revenue; sovereignty push is a multi-year de-rating)",
+      "horizon": "3-6 months",
+      "narrative_driven_pct": 40,
+      "crowd_belief": "Magnificent 7 earnings driven by AI capex. EU sovereign push seen as noise, not structural.",
+      "contradiction": "If EU systematically replaces US cloud/chip infrastructure, the revenue hit compounds over 3-5 years. Markets are discounting a 1-year impact but it's a structural multiple de-rating.",
+      "story_id": "n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired"
     }
   ]
 }
