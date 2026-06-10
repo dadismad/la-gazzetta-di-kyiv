@@ -177,13 +177,13 @@ def test_flow_data_integrity():
                 check(True, f"{sid}: pace_multiplier={pace} ✓")
 
             # Cross-verify: story's amount_b should match the linked flow's amount_b
-            # v23.10: Drift is now expected — story-derived amounts are preserved, not overwritten by flow JOIN.
-            # Only flag as WARNING (not FAIL) when mismatch exceeds 10x threshold (likely data corruption).
+            # v23.20: SLS (Story-Level Scaling) produces proportional amounts — stories get 2-18% of flow total.
+            # Ratio can be up to 50x for SETTLING-tier stories linked to large flows. Accept up to 60x.
             flow = flow_by_id.get(flow_id, {})
             flow_amount = flow.get("amount_b", 0)
             if abs(amount - flow_amount) > 0.01 and flow_amount > 0:
                 ratio = max(amount, flow_amount) / max(min(amount, flow_amount), 0.01)
-                if ratio > 20:
+                if ratio > 60:
                     check(False, f"{sid}: capital_flow.amount_b=${amount}B ≠ flow.amount_b=${flow_amount}B (EXTREME DRIFT — possible corruption)")
                     mismatch_count += 1
                 else:

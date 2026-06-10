@@ -185,19 +185,24 @@
       <span id="heroProductCount">—</span>
       <span data-i18n="hero_subtitle_p2">intelligence products — from narrative reports to verifiable bets.</span>
     </p>
-    <!-- v2.0: Hero hook indicators -->
+    <!-- v23.20: Refined indicators — Asymmetry Dial, Divergence, Freshness -->
     <div class="hero-indicators" id="heroIndicators">
-      <a href="./signal.html" class="hero-ind" id="heroContradictions" title="Active narrative-to-data divergences">
+      <!-- Asymmetry Dial — SVG gauge replacing text -->
+      <div class="hero-ind hero-asymmetry" id="heroAsymmetry" title="Price-Narrative Delta">
+        <svg viewBox="0 0 100 60" class="hero-gauge-svg">
+          <path d="M 8 52 A 42 42 0 0 1 92 52" fill="none" stroke="#E5E7EB" stroke-width="6" stroke-linecap="round"/>
+          <path id="heroGaugeArc" d="M 8 52 A 42 42 0 0 1 92 52" fill="none" stroke="#B8860B" stroke-width="6" stroke-linecap="round" stroke-dasharray="0 132"/>
+          <text x="50" y="28" text-anchor="middle" font-family="var(--mono)" font-size="16" font-weight="900" fill="var(--ink)" id="heroGaugeValue">—</text>
+          <text x="50" y="40" text-anchor="middle" font-family="var(--sans)" font-size="7" fill="var(--ink-muted)" id="heroGaugeLabel">ASYMMETRY</text>
+        </svg>
+      </div>
+      <a href="./signal.html" class="hero-ind" id="heroDivergence" title="Active narrative-price contradictions">
         <span class="hero-ind-value">—</span>
-        <span class="hero-ind-label" data-i18n="hero_contradictions">Contradictions</span>
+        <span class="hero-ind-label">DIVERGENCE</span>
       </a>
-      <a href="./flow-nodes.html" class="hero-ind" id="heroTopVelocity" title="Highest-momentum capital flow category">
+      <a href="./flows.html" class="hero-ind" id="heroFreshness" title="Market correlation status">
         <span class="hero-ind-value">—</span>
-        <span class="hero-ind-label" data-i18n="hero_top_velocity">Top Velocity</span>
-      </a>
-      <a href="./flows.html" class="hero-ind" id="heroFreshness" title="Last system data refresh">
-        <span class="hero-ind-value">—</span>
-        <span class="hero-ind-label" data-i18n="hero_freshness">Freshness</span>
+        <span class="hero-ind-label">FRESHNESS</span>
       </a>
     </div>
   </div>

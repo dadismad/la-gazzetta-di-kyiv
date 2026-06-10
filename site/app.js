@@ -518,25 +518,27 @@ async function fetchFlows() {
 // ── v2.0: Hero indicator updates ──
 function updateHeroIndicators(flowsData) {
   if (!flowsData || !flowsData.flows) return;
-  // Contradictions: flows with confidence < 70%
-  const contradictions = flowsData.flows.filter(f => f.confidence_pct && f.confidence_pct < 70).length;
-  const contraEl = document.getElementById('heroContradictions');
-  if (contraEl) {
-    contraEl.querySelector('.hero-ind-value').textContent = contradictions;
-    contraEl.querySelector('.hero-ind-value').style.color = contradictions >= 2 ? '#DC2626' : 'var(--ink)';
+  // Divergence gauge: number of contradicted flows (confidence < 70%)
+  const divergences = flowsData.flows.filter(f => f.confidence_pct && f.confidence_pct < 70).length;
+  const divEl = document.getElementById('heroDivergence');
+  if (divEl) {
+    divEl.querySelector('.hero-ind-value').textContent = divergences;
+    divEl.querySelector('.hero-ind-value').style.color = divergences >= 2 ? '#DC2626' : 'var(--ink)';
   }
-  // Top velocity: highest pace_multiplier across flows
-  let topVel = 0, topCat = '';
-  flowsData.flows.forEach(f => {
-    if ((f.pace_multiplier || 1) > topVel) {
-      topVel = f.pace_multiplier || 1;
-      topCat = f.asset_class || '';
-    }
-  });
-  const velEl = document.getElementById('heroTopVelocity');
-  if (velEl) {
-    velEl.querySelector('.hero-ind-value').textContent = `${topVel.toFixed(1)}×`;
-    velEl.title = `Highest velocity: ${topCat}`;
+  // Asymmetry gauge dial: update arc + value from max asymmetry score
+  const storiesData = window._gazzettaStories || [];
+  let maxAsym = 0, asymTier = 'LOW';
+  storiesData.forEach(s => { if (s && s.asymmetry_score > maxAsym) { maxAsym = s.asymmetry_score; asymTier = s.asymmetry_tier || 'LOW'; } });
+  const gaugeArc = document.getElementById('heroGaugeArc');
+  const gaugeVal = document.getElementById('heroGaugeValue');
+  const gaugeLbl = document.getElementById('heroGaugeLabel');
+  if (gaugeArc && gaugeVal) {
+    const circumference = 132; // arc length
+    const dash = (maxAsym / 100) * circumference;
+    gaugeArc.setAttribute('stroke-dasharray', `${dash} ${circumference}`);
+    gaugeArc.setAttribute('stroke', maxAsym >= 65 ? '#DC2626' : maxAsym >= 40 ? '#B8860B' : '#6B7280');
+    gaugeVal.textContent = maxAsym || '—';
+    gaugeLbl.textContent = asymTier === 'MAX ASYMMETRY' ? 'MAX' : asymTier === 'HIGH ASYMMETRY' ? 'HIGH' : asymTier === 'MODERATE' ? 'MODERATE' : 'LOW';
   }
   // Freshness 2.0: market correlation (v23.17)
   const freshEl = document.getElementById('heroFreshness');
@@ -1347,19 +1349,19 @@ function livingCardHTML(story, isLead) {
         ${extremumHTML}
         <a href="./story.html?id=${story.story_id}" class="intel-report-link" data-i18n="story_full_report">Full intelligence report →</a>
         <div class="share-row">
-          <button class="share-btn copy-link" title="${i18n.t('share_copy','Copy link')}" onclick="copyShareLink(this.closest('.card'))">
+          <button class="share-btn copy-link" title="${i18n.t('share_copy','Copy link')}" data-action="copy-link">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
           </button>
-          <button class="share-btn share-x" title="${i18n.t('share_x','Share on X')}" onclick="shareToX(this.closest('.card'))">
+          <button class="share-btn share-x" title="${i18n.t('share_x','Share on X')}" data-action="share-x">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7.5 7.5L4 19"/><path d="M20 4l-7.5 7.5L20 19"/></svg>
           </button>
-          <button class="share-btn share-facebook" title="${i18n.t('share_facebook','Share on Facebook')}" onclick="shareToFacebook(this.closest('.card'))">
+          <button class="share-btn share-facebook" title="${i18n.t('share_facebook','Share on Facebook')}" data-action="share-facebook">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           </button>
-          <button class="share-btn share-telegram" title="${i18n.t('share_telegram','Share on Telegram')}" onclick="shareToTelegram(this.closest('.card'))">
+          <button class="share-btn share-telegram" title="${i18n.t('share_telegram','Share on Telegram')}" data-action="share-telegram">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           </button>
-          <button class="share-btn share-reddit" title="${i18n.t('share_reddit','Share on Reddit')}" onclick="shareToReddit(this.closest('.card'))">
+          <button class="share-btn share-reddit" title="${i18n.t('share_reddit','Share on Reddit')}" data-action="share-reddit">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8s-4-1-8 2"/><path d="M8 16s4 1 8-2"/><circle cx="9" cy="9" r="0.5" fill="currentColor"/><circle cx="15" cy="9" r="0.5" fill="currentColor"/></svg>
           </button>
         </div>
@@ -2097,6 +2099,20 @@ function shareToReddit(card) {
 // ═══════════════════════════════════════════════════════════════
 
 async function boot() {
+  // v23.20: Event delegation — handles all share buttons + interlinks
+  document.addEventListener('click', function(e) {
+    const btn = e.target.closest('[data-action]');
+    if (!btn) return;
+    const action = btn.getAttribute('data-action');
+    const card = btn.closest('.card') || btn.closest('.story-card');
+    switch(action) {
+      case 'copy-link': copyShareLink(card); break;
+      case 'share-x': shareToX(card); break;
+      case 'share-facebook': shareToFacebook(card); break;
+      case 'share-telegram': shareToTelegram(card); break;
+      case 'share-reddit': shareToReddit(card); break;
+    }
+  });
   // Wait for i18n translations to finish loading before rendering
   if (window.i18n && !window.i18n._ready) {
     await new Promise(resolve => {

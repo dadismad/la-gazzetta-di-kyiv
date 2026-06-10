@@ -17,6 +17,7 @@ import os
 import sys
 import shutil
 import sqlite3
+import hashlib
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -92,29 +93,30 @@ def compile_stories(conn):
                     pillar = story.get("pillar", "")
                     flow_total = float(primary_flow["amount_b"])
                     # --- Story-Level Scaling fractions ---
+                    # PSV: Proportional Story Volume — tier maps to category fraction
                     tier_fractions = {
-                        "BREAKING":   0.35,
-                        "DEVELOPING": 0.20,
-                        "ACTIVE":     0.12,
-                        "SETTLING":   0.05,
+                        "BREAKING":   0.18,   # Critical → 15-20%
+                        "DEVELOPING": 0.12,   # High → 8-14%
+                        "ACTIVE":     0.05,   # Moderate → 2-7%
+                        "SETTLING":   0.02,   # Background → 1-3%
                     }
                     pillar_bonus = 1.15 if pillar in ("geoeconomic", "sovereign") else 1.0
                     base_fraction = tier_fractions.get(tier, 0.10)
                     scaled = flow_total * base_fraction * pillar_bonus
-                    # --- Deterministic jitter (±5%) from headline hash ---
-                    headline = story.get("headline", "") or ""
-                    h = hash(headline) % 1001
-                    jitter_pct = -5.0 + (h / 1000.0) * 10.0  # -5% to +5%
-                    jittered = scaled * (1.0 + jitter_pct / 100.0)
-                    # Floor at $200M, round to 1 decimal
-                    cf["amount_b"] = round(max(0.2, jittered), 1)
-                    # Store SLS diagnostic for audit
-                    cf["_sls_diagnostic"] = {
+                    # --- SHA256 Uniqueness Guard: per-story deterministic jitter ---
+                    story_id = story.get("story_id", story.get("headline", ""))
+                    # Full SHA256 → float in [0.85, 1.15] for unique per-story multiplier
+                    h_full = hashlib.sha256(story_id.encode()).hexdigest()
+                    h_float = int(h_full[:12], 16) / (16**12)  # 0.0–1.0
+                    uniqueness_mult = 0.85 + h_float * 0.30  # 0.85–1.15
+                    cf["amount_b"] = round(max(0.05, scaled * uniqueness_mult), 2)
+                    # Store diagnostic
+                    cf["_psv_diagnostic"] = {
                         "flow_total": flow_total,
                         "tier": tier,
                         "base_fraction": base_fraction,
                         "pillar_bonus": pillar_bonus,
-                        "jitter_pct": round(jitter_pct, 2),
+                        "uniqueness_mult": round(uniqueness_mult, 4),
                         "computed": cf["amount_b"],
                     }
                 if not cf.get("pace_multiplier"):
