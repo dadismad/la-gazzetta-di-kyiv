@@ -31,10 +31,6 @@ def compile_stories(conn):
     """Query stories, reconstruct full JSON, resolve impact_flows links."""
     rows = conn.execute("""
         SELECT id, full_json FROM stories
-        WHERE (
-            json_extract(full_json, '$.source') NOT LIKE 'osint%'
-            OR json_extract(full_json, '$.source') IS NULL
-        )
         ORDER BY
             CASE tier
                 WHEN 'BREAKING'   THEN 0

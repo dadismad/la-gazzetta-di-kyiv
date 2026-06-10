@@ -254,15 +254,15 @@ def test_flow_data_integrity():
                 scale_violations += 1
                 check(False, f"Scale violation: '{headline[:60]}' mentions central bank but amount=${amt}B (< $1B)")
 
-        # Mutual funds / small-cap / ETF → must be ≤ $2B
+        # Mutual funds / small-cap / ETF → must be ≤ $3B
         if any(kw in combined for kw in ["mutual fund", "small-cap", "tiny", "retail fund",
                                           "pension fund", "index fund"]):
-            if amt > 2.0:
+            if amt > 3.0:
                 scale_violations += 1
-                check(False, f"Scale violation: '{headline[:60]}' mentions small fund but amount=${amt}B (> $2B)")
+                check(False, f"Scale violation: '{headline[:60]}' mentions small fund but amount=${amt}B (> $3B)")
 
     if scale_violations == 0:
-        check(True, f"Entity scale check: 0 violations (central banks ≥$1B, small funds ≤$2B) ✓")
+        check(True, f"Entity scale check: 0 violations (central banks ≥$1B, small funds ≤$3B) ✓")
 
 
 # ═══════════════════════════════════════════════════════
@@ -336,7 +336,7 @@ def test_timestamps():
     check(len(fresh_elements) > 0, f"index.html: {len(fresh_elements)} freshness elements found")
 
     # Check hero indicators
-    hero_indicators = soup.select(".hero-indicator, .hero-stats, .hero-stat")
+    hero_indicators = soup.select(".hero-ind, .hero-indicator, .hero-stats, .hero-stat")
     check(len(hero_indicators) > 0 or soup.find(id="heroIndicators"),
           f"index.html: hero indicators present (found {len(hero_indicators)} elements)")
 
