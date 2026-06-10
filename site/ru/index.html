@@ -432,20 +432,7 @@
   <script src="./i18n.041121bb.js"></script>
 <script src="./app.2104a06a.js"></script>
 
-<!-- Retail onboarding — first-visit tooltip (v22.16) -->
-<div id="onboardingOverlay" style="display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:white;padding:12px 18px;border-radius:0;font-family:Inter,system-ui;font-size:12px;line-height:1.5;z-index:9999;max-width:360px;box-shadow:none;cursor:pointer;" onclick="this.style.display='none';localStorage.setItem('gazzetta_onboarded','1');">
-  <strong>Welcome to La Gazzetta di Kyiv</strong><br>
-  We track where big money moves → decode why → show you how to position.<br>
-  <span style="opacity:0.7;">Stories → Flows → Trades → Signal → Track Record.</span><br>
-  <span style="font-size:10px;opacity:0.5;">Tap anywhere to dismiss</span>
-</div>
-<script>
-(function(){
-  if (!localStorage.getItem('gazzetta_onboarded')) {
-    setTimeout(function(){ document.getElementById('onboardingOverlay').style.display='block'; }, 1500);
-  }
-})();
-</script>
+
 
 <script>
 (function(){

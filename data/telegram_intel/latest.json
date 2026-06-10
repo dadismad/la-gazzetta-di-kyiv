@@ -1,114 +1,54 @@
 {
-  "scrape_time": "2026-06-10T15:25:00Z",
-  "model_used": "deepseek-v4-flash",
-  "horizon": "Next 1-2 hours (~15:25-17:25 UTC / 11:25-13:25 ET)",
-  "time_context": "Wednesday June 10, 15:25 UTC — US equities mid-afternoon session. CPI in-line (+4.2% YoY) at 12:30. EIA crude -7.227M vs -3M expected at 14:30. OPEC at lowest since 2000 at 14:40. US inflation at 3-year high (14:49). Markets digesting: NASDAQ -1% earlier, S&P -1.2% yesterday. Bond traders pricing Fed hike in 2026. Trump just signed Secure America Act at 15:20 — could make Iran statement at ceremony. Israel struck Lebanon Bekaa Valley at 15:23 — FRESH.",
-  "channels_monitored": [
-    "@trad_fin",
-    "@MonitoringSituation",
-    "@ASupersharij",
-    "@infinityhedge",
-    "@ethanlevins",
-    "@markettwits"
-  ],
-  "channel_status": {
-    "@trad_fin": "LOW — Latest at 15:17 (Anthropic CEO on Iran strike). Mostly tech/IPO news, not real-time geopolitical. Last strategic signal: US completed Iran strikes (00:57).",
-    "@MonitoringSituation": "MODERATE — Latest at 14:40 (2M bpd flowing through Hormuz bypass). Key early posts: Trump threat to hit power plants/bridges (11:22). Active but last post 45min ago.",
-    "@ASupersharij": "ACTIVE — Russian-language, Ukraine focus. Latest at 15:12 (strategic analysis on Russia's position, bridge logistics war). Key: GRAU supply officer killed in car bomb (14:30). Putin calls for negotiations (13:41). Fuel crisis in Kuban from refinery strikes.",
-    "@infinityhedge": "DEAD — Latest from 12:30 CPI data. No fresh content. Last 5 days of archive posts.",
-    "@ethanlevins": "HOT — FRESH: Israel airstrike Bekaa Valley 15:23. Earlier: Ukraine-Russia logistics tipping point analysis (13:47), Zatoka Bridge struck (13:40). Best real-time source.",
-    "@markettwits": "HOT — Continuous high-frequency. Latest: Trump signed Secure America Act 15:20, Russian stocks attempting reversal on Putin rate signal 15:01. Key: EIA -7.227M (14:30), OPEC lowest since 2000 (14:40), US inflation 3-year high (14:49), Fold +80% selling BTC (14:26)."
-  },
-  "summary_stats": {
-    "total_messages_fetched": 116,
-    "messages_last_30min": 8,
-    "messages_last_2h": 25,
-    "actionable_stories_identified": 3,
-    "critical_new_data_since_prev_scan": "Israel airstrike Bekaa Valley Lebanon (15:23), Trump signs Secure America Act ceremony — potential Iran comments (15:20), US inflation at 3-year high bonds pricing Fed hike (14:49), OPEC production lowest since 2000 (14:40), EIA crude -7.227M (14:30), Putin signals rate cut basis (14:30), Russian stocks reversal attempt (15:01), Fold +80% selling BTC for debt (14:26), Ripple-Mastercard AI-agent payments (14:20), Israel warplanes strike southern Lebanon (13:32)"
-  },
+  "scrape_time": "2026-06-10T18:55:00Z",
+  "analysis_model": "deepseek-v4-flash",
+  "time_horizon": "1-2 hours",
   "stories": [
     {
-      "id": "israel-lebanon-bekaa-strike-20260610-1525",
       "rank": 1,
-      "materiality_score": 9,
-      "title": "ISRAEL STRIKES BEKAA VALLEY, EASTERN LEBANON — FRESH AIRSTRIKE (15:23 UTC). Netanyahu Reaffirmed Iran Strike Posture 84 Min Earlier. Israel Already Bombing Southern Lebanon Repeatedly Despite Ceasefire.",
-      "freshness": "15:23 UTC (2 minutes ago — FRESHEST). Netanyahu reaffirmation: 13:59 UTC (86 min ago). Southern Lebanon strikes: 13:32 UTC (113 min ago). Hezbollah launches into northern Israel: 21:12 (yesterday). Yemen ballistic missile failed launch toward Israel: 22:01 (yesterday).",
-      "source_channels": ["@ethanlevins", "@markettwits"],
-      "event": "At 15:23 UTC, the Israeli Air Force launched an airstrike in the Bekaa Valley area of eastern Lebanon — this is distinct from the ongoing southern Lebanon operations and represents a geographic expansion of Israeli strikes. 86 minutes earlier, Netanyahu said 'We will continue to act decisively against Iran and its agents' (13:59). Israeli warplanes also struck Homain al-Fuqa in Nabatiyeh, southern Lebanon at 13:32. This comes after: (1) IDF officer from Egoz Recon Unit died of wounds from southern Lebanon clashes, (2) Israeli military leader stated 'impossible to disarm Hezbollah without full occupation of Lebanon,' (3) 2,500 Hezbollah fighters operating south of Litani despite ceasefire. Yemen also launched ballistic missile at Israel last night (failed). Hezbollah launched toward northern Israel yesterday (most intercepted). The multi-front Israel escalation is accelerating in real-time.",
-      "consensus_narrative": "Bekaa Valley is standard Israeli counter-Hezbollah targeting. Israel has been hitting Hezbollah weapons convoys and infrastructure in eastern Lebanon for years. This is not an expansion of the conflict — it's routine interdiction of Hezbollah supply routes from Syria through Bekaa. Markets are pricing zero risk of broader war. Oil is stable despite the headlines. CPI data shows no inflation surprise, so the stagflation thesis is overblown.",
-      "contradiction": "Four reasons this is NOT routine: (1) Bekaa strike comes on the same day Netanyahu reaffirmed 'decisive action against Iran and its agents' — the Israel-Lebanon and Israel-Iran tracks are converging, not separate. (2) The timing — right after Trump's Secure America Act signing ceremony (15:20) — suggests coordinated US-Israel escalation posture, not independent Israeli operations. (3) Southern Lebanon already being hit repeatedly despite ceasefire terms that included halting demolitions. The ceasefire framework is visibly failing. (4) US State Department called on Iran to 'cease these actions' at 13:29 — explicit US diplomatic engagement signals Washington expects escalation, not de-escalation. The multi-front Middle East war (Israel-Hezbollah, US-Iran, Yemen-Israel) is intensifying, and markets still have not priced a regional war scenario.",
-      "bet": {
-        "direction": "LONG oil (escalation confirms supply disruption risk), LONG gold (regional war premium), LONG defense (multi-front conflict), SHORT NASDAQ (risk-off into close)",
-        "assets": [
-          "WTI crude ($CL) — EIA -7.227M already confirms physical tightness. OPEC at lowest since 2000 is structural. Bekaa strike + Netanyahu posture = escalation risk premium that widens. $89-92 target zone with afternoon drift higher.",
-          "Gold ($GLD) — US inflation at 3-year high + Canada BoC energy inflation warning + regional war expansion = stagflation bid. $2,750+ is the target.",
-          "QQQ/SHORT NASDAQ — NASDAQ already -1% at low. No catalyst for reversal. Israel-Bekaa strike is risk-off headline after 14:00 ET. Short into US equity close for weekend carry risk.",
-          "Defense ($ITA, $LMT, $GD) — US striking Iran, Israel striking Lebanon, Israel preparing strikes on Iran, Yemen launching missiles at Israel. Multi-front war = sustained defense budget expansion."
-        ],
-        "trigger": "Netanyahu makes public statement on Bekaa operation = immediate escalation of risk pricing. Any Hezbollah retaliation across northern Israel = oil gaps higher. Trump says anything about Iran at Secure America Act ceremony (15:20 was signing time — statement may come imminently) = 1-2% WTI spike.",
-        "horizon": "Next 2 hours through US equity close (16:00 ET / 20:00 UTC). Weekend carry risk is elevated — no ceasefire framework holding across any front.",
-        "confidence": "HIGH — corroborated across @ethanlevins, @markettwits, @MonitoringSituation. Real-time strike reporting + leadership statements consistent."
-      },
-      "benefit": {
-        "Gazzetta di Kyiv": "FRONT PAGE: 'Israel Just Expanded Its War to Eastern Lebanon — Netanyahu Is Running Out of Off-Ramps.' Frame as 'Middle East 2026: Four Wars, No Door.' Connect: US-Iran, Israel-Lebanon, Israel-Yemen, Ukraine-Russia — all active simultaneously. 'The US can't arm four fronts — who loses first? Ukraine?' The Bekaa strike is concrete escalation proof. Tie to Ukraine: 'Israel's Bekaa strike proves drone warfare enables precision deep strikes — same technology Ukraine used to hit St. Petersburg.'",
-        "Bet&Benefit": "IMMEDIATE ACTION: Oil longs into US close. EIA + OPEC data already bullish. Bekaa strike is the escalation catalyst. If Trump makes Iran statement at Secure America Act ceremony, WTI could spike $2 intraday. Position for Friday close gap risk. Gold as weekend hedge."
-      }
+      "event": "Trump announces renewed military strikes on Iran — 'WILL BE ATTACKING IRAN HARD' / 'Today we will strike Iran hard again'",
+      "sources": ["trad_fin", "MonitoringSituation", "markettwits", "ethanlevins", "infinityhedge"],
+      "timeline": "Breaking 15:48-15:55 UTC. US strikes already completed overnight (20 targets). Trump now threatening second wave targeting power plants and bridges. Israel also preparing strikes on Iran.",
+      "consensus_narrative": "Escalation-de-escalation whiplash. Iran shot down US Apache over Hormuz → US retaliatory strikes overnight → Iran struck Bahrain/Jordan → Trump now threatens 'hard' attacks on infrastructure. But simultaneously says 'they just need to sign the paper' and deal is 'fully negotiated'. Market reading: volatility spike, but traders expect de-escalation before US close.",
+      "contradiction": "Trump flipped from 'strikes completed' (00:57 UTC) to 'will attack hard again' (15:48 UTC) within 15 hours. Parallel messaging: (a) 'deal is done / just needs signing' vs (b) 'going to hit them again today'. Iran's military 'doesn't exist anymore' per Trump, yet Iran struck Bahrain/Jordan successfully. Biggest contradiction: the deal that Trump says is 'fully negotiated' is somehow simultaneous with renewed bombing.",
+      "bet": "SHORT oil/energy into the threat spike, target fade within 2 hours. Every prior Iran escalation under Trump has faded within the same session once 'deal is close' narrative re-emerges. If WTI spikes above $78 on headline, short. If Trump goes live on Fox with more threats, wait 15 min for peak, then position for fade. The 'Praise Be To Allah' signal from Trump (infinityhedge/26681) confirms he's oscillating back toward resolution. Also: short volatility (UVXY) into US close — VIX spike is a sell.",
+      "benefit": "Oil spike fade: WTI likely to settle back to $74-76 range within 2 hours as deal narrative reasserts. Iran deal completion would drop oil $5-8/bbl. If Trump instead follows through with infrastructure strikes (bridges/power plants) — genuine escalation, not bluff — then long oil, short equities, long defense (RTX, LMT). Watch for: Trump signing Secure America Act (15:20 UTC) could be the venue for announcement.",
+      "confidence": 75,
+      "market_impact_potential": "HIGH",
+      "expiry": "2026-06-10T21:00:00Z"
     },
     {
-      "id": "eia-opec-us-inflation-trilateral-oil-bull-20260610-1525",
       "rank": 2,
-      "materiality_score": 8.5,
-      "title": "TRIPLE OIL BULL SIGNAL: EIA -7.227M (2x Expectation), OPEC Lowest Since 2000, US Inflation Hits 3-Year High Bond Traders Price Fed Hike — Stagflation Cocktail Confirmed.",
-      "freshness": "EIA crude: 14:30 UTC (55 min ago). OPEC lowest since 2000: 14:40 UTC (45 min ago). US inflation 3-year high: 14:49 UTC (36 min ago). Putin rate cut signal: 14:30 UTC (55 min ago). Beef prices record high: 14:47 UTC (38 min ago).",
-      "source_channels": ["@markettwits", "@MonitoringSituation", "@infinityhedge"],
-      "event": "TRIPLE SIGNAL CLUSTER: (1) EIA crude inventories: -7.227M vs -3.0M expected — MORE THAN DOUBLE the expected draw. Prior week was -7.974M. Two consecutive massive draws. (2) OPEC production at lowest level since at least the year 2000 per RTRS survey — structural multi-decade low. (3) US inflation officially at 3-year high per Bloomberg — bond traders keeping bets on Fed rate HIKE in 2026 after CPI data. Retail beef prices in US at all-time record high (14:47). Meanwhile: Putin at 14:30 signaled basis for rate cut in Russia. 16 tankers clustering off Oman flowing 2M bpd through Hormuz bypass (14:40 from MonitoringSituation) — far below normal 17M bpd.",
-      "consensus_narrative": "EIA draw is seasonal (summer driving season). OPEC at lows is about quota compliance, not supply disruption. US inflation is driven by used cars and shelter, not oil. Bond market pricing a Fed hike is a positioning squeeze, not a real probability. The Hormuz bypass of 2M bpd shows the blockade is working — oil is getting through. This is all noise in a range-bound $85-90 oil market.",
-      "contradiction": "Four reasons this is structural, not noise: (1) EIA -7.227M is NOT seasonal — last week was -7.974M and this week -7.227M. Two consecutive weeks of massive draws in a period when the Hormuz blockade is supposedly 'leaking' 2M bpd. The math doesn't work: if 2M bpd is flowing out, inventories should be building or stable, not drawing 7M barrels/week. This implies the real flow-through is MUCH lower than 2M bpd. (2) OPEC at lowest since 2000 is not 'compliance' — OPEC members can't ramp because Iran (a major producer) is blockaded. This is a forced supply cut, not voluntary. (3) US inflation at 3-year high + bond traders pricing Fed HIKE = stagflation is being validated by market pricing, not dismissed. Central banks will face a dilemma: cut rates into inflation (bullish gold, bearish bonds) or hike into a slowing economy (bullish USD, bearish equities). (4) Putin signaling rate cuts WHILE inflation remains elevated in Russia shows the global central bank dissonance — every major economy is facing different flavors of the same inflation problem. The only consistent trade is commodities.",
-      "bet": {
-        "direction": "LONG oil, LONG gold, LONG commodity equities, SHORT bonds (TLT), SHORT NASDAQ (stagflation kills growth stocks)",
-        "assets": [
-          "WTI crude ($CL) — EIA -7.227M + OPEC lows + Hormuz blockade + Israel-Lebanon escalation = multiple overlapping bullish catalysts. $89-92 within 2 hours. If Trump mentions Iran at bill signing, $93 is possible.",
-          "Gold ($GLD) — Inflation at 3-year high + stagflation narrative + Middle East war = safe haven and inflation hedge simultaneously. $2,750+ is the near-term magnet.",
-          "Crude ETF ($USO, $XLE) — Direct beta to the oil thesis. XLE also catches refining margins if product inventories follow crude lower.",
-          "SHORT TLT / LONG TBT — Bond traders pricing Fed hike means long end under pressure. Inflation 3-year high is not transitory if oil stays elevated.",
-          "Defense ($ITA, $LMT) — Multi-front war = sustained high defense spending."
-        ],
-        "trigger": "Any new EIA product inventory data showing draws = confirms the crude story flows downstream. Any Iran deal headline = contrarian buy oil dip. Any Israel escalation headline = oil gap up. The data is already released — the trigger is market REACTION in the afternoon session.",
-        "horizon": "Next 2 hours through US close. Weekend carry: if no Iran deal by Friday, oil gaps up Monday on supply deficit confirmation.",
-        "confidence": "HIGH — EIA and OPEC data are hard, not opinions. Data released 14:30-14:40. Market is still digesting — afternoon reaction to come."
-      },
-      "benefit": {
-        "Gazzetta di Kyiv": "FRAME: 'The Oil War Data Is In — And It's Worse Than You Think.' EIA -7.227M is not seasonal — it's a structural supply deficit caused by the Hormuz blockade + OPEC inability to replace Iranian barrels. Connect to Ukraine: 'Putin watches the oil market dance as Russia's budget bleeds 29.8% in oil/gas revenue. The same blockade crushing Iran is also starving Russia of energy export revenue as alternative routes get disrupted.' Secondary: US inflation at 3-year high is the economic cost of the Iran war — 'American families paying more at the pump and the grocery store because of a Middle East war with no exit.'",
-        "Bet&Benefit": "EXECUTE: Long crude futures/oil ETFs before US close. The data is out — the question is whether the market wakes up to the structural nature of the supply deficit. Position size for weekend gap. If no Iran deal by Friday, this is a Monday morning gap-up. Gold calls for the stagflation/risk-off hedge."
-      }
+      "event": "US May CPI in-line headline but core M/M below expectations (+0.2% vs +0.3% est) — inflation at 3-year high, bond traders price Fed hike by end-2026",
+      "sources": ["infinityhedge", "markettwits"],
+      "timeline": "Released ~12:30 UTC June 10. Data now fully digested.",
+      "consensus_narrative": "Headline CPI +4.2% Y/Y at 3-year high confirms inflation is sticky. Core M/M softer than expected (+0.2% vs +0.3%) gives Fed cover to hold — but bond market still pricing a hike by Dec 2026. Beef prices at all-time highs in US retail are the visceral inflation signal.",
+      "contradiction": "Core CPI softening vs headline sticky. Bond market prices hike (hawkish) but weaker core suggests no urgency. Putin claims Russia inflation is under control and key rate can be cut — opposite macro regime. The 'soft core' print gives risk assets a bid while bond vigilantes keep long-end yields elevated.",
+      "bet": "LONG Nasdaq / QQQ on the core miss. If bonds don't sell off further and core trend is softening, tech can rally on 'peak hawkishness' thesis. The S&P and Nasdaq were down 1.2% and 2% yesterday (June 9) — today's CPI gives dip-buyers a catalyst. BlackRock explicitly called tech selloff 'opportunity to generate alpha'.",
+      "benefit": "QQQ recovery toward prior resistance levels. NVDA remains the macro proxy — AI trade intact (Anthropic Claude Fable 5 released, SpaceX IPO Friday, OpenAI files S-1). Tech positioning: long NVDA, ANTH (if public), MSTR (MicroStrategy bought 1,550 BTC last week). Hard asset inflation (beef prices) suggests consumer staples can also run.",
+      "confidence": 70,
+      "market_impact_potential": "MEDIUM",
+      "expiry": "2026-06-11T12:00:00Z"
     },
     {
-      "id": "trump-secure-america-act-iran-comments-20260610-1525",
       "rank": 3,
-      "materiality_score": 8,
-      "title": "TRUMP SIGNS SECURE AMERICA ACT (15:20 UTC) — CEREMONY CREATES WINDOW FOR IRAN STATEMENT. Trump Already Threatened Power Plants/Bridges Earlier Today. Market Primed for Fresh Escalation Language.",
-      "freshness": "Bill signed: 15:20 UTC (5 min ago). Earlier threats this morning: 11:22-11:28 UTC (power plants/bridges). CPI: 12:30. Trump Truth Social 'Praise be to Allah': 11:33. Trump 'Now Iran Will Have to Pay the Price': 11:05.",
-      "source_channels": ["@markettwits", "@MonitoringSituation", "@infinityhedge", "@trad_fin"],
-      "event": "At 15:20 UTC, Trump signed the Secure America Act in a ceremony. @markettwits flagged: 'may say something about Iran during ceremony.' Trump's Iran posture today has been aggressive: (1) 11:04 — 'Iran's military is a complete and total mess... they've taken too long to negotiate' (2) 11:05 — 'Now Iran will have to pay the price' (3) 11:22 — Told Fox News he's 'close to ordering new strikes against Iranian power plants and bridges' (4) 11:25 — 'I'll keep going on Iran' (5) 11:28 — Boasted blockade is 'the most successful in history' (6) 15:20 — Signs Secure America Act. Any statement at/after the signing ceremony that references Iran — whether escalation (threats), de-escalation (deal progress), or deflection (no comment) — will move markets. The threat to hit power plants and bridges (4 hours old, not retracted) is the specific language that would trigger a risk-off move if repeated.",
-      "consensus_narrative": "The Secure America Act ceremony is a routine bill signing. Trump already said his Iran piece this morning. He'll focus on domestic security. The bill is about border security and immigration enforcement, not foreign policy. Even if he mentions Iran, it will be a rehash of this morning's posture. Markets have already priced the Iran risk for today.",
-      "contradiction": "Three reasons this ceremony is different: (1) Bill signing ceremonies are one of the few moments Trump commands live TV coverage. If he wants maximum audience for an Iran statement, this is the optimal venue — more eyeballs than a Truth Social post. (2) Trump's morning threats (power plants/bridges) have NOT been retracted or softened. They're 4 hours old and still active. Repeating them at a signing ceremony transforms them from 'throwaway Fox interview comments' to 'presidential statement at official event'. (3) The simultaneous data flow — EIA -7.227M, OPEC lows, Israel's Bekaa strike 3 minutes after the signing — creates a news environment where any Trump Iran comment will be amplified by the data context. Even 'we're making progress on negotiations' would be a dovish surprise that reverses oil's afternoon trajectory.",
-      "bet": {
-        "direction": "LONG oil / LONG VIX if Trump mentions Iran strikes. SHORT oil / LONG equities if Trump signals deal progress. The symmetric binary — prepare for both.",
-        "assets": [
-          "WTI crude ($CL) — Aggressive Iran mention = $0.50-1.00 immediate spike with follow-through. Deal/diplomacy mention = $0.50-1.00 drop as risk premium evaporates. Position small with tight stop.",
-          "VIX futures/options ($VIX) — Any escalation language in a formal ceremony context = VIX spike. Expected move pricing is too low for this event risk.",
-          "Gold ($GLD) — Safe haven beneficiary of escalation. If Trump is conciliatory, gold dips but recovers on the EIA/OPEC data structural support.",
-          "QQQ — Escalation = tech selloff accelerates below Friday's low. De-escalation = dead cat bounce."
-        ],
-        "trigger": "First Iran reference during or immediately after the Secure America Act signing. Watch @markettwits and @trad_fin for immediate alerts. Market reaction within 30-60 seconds of any Iran mention.",
-        "horizon": "Next 30-60 minutes during/after the signing ceremony. After that, the event window closes until Trump's next public appearance.",
-        "confidence": "MEDIUM-HIGH — Pattern recognition: Trump uses bill signings for policy announcements. The China tariff signing in February 2026 was used to announce additional tariffs. High probability of Iran mention given today's aggressive posture."
-      },
-      "benefit": {
-        "Gazzetta di Kyiv": "IMMEDIATE: 'Trump Just Signed the Secure America Act — And What He Says About Iran Next Will Move Markets.' Frame: 'The US Commander in Chief is threatening to bomb Iran's power plants. This is the most direct threat of infrastructure warfare since the blockade began. If he repeats this at a formal signing ceremony, it's official US policy — not a morning talk show comment.' Tie to Ukraine: 'Putin is watching Trump's Iran posture carefully — if America escalates in the Middle East, Ukraine's window to strike deeper into Russia widens. The distraction is Ukraine's opportunity.'",
-        "Bet&Benefit": "STANDBY — Monitor @markettwits for real-time Trump Iran statement. If aggressive: buy WTI calls, buy VIX. If diplomatic: buy QQQ, sell WTI. The bilateral nature of this event means you must watch for the statement and react, not pre-position. Position size: small and agile."
-      }
+      "event": "SpaceX IPO on Nasdaq (SPCX) scheduled June 12 — $250B+ demand against $75B raise target — biggest IPO in history",
+      "sources": ["trad_fin", "infinityhedge"],
+      "timeline": "Filing confirmed. IPO date June 12 (Friday this week). 1Q rev $4.69B, net loss $4.28B. $18.7B FY2025 revenue. Starlink 10.3M subscribers.",
+      "consensus_narrative": "SpaceX IPO is the marquee event of 2026. $1.8T+ expected valuation. $250B in demand vs $75B raise — massively oversubscribed. Elon Musk has 85.1% voting power. Symbol SPCX on Nasdaq. This is compressing AI/space/crypto narratives into one instrument.",
+      "contradiction": "Valuation at $1.8T on $18.7B revenue (~96x sales) vs operating loss of $2.6B. Retail demand is euphoric, institutional allocation will dominate. The net loss in Q1 ($4.28B) against revenue growth trajectory creates a wedge — this is a narrative-driven, not fundamentals-driven, IPO. Also: Trump mentioned 'public will become very rich from AI action' — could be a catalyst for the broader AI/tech complex pre-IPO.",
+      "bet": "LONG SPCX-related proxies: if you can't get IPO allocation, positions in satellite/space-adjacent stocks (ASTS, IRDM) and crypto (Starlink/connectivity angle). The Musk/Trump alignment adds a political premium. Watch for: Trump mentioning SpaceX/SPCX in his Iran press availability — would be a massive brand awareness pump.",
+      "benefit": "Pre-IPO positioning: long ASTS, long BTC (MicroStrategy bought 1,550 BTC last week, Saylor positioning for crypto-financed SpaceX play). The $250B demand signal makes this the liquidity event of the year — expect correlated asset pumps into Friday.",
+      "confidence": 80,
+      "market_impact_potential": "HIGH",
+      "expiry": "2026-06-13T00:00:00Z"
     }
   ],
-  "meta_observation": "Wednesday June 10, 15:25 UTC / 11:25 ET. US equities mid-afternoon session — 90 min to close. Three simultaneous high-impact events: (1) Israel just struck Bekaa Valley Lebanon (15:23) — FRESHEST data point, escalates Israel-Lebanon front geographically, (2) EIA -7.227M + OPEC lowest since 2000 + US inflation 3-year high = stagflation data cluster still being digested, (3) Trump signed Secure America Act (15:20) with live ceremony window for Iran statement. These three stories intersect on OIL — the common thread is physical supply disruption (blockade + OPEC inability to ramp + Israel multi-front war) meeting demand-side inflation (CPI 4.2%, bond market pricing Fed hike). The 2-hour horizon trade is LONG oil, LONG gold through US close. @ethanlevins (Bekaa strike, logistics war analysis) and @markettwits (EIA, OPEC, inflation, Trump signing) are the two HOT channels providing real-time actionable intelligence. @MonitoringSituation's 2M bpd bypass story (14:40) is critical context — the flow-through is much lower than normal suggesting the blockade is still effective despite media framing of 'leaks.' @infinityhedge is dead. @trad_fin is dormant. @ASupersharij provides Russian-language Ukraine context but no market-moving signals today."
+  "monitoring_channels": {
+    "@trad_fin": {"messages_fetched": 20, "last_message": "2026-06-10T15:54:48Z", "status": "ok"},
+    "@MonitoringSituation": {"messages_fetched": 20, "last_message": "2026-06-10T15:56:21Z", "status": "ok"},
+    "@ASupersharij": {"messages_fetched": 16, "last_message": "2026-06-10T15:12:27Z", "status": "ok"},
+    "@infinityhedge": {"messages_fetched": 20, "last_message": "2026-06-10T12:30:20Z", "status": "ok"},
+    "@ethanlevins": {"messages_fetched": 20, "last_message": "2026-06-10T15:51:05Z", "status": "ok"},
+    "@markettwits": {"messages_fetched": 20, "last_message": "2026-06-10T15:55:51Z", "status": "ok"}
+  }
 }

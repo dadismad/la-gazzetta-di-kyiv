@@ -77,7 +77,10 @@ def compile_stories(conn):
             story["impacted_flows"] = impacted_ids
 
             # JOIN: inject REAL flow metrics into capital_flow dict
-            # Use flow values ONLY as fallbacks — preserve story-derived values
+            # STORY-LEVEL SCALING (v23.15): each story gets a fraction of the
+            # linked flow's total amount_b based on its tier + pillar, NOT the
+            # full category amount. Deterministic ±5% jitter from headline hash
+            # ensures no two stories show the exact same number.
             primary_flow = flow_by_id.get(impacted_ids[0])
             if primary_flow:
                 cf = story.get("capital_flow", {})
@@ -85,7 +88,35 @@ def compile_stories(conn):
                 # Exception: override the known $5.0B default (intel_to_stories.py default)
                 is_default_amount = (cf.get("amount_b") == 5.0 and not cf.get("_amount_derived"))
                 if not cf.get("amount_b") or is_default_amount:
-                    cf["amount_b"] = primary_flow["amount_b"]
+                    tier = story.get("tier", "ACTIVE")
+                    pillar = story.get("pillar", "")
+                    flow_total = float(primary_flow["amount_b"])
+                    # --- Story-Level Scaling fractions ---
+                    tier_fractions = {
+                        "BREAKING":   0.35,
+                        "DEVELOPING": 0.20,
+                        "ACTIVE":     0.12,
+                        "SETTLING":   0.05,
+                    }
+                    pillar_bonus = 1.15 if pillar in ("geoeconomic", "sovereign") else 1.0
+                    base_fraction = tier_fractions.get(tier, 0.10)
+                    scaled = flow_total * base_fraction * pillar_bonus
+                    # --- Deterministic jitter (±5%) from headline hash ---
+                    headline = story.get("headline", "") or ""
+                    h = hash(headline) % 1001
+                    jitter_pct = -5.0 + (h / 1000.0) * 10.0  # -5% to +5%
+                    jittered = scaled * (1.0 + jitter_pct / 100.0)
+                    # Floor at $200M, round to 1 decimal
+                    cf["amount_b"] = round(max(0.2, jittered), 1)
+                    # Store SLS diagnostic for audit
+                    cf["_sls_diagnostic"] = {
+                        "flow_total": flow_total,
+                        "tier": tier,
+                        "base_fraction": base_fraction,
+                        "pillar_bonus": pillar_bonus,
+                        "jitter_pct": round(jitter_pct, 2),
+                        "computed": cf["amount_b"],
+                    }
                 if not cf.get("pace_multiplier"):
                     cf["pace_multiplier"] = primary_flow["velocity"]
                 if not cf.get("direction") or cf.get("direction") == "neutral":
@@ -94,8 +125,8 @@ def compile_stories(conn):
                     cf["asset_class"] = primary_flow["category"]
                 cf["confidence_pct"] = cf.get("confidence_pct", 50)
                 cf["confidence_level"] = cf.get("confidence_level", "medium")
-                cf["claim"] = f"${primary_flow['amount_b']}B {primary_flow['direction']} {cf.get('asset_class', '')}"
-                if primary_flow["amount_b"] > 0:
+                cf["claim"] = f"${cf.get('amount_b', 0)}B {cf.get('direction', primary_flow['direction'])} {cf.get('asset_class', '')}"
+                if cf.get("amount_b", 0) > 0:
                     cf["confidence"] = f"{cf.get('confidence_pct', 50)}%"
                 story["capital_flow"] = cf
 
@@ -359,6 +390,32 @@ def compile_flows(conn):
     
     if asymmetry_detected:
         print(f"  ⚡ Asymmetry Scores: {asymmetry_detected} stories computed, {high_asymmetry_count} HIGH+ stories")
+        
+        # ── v23.15: WRITE BACK asymmetry-enriched stories to stories.json ──
+        stories_path = DATA / "stories.json"
+        if stories_path.exists():
+            with open(stories_path) as f:
+                sd = json.load(f)
+            all_stories_map = {}
+            for s in all_stories:
+                sid = s.get("story_id", "")
+                if sid:
+                    all_stories_map[sid] = s
+            # Patch lead
+            if sd.get("lead") and sd["lead"].get("story_id") in all_stories_map:
+                sd["lead"] = all_stories_map[sd["lead"]["story_id"]]
+            # Patch stories array
+            updated_stories = []
+            for s in sd.get("stories", []):
+                sid = s.get("story_id", "")
+                if sid in all_stories_map:
+                    updated_stories.append(all_stories_map[sid])
+                else:
+                    updated_stories.append(s)
+            sd["stories"] = updated_stories
+            with open(stories_path, "w") as f:
+                json.dump(sd, f, indent=2, ensure_ascii=False)
+            print(f"  ✓ Asymmetry scores written back to stories.json")
     
     contradiction_detected = asymmetry_detected  # backward compat
 

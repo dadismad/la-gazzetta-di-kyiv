@@ -37,6 +37,27 @@
   --φ-xl: calc(1rem * var(--φ) * var(--φ) * var(--φ));
 }
 
+/* ── v23.16 MOBILE COMPATIBILITY ──
+   Vendor prefixes for older iOS Safari (8-14), Android Browser,
+   and IE10/11. Full autoprefixer pass recommended for build pipeline. */
+@supports not (display: grid) {
+  /* Grid fallback for IE11 / old Edge */
+  .product-grid, .teaser-list, .flow-sector-grid,
+  .side-hooks, .side-freshness, .side-tickers {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@supports not (display: flex) {
+  /* Ancient browser fallback */
+  .product-nav, .teaser-list, .side-hooks,
+  .side-freshness, .masthead-inner {
+    display: block;
+  }
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
