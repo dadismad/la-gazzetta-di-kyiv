@@ -413,25 +413,34 @@ async function fetchFlows() {
 // ── v2.0: Hero indicator updates ──
 function updateHeroIndicators(flowsData) {
   if (!flowsData || !flowsData.flows) return;
-  // Contradictions: flows with confidence < 70%
+  // Divergence: flows with confidence < 70% (price-narrative gaps)
   const contradictions = flowsData.flows.filter(f => f.confidence_pct && f.confidence_pct < 70).length;
-  const contraEl = document.getElementById('heroContradictions');
-  if (contraEl) {
-    contraEl.querySelector('.hero-ind-value').textContent = contradictions;
-    contraEl.querySelector('.hero-ind-value').style.color = contradictions >= 2 ? '#DC2626' : 'var(--ink)';
+  const divEl = document.getElementById('heroDivergence');
+  if (divEl) {
+    divEl.querySelector('.hero-ind-value').textContent = contradictions;
+    divEl.querySelector('.hero-ind-value').style.color = contradictions >= 2 ? '#DC2626' : 'var(--ink)';
+    divEl.title = `${contradictions} active narrative-price contradiction${contradictions !== 1 ? 's' : ''}`;
   }
-  // Top velocity: highest pace_multiplier across flows
-  let topVel = 0, topCat = '';
+  // Asymmetry gauge: max asymmetry score across flows
+  let maxAsym = 0;
   flowsData.flows.forEach(f => {
-    if ((f.pace_multiplier || 1) > topVel) {
-      topVel = f.pace_multiplier || 1;
-      topCat = f.asset_class || '';
-    }
+    if ((f.divergence_score || 0) > maxAsym) maxAsym = f.divergence_score || 0;
   });
-  const velEl = document.getElementById('heroTopVelocity');
-  if (velEl) {
-    velEl.querySelector('.hero-ind-value').textContent = `${topVel.toFixed(1)}×`;
-    velEl.title = `Highest velocity: ${topCat}`;
+  const gaugeVal = document.getElementById('heroGaugeValue');
+  const gaugeArc = document.getElementById('heroGaugeArc');
+  const gaugeLabel = document.getElementById('heroGaugeLabel');
+  if (gaugeVal) {
+    gaugeVal.textContent = maxAsym || '—';
+    gaugeVal.style.fill = maxAsym >= 80 ? '#DC2626' : maxAsym >= 50 ? '#D97706' : 'var(--ink)';
+  }
+  if (gaugeArc && maxAsym > 0) {
+    const circumference = 132; // r=42 arc length
+    const dashLen = (maxAsym / 100) * circumference;
+    gaugeArc.setAttribute('stroke-dasharray', `${dashLen} ${circumference}`);
+    gaugeArc.setAttribute('stroke', maxAsym >= 80 ? '#DC2626' : maxAsym >= 50 ? '#D97706' : '#B8860B');
+  }
+  if (gaugeLabel) {
+    gaugeLabel.textContent = maxAsym >= 80 ? 'MAX ASYMMETRY' : maxAsym >= 50 ? 'HIGH ASYMMETRY' : maxAsym >= 25 ? 'MODERATE' : 'LOW';
   }
   // Last Big Inflow — most recent significant capital flow (>$1B, highest velocity)
   const inflowEl = document.getElementById('heroLastInflow');
