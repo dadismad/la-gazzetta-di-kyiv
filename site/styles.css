@@ -29,6 +29,7 @@
   --display: 'Playfair Display', Georgia, serif;
   --body:    'Source Serif 4', Georgia, serif;
   --sans:    'Inter', -apple-system, sans-serif;
+  --mono:    'JetBrains Mono', 'Roboto Mono', 'Courier New', monospace;
 
   --φ: 1.618;
   --φ-sm: calc(1rem / var(--φ));
@@ -1567,6 +1568,14 @@ body {
 .anchor-pill.watch { background: var(--gold-light); color: var(--gold); }
 .asset-zone { color: var(--ink); }
 .asset-stop  { color: var(--red); font-size: 9px; }
+.asset-rr {
+  font-size: 9px; font-weight: 700; padding: 1px 5px;
+  border: 1px solid; margin-left: 2px; white-space: nowrap;
+  font-family: var(--mono, 'JetBrains Mono', 'Courier New', monospace);
+}
+.asset-rr.rr-elite   { color: #059669; border-color: #059669; background: rgba(5,150,105,0.08); }
+.asset-rr.rr-strong  { color: #2563EB; border-color: #2563EB; background: rgba(37,99,235,0.08); }
+.asset-rr.rr-viable  { color: #6B7280; border-color: #9CA3AF; background: rgba(107,114,128,0.06); }
 .anchor-badge {
   font-size: 10px;
   font-weight: 700;
@@ -2015,6 +2024,11 @@ body {
 .freshness-ago.freshness-today { color: var(--gold); }
 .freshness-ago.freshness-day { color: var(--ink-muted); }
 .freshness-ago.freshness-stale { color: var(--ink-muted); opacity: 0.6; }
+/* v23.17: Market correlation freshness */
+.hero-ind.freshness-critical { border-color: #DC2626; background: rgba(220,38,38,0.06); }
+.hero-ind.freshness-critical .hero-ind-value { color: #DC2626; font-weight: 900; }
+.hero-ind.freshness-active { border-color: #059669; background: rgba(5,150,105,0.06); }
+.hero-ind.freshness-active .hero-ind-value { color: #059669; }
 
 /* ── Breaking news badge (pulsing red) ── */
 .breaking-badge {

@@ -159,6 +159,55 @@ function freshnessClass(isoString) {
   return 'freshness-stale';
 }
 
+// ── v23.17: Market Correlation Freshness ──
+// Compares story age against price movement. If stories are fresh but
+// asymmetry scores are low → DORMANT. If contradiction detected → CRITICAL.
+function marketCorrelationLabel(stories, flowsData) {
+  if (!stories || !stories.length) return 'DORMANT';
+  
+  // Find stories with asymmetry data from the last 6 hours
+  const recent = stories.filter(s => {
+    if (!s) return false;
+    const ts = s.generated_at || s.timestamp;
+    if (!ts) return false;
+    return (Date.now() - new Date(ts).getTime()) < 6 * 3600000;
+  });
+  
+  if (!recent.length) return 'DORMANT';
+  
+  // Check asymmetry scores
+  const scores = recent.map(s => s.asymmetry_score || 0);
+  const maxScore = Math.max(...scores);
+  const avgScore = scores.reduce((a,b) => a+b, 0) / scores.length;
+  
+  // Check for price-narrative contradiction
+  const contradictions = recent.filter(s => {
+    const diag = s.asymmetry_diagnostic;
+    if (!diag) return false;
+    const sentiment = diag.sentiment || 0;
+    const priceDelta = diag.price_delta || 0;
+    return (sentiment > 0 && priceDelta < -0.1) || (sentiment < 0 && priceDelta > 0.1);
+  });
+  
+  if (contradictions.length >= 2 || maxScore >= 65) return 'CRITICAL';
+  if (avgScore >= 35) return 'ACTIVE';
+  return 'DORMANT';
+}
+
+function freshnessLabel(isoString, stories, flowsData) {
+  const timeClass = freshnessClass(isoString);
+  const corr = marketCorrelationLabel(stories, flowsData);
+  
+  if (corr === 'CRITICAL') return { text: 'CRITICAL — Price contradicting narrative', cls: 'freshness-critical' };
+  if (corr === 'ACTIVE') return { text: 'Active — Market confirming thesis', cls: 'freshness-active' };
+  
+  const hours = isoString ? (Date.now() - new Date(isoString).getTime()) / 3600000 : 99;
+  if (hours < 1) return { text: 'Live — just now', cls: 'freshness-recent' };
+  if (hours < 6) return { text: `Recent — ${Math.round(hours)}h ago`, cls: 'freshness-today' };
+  if (hours < 24) return { text: `Today — ${Math.round(hours)}h ago`, cls: 'freshness-day' };
+  return { text: 'Dormant — awaiting catalyst', cls: 'freshness-stale' };
+}
+
 function formatTimestamp(isoString) {
   if (!isoString) return '';
   const d = new Date(isoString);
@@ -269,6 +318,21 @@ function anchorRowHTML(a) {
   const pillClass = a.bias === 'BUY' ? 'anchor-pill buy' : a.bias === 'SELL' ? 'anchor-pill sell' : 'anchor-pill watch';
   const badgeClass = a.conviction === 'HIGH' ? 'anchor-badge high' : a.conviction === 'MED' ? 'anchor-badge med' : 'anchor-badge low';
   const atrPct = (a.atr_pct * 100).toFixed(1);
+  
+  // ── v23.17: R:R Ratio — calculated from entry/target/stop ──
+  const entryVal = parseFloat(String(a.entry).replace(/,/g, ''));
+  const targetVal = parseFloat(String(a.target).replace(/,/g, ''));
+  const stopVal = a.stop ? parseFloat(a.stop) : (a.bias === 'SELL' ? entryVal * (1 + a.atr_pct * a.stop_atr_mult) : entryVal * (1 - a.atr_pct * a.stop_atr_mult));
+  const risk = Math.abs(entryVal - stopVal);
+  const reward = Math.abs(targetVal - entryVal);
+  const rr = risk > 0 ? reward / risk : 0;
+  a._rr = rr; // store for filtering
+  
+  if (rr < 2.0) return null; // HIDE: doesn't meet quality threshold
+  
+  const rrClass = rr >= 3.5 ? 'rr-elite' : rr >= 2.5 ? 'rr-strong' : 'rr-viable';
+  const rrDisplay = rr.toFixed(1) + ':1';
+  
   return `
     <div class="asset-row">
       <div class="asset-info">
@@ -280,6 +344,7 @@ function anchorRowHTML(a) {
         <span class="${pillClass}">${i18n.t(a.bias.toLowerCase(), a.bias)}</span>
         <span class="asset-zone">${a.entry} → ${a.target}</span>
         <span class="asset-stop" title="Volatility-adjusted: ${a.stop_atr_mult}×${atrPct}% ATR from entry">Stop ${a.stop || '—'} · ${a.stop_atr_mult}×ATR</span>
+        <span class="asset-rr ${rrClass}" title="Risk/Reward: reward ÷ risk">R:R ${rrDisplay}</span>
         <span class="${badgeClass}">${i18n.t("conviction_"+a.conviction, a.conviction)}</span>
       </div>
     </div>`;
@@ -306,12 +371,14 @@ function renderPDR(elId) {
 
 function renderAnchor() {
   const el = byId('assetList') || byId('anchorGrid');
-  if (el) el.innerHTML = ANCHOR_ASSETS.map(anchorRowHTML).join('') + cryptoSignalHTML();
+  if (el) {
+    const rows = ANCHOR_ASSETS.map(anchorRowHTML).filter(r => r !== null);
+    el.innerHTML = rows.join('') + cryptoSignalHTML();
+    // Update dynamic count (excludes R:R < 2.0 filtered hooks)
+    const anchorCount = byId('anchorCount');
+    if (anchorCount) anchorCount.textContent = String(rows.length);
+  }
   renderPDR('pdrGauge');
-  
-  // Update container description with dynamic asset count
-  const anchorCount = byId('anchorCount');
-  if (anchorCount) anchorCount.textContent = String(ANCHOR_ASSETS.length);
   
   // Data freshness note — anchor prices are reference points, not live
   const freshnessEl = byId('anchorFreshness');
@@ -395,10 +462,13 @@ function updateHeroIndicators(flowsData) {
     velEl.querySelector('.hero-ind-value').textContent = `${topVel.toFixed(1)}×`;
     velEl.title = `Highest velocity: ${topCat}`;
   }
-  // Freshness: from generated_at
+  // Freshness 2.0: market correlation (v23.17)
   const freshEl = document.getElementById('heroFreshness');
   if (freshEl && flowsData.generated_at) {
-    freshEl.querySelector('.hero-ind-value').textContent = formatTimeAgo(flowsData.generated_at);
+    const storiesData = window._gazzettaStories || [];
+    const label = freshnessLabel(flowsData.generated_at, storiesData, flowsData);
+    freshEl.querySelector('.hero-ind-value').textContent = label.text;
+    freshEl.className = 'hero-ind ' + label.cls;
     freshEl.title = flowsData.generated_at;
   }
 }
@@ -2080,6 +2150,8 @@ async function populateTeasers() {
   try {
     const storiesData = await getJSON(getDataPath(), null);
     if (storiesData && storiesData.stories) {
+      // v23.17: Store for freshness correlation
+      window._gazzettaStories = [storiesData.lead, ...storiesData.stories].filter(Boolean);
       const el = document.getElementById('storiesTeaserContent');
       const countEl = document.getElementById('teaserStoryCount');
       if (el) {
