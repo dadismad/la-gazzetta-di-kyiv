@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T20:36:08.986349+00:00",
+  "generated_at": "2026-06-10T20:43:05.958949+00:00",
   "total_signals": 58,
   "aggregate_score": 64,
   "signals": [
@@ -168,26 +168,5 @@
       "asset_class": "commodities",
       "direction": "outflow"
     }
-  ],
-  "asymmetry": {
-    "high_count": 1,
-    "top_scores": [
-      {
-        "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
-        "asset_class": "commodities",
-        "narrative_direction": "outflow",
-        "price_direction": "up",
-        "price_change_pct": 2.12,
-        "asymmetry_score": 60,
-        "diagnostic_trace": {
-          "narrative_sentiment": -0.8,
-          "price_velocity": 0.4,
-          "raw_delta": -60.0,
-          "formula": "(-0.80 - 0.40) * 50 = |-60.0| = 60"
-        },
-        "signal": "HIGH ASYMMETRY"
-      }
-    ],
-    "aggregate_asymmetry": 60
-  }
+  ]
 }
