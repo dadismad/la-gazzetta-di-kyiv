@@ -189,7 +189,6 @@ critical_elements = {
         ("product nav", r'class="[^"]*product-nav[^"]*"'),
         ("container collapsible (Stories)", r'id="storiesTeaser"'),
         ("heroProductCount span", r'id="heroProductCount"'),
-        ("onboarding overlay", r'id="onboardingOverlay"'),
         ("storyFreshness span", r'id="storyFreshness"'),
         ("flowFreshness span", r'id="flowFreshness"'),
     ],

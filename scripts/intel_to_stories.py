@@ -442,6 +442,20 @@ def intel_story_to_gazzetta(intel_story, pillar):
     }
 
     base_story["multi_persona"] = generate_multi_persona(base_story)
+    
+    # ── v23.18: Conviction Probability (0-100%) ──
+    # Multi-factor model: contradiction strength + source corroboration + freshness
+    sources = intel_story.get("sources", [])
+    source_count = len(sources) if isinstance(sources, list) else 1
+    source_bonus = min((source_count - 1) * 5, 15)  # +5% per corroborating source, max +15%
+    freshness_bonus = 10 if intel_story.get("freshness") == "breaking" else (5 if horizon in ("1-6h", "6-24h") else 0)
+    confidence_bonus = 10 if confidence_level == "high" else (5 if confidence_level == "medium" else 0)
+    # Contradiction score base: 50-85
+    contra_base = 50 + min((contradiction_score - 45) * 0.8, 35)  # CS 45→50, CS 90→86
+    conviction_prob = min(95, max(50, round(contra_base + source_bonus + freshness_bonus + confidence_bonus)))
+    base_story["conviction_probability"] = conviction_prob
+    base_story["conviction_tier"] = "ALPHA" if conviction_prob >= 85 else ("HIGH" if conviction_prob >= 75 else ("MODERATE" if conviction_prob >= 60 else "BASELINE"))
+    
     return base_story
 
 

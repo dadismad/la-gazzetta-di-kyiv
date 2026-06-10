@@ -8,7 +8,7 @@
      8|  <link rel="preconnect" href="https://fonts.googleapis.com">
      9|  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     10|  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    11|  <link rel="stylesheet" href="./styles.8414edc7.css"/>
+    11|  <link rel="stylesheet" href="./styles.ce1d3b65.css"/>
     12|  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='2' fill='%23111827'/><text x='16' y='24' text-anchor='middle' font-size='22' font-weight='bold' font-family='Georgia,serif' fill='%23D4AF37'>G</text></svg>"/>
     13|  <style>
     14|    /* ═══════════════════════════════════════════════
@@ -43,9 +43,9 @@
     43|      --cn-green:       #047857;
     44|      --cn-red:         #DC2626;
     45|    }
-    46|
+
     47|    * { box-sizing: border-box; margin: 0; padding: 0; }
-    48|
+
     49|    body.cn-body {
     50|      background: var(--cn-bg);
     51|      color: var(--cn-text);
@@ -56,7 +56,7 @@
     56|      overflow-x: hidden;
     57|      transition: background 0.3s, color 0.3s;
     58|    }
-    59|
+
     60|    /* ── PRODUCT NAV ── */
     61|    .cn-nav {
     62|      display: flex;
@@ -85,7 +85,7 @@
     85|    .cn-nav a:hover, .cn-nav a:active { color: var(--cn-text); }
     86|    .cn-nav a.active { color: var(--cn-gold); border-bottom-color: var(--cn-gold); }
     87|    .cn-nav-spacer { flex: 1; }
-    88|
+
     89|    /* ── MASTHEAD ── */
     90|    .cn-masthead {
     91|      display: flex;
@@ -136,7 +136,7 @@
    136|    }
    137|    .cn-dot.active { background: var(--cn-green); animation: pulse-dot 1.5s ease-in-out infinite; }
    138|    @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:.3} }
-   139|
+
    140|    .cn-theme-btn {
    141|      background: none;
    142|      border: 1px solid var(--cn-divider);
@@ -155,14 +155,14 @@
    155|      padding: 3px 8px;
    156|      border: 1px solid var(--cn-divider);
    157|    }
-   158|
+
    159|    /* ── LAYOUT ── */
    160|    .cn-flex {
    161|      display: flex;
    162|      gap: 0;
    163|      min-height: calc(100vh - 100px);
    164|    }
-   165|
+
    166|    /* ── THESIS ── */
    167|    .cn-thesis {
    168|      padding: 14px 18px 10px;
@@ -182,7 +182,7 @@
    182|      color: var(--cn-muted);
    183|      max-width: 900px;
    184|    }
-   185|
+
    186|    /* ── GRAPH ── */
    187|    #cn-graph-container {
    188|      flex: 1;
@@ -194,7 +194,7 @@
    194|      width: 100%;
    195|      max-width: 1200px;
    196|    }
-   197|
+
    198|    /* ── EDGE LABELS ── */
    199|    .cn-edge-label {
    200|      font-family: var(--cn-sans);
@@ -205,7 +205,7 @@
    205|    }
    206|    .cn-edge-label.inflow { fill: var(--cn-green); }
    207|    .cn-edge-label.outflow { fill: var(--cn-red); }
-   208|
+
    209|    /* ── INFO PANEL ── */
    210|    #cn-info-panel {
    211|      width: 0;
@@ -308,7 +308,7 @@
    308|      text-align: center;
    309|      line-height: 1.6;
    310|    }
-   311|
+
    312|    /* ── SPARKLINE ── */
    313|    .cn-sparkline-container {
    314|      margin: 8px 0;
@@ -320,7 +320,7 @@
    320|      color: var(--cn-dim);
    321|      margin-bottom: 4px;
    322|    }
-   323|
+
    324|    /* ── LEGEND ── */
    325|    .cn-legend {
    326|      display: flex;
@@ -362,7 +362,7 @@
    362|    .cn-legend-shape.corp       { background: var(--cn-green); clip-path: polygon(15% 0%,85% 0%,100% 25%,100% 75%,85% 100%,15% 100%,0% 75%,0% 25%); }
    363|    .cn-legend-shape.retail     { background: var(--cn-violet); }
    364|    .cn-legend-shape.xborder    { background: var(--cn-red); clip-path: polygon(50% 0%,85% 15%,100% 50%,85% 85%,50% 100%,15% 85%,0% 50%,15% 15%); }
-   365|
+
    366|    /* ── EDGE STYLES ── */
    367|    .cn-edge { fill: none; transition: opacity 0.15s; }
    368|    .cn-edge.inflow { stroke: var(--cn-green); }
@@ -372,7 +372,7 @@
    372|    .cn-edge-arrow.inflow { fill: var(--cn-green); }
    373|    .cn-edge-arrow.outflow { fill: var(--cn-red); }
    374|    .cn-edge-arrow.low-conf { opacity: 0.5; }
-   375|
+
    376|    .cn-node-group { cursor: pointer; }
    377|    .cn-node-group:active .cn-node-shape,
    378|    .cn-node-group.active .cn-node-shape { stroke-width: 2.5; }
@@ -406,7 +406,7 @@
    406|      text-anchor: middle;
    407|      pointer-events: none;
    408|    }
-   409|
+
    410|    @media (max-width: 768px) {
    411|      .cn-flex { flex-direction: column; }
    412|      #cn-info-panel.cn-panel-open { width: 100%; max-height: 45vh; overflow-y: auto; }
@@ -470,7 +470,7 @@
    470|    <button class="cn-mf-btn" data-mf="cross_border" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-divider);background:var(--cn-bg);color:var(--cn-muted);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">X-Border</button>
    471|    <button class="cn-mf-reset" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-gold);background:var(--cn-bg);color:var(--cn-gold);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">All</button>
    472|  </div>
-   473|
+
    474|  <!-- MASTHEAD -->
    475|  <header class="masthead">
   <div class="masthead-left">
@@ -491,15 +491,22 @@
       <a href="./trades.html" class="nav-link">Trades</a>
       <a href="./track.html" class="nav-link">Track</a>
     </nav>
+    <div class="masthead-tickers" id="mastheadTickers" style="display:flex;gap:14px;font-size:10px;font-family:var(--cn-sans);color:var(--cn-muted);overflow:hidden;max-width:340px;">
+      <span>CL=F <span style="color:#059669">↑1.3%</span></span>
+      <span>BTC <span style="color:#059669">↑0.9%</span></span>
+      <span>SPY <span style="color:#DC2626">↓0.2%</span></span>
+      <span>GC=F <span style="color:#DC2626">↓1.7%</span></span>
+      <span>TLT <span style="color:#059669">↑0.1%</span></span>
+    </div>
   </div>
 </header>
-   488|
+
    489|  <!-- THESIS -->
    490|  <div class="cn-thesis">
    491|    <h1>Node-Based Capital Flow Decomposition</h1>
    492|    <p>Capital does not move randomly. It flows through structural conduits — governmental policy levers, institutional intermediation, corporate treasuries, retail participation, crypto markets, and cross-border channels. Click any node to decompose its inflows and outflows with linked stories and trades. Edge width scales with flow amount; green = inflow, red = outflow. Dashed = low confidence (&lt;60%). <a href="./capital.html" style="color:var(--cn-gold);">Methodology →</a></p>
    493|  </div>
-   494|
+
    495|  <!-- FLEX LAYOUT -->
    496|  <div class="cn-flex">
    497|    <div id="cn-graph-container">
@@ -562,7 +569,7 @@
    554|      </div>
    555|    </aside>
    556|  </div>
-   557|
+
    558|  <!-- LEGEND -->
    559|  <footer class="cn-legend" id="cn-legend">
    560|    <div class="cn-legend-item" data-type="gov"><span class="cn-legend-shape gov"></span>Gov<span class="key-hint">1</span></div>
@@ -575,15 +582,15 @@
    567|    <div class="cn-legend-item" style="cursor:default"><span style="display:inline-block;width:12px;height:2px;background:var(--cn-red);vertical-align:middle;"></span>Outflow</div>
    568|    <div class="cn-legend-item" style="cursor:default"><span style="display:inline-block;width:12px;height:2px;background:var(--cn-dim);border-bottom:2px dashed var(--cn-dim);vertical-align:middle;"></span>Low Conf</div>
    569|  </footer>
-   570|
+
    571|  <script>
    572|  (function(){
    573|    'use strict';
-   574|
+
    575|    const DATA_URL = './data/flow_nodes.json';
    576|    const $ = (s) => document.querySelector(s);
    577|    const $$ = (s) => document.querySelectorAll(s);
-   578|
+
    579|    const graphContainer = $('#cn-graph-container');
    580|    const svg = $('#cn-graph');
    581|    const edgesLayer = $('#cn-edges-layer');
@@ -592,13 +599,13 @@
    584|    const panelNoSel = $('#cn-panel-no-selection');
    585|    const panelContent = $('#cn-panel-content');
    586|    const legendItems = $$('.cn-legend-item[data-type]');
-   587|
+
    588|    let data = null;
    589|    let nodeMap = {};
    590|    let activeNodeId = null;
    591|    let edgeMap = {}; // source→target→edges
    592|    let themeLight = false;
-   593|
+
    594|    /* ── UTILITY ── */
    595|    function fmtB(n) {
    596|      if (n === undefined || n === null) return '—';
@@ -624,7 +631,7 @@
    616|      if (!s || s === 'NONE') return '';
    617|      return s.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
    618|    }
-   619|
+
    620|    /* ── NODE SHAPE PATHS ── */
    621|    function getNodeShape(type, w, h) {
    622|      const hw=w/2, hh=h/2;
@@ -638,7 +645,7 @@
    630|        default: return `M${-hw},${-hh} L${hw},${-hh} L${hw},${hh} L${-hw},${hh} Z`;
    631|      }
    632|    }
-   633|
+
    634|    /* ── LAYOUT ── */
    635|    function computeLayout(nodes, edges) {
    636|      const typeOrder = ['gov','institutional','corporate','retail','crypto','cross_border'];
@@ -647,7 +654,7 @@
    639|      const marginY = 100;
    640|      const nodeW = 120;
    641|      const nodeH = 70;
-   642|
+
    643|      const byType = {};
    644|      typeOrder.forEach(t => byType[t] = []);
    645|      nodes.forEach(n => {
@@ -658,14 +665,14 @@
    650|      Object.keys(byType).forEach(t => {
    651|        byType[t].sort((a,b) => ((b.metrics.total_assets_b||b.metrics.net_flow_b)||0) - ((a.metrics.total_assets_b||a.metrics.net_flow_b)||0));
    652|      });
-   653|
+
    654|      let maxCount = 0;
    655|      Object.values(byType).forEach(arr => { if(arr.length>maxCount) maxCount=arr.length; });
    656|      const svgW = Math.max(typeOrder.length * columnWidth + marginX*2, 1200);
    657|      const svgH = 740;
    658|      const rowHeight = Math.min((svgH-marginY*2)/Math.max(maxCount,1), 80);
    659|      const positions = {};
-   660|
+
    661|      typeOrder.forEach((t, ci) => {
    662|        const arr = byType[t] || [];
    663|        const cx = marginX + ci*columnWidth + columnWidth/2;
@@ -676,7 +683,7 @@
    668|      });
    669|      return {positions, svgW, svgH};
    670|    }
-   671|
+
    672|    /* ── EDGE LABEL MIDPOINT ── */
    673|    function edgeMidpoint(sx,sy,ex,ey,cpOffsetX) {
    674|      // Cubic bezier midpoint at t=0.5
@@ -687,24 +694,24 @@
    679|      const angle = Math.atan2(ey-sy, ex-sx) * 180 / Math.PI;
    680|      return {mx, my, angle};
    681|    }
-   682|
+
    683|    /* ── RENDER ── */
    684|    function render(data) {
    685|      const {nodes, edges, summary} = data;
    686|      const meta = summary || {};
    687|      const {positions, svgW, svgH} = computeLayout(nodes, edges);
    688|      svg.setAttribute('viewBox', `0 0 ${svgW} ${svgH+30}`);
-   689|
+
    690|      edgesLayer.innerHTML = '';
    691|      nodesLayer.innerHTML = '';
    692|      nodeMap = {};
    693|      edgeMap = {};
-   694|
+
    695|      nodes.forEach(n => {
    696|        nodeMap[n.id] = {...n, pos: positions[n.id]};
    697|        if (!edgeMap[n.id]) edgeMap[n.id] = {in:[], out:[]};
    698|      });
-   699|
+
    700|      // Build edge index
    701|      edges.forEach(e => {
    702|        if (!edgeMap[e.source]) edgeMap[e.source] = {in:[], out:[]};
@@ -712,7 +719,7 @@
    704|        edgeMap[e.target].in.push(e);  // flows INTO target
    705|        edgeMap[e.source].out.push(e); // flows OUT of source
    706|      });
-   707|
+
    708|      // Edge overlap tracking
    709|      const edgeCounts = {};
    710|      edges.forEach(e => {
@@ -724,12 +731,12 @@
    716|        const key = e.source < e.target ? `${e.source}->${e.target}` : `${e.target}->${e.source}`;
    717|        edgeIdx[key] = (edgeIdx[key]||0) + 1;
    718|      });
-   719|
+
    720|      edges.forEach((e, i) => {
    721|        const src = nodeMap[e.source];
    722|        const dst = nodeMap[e.target];
    723|        if (!src || !dst) return;
-   724|
+
    725|        const sp = src.pos, dp = dst.pos;
    726|        const dx = dp.x - sp.x, dy = dp.y - sp.y;
    727|        const cpOffsetX = Math.abs(dx)*0.4;
@@ -737,19 +744,19 @@
    729|        const totalParallel = edgeCounts[key]||1;
    730|        const idx = (edgeIdx[key]||1) - 1;
    731|        const vOffset = (idx - (totalParallel-1)/2)*12;
-   732|
+
    733|        const sx = sp.x + sp.w/2;
    734|        const sy = sp.y + vOffset;
    735|        const ex = dp.x - dp.w/2;
    736|        const ey = dp.y + vOffset;
    737|        const pathD = `M${sx},${sy} C${sx+cpOffsetX},${sy} ${ex-cpOffsetX},${ey} ${ex},${ey}`;
-   738|
+
    739|        const isOutflow = e.direction === 'outflow';
    740|        const isLowConf = (e.confidence_pct||50) < 60;
    741|        const lineWidth = Math.max(1, Math.min(8, (e.amount_b||0)/45));
    742|        const cls = `cn-edge ${isOutflow?'outflow':'inflow'} ${isLowConf?'low-conf':''}`;
    743|        const edgeId = `edge-${i}`;
-   744|
+
    745|        // Path
    746|        const path = document.createElementNS('http://www.w3.org/2000/svg','path');
    747|        path.setAttribute('d', pathD);
@@ -762,7 +769,7 @@
    754|        path.setAttribute('data-amount', e.amount_b);
    755|        path.setAttribute('data-direction', e.direction);
    756|        edgesLayer.appendChild(path);
-   757|
+
    758|        // Arrowhead
    759|        const arrow = document.createElementNS('http://www.w3.org/2000/svg','polygon');
    760|        const arrowSize = Math.max(4, Math.min(10, lineWidth*2));
@@ -776,7 +783,7 @@
    768|        arrow.setAttribute('opacity', 0.55);
    769|        arrow.setAttribute('data-edge-id', edgeId);
    770|        edgesLayer.appendChild(arrow);
-   771|
+
    772|        // Edge label
    773|        const {mx, my, angle: labelAngle} = edgeMidpoint(sx,sy,ex,ey,cpOffsetX);
    774|        const labelAmount = fmtB(e.amount_b);
@@ -791,7 +798,7 @@
    783|        label.textContent = labelText;
    784|        edgesLayer.appendChild(label);
    785|      });
-   786|
+
    787|      // Render nodes
    788|      nodes.forEach(node => {
    789|        const p = positions[node.id];
@@ -801,12 +808,12 @@
    793|        g.setAttribute('data-node-id', node.id);
    794|        g.setAttribute('data-type', node.type);
    795|        g.setAttribute('transform', `translate(${p.x},${p.y})`);
-   796|
+
    797|        const nodeSize = node.metrics.total_assets_b || node.metrics.net_flow_b || Math.abs(node.metrics.total_inflow_b||0);
    798|        const scaledW = Math.max(80, Math.min(170, nodeSize/28));
    799|        const scaledH = Math.max(48, Math.min(85, scaledW*0.55));
    800|        p.w = scaledW; p.h = scaledH;
-   801|
+
    802|        const shape = document.createElementNS('http://www.w3.org/2000/svg','path');
    803|        shape.setAttribute('d', getNodeShape(node.type, scaledW, scaledH));
    804|        shape.setAttribute('class','cn-node-shape');
@@ -814,31 +821,31 @@
    806|        shape.setAttribute('stroke', typeColor(node.type));
    807|        shape.setAttribute('stroke-width','1.5');
    808|        g.appendChild(shape);
-   809|
+
    810|        const lbl = document.createElementNS('http://www.w3.org/2000/svg','text');
    811|        lbl.setAttribute('class','cn-node-label');
    812|        lbl.setAttribute('y',-4);
    813|        lbl.textContent = node.label;
    814|        g.appendChild(lbl);
-   815|
+
    816|        const amt = document.createElementNS('http://www.w3.org/2000/svg','text');
    817|        amt.setAttribute('class','cn-node-amount');
    818|        amt.setAttribute('y',10);
    819|        amt.textContent = fmtB(node.metrics.total_assets_b || node.metrics.net_flow_b || 0);
    820|        g.appendChild(amt);
-   821|
+
    822|        const sub = document.createElementNS('http://www.w3.org/2000/svg','text');
    823|        sub.setAttribute('class','cn-node-sub');
    824|        sub.setAttribute('y',22);
    825|        sub.textContent = subtypeLabel(node.subtype) || typeLabel(node.type);
    826|        g.appendChild(sub);
-   827|
+
    828|        g.addEventListener('mouseenter', () => showNodeInfo(node.id));
    829|        g.addEventListener('mouseleave', () => { if(activeNodeId !== node.id) hideEdgeHighlight(); });
    830|        g.addEventListener('click', () => showNodeInfo(node.id));
    831|        nodesLayer.appendChild(g);
    832|      });
-   833|
+
    834|      // Header stats
    835|      document.getElementById('cn-last-updated').textContent = data.generated_at ? new Date(data.generated_at).toLocaleString() : '—';
    836|      document.getElementById('cn-last-updated').setAttribute('datetime', data.generated_at || '');
@@ -846,14 +853,14 @@
    838|      document.getElementById('cn-node-count').textContent = (meta.total_nodes||nodes.length) + ' nodes';
    839|      document.getElementById('cn-edge-count').textContent = (meta.total_edges||edges.length) + ' edges';
    840|    }
-   841|
+
    842|    /* ── MINI SPARKLINE ── */
    843|    function renderSparkline(history) {
    844|      const container = document.getElementById('pn-sparkline-container');
    845|      const svgEl = document.getElementById('pn-sparkline');
    846|      if (!history || history.length < 2) { container.style.display = 'none'; return; }
    847|      container.style.display = 'block';
-   848|
+
    849|      const vals = history.map(h => h.value);
    850|      const min = Math.min(...vals), max = Math.max(...vals);
    851|      const range = max - min || 1;
@@ -863,29 +870,29 @@
    855|        const y = h - pad - ((v-min)/range)*(h-2*pad);
    856|        return `${x},${y}`;
    857|      }).join(' ');
-   858|
+
    859|      const lastVal = vals[vals.length-1];
    860|      const firstVal = vals[0];
    861|      const trend = lastVal >= firstVal ? 'var(--cn-green)' : 'var(--cn-red)';
-   862|
+
    863|      svgEl.innerHTML = `
    864|        <polyline points="${points}" fill="none" stroke="${trend}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
    865|        <circle cx="${pad + (vals.length-1)/(vals.length-1)*(w-2*pad)}" cy="${h-pad-((lastVal-min)/range)*(h-2*pad)}" r="2.5" fill="${trend}"/>
    866|      `;
    867|    }
-   868|
+
    869|    /* ── INFO PANEL ── */
    870|    function showNodeInfo(nodeId) {
    871|      const node = nodeMap[nodeId];
    872|      if (!node) return;
-   873|
+
    874|      activeNodeId = nodeId;
-   875|
+
    876|      // Highlight
    877|      $$('.cn-node-group').forEach(el => el.classList.remove('active'));
    878|      const activeEl = document.querySelector(`.cn-node-group[data-node-id="${nodeId}"]`);
    879|      if (activeEl) activeEl.classList.add('active');
-   880|
+
    881|      // Highlight connected edges and their labels
    882|      const connectedEdgeIds = new Set();
    883|      (data.edges||[]).forEach((e,i) => {
@@ -896,24 +903,24 @@
    888|        if (connectedEdgeIds.has(eid)) el.setAttribute('opacity','1.0');
    889|        else el.setAttribute('opacity','0.10');
    890|      });
-   891|
+
    892|      // Panel
    893|      panelNoSel.style.display = 'none';
    894|      panelContent.style.display = 'block';
    895|      infoPanel.classList.add('cn-panel-open');
-   896|
+
    897|      document.getElementById('pn-name').textContent = node.label;
    898|      document.getElementById('pn-name').style.color = typeColor(node.type);
    899|      document.getElementById('pn-type-badge').textContent = typeLabel(node.type);
    900|      document.getElementById('pn-type-badge').style.color = typeColor(node.type);
    901|      document.getElementById('pn-subtype').textContent = subtypeLabel(node.subtype);
    902|      document.getElementById('pn-desc').textContent = node.description || '';
-   903|
+
    904|      const totalAssets = node.metrics.total_assets_b || node.metrics.net_flow_b || 0;
    905|      document.getElementById('pn-assets').textContent = fmtB(Math.abs(totalAssets));
    906|      document.getElementById('pn-inflow-vel').textContent = (node.metrics.inflow_velocity||'—').toUpperCase();
    907|      document.getElementById('pn-outflow-vel').textContent = (node.metrics.outflow_velocity||'—').toUpperCase();
-   908|
+
    909|      // Net flow with delta
    910|      const netFlow = (node.metrics.net_flow_b || (node.metrics.total_inflow_b||0) - (node.metrics.total_outflow_b||0));
    911|      document.getElementById('pn-net-flow').textContent = fmtB(netFlow);
@@ -930,12 +937,12 @@
    922|        assetsDeltaEl.textContent = (assetsDelta>0?'↑':'↓') + ' ' + fmtB(assetsDelta) + ' vs 30d';
    923|        assetsDeltaEl.className = 'cn-panel-delta ' + (assetsDelta>0?'up':'down');
    924|      } else { assetsDeltaEl.textContent = ''; }
-   925|
+
    926|      document.getElementById('pn-confidence').textContent = (node.metrics.confidence_pct||'—') + '%';
-   927|
+
    928|      // Sparkline from history
    929|      renderSparkline(node.history || data.history?.[nodeId]);
-   930|
+
    931|      // SOURCES — derived from edges where this node is TARGET (money flows IN)
    932|      const srcEl = document.getElementById('pn-sources');
    933|      srcEl.innerHTML = '';
@@ -968,7 +975,7 @@
    960|      } else {
    961|        srcEl.innerHTML = '<div style="color:var(--cn-dim);font-size:10px;">No source data tracked</div>';
    962|      }
-   963|
+
    964|      // DESTINATIONS — derived from edges where this node is SOURCE (money flows OUT)
    965|      const dstEl = document.getElementById('pn-destinations');
    966|      dstEl.innerHTML = '';
@@ -998,7 +1005,7 @@
    990|      } else {
    991|        dstEl.innerHTML = '<div style="color:var(--cn-dim);font-size:10px;">No destination data tracked</div>';
    992|      }
-   993|
+
    994|      // LINKED STORIES — from edge story_ids
    995|      const storiesEl = document.getElementById('pn-stories');
    996|      storiesEl.innerHTML = '';
@@ -1017,7 +1024,7 @@
   1009|      if (seenStories.size === 0) {
   1010|        storiesEl.innerHTML = '<div style="color:var(--cn-dim);font-size:10px;">No stories linked</div>';
   1011|      }
-  1012|
+
   1013|      // DATA SOURCES
   1014|      const dsEl = document.getElementById('pn-datasources');
   1015|      dsEl.innerHTML = '';
@@ -1040,13 +1047,13 @@
   1032|        dsEl.innerHTML = '<div style="color:var(--cn-dim);font-size:10px;">No data sources recorded</div>';
   1033|      }
   1034|    }
-  1035|
+
   1036|    function hideEdgeHighlight() {
   1037|      document.querySelectorAll('.cn-edge,.cn-edge-arrow,.cn-edge-label').forEach(el => {
   1038|        el.setAttribute('opacity', 0.55);
   1039|      });
   1040|    }
-  1041|
+
   1042|    /* ── CLOSE PANEL ── */
   1043|    function closePanel() {
   1044|      infoPanel.classList.remove('cn-panel-open');
@@ -1057,7 +1064,7 @@
   1049|      activeNodeId = null;
   1050|    }
   1051|    document.getElementById('pn-close').addEventListener('click', closePanel);
-  1052|
+
   1053|    /* ── LEGEND FILTER ── */
   1054|    let activeFilter = null;
   1055|    legendItems.forEach((item, idx) => {
@@ -1090,13 +1097,13 @@
   1082|        }
   1083|      });
   1084|    });
-  1085|
+
   1086|    /* ── KEYBOARD SHORTCUTS ── */
   1087|    const TYPE_KEYS = {'1':'gov','2':'institutional','3':'corporate','4':'retail','5':'crypto','6':'cross_border'};
   1088|    document.addEventListener('keydown', e => {
   1089|      // Don't intercept when typing in inputs
   1090|      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-  1091|
+
   1092|      // 1-6: Filter by type
   1093|      if (TYPE_KEYS[e.key]) {
   1094|        const type = TYPE_KEYS[e.key];
@@ -1104,10 +1111,10 @@
   1096|        if (item) item.click();
   1097|        return;
   1098|      }
-  1099|
+
   1100|      // Escape: Close panel
   1101|      if (e.key === 'Escape') { closePanel(); return; }
-  1102|
+
   1103|      // Arrow keys: Navigate nodes
   1104|      if (activeNodeId && ['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.key)) {
   1105|        e.preventDefault();
@@ -1124,7 +1131,7 @@
   1116|        }
   1117|        return;
   1118|      }
-  1119|
+
   1120|      // 0: Reset filter
   1121|      if (e.key === '0') {
   1122|        if (activeFilter) {
@@ -1133,7 +1140,7 @@
   1125|        }
   1126|      }
   1127|    });
-  1128|
+
   1129|    /* ── THEME TOGGLE ── */
   1130|    const themeBtn = document.getElementById('cn-theme-toggle');
   1131|    themeBtn.addEventListener('click', () => {
@@ -1141,7 +1148,7 @@
   1133|      document.body.classList.toggle('cn-dark', themeLight);
   1134|      themeBtn.textContent = themeLight ? '☀' : '☽';
   1135|    });
-  1136|
+
   1137|    /* ── INIT ── */
   1138|    function init() {
   1139|      fetch(DATA_URL)
@@ -1159,7 +1166,7 @@
   1151|            '<p style="font-size:11px;color:var(--cn-dim);margin-top:4px;">Ensure ./data/flow_nodes.json is accessible.</p></div>';
   1152|        });
   1153|    }
-  1154|
+
   1155|    /* ── MOBILE FILTER BUTTONS ── */
   1156|    document.querySelectorAll('.cn-mf-btn').forEach(btn => {
   1157|      btn.addEventListener('click', () => {
@@ -1178,12 +1185,25 @@
   1170|      }
   1171|      document.querySelectorAll('.cn-mf-btn').forEach(b => b.style.borderColor = 'var(--cn-divider)');
   1172|    });
-  1173|
+
   1174|    if (document.readyState === 'loading') {
   1175|      document.addEventListener('DOMContentLoaded', init);
   1176|    } else { init(); }
   1177|  })();
   1178|  </script>
-  1179|</body>
+  1179|<script src="./app.84bbe64a.js"></script>
+<script>
+/* Dynamic story linking */
+(async function(){
+  try {
+    var r = await fetch("./data/stories.json?t="+Date.now(),{cache:"no-store"});
+    var d = await r.json();
+    window.__gazzettaStories = [d.lead,...(d.stories||[])].filter(Boolean);
+    document.querySelectorAll("[data-node-type]").forEach(function(el){
+      el.style.cursor="pointer";el.title="Linked stories";el.onclick=function(){location.href="./stories.html";};
+    });
+  }catch(e){}
+})();
+</script>
+</body>
   1180|</html>
-  1181|

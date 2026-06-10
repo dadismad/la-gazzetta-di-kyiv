@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T13:36:47.783250+00:00",
+  "generated_at": "2026-06-10T20:50:02.177828+00:00",
   "lead": {
     "story_id": "n21_china_ascendancy__china_launches_maritime_enforcement_operation_east_of_taiwan",
     "headline": "Китай начинает морскую правоохранительную операцию к востоку от Тайваня — 46 минут назад",
@@ -3181,6 +3181,4098 @@
           }
         }
       }
+    },
+    {
+      "story_id": "n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work",
+      "headline": "以色列占领军绑架两名黎巴嫩市政工作人员",
+      "sector": "tech",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "The kidnappings come amid proposals at the Israeli cabinet to use of the kidnapping of women and children as a weapon against the Lebanese resistance"
+      ],
+      "they_say": "来源：the_cradle。这些绑架事件发生之际，以色列内阁正提议将绑架妇女和儿童作为对抗黎巴嫩抵抗力量的武器。",
+      "reality": "Похищения происходят на фоне предложений в израильском кабинете министров об использовании похищения женщин и детей в качестве оружия против ливанского сопротивления.",
+      "thesis": "OSINT draft #156: Israeli occupation troops abduct two Lebanese municipal workers",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: INFLOW tech. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "The kidnappings come amid proposals at the Israeli cabinet to use of the kidnapping of women and children as a weapon against the Lebanese resistance",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 14.6,
+        "asset_class": "tech",
+        "projected": "The kidnappings come amid proposals at the Israeli cabinet to use of the kidnapping of women and children as a weapon against the Lebanese resistance",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$14.6B inflow tech",
+        "confidence": "50%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #156. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 156"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-10T19:50:48.809780+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Israeli occupation troops abduct two Lebanese municipal workers",
+          "body": "Structural assessment: The kidnappings come amid proposals at the Israeli cabinet to use of the kidnapping of women and children as a weapon against the Lebanese resistance... Implicated assets: tech. Regions: Israel. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: tech exposure review recommended. Directional bias: LONG."
+        },
+        "quant": {
+          "headline": "TECH signal: LONG",
+          "body": "Raw telemetry — tech flow detected from The kidnappings come amid proposals at the Israeli cabinet to use of the kidnapping of women and children as a weapon against the Lebanese resistance... Assets tagged: tech. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "inflow",
+            "asset_class": "tech",
+            "geographies": [
+              "Israel"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG tech",
+          "body": "Directional: LONG. Asset: tech. Context: Israeli occupation troops abduct two Lebanese municipal workers. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "LONG",
+        "asset_class": "tech",
+        "capital_at_stake": "$14.6B",
+        "rationale": "The kidnappings come amid proposals at the Israeli cabinet to use of the kidnapping of women and children as a weapon against the Lebanese resistance",
+        "horizon": "24-72h",
+        "action": "Position for tech long exposure. The kidnappings come amid proposals at the Israeli cabinet to use of the kidnapping of women and children as a weapon against the Lebanese resistance",
+        "gated": true
+      },
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "asymmetry_diagnostic": {
+        "sentiment": 0.5,
+        "price_delta": -0.03,
+        "price_change_pct": -0.15,
+        "formula": "ABS((0.50 - -0.03) * 50) = 26",
+        "ticker": "QQQ",
+        "ticker_price": 706.76
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__nuking_iran_why_israel_and_the_us_gain_nothing_from_crossin",
+          "headline": "Nuking Iran: Why Israel and the US gain nothing from crossing the ultimate red line",
+          "sector": "crypto",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "inflow",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__tehran_launches_regional_counterattack_on_washington_039_s",
+          "headline": "Tehran launches regional counterattack on Washington&#039;s assets after new US strikes",
+          "sector": "tech",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "tech"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__pakistan_says_israel_derailed_us_iran_peace_deal_described_a",
+          "headline": "Pakistan says Israel derailed US–Iran peace deal described as &#039;inches away&#039;: Report",
+          "sector": "tech",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "tech"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired",
+          "asset_class": "tech",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 2.2,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work",
+          "asset_class": "tech",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai",
+          "asset_class": "tech",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 2.2,
+          "score": 3
+        }
+      ]
+    },
+    {
+      "story_id": "n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+      "headline": "МАГАТЭ принимает антииранскую резолюцию, требуя от Тегерана раскрыть местонахождение обогащённого урана.",
+      "sector": "defense",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Iranian reports from April said the alleged mission to rescue a downed US pilot during the war was actually an attempt to find and steal the uranium"
+      ],
+      "they_say": "Источник: the_cradle. Согласно иранским сообщениям за апрель, предполагаемая миссия по спасению сбитого американского пилота во время войны на самом деле была попыткой найти и похитить уран.",
+      "reality": "根据4月份的伊朗报道，所谓在战争期间营救一名被击落美国飞行员的任务，实际上是一次试图寻找并窃取铀的行动。",
+      "thesis": "OSINT draft #157: IAEA passes anti-Iran resolution, demands Tehran reveal location of enriched uranium",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL defense. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Iranian reports from April said the alleged mission to rescue a downed US pilot during the war was actually an attempt to find and steal the uranium",
+      "capital_flow": {
+        "direction": "neutral",
+        "amount_b": 4.1,
+        "asset_class": "defense",
+        "projected": "Iranian reports from April said the alleged mission to rescue a downed US pilot during the war was actually an attempt to find and steal the uranium",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$4.1B neutral defense",
+        "confidence": "50%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #157. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 157"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-10T19:50:48.809689+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "IAEA passes anti-Iran resolution, demands Tehran reveal location of enriched uranium",
+          "body": "Structural assessment: Iranian reports from April said the alleged mission to rescue a downed US pilot during the war was actually an attempt to find and steal the uranium... Implicated assets: SOL. Regions: Iran. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: defense exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "DEFENSE signal: WATCH",
+          "body": "Raw telemetry — defense flow detected from Iranian reports from April said the alleged mission to rescue a downed US pilot during the war was actually an attempt to find and steal the uranium... Assets tagged: SOL. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "defense",
+            "geographies": [
+              "Iran"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH SOL",
+          "body": "Directional: WATCH. Asset: SOL. Context: IAEA passes anti-Iran resolution, demands Tehran reveal location of enriched ura. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "NEUTRAL",
+        "asset_class": "defense",
+        "capital_at_stake": "$4.1B",
+        "rationale": "Iranian reports from April said the alleged mission to rescue a downed US pilot during the war was actually an attempt to find and steal the uranium",
+        "horizon": "24-72h",
+        "action": "Position for defense neutral exposure. Iranian reports from April said the alleged mission to rescue a downed US pilot during the war was actually an attempt to find and steal the uranium",
+        "gated": true
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "headline": "Most Israelis oppose Netanyahu&#039;s re-election as Trump says PM &#039;may quit politics&#039;",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__iran_to_pursue__039_war_and_diplomacy_039_simultaneously",
+          "headline": "Iran to pursue &#039;war and diplomacy&#039; simultaneously: Ghalibaf",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__israel_used_jordanian_airspace_to_bomb_iran_report",
+          "headline": "Israel used Jordanian airspace to bomb Iran: Report",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__imprison_their_women_and_children__supremacist_israeli_min",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
+    },
+    {
+      "story_id": "n21_osint__the_cradle__christian_village_in_occupied_west_bank_goes_up_in_flames_af",
+      "headline": "约旦河西岸被占领地区的一座基督教村庄在以色列定居者大规模袭击后陷入火海。",
+      "sector": "crypto",
+      "pillar": "china_ascendancy",
+      "paradigm_pillar": "china_ascendancy",
+      "paradigm_implications": [
+        "The pogrom carried out by Jewish settlers is part of a state-backed campaign of ethnic cleansing and displacement aimed at annexing the occupied Palestinian territory"
+      ],
+      "they_say": "Источник: the_cradle. Погром, устроенный еврейскими поселенцами, является частью поддерживаемой государством кампании этнических чисток и перемещения, направленной на аннексию оккупированной палестинской территории.",
+      "reality": "犹太定居者实施的暴行是国家支持的种族清洗和驱逐运动的一部分，旨在吞并被占领的巴勒斯坦领土。",
+      "thesis": "OSINT draft #158: Christian village in occupied West Bank goes up in flames after large-scale attack by Israeli settlers",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL crypto. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "The pogrom carried out by Jewish settlers is part of a state-backed campaign of ethnic cleansing and displacement aimed at annexing the occupied Palestinian territory",
+      "capital_flow": {
+        "direction": "neutral",
+        "amount_b": 0.3,
+        "asset_class": "crypto",
+        "projected": "The pogrom carried out by Jewish settlers is part of a state-backed campaign of ethnic cleansing and displacement aimed at annexing the occupied Palestinian territory",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$0.3B neutral crypto",
+        "confidence": "50%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #158. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 158"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-10T19:50:48.809594+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__christian_village_in_occupied_west_bank_goes_up_in_flames_af"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Christian village in occupied West Bank goes up in flames after large-scale attack by Israeli settlers",
+          "body": "Structural assessment: The pogrom carried out by Jewish settlers is part of a state-backed campaign of ethnic cleansing and displacement aimed at annexing the occupied Palestinian territory... Implicated assets: ETH. Regions: Israel. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: crypto exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "CRYPTO signal: WATCH",
+          "body": "Raw telemetry — crypto flow detected from The pogrom carried out by Jewish settlers is part of a state-backed campaign of ethnic cleansing and displacement aimed at annexing the occupied Pales... Assets tagged: ETH. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "crypto",
+            "geographies": [
+              "Israel"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH ETH",
+          "body": "Directional: WATCH. Asset: ETH. Context: Christian village in occupied West Bank goes up in flames after large-scale atta. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "NEUTRAL",
+        "asset_class": "crypto",
+        "capital_at_stake": "$0.3B",
+        "rationale": "The pogrom carried out by Jewish settlers is part of a state-backed campaign of ethnic cleansing and displacement aimed at annexing the occupied Palestinian territory",
+        "horizon": "24-72h",
+        "action": "Position for crypto neutral exposure. The pogrom carried out by Jewish settlers is part of a state-backed campaign of ethnic cleansing and displacement aimed at annexing the occupied Palestinian territory",
+        "gated": true
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "headline": "IAEA passes anti-Iran resolution, demands Tehran reveal location of enriched uranium",
+          "sector": "defense",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__russia_discusses_reformatting_military_presence_in_syria_a",
+          "headline": "Russia discusses ‘reformatting’ military presence in Syria as ties ‘develop actively’",
+          "sector": "commodities",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "headline": "UK court grants Allianz permission to sue pro-Palestine activists for nearly $400,000",
+          "sector": "equities",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__christian_village_in_occupied_west_bank_goes_up_in_flames_af",
+          "asset_class": "crypto",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 2.0,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 75,
+          "pace_multiplier": 2.3,
+          "score": 2
+        }
+      ]
+    },
+    {
+      "story_id": "n21_osint__the_cradle__russia_discusses_reformatting_military_presence_in_syria_a",
+      "headline": "Россия обсуждает «переформатирование» военного присутствия в Сирии на фоне «активного развития» отношений.",
+      "sector": "commodities",
+      "pillar": "china_ascendancy",
+      "paradigm_pillar": "china_ascendancy",
+      "paradigm_implications": [
+        "Moscow has been supplying Syria with oil, and recently unveiled plans for a new goods distribution hub at Tartous Port"
+      ],
+      "they_say": "Источник: the_cradle. Москва поставляет нефть в Сирию и недавно представила планы по созданию нового распределительного центра для товаров в порту Тартус.",
+      "reality": "Москва осуществляет поставки нефти в Сирию, а недавно представила планы по созданию нового распределительного центра товаров в порту Тартус.",
+      "thesis": "OSINT draft #159: Russia discusses ‘reformatting’ military presence in Syria as ties ‘develop actively’",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL commodities. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Moscow has been supplying Syria with oil, and recently unveiled plans for a new goods distribution hub at Tartous Port",
+      "capital_flow": {
+        "direction": "neutral",
+        "amount_b": 7.7,
+        "asset_class": "commodities",
+        "projected": "Moscow has been supplying Syria with oil, and recently unveiled plans for a new goods distribution hub at Tartous Port",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$7.7B neutral commodities",
+        "confidence": "50%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #159. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 159"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-10T19:50:48.809498+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__russia_discusses_reformatting_military_presence_in_syria_a"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Russia discusses ‘reformatting’ military presence in Syria as ties ‘develop actively’",
+          "body": "Structural assessment: Moscow has been supplying Syria with oil, and recently unveiled plans for a new goods distribution hub at Tartous Port... Implicated assets: WTI. Regions: Russia, Syria. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: commodities exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "COMMODITIES signal: WATCH",
+          "body": "Raw telemetry — commodities flow detected from Moscow has been supplying Syria with oil, and recently unveiled plans for a new goods distribution hub at Tartous Port... Assets tagged: WTI. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "commodities",
+            "geographies": [
+              "Russia",
+              "Syria"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH WTI",
+          "body": "Directional: WATCH. Asset: WTI. Context: Russia discusses ‘reformatting’ military presence in Syria as ties ‘develop acti. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "NEUTRAL",
+        "asset_class": "commodities",
+        "capital_at_stake": "$7.7B",
+        "rationale": "Moscow has been supplying Syria with oil, and recently unveiled plans for a new goods distribution hub at Tartous Port",
+        "horizon": "24-72h",
+        "action": "Position for commodities neutral exposure. Moscow has been supplying Syria with oil, and recently unveiled plans for a new goods distribution hub at Tartous Port",
+        "gated": true
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "headline": "The energy shock that could accelerate a multipolar world",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "headline": "IAEA passes anti-Iran resolution, demands Tehran reveal location of enriched uranium",
+          "sector": "defense",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__christian_village_in_occupied_west_bank_goes_up_in_flames_af",
+          "headline": "Christian village in occupied West Bank goes up in flames after large-scale attack by Israeli settlers",
+          "sector": "crypto",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__russia_discusses_reformatting_military_presence_in_syria_a",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        }
+      ]
+    },
+    {
+      "story_id": "n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+      "headline": "Британский суд разрешил Allianz подать иск к пропалестинским активистам на сумму почти $400,000.",
+      "sector": "equities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Damages would be collected from the activists’ future earnings and savings, a move described as an ‘intimidatory fear tactic’"
+      ],
+      "they_say": "来源：the_cradle。赔偿金将从活动人士的未来收入及储蓄中扣除，此举被描述为一种“恐吓性恐惧策略”。",
+      "reality": "赔偿金将从活动人士的未来收入和储蓄中扣除，此举被描述为一种‘恐吓性恐惧策略’。",
+      "thesis": "OSINT draft #160: UK court grants Allianz permission to sue pro-Palestine activists for nearly $400,000",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL equities. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Damages would be collected from the activists’ future earnings and savings, a move described as an ‘intimidatory fear tactic’",
+      "capital_flow": {
+        "direction": "neutral",
+        "amount_b": 0.2,
+        "asset_class": "equities",
+        "projected": "Damages would be collected from the activists’ future earnings and savings, a move described as an ‘intimidatory fear tactic’",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$0.2B neutral equities",
+        "confidence": "50%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #160. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 160"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-10T19:50:48.809405+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "UK court grants Allianz permission to sue pro-Palestine activists for nearly $400,000",
+          "body": "Structural assessment: Damages would be collected from the activists’ future earnings and savings, a move described as an ‘intimidatory fear tactic’... Implicated assets: equities. Regions: UK. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: equities exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "EQUITIES signal: WATCH",
+          "body": "Raw telemetry — equities flow detected from Damages would be collected from the activists’ future earnings and savings, a move described as an ‘intimidatory fear tactic’... Assets tagged: equities. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "equities",
+            "geographies": [
+              "UK"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH equities",
+          "body": "Directional: WATCH. Asset: equities. Context: UK court grants Allianz permission to sue pro-Palestine activists for nearly $40. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "NEUTRAL",
+        "asset_class": "equities",
+        "capital_at_stake": "$0.2B",
+        "rationale": "Damages would be collected from the activists’ future earnings and savings, a move described as an ‘intimidatory fear tactic’",
+        "horizon": "24-72h",
+        "action": "Position for equities neutral exposure. Damages would be collected from the activists’ future earnings and savings, a move described as an ‘intimidatory fear tactic’",
+        "gated": true
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__lebanese_army_chief_meets_top_pakistani_officials_amid_us-ba",
+          "headline": "Lebanese army chief meets top Pakistani officials amid US-backed Israeli escalation",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__wave_of_mass_displacement_hits_lebanon_039_s_tyre_as_israel",
+          "headline": "Wave of mass displacement hits Lebanon&#039;s Tyre as Israeli massacres continue",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__over_one_third_of_labour_mps_call_on_london_to_ban_trade_wit",
+          "headline": "Over one third of Labour MPs call on London to ban trade with illegal West Bank settlements",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__us_seeking__039_precise_info_039_on_iran_039_s_enriched",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__eu_sanctions_iranian_officials_irgc_unit_over_hormuz_restri",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
+    },
+    {
+      "story_id": "n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+      "headline": "大多数以色列人反对内塔尼亚胡连任，特朗普称其“可能退出政坛”。",
+      "sector": "defense",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Trump continues to call the premier a 'wartime prime minister' as Netanyahu faces ongoing internal opposition and a long-delayed corruption trial"
+      ],
+      "they_say": "Источник: the_cradle. Трамп продолжает называть премьер-министра «военным премьером», в то время как Нетаньяху сталкивается с продолжающейся внутренней оппозицией и давно отложенным судебным процессом по делу о коррупции.",
+      "reality": "特朗普持续称内塔尼亚胡为“战时总理”，后者正面临持续的内部反对以及一桩长期拖延的腐败审判。",
+      "thesis": "OSINT draft #161: Most Israelis oppose Netanyahu&#039;s re-election as Trump says PM &#039;may quit politics&#039;",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL defense. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Trump continues to call the premier a 'wartime prime minister' as Netanyahu faces ongoing internal opposition and a long-delayed corruption trial",
+      "capital_flow": {
+        "direction": "neutral",
+        "amount_b": 8.8,
+        "asset_class": "defense",
+        "projected": "Trump continues to call the premier a 'wartime prime minister' as Netanyahu faces ongoing internal opposition and a long-delayed corruption trial",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$8.8B neutral defense",
+        "confidence": "50%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #161. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 161"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-10T19:50:48.809312+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Most Israelis oppose Netanyahu&#039;s re-election as Trump says PM &#039;may quit politics&#039;",
+          "body": "Structural assessment: Trump continues to call the premier a 'wartime prime minister' as Netanyahu faces ongoing internal opposition and a long-delayed corruption trial... Implicated assets: defense. Regions: Israel. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: defense exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "DEFENSE signal: WATCH",
+          "body": "Raw telemetry — defense flow detected from Trump continues to call the premier a 'wartime prime minister' as Netanyahu faces ongoing internal opposition and a long-delayed corruption trial... Assets tagged: defense. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "defense",
+            "geographies": [
+              "Israel"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH defense",
+          "body": "Directional: WATCH. Asset: defense. Context: Most Israelis oppose Netanyahu&#039;s re-election as Trump says PM &#039;may qui. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "NEUTRAL",
+        "asset_class": "defense",
+        "capital_at_stake": "$8.8B",
+        "rationale": "Trump continues to call the premier a 'wartime prime minister' as Netanyahu faces ongoing internal opposition and a long-delayed corruption trial",
+        "horizon": "24-72h",
+        "action": "Position for defense neutral exposure. Trump continues to call the premier a 'wartime prime minister' as Netanyahu faces ongoing internal opposition and a long-delayed corruption trial",
+        "gated": true
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "headline": "IAEA passes anti-Iran resolution, demands Tehran reveal location of enriched uranium",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__iran_to_pursue__039_war_and_diplomacy_039_simultaneously",
+          "headline": "Iran to pursue &#039;war and diplomacy&#039; simultaneously: Ghalibaf",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__israel_used_jordanian_airspace_to_bomb_iran_report",
+          "headline": "Israel used Jordanian airspace to bomb Iran: Report",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__imprison_their_women_and_children__supremacist_israeli_min",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
+    },
+    {
+      "story_id": "n21_osint__the_cradle__nuking_iran_why_israel_and_the_us_gain_nothing_from_crossin",
+      "headline": "对伊朗实施核打击：为何以色列与美国跨越终极红线将一无所获",
+      "sector": "crypto",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "The real danger is not whether Washington or Tel Aviv can cross the nuclear threshold, but what kind of world emerges once they do."
+      ],
+      "they_say": "Источник: the_cradle. Реальная угроза заключается не в том, смогут ли Вашингтон или Тель-Авив пересечь ядерный порог, а в том, каким станет мир после этого шага.",
+      "reality": "Реальная опасность заключается не в том, сможет ли Вашингтон или Тель-Авив пересечь ядерный порог, а в том, каким станет мир после того, как они это сделают.",
+      "thesis": "OSINT draft #162: Nuking Iran: Why Israel and the US gain nothing from crossing the ultimate red line",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: INFLOW crypto. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "The real danger is not whether Washington or Tel Aviv can cross the nuclear threshold, but what kind of world emerges once they do.",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 1.9,
+        "asset_class": "crypto",
+        "projected": "The real danger is not whether Washington or Tel Aviv can cross the nuclear threshold, but what kind of world emerges once they do.",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$1.9B inflow crypto",
+        "confidence": "50%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #162. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 162"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-10T19:50:48.809217+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__nuking_iran_why_israel_and_the_us_gain_nothing_from_crossin"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Nuking Iran: Why Israel and the US gain nothing from crossing the ultimate red line",
+          "body": "Structural assessment: The real danger is not whether Washington or Tel Aviv can cross the nuclear threshold, but what kind of world emerges once they do.... Implicated assets: ETH. Regions: Iran, Israel, UK. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: crypto exposure review recommended. Directional bias: LONG."
+        },
+        "quant": {
+          "headline": "CRYPTO signal: LONG",
+          "body": "Raw telemetry — crypto flow detected from The real danger is not whether Washington or Tel Aviv can cross the nuclear threshold, but what kind of world emerges once they do.... Assets tagged: ETH. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "inflow",
+            "asset_class": "crypto",
+            "geographies": [
+              "Iran",
+              "Israel",
+              "UK",
+              "USA"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG ETH",
+          "body": "Directional: LONG. Asset: ETH. Context: Nuking Iran: Why Israel and the US gain nothing from crossing the ultimate red l. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "LONG",
+        "asset_class": "crypto",
+        "capital_at_stake": "$1.9B",
+        "rationale": "The real danger is not whether Washington or Tel Aviv can cross the nuclear threshold, but what kind of world emerges once they do.",
+        "horizon": "24-72h",
+        "action": "Position for crypto long exposure. The real danger is not whether Washington or Tel Aviv can cross the nuclear threshold, but what kind of world emerges once they do.",
+        "gated": true
+      },
+      "asymmetry_score": 21,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "asymmetry_diagnostic": {
+        "sentiment": 0.5,
+        "price_delta": 0.076,
+        "price_change_pct": 0.38,
+        "formula": "ABS((0.50 - 0.08) * 50) = 21",
+        "ticker": "BTC-USD",
+        "ticker_price": 61875.98
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
+          "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
+          "sector": "crypto",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_abundance_tech__btc_crash__worst_week_since_ftx_collapse_microstrategy_bou",
+          "headline": "BTC CRASH — Worst Week Since FTX Collapse, MicroStrategy Bought $65K Dip, Whales Hold",
+          "sector": "crypto",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "inflow"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work",
+          "headline": "Israeli occupation troops abduct two Lebanese municipal workers",
+          "sector": "tech",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "inflow",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 2.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 75,
+          "pace_multiplier": 2.3,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
+    },
+    {
+      "story_id": "n21_osint__the_cradle__tehran_launches_regional_counterattack_on_washington_039_s",
+      "headline": "德黑兰在美国新一轮打击后，对华盛顿资产发起区域性反击。",
+      "sector": "tech",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "The IRGC said it struck US jet hangars and other ‘important targets’ at the Muwaffaq Salti Base in Jordan, as part of attacks that also targeted the US Fifth Fleet in Bahrain"
+      ],
+      "they_say": "Источник: the_cradle. КСИР заявил, что нанёс удары по ангарам для американских истребителей и другим «важным целям» на базе Муваффак Салти в Иордании, в рамках атак, которые также затронули Пятый флот США в Бахрейне.",
+      "reality": "Корпус стражей исламской революции (КСИР) заявил, что нанёс удары по ангарам для самолётов США и другим «важным целям» на базе Муваффак Салти в Иордании в рамках атак, которые также затронули Пятый флот США в Бахрейне.",
+      "thesis": "OSINT draft #163: Tehran launches regional counterattack on Washington&#039;s assets after new US strikes",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL tech. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "The IRGC said it struck US jet hangars and other ‘important targets’ at the Muwaffaq Salti Base in Jordan, as part of attacks that also targeted the US Fifth Fleet in Bahrain",
+      "capital_flow": {
+        "direction": "neutral",
+        "amount_b": 2.7,
+        "asset_class": "tech",
+        "projected": "The IRGC said it struck US jet hangars and other ‘important targets’ at the Muwaffaq Salti Base in Jordan, as part of attacks that also targeted the US Fifth Fleet in Bahrain",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$2.7B neutral tech",
+        "confidence": "50%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #163. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 163"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-10T19:50:48.809120+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__tehran_launches_regional_counterattack_on_washington_039_s"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Tehran launches regional counterattack on Washington&#039;s assets after new US strikes",
+          "body": "Structural assessment: The IRGC said it struck US jet hangars and other ‘important targets’ at the Muwaffaq Salti Base in Jordan, as part of attacks that also targeted the US Fifth Fleet in Bahrain... Implicated assets: tech. Regions: Iran, USA. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: tech exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "TECH signal: WATCH",
+          "body": "Raw telemetry — tech flow detected from The IRGC said it struck US jet hangars and other ‘important targets’ at the Muwaffaq Salti Base in Jordan, as part of attacks that also targeted the U... Assets tagged: tech. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "tech",
+            "geographies": [
+              "Iran",
+              "USA"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH tech",
+          "body": "Directional: WATCH. Asset: tech. Context: Tehran launches regional counterattack on Washington&#039;s assets after new US . Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "NEUTRAL",
+        "asset_class": "tech",
+        "capital_at_stake": "$2.7B",
+        "rationale": "The IRGC said it struck US jet hangars and other ‘important targets’ at the Muwaffaq Salti Base in Jordan, as part of attacks that also targeted the US Fifth Fleet in Bahrain",
+        "horizon": "24-72h",
+        "action": "Position for tech neutral exposure. The IRGC said it struck US jet hangars and other ‘important targets’ at the Muwaffaq Salti Base in Jordan, as part of attacks that also targeted the US Fifth Fleet in Bahrain",
+        "gated": true
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__pakistan_says_israel_derailed_us_iran_peace_deal_described_a",
+          "headline": "Pakistan says Israel derailed US–Iran peace deal described as &#039;inches away&#039;: Report",
+          "sector": "tech",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__irgc_declares_new_regional_security_belt_extending_from_horm",
+          "headline": "IRGC declares new regional security belt extending from Hormuz to Red Sea",
+          "sector": "tech",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work",
+          "headline": "Israeli occupation troops abduct two Lebanese municipal workers",
+          "sector": "tech",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "tech"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__pakistan_says_israel_derailed_us_iran_peace_deal_described_a",
+          "asset_class": "tech",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__irgc_declares_new_regional_security_belt_extending_from_horm",
+          "asset_class": "tech",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__tehran_launches_regional_counterattack_on_washington_039_s",
+          "asset_class": "tech",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
+    },
+    {
+      "story_id": "n21_osint__the_cradle__pakistan_says_israel_derailed_us_iran_peace_deal_described_a",
+      "headline": "Пакистан заявляет, что Израиль сорвал мирную сделку между США и Ираном, которая, по описанию, была «в шаге» от заключения: отчет",
+      "sector": "tech",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Continued Israeli violations in Lebanon and Gaza are the 'main obstacle' to lasting peace, mediators say"
+      ],
+      "they_say": "来源：the_cradle。调解方表示，以色列在黎巴嫩和加沙的持续侵犯行为是实现持久和平的“主要障碍”。",
+      "reality": "调解方表示，以色列在黎巴嫩和加沙的持续侵犯行为是实现持久和平的“主要障碍”。",
+      "thesis": "OSINT draft #164: Pakistan says Israel derailed US–Iran peace deal described as &#039;inches away&#039;: Report",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL tech. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Continued Israeli violations in Lebanon and Gaza are the 'main obstacle' to lasting peace, mediators say",
+      "capital_flow": {
+        "direction": "neutral",
+        "amount_b": 12.0,
+        "asset_class": "tech",
+        "projected": "Continued Israeli violations in Lebanon and Gaza are the 'main obstacle' to lasting peace, mediators say",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$12.0B neutral tech",
+        "confidence": "50%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #164. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 164"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-10T19:50:48.809020+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__pakistan_says_israel_derailed_us_iran_peace_deal_described_a"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Pakistan says Israel derailed US–Iran peace deal described as &#039;inches away&#039;: Report",
+          "body": "Structural assessment: Continued Israeli violations in Lebanon and Gaza are the 'main obstacle' to lasting peace, mediators say... Implicated assets: tech. Regions: Iran, Israel, Lebanon. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: tech exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "TECH signal: WATCH",
+          "body": "Raw telemetry — tech flow detected from Continued Israeli violations in Lebanon and Gaza are the 'main obstacle' to lasting peace, mediators say... Assets tagged: tech. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "tech",
+            "geographies": [
+              "Iran",
+              "Israel",
+              "Lebanon"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH tech",
+          "body": "Directional: WATCH. Asset: tech. Context: Pakistan says Israel derailed US–Iran peace deal described as &#039;inches away&. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "NEUTRAL",
+        "asset_class": "tech",
+        "capital_at_stake": "$12.0B",
+        "rationale": "Continued Israeli violations in Lebanon and Gaza are the 'main obstacle' to lasting peace, mediators say",
+        "horizon": "24-72h",
+        "action": "Position for tech neutral exposure. Continued Israeli violations in Lebanon and Gaza are the 'main obstacle' to lasting peace, mediators say",
+        "gated": true
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__tehran_launches_regional_counterattack_on_washington_039_s",
+          "headline": "Tehran launches regional counterattack on Washington&#039;s assets after new US strikes",
+          "sector": "tech",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__irgc_declares_new_regional_security_belt_extending_from_horm",
+          "headline": "IRGC declares new regional security belt extending from Hormuz to Red Sea",
+          "sector": "tech",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work",
+          "headline": "Israeli occupation troops abduct two Lebanese municipal workers",
+          "sector": "tech",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "tech"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__pakistan_says_israel_derailed_us_iran_peace_deal_described_a",
+          "asset_class": "tech",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__irgc_declares_new_regional_security_belt_extending_from_horm",
+          "asset_class": "tech",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__tehran_launches_regional_counterattack_on_washington_039_s",
+          "asset_class": "tech",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
+    },
+    {
+      "story_id": "n21_osint__the_cradle__iran_to_pursue__039_war_and_diplomacy_039_simultaneously",
+      "headline": "伊朗将同时推进“战争与外交”：卡利巴夫",
+      "sector": "defense",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Satellite imagery has revealed that Iran’s latest strike on Israel, carried out in defense of Lebanon, damaged a key Israeli air base"
+      ],
+      "they_say": "来源：the_cradle。卫星图像显示，伊朗为保卫黎巴嫩而对以色列发动的最近一次打击，已对一处关键以色列空军基地造成破坏。",
+      "reality": "卫星图像显示，伊朗为保卫黎巴嫩而对以色列发动的最新打击，已损坏了一处关键的以色列空军基地。",
+      "thesis": "OSINT draft #165: Iran to pursue &#039;war and diplomacy&#039; simultaneously: Ghalibaf",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL defense. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Satellite imagery has revealed that Iran’s latest strike on Israel, carried out in defense of Lebanon, damaged a key Israeli air base",
+      "capital_flow": {
+        "direction": "neutral",
+        "amount_b": 3.7,
+        "asset_class": "defense",
+        "projected": "Satellite imagery has revealed that Iran’s latest strike on Israel, carried out in defense of Lebanon, damaged a key Israeli air base",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$3.7B neutral defense",
+        "confidence": "50%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #165. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 165"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-10T19:50:48.808923+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__iran_to_pursue__039_war_and_diplomacy_039_simultaneously"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Iran to pursue &#039;war and diplomacy&#039; simultaneously: Ghalibaf",
+          "body": "Structural assessment: Satellite imagery has revealed that Iran’s latest strike on Israel, carried out in defense of Lebanon, damaged a key Israeli air base... Implicated assets: defense. Regions: Iran, Israel, Lebanon. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: defense exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "DEFENSE signal: WATCH",
+          "body": "Raw telemetry — defense flow detected from Satellite imagery has revealed that Iran’s latest strike on Israel, carried out in defense of Lebanon, damaged a key Israeli air base... Assets tagged: defense. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "defense",
+            "geographies": [
+              "Iran",
+              "Israel",
+              "Lebanon"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH defense",
+          "body": "Directional: WATCH. Asset: defense. Context: Iran to pursue &#039;war and diplomacy&#039; simultaneously: Ghalibaf. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "NEUTRAL",
+        "asset_class": "defense",
+        "capital_at_stake": "$3.7B",
+        "rationale": "Satellite imagery has revealed that Iran’s latest strike on Israel, carried out in defense of Lebanon, damaged a key Israeli air base",
+        "horizon": "24-72h",
+        "action": "Position for defense neutral exposure. Satellite imagery has revealed that Iran’s latest strike on Israel, carried out in defense of Lebanon, damaged a key Israeli air base",
+        "gated": true
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "headline": "IAEA passes anti-Iran resolution, demands Tehran reveal location of enriched uranium",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "headline": "Most Israelis oppose Netanyahu&#039;s re-election as Trump says PM &#039;may quit politics&#039;",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__israel_used_jordanian_airspace_to_bomb_iran_report",
+          "headline": "Israel used Jordanian airspace to bomb Iran: Report",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__imprison_their_women_and_children__supremacist_israeli_min",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
+    },
+    {
+      "story_id": "n21_osint__the_cradle__israel_used_jordanian_airspace_to_bomb_iran_report",
+      "headline": "Израиль использовал воздушное пространство Иордании для нанесения ударов по Ирану: отчет",
+      "sector": "defense",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Jordan has been serving as a ‘key hub’ for US and Israeli attacks on Iran since the beginning of the war in February"
+      ],
+      "they_say": "Источник: the_cradle. Иордания с начала войны в феврале выполняет функцию «ключевого хаба» для атак США и Израиля на Иран.",
+      "reality": "С начала войны в феврале Иордания выступает в качестве «ключевого хаба» для атак США и Израиля на Иран.",
+      "thesis": "OSINT draft #166: Israel used Jordanian airspace to bomb Iran: Report",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL defense. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Jordan has been serving as a ‘key hub’ for US and Israeli attacks on Iran since the beginning of the war in February",
+      "capital_flow": {
+        "direction": "neutral",
+        "amount_b": 3.7,
+        "asset_class": "defense",
+        "projected": "Jordan has been serving as a ‘key hub’ for US and Israeli attacks on Iran since the beginning of the war in February",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$3.7B neutral defense",
+        "confidence": "50%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #166. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 166"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-10T19:50:48.808826+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__israel_used_jordanian_airspace_to_bomb_iran_report"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Israel used Jordanian airspace to bomb Iran: Report",
+          "body": "Structural assessment: Jordan has been serving as a ‘key hub’ for US and Israeli attacks on Iran since the beginning of the war in February... Implicated assets: defense. Regions: Iran, Israel. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: defense exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "DEFENSE signal: WATCH",
+          "body": "Raw telemetry — defense flow detected from Jordan has been serving as a ‘key hub’ for US and Israeli attacks on Iran since the beginning of the war in February... Assets tagged: defense. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "defense",
+            "geographies": [
+              "Iran",
+              "Israel"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH defense",
+          "body": "Directional: WATCH. Asset: defense. Context: Israel used Jordanian airspace to bomb Iran: Report. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "NEUTRAL",
+        "asset_class": "defense",
+        "capital_at_stake": "$3.7B",
+        "rationale": "Jordan has been serving as a ‘key hub’ for US and Israeli attacks on Iran since the beginning of the war in February",
+        "horizon": "24-72h",
+        "action": "Position for defense neutral exposure. Jordan has been serving as a ‘key hub’ for US and Israeli attacks on Iran since the beginning of the war in February",
+        "gated": true
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "headline": "IAEA passes anti-Iran resolution, demands Tehran reveal location of enriched uranium",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "headline": "Most Israelis oppose Netanyahu&#039;s re-election as Trump says PM &#039;may quit politics&#039;",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__iran_to_pursue__039_war_and_diplomacy_039_simultaneously",
+          "headline": "Iran to pursue &#039;war and diplomacy&#039; simultaneously: Ghalibaf",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__imprison_their_women_and_children__supremacist_israeli_min",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
+    },
+    {
+      "story_id": "n21_osint__the_cradle__lebanese_army_chief_meets_top_pakistani_officials_amid_us-ba",
+      "headline": "Начальник штаба Ливанской армии встретился с высокопоставленными пакистанскими чиновниками на фоне эскалации со стороны Израиля при поддержке США",
+      "sector": "equities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "The visit comes as Beirut continues to insist that the situation in Lebanon is not linked to negotiations between Tehran and Washington"
+      ],
+      "they_say": "来源：the_cradle。此次访问正值贝鲁特方面持续强调，黎巴嫩局势与德黑兰及华盛顿之间的谈判无关。",
+      "reality": "此次访问正值贝鲁特方面持续强调，黎巴嫩局势与德黑兰及华盛顿之间的谈判无关。",
+      "thesis": "OSINT draft #167: Lebanese army chief meets top Pakistani officials amid US-backed Israeli escalation",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL equities. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "The visit comes as Beirut continues to insist that the situation in Lebanon is not linked to negotiations between Tehran and Washington",
+      "capital_flow": {
+        "direction": "neutral",
+        "amount_b": 0.1,
+        "asset_class": "equities",
+        "projected": "The visit comes as Beirut continues to insist that the situation in Lebanon is not linked to negotiations between Tehran and Washington",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$0.1B neutral equities",
+        "confidence": "50%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #167. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 167"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-10T19:50:48.808728+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__lebanese_army_chief_meets_top_pakistani_officials_amid_us-ba"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Lebanese army chief meets top Pakistani officials amid US-backed Israeli escalation",
+          "body": "Structural assessment: The visit comes as Beirut continues to insist that the situation in Lebanon is not linked to negotiations between Tehran and Washington... Implicated assets: equities. Regions: Iran, Israel, Lebanon. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: equities exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "EQUITIES signal: WATCH",
+          "body": "Raw telemetry — equities flow detected from The visit comes as Beirut continues to insist that the situation in Lebanon is not linked to negotiations between Tehran and Washington... Assets tagged: equities. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "equities",
+            "geographies": [
+              "Iran",
+              "Israel",
+              "Lebanon",
+              "USA"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH equities",
+          "body": "Directional: WATCH. Asset: equities. Context: Lebanese army chief meets top Pakistani officials amid US-backed Israeli escalat. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "NEUTRAL",
+        "asset_class": "equities",
+        "capital_at_stake": "$0.1B",
+        "rationale": "The visit comes as Beirut continues to insist that the situation in Lebanon is not linked to negotiations between Tehran and Washington",
+        "horizon": "24-72h",
+        "action": "Position for equities neutral exposure. The visit comes as Beirut continues to insist that the situation in Lebanon is not linked to negotiations between Tehran and Washington",
+        "gated": true
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "headline": "UK court grants Allianz permission to sue pro-Palestine activists for nearly $400,000",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__wave_of_mass_displacement_hits_lebanon_039_s_tyre_as_israel",
+          "headline": "Wave of mass displacement hits Lebanon&#039;s Tyre as Israeli massacres continue",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__over_one_third_of_labour_mps_call_on_london_to_ban_trade_wit",
+          "headline": "Over one third of Labour MPs call on London to ban trade with illegal West Bank settlements",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__us_seeking__039_precise_info_039_on_iran_039_s_enriched",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__eu_sanctions_iranian_officials_irgc_unit_over_hormuz_restri",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
+    },
+    {
+      "story_id": "n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+      "headline": "能源冲击或将加速多极化世界的形成",
+      "sector": "commodities",
+      "pillar": "china_ascendancy",
+      "paradigm_pillar": "china_ascendancy",
+      "paradigm_implications": [
+        "The disruption of Persian Gulf energy flows is driving inflation, economic turmoil, and a global realignment that favors China and Russia."
+      ],
+      "they_say": "Источник: the_cradle. Нарушение потоков энергоносителей в Персидском заливе ведёт к инфляции, экономической нестабильности и глобальной перестройке, выгодной для Китая и России.",
+      "reality": "波斯湾能源流动的中断正在推高通胀、引发经济动荡，并推动全球格局重组，这一趋势对中国和俄罗斯有利。",
+      "thesis": "OSINT draft #168: The energy shock that could accelerate a multipolar world",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL commodities. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "The disruption of Persian Gulf energy flows is driving inflation, economic turmoil, and a global realignment that favors China and Russia.",
+      "capital_flow": {
+        "direction": "neutral",
+        "amount_b": 8.1,
+        "asset_class": "commodities",
+        "projected": "The disruption of Persian Gulf energy flows is driving inflation, economic turmoil, and a global realignment that favors China and Russia.",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$8.1B neutral commodities",
+        "confidence": "50%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #168. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 168"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-10T19:50:48.808634+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "The energy shock that could accelerate a multipolar world",
+          "body": "Structural assessment: The disruption of Persian Gulf energy flows is driving inflation, economic turmoil, and a global realignment that favors China and Russia.... Implicated assets: WTI. Regions: China, Russia. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: commodities exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "COMMODITIES signal: WATCH",
+          "body": "Raw telemetry — commodities flow detected from The disruption of Persian Gulf energy flows is driving inflation, economic turmoil, and a global realignment that favors China and Russia.... Assets tagged: WTI. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "commodities",
+            "geographies": [
+              "China",
+              "Russia"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH WTI",
+          "body": "Directional: WATCH. Asset: WTI. Context: The energy shock that could accelerate a multipolar world. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "NEUTRAL",
+        "asset_class": "commodities",
+        "capital_at_stake": "$8.1B",
+        "rationale": "The disruption of Persian Gulf energy flows is driving inflation, economic turmoil, and a global realignment that favors China and Russia.",
+        "horizon": "24-72h",
+        "action": "Position for commodities neutral exposure. The disruption of Persian Gulf energy flows is driving inflation, economic turmoil, and a global realignment that favors China and Russia.",
+        "gated": true
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__russia_discusses_reformatting_military_presence_in_syria_a",
+          "headline": "Russia discusses ‘reformatting’ military presence in Syria as ties ‘develop actively’",
+          "sector": "commodities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "headline": "IAEA passes anti-Iran resolution, demands Tehran reveal location of enriched uranium",
+          "sector": "defense",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__christian_village_in_occupied_west_bank_goes_up_in_flames_af",
+          "headline": "Christian village in occupied West Bank goes up in flames after large-scale attack by Israeli settlers",
+          "sector": "crypto",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__russia_discusses_reformatting_military_presence_in_syria_a",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 2
+        }
+      ]
+    },
+    {
+      "story_id": "n21_osint__the_cradle__irgc_declares_new_regional_security_belt_extending_from_horm",
+      "headline": "IRGC宣布建立新的区域安全带，范围从霍尔木兹延伸至红海。",
+      "sector": "tech",
+      "pillar": "china_ascendancy",
+      "paradigm_pillar": "china_ascendancy",
+      "paradigm_implications": [
+        "The Axis of Resistance recently adopted a proactive strategic posture after repeated peace pledges failed to halt US-Israeli aggression"
+      ],
+      "they_say": "Источник: the_cradle. Ось сопротивления недавно приняла проактивную стратегическую позицию после того, как неоднократные мирные обязательства не смогли остановить агрессию США и Израиля.",
+      "reality": "轴心抵抗力量在多次和平承诺未能阻止美以侵略后，近期采取了主动的战略姿态。",
+      "thesis": "OSINT draft #169: IRGC declares new regional security belt extending from Hormuz to Red Sea",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL tech. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "The Axis of Resistance recently adopted a proactive strategic posture after repeated peace pledges failed to halt US-Israeli aggression",
+      "capital_flow": {
+        "direction": "neutral",
+        "amount_b": 10.3,
+        "asset_class": "tech",
+        "projected": "The Axis of Resistance recently adopted a proactive strategic posture after repeated peace pledges failed to halt US-Israeli aggression",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$10.3B neutral tech",
+        "confidence": "50%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #169. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 169"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-10T19:50:48.808539+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__irgc_declares_new_regional_security_belt_extending_from_horm"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "IRGC declares new regional security belt extending from Hormuz to Red Sea",
+          "body": "Structural assessment: The Axis of Resistance recently adopted a proactive strategic posture after repeated peace pledges failed to halt US-Israeli aggression... Implicated assets: tech. Regions: Israel. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: tech exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "TECH signal: WATCH",
+          "body": "Raw telemetry — tech flow detected from The Axis of Resistance recently adopted a proactive strategic posture after repeated peace pledges failed to halt US-Israeli aggression... Assets tagged: tech. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "tech",
+            "geographies": [
+              "Israel"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH tech",
+          "body": "Directional: WATCH. Asset: tech. Context: IRGC declares new regional security belt extending from Hormuz to Red Sea. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "NEUTRAL",
+        "asset_class": "tech",
+        "capital_at_stake": "$10.3B",
+        "rationale": "The Axis of Resistance recently adopted a proactive strategic posture after repeated peace pledges failed to halt US-Israeli aggression",
+        "horizon": "24-72h",
+        "action": "Position for tech neutral exposure. The Axis of Resistance recently adopted a proactive strategic posture after repeated peace pledges failed to halt US-Israeli aggression",
+        "gated": true
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__tehran_launches_regional_counterattack_on_washington_039_s",
+          "headline": "Tehran launches regional counterattack on Washington&#039;s assets after new US strikes",
+          "sector": "tech",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__pakistan_says_israel_derailed_us_iran_peace_deal_described_a",
+          "headline": "Pakistan says Israel derailed US–Iran peace deal described as &#039;inches away&#039;: Report",
+          "sector": "tech",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "neutral"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work",
+          "headline": "Israeli occupation troops abduct two Lebanese municipal workers",
+          "sector": "tech",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "tech"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__pakistan_says_israel_derailed_us_iran_peace_deal_described_a",
+          "asset_class": "tech",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__irgc_declares_new_regional_security_belt_extending_from_horm",
+          "asset_class": "tech",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__tehran_launches_regional_counterattack_on_washington_039_s",
+          "asset_class": "tech",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
+    },
+    {
+      "story_id": "n21_osint__the_cradle__imprison_their_women_and_children__supremacist_israeli_min",
+      "headline": "\"Заключите в тюрьму их женщин и детей\": израильский министр-супрематист призывает военных похищать ливанских гражданских лиц.",
+      "sector": "defense",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Dozens of Lebanese prisoners have been behind bars in Israeli jails since the 2024 war on Lebanon"
+      ],
+      "they_say": "Источник: the_cradle. Десятки ливанских заключенных находятся за решеткой в израильских тюрьмах с начала войны 2024 года против Ливана.",
+      "reality": "数十名黎巴嫩囚犯自2024年黎巴嫩战争以来一直被关押在以色列监狱中。",
+      "thesis": "OSINT draft #170: ‘Imprison their women and children’: Supremacist Israeli minister calls on troops to abduct Lebanese civilians",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL defense. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Dozens of Lebanese prisoners have been behind bars in Israeli jails since the 2024 war on Lebanon",
+      "capital_flow": {
+        "direction": "neutral",
+        "amount_b": 9.7,
+        "asset_class": "defense",
+        "projected": "Dozens of Lebanese prisoners have been behind bars in Israeli jails since the 2024 war on Lebanon",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$9.7B neutral defense",
+        "confidence": "50%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #170. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 170"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-10T19:50:48.808438+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__imprison_their_women_and_children__supremacist_israeli_min"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "‘Imprison their women and children’: Supremacist Israeli minister calls on troops to abduct Lebanese civilians",
+          "body": "Structural assessment: Dozens of Lebanese prisoners have been behind bars in Israeli jails since the 2024 war on Lebanon... Implicated assets: defense. Regions: Israel, Lebanon. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: defense exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "DEFENSE signal: WATCH",
+          "body": "Raw telemetry — defense flow detected from Dozens of Lebanese prisoners have been behind bars in Israeli jails since the 2024 war on Lebanon... Assets tagged: defense. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "defense",
+            "geographies": [
+              "Israel",
+              "Lebanon"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH defense",
+          "body": "Directional: WATCH. Asset: defense. Context: ‘Imprison their women and children’: Supremacist Israeli minister calls on troop. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "NEUTRAL",
+        "asset_class": "defense",
+        "capital_at_stake": "$9.7B",
+        "rationale": "Dozens of Lebanese prisoners have been behind bars in Israeli jails since the 2024 war on Lebanon",
+        "horizon": "24-72h",
+        "action": "Position for defense neutral exposure. Dozens of Lebanese prisoners have been behind bars in Israeli jails since the 2024 war on Lebanon",
+        "gated": true
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "headline": "IAEA passes anti-Iran resolution, demands Tehran reveal location of enriched uranium",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "headline": "Most Israelis oppose Netanyahu&#039;s re-election as Trump says PM &#039;may quit politics&#039;",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__iran_to_pursue__039_war_and_diplomacy_039_simultaneously",
+          "headline": "Iran to pursue &#039;war and diplomacy&#039; simultaneously: Ghalibaf",
+          "sector": "defense",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "defense",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__imprison_their_women_and_children__supremacist_israeli_min",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+          "asset_class": "defense",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
+    },
+    {
+      "story_id": "n21_osint__the_cradle__wave_of_mass_displacement_hits_lebanon_039_s_tyre_as_israel",
+      "headline": "Волна массового перемещения населения охватывает ливанский Тир на фоне продолжающихся израильских массовых убийств.",
+      "sector": "equities",
+      "pillar": "china_ascendancy",
+      "paradigm_pillar": "china_ascendancy",
+      "paradigm_implications": [
+        "Israeli strikes on Tyre’s Masaken al-Shaabiya area killed nine people and injured over two dozen on Tuesday"
+      ],
+      "they_say": "Источник: the_cradle. В результате израильских ударов по району Масакин аш-Шаабия в Тире во вторник погибли девять человек, более двух десятков получили ранения.",
+      "reality": "以色列对提尔市Masaken al-Shaabiya地区的空袭于周二造成9人死亡，逾24人受伤。",
+      "thesis": "OSINT draft #171: Wave of mass displacement hits Lebanon&#039;s Tyre as Israeli massacres continue",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL equities. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Israeli strikes on Tyre’s Masaken al-Shaabiya area killed nine people and injured over two dozen on Tuesday",
+      "capital_flow": {
+        "direction": "neutral",
+        "amount_b": 0.1,
+        "asset_class": "equities",
+        "projected": "Israeli strikes on Tyre’s Masaken al-Shaabiya area killed nine people and injured over two dozen on Tuesday",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$0.1B neutral equities",
+        "confidence": "50%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #171. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 171"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-10T19:50:48.808337+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__wave_of_mass_displacement_hits_lebanon_039_s_tyre_as_israel"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Wave of mass displacement hits Lebanon&#039;s Tyre as Israeli massacres continue",
+          "body": "Structural assessment: Israeli strikes on Tyre’s Masaken al-Shaabiya area killed nine people and injured over two dozen on Tuesday... Implicated assets: equities. Regions: Israel, Lebanon. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: equities exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "EQUITIES signal: WATCH",
+          "body": "Raw telemetry — equities flow detected from Israeli strikes on Tyre’s Masaken al-Shaabiya area killed nine people and injured over two dozen on Tuesday... Assets tagged: equities. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "equities",
+            "geographies": [
+              "Israel",
+              "Lebanon"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH equities",
+          "body": "Directional: WATCH. Asset: equities. Context: Wave of mass displacement hits Lebanon&#039;s Tyre as Israeli massacres continue. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "NEUTRAL",
+        "asset_class": "equities",
+        "capital_at_stake": "$0.1B",
+        "rationale": "Israeli strikes on Tyre’s Masaken al-Shaabiya area killed nine people and injured over two dozen on Tuesday",
+        "horizon": "24-72h",
+        "action": "Position for equities neutral exposure. Israeli strikes on Tyre’s Masaken al-Shaabiya area killed nine people and injured over two dozen on Tuesday",
+        "gated": true
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "headline": "UK court grants Allianz permission to sue pro-Palestine activists for nearly $400,000",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__lebanese_army_chief_meets_top_pakistani_officials_amid_us-ba",
+          "headline": "Lebanese army chief meets top Pakistani officials amid US-backed Israeli escalation",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__over_one_third_of_labour_mps_call_on_london_to_ban_trade_wit",
+          "headline": "Over one third of Labour MPs call on London to ban trade with illegal West Bank settlements",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__us_seeking__039_precise_info_039_on_iran_039_s_enriched",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__eu_sanctions_iranian_officials_irgc_unit_over_hormuz_restri",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
+    },
+    {
+      "story_id": "n21_osint__the_cradle__over_one_third_of_labour_mps_call_on_london_to_ban_trade_wit",
+      "headline": "超过三分之一的工党议员呼吁伦敦禁止与非法西岸定居点进行贸易。",
+      "sector": "equities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "The British lawmakers decried explicit Israeli threats to depopulate a Palestinian Bedouin village to expand the E1 settlement bloc"
+      ],
+      "they_say": "Источник: the_cradle. Британские законодатели осудили откровенные угрозы Израиля депопулировать палестинскую бедуинскую деревню для расширения поселенческого блока E1.",
+      "reality": "英国议员谴责以色列明确威胁要驱逐巴勒斯坦贝都因村庄的居民，以扩大E1定居点区块。",
+      "thesis": "OSINT draft #172: Over one third of Labour MPs call on London to ban trade with illegal West Bank settlements",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL equities. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "The British lawmakers decried explicit Israeli threats to depopulate a Palestinian Bedouin village to expand the E1 settlement bloc",
+      "capital_flow": {
+        "direction": "neutral",
+        "amount_b": 0.37,
+        "asset_class": "equities",
+        "projected": "The British lawmakers decried explicit Israeli threats to depopulate a Palestinian Bedouin village to expand the E1 settlement bloc",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "_psv_diagnostic": {
+          "flow_total": 4.2,
+          "tier": "DEVELOPING",
+          "base_fraction": 0.08,
+          "pillar_bonus": 1.0,
+          "uniqueness_mult": 1.1019,
+          "computed": 0.37
+        },
+        "claim": "$0.37B neutral equities",
+        "confidence": "50%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #172. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 172"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-10T19:50:48.808229+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__over_one_third_of_labour_mps_call_on_london_to_ban_trade_wit"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Over one third of Labour MPs call on London to ban trade with illegal West Bank settlements",
+          "body": "Structural assessment: The British lawmakers decried explicit Israeli threats to depopulate a Palestinian Bedouin village to expand the E1 settlement bloc... Implicated assets: equities. Regions: Israel, UK. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: equities exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "EQUITIES signal: WATCH",
+          "body": "Raw telemetry — equities flow detected from The British lawmakers decried explicit Israeli threats to depopulate a Palestinian Bedouin village to expand the E1 settlement bloc... Assets tagged: equities. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "equities",
+            "geographies": [
+              "Israel",
+              "UK"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH equities",
+          "body": "Directional: WATCH. Asset: equities. Context: Over one third of Labour MPs call on London to ban trade with illegal West Bank . Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "NEUTRAL",
+        "asset_class": "equities",
+        "capital_at_stake": "$0.37B",
+        "rationale": "The British lawmakers decried explicit Israeli threats to depopulate a Palestinian Bedouin village to expand the E1 settlement bloc",
+        "horizon": "24-72h",
+        "action": "Position for equities neutral exposure. The British lawmakers decried explicit Israeli threats to depopulate a Palestinian Bedouin village to expand the E1 settlement bloc",
+        "gated": true
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "headline": "UK court grants Allianz permission to sue pro-Palestine activists for nearly $400,000",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__lebanese_army_chief_meets_top_pakistani_officials_amid_us-ba",
+          "headline": "Lebanese army chief meets top Pakistani officials amid US-backed Israeli escalation",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__wave_of_mass_displacement_hits_lebanon_039_s_tyre_as_israel",
+          "headline": "Wave of mass displacement hits Lebanon&#039;s Tyre as Israeli massacres continue",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__us_seeking__039_precise_info_039_on_iran_039_s_enriched",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__eu_sanctions_iranian_officials_irgc_unit_over_hormuz_restri",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
+    },
+    {
+      "story_id": "n21_osint__the_cradle__us_seeking__039_precise_info_039_on_iran_039_s_enriched",
+      "headline": "美国正通过IAEA理事会寻求有关伊朗浓缩铀的“精确信息”：报道",
+      "sector": "equities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Tehran has repeatedly accused the IAEA of passing along sensitive information to Israel, and has condemned the agency’s requests for access to nuclear sites bombed by Washington"
+      ],
+      "they_say": "Источник: the_cradle. Тегеран неоднократно обвинял МАГАТЭ в передаче конфиденциальной информации Израилю и осуждал запросы агентства на доступ к ядерным объектам, подвергшимся бомбардировкам со стороны Вашингтона.",
+      "reality": "Тегеран неоднократно обвинял МАГАТЭ в передаче конфиденциальной информации Израилю и осуждал запросы агентства на доступ к ядерным объектам, подвергшимся бомбардировкам со стороны Вашингтона.",
+      "thesis": "OSINT draft #173: US seeking &#039;precise info&#039; on Iran&#039;s enriched uranium via IAEA Board: Report",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL equities. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Tehran has repeatedly accused the IAEA of passing along sensitive information to Israel, and has condemned the agency’s requests for access to nuclear sites bombed by Washington",
+      "capital_flow": {
+        "direction": "neutral",
+        "amount_b": 0.2,
+        "asset_class": "equities",
+        "projected": "Tehran has repeatedly accused the IAEA of passing along sensitive information to Israel, and has condemned the agency’s requests for access to nuclear sites bombed by Washington",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$0.2B neutral equities",
+        "confidence": "50%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #173. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 173"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-10T19:50:48.808109+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__us_seeking__039_precise_info_039_on_iran_039_s_enriched"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "US seeking &#039;precise info&#039; on Iran&#039;s enriched uranium via IAEA Board: Report",
+          "body": "Structural assessment: Tehran has repeatedly accused the IAEA of passing along sensitive information to Israel, and has condemned the agency’s requests for access to nuclear sites bombed by Washington... Implicated assets: equities. Regions: Iran, Israel, USA. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: equities exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "EQUITIES signal: WATCH",
+          "body": "Raw telemetry — equities flow detected from Tehran has repeatedly accused the IAEA of passing along sensitive information to Israel, and has condemned the agency’s requests for access to nuclear... Assets tagged: equities. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "equities",
+            "geographies": [
+              "Iran",
+              "Israel",
+              "USA"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH equities",
+          "body": "Directional: WATCH. Asset: equities. Context: US seeking &#039;precise info&#039; on Iran&#039;s enriched uranium via IAEA Boa. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "NEUTRAL",
+        "asset_class": "equities",
+        "capital_at_stake": "$0.2B",
+        "rationale": "Tehran has repeatedly accused the IAEA of passing along sensitive information to Israel, and has condemned the agency’s requests for access to nuclear sites bombed by Washington",
+        "horizon": "24-72h",
+        "action": "Position for equities neutral exposure. Tehran has repeatedly accused the IAEA of passing along sensitive information to Israel, and has condemned the agency’s requests for access to nuclear sites bombed by Washington",
+        "gated": true
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "headline": "UK court grants Allianz permission to sue pro-Palestine activists for nearly $400,000",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__lebanese_army_chief_meets_top_pakistani_officials_amid_us-ba",
+          "headline": "Lebanese army chief meets top Pakistani officials amid US-backed Israeli escalation",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__wave_of_mass_displacement_hits_lebanon_039_s_tyre_as_israel",
+          "headline": "Wave of mass displacement hits Lebanon&#039;s Tyre as Israeli massacres continue",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__us_seeking__039_precise_info_039_on_iran_039_s_enriched",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__eu_sanctions_iranian_officials_irgc_unit_over_hormuz_restri",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
+    },
+    {
+      "story_id": "n21_osint__the_cradle__eu_sanctions_iranian_officials_irgc_unit_over_hormuz_restri",
+      "headline": "欧盟制裁伊朗官员及伊斯兰革命卫队下属单位，因其对霍尔木兹海峡施加限制措施。",
+      "sector": "equities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "The measures come in response to Tehran restricting transit for hostile states through the strategic waterway"
+      ],
+      "they_say": "Источник: the_cradle. Данные меры приняты в ответ на ограничение Тегераном транзита для враждебных государств через стратегический водный путь.",
+      "reality": "这些措施是针对德黑兰限制敌对国通过该战略水道的过境行为所采取的回应。",
+      "thesis": "OSINT draft #174: EU sanctions Iranian officials, IRGC unit over Hormuz restrictions",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL equities. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "The measures come in response to Tehran restricting transit for hostile states through the strategic waterway",
+      "capital_flow": {
+        "direction": "neutral",
+        "amount_b": 0.1,
+        "asset_class": "equities",
+        "projected": "The measures come in response to Tehran restricting transit for hostile states through the strategic waterway",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "claim": "$0.1B neutral equities",
+        "confidence": "50%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #174. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 174"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-10T19:50:48.807941+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__eu_sanctions_iranian_officials_irgc_unit_over_hormuz_restri"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "EU sanctions Iranian officials, IRGC unit over Hormuz restrictions",
+          "body": "Structural assessment: The measures come in response to Tehran restricting transit for hostile states through the strategic waterway... Implicated assets: equities. Regions: EU, Iran. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: equities exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "EQUITIES signal: WATCH",
+          "body": "Raw telemetry — equities flow detected from The measures come in response to Tehran restricting transit for hostile states through the strategic waterway... Assets tagged: equities. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "equities",
+            "geographies": [
+              "EU",
+              "Iran"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH equities",
+          "body": "Directional: WATCH. Asset: equities. Context: EU sanctions Iranian officials, IRGC unit over Hormuz restrictions. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "NEUTRAL",
+        "asset_class": "equities",
+        "capital_at_stake": "$0.1B",
+        "rationale": "The measures come in response to Tehran restricting transit for hostile states through the strategic waterway",
+        "horizon": "24-72h",
+        "action": "Position for equities neutral exposure. The measures come in response to Tehran restricting transit for hostile states through the strategic waterway",
+        "gated": true
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "headline": "UK court grants Allianz permission to sue pro-Palestine activists for nearly $400,000",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__lebanese_army_chief_meets_top_pakistani_officials_amid_us-ba",
+          "headline": "Lebanese army chief meets top Pakistani officials amid US-backed Israeli escalation",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__wave_of_mass_displacement_hits_lebanon_039_s_tyre_as_israel",
+          "headline": "Wave of mass displacement hits Lebanon&#039;s Tyre as Israeli massacres continue",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__us_seeking__039_precise_info_039_on_iran_039_s_enriched",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__eu_sanctions_iranian_officials_irgc_unit_over_hormuz_restri",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
+    },
+    {
+      "story_id": "n21_osint__the_cradle__iran_vows_response_to_israeli_violations_in_south_lebanon_w",
+      "headline": "伊朗誓言回应以色列在黎巴嫩南部的侵犯，并将“主动采取行动”捍卫抵抗轴心。",
+      "sector": "equities",
+      "pillar": "china_ascendancy",
+      "paradigm_pillar": "china_ascendancy",
+      "paradigm_implications": [
+        "Tehran says it is drawing new red lines in the conflict after retaliating directly to Israel's bombing of Beirut on Sunday"
+      ],
+      "they_say": "Источник: the_cradle. Тегеран заявляет, что устанавливает новые красные линии в конфликте после прямого ответного удара на бомбардировку Бейрута Израилем в воскресенье.",
+      "reality": "Тегеран заявляет, что устанавливает новые красные линии в конфликте после прямого ответного удара на бомбардировку Бейрута Израилем в воскресенье.",
+      "thesis": "OSINT draft #175: Iran vows response to Israeli violations in south Lebanon, will &#039;take initiative&#039; to defend Axis of Resistance",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL equities. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Tehran says it is drawing new red lines in the conflict after retaliating directly to Israel's bombing of Beirut on Sunday",
+      "capital_flow": {
+        "direction": "neutral",
+        "amount_b": 0.38,
+        "asset_class": "equities",
+        "projected": "Tehran says it is drawing new red lines in the conflict after retaliating directly to Israel's bombing of Beirut on Sunday",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 50,
+        "confidence_level": "low",
+        "_psv_diagnostic": {
+          "flow_total": 4.2,
+          "tier": "DEVELOPING",
+          "base_fraction": 0.08,
+          "pillar_bonus": 1.0,
+          "uniqueness_mult": 1.1293,
+          "computed": 0.38
+        },
+        "claim": "$0.38B neutral equities",
+        "confidence": "50%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #175. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 175"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-10T19:50:48.806897+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__iran_vows_response_to_israeli_violations_in_south_lebanon_w"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Iran vows response to Israeli violations in south Lebanon, will &#039;take initiative&#039; to defend Axis of Resistance",
+          "body": "Structural assessment: Tehran says it is drawing new red lines in the conflict after retaliating directly to Israel's bombing of Beirut on Sunday... Implicated assets: equities. Regions: Iran, Israel, Lebanon. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: equities exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "EQUITIES signal: WATCH",
+          "body": "Raw telemetry — equities flow detected from Tehran says it is drawing new red lines in the conflict after retaliating directly to Israel's bombing of Beirut on Sunday... Assets tagged: equities. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "equities",
+            "geographies": [
+              "Iran",
+              "Israel",
+              "Lebanon"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH equities",
+          "body": "Directional: WATCH. Asset: equities. Context: Iran vows response to Israeli violations in south Lebanon, will &#039;take initi. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "NEUTRAL",
+        "asset_class": "equities",
+        "capital_at_stake": "$0.38B",
+        "rationale": "Tehran says it is drawing new red lines in the conflict after retaliating directly to Israel's bombing of Beirut on Sunday",
+        "horizon": "24-72h",
+        "action": "Position for equities neutral exposure. Tehran says it is drawing new red lines in the conflict after retaliating directly to Israel's bombing of Beirut on Sunday",
+        "gated": true
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "headline": "UK court grants Allianz permission to sue pro-Palestine activists for nearly $400,000",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__lebanese_army_chief_meets_top_pakistani_officials_amid_us-ba",
+          "headline": "Lebanese army chief meets top Pakistani officials amid US-backed Israeli escalation",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__wave_of_mass_displacement_hits_lebanon_039_s_tyre_as_israel",
+          "headline": "Wave of mass displacement hits Lebanon&#039;s Tyre as Israeli massacres continue",
+          "sector": "equities",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "equities",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__the_cradle__us_seeking__039_precise_info_039_on_iran_039_s_enriched",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__eu_sanctions_iranian_officials_irgc_unit_over_hormuz_restri",
+          "asset_class": "equities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 3
+        }
+      ]
+    },
+    {
+      "story_id": "n21_multi_pillar__us_doe_releases_40m_barrels_from_strategic_petroleum_reserve",
+      "headline": "МИНИСТЕРСТВО ЭНЕРГЕТИКИ США ВЫПУСКАЕТ 40 МЛН БАРРЕЛЕЙ ИЗ СТРАТЕГИЧЕСКОГО НЕФТЯНОГО РЕЗЕРВА — ПРЕДВАРИТЕЛЬНОЕ РАЗМЕЩЕНИЕ ЗАПАСОВ ПЕРЕД УДАРОМ",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "{\"oil_directional\": \"WTI $93-96 (+3-6%) on confirmed strikes + SPR confirms disruption risk. Bear case: no strikes, SPR overshadows, WTI drifts to $87-88 support.\", \"equity_directional\": \"Energy secto"
+      ],
+      "they_say": "Нефтяные рынки воспринимают высвобождение из SPR как МЕДВЕЖИЙ сигнал — правительство США вбрасывает 40 млн баррелей предложения для сдерживания цен на нефть. В сочетании с историей про 100 млн баррелей в Ормузском проливе рынок видит поступление 140 млн баррелей нового предложения в систему. WTI снизилась с $91,56 до $90,19 на этом нарративе. Консенсус: «Администрация предотвращает скачок нефти — длинные позиции по нефти здесь опасны».",
+      "reality": "Высвобождение SPR на самом деле является БЫЧЬИМ сигналом для нефти, а не медвежьим. Полное противоречие: (1) Правительства высвобождают SPR только тогда, когда ОЖИДАЮТ перебои с поставками. Вторжение России в Украину в 2022 году спровоцировало высвобождение SPR. Эскалация ситуации с Ираном в 2026 году, вызвавшая высвобождение 40 млн баррелей, подтверждает, что администрация ОЖИДАЕТ дополнительных перебоев с поставками. (2) 40 млн баррелей — это 1,3 млн баррелей в сутки в течение 30 дней. Иран экспортирует около 1,5 млн баррелей в сутки. Если Ормуз",
+      "thesis": "",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "",
+      "contradiction_score": 61,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "{\"oil_directional\": \"WTI $93-96 (+3-6%) on confirmed strikes + SPR confirms disruption risk. Bear case: no strikes, SPR overshadows, WTI drifts to $87-88 support.\", \"equity_directional\": \"Energy sector (XLE) overweights on SPR + strike combo. XLE +2-3% on oil spike. SPY continues lower.\", \"vix_direc",
+      "capital_flow": {
+        "direction": "outflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "{\"oil_directional\": \"WTI $93-96 (+3-6%) on confirmed strikes + SPR confirms disruption risk. Bear case: no strikes, SPR overshadows, WTI drifts to $87-88 support.\", \"equity_directional\": \"Energy…",
+        "pace_multiplier": 1.8,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "source_label": "[LIVE-DATA]"
+      },
+      "capital_flow_implication": "",
+      "evidence": [
+        "@markettwits"
+      ],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-10T19:50:39.131617+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [
+          "VIX",
+          "WTI"
+        ],
+        "geographies": [
+          "EU"
+        ],
+        "actors": [
+          "Biden",
+          "SEC",
+          "UN",
+          "Xi Jinping"
+        ],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "US DOE RELEASES 40M BARRELS FROM STRATEGIC PETROLEUM RESERVE — PRE-STRIKE SUPPLY PRE-POSITIONING",
+          "body": "Structural assessment: The SPR release is actually a BULLISH signal for oil, not bearish. Full contradiction: (1) Governments only release SPR when they EXPECT a supply disruption. The 2022 Russia-Ukraine invasion triggered SPR releases. This 2026 Iran escalation triggering a 40M release confirms administration EXPECTS ad. Capital repositioning of $5.0B identified in commodities. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "implication": "Board-level risk: commodities exposure requires short hedge within 72h."
+        },
+        "quant": {
+          "headline": "COMMODITIES flow: $5.0B outflow",
+          "body": "Raw telemetry — commodities $5.0B outflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
+          "metrics": {
+            "flow_velocity": 0.21,
+            "correlation_coeff": 0.65,
+            "z_score": 0.5
+          }
+        },
+        "degen": {
+          "headline": "🔴 SHORT COMMODITIES $5.0B",
+          "body": "Directional: SHORT. Flow: $5.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: US DOE RELEASES 40M BARRELS FROM STRATEGIC PETROLEUM RESERVE — PRE-STRIKE SUPPLY",
+          "signal": {
+            "direction": "SHORT",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+10-15%",
+            "conviction": "MEDIUM"
+          }
+        }
+      },
+      "conviction_probability": 68,
+      "conviction_tier": "MODERATE",
+      "strategic_recommendation": {
+        "tier": "ELEVATED",
+        "bias": "SHORT",
+        "asset_class": "commodities",
+        "capital_at_stake": "$5.0B",
+        "rationale": "{\"oil_directional\": \"WTI $93-96 (+3-6%) on confirmed strikes + SPR confirms disruption risk. Bear case: no strikes, SPR overshadows, WTI drifts to $87-88 support.\", \"equity_directional\": \"Energy sector (XLE) overweights on SPR + strike combo. XLE +2-3% on oil spike. SPY continues lower.\", \"vix_direc",
+        "horizon": "24-72h",
+        "action": "Position for commodities short exposure. {\"oil_directional\": \"WTI $93-96 (+3-6%) on confirmed strikes + SPR confirms disruption risk. Bear case: no strikes, SPR overshadows, WTI drifts to $87-88 support.\", \"equity_directional\": \"Energy sector (XLE) o",
+        "gated": true
+      },
+      "asymmetry_score": 58,
+      "asymmetry_tier": "MODERATE",
+      "asymmetry_diagnostic": {
+        "sentiment": -0.75,
+        "price_delta": 0.4,
+        "price_change_pct": 2.12,
+        "formula": "ABS((-0.75 - 0.40) * 50) = 58",
+        "ticker": "CL=F",
+        "ticker_price": 90.07
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__the_cradle__russia_discusses_reformatting_military_presence_in_syria_a",
+          "headline": "Russia discusses ‘reformatting’ military presence in Syria as ties ‘develop actively’",
+          "sector": "commodities",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "headline": "The energy shock that could accelerate a multipolar world",
+          "sector": "commodities",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "commodities",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela",
+          "headline": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet - CNBC",
+          "sector": "crypto",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "geographies",
+            "instruments",
+            "outflow"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+          "asset_class": "commodities",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 1.9,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_osint__the_cradle__russia_discusses_reformatting_military_presence_in_syria_a",
+          "asset_class": "commodities",
+          "direction": "neutral",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 1.0,
+          "score": 2
+        }
+      ]
+    },
+    {
+      "story_id": "n21_multi_pillar__us-israel_strike_package_on_iran__assets_airborne_strike_w",
+      "headline": "США-ИЗРАИЛЬСКИЙ УДАРНЫЙ ПАКЕТ ПО ИРАНУ — АКТИВЫ В ВОЗДУХЕ, ОКНО НАНЕСЕНИЯ УДАРА ОТКРЫТО В 21:17 UTC",
+      "sector": "crypto",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "{\"oil_directional\": \"WTI $93-96/bbl (+3-7% from $90.19) on confirmed overnight strikes. If Hormuz flow stays open (US claims control), capped at $96. If Iran retaliates against Hormuz shipping (Iran P"
+      ],
+      "they_say": "Рыночная оценка: WTI снизился с максимума $91,56 до $90,19 (-1,5%). SPY на постмаркете — $727,66 (-1,27%). Золото обвалилось на -3,66% до $4 129. Биткоин без изменений — $61 678. Консенсус на 21:17 UTC: «Эскалация уже учтена в ценах. Заявление Трампа о 100 млн баррелей в Ормузском проливе подтверждает, что он празднует победу и снижает напряжённость. Заявление министра обороны Израиля — политический театр. Рост нефти был заголовочной сделкой, импульс угасает. Золото кол...»",
+      "reality": "Рынок катастрофически неверно интерпретирует структуру сигналов. Полный разбор противоречий: (1) История про 100 млн баррелей в Ормузском проливе (17:51) НЕ является сигналом деэскалации — это сигнал ПРЕДВАРИТЕЛЬНОГО РАЗМЕЩЕНИЯ. «Мы вывезли нефть, теперь можем наносить удар, не вызывая кризиса поставок». (2) Золото -3.66% в условиях высочайшей геополитической эскалации с февраля 2022 года НЕ является нормой — это указывает на принудительную ликвидацию (маржин-колл).",
+      "thesis": "",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "",
+      "contradiction_score": 58,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "{\"oil_directional\": \"WTI $93-96/bbl (+3-7% from $90.19) on confirmed overnight strikes. If Hormuz flow stays open (US claims control), capped at $96. If Iran retaliates against Hormuz shipping (Iran Parliament threat), WTI $98-102.\", \"equity_directional\": \"SPY $710-720 (-1.5% to -2.5%) gap down at U",
+      "capital_flow": {
+        "direction": "outflow",
+        "amount_b": 5.0,
+        "asset_class": "crypto",
+        "projected": "{\"oil_directional\": \"WTI $93-96/bbl (+3-7% from $90.19) on confirmed overnight strikes. If Hormuz flow stays open (US claims control), capped at $96. If Iran retaliates against Hormuz shipping (Iran…",
+        "pace_multiplier": 2.1,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "source_label": "[LIVE-DATA]"
+      },
+      "capital_flow_implication": "",
+      "evidence": [
+        "@ethanlevins",
+        "@MonitoringSituation",
+        "@trad_fin",
+        "@markettwits"
+      ],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-10T19:50:39.122646+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [
+          "BTC",
+          "ETH",
+          "VIX",
+          "WTI",
+          "XAU"
+        ],
+        "geographies": [
+          "Iran",
+          "Iraq",
+          "Israel",
+          "USA"
+        ],
+        "actors": [
+          "Trump",
+          "UN"
+        ],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "US-ISRAEL STRIKE PACKAGE ON IRAN — ASSETS AIRBORNE, STRIKE WINDOW OPEN AT 21:17 UTC",
+          "body": "Structural assessment: The market is catastrophically misreading the signal structure. Full contradiction breakdown: (1) The 100M barrels Hormuz story (17:51) IS NOT a de-escalation signal — it is a PRE-POSITIONING signal. 'We got the oil out, now we can strike without causing a supply crisis.' (2) Gold -3.66% during the . Capital repositioning of $5.0B identified in crypto. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "implication": "Board-level risk: crypto exposure requires short hedge within 72h."
+        },
+        "quant": {
+          "headline": "CRYPTO flow: $5.0B outflow",
+          "body": "Raw telemetry — crypto $5.0B outflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
+          "metrics": {
+            "flow_velocity": 0.21,
+            "correlation_coeff": 0.65,
+            "z_score": 0.5
+          }
+        },
+        "degen": {
+          "headline": "🔴 SHORT CRYPTO $5.0B",
+          "body": "Directional: SHORT. Flow: $5.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: US-ISRAEL STRIKE PACKAGE ON IRAN — ASSETS AIRBORNE, STRIKE WINDOW OPEN AT 21:17 ",
+          "signal": {
+            "direction": "SHORT",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+10-15%",
+            "conviction": "MEDIUM"
+          }
+        }
+      },
+      "conviction_probability": 80,
+      "conviction_tier": "HIGH",
+      "strategic_recommendation": {
+        "tier": "ELEVATED",
+        "bias": "SHORT",
+        "asset_class": "crypto",
+        "capital_at_stake": "$5.0B",
+        "rationale": "{\"oil_directional\": \"WTI $93-96/bbl (+3-7% from $90.19) on confirmed overnight strikes. If Hormuz flow stays open (US claims control), capped at $96. If Iran retaliates against Hormuz shipping (Iran Parliament threat), WTI $98-102.\", \"equity_directional\": \"SPY $710-720 (-1.5% to -2.5%) gap down at U",
+        "horizon": "24-72h",
+        "action": "Position for crypto short exposure. {\"oil_directional\": \"WTI $93-96/bbl (+3-7% from $90.19) on confirmed overnight strikes. If Hormuz flow stays open (US claims control), capped at $96. If Iran retaliates against Hormuz shipping (Iran Parliament thre",
+        "gated": true
+      },
+      "asymmetry_score": 41,
+      "asymmetry_tier": "MODERATE",
+      "asymmetry_diagnostic": {
+        "sentiment": -0.75,
+        "price_delta": 0.076,
+        "price_change_pct": 0.38,
+        "formula": "ABS((-0.75 - 0.08) * 50) = 41",
+        "ticker": "BTC-USD",
+        "ticker_price": 61875.98
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela",
+          "headline": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet - CNBC",
+          "sector": "crypto",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__iran_parliament__war_won_t_be_limited_to_the_region__asym",
+          "headline": "IRAN PARLIAMENT: 'WAR WON'T BE LIMITED TO THE REGION' — ASYMMETRIC ESCALATION THREAT",
+          "sector": "crypto",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__christian_village_in_occupied_west_bank_goes_up_in_flames_af",
+          "headline": "Christian village in occupied West Bank goes up in flames after large-scale attack by Israeli settlers",
+          "sector": "crypto",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela",
+          "asset_class": "crypto",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 2.4,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 2.0,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 75,
+          "pace_multiplier": 2.3,
+          "score": 2
+        }
+      ]
+    },
+    {
+      "story_id": "n21_multi_pillar__iran_parliament__war_won_t_be_limited_to_the_region__asym",
+      "headline": "ИРАНСКИЙ ПАРЛАМЕНТ: «ВОЙНА НЕ ОГРАНИЧИТСЯ РЕГИОНОМ» — УГРОЗА АСИММЕТРИЧНОЙ ЭСКАЛАЦИИ",
+      "sector": "crypto",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "{\"oil_directional\": \"WTI $95-100 if Iran targets Hormuz or Gulf shipping. Iran Parliament warning + US military posture = asymmetric escalation risk is real.\", \"equity_directional\": \"SPY $710-718 if t"
+      ],
+      "they_say": "Рыночный консенсус: угроза Ирана о «расширении войны» носит риторический характер. Иран ослаблен ударами США. Командование КСИР дезорганизовано. Возможности для расширения конфликта отсутствуют. Заявление парламента — элемент внутренней политики: консерваторы спасают лицо после того, как удары США поразили инфраструктуру. Рынки нефти и акций игнорируют заголовок, расценивая его как шум.",
+      "reality": "Три противоречия: (1) Заявление парламента Ирана — ЭТО ИМЕННО тот вид предупреждения об эскалации, который предшествует асимметричному ответу. Иран продемонстрировал возможности: кибератаки на инфраструктуру США (атаки на трубопроводы в 2023 году), прокси-силы в Йемене, Ираке и Сирии, радиус действия баллистических ракет, охватывающий Израиль и государства Персидского залива. (2) Перенаправление B-52 из Сицилии на Ближний Восток указывает на то, что США готовятся к",
+      "thesis": "",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "",
+      "contradiction_score": 56,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "{\"oil_directional\": \"WTI $95-100 if Iran targets Hormuz or Gulf shipping. Iran Parliament warning + US military posture = asymmetric escalation risk is real.\", \"equity_directional\": \"SPY $710-718 if three-front war confirmed. Israel-Hezbollah-Iran-US = four-party engagement. That's a VIX 30+ event.\"",
+      "capital_flow": {
+        "direction": "outflow",
+        "amount_b": 5.0,
+        "asset_class": "crypto",
+        "projected": "{\"oil_directional\": \"WTI $95-100 if Iran targets Hormuz or Gulf shipping. Iran Parliament warning + US military posture = asymmetric escalation risk is real.\", \"equity_directional\": \"SPY $710-718 if…",
+        "pace_multiplier": 2.1,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "source_label": "[LIVE-DATA]"
+      },
+      "capital_flow_implication": "",
+      "evidence": [
+        "@MonitoringSituation",
+        "@ethanlevins"
+      ],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-10T19:50:39.131981+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [
+          "BTC",
+          "ETH",
+          "SOL",
+          "VIX",
+          "WTI",
+          "XAU"
+        ],
+        "geographies": [
+          "Iran",
+          "Iraq",
+          "Israel",
+          "Lebanon",
+          "USA"
+        ],
+        "actors": [
+          "Hezbollah",
+          "SEC",
+          "UN",
+          "Xi Jinping"
+        ],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "IRAN PARLIAMENT: 'WAR WON'T BE LIMITED TO THE REGION' — ASYMMETRIC ESCALATION THREAT",
+          "body": "Structural assessment: Three contradictions: (1) Iran's Parliament statement is EXACTLY the kind of escalation warning that precedes asymmetric retaliation. Iran has demonstrated capability: cyber attacks on US infrastructure (2023 pipeline attacks), proxy forces across Yemen/Iraq/Syria, ballistic missile range covering I. Capital repositioning of $5.0B identified in crypto. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "implication": "Board-level risk: crypto exposure requires short hedge within 72h."
+        },
+        "quant": {
+          "headline": "CRYPTO flow: $5.0B outflow",
+          "body": "Raw telemetry — crypto $5.0B outflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
+          "metrics": {
+            "flow_velocity": 0.21,
+            "correlation_coeff": 0.65,
+            "z_score": 0.5
+          }
+        },
+        "degen": {
+          "headline": "🔴 SHORT CRYPTO $5.0B",
+          "body": "Directional: SHORT. Flow: $5.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: IRAN PARLIAMENT: 'WAR WON'T BE LIMITED TO THE REGION' — ASYMMETRIC ESCALATION TH",
+          "signal": {
+            "direction": "SHORT",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+10-15%",
+            "conviction": "MEDIUM"
+          }
+        }
+      },
+      "conviction_probability": 69,
+      "conviction_tier": "MODERATE",
+      "strategic_recommendation": {
+        "tier": "ELEVATED",
+        "bias": "SHORT",
+        "asset_class": "crypto",
+        "capital_at_stake": "$5.0B",
+        "rationale": "{\"oil_directional\": \"WTI $95-100 if Iran targets Hormuz or Gulf shipping. Iran Parliament warning + US military posture = asymmetric escalation risk is real.\", \"equity_directional\": \"SPY $710-718 if three-front war confirmed. Israel-Hezbollah-Iran-US = four-party engagement. That's a VIX 30+ event.\"",
+        "horizon": "24-72h",
+        "action": "Position for crypto short exposure. {\"oil_directional\": \"WTI $95-100 if Iran targets Hormuz or Gulf shipping. Iran Parliament warning + US military posture = asymmetric escalation risk is real.\", \"equity_directional\": \"SPY $710-718 if three-front war",
+        "gated": true
+      },
+      "asymmetry_score": 41,
+      "asymmetry_tier": "MODERATE",
+      "asymmetry_diagnostic": {
+        "sentiment": -0.75,
+        "price_delta": 0.076,
+        "price_change_pct": 0.38,
+        "formula": "ABS((-0.75 - 0.08) * 50) = 41",
+        "ticker": "BTC-USD",
+        "ticker_price": 61875.98
+      },
+      "related_stories": [
+        {
+          "story_id": "n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela",
+          "headline": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet - CNBC",
+          "sector": "crypto",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_multi_pillar__us-israel_strike_package_on_iran__assets_airborne_strike_w",
+          "headline": "US-ISRAEL STRIKE PACKAGE ON IRAN — ASSETS AIRBORNE, STRIKE WINDOW OPEN AT 21:17 UTC",
+          "sector": "crypto",
+          "score": 6,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "instruments"
+          ]
+        },
+        {
+          "story_id": "n21_osint__the_cradle__christian_village_in_occupied_west_bank_goes_up_in_flames_af",
+          "headline": "Christian village in occupied West Bank goes up in flames after large-scale attack by Israeli settlers",
+          "sector": "crypto",
+          "score": 5,
+          "shared_tags": [
+            "actors",
+            "assets",
+            "crypto",
+            "geographies",
+            "instruments"
+          ]
+        }
+      ],
+      "related_flows": [
+        {
+          "flow_id": "flow_n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela",
+          "asset_class": "crypto",
+          "direction": "outflow",
+          "amount_formatted": "",
+          "confidence_pct": 50,
+          "pace_multiplier": 2.4,
+          "score": 3
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 80,
+          "pace_multiplier": 2.0,
+          "score": 2
+        },
+        {
+          "flow_id": "flow_n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv",
+          "asset_class": "crypto",
+          "direction": "inflow",
+          "amount_formatted": "",
+          "confidence_pct": 75,
+          "pace_multiplier": 2.3,
+          "score": 2
+        }
+      ]
     }
   ],
   "language": "ru"

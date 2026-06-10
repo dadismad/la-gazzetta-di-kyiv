@@ -1,22 +1,29 @@
 #!/bin/bash
-# shipit.sh — Gazzetta di Kyiv deploy pipeline v3.0 (SQLite-backed)
+# shipit.sh — Gazzetta di Kyiv deploy pipeline v3.1 (Nuclear Clean + Atomic Sync)
 #
 # Stages:
+#   0. nuclear_clean — rm -rf site/ (fresh start, no ghost files)
 #   1. db_to_json   — Compile gazzetta.db → data/stories.json + data/flows.json
-#   2. build_site   — Sync data/ → site/data/ + generate API endpoints
-#   3. hash assets  — SHA256-hash CSS/JS, rewrite HTML references
-#   4. GCS deploy   — gsutil rsync site/ → GCS bucket
-#   5. live verify  — curl headers
-#   6. deploy report— generate deploy_report.txt
-#   7. git sync     — add → commit → push
+#   1.02 enrich_mp  — Multi-persona blocks (C-Suite/Quant/Degen)
+#   1.05 live_prices— CoinGecko price feed
+#   1.1  rel_links  — Auto-interlinking engine
+#   1.2  narratives — 3 Core Market Narratives
+#   1.5  enrich     — Editorial enrichment + signal/trades API
+#   2.   build_site — Sync data/ → site/data/
+#   2.5  TEST GATE  — test_platform.py (MUST PASS — abort on failure)
+#   2.6  ru_sync    — RU sync gate
+#   3.   hash       — SHA256-hash CSS/JS
+#   4.   GCS deploy — rsync -d to bucket, set cache headers
+#   5.   live verify— curl homepage + curl stories.json for newest headline
+#   6.   report     — deploy_report.txt
+#   7.   git sync   — add → commit → push
 #
-# Usage: bash shipit.sh [--skip-git] [--dry-run]
+# Usage: bash shipit.sh [--skip-git] [--dry-run] [--nuclear]
 
 set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT="$SCRIPT_DIR"
 
-# ── Config ──
 BUCKET="gs://www.lagazzettadikyiv.com"
 GCLOUD_DIR="${GCLOUD_DIR:-$HOME/lagazzettadikyiv/google-cloud-sdk}"
 GCLOUD="$GCLOUD_DIR/bin/gcloud"
@@ -24,11 +31,13 @@ GSUTIL="$GCLOUD_DIR/bin/gsutil"
 PYTHON="$PROJECT/.venv/bin/python"
 SKIP_GIT=false
 DRY_RUN=false
+NUCLEAR=false
 
 for arg in "$@"; do
     case "$arg" in
         --skip-git) SKIP_GIT=true ;;
         --dry-run)  DRY_RUN=true ;;
+        --nuclear)  NUCLEAR=true ;;
     esac
 done
 
@@ -37,47 +46,76 @@ echo "  SHIPIT — Gazzetta di Kyiv Deploy"
 echo "══════════════════════════════════════"
 echo ""
 
-# ═══ Stage 1: db_to_json — compile SQLite → JSON ═══
+# ═══ Stage 0: Nuclear Clean — delete generated dirs before every build ═══
+echo "── Stage 0: nuclear_clean ──"
+# Only delete generated directories — preserve HTML/CSS/JS sources in repo
+for dir in "$PROJECT/site/data" "$PROJECT/site/api" "$PROJECT/site/ru" "$PROJECT/site/media"; do
+    if [ -d "$dir" ]; then
+        rm -rf "$dir"
+        echo "  ✓ $(basename "$dir")/ deleted"
+    fi
+done
+# Also remove generated files
+rm -f "$PROJECT/site/build-manifest.json" "$PROJECT/site/deploy_report.txt" \
+      "$PROJECT/site/styles."*.css "$PROJECT/site/app."*.js "$PROJECT/site/story-app."*.js \
+      "$PROJECT/site/sector."*.js "$PROJECT/site/i18n."*.js "$PROJECT/site/styles-modern."*.css 2>/dev/null || true
+echo "  ✓ Hashed assets cleaned"
+# Recreate essential dirs
+mkdir -p "$PROJECT/site/data/en" "$PROJECT/site/data/ru" "$PROJECT/site/ru" "$PROJECT/site/api/v1/home"
+echo "  ✓ Essential directories recreated"
+echo ""
+
+# ═══ Stage 1: db_to_json ──
 echo "── Stage 1: db_to_json ──"
 if [ -f "$PROJECT/gazzetta.db" ]; then
     $PYTHON "$PROJECT/scripts/db_to_json.py"
     echo "  ✓ JSON compiled from gazzetta.db"
+
+    echo "── Stage 1.02: enrich_multi_persona ──"
+    $PYTHON "$PROJECT/scripts/enrich_multi_persona.py" || echo "  ⚠ Multi-persona skipped (API unavailable)"
+    echo "  ✓ Multi-persona blocks enriched"
 else
     echo "  ⚠ No gazzetta.db found — skipping (JSON unchanged)"
 fi
 echo ""
 
-# ═══ Stage 1.2: analyze_narratives — synthesize 3 Core Market Narratives ═══
-echo "── Stage 1.2: analyze_narratives ──"
-$PYTHON "$PROJECT/ops/analyze_narratives_v2.py" || echo "  ⚠ Narratives skipped (API unavailable — using fallback)"
+echo "── Stage 1.05: fetch_live_prices ──"
+$PYTHON "$PROJECT/scripts/fetch_live_prices.py" || echo "  ⚠ Live prices skipped"
+echo "  ✓ Live prices fetched"
+echo ""
 
-# ═══ Stage 1.5: enrich — add capital_flow + generated_at to editorial stories ═══
+echo "── Stage 1.1: build_related_links ──"
+$PYTHON "$PROJECT/scripts/build_related_links.py" || echo "  ⚠ Related links skipped"
+echo "  ✓ Story→story & story→flow links generated"
+echo ""
+
+echo "── Stage 1.2: analyze_narratives ──"
+$PYTHON "$PROJECT/ops/analyze_narratives_v2.py" || echo "  ⚠ Narratives skipped"
+echo ""
+
 echo "── Stage 1.5: enrich ──"
 $PYTHON "$PROJECT/scripts/enrich_editorial_stories.py" || true
 $PYTHON "$PROJECT/scripts/ensure_generated_at.py" || true
 echo "  ✓ Stories enriched with capital_flow + generated_at"
-
-# v23.0: Generate API endpoints for Signal + Trades
 $PYTHON "$PROJECT/scripts/generate_signal_api.py" || true
 $PYTHON "$PROJECT/scripts/generate_trades_api.py" || true
 echo "  ✓ Signal + Trades API endpoints generated"
 echo ""
 
-# ═══ Stage 2: build_site — sync data + API endpoints ═══
+# ═══ Stage 2: build_site ──
 echo "── Stage 2: build_site ──"
 $PYTHON "$PROJECT/scripts/build_site.py"
 echo "  ✓ site/data/ synced, API endpoints generated"
 echo ""
 
-# ═══ Stage 2.5: test_platform — automated UI & data integrity gate ═══
-echo "
-# ═══ Stage 2.2: generate broadcasts ═══
+# ═══ Stage 2.2: generate_broadcasts ──
 echo "── Stage 2.2: generate_broadcasts ──"
 $PYTHON "$PROJECT/scripts/generate_broadcasts.py" || true
 echo "  ✓ Distribution broadcasts generated"
 echo ""
 
-# ═── Stage 2.5: test_platform ──"
+# ═══ Stage 2.5: TEST GATE — BLOCKING ═══
+echo "── Stage 2.5: test_platform ──"
 if $PYTHON "$PROJECT/scripts/test_platform.py"; then
     echo "  ✓ All tests passed"
 else
@@ -90,40 +128,117 @@ else
 fi
 echo ""
 
-# ═══ Stage 3: hash assets ═══
+# ═══ Stage 2.6: ru_sync_gate ──
+echo "── Stage 2.6: ru_sync_gate ──"
+RU_MISSING=0
+for f in about.html capital.html data.html methodology.html sources.html terms.html robots.txt sitemap.xml; do
+  if [ ! -f "$PROJECT/site/ru/$f" ]; then
+    cp "$PROJECT/site/$f" "$PROJECT/site/ru/$f" 2>/dev/null || true
+    RU_MISSING=$((RU_MISSING + 1))
+  fi
+done
+EN_COUNT=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories.json')); print(len([d.get('lead')]+d.get('stories',[])))" 2>/dev/null || echo 0)
+RU_COUNT=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories_ru.json')); print(len([d.get('lead')]+d.get('stories',[])))" 2>/dev/null || echo 0)
+
+# Check if RU translation is stale by timestamp (v3.1: prevents count-equal-but-content-stale bug)
+NEED_TRANSLATION=false
+if [ "$RU_COUNT" -lt "$EN_COUNT" ]; then
+  NEED_TRANSLATION=true
+  echo "  ⚠ RU stories ($RU_COUNT) < EN stories ($EN_COUNT)"
+else
+  # Compare timestamps: if RU is >1hr older than EN, force re-translate
+  EN_TS=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories.json')); print(d.get('generated_at','2000-01-01T00:00:00')[:19])" 2>/dev/null || echo "2000-01-01T00:00:00")
+  RU_TS=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories_ru.json')); print(d.get('generated_at','2000-01-01T00:00:00')[:19])" 2>/dev/null || echo "2000-01-01T00:00:00")
+  EN_EPOCH=$(date -j -f "%Y-%m-%dT%H:%M:%S" "$EN_TS" "+%s" 2>/dev/null || echo 0)
+  RU_EPOCH=$(date -j -f "%Y-%m-%dT%H:%M:%S" "$RU_TS" "+%s" 2>/dev/null || echo 0)
+  AGE_GAP=$(( EN_EPOCH - RU_EPOCH ))
+  if [ "$AGE_GAP" -gt 3600 ]; then
+    NEED_TRANSLATION=true
+    echo "  ⚠ RU stories stale by ${AGE_GAP}s ($RU_TS vs $EN_TS) — re-translating"
+  fi
+fi
+
+if [ "$NEED_TRANSLATION" = true ]; then
+  echo "  Running translate_content.py..."
+  $PYTHON "$PROJECT/scripts/translate_content.py" 2>/dev/null || echo "  ⚠ Translation failed"
+  RU_COUNT_NEW=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories_ru.json')); print(len([d.get('lead')]+d.get('stories',[])))" 2>/dev/null || echo 0)
+  if [ "$RU_COUNT_NEW" -lt "$EN_COUNT" ]; then
+    echo "  ✗ CRITICAL: RU sync failed ($RU_COUNT_NEW < $EN_COUNT). Aborting deploy."
+    exit 1
+  fi
+  echo "  ✓ RU stories re-translated: $RU_COUNT_NEW stories"
+fi
+echo "  ✓ RU sync gate passed: $RU_COUNT stories, $RU_MISSING files copied"
+
+# ═══ Stage 3: hash assets ──
 echo "── Stage 3: hash assets ──"
 $PYTHON "$PROJECT/scripts/build_hashed_assets.py"
 echo "  ✓ CSS/JS hashed, HTML references rewritten"
 echo ""
 
-# ═══ Stage 4: GCS deploy ═══
+# ═══ Stage 4: GCS deploy ──
 echo "── Stage 4: GCS deploy ──"
 if [ "$DRY_RUN" = true ]; then
-    echo "  DRY RUN — skipping gsutil rsync"
-else
-    # Set immutable cache on hashed assets
+    echo "  DRY RUN — skipping gsutil"
+elif [ "$NUCLEAR" = true ]; then
+    echo "  ☢ NUCLEAR MODE: deleting remote bucket contents..."
+    $GSUTIL -m rm -r "$BUCKET/**" 2>/dev/null || true
+    echo "  ✓ Remote bucket cleared"
+fi
+
+if [ "$DRY_RUN" != true ]; then
+    # Rsync with delete (-d) to remove stale files
     $GSUTIL -m rsync -r -d "$PROJECT/site/" "$BUCKET/"
+    # Immutable cache on hashed assets
     $GSUTIL -m setmeta -h "Cache-Control:public, max-age=31536000, immutable" \
         "$BUCKET/styles.*.css" "$BUCKET/app.*.js" "$BUCKET/story-app.*.js" \
         "$BUCKET/sector.*.js" 2>/dev/null || true
-    # Zero cache on HTML
+    # Zero cache on ALL HTML
     $GSUTIL -m setmeta -h "Cache-Control:public, max-age=0, must-revalidate" \
-        "$BUCKET/*.html" 2>/dev/null || true
-    # Zero cache on JSON (critical for HFT/quant data freshness)
-    $GSUTIL -m setmeta -h "Cache-Control:public, max-age=0, must-revalidate" \
-        "$BUCKET/data/*.json" 2>/dev/null || true
-    echo "  ✓ GCS rsync complete"
+        "$BUCKET/*.html" "$BUCKET/ru/*.html" 2>/dev/null || true
+    # No-store on ALL JSON
+    $GSUTIL -m setmeta -h "Cache-Control:private, no-store" \
+        "$BUCKET/data/*.json" "$BUCKET/data/en/*.json" "$BUCKET/data/ru/*.json" \
+        "$BUCKET/api/**/*.json" 2>/dev/null || true
+    echo "  ✓ GCS rsync + cache headers set"
 fi
 echo ""
 
-# ═══ Stage 5: live verify ═══
-echo "── Stage 5: live verify ──"
-HTTP_CODE=$(curl -sI -o /dev/null -w "%{http_code}" "https://www.lagazzettadikyiv.com/" 2>/dev/null || echo "000")
-ETAG=$(curl -sI "https://www.lagazzettadikyiv.com/" 2>/dev/null | grep -i 'etag:' | tr -d '\r' || echo "none")
-echo "  HTTP $HTTP_CODE · ETag: ${ETAG#ETag: }"
+# ═══ Stage 5: EXTERNAL VERIFICATION (curl public internet) ═══
+echo "── Stage 5: external_verify ──"
+SITE_URL="https://www.lagazzettadikyiv.com"
+
+# Verify homepage
+HTTP_CODE=$(curl -sI -o /dev/null -w "%{http_code}" "$SITE_URL/" 2>/dev/null || echo "000")
+echo "  Homepage: HTTP $HTTP_CODE"
+
+# Verify stories.json freshness
+JSON_TS=$(curl -s -H 'Cache-Control: no-cache' "$SITE_URL/data/stories.json" 2>/dev/null | \
+    python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('generated_at','MISSING')[:19])" 2>/dev/null || echo "FAILED")
+echo "  stories.json generated_at: $JSON_TS"
+
+# Verify newest headline on public internet
+NEWEST_LEAD=$(curl -s -H 'Cache-Control: no-cache' "$SITE_URL/data/stories.json" 2>/dev/null | \
+    python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('lead',{}).get('headline','MISSING')[:80])" 2>/dev/null || echo "FAILED")
+echo "  Public lead headline: $NEWEST_LEAD"
+
+# Compare with local
+LOCAL_LEAD=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories.json')); print(d.get('lead',{}).get('headline','MISSING')[:80])" 2>/dev/null || echo "FAILED")
+if [ "$NEWEST_LEAD" != "$LOCAL_LEAD" ] && [ "$NEWEST_LEAD" != "FAILED" ]; then
+    echo ""
+    echo "  ⚠ OPERATIONAL CRISIS: Public headline ≠ local headline"
+    echo "     Public: $NEWEST_LEAD"
+    echo "     Local:  $LOCAL_LEAD"
+    echo "     CDN cache may be stale. Run with --nuclear to force-clear."
+    # Don't abort — warn and continue
+fi
+
+# Verify stories.html contains content
+STORIES_HTML=$(curl -s -H 'Cache-Control: no-cache' "$SITE_URL/stories.html" 2>/dev/null | wc -c)
+echo "  stories.html: ${STORIES_HTML} bytes"
 echo ""
 
-# ═══ Stage 6: deploy report ═══
+# ═══ Stage 6: deploy report ──
 echo "── Stage 6: deploy report ──"
 TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 COMMIT=$(git rev-parse --short HEAD 2>/dev/null || echo "unknown")
@@ -133,12 +248,13 @@ Deploy: $TIMESTAMP
 Commit: $COMMIT
 Stories: $STORY_COUNT
 HTTP: $HTTP_CODE
-ETag: ${ETAG#ETag: }
+Lead: $LOCAL_LEAD
+Public match: $([ "$NEWEST_LEAD" = "$LOCAL_LEAD" ] && echo YES || echo "NO — CDN STALE")
 EOF
 echo "  ✓ deploy_report.txt written"
 echo ""
 
-# ═══ Stage 7: git sync ═══
+# ═══ Stage 7: git sync ──
 echo "── Stage 7: git sync ──"
 if [ "$SKIP_GIT" = true ] || [ "$DRY_RUN" = true ]; then
     echo "  Skipped (--skip-git or --dry-run)"
@@ -157,4 +273,7 @@ echo ""
 echo "══════════════════════════════════════"
 echo "  SHIPIT COMPLETE"
 echo "  $TIMESTAMP · $STORY_COUNT stories · $(git rev-parse --short HEAD 2>/dev/null || echo ?)"
+if [ "$NEWEST_LEAD" != "$LOCAL_LEAD" ] && [ "$NEWEST_LEAD" != "FAILED" ]; then
+    echo "  ⚠ CDN STALE — public site not reflecting latest deploy"
+fi
 echo "══════════════════════════════════════"

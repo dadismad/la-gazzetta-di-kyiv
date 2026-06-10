@@ -1,8 +1,151 @@
 {
-  "generated_at": "2026-06-10T14:49:22.580818+00:00",
-  "total_signals": 30,
-  "aggregate_score": 61,
+  "generated_at": "2026-06-10T20:57:32.296442+00:00",
+  "total_signals": 58,
+  "aggregate_score": 64,
   "signals": [
+    {
+      "story_id": "n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired",
+      "headline": "All the Ways Europe Is Ditching American Technology - WIRED",
+      "score": 80,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 35,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "defense",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai",
+      "headline": "Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates - WSJ",
+      "score": 80,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 35,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "defense",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela",
+      "headline": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish be",
+      "score": 75,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 30,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "crypto",
+      "direction": "outflow"
+    },
+    {
+      "story_id": "n21_osint__the_cradle__russia_discusses_reformatting_military_presence_in_syria_a",
+      "headline": "Russia discusses ‘reformatting’ military presence in Syria as ties ‘develop actively’",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "commodities",
+      "direction": "neutral"
+    },
+    {
+      "story_id": "n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s",
+      "headline": "Most Israelis oppose Netanyahu&#039;s re-election as Trump says PM &#039;may quit politics&#039;",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "defense",
+      "direction": "neutral"
+    },
+    {
+      "story_id": "n21_osint__the_cradle__pakistan_says_israel_derailed_us_iran_peace_deal_described_a",
+      "headline": "Pakistan says Israel derailed US–Iran peace deal described as &#039;inches away&#039;: Report",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "tech",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world",
+      "headline": "The energy shock that could accelerate a multipolar world",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "commodities",
+      "direction": "neutral"
+    },
+    {
+      "story_id": "n21_osint__the_cradle__irgc_declares_new_regional_security_belt_extending_from_horm",
+      "headline": "IRGC declares new regional security belt extending from Hormuz to Red Sea",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "tech",
+      "direction": "neutral"
+    },
+    {
+      "story_id": "n21_osint__the_cradle__imprison_their_women_and_children__supremacist_israeli_min",
+      "headline": "‘Imprison their women and children’: Supremacist Israeli minister calls on troops to abduct Lebanese",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "defense",
+      "direction": "neutral"
+    },
+    {
+      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+      "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Resp",
+      "score": 72,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 35,
+      "contradiction": 22,
+      "event_strength": 15,
+      "asset_class": "commodities",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca",
+      "headline": "IAEA passes anti-Iran resolution, demands Tehran reveal location of enriched uranium",
+      "score": 69,
+      "tier": "MODERATE",
+      "flow_alignment": 24,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "defense",
+      "direction": "neutral"
+    },
+    {
+      "story_id": "n21_osint__the_cradle__iran_to_pursue__039_war_and_diplomacy_039_simultaneously",
+      "headline": "Iran to pursue &#039;war and diplomacy&#039; simultaneously: Ghalibaf",
+      "score": 69,
+      "tier": "MODERATE",
+      "flow_alignment": 24,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "defense",
+      "direction": "neutral"
+    },
+    {
+      "story_id": "n21_osint__the_cradle__israel_used_jordanian_airspace_to_bomb_iran_report",
+      "headline": "Israel used Jordanian airspace to bomb Iran: Report",
+      "score": 69,
+      "tier": "MODERATE",
+      "flow_alignment": 24,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "defense",
+      "direction": "neutral"
+    },
     {
       "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
       "headline": "CRITICAL CONTRADICTION: WTI Drops Below $90 (-2%) Despite Israel-Iran War, Hormuz Toll, Beirut Bombi",
@@ -15,179 +158,15 @@
       "direction": "outflow"
     },
     {
-      "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
-      "headline": "Israeli Minister Ben-Gvir Urges Cabinet to Abduct Lebanese Women and Children as Psychological Warfa",
+      "story_id": "n21_multi_pillar__us_doe_releases_40m_barrels_from_strategic_petroleum_reserve",
+      "headline": "US DOE RELEASES 40M BARRELS FROM STRATEGIC PETROLEUM RESERVE — PRE-STRIKE SUPPLY PRE-POSITIONING",
       "score": 69,
       "tier": "MODERATE",
       "flow_alignment": 32,
       "contradiction": 22,
       "event_strength": 15,
       "asset_class": "commodities",
-      "direction": "inflow"
-    },
-    {
-      "story_id": "n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
-      "headline": "Ethena (ENA) Partners with Janus Henderson ($300B+ AUM) for Tokenized CLOs — Institutional DeFi Brea",
-      "score": 65,
-      "tier": "MODERATE",
-      "flow_alignment": 35,
-      "contradiction": 15,
-      "event_strength": 15,
-      "asset_class": "crypto",
-      "direction": "inflow"
-    },
-    {
-      "story_id": "n21_multi_pillar__iran_begins_charging_ships_1_5-2m_per_transit_through_strai",
-      "headline": "IRAN BEGINS CHARGING SHIPS $1.5-2M PER TRANSIT THROUGH STRAIT OF HORMUZ — TURNS GEOPOLITICAL RISK IN",
-      "score": 65,
-      "tier": "MODERATE",
-      "flow_alignment": 35,
-      "contradiction": 15,
-      "event_strength": 15,
-      "asset_class": "commodities",
-      "direction": "inflow"
-    },
-    {
-      "story_id": "n21_multi_pillar__ukraine_assassinates_russian_colonel_missile_supply_chief",
-      "headline": "Ukraine Assassinates Russian Colonel (Missile Supply Chief) in Moscow — Zelensky Promises Massive Dr",
-      "score": 65,
-      "tier": "MODERATE",
-      "flow_alignment": 35,
-      "contradiction": 15,
-      "event_strength": 15,
-      "asset_class": "commodities",
-      "direction": "inflow"
-    },
-    {
-      "story_id": "n21_blockchain_agentic__blackrock_transferring_btc_to_exchanges_for_client_sales__o",
-      "headline": "BlackRock Transferring BTC to Exchanges for Client Sales — On-Chain Distribution Signal",
-      "score": 65,
-      "tier": "MODERATE",
-      "flow_alignment": 35,
-      "contradiction": 15,
-      "event_strength": 15,
-      "asset_class": "crypto",
-      "direction": "inflow"
-    },
-    {
-      "story_id": "n21_china_ascendancy__breaking_eu_proposes_biggest_sanctions_package_in_2_years",
-      "headline": "BREAKING: EU Proposes Biggest Sanctions Package in 2 Years — 90 Banks, 11 Crypto Platforms, LNG Tank",
-      "score": 65,
-      "tier": "MODERATE",
-      "flow_alignment": 35,
-      "contradiction": 15,
-      "event_strength": 15,
-      "asset_class": "commodities",
-      "direction": "inflow"
-    },
-    {
-      "story_id": "n21_abundance_tech__btc_crash__worst_week_since_ftx_collapse_microstrategy_bou",
-      "headline": "BTC CRASH — Worst Week Since FTX Collapse, MicroStrategy Bought $65K Dip, Whales Hold",
-      "score": 65,
-      "tier": "MODERATE",
-      "flow_alignment": 35,
-      "contradiction": 15,
-      "event_strength": 15,
-      "asset_class": "crypto",
-      "direction": "inflow"
-    },
-    {
-      "story_id": "n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1",
-      "headline": "US Existing Home Sales Crush Estimates — +3.2% MoM vs +1.1% Expected (3x Beat)",
-      "score": 62,
-      "tier": "MODERATE",
-      "flow_alignment": 25,
-      "contradiction": 22,
-      "event_strength": 15,
-      "asset_class": "crypto",
-      "direction": "inflow"
-    },
-    {
-      "story_id": "n21_multi_pillar__us_adp_nonfarm_29k_vs_35_7k_prior__labor_market_cracking",
-      "headline": "US ADP Nonfarm +29K vs +35.7K Prior — Labor Market Cracking as Inflation Expectations Rise 3rd Month",
-      "score": 62,
-      "tier": "MODERATE",
-      "flow_alignment": 32,
-      "contradiction": 15,
-      "event_strength": 15,
-      "asset_class": "commodities",
-      "direction": "inflow"
-    },
-    {
-      "story_id": "n21_multi_pillar__kuwait_discussing_hormuz_bypass_via_saudi_uae_pipelines__ei",
-      "headline": "Kuwait Discussing Hormuz Bypass via Saudi/UAE Pipelines + EIA Raises WTI Forecast to $88.32 — Blocka",
-      "score": 62,
-      "tier": "MODERATE",
-      "flow_alignment": 32,
-      "contradiction": 15,
-      "event_strength": 15,
-      "asset_class": "commodities",
-      "direction": "inflow"
-    },
-    {
-      "story_id": "n21_multi_pillar__idf_declares_readiness_to_immediately_resume_iran_operations",
-      "headline": "IDF Declares Readiness to Immediately Resume Iran Operations + Tyre Under Full Evacuation — Two-Fron",
-      "score": 62,
-      "tier": "MODERATE",
-      "flow_alignment": 32,
-      "contradiction": 15,
-      "event_strength": 15,
-      "asset_class": "commodities",
-      "direction": "inflow"
-    },
-    {
-      "story_id": "n21_multi_pillar__ukraine_fp-5_flamingo_missiles_strike_cheboksary__second_st",
-      "headline": "UKRAINE FP-5 FLAMINGO MISSILES STRIKE CHEBOKSARY — SECOND Strike on VNIIR-Progress, Samara Refinery ",
-      "score": 62,
-      "tier": "MODERATE",
-      "flow_alignment": 32,
-      "contradiction": 15,
-      "event_strength": 15,
-      "asset_class": "commodities",
-      "direction": "inflow"
-    },
-    {
-      "story_id": "n21_multi_pillar__eia_drops_bombshell_hormuz_timeline__blockade_persists_thro",
-      "headline": "EIA Drops Bombshell Hormuz Timeline — Blockade Persists Through Q3 2026, Full Recovery Only in 2027",
-      "score": 62,
-      "tier": "MODERATE",
-      "flow_alignment": 32,
-      "contradiction": 15,
-      "event_strength": 15,
-      "asset_class": "commodities",
-      "direction": "inflow"
-    },
-    {
-      "story_id": "n21_multi_pillar__israel_cabinet_any_lebanon_rocket__automatic_beirut_strike",
-      "headline": "Israel Cabinet: Any Lebanon Rocket = Automatic Beirut Strike Without Approval — Escalation Switch Re",
-      "score": 62,
-      "tier": "MODERATE",
-      "flow_alignment": 32,
-      "contradiction": 15,
-      "event_strength": 15,
-      "asset_class": "commodities",
-      "direction": "inflow"
+      "direction": "outflow"
     }
-  ],
-  "asymmetry": {
-    "high_count": 1,
-    "top_scores": [
-      {
-        "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
-        "asset_class": "commodities",
-        "narrative_direction": "outflow",
-        "price_direction": "up",
-        "price_change_pct": 2.12,
-        "asymmetry_score": 60,
-        "diagnostic_trace": {
-          "narrative_sentiment": -0.8,
-          "price_velocity": 0.4,
-          "raw_delta": -60.0,
-          "formula": "(-0.80 - 0.40) * 50 = |-60.0| = 60"
-        },
-        "signal": "HIGH ASYMMETRY"
-      }
-    ],
-    "aggregate_asymmetry": 60
-  }
+  ]
 }

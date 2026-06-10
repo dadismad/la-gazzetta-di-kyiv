@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-06-10T14:49:22.433673+00:00",
+  "generated_at": "2026-06-10T20:57:32.112660+00:00",
   "story_count": 15,
   "model": "deepseek-chat",
   "narratives": [
     {
-      "title": "Geopolitical Escalation Spiral",
+      "title": "Geopolitical Escalation Risk-Off",
       "strength": "DOMINANT",
       "direction": "Risk-Off",
-      "summary": "Capital is fleeing risk assets as multiple kinetic conflicts escalate simultaneously: US-Iran active exchanges, Israel two-front operations, and deep Ukraine strikes. The EIA's extended Hormuz blockade timeline and the Apache shootdown confirm the conflict is broadening, not de-escalating, driving a structural risk-off shift.",
-      "key_stories": 8,
-      "trade_implication": "Short S&P 500 futures; long WTI crude oil and gold; long VIX futures."
+      "summary": "Capital is fleeing risk assets as multi-front conflicts (Iran, Israel, Ukraine) escalate beyond controlled tit-for-tat, with actual kinetic exchanges and strategic infrastructure strikes. The market consensus underestimates the persistence and breadth of these conflicts, driving safe-haven flows.",
+      "key_stories": 9,
+      "trade_implication": "Long gold, short S&P 500 futures; overweight cash and short-duration Treasuries."
     },
     {
-      "title": "Hormuz Blockade Structural Oil Shock",
+      "title": "Oil Supply Disruption Premium",
       "strength": "STRONG",
       "direction": "Neutral-to-Bullish",
-      "summary": "The Strait of Hormuz blockade is now structurally priced through Q3 2026 per EIA, with Kuwait actively seeking pipeline bypasses. This is not a transient spike but a multi-year supply disruption, forcing capital into energy commodities and away from import-dependent equities.",
-      "key_stories": 4,
-      "trade_implication": "Long WTI crude oil futures; long energy sector ETFs; short Asian and European equity indices."
+      "summary": "Capital is flowing into oil and energy assets as the Strait of Hormuz blockade persists through Q3 2026 per EIA, with SPR releases actually signaling bullish supply tightness. Diplomatic progress claims are contradicted by active military escalation, reinforcing structural oil scarcity.",
+      "key_stories": 6,
+      "trade_implication": "Long WTI crude futures and energy sector ETFs; short refined product spreads."
     },
     {
-      "title": "Institutional DeFi and Crypto Divergence",
-      "strength": "BUILDING",
-      "direction": "Neutral",
-      "summary": "While BTC crashed on macro risk-off, institutional adoption continues with Janus Henderson's tokenized CLO partnership. Capital is rotating from speculative crypto into regulated, yield-bearing DeFi instruments, creating a bifurcation between BTC as risk proxy and institutional DeFi as a separate growth story.",
-      "key_stories": 3,
-      "trade_implication": "Long ENA and tokenized asset protocols; short BTC futures; long DeFi index tokens."
+      "title": "Crypto as Macro Risk Proxy",
+      "strength": "MODERATE",
+      "direction": "Risk-Off",
+      "summary": "Bitcoin's selloff mirrors broad risk-off moves, not crypto-specific weakness, as institutional de-risking dominates. Whale accumulation and MicroStrategy buying suggest dip-buying, but capital flows are driven by macro fear, not fundamentals.",
+      "key_stories": 2,
+      "trade_implication": "Short Bitcoin futures; long volatility via options on crypto ETFs."
     }
   ]
 }

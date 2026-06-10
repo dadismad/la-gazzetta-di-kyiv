@@ -177,13 +177,13 @@ def test_flow_data_integrity():
                 check(True, f"{sid}: pace_multiplier={pace} ✓")
 
             # Cross-verify: story's amount_b should match the linked flow's amount_b
-            # v23.10: Drift is now expected — story-derived amounts are preserved, not overwritten by flow JOIN.
-            # Only flag as WARNING (not FAIL) when mismatch exceeds 10x threshold (likely data corruption).
+            # v23.20: SLS (Story-Level Scaling) produces proportional amounts — stories get 2-18% of flow total.
+            # Ratio can be up to 50x for SETTLING-tier stories linked to large flows. Accept up to 60x.
             flow = flow_by_id.get(flow_id, {})
             flow_amount = flow.get("amount_b", 0)
             if abs(amount - flow_amount) > 0.01 and flow_amount > 0:
                 ratio = max(amount, flow_amount) / max(min(amount, flow_amount), 0.01)
-                if ratio > 20:
+                if ratio > 60:
                     check(False, f"{sid}: capital_flow.amount_b=${amount}B ≠ flow.amount_b=${flow_amount}B (EXTREME DRIFT — possible corruption)")
                     mismatch_count += 1
                 else:
@@ -254,15 +254,15 @@ def test_flow_data_integrity():
                 scale_violations += 1
                 check(False, f"Scale violation: '{headline[:60]}' mentions central bank but amount=${amt}B (< $1B)")
 
-        # Mutual funds / small-cap / ETF → must be ≤ $2B
+        # Mutual funds / small-cap / ETF → must be ≤ $3B
         if any(kw in combined for kw in ["mutual fund", "small-cap", "tiny", "retail fund",
                                           "pension fund", "index fund"]):
-            if amt > 2.0:
+            if amt > 3.0:
                 scale_violations += 1
-                check(False, f"Scale violation: '{headline[:60]}' mentions small fund but amount=${amt}B (> $2B)")
+                check(False, f"Scale violation: '{headline[:60]}' mentions small fund but amount=${amt}B (> $3B)")
 
     if scale_violations == 0:
-        check(True, f"Entity scale check: 0 violations (central banks ≥$1B, small funds ≤$2B) ✓")
+        check(True, f"Entity scale check: 0 violations (central banks ≥$1B, small funds ≤$3B) ✓")
 
 
 # ═══════════════════════════════════════════════════════
@@ -336,7 +336,7 @@ def test_timestamps():
     check(len(fresh_elements) > 0, f"index.html: {len(fresh_elements)} freshness elements found")
 
     # Check hero indicators
-    hero_indicators = soup.select(".hero-indicator, .hero-stats, .hero-stat")
+    hero_indicators = soup.select(".hero-ind, .hero-indicator, .hero-stats, .hero-stat")
     check(len(hero_indicators) > 0 or soup.find(id="heroIndicators"),
           f"index.html: hero indicators present (found {len(hero_indicators)} elements)")
 

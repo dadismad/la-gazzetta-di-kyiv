@@ -1,12 +1,10 @@
-South Korea paid $350B — 20% of GDP — for tariff relief. They call it "investment." Reality: protection payment.
+US housing beat 3x consensus (+3.2% vs +1.1%) — but strong housing means sticky shelter inflation, locking the Fed into higher-for-longer. Markets call it 'resilience.' Reality: stagflation lock-in.
 
-EU unveils tech sovereignty package: "We want to be sure nobody has a kill switch." The kill switch is American.
+Ukraine's FP-5 missiles hit Cheboksary twice, Samara refinery burning, while the world watches Iran. Window of maximum opportunity.
 
-Consensus: alliance solidarity. Reality: allies pay tribute or build exits.
+• Short TLT — rate cuts priced out
+• Long TTF — Russian gas infrastructure under attack
 
-• Long HD Hyundai Heavy — Korean shipbuilder orderbook
-• Long ASML — EU sovereignty capex structural
+¹ US DOE released 40M barrels SPR (18:16 UTC) — pre-positioning for conflict, not de-escalation (source: markettwits)
 
-¹ $350B = ~20% of Korea's GDP. $200B US industries + $150B shipbuilding. (source: Reuters)
-
-Continuity: www.lagazzettadikyiv.com | Next trigger: SpaceX IPO June 12; OpenAI S-1 pricing
+Continuity: lagazzettadikyiv.com | Next trigger: NFP Friday 08:30 UTC
