@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T19:16:45.115912+00:00",
+  "generated_at": "2026-06-10T19:28:12.590816+00:00",
   "story_count": 15,
   "model": "deepseek-chat",
   "narratives": [
@@ -7,25 +7,25 @@
       "title": "Geopolitical Escalation Spiral",
       "strength": "DOMINANT",
       "direction": "Risk-Off",
-      "summary": "Capital is fleeing risk assets as multiple kinetic conflicts escalate simultaneously: US-Iran active exchanges, Israel two-front operations, and deep Ukraine strikes. The EIA's extended Hormuz blockade timeline and the Apache shootdown confirm that de-escalation is failing, forcing a repricing of geopolitical risk premia across equities, commodities, and crypto.",
+      "summary": "Capital is fleeing risk assets as the US-Iran kinetic exchange escalates beyond a one-off strike, with Iran retaliating and shooting down a US Apache. Simultaneous Israel-Hezbollah and Ukraine-Russia intensifications create a multi-front crisis, driving flows into safe havens and commodities.",
       "key_stories": 8,
-      "trade_implication": "Long WTI crude oil and short S&P 500 futures; overweight defense and energy equities, underweight consumer discretionary and tech."
+      "trade_implication": "Long gold, short S&P 500 futures; overweight energy equities (XLE) and long WTI crude oil futures."
     },
     {
-      "title": "Hormuz Blockade Structural Oil Shock",
+      "title": "Strait of Hormuz Blockade Persists",
       "strength": "STRONG",
       "direction": "Neutral-to-Bullish",
-      "summary": "The EIA's projection of a Hormuz blockade persisting through Q3 2026 and Kuwait's active pursuit of pipeline bypasses signal a structural supply disruption, not a transient spike. Capital is rotating into energy commodities and related infrastructure plays, while diplomatic progress claims are treated with skepticism given ongoing kinetic exchanges.",
+      "summary": "The EIA projects the Hormuz blockade lasting through Q3 2026, with Kuwait actively seeking pipeline bypasses. Oil prices are structurally supported by supply disruption, though a potential diplomatic deal could reverse this quickly.",
       "key_stories": 4,
-      "trade_implication": "Buy WTI call spreads and energy infrastructure ETFs; short airlines and shipping equities exposed to fuel cost inflation."
+      "trade_implication": "Long WTI crude oil futures; long tanker equities (STNG, EURN); short airline stocks (JETS) on elevated fuel costs."
     },
     {
-      "title": "Institutional DeFi and AI Adoption",
+      "title": "Institutional Crypto Adoption Accelerates",
       "strength": "BUILDING",
-      "direction": "Neutral-to-Bullish",
-      "summary": "Despite macro risk-off, capital is selectively flowing into institutional-grade crypto and AI infrastructure. Janus Henderson's partnership with Ethena for tokenized CLOs and Anthropic's early release of Claude Fable signal that large asset managers and tech firms are accelerating deployment, decoupling from broader risk sentiment.",
-      "key_stories": 3,
-      "trade_implication": "Accumulate Ethereum and select DeFi tokens (e.g., ENA) on dips; long AI infrastructure ETFs and short-dated tech calls."
+      "direction": "Risk-On",
+      "summary": "Despite BTC's macro-driven selloff, institutional flows into crypto infrastructure continue, exemplified by Janus Henderson's partnership with Ethena for tokenized CLOs. This signals long-term capital rotation into digital assets as a distinct asset class.",
+      "key_stories": 2,
+      "trade_implication": "Accumulate BTC on dips; long ETH and DeFi tokens (ENA); overweight crypto-exposed equities (MSTR, COIN)."
     }
   ]
 }

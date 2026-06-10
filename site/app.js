@@ -433,11 +433,33 @@ function updateHeroIndicators(flowsData) {
     velEl.querySelector('.hero-ind-value').textContent = `${topVel.toFixed(1)}×`;
     velEl.title = `Highest velocity: ${topCat}`;
   }
-  // Freshness: from generated_at
+  // Freshness: Contextual Action Window — trader cares about actionability, not timers
   const freshEl = document.getElementById('heroFreshness');
   if (freshEl && flowsData.generated_at) {
-    freshEl.querySelector('.hero-ind-value').textContent = formatTimeAgo(flowsData.generated_at);
-    freshEl.title = flowsData.generated_at;
+    const genTime = new Date(flowsData.generated_at);
+    const ageMs = Date.now() - genTime.getTime();
+    const ageMin = ageMs / 60000;
+    let windowLabel, windowColor;
+    if (ageMin < 60) {
+      windowLabel = '[HOT ALPHA]';
+      windowColor = '#DC2626';
+    } else if (ageMin < 240) {
+      windowLabel = '[ACTIVE WINDOW]';
+      windowColor = '#D97706';
+    } else if (ageMin < 1440) {
+      windowLabel = '[DELAYED REACTION]';
+      windowColor = '#6B7280';
+    } else {
+      windowLabel = '[STALE]';
+      windowColor = '#9CA3AF';
+    }
+    freshEl.querySelector('.hero-ind-value').textContent = windowLabel;
+    freshEl.querySelector('.hero-ind-value').style.color = windowColor;
+    freshEl.title = 'Generated: ' + flowsData.generated_at;
+    // Show age in minutes as subtitle
+    const ageStr = ageMin < 60 ? Math.round(ageMin) + 'm' : Math.round(ageMin/60) + 'h';
+    const labelEl = freshEl.querySelector('.hero-ind-label');
+    if (labelEl) labelEl.textContent = ageStr + ' ago';
   }
 }
 
@@ -813,14 +835,19 @@ function updateTradeHooks(flowsData) {
     const priceTicker = priceMap[symbol.toLowerCase()];
     const priceDelta = priceTicker ? priceTicker.change_pct : 0;
 
-    const { gap } = computeDivergence(direction, confidence, priceDelta);
+    const { gap, narrativeForce } = computeDivergence(direction, confidence, priceDelta);
     const gapPct = (gap * 100).toFixed(1);
     const divLabel = getDivergenceLabel(gap);
     const color = getDivergenceColor(gap);
 
+    // Kobeissi/ZeroHedge style: [ASSET] GAP% → DIRECTIONAL BIAS
+    const biasLabel = direction === 'outflow' ? 'BEARISH' : 'BULLISH';
+    const biasDir = direction === 'outflow' ? '↓' : '↑';
+    
     symEl.textContent = symbol;
-    labelEl.innerHTML = `${dirArrow} ${dirLabel} <span style="color:${color};font-weight:700">[${divLabel}]</span>`;
-    gapEl.textContent = `Δ ${gapPct}%`;
+    labelEl.innerHTML = `<span style="color:${color};font-weight:700;font-size:11px">${divLabel}</span>`;
+    labelEl.title = `${gapPct}% narrative-price gap · Narrative ${(narrativeForce*100).toFixed(0)}% ${biasLabel} vs Price ${priceDelta > 0 ? '+' : ''}${priceDelta}%`;
+    gapEl.innerHTML = `<span style="font-weight:700;color:${color}">${biasDir} ${gapPct}%</span>`;
     gapEl.style.color = color;
   }
 
@@ -2117,6 +2144,21 @@ async function boot() {
 
   // Fetch flows — always, regardless of page (drives hero confidence, flowFreshness, global state)
   await fetchFlows();
+
+  // Fetch market prices for divergence computation in trade hooks
+  try {
+    const priceResp = await fetch('./data/market_prices.json');
+    if (priceResp.ok) {
+      const priceData = await priceResp.json();
+      window._lastTickerMap = {};
+      const prices = priceData.prices || {};
+      // Index by asset class name AND ticker symbol for flexible lookup
+      Object.entries(prices).forEach(([assetClass, p]) => {
+        window._lastTickerMap[assetClass.toLowerCase()] = p;
+        if (p.ticker) window._lastTickerMap[p.ticker.toLowerCase()] = p;
+      });
+    }
+  } catch(e) { /* prices optional, trade hooks fall back gracefully */ }
 
   // Start flows polling (5 min cadence)
   setInterval(fetchFlows, FLOWS_POLL_INTERVAL);

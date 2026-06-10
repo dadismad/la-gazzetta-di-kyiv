@@ -92,6 +92,42 @@ RSS_FEEDS = [
         "category": "asymmetry_blog",
         "priority": "medium",
     },
+    # v23.23: 5 additional high-conviction sources — sovereign yields + political arbitrage
+    {
+        "name": "treasury_yield_curve",
+        "label": "US Treasury Yield Curve (TreasuryDirect)",
+        "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/textview.aspx?data=yieldrss",
+        "category": "sovereign_yields",
+        "priority": "high",
+    },
+    {
+        "name": "federal_reserve",
+        "label": "Federal Reserve Board (Monetary Policy)",
+        "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+        "category": "central_bank",
+        "priority": "high",
+    },
+    {
+        "name": "bis_global_flows",
+        "label": "BIS — Global Sovereign Debt & Flow Statistics",
+        "url": "https://www.bis.org/publ/rss.xml",
+        "category": "sovereign_yields",
+        "priority": "medium",
+    },
+    {
+        "name": "geopolitical_futures",
+        "label": "Geopolitical Futures (Friedman — Political Arbitrage)",
+        "url": "https://geopoliticalfutures.com/feed/",
+        "category": "political_arbitrage",
+        "priority": "high",
+    },
+    {
+        "name": "the_cradle",
+        "label": "The Cradle (Middle East Geopolitics + Finance)",
+        "url": "https://thecradle.co/feed",
+        "category": "political_arbitrage",
+        "priority": "medium",
+    },
 ]
 
 # ═══════════════════════════════════════════════════════
