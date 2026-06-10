@@ -2282,14 +2282,23 @@ async function populateTeasers() {
           if (s.associated_positions && s.associated_positions.length) {
             linkedHtml += ` <span class="teaser-linked">⚡ ${s.associated_positions.length} bet${s.associated_positions.length > 1 ? 's' : ''}</span>`;
           }
-          // Time-decay freshness indicator
+          // Time-decay freshness indicator — show time label not bare %
           const td = s.time_decay || {};
-          const fresh = td.current_freshness;
+          const genAt = s.generated_at || td.generated_at || '';
           let freshHtml = '';
-          if (fresh !== undefined) {
-            const pct = Math.round(fresh * 100);
+          if (genAt) {
+            const ageMs = Date.now() - new Date(genAt).getTime();
+            const mins = Math.round(ageMs / 60000);
+            const hrs = Math.round(ageMs / 3600000);
+            const days = Math.round(ageMs / 86400000);
+            const label = mins < 60 ? `${mins}m` : hrs < 24 ? `${hrs}h` : `${days}d`;
+            const fresh = td.current_freshness;
             const cls = fresh > 0.8 ? 'freshness-recent' : fresh > 0.4 ? 'freshness-today' : 'freshness-stale';
-            freshHtml = ` <span class="freshness-ago ${cls}">${pct}%</span>`;
+            freshHtml = ` <span class="freshness-ago ${cls}" title="${Math.round((fresh||0)*100)}% freshness">${label}</span>`;
+          } else if (td.current_freshness !== undefined) {
+            const pct = Math.round(td.current_freshness * 100);
+            const cls = td.current_freshness > 0.8 ? 'freshness-recent' : 'freshness-stale';
+            freshHtml = ` <span class="freshness-ago ${cls}">~${pct}% fresh</span>`;
           }
           return `<a href="./story.html?id=${s.story_id || s.id || ''}" class="teaser-item">${amtHtml}${headline}${linkedHtml}${freshHtml}</a>`;
         }).join('');

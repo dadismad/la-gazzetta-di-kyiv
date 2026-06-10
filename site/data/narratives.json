@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T20:57:32.112660+00:00",
+  "generated_at": "2026-06-10T21:23:05.881113+00:00",
   "story_count": 15,
   "model": "deepseek-chat",
   "narratives": [
@@ -7,25 +7,25 @@
       "title": "Geopolitical Escalation Risk-Off",
       "strength": "DOMINANT",
       "direction": "Risk-Off",
-      "summary": "Capital is fleeing risk assets as multi-front conflicts (Iran, Israel, Ukraine) escalate beyond controlled tit-for-tat, with actual kinetic exchanges and strategic infrastructure strikes. The market consensus underestimates the persistence and breadth of these conflicts, driving safe-haven flows.",
+      "summary": "Capital is fleeing risk assets as multi-front conflicts (Iran, Israel, Ukraine) escalate beyond controlled tit-for-tat, with real supply disruptions (Hormuz blockade, SPR release) and military incidents (Apache shootdown) confirming systemic risk. Markets are underpricing the duration and breadth of these conflicts, driving flows into safe havens.",
       "key_stories": 9,
-      "trade_implication": "Long gold, short S&P 500 futures; overweight cash and short-duration Treasuries."
+      "trade_implication": "Long VIX futures, short S&P 500 (SPY) with stop at 715, long gold (GLD) and short-dated Treasuries (SHY)."
     },
     {
-      "title": "Oil Supply Disruption Premium",
+      "title": "Energy Supply Shock Repricing",
       "strength": "STRONG",
       "direction": "Neutral-to-Bullish",
-      "summary": "Capital is flowing into oil and energy assets as the Strait of Hormuz blockade persists through Q3 2026 per EIA, with SPR releases actually signaling bullish supply tightness. Diplomatic progress claims are contradicted by active military escalation, reinforcing structural oil scarcity.",
-      "key_stories": 6,
-      "trade_implication": "Long WTI crude futures and energy sector ETFs; short refined product spreads."
+      "summary": "Capital is rotating into energy commodities as the Hormuz blockade persists through Q3 2026 (EIA timeline), SPR releases signal bullish supply tightness, and infrastructure bypass talks (Kuwait-Saudi pipeline) indicate structural disruption. Markets are still pricing a diplomatic resolution that is unlikely near-term.",
+      "key_stories": 5,
+      "trade_implication": "Long WTI crude futures (CL) and energy sector ETF (XLE), short refined products spreads (HO:RB) on refinery risk."
     },
     {
       "title": "Crypto as Macro Risk Proxy",
       "strength": "MODERATE",
-      "direction": "Risk-Off",
-      "summary": "Bitcoin's selloff mirrors broad risk-off moves, not crypto-specific weakness, as institutional de-risking dominates. Whale accumulation and MicroStrategy buying suggest dip-buying, but capital flows are driven by macro fear, not fundamentals.",
+      "direction": "Neutral",
+      "summary": "Bitcoin's selloff mirrors broad risk-off moves, but whale accumulation and MicroStrategy buying suggest dip-buying by sophisticated capital. The narrative is shifting from crypto-specific to macro-driven, with potential for divergence if geopolitical tensions ease.",
       "key_stories": 2,
-      "trade_implication": "Short Bitcoin futures; long volatility via options on crypto ETFs."
+      "trade_implication": "Accumulate BTC via futures (CME) on dips below $60K, hedge with short ETH/BTC ratio."
     }
   ]
 }

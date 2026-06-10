@@ -99,7 +99,8 @@ $PYTHON "$PROJECT/scripts/ensure_generated_at.py" || true
 echo "  ✓ Stories enriched with capital_flow + generated_at"
 $PYTHON "$PROJECT/scripts/generate_signal_api.py" || true
 $PYTHON "$PROJECT/scripts/generate_trades_api.py" || true
-echo "  ✓ Signal + Trades API endpoints generated"
+$PYTHON "$PROJECT/scripts/build_track_record.py" || true
+echo "  ✓ Signal + Trades + Track Record API endpoints generated"
 echo ""
 
 # ═══ Stage 2: build_site ──
