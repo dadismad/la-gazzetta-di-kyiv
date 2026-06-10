@@ -76,7 +76,7 @@ def compile_stories(conn):
             if primary_flow:
                 cf = story.get("capital_flow", {})
                 cf["amount_b"] = primary_flow["amount_b"]
-                cf["pace_multiplier"] = primary_flow["velocity"]
+                cf["pace_multiplier"] = cf.get("pace_multiplier") or primary_flow["velocity"]
                 cf["direction"] = primary_flow["direction"]
                 cf["asset_class"] = cf.get("asset_class") or primary_flow["category"]
                 cf["confidence_pct"] = cf.get("confidence_pct", 50)
