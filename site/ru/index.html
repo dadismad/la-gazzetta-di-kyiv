@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
   <base href="/">
   <meta charset="utf-8"/>
@@ -217,8 +217,8 @@
     <div class="side-section alpha-gated" id="signalGate">
       <div class="side-section-label" data-i18n="side_signal_gate">FULL SIGNAL</div>
       <div class="gate-overlay">
-        <span class="gate-hint">Entry zones & stop levels are gated</span>
-        <a href="https://t.me/GazzettaDiKyiv" class="gate-cta" target="_blank" rel="noopener">🔓 Unlock Full Signal →</a>
+        <span class="gate-hint" data-i18n="gate_hint">Entry zones & stop levels are gated</span>
+        <a href="https://t.me/GazzettaDiKyiv" class="gate-cta" target="_blank" rel="noopener" data-i18n="gate_cta">🔓 Unlock Full Signal →</a>
       </div>
       <div class="gated-content">
         <div class="side-hooks">
@@ -335,24 +335,24 @@
   <!-- v2.0: Services Utility Grid — persona-driven value props -->
   <section class="container" id="servicesGrid" style="background:transparent;border:none;">
     <div class="container-header">
-      <span class="container-title">How We Serve You</span>
+      <span class="container-title" data-i18n="svc_how_we_serve">How We Serve You</span>
     </div>
     <div class="container-body">
       <div class="services-grid">
         <a href="./stories.html" class="svc-card" id="svcCSuite">
           <span class="svc-persona" data-i18n="svc_csuite">C-SUITE</span>
           <span class="svc-title" data-i18n="svc_macro_horizon">Macro Horizon</span>
-          <span class="svc-desc">Structural policy shifts, supply-chain bottlenecks, regulatory implications. Board-ready context for capital allocators.</span>
+          <span class="svc-desc" data-i18n="svc_csuite_desc">Structural policy shifts, supply-chain bottlenecks, regulatory implications. Board-ready context for capital allocators.</span>
         </a>
         <a href="./flow-nodes.html" class="svc-card" id="svcQuant">
           <span class="svc-persona" data-i18n="svc_quant">QUANTITATIVE</span>
           <span class="svc-title" data-i18n="svc_flow_telemetry">Flow Telemetry</span>
-          <span class="svc-desc">Capital velocity differentials, correlation coefficients, heat scores. Low-latency raw data. Zero narrative fluff.</span>
+          <span class="svc-desc" data-i18n="svc_quant_desc">Capital velocity differentials, correlation coefficients, heat scores. Low-latency raw data. Zero narrative fluff.</span>
         </a>
         <a href="./trades.html" class="svc-card" id="svcTrader">
           <span class="svc-persona" data-i18n="svc_execution">EXECUTION</span>
           <span class="svc-title" data-i18n="svc_action_triggers">Action Triggers</span>
-          <span class="svc-desc">Directional bias, entry/stop levels, conviction ratings with ATR-derived stops. Ultra-concise, trade-ready.</span>
+          <span class="svc-desc" data-i18n="svc_trader_desc">Directional bias, entry/stop levels, conviction ratings with ATR-derived stops. Ultra-concise, trade-ready.</span>
         </a>
       </div>
     </div>
@@ -399,20 +399,20 @@
     <div class="side-section">
       <div class="side-section-label" data-i18n="side_navigate">NAVIGATE</div>
       <nav class="side-breadcrumbs">
-        <a href="./event_horizon.html" class="side-bc-link">→ Horizon <span class="side-bc-desc">Geopolitical chokepoints</span></a>
-        <a href="./flow-nodes.html" class="side-bc-link">→ Flow Nodes <span class="side-bc-desc">Capital network graph</span></a>
-        <a href="./stories.html" class="side-bc-link">→ All Stories <span class="side-bc-desc">Full intel feed</span></a>
-        <a href="./trades.html" class="side-bc-link">→ All Trades <span class="side-bc-desc">Position dashboard</span></a>
+        <a href="./event_horizon.html" class="side-bc-link"><span data-i18n="side_horizon">→ Horizon</span> <span class="side-bc-desc" data-i18n="side_horizon_desc">Geopolitical chokepoints</span></a>
+        <a href="./flow-nodes.html" class="side-bc-link"><span data-i18n="side_nodes">→ Flow Nodes</span> <span class="side-bc-desc" data-i18n="side_nodes_desc">Capital network graph</span></a>
+        <a href="./stories.html" class="side-bc-link"><span data-i18n="side_all_stories">→ All Stories</span> <span class="side-bc-desc" data-i18n="side_all_stories_desc">Full intel feed</span></a>
+        <a href="./trades.html" class="side-bc-link"><span data-i18n="side_all_trades">→ All Trades</span> <span class="side-bc-desc" data-i18n="side_all_trades_desc">Position dashboard</span></a>
       </nav>
     </div>
     <div class="side-section">
       <div class="side-section-label" data-i18n="side_gazzetta">GAZZETTA</div>
       <nav class="side-meta-links">
-        <a href="./about.html">About</a>
-        <a href="./capital.html">Methodology</a>
-        <a href="./data.html">Data Sources</a>
-        <a href="./privacy.html">Privacy</a>
-        <a href="./terms.html">Terms</a>
+        <a href="./about.html" data-i18n="footer_about">About</a>
+        <a href="./capital.html" data-i18n="footer_methodology">Methodology</a>
+        <a href="./data.html" data-i18n="footer_sources">Data Sources</a>
+        <a href="./privacy.html" data-i18n="footer_privacy">Privacy</a>
+        <a href="./terms.html" data-i18n="footer_terms">Terms</a>
       </nav>
     </div>
   </aside>
@@ -460,7 +460,7 @@
     var sv=document.querySelector('#sideSentiment .side-sent-value');
     if(sv){sv.textContent=pct+'%';sv.className='side-sent-value '+(pct>=70?'bullish':pct<=30?'bearish':'neutral');}
     var sl=document.querySelector('#sideSentiment .side-sent-label');
-    if(sl)sl.textContent='Inflow ratio · '+inflow.length+'/'+flows.length;
+    if(sl)sl.textContent=(window.I18N&&window.I18N.t('inflow_ratio','Inflow ratio')||'Inflow ratio')+' · '+inflow.length+'/'+flows.length;
     function sf(id,data){var el=document.getElementById(id);if(!el||!data||!data.generated_at)return;var m=Math.floor((Date.now()-new Date(data.generated_at).getTime())/60000);el.textContent=m<60?m+'m ago':Math.floor(m/60)+'h ago';}
     sf('freshStories',fd);sf('freshFlows',fd);
     try{var td=JSON.parse(localStorage.getItem('gazzetta_trades_data')||'{}');sf('freshTrades',td);}catch(e){}

@@ -115,6 +115,26 @@ const ASSET_BADGE_LABELS = {
   crypto: 'CRYPTO', fixed_income: 'SOVEREIGN', defense: 'DEFENSE', tech: 'TECH',
 };
 
+// v23.21: Asset Class Icons — institutional color tokens for teaser cards
+const ASSET_ICONS = {
+  fx: { symbol: '💱', color: '#B8860B', label: 'FX' },
+  commodities: { symbol: '🛢', color: '#059669', label: 'COMMODITIES' },
+  crypto: { symbol: '₿', color: '#DC2626', label: 'CRYPTO' },
+  equities: { symbol: '📈', color: '#2563EB', label: 'EQUITIES' },
+  fixed_income: { symbol: '🏛', color: '#6D28D9', label: 'SOVEREIGN' },
+  defense: { symbol: '🛡', color: '#374151', label: 'DEFENSE' },
+  tech: { symbol: '⚙', color: '#7C3AED', label: 'TECH' },
+  spx: { symbol: '📊', color: '#2563EB', label: 'SPX' },
+  btc: { symbol: '₿', color: '#F59E0B', label: 'BTC' },
+  oil: { symbol: '🛢', color: '#DC2626', label: 'OIL' },
+  gold: { symbol: '🥇', color: '#B8860B', label: 'GOLD' },
+  bonds: { symbol: '📜', color: '#6D28D9', label: 'BONDS' },
+};
+function assetIcon(ac) {
+  const a = ASSET_ICONS[(ac || '').toLowerCase()] || ASSET_ICONS['equities'];
+  return `<span class="asset-icon" style="color:${a.color}" title="${a.label}">${a.symbol}</span>`;
+}
+
 // ═══════════════════════════════════════════════════════════════
 // COLLAPSIBLE CONTAINERS
 // ═══════════════════════════════════════════════════════════════
@@ -2271,7 +2291,9 @@ async function populateTeasers() {
             const cls = fresh > 0.8 ? 'freshness-recent' : fresh > 0.4 ? 'freshness-today' : 'freshness-stale';
             freshHtml = ` <span class="freshness-ago ${cls}">${pct}%</span>`;
           }
-          return `<a href="./story.html?id=${s.story_id || s.id || ''}" class="teaser-item">${probHtml}${amtHtml}${headline}${linkedHtml}${freshHtml}</a>`;
+                    const cf2 = s.capital_flow || {};
+          const iconHtml = cf2.asset_class ? assetIcon(cf2.asset_class) : '';
+          return `<a href="./story.html?id=${s.story_id || s.id || ''}" class="teaser-item">${iconHtml}${probHtml}${amtHtml}${headline}${linkedHtml}${freshHtml}</a>`;
         }).join('');
         if (countEl) countEl.textContent = items.length + ' stories';
         // Story freshness timestamp

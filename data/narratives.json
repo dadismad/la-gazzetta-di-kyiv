@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T15:41:22.686907+00:00",
+  "generated_at": "2026-06-10T17:05:56.233099+00:00",
   "story_count": 15,
   "model": "deepseek-chat",
   "narratives": [
@@ -7,25 +7,25 @@
       "title": "Geopolitical Escalation Spiral",
       "strength": "DOMINANT",
       "direction": "Risk-Off",
-      "summary": "Capital is fleeing risk assets as the US-Iran kinetic exchange escalates beyond a one-off strike, with Iran retaliating and shooting down a US Apache. Simultaneous Ukraine deep strikes and Israel's two-front war signal a multi-theater conflict that markets are underpricing, driving flows into safe havens.",
+      "summary": "Capital is fleeing risk assets as the US-Iran conflict escalates beyond a one-off exchange, with Iran shooting down a US Apache and threatening Hormuz. Simultaneous Ukraine deep strikes and Israel's two-front war compound the risk premium, driving equity selloffs and commodity spikes.",
       "key_stories": 8,
-      "trade_implication": "Long gold, short S&P 500 futures; hedge with VIX calls and long-dated US Treasuries."
+      "trade_implication": "Long crude oil and gold; short S&P 500 and emerging market equities; consider long volatility via VIX futures."
     },
     {
-      "title": "Hormuz Blockade Structural Oil Shock",
+      "title": "Hormuz Blockade Structural Shift",
       "strength": "STRONG",
       "direction": "Neutral-to-Bullish",
-      "summary": "The EIA's extended Hormuz blockade timeline through Q3 2026 and Kuwait's pipeline bypass discussions confirm a structural supply disruption. Oil prices are rallying as the blockade persists, with WTI forecast raised to $88.32, but diplomatic off-ramps create two-way risk.",
+      "summary": "The EIA's extended Hormuz blockade timeline through Q3 2026 is forcing structural capital flows into energy infrastructure bypass plays, like Kuwait's pipeline talks with Saudi/UAE. Oil prices are being repriced higher, with WTI forecast at $88.32, as supply disruption becomes entrenched.",
       "key_stories": 4,
-      "trade_implication": "Long WTI crude futures and energy equities; add Brent call spreads for upside, but hedge with short-dated puts on any Iran deal headlines."
+      "trade_implication": "Long WTI crude futures and energy infrastructure ETFs (e.g., pipeline operators); short consumer discretionary and airlines."
     },
     {
-      "title": "Institutional DeFi and Crypto Divergence",
+      "title": "Institutional Crypto Adoption Divergence",
       "strength": "BUILDING",
       "direction": "Neutral",
-      "summary": "While BTC crashed on macro risk-off, institutional flows into crypto infrastructure continue, as evidenced by Janus Henderson's partnership with Ethena for tokenized CLOs. This signals a bifurcation between speculative retail crypto and serious institutional adoption, with capital rotating into regulated DeFi plays.",
+      "summary": "Despite BTC's macro-driven selloff, capital is flowing into crypto via institutional channels, as evidenced by Janus Henderson's $300B+ partnership with Ethena for tokenized CLOs. This decoupling from retail risk-off sentiment suggests selective bullishness on blockchain-based real-world assets.",
       "key_stories": 3,
-      "trade_implication": "Accumulate ENA and other institutional-grade DeFi tokens; short BTC against long ETH or SOL to capture the divergence."
+      "trade_implication": "Long tokenized asset protocols (e.g., ENA) and BTC via institutional-grade custodians; short leveraged retail crypto ETFs."
     }
   ]
 }

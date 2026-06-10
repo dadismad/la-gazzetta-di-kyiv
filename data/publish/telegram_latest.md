@@ -1,11 +1,8 @@
-Trump just told Fox News he's "close to ordering new strikes against Iranian power plants and bridges." Not retracted. Netanyahu reaffirmed at 13:59 UTC.
+WTI BELOW $90 as Trump declares Iran shot down a US Apache over Hormuz — but NYT reports crash, crew rescued. STATUS: no shootdown confirmed. If Trump escalates on unverified intel, oil gaps $3-5 higher. If crash confirmed, $87 fails.
 
-Consensus: crisis de-escalating. Reality: infrastructure warfare threat + EIA crude -7.2M vs -3M expected + OPEC lowest since 2000. Triple oil supply crunch.
+• Long WTI/GLD into US response window — stop below $85
+• Short if no confirmation by 21:00 UTC — premium fades
 
-• Long WTI crude — structural deficit confirmed by physical data
-• Long defense (LMT, GD) — confirmed multi-front combat
-• Short NASDAQ — risk-off, no reversal catalyst
+¹ NYT vs White House: conflicting Apache accounts over Hormuz — no shootdown verified (source: nytimes.com)
 
-¹ EIA: crude inventories -7.227M barrels vs -3M consensus (source: eia.gov/petroleum/supply/weekly/)
-
-Continuity: www.lagazzettadikyiv.com | Next trigger: Trump Truth Social on Iran strikes or Israel preemptive action
+Continuity: www.lagazzettadikyiv.com | Next trigger: CENTCOM statement 18:00 UTC — if no shootdown confirmation, thesis decays.
