@@ -42,10 +42,20 @@ echo "── Stage 1: db_to_json ──"
 if [ -f "$PROJECT/gazzetta.db" ]; then
     $PYTHON "$PROJECT/scripts/db_to_json.py"
     echo "  ✓ JSON compiled from gazzetta.db"
+
+    # ═══ Stage 1.02: enrich_multi_persona — generate C-Suite/Quant/Degen blocks ═══
+    echo "── Stage 1.02: enrich_multi_persona ──"
+    $PYTHON "$PROJECT/scripts/enrich_multi_persona.py" || echo "  ⚠ Multi-persona skipped (API unavailable)"
+    echo "  ✓ Multi-persona blocks enriched"
 else
     echo "  ⚠ No gazzetta.db found — skipping (JSON unchanged)"
 fi
 echo ""
+
+# ═══ Stage 1.05: fetch_live_prices — real-time asset prices from CoinGecko ═══
+echo "── Stage 1.05: fetch_live_prices ──"
+$PYTHON "$PROJECT/scripts/fetch_live_prices.py" || echo "  ⚠ Live prices skipped (non-critical)"
+echo "  ✓ Live prices fetched"
 
 # ═══ Stage 1.1: build_related_links — auto-interlinking engine ═══
 echo "── Stage 1.1: build_related_links ──"
