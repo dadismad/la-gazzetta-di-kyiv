@@ -30,6 +30,10 @@ def compile_stories(conn):
     """Query stories, reconstruct full JSON, resolve impact_flows links."""
     rows = conn.execute("""
         SELECT id, full_json FROM stories
+        WHERE (
+            json_extract(full_json, '$.source') NOT LIKE 'osint%'
+            OR json_extract(full_json, '$.source') IS NULL
+        )
         ORDER BY
             CASE tier
                 WHEN 'BREAKING'   THEN 0
@@ -73,14 +77,21 @@ def compile_stories(conn):
             story["impacted_flows"] = impacted_ids
 
             # JOIN: inject REAL flow metrics into capital_flow dict
-            # Use the first linked flow's actual DB values
+            # Use flow values ONLY as fallbacks — preserve story-derived values
             primary_flow = flow_by_id.get(impacted_ids[0])
             if primary_flow:
                 cf = story.get("capital_flow", {})
-                cf["amount_b"] = primary_flow["amount_b"]
-                cf["pace_multiplier"] = cf.get("pace_multiplier") or primary_flow["velocity"]
-                cf["direction"] = primary_flow["direction"]
-                cf["asset_class"] = cf.get("asset_class") or primary_flow["category"]
+                # Only use flow values when story doesn't have its own
+                # Exception: override the known $5.0B default (intel_to_stories.py default)
+                is_default_amount = (cf.get("amount_b") == 5.0 and not cf.get("_amount_derived"))
+                if not cf.get("amount_b") or is_default_amount:
+                    cf["amount_b"] = primary_flow["amount_b"]
+                if not cf.get("pace_multiplier"):
+                    cf["pace_multiplier"] = primary_flow["velocity"]
+                if not cf.get("direction") or cf.get("direction") == "neutral":
+                    cf["direction"] = primary_flow["direction"]
+                if not cf.get("asset_class"):
+                    cf["asset_class"] = primary_flow["category"]
                 cf["confidence_pct"] = cf.get("confidence_pct", 50)
                 cf["confidence_level"] = cf.get("confidence_level", "medium")
                 cf["claim"] = f"${primary_flow['amount_b']}B {primary_flow['direction']} {cf.get('asset_class', '')}"

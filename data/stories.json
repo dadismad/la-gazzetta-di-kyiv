@@ -1,49 +1,64 @@
 {
-  "generated_at": "2026-06-10T14:19:50.940644+00:00",
+  "generated_at": "2026-06-10T14:32:29.408880+00:00",
   "lead": {
-    "story_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
-    "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
-    "sector": "crypto",
-    "pillar": "blockchain_agentic",
-    "paradigm_pillar": "blockchain_agentic",
+    "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
+    "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+    "sector": "commodities",
+    "pillar": "multi_pillar",
+    "paradigm_pillar": "multi_pillar",
     "paradigm_implications": [
-      "Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath &nbsp;&nbsp; CNBC    MicroStrategy’s STR"
+      "Oil longs are the single highest-conviction trade of the session. Direct US-Iran military engagement over the world's most important oil chokepoint is the definition of a binary bullish oil catalyst. "
     ],
-    "they_say": "Source: reuters_business. Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath &nbsp;&nbsp; CNBC    MicroStrategy’s STRC Tracks Bitcoin Lower Again as Semi-Monthly Dividend Begins &nbsp;&nbsp; Yahoo Finance    Bitcoin S",
-    "reality": "Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath &nbsp;&nbsp; CNBC    MicroStrategy’s STRC Tracks Bitcoin Lower Again as Semi-Monthly Dividend Begins &nbsp;&nbsp; Yahoo Finance    Bitcoin S",
-    "thesis": "OSINT draft #58: Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
+    "they_say": "This is the single most consequential escalation of the Iran conflict to date. A US helicopter was SHOT DOWN — not an accident, not a collision — and the President of the United States has publicly declared the US 'must respond.' The Strait of Hormuz location is not coincidental — it's the epicenter of the US blockade against Iran. This event transforms the market calculus: previously, markets saw the Iran conflict as Israel vs Iran with the US as a backstop/mediator. Now the US is a direct belligerent. The risk premium for oil, gold, and defense stocks just repriced upward. For equities, the Apache shootdown accelerates the pre-existing selloff — geopolitical risk premium that was 'theoretical' at 15:30 is now concretely priced as US forces are directly under attack. The EIA's Hormuz timeline (blockade through Q3 2026) published just 25 minutes before this news now looks optimistic — if the US is now in active military engagement with Iran over the Strait, the blockade doesn't end until the military outcome is decided. Trump's 'must respond' language leaves zero ambiguity about imminent US retaliation.",
+    "reality": "The Apache was 'shot down' according to Trump — but no independent confirmation of the circumstances exists. The NYT earlier reported it as a 'crash' with crew rescued. If the shootdown narrative is pre-text for escalation rather than a verified hostile act, the market reaction could reverse on clarification. Iran may claim it was a warning shot or accidental. Trump is known for escalating rhetoric that doesn't always materialize into action — his 'must respond' is identical language to previous threats that resulted in measured responses. The EIA's simultaneous demand downgrade for oil creates a ceiling — if US retaliation is limited (e.g., cyber, diplomatic), oil spikes and fades. The White House was simultaneously claiming 'progress' on Iran deal at 13:55 UTC — the diplomatic track hasn't been formally abandoned despite the Apache shootdown. The rescue of both pilots without casualties means this isn't a loss-of-life trigger — the military response calculus is different from a fatality event.",
+    "thesis": "LONG oil/gold aggressively; SHORT equities on escalation risk premium repricing",
     "actors": [],
     "horizon": "24-72h",
-    "confidence": "low",
+    "confidence": "medium",
     "tier": "DEVELOPING",
-    "actionable_trade": "OSINT signal: INFLOW crypto. Review before execution.",
-    "contradiction_score": 75,
-    "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
-    "portfolio_implication": "Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath &nbsp;&nbsp; CNBC    MicroStrategy’s STR",
+    "actionable_trade": "LONG oil/gold aggressively; SHORT equities on escalation risk premium repricing",
+    "contradiction_score": 65,
+    "invalidation_trigger": "Narrative reversal or event resolution",
+    "portfolio_implication": "Oil longs are the single highest-conviction trade of the session. Direct US-Iran military engagement over the world's most important oil chokepoint is the definition of a binary bullish oil catalyst. Go long WTI/Brent futures, USO, XLE, OIH hard into close. Pair with gold (GLD) for the flight-to-saf",
     "capital_flow": {
       "direction": "inflow",
-      "amount_b": 2.1,
-      "asset_class": "crypto",
-      "projected": "Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath &nbsp;&nbsp; CNBC    MicroStrategy’s STR",
-      "pace_multiplier": 1.0,
-      "confidence_pct": 50,
-      "confidence_level": "low",
-      "claim": "$2.1B inflow crypto",
-      "confidence": "50%"
+      "amount_b": 88.0,
+      "asset_class": "commodities",
+      "projected": "Oil longs are the single highest-conviction trade of the session. Direct US-Iran military engagement over the world's most important oil chokepoint is the definition of a binary bullish oil…",
+      "pace_multiplier": 2.3,
+      "confidence_pct": 75,
+      "confidence_level": "medium",
+      "claim": "$88.0B outflow commodities",
+      "confidence": "75%"
     },
-    "capital_flow_implication": "OSINT draft #58. Source: reuters_business.",
-    "evidence": [
-      "source: reuters_business",
-      "draft_id: 58"
-    ],
-    "source": "osint_reuters_business",
-    "generated_at": "2026-06-09T16:38:48.413433+00:00",
+    "capital_flow_implication": "LONG oil/gold aggressively; SHORT equities on escalation risk premium repricing",
+    "evidence": [],
+    "source": "telegram_intel",
+    "generated_at": "2026-06-09T17:28:41.730363+00:00",
     "freshness": "breaking",
     "entity_tags": {
-      "assets": [],
-      "geographies": [],
-      "actors": [],
-      "instruments": []
+      "assets": [
+        "BRENT",
+        "ETH",
+        "SPX",
+        "VIX",
+        "WTI",
+        "XAU"
+      ],
+      "geographies": [
+        "Iran",
+        "Israel",
+        "USA"
+      ],
+      "actors": [
+        "Trump",
+        "UN",
+        "Xi Jinping"
+      ],
+      "instruments": [
+        "futures",
+        "options"
+      ]
     },
     "time_decay": {
       "half_life_hours": 36.0,
@@ -57,501 +72,38 @@
       ]
     },
     "impacted_flows": [
-      "flow_n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic"
+      "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
     ],
     "associated_positions": [],
     "multi_persona": {
       "c_suite": {
-        "headline": "Strategy resumes bitcoin buying spree, quelling market panic - Investing.com",
-        "body": "Structural assessment: Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin bloodbath &nbsp;&nbsp; CNBC    MicroStrategy’s STRC Tracks Bitcoin Lower Again as Semi-Monthly Divid... Implicated assets: BTC. Regions: global. Monitor for policy or supply-chain cascades.",
-        "implication": "Board-level: crypto exposure review recommended. Directional bias: LONG."
+        "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
+        "body": "Structural assessment: The Apache was 'shot down' according to Trump — but no independent confirmation of the circumstances exists. The NYT earlier reported it as a 'crash' with crew rescued. If the shootdown narrative is pre-text for escalation rather than a verified hostile act, the market reaction could reverse on clar. Capital repositioning of $5.0B identified in commodities. Policy implication: monitor for regulatory or supply-chain cascades.",
+        "implication": "Board-level risk: commodities exposure requires long hedge within 72h."
       },
       "quant": {
-        "headline": "CRYPTO signal: LONG",
-        "body": "Raw telemetry — crypto flow detected from Strategy resumes bitcoin buying spree, quelling market panic &nbsp;&nbsp; Investing.com    Crypto mutiny on Strategy: Shorts target 'MSTR' in bitcoin ... Assets tagged: BTC. Correlation regime: TBD. Watch vol surface for confirmation.",
+        "headline": "COMMODITIES flow: $5.0B inflow",
+        "body": "Raw telemetry — commodities $5.0B inflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
         "metrics": {
-          "flow_direction": "inflow",
-          "asset_class": "crypto",
-          "geographies": []
+          "flow_velocity": 0.21,
+          "correlation_coeff": 0.65,
+          "z_score": 0.5
         }
       },
       "degen": {
-        "headline": "🟢 LONG BTC",
-        "body": "Directional: LONG. Asset: BTC. Context: Strategy resumes bitcoin buying spree, quelling market panic - Investing.com. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+        "headline": "🟢 LONG COMMODITIES $5.0B",
+        "body": "Directional: LONG. Flow: $5.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump De",
         "signal": {
           "direction": "LONG",
-          "entry_zone": "awaiting review",
-          "stop_level": "TBD",
-          "target": "TBD",
-          "conviction": "LOW"
+          "entry_zone": "market",
+          "stop_level": "-5%",
+          "target": "+10-15%",
+          "conviction": "MEDIUM"
         }
       }
     }
   },
   "stories": [
-    {
-      "story_id": "n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes",
-      "headline": "This tiny mutual fund outperforms by backing the world’s best management teams - MarketWatch",
-      "sector": "equities",
-      "pillar": "multi_pillar",
-      "paradigm_pillar": "multi_pillar",
-      "paradigm_implications": [
-        "This tiny mutual fund outperforms by backing the world’s best management teams &nbsp;&nbsp; MarketWatch"
-      ],
-      "they_say": "Source: reuters_business. This tiny mutual fund outperforms by backing the world’s best management teams &nbsp;&nbsp; MarketWatch",
-      "reality": "This tiny mutual fund outperforms by backing the world’s best management teams &nbsp;&nbsp; MarketWatch",
-      "thesis": "OSINT draft #21: This tiny mutual fund outperforms by backing the world’s best management teams - MarketWatch",
-      "actors": [],
-      "horizon": "24-72h",
-      "confidence": "low",
-      "tier": "DEVELOPING",
-      "actionable_trade": "OSINT signal: NEUTRAL equities. Review before execution.",
-      "contradiction_score": 75,
-      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
-      "portfolio_implication": "This tiny mutual fund outperforms by backing the world’s best management teams &nbsp;&nbsp; MarketWatch",
-      "capital_flow": {
-        "direction": "inflow",
-        "amount_b": 0.8,
-        "asset_class": "equities",
-        "projected": "This tiny mutual fund outperforms by backing the world’s best management teams &nbsp;&nbsp; MarketWatch",
-        "pace_multiplier": 1.8,
-        "confidence_pct": 50,
-        "confidence_level": "low",
-        "claim": "$0.8B inflow equities",
-        "confidence": "50%"
-      },
-      "capital_flow_implication": "OSINT draft #21. Source: reuters_business.",
-      "evidence": [
-        "source: reuters_business",
-        "draft_id: 21"
-      ],
-      "source": "osint_reuters_business",
-      "generated_at": "2026-06-09T16:38:48.413174+00:00",
-      "freshness": "breaking",
-      "entity_tags": {
-        "assets": [],
-        "geographies": [],
-        "actors": [],
-        "instruments": []
-      },
-      "time_decay": {
-        "half_life_hours": 36.0,
-        "decay_curve": "exponential",
-        "current_freshness": 1.0,
-        "hours_elapsed": 0.0,
-        "renewal_triggers": [
-          "new_intel",
-          "price_breach",
-          "flow_confirmation"
-        ]
-      },
-      "impacted_flows": [
-        "flow_n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes"
-      ],
-      "associated_positions": [],
-      "multi_persona": {
-        "c_suite": {
-          "headline": "This tiny mutual fund outperforms by backing the world’s best management teams - MarketWatch",
-          "body": "Structural assessment: This tiny mutual fund outperforms by backing the world’s best management teams &nbsp;&nbsp; MarketWatch... Implicated assets: equities. Regions: global. Monitor for policy or supply-chain cascades.",
-          "implication": "Board-level: equities exposure review recommended. Directional bias: WATCH."
-        },
-        "quant": {
-          "headline": "EQUITIES signal: WATCH",
-          "body": "Raw telemetry — equities flow detected from This tiny mutual fund outperforms by backing the world’s best management teams &nbsp;&nbsp; MarketWatch... Assets tagged: equities. Correlation regime: TBD. Watch vol surface for confirmation.",
-          "metrics": {
-            "flow_direction": "neutral",
-            "asset_class": "equities",
-            "geographies": []
-          }
-        },
-        "degen": {
-          "headline": "🟡 WATCH equities",
-          "body": "Directional: WATCH. Asset: equities. Context: This tiny mutual fund outperforms by backing the world’s best management teams -. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
-          "signal": {
-            "direction": "WATCH",
-            "entry_zone": "awaiting review",
-            "stop_level": "TBD",
-            "target": "TBD",
-            "conviction": "LOW"
-          }
-        }
-      }
-    },
-    {
-      "story_id": "n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired",
-      "headline": "All the Ways Europe Is Ditching American Technology - WIRED",
-      "sector": "defense",
-      "pillar": "china_ascendancy",
-      "paradigm_pillar": "china_ascendancy",
-      "paradigm_implications": [
-        "All the Ways Europe Is Ditching American Technology &nbsp;&nbsp; WIRED    ASML chief warns EU against directing chip supplies &nbsp;&nbsp; Financial Times    Europe unveils tech sovereignty package am"
-      ],
-      "they_say": "Source: reuters_business. All the Ways Europe Is Ditching American Technology &nbsp;&nbsp; WIRED    ASML chief warns EU against directing chip supplies &nbsp;&nbsp; Financial Times    Europe unveils tech sovereignty package amid growing concerns over reliance on U.S. tech: 'We want to be sure nobody has a kill switch' &nbsp;",
-      "reality": "All the Ways Europe Is Ditching American Technology &nbsp;&nbsp; WIRED    ASML chief warns EU against directing chip supplies &nbsp;&nbsp; Financial Times    Europe unveils tech sovereignty package amid growing concerns over reliance on U.S. tech: 'We want to be sure nobody has a kill switch' &nbsp;",
-      "thesis": "OSINT draft #67: All the Ways Europe Is Ditching American Technology - WIRED",
-      "actors": [],
-      "horizon": "24-72h",
-      "confidence": "low",
-      "tier": "DEVELOPING",
-      "actionable_trade": "OSINT signal: INFLOW defense. Review before execution.",
-      "contradiction_score": 75,
-      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
-      "portfolio_implication": "All the Ways Europe Is Ditching American Technology &nbsp;&nbsp; WIRED    ASML chief warns EU against directing chip supplies &nbsp;&nbsp; Financial Times    Europe unveils tech sovereignty package am",
-      "capital_flow": {
-        "direction": "inflow",
-        "amount_b": 34.0,
-        "asset_class": "defense",
-        "projected": "All the Ways Europe Is Ditching American Technology &nbsp;&nbsp; WIRED    ASML chief warns EU against directing chip supplies &nbsp;&nbsp; Financial Times    Europe unveils tech sovereignty package am",
-        "pace_multiplier": 2.2,
-        "confidence_pct": 50,
-        "confidence_level": "low",
-        "claim": "$34.0B inflow defense",
-        "confidence": "50%"
-      },
-      "capital_flow_implication": "OSINT draft #67. Source: reuters_business.",
-      "evidence": [
-        "source: reuters_business",
-        "draft_id: 67"
-      ],
-      "source": "osint_reuters_business",
-      "generated_at": "2026-06-09T16:38:48.412894+00:00",
-      "freshness": "breaking",
-      "entity_tags": {
-        "assets": [],
-        "geographies": [],
-        "actors": [],
-        "instruments": []
-      },
-      "time_decay": {
-        "half_life_hours": 36.0,
-        "decay_curve": "exponential",
-        "current_freshness": 1.0,
-        "hours_elapsed": 0.0,
-        "renewal_triggers": [
-          "new_intel",
-          "price_breach",
-          "flow_confirmation"
-        ]
-      },
-      "impacted_flows": [
-        "flow_n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired"
-      ],
-      "associated_positions": [],
-      "multi_persona": {
-        "c_suite": {
-          "headline": "All the Ways Europe Is Ditching American Technology - WIRED",
-          "body": "Structural assessment: All the Ways Europe Is Ditching American Technology &nbsp;&nbsp; WIRED    ASML chief warns EU against directing chip supplies &nbsp;&nbsp; Financial Times    Europe unveils tech sovereignty package amid growing concerns over reliance on U.S. tech: 'W... Implicated assets: EUR. Regions: Australia, Canada, EU. Monitor for policy or supply-chain cascades.",
-          "implication": "Board-level: defense exposure review recommended. Directional bias: LONG."
-        },
-        "quant": {
-          "headline": "DEFENSE signal: LONG",
-          "body": "Raw telemetry — defense flow detected from All the Ways Europe Is Ditching American Technology &nbsp;&nbsp; WIRED    ASML chief warns EU against directing chip supplies &nbsp;&nbsp; Financial T... Assets tagged: EUR. Correlation regime: TBD. Watch vol surface for confirmation.",
-          "metrics": {
-            "flow_direction": "inflow",
-            "asset_class": "defense",
-            "geographies": [
-              "Australia",
-              "Canada",
-              "EU",
-              "Japan",
-              "USA"
-            ]
-          }
-        },
-        "degen": {
-          "headline": "🟢 LONG EUR",
-          "body": "Directional: LONG. Asset: EUR. Context: All the Ways Europe Is Ditching American Technology - WIRED. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
-          "signal": {
-            "direction": "LONG",
-            "entry_zone": "awaiting review",
-            "stop_level": "TBD",
-            "target": "TBD",
-            "conviction": "LOW"
-          }
-        }
-      }
-    },
-    {
-      "story_id": "n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela",
-      "headline": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet - CNBC",
-      "sector": "crypto",
-      "pillar": "china_ascendancy",
-      "paradigm_pillar": "china_ascendancy",
-      "paradigm_implications": [
-        "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin’s Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; "
-      ],
-      "they_say": "Source: reuters_business. Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin’s Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; Bloomberg    Mapping the Market: Bitcoin teetering on brink of further losses &nbsp;&nbsp; Reuters  ",
-      "reality": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin’s Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; Bloomberg    Mapping the Market: Bitcoin teetering on brink of further losses &nbsp;&nbsp; Reuters  ",
-      "thesis": "OSINT draft #66: Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet - CNBC",
-      "actors": [],
-      "horizon": "24-72h",
-      "confidence": "low",
-      "tier": "DEVELOPING",
-      "actionable_trade": "OSINT signal: OUTFLOW crypto. Review before execution.",
-      "contradiction_score": 75,
-      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
-      "portfolio_implication": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin’s Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; ",
-      "capital_flow": {
-        "direction": "outflow",
-        "amount_b": 4.8,
-        "asset_class": "crypto",
-        "projected": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin’s Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; ",
-        "pace_multiplier": 2.4,
-        "confidence_pct": 50,
-        "confidence_level": "low",
-        "claim": "$4.8B outflow crypto",
-        "confidence": "50%"
-      },
-      "capital_flow_implication": "OSINT draft #66. Source: reuters_business.",
-      "evidence": [
-        "source: reuters_business",
-        "draft_id: 66"
-      ],
-      "source": "osint_reuters_business",
-      "generated_at": "2026-06-09T16:38:48.412745+00:00",
-      "freshness": "breaking",
-      "entity_tags": {
-        "assets": [],
-        "geographies": [],
-        "actors": [],
-        "instruments": []
-      },
-      "time_decay": {
-        "half_life_hours": 36.0,
-        "decay_curve": "exponential",
-        "current_freshness": 1.0,
-        "hours_elapsed": 0.0,
-        "renewal_triggers": [
-          "new_intel",
-          "price_breach",
-          "flow_confirmation"
-        ]
-      },
-      "impacted_flows": [
-        "flow_n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela"
-      ],
-      "associated_positions": [],
-      "multi_persona": {
-        "c_suite": {
-          "headline": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet - CNBC",
-          "body": "Structural assessment: Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin’s Worst Week Since FTX Crash May Signal More Pain Ahead &nbsp;&nbsp; Bloomberg    Mapping the Market: Bitcoin teetering... Implicated assets: BTC. Regions: EU. Monitor for policy or supply-chain cascades.",
-          "implication": "Board-level: crypto exposure review recommended. Directional bias: SHORT."
-        },
-        "quant": {
-          "headline": "CRYPTO signal: SHORT",
-          "body": "Raw telemetry — crypto flow detected from Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish bet &nbsp;&nbsp; CNBC    Bitcoin’s Worst Week Since ... Assets tagged: BTC. Correlation regime: TBD. Watch vol surface for confirmation.",
-          "metrics": {
-            "flow_direction": "outflow",
-            "asset_class": "crypto",
-            "geographies": [
-              "EU"
-            ]
-          }
-        },
-        "degen": {
-          "headline": "🔴 SHORT BTC",
-          "body": "Directional: SHORT. Asset: BTC. Context: Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, includin. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
-          "signal": {
-            "direction": "SHORT",
-            "entry_zone": "awaiting review",
-            "stop_level": "TBD",
-            "target": "TBD",
-            "conviction": "LOW"
-          }
-        }
-      }
-    },
-    {
-      "story_id": "n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai",
-      "headline": "Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates - WSJ",
-      "sector": "defense",
-      "pillar": "abundance_tech",
-      "paradigm_pillar": "abundance_tech",
-      "paradigm_implications": [
-        "Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates &nbsp;&nbsp; WSJ    Stock Market Today: Dow, S&amp;P 500, Nasdaq Open Up; Micron, Marvell, Intel, Nvidia, More "
-      ],
-      "they_say": "Source: reuters_business. Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates &nbsp;&nbsp; WSJ    Stock Market Today: Dow, S&amp;P 500, Nasdaq Open Up; Micron, Marvell, Intel, Nvidia, More Movers &nbsp;&nbsp; Barron's    Technology stocks are turning lower in late-morning trade, pressured",
-      "reality": "Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates &nbsp;&nbsp; WSJ    Stock Market Today: Dow, S&amp;P 500, Nasdaq Open Up; Micron, Marvell, Intel, Nvidia, More Movers &nbsp;&nbsp; Barron's    Technology stocks are turning lower in late-morning trade, pressured",
-      "thesis": "OSINT draft #70: Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates - WSJ",
-      "actors": [],
-      "horizon": "24-72h",
-      "confidence": "low",
-      "tier": "DEVELOPING",
-      "actionable_trade": "OSINT signal: OUTFLOW defense. Review before execution.",
-      "contradiction_score": 75,
-      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
-      "portfolio_implication": "Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates &nbsp;&nbsp; WSJ    Stock Market Today: Dow, S&amp;P 500, Nasdaq Open Up; Micron, Marvell, Intel, Nvidia, More ",
-      "capital_flow": {
-        "direction": "inflow",
-        "amount_b": 12.5,
-        "asset_class": "defense",
-        "projected": "Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates &nbsp;&nbsp; WSJ    Stock Market Today: Dow, S&amp;P 500, Nasdaq Open Up; Micron, Marvell, Intel, Nvidia, More ",
-        "pace_multiplier": 2.2,
-        "confidence_pct": 50,
-        "confidence_level": "low",
-        "claim": "$12.5B inflow defense",
-        "confidence": "50%"
-      },
-      "capital_flow_implication": "OSINT draft #70. Source: reuters_business.",
-      "evidence": [
-        "source: reuters_business",
-        "draft_id: 70"
-      ],
-      "source": "osint_reuters_business",
-      "generated_at": "2026-06-09T16:38:48.411370+00:00",
-      "freshness": "breaking",
-      "entity_tags": {
-        "assets": [],
-        "geographies": [],
-        "actors": [],
-        "instruments": []
-      },
-      "time_decay": {
-        "half_life_hours": 36.0,
-        "decay_curve": "exponential",
-        "current_freshness": 1.0,
-        "hours_elapsed": 0.0,
-        "renewal_triggers": [
-          "new_intel",
-          "price_breach",
-          "flow_confirmation"
-        ]
-      },
-      "impacted_flows": [
-        "flow_n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai"
-      ],
-      "associated_positions": [],
-      "multi_persona": {
-        "c_suite": {
-          "headline": "Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates - WSJ",
-          "body": "Structural assessment: Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates &nbsp;&nbsp; WSJ    Stock Market Today: Dow, S&amp;P 500, Nasdaq Open Up; Micron, Marvell, Intel, Nvidia, More Movers &nbsp;&nbsp; Barron's    Technology stocks ... Implicated assets: NDX, NVDA, OpenAI. Regions: global. Monitor for policy or supply-chain cascades.",
-          "implication": "Board-level: defense exposure review recommended. Directional bias: SHORT."
-        },
-        "quant": {
-          "headline": "DEFENSE signal: SHORT",
-          "body": "Raw telemetry — defense flow detected from Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates &nbsp;&nbsp; WSJ    Stock Market Today: Dow, S&amp;P 500, Nas... Assets tagged: NDX, NVDA, OpenAI. Correlation regime: TBD. Watch vol surface for confirmation.",
-          "metrics": {
-            "flow_direction": "outflow",
-            "asset_class": "defense",
-            "geographies": []
-          }
-        },
-        "degen": {
-          "headline": "🔴 SHORT NDX, NVDA, OpenAI",
-          "body": "Directional: SHORT. Asset: NDX, NVDA, OpenAI. Context: Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
-          "signal": {
-            "direction": "SHORT",
-            "entry_zone": "awaiting review",
-            "stop_level": "TBD",
-            "target": "TBD",
-            "conviction": "LOW"
-          }
-        }
-      }
-    },
-    {
-      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
-      "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
-      "sector": "commodities",
-      "pillar": "multi_pillar",
-      "paradigm_pillar": "multi_pillar",
-      "paradigm_implications": [
-        "Oil longs are the single highest-conviction trade of the session. Direct US-Iran military engagement over the world's most important oil chokepoint is the definition of a binary bullish oil catalyst. "
-      ],
-      "they_say": "This is the single most consequential escalation of the Iran conflict to date. A US helicopter was SHOT DOWN — not an accident, not a collision — and the President of the United States has publicly declared the US 'must respond.' The Strait of Hormuz location is not coincidental — it's the epicenter of the US blockade against Iran. This event transforms the market calculus: previously, markets saw the Iran conflict as Israel vs Iran with the US as a backstop/mediator. Now the US is a direct belligerent. The risk premium for oil, gold, and defense stocks just repriced upward. For equities, the Apache shootdown accelerates the pre-existing selloff — geopolitical risk premium that was 'theoretical' at 15:30 is now concretely priced as US forces are directly under attack. The EIA's Hormuz timeline (blockade through Q3 2026) published just 25 minutes before this news now looks optimistic — if the US is now in active military engagement with Iran over the Strait, the blockade doesn't end until the military outcome is decided. Trump's 'must respond' language leaves zero ambiguity about imminent US retaliation.",
-      "reality": "The Apache was 'shot down' according to Trump — but no independent confirmation of the circumstances exists. The NYT earlier reported it as a 'crash' with crew rescued. If the shootdown narrative is pre-text for escalation rather than a verified hostile act, the market reaction could reverse on clarification. Iran may claim it was a warning shot or accidental. Trump is known for escalating rhetoric that doesn't always materialize into action — his 'must respond' is identical language to previous threats that resulted in measured responses. The EIA's simultaneous demand downgrade for oil creates a ceiling — if US retaliation is limited (e.g., cyber, diplomatic), oil spikes and fades. The White House was simultaneously claiming 'progress' on Iran deal at 13:55 UTC — the diplomatic track hasn't been formally abandoned despite the Apache shootdown. The rescue of both pilots without casualties means this isn't a loss-of-life trigger — the military response calculus is different from a fatality event.",
-      "thesis": "LONG oil/gold aggressively; SHORT equities on escalation risk premium repricing",
-      "actors": [],
-      "horizon": "24-72h",
-      "confidence": "medium",
-      "tier": "DEVELOPING",
-      "actionable_trade": "LONG oil/gold aggressively; SHORT equities on escalation risk premium repricing",
-      "contradiction_score": 65,
-      "invalidation_trigger": "Narrative reversal or event resolution",
-      "portfolio_implication": "Oil longs are the single highest-conviction trade of the session. Direct US-Iran military engagement over the world's most important oil chokepoint is the definition of a binary bullish oil catalyst. Go long WTI/Brent futures, USO, XLE, OIH hard into close. Pair with gold (GLD) for the flight-to-saf",
-      "capital_flow": {
-        "direction": "outflow",
-        "amount_b": 88.0,
-        "asset_class": "commodities",
-        "projected": "Oil longs are the single highest-conviction trade of the session. Direct US-Iran military engagement over the world's most important oil chokepoint is the definition of a binary bullish oil…",
-        "pace_multiplier": 2.3,
-        "confidence_pct": 75,
-        "confidence_level": "medium",
-        "claim": "$88.0B outflow commodities",
-        "confidence": "75%"
-      },
-      "capital_flow_implication": "LONG oil/gold aggressively; SHORT equities on escalation risk premium repricing",
-      "evidence": [],
-      "source": "telegram_intel",
-      "generated_at": "2026-06-09T17:28:41.730363+00:00",
-      "freshness": "breaking",
-      "entity_tags": {
-        "assets": [
-          "BRENT",
-          "ETH",
-          "SPX",
-          "VIX",
-          "WTI",
-          "XAU"
-        ],
-        "geographies": [
-          "Iran",
-          "Israel",
-          "USA"
-        ],
-        "actors": [
-          "Trump",
-          "UN",
-          "Xi Jinping"
-        ],
-        "instruments": [
-          "futures",
-          "options"
-        ]
-      },
-      "time_decay": {
-        "half_life_hours": 36.0,
-        "decay_curve": "exponential",
-        "current_freshness": 1.0,
-        "hours_elapsed": 0.0,
-        "renewal_triggers": [
-          "new_intel",
-          "price_breach",
-          "flow_confirmation"
-        ]
-      },
-      "impacted_flows": [
-        "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is"
-      ],
-      "associated_positions": [],
-      "multi_persona": {
-        "c_suite": {
-          "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
-          "body": "Structural assessment: The Apache was 'shot down' according to Trump — but no independent confirmation of the circumstances exists. The NYT earlier reported it as a 'crash' with crew rescued. If the shootdown narrative is pre-text for escalation rather than a verified hostile act, the market reaction could reverse on clar. Capital repositioning of $5.0B identified in commodities. Policy implication: monitor for regulatory or supply-chain cascades.",
-          "implication": "Board-level risk: commodities exposure requires long hedge within 72h."
-        },
-        "quant": {
-          "headline": "COMMODITIES flow: $5.0B inflow",
-          "body": "Raw telemetry — commodities $5.0B inflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
-          "metrics": {
-            "flow_velocity": 0.21,
-            "correlation_coeff": 0.65,
-            "z_score": 0.5
-          }
-        },
-        "degen": {
-          "headline": "🟢 LONG COMMODITIES $5.0B",
-          "body": "Directional: LONG. Flow: $5.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump De",
-          "signal": {
-            "direction": "LONG",
-            "entry_zone": "market",
-            "stop_level": "-5%",
-            "target": "+10-15%",
-            "conviction": "MEDIUM"
-          }
-        }
-      }
-    },
     {
       "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
       "headline": "CRITICAL CONTRADICTION: WTI Drops Below $90 (-2%) Despite Israel-Iran War, Hormuz Toll, Beirut Bombing — Risk Premium Collapsing",
@@ -653,7 +205,7 @@
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "Gold and VIX as structural hedges. This isn't a tradeable event in isolation, but it raises the tail probability of a Lebanon escalation event. Own optionality, not direction.",
       "capital_flow": {
-        "direction": "outflow",
+        "direction": "inflow",
         "amount_b": 88.0,
         "asset_class": "commodities",
         "projected": "Gold and VIX as structural hedges. This isn't a tradeable event in isolation, but it raises the tail probability of a Lebanon escalation event. Own optionality, not direction.",
@@ -733,7 +285,7 @@
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "Long duration (TLT) as the stagflation trade. Gold as the inflation hedge. Short financials as rate expectations repivot. If this is the start of a weak labor trend, the Fed is trapped — and that means gold to new highs.",
       "capital_flow": {
-        "direction": "outflow",
+        "direction": "inflow",
         "amount_b": 88.0,
         "asset_class": "commodities",
         "projected": "Long duration (TLT) as the stagflation trade. Gold as the inflation hedge. Short financials as rate expectations repivot. If this is the start of a weak labor trend, the Fed is trapped — and that…",
@@ -773,7 +325,7 @@
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "Oil futures long with multi-week horizon. The Kuwait pipeline story is a 'tell' — when a major OPEC producer starts planning alternative infrastructure around a blockade, it means the blockade is expected to persist. This is a structural oil bid the market hasn't fully priced because most participan",
       "capital_flow": {
-        "direction": "outflow",
+        "direction": "inflow",
         "amount_b": 88.0,
         "asset_class": "commodities",
         "projected": "Oil futures long with multi-week horizon. The Kuwait pipeline story is a 'tell' — when a major OPEC producer starts planning alternative infrastructure around a blockade, it means the blockade is…",
@@ -870,7 +422,7 @@
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "Position oil and gold longs into US close. The weekend de-escalation narrative is dead — the IDF Iran readiness statement reverses it. If Tyre evacuation means a ground operation is imminent, oil gets a fear bid into Wednesday. LMT/GD have been consolidating — multi-front escalation is their catalys",
       "capital_flow": {
-        "direction": "outflow",
+        "direction": "inflow",
         "amount_b": 88.0,
         "asset_class": "commodities",
         "projected": "Position oil and gold longs into US close. The weekend de-escalation narrative is dead — the IDF Iran readiness statement reverses it. If Tyre evacuation means a ground operation is imminent, oil…",
@@ -972,7 +524,7 @@
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "Gazzetta di Kyiv FRONT PAGE: 'KYIV STRIKES 600KM INSIDE RUSSIA — FP-5 Hits Cheboksary Again, Samara Refinery Burning, Tyumen Next. GRAU Artillery Chief Dead in Moscow.' Bet&Benefit: Natgas long on Russian infrastructure disruption. Rheinmetall/European defense. The strategic story: Ukraine exploits ",
       "capital_flow": {
-        "direction": "outflow",
+        "direction": "inflow",
         "amount_b": 88.0,
         "asset_class": "commodities",
         "projected": "Gazzetta di Kyiv FRONT PAGE: 'KYIV STRIKES 600KM INSIDE RUSSIA — FP-5 Hits Cheboksary Again, Samara Refinery Burning, Tyumen Next. GRAU Artillery Chief Dead in Moscow.' Bet&Benefit: Natgas long on…",
@@ -1075,7 +627,7 @@
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "The EIA Apache-confirmed oil bid is the highest-conviction trade. Do not overthink the demand downgrade — supply disruption dominates in the short term. Pair oil longs with gold for the geopolitical flight-to-safety bid that is just beginning to price.",
       "capital_flow": {
-        "direction": "outflow",
+        "direction": "inflow",
         "amount_b": 88.0,
         "asset_class": "commodities",
         "projected": "The EIA Apache-confirmed oil bid is the highest-conviction trade. Do not overthink the demand downgrade — supply disruption dominates in the short term. Pair oil longs with gold for the geopolitical…",
@@ -1303,7 +855,7 @@
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "Oil producers: structural revenue uplift from elevated risk premium. US shale (Permian, Bakken) becomes more competitive as Hormuz transit becomes costly. Tanker owners: rate re-pricing as war risk premium loads into shipping contracts. Gold: safe haven flows. Crypto: Iran accepting Tether for Hormu",
       "capital_flow": {
-        "direction": "outflow",
+        "direction": "inflow",
         "amount_b": 88.0,
         "asset_class": "commodities",
         "projected": "Oil producers: structural revenue uplift from elevated risk premium. US shale (Permian, Bakken) becomes more competitive as Hormuz transit becomes costly. Tanker owners: rate re-pricing as war risk…",
@@ -1343,7 +895,7 @@
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "This is primarily a Gazzetta content play — compelling narrative, visual (car bomb in Moscow suburb), connects to Zelensky announcement. For Bet&Benefit: if this pattern continues (weekly Moscow assassinations of military logistics officers), Russian war sustainability comes into question — that's a",
       "capital_flow": {
-        "direction": "outflow",
+        "direction": "inflow",
         "amount_b": 88.0,
         "asset_class": "commodities",
         "projected": "This is primarily a Gazzetta content play — compelling narrative, visual (car bomb in Moscow suburb), connects to Zelensky announcement. For Bet&Benefit: if this pattern continues (weekly Moscow…",
@@ -1383,7 +935,7 @@
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "Structural long oil/gold. The 'automatic trigger' is a volatility cliff — traders should own optionality (VIX calls, OTM oil calls) for tail risk. If no trigger today, premium decays; but if it fires, payoff is multi-standard-deviation.",
       "capital_flow": {
-        "direction": "outflow",
+        "direction": "inflow",
         "amount_b": 88.0,
         "asset_class": "commodities",
         "projected": "Structural long oil/gold. The 'automatic trigger' is a volatility cliff — traders should own optionality (VIX calls, OTM oil calls) for tail risk. If no trigger today, premium decays; but if it…",
@@ -1423,7 +975,7 @@
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "BUY WTI futures or USO calls with today's expiry or tomorrow. Kuwait pipeline deal confirmation = oil stays bid above $80 on structural premium. IDF readiness declaration alone may not move the needle but any Israeli action in the next 2 hours = immediate spike. The asymmetric payoff is strongly in ",
       "capital_flow": {
-        "direction": "outflow",
+        "direction": "inflow",
         "amount_b": 88.0,
         "asset_class": "commodities",
         "projected": "BUY WTI futures or USO calls with today's expiry or tomorrow. Kuwait pipeline deal confirmation = oil stays bid above $80 on structural premium. IDF readiness declaration alone may not move the…",
@@ -1503,7 +1055,7 @@
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "SHORT RSX/MOEX on headline. LONG European gas — LNG supply tightening is constructive for $NG. Crypto ban accelerates Russian BTC demand (capital flight into non-sanctionable assets) — contrarian LONG BTC.",
       "capital_flow": {
-        "direction": "outflow",
+        "direction": "inflow",
         "amount_b": 88.0,
         "asset_class": "commodities",
         "projected": "SHORT RSX/MOEX on headline. LONG European gas — LNG supply tightening is constructive for $NG. Crypto ban accelerates Russian BTC demand (capital flight into non-sanctionable assets) — contrarian…",
@@ -1543,7 +1095,7 @@
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "Defense contractors: Israel emergency resupply + potential US re-engagement. Oil: multi-front Middle East war keeps floor under prices hard. Gold: safe haven demand spikes. Cyber sector (Israel-linked cyber firms): CBR, cyber-security stocks re-rate. Energy (oil): Strait toll + Beirut strikes = doub",
       "capital_flow": {
-        "direction": "outflow",
+        "direction": "inflow",
         "amount_b": 88.0,
         "asset_class": "commodities",
         "projected": "Defense contractors: Israel emergency resupply + potential US re-engagement. Oil: multi-front Middle East war keeps floor under prices hard. Gold: safe haven demand spikes. Cyber sector…",
@@ -1583,7 +1135,7 @@
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "Defense contractors: Israel will need resupply, US defense stocks re-rate on sustained Middle East engagement. Oil: Lebanon escalation keeps a floor under oil prices even if OPEC+ tries to cap them. Gold: geopolitical risk premium rises.",
       "capital_flow": {
-        "direction": "outflow",
+        "direction": "inflow",
         "amount_b": 88.0,
         "asset_class": "commodities",
         "projected": "Defense contractors: Israel will need resupply, US defense stocks re-rate on sustained Middle East engagement. Oil: Lebanon escalation keeps a floor under oil prices even if OPEC+ tries to cap them.…",
@@ -1624,7 +1176,7 @@
       "portfolio_implication": "Gazzetta di Kyiv: 'BTC CRASHES Worst Week Since FTX — Digital Gold Thesis Tested by Real War.' Bet&Benefit: Asymmetric BTC long at $65K support. Ukraine crypto donation angle — volatility creates donor opportunity. If BTC decouples from equities on dollar-weakening narrative, massive upside.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 300.0,
+        "amount_b": 250.0,
         "asset_class": "crypto",
         "projected": "Gazzetta di Kyiv: 'BTC CRASHES Worst Week Since FTX — Digital Gold Thesis Tested by Real War.' Bet&Benefit: Asymmetric BTC long at $65K support. Ukraine crypto donation angle — volatility creates…",
         "pace_multiplier": 2.3,
@@ -1720,7 +1272,7 @@
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "Gazzetta di Kyiv: 'HOT WAR — US Bombs 20 Iranian Targets, IRGC Strikes Bahrain, Hormuz in Flames.' Bet&Benefit: OIL UP aggressive long, tight stop at $88 Brent. Defense calls. LNG long per MS outlook. Ukraine angle: US two-front vulnerability — Russia exploits distraction, Kyiv accelerates deep stri",
       "capital_flow": {
-        "direction": "outflow",
+        "direction": "inflow",
         "amount_b": 88.0,
         "asset_class": "commodities",
         "projected": "Gazzetta di Kyiv: 'HOT WAR — US Bombs 20 Iranian Targets, IRGC Strikes Bahrain, Hormuz in Flames.' Bet&Benefit: OIL UP aggressive long, tight stop at $88 Brent. Defense calls. LNG long per MS…",
@@ -2038,7 +1590,7 @@
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "Oil producers: every dip from OPEC+ noise is a buying opportunity for energy equities. Sovereign wealth funds in Gulf states: their revenue per barrel rises even with the small quota increase because price per barrel is supported. US Treasury: higher oil revenue = higher tax receipts from energy sec",
       "capital_flow": {
-        "direction": "outflow",
+        "direction": "inflow",
         "amount_b": 88.0,
         "asset_class": "commodities",
         "projected": "Oil producers: every dip from OPEC+ noise is a buying opportunity for energy equities. Sovereign wealth funds in Gulf states: their revenue per barrel rises even with the small quota increase…",
@@ -2078,7 +1630,7 @@
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "Gold calls intraday. VIX calls if available (VIX is low currently — this explosion of volatility would catch most short-vol strategies flat-footed). The auto-retaliation mechanism is a genuine escalation innovation that markets haven't priced. If you want a high-beta trade: short Israeli shekel via ",
       "capital_flow": {
-        "direction": "outflow",
+        "direction": "inflow",
         "amount_b": 88.0,
         "asset_class": "commodities",
         "projected": "Gold calls intraday. VIX calls if available (VIX is low currently — this explosion of volatility would catch most short-vol strategies flat-footed). The auto-retaliation mechanism is a genuine…",
@@ -2118,7 +1670,7 @@
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "Oil producers (Saudi Arabia, Russia, US shale) benefit from elevated prices regardless of the OPEC+ quota increase. Energy sector earnings revision upward.",
       "capital_flow": {
-        "direction": "outflow",
+        "direction": "inflow",
         "amount_b": 88.0,
         "asset_class": "commodities",
         "projected": "Oil producers (Saudi Arabia, Russia, US shale) benefit from elevated prices regardless of the OPEC+ quota increase. Energy sector earnings revision upward.",
@@ -2158,7 +1710,7 @@
       "invalidation_trigger": "Narrative reversal or event resolution",
       "portfolio_implication": "Oil producers and energy exporters benefit from $5-10/bbl risk premium immediately. Defense contractors (RTX, LMT, NOC) benefit from extended Middle East engagement. Maritime/insurance sector re-rates higher on Hormuz risk.",
       "capital_flow": {
-        "direction": "outflow",
+        "direction": "inflow",
         "amount_b": 88.0,
         "asset_class": "commodities",
         "projected": "Oil producers and energy exporters benefit from $5-10/bbl risk premium immediately. Defense contractors (RTX, LMT, NOC) benefit from extended Middle East engagement. Maritime/insurance sector…",

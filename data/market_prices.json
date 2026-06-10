@@ -57,113 +57,127 @@
     }
   },
   "asymmetry_scores": {
-    "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for": {
-      "flow_id": "flow_n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
+    "crypto": {
       "asset_class": "crypto",
-      "narrative_direction": "inflow",
+      "ticker": "BTC-USD",
+      "price": 62214.32,
+      "change_pct": 0.93,
       "price_direction": "up",
-      "price_change_pct": 0.93,
+      "narrative_direction": "bullish",
+      "narrative_inflow_b": 914.7,
+      "narrative_outflow_b": 0,
       "asymmetry_score": 27,
-      "signal": "LOW ASYMMETRY"
+      "signal": "LOW"
     },
-    "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is": {
-      "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
+    "equities": {
+      "asset_class": "equities",
+      "ticker": "SPY",
+      "price": 735.34,
+      "change_pct": -0.23,
+      "price_direction": "down",
+      "narrative_direction": "bearish",
+      "narrative_inflow_b": 5.4,
+      "narrative_outflow_b": 6.5,
+      "asymmetry_score": 29,
+      "signal": "LOW"
+    },
+    "commodities": {
       "asset_class": "commodities",
-      "narrative_direction": "outflow",
+      "ticker": "CL=F",
+      "price": 89.34,
+      "change_pct": 1.29,
       "price_direction": "up",
-      "price_change_pct": 1.29,
-      "asymmetry_score": 62,
-      "signal": "HIGH ASYMMETRY"
+      "narrative_direction": "bearish",
+      "narrative_inflow_b": 4.2,
+      "narrative_outflow_b": 1678.5,
+      "asymmetry_score": 76,
+      "signal": "MAX ASYMMETRY"
     },
-    "flow_n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired": {
-      "flow_id": "flow_n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired",
-      "asset_class": "tech",
-      "narrative_direction": "inflow",
-      "price_direction": "down",
-      "price_change_pct": -0.27,
-      "asymmetry_score": 66,
-      "signal": "HIGH ASYMMETRY"
-    },
-    "flow_n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai": {
-      "flow_id": "flow_n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai",
-      "asset_class": "tech",
-      "narrative_direction": "inflow",
-      "price_direction": "down",
-      "price_change_pct": -0.27,
-      "asymmetry_score": 66,
-      "signal": "HIGH ASYMMETRY"
-    },
-    "flow_n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv": {
-      "flow_id": "flow_n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv",
-      "asset_class": "crypto",
-      "narrative_direction": "inflow",
+    "fixed_income": {
+      "asset_class": "fixed_income",
+      "ticker": "TLT",
+      "price": 85.16,
+      "change_pct": 0.05,
       "price_direction": "up",
-      "price_change_pct": 0.93,
-      "asymmetry_score": 27,
-      "signal": "LOW ASYMMETRY"
+      "narrative_direction": "neutral",
+      "narrative_inflow_b": 0,
+      "narrative_outflow_b": 0,
+      "asymmetry_score": 0,
+      "signal": "LOW"
     },
-    "flow_n21_multi_pillar__israel_s_nabatieh_offensive__earthquake_that_topples_hezbo": {
-      "flow_id": "flow_n21_multi_pillar__israel_s_nabatieh_offensive__earthquake_that_topples_hezbo",
+    "fx": {
+      "asset_class": "fx",
+      "ticker": "UUP",
+      "price": 27.96,
+      "change_pct": -0.18,
+      "price_direction": "down",
+      "narrative_direction": "neutral",
+      "narrative_inflow_b": 0,
+      "narrative_outflow_b": 0,
+      "asymmetry_score": 0,
+      "signal": "LOW"
+    },
+    "defense": {
       "asset_class": "defense",
-      "narrative_direction": "outflow",
+      "ticker": "ITA",
+      "price": 230.12,
+      "change_pct": -0.14,
       "price_direction": "down",
-      "price_change_pct": -0.14,
-      "asymmetry_score": 30,
-      "signal": "LOW ASYMMETRY"
+      "narrative_direction": "neutral",
+      "narrative_inflow_b": 0,
+      "narrative_outflow_b": 0,
+      "asymmetry_score": 0,
+      "signal": "LOW"
     },
-    "flow_n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela": {
-      "flow_id": "flow_n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela",
-      "asset_class": "crypto",
-      "narrative_direction": "outflow",
-      "price_direction": "up",
-      "price_change_pct": 0.93,
-      "asymmetry_score": 70,
-      "signal": "HIGH ASYMMETRY"
-    },
-    "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149": {
-      "flow_id": "flow_n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149",
-      "asset_class": "commodities",
-      "narrative_direction": "inflow",
-      "price_direction": "up",
-      "price_change_pct": 1.29,
-      "asymmetry_score": 26,
-      "signal": "LOW ASYMMETRY"
-    },
-    "flow_n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t": {
-      "flow_id": "flow_n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t",
+    "tech": {
       "asset_class": "tech",
-      "narrative_direction": "inflow",
+      "ticker": "QQQ",
+      "price": 705.95,
+      "change_pct": -0.27,
       "price_direction": "down",
-      "price_change_pct": -0.27,
-      "asymmetry_score": 60,
-      "signal": "HIGH ASYMMETRY"
+      "narrative_direction": "neutral",
+      "narrative_inflow_b": 0,
+      "narrative_outflow_b": 0,
+      "asymmetry_score": 0,
+      "signal": "LOW"
     },
-    "flow_n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1": {
-      "flow_id": "flow_n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1",
-      "asset_class": "equities",
-      "narrative_direction": "inflow",
+    "gold": {
+      "asset_class": "gold",
+      "ticker": "GC=F",
+      "price": 4186.9,
+      "change_pct": -1.72,
       "price_direction": "down",
-      "price_change_pct": -0.23,
-      "asymmetry_score": 59,
-      "signal": "MODERATE"
+      "narrative_direction": "neutral",
+      "narrative_inflow_b": 0,
+      "narrative_outflow_b": 0,
+      "asymmetry_score": 0,
+      "signal": "LOW"
     },
-    "flow_n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic": {
-      "flow_id": "flow_n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
-      "asset_class": "crypto",
-      "narrative_direction": "inflow",
+    "oil": {
+      "asset_class": "oil",
+      "ticker": "CL=F",
+      "price": 89.34,
+      "change_pct": 1.29,
       "price_direction": "up",
-      "price_change_pct": 0.93,
-      "asymmetry_score": 27,
-      "signal": "LOW ASYMMETRY"
-    },
-    "flow_n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes": {
-      "flow_id": "flow_n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes",
-      "asset_class": "equities",
-      "narrative_direction": "inflow",
-      "price_direction": "down",
-      "price_change_pct": -0.23,
-      "asymmetry_score": 66,
-      "signal": "HIGH ASYMMETRY"
+      "narrative_direction": "neutral",
+      "narrative_inflow_b": 0,
+      "narrative_outflow_b": 0,
+      "asymmetry_score": 0,
+      "signal": "LOW"
     }
+  },
+  "asymmetry_summary": {
+    "high_count": 1,
+    "aggregate": 76,
+    "top_contradictions": [
+      {
+        "asset_class": "commodities",
+        "score": 76,
+        "signal": "MAX ASYMMETRY",
+        "narrative": "bearish",
+        "price": "up",
+        "change_pct": 1.29
+      }
+    ]
   }
 }

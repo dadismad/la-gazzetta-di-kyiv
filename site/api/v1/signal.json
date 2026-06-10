@@ -1,52 +1,8 @@
 {
-  "generated_at": "2026-06-10T14:19:51.025735+00:00",
-  "total_signals": 35,
-  "aggregate_score": 63,
+  "generated_at": "2026-06-10T14:32:29.475093+00:00",
+  "total_signals": 30,
+  "aggregate_score": 61,
   "signals": [
-    {
-      "story_id": "n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired",
-      "headline": "All the Ways Europe Is Ditching American Technology - WIRED",
-      "score": 80,
-      "tier": "HIGH CONVICTION",
-      "flow_alignment": 35,
-      "contradiction": 30,
-      "event_strength": 15,
-      "asset_class": "defense",
-      "direction": "inflow"
-    },
-    {
-      "story_id": "n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai",
-      "headline": "Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates - WSJ",
-      "score": 80,
-      "tier": "HIGH CONVICTION",
-      "flow_alignment": 35,
-      "contradiction": 30,
-      "event_strength": 15,
-      "asset_class": "defense",
-      "direction": "inflow"
-    },
-    {
-      "story_id": "n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela",
-      "headline": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish be",
-      "score": 75,
-      "tier": "HIGH CONVICTION",
-      "flow_alignment": 30,
-      "contradiction": 30,
-      "event_strength": 15,
-      "asset_class": "crypto",
-      "direction": "outflow"
-    },
-    {
-      "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
-      "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Resp",
-      "score": 72,
-      "tier": "HIGH CONVICTION",
-      "flow_alignment": 35,
-      "contradiction": 22,
-      "event_strength": 15,
-      "asset_class": "commodities",
-      "direction": "outflow"
-    },
     {
       "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
       "headline": "CRITICAL CONTRADICTION: WTI Drops Below $90 (-2%) Despite Israel-Iran War, Hormuz Toll, Beirut Bombi",
@@ -67,7 +23,7 @@
       "contradiction": 22,
       "event_strength": 15,
       "asset_class": "commodities",
-      "direction": "outflow"
+      "direction": "inflow"
     },
     {
       "story_id": "n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
@@ -89,7 +45,7 @@
       "contradiction": 15,
       "event_strength": 15,
       "asset_class": "commodities",
-      "direction": "outflow"
+      "direction": "inflow"
     },
     {
       "story_id": "n21_multi_pillar__ukraine_assassinates_russian_colonel_missile_supply_chief",
@@ -100,7 +56,7 @@
       "contradiction": 15,
       "event_strength": 15,
       "asset_class": "commodities",
-      "direction": "outflow"
+      "direction": "inflow"
     },
     {
       "story_id": "n21_blockchain_agentic__blackrock_transferring_btc_to_exchanges_for_client_sales__o",
@@ -122,7 +78,7 @@
       "contradiction": 15,
       "event_strength": 15,
       "asset_class": "commodities",
-      "direction": "outflow"
+      "direction": "inflow"
     },
     {
       "story_id": "n21_abundance_tech__btc_crash__worst_week_since_ftx_collapse_microstrategy_bou",
@@ -133,17 +89,6 @@
       "contradiction": 15,
       "event_strength": 15,
       "asset_class": "crypto",
-      "direction": "inflow"
-    },
-    {
-      "story_id": "n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes",
-      "headline": "This tiny mutual fund outperforms by backing the world’s best management teams - MarketWatch",
-      "score": 62,
-      "tier": "MODERATE",
-      "flow_alignment": 17,
-      "contradiction": 30,
-      "event_strength": 15,
-      "asset_class": "equities",
       "direction": "inflow"
     },
     {
@@ -166,58 +111,80 @@
       "contradiction": 15,
       "event_strength": 15,
       "asset_class": "commodities",
-      "direction": "outflow"
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_multi_pillar__kuwait_discussing_hormuz_bypass_via_saudi_uae_pipelines__ei",
+      "headline": "Kuwait Discussing Hormuz Bypass via Saudi/UAE Pipelines + EIA Raises WTI Forecast to $88.32 — Blocka",
+      "score": 62,
+      "tier": "MODERATE",
+      "flow_alignment": 32,
+      "contradiction": 15,
+      "event_strength": 15,
+      "asset_class": "commodities",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_multi_pillar__idf_declares_readiness_to_immediately_resume_iran_operations",
+      "headline": "IDF Declares Readiness to Immediately Resume Iran Operations + Tyre Under Full Evacuation — Two-Fron",
+      "score": 62,
+      "tier": "MODERATE",
+      "flow_alignment": 32,
+      "contradiction": 15,
+      "event_strength": 15,
+      "asset_class": "commodities",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_multi_pillar__ukraine_fp-5_flamingo_missiles_strike_cheboksary__second_st",
+      "headline": "UKRAINE FP-5 FLAMINGO MISSILES STRIKE CHEBOKSARY — SECOND Strike on VNIIR-Progress, Samara Refinery ",
+      "score": 62,
+      "tier": "MODERATE",
+      "flow_alignment": 32,
+      "contradiction": 15,
+      "event_strength": 15,
+      "asset_class": "commodities",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_multi_pillar__eia_drops_bombshell_hormuz_timeline__blockade_persists_thro",
+      "headline": "EIA Drops Bombshell Hormuz Timeline — Blockade Persists Through Q3 2026, Full Recovery Only in 2027",
+      "score": 62,
+      "tier": "MODERATE",
+      "flow_alignment": 32,
+      "contradiction": 15,
+      "event_strength": 15,
+      "asset_class": "commodities",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_multi_pillar__israel_cabinet_any_lebanon_rocket__automatic_beirut_strike",
+      "headline": "Israel Cabinet: Any Lebanon Rocket = Automatic Beirut Strike Without Approval — Escalation Switch Re",
+      "score": 62,
+      "tier": "MODERATE",
+      "flow_alignment": 32,
+      "contradiction": 15,
+      "event_strength": 15,
+      "asset_class": "commodities",
+      "direction": "inflow"
     }
   ],
   "asymmetry": {
-    "high_count": 6,
+    "high_count": 1,
     "top_scores": [
       {
-        "flow_id": "flow_n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela",
-        "asset_class": "crypto",
-        "narrative_direction": "outflow",
-        "price_direction": "up",
-        "price_change_pct": 0.93,
-        "asymmetry_score": 70,
-        "signal": "HIGH ASYMMETRY"
-      },
-      {
-        "flow_id": "flow_n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired",
-        "asset_class": "tech",
-        "narrative_direction": "inflow",
-        "price_direction": "down",
-        "price_change_pct": -0.27,
-        "asymmetry_score": 66,
-        "signal": "HIGH ASYMMETRY"
-      },
-      {
-        "flow_id": "flow_n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai",
-        "asset_class": "tech",
-        "narrative_direction": "inflow",
-        "price_direction": "down",
-        "price_change_pct": -0.27,
-        "asymmetry_score": 66,
-        "signal": "HIGH ASYMMETRY"
-      },
-      {
-        "flow_id": "flow_n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes",
-        "asset_class": "equities",
-        "narrative_direction": "inflow",
-        "price_direction": "down",
-        "price_change_pct": -0.23,
-        "asymmetry_score": 66,
-        "signal": "HIGH ASYMMETRY"
-      },
-      {
-        "flow_id": "flow_n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
         "asset_class": "commodities",
-        "narrative_direction": "outflow",
+        "ticker": "CL=F",
+        "price": 89.34,
+        "change_pct": 1.29,
         "price_direction": "up",
-        "price_change_pct": 1.29,
-        "asymmetry_score": 62,
-        "signal": "HIGH ASYMMETRY"
+        "narrative_direction": "bearish",
+        "narrative_inflow_b": 4.2,
+        "narrative_outflow_b": 1678.5,
+        "asymmetry_score": 76,
+        "signal": "MAX ASYMMETRY"
       }
     ],
-    "aggregate_asymmetry": 65
+    "aggregate_asymmetry": 76
   }
 }
