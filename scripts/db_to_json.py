@@ -15,6 +15,7 @@ Usage:
 import json
 import os
 import sys
+import shutil
 import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
@@ -211,7 +212,29 @@ def main():
         story_count = compile_stories(conn)
         flow_count = compile_flows(conn)
 
-        # Copy to site/data/ for deployment
+        # ── Atomic EN/RU output (v23.6) ──
+        # English: canonical paths (backward compatible)
+        EN_DIR = DATA / "en"
+        RU_DIR = DATA / "ru"
+
+        # 1) Copy EN to data/en/ for atomic bilingual structure
+        os.makedirs(str(EN_DIR), exist_ok=True)
+        for fname in ["stories.json", "flows.json"]:
+            src = DATA / fname
+            dst = EN_DIR / fname
+            if src.exists():
+                dst.write_text(src.read_text())
+
+        # 2) Sync RU from existing translations (translate_content.py output)
+        os.makedirs(str(RU_DIR), exist_ok=True)
+        ru_stories = DATA / "stories_ru.json"
+        ru_flows = DATA / "flows_ru.json"
+        if ru_stories.exists():
+            shutil.copy(str(ru_stories), str(RU_DIR / "stories.json"))
+        if ru_flows.exists():
+            shutil.copy(str(ru_flows), str(RU_DIR / "flows.json"))
+
+        # 3) Copy to site/data/ for deployment
         if not data_only:
             os.makedirs(str(SITE_DATA), exist_ok=True)
 
@@ -221,6 +244,25 @@ def main():
                 if src.exists():
                     dst.write_text(src.read_text())
                     print(f"  ✓ site/data/{fname} synced")
+
+            # Also sync RU files to site/data/
+            for fname in ["stories_ru.json", "flows_ru.json"]:
+                src = DATA / fname
+                dst = SITE_DATA / fname
+                if src.exists():
+                    dst.write_text(src.read_text())
+                    print(f"  ✓ site/data/{fname} synced")
+
+            # Verify translation sync
+            en_count = story_count
+            if ru_stories.exists():
+                with open(ru_stories) as f:
+                    ru_data = json.load(f)
+                ru_count = len(ru_data.get("stories", []))
+                if ru_count < en_count:
+                    print(f"  ⚠ TRANSLATION GAP: EN={en_count} stories, RU={ru_count} — run translate_content.py")
+                else:
+                    print(f"  ✓ Translation sync: {en_count} EN = {ru_count} RU")
 
         print(f"\n  DB → JSON compiled: {story_count} stories, {flow_count} flows")
 
