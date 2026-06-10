@@ -433,33 +433,28 @@ function updateHeroIndicators(flowsData) {
     velEl.querySelector('.hero-ind-value').textContent = `${topVel.toFixed(1)}×`;
     velEl.title = `Highest velocity: ${topCat}`;
   }
-  // Freshness: Contextual Action Window — trader cares about actionability, not timers
+  // Last Big Inflow — most recent significant capital flow (>$1B, highest velocity)
+  const inflowEl = document.getElementById('heroLastInflow');
+  // Also support legacy heroFreshness ID for backward compat
   const freshEl = document.getElementById('heroFreshness');
-  if (freshEl && flowsData.generated_at) {
-    const genTime = new Date(flowsData.generated_at);
-    const ageMs = Date.now() - genTime.getTime();
-    const ageMin = ageMs / 60000;
-    let windowLabel, windowColor;
-    if (ageMin < 60) {
-      windowLabel = '[HOT ALPHA]';
-      windowColor = '#DC2626';
-    } else if (ageMin < 240) {
-      windowLabel = '[ACTIVE WINDOW]';
-      windowColor = '#D97706';
-    } else if (ageMin < 1440) {
-      windowLabel = '[DELAYED REACTION]';
-      windowColor = '#6B7280';
+  const targetEl = inflowEl || freshEl;
+  if (targetEl && flowsData.flows) {
+    const bigFlows = flowsData.flows
+      .filter(f => f.amount_b && f.amount_b >= 1)
+      .sort((a, b) => (b.pace_multiplier || 1) - (a.pace_multiplier || 1));
+    if (bigFlows.length > 0) {
+      const top = bigFlows[0];
+      const amt = top.amount_b >= 1 ? `$${top.amount_b.toFixed(1)}B` : `$${(top.amount_b*1000).toFixed(0)}M`;
+      const vel = (top.pace_multiplier || 1) >= 2 ? 'FAST' : (top.pace_multiplier || 1) >= 1.5 ? 'STEADY' : 'SLOW';
+      const dir = (top.net_direction || top.direction) === 'outflow' ? 'out' : 'in';
+      targetEl.querySelector('.hero-ind-value').textContent = `${amt} ${dir}`;
+      targetEl.querySelector('.hero-ind-value').style.color = dir === 'out' ? 'var(--red)' : 'var(--green)';
+      targetEl.title = `${(top.asset_class || '').toUpperCase()}: ${amt} ${dir} at ${(top.pace_multiplier||1).toFixed(1)}× velocity — ${vel}`;
     } else {
-      windowLabel = '[STALE]';
-      windowColor = '#9CA3AF';
+      targetEl.querySelector('.hero-ind-value').textContent = '—';
+      targetEl.querySelector('.hero-ind-value').style.color = '';
+      targetEl.title = 'No significant flows tracked yet';
     }
-    freshEl.querySelector('.hero-ind-value').textContent = windowLabel;
-    freshEl.querySelector('.hero-ind-value').style.color = windowColor;
-    freshEl.title = 'Generated: ' + flowsData.generated_at;
-    // Show age in minutes as subtitle
-    const ageStr = ageMin < 60 ? Math.round(ageMin) + 'm' : Math.round(ageMin/60) + 'h';
-    const labelEl = freshEl.querySelector('.hero-ind-label');
-    if (labelEl) labelEl.textContent = ageStr + ' ago';
   }
 }
 
@@ -840,14 +835,18 @@ function updateTradeHooks(flowsData) {
     const divLabel = getDivergenceLabel(gap);
     const color = getDivergenceColor(gap);
 
-    // Kobeissi/ZeroHedge style: [ASSET] GAP% → DIRECTIONAL BIAS
-    const biasLabel = direction === 'outflow' ? 'BEARISH' : 'BULLISH';
-    const biasDir = direction === 'outflow' ? '↓' : '↑';
+    // ASKEW TELEMETRY format: COMMODITIES · [BULLISH SKEW] · +1.2B Divergence
+    const skewLabel = gap > 0.5 ? (direction === 'outflow' ? 'BEARISH SKEW' : 'BULLISH SKEW')
+                    : gap > 0.25 ? (direction === 'outflow' ? 'BEARISH TILT' : 'BULLISH TILT')
+                    : 'NEUTRAL';
+    
+    const flowAmt = flow.amount_b || 0;
+    const amtStr = flowAmt >= 1 ? `$${flowAmt.toFixed(1)}B` : `$${(flowAmt * 1000).toFixed(0)}M`;
     
     symEl.textContent = symbol;
-    labelEl.innerHTML = `<span style="color:${color};font-weight:700;font-size:11px">${divLabel}</span>`;
-    labelEl.title = `${gapPct}% narrative-price gap · Narrative ${(narrativeForce*100).toFixed(0)}% ${biasLabel} vs Price ${priceDelta > 0 ? '+' : ''}${priceDelta}%`;
-    gapEl.innerHTML = `<span style="font-weight:700;color:${color}">${biasDir} ${gapPct}%</span>`;
+    labelEl.innerHTML = `<span style="color:${color};font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.03em">${skewLabel}</span>`;
+    labelEl.title = `Askew Telemetry: ${gapPct}% narrative-price gap · ${amtStr} ${direction}`;
+    gapEl.innerHTML = `<span style="font-weight:700;color:${color}">${gapPct}%</span> <span style="font-size:9px;color:var(--ink-muted)">divergence</span>`;
     gapEl.style.color = color;
   }
 

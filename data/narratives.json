@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-06-10T19:56:11.376464+00:00",
+  "generated_at": "2026-06-10T20:09:17.911712+00:00",
   "story_count": 15,
   "model": "deepseek-chat",
   "narratives": [
     {
-      "title": "Geopolitical Escalation Risk-Off",
+      "title": "Geopolitical Escalation Driving Risk-Off",
       "strength": "DOMINANT",
       "direction": "Risk-Off",
-      "summary": "Capital is fleeing risk assets as multiple fronts of kinetic conflict (US-Iran, Israel-Hezbollah, Ukraine-Russia) escalate simultaneously, with the Strait of Hormuz blockade persisting and diplomatic off-ramps appearing fragile. The market is underpricing the duration and breadth of these conflicts, driving flows into safe havens and commodities.",
-      "key_stories": 10,
-      "trade_implication": "Long WTI crude oil and gold; short S&P 500 and BTC; overweight US Treasuries and USD."
+      "summary": "Capital is fleeing risk assets as multi-front conflicts (US-Iran, Israel-Lebanon, Ukraine-Russia) escalate beyond controlled tit-for-tat. The shootdown of a US Apache and Iran's retaliation contradict the 'one-and-done' thesis, while equity break below key supports confirms panic selling.",
+      "key_stories": 8,
+      "trade_implication": "Short S&P 500 futures (SPY) and long VIX; add long WTI crude oil positions as supply disruption risk is underpriced."
     },
     {
-      "title": "Energy Supply Disruption Pricing",
+      "title": "Oil Supply Disruption and Blockade",
       "strength": "STRONG",
       "direction": "Neutral-to-Bullish",
-      "summary": "Capital is rotating into energy assets as the Hormuz blockade structurally tightens supply, with EIA forecasts rising and Kuwait seeking bypass pipelines. The SPR release is being misread as bearish but actually signals government concern over sustained disruption, supporting oil prices.",
+      "summary": "The Strait of Hormuz blockade is structurally biting, with EIA projecting persistence through Q3 2026 and Kuwait seeking bypass pipelines. The US SPR release is misread as bearish but actually signals pre-positioning for sustained disruption, driving capital into oil and energy equities.",
       "key_stories": 5,
-      "trade_implication": "Long WTI and Brent futures; long energy equities (XLE); short refined product spreads on supply risk."
+      "trade_implication": "Long WTI crude oil futures and energy sector ETFs (XLE); short downstream refiners exposed to crude input costs."
     },
     {
-      "title": "Diplomatic Mirage vs. Reality",
+      "title": "Diplomatic Off-Ramp Uncertainty",
       "strength": "MODERATE",
-      "direction": "Neutral-to-Bearish",
-      "summary": "Capital is skeptical of White House claims of Iran deal progress, as military actions (Apache shootdown, IDF readiness) contradict diplomatic signals. This narrative drives volatility in risk assets and commodities, with markets pricing a fragile status quo that could break either way.",
+      "direction": "Neutral",
+      "summary": "Despite active conflict, White House claims of 'progress' on Iran deal and US Ambassador's ceasefire signals create a diplomatic track that markets are underweighting. Capital is torn between pricing in escalation and potential de-escalation, leading to choppy positioning in safe havens and oil.",
       "key_stories": 4,
-      "trade_implication": "Long VIX futures; short USD/IRR; long option straddles on WTI and SPY."
+      "trade_implication": "Hedge with long gold and short-term T-bills; avoid directional bets on oil until deal clarity emerges."
     }
   ]
 }

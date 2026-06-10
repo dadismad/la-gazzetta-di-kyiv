@@ -93,8 +93,8 @@ def main():
                 failures.append(f"Export gap: {delta} stories missing from public JSON")
 
         # Check source diversity
-        db.execute("SELECT COUNT(DISTINCT json_extract(full_json, '$.source')) FROM stories")
-        source_count = db.fetchone()[0]
+        cur = db.execute("SELECT COUNT(DISTINCT json_extract(full_json, '$.source')) FROM stories")
+        source_count = cur.fetchone()[0]
         print(f"  DB sources: {source_count}")
         db.close()
 
