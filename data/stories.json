@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T19:28:06.775537+00:00",
+  "generated_at": "2026-06-10T19:50:52.804777+00:00",
   "lead": {
     "story_id": "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait",
     "headline": "BREAKING: Iran Shoots Down US Apache Helicopter Over Strait of Hormuz — Trump Declares US 'Must Respond'",
@@ -22,21 +22,21 @@
     "portfolio_implication": "Oil longs are the single highest-conviction trade of the session. Direct US-Iran military engagement over the world's most important oil chokepoint is the definition of a binary bullish oil catalyst. Go long WTI/Brent futures, USO, XLE, OIH hard into close. Pair with gold (GLD) for the flight-to-saf",
     "capital_flow": {
       "direction": "inflow",
-      "amount_b": 7.18,
+      "amount_b": 8.41,
       "asset_class": "commodities",
       "projected": "Oil longs are the single highest-conviction trade of the session. Direct US-Iran military engagement over the world's most important oil chokepoint is the definition of a binary bullish oil…",
       "pace_multiplier": 2.3,
       "confidence_pct": 75,
       "confidence_level": "medium",
       "_psv_diagnostic": {
-        "flow_total": 92.2,
+        "flow_total": 108.0,
         "tier": "DEVELOPING",
         "base_fraction": 0.08,
         "pillar_bonus": 1.0,
         "uniqueness_mult": 0.9739,
-        "computed": 7.18
+        "computed": 8.41
       },
-      "claim": "$7.18B inflow commodities",
+      "claim": "$8.41B inflow commodities",
       "confidence": "75%",
       "source_label": "[LIVE-DATA]"
     },
@@ -117,7 +117,7 @@
       "tier": "ELEVATED",
       "bias": "LONG",
       "asset_class": "commodities",
-      "capital_at_stake": "$7.18B",
+      "capital_at_stake": "$8.41B",
       "rationale": "Oil longs are the single highest-conviction trade of the session. Direct US-Iran military engagement over the world's most important oil chokepoint is the definition of a binary bullish oil catalyst. Go long WTI/Brent futures, USO, XLE, OIH hard into close. Pair with gold (GLD) for the flight-to-saf",
       "horizon": "24-72h",
       "action": "Position for commodities long exposure. Oil longs are the single highest-conviction trade of the session. Direct US-Iran military engagement over the world's most important oil chokepoint is the definition of a binary bullish oil catalyst. Go long WT",
@@ -262,6 +262,122 @@
       }
     },
     {
+      "story_id": "n21_multi_pillar__us_doe_releases_40m_barrels_from_strategic_petroleum_reserve",
+      "headline": "US DOE RELEASES 40M BARRELS FROM STRATEGIC PETROLEUM RESERVE — PRE-STRIKE SUPPLY PRE-POSITIONING",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "{\"oil_directional\": \"WTI $93-96 (+3-6%) on confirmed strikes + SPR confirms disruption risk. Bear case: no strikes, SPR overshadows, WTI drifts to $87-88 support.\", \"equity_directional\": \"Energy secto"
+      ],
+      "they_say": "Oil markets are reading the SPR release as a BEARISH signal — the US government injecting 40M barrels of supply to cap oil prices. Combined with the 100M barrels Hormuz story, market sees 140M barrels of fresh supply hitting the system. WTI faded from $91.56 to $90.19 on this narrative. Consensus: 'The administration is preventing an oil spike — long oil is dangerous here.'",
+      "reality": "The SPR release is actually a BULLISH signal for oil, not bearish. Full contradiction: (1) Governments only release SPR when they EXPECT a supply disruption. The 2022 Russia-Ukraine invasion triggered SPR releases. This 2026 Iran escalation triggering a 40M release confirms administration EXPECTS additional supply disruption. (2) 40M barrels is 1.3M bpd for 30 days. Iran exports ~1.5M bpd. If Hormuz is disrupted (Iran Parliament threat), the SPR covers ~1 month — then what? (3) The timing: SPR release AFTER initial strikes and AFTER Hormuz flush. This is the government backfilling the oil they just pushed through, knowing more disruption is coming. (4) The BEARISH read (supply injection caps prices) only works if the conflict ends. If conflict escalates, the SPR release is confirmed as preparation for prolonged disruption — which is BULLISH for long-dated oil.",
+      "thesis": "",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "",
+      "contradiction_score": 61,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "{\"oil_directional\": \"WTI $93-96 (+3-6%) on confirmed strikes + SPR confirms disruption risk. Bear case: no strikes, SPR overshadows, WTI drifts to $87-88 support.\", \"equity_directional\": \"Energy sector (XLE) overweights on SPR + strike combo. XLE +2-3% on oil spike. SPY continues lower.\", \"vix_direc",
+      "capital_flow": {
+        "direction": "outflow",
+        "amount_b": 5.0,
+        "asset_class": "commodities",
+        "projected": "{\"oil_directional\": \"WTI $93-96 (+3-6%) on confirmed strikes + SPR confirms disruption risk. Bear case: no strikes, SPR overshadows, WTI drifts to $87-88 support.\", \"equity_directional\": \"Energy…",
+        "pace_multiplier": 1.8,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "source_label": "[LIVE-DATA]"
+      },
+      "capital_flow_implication": "",
+      "evidence": [
+        "@markettwits"
+      ],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-10T19:50:39.131617+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [
+          "VIX",
+          "WTI"
+        ],
+        "geographies": [
+          "EU"
+        ],
+        "actors": [
+          "Biden",
+          "SEC",
+          "UN",
+          "Xi Jinping"
+        ],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "US DOE RELEASES 40M BARRELS FROM STRATEGIC PETROLEUM RESERVE — PRE-STRIKE SUPPLY PRE-POSITIONING",
+          "body": "Structural assessment: The SPR release is actually a BULLISH signal for oil, not bearish. Full contradiction: (1) Governments only release SPR when they EXPECT a supply disruption. The 2022 Russia-Ukraine invasion triggered SPR releases. This 2026 Iran escalation triggering a 40M release confirms administration EXPECTS ad. Capital repositioning of $5.0B identified in commodities. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "implication": "Board-level risk: commodities exposure requires short hedge within 72h."
+        },
+        "quant": {
+          "headline": "COMMODITIES flow: $5.0B outflow",
+          "body": "Raw telemetry — commodities $5.0B outflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
+          "metrics": {
+            "flow_velocity": 0.21,
+            "correlation_coeff": 0.65,
+            "z_score": 0.5
+          }
+        },
+        "degen": {
+          "headline": "🔴 SHORT COMMODITIES $5.0B",
+          "body": "Directional: SHORT. Flow: $5.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: US DOE RELEASES 40M BARRELS FROM STRATEGIC PETROLEUM RESERVE — PRE-STRIKE SUPPLY",
+          "signal": {
+            "direction": "SHORT",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+10-15%",
+            "conviction": "MEDIUM"
+          }
+        }
+      },
+      "conviction_probability": 68,
+      "conviction_tier": "MODERATE",
+      "strategic_recommendation": {
+        "tier": "ELEVATED",
+        "bias": "SHORT",
+        "asset_class": "commodities",
+        "capital_at_stake": "$5.0B",
+        "rationale": "{\"oil_directional\": \"WTI $93-96 (+3-6%) on confirmed strikes + SPR confirms disruption risk. Bear case: no strikes, SPR overshadows, WTI drifts to $87-88 support.\", \"equity_directional\": \"Energy sector (XLE) overweights on SPR + strike combo. XLE +2-3% on oil spike. SPY continues lower.\", \"vix_direc",
+        "horizon": "24-72h",
+        "action": "Position for commodities short exposure. {\"oil_directional\": \"WTI $93-96 (+3-6%) on confirmed strikes + SPR confirms disruption risk. Bear case: no strikes, SPR overshadows, WTI drifts to $87-88 support.\", \"equity_directional\": \"Energy sector (XLE) o",
+        "gated": true
+      },
+      "asymmetry_score": 58,
+      "asymmetry_tier": "MODERATE",
+      "asymmetry_diagnostic": {
+        "sentiment": -0.75,
+        "price_delta": 0.4,
+        "price_change_pct": 2.12,
+        "formula": "ABS((-0.75 - 0.40) * 50) = 58",
+        "ticker": "CL=F",
+        "ticker_price": 90.07
+      }
+    },
+    {
       "story_id": "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w",
       "headline": "Israeli Minister Ben-Gvir Urges Cabinet to Abduct Lebanese Women and Children as Psychological Warfare — Far-Right Escalation Signal",
       "sector": "commodities",
@@ -283,21 +399,21 @@
       "portfolio_implication": "Gold and VIX as structural hedges. This isn't a tradeable event in isolation, but it raises the tail probability of a Lebanon escalation event. Own optionality, not direction.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 8.32,
+        "amount_b": 9.75,
         "asset_class": "commodities",
         "projected": "Gold and VIX as structural hedges. This isn't a tradeable event in isolation, but it raises the tail probability of a Lebanon escalation event. Own optionality, not direction.",
         "pace_multiplier": 1.8,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$8.32B inflow commodities",
+        "claim": "$9.75B inflow commodities",
         "confidence": "75%",
         "_psv_diagnostic": {
-          "flow_total": 92.2,
+          "flow_total": 108.0,
           "tier": "DEVELOPING",
           "base_fraction": 0.08,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 1.1286,
-          "computed": 8.32
+          "computed": 9.75
         },
         "source_label": "[LIVE-DATA]"
       },
@@ -315,7 +431,7 @@
         "tier": "ELEVATED",
         "bias": "LONG",
         "asset_class": "commodities",
-        "capital_at_stake": "$8.32B",
+        "capital_at_stake": "$9.75B",
         "rationale": "Gold and VIX as structural hedges. This isn't a tradeable event in isolation, but it raises the tail probability of a Lebanon escalation event. Own optionality, not direction.",
         "horizon": "24-72h",
         "action": "Position for commodities long exposure. Gold and VIX as structural hedges. This isn't a tradeable event in isolation, but it raises the tail probability of a Lebanon escalation event. Own optionality, not direction.",
@@ -417,21 +533,21 @@
       "portfolio_implication": "Long duration (TLT) as the stagflation trade. Gold as the inflation hedge. Short financials as rate expectations repivot. If this is the start of a weak labor trend, the Fed is trapped — and that means gold to new highs.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 7.63,
+        "amount_b": 8.93,
         "asset_class": "commodities",
         "projected": "Long duration (TLT) as the stagflation trade. Gold as the inflation hedge. Short financials as rate expectations repivot. If this is the start of a weak labor trend, the Fed is trapped — and that…",
         "pace_multiplier": 1.8,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$7.63B inflow commodities",
+        "claim": "$8.93B inflow commodities",
         "confidence": "75%",
         "_psv_diagnostic": {
-          "flow_total": 92.2,
+          "flow_total": 108.0,
           "tier": "DEVELOPING",
           "base_fraction": 0.08,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 1.0339,
-          "computed": 7.63
+          "computed": 8.93
         },
         "source_label": "[LIVE-DATA]"
       },
@@ -449,7 +565,7 @@
         "tier": "ELEVATED",
         "bias": "LONG",
         "asset_class": "commodities",
-        "capital_at_stake": "$7.63B",
+        "capital_at_stake": "$8.93B",
         "rationale": "Long duration (TLT) as the stagflation trade. Gold as the inflation hedge. Short financials as rate expectations repivot. If this is the start of a weak labor trend, the Fed is trapped — and that means gold to new highs.",
         "horizon": "24-72h",
         "action": "Position for commodities long exposure. Long duration (TLT) as the stagflation trade. Gold as the inflation hedge. Short financials as rate expectations repivot. If this is the start of a weak labor trend, the Fed is trapped — and that means gold to ",
@@ -464,6 +580,129 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      }
+    },
+    {
+      "story_id": "n21_multi_pillar__us-israel_strike_package_on_iran__assets_airborne_strike_w",
+      "headline": "US-ISRAEL STRIKE PACKAGE ON IRAN — ASSETS AIRBORNE, STRIKE WINDOW OPEN AT 21:17 UTC",
+      "sector": "crypto",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "{\"oil_directional\": \"WTI $93-96/bbl (+3-7% from $90.19) on confirmed overnight strikes. If Hormuz flow stays open (US claims control), capped at $96. If Iran retaliates against Hormuz shipping (Iran P"
+      ],
+      "they_say": "Market pricing: WTI faded from $91.56 high to $90.19 (-1.5%). SPY in after-hours at $727.66 (-1.27%). Gold collapsed -3.66% to $4,129. Bitcoin flat $61,678. Consensus at 21:17 UTC: 'Escalation is priced. Trump's 100M barrels Hormuz announcement proves he is taking a victory lap and de-escalating. The Israeli DM statement is political theater. Oil spike was the headline trade, it's fading. Gold collapse is the real signal — market sees no war risk.' VIX after-hours implied ~21 — markets pricing contained conflict.",
+      "reality": "The market is catastrophically misreading the signal structure. Full contradiction breakdown: (1) The 100M barrels Hormuz story (17:51) IS NOT a de-escalation signal — it is a PRE-POSITIONING signal. 'We got the oil out, now we can strike without causing a supply crisis.' (2) Gold -3.66% during the highest geopolitical escalation since Feb 2022 is NOT normal — it signals forced liquidation (margin calls on commodity longs / algo de-risking), NOT market confidence. (3) The 'Trump not interested in full-scale war' leak at 17:46 (ethanlevins/3522) timed perfectly before the Israeli DM statement at 18:06 and the fighter jet activity at 18:51. This is a textbook pre-strike disinformation play. (4) B-52 with transponder off + fighter jets over Iraq + drones over Tehran = PHYSICAL FORCE POSTURE, not negotiation. (5) Iran Parliament's 'war won't be limited to region' at 18:22 is the response to US strikes already hitting water infrastructure at 17:04 — escalation spiral is locked in. (6) US DOE SPR release 40M barrels at 18:16 is the GOVERNMENT PREPARING FOR SUPPLY DISRUPTION — not a signal of calm.",
+      "thesis": "",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "",
+      "contradiction_score": 58,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "{\"oil_directional\": \"WTI $93-96/bbl (+3-7% from $90.19) on confirmed overnight strikes. If Hormuz flow stays open (US claims control), capped at $96. If Iran retaliates against Hormuz shipping (Iran Parliament threat), WTI $98-102.\", \"equity_directional\": \"SPY $710-720 (-1.5% to -2.5%) gap down at U",
+      "capital_flow": {
+        "direction": "outflow",
+        "amount_b": 5.0,
+        "asset_class": "crypto",
+        "projected": "{\"oil_directional\": \"WTI $93-96/bbl (+3-7% from $90.19) on confirmed overnight strikes. If Hormuz flow stays open (US claims control), capped at $96. If Iran retaliates against Hormuz shipping (Iran…",
+        "pace_multiplier": 2.1,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "source_label": "[LIVE-DATA]"
+      },
+      "capital_flow_implication": "",
+      "evidence": [
+        "@ethanlevins",
+        "@MonitoringSituation",
+        "@trad_fin",
+        "@markettwits"
+      ],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-10T19:50:39.122646+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [
+          "BTC",
+          "ETH",
+          "VIX",
+          "WTI",
+          "XAU"
+        ],
+        "geographies": [
+          "Iran",
+          "Iraq",
+          "Israel",
+          "USA"
+        ],
+        "actors": [
+          "Trump",
+          "UN"
+        ],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "US-ISRAEL STRIKE PACKAGE ON IRAN — ASSETS AIRBORNE, STRIKE WINDOW OPEN AT 21:17 UTC",
+          "body": "Structural assessment: The market is catastrophically misreading the signal structure. Full contradiction breakdown: (1) The 100M barrels Hormuz story (17:51) IS NOT a de-escalation signal — it is a PRE-POSITIONING signal. 'We got the oil out, now we can strike without causing a supply crisis.' (2) Gold -3.66% during the . Capital repositioning of $5.0B identified in crypto. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "implication": "Board-level risk: crypto exposure requires short hedge within 72h."
+        },
+        "quant": {
+          "headline": "CRYPTO flow: $5.0B outflow",
+          "body": "Raw telemetry — crypto $5.0B outflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
+          "metrics": {
+            "flow_velocity": 0.21,
+            "correlation_coeff": 0.65,
+            "z_score": 0.5
+          }
+        },
+        "degen": {
+          "headline": "🔴 SHORT CRYPTO $5.0B",
+          "body": "Directional: SHORT. Flow: $5.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: US-ISRAEL STRIKE PACKAGE ON IRAN — ASSETS AIRBORNE, STRIKE WINDOW OPEN AT 21:17 ",
+          "signal": {
+            "direction": "SHORT",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+10-15%",
+            "conviction": "MEDIUM"
+          }
+        }
+      },
+      "conviction_probability": 80,
+      "conviction_tier": "HIGH",
+      "strategic_recommendation": {
+        "tier": "ELEVATED",
+        "bias": "SHORT",
+        "asset_class": "crypto",
+        "capital_at_stake": "$5.0B",
+        "rationale": "{\"oil_directional\": \"WTI $93-96/bbl (+3-7% from $90.19) on confirmed overnight strikes. If Hormuz flow stays open (US claims control), capped at $96. If Iran retaliates against Hormuz shipping (Iran Parliament threat), WTI $98-102.\", \"equity_directional\": \"SPY $710-720 (-1.5% to -2.5%) gap down at U",
+        "horizon": "24-72h",
+        "action": "Position for crypto short exposure. {\"oil_directional\": \"WTI $93-96/bbl (+3-7% from $90.19) on confirmed overnight strikes. If Hormuz flow stays open (US claims control), capped at $96. If Iran retaliates against Hormuz shipping (Iran Parliament thre",
+        "gated": true
+      },
+      "asymmetry_score": 41,
+      "asymmetry_tier": "MODERATE",
+      "asymmetry_diagnostic": {
+        "sentiment": -0.75,
+        "price_delta": 0.076,
+        "price_change_pct": 0.38,
+        "formula": "ABS((-0.75 - 0.08) * 50) = 41",
+        "ticker": "BTC-USD",
+        "ticker_price": 61875.98
       }
     },
     {
@@ -488,21 +727,21 @@
       "portfolio_implication": "Oil futures long with multi-week horizon. The Kuwait pipeline story is a 'tell' — when a major OPEC producer starts planning alternative infrastructure around a blockade, it means the blockade is expected to persist. This is a structural oil bid the market hasn't fully priced because most participan",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 6.37,
+        "amount_b": 7.46,
         "asset_class": "commodities",
         "projected": "Oil futures long with multi-week horizon. The Kuwait pipeline story is a 'tell' — when a major OPEC producer starts planning alternative infrastructure around a blockade, it means the blockade is…",
         "pace_multiplier": 1.8,
         "confidence_pct": 75,
         "confidence_level": "medium",
         "_psv_diagnostic": {
-          "flow_total": 92.2,
+          "flow_total": 108.0,
           "tier": "DEVELOPING",
           "base_fraction": 0.08,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 0.8634,
-          "computed": 6.37
+          "computed": 7.46
         },
-        "claim": "$6.37B inflow commodities",
+        "claim": "$7.46B inflow commodities",
         "confidence": "75%",
         "source_label": "[LIVE-DATA]"
       },
@@ -577,7 +816,7 @@
         "tier": "ELEVATED",
         "bias": "LONG",
         "asset_class": "commodities",
-        "capital_at_stake": "$6.37B",
+        "capital_at_stake": "$7.46B",
         "rationale": "Oil futures long with multi-week horizon. The Kuwait pipeline story is a 'tell' — when a major OPEC producer starts planning alternative infrastructure around a blockade, it means the blockade is expected to persist. This is a structural oil bid the market hasn't fully priced because most participan",
         "horizon": "24-72h",
         "action": "Position for commodities long exposure. Oil futures long with multi-week horizon. The Kuwait pipeline story is a 'tell' — when a major OPEC producer starts planning alternative infrastructure around a blockade, it means the blockade is expected to pe",
@@ -616,21 +855,21 @@
       "portfolio_implication": "Position oil and gold longs into US close. The weekend de-escalation narrative is dead — the IDF Iran readiness statement reverses it. If Tyre evacuation means a ground operation is imminent, oil gets a fear bid into Wednesday. LMT/GD have been consolidating — multi-front escalation is their catalys",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 7.93,
+        "amount_b": 9.29,
         "asset_class": "commodities",
         "projected": "Position oil and gold longs into US close. The weekend de-escalation narrative is dead — the IDF Iran readiness statement reverses it. If Tyre evacuation means a ground operation is imminent, oil…",
         "pace_multiplier": 1.8,
         "confidence_pct": 75,
         "confidence_level": "medium",
         "_psv_diagnostic": {
-          "flow_total": 92.2,
+          "flow_total": 108.0,
           "tier": "DEVELOPING",
           "base_fraction": 0.08,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 1.0752,
-          "computed": 7.93
+          "computed": 9.29
         },
-        "claim": "$7.93B inflow commodities",
+        "claim": "$9.29B inflow commodities",
         "confidence": "75%",
         "source_label": "[LIVE-DATA]"
       },
@@ -710,7 +949,7 @@
         "tier": "ELEVATED",
         "bias": "LONG",
         "asset_class": "commodities",
-        "capital_at_stake": "$7.93B",
+        "capital_at_stake": "$9.29B",
         "rationale": "Position oil and gold longs into US close. The weekend de-escalation narrative is dead — the IDF Iran readiness statement reverses it. If Tyre evacuation means a ground operation is imminent, oil gets a fear bid into Wednesday. LMT/GD have been consolidating — multi-front escalation is their catalys",
         "horizon": "24-72h",
         "action": "Position for commodities long exposure. Position oil and gold longs into US close. The weekend de-escalation narrative is dead — the IDF Iran readiness statement reverses it. If Tyre evacuation means a ground operation is imminent, oil gets a fear bi",
@@ -725,6 +964,131 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      }
+    },
+    {
+      "story_id": "n21_multi_pillar__iran_parliament__war_won_t_be_limited_to_the_region__asym",
+      "headline": "IRAN PARLIAMENT: 'WAR WON'T BE LIMITED TO THE REGION' — ASYMMETRIC ESCALATION THREAT",
+      "sector": "crypto",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "{\"oil_directional\": \"WTI $95-100 if Iran targets Hormuz or Gulf shipping. Iran Parliament warning + US military posture = asymmetric escalation risk is real.\", \"equity_directional\": \"SPY $710-718 if t"
+      ],
+      "they_say": "Market consensus: Iran's 'war expansion' threat is rhetorical posturing. Iran has been degraded by US strikes. IRGC command disrupted. No capability to expand. The Parliament statement is internal politics — hardliners saving face after US strikes hit infrastructure. Oil and equity markets are fading the headline, treating it as noise.",
+      "reality": "Three contradictions: (1) Iran's Parliament statement is EXACTLY the kind of escalation warning that precedes asymmetric retaliation. Iran has demonstrated capability: cyber attacks on US infrastructure (2023 pipeline attacks), proxy forces across Yemen/Iraq/Syria, ballistic missile range covering Israel and Gulf states. (2) The B-52 vectoring from Sicily toward ME suggests the US is preparing for a larger engagement, not a pinprick strike. Transponder off means operational stealth. (3) The Israeli-Iran-Hezbollah nexus is the most under-priced risk. Israeli Defense Minister announcing readiness to strike Iranian territory + Israeli jets over Lebanon + Hezbollah elements being actively targeted = the Israeli front is becoming active simultaneously. If Iran retaliates through Hezbollah (which it will), Israel fights a two-front war (Lebanon + Iran). This has NOT been priced by any market. SPY -1.27% does not reflect a three-front Middle East war.",
+      "thesis": "",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "medium",
+      "tier": "DEVELOPING",
+      "actionable_trade": "",
+      "contradiction_score": 56,
+      "invalidation_trigger": "Narrative reversal or event resolution",
+      "portfolio_implication": "{\"oil_directional\": \"WTI $95-100 if Iran targets Hormuz or Gulf shipping. Iran Parliament warning + US military posture = asymmetric escalation risk is real.\", \"equity_directional\": \"SPY $710-718 if three-front war confirmed. Israel-Hezbollah-Iran-US = four-party engagement. That's a VIX 30+ event.\"",
+      "capital_flow": {
+        "direction": "outflow",
+        "amount_b": 5.0,
+        "asset_class": "crypto",
+        "projected": "{\"oil_directional\": \"WTI $95-100 if Iran targets Hormuz or Gulf shipping. Iran Parliament warning + US military posture = asymmetric escalation risk is real.\", \"equity_directional\": \"SPY $710-718 if…",
+        "pace_multiplier": 2.1,
+        "confidence_pct": 75,
+        "confidence_level": "medium",
+        "source_label": "[LIVE-DATA]"
+      },
+      "capital_flow_implication": "",
+      "evidence": [
+        "@MonitoringSituation",
+        "@ethanlevins"
+      ],
+      "source": "telegram_intel",
+      "generated_at": "2026-06-10T19:50:39.131981+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [
+          "BTC",
+          "ETH",
+          "SOL",
+          "VIX",
+          "WTI",
+          "XAU"
+        ],
+        "geographies": [
+          "Iran",
+          "Iraq",
+          "Israel",
+          "Lebanon",
+          "USA"
+        ],
+        "actors": [
+          "Hezbollah",
+          "SEC",
+          "UN",
+          "Xi Jinping"
+        ],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "IRAN PARLIAMENT: 'WAR WON'T BE LIMITED TO THE REGION' — ASYMMETRIC ESCALATION THREAT",
+          "body": "Structural assessment: Three contradictions: (1) Iran's Parliament statement is EXACTLY the kind of escalation warning that precedes asymmetric retaliation. Iran has demonstrated capability: cyber attacks on US infrastructure (2023 pipeline attacks), proxy forces across Yemen/Iraq/Syria, ballistic missile range covering I. Capital repositioning of $5.0B identified in crypto. Policy implication: monitor for regulatory or supply-chain cascades.",
+          "implication": "Board-level risk: crypto exposure requires short hedge within 72h."
+        },
+        "quant": {
+          "headline": "CRYPTO flow: $5.0B outflow",
+          "body": "Raw telemetry — crypto $5.0B outflow. Consensus vs reality divergence detected. Correlation regime: risk-on/off binary. Watch VIX-DXY spread for confirmation.",
+          "metrics": {
+            "flow_velocity": 0.21,
+            "correlation_coeff": 0.65,
+            "z_score": 0.5
+          }
+        },
+        "degen": {
+          "headline": "🔴 SHORT CRYPTO $5.0B",
+          "body": "Directional: SHORT. Flow: $5.0B. Entry zone: near current. Stop: -5% from entry. Conviction: MEDIUM. Catalyst: IRAN PARLIAMENT: 'WAR WON'T BE LIMITED TO THE REGION' — ASYMMETRIC ESCALATION TH",
+          "signal": {
+            "direction": "SHORT",
+            "entry_zone": "market",
+            "stop_level": "-5%",
+            "target": "+10-15%",
+            "conviction": "MEDIUM"
+          }
+        }
+      },
+      "conviction_probability": 69,
+      "conviction_tier": "MODERATE",
+      "strategic_recommendation": {
+        "tier": "ELEVATED",
+        "bias": "SHORT",
+        "asset_class": "crypto",
+        "capital_at_stake": "$5.0B",
+        "rationale": "{\"oil_directional\": \"WTI $95-100 if Iran targets Hormuz or Gulf shipping. Iran Parliament warning + US military posture = asymmetric escalation risk is real.\", \"equity_directional\": \"SPY $710-718 if three-front war confirmed. Israel-Hezbollah-Iran-US = four-party engagement. That's a VIX 30+ event.\"",
+        "horizon": "24-72h",
+        "action": "Position for crypto short exposure. {\"oil_directional\": \"WTI $95-100 if Iran targets Hormuz or Gulf shipping. Iran Parliament warning + US military posture = asymmetric escalation risk is real.\", \"equity_directional\": \"SPY $710-718 if three-front war",
+        "gated": true
+      },
+      "asymmetry_score": 41,
+      "asymmetry_tier": "MODERATE",
+      "asymmetry_diagnostic": {
+        "sentiment": -0.75,
+        "price_delta": 0.076,
+        "price_change_pct": 0.38,
+        "formula": "ABS((-0.75 - 0.08) * 50) = 41",
+        "ticker": "BTC-USD",
+        "ticker_price": 61875.98
       }
     },
     {
@@ -749,21 +1113,21 @@
       "portfolio_implication": "Gazzetta di Kyiv FRONT PAGE: 'KYIV STRIKES 600KM INSIDE RUSSIA — FP-5 Hits Cheboksary Again, Samara Refinery Burning, Tyumen Next. GRAU Artillery Chief Dead in Moscow.' Bet&Benefit: Natgas long on Russian infrastructure disruption. Rheinmetall/European defense. The strategic story: Ukraine exploits ",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 8.39,
+        "amount_b": 9.83,
         "asset_class": "commodities",
         "projected": "Gazzetta di Kyiv FRONT PAGE: 'KYIV STRIKES 600KM INSIDE RUSSIA — FP-5 Hits Cheboksary Again, Samara Refinery Burning, Tyumen Next. GRAU Artillery Chief Dead in Moscow.' Bet&Benefit: Natgas long on…",
         "pace_multiplier": 1.7,
         "confidence_pct": 75,
         "confidence_level": "medium",
         "_psv_diagnostic": {
-          "flow_total": 92.2,
+          "flow_total": 108.0,
           "tier": "DEVELOPING",
           "base_fraction": 0.08,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 1.1381,
-          "computed": 8.39
+          "computed": 9.83
         },
-        "claim": "$8.39B inflow commodities",
+        "claim": "$9.83B inflow commodities",
         "confidence": "75%",
         "source_label": "[LIVE-DATA]"
       },
@@ -844,7 +1208,7 @@
         "tier": "ELEVATED",
         "bias": "LONG",
         "asset_class": "commodities",
-        "capital_at_stake": "$8.39B",
+        "capital_at_stake": "$9.83B",
         "rationale": "Gazzetta di Kyiv FRONT PAGE: 'KYIV STRIKES 600KM INSIDE RUSSIA — FP-5 Hits Cheboksary Again, Samara Refinery Burning, Tyumen Next. GRAU Artillery Chief Dead in Moscow.' Bet&Benefit: Natgas long on Russian infrastructure disruption. Rheinmetall/European defense. The strategic story: Ukraine exploits ",
         "horizon": "24-72h",
         "action": "Position for commodities long exposure. Gazzetta di Kyiv FRONT PAGE: 'KYIV STRIKES 600KM INSIDE RUSSIA — FP-5 Hits Cheboksary Again, Samara Refinery Burning, Tyumen Next. GRAU Artillery Chief Dead in Moscow.' Bet&Benefit: Natgas long on Russian infra",
@@ -883,21 +1247,21 @@
       "portfolio_implication": "The EIA Apache-confirmed oil bid is the highest-conviction trade. Do not overthink the demand downgrade — supply disruption dominates in the short term. Pair oil longs with gold for the geopolitical flight-to-safety bid that is just beginning to price.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 8.22,
+        "amount_b": 9.63,
         "asset_class": "commodities",
         "projected": "The EIA Apache-confirmed oil bid is the highest-conviction trade. Do not overthink the demand downgrade — supply disruption dominates in the short term. Pair oil longs with gold for the geopolitical…",
         "pace_multiplier": 1.7,
         "confidence_pct": 75,
         "confidence_level": "medium",
         "_psv_diagnostic": {
-          "flow_total": 92.2,
+          "flow_total": 108.0,
           "tier": "DEVELOPING",
           "base_fraction": 0.08,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 1.1145,
-          "computed": 8.22
+          "computed": 9.63
         },
-        "claim": "$8.22B inflow commodities",
+        "claim": "$9.63B inflow commodities",
         "confidence": "75%",
         "source_label": "[LIVE-DATA]"
       },
@@ -969,7 +1333,7 @@
         "tier": "ELEVATED",
         "bias": "LONG",
         "asset_class": "commodities",
-        "capital_at_stake": "$8.22B",
+        "capital_at_stake": "$9.63B",
         "rationale": "The EIA Apache-confirmed oil bid is the highest-conviction trade. Do not overthink the demand downgrade — supply disruption dominates in the short term. Pair oil longs with gold for the geopolitical flight-to-safety bid that is just beginning to price.",
         "horizon": "24-72h",
         "action": "Position for commodities long exposure. The EIA Apache-confirmed oil bid is the highest-conviction trade. Do not overthink the demand downgrade — supply disruption dominates in the short term. Pair oil longs with gold for the geopolitical flight-to-s",
@@ -1008,21 +1372,21 @@
       "portfolio_implication": "Short SPY/QQQ for remainder of US session. If Friday low break holds through 21:00 UTC close, the gap-down open tomorrow is the momentum follow-through trade. VIX calls as hedge — if VIX breaches 20, panic options buying accelerates. Pair with oil longs for the stagflation hedge.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 0.26,
+        "amount_b": 0.32,
         "asset_class": "equities",
         "projected": "Short SPY/QQQ for remainder of US session. If Friday low break holds through 21:00 UTC close, the gap-down open tomorrow is the momentum follow-through trade. VIX calls as hedge — if VIX breaches…",
         "pace_multiplier": 1.5,
         "confidence_pct": 75,
         "confidence_level": "medium",
         "_psv_diagnostic": {
-          "flow_total": 3.5,
+          "flow_total": 4.2,
           "tier": "DEVELOPING",
           "base_fraction": 0.08,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 0.9442,
-          "computed": 0.26
+          "computed": 0.32
         },
-        "claim": "$0.26B inflow equities",
+        "claim": "$0.32B inflow equities",
         "confidence": "75%",
         "source_label": "[LIVE-DATA]"
       },
@@ -1094,7 +1458,7 @@
         "tier": "ELEVATED",
         "bias": "LONG",
         "asset_class": "equities",
-        "capital_at_stake": "$0.26B",
+        "capital_at_stake": "$0.32B",
         "rationale": "Short SPY/QQQ for remainder of US session. If Friday low break holds through 21:00 UTC close, the gap-down open tomorrow is the momentum follow-through trade. VIX calls as hedge — if VIX breaches 20, panic options buying accelerates. Pair with oil longs for the stagflation hedge.",
         "horizon": "24-72h",
         "action": "Position for equities long exposure. Short SPY/QQQ for remainder of US session. If Friday low break holds through 21:00 UTC close, the gap-down open tomorrow is the momentum follow-through trade. VIX calls as hedge — if VIX breaches 20, panic options",
@@ -1196,21 +1560,21 @@
       "portfolio_implication": "Oil producers: structural revenue uplift from elevated risk premium. US shale (Permian, Bakken) becomes more competitive as Hormuz transit becomes costly. Tanker owners: rate re-pricing as war risk premium loads into shipping contracts. Gold: safe haven flows. Crypto: Iran accepting Tether for Hormu",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 7.69,
+        "amount_b": 9.01,
         "asset_class": "commodities",
         "projected": "Oil producers: structural revenue uplift from elevated risk premium. US shale (Permian, Bakken) becomes more competitive as Hormuz transit becomes costly. Tanker owners: rate re-pricing as war risk…",
         "pace_multiplier": 2.1,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$7.69B inflow commodities",
+        "claim": "$9.01B inflow commodities",
         "confidence": "75%",
         "_psv_diagnostic": {
-          "flow_total": 92.2,
+          "flow_total": 108.0,
           "tier": "DEVELOPING",
           "base_fraction": 0.08,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 1.0423,
-          "computed": 7.69
+          "computed": 9.01
         },
         "source_label": "[LIVE-DATA]"
       },
@@ -1228,7 +1592,7 @@
         "tier": "ELEVATED",
         "bias": "LONG",
         "asset_class": "commodities",
-        "capital_at_stake": "$7.69B",
+        "capital_at_stake": "$9.01B",
         "rationale": "Oil producers: structural revenue uplift from elevated risk premium. US shale (Permian, Bakken) becomes more competitive as Hormuz transit becomes costly. Tanker owners: rate re-pricing as war risk premium loads into shipping contracts. Gold: safe haven flows. Crypto: Iran accepting Tether for Hormu",
         "horizon": "24-72h",
         "action": "Position for commodities long exposure. Oil producers: structural revenue uplift from elevated risk premium. US shale (Permian, Bakken) becomes more competitive as Hormuz transit becomes costly. Tanker owners: rate re-pricing as war risk premium load",
@@ -1267,21 +1631,21 @@
       "portfolio_implication": "This is primarily a Gazzetta content play — compelling narrative, visual (car bomb in Moscow suburb), connects to Zelensky announcement. For Bet&Benefit: if this pattern continues (weekly Moscow assassinations of military logistics officers), Russian war sustainability comes into question — that's a",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 10.59,
+        "amount_b": 12.41,
         "asset_class": "commodities",
         "projected": "This is primarily a Gazzetta content play — compelling narrative, visual (car bomb in Moscow suburb), connects to Zelensky announcement. For Bet&Benefit: if this pattern continues (weekly Moscow…",
         "pace_multiplier": 2.1,
         "confidence_pct": 75,
         "confidence_level": "medium",
         "_psv_diagnostic": {
-          "flow_total": 92.2,
+          "flow_total": 108.0,
           "tier": "ALIGNED",
           "base_fraction": 0.1,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 1.149,
-          "computed": 10.59
+          "computed": 12.41
         },
-        "claim": "$10.59B inflow commodities",
+        "claim": "$12.41B inflow commodities",
         "confidence": "75%",
         "source_label": "[LIVE-DATA]"
       },
@@ -1328,21 +1692,21 @@
       "portfolio_implication": "Structural long oil/gold. The 'automatic trigger' is a volatility cliff — traders should own optionality (VIX calls, OTM oil calls) for tail risk. If no trigger today, premium decays; but if it fires, payoff is multi-standard-deviation.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 8.66,
+        "amount_b": 10.14,
         "asset_class": "commodities",
         "projected": "Structural long oil/gold. The 'automatic trigger' is a volatility cliff — traders should own optionality (VIX calls, OTM oil calls) for tail risk. If no trigger today, premium decays; but if it…",
         "pace_multiplier": 1.7,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$8.66B inflow commodities",
+        "claim": "$10.14B inflow commodities",
         "confidence": "75%",
         "_psv_diagnostic": {
-          "flow_total": 92.2,
+          "flow_total": 108.0,
           "tier": "ALIGNED",
           "base_fraction": 0.1,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 0.9393,
-          "computed": 8.66
+          "computed": 10.14
         },
         "source_label": "[LIVE-DATA]"
       },
@@ -1389,21 +1753,21 @@
       "portfolio_implication": "BUY WTI futures or USO calls with today's expiry or tomorrow. Kuwait pipeline deal confirmation = oil stays bid above $80 on structural premium. IDF readiness declaration alone may not move the needle but any Israeli action in the next 2 hours = immediate spike. The asymmetric payoff is strongly in ",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 9.86,
+        "amount_b": 11.55,
         "asset_class": "commodities",
         "projected": "BUY WTI futures or USO calls with today's expiry or tomorrow. Kuwait pipeline deal confirmation = oil stays bid above $80 on structural premium. IDF readiness declaration alone may not move the…",
         "pace_multiplier": 1.7,
         "confidence_pct": 75,
         "confidence_level": "medium",
         "_psv_diagnostic": {
-          "flow_total": 92.2,
+          "flow_total": 108.0,
           "tier": "ALIGNED",
           "base_fraction": 0.1,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 1.0694,
-          "computed": 9.86
+          "computed": 11.55
         },
-        "claim": "$9.86B inflow commodities",
+        "claim": "$11.55B inflow commodities",
         "confidence": "75%",
         "source_label": "[LIVE-DATA]"
       },
@@ -1450,21 +1814,21 @@
       "portfolio_implication": "Short-term BTC bearish. Use EU sanctions crypto ban narrative as catalyst for BTC dip-buying if $58K area holds. Institutions sell into strength, retail panics, then accumulation.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 33.4,
+        "amount_b": 33.63,
         "asset_class": "crypto",
         "projected": "Short-term BTC bearish. Use EU sanctions crypto ban narrative as catalyst for BTC dip-buying if $58K area holds. Institutions sell into strength, retail panics, then accumulation.",
         "pace_multiplier": 2.0,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$33.4B inflow crypto",
+        "claim": "$33.63B inflow crypto",
         "confidence": "75%",
         "_psv_diagnostic": {
-          "flow_total": 318.40000000000003,
+          "flow_total": 320.6,
           "tier": "ALIGNED",
           "base_fraction": 0.1,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 1.0491,
-          "computed": 33.4
+          "computed": 33.63
         },
         "source_label": "[LIVE-DATA]"
       },
@@ -1511,21 +1875,21 @@
       "portfolio_implication": "SHORT RSX/MOEX on headline. LONG European gas — LNG supply tightening is constructive for $NG. Crypto ban accelerates Russian BTC demand (capital flight into non-sanctionable assets) — contrarian LONG BTC.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 8.24,
+        "amount_b": 9.65,
         "asset_class": "commodities",
         "projected": "SHORT RSX/MOEX on headline. LONG European gas — LNG supply tightening is constructive for $NG. Crypto ban accelerates Russian BTC demand (capital flight into non-sanctionable assets) — contrarian…",
         "pace_multiplier": 2.4,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$8.24B inflow commodities",
+        "claim": "$9.65B inflow commodities",
         "confidence": "75%",
         "_psv_diagnostic": {
-          "flow_total": 92.2,
+          "flow_total": 108.0,
           "tier": "ALIGNED",
           "base_fraction": 0.1,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 0.8939,
-          "computed": 8.24
+          "computed": 9.65
         },
         "source_label": "[LIVE-DATA]"
       },
@@ -1572,21 +1936,21 @@
       "portfolio_implication": "Defense contractors: Israel emergency resupply + potential US re-engagement. Oil: multi-front Middle East war keeps floor under prices hard. Gold: safe haven demand spikes. Cyber sector (Israel-linked cyber firms): CBR, cyber-security stocks re-rate. Energy (oil): Strait toll + Beirut strikes = doub",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 8.91,
+        "amount_b": 10.43,
         "asset_class": "commodities",
         "projected": "Defense contractors: Israel emergency resupply + potential US re-engagement. Oil: multi-front Middle East war keeps floor under prices hard. Gold: safe haven demand spikes. Cyber sector…",
         "pace_multiplier": 1.7,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$8.91B inflow commodities",
+        "claim": "$10.43B inflow commodities",
         "confidence": "75%",
         "_psv_diagnostic": {
-          "flow_total": 92.2,
+          "flow_total": 108.0,
           "tier": "ALIGNED",
           "base_fraction": 0.1,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 0.966,
-          "computed": 8.91
+          "computed": 10.43
         },
         "source_label": "[LIVE-DATA]"
       },
@@ -1633,21 +1997,21 @@
       "portfolio_implication": "Defense contractors: Israel will need resupply, US defense stocks re-rate on sustained Middle East engagement. Oil: Lebanon escalation keeps a floor under oil prices even if OPEC+ tries to cap them. Gold: geopolitical risk premium rises.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 8.12,
+        "amount_b": 9.51,
         "asset_class": "commodities",
         "projected": "Defense contractors: Israel will need resupply, US defense stocks re-rate on sustained Middle East engagement. Oil: Lebanon escalation keeps a floor under oil prices even if OPEC+ tries to cap them.…",
         "pace_multiplier": 1.7,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$8.12B inflow commodities",
+        "claim": "$9.51B inflow commodities",
         "confidence": "75%",
         "_psv_diagnostic": {
-          "flow_total": 92.2,
+          "flow_total": 108.0,
           "tier": "ALIGNED",
           "base_fraction": 0.1,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 0.881,
-          "computed": 8.12
+          "computed": 9.51
         },
         "source_label": "[LIVE-DATA]"
       },
@@ -1804,21 +2168,21 @@
       "portfolio_implication": "Gazzetta di Kyiv: 'HOT WAR — US Bombs 20 Iranian Targets, IRGC Strikes Bahrain, Hormuz in Flames.' Bet&Benefit: OIL UP aggressive long, tight stop at $88 Brent. Defense calls. LNG long per MS outlook. Ukraine angle: US two-front vulnerability — Russia exploits distraction, Kyiv accelerates deep stri",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 8.63,
+        "amount_b": 10.11,
         "asset_class": "commodities",
         "projected": "Gazzetta di Kyiv: 'HOT WAR — US Bombs 20 Iranian Targets, IRGC Strikes Bahrain, Hormuz in Flames.' Bet&Benefit: OIL UP aggressive long, tight stop at $88 Brent. Defense calls. LNG long per MS…",
         "pace_multiplier": 1.7,
         "confidence_pct": 75,
         "confidence_level": "medium",
         "_psv_diagnostic": {
-          "flow_total": 92.2,
+          "flow_total": 108.0,
           "tier": "ALIGNED",
           "base_fraction": 0.1,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 0.936,
-          "computed": 8.63
+          "computed": 10.11
         },
-        "claim": "$8.63B inflow commodities",
+        "claim": "$10.11B inflow commodities",
         "confidence": "75%",
         "source_label": "[LIVE-DATA]"
       },
@@ -1926,21 +2290,21 @@
       "portfolio_implication": "Short SPY/QQQ with the Apache catalyst is cleaner than the pre-existing 'no catalyst' short. The risk-reward is asymmetric to downside into close because no US response has been announced yet — the uncertainty premium cuts against risk assets. Cover immediately on any measured response announcement.",
       "capital_flow": {
         "direction": "outflow",
-        "amount_b": 0.61,
+        "amount_b": 3.4,
         "asset_class": "defense",
         "projected": "Short SPY/QQQ with the Apache catalyst is cleaner than the pre-existing 'no catalyst' short. The risk-reward is asymmetric to downside into close because no US response has been announced yet — the…",
         "pace_multiplier": 1.8,
         "confidence_pct": 75,
         "confidence_level": "medium",
         "_psv_diagnostic": {
-          "flow_total": 6.5,
+          "flow_total": 36.5,
           "tier": "ALIGNED",
           "base_fraction": 0.1,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 0.9318,
-          "computed": 0.61
+          "computed": 3.4
         },
-        "claim": "$0.61B outflow defense",
+        "claim": "$3.4B outflow defense",
         "confidence": "75%",
         "source_label": "[LIVE-DATA]"
       },
@@ -2203,21 +2567,21 @@
       "portfolio_implication": "Oil producers: every dip from OPEC+ noise is a buying opportunity for energy equities. Sovereign wealth funds in Gulf states: their revenue per barrel rises even with the small quota increase because price per barrel is supported. US Treasury: higher oil revenue = higher tax receipts from energy sec",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 10.13,
+        "amount_b": 11.86,
         "asset_class": "commodities",
         "projected": "Oil producers: every dip from OPEC+ noise is a buying opportunity for energy equities. Sovereign wealth funds in Gulf states: their revenue per barrel rises even with the small quota increase…",
         "pace_multiplier": 1.7,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$10.13B inflow commodities",
+        "claim": "$11.86B inflow commodities",
         "confidence": "75%",
         "_psv_diagnostic": {
-          "flow_total": 92.2,
+          "flow_total": 108.0,
           "tier": "ALIGNED",
           "base_fraction": 0.1,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 1.0984,
-          "computed": 10.13
+          "computed": 11.86
         },
         "source_label": "[LIVE-DATA]"
       },
@@ -2264,21 +2628,21 @@
       "portfolio_implication": "Gold calls intraday. VIX calls if available (VIX is low currently — this explosion of volatility would catch most short-vol strategies flat-footed). The auto-retaliation mechanism is a genuine escalation innovation that markets haven't priced. If you want a high-beta trade: short Israeli shekel via ",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 9.9,
+        "amount_b": 11.59,
         "asset_class": "commodities",
         "projected": "Gold calls intraday. VIX calls if available (VIX is low currently — this explosion of volatility would catch most short-vol strategies flat-footed). The auto-retaliation mechanism is a genuine…",
         "pace_multiplier": 1.7,
         "confidence_pct": 75,
         "confidence_level": "medium",
         "_psv_diagnostic": {
-          "flow_total": 92.2,
+          "flow_total": 108.0,
           "tier": "ALIGNED",
           "base_fraction": 0.1,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 1.0736,
-          "computed": 9.9
+          "computed": 11.59
         },
-        "claim": "$9.9B inflow commodities",
+        "claim": "$11.59B inflow commodities",
         "confidence": "75%",
         "source_label": "[LIVE-DATA]"
       },
@@ -2325,21 +2689,21 @@
       "portfolio_implication": "Oil producers (Saudi Arabia, Russia, US shale) benefit from elevated prices regardless of the OPEC+ quota increase. Energy sector earnings revision upward.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 7.99,
+        "amount_b": 9.36,
         "asset_class": "commodities",
         "projected": "Oil producers (Saudi Arabia, Russia, US shale) benefit from elevated prices regardless of the OPEC+ quota increase. Energy sector earnings revision upward.",
         "pace_multiplier": 1.7,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$7.99B inflow commodities",
+        "claim": "$9.36B inflow commodities",
         "confidence": "75%",
         "_psv_diagnostic": {
-          "flow_total": 92.2,
+          "flow_total": 108.0,
           "tier": "ALIGNED",
           "base_fraction": 0.1,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 0.8667,
-          "computed": 7.99
+          "computed": 9.36
         },
         "source_label": "[LIVE-DATA]"
       },
@@ -2386,21 +2750,21 @@
       "portfolio_implication": "Oil producers and energy exporters benefit from $5-10/bbl risk premium immediately. Defense contractors (RTX, LMT, NOC) benefit from extended Middle East engagement. Maritime/insurance sector re-rates higher on Hormuz risk.",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 8.72,
+        "amount_b": 10.22,
         "asset_class": "commodities",
         "projected": "Oil producers and energy exporters benefit from $5-10/bbl risk premium immediately. Defense contractors (RTX, LMT, NOC) benefit from extended Middle East engagement. Maritime/insurance sector…",
         "pace_multiplier": 1.7,
         "confidence_pct": 75,
         "confidence_level": "medium",
-        "claim": "$8.72B inflow commodities",
+        "claim": "$10.22B inflow commodities",
         "confidence": "75%",
         "_psv_diagnostic": {
-          "flow_total": 92.2,
+          "flow_total": 108.0,
           "tier": "ALIGNED",
           "base_fraction": 0.1,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 0.946,
-          "computed": 8.72
+          "computed": 10.22
         },
         "source_label": "[LIVE-DATA]"
       },
@@ -2452,21 +2816,21 @@
       "freshness": "background",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 0.09,
+        "amount_b": 0.11,
         "projected": "Capital flow tracked — direction forming",
         "pace_multiplier": 1.2,
         "confidence_pct": 65,
         "confidence_level": "medium",
         "asset_class": "equities",
-        "claim": "$0.09B inflow equities",
+        "claim": "$0.11B inflow equities",
         "confidence": "65%",
         "_psv_diagnostic": {
-          "flow_total": 3.5,
+          "flow_total": 4.2,
           "tier": "ACTIVE",
           "base_fraction": 0.03,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 0.8598,
-          "computed": 0.09
+          "computed": 0.11
         },
         "source_label": "[CALC-EST]"
       },

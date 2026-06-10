@@ -1,11 +1,22 @@
 {
-  "generated_at": "2026-06-10T19:28:12.706536+00:00",
-  "total_signals": 30,
-  "aggregate_score": 60,
+  "generated_at": "2026-06-10T19:50:58.514368+00:00",
+  "total_signals": 33,
+  "aggregate_score": 61,
   "signals": [
     {
       "story_id": "n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is",
       "headline": "CRITICAL CONTRADICTION: WTI Drops Below $90 (-2%) Despite Israel-Iran War, Hormuz Toll, Beirut Bombi",
+      "score": 69,
+      "tier": "MODERATE",
+      "flow_alignment": 32,
+      "contradiction": 22,
+      "event_strength": 15,
+      "asset_class": "commodities",
+      "direction": "outflow"
+    },
+    {
+      "story_id": "n21_multi_pillar__us_doe_releases_40m_barrels_from_strategic_petroleum_reserve",
+      "headline": "US DOE RELEASES 40M BARRELS FROM STRATEGIC PETROLEUM RESERVE — PRE-STRIKE SUPPLY PRE-POSITIONING",
       "score": 69,
       "tier": "MODERATE",
       "flow_alignment": 32,
@@ -24,6 +35,28 @@
       "event_strength": 15,
       "asset_class": "commodities",
       "direction": "inflow"
+    },
+    {
+      "story_id": "n21_multi_pillar__us-israel_strike_package_on_iran__assets_airborne_strike_w",
+      "headline": "US-ISRAEL STRIKE PACKAGE ON IRAN — ASSETS AIRBORNE, STRIKE WINDOW OPEN AT 21:17 UTC",
+      "score": 65,
+      "tier": "MODERATE",
+      "flow_alignment": 35,
+      "contradiction": 15,
+      "event_strength": 15,
+      "asset_class": "crypto",
+      "direction": "outflow"
+    },
+    {
+      "story_id": "n21_multi_pillar__iran_parliament__war_won_t_be_limited_to_the_region__asym",
+      "headline": "IRAN PARLIAMENT: 'WAR WON'T BE LIMITED TO THE REGION' — ASYMMETRIC ESCALATION THREAT",
+      "score": 65,
+      "tier": "MODERATE",
+      "flow_alignment": 35,
+      "contradiction": 15,
+      "event_strength": 15,
+      "asset_class": "crypto",
+      "direction": "outflow"
     },
     {
       "story_id": "n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for",
@@ -127,39 +160,6 @@
     {
       "story_id": "n21_multi_pillar__idf_declares_readiness_to_immediately_resume_iran_operations",
       "headline": "IDF Declares Readiness to Immediately Resume Iran Operations + Tyre Under Full Evacuation — Two-Fron",
-      "score": 62,
-      "tier": "MODERATE",
-      "flow_alignment": 32,
-      "contradiction": 15,
-      "event_strength": 15,
-      "asset_class": "commodities",
-      "direction": "inflow"
-    },
-    {
-      "story_id": "n21_multi_pillar__ukraine_fp-5_flamingo_missiles_strike_cheboksary__second_st",
-      "headline": "UKRAINE FP-5 FLAMINGO MISSILES STRIKE CHEBOKSARY — SECOND Strike on VNIIR-Progress, Samara Refinery ",
-      "score": 62,
-      "tier": "MODERATE",
-      "flow_alignment": 32,
-      "contradiction": 15,
-      "event_strength": 15,
-      "asset_class": "commodities",
-      "direction": "inflow"
-    },
-    {
-      "story_id": "n21_multi_pillar__eia_drops_bombshell_hormuz_timeline__blockade_persists_thro",
-      "headline": "EIA Drops Bombshell Hormuz Timeline — Blockade Persists Through Q3 2026, Full Recovery Only in 2027",
-      "score": 62,
-      "tier": "MODERATE",
-      "flow_alignment": 32,
-      "contradiction": 15,
-      "event_strength": 15,
-      "asset_class": "commodities",
-      "direction": "inflow"
-    },
-    {
-      "story_id": "n21_multi_pillar__israel_cabinet_any_lebanon_rocket__automatic_beirut_strike",
-      "headline": "Israel Cabinet: Any Lebanon Rocket = Automatic Beirut Strike Without Approval — Escalation Switch Re",
       "score": 62,
       "tier": "MODERATE",
       "flow_alignment": 32,

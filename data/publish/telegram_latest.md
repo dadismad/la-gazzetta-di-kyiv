@@ -1,8 +1,10 @@
-WTI BELOW $90 as Trump declares Iran shot down a US Apache over Hormuz — but NYT reports crash, crew rescued. STATUS: no shootdown confirmed. If Trump escalates on unverified intel, oil gaps $3-5 higher. If crash confirmed, $87 fails.
+US housing beat 3x consensus (+3.2% vs +1.1%) — but strong housing means sticky shelter inflation, locking the Fed into higher-for-longer. Markets call it 'resilience.' Reality: stagflation lock-in.
 
-• Long WTI/GLD into US response window — stop below $85
-• Short if no confirmation by 21:00 UTC — premium fades
+Ukraine's FP-5 missiles hit Cheboksary twice, Samara refinery burning, while the world watches Iran. Window of maximum opportunity.
 
-¹ NYT vs White House: conflicting Apache accounts over Hormuz — no shootdown verified (source: nytimes.com)
+• Short TLT — rate cuts priced out
+• Long TTF — Russian gas infrastructure under attack
 
-Continuity: www.lagazzettadikyiv.com | Next trigger: CENTCOM statement 18:00 UTC — if no shootdown confirmation, thesis decays.
+¹ US DOE released 40M barrels SPR (18:16 UTC) — pre-positioning for conflict, not de-escalation (source: markettwits)
+
+Continuity: lagazzettadikyiv.com | Next trigger: NFP Friday 08:30 UTC

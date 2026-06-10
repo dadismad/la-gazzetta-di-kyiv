@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-06-10T19:28:12.590816+00:00",
+  "generated_at": "2026-06-10T19:50:58.382784+00:00",
   "story_count": 15,
   "model": "deepseek-chat",
   "narratives": [
     {
-      "title": "Geopolitical Escalation Spiral",
+      "title": "Geopolitical Escalation Risk-Off",
       "strength": "DOMINANT",
       "direction": "Risk-Off",
-      "summary": "Capital is fleeing risk assets as the US-Iran kinetic exchange escalates beyond a one-off strike, with Iran retaliating and shooting down a US Apache. Simultaneous Israel-Hezbollah and Ukraine-Russia intensifications create a multi-front crisis, driving flows into safe havens and commodities.",
-      "key_stories": 8,
-      "trade_implication": "Long gold, short S&P 500 futures; overweight energy equities (XLE) and long WTI crude oil futures."
+      "summary": "Capital is fleeing risk assets as multi-front conflicts (Iran, Israel, Ukraine) escalate beyond controlled tit-for-tat, with Hormuz blockade persisting and US military assets engaged. The market consensus underestimates the structural disruption, driving flows into safe havens and commodities.",
+      "key_stories": 9,
+      "trade_implication": "Long WTI crude oil and short S&P 500 futures; overweight gold and USD."
     },
     {
-      "title": "Strait of Hormuz Blockade Persists",
+      "title": "Energy Supply Chain Disruption",
       "strength": "STRONG",
       "direction": "Neutral-to-Bullish",
-      "summary": "The EIA projects the Hormuz blockade lasting through Q3 2026, with Kuwait actively seeking pipeline bypasses. Oil prices are structurally supported by supply disruption, though a potential diplomatic deal could reverse this quickly.",
-      "key_stories": 4,
-      "trade_implication": "Long WTI crude oil futures; long tanker equities (STNG, EURN); short airline stocks (JETS) on elevated fuel costs."
+      "summary": "Capital is rotating into energy assets as the Hormuz blockade structurally tightens oil supply through Q3 2026, with SPR releases signaling bullish pre-positioning rather than bearish intervention. Pipeline bypass discussions and elevated EIA forecasts confirm persistent supply risk.",
+      "key_stories": 5,
+      "trade_implication": "Long crude oil futures and energy sector ETFs; short refined product spreads."
     },
     {
-      "title": "Institutional Crypto Adoption Accelerates",
+      "title": "Diplomatic Mirage vs. Reality",
       "strength": "BUILDING",
-      "direction": "Risk-On",
-      "summary": "Despite BTC's macro-driven selloff, institutional flows into crypto infrastructure continue, exemplified by Janus Henderson's partnership with Ethena for tokenized CLOs. This signals long-term capital rotation into digital assets as a distinct asset class.",
-      "key_stories": 2,
-      "trade_implication": "Accumulate BTC on dips; long ETH and DeFi tokens (ENA); overweight crypto-exposed equities (MSTR, COIN)."
+      "direction": "Neutral-to-Bearish",
+      "summary": "Capital is pricing a fragile status quo despite White House claims of Iran deal progress, as military readiness and actual strikes contradict diplomatic narratives. The disconnect between official statements and on-ground escalation creates volatility, with markets gradually repricing risk.",
+      "key_stories": 4,
+      "trade_implication": "Long VIX futures and short emerging market bonds; hedge with gold options."
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T19:28:12.726522+00:00",
+  "generated_at": "2026-06-10T19:50:58.537861+00:00",
   "total_positions": 13,
   "aggregate_bias": "bullish",
   "trades": [
@@ -7,11 +7,11 @@
       "symbol": "SPX",
       "name": "S&P 500",
       "asset_class": "equities",
-      "direction": "BUY",
-      "conviction": "MED",
+      "direction": "WATCH",
+      "conviction": "LOW",
       "entry": 5950,
-      "target": 6426.0,
-      "stop": 5771.5,
+      "target": 5474.0,
+      "stop": 6128.5,
       "atr_pct": 1.2,
       "stop_multiplier": 2.5
     },
@@ -19,11 +19,11 @@
       "symbol": "NVDA",
       "name": "NVIDIA",
       "asset_class": "equities",
-      "direction": "BUY",
-      "conviction": "MED",
+      "direction": "WATCH",
+      "conviction": "LOW",
       "entry": 132,
-      "target": 142.56,
-      "stop": 122.76,
+      "target": 121.44,
+      "stop": 141.24,
       "atr_pct": 3.5,
       "stop_multiplier": 2.0
     },
