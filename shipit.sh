@@ -139,14 +139,34 @@ for f in about.html capital.html data.html methodology.html sources.html terms.h
 done
 EN_COUNT=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories.json')); print(len([d.get('lead')]+d.get('stories',[])))" 2>/dev/null || echo 0)
 RU_COUNT=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories_ru.json')); print(len([d.get('lead')]+d.get('stories',[])))" 2>/dev/null || echo 0)
+
+# Check if RU translation is stale by timestamp (v3.1: prevents count-equal-but-content-stale bug)
+NEED_TRANSLATION=false
 if [ "$RU_COUNT" -lt "$EN_COUNT" ]; then
-  echo "  ⚠ RU stories ($RU_COUNT) < EN stories ($EN_COUNT) — running translate_content.py"
+  NEED_TRANSLATION=true
+  echo "  ⚠ RU stories ($RU_COUNT) < EN stories ($EN_COUNT)"
+else
+  # Compare timestamps: if RU is >1hr older than EN, force re-translate
+  EN_TS=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories.json')); print(d.get('generated_at','2000-01-01T00:00:00')[:19])" 2>/dev/null || echo "2000-01-01T00:00:00")
+  RU_TS=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories_ru.json')); print(d.get('generated_at','2000-01-01T00:00:00')[:19])" 2>/dev/null || echo "2000-01-01T00:00:00")
+  EN_EPOCH=$(date -j -f "%Y-%m-%dT%H:%M:%S" "$EN_TS" "+%s" 2>/dev/null || echo 0)
+  RU_EPOCH=$(date -j -f "%Y-%m-%dT%H:%M:%S" "$RU_TS" "+%s" 2>/dev/null || echo 0)
+  AGE_GAP=$(( EN_EPOCH - RU_EPOCH ))
+  if [ "$AGE_GAP" -gt 3600 ]; then
+    NEED_TRANSLATION=true
+    echo "  ⚠ RU stories stale by ${AGE_GAP}s ($RU_TS vs $EN_TS) — re-translating"
+  fi
+fi
+
+if [ "$NEED_TRANSLATION" = true ]; then
+  echo "  Running translate_content.py..."
   $PYTHON "$PROJECT/scripts/translate_content.py" 2>/dev/null || echo "  ⚠ Translation failed"
   RU_COUNT_NEW=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories_ru.json')); print(len([d.get('lead')]+d.get('stories',[])))" 2>/dev/null || echo 0)
   if [ "$RU_COUNT_NEW" -lt "$EN_COUNT" ]; then
     echo "  ✗ CRITICAL: RU sync failed ($RU_COUNT_NEW < $EN_COUNT). Aborting deploy."
     exit 1
   fi
+  echo "  ✓ RU stories re-translated: $RU_COUNT_NEW stories"
 fi
 echo "  ✓ RU sync gate passed: $RU_COUNT stories, $RU_MISSING files copied"
 
