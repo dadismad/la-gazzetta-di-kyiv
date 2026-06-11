@@ -1,44 +1,39 @@
-# Python Virtual Environment
-.venv/
-venv/
-env/
-__pycache__/
-*.pyc
-*.pyo
-*.egg-info/
-dist/
-build/
-
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-*~
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Environment
-.env.local
-.env.*.local
 
 # Build artifacts (generated)
-site/styles.*.css
+# Cron output (local)
+# Environment
+# IDE
+# OS
+# Python Virtual Environment
+# SQLite database (local source of truth)
+# Safe-git backups
+*.egg-info/
+*.pyc
+*.pyo
+*.swo
+*.swp
+*~
+.DS_Store
+.backup/
+.env.*.local
+.env.local
+.idea/
+.venv/
+.vscode/
+Thumbs.db
+__pycache__/
+build/
+dist/
+env/
+gazzetta.db
 site/app.*.js
-site/story-app.*.js
+site/build-manifest.json
+site/contacts.html\nsite/cooperation.html\nsite/ops.html\nsite/privacy.html\nsite/research.html\nsite/variant-modern.html
+site/data/flows_ru.json\nsite/data/stories_ru.json\nsite/data/ru/
 site/i18n.*.js
 site/sector.*.js
+site/story-app.*.js
 site/styles-modern.*.css
-site/build-manifest.json
-
-# Safe-git backups
-.backup/
-
-# SQLite database (local source of truth)
-gazzetta.db
-
-# Cron output (local)
+site/styles.*.css
+venv/
 ~/.hermes/cron/output/
-site/contacts.html\nsite/cooperation.html\nsite/ops.html\nsite/privacy.html\nsite/research.html\nsite/variant-modern.html
