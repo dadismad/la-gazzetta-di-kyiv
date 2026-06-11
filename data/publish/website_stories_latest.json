@@ -1,45 +1,45 @@
 {
-  "generated_at": "2026-06-10T14:00:00Z",
+  "generated_at": "2026-06-11T16:00:00Z",
   "stories": [
     {
-      "headline": "Anthropic Drops Claude Fable at 2x Opus Pricing — AI Race Accelerates",
-      "thesis": "Anthropic released Claude Fable today — earlier than any analyst expected, at 2x Opus pricing. Premium enterprise AI pricing is here. OpenAI filed S-1 same week.",
+      "headline": "US Strikes Destroy Iran Water Facility — 20,000 Cut Off as Oil Markets Restructure",
+      "thesis": "US strikes hit civilian water infrastructure in Hormozgan province. The Strait of Hormuz disruption has made America the world's top oil exporter as Iranian crude competition is physically blockaded. Markets price containment; the data shows structural oil market capture.",
+      "sector": "geopolitics",
+      "source_count": 6,
+      "setup_id": "n21_osint__reuters_business__oil_prices_fluctuate_as_us_launches_new_attack_on_iran",
+      "image_url": "https://i.guim.co.uk/img/media/db4a5a8c9ca3c9f5d8a7d6e5c4b3a2918271605f/0_0_5000_3000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=8a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d"
+    },
+    {
+      "headline": "Dow Drops 950 Points — Chip Rout Meets Iran War Premium",
+      "thesis": "Nasdaq fell 2% and the Dow shed 950 points as the semiconductor sell-off collided with escalating US-Iran strikes. Trump's renewed threats and PPI inflation data compounded the risk-off move. Tech is absorbing both war premium and AI valuation doubts.",
+      "sector": "markets",
+      "source_count": 5,
+      "setup_id": "n21_osint__reuters_business__stock_market_today_nasdaq_drops_2_dow_falls_950_points",
+      "image_url": "https://i.guim.co.uk/img/media/1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b/0_0_5000_3000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=f9e8d7c6b5a4938271605f4e3d2c1b0a"
+    },
+    {
+      "headline": "Bezos Launches Prometheus — $12B AI Startup Valued at $41B Despite Job Loss Fears",
+      "thesis": "Jeff Bezos raised $12 billion for Prometheus, his industrial AI startup now valued at $41 billion. Bezos claims AI will bring 'golden ages' not mass job losses, while Anthropic simultaneously warns of 25% unemployment risk. The contradiction between AI founders' public optimism and private planning is widening.",
+      "sector": "tech",
+      "source_count": 6,
+      "setup_id": "n21_osint__reuters_business__bezos_bats_down_ai_job_loss_fears_while_launching_new_venture",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jeff_Bezos_at_Amazon_Spheres_Grand_Opening_in_Seattle.jpg"
+    },
+    {
+      "headline": "SpaceX IPO — $1.8T Valuation Props Up Markets as 'Hopes and Dreams' Confront Reality",
+      "thesis": "SpaceX is set to list June 12 at a $1.8 trillion valuation on $4.69B quarterly revenue and a 91% loss margin. Barron's calls it 'hopes and dreams' propping up markets. The IPO is the largest capital raise in history — and the widest valuation-to-fundamentals gap since 2021.",
+      "sector": "tech",
+      "source_count": 5,
+      "setup_id": "n21_osint__reuters_business__spacex_hopes_and_dreams_are_propping_up_markets",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX_CRS-20_Launch_%28KSC-20200307-PH-SPX01_0001%29.jpg"
+    },
+    {
+      "headline": "Anthropic Warns 25% AI Unemployment While Bezos Promises 'Golden Ages'",
+      "thesis": "Anthropic CEO Dario Amodei suggests universal basic income may be needed to offset AI-related job losses, warning of 25% unemployment. Simultaneously, Bezos launches Prometheus claiming AI will create 'golden ages.' The split between AI builders on labor impact is the most important unreported contradiction in tech.",
       "sector": "tech",
       "source_count": 4,
-      "setup_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t",
+      "setup_id": "n21_osint__reuters_business__what_happens_if_ai_causes_25_unemployment_anthropic_has_a",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthropic_logo.svg"
-    },
-    {
-      "headline": "SpaceX IPO 2 Days Out — $1.8T Valuation on 91% Loss Margin",
-      "thesis": "SpaceX lists June 12 at $1.8T+ valuation, raising $80B+. Q1 loss of $4.28B on $4.69B revenue — 96x revenue. OpenAI S-1 filed alongside. Defining capital markets moment of 2026.",
-      "sector": "tech",
-      "source_count": 4,
-      "setup_id": "n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SpaceX_Dragon_2_approach_to_ISS_1.jpg"
-    },
-    {
-      "headline": "Strategy Resumes Bitcoin Buying at $58K — Halts Panic, Shorts Squeezed",
-      "thesis": "MicroStrategy resumed BTC accumulation at $58K support — the world's largest corporate BTC holder halted the sell-off. Shorts targeting MSTR face capitulation risk.",
-      "sector": "crypto",
-      "source_count": 3,
-      "setup_id": "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitcoin_logo.svg"
-    },
-    {
-      "headline": "South Korea Commits $350B to US — Protection Payment for Tariff Relief",
-      "thesis": "South Korea approved $350B (~20% GDP) in US strategic investments. $200B in strategic industries, $150B shipbuilding. Template for allies: pay or face tariffs.",
-      "sector": "macro",
-      "source_count": 3,
-      "setup_id": "n21_macro",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_South_Korea.svg"
-    },
-    {
-      "headline": "Europe Ditches American Tech — 'Nobody Has a Kill Switch'",
-      "thesis": "EU unveils tech sovereignty package with explicit motive: eliminate US control over chip/cloud supply chains. $34B defense/tech inflow projected. ASML chief warns against directing supplies.",
-      "sector": "defense",
-      "source_count": 3,
-      "setup_id": "n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/EU_flag.svg"
     }
   ]
 }

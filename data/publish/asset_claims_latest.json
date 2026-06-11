@@ -1,53 +1,65 @@
 {
-  "generated_at": "2026-06-10T14:00:00Z",
+  "generated_at": "2026-06-11T16:00:00Z",
   "claims": [
     {
-      "ticker": "NVDA",
+      "ticker": "CL",
       "direction": "up",
-      "price_target": "+15-20% on AI capex cycle expansion",
-      "strategy": "Core long — every new frontier model launch expands the AI compute demand layer",
-      "win_rate": "70% (AI capex cycle has multi-year visibility)",
-      "horizon": "3-6 months",
-      "narrative_driven_pct": 55,
-      "crowd_belief": "Consensus prices NVDA for AI data center growth but underprices the pace of frontier model releases driving incremental demand",
-      "contradiction": "Each new frontier model (Claude Fable, GPT-5) requires exponentially more compute — but market prices NVDA as if the current demand base is the ceiling",
-      "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t"
+      "price_target": "$96-98",
+      "strategy": "Geopolitical flash — buy crude on strike escalation",
+      "win_rate": "55% (if disciplined on stop)",
+      "horizon": "24-72h",
+      "narrative_driven_pct": 70,
+      "crowd_belief": "Markets fade oil from $98 to $90 on Iran 'end of current attacks' statement. Consensus treats SPR release as bearish supply injection.",
+      "contradiction": "SPR releases historically precede further escalation, not de-escalation. US now top oil exporter — structural supply disruption is widening, not closing. Crowd fading oil is the wrong side of the 2022 playbook.",
+      "story_id": "us_iran_strikes_water_infrastructure_oil_market_restructuring"
     },
     {
-      "ticker": "SMH",
-      "direction": "up",
-      "price_target": "+10% on semiconductor cycle AI demand layer",
-      "strategy": "Core long — AI chip demand expands semiconductor cycle duration",
-      "win_rate": "60% (AI extends semi cycle by 2-3 quarters)",
-      "horizon": "3-6 months",
-      "narrative_driven_pct": 45,
-      "crowd_belief": "Semiconductor cycle viewed as peaking. AI demand layer is structural and additive to traditional cycle.",
-      "contradiction": "Traditional semi cycle would be peaking, but AI demand layer adds 2-3 quarters of expansion that consensus hasn't repriced",
-      "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t"
+      "ticker": "QQQ",
+      "direction": "down",
+      "price_target": "-3-5% from current levels",
+      "strategy": "War premium + chip valuation compression — short rallies",
+      "win_rate": "60% (until ceasefire catalyst)",
+      "horizon": "24-72h",
+      "narrative_driven_pct": 60,
+      "crowd_belief": "Tech dip is a buying opportunity. AI thesis intact. Iran is a headline.",
+      "contradiction": "Dow -950 points on chip rout + war premium is not a dip-buying setup. Oracle tumbled on data center costs — AI capex cycle faces its first stress test. Until ceasefire materializes, rallies are exits not entries.",
+      "story_id": "dow_drops_950_chip_rout_iran_war_premium"
     },
     {
-      "ticker": "FET",
+      "ticker": "LMT",
       "direction": "up",
-      "price_target": "+25-35% on AI-crypto narrative coupling",
-      "strategy": "Event-driven — AI acceleration narrative flows through to AI-crypto tokens",
-      "win_rate": "55% (narrative-driven, high beta to AI newsflow)",
+      "price_target": "+5-8% on multi-front combat confirmation",
+      "strategy": "Defense sector long — multi-front conflict locks budget increases",
+      "win_rate": "65%",
       "horizon": "1-3 months",
       "narrative_driven_pct": 75,
-      "crowd_belief": "AI-crypto tokens seen as disconnected from frontier AI model releases",
-      "contradiction": "Anthropic and OpenAI model releases increase demand for decentralized AI compute — FET/TAO benefit from same narrative tailwind as NVDA but at 10x beta",
-      "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t"
+      "crowd_belief": "Defense stocks already priced the Iran escalation. Limited upside from here.",
+      "contradiction": "Three-front combat (US-Iran, Israel-Iran, Israel-Hezbollah) is NOT priced. US NATO cuts + simultaneous Middle East engagement = defense industrial base must expand. LMT/GD budgets structurally higher, not cyclically.",
+      "story_id": "us_iran_strikes_water_infrastructure_oil_market_restructuring"
     },
     {
-      "ticker": "TAO",
+      "ticker": "GD",
       "direction": "up",
-      "price_target": "+30-40% on decentralized AI compute narrative",
-      "strategy": "Event-driven — Bittensor network benefits from AI compute decentralization thesis",
-      "win_rate": "50% (high beta, narrative-driven token)",
+      "price_target": "+5-8% on multi-front combat confirmation",
+      "strategy": "Defense sector long — naval and ground systems demand accelerates",
+      "win_rate": "65%",
       "horizon": "1-3 months",
-      "narrative_driven_pct": 80,
-      "crowd_belief": "TAO is uncorrelated with frontier AI model releases",
-      "contradiction": "Claude Fable and GPT-5 drive demand for decentralized inference compute — TAO's Bittensor network is the primary venue for that, underpriced by consensus",
-      "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t"
+      "narrative_driven_pct": 75,
+      "crowd_belief": "GD already benefited from Ukraine cycle. Iran is incremental, not transformational.",
+      "contradiction": "US naval operations in Hormuz + ground force posture in Iraq require sustained procurement. GD's shipbuilding and combat systems divisions see multi-year demand acceleration, not a one-quarter bump.",
+      "story_id": "us_iran_strikes_water_infrastructure_oil_market_restructuring"
+    },
+    {
+      "ticker": "XLE",
+      "direction": "up",
+      "price_target": "+4-6% on US oil exporter dominance",
+      "strategy": "Long US energy complex — structural market share capture",
+      "win_rate": "70%",
+      "horizon": "3-6 months",
+      "narrative_driven_pct": 65,
+      "crowd_belief": "Oil sector is cyclical. Hormuz reopens, prices normalize, US loses export advantage.",
+      "contradiction": "European and Asian buyers signing long-term US crude contracts is permanent market restructuring. The US didn't just win a quarter — it captured customers who will take years to unwind. This is a structural rerating of US energy, not a cyclical trade.",
+      "story_id": "us_becomes_top_oil_exporter_hormuz_blockade"
     }
   ]
 }

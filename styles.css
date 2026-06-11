@@ -1988,3 +1988,9 @@ display: -webkit-flex;
 @media (max-width: 768px) {
   .gate-overlay .gate-cta { font-size: 14px; padding: 12px 24px; width: 80%; text-align: center; }
 }
+
+/* ═══════════ v25.7: Loading skeleton spinner ═══════════ */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+#storiesLoading.hidden { display: none; }

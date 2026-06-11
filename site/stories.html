@@ -76,6 +76,11 @@
   </div>
   <div class="container-desc" data-i18n="container_stories_desc">Today's narratives, decoded. Each story reveals who benefits, who loses, and what the money already priced in — with an actionable trade idea.</div>
   <div class="container-body" style="max-height:none;overflow:visible;">
+    <!-- v25.7: Loading skeleton — shown until boot() populates cards -->
+    <div id="storiesLoading" style="padding:40px 20px;text-align:center;">
+      <div style="display:inline-block;width:40px;height:40px;border:3px solid var(--divider);border-top-color:var(--gold);border-radius:50%;animation:spin 0.8s linear infinite;"></div>
+      <p style="margin-top:16px;font-family:var(--sans);font-size:12px;color:var(--ink-muted);">Loading intelligence feed…</p>
+    </div>
     <div class="news-col" id="newsCol"></div>
   </div>
 </section>

@@ -1,10 +1,13 @@
-US housing beat 3x consensus (+3.2% vs +1.1%) — but strong housing means sticky shelter inflation, locking the Fed into higher-for-longer. Markets call it 'resilience.' Reality: stagflation lock-in.
+US STRIKES destroy Iran water facility in Hormozgan — 20,000 without water. Second consecutive day of attacks. Status: new strikes launched today, June 11.
 
-Ukraine's FP-5 missiles hit Cheboksary twice, Samara refinery burning, while the world watches Iran. Window of maximum opportunity.
+The US is now the world's top oil exporter. Hormuz disruption has crippled Iranian competition. European and Asian buyers are locked into US crude — structural market capture, not temporary.
 
-• Short TLT — rate cuts priced out
-• Long TTF — Russian gas infrastructure under attack
+• Long WTI: dips to $90, target $96-98, stop $87. Strikes ongoing = oil underpriced.
+• Long defense (LMT, GD): multi-front combat confirmed across US-Iran-Israel axis.
+• Short QQQ: Dow -950 on chip rout + war premium. Rallies are exits until ceasefire.
 
-¹ US DOE released 40M barrels SPR (18:16 UTC) — pre-positioning for conflict, not de-escalation (source: markettwits)
+¹ US strikes destroyed key water facility in Hormozgan, cutting access to ~20,000 people (The Cradle, June 11)
 
-Continuity: lagazzettadikyiv.com | Next trigger: NFP Friday 08:30 UTC
+Continuity: https://www.lagazzettadikyiv.com/ | Next trigger: Iran retaliation — if Hezbollah activates or Gulf shipping is hit, oil gaps to $100+. CPI Thursday.
+
+Full briefing: https://www.lagazzettadikyiv.com/

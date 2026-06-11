@@ -2234,6 +2234,7 @@ async function boot() {
     const stories = (livingData.stories || []).filter(s => s.story_id !== leadId);
     const all = [livingData.lead, ...stories, ...(livingData.archived_stories || [])].filter(Boolean);
     STORIES_DATA = all;  // v22.30: global store
+    window.STORIES_DATA = all;  // v25.7: also expose on window for cross-function access
 
     const el = byId('newsCol');
     if (el) {
@@ -2275,10 +2276,14 @@ async function boot() {
   const filteredStories = (data.stories || []).filter(s => s.story_id !== leadId);
   const all = [data.lead, ...filteredStories].filter(Boolean);
   STORIES_DATA = all;  // v22.30: global store for cross-page triangulation
+  window.STORIES_DATA = all;  // v25.7: expose on window
 
   const el2 = byId('newsCol');
   if (el2) {
     all.forEach((s, i) => appendStoryCard(s, i === 0));
+    // v25.7: Hide loading skeleton after first cards render
+    const skel = document.getElementById('storiesLoading');
+    if (skel) skel.classList.add('hidden');
   }
 
   // Triangulation AFTER cards are in DOM — with retry
@@ -2308,13 +2313,25 @@ async function boot() {
 
 }
 
-// v22.20: Front-page teaser populator — headlines only, not full content
+// v25.7: Front-page teaser populator — reuses STORIES_DATA from boot(), no separate fetch
 async function populateTeasers() {
   if (!document.querySelector('.teaser-list')) return;
 
-  // Stories teaser
+  // Stories teaser — v25.7: reuse STORIES_DATA from boot(), poll if not ready
   try {
-    const storiesData = await getJSON(getDataPath(), null);
+    // Poll for STORIES_DATA readiness (boot() populates it)
+    let storiesData = null;
+    for (let attempt = 0; attempt < 20; attempt++) {
+      if (window.STORIES_DATA && window.STORIES_DATA.length > 0) {
+        storiesData = { lead: window.STORIES_DATA[0], stories: window.STORIES_DATA.slice(1) };
+        break;
+      }
+      await new Promise(r => setTimeout(r, 150));
+    }
+    // Fallback: if STORIES_DATA never populated, fetch directly
+    if (!storiesData) {
+      storiesData = await getJSON(getDataPath(), null);
+    }
     if (storiesData && storiesData.stories) {
       const el = document.getElementById('storiesTeaserContent');
       const countEl = document.getElementById('teaserStoryCount');

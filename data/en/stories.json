@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T15:11:10.272136+00:00",
+  "generated_at": "2026-06-11T15:32:12.845688+00:00",
   "lead": {
     "story_id": "n21_osint__reuters_business__stock_market_today_indexes_surge_as_ai_stocks_rebound_oil",
     "headline": "Stock Market Today: Indexes Surge as AI Stocks Rebound; Oil Prices Fall Despite Trump Warning US Will Strike Iran 'Very Hard Tonight' - Investopedia",
@@ -10933,22 +10933,22 @@
       "portfolio_implication": "SpaceX IPO to mint 4,000 millionaires, cooks included &nbsp;&nbsp; The Next Web    SpaceX’s I.P.O. Could Turn 4,400 Employees Into Millionaires &nbsp;&nbsp; The New York Times    SpaceX Left Californi",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 55.11,
+        "amount_b": 55.15,
         "asset_class": "tech",
         "projected": "SpaceX IPO to mint 4,000 millionaires, cooks included &nbsp;&nbsp; The Next Web    SpaceX’s I.P.O. Could Turn 4,400 Employees Into Millionaires &nbsp;&nbsp; The New York Times    SpaceX Left Californi",
         "pace_multiplier": 1.0,
         "confidence_pct": 82,
         "confidence_level": "high",
         "_psv_diagnostic": {
-          "flow_total": 697.6450000000001,
+          "flow_total": 698.1450000000001,
           "tier": "DEVELOPING",
           "base_fraction": 0.08,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 0.9875,
-          "computed": 55.11
+          "computed": 55.15
         },
         "confidence_trace": "whale-flow+25 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
-        "claim": "$55.11B inflow tech",
+        "claim": "$55.15B inflow tech",
         "confidence": "82%",
         "source_label": "[CALC-EST]"
       },
@@ -11016,7 +11016,7 @@
         "tier": "MAX CONVICTION",
         "bias": "LONG",
         "asset_class": "tech",
-        "capital_at_stake": "$55.11B",
+        "capital_at_stake": "$55.15B",
         "rationale": "SpaceX IPO to mint 4,000 millionaires, cooks included &nbsp;&nbsp; The Next Web    SpaceX’s I.P.O. Could Turn 4,400 Employees Into Millionaires &nbsp;&nbsp; The New York Times    SpaceX Left Californi",
         "horizon": "24-72h",
         "action": "Position for tech long exposure. SpaceX IPO to mint 4,000 millionaires, cooks included &nbsp;&nbsp; The Next Web    SpaceX’s I.P.O. Could Turn 4,400 Employees Into Millionaires &nbsp;&nbsp; The New York Times    SpaceX Left Californi",
@@ -14133,22 +14133,22 @@
       "portfolio_implication": "SpaceX Leaves Some Banks Peeved at Junior Roles in IPO Lineup &nbsp;&nbsp; Bloomberg.com    SpaceX’s I.P.O. Could Turn 4,400 Employees Into Millionaires &nbsp;&nbsp; The New York Times    SpaceX Left ",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 55.7,
+        "amount_b": 55.74,
         "asset_class": "tech",
         "projected": "SpaceX Leaves Some Banks Peeved at Junior Roles in IPO Lineup &nbsp;&nbsp; Bloomberg.com    SpaceX’s I.P.O. Could Turn 4,400 Employees Into Millionaires &nbsp;&nbsp; The New York Times    SpaceX Left ",
         "pace_multiplier": 1.0,
         "confidence_pct": 82,
         "confidence_level": "high",
         "_psv_diagnostic": {
-          "flow_total": 697.6450000000001,
+          "flow_total": 698.1450000000001,
           "tier": "DEVELOPING",
           "base_fraction": 0.08,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 0.998,
-          "computed": 55.7
+          "computed": 55.74
         },
         "confidence_trace": "whale-flow+25 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
-        "claim": "$55.7B inflow tech",
+        "claim": "$55.74B inflow tech",
         "confidence": "82%",
         "source_label": "[CALC-EST]"
       },
@@ -14216,7 +14216,7 @@
         "tier": "MAX CONVICTION",
         "bias": "LONG",
         "asset_class": "tech",
-        "capital_at_stake": "$55.7B",
+        "capital_at_stake": "$55.74B",
         "rationale": "SpaceX Leaves Some Banks Peeved at Junior Roles in IPO Lineup &nbsp;&nbsp; Bloomberg.com    SpaceX’s I.P.O. Could Turn 4,400 Employees Into Millionaires &nbsp;&nbsp; The New York Times    SpaceX Left ",
         "horizon": "24-72h",
         "action": "Position for tech long exposure. SpaceX Leaves Some Banks Peeved at Junior Roles in IPO Lineup &nbsp;&nbsp; Bloomberg.com    SpaceX’s I.P.O. Could Turn 4,400 Employees Into Millionaires &nbsp;&nbsp; The New York Times    SpaceX Left ",
