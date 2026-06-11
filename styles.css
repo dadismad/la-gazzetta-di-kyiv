@@ -58,7 +58,7 @@ body {
   justify-content: space-between;
   padding: 8px 14px;
   background: #FFFFFF;
-  border-bottom: 1px solid var(--divider);
+  border-bottom: 2px solid #D4AF37;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -147,22 +147,27 @@ body {
   position: sticky;
   top: 56px;
   z-index: 99;
-  border-bottom: 1px solid rgba(212,175,55,0.3);
+  border-bottom: 2px solid #D4AF37;
 }
 .nav-dropdown { position: relative; }
 .nav-dropdown-trigger {
-  background: none;
-  border: none;
-  color: var(--gold);
+  background: #FFFFFF;
+  border: 1px solid #D4AF37;
+  color: #0F172A;
   font-family: var(--sans);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.12em;
-  padding: 10px 16px;
+  padding: 8px 14px;
   cursor: pointer;
-  transition: color 0.15s;
+  border-radius: 4px;
+  transition: all 0.15s;
 }
-.nav-dropdown-trigger:hover { color: #FFFFFF; }
+.nav-dropdown-trigger:hover {
+  background: #D4AF37;
+  color: #0F172A;
+  border-color: #D4AF37;
+}
 .nav-dd-arrow { font-size: 8px; margin-left: 3px; }
 .nav-dropdown.open .nav-dd-arrow { transform: rotate(180deg); display: inline-block; }
 .nav-dropdown-panel {
@@ -617,6 +622,9 @@ article.card:hover {
   border-color: var(--gold);
   box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 }
+article.card {
+  border-left: 2px solid #D4AF37;
+}
 article.card.lead {
   border-left: 3px solid var(--gold);
 }
@@ -728,6 +736,27 @@ a:hover, .nav-link:hover { color: var(--gold); }
 }
 
 .product-page .container-body { max-height: none !important; overflow: visible !important; }
+
+/* v26.1: Collapsible containers — collapse/expand on all screen sizes */
+.container.collapsible .container-header {
+  cursor: pointer;
+  user-select: none;
+}
+.container.collapsible .container-arrow {
+  transition: transform 0.2s;
+}
+.container.collapsible.expanded .container-arrow {
+  transform: rotate(180deg);
+}
+.container.collapsible:not(.expanded) .container-body {
+  max-height: 0 !important;
+  overflow: hidden !important;
+  opacity: 0;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
 
 /* v23.5: Hints lobby — 3-column Golden Ratio grid (φ=1.618 → 21%|61%|18%) */
 .hints-lobby {
@@ -1489,7 +1518,7 @@ tant; }
   color: var(--ink);
 }
 
-.intel-header { border-left: 3px solid #3B82F6;
+.intel-header { border-left: 3px solid #0F172A;
   margin-bottom: 28px;
 }
 .intel-meta {
@@ -2009,9 +2038,9 @@ display: -webkit-flex;
 .asset-badge.tech          { color: #0891B2; border-color: #0891B2; background: rgba(8,145,178,0.06); }
 
 /* ═══ v23.1: Intel vs Alpha global accent distinction ═══ */
-.intel-accent { color: #1E293B; border-left-color: #3B82F6; }
+.intel-accent { color: #0F172A; border-left-color: #0F172A; }
 .alpha-accent { color: #D4AF37; border-left-color: #D4AF37; }
-.layer-header.intel-header .layer-label { background: #1E293B; color: #E2E8F0; }
+.layer-header.intel-header .layer-label { background: #0F172A; color: #E2E8F0; }
 .layer-header.alpha-header .layer-desc { color: #D4AF37; }
 .alpha-header .layer-label { background: #D4AF37; color: #0F172A; font-family: 'JetBrains Mono', 'Roboto Mono', 'Courier New', monospace !important; }
 
@@ -2307,7 +2336,7 @@ display: -webkit-flex;
 
 /* INTEL accent: blue left border */
 .product-page[data-layer="intel"] .container {
-  border-left: 3px solid #3B82F6;
+  border-left: 3px solid #0F172A;
 }
 /* ALPHA accent: gold left border */
 .product-page[data-layer="alpha"] .container {
@@ -2338,7 +2367,7 @@ display: -webkit-flex;
   border-radius: 2px;
 }
 .product-page[data-layer="intel"] .container-subtitle {
-  background: #1E293B;
+  background: #0F172A;
   color: #E2E8F0;
 }
 .product-page[data-layer="alpha"] .container-subtitle {
@@ -2374,7 +2403,7 @@ display: -webkit-flex;
 .product-page .flow-row {
   background: #FFFFFF;
   border: 1px solid #E5E7EB;
-  border-left: 3px solid #3B82F6;
+  border-left: 3px solid #0F172A;
   border-radius: 4px;
   padding: 14px 16px;
   margin-bottom: 10px;
