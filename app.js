@@ -2238,7 +2238,9 @@ async function boot() {
 
     const el = byId('newsCol');
     if (el) {
-      all.forEach((s, i) => appendStoryCard(s, i === 0));
+      // Reverse iterate: afterbegin prepends, so reverse order = newest (lead) appears at top
+      const rev = [...all].reverse();
+      rev.forEach((s, i) => appendStoryCard(s, i === rev.length - 1));
     }
 
     // Triangulation AFTER cards are in DOM — with mutation observer fallback
@@ -2280,7 +2282,9 @@ async function boot() {
 
   const el2 = byId('newsCol');
   if (el2) {
-    all.forEach((s, i) => appendStoryCard(s, i === 0));
+    // Reverse iterate: afterbegin prepends, so reverse order = newest (lead) appears at top
+    const rev2 = [...all].reverse();
+    rev2.forEach((s, i) => appendStoryCard(s, i === rev2.length - 1));
     // v25.7: Hide loading skeleton after first cards render
     const skel = document.getElementById('storiesLoading');
     if (skel) skel.classList.add('hidden');
