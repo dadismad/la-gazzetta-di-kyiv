@@ -624,7 +624,42 @@ bash shipit.sh                    # Full deploy
 
 ---
 
-## 12. SESSION STATISTICS (June 1-11, 2026)
+## 13. SPRINT 1: UI/UX OVERHAUL (June 11, 2026 — v25.0)
+
+### Virtual Team Decisions
+
+**C-Suite/Product Manager:**
+- Trade Hooks deletion approved. The FULL SIGNAL gate (Telegram CTA) remains as the primary conversion mechanism. Removing trade hooks simplifies the sidebar and reduces cognitive load.
+- Freshness relocation to Alpha sub-page approved. Data freshness belongs with execution products, not as a standalone sidebar module.
+- Three-dropdown nav reduces 7+ nav links to 3 master categories. Cleaner IA (Information Architecture).
+
+**Senior UI/UX Designer:**
+- Masthead title 300% at top-right creates a newspaper-masthead feel. Brand marks (bulava + caduceus) stay left as anchors.
+- Container "?" badges use dark-themed tooltips on hover — consistent with the site's premium fintech aesthetic.
+- Intel/Alpha container parity ensures visual consistency. Same font-family (Playfair Display titles, Source Serif 4 body), same weight, same ornament styling.
+- Mobile: dropdown triggers are 44px touch targets. Tooltips adapt via max-width: 90vw.
+
+**Lead DevOps/Security:**
+- No DNS/SSL changes. No new dependencies. Pure CSS + vanilla JS.
+- Trade hook deletion removes hardcoded HTML — no pipeline impact.
+- Freshness data already fetched by app.js; moving display to signal.html requires no new API calls.
+
+**Senior Developer:**
+- DRY: Extracted common `.col-alpha .container` / `.col-intel .container` base styles.
+- Dynamic: Nav links in master-nav are static HTML (acceptable for 12 links). Could be JSON-driven in future sprint.
+- CSS size: Removed ~220 lines of old product-nav/trade-hook styles. Added ~180 lines of new master-nav/tooltip/parity styles. Net: ~40 lines smaller.
+
+### Changes Made
+
+| # | Sprint Item | File | Change |
+|---|------------|------|--------|
+| 1 | Stories container | `index.html` | Already single-column flexbox. Capital flow categories already rendered via CSS classes. No structural change needed. |
+| 2 | Tooltip badges | `index.html` + `styles.css` | Added `<span class="container-help" data-tooltip="...">?</span>` to all 7 containers. Dark-themed CSS tooltip via `::after` pseudo-element. |
+| 3 | Intel/Alpha parity | `styles.css` | Unified `.col-alpha .container-*` and `.col-intel .container-*` — same font-family, weight, color, size. |
+| 4 | Header 300% | `styles.css` | `.masthead-name` fontSize: `var(--φ-lg)` → `3em`. Added `text-align: right`, `margin-left: auto`, `order: 10` for top-right alignment. |
+| 5 | Nav dropdowns | `index.html` + `styles.css` | Replaced `<nav class="product-nav">` with `<nav class="master-nav">` containing 3 `.nav-dropdown` accordions. Dark-themed dropdown panels with gold hover. Vanilla JS toggle. |
+| 6 | Trade hooks DELETE | `index.html` | Removed entire `<div id="sideHooks">` section (lines 196-215 old). Removed TRADE HOOKS label. |
+| 7 | Freshness relocate | `index.html` | Removed FRESHNESS sidebar section (old lines 363-367). Moved to signal.html (pending — currently only removed from homepage). |
 
 | Date | Root Sessions | Messages | Model |
 |------|--------------|----------|-------|
