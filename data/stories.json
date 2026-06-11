@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-06-11T18:09:00.495708+00:00",
+  "generated_at": "2026-06-11T18:39:50.989128+00:00",
   "lead": {
-    "story_id": "n21_osint__reuters_business__why_these_3_analysts_say_oracle_s_post-earnings_stock_slump",
-    "headline": "Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity - Barron's",
+    "story_id": "n21_osint__reuters_business__medicare_advantage_plans_denied_prior_authorization_requests",
+    "headline": "Medicare Advantage plans denied prior authorization requests at unusually high rates, HHS report finds - NBC News",
     "sector": "tech",
     "pillar": "china_ascendancy",
     "paradigm_pillar": "china_ascendancy",
     "paradigm_implications": [
-      "Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity &nbsp;&nbsp; Barron's    Oracle shares tumble 11% on increased capital raise, cash concerns &nbsp;&nbsp; CNBC    Ora"
+      "Medicare Advantage plans denied prior authorization requests at unusually high rates, HHS report finds &nbsp;&nbsp; NBC News    Private Medicare Plans Often Deny Access to Rehab Care, Analysis Shows &"
     ],
-    "they_say": "Source: reuters_business. Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity &nbsp;&nbsp; Barron's    Oracle shares tumble 11% on increased capital raise, cash concerns &nbsp;&nbsp; CNBC    Oracle shares slide as hefty AI spending, debt plans spook investors &nbsp;&nbsp; Yahoo Finance    Orac",
-    "reality": "Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity &nbsp;&nbsp; Barron's    Oracle shares tumble 11% on increased capital raise, cash concerns &nbsp;&nbsp; CNBC    Oracle shares slide as hefty AI spending, debt plans spook investors &nbsp;&nbsp; Yahoo Finance    Orac",
-    "thesis": "OSINT draft #341: Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity - Barron's",
+    "they_say": "Source: reuters_business. Medicare Advantage plans denied prior authorization requests at unusually high rates, HHS report finds &nbsp;&nbsp; NBC News    Private Medicare Plans Often Deny Access to Rehab Care, Analysis Shows &nbsp;&nbsp; The New York Times    Seniors needed long-term care and rehab. Their private Medicare pl",
+    "reality": "Medicare Advantage plans denied prior authorization requests at unusually high rates, HHS report finds &nbsp;&nbsp; NBC News    Private Medicare Plans Often Deny Access to Rehab Care, Analysis Shows &nbsp;&nbsp; The New York Times    Seniors needed long-term care and rehab. Their private Medicare pl",
+    "thesis": "OSINT draft #358: Medicare Advantage plans denied prior authorization requests at unusually high rates, HHS report finds - NBC News",
     "actors": [],
     "horizon": "24-72h",
     "confidence": "low",
@@ -19,27 +19,26 @@
     "actionable_trade": "OSINT signal: NEUTRAL tech. Review before execution.",
     "contradiction_score": 75,
     "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
-    "portfolio_implication": "Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity &nbsp;&nbsp; Barron's    Oracle shares tumble 11% on increased capital raise, cash concerns &nbsp;&nbsp; CNBC    Ora",
+    "portfolio_implication": "Medicare Advantage plans denied prior authorization requests at unusually high rates, HHS report finds &nbsp;&nbsp; NBC News    Private Medicare Plans Often Deny Access to Rehab Care, Analysis Shows &",
     "capital_flow": {
       "direction": "inflow",
-      "amount_b": 9.0,
+      "amount_b": null,
       "asset_class": "tech",
-      "projected": "Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity &nbsp;&nbsp; Barron's    Oracle shares tumble 11% on increased capital raise, cash concerns &nbsp;&nbsp; CNBC    Ora",
+      "projected": "Medicare Advantage plans denied prior authorization requests at unusually high rates, HHS report finds &nbsp;&nbsp; NBC News    Private Medicare Plans Often Deny Access to Rehab Care, Analysis Shows &",
       "pace_multiplier": 1.0,
-      "confidence_pct": 72,
-      "confidence_level": "medium",
-      "confidence_trace": "mid-flow+15 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
-      "claim": "$9.0B inflow tech",
-      "confidence": "72%",
+      "confidence_pct": 59,
+      "confidence_level": "low",
+      "confidence_trace": "trace-flow+2 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
+      "claim": "inflow tech",
       "source_label": "[CALC-EST]"
     },
-    "capital_flow_implication": "OSINT draft #341. Source: reuters_business.",
+    "capital_flow_implication": "OSINT draft #358. Source: reuters_business.",
     "evidence": [
       "source: reuters_business",
-      "draft_id: 341"
+      "draft_id: 358"
     ],
     "source": "osint_reuters_business",
-    "generated_at": "2026-06-11T17:22:04.740613+00:00",
+    "generated_at": "2026-06-11T18:23:14.142131+00:00",
     "freshness": "breaking",
     "entity_tags": {
       "assets": [],
@@ -59,27 +58,29 @@
       ]
     },
     "impacted_flows": [
-      "flow_n21_osint__reuters_business__why_these_3_analysts_say_oracle_s_post-earnings_stock_slump"
+      "flow_n21_osint__reuters_business__medicare_advantage_plans_denied_prior_authorization_requests"
     ],
     "associated_positions": [],
     "multi_persona": {
       "c_suite": {
-        "headline": "Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity - Barron's",
-        "body": "Structural assessment: Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity &nbsp;&nbsp; Barron's    Oracle shares tumble 11% on increased capital raise, cash concerns &nbsp;&nbsp; CNBC    Oracle shares slide as hefty AI spending, debt plans ... Implicated assets: tech. Regions: global. Monitor for policy or supply-chain cascades.",
+        "headline": "Medicare Advantage plans denied prior authorization requests at unusually high rates, HHS report finds - NBC News",
+        "body": "Structural assessment: Medicare Advantage plans denied prior authorization requests at unusually high rates, HHS report finds &nbsp;&nbsp; NBC News    Private Medicare Plans Often Deny Access to Rehab Care, Analysis Shows &nbsp;&nbsp; The New York Times    Seniors needed l... Implicated assets: tech. Regions: USA. Monitor for policy or supply-chain cascades.",
         "implication": "Board-level: tech exposure review recommended. Directional bias: WATCH."
       },
       "quant": {
         "headline": "TECH signal: WATCH",
-        "body": "Raw telemetry — tech flow detected from Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity &nbsp;&nbsp; Barron's    Oracle shares tumble 11% on increased cap... Assets tagged: tech. Correlation regime: TBD. Watch vol surface for confirmation.",
+        "body": "Raw telemetry — tech flow detected from Medicare Advantage plans denied prior authorization requests at unusually high rates, HHS report finds &nbsp;&nbsp; NBC News    Private Medicare Plans... Assets tagged: tech. Correlation regime: TBD. Watch vol surface for confirmation.",
         "metrics": {
           "flow_direction": "neutral",
           "asset_class": "tech",
-          "geographies": []
+          "geographies": [
+            "USA"
+          ]
         }
       },
       "degen": {
         "headline": "🟡 WATCH tech",
-        "body": "Directional: WATCH. Asset: tech. Context: Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportun. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+        "body": "Directional: WATCH. Asset: tech. Context: Medicare Advantage plans denied prior authorization requests at unusually high r. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
         "signal": {
           "direction": "WATCH",
           "entry_zone": "awaiting review",
@@ -89,30 +90,1615 @@
         }
       }
     },
-    "conviction_probability": 94,
+    "conviction_probability": 89,
     "conviction_tier": "ALPHA",
     "strategic_recommendation": {
       "tier": "MAX CONVICTION",
       "bias": "LONG",
       "asset_class": "tech",
-      "capital_at_stake": "$9.0B",
-      "rationale": "Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity &nbsp;&nbsp; Barron's    Oracle shares tumble 11% on increased capital raise, cash concerns &nbsp;&nbsp; CNBC    Ora",
+      "capital_at_stake": "—",
+      "rationale": "Medicare Advantage plans denied prior authorization requests at unusually high rates, HHS report finds &nbsp;&nbsp; NBC News    Private Medicare Plans Often Deny Access to Rehab Care, Analysis Shows &",
       "horizon": "24-72h",
-      "action": "Position for tech long exposure. Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity &nbsp;&nbsp; Barron's    Oracle shares tumble 11% on increased capital raise, cash concerns &nbsp;&nbsp; CNBC    Ora",
+      "action": "Position for tech long exposure. Medicare Advantage plans denied prior authorization requests at unusually high rates, HHS report finds &nbsp;&nbsp; NBC News    Private Medicare Plans Often Deny Access to Rehab Care, Analysis Shows &",
       "gated": true
     },
-    "asymmetry_score": 37,
+    "asymmetry_score": 31,
     "asymmetry_tier": "LOW ASYMMETRY",
     "asymmetry_diagnostic": {
-      "sentiment": 0.72,
+      "sentiment": 0.59,
       "price_delta": -0.03,
       "price_change_pct": -0.15,
-      "formula": "ABS((0.72 - -0.03) * 50) = 37",
+      "formula": "ABS((0.59 - -0.03) * 50) = 31",
       "ticker": "QQQ",
       "ticker_price": 706.76
     }
   },
   "stories": [
+    {
+      "story_id": "n21_osint__reuters_business__barrett_says_scotus_liberals_rely_on_fictional_premise_in",
+      "headline": "Barrett Says SCOTUS Liberals Rely on ‘Fictional Premise’ in Their Dissent - Newsweek",
+      "sector": "tech",
+      "pillar": "eu_fragmentation",
+      "paradigm_pillar": "eu_fragmentation",
+      "paradigm_implications": [
+        "Barrett Says SCOTUS Liberals Rely on ‘Fictional Premise’ in Their Dissent &nbsp;&nbsp; Newsweek    Jackson accuses Barrett majority of turning ‘a deaf ear’ in legal interpretation &nbsp;&nbsp; MS NOW "
+      ],
+      "they_say": "Source: reuters_business. Barrett Says SCOTUS Liberals Rely on ‘Fictional Premise’ in Their Dissent &nbsp;&nbsp; Newsweek    Jackson accuses Barrett majority of turning ‘a deaf ear’ in legal interpretation &nbsp;&nbsp; MS NOW    Supreme Court rules against private suits brought under key securities law &nbsp;&nbsp; CNBC    U",
+      "reality": "Barrett Says SCOTUS Liberals Rely on ‘Fictional Premise’ in Their Dissent &nbsp;&nbsp; Newsweek    Jackson accuses Barrett majority of turning ‘a deaf ear’ in legal interpretation &nbsp;&nbsp; MS NOW    Supreme Court rules against private suits brought under key securities law &nbsp;&nbsp; CNBC    U",
+      "thesis": "OSINT draft #359: Barrett Says SCOTUS Liberals Rely on ‘Fictional Premise’ in Their Dissent - Newsweek",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: INFLOW tech. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Barrett Says SCOTUS Liberals Rely on ‘Fictional Premise’ in Their Dissent &nbsp;&nbsp; Newsweek    Jackson accuses Barrett majority of turning ‘a deaf ear’ in legal interpretation &nbsp;&nbsp; MS NOW ",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": null,
+        "asset_class": "tech",
+        "projected": "Barrett Says SCOTUS Liberals Rely on ‘Fictional Premise’ in Their Dissent &nbsp;&nbsp; Newsweek    Jackson accuses Barrett majority of turning ‘a deaf ear’ in legal interpretation &nbsp;&nbsp; MS NOW ",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 59,
+        "confidence_level": "low",
+        "confidence_trace": "trace-flow+2 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
+        "claim": "inflow tech",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #359. Source: reuters_business.",
+      "evidence": [
+        "source: reuters_business",
+        "draft_id: 359"
+      ],
+      "source": "osint_reuters_business",
+      "generated_at": "2026-06-11T18:23:14.142010+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__reuters_business__barrett_says_scotus_liberals_rely_on_fictional_premise_in"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Barrett Says SCOTUS Liberals Rely on ‘Fictional Premise’ in Their Dissent - Newsweek",
+          "body": "Structural assessment: Barrett Says SCOTUS Liberals Rely on ‘Fictional Premise’ in Their Dissent &nbsp;&nbsp; Newsweek    Jackson accuses Barrett majority of turning ‘a deaf ear’ in legal interpretation &nbsp;&nbsp; MS NOW    Supreme Court rules against private suits broug... Implicated assets: tech. Regions: EU. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: tech exposure review recommended. Directional bias: LONG."
+        },
+        "quant": {
+          "headline": "TECH signal: LONG",
+          "body": "Raw telemetry — tech flow detected from Barrett Says SCOTUS Liberals Rely on ‘Fictional Premise’ in Their Dissent &nbsp;&nbsp; Newsweek    Jackson accuses Barrett majority of turning ‘a deaf... Assets tagged: tech. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "inflow",
+            "asset_class": "tech",
+            "geographies": [
+              "EU"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG tech",
+          "body": "Directional: LONG. Asset: tech. Context: Barrett Says SCOTUS Liberals Rely on ‘Fictional Premise’ in Their Dissent - News. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "LONG",
+        "asset_class": "tech",
+        "capital_at_stake": "—",
+        "rationale": "Barrett Says SCOTUS Liberals Rely on ‘Fictional Premise’ in Their Dissent &nbsp;&nbsp; Newsweek    Jackson accuses Barrett majority of turning ‘a deaf ear’ in legal interpretation &nbsp;&nbsp; MS NOW ",
+        "horizon": "24-72h",
+        "action": "Position for tech long exposure. Barrett Says SCOTUS Liberals Rely on ‘Fictional Premise’ in Their Dissent &nbsp;&nbsp; Newsweek    Jackson accuses Barrett majority of turning ‘a deaf ear’ in legal interpretation &nbsp;&nbsp; MS NOW ",
+        "gated": true
+      },
+      "asymmetry_score": 31,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "asymmetry_diagnostic": {
+        "sentiment": 0.59,
+        "price_delta": -0.03,
+        "price_change_pct": -0.15,
+        "formula": "ABS((0.59 - -0.03) * 50) = 31",
+        "ticker": "QQQ",
+        "ticker_price": 706.76
+      }
+    },
+    {
+      "story_id": "n21_osint__reuters_business__19_things_to_know_about_gwynne_shotwell_spacex_s_president",
+      "headline": "19 Things to Know About Gwynne Shotwell, SpaceX’s President - WSJ",
+      "sector": "equities",
+      "pillar": "abundance_tech",
+      "paradigm_pillar": "abundance_tech",
+      "paradigm_implications": [
+        "19 Things to Know About Gwynne Shotwell, SpaceX’s President &nbsp;&nbsp; WSJ    The Steady Hand at SpaceX Is Not Elon Musk &nbsp;&nbsp; The New York Times    How this top SpaceX executive brings Elon "
+      ],
+      "they_say": "Source: reuters_business. 19 Things to Know About Gwynne Shotwell, SpaceX’s President &nbsp;&nbsp; WSJ    The Steady Hand at SpaceX Is Not Elon Musk &nbsp;&nbsp; The New York Times    How this top SpaceX executive brings Elon Musk's wildest dreams to life &nbsp;&nbsp; Yahoo Finance    Gwynne Shotwell, the 'glue' executing Mu",
+      "reality": "19 Things to Know About Gwynne Shotwell, SpaceX’s President &nbsp;&nbsp; WSJ    The Steady Hand at SpaceX Is Not Elon Musk &nbsp;&nbsp; The New York Times    How this top SpaceX executive brings Elon Musk's wildest dreams to life &nbsp;&nbsp; Yahoo Finance    Gwynne Shotwell, the 'glue' executing Mu",
+      "thesis": "OSINT draft #360: 19 Things to Know About Gwynne Shotwell, SpaceX’s President - WSJ",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL equities. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "19 Things to Know About Gwynne Shotwell, SpaceX’s President &nbsp;&nbsp; WSJ    The Steady Hand at SpaceX Is Not Elon Musk &nbsp;&nbsp; The New York Times    How this top SpaceX executive brings Elon ",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 14.8,
+        "asset_class": "equities",
+        "projected": "19 Things to Know About Gwynne Shotwell, SpaceX’s President &nbsp;&nbsp; WSJ    The Steady Hand at SpaceX Is Not Elon Musk &nbsp;&nbsp; The New York Times    How this top SpaceX executive brings Elon ",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 77,
+        "confidence_level": "medium",
+        "confidence_trace": "large-flow+20 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
+        "claim": "$14.8B inflow equities",
+        "confidence": "77%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #360. Source: reuters_business.",
+      "evidence": [
+        "source: reuters_business",
+        "draft_id: 360"
+      ],
+      "source": "osint_reuters_business",
+      "generated_at": "2026-06-11T18:23:14.141883+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__reuters_business__19_things_to_know_about_gwynne_shotwell_spacex_s_president"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "19 Things to Know About Gwynne Shotwell, SpaceX’s President - WSJ",
+          "body": "Structural assessment: 19 Things to Know About Gwynne Shotwell, SpaceX’s President &nbsp;&nbsp; WSJ    The Steady Hand at SpaceX Is Not Elon Musk &nbsp;&nbsp; The New York Times    How this top SpaceX executive brings Elon Musk's wildest dreams to life &nbsp;&nbsp; Yahoo F... Implicated assets: equities. Regions: EU. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: equities exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "EQUITIES signal: WATCH",
+          "body": "Raw telemetry — equities flow detected from 19 Things to Know About Gwynne Shotwell, SpaceX’s President &nbsp;&nbsp; WSJ    The Steady Hand at SpaceX Is Not Elon Musk &nbsp;&nbsp; The New York T... Assets tagged: equities. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "equities",
+            "geographies": [
+              "EU"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH equities",
+          "body": "Directional: WATCH. Asset: equities. Context: 19 Things to Know About Gwynne Shotwell, SpaceX’s President - WSJ. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 94,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "LONG",
+        "asset_class": "equities",
+        "capital_at_stake": "$14.8B",
+        "rationale": "19 Things to Know About Gwynne Shotwell, SpaceX’s President &nbsp;&nbsp; WSJ    The Steady Hand at SpaceX Is Not Elon Musk &nbsp;&nbsp; The New York Times    How this top SpaceX executive brings Elon ",
+        "horizon": "24-72h",
+        "action": "Position for equities long exposure. 19 Things to Know About Gwynne Shotwell, SpaceX’s President &nbsp;&nbsp; WSJ    The Steady Hand at SpaceX Is Not Elon Musk &nbsp;&nbsp; The New York Times    How this top SpaceX executive brings Elon ",
+        "gated": true
+      },
+      "asymmetry_score": 41,
+      "asymmetry_tier": "MODERATE",
+      "asymmetry_diagnostic": {
+        "sentiment": 0.77,
+        "price_delta": -0.046,
+        "price_change_pct": -0.23,
+        "formula": "ABS((0.77 - -0.05) * 50) = 41",
+        "ticker": "SPY",
+        "ticker_price": 735.35
+      }
+    },
+    {
+      "story_id": "n21_osint__reuters_business__china_is_quietly_keeping_world_oil_prices_lower_-_newser",
+      "headline": "China Is Quietly Keeping World Oil Prices Lower - Newser",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "China Is Quietly Keeping World Oil Prices Lower &nbsp;&nbsp; Newser    China learns to live on less fuel, to the relief of oil markets &nbsp;&nbsp; Reuters    China Is Propping Up the World Economy by"
+      ],
+      "they_say": "Source: reuters_business. China Is Quietly Keeping World Oil Prices Lower &nbsp;&nbsp; Newser    China learns to live on less fuel, to the relief of oil markets &nbsp;&nbsp; Reuters    China Is Propping Up the World Economy by Importing a Lot Less Oil &nbsp;&nbsp; WSJ    China's 8-year low oil imports cushion Iran war shock ",
+      "reality": "China Is Quietly Keeping World Oil Prices Lower &nbsp;&nbsp; Newser    China learns to live on less fuel, to the relief of oil markets &nbsp;&nbsp; Reuters    China Is Propping Up the World Economy by Importing a Lot Less Oil &nbsp;&nbsp; WSJ    China's 8-year low oil imports cushion Iran war shock ",
+      "thesis": "OSINT draft #361: China Is Quietly Keeping World Oil Prices Lower - Newser",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL commodities. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "China Is Quietly Keeping World Oil Prices Lower &nbsp;&nbsp; Newser    China learns to live on less fuel, to the relief of oil markets &nbsp;&nbsp; Reuters    China Is Propping Up the World Economy by",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": null,
+        "asset_class": "commodities",
+        "projected": "China Is Quietly Keeping World Oil Prices Lower &nbsp;&nbsp; Newser    China learns to live on less fuel, to the relief of oil markets &nbsp;&nbsp; Reuters    China Is Propping Up the World Economy by",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 59,
+        "confidence_level": "low",
+        "confidence_trace": "trace-flow+2 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
+        "claim": "inflow commodities",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #361. Source: reuters_business.",
+      "evidence": [
+        "source: reuters_business",
+        "draft_id: 361"
+      ],
+      "source": "osint_reuters_business",
+      "generated_at": "2026-06-11T18:23:14.141758+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__reuters_business__china_is_quietly_keeping_world_oil_prices_lower_-_newser"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "China Is Quietly Keeping World Oil Prices Lower - Newser",
+          "body": "Structural assessment: China Is Quietly Keeping World Oil Prices Lower &nbsp;&nbsp; Newser    China learns to live on less fuel, to the relief of oil markets &nbsp;&nbsp; Reuters    China Is Propping Up the World Economy by Importing a Lot Less Oil &nbsp;&nbsp; WSJ    Chin... Implicated assets: WTI. Regions: China, EU, Iran. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: commodities exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "COMMODITIES signal: WATCH",
+          "body": "Raw telemetry — commodities flow detected from China Is Quietly Keeping World Oil Prices Lower &nbsp;&nbsp; Newser    China learns to live on less fuel, to the relief of oil markets &nbsp;&nbsp; Re... Assets tagged: WTI. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "commodities",
+            "geographies": [
+              "China",
+              "EU",
+              "Iran"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH WTI",
+          "body": "Directional: WATCH. Asset: WTI. Context: China Is Quietly Keeping World Oil Prices Lower - Newser. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "LONG",
+        "asset_class": "commodities",
+        "capital_at_stake": "—",
+        "rationale": "China Is Quietly Keeping World Oil Prices Lower &nbsp;&nbsp; Newser    China learns to live on less fuel, to the relief of oil markets &nbsp;&nbsp; Reuters    China Is Propping Up the World Economy by",
+        "horizon": "24-72h",
+        "action": "Position for commodities long exposure. China Is Quietly Keeping World Oil Prices Lower &nbsp;&nbsp; Newser    China learns to live on less fuel, to the relief of oil markets &nbsp;&nbsp; Reuters    China Is Propping Up the World Economy by",
+        "gated": true
+      },
+      "asymmetry_score": 9,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "asymmetry_diagnostic": {
+        "sentiment": 0.59,
+        "price_delta": 0.4,
+        "price_change_pct": 2.12,
+        "formula": "ABS((0.59 - 0.40) * 50) = 9",
+        "ticker": "CL=F",
+        "ticker_price": 90.07
+      }
+    },
+    {
+      "story_id": "n21_osint__reuters_business__prometheus_jeff_bezos_ai_startup_is_now_worth_41_billion",
+      "headline": "Prometheus, Jeff Bezos' AI startup, is now worth $41 billion - Axios",
+      "sector": "crypto",
+      "pillar": "china_ascendancy",
+      "paradigm_pillar": "china_ascendancy",
+      "paradigm_implications": [
+        "Prometheus, Jeff Bezos' AI startup, is now worth $41 billion &nbsp;&nbsp; Axios    Jeff Bezos Wants to Build an ‘Artificial General Engineer’ &nbsp;&nbsp; The New York Times    Bezos Bats Down AI Job "
+      ],
+      "they_say": "Source: reuters_business. Prometheus, Jeff Bezos' AI startup, is now worth $41 billion &nbsp;&nbsp; Axios    Jeff Bezos Wants to Build an ‘Artificial General Engineer’ &nbsp;&nbsp; The New York Times    Bezos Bats Down AI Job Loss Fears While Launching New Venture &nbsp;&nbsp; WSJ    Bezos opens up about AI startup Prometheu",
+      "reality": "Prometheus, Jeff Bezos' AI startup, is now worth $41 billion &nbsp;&nbsp; Axios    Jeff Bezos Wants to Build an ‘Artificial General Engineer’ &nbsp;&nbsp; The New York Times    Bezos Bats Down AI Job Loss Fears While Launching New Venture &nbsp;&nbsp; WSJ    Bezos opens up about AI startup Prometheu",
+      "thesis": "OSINT draft #362: Prometheus, Jeff Bezos' AI startup, is now worth $41 billion - Axios",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: OUTFLOW crypto. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Prometheus, Jeff Bezos' AI startup, is now worth $41 billion &nbsp;&nbsp; Axios    Jeff Bezos Wants to Build an ‘Artificial General Engineer’ &nbsp;&nbsp; The New York Times    Bezos Bats Down AI Job ",
+      "capital_flow": {
+        "direction": "outflow",
+        "amount_b": 41.0,
+        "asset_class": "crypto",
+        "projected": "Prometheus, Jeff Bezos' AI startup, is now worth $41 billion &nbsp;&nbsp; Axios    Jeff Bezos Wants to Build an ‘Artificial General Engineer’ &nbsp;&nbsp; The New York Times    Bezos Bats Down AI Job ",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 77,
+        "confidence_level": "medium",
+        "confidence_trace": "whale-flow+25 > flat-pace+2 > distributing+10 > high-contradiction+10 > generic-source+5",
+        "claim": "$41.0B outflow crypto",
+        "confidence": "77%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #362. Source: reuters_business.",
+      "evidence": [
+        "source: reuters_business",
+        "draft_id: 362"
+      ],
+      "source": "osint_reuters_business",
+      "generated_at": "2026-06-11T18:23:14.141415+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__reuters_business__prometheus_jeff_bezos_ai_startup_is_now_worth_41_billion"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Prometheus, Jeff Bezos' AI startup, is now worth $41 billion - Axios",
+          "body": "Structural assessment: Prometheus, Jeff Bezos' AI startup, is now worth $41 billion &nbsp;&nbsp; Axios    Jeff Bezos Wants to Build an ‘Artificial General Engineer’ &nbsp;&nbsp; The New York Times    Bezos Bats Down AI Job Loss Fears While Launching New Venture &nbsp;&nbsp... Implicated assets: ETH, XAU. Regions: EU, Italy. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: crypto exposure review recommended. Directional bias: SHORT."
+        },
+        "quant": {
+          "headline": "CRYPTO signal: SHORT",
+          "body": "Raw telemetry — crypto flow detected from Prometheus, Jeff Bezos' AI startup, is now worth $41 billion &nbsp;&nbsp; Axios    Jeff Bezos Wants to Build an ‘Artificial General Engineer’ &nbsp;&n... Assets tagged: ETH, XAU. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "outflow",
+            "asset_class": "crypto",
+            "geographies": [
+              "EU",
+              "Italy"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🔴 SHORT ETH, XAU",
+          "body": "Directional: SHORT. Asset: ETH, XAU. Context: Prometheus, Jeff Bezos' AI startup, is now worth $41 billion - Axios. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "SHORT",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 94,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "SHORT",
+        "asset_class": "crypto",
+        "capital_at_stake": "$41.0B",
+        "rationale": "Prometheus, Jeff Bezos' AI startup, is now worth $41 billion &nbsp;&nbsp; Axios    Jeff Bezos Wants to Build an ‘Artificial General Engineer’ &nbsp;&nbsp; The New York Times    Bezos Bats Down AI Job ",
+        "horizon": "24-72h",
+        "action": "Position for crypto short exposure. Prometheus, Jeff Bezos' AI startup, is now worth $41 billion &nbsp;&nbsp; Axios    Jeff Bezos Wants to Build an ‘Artificial General Engineer’ &nbsp;&nbsp; The New York Times    Bezos Bats Down AI Job ",
+        "gated": true
+      },
+      "asymmetry_score": 42,
+      "asymmetry_tier": "MODERATE",
+      "asymmetry_diagnostic": {
+        "sentiment": -0.77,
+        "price_delta": 0.076,
+        "price_change_pct": 0.38,
+        "formula": "ABS((-0.77 - 0.08) * 50) = 42",
+        "ticker": "BTC-USD",
+        "ticker_price": 61875.98
+      }
+    },
+    {
+      "story_id": "n21_osint__reuters_business__musk_to_pitch_terafab_semiconductor_factory_to_asml_ahead_of",
+      "headline": "Musk To Pitch Terafab Semiconductor Factory To ASML Ahead Of SpaceX IPO - Investor's Business Daily",
+      "sector": "tech",
+      "pillar": "abundance_tech",
+      "paradigm_pillar": "abundance_tech",
+      "paradigm_implications": [
+        "Musk To Pitch Terafab Semiconductor Factory To ASML Ahead Of SpaceX IPO &nbsp;&nbsp; Investor's Business Daily    Ahead of SpaceX IPO, Elon Musk addresses ASML employees as part of push into chip manu"
+      ],
+      "they_say": "Source: reuters_business. Musk To Pitch Terafab Semiconductor Factory To ASML Ahead Of SpaceX IPO &nbsp;&nbsp; Investor's Business Daily    Ahead of SpaceX IPO, Elon Musk addresses ASML employees as part of push into chip manufacturing &nbsp;&nbsp; CNBC    Musk to speak at chip tool giant ASML event ahead of SpaceX IPO &nbsp",
+      "reality": "Musk To Pitch Terafab Semiconductor Factory To ASML Ahead Of SpaceX IPO &nbsp;&nbsp; Investor's Business Daily    Ahead of SpaceX IPO, Elon Musk addresses ASML employees as part of push into chip manufacturing &nbsp;&nbsp; CNBC    Musk to speak at chip tool giant ASML event ahead of SpaceX IPO &nbsp",
+      "thesis": "OSINT draft #363: Musk To Pitch Terafab Semiconductor Factory To ASML Ahead Of SpaceX IPO - Investor's Business Daily",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL tech. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Musk To Pitch Terafab Semiconductor Factory To ASML Ahead Of SpaceX IPO &nbsp;&nbsp; Investor's Business Daily    Ahead of SpaceX IPO, Elon Musk addresses ASML employees as part of push into chip manu",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 9.3,
+        "asset_class": "tech",
+        "projected": "Musk To Pitch Terafab Semiconductor Factory To ASML Ahead Of SpaceX IPO &nbsp;&nbsp; Investor's Business Daily    Ahead of SpaceX IPO, Elon Musk addresses ASML employees as part of push into chip manu",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 72,
+        "confidence_level": "medium",
+        "confidence_trace": "mid-flow+15 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
+        "claim": "$9.3B inflow tech",
+        "confidence": "72%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #363. Source: reuters_business.",
+      "evidence": [
+        "source: reuters_business",
+        "draft_id: 363"
+      ],
+      "source": "osint_reuters_business",
+      "generated_at": "2026-06-11T18:23:14.141072+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__reuters_business__musk_to_pitch_terafab_semiconductor_factory_to_asml_ahead_of"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Musk To Pitch Terafab Semiconductor Factory To ASML Ahead Of SpaceX IPO - Investor's Business Daily",
+          "body": "Structural assessment: Musk To Pitch Terafab Semiconductor Factory To ASML Ahead Of SpaceX IPO &nbsp;&nbsp; Investor's Business Daily    Ahead of SpaceX IPO, Elon Musk addresses ASML employees as part of push into chip manufacturing &nbsp;&nbsp; CNBC    Musk to speak at ch... Implicated assets: tech. Regions: Canada, EU. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: tech exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "TECH signal: WATCH",
+          "body": "Raw telemetry — tech flow detected from Musk To Pitch Terafab Semiconductor Factory To ASML Ahead Of SpaceX IPO &nbsp;&nbsp; Investor's Business Daily    Ahead of SpaceX IPO, Elon Musk addre... Assets tagged: tech. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "tech",
+            "geographies": [
+              "Canada",
+              "EU"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH tech",
+          "body": "Directional: WATCH. Asset: tech. Context: Musk To Pitch Terafab Semiconductor Factory To ASML Ahead Of SpaceX IPO - Invest. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 94,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "LONG",
+        "asset_class": "tech",
+        "capital_at_stake": "$9.3B",
+        "rationale": "Musk To Pitch Terafab Semiconductor Factory To ASML Ahead Of SpaceX IPO &nbsp;&nbsp; Investor's Business Daily    Ahead of SpaceX IPO, Elon Musk addresses ASML employees as part of push into chip manu",
+        "horizon": "24-72h",
+        "action": "Position for tech long exposure. Musk To Pitch Terafab Semiconductor Factory To ASML Ahead Of SpaceX IPO &nbsp;&nbsp; Investor's Business Daily    Ahead of SpaceX IPO, Elon Musk addresses ASML employees as part of push into chip manu",
+        "gated": true
+      },
+      "asymmetry_score": 37,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "asymmetry_diagnostic": {
+        "sentiment": 0.72,
+        "price_delta": -0.03,
+        "price_change_pct": -0.15,
+        "formula": "ABS((0.72 - -0.03) * 50) = 37",
+        "ticker": "QQQ",
+        "ticker_price": 706.76
+      }
+    },
+    {
+      "story_id": "n21_osint__reuters_business__social_security_announces_important_deadline_again_-_al_com",
+      "headline": "Social Security announces important deadline…again - AL.com",
+      "sector": "tech",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Social Security announces important deadline…again &nbsp;&nbsp; AL.com    Social Security benefits continue move to 100% electronic payments &nbsp;&nbsp; USA Today    Social Security requiring paper c"
+      ],
+      "they_say": "Source: reuters_business. Social Security announces important deadline…again &nbsp;&nbsp; AL.com    Social Security benefits continue move to 100% electronic payments &nbsp;&nbsp; USA Today    Social Security requiring paper check recipients to move to electronic payments &nbsp;&nbsp; KATU    This Social Security shift could",
+      "reality": "Social Security announces important deadline…again &nbsp;&nbsp; AL.com    Social Security benefits continue move to 100% electronic payments &nbsp;&nbsp; USA Today    Social Security requiring paper check recipients to move to electronic payments &nbsp;&nbsp; KATU    This Social Security shift could",
+      "thesis": "OSINT draft #364: Social Security announces important deadline…again - AL.com",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: INFLOW tech. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Social Security announces important deadline…again &nbsp;&nbsp; AL.com    Social Security benefits continue move to 100% electronic payments &nbsp;&nbsp; USA Today    Social Security requiring paper c",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": null,
+        "asset_class": "tech",
+        "projected": "Social Security announces important deadline…again &nbsp;&nbsp; AL.com    Social Security benefits continue move to 100% electronic payments &nbsp;&nbsp; USA Today    Social Security requiring paper c",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 59,
+        "confidence_level": "low",
+        "confidence_trace": "trace-flow+2 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
+        "claim": "inflow tech",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #364. Source: reuters_business.",
+      "evidence": [
+        "source: reuters_business",
+        "draft_id: 364"
+      ],
+      "source": "osint_reuters_business",
+      "generated_at": "2026-06-11T18:23:14.140370+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__reuters_business__social_security_announces_important_deadline_again_-_al_com"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Social Security announces important deadline…again - AL.com",
+          "body": "Structural assessment: Social Security announces important deadline…again &nbsp;&nbsp; AL.com    Social Security benefits continue move to 100% electronic payments &nbsp;&nbsp; USA Today    Social Security requiring paper check recipients to move to electronic payments &nb... Implicated assets: tech. Regions: USA. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: tech exposure review recommended. Directional bias: LONG."
+        },
+        "quant": {
+          "headline": "TECH signal: LONG",
+          "body": "Raw telemetry — tech flow detected from Social Security announces important deadline…again &nbsp;&nbsp; AL.com    Social Security benefits continue move to 100% electronic payments &nbsp;&nb... Assets tagged: tech. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "inflow",
+            "asset_class": "tech",
+            "geographies": [
+              "USA"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG tech",
+          "body": "Directional: LONG. Asset: tech. Context: Social Security announces important deadline…again - AL.com. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "LONG",
+        "asset_class": "tech",
+        "capital_at_stake": "—",
+        "rationale": "Social Security announces important deadline…again &nbsp;&nbsp; AL.com    Social Security benefits continue move to 100% electronic payments &nbsp;&nbsp; USA Today    Social Security requiring paper c",
+        "horizon": "24-72h",
+        "action": "Position for tech long exposure. Social Security announces important deadline…again &nbsp;&nbsp; AL.com    Social Security benefits continue move to 100% electronic payments &nbsp;&nbsp; USA Today    Social Security requiring paper c",
+        "gated": true
+      },
+      "asymmetry_score": 31,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "asymmetry_diagnostic": {
+        "sentiment": 0.59,
+        "price_delta": -0.03,
+        "price_change_pct": -0.15,
+        "formula": "ABS((0.59 - -0.03) * 50) = 31",
+        "ticker": "QQQ",
+        "ticker_price": 706.76
+      }
+    },
+    {
+      "story_id": "n21_osint__reuters_business__the_rise_of_the_botsitters_-_business_insider",
+      "headline": "The Rise of the 'Botsitters' - Business Insider",
+      "sector": "tech",
+      "pillar": "china_ascendancy",
+      "paradigm_pillar": "china_ascendancy",
+      "paradigm_implications": [
+        "The Rise of the 'Botsitters' &nbsp;&nbsp; Business Insider    AI and the productivity paradox &nbsp;&nbsp; Financial Times    Brit workers waste nearly six hours a week 'botsitting' &nbsp;&nbsp; The R"
+      ],
+      "they_say": "Source: reuters_business. The Rise of the 'Botsitters' &nbsp;&nbsp; Business Insider    AI and the productivity paradox &nbsp;&nbsp; Financial Times    Brit workers waste nearly six hours a week 'botsitting' &nbsp;&nbsp; The Register    Everyone’s Using AI at Work. So Why Isn’t Performance Improving? &nbsp;&nbsp; inc.com    ",
+      "reality": "The Rise of the 'Botsitters' &nbsp;&nbsp; Business Insider    AI and the productivity paradox &nbsp;&nbsp; Financial Times    Brit workers waste nearly six hours a week 'botsitting' &nbsp;&nbsp; The Register    Everyone’s Using AI at Work. So Why Isn’t Performance Improving? &nbsp;&nbsp; inc.com    ",
+      "thesis": "OSINT draft #365: The Rise of the 'Botsitters' - Business Insider",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: INFLOW tech. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "The Rise of the 'Botsitters' &nbsp;&nbsp; Business Insider    AI and the productivity paradox &nbsp;&nbsp; Financial Times    Brit workers waste nearly six hours a week 'botsitting' &nbsp;&nbsp; The R",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": null,
+        "asset_class": "tech",
+        "projected": "The Rise of the 'Botsitters' &nbsp;&nbsp; Business Insider    AI and the productivity paradox &nbsp;&nbsp; Financial Times    Brit workers waste nearly six hours a week 'botsitting' &nbsp;&nbsp; The R",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 59,
+        "confidence_level": "low",
+        "confidence_trace": "trace-flow+2 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
+        "claim": "inflow tech",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #365. Source: reuters_business.",
+      "evidence": [
+        "source: reuters_business",
+        "draft_id: 365"
+      ],
+      "source": "osint_reuters_business",
+      "generated_at": "2026-06-11T18:23:14.139886+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__reuters_business__the_rise_of_the_botsitters_-_business_insider"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "The Rise of the 'Botsitters' - Business Insider",
+          "body": "Structural assessment: The Rise of the 'Botsitters' &nbsp;&nbsp; Business Insider    AI and the productivity paradox &nbsp;&nbsp; Financial Times    Brit workers waste nearly six hours a week 'botsitting' &nbsp;&nbsp; The Register    Everyone’s Using AI at Work. So Why Isn... Implicated assets: tech. Regions: global. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: tech exposure review recommended. Directional bias: LONG."
+        },
+        "quant": {
+          "headline": "TECH signal: LONG",
+          "body": "Raw telemetry — tech flow detected from The Rise of the 'Botsitters' &nbsp;&nbsp; Business Insider    AI and the productivity paradox &nbsp;&nbsp; Financial Times    Brit workers waste nearl... Assets tagged: tech. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "inflow",
+            "asset_class": "tech",
+            "geographies": []
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG tech",
+          "body": "Directional: LONG. Asset: tech. Context: The Rise of the 'Botsitters' - Business Insider. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "LONG",
+        "asset_class": "tech",
+        "capital_at_stake": "—",
+        "rationale": "The Rise of the 'Botsitters' &nbsp;&nbsp; Business Insider    AI and the productivity paradox &nbsp;&nbsp; Financial Times    Brit workers waste nearly six hours a week 'botsitting' &nbsp;&nbsp; The R",
+        "horizon": "24-72h",
+        "action": "Position for tech long exposure. The Rise of the 'Botsitters' &nbsp;&nbsp; Business Insider    AI and the productivity paradox &nbsp;&nbsp; Financial Times    Brit workers waste nearly six hours a week 'botsitting' &nbsp;&nbsp; The R",
+        "gated": true
+      },
+      "asymmetry_score": 31,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "asymmetry_diagnostic": {
+        "sentiment": 0.59,
+        "price_delta": -0.03,
+        "price_change_pct": -0.15,
+        "formula": "ABS((0.59 - -0.03) * 50) = 31",
+        "ticker": "QQQ",
+        "ticker_price": 706.76
+      }
+    },
+    {
+      "story_id": "n21_osint__reuters_business__here_are_biopharma_s_10_highest-paid_scientists_and_doctors",
+      "headline": "Here are biopharma’s 10 highest-paid scientists and doctors for 2025 - Endpoints News",
+      "sector": "tech",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Here are biopharma’s 10 highest-paid scientists and doctors for 2025 &nbsp;&nbsp; Endpoints News    Who pays the best (and worst) in biopharma? A look at typical employee salaries &nbsp;&nbsp; Endpoin"
+      ],
+      "they_say": "Source: reuters_business. Here are biopharma’s 10 highest-paid scientists and doctors for 2025 &nbsp;&nbsp; Endpoints News    Who pays the best (and worst) in biopharma? A look at typical employee salaries &nbsp;&nbsp; Endpoints News    The 25 highest-paid CEOs in biopharma for 2025 with $25M+ paydays &nbsp;&nbsp; Endpoints ",
+      "reality": "Here are biopharma’s 10 highest-paid scientists and doctors for 2025 &nbsp;&nbsp; Endpoints News    Who pays the best (and worst) in biopharma? A look at typical employee salaries &nbsp;&nbsp; Endpoints News    The 25 highest-paid CEOs in biopharma for 2025 with $25M+ paydays &nbsp;&nbsp; Endpoints ",
+      "thesis": "OSINT draft #366: Here are biopharma’s 10 highest-paid scientists and doctors for 2025 - Endpoints News",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL tech. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Here are biopharma’s 10 highest-paid scientists and doctors for 2025 &nbsp;&nbsp; Endpoints News    Who pays the best (and worst) in biopharma? A look at typical employee salaries &nbsp;&nbsp; Endpoin",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": null,
+        "asset_class": "tech",
+        "projected": "Here are biopharma’s 10 highest-paid scientists and doctors for 2025 &nbsp;&nbsp; Endpoints News    Who pays the best (and worst) in biopharma? A look at typical employee salaries &nbsp;&nbsp; Endpoin",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 59,
+        "confidence_level": "low",
+        "confidence_trace": "trace-flow+2 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
+        "claim": "inflow tech",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #366. Source: reuters_business.",
+      "evidence": [
+        "source: reuters_business",
+        "draft_id: 366"
+      ],
+      "source": "osint_reuters_business",
+      "generated_at": "2026-06-11T18:23:14.139754+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__reuters_business__here_are_biopharma_s_10_highest-paid_scientists_and_doctors"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Here are biopharma’s 10 highest-paid scientists and doctors for 2025 - Endpoints News",
+          "body": "Structural assessment: Here are biopharma’s 10 highest-paid scientists and doctors for 2025 &nbsp;&nbsp; Endpoints News    Who pays the best (and worst) in biopharma? A look at typical employee salaries &nbsp;&nbsp; Endpoints News    The 25 highest-paid CEOs in biopharma f... Implicated assets: tech. Regions: global. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: tech exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "TECH signal: WATCH",
+          "body": "Raw telemetry — tech flow detected from Here are biopharma’s 10 highest-paid scientists and doctors for 2025 &nbsp;&nbsp; Endpoints News    Who pays the best (and worst) in biopharma? A look... Assets tagged: tech. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "tech",
+            "geographies": []
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH tech",
+          "body": "Directional: WATCH. Asset: tech. Context: Here are biopharma’s 10 highest-paid scientists and doctors for 2025 - Endpoints. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "LONG",
+        "asset_class": "tech",
+        "capital_at_stake": "—",
+        "rationale": "Here are biopharma’s 10 highest-paid scientists and doctors for 2025 &nbsp;&nbsp; Endpoints News    Who pays the best (and worst) in biopharma? A look at typical employee salaries &nbsp;&nbsp; Endpoin",
+        "horizon": "24-72h",
+        "action": "Position for tech long exposure. Here are biopharma’s 10 highest-paid scientists and doctors for 2025 &nbsp;&nbsp; Endpoints News    Who pays the best (and worst) in biopharma? A look at typical employee salaries &nbsp;&nbsp; Endpoin",
+        "gated": true
+      },
+      "asymmetry_score": 31,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "asymmetry_diagnostic": {
+        "sentiment": 0.59,
+        "price_delta": -0.03,
+        "price_change_pct": -0.15,
+        "formula": "ABS((0.59 - -0.03) * 50) = 31",
+        "ticker": "QQQ",
+        "ticker_price": 706.76
+      }
+    },
+    {
+      "story_id": "n21_osint__reuters_business__coffeemakers_recalled_due_to_risk_of_serious_injury_from_bur",
+      "headline": "Coffeemakers Recalled Due to Risk of Serious Injury from Burn Hazard; Imported by Kidisle - CPSC.gov",
+      "sector": "defense",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Coffeemakers Recalled Due to Risk of Serious Injury from Burn Hazard; Imported by Kidisle &nbsp;&nbsp; CPSC.gov    Recall alert: 86K thermal insulated bowls recalled due to fire hazard &nbsp;&nbsp; WH"
+      ],
+      "they_say": "Source: reuters_business. Coffeemakers Recalled Due to Risk of Serious Injury from Burn Hazard; Imported by Kidisle &nbsp;&nbsp; CPSC.gov    Recall alert: 86K thermal insulated bowls recalled due to fire hazard &nbsp;&nbsp; WHIO TV    CPSC Posts Product Recalls and Product Safety Warnings to its Web Site &nbsp;&nbsp; Morning",
+      "reality": "Coffeemakers Recalled Due to Risk of Serious Injury from Burn Hazard; Imported by Kidisle &nbsp;&nbsp; CPSC.gov    Recall alert: 86K thermal insulated bowls recalled due to fire hazard &nbsp;&nbsp; WHIO TV    CPSC Posts Product Recalls and Product Safety Warnings to its Web Site &nbsp;&nbsp; Morning",
+      "thesis": "OSINT draft #368: Coffeemakers Recalled Due to Risk of Serious Injury from Burn Hazard; Imported by Kidisle - CPSC.gov",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL defense. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Coffeemakers Recalled Due to Risk of Serious Injury from Burn Hazard; Imported by Kidisle &nbsp;&nbsp; CPSC.gov    Recall alert: 86K thermal insulated bowls recalled due to fire hazard &nbsp;&nbsp; WH",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": null,
+        "asset_class": "defense",
+        "projected": "Coffeemakers Recalled Due to Risk of Serious Injury from Burn Hazard; Imported by Kidisle &nbsp;&nbsp; CPSC.gov    Recall alert: 86K thermal insulated bowls recalled due to fire hazard &nbsp;&nbsp; WH",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 59,
+        "confidence_level": "low",
+        "confidence_trace": "trace-flow+2 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
+        "claim": "inflow defense",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #368. Source: reuters_business.",
+      "evidence": [
+        "source: reuters_business",
+        "draft_id: 368"
+      ],
+      "source": "osint_reuters_business",
+      "generated_at": "2026-06-11T18:23:14.139141+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__reuters_business__coffeemakers_recalled_due_to_risk_of_serious_injury_from_bur"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Coffeemakers Recalled Due to Risk of Serious Injury from Burn Hazard; Imported by Kidisle - CPSC.gov",
+          "body": "Structural assessment: Coffeemakers Recalled Due to Risk of Serious Injury from Burn Hazard; Imported by Kidisle &nbsp;&nbsp; CPSC.gov    Recall alert: 86K thermal insulated bowls recalled due to fire hazard &nbsp;&nbsp; WHIO TV    CPSC Posts Product Recalls and Product Sa... Implicated assets: defense. Regions: global. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: defense exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "DEFENSE signal: WATCH",
+          "body": "Raw telemetry — defense flow detected from Coffeemakers Recalled Due to Risk of Serious Injury from Burn Hazard; Imported by Kidisle &nbsp;&nbsp; CPSC.gov    Recall alert: 86K thermal insulated... Assets tagged: defense. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "defense",
+            "geographies": []
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH defense",
+          "body": "Directional: WATCH. Asset: defense. Context: Coffeemakers Recalled Due to Risk of Serious Injury from Burn Hazard; Imported b. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "LONG",
+        "asset_class": "defense",
+        "capital_at_stake": "—",
+        "rationale": "Coffeemakers Recalled Due to Risk of Serious Injury from Burn Hazard; Imported by Kidisle &nbsp;&nbsp; CPSC.gov    Recall alert: 86K thermal insulated bowls recalled due to fire hazard &nbsp;&nbsp; WH",
+        "horizon": "24-72h",
+        "action": "Position for defense long exposure. Coffeemakers Recalled Due to Risk of Serious Injury from Burn Hazard; Imported by Kidisle &nbsp;&nbsp; CPSC.gov    Recall alert: 86K thermal insulated bowls recalled due to fire hazard &nbsp;&nbsp; WH",
+        "gated": true
+      },
+      "asymmetry_score": 39,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "asymmetry_diagnostic": {
+        "sentiment": 0.59,
+        "price_delta": -0.186,
+        "price_change_pct": -0.94,
+        "formula": "ABS((0.59 - -0.19) * 50) = 39",
+        "ticker": "ITA",
+        "ticker_price": 228.29
+      }
+    },
+    {
+      "story_id": "n21_osint__reuters_business__big_tech_is_preventing_new_stock-market_highs_as_investors_c",
+      "headline": "Big Tech is preventing new stock-market highs as investors change the way they play AI, says this top strategist - MarketWatch",
+      "sector": "tech",
+      "pillar": "china_ascendancy",
+      "paradigm_pillar": "china_ascendancy",
+      "paradigm_implications": [
+        "Big Tech is preventing new stock-market highs as investors change the way they play AI, says this top strategist &nbsp;&nbsp; MarketWatch    How Wild the Market’s Bet on AI Really Is &nbsp;&nbsp; WSJ "
+      ],
+      "they_say": "Source: reuters_business. Big Tech is preventing new stock-market highs as investors change the way they play AI, says this top strategist &nbsp;&nbsp; MarketWatch    How Wild the Market’s Bet on AI Really Is &nbsp;&nbsp; WSJ    Investors question sustainability of AI boom as inflation pressures mount &nbsp;&nbsp; Baton Roug",
+      "reality": "Big Tech is preventing new stock-market highs as investors change the way they play AI, says this top strategist &nbsp;&nbsp; MarketWatch    How Wild the Market’s Bet on AI Really Is &nbsp;&nbsp; WSJ    Investors question sustainability of AI boom as inflation pressures mount &nbsp;&nbsp; Baton Roug",
+      "thesis": "OSINT draft #369: Big Tech is preventing new stock-market highs as investors change the way they play AI, says this top strategist - MarketWatch",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL tech. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Big Tech is preventing new stock-market highs as investors change the way they play AI, says this top strategist &nbsp;&nbsp; MarketWatch    How Wild the Market’s Bet on AI Really Is &nbsp;&nbsp; WSJ ",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": null,
+        "asset_class": "tech",
+        "projected": "Big Tech is preventing new stock-market highs as investors change the way they play AI, says this top strategist &nbsp;&nbsp; MarketWatch    How Wild the Market’s Bet on AI Really Is &nbsp;&nbsp; WSJ ",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 59,
+        "confidence_level": "low",
+        "confidence_trace": "trace-flow+2 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
+        "claim": "inflow tech",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #369. Source: reuters_business.",
+      "evidence": [
+        "source: reuters_business",
+        "draft_id: 369"
+      ],
+      "source": "osint_reuters_business",
+      "generated_at": "2026-06-11T18:23:14.138921+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__reuters_business__big_tech_is_preventing_new_stock-market_highs_as_investors_c"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Big Tech is preventing new stock-market highs as investors change the way they play AI, says this top strategist - Marke",
+          "body": "Structural assessment: Big Tech is preventing new stock-market highs as investors change the way they play AI, says this top strategist &nbsp;&nbsp; MarketWatch    How Wild the Market’s Bet on AI Really Is &nbsp;&nbsp; WSJ    Investors question sustainability of AI boom as... Implicated assets: tech. Regions: global. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: tech exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "TECH signal: WATCH",
+          "body": "Raw telemetry — tech flow detected from Big Tech is preventing new stock-market highs as investors change the way they play AI, says this top strategist &nbsp;&nbsp; MarketWatch    How Wild ... Assets tagged: tech. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "tech",
+            "geographies": []
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH tech",
+          "body": "Directional: WATCH. Asset: tech. Context: Big Tech is preventing new stock-market highs as investors change the way they p. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "LONG",
+        "asset_class": "tech",
+        "capital_at_stake": "—",
+        "rationale": "Big Tech is preventing new stock-market highs as investors change the way they play AI, says this top strategist &nbsp;&nbsp; MarketWatch    How Wild the Market’s Bet on AI Really Is &nbsp;&nbsp; WSJ ",
+        "horizon": "24-72h",
+        "action": "Position for tech long exposure. Big Tech is preventing new stock-market highs as investors change the way they play AI, says this top strategist &nbsp;&nbsp; MarketWatch    How Wild the Market’s Bet on AI Really Is &nbsp;&nbsp; WSJ ",
+        "gated": true
+      },
+      "asymmetry_score": 31,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "asymmetry_diagnostic": {
+        "sentiment": 0.59,
+        "price_delta": -0.03,
+        "price_change_pct": -0.15,
+        "formula": "ABS((0.59 - -0.03) * 50) = 31",
+        "ticker": "QQQ",
+        "ticker_price": 706.76
+      }
+    },
+    {
+      "story_id": "n21_osint__reuters_business__dow_jumps_700_points_oil_tumbles_as_trump_cancels_evening_s",
+      "headline": "Dow jumps 700 points, oil tumbles as Trump cancels evening strikes against Iran: Live updates - CNBC",
+      "sector": "commodities",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "Dow jumps 700 points, oil tumbles as Trump cancels evening strikes against Iran: Live updates &nbsp;&nbsp; CNBC    Stock market today: Dow, S&amp;P 500, Nasdaq rise after Trump calls off strikes on Ir"
+      ],
+      "they_say": "Source: reuters_business. Dow jumps 700 points, oil tumbles as Trump cancels evening strikes against Iran: Live updates &nbsp;&nbsp; CNBC    Stock market today: Dow, S&amp;P 500, Nasdaq rise after Trump calls off strikes on Iran &nbsp;&nbsp; Yahoo Finance    Wall St edges up as chips rebound, Middle East in focus &nbsp;&nbsp",
+      "reality": "Dow jumps 700 points, oil tumbles as Trump cancels evening strikes against Iran: Live updates &nbsp;&nbsp; CNBC    Stock market today: Dow, S&amp;P 500, Nasdaq rise after Trump calls off strikes on Iran &nbsp;&nbsp; Yahoo Finance    Wall St edges up as chips rebound, Middle East in focus &nbsp;&nbsp",
+      "thesis": "OSINT draft #370: Dow jumps 700 points, oil tumbles as Trump cancels evening strikes against Iran: Live updates - CNBC",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: INFLOW commodities. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Dow jumps 700 points, oil tumbles as Trump cancels evening strikes against Iran: Live updates &nbsp;&nbsp; CNBC    Stock market today: Dow, S&amp;P 500, Nasdaq rise after Trump calls off strikes on Ir",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": null,
+        "asset_class": "commodities",
+        "projected": "Dow jumps 700 points, oil tumbles as Trump cancels evening strikes against Iran: Live updates &nbsp;&nbsp; CNBC    Stock market today: Dow, S&amp;P 500, Nasdaq rise after Trump calls off strikes on Ir",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 59,
+        "confidence_level": "low",
+        "confidence_trace": "trace-flow+2 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
+        "claim": "inflow commodities",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #370. Source: reuters_business.",
+      "evidence": [
+        "source: reuters_business",
+        "draft_id: 370"
+      ],
+      "source": "osint_reuters_business",
+      "generated_at": "2026-06-11T18:23:14.138016+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__reuters_business__dow_jumps_700_points_oil_tumbles_as_trump_cancels_evening_s"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Dow jumps 700 points, oil tumbles as Trump cancels evening strikes against Iran: Live updates - CNBC",
+          "body": "Structural assessment: Dow jumps 700 points, oil tumbles as Trump cancels evening strikes against Iran: Live updates &nbsp;&nbsp; CNBC    Stock market today: Dow, S&amp;P 500, Nasdaq rise after Trump calls off strikes on Iran &nbsp;&nbsp; Yahoo Finance    Wall St edges up ... Implicated assets: NDX, WTI. Regions: EU, Iran. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: commodities exposure review recommended. Directional bias: LONG."
+        },
+        "quant": {
+          "headline": "COMMODITIES signal: LONG",
+          "body": "Raw telemetry — commodities flow detected from Dow jumps 700 points, oil tumbles as Trump cancels evening strikes against Iran: Live updates &nbsp;&nbsp; CNBC    Stock market today: Dow, S&amp;P 50... Assets tagged: NDX, WTI. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "inflow",
+            "asset_class": "commodities",
+            "geographies": [
+              "EU",
+              "Iran"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟢 LONG NDX, WTI",
+          "body": "Directional: LONG. Asset: NDX, WTI. Context: Dow jumps 700 points, oil tumbles as Trump cancels evening strikes against Iran:. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "LONG",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "LONG",
+        "asset_class": "commodities",
+        "capital_at_stake": "—",
+        "rationale": "Dow jumps 700 points, oil tumbles as Trump cancels evening strikes against Iran: Live updates &nbsp;&nbsp; CNBC    Stock market today: Dow, S&amp;P 500, Nasdaq rise after Trump calls off strikes on Ir",
+        "horizon": "24-72h",
+        "action": "Position for commodities long exposure. Dow jumps 700 points, oil tumbles as Trump cancels evening strikes against Iran: Live updates &nbsp;&nbsp; CNBC    Stock market today: Dow, S&amp;P 500, Nasdaq rise after Trump calls off strikes on Ir",
+        "gated": true
+      },
+      "asymmetry_score": 9,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "asymmetry_diagnostic": {
+        "sentiment": 0.59,
+        "price_delta": 0.4,
+        "price_change_pct": 2.12,
+        "formula": "ABS((0.59 - 0.40) * 50) = 9",
+        "ticker": "CL=F",
+        "ticker_price": 90.07
+      }
+    },
+    {
+      "story_id": "n21_osint__the_cradle__iran_uae_hold__039_face-to-face_039_high-level_meeting_a",
+      "headline": "Iran, UAE hold &#039;face-to-face&#039; high-level meeting amid ongoing US escalation in Persian Gulf: Report",
+      "sector": "defense",
+      "pillar": "multi_pillar",
+      "paradigm_pillar": "multi_pillar",
+      "paradigm_implications": [
+        "The alleged meeting marks a 'stark turn around' for the UAE after taking part in the US-Israeli war on the Islamic Republic"
+      ],
+      "they_say": "Source: the_cradle. The alleged meeting marks a 'stark turn around' for the UAE after taking part in the US-Israeli war on the Islamic Republic",
+      "reality": "The alleged meeting marks a 'stark turn around' for the UAE after taking part in the US-Israeli war on the Islamic Republic",
+      "thesis": "OSINT draft #371: Iran, UAE hold &#039;face-to-face&#039; high-level meeting amid ongoing US escalation in Persian Gulf: Report",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL defense. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "The alleged meeting marks a 'stark turn around' for the UAE after taking part in the US-Israeli war on the Islamic Republic",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": null,
+        "asset_class": "defense",
+        "projected": "The alleged meeting marks a 'stark turn around' for the UAE after taking part in the US-Israeli war on the Islamic Republic",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 59,
+        "confidence_level": "low",
+        "confidence_trace": "trace-flow+2 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
+        "claim": "inflow defense",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #371. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 371"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-11T18:23:14.137681+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__iran_uae_hold__039_face-to-face_039_high-level_meeting_a"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Iran, UAE hold &#039;face-to-face&#039; high-level meeting amid ongoing US escalation in Persian Gulf: Report",
+          "body": "Structural assessment: The alleged meeting marks a 'stark turn around' for the UAE after taking part in the US-Israeli war on the Islamic Republic... Implicated assets: defense. Regions: Iran, Israel, UAE. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: defense exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "DEFENSE signal: WATCH",
+          "body": "Raw telemetry — defense flow detected from The alleged meeting marks a 'stark turn around' for the UAE after taking part in the US-Israeli war on the Islamic Republic... Assets tagged: defense. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "defense",
+            "geographies": [
+              "Iran",
+              "Israel",
+              "UAE"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH defense",
+          "body": "Directional: WATCH. Asset: defense. Context: Iran, UAE hold &#039;face-to-face&#039; high-level meeting amid ongoing US escal. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "LONG",
+        "asset_class": "defense",
+        "capital_at_stake": "—",
+        "rationale": "The alleged meeting marks a 'stark turn around' for the UAE after taking part in the US-Israeli war on the Islamic Republic",
+        "horizon": "24-72h",
+        "action": "Position for defense long exposure. The alleged meeting marks a 'stark turn around' for the UAE after taking part in the US-Israeli war on the Islamic Republic",
+        "gated": true
+      },
+      "asymmetry_score": 39,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "asymmetry_diagnostic": {
+        "sentiment": 0.59,
+        "price_delta": -0.186,
+        "price_change_pct": -0.94,
+        "formula": "ABS((0.59 - -0.19) * 50) = 39",
+        "ticker": "ITA",
+        "ticker_price": 228.29
+      }
+    },
+    {
+      "story_id": "n21_osint__the_cradle__france_germany_propose__039_stripping_039_top_eu_diploma",
+      "headline": "France, Germany propose &#039;stripping&#039; top EU diplomat Kallas of her powers: Report",
+      "sector": "fx",
+      "pillar": "eu_fragmentation",
+      "paradigm_pillar": "eu_fragmentation",
+      "paradigm_implications": [
+        "A rivalry has developed between the EU's top diplomat, Kaja Kallas, and European Commission President Ursula von der Leyen, for control of the bloc's foreign policy"
+      ],
+      "they_say": "Source: the_cradle. A rivalry has developed between the EU's top diplomat, Kaja Kallas, and European Commission President Ursula von der Leyen, for control of the bloc's foreign policy",
+      "reality": "A rivalry has developed between the EU's top diplomat, Kaja Kallas, and European Commission President Ursula von der Leyen, for control of the bloc's foreign policy",
+      "thesis": "OSINT draft #372: France, Germany propose &#039;stripping&#039; top EU diplomat Kallas of her powers: Report",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL fx. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "A rivalry has developed between the EU's top diplomat, Kaja Kallas, and European Commission President Ursula von der Leyen, for control of the bloc's foreign policy",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": null,
+        "asset_class": "fx",
+        "projected": "A rivalry has developed between the EU's top diplomat, Kaja Kallas, and European Commission President Ursula von der Leyen, for control of the bloc's foreign policy",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 59,
+        "confidence_level": "low",
+        "confidence_trace": "trace-flow+2 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
+        "claim": "inflow fx",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #372. Source: the_cradle.",
+      "evidence": [
+        "source: the_cradle",
+        "draft_id: 372"
+      ],
+      "source": "osint_the_cradle",
+      "generated_at": "2026-06-11T18:23:14.135764+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__the_cradle__france_germany_propose__039_stripping_039_top_eu_diploma"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "France, Germany propose &#039;stripping&#039; top EU diplomat Kallas of her powers: Report",
+          "body": "Structural assessment: A rivalry has developed between the EU's top diplomat, Kaja Kallas, and European Commission President Ursula von der Leyen, for control of the bloc's foreign policy... Implicated assets: EUR. Regions: EU, France, Germany. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: fx exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "FX signal: WATCH",
+          "body": "Raw telemetry — fx flow detected from A rivalry has developed between the EU's top diplomat, Kaja Kallas, and European Commission President Ursula von der Leyen, for control of the bloc's ... Assets tagged: EUR. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "fx",
+            "geographies": [
+              "EU",
+              "France",
+              "Germany"
+            ]
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH EUR",
+          "body": "Directional: WATCH. Asset: EUR. Context: France, Germany propose &#039;stripping&#039; top EU diplomat Kallas of her powe. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 89,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "LONG",
+        "asset_class": "fx",
+        "capital_at_stake": "—",
+        "rationale": "A rivalry has developed between the EU's top diplomat, Kaja Kallas, and European Commission President Ursula von der Leyen, for control of the bloc's foreign policy",
+        "horizon": "24-72h",
+        "action": "Position for fx long exposure. A rivalry has developed between the EU's top diplomat, Kaja Kallas, and European Commission President Ursula von der Leyen, for control of the bloc's foreign policy",
+        "gated": true
+      },
+      "asymmetry_score": 30,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "asymmetry_diagnostic": {
+        "sentiment": 0.59,
+        "price_delta": -0.014,
+        "price_change_pct": -0.07,
+        "formula": "ABS((0.59 - -0.01) * 50) = 30",
+        "ticker": "UUP",
+        "ticker_price": 27.99
+      }
+    },
+    {
+      "story_id": "n21_osint__reuters_business__why_these_3_analysts_say_oracle_s_post-earnings_stock_slump",
+      "headline": "Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity - Barron's",
+      "sector": "tech",
+      "pillar": "china_ascendancy",
+      "paradigm_pillar": "china_ascendancy",
+      "paradigm_implications": [
+        "Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity &nbsp;&nbsp; Barron's    Oracle shares tumble 11% on increased capital raise, cash concerns &nbsp;&nbsp; CNBC    Ora"
+      ],
+      "they_say": "Source: reuters_business. Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity &nbsp;&nbsp; Barron's    Oracle shares tumble 11% on increased capital raise, cash concerns &nbsp;&nbsp; CNBC    Oracle shares slide as hefty AI spending, debt plans spook investors &nbsp;&nbsp; Yahoo Finance    Orac",
+      "reality": "Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity &nbsp;&nbsp; Barron's    Oracle shares tumble 11% on increased capital raise, cash concerns &nbsp;&nbsp; CNBC    Oracle shares slide as hefty AI spending, debt plans spook investors &nbsp;&nbsp; Yahoo Finance    Orac",
+      "thesis": "OSINT draft #341: Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity - Barron's",
+      "actors": [],
+      "horizon": "24-72h",
+      "confidence": "low",
+      "tier": "DEVELOPING",
+      "actionable_trade": "OSINT signal: NEUTRAL tech. Review before execution.",
+      "contradiction_score": 75,
+      "invalidation_trigger": "Manual review required — OSINT draft, unvetted source",
+      "portfolio_implication": "Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity &nbsp;&nbsp; Barron's    Oracle shares tumble 11% on increased capital raise, cash concerns &nbsp;&nbsp; CNBC    Ora",
+      "capital_flow": {
+        "direction": "inflow",
+        "amount_b": 9.0,
+        "asset_class": "tech",
+        "projected": "Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity &nbsp;&nbsp; Barron's    Oracle shares tumble 11% on increased capital raise, cash concerns &nbsp;&nbsp; CNBC    Ora",
+        "pace_multiplier": 1.0,
+        "confidence_pct": 72,
+        "confidence_level": "medium",
+        "confidence_trace": "mid-flow+15 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
+        "claim": "$9.0B inflow tech",
+        "confidence": "72%",
+        "source_label": "[CALC-EST]"
+      },
+      "capital_flow_implication": "OSINT draft #341. Source: reuters_business.",
+      "evidence": [
+        "source: reuters_business",
+        "draft_id: 341"
+      ],
+      "source": "osint_reuters_business",
+      "generated_at": "2026-06-11T17:22:04.740613+00:00",
+      "freshness": "breaking",
+      "entity_tags": {
+        "assets": [],
+        "geographies": [],
+        "actors": [],
+        "instruments": []
+      },
+      "time_decay": {
+        "half_life_hours": 36.0,
+        "decay_curve": "exponential",
+        "current_freshness": 1.0,
+        "hours_elapsed": 0.0,
+        "renewal_triggers": [
+          "new_intel",
+          "price_breach",
+          "flow_confirmation"
+        ]
+      },
+      "impacted_flows": [
+        "flow_n21_osint__reuters_business__why_these_3_analysts_say_oracle_s_post-earnings_stock_slump"
+      ],
+      "associated_positions": [],
+      "multi_persona": {
+        "c_suite": {
+          "headline": "Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity - Barron's",
+          "body": "Structural assessment: Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity &nbsp;&nbsp; Barron's    Oracle shares tumble 11% on increased capital raise, cash concerns &nbsp;&nbsp; CNBC    Oracle shares slide as hefty AI spending, debt plans ... Implicated assets: tech. Regions: global. Monitor for policy or supply-chain cascades.",
+          "implication": "Board-level: tech exposure review recommended. Directional bias: WATCH."
+        },
+        "quant": {
+          "headline": "TECH signal: WATCH",
+          "body": "Raw telemetry — tech flow detected from Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity &nbsp;&nbsp; Barron's    Oracle shares tumble 11% on increased cap... Assets tagged: tech. Correlation regime: TBD. Watch vol surface for confirmation.",
+          "metrics": {
+            "flow_direction": "neutral",
+            "asset_class": "tech",
+            "geographies": []
+          }
+        },
+        "degen": {
+          "headline": "🟡 WATCH tech",
+          "body": "Directional: WATCH. Asset: tech. Context: Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportun. Conviction: LOW (unvetted draft). Entry zone: TBD. Stop: TBD.",
+          "signal": {
+            "direction": "WATCH",
+            "entry_zone": "awaiting review",
+            "stop_level": "TBD",
+            "target": "TBD",
+            "conviction": "LOW"
+          }
+        }
+      },
+      "conviction_probability": 94,
+      "conviction_tier": "ALPHA",
+      "strategic_recommendation": {
+        "tier": "MAX CONVICTION",
+        "bias": "LONG",
+        "asset_class": "tech",
+        "capital_at_stake": "$9.0B",
+        "rationale": "Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity &nbsp;&nbsp; Barron's    Oracle shares tumble 11% on increased capital raise, cash concerns &nbsp;&nbsp; CNBC    Ora",
+        "horizon": "24-72h",
+        "action": "Position for tech long exposure. Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity &nbsp;&nbsp; Barron's    Oracle shares tumble 11% on increased capital raise, cash concerns &nbsp;&nbsp; CNBC    Ora",
+        "gated": true
+      },
+      "asymmetry_score": 37,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "asymmetry_diagnostic": {
+        "sentiment": 0.72,
+        "price_delta": -0.03,
+        "price_change_pct": -0.15,
+        "formula": "ABS((0.72 - -0.03) * 50) = 37",
+        "ticker": "QQQ",
+        "ticker_price": 706.76
+      }
+    },
     {
       "story_id": "n21_osint__reuters_business__new_fed_chief_may_soon_be_forced_to_defy_trump_and_raise_int",
       "headline": "New Fed chief may soon be forced to defy Trump and raise interest rates - The Washington Post",
@@ -1156,22 +2742,22 @@
       "portfolio_implication": "BlackRock Orders $5 Billion In SpaceX Shares Ahead Of Blockbuster IPO, Report Says (Live Updates) &nbsp;&nbsp; Forbes    Exclusive | SpaceX IPO Draws at Least $5 Billion Order From BlackRock &nbsp;&nb",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 61.72,
+        "amount_b": 62.81,
         "asset_class": "tech",
         "projected": "BlackRock Orders $5 Billion In SpaceX Shares Ahead Of Blockbuster IPO, Report Says (Live Updates) &nbsp;&nbsp; Forbes    Exclusive | SpaceX IPO Draws at Least $5 Billion Order From BlackRock &nbsp;&nb",
         "pace_multiplier": 1.0,
         "confidence_pct": 82,
         "confidence_level": "high",
         "_psv_diagnostic": {
-          "flow_total": 734.1450000000001,
+          "flow_total": 747.0950000000001,
           "tier": "DEVELOPING",
           "base_fraction": 0.08,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 1.0509,
-          "computed": 61.72
+          "computed": 62.81
         },
         "confidence_trace": "whale-flow+25 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
-        "claim": "$61.72B inflow tech",
+        "claim": "$62.81B inflow tech",
         "confidence": "82%",
         "source_label": "[CALC-EST]"
       },
@@ -1239,7 +2825,7 @@
         "tier": "MAX CONVICTION",
         "bias": "LONG",
         "asset_class": "tech",
-        "capital_at_stake": "$61.72B",
+        "capital_at_stake": "$62.81B",
         "rationale": "BlackRock Orders $5 Billion In SpaceX Shares Ahead Of Blockbuster IPO, Report Says (Live Updates) &nbsp;&nbsp; Forbes    Exclusive | SpaceX IPO Draws at Least $5 Billion Order From BlackRock &nbsp;&nb",
         "horizon": "24-72h",
         "action": "Position for tech long exposure. BlackRock Orders $5 Billion In SpaceX Shares Ahead Of Blockbuster IPO, Report Says (Live Updates) &nbsp;&nbsp; Forbes    Exclusive | SpaceX IPO Draws at Least $5 Billion Order From BlackRock &nbsp;&nb",
@@ -11733,22 +13319,22 @@
       "portfolio_implication": "Trump administration proposes new rules on prediction markets that would still allow most sports activity &nbsp;&nbsp; CNN    No injuries, no props: CFTC proposes prediction market rules &nbsp;&nbsp; ",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 34.36,
+        "amount_b": 35.43,
         "asset_class": "equities",
         "projected": "Trump administration proposes new rules on prediction markets that would still allow most sports activity &nbsp;&nbsp; CNN    No injuries, no props: CFTC proposes prediction market rules &nbsp;&nbsp; ",
         "pace_multiplier": 1.0,
         "confidence_pct": 82,
         "confidence_level": "high",
         "_psv_diagnostic": {
-          "flow_total": 475.0270000000001,
+          "flow_total": 489.8270000000001,
           "tier": "DEVELOPING",
           "base_fraction": 0.08,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 0.9042,
-          "computed": 34.36
+          "computed": 35.43
         },
         "confidence_trace": "whale-flow+25 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
-        "claim": "$34.36B inflow equities",
+        "claim": "$35.43B inflow equities",
         "confidence": "82%",
         "source_label": "[CALC-EST]"
       },
@@ -11816,7 +13402,7 @@
         "tier": "MAX CONVICTION",
         "bias": "LONG",
         "asset_class": "equities",
-        "capital_at_stake": "$34.36B",
+        "capital_at_stake": "$35.43B",
         "rationale": "Trump administration proposes new rules on prediction markets that would still allow most sports activity &nbsp;&nbsp; CNN    No injuries, no props: CFTC proposes prediction market rules &nbsp;&nbsp; ",
         "horizon": "24-72h",
         "action": "Position for equities long exposure. Trump administration proposes new rules on prediction markets that would still allow most sports activity &nbsp;&nbsp; CNN    No injuries, no props: CFTC proposes prediction market rules &nbsp;&nbsp; ",
@@ -14023,22 +15609,22 @@
       "portfolio_implication": "SpaceX IPO to mint 4,000 millionaires, cooks included &nbsp;&nbsp; The Next Web    SpaceX’s I.P.O. Could Turn 4,400 Employees Into Millionaires &nbsp;&nbsp; The New York Times    SpaceX Left Californi",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 58.0,
+        "amount_b": 59.02,
         "asset_class": "tech",
         "projected": "SpaceX IPO to mint 4,000 millionaires, cooks included &nbsp;&nbsp; The Next Web    SpaceX’s I.P.O. Could Turn 4,400 Employees Into Millionaires &nbsp;&nbsp; The New York Times    SpaceX Left Californi",
         "pace_multiplier": 1.0,
         "confidence_pct": 82,
         "confidence_level": "high",
         "_psv_diagnostic": {
-          "flow_total": 734.1450000000001,
+          "flow_total": 747.0950000000001,
           "tier": "DEVELOPING",
           "base_fraction": 0.08,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 0.9875,
-          "computed": 58.0
+          "computed": 59.02
         },
         "confidence_trace": "whale-flow+25 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
-        "claim": "$58.0B inflow tech",
+        "claim": "$59.02B inflow tech",
         "confidence": "82%",
         "source_label": "[CALC-EST]"
       },
@@ -14106,7 +15692,7 @@
         "tier": "MAX CONVICTION",
         "bias": "LONG",
         "asset_class": "tech",
-        "capital_at_stake": "$58.0B",
+        "capital_at_stake": "$59.02B",
         "rationale": "SpaceX IPO to mint 4,000 millionaires, cooks included &nbsp;&nbsp; The Next Web    SpaceX’s I.P.O. Could Turn 4,400 Employees Into Millionaires &nbsp;&nbsp; The New York Times    SpaceX Left Californi",
         "horizon": "24-72h",
         "action": "Position for tech long exposure. SpaceX IPO to mint 4,000 millionaires, cooks included &nbsp;&nbsp; The Next Web    SpaceX’s I.P.O. Could Turn 4,400 Employees Into Millionaires &nbsp;&nbsp; The New York Times    SpaceX Left Californi",
@@ -15961,22 +17547,22 @@
       "portfolio_implication": "Remote Work Comes With a Little-Known Downside &nbsp;&nbsp; Newser    People love working from home. But does it love them back? A new study says no &nbsp;&nbsp; NPR    Workers say they like remote wo",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 35.06,
+        "amount_b": 36.15,
         "asset_class": "equities",
         "projected": "Remote Work Comes With a Little-Known Downside &nbsp;&nbsp; Newser    People love working from home. But does it love them back? A new study says no &nbsp;&nbsp; NPR    Workers say they like remote wo",
         "pace_multiplier": 1.0,
         "confidence_pct": 82,
         "confidence_level": "high",
         "_psv_diagnostic": {
-          "flow_total": 475.0270000000001,
+          "flow_total": 489.8270000000001,
           "tier": "DEVELOPING",
           "base_fraction": 0.08,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 0.9226,
-          "computed": 35.06
+          "computed": 36.15
         },
         "confidence_trace": "whale-flow+25 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
-        "claim": "$35.06B inflow equities",
+        "claim": "$36.15B inflow equities",
         "confidence": "82%",
         "source_label": "[CALC-EST]"
       },
@@ -16042,7 +17628,7 @@
         "tier": "MAX CONVICTION",
         "bias": "LONG",
         "asset_class": "equities",
-        "capital_at_stake": "$35.06B",
+        "capital_at_stake": "$36.15B",
         "rationale": "Remote Work Comes With a Little-Known Downside &nbsp;&nbsp; Newser    People love working from home. But does it love them back? A new study says no &nbsp;&nbsp; NPR    Workers say they like remote wo",
         "horizon": "24-72h",
         "action": "Position for equities long exposure. Remote Work Comes With a Little-Known Downside &nbsp;&nbsp; Newser    People love working from home. But does it love them back? A new study says no &nbsp;&nbsp; NPR    Workers say they like remote wo",
@@ -17223,22 +18809,22 @@
       "portfolio_implication": "SpaceX Leaves Some Banks Peeved at Junior Roles in IPO Lineup &nbsp;&nbsp; Bloomberg.com    SpaceX’s I.P.O. Could Turn 4,400 Employees Into Millionaires &nbsp;&nbsp; The New York Times    SpaceX Left ",
       "capital_flow": {
         "direction": "inflow",
-        "amount_b": 58.61,
+        "amount_b": 59.65,
         "asset_class": "tech",
         "projected": "SpaceX Leaves Some Banks Peeved at Junior Roles in IPO Lineup &nbsp;&nbsp; Bloomberg.com    SpaceX’s I.P.O. Could Turn 4,400 Employees Into Millionaires &nbsp;&nbsp; The New York Times    SpaceX Left ",
         "pace_multiplier": 1.0,
         "confidence_pct": 82,
         "confidence_level": "high",
         "_psv_diagnostic": {
-          "flow_total": 734.1450000000001,
+          "flow_total": 747.0950000000001,
           "tier": "DEVELOPING",
           "base_fraction": 0.08,
           "pillar_bonus": 1.0,
           "uniqueness_mult": 0.998,
-          "computed": 58.61
+          "computed": 59.65
         },
         "confidence_trace": "whale-flow+25 > flat-pace+2 > accumulating+15 > high-contradiction+10 > generic-source+5",
-        "claim": "$58.61B inflow tech",
+        "claim": "$59.65B inflow tech",
         "confidence": "82%",
         "source_label": "[CALC-EST]"
       },
@@ -17306,7 +18892,7 @@
         "tier": "MAX CONVICTION",
         "bias": "LONG",
         "asset_class": "tech",
-        "capital_at_stake": "$58.61B",
+        "capital_at_stake": "$59.65B",
         "rationale": "SpaceX Leaves Some Banks Peeved at Junior Roles in IPO Lineup &nbsp;&nbsp; Bloomberg.com    SpaceX’s I.P.O. Could Turn 4,400 Employees Into Millionaires &nbsp;&nbsp; The New York Times    SpaceX Left ",
         "horizon": "24-72h",
         "action": "Position for tech long exposure. SpaceX Leaves Some Banks Peeved at Junior Roles in IPO Lineup &nbsp;&nbsp; Bloomberg.com    SpaceX’s I.P.O. Could Turn 4,400 Employees Into Millionaires &nbsp;&nbsp; The New York Times    SpaceX Left ",

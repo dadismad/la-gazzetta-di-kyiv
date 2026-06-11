@@ -51,6 +51,76 @@
     }
   },
   "asymmetry_scores": {
+    "n21_osint__reuters_business__medicare_advantage_plans_denied_prior_authorization_requests": {
+      "asymmetry_score": 31,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.59 - -0.03) * 50) = 31"
+    },
+    "n21_osint__reuters_business__barrett_says_scotus_liberals_rely_on_fictional_premise_in": {
+      "asymmetry_score": 31,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.59 - -0.03) * 50) = 31"
+    },
+    "n21_osint__reuters_business__19_things_to_know_about_gwynne_shotwell_spacex_s_president": {
+      "asymmetry_score": 41,
+      "asymmetry_tier": "MODERATE",
+      "diagnostic_trace": "ABS((0.77 - -0.05) * 50) = 41"
+    },
+    "n21_osint__reuters_business__china_is_quietly_keeping_world_oil_prices_lower_-_newser": {
+      "asymmetry_score": 9,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.59 - 0.40) * 50) = 9"
+    },
+    "n21_osint__reuters_business__prometheus_jeff_bezos_ai_startup_is_now_worth_41_billion": {
+      "asymmetry_score": 42,
+      "asymmetry_tier": "MODERATE",
+      "diagnostic_trace": "ABS((-0.77 - 0.08) * 50) = 42"
+    },
+    "n21_osint__reuters_business__musk_to_pitch_terafab_semiconductor_factory_to_asml_ahead_of": {
+      "asymmetry_score": 37,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.72 - -0.03) * 50) = 37"
+    },
+    "n21_osint__reuters_business__social_security_announces_important_deadline_again_-_al_com": {
+      "asymmetry_score": 31,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.59 - -0.03) * 50) = 31"
+    },
+    "n21_osint__reuters_business__the_rise_of_the_botsitters_-_business_insider": {
+      "asymmetry_score": 31,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.59 - -0.03) * 50) = 31"
+    },
+    "n21_osint__reuters_business__here_are_biopharma_s_10_highest-paid_scientists_and_doctors": {
+      "asymmetry_score": 31,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.59 - -0.03) * 50) = 31"
+    },
+    "n21_osint__reuters_business__coffeemakers_recalled_due_to_risk_of_serious_injury_from_bur": {
+      "asymmetry_score": 39,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.59 - -0.19) * 50) = 39"
+    },
+    "n21_osint__reuters_business__big_tech_is_preventing_new_stock-market_highs_as_investors_c": {
+      "asymmetry_score": 31,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.59 - -0.03) * 50) = 31"
+    },
+    "n21_osint__reuters_business__dow_jumps_700_points_oil_tumbles_as_trump_cancels_evening_s": {
+      "asymmetry_score": 9,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.59 - 0.40) * 50) = 9"
+    },
+    "n21_osint__the_cradle__iran_uae_hold__039_face-to-face_039_high-level_meeting_a": {
+      "asymmetry_score": 39,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.59 - -0.19) * 50) = 39"
+    },
+    "n21_osint__the_cradle__france_germany_propose__039_stripping_039_top_eu_diploma": {
+      "asymmetry_score": 30,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.59 - -0.01) * 50) = 30"
+    },
     "n21_osint__reuters_business__why_these_3_analysts_say_oracle_s_post-earnings_stock_slump": {
       "asymmetry_score": 37,
       "asymmetry_tier": "LOW ASYMMETRY",

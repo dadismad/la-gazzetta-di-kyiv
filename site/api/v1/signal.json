@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-11T17:36:02.584141+00:00",
-  "total_signals": 231,
+  "generated_at": "2026-06-11T18:39:51.154228+00:00",
+  "total_signals": 245,
   "aggregate_score": 67,
   "signals": [
     {
@@ -35,6 +35,50 @@
       "event_strength": 15,
       "asset_class": "crypto",
       "direction": "outflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__19_things_to_know_about_gwynne_shotwell_spacex_s_president",
+      "headline": "19 Things to Know About Gwynne Shotwell, SpaceX’s President - WSJ",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "equities",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__prometheus_jeff_bezos_ai_startup_is_now_worth_41_billion",
+      "headline": "Prometheus, Jeff Bezos' AI startup, is now worth $41 billion - Axios",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "crypto",
+      "direction": "outflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__musk_to_pitch_terafab_semiconductor_factory_to_asml_ahead_of",
+      "headline": "Musk To Pitch Terafab Semiconductor Factory To ASML Ahead Of SpaceX IPO - Investor's Business Daily",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "tech",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__why_these_3_analysts_say_oracle_s_post-earnings_stock_slump",
+      "headline": "Why These 3 Analysts Say Oracle’s Post-Earnings Stock Slump Is a Buying Opportunity - Barron's",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "tech",
+      "direction": "inflow"
     },
     {
       "story_id": "n21_osint__reuters_business__new_fed_chief_may_soon_be_forced_to_defy_trump_and_raise_int",
@@ -122,50 +166,6 @@
       "contradiction": 30,
       "event_strength": 15,
       "asset_class": "crypto",
-      "direction": "inflow"
-    },
-    {
-      "story_id": "n21_osint__reuters_business__prometheus_the_industrial_ai_startup_from_jeff_bezos_is_no",
-      "headline": "Prometheus, the industrial AI startup from Jeff Bezos, is now worth $41 billion - Axios",
-      "score": 74,
-      "tier": "HIGH CONVICTION",
-      "flow_alignment": 29,
-      "contradiction": 30,
-      "event_strength": 15,
-      "asset_class": "crypto",
-      "direction": "outflow"
-    },
-    {
-      "story_id": "n21_osint__reuters_business__justice_department_opens_sweeping_debanking_probe_into_jpm",
-      "headline": "Justice Department opens sweeping 'debanking' probe into JPMorgan, Bank of America and more - New Yo",
-      "score": 74,
-      "tier": "HIGH CONVICTION",
-      "flow_alignment": 29,
-      "contradiction": 30,
-      "event_strength": 15,
-      "asset_class": "equities",
-      "direction": "inflow"
-    },
-    {
-      "story_id": "n21_osint__reuters_business__stock_market_today_russell_2000_leads_upside_ahead_of_space",
-      "headline": "Stock Market Today: Russell 2000 Leads Upside Ahead Of SpaceX IPO; AI Stocks Rally (Live Coverage) -",
-      "score": 74,
-      "tier": "HIGH CONVICTION",
-      "flow_alignment": 29,
-      "contradiction": 30,
-      "event_strength": 15,
-      "asset_class": "tech",
-      "direction": "outflow"
-    },
-    {
-      "story_id": "n21_osint__reuters_business__what_happens_if_ai_causes_25_unemployment_anthropic_has_a",
-      "headline": "What Happens If AI Causes 25% Unemployment? Anthropic Has a Concept of a Plan - Gizmodo",
-      "score": 74,
-      "tier": "HIGH CONVICTION",
-      "flow_alignment": 29,
-      "contradiction": 30,
-      "event_strength": 15,
-      "asset_class": "defense",
       "direction": "inflow"
     }
   ]

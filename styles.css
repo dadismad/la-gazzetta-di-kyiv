@@ -2284,3 +2284,213 @@ display: -webkit-flex;
   .sector-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+
+
+/* ═══════════════════════════════════════════════ */
+/* v25.16: PRODUCT PAGE LEAN RESTRUCTURING        */
+/* ═══════════════════════════════════════════════ */
+
+/* Product page container — matching homepage card style */
+.product-page .container {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 4px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+.product-page .container:hover {
+  box-shadow: 0 2px 12px rgba(212,175,55,0.10);
+  border-color: #D4AF37;
+}
+
+/* INTEL accent: blue left border */
+.product-page[data-layer="intel"] .container {
+  border-left: 3px solid #3B82F6;
+}
+/* ALPHA accent: gold left border */
+.product-page[data-layer="alpha"] .container {
+  border-left: 3px solid #D4AF37;
+}
+
+/* Container header — clean typography */
+.product-page .container-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+.product-page .container-title {
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.product-page .container-subtitle {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  padding: 2px 7px;
+  border-radius: 2px;
+}
+.product-page[data-layer="intel"] .container-subtitle {
+  background: #1E293B;
+  color: #E2E8F0;
+}
+.product-page[data-layer="alpha"] .container-subtitle {
+  background: #D4AF37;
+  color: #0F172A;
+}
+
+/* Container description */
+.product-page .container-desc {
+  font-family: var(--serif);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--ink-muted);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+/* Container count/freshness */
+.product-page .container-count {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-light);
+  margin-left: auto;
+}
+
+/* Container body */
+.product-page .container-body {
+  padding: 0;
+}
+
+/* Flow card styling within product pages */
+.product-page .flow-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-left: 3px solid #3B82F6;
+  border-radius: 4px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  transition: box-shadow 0.15s;
+}
+.product-page .flow-card:hover {
+  box-shadow: 0 2px 8px rgba(212,175,55,0.10);
+}
+.product-page[data-layer="alpha"] .flow-card {
+  border-left-color: #D4AF37;
+}
+
+/* Story card styling within product pages */
+.product-page .story-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-left: 3px solid #3B82F6;
+  border-radius: 4px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  transition: box-shadow 0.15s;
+}
+.product-page .story-card:hover {
+  box-shadow: 0 2px 8px rgba(212,175,55,0.10);
+}
+.product-page[data-layer="alpha"] .story-card {
+  border-left-color: #D4AF37;
+}
+
+/* Trade/anchor card styling */
+.product-page .anchor-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-left: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  transition: box-shadow 0.15s;
+}
+.product-page .anchor-card:hover {
+  box-shadow: 0 2px 8px rgba(212,175,55,0.12);
+}
+
+/* Signal card styling */
+.product-page .signal-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-left: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  transition: box-shadow 0.15s;
+}
+.product-page .signal-card:hover {
+  box-shadow: 0 2px 8px rgba(212,175,55,0.12);
+}
+
+/* Track record card styling */
+.product-page .track-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-left: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  transition: box-shadow 0.15s;
+}
+.product-page .track-card:hover {
+  box-shadow: 0 2px 8px rgba(212,175,55,0.12);
+}
+
+/* Regime cards (flows page) */
+.product-page .regime-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 4px;
+  padding: 12px 14px;
+}
+
+/* Sector chip grid */
+.product-page .sector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+  margin: 12px 0;
+}
+
+/* Divergence meter / signal grid items */
+.product-page .divergence-item {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 4px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  transition: box-shadow 0.15s;
+}
+.product-page .divergence-item:hover {
+  box-shadow: 0 2px 8px rgba(212,175,55,0.10);
+}
+
+/* Data freshness footer note */
+.product-page .data-freshness {
+  font-family: var(--sans);
+  font-size: 10px;
+  color: var(--ink-muted);
+  text-align: right;
+  margin-top: 8px;
+  opacity: 0.5;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .product-page .container {
+    padding: 14px 12px;
+  }
+  .product-page .container-title {
+    font-size: 16px;
+  }
+}
+

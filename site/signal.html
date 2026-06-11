@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="./data/stories.json" as="fetch" crossorigin="anonymous">
   <link rel="preload" href="./data/flows.json" as="fetch" crossorigin="anonymous">  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.354543bb.css"/>
+  <link rel="stylesheet" href="./styles.css?v=25.17"/>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='2' fill='%23111827'/><text x='16' y='24' text-anchor='middle' font-size='22' font-weight='bold' font-family='Georgia,serif' fill='%23D4AF37'>G</text></svg>"/>
 
   <link rel="canonical" href="https://www.lagazzettadikyiv.com/signal.html"/>
@@ -53,27 +53,30 @@
   </div>
   <div class="masthead-right">
     <nav class="product-nav" style="display:flex;gap:14px;align-items:center;">
-      <a href="./stories.html">Stories</a>
-      <a href="./flows.html">Flows</a>
-      <a href="./event_horizon.html">Horizon</a>
-      <a href="./flow-nodes.html">Flow Nodes</a>
-      <a href="./trades.html">Trades</a>
-      <a href="./signal.html">Signal</a>
-      <a href="./track.html">Track</a>
+      <a href="./stories.html" data-i18n="nav_stories">Stories</a>
+      <a href="./flows.html" data-i18n="nav_flows">Flows</a>
+      <a href="./event_horizon.html" data-i18n="nav_horizon">Horizon</a>
+      <a href="./flow-nodes.html" data-i18n="nav_flow_nodes">Flow Nodes</a>
+      <a href="./trades.html" data-i18n="nav_trades">Trades</a>
+      <a href="./signal.html" data-i18n="nav_signal">Signal</a>
+      <a href="./track.html" data-i18n="nav_track">Track</a>
     </nav>
-    
+    <span class="lang-switcher">
+      <button class="lang-switch active" data-lang="en" onclick="i18n.switchLang('en')" aria-label="English">EN</button>
+      <button class="lang-switch" data-lang="ru" onclick="i18n.switchLang('ru')" aria-label="Russian">RU</button>
+    </span>
   </div>
 </header>
 
-<main class="product-page">
+<main class="product-page" data-layer="alpha">
 
 <section class="container expanded" id="signalContainer">
   <div class="container-header">
-    <span class="container-title">The Signal</span>
-    <span class="container-subtitle">Flow x Bet x Event</span>
+    <span class="container-title" data-i18n="container_signal_title">The Signal</span>
+    <span class="container-subtitle" data-i18n="container_signal_subtitle">Flow x Bet x Event</span>
     <span class="container-freshness" id="signalFreshness" style="font-family:var(--sans);font-size:9px;color:var(--ink-muted);margin-left:auto;"></span>
   </div>
-  <div class="container-desc">Cross-container triangulation: where narrative intelligence, capital flows, and trade ideas converge — or conflict. Divergence IS the edge.</div>
+  <div class="container-desc" data-i18n="container_signal_desc">Cross-container triangulation: where narrative intelligence, capital flows, and trade ideas converge — or conflict. Divergence IS the edge.</div>
   <div class="container-body" style="max-height:none;overflow:visible;">
     <!-- v22.35: Divergence Meter — cross-product signal overlay -->
     <div class="divergence-meter" id="divergenceMeter"></div>
@@ -110,7 +113,8 @@
   <div style="text-align:center;padding-top:16px;font-size:10px;color:var(--ink-muted);">Kyiv · Since 2025</div>
 </footer>
 
-<script src="./app.49c70b17.js"></script>
+<script src="./i18n.js?v=25.17"></script>
+<script src="./app.js?v=25.17"></script>
 
 <!-- Hidden containers for boot() compatibility -->
 <div style="display:none">
