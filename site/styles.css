@@ -51,30 +51,29 @@ body {
 }
 
 /* ── Masthead ── */
-/* v25.0: 300% title, top-right aligned */
+/* v25.14: Single-bar masthead — brand left, nav right, no EN/RU */
 .masthead {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  padding: 8px 14px;
+  padding: 10px 16px;
   background: #FFFFFF;
   border-bottom: 1px solid var(--divider);
   position: sticky;
   top: 0;
   z-index: 100;
-  gap: 8px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 .masthead-left {
   display: flex;
   align-items: center;
   gap: 10px;
-  flex-wrap: wrap;
-  flex: 1 1 auto;
+  flex-shrink: 0;
 }
 .masthead-name {
   font-family: var(--display);
-  font-size: 3em;
+  font-size: 1.6em;
   line-height: 1.1;
   /* Shimmering Tyrian purple — gradient with lustre */
   background: linear-gradient(
@@ -93,10 +92,6 @@ body {
   text-stroke: 0.4px rgba(245, 215, 110, 0.45);
   white-space: nowrap;
   animation: shimmer 8s ease-in-out infinite;
-  text-align: right;
-  flex: 1 1 auto;
-  margin-left: auto;
-  order: 10;
 }
 .masthead-bulava {
   position: relative;
@@ -139,6 +134,16 @@ body {
   height: 40px;
 }
 /* v25.0: Master navigation dropdowns */
+/* v25.14: master-nav inside masthead — transparent, inline */
+.masthead .master-nav {
+  display: flex;
+  gap: 0;
+  background: transparent;
+  padding: 0;
+  position: static;
+  border-bottom: none;
+}
+/* Standalone master-nav (legacy — only if outside masthead) */
 .master-nav {
   display: flex;
   gap: 0;
@@ -153,7 +158,7 @@ body {
 .nav-dropdown-trigger {
   background: none;
   border: none;
-  color: var(--gold);
+  color: var(--ink);
   font-family: var(--sans);
   font-size: 11px;
   font-weight: 700;
@@ -162,7 +167,10 @@ body {
   cursor: pointer;
   transition: color 0.15s;
 }
-.nav-dropdown-trigger:hover { color: #FFFFFF; }
+.nav-dropdown-trigger:hover { color: var(--gold); }
+/* Dark-bg override (legacy standalone nav) */
+.master-nav:not(.masthead .master-nav) .nav-dropdown-trigger { color: var(--gold); }
+.master-nav:not(.masthead .master-nav) .nav-dropdown-trigger:hover { color: #FFFFFF; }
 .nav-dd-arrow { font-size: 8px; margin-left: 3px; }
 .nav-dropdown.open .nav-dd-arrow { transform: rotate(180deg); display: inline-block; }
 .nav-dropdown-panel {
@@ -402,6 +410,7 @@ display: -webkit-box;
 display: -webkit-flex;
 .teaser-list { display: flex; flex-direction: column; gap: 4px; padding: 4px 0; }
 .teaser-item {
+  display: block;
   padding: 6px 8px;
   font-family: 'Source Serif 4', Georgia, serif;
   font-size: 13px;
