@@ -225,6 +225,15 @@
         "formula": "ABS((0.59 - -0.03) * 50) = 31",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -339,6 +348,15 @@
         "formula": "ABS((0.77 - -0.05) * 50) = 41",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -454,6 +472,16 @@
         "formula": "ABS((0.59 - 0.40) * 50) = 9",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "GLD",
+        "tickers": [
+          "GLD",
+          "USO",
+          "DBC",
+          "GSG"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -569,6 +597,17 @@
         "formula": "ABS((-0.77 - 0.08) * 50) = 42",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "BTC",
+        "tickers": [
+          "BTC",
+          "DIA",
+          "SOL",
+          "ETH",
+          "NVDA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -684,6 +723,16 @@
         "formula": "ABS((0.72 - -0.03) * 50) = 37",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT",
+          "SMH"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -797,6 +846,15 @@
         "formula": "ABS((0.59 - -0.03) * 50) = 31",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -908,6 +966,16 @@
         "formula": "ABS((0.59 - -0.03) * 50) = 31",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT",
+          "XLF"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -1019,6 +1087,16 @@
         "formula": "ABS((0.59 - -0.03) * 50) = 31",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT",
+          "XLV"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -1130,6 +1208,15 @@
         "formula": "ABS((0.59 - -0.19) * 50) = 39",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -1241,6 +1328,15 @@
         "formula": "ABS((0.59 - -0.03) * 50) = 31",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -1355,6 +1451,17 @@
         "formula": "ABS((0.59 - 0.40) * 50) = 9",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "SMH",
+          "DBC",
+          "DIA",
+          "GSG"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -1470,6 +1577,16 @@
         "formula": "ABS((0.59 - -0.19) * 50) = 39",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "USO",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -1585,6 +1702,15 @@
         "formula": "ABS((0.59 - -0.01) * 50) = 30",
         "ticker": "UUP",
         "ticker_price": 27.99
+      },
+      "asset_claim": {
+        "primary_ticker": "UUP",
+        "tickers": [
+          "UUP",
+          "FXE",
+          "FXY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -1697,6 +1823,15 @@
         "formula": "ABS((0.72 - -0.03) * 50) = 37",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -1811,6 +1946,16 @@
         "formula": "ABS((0.82 - 0.03) * 50) = 39",
         "ticker": "TLT",
         "ticker_price": 85.26
+      },
+      "asset_claim": {
+        "primary_ticker": "IEF",
+        "tickers": [
+          "IEF",
+          "TLT",
+          "NVDA",
+          "SHY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -1925,6 +2070,17 @@
         "formula": "ABS((0.67 - 0.40) * 50) = 13",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "SOL",
+          "XLE",
+          "GSG",
+          "GLD"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -2038,6 +2194,16 @@
         "formula": "ABS((0.59 - -0.03) * 50) = 31",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT",
+          "DIA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -2150,6 +2316,17 @@
         "formula": "ABS((0.72 - 0.40) * 50) = 16",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "UNG",
+          "GSG",
+          "GLD",
+          "NVDA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -2265,6 +2442,17 @@
         "formula": "ABS((-0.54 - -0.19) * 50) = 18",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "LMT",
+          "USO",
+          "XLF",
+          "PPA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -2378,6 +2566,17 @@
         "formula": "ABS((0.59 - -0.03) * 50) = 31",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "SMH",
+          "MSFT",
+          "NVDA",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -2493,6 +2692,16 @@
         "formula": "ABS((0.59 - 0.40) * 50) = 9",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "GLD",
+        "tickers": [
+          "GLD",
+          "USO",
+          "DBC",
+          "GSG"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -2607,6 +2816,16 @@
         "formula": "ABS((-0.67 - -0.19) * 50) = 24",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "NVDA",
+        "tickers": [
+          "NVDA",
+          "ITA",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -2718,6 +2937,15 @@
         "formula": "ABS((-0.54 - -0.05) * 50) = 25",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -2840,6 +3068,15 @@
         "formula": "ABS((0.82 - -0.03) * 50) = 42",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -2953,6 +3190,16 @@
         "formula": "ABS((0.59 - -0.19) * 50) = 39",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "USO",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -3066,6 +3313,15 @@
         "formula": "ABS((0.59 - -0.03) * 50) = 31",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -3179,6 +3435,17 @@
         "formula": "ABS((0.59 - -0.19) * 50) = 39",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "LMT",
+          "NVDA",
+          "USO",
+          "PPA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -3293,6 +3560,17 @@
         "formula": "ABS((0.62 - 0.40) * 50) = 11",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "XLE",
+          "GSG",
+          "GLD",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -3405,6 +3683,15 @@
         "formula": "ABS((0.72 - -0.03) * 50) = 37",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -3519,6 +3806,17 @@
         "formula": "ABS((0.62 - -0.19) * 50) = 40",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "SMH",
+        "tickers": [
+          "SMH",
+          "DIA",
+          "ITA",
+          "LMT",
+          "NVDA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -3631,6 +3929,16 @@
         "formula": "ABS((0.72 - -0.19) * 50) = 45",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "NVDA",
+        "tickers": [
+          "NVDA",
+          "ITA",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -3743,6 +4051,15 @@
         "formula": "ABS((0.72 - -0.19) * 50) = 45",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -3855,6 +4172,16 @@
         "formula": "ABS((0.72 - 0.08) * 50) = 32",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "NVDA",
+        "tickers": [
+          "NVDA",
+          "ETH",
+          "BTC",
+          "SOL"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -3969,6 +4296,17 @@
         "formula": "ABS((-0.57 - 0.40) * 50) = 49",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "GSG",
+          "GLD",
+          "USO",
+          "XLF"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -4083,6 +4421,17 @@
         "formula": "ABS((0.67 - 0.40) * 50) = 13",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "DBC",
+          "DIA",
+          "GSG",
+          "GLD"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -4198,6 +4547,17 @@
         "formula": "ABS((-0.77 - 0.08) * 50) = 42",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "BTC",
+        "tickers": [
+          "BTC",
+          "DIA",
+          "SOL",
+          "ETH",
+          "NVDA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -4312,6 +4672,15 @@
         "formula": "ABS((0.62 - -0.03) * 50) = 32",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -4426,6 +4795,16 @@
         "formula": "ABS((0.67 - -0.05) * 50) = 36",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY",
+          "DIA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -4541,6 +4920,16 @@
         "formula": "ABS((0.72 - -0.05) * 50) = 38",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY",
+          "XLF"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -4653,6 +5042,15 @@
         "formula": "ABS((-0.72 - -0.03) * 50) = 35",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -4767,6 +5165,17 @@
         "formula": "ABS((0.62 - 0.40) * 50) = 11",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "SMH",
+        "tickers": [
+          "SMH",
+          "DBC",
+          "GSG",
+          "GLD",
+          "NVDA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -4879,6 +5288,16 @@
         "formula": "ABS((0.77 - -0.19) * 50) = 48",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "NVDA",
+        "tickers": [
+          "NVDA",
+          "ITA",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -4993,6 +5412,15 @@
         "formula": "ABS((-0.57 - 0.08) * 50) = 32",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "ETH",
+        "tickers": [
+          "ETH",
+          "BTC",
+          "SOL"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -5107,6 +5535,15 @@
         "formula": "ABS((-0.77 - -0.03) * 50) = 37",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -5221,6 +5658,17 @@
         "formula": "ABS((0.72 - 0.40) * 50) = 16",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "SOL",
+          "XLE",
+          "GSG",
+          "GLD"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -5333,6 +5781,15 @@
         "formula": "ABS((0.72 - -0.05) * 50) = 38",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -5448,6 +5905,17 @@
         "formula": "ABS((-0.72 - 0.08) * 50) = 40",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "BTC",
+        "tickers": [
+          "BTC",
+          "DIA",
+          "SOL",
+          "ETH",
+          "NVDA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -5560,6 +6028,15 @@
         "formula": "ABS((0.62 - -0.03) * 50) = 32",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -5676,6 +6153,17 @@
         "formula": "ABS((0.62 - 0.40) * 50) = 11",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "GSG",
+          "GLD",
+          "NVDA",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -5791,6 +6279,15 @@
         "formula": "ABS((0.62 - -0.19) * 50) = 40",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -5905,6 +6402,17 @@
         "formula": "ABS((0.67 - -0.03) * 50) = 35",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "DIA",
+          "MSFT",
+          "NVDA",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -6019,6 +6527,17 @@
         "formula": "ABS((-0.57 - -0.19) * 50) = 19",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "SMH",
+          "DIA",
+          "ITA",
+          "LMT"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -6131,6 +6650,16 @@
         "formula": "ABS((0.82 - -0.03) * 50) = 42",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "TLT",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -6247,6 +6776,17 @@
         "formula": "ABS((0.62 - 0.40) * 50) = 11",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "GSG",
+          "GLD",
+          "FXE",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -6362,6 +6902,17 @@
         "formula": "ABS((0.62 - -0.19) * 50) = 40",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "LMT",
+          "NVDA",
+          "USO",
+          "PPA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -6474,6 +7025,16 @@
         "formula": "ABS((0.82 - -0.03) * 50) = 42",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT",
+          "DIA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -6588,6 +7149,15 @@
         "formula": "ABS((0.67 - -0.03) * 50) = 35",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -6702,6 +7272,15 @@
         "formula": "ABS((0.62 - 0.40) * 50) = 11",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "GLD",
+        "tickers": [
+          "GLD",
+          "DBC",
+          "GSG"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -6817,6 +7396,15 @@
         "formula": "ABS((-0.77 - -0.03) * 50) = 37",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -6932,6 +7520,17 @@
         "formula": "ABS((0.62 - 0.40) * 50) = 11",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "XLE",
+          "GSG",
+          "GLD",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -7044,6 +7643,15 @@
         "formula": "ABS((0.62 - -0.05) * 50) = 33",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -7158,6 +7766,16 @@
         "formula": "ABS((0.62 - 0.40) * 50) = 11",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "GLD",
+        "tickers": [
+          "GLD",
+          "USO",
+          "DBC",
+          "GSG"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -7272,6 +7890,17 @@
         "formula": "ABS((0.82 - 0.03) * 50) = 39",
         "ticker": "TLT",
         "ticker_price": 85.26
+      },
+      "asset_claim": {
+        "primary_ticker": "TLT",
+        "tickers": [
+          "TLT",
+          "IEF",
+          "SHY",
+          "AGG",
+          "NVDA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -7384,6 +8013,17 @@
         "formula": "ABS((0.62 - 0.40) * 50) = 11",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "UNG",
+          "GSG",
+          "GLD",
+          "NVDA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -7498,6 +8138,17 @@
         "formula": "ABS((0.62 - -0.19) * 50) = 40",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "LMT",
+          "NVDA",
+          "USO",
+          "PPA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -7612,6 +8263,17 @@
         "formula": "ABS((-0.57 - -0.03) * 50) = 27",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "SMH",
+          "MSFT",
+          "NVDA",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -7726,6 +8388,17 @@
         "formula": "ABS((-0.77 - 0.03) * 50) = 40",
         "ticker": "TLT",
         "ticker_price": 85.26
+      },
+      "asset_claim": {
+        "primary_ticker": "TLT",
+        "tickers": [
+          "TLT",
+          "IEF",
+          "SHY",
+          "NVDA",
+          "XLF"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -7841,6 +8514,15 @@
         "formula": "ABS((0.62 - -0.05) * 50) = 33",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -7955,6 +8637,15 @@
         "formula": "ABS((-0.57 - -0.19) * 50) = 19",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -8067,6 +8758,17 @@
         "formula": "ABS((0.82 - -0.05) * 50) = 43",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "TLT",
+          "IWM",
+          "XLF",
+          "SPY"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -8179,6 +8881,15 @@
         "formula": "ABS((0.82 - -0.05) * 50) = 43",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -8291,6 +9002,15 @@
         "formula": "ABS((0.82 - -0.05) * 50) = 43",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -8406,6 +9126,17 @@
         "formula": "ABS((0.82 - 0.40) * 50) = 21",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "DIA",
+          "XLE",
+          "GSG",
+          "GLD"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -8520,6 +9251,15 @@
         "formula": "ABS((0.62 - -0.05) * 50) = 33",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -8634,6 +9374,17 @@
         "formula": "ABS((0.77 - 0.40) * 50) = 18",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "SMH",
+          "DBC",
+          "DIA",
+          "GSG"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -8746,6 +9497,15 @@
         "formula": "ABS((0.62 - -0.05) * 50) = 33",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -8858,6 +9618,15 @@
         "formula": "ABS((0.62 - 0.40) * 50) = 11",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "GLD",
+        "tickers": [
+          "GLD",
+          "DBC",
+          "GSG"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -8972,6 +9741,16 @@
         "formula": "ABS((-0.57 - 0.40) * 50) = 49",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "GLD",
+        "tickers": [
+          "GLD",
+          "XLE",
+          "DBC",
+          "GSG"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -9087,6 +9866,17 @@
         "formula": "ABS((0.62 - -0.19) * 50) = 40",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "LMT",
+          "NVDA",
+          "USO",
+          "PPA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -9201,6 +9991,17 @@
         "formula": "ABS((0.77 - -0.19) * 50) = 48",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "LMT",
+          "NVDA",
+          "USO",
+          "PPA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -9313,6 +10114,16 @@
         "formula": "ABS((0.59 - -0.05) * 50) = 32",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY",
+          "TLT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -9425,6 +10236,16 @@
         "formula": "ABS((0.82 - -0.05) * 50) = 43",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY",
+          "TLT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -9542,6 +10363,16 @@
         "formula": "ABS((0.62 - -0.19) * 50) = 40",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "NVDA",
+        "tickers": [
+          "NVDA",
+          "ITA",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -9656,6 +10487,15 @@
         "formula": "ABS((0.72 - -0.03) * 50) = 37",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -9768,6 +10608,15 @@
         "formula": "ABS((0.72 - -0.03) * 50) = 37",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -9883,6 +10732,16 @@
         "formula": "ABS((0.62 - -0.19) * 50) = 40",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "USO",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -9997,6 +10856,15 @@
         "formula": "ABS((0.59 - -0.05) * 50) = 32",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -10109,6 +10977,15 @@
         "formula": "ABS((0.72 - -0.03) * 50) = 37",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -10224,6 +11101,17 @@
         "formula": "ABS((0.62 - 0.40) * 50) = 11",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "GSG",
+          "GLD",
+          "NVDA",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -10336,6 +11224,17 @@
         "formula": "ABS((0.62 - -0.03) * 50) = 32",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "TLT",
+          "MSFT",
+          "NVDA",
+          "XLF"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -10448,6 +11347,15 @@
         "formula": "ABS((-0.67 - -0.03) * 50) = 32",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -10562,6 +11470,16 @@
         "formula": "ABS((0.77 - -0.01) * 50) = 39",
         "ticker": "UUP",
         "ticker_price": 27.99
+      },
+      "asset_claim": {
+        "primary_ticker": "UUP",
+        "tickers": [
+          "UUP",
+          "FXE",
+          "FXY",
+          "NVDA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -10676,6 +11594,15 @@
         "formula": "ABS((0.77 - -0.05) * 50) = 41",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -10788,6 +11715,15 @@
         "formula": "ABS((0.67 - -0.05) * 50) = 36",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -10903,6 +11839,17 @@
         "formula": "ABS((0.62 - 0.40) * 50) = 11",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "GSG",
+          "GLD",
+          "NVDA",
+          "FXE"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -11017,6 +11964,16 @@
         "formula": "ABS((0.67 - -0.19) * 50) = 43",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "NVDA",
+        "tickers": [
+          "NVDA",
+          "ITA",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -11132,6 +12089,17 @@
         "formula": "ABS((0.62 - 0.40) * 50) = 11",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "GSG",
+          "GLD",
+          "NVDA",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -11244,6 +12212,15 @@
         "formula": "ABS((-0.77 - -0.03) * 50) = 37",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -11360,6 +12337,17 @@
         "formula": "ABS((0.62 - 0.40) * 50) = 11",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "DIA",
+          "GSG",
+          "GLD",
+          "NVDA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -11472,6 +12460,16 @@
         "formula": "ABS((0.72 - -0.19) * 50) = 45",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "NVDA",
+        "tickers": [
+          "NVDA",
+          "ITA",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -11584,6 +12582,15 @@
         "formula": "ABS((0.77 - -0.03) * 50) = 40",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -11699,6 +12706,16 @@
         "formula": "ABS((0.62 - -0.03) * 50) = 32",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "USO",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -11815,6 +12832,15 @@
         "formula": "ABS((0.72 - -0.03) * 50) = 37",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -11931,6 +12957,16 @@
         "formula": "ABS((0.72 - -0.19) * 50) = 45",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "USO",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -12045,6 +13081,15 @@
         "formula": "ABS((-0.72 - -0.05) * 50) = 34",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -12160,6 +13205,17 @@
         "formula": "ABS((-0.67 - -0.19) * 50) = 24",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "SMH",
+          "DIA",
+          "ITA",
+          "LMT"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -12274,6 +13330,16 @@
         "formula": "ABS((0.67 - -0.19) * 50) = 43",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "NVDA",
+        "tickers": [
+          "NVDA",
+          "ITA",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -12386,6 +13452,15 @@
         "formula": "ABS((0.67 - -0.03) * 50) = 35",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -12498,6 +13573,15 @@
         "formula": "ABS((-0.72 - -0.03) * 50) = 35",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -12610,6 +13694,15 @@
         "formula": "ABS((0.62 - -0.03) * 50) = 32",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -12724,6 +13817,15 @@
         "formula": "ABS((0.82 - -0.05) * 50) = 43",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -12838,6 +13940,15 @@
         "formula": "ABS((-0.72 - -0.05) * 50) = 34",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -12954,6 +14065,16 @@
         "formula": "ABS((-0.57 - 0.40) * 50) = 49",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "GLD",
+        "tickers": [
+          "GLD",
+          "USO",
+          "DBC",
+          "GSG"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -13069,6 +14190,17 @@
         "formula": "ABS((0.62 - -0.19) * 50) = 40",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "SOL",
+        "tickers": [
+          "SOL",
+          "ITA",
+          "LMT",
+          "USO",
+          "PPA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -13181,6 +14313,15 @@
         "formula": "ABS((0.72 - -0.03) * 50) = 37",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -13295,6 +14436,15 @@
         "formula": "ABS((0.59 - -0.05) * 50) = 32",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -13417,6 +14567,15 @@
         "formula": "ABS((0.82 - -0.05) * 50) = 43",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -13531,6 +14690,16 @@
         "formula": "ABS((0.72 - -0.19) * 50) = 45",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "NVDA",
+        "tickers": [
+          "NVDA",
+          "ITA",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -13646,6 +14815,16 @@
         "formula": "ABS((0.62 - 0.08) * 50) = 27",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "ETH",
+        "tickers": [
+          "ETH",
+          "XLF",
+          "BTC",
+          "SOL"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -13760,6 +14939,15 @@
         "formula": "ABS((0.59 - -0.05) * 50) = 32",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -13874,6 +15062,15 @@
         "formula": "ABS((-0.77 - -0.03) * 50) = 37",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -13989,6 +15186,16 @@
         "formula": "ABS((0.59 - -0.05) * 50) = 32",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY",
+          "XLF"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -14105,6 +15312,16 @@
         "formula": "ABS((0.67 - -0.01) * 50) = 34",
         "ticker": "UUP",
         "ticker_price": 27.99
+      },
+      "asset_claim": {
+        "primary_ticker": "UUP",
+        "tickers": [
+          "UUP",
+          "FXE",
+          "FXY",
+          "SOL"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -14220,6 +15437,16 @@
         "formula": "ABS((0.62 - 0.40) * 50) = 11",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "GLD",
+        "tickers": [
+          "GLD",
+          "USO",
+          "DBC",
+          "GSG"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -14334,6 +15561,15 @@
         "formula": "ABS((0.62 - -0.05) * 50) = 33",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -14448,6 +15684,17 @@
         "formula": "ABS((-0.62 - 0.08) * 50) = 35",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "BTC",
+        "tickers": [
+          "BTC",
+          "SOL",
+          "ETH",
+          "NVDA",
+          "XLF"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -14560,6 +15807,15 @@
         "formula": "ABS((-0.67 - -0.03) * 50) = 32",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -14674,6 +15930,16 @@
         "formula": "ABS((0.59 - -0.19) * 50) = 39",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "TLT",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -14788,6 +16054,16 @@
         "formula": "ABS((0.82 - 0.03) * 50) = 39",
         "ticker": "TLT",
         "ticker_price": 85.26
+      },
+      "asset_claim": {
+        "primary_ticker": "IEF",
+        "tickers": [
+          "IEF",
+          "TLT",
+          "SHY",
+          "AGG"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -14900,6 +16176,16 @@
         "formula": "ABS((-0.77 - 0.03) * 50) = 40",
         "ticker": "TLT",
         "ticker_price": 85.26
+      },
+      "asset_claim": {
+        "primary_ticker": "IEF",
+        "tickers": [
+          "IEF",
+          "TLT",
+          "SHY",
+          "AGG"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -15012,6 +16298,15 @@
         "formula": "ABS((0.72 - -0.19) * 50) = 45",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -15127,6 +16422,15 @@
         "formula": "ABS((-0.72 - -0.03) * 50) = 35",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -15242,6 +16546,17 @@
         "formula": "ABS((0.72 - -0.19) * 50) = 45",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "LMT",
+          "NVDA",
+          "USO",
+          "PPA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -15357,6 +16672,16 @@
         "formula": "ABS((-0.72 - 0.40) * 50) = 56",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "GLD",
+        "tickers": [
+          "GLD",
+          "USO",
+          "DBC",
+          "GSG"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -15471,6 +16796,15 @@
         "formula": "ABS((-0.57 - -0.03) * 50) = 27",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -15585,6 +16919,15 @@
         "formula": "ABS((0.59 - -0.05) * 50) = 32",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -15707,6 +17050,15 @@
         "formula": "ABS((0.82 - -0.03) * 50) = 42",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -15822,6 +17174,17 @@
         "formula": "ABS((0.72 - 0.40) * 50) = 16",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "DIA",
+          "GSG",
+          "GLD",
+          "NVDA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -15934,6 +17297,15 @@
         "formula": "ABS((0.72 - -0.03) * 50) = 37",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -16046,6 +17418,15 @@
         "formula": "ABS((0.77 - -0.03) * 50) = 40",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -16160,6 +17541,15 @@
         "formula": "ABS((0.72 - -0.03) * 50) = 37",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -16272,6 +17662,16 @@
         "formula": "ABS((0.72 - -0.19) * 50) = 45",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "NVDA",
+        "tickers": [
+          "NVDA",
+          "ITA",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -16384,6 +17784,16 @@
         "formula": "ABS((0.62 - -0.03) * 50) = 32",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "IBB",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -16498,6 +17908,15 @@
         "formula": "ABS((-0.77 - -0.03) * 50) = 37",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -16614,6 +18033,17 @@
         "formula": "ABS((0.67 - 0.40) * 50) = 13",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "GSG",
+          "GLD",
+          "NVDA",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -16726,6 +18156,15 @@
         "formula": "ABS((0.67 - -0.03) * 50) = 35",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -16840,6 +18279,16 @@
         "formula": "ABS((0.67 - 0.40) * 50) = 13",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "GLD",
+        "tickers": [
+          "GLD",
+          "XLE",
+          "DBC",
+          "GSG"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -16952,6 +18401,15 @@
         "formula": "ABS((0.77 - -0.03) * 50) = 40",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -17066,6 +18524,16 @@
         "formula": "ABS((0.72 - -0.03) * 50) = 37",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT",
+          "XLF"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -17178,6 +18646,16 @@
         "formula": "ABS((0.59 - 0.08) * 50) = 26",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "NVDA",
+        "tickers": [
+          "NVDA",
+          "ETH",
+          "BTC",
+          "SOL"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -17292,6 +18770,15 @@
         "formula": "ABS((-0.72 - -0.03) * 50) = 35",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -17407,6 +18894,15 @@
         "formula": "ABS((0.77 - -0.03) * 50) = 40",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -17523,6 +19019,17 @@
         "formula": "ABS((0.67 - 0.40) * 50) = 13",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "GSG",
+          "GLD",
+          "NVDA",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -17643,6 +19150,16 @@
         "formula": "ABS((0.82 - -0.05) * 50) = 43",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY",
+          "DIA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -17758,6 +19275,17 @@
         "formula": "ABS((-0.62 - 0.40) * 50) = 51",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "GSG",
+          "GLD",
+          "NVDA",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -17872,6 +19400,16 @@
         "formula": "ABS((-0.54 - -0.05) * 50) = 25",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY",
+          "SOL"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -17986,6 +19524,16 @@
         "formula": "ABS((0.67 - 0.40) * 50) = 13",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "GLD",
+        "tickers": [
+          "GLD",
+          "USO",
+          "DBC",
+          "GSG"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -18098,6 +19646,15 @@
         "formula": "ABS((0.67 - -0.03) * 50) = 35",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -18212,6 +19769,15 @@
         "formula": "ABS((0.77 - -0.03) * 50) = 40",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -18327,6 +19893,16 @@
         "formula": "ABS((0.82 - 0.40) * 50) = 21",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "GLD",
+        "tickers": [
+          "GLD",
+          "USO",
+          "DBC",
+          "GSG"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -18442,6 +20018,15 @@
         "formula": "ABS((-0.67 - 0.08) * 50) = 37",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "ETH",
+        "tickers": [
+          "ETH",
+          "BTC",
+          "SOL"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -18558,6 +20143,17 @@
         "formula": "ABS((0.72 - -0.19) * 50) = 45",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "FXE",
+        "tickers": [
+          "FXE",
+          "ITA",
+          "LMT",
+          "NVDA",
+          "PPA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -18673,6 +20269,17 @@
         "formula": "ABS((-0.67 - -0.19) * 50) = 24",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "DIA",
+          "ITA",
+          "LMT",
+          "NVDA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -18785,6 +20392,15 @@
         "formula": "ABS((0.77 - -0.03) * 50) = 40",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -18907,6 +20523,16 @@
         "formula": "ABS((0.82 - -0.03) * 50) = 42",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT",
+          "XLF"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -19019,6 +20645,15 @@
         "formula": "ABS((0.72 - -0.03) * 50) = 37",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -19133,6 +20768,16 @@
         "formula": "ABS((0.72 - -0.19) * 50) = 45",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "LMT",
+          "XLF",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -19247,6 +20892,16 @@
         "formula": "ABS((0.82 - -0.01) * 50) = 42",
         "ticker": "UUP",
         "ticker_price": 27.99
+      },
+      "asset_claim": {
+        "primary_ticker": "UUP",
+        "tickers": [
+          "UUP",
+          "FXE",
+          "FXY",
+          "NVDA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -19359,6 +21014,16 @@
         "formula": "ABS((0.77 - 0.08) * 50) = 35",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "NVDA",
+        "tickers": [
+          "NVDA",
+          "ETH",
+          "BTC",
+          "SOL"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -19471,6 +21136,15 @@
         "formula": "ABS((0.62 - -0.03) * 50) = 32",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -19583,6 +21257,15 @@
         "formula": "ABS((0.67 - -0.03) * 50) = 35",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -19695,6 +21378,15 @@
         "formula": "ABS((0.77 - -0.03) * 50) = 40",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -19807,6 +21499,16 @@
         "formula": "ABS((0.72 - 0.40) * 50) = 16",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "GLD",
+        "tickers": [
+          "GLD",
+          "XLE",
+          "DBC",
+          "GSG"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -19919,6 +21621,15 @@
         "formula": "ABS((0.77 - 0.08) * 50) = 35",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "ETH",
+        "tickers": [
+          "ETH",
+          "BTC",
+          "SOL"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -20033,6 +21744,16 @@
         "formula": "ABS((0.82 - -0.03) * 50) = 42",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT",
+          "DIA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -20148,6 +21869,17 @@
         "formula": "ABS((0.72 - -0.19) * 50) = 45",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "LMT",
+          "NVDA",
+          "USO",
+          "PPA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -20260,6 +21992,15 @@
         "formula": "ABS((0.67 - -0.03) * 50) = 35",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -20372,6 +22113,16 @@
         "formula": "ABS((0.77 - -0.05) * 50) = 41",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "BOAT",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -20484,6 +22235,15 @@
         "formula": "ABS((0.72 - -0.03) * 50) = 37",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -20596,6 +22356,15 @@
         "formula": "ABS((0.72 - -0.03) * 50) = 37",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -20711,6 +22480,15 @@
         "formula": "ABS((0.77 - -0.03) * 50) = 40",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -20823,6 +22601,17 @@
         "formula": "ABS((0.72 - 0.40) * 50) = 16",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "DIA",
+          "XLE",
+          "GSG",
+          "GLD"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -20935,6 +22724,15 @@
         "formula": "ABS((-0.67 - -0.03) * 50) = 32",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -21049,6 +22847,15 @@
         "formula": "ABS((0.77 - -0.03) * 50) = 40",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -21163,6 +22970,17 @@
         "formula": "ABS((-0.67 - 0.40) * 50) = 54",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "UNG",
+          "GSG",
+          "GLD",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -21275,6 +23093,15 @@
         "formula": "ABS((0.72 - -0.19) * 50) = 45",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -21389,6 +23216,15 @@
         "formula": "ABS((0.77 - -0.03) * 50) = 40",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -21498,6 +23334,17 @@
         "formula": "ABS((0.50 - -0.19) * 50) = 34",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "SOL",
+        "tickers": [
+          "SOL",
+          "DIA",
+          "ITA",
+          "LMT",
+          "NVDA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -21607,6 +23454,17 @@
         "formula": "ABS((0.50 - 0.08) * 50) = 21",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "BTC",
+        "tickers": [
+          "BTC",
+          "SOL",
+          "ETH",
+          "NVDA",
+          "XLF"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -21717,6 +23575,17 @@
         "formula": "ABS((0.50 - 0.40) * 50) = 5",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "ITA",
+          "GSG",
+          "GLD",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -21826,6 +23695,15 @@
         "formula": "ABS((0.50 - -0.05) * 50) = 27",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -21935,6 +23813,15 @@
         "formula": "ABS((0.50 - -0.19) * 50) = 34",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -22047,6 +23934,17 @@
         "formula": "ABS((0.50 - 0.08) * 50) = 21",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "BTC",
+        "tickers": [
+          "BTC",
+          "SOL",
+          "ETH",
+          "NVDA",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -22157,6 +24055,15 @@
         "formula": "ABS((0.50 - -0.03) * 50) = 26",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -22273,6 +24180,16 @@
         "formula": "ABS((0.77 - -0.03) * 50) = 40",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "USO",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -22384,6 +24301,17 @@
         "formula": "ABS((0.50 - -0.19) * 50) = 34",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "LMT",
+          "NVDA",
+          "USO",
+          "PPA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -22494,6 +24422,17 @@
         "formula": "ABS((0.50 - -0.19) * 50) = 34",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "ITA",
+        "tickers": [
+          "ITA",
+          "LMT",
+          "NVDA",
+          "USO",
+          "PPA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -22606,6 +24545,15 @@
         "formula": "ABS((0.50 - -0.05) * 50) = 27",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -22716,6 +24664,17 @@
         "formula": "ABS((0.50 - 0.40) * 50) = 5",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "XLE",
+          "GSG",
+          "GLD",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -22825,6 +24784,16 @@
         "formula": "ABS((0.50 - -0.03) * 50) = 26",
         "ticker": "QQQ",
         "ticker_price": 706.76
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "NVDA",
+          "USO",
+          "MSFT"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -22935,6 +24904,16 @@
         "formula": "ABS((0.50 - -0.19) * 50) = 34",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "NVDA",
+        "tickers": [
+          "NVDA",
+          "ITA",
+          "LMT",
+          "PPA"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -23045,6 +25024,15 @@
         "formula": "ABS((0.50 - -0.05) * 50) = 27",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -23155,6 +25143,16 @@
         "formula": "ABS((0.50 - -0.05) * 50) = 27",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY",
+          "XLF"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -23266,6 +25264,16 @@
         "formula": "ABS((0.50 - -0.05) * 50) = 27",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "USO",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -23376,6 +25384,16 @@
         "formula": "ABS((0.50 - -0.05) * 50) = 27",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "USO",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -23487,6 +25505,16 @@
         "formula": "ABS((0.50 - -0.05) * 50) = 27",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "USO",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -23596,6 +25624,16 @@
         "formula": "ABS((0.50 - 0.08) * 50) = 21",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "NVDA",
+        "tickers": [
+          "NVDA",
+          "ETH",
+          "BTC",
+          "SOL"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -23705,6 +25743,15 @@
         "formula": "ABS((0.50 - -0.05) * 50) = 27",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "IWM",
+          "SPY"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -23823,6 +25870,17 @@
         "formula": "ABS((0.92 - -0.19) * 50) = 55",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "SMH",
+        "tickers": [
+          "SMH",
+          "ITA",
+          "LMT",
+          "NVDA",
+          "FXE"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -23934,6 +25992,16 @@
         "formula": "ABS((-0.50 - 0.08) * 50) = 29",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "NVDA",
+        "tickers": [
+          "NVDA",
+          "ETH",
+          "BTC",
+          "SOL"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -24046,6 +26114,17 @@
         "formula": "ABS((0.87 - -0.19) * 50) = 53",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "DIA",
+          "ITA",
+          "LMT",
+          "NVDA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -24181,6 +26260,17 @@
         "formula": "ABS((0.76 - 0.40) * 50) = 18",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "ITA",
+          "GSG",
+          "GLD",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -24269,6 +26359,17 @@
         "formula": "ABS((-0.77 - 0.40) * 50) = 59",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "SOL",
+          "GSG",
+          "GLD",
+          "AGG"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -24354,6 +26455,17 @@
         "formula": "ABS((0.75 - 0.08) * 50) = 34",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "TLT",
+        "tickers": [
+          "TLT",
+          "BTC",
+          "SOL",
+          "XHB",
+          "ETH"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -24470,6 +26582,17 @@
         "formula": "ABS((-0.75 - 0.40) * 50) = 58",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "GSG",
+          "GLD",
+          "NVDA",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -24566,6 +26689,17 @@
         "formula": "ABS((0.72 - 0.40) * 50) = 16",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "SOL",
+          "DIA",
+          "GSG",
+          "GLD"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -24651,6 +26785,17 @@
         "formula": "ABS((0.75 - 0.40) * 50) = 17",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "TLT",
+        "tickers": [
+          "TLT",
+          "DBC",
+          "GSG",
+          "GLD",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -24747,6 +26892,17 @@
         "formula": "ABS((0.69 - 0.40) * 50) = 14",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "TLT",
+        "tickers": [
+          "TLT",
+          "DBC",
+          "GSG",
+          "GLD",
+          "AGG"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -24870,6 +27026,17 @@
         "formula": "ABS((-0.75 - 0.08) * 50) = 41",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "BTC",
+        "tickers": [
+          "BTC",
+          "SOL",
+          "DIA",
+          "GLD",
+          "ETH"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -24999,6 +27166,17 @@
         "formula": "ABS((0.69 - 0.40) * 50) = 14",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "GSG",
+          "GLD",
+          "NVDA",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -25133,6 +27311,17 @@
         "formula": "ABS((0.69 - 0.40) * 50) = 14",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "SOL",
+          "DIA",
+          "GSG",
+          "GLD"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -25258,6 +27447,17 @@
         "formula": "ABS((-0.75 - 0.08) * 50) = 41",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "BTC",
+        "tickers": [
+          "BTC",
+          "SOL",
+          "ITA",
+          "ETH",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -25393,6 +27593,17 @@
         "formula": "ABS((0.69 - 0.40) * 50) = 14",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "SOL",
+          "ITA",
+          "XLE",
+          "GSG"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -25519,6 +27730,17 @@
         "formula": "ABS((0.69 - 0.40) * 50) = 14",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "SOL",
+          "ITA",
+          "GSG",
+          "GLD"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -25632,6 +27854,17 @@
         "formula": "ABS((0.75 - -0.05) * 50) = 40",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "QQQ",
+        "tickers": [
+          "QQQ",
+          "DIA",
+          "IWM",
+          "NVDA",
+          "FXY"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -25720,6 +27953,16 @@
         "formula": "ABS((0.83 - 0.08) * 50) = 38",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "NVDA",
+        "tickers": [
+          "NVDA",
+          "ETH",
+          "BTC",
+          "SOL"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -25816,6 +28059,17 @@
         "formula": "ABS((0.73 - 0.40) * 50) = 16",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "ITA",
+          "GSG",
+          "GLD",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -25902,6 +28156,17 @@
         "formula": "ABS((0.78 - 0.40) * 50) = 19",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "ITA",
+          "GSG",
+          "GLD",
+          "NVDA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -25988,6 +28253,17 @@
         "formula": "ABS((0.69 - 0.40) * 50) = 14",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "ITA",
+          "GSG",
+          "GLD",
+          "NVDA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -26074,6 +28350,17 @@
         "formula": "ABS((0.69 - 0.40) * 50) = 14",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "GSG",
+          "GLD",
+          "NVDA",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -26160,6 +28447,16 @@
         "formula": "ABS((0.83 - 0.08) * 50) = 38",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "NVDA",
+        "tickers": [
+          "NVDA",
+          "ETH",
+          "BTC",
+          "SOL"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -26246,6 +28543,17 @@
         "formula": "ABS((0.73 - 0.40) * 50) = 16",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "BTC",
+          "XLE",
+          "GSG",
+          "GLD"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -26332,6 +28640,17 @@
         "formula": "ABS((0.69 - 0.40) * 50) = 14",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "GSG",
+          "GLD",
+          "NVDA",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -26418,6 +28737,17 @@
         "formula": "ABS((0.69 - 0.40) * 50) = 14",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "ITA",
+          "GSG",
+          "GLD",
+          "NVDA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -26529,6 +28859,17 @@
         "formula": "ABS((0.83 - 0.08) * 50) = 38",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "UUP",
+        "tickers": [
+          "UUP",
+          "BTC",
+          "SOL",
+          "ITA",
+          "ETH"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -26652,6 +28993,17 @@
         "formula": "ABS((0.69 - 0.40) * 50) = 14",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "BNO",
+        "tickers": [
+          "BNO",
+          "DBC",
+          "DIA",
+          "GSG",
+          "GLD"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -26758,6 +29110,17 @@
         "formula": "ABS((-0.75 - -0.19) * 50) = 28",
         "ticker": "ITA",
         "ticker_price": 228.29
+      },
+      "asset_claim": {
+        "primary_ticker": "DIA",
+        "tickers": [
+          "DIA",
+          "ITA",
+          "LMT",
+          "USO",
+          "SPY"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -26833,6 +29196,16 @@
         "formula": "ABS((0.75 - 0.08) * 50) = 34",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "NVDA",
+        "tickers": [
+          "NVDA",
+          "ETH",
+          "BTC",
+          "SOL"
+        ],
+        "confidence": "medium"
       }
     },
     {
@@ -26908,6 +29281,17 @@
         "formula": "ABS((-0.75 - 0.40) * 50) = 58",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "ITA",
+          "GSG",
+          "GLD",
+          "NVDA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -26983,6 +29367,17 @@
         "formula": "ABS((0.75 - 0.08) * 50) = 34",
         "ticker": "BTC-USD",
         "ticker_price": 61875.98
+      },
+      "asset_claim": {
+        "primary_ticker": "BTC",
+        "tickers": [
+          "BTC",
+          "DIA",
+          "SOL",
+          "ETH",
+          "NVDA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -27069,6 +29464,17 @@
         "formula": "ABS((0.69 - 0.40) * 50) = 14",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "TLT",
+        "tickers": [
+          "TLT",
+          "DBC",
+          "GSG",
+          "GLD",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -27155,6 +29561,17 @@
         "formula": "ABS((0.69 - 0.40) * 50) = 14",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "DIA",
+          "GSG",
+          "GLD",
+          "NVDA"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -27241,6 +29658,17 @@
         "formula": "ABS((0.69 - 0.40) * 50) = 14",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "SOL",
+          "GSG",
+          "GLD",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -27327,6 +29755,17 @@
         "formula": "ABS((0.69 - 0.40) * 50) = 14",
         "ticker": "CL=F",
         "ticker_price": 90.07
+      },
+      "asset_claim": {
+        "primary_ticker": "DBC",
+        "tickers": [
+          "DBC",
+          "ITA",
+          "GSG",
+          "GLD",
+          "USO"
+        ],
+        "confidence": "high"
       }
     },
     {
@@ -27402,6 +29841,15 @@
         "formula": "ABS((0.65 - -0.05) * 50) = 35",
         "ticker": "SPY",
         "ticker_price": 735.35
+      },
+      "asset_claim": {
+        "primary_ticker": "NVDA",
+        "tickers": [
+          "NVDA",
+          "ITA",
+          "USO"
+        ],
+        "confidence": "medium"
       }
     }
   ]
