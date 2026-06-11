@@ -355,11 +355,15 @@ function cryptoSignalHTML() {
 function renderPDR(elId) {
   const el = document.getElementById(elId);
   if (!el) return;
-  el.querySelector('.pdr-value').textContent = ANCHOR_PDR.value;
+  const pv = el.querySelector('.pdr-value');
+  if (pv) pv.textContent = ANCHOR_PDR.value;
   const regimeEl = el.querySelector('.pdr-regime');
-  regimeEl.textContent = ANCHOR_PDR.regimeLabel;
-  regimeEl.className = 'pdr-regime ' + ANCHOR_PDR.regime;
-  el.querySelector('.pdr-trend').textContent = ANCHOR_PDR.trend;
+  if (regimeEl) {
+    regimeEl.textContent = ANCHOR_PDR.regimeLabel;
+    regimeEl.className = 'pdr-regime ' + ANCHOR_PDR.regime;
+  }
+  const trendEl = el.querySelector('.pdr-trend');
+  if (trendEl) trendEl.textContent = ANCHOR_PDR.trend;
 }
 
 function renderAnchor() {

@@ -51,6 +51,81 @@
     }
   },
   "asymmetry_scores": {
+    "n21_osint__reuters_business__stock_market_today_indexes_surge_as_ai_stocks_rebound_oil": {
+      "asymmetry_score": 9,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.59 - 0.40) * 50) = 9"
+    },
+    "n21_osint__reuters_business__what_happens_if_ai_causes_25_unemployment_anthropic_has_a": {
+      "asymmetry_score": 48,
+      "asymmetry_tier": "MODERATE",
+      "diagnostic_trace": "ABS((0.77 - -0.19) * 50) = 48"
+    },
+    "n21_osint__reuters_business__some_us_employers_to_drop_coverage_of_glp-1_obesity_drugs_in": {
+      "asymmetry_score": 31,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((-0.54 - 0.08) * 50) = 31"
+    },
+    "n21_osint__reuters_business__oracle_shares_tumble_amid_pricey_data-center_build-out_-_wsj": {
+      "asymmetry_score": 37,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((-0.77 - -0.03) * 50) = 37"
+    },
+    "n21_osint__reuters_business__solar_generates_more_energy_in_us_than_coal_for_first_time_-": {
+      "asymmetry_score": 16,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.72 - 0.40) * 50) = 16"
+    },
+    "n21_osint__reuters_business__beyond_spacex_here_s_where_family_offices_see_buying_opport": {
+      "asymmetry_score": 38,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.72 - -0.05) * 50) = 38"
+    },
+    "n21_osint__reuters_business__bezos_bats_down_ai_job_loss_fears_while_launching_new_ventur": {
+      "asymmetry_score": 40,
+      "asymmetry_tier": "MODERATE",
+      "diagnostic_trace": "ABS((-0.72 - 0.08) * 50) = 40"
+    },
+    "n21_osint__reuters_business__dana_incorporated_announces_agreement_to_combine_with_eaton": {
+      "asymmetry_score": 31,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.59 - -0.03) * 50) = 31"
+    },
+    "n21_osint__reuters_business__oil_prices_fluctuate_as_u_s_launches_new_attack_on_iran_-_t": {
+      "asymmetry_score": 9,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.59 - 0.40) * 50) = 9"
+    },
+    "n21_osint__reuters_business__paramount-warner_bros_deal_cleared_in_australia_new_zealan": {
+      "asymmetry_score": 39,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.59 - -0.19) * 50) = 39"
+    },
+    "n21_osint__reuters_business__spacex_hopes_and_dreams_are_propping_up_markets_but_stock": {
+      "asymmetry_score": 35,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.67 - -0.03) * 50) = 35"
+    },
+    "n21_osint__reuters_business__stock_market_today_nasdaq_drops_2__dow_falls_950_points_as": {
+      "asymmetry_score": 18,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((-0.54 - -0.19) * 50) = 18"
+    },
+    "n21_osint__federal_reserve__federal_reserve_board_announces_final_rule_that_establishes": {
+      "asymmetry_score": 42,
+      "asymmetry_tier": "MODERATE",
+      "diagnostic_trace": "ABS((0.82 - -0.03) * 50) = 42"
+    },
+    "n21_osint__the_cradle__us_becomes_world_s_top_oil_exporter_as_war_on_iran_cripples": {
+      "asymmetry_score": 9,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.59 - 0.40) * 50) = 9"
+    },
+    "n21_osint__the_cradle__us__039_precision_strikes_039_cut_water_access_to_20_000": {
+      "asymmetry_score": 39,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.59 - -0.19) * 50) = 39"
+    },
     "n21_osint__reuters_business__spacex_ipo_draws_more_than_70_billion_in_retail_orders_-_bl": {
       "asymmetry_score": 42,
       "asymmetry_tier": "MODERATE",
