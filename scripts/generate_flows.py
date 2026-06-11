@@ -631,13 +631,8 @@ def main():
 
     print(f"✅ Generated {len(flows)} flows → {OUTPUT}")
     print(f"   Aggregate confidence: {agg_conf}% ({agg_direction})")
-    print(f"   {inflows} inflows · {outflows} outflows")
-    print(f"   Next update: {(now_eet + timedelta(hours=1)).strftime('%Y-%m-%d %H:%M')} EET")
-
-    # Also write to data/flows.json for reference
-    DATA_FLOWS = PROJECT_ROOT / "data" / "flows.json"
-    DATA_FLOWS.parent.mkdir(parents=True, exist_ok=True)
-    DATA_FLOWS.write_text(json.dumps(output, indent=2))
+    OUTPUT.write_text(json.dumps(output, indent=2))
+    print(f"✅ Generated {len(flows)} flows → {OUTPUT}")
 
 
 if __name__ == "__main__":
