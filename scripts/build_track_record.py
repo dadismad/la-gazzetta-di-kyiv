@@ -146,7 +146,7 @@ def compile():
     total_realized = len(correct_trades)
     win_rate = round(len(correct_trades) / max(len(settled), 1) * 100)
     avg_correct_pnl = round(sum(t["realized_pnl_pct"] for t in correct_trades) / max(len(correct_trades), 1), 2)
-    avg_incorrect_pnl = round(abs(sum(t["realized_pnl_pct"] for t in incorrect_trades)) / max(len(incorrect_trades), 1), 2)
+    avg_incorrect_pnl = round(sum(t["realized_pnl_pct"] for t in incorrect_trades) / max(len(incorrect_trades), 1), 2)
     success_velocity = round(win_rate / 100 * avg_correct_pnl, 1)
 
     record = {
@@ -177,7 +177,7 @@ def compile():
     print(f"  Total Realized Alpha: {total_realized}")
     print(f"  Win Rate:             {win_rate}%")
     print(f"  Avg Correct PnL:      +{avg_correct_pnl}%")
-    print(f"  Avg Incorrect PnL:    −{avg_incorrect_pnl}%")
+    print(f"  Avg Incorrect PnL:    {avg_incorrect_pnl}%")
     print(f"  Success Velocity:     {success_velocity}")
     print(f"  → {OUT}")
 

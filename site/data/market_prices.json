@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T14:46:21.411246+00:00",
+  "generated_at": "2026-06-11T20:55:02.515079+00:00",
   "prices": {
     "crypto": {
       "ticker": "BTC-USD",
@@ -44,8 +44,8 @@
       "direction": "down"
     },
     "gold": {
-      "ticker": "GC=F",
-      "price": 4180.5,
+      "ticker": "XAUUSD=X",
+      "price": 2410.0,
       "change_pct": -1.87,
       "direction": "down"
     }
@@ -406,7 +406,7 @@
       "asymmetry_tier": "MODERATE",
       "diagnostic_trace": "ABS((0.82 - -0.05) * 50) = 43"
     },
-    "n21_osint__ecb_press__christine_lagarde_boris_vujčić_monetary_policy_statement": {
+    "n21_osint__ecb_press__christine_lagarde_boris_vuj\u010di\u0107_monetary_policy_statement": {
       "asymmetry_score": 43,
       "asymmetry_tier": "MODERATE",
       "diagnostic_trace": "ABS((0.82 - -0.05) * 50) = 43"
