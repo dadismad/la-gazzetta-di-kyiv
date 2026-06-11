@@ -138,9 +138,11 @@ echo ""
 # ═══ Stage 3.1: ru_sync_gate — AFTER hash so RU gets correct script references ═══
 echo "── Stage 3.1: ru_sync_gate ──"
 RU_MISSING=0
-for f in about.html capital.html data.html index.html methodology.html sources.html terms.html robots.txt sitemap.xml; do
+for f in about.html capital.html data.html index.html methodology.html sources.html terms.html robots.txt sitemap.xml stories.html flows.html event_horizon.html flow-nodes.html signal.html trades.html track.html privacy.html; do
   if [ ! -f "$PROJECT/site/ru/$f" ]; then
     cp "$PROJECT/site/$f" "$PROJECT/site/ru/$f" 2>/dev/null || true
+    # Fix lang attribute for RU versions (except robots.txt and sitemap.xml)
+    case "$f" in *.html) sed -i '' 's/<html lang="en"/<html lang="ru"/g' "$PROJECT/site/ru/$f" ;; esac
     RU_MISSING=$((RU_MISSING + 1))
   fi
 done
