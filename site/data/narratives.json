@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-06-11T15:11:16.780114+00:00",
+  "generated_at": "2026-06-11T15:41:23.582130+00:00",
   "story_count": 15,
   "model": "deepseek-chat",
   "narratives": [
     {
-      "title": "Geopolitical Escalation Risk-Off",
+      "title": "Geopolitical Escalation Spiral",
       "strength": "DOMINANT",
       "direction": "Risk-Off",
-      "summary": "Capital is fleeing risk assets as multi-front conflicts (Iran, Israel, Ukraine) escalate beyond market expectations. The Iran Parliament threat, US-Israel strike package, and Apache shootdown signal asymmetric escalation, driving equity selloffs and BTC crashes despite diplomatic noise.",
-      "key_stories": 9,
-      "trade_implication": "Short S&P 500 futures (ES) and long VIX; buy gold and short BTC as hedge against further escalation."
+      "summary": "Capital is fleeing risk assets as the Iran-Israel-US conflict escalates asymmetrically, with strikes, retaliation, and Hormuz blockade threats. The market consensus underestimates the persistence and breadth of the conflict, driving safe-haven flows into commodities and out of equities.",
+      "key_stories": 8,
+      "trade_implication": "Long WTI crude oil and gold; short S&P 500 futures and long-dated Treasuries."
     },
     {
-      "title": "Oil Supply Disruption Premium",
+      "title": "Energy Supply Disruption Pricing",
       "strength": "STRONG",
       "direction": "Neutral-to-Bullish",
-      "summary": "Capital is rotating into oil and energy plays as the Hormuz blockade persists through Q3 2026, per EIA data. The SPR release is misread as bearish but actually signals supply pre-positioning, while Kuwait's pipeline bypass talks confirm structural disruption.",
+      "summary": "Capital is rotating into energy commodities as the Strait of Hormuz blockade persists through Q3 2026 per EIA, with Kuwait seeking bypass pipelines. The SPR release is misread as bearish but actually signals supply pre-positioning, reinforcing bullish oil dynamics.",
       "key_stories": 5,
-      "trade_implication": "Long WTI crude futures and energy sector ETFs (XLE); short refined product spreads on refinery outage risks."
+      "trade_implication": "Buy WTI and Brent futures; long energy sector ETFs; short consumer discretionary."
     },
     {
-      "title": "Diplomatic Mirage vs. Reality",
+      "title": "Risk-Off Liquidation Cascades",
       "strength": "MODERATE",
-      "direction": "Neutral",
-      "summary": "Capital is pricing a fragile status quo despite White House claims of Iran deal progress, as IDF readiness and Kuwait bypass talks contradict diplomatic optimism. Markets are torn between hope for de-escalation and evidence of ongoing kinetic exchanges.",
+      "direction": "Risk-Off",
+      "summary": "Equity selloffs are accelerating due to algorithmic stop-loss cascades and geopolitical uncertainty, with BTC also crashing on macro risk-off sentiment. Capital is moving to cash and short-duration Treasuries as institutional de-risking dominates.",
       "key_stories": 4,
-      "trade_implication": "Neutral on USD/JPY; buy short-dated T-bills for safety, but avoid long-duration bonds until clarity emerges."
+      "trade_implication": "Short Nasdaq futures; buy 2-year Treasury notes; increase cash allocation."
     }
   ]
 }

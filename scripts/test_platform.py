@@ -181,6 +181,11 @@ def test_flow_data_integrity():
             # Ratio can be up to 50x for SETTLING-tier stories linked to large flows. Accept up to 60x.
             flow = flow_by_id.get(flow_id, {})
             flow_amount = flow.get("amount_b", 0)
+            # Guard against None values from data (v23.x pipeline may produce None)
+            if amount is None:
+                amount = 0
+            if flow_amount is None:
+                flow_amount = 0
             if abs(amount - flow_amount) > 0.01 and flow_amount > 0:
                 ratio = max(amount, flow_amount) / max(min(amount, flow_amount), 0.01)
                 if ratio > 60:

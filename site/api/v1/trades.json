@@ -1,0 +1,163 @@
+{
+  "generated_at": "2026-06-11T15:41:23.760005+00:00",
+  "total_positions": 13,
+  "aggregate_bias": "bullish",
+  "trades": [
+    {
+      "symbol": "SPX",
+      "name": "S&P 500",
+      "asset_class": "equities",
+      "direction": "BUY",
+      "conviction": "HIGH",
+      "entry": 5950,
+      "target": 6426.0,
+      "stop": 5771.5,
+      "atr_pct": 1.2,
+      "stop_multiplier": 2.5
+    },
+    {
+      "symbol": "NVDA",
+      "name": "NVIDIA",
+      "asset_class": "equities",
+      "direction": "BUY",
+      "conviction": "HIGH",
+      "entry": 132,
+      "target": 142.56,
+      "stop": 122.76,
+      "atr_pct": 3.5,
+      "stop_multiplier": 2.0
+    },
+    {
+      "symbol": "BRENT",
+      "name": "Brent Crude",
+      "asset_class": "commodities",
+      "direction": "BUY",
+      "conviction": "HIGH",
+      "entry": 72,
+      "target": 77.76,
+      "stop": 66.96,
+      "atr_pct": 2.8,
+      "stop_multiplier": 2.5
+    },
+    {
+      "symbol": "DXY",
+      "name": "US Dollar Index",
+      "asset_class": "fx",
+      "direction": "BUY",
+      "conviction": "HIGH",
+      "entry": 104,
+      "target": 112.32,
+      "stop": 102.13,
+      "atr_pct": 0.6,
+      "stop_multiplier": 3.0
+    },
+    {
+      "symbol": "GOLD",
+      "name": "Gold",
+      "asset_class": "commodities",
+      "direction": "BUY",
+      "conviction": "HIGH",
+      "entry": 3350,
+      "target": 3618.0,
+      "stop": 3224.38,
+      "atr_pct": 1.5,
+      "stop_multiplier": 2.5
+    },
+    {
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "asset_class": "crypto",
+      "direction": "BUY",
+      "conviction": "HIGH",
+      "entry": 103000,
+      "target": 111240.0,
+      "stop": 94760.0,
+      "atr_pct": 4.0,
+      "stop_multiplier": 2.0
+    },
+    {
+      "symbol": "10Y",
+      "name": "10Y Treasury",
+      "asset_class": "fixed_income",
+      "direction": "BUY",
+      "conviction": "HIGH",
+      "entry": 4.42,
+      "target": 4.77,
+      "stop": 4.38,
+      "atr_pct": 0.3,
+      "stop_multiplier": 3.0
+    },
+    {
+      "symbol": "ETH",
+      "name": "Ethereum",
+      "asset_class": "crypto",
+      "direction": "BUY",
+      "conviction": "HIGH",
+      "entry": 3400,
+      "target": 3672.0,
+      "stop": 3094.0,
+      "atr_pct": 4.5,
+      "stop_multiplier": 2.0
+    },
+    {
+      "symbol": "SOL",
+      "name": "Solana",
+      "asset_class": "crypto",
+      "direction": "BUY",
+      "conviction": "HIGH",
+      "entry": 168,
+      "target": 181.44,
+      "stop": 149.52,
+      "atr_pct": 5.5,
+      "stop_multiplier": 2.0
+    },
+    {
+      "symbol": "XRP",
+      "name": "XRP",
+      "asset_class": "crypto",
+      "direction": "BUY",
+      "conviction": "HIGH",
+      "entry": 2.35,
+      "target": 2.54,
+      "stop": 2.19,
+      "atr_pct": 3.5,
+      "stop_multiplier": 2.0
+    },
+    {
+      "symbol": "BNB",
+      "name": "BNB",
+      "asset_class": "crypto",
+      "direction": "BUY",
+      "conviction": "HIGH",
+      "entry": 690,
+      "target": 745.2,
+      "stop": 648.6,
+      "atr_pct": 3.0,
+      "stop_multiplier": 2.0
+    },
+    {
+      "symbol": "ADA",
+      "name": "Cardano",
+      "asset_class": "crypto",
+      "direction": "BUY",
+      "conviction": "HIGH",
+      "entry": 0.42,
+      "target": 0.45,
+      "stop": 0.39,
+      "atr_pct": 4.0,
+      "stop_multiplier": 2.0
+    },
+    {
+      "symbol": "DOGE",
+      "name": "Dogecoin",
+      "asset_class": "crypto",
+      "direction": "BUY",
+      "conviction": "HIGH",
+      "entry": 0.18,
+      "target": 0.19,
+      "stop": 0.16,
+      "atr_pct": 6.5,
+      "stop_multiplier": 2.0
+    }
+  ]
+}
