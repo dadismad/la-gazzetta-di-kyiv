@@ -1,9 +1,9 @@
-// La Gazzetta di Kyiv v25.13 — English only
+// La Gazzetta di Kyiv v20.24 — i18n support · language-specific data files
 const DATA_BASE = './data/stories';
 const LIVING_DATA = './data/living_stories.json';
 const FLOWS_BASE = './data/flows';
-function getDataPath() { return DATA_BASE + ('') + '.json'; }
-function getFlowsPath() { return FLOWS_BASE + ('') + '.json'; }
+function getDataPath() { return DATA_BASE + (window.i18n && i18n.lang === 'ru' ? '_ru' : '') + '.json'; }
+function getFlowsPath() { return FLOWS_BASE + (window.i18n && i18n.lang === 'ru' ? '_ru' : '') + '.json'; }
 const FLOWS_POLL_INTERVAL = 300000;
 
 // ═══════════════ v23.8: Gazzetta Namespace ═══════════════
@@ -47,13 +47,13 @@ document.addEventListener('click', function(e) {
       if (typeof shareToReddit === 'function') shareToReddit(card);
       break;
     case 'nav-flows':
-      window.location.href = './flows.html';
+      window.location.href = (window.i18n && i18n.lang === 'ru') ? './flows.html?lang=ru' : './flows.html';
       break;
     case 'lang-en':
-      
+      if (window.i18n && i18n.switchLang) i18n.switchLang('en');
       break;
     case 'lang-ru':
-      
+      if (window.i18n && i18n.switchLang) i18n.switchLang('ru');
       break;
     case 'navigate':
       if (btn.hasAttribute('data-href')) {
@@ -152,12 +152,12 @@ function pickPhoto(sector, idx) {
 
 // ── Category tag labels ──
 const SECTOR_LABELS = {
-  geopolitics: () => 'GEOPOLITICS',
-  markets: () => 'MARKETS',
-  tech: () => 'TECH',
-  macro: () => 'MACRO',
-  wealth: () => 'WEALTH',
-  pleasure: () => 'PLEASURE',
+  geopolitics: () => i18n.t('sector_geopolitics','GEOPOLITICS'),
+  markets: () => i18n.t('sector_markets','MARKETS'),
+  tech: () => i18n.t('sector_tech','TECH'),
+  macro: () => i18n.t('sector_macro','MACRO'),
+  wealth: () => i18n.t('sector_wealth','WEALTH'),
+  pleasure: () => i18n.t('sector_pleasure','PLEASURE'),
 };
 
 // ── v23.1: Asset class badges (color-coded) ──
@@ -200,11 +200,11 @@ function formatTimeAgo(isoString) {
   if (!isoString) return '';
   const diff = Date.now() - new Date(isoString).getTime();
   const mins = Math.floor(diff / 60000);
-  if (mins < 1) return 'just now';
-  if (mins < 60) return `${mins}${'m ago'}`;
+  if (mins < 1) return i18n.t('just_now','just now');
+  if (mins < 60) return `${mins}${i18n.t('m_ago','m ago')}`;
   const hours = Math.floor(mins / 60);
-  if (hours < 24) return `${hours}${'h ago'}`;
-  return `${Math.floor(hours / 24)}${'d ago'}`;
+  if (hours < 24) return `${hours}${i18n.t('h_ago','h ago')}`;
+  return `${Math.floor(hours / 24)}${i18n.t('d_ago','d ago')}`;
 }
 
 function freshnessClass(isoString) {
@@ -223,7 +223,7 @@ function formatTimestamp(isoString) {
   const now = new Date();
   const isToday = d.toDateString() === now.toDateString();
   const time = d.toTimeString().slice(0, 5);
-  if (isToday) return `${time} · ${'Today'}`;
+  if (isToday) return `${time} · ${i18n.t('today','Today')}`;
   const date = `${d.getDate()}/${d.getMonth() + 1}`;
   return `${time} · ${date}`;
 }
@@ -321,7 +321,7 @@ const ANCHOR_CRYPTO = {
   fundingRate: { value: '-0.01%', regime: 'neutral', label: 'Aggregate Funding' },
 };
 
-const ANCHOR_PDR = { value: '1.7', regime: 'passive', get regimeLabel() { return 'Passive Discovery'; }, trend: '▁▃▅▆▇' };
+const ANCHOR_PDR = { value: '1.7', regime: 'passive', get regimeLabel() { return i18n.t('pdr_regime_passive','Passive Discovery'); }, trend: '▁▃▅▆▇' };
 
 function anchorRowHTML(a) {
   const pillClass = a.bias === 'BUY' ? 'anchor-pill buy' : a.bias === 'SELL' ? 'anchor-pill sell' : 'anchor-pill watch';
@@ -335,10 +335,10 @@ function anchorRowHTML(a) {
         <span class="asset-change ${a.dir}">${a.change}</span>
       </div>
       <div class="asset-trade">
-        <span class="${pillClass}">${a.bias}</span>
+        <span class="${pillClass}">${i18n.t(a.bias.toLowerCase(), a.bias)}</span>
         <span class="asset-zone">${a.entry} → ${a.target}</span>
         <span class="asset-stop" title="${a.stop ? 'Volatility-adjusted: ' + a.stop_atr_mult + '×' + atrPct + '% ATR from entry' : 'No stop computed — monitoring only'}">${a.stop ? 'Stop ' + a.stop + ' · ' + a.stop_atr_mult + '×ATR' : 'Monitoring'}</span>
-        <span class="${badgeClass}">${a.conviction}</span>
+        <span class="${badgeClass}">${i18n.t("conviction_"+a.conviction, a.conviction)}</span>
       </div>
     </div>`;
 }
@@ -379,7 +379,7 @@ function renderAnchor() {
   const freshnessEl = byId('anchorFreshness');
   if (freshnessEl) {
     const now = new Date();
-    freshnessEl.textContent = 'Reference prices · reviewed' + ` ${now.toDateString()}`;
+    freshnessEl.textContent = i18n.t('reference_prices','Reference prices · reviewed') + ` ${now.toDateString()}`;
   }
 }
 
@@ -430,7 +430,8 @@ async function fetchFlows() {
   }
   // Populate hero indicators
   updateHeroIndicators(data);
-  
+  // Re-apply i18n to dynamically rendered flow items (v22.18)
+  if (window.i18n && window.i18n.applyTranslations) window.i18n.applyTranslations();
   return true;
 }
 
@@ -528,7 +529,7 @@ function positionLabel(positioning) {
   const idx = _variantIdx[positioning] % variants.length;
   _variantIdx[positioning] = (idx + 1) % variants.length;  // deterministic cycling
   const v = variants[idx];
-  return v.fallback;
+  return i18n.t(v.key, v.fallback);
 }
 
 // ── Source label mappings ──
@@ -645,7 +646,7 @@ function renderCapitalFlows() {
   const el = byId('flowsList');
   if (!el) return;
   if (!CAPITAL_FLOWS_DATA.length) {
-    el.innerHTML = '<div class="flows-loading">' + 'Analyzing capital movements…' + '</div>';
+    el.innerHTML = '<div class="flows-loading">' + i18n.t('analyzing_capital','Analyzing capital movements…') + '</div>';
     return;
   }
   // Aggregate duplicate flows (same headline+direction+amount) with catalyst counts
@@ -657,7 +658,7 @@ function renderCapitalFlows() {
     const dirLabel = f.direction === 'inflow' ? 'IN' : 'OUT';
     const confPct = f.confidence_pct || 50;
     const paceDisplay = f.pace_multiplier >= 1.5 ? `↑ ${f.pace_multiplier}×` : f.pace_multiplier <= 0.7 ? `↓ ${f.pace_multiplier}×` : `= ${f.pace_multiplier}×`;
-    const catalystBadge = f.catalyst_count > 1 ? `<span class="catalyst-badge">${f.catalyst_count} ` + 'catalysts' + `</span>` : '';
+    const catalystBadge = f.catalyst_count > 1 ? `<span class="catalyst-badge">${f.catalyst_count} ` + i18n.t('catalysts','catalysts') + `</span>` : '';
 
     // v22.32: Trade signal emoji + heat score in collapsed view
     const playPill = anchorAsset
@@ -729,7 +730,7 @@ function renderCapitalFlows() {
     // v22.35: time freshness badge on every product
     const genTime = window._flowsGeneratedAt || '';
     const ageStr = genTime ? formatTimeAgo(genTime) : '';
-    sub.innerHTML = `${inflows.length} ${'inflows'} · ${outflows.length} ${'outflows'}${ageStr ? ' · <span style="font-size:9px;color:var(--ink-muted);">' + ageStr + '</span>' : ''}`;
+    sub.innerHTML = `${inflows.length} ${i18n.t('flow_inflows','inflows')} · ${outflows.length} ${i18n.t('flow_outflows','outflows')}${ageStr ? ' · <span style="font-size:9px;color:var(--ink-muted);">' + ageStr + '</span>' : ''}`;
   }
 
   // Wire expand-on-click (v22.17)
@@ -755,7 +756,7 @@ function refreshFlowStoryLinks() {
       const cached = STORIES_CACHE[sid];
       if (card) {
         const h3 = card.querySelector('h3');
-        link.textContent = h3 ? h3.textContent : 'Story found';
+        link.textContent = h3 ? h3.textContent : i18n.t('story_found','Story found');
         link.style.cursor = 'pointer';
         link.style.color = 'var(--blue)';
         link.addEventListener('click', () => {
@@ -766,7 +767,7 @@ function refreshFlowStoryLinks() {
         link.textContent = cached.headline;
         link.style.color = 'var(--ink-muted)';
         link.style.cursor = 'default';
-        link.title = 'Refresh page to enable click-through to story';
+        link.title = i18n.t('refresh_for_click','Refresh page to enable click-through to story');
       }
     }
   });
@@ -792,6 +793,7 @@ function updateHeroConfidence(pct, label, direction) {
   el.innerHTML = `<div><span style="color:${color};font-weight:700;font-size:inherit;">${pct}% ${badge}</span></div><div style="font-size:9px;color:var(--ink-muted);margin-top:1px;">${tierLabel}</div>`;
   el.title = `Flow confidence: ${pct}% (${label}). Based on: flow magnitude, pace, institutional positioning, contradiction score, source quality.`;
   el.style.color = color;
+  // Label stays clean — data-i18n handles it
 }
 
 function updateMastheadFlows(flowsData) {
@@ -1024,10 +1026,10 @@ function computeTriangulation(story, flow, anchorAsset) {
 
   const cappedScore = Math.min(score, 100);
   let verdict, verdictCls;
-  if (cappedScore >= 85) { verdict = 'MAX CONVICTION'; verdictCls = 'max'; }
-  else if (cappedScore >= 70) { verdict = 'HIGH CONVICTION'; verdictCls = 'high'; }
-  else if (cappedScore >= 55) { verdict = 'MODERATE'; verdictCls = 'moderate'; }
-  else { verdict = 'WATCH'; verdictCls = 'watch'; }
+  if (cappedScore >= 85) { verdict = i18n.t('tri_max_conviction','MAX CONVICTION'); verdictCls = 'max'; }
+  else if (cappedScore >= 70) { verdict = i18n.t('tri_high_conviction','HIGH CONVICTION'); verdictCls = 'high'; }
+  else if (cappedScore >= 55) { verdict = i18n.t('tri_moderate','MODERATE'); verdictCls = 'moderate'; }
+  else { verdict = i18n.t('tri_watch','WATCH'); verdictCls = 'watch'; }
 
   return { score: cappedScore, verdict, verdictCls, alignment, alignDetail, signals, anchorAsset, flowDir, betBias };
 }
@@ -1163,7 +1165,7 @@ function renderTriangulation() {
   }
 
   if (items.length === 0) {
-    el.innerHTML = '<div style="padding:12px;color:var(--ink-muted);font-style:italic;font-size:12px">' + 'Stories loading — triangulation will appear when cards are rendered.' + '</div>';
+    el.innerHTML = '<div style="padding:12px;color:var(--ink-muted);font-style:italic;font-size:12px">' + i18n.t('stories_loading','Stories loading — triangulation will appear when cards are rendered.') + '</div>';
     return;
   }
 
@@ -1209,9 +1211,9 @@ function capitalFlowHTML(cf) {
   if (!cf) return '';
   return `
     <div class="capital-flow-block">
-      <span class="cf-label">${'CAPITAL FLOW'}</span>
+      <span class="cf-label">${i18n.t('capital_flow_label','CAPITAL FLOW')}</span>
       <span class="cf-line">${cf.claim || ''}</span>
-      <span class="cf-line">${'Projected further flow'}: ${cf.projected} (${cf.confidence} ${'confidence'})</span>
+      <span class="cf-line">${i18n.t('flow_projected','Projected further flow')}: ${cf.projected} (${cf.confidence} ${i18n.t('flow_confidence_pct','confidence')})</span>
       <span class="cf-line">${cf.positioning ? positionLabel(cf.positioning) : ''}</span>
     </div>`;
 }
@@ -1350,7 +1352,7 @@ function livingCardHTML(story, isLead) {
   // Status dot + update badge
   const dotClass = statusDotClass(status);
   const updateBadge = story.update_count > 0
-    ? `<span class="story-update-badge">+${story.update_count} ` + 'updates' + `</span>`
+    ? `<span class="story-update-badge">+${story.update_count} ` + i18n.t('updates','updates') + `</span>`
     : '';
   const updatedAgo = story.last_updated
     ? `<span class="updated-ago">${formatTimeAgo(story.last_updated)}</span>`
@@ -1373,7 +1375,7 @@ function livingCardHTML(story, isLead) {
   // Contradiction tier badge — 4 tiers for visual differentiation
   const cs = calcContradictionScore(story);
   const tier = cs >= 66 ? 'contradicted' : cs >= 51 ? 'divergent' : cs >= 31 ? 'developing' : 'aligned';
-  const tierLabel = cs >= 66 ? 'MAX TENSION' : cs >= 51 ? 'HIGH TENSION' : cs >= 31 ? 'BUILDING' : 'CONSENSUS';
+  const tierLabel = cs >= 66 ? i18n.t('tension_max','MAX TENSION') : cs >= 51 ? i18n.t('tension_high','HIGH TENSION') : cs >= 31 ? i18n.t('tension_building','BUILDING') : i18n.t('tension_consensus','CONSENSUS');
   const tierTitle = cs >= 66 ? 'Narrative inverts reality — strongest trade signal. Contradiction score: ' + cs + '/100'
     : cs >= 51 ? 'Material gap between narrative and reality — opportunity. Contradiction score: ' + cs + '/100'
     : cs >= 31 ? 'Early tension forming — watch for widening. Contradiction score: ' + cs + '/100'
@@ -1392,7 +1394,7 @@ function livingCardHTML(story, isLead) {
         <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:2px">
           ${cf && cf.asset_class ? `<span class="asset-badge ${cf.asset_class}">${ASSET_BADGE_LABELS[cf.asset_class] || cf.asset_class.toUpperCase()}</span>` : ''}
           ${sector ? `<span class="category-tag ${sector}">${SECTOR_LABELS[sector] ? SECTOR_LABELS[sector]() : sector}</span>` : ''}
-          <span class="severity ${severity}">${severity === 'critical' ? 'CRITICAL' : severity === 'high' ? 'HIGH' : 'ELEVATED'}</span>
+          <span class="severity ${severity}">${severity === 'critical' ? i18n.t('severity_critical','CRITICAL') : severity === 'high' ? i18n.t('severity_high','HIGH') : i18n.t('severity_elevated','ELEVATED')}</span>
           ${breakingBadge}
           ${freshnessAgo}
           ${updateBadge}
@@ -1409,31 +1411,31 @@ function livingCardHTML(story, isLead) {
         ${reality ? `<p class="summary">${reality}</p>` : ''}
         ${theySay || reality ? `
         <div class="detail">
-          ${theySay ? `<div class="con-they"><span class="con-label">${'They say'}</span>${theySay}</div>` : ''}
-          ${reality ? `<div class="con-real"><span class="con-label">${'Reality'}</span>${reality}</div>` : ''}
+          ${theySay ? `<div class="con-they"><span class="con-label">${i18n.t('they_say','They say')}</span>${theySay}</div>` : ''}
+          ${reality ? `<div class="con-real"><span class="con-label">${i18n.t('reality','Reality')}</span>${reality}</div>` : ''}
         </div>` : ''}
         ${capitalFlowHTML(cf)}
         ${story.portfolio_implication ? `
         <div class="the-play">
-          <span class="pi-label">${'THE PLAY'}</span>
+          <span class="pi-label">${i18n.t('the_play_label','THE PLAY')}</span>
           <span class="pi-text">${story.portfolio_implication}</span>
         </div>` : ''}
         ${extremumHTML}
-        <a href="./story.html?id=${story.story_id}" class="intel-report-link">Full intelligence report →</a>
+        <a href="./story.html?id=${story.story_id}" class="intel-report-link" data-i18n="story_full_report">Full intelligence report →</a>
         <div class="share-row">
-          <button class="share-btn copy-link" title="${'Copy link'}" data-action="copy-link">
+          <button class="share-btn copy-link" title="${i18n.t('share_copy','Copy link')}" data-action="copy-link">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
           </button>
-          <button class="share-btn share-x" title="${'Share on X'}" data-action="share-x">
+          <button class="share-btn share-x" title="${i18n.t('share_x','Share on X')}" data-action="share-x">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7.5 7.5L4 19"/><path d="M20 4l-7.5 7.5L20 19"/></svg>
           </button>
-          <button class="share-btn share-facebook" title="${'Share on Facebook'}" data-action="share-facebook">
+          <button class="share-btn share-facebook" title="${i18n.t('share_facebook','Share on Facebook')}" data-action="share-facebook">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           </button>
-          <button class="share-btn share-telegram" title="${'Share on Telegram'}" data-action="share-telegram">
+          <button class="share-btn share-telegram" title="${i18n.t('share_telegram','Share on Telegram')}" data-action="share-telegram">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           </button>
-          <button class="share-btn share-reddit" title="${'Share on Reddit'}" data-action="share-reddit">
+          <button class="share-btn share-reddit" title="${i18n.t('share_reddit','Share on Reddit')}" data-action="share-reddit">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8s-4-1-8 2"/><path d="M8 16s4 1 8-2"/><circle cx="9" cy="9" r="0.5" fill="currentColor"/><circle cx="15" cy="9" r="0.5" fill="currentColor"/></svg>
           </button>
         </div>
@@ -1442,9 +1444,9 @@ function livingCardHTML(story, isLead) {
         </div>
       </div>
       <div class="story-evolution-timeline" style="display:none">
-        <div class="timeline-loading">${'Loading evolution timeline...'}</div>
+        <div class="timeline-loading">${i18n.t('loading_timeline','Loading evolution timeline...')}</div>
       </div>
-      ${story.status === 'resolved' ? `<div class="resolved-banner"><span class="resolved-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>${'Resolved'}</span></div>` : ''}
+      ${story.status === 'resolved' ? `<div class="resolved-banner"><span class="resolved-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>${i18n.t('resolved','Resolved')}</span></div>` : ''}
     </article>`;
 }
 
@@ -1458,7 +1460,7 @@ function extremumLineHTML(extremumStr) {
     const typeLabel = t.replace(/_/g, ' ').toUpperCase();
     return `
     <div class="card-extremum">
-      <span class="ex-label">${'EXTREMUM'}</span>
+      <span class="ex-label">${i18n.t('extremum','EXTREMUM')}</span>
       <span class="ex-win">${typeLabel}: ${desc.slice(0,120)}</span>
     </div>`;
   }
@@ -1473,11 +1475,11 @@ function extremumLineHTML(extremumStr) {
   });
   return `
     <div class="card-extremum">
-      <span class="ex-label">${'EXTREMUM'}</span>
-      ${winner ? `<span class="ex-win">${'WINNER'}: ${winner}</span>` : ''}
-      ${loser ? `<span class="ex-lose">${'LOSER'}: ${loser}</span>` : ''}
-      ${idiot ? `<span class="ex-idiot">${'IDIOT'}: ${idiot}</span>` : ''}
-      ${genius ? `<span class="ex-genius">${'GENIUS'}: ${genius}</span>` : ''}
+      <span class="ex-label">${i18n.t('extremum','EXTREMUM')}</span>
+      ${winner ? `<span class="ex-win">${i18n.t('winner','WINNER')}: ${winner}</span>` : ''}
+      ${loser ? `<span class="ex-lose">${i18n.t('loser','LOSER')}: ${loser}</span>` : ''}
+      ${idiot ? `<span class="ex-idiot">${i18n.t('idiot','IDIOT')}: ${idiot}</span>` : ''}
+      ${genius ? `<span class="ex-genius">${i18n.t('genius','GENIUS')}: ${genius}</span>` : ''}
     </div>`;
 }
 
@@ -1515,7 +1517,7 @@ function wireCardDelegation() {
     // Lazy-load timeline
     if (!timelineEl.dataset.loaded) {
       timelineEl.style.display = 'block';
-      timelineEl.innerHTML = '<div class="timeline-loading">' + 'Loading evolution timeline...' + '</div>';
+      timelineEl.innerHTML = '<div class="timeline-loading">' + i18n.t('loading_timeline','Loading evolution timeline...') + '</div>';
 
       try {
         const timelineData = await getJSON(`./data/stories/${storyId}/timeline.json`, null);
@@ -1524,11 +1526,11 @@ function wireCardDelegation() {
           timelineEl.dataset.loaded = 'true';
           wireThreadNavigation(timelineEl, timelineData, storyId);
         } else {
-          timelineEl.innerHTML = '<div class="timeline-empty">' + 'No evolution data available yet.' + '</div>';
+          timelineEl.innerHTML = '<div class="timeline-empty">' + i18n.t('no_evolution','No evolution data available yet.') + '</div>';
           timelineEl.dataset.loaded = 'true';
         }
       } catch (err) {
-        timelineEl.innerHTML = '<div class="timeline-empty">' + 'Could not load timeline.' + '</div>';
+        timelineEl.innerHTML = '<div class="timeline-empty">' + i18n.t('could_not_load','Could not load timeline.') + '</div>';
         timelineEl.dataset.loaded = 'true';
       }
     } else {
@@ -1545,7 +1547,7 @@ function timelineHTML(timelineData, activeThreadId) {
 
   const threadNav = timelineData.threads && timelineData.threads.length > 1
     ? `<div class="thread-nav">${timelineData.threads.map(t =>
-        `<span class="thread-pill${t.thread_id === activeThreadId ? ' active' : ''}" data-thread-id="${t.thread_id}">${t.type === 'main' ? 'Main' : (t.current_state?.headline?.slice(0,30) || t.thread_id.slice(0,25))} (${t.evolution?.length || 0})</span>`
+        `<span class="thread-pill${t.thread_id === activeThreadId ? ' active' : ''}" data-thread-id="${t.thread_id}">${t.type === 'main' ? i18n.t('main','Main') : (t.current_state?.headline?.slice(0,30) || t.thread_id.slice(0,25))} (${t.evolution?.length || 0})</span>`
       ).join('')}</div>`
     : '';
 
@@ -1647,7 +1649,7 @@ function updateStoryCount() {
   const countEl = byId('storyCount');
   const heroCountEl = byId('heroStoryCount');
   const count = document.querySelectorAll('.card[data-story-id]').length;
-  if (countEl) countEl.textContent = `${count} ${'stories'}`;
+  if (countEl) countEl.textContent = `${count} ${i18n.t('hero_stories','stories')}`;
   if (heroCountEl) heroCountEl.textContent = String(count);
   updateCumulativeStats();
 }
@@ -2171,7 +2173,19 @@ function shareToReddit(card) {
 // ═══════════════════════════════════════════════════════════════
 
 async function boot() {
-  // i18n removed — direct render (Russian version deleted June 2026)
+  // Wait for i18n translations to finish loading before rendering
+  if (window.i18n && !window.i18n._ready) {
+    await new Promise(resolve => {
+      const check = () => {
+        if (window.i18n._ready) { resolve(); return; }
+        setTimeout(check, 50);
+      };
+      window.addEventListener('i18nReady', resolve, { once: true });
+      check();
+      // Hard safety: proceed after 5s regardless
+      setTimeout(resolve, 5000);
+    });
+  }
 
   // v22.18: Product page detection — only render what exists on this page
   const isProductPage = !!document.querySelector('.product-page');
@@ -2236,7 +2250,8 @@ async function boot() {
     updateMasthead();
     // Refresh flow→story links now that stories are in DOM
     refreshFlowStoryLinks();
-    
+    // Re-apply i18n to dynamically inserted DOM (v22.18)
+    if (window.i18n && window.i18n.applyTranslations) window.i18n.applyTranslations();
 
     // Start polling
     setInterval(pollLivingStories, POLL_INTERVAL);
@@ -2282,7 +2297,8 @@ async function boot() {
   updateMasthead();
   // Refresh flow→story links now that stories are in DOM
   refreshFlowStoryLinks();
-  
+  // Re-apply i18n to dynamically inserted DOM (v22.18)
+  if (window.i18n && window.i18n.applyTranslations) window.i18n.applyTranslations();
 
   // v22.42: Homepage teasers are populated by populateTeasers() called via setTimeout below
 
@@ -2298,6 +2314,7 @@ async function boot() {
       el.style.fontSize = '20px';
     });
   }
+
 
 }
 
@@ -2497,13 +2514,16 @@ async function populateTeasers() {
       }
     }
   } catch(e) { console.error("populateTeasers:", e); }
-  
+
+  // Re-apply i18n
+  if (window.i18n && window.i18n.applyTranslations) window.i18n.applyTranslations();
 }
 
 // Call teasers after boot completes
 if (document.querySelector('.teaser-list')) {
   setTimeout(populateTeasers, 1500);
 }
+
 
 // ── Delayed triangulation: retries if DOM not ready ──
 function scheduleTriangulation() {
