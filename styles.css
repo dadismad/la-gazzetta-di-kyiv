@@ -980,7 +980,6 @@ tant; }
 
   /* ── Flows subtitle stat ── */
   .flow-freshness { font-size: 9px; }
-}
 
 /* Small phone (≤400px) */
 @media (max-width: 400px) {
