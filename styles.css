@@ -2370,7 +2370,8 @@ display: -webkit-flex;
 }
 
 /* Flow card styling within product pages */
-.product-page .flow-card {
+.product-page .flow-card,
+.product-page .flow-row {
   background: #FFFFFF;
   border: 1px solid #E5E7EB;
   border-left: 3px solid #3B82F6;
@@ -2379,10 +2380,12 @@ display: -webkit-flex;
   margin-bottom: 10px;
   transition: box-shadow 0.15s;
 }
-.product-page .flow-card:hover {
+.product-page .flow-card:hover,
+.product-page .flow-row:hover {
   box-shadow: 0 2px 8px rgba(212,175,55,0.10);
 }
-.product-page[data-layer="alpha"] .flow-card {
+.product-page[data-layer="alpha"] .flow-card,
+.product-page[data-layer="alpha"] .flow-row {
   border-left-color: #D4AF37;
 }
 
@@ -2404,7 +2407,8 @@ display: -webkit-flex;
 }
 
 /* Trade/anchor card styling */
-.product-page .anchor-card {
+.product-page .anchor-card,
+.product-page .anchor-item {
   background: #FFFFFF;
   border: 1px solid #E5E7EB;
   border-left: 3px solid #D4AF37;
@@ -2413,8 +2417,13 @@ display: -webkit-flex;
   margin-bottom: 10px;
   transition: box-shadow 0.15s;
 }
-.product-page .anchor-card:hover {
+.product-page .anchor-card:hover,
+.product-page .anchor-item:hover {
   box-shadow: 0 2px 8px rgba(212,175,55,0.12);
+}
+
+/* Original anchor-card (keep for backward compat) */
+  /* legacy anchor-card — merged above */
 }
 
 /* Signal card styling */

@@ -2236,6 +2236,8 @@ async function boot() {
     const all = [livingData.lead, ...stories, ...(livingData.archived_stories || [])].filter(Boolean);
     STORIES_DATA = all;  // v22.30: global store
     window.STORIES_DATA = all;  // v25.7: also expose on window for cross-function access
+    // v25.19: Re-render divergence meter now that stories are loaded (fixes "Stories: 0")
+    renderDivergenceMeter();
 
     const el = byId('newsCol');
     if (el) {
@@ -2280,6 +2282,8 @@ async function boot() {
   const all = [data.lead, ...filteredStories].filter(Boolean);
   STORIES_DATA = all;  // v22.30: global store for cross-page triangulation
   window.STORIES_DATA = all;  // v25.7: expose on window
+  // v25.19: Re-render divergence meter now that stories are loaded (fixes "Stories: 0")
+  renderDivergenceMeter();
 
   const el2 = byId('newsCol');
   if (el2) {
