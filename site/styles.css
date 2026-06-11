@@ -58,7 +58,7 @@ body {
   justify-content: space-between;
   padding: 10px 16px;
   background: #FFFFFF;
-  border-bottom: 1px solid var(--divider);
+  border-bottom: 2px solid var(--gold);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -590,7 +590,8 @@ display: -webkit-flex;
 /* ── Story Cards: visual definition ── */
 article.card {
   background: var(--card-bg);
-  border: 1px solid var(--divider);
+  border: 1px solid rgba(212,175,55,0.25);
+  border-left: 2px solid var(--gold);
   border-radius: 4px;
   padding: 12px 14px;
   margin-bottom: 4px;
@@ -598,7 +599,7 @@ article.card {
 }
 article.card:hover {
   border-color: var(--gold);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 6px rgba(212,175,55,0.12);
 }
 article.card.lead {
   border-left: 3px solid var(--gold);
@@ -624,7 +625,8 @@ article.card.lead {
 /* ── Service cards (C-SUITE/QUANT/EXECUTION) ── */
 .hint-card {
   border-radius: 4px;
-  border: 1px solid var(--divider);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-left: 2px solid var(--gold);
   transition: border-color 0.15s;
 }
 .hint-card:hover {
