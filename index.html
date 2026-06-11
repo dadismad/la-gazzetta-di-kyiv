@@ -46,6 +46,19 @@
 <!-- ═══════════════════════════════════════════════ -->
 <header class="masthead">
   <div class="masthead-left">
+    <span class="masthead-caduceus" title="Caduceus — commerce, flow, intelligence" aria-hidden="true">
+      <svg viewBox="0 0 20 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="10" y1="8" x2="10" y2="36" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="10" cy="36" r="2.5" fill="currentColor" opacity="0.35"/>
+        <path d="M10 8 Q4 2 2 6 Q4 10 10 10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        <path d="M10 8 Q16 2 18 6 Q16 10 10 10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        <path d="M3 14 Q6 12 10 16 Q14 20 10 24 Q6 28 10 32 Q14 36 17 34" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M17 14 Q14 12 10 16 Q6 20 10 24 Q14 28 10 32 Q6 36 3 34" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <circle cx="3" cy="14" r="1.3" fill="currentColor" opacity="0.5"/>
+        <circle cx="17" cy="14" r="1.3" fill="currentColor" opacity="0.5"/>
+      </svg>
+    </span>
+    <span class="masthead-name">La Gazzetta di Kyiv</span>
     <span class="masthead-bulava" title="Crossed bulavas — Hetman's maces" aria-hidden="true">
       <svg viewBox="0 0 14 38" fill="none" xmlns="http://www.w3.org/2000/svg">
         <line x1="7" y1="18" x2="7" y2="35" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
@@ -74,20 +87,6 @@
         <circle cx="7" cy="1.5" r="1.5" fill="currentColor"/>
       </svg>
     </span>
-    <span class="masthead-caduceus" title="Caduceus — commerce, flow, intelligence" aria-hidden="true">
-      <svg viewBox="0 0 20 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <line x1="10" y1="8" x2="10" y2="36" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-        <circle cx="10" cy="36" r="2.5" fill="currentColor" opacity="0.35"/>
-        <path d="M10 8 Q4 2 2 6 Q4 10 10 10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
-        <path d="M10 8 Q16 2 18 6 Q16 10 10 10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
-        <path d="M3 14 Q6 12 10 16 Q14 20 10 24 Q6 28 10 32 Q14 36 17 34" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-        <path d="M17 14 Q14 12 10 16 Q6 20 10 24 Q14 28 10 32 Q6 36 3 34" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-        <circle cx="3" cy="14" r="1.3" fill="currentColor" opacity="0.5"/>
-        <circle cx="17" cy="14" r="1.3" fill="currentColor" opacity="0.5"/>
-      </svg>
-    </span>
-    <!-- v25.0: 300% title, moved to top-right alignment -->
-    <span class="masthead-name">La Gazzetta di Kyiv</span>
   </div>
 </header>
 
@@ -191,7 +190,7 @@
   </div>
 
   <!-- v25.0: Container with "?" tooltip badge -->
-  <section class="container collapsible expanded" id="storiesTeaser">
+  <section class="container collapsible" id="storiesTeaser">
     <div class="container-header">
       <span class="container-title" data-i18n="container_stories_title">Stories</span>
       <span class="container-count" id="teaserStoryCount">—</span>
@@ -206,7 +205,7 @@
     </div>
   </section>
 
-  <section class="container collapsible expanded" id="flowsTeaser">
+  <section class="container collapsible" id="flowsTeaser">
     <div class="container-header">
       <span class="container-title" data-i18n="container_flows_title">Capital Flows</span>
       <span class="container-subtitle" id="teaserFlowSub">—</span>
@@ -221,7 +220,7 @@
     </div>
   </section>
 
-  <section class="container collapsible expanded" id="tradesTeaser">
+  <section class="container collapsible" id="tradesTeaser">
     <div class="container-header">
       <span class="container-title" data-i18n="nav_trades">Trade Ideas</span>
       <span class="container-subtitle" id="teaserTradeSub">—</span>

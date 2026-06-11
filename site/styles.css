@@ -93,10 +93,6 @@ body {
   text-stroke: 0.4px rgba(245, 215, 110, 0.45);
   white-space: nowrap;
   animation: shimmer 8s ease-in-out infinite;
-  text-align: right;
-  flex: 1 1 auto;
-  margin-left: auto;
-  order: 10;
 }
 .masthead-bulava {
   position: relative;
