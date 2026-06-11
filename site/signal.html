@@ -133,22 +133,38 @@
 </div>
 
 <script>
-// v22.18: Product page — render only this page's content after boot()
+// v23.36: Poll for STORIES_DATA readiness instead of blind timeout
 window.addEventListener('load', function() {
-  // Wait for app.js boot() to finish (it runs on DOMContentLoaded)
-  setTimeout(function() {
-    // Expand the visible container
+  var attempts = 0;
+  var maxAttempts = 40;  // 10 seconds max
+  
+  function tryRender() {
     var container = document.querySelector('.product-page .container');
     if (container) container.classList.add('expanded');
-    // v22.34: Product page — explicitly render triangulation (doesn't fire via click on pre-expanded container)
-    if (window.renderTriangulation && document.getElementById('signalGrid')) {
-      window.renderTriangulation();
+    
+    // Check if STORIES_DATA is populated (boot() may still be fetching)
+    if (window.STORIES_DATA && window.STORIES_DATA.length > 0) {
+      if (window.renderTriangulation && document.getElementById('signalGrid')) {
+        window.renderTriangulation();
+      }
+      if (window.i18n && window.i18n.applyTranslations) {
+        setTimeout(function() { window.i18n.applyTranslations(); }, 1000);
+      }
+      return;
     }
-    // Apply i18n to any dynamically rendered content
-    if (window.i18n && window.i18n.applyTranslations) {
-      setTimeout(function() { window.i18n.applyTranslations(); }, 1000);
+    
+    attempts++;
+    if (attempts < maxAttempts) {
+      setTimeout(tryRender, 250);
+    } else {
+      // Fallback: render anyway after 10s
+      if (window.renderTriangulation && document.getElementById('signalGrid')) {
+        window.renderTriangulation();
+      }
     }
-  }, 2500);  // v22.34: increased from 2000ms to give boot() time to populate STORIES_DATA
+  }
+  
+  tryRender();
 });
 </script>
 </body>

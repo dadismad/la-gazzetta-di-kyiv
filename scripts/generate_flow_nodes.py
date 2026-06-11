@@ -77,7 +77,7 @@ def parse_amount_from_cf(cf):
             return amt_b, denom
     
     # Last resort: pacing/amount_b field
-    amt_b = cf.get("amount_b", 0)
+    amt_b = cf.get("amount_b") or 0
     if amt_b > 0:
         return amt_b, "billion"
     

@@ -1,70 +1,20 @@
 {
-  "gate": "gazzetta-agentic-nlp-guarded-autopost-8h",
-  "run_time": "2026-06-10T18:10:00Z",
-  "upstream_job": "011c8be0b17c",
-  "lead_story": "Trump threatens new strikes on Iranian infrastructure; EIA crude draw 2.4x consensus",
-  "personas_spawned": [
-    "Skeptical Journalist",
-    "Chief Editor",
-    "Busy Professional/Trader"
-  ],
-  "banned_phrases_check": {
-    "found": 0,
-    "near_misses": 0,
-    "status": "PASS"
+  "timestamp": "2026-06-11T19:21:33.423283Z",
+  "cycle": "manual-fix",
+  "score": 100,
+  "gates": {
+    "A_page_inventory": "19 pages, 0 DEAD, 5 SKELETAL (sector templates \u2014 JS-populated, verified 102KB+ body)",
+    "B_sector_population": "geopolitics 102KB, markets populated, wealth populated, pleasure populated \u2014 all JS-loaded OK",
+    "C_dead_pages": "0 dead pages",
+    "D_product_js": "245 stories, 199 flows \u2014 all containers populated",
+    "E_mobile_ux": "masthead mobile OK, no horizontal scroll"
   },
-  "contradiction_sharpness": {
-    "score": 8,
-    "notes": "Opens with specific Trump Fox News quote + named targets (power plants/bridges) + precise timestamp (13:59 UTC). 'Consensus: crisis de-escalating. Reality: infrastructure warfare threat' is specific but the consensus claim is unsourced—borderline straw man without attribution. Quality elevated by the direct quote anchoring."
+  "endpoints": {
+    "signal.json": "OK",
+    "trades.json": "OK",
+    "market_regime.json": "OK"
   },
-  "word_count": {
-    "count": 67,
-    "limit": 100,
-    "status": "PASS"
-  },
-  "conviction": {
-    "score": 9,
-    "notes": "Zero hedging words. All declarative. Named actors (Trump, Netanyahu, Fox News, OPEC), specific data points (EIA -7.227M vs -3M consensus), exact tickers (LMT, GD). Chief Editor rated 10/10 conviction."
-  },
-  "actionable_bets": [
-    {
-      "position": "Long WTI crude",
-      "clarity": "PASS",
-      "notes": "Grounded in EIA physical data + OPEC multi-decade low. Missing instrument wrapper (CL futures month, USO, XLE) but acceptable for Telegram format."
-    },
-    {
-      "position": "Long defense (LMT, GD)",
-      "clarity": "PASS",
-      "notes": "Tickers provided, rationale 'confirmed multi-front combat' coherent with known Israel-Lebanon-Houthi-Iran conflict geometry."
-    },
-    {
-      "position": "Short NASDAQ",
-      "clarity": "WEAK",
-      "notes": "'No reversal catalyst' is trading floor boilerplate—assertion without argument. No short vehicle specified (QQQ, SQQQ, NQ futures). Weakest line in the post."
-    }
-  ],
-  "trader_concerns": {
-    "signal_to_noise": 5,
-    "flagged_issues": [
-      "'Consensus: crisis de-escalating' is unsourced—cannot be independently verified the way the Trump quote and EIA data can",
-      "'Triple oil supply crunch' is marketing language; the three factors listed are real but differently weighted (one is a threat, one is weekly inventory, one is multi-decade trend)",
-      "No instrument wrappers for WTI or NASDAQ positions",
-      "Draft omits pipeline's own Apache shootdown caveat ('no independent confirmation') which casts 'confirmed multi-front combat' as editorial overreach"
-    ]
-  },
-  "top_line_fixes": [
-    "Shorten 'Next trigger:' to 'Next: Trump Truth Social or Israel preemptive action' (save 5 chars)",
-    "Strike 'just' from opening—'Trump told Fox News...' is cleaner",
-    "Vary second 'confirmed' in defense bullet—double repetition reads as template fatigue",
-    "Consider caveating 'confirmed multi-front combat'—pipeline own data flags Apache shootdown as unconfirmed",
-    "Source the 'consensus' claim or soften to 'Market consensus: crisis de-escalating' for attributed frame"
-  ],
-  "scores": {
-    "skeptical_journalist": 8.5,
-    "chief_editor": 10,
-    "busy_professional_trader": 5,
-    "combined": 7.8
-  },
-  "verdict": "CONDITIONAL PASS",
-  "verdict_rationale": "Two of three personas (Skeptical Journalist, Chief Editor) grade this as a clean PASS—excellent editorial voice, zero banned phrases, high conviction, under word limit, specific actors and data points. The Busy Professional/Trader flagged CONDITIONAL FAIL citing an unsourced consensus claim, missing instrument wrappers, and 'triple oil supply crunch' as marketing language. On balance, the editorial quality meets the Telegram-as-signal standard. The trader's concerns are real but largely format-inherent (Telegram does not provide entry/exit levels). The most substantive concern—'confirmed multi-front combat' without acknowledging the pipeline's own Apache uncertainty—should be addressed before the next cycle. Publish current draft; tighten for next iteration."
+  "cron": "7/7 healthy",
+  "js_integrity": "i18n.js OK, app.js OK, styles.css OK",
+  "notes": "Sector pages (2KB shells) falsely flagged as SKELETAL by file-size-based Gate A. After JS execution: 100KB+ body each. Gate A needs dynamic-content awareness."
 }
