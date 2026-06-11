@@ -134,50 +134,9 @@ echo "── Stage 3: build_hashed_assets ──"
 $PYTHON "$PROJECT/scripts/build_hashed_assets.py"
 echo "  ✓ CSS/JS hashed, HTML references rewritten"
 echo ""
-
-# ═══ Stage 3.1: ru_sync_gate — AFTER hash so RU gets correct script references ═══
+# ═══ Stage 3.1: ru_sync_gate — REMOVED (Russian version deleted June 2026) ═══
 echo "── Stage 3.1: ru_sync_gate ──"
-RU_MISSING=0
-for f in about.html capital.html data.html index.html methodology.html sources.html terms.html robots.txt sitemap.xml stories.html flows.html event_horizon.html flow-nodes.html signal.html trades.html track.html privacy.html; do
-  if [ ! -f "$PROJECT/site/ru/$f" ]; then
-    cp "$PROJECT/site/$f" "$PROJECT/site/ru/$f" 2>/dev/null || true
-    # Fix lang attribute for RU versions (except robots.txt and sitemap.xml)
-    case "$f" in *.html) sed -i '' 's/<html lang="en"/<html lang="ru"/g' "$PROJECT/site/ru/$f" ;; esac
-    RU_MISSING=$((RU_MISSING + 1))
-  fi
-done
-EN_COUNT=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories.json')); print(len([d.get('lead')]+d.get('stories',[])))" 2>/dev/null || echo 0)
-RU_COUNT=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories_ru.json')); print(len([d.get('lead')]+d.get('stories',[])))" 2>/dev/null || echo 0)
-
-# Check if RU translation is stale by timestamp (v3.1: prevents count-equal-but-content-stale bug)
-NEED_TRANSLATION=false
-if [ "$RU_COUNT" -lt "$EN_COUNT" ]; then
-  NEED_TRANSLATION=true
-  echo "  ⚠ RU stories ($RU_COUNT) < EN stories ($EN_COUNT)"
-else
-  # Compare timestamps: if RU is >1hr older than EN, force re-translate
-  EN_TS=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories.json')); print(d.get('generated_at','2000-01-01T00:00:00')[:19])" 2>/dev/null || echo "2000-01-01T00:00:00")
-  RU_TS=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories_ru.json')); print(d.get('generated_at','2000-01-01T00:00:00')[:19])" 2>/dev/null || echo "2000-01-01T00:00:00")
-  EN_EPOCH=$(date -j -f "%Y-%m-%dT%H:%M:%S" "$EN_TS" "+%s" 2>/dev/null || echo 0)
-  RU_EPOCH=$(date -j -f "%Y-%m-%dT%H:%M:%S" "$RU_TS" "+%s" 2>/dev/null || echo 0)
-  AGE_GAP=$(( EN_EPOCH - RU_EPOCH ))
-  if [ "$AGE_GAP" -gt 3600 ]; then
-    NEED_TRANSLATION=true
-    echo "  ⚠ RU stories stale by ${AGE_GAP}s ($RU_TS vs $EN_TS) — re-translating"
-  fi
-fi
-
-if [ "$NEED_TRANSLATION" = true ]; then
-  echo "  Running translate_content.py..."
-  $PYTHON "$PROJECT/scripts/translate_content.py" 2>/dev/null || echo "  ⚠ Translation failed"
-  RU_COUNT_NEW=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories_ru.json')); print(len([d.get('lead')]+d.get('stories',[])))" 2>/dev/null || echo 0)
-  if [ "$RU_COUNT_NEW" -lt "$EN_COUNT" ]; then
-    echo "  ✗ CRITICAL: RU sync failed ($RU_COUNT_NEW < $EN_COUNT). Aborting deploy."
-    exit 1
-  fi
-  echo "  ✓ RU stories re-translated: $RU_COUNT_NEW stories"
-fi
-echo "  ✓ RU sync gate passed: $RU_COUNT stories, $RU_MISSING files copied"
+echo "  ✓ SKIPPED — Russian version removed. English only."
 
 # ═══ Stage 4: GCS deploy ──
 echo "── Stage 4: GCS deploy ──"
@@ -198,10 +157,10 @@ if [ "$DRY_RUN" != true ]; then
         "$BUCKET/sector.*.js" 2>/dev/null || true
     # Zero cache on ALL HTML
     $GSUTIL -m setmeta -h "Cache-Control:public, max-age=0, must-revalidate" \
-        "$BUCKET/*.html" "$BUCKET/ru/*.html" 2>/dev/null || true
+        "$BUCKET/*.html" 2>/dev/null || true
     # No-store on ALL JSON
     $GSUTIL -m setmeta -h "Cache-Control:private, no-store" \
-        "$BUCKET/data/*.json" "$BUCKET/data/en/*.json" "$BUCKET/data/ru/*.json" \
+        "$BUCKET/data/*.json" \
         "$BUCKET/api/**/*.json" 2>/dev/null || true
     echo "  ✓ GCS rsync + cache headers set"
 fi

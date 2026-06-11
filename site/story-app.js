@@ -7,7 +7,7 @@
   'use strict';
 
   const STORIES_PATH = './data/stories.json';
-  const STORIES_RU_PATH = './data/stories_ru.json';
+  // RU path removed
   const LIVING_PATH = './data/living_stories.json';
 
   async function getJSON(path, fallback) {
@@ -40,13 +40,13 @@
 
   function tensionBadge(score) {
     const s = score || 0;
-    if (s >= 67) return { cls: 'contradicted', label: window.i18n ? i18n.t('tension_max','MAX TENSION') : 'MAX TENSION' };
-    if (s >= 34) return { cls: 'divergent', label: window.i18n ? i18n.t('tension_high','HIGH TENSION') : 'HIGH TENSION' };
-    return { cls: 'aligned', label: window.i18n ? i18n.t('tension_building','BUILDING') : 'BUILDING' };
+    if (s >= 67) return { cls: 'contradicted', label: 'MAX TENSION' };
+    if (s >= 34) return { cls: 'divergent', label: 'HIGH TENSION' };
+    return { cls: 'aligned', label: 'BUILDING' };
   }
 
   function buildHTML(story, allStories, currentIdx) {
-    const t = window.i18n ? (k, fb) => i18n.t(k, fb) : (k, fb) => fb;
+    const t = (k, fb) => fb;  // i18n removed
     const cf = story.capital_flow || {};
     const tension = tensionBadge(story.contradiction_score || 0);
     const category = t('sector_' + (story.sector || 'markets').toLowerCase(), (story.sector || 'MARKETS').toUpperCase());
@@ -218,9 +218,7 @@ Gazzetta.Story.init = init;
 Gazzetta.Story.buildHTML = buildHTML;
 
 async function init() {
-    // Wait for i18n
-    if (window.i18n && !window.i18n._ready) {
-      await new Promise(r => { window.addEventListener('i18nReady', r, { once: true }); });
+    // i18n removed); });
     }
 
     const storyId = getStoryId();
@@ -230,7 +228,7 @@ async function init() {
     }
 
     // Load stories
-    const lang = window.i18n ? i18n.lang : 'en';
+    const lang = 'en';
     const dataPath = lang === 'ru' ? STORIES_RU_PATH : STORIES_PATH;
     const data = await getJSON(dataPath, null);
     
@@ -276,7 +274,6 @@ async function init() {
     init();
   }
 })();
-
 
 // Export to namespace after definition
 if (typeof Gazzetta !== "undefined") { Gazzetta.Story.loaded = true; }

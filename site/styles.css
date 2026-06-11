@@ -263,31 +263,6 @@ body {
 }
 
 /* ── Language Toggle ── */
-.lang-switch {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  background: transparent;
-  border: 1px solid var(--divider);
-  border-radius: 3px;
-  padding: 5px 10px;
-  cursor: pointer;
-  transition: all 0.15s;
-  -webkit-appearance: none;
-  appearance: none;
-}
-.lang-switch:hover {
-  color: var(--gold);
-  border-color: var(--gold);
-}
-.lang-switch.active {
-  color: var(--ink);
-  border-color: var(--gold);
-  background: var(--gold-light);
-}
 
 /* ── Hero Section ── */
 .hero {
@@ -601,7 +576,6 @@ display: -webkit-flex;
 }
 .teaser-full-link:hover { text-decoration: underline; }
 
-
 /* ═══ v25.12 DESIGN OVERHAUL ═══ */
 
 /* ── Story Cards: visual definition ── */
@@ -650,7 +624,6 @@ article.card.lead {
 
 /* ── Gold references updated ── */
 a:hover, .nav-link:hover { color: var(--gold); }
-
 
 /* v23.6: Mobile product nav — horizontal scroll slider */
 @media (max-width: 768px) {
@@ -721,7 +694,6 @@ a:hover, .nav-link:hover { color: var(--gold); }
   .product-nav a { font-size: 9px; padding: 4px 8px; min-height: 32px; }
   .nav-group-label { font-size: 9px; }
 }
-
 
 @media (max-width: 600px) {
   .teaser-item { font-size: 12px; padding: 5px 4px; }
@@ -977,7 +949,6 @@ tant; }
   .masthead-bulava svg, .masthead-caduceus svg { width: 12px; height: 22px; }
   .product-nav { margin: 4px 0 !important; gap: 8px !important; }
   .product-nav a { font-size: 12px !important; }
-  .lang-switch { min-width: 44px; min-height: 44px; font-size: 13px; padding: 10px 14px; }
 
   /* ── Container headers: big tap targets ── */
   .container-header {
@@ -1043,12 +1014,10 @@ tant; }
 
   /* ── Footer: bigger touch targets ── */
   .footer { padding: 12px 8px; font-size: 11px; gap: 8px; }
-  display: -webkit-inline-flex;
   .footer a { min-height: 44px; display: inline-flex; align-items: center; padding: 0 6px; }
 
   /* ── Subpage nav: 44px tall taps ── */
   .product-page .masthead-right { gap: 8px; }
-  display: -webkit-inline-flex;
   .product-page .masthead-right a { min-height: 44px; display: inline-flex; align-items: center; font-size: 12px; padding: 0 8px; }
 
   /* ── Trade items ── */
