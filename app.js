@@ -634,7 +634,7 @@ function renderFlowInsight(flowsData) {
       const arrow = data.direction === 'inflow' ? '↑' : '⇅';
       const color = data.direction === 'inflow' ? 'var(--green)' : 'var(--ink-muted)';
       return `<div class="sector-stat-box">
-        <div class="sector-stat-label">${SECTOR_DISPLAY_LABELS[sector] || sector}</div>
+        <div class="sector-stat-label">${SECTOR_DISPLAY_LABELS[sector] || SECTOR_DISPLAY_LABELS[sector.toLowerCase()] || sector}</div>
         <div class="sector-stat-value" style="color:${color};">$${data.total_b.toFixed(1)}B ${arrow}</div>
         <div class="sector-stat-sub">${data.count} flows · ${data.avg_pace}x pace · ${data.avg_confidence}% conf</div>
       </div>`;
@@ -1117,9 +1117,9 @@ function renderDivergenceMeter() {
           <span style="font-family:var(--sans);font-size:8px;font-weight:700;color:${r.divColor};text-transform:uppercase;">${r.divergence}</span>
         </div>
         <div style="display:flex;gap:8px;font-size:10px;font-family:var(--sans);color:var(--ink-muted);">
-          <span>Story ${r.storySignal} (${r.stories})</span>
-          <span>Flow ${r.flowSignal} (${r.flows})</span>
-          <span>Trade ${r.tradeSignal}</span>
+          <span>Stories: ${r.stories || 0}</span>
+          <span>Flows: ${r.flows} ${r.flowSignal}</span>
+          <span>Trades: ${r.tradeSignal}</span>
         </div>
       </div>
     `).join('')}
@@ -1339,7 +1339,8 @@ function livingCardHTML(story, isLead) {
     const anchorAsset = ANCHOR_ASSETS.find(a => a.symbol === anchorSym);
     if (anchorAsset) {
       const tradeColor = anchorAsset.bias === 'BUY' || anchorAsset.bias === 'LONG' ? 'var(--green)' : anchorAsset.bias === 'SELL' || anchorAsset.bias === 'SHORT' ? 'var(--red)' : 'var(--ink-muted)';
-      tradeHint = `<span style="color:${tradeColor};margin-left:4px;">→ ${anchorAsset.symbol} ${anchorAsset.bias} ${anchorAsset.conviction}</span>`;
+      const biasLabel = anchorAsset.bias === 'LONG' ? 'BUY' : anchorAsset.bias === 'SHORT' ? 'SELL' : anchorAsset.bias;
+      tradeHint = `<span style="color:${tradeColor};margin-left:4px;">→ ${anchorAsset.symbol} ${biasLabel} ${anchorAsset.conviction}</span>`;
     }
   }
   cfHint = `<a href="./flows.html" class="cf-hint" style="color:${hintColor};text-decoration:none;" title="View in Capital Flows — ${cf.direction === 'outflow' ? 'out of' : 'into'} ${cf.asset_class || 'this sector'}">${hintAmt} ${hintDir}${sectorHint}${tradeHint}</a>`;
@@ -1922,9 +1923,9 @@ function renderTrackRecordLocal(el, stats) {
     const openExposure = openCount > 0 ? '$' + (openCount * 1.5).toFixed(1) + 'K' : '—';
     html = `<div class="tr-active">
       <div class="tr-grid">
-        <div class="tr-stat"><span class="tr-val">${openCount}</span><span class="tr-label">Open Positions</span></div>
-        <div class="tr-stat"><span class="tr-val">${openExposure}</span><span class="tr-label">Notional Exposure</span></div>
-        <div class="tr-stat"><span class="tr-val">0</span><span class="tr-label">Settled</span></div>
+        <div class="tr-stat"><span class="tr-val">${openCount}</span> <span class="tr-label">Open Positions</span></div>
+        <div class="tr-stat"><span class="tr-val">${openExposure}</span> <span class="tr-label">Notional Exposure</span></div>
+        <div class="tr-stat"><span class="tr-val">0</span> <span class="tr-label">Settled</span></div>
       </div>
       <div class="tr-empty" style="margin-top:8px">Positions snapshotted today. First settlements expected within 7 days.</div>
     </div>`;
