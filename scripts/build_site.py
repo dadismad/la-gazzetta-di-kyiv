@@ -29,6 +29,8 @@ SYNC_FILES = [
     "publish_manifest.json",
     "flows.json",
     "website_stories_latest.json",
+    "event_horizon.json",   # v23.0: event_horizon.html dashboard data
+    "flow_nodes.json",      # v23.0: flow-nodes.html visualization data
 ]
 
 

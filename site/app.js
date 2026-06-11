@@ -55,6 +55,11 @@ document.addEventListener('click', function(e) {
     case 'lang-ru':
       if (window.i18n && i18n.switchLang) i18n.switchLang('ru');
       break;
+    case 'navigate':
+      if (btn.hasAttribute('data-href')) {
+        window.location.href = btn.getAttribute('data-href');
+      }
+      break;
   }
 });
 
@@ -71,18 +76,27 @@ function byId(id) {
 // AbortController for stale fetch cancellation
 let _fetchAC = null;
 
-async function getJSON(path, fallback) {
+async function getJSON(path, fallback, retries = 2) {
   if (_fetchAC) { _fetchAC.abort(); }
   _fetchAC = new AbortController();
-  try {
-    const r = await fetch(`${path}?t=${Date.now()}`, { cache: 'no-store', signal: _fetchAC.signal });
-    if (!r.ok) throw new Error(String(r.status));
-    return await r.json();
-  } catch (e) {
-    console.error('Gazzetta fetch error:', e);
-    if (e.name === 'AbortError') { console.debug('Fetch aborted:', path); return fallback; }
-    console.warn('Fetch:', path, e); return fallback;
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const r = await fetch(`${path}?t=${Date.now()}`, { cache: 'no-store', signal: _fetchAC.signal });
+      if (!r.ok) throw new Error(String(r.status));
+      return await r.json();
+    } catch (e) {
+      if (e.name === 'AbortError') { console.debug('Fetch aborted:', path); return fallback; }
+      if (attempt < retries) {
+        const delay = Math.min(1000 * Math.pow(2, attempt), 8000);
+        console.warn(`Gazzetta fetch retry ${attempt + 1}/${retries} for ${path} in ${delay}ms:`, e.message);
+        await new Promise(r => setTimeout(r, delay));
+      } else {
+        console.error('Gazzetta fetch failed after retries:', path, e);
+        return fallback;
+      }
+    }
   }
+  return fallback;
 }
 
 // ── Captured story set (accumulation — never remove old cards) ──
@@ -413,34 +427,41 @@ async function fetchFlows() {
 // ── v2.0: Hero indicator updates ──
 function updateHeroIndicators(flowsData) {
   if (!flowsData || !flowsData.flows) return;
-  // Divergence: flows with confidence < 70% (price-narrative gaps)
-  const contradictions = flowsData.flows.filter(f => f.confidence_pct && f.confidence_pct < 70).length;
-  const divEl = document.getElementById('heroDivergence');
-  if (divEl) {
-    divEl.querySelector('.hero-ind-value').textContent = contradictions;
-    divEl.querySelector('.hero-ind-value').style.color = contradictions >= 2 ? '#DC2626' : 'var(--ink)';
-    divEl.title = `${contradictions} active narrative-price contradiction${contradictions !== 1 ? 's' : ''}`;
-  }
-  // Asymmetry gauge: max asymmetry score across flows
-  let maxAsym = 0;
-  flowsData.flows.forEach(f => {
-    if ((f.divergence_score || 0) > maxAsym) maxAsym = f.divergence_score || 0;
+  const flows = flowsData.flows;
+  // Divergence: count flows where narrative direction opposes price movement
+  const priceMap = window._lastTickerMap || {};
+  let diverged = 0;
+  flows.forEach(f => {
+    const ac = (f.asset_class || '').toLowerCase();
+    const price = priceMap[ac] || {};
+    const { gap } = computeDivergence(f.direction, (f.confidence_pct || 50) / 100, price.change_pct || 0);
+    if (gap > 0.25) diverged++;
   });
-  const gaugeVal = document.getElementById('heroGaugeValue');
-  const gaugeArc = document.getElementById('heroGaugeArc');
-  const gaugeLabel = document.getElementById('heroGaugeLabel');
-  if (gaugeVal) {
-    gaugeVal.textContent = maxAsym || '—';
-    gaugeVal.style.fill = maxAsym >= 80 ? '#DC2626' : maxAsym >= 50 ? '#D97706' : 'var(--ink)';
+  const divEl = document.getElementById('heroContradictions');
+  if (divEl) {
+    const valEl = divEl.querySelector('.hero-ind-value');
+    const labelEl = divEl.querySelector('.hero-ind-label');
+    if (valEl) {
+      valEl.textContent = diverged;
+      valEl.style.color = diverged >= 2 ? '#DC2626' : diverged >= 1 ? '#D97706' : '#059669';
+    }
+    if (labelEl) {
+      labelEl.textContent = diverged === 0 ? 'ALIGNED' : diverged === 1 ? 'DIVERGENCE' : 'DIVERGENCES';
+    }
+    divEl.title = diverged === 0 ? 'All flows aligned — no narrative-price contradictions' : `${diverged} narrative-price contradiction${diverged !== 1 ? 's' : ''}`;
   }
-  if (gaugeArc && maxAsym > 0) {
-    const circumference = 132; // r=42 arc length
-    const dashLen = (maxAsym / 100) * circumference;
-    gaugeArc.setAttribute('stroke-dasharray', `${dashLen} ${circumference}`);
-    gaugeArc.setAttribute('stroke', maxAsym >= 80 ? '#DC2626' : maxAsym >= 50 ? '#D97706' : '#B8860B');
-  }
-  if (gaugeLabel) {
-    gaugeLabel.textContent = maxAsym >= 80 ? 'MAX ASYMMETRY' : maxAsym >= 50 ? 'HIGH ASYMMETRY' : maxAsym >= 25 ? 'MODERATE' : 'LOW';
+  // Top velocity: highest pace_multiplier across flows
+  let topVel = 0, topCat = '';
+  flowsData.flows.forEach(f => {
+    if ((f.pace_multiplier || 1) > topVel) {
+      topVel = f.pace_multiplier || 1;
+      topCat = f.asset_class || '';
+    }
+  });
+  const velEl = document.getElementById('heroTopVelocity');
+  if (velEl) {
+    velEl.querySelector('.hero-ind-value').textContent = `${topVel.toFixed(1)}×`;
+    velEl.title = `Highest velocity: ${topCat}`;
   }
   // Last Big Inflow — most recent significant capital flow (>$1B, highest velocity)
   const inflowEl = document.getElementById('heroLastInflow');
@@ -456,8 +477,10 @@ function updateHeroIndicators(flowsData) {
       const amt = top.amount_b >= 1 ? `$${top.amount_b.toFixed(1)}B` : `$${(top.amount_b*1000).toFixed(0)}M`;
       const vel = (top.pace_multiplier || 1) >= 2 ? 'FAST' : (top.pace_multiplier || 1) >= 1.5 ? 'STEADY' : 'SLOW';
       const dir = (top.net_direction || top.direction) === 'outflow' ? 'out' : 'in';
-      targetEl.querySelector('.hero-ind-value').textContent = `${amt} ${dir}`;
+      const arrow = dir === 'out' ? '↓' : '↑';
+      targetEl.querySelector('.hero-ind-value').textContent = `${amt} ${arrow}`;
       targetEl.querySelector('.hero-ind-value').style.color = dir === 'out' ? 'var(--red)' : 'var(--green)';
+      targetEl.querySelector('.hero-ind-label').textContent = dir === 'out' ? 'LAST OUTFLOW' : 'LAST INFLOW';
       targetEl.title = `${(top.asset_class || '').toUpperCase()}: ${amt} ${dir} at ${(top.pace_multiplier||1).toFixed(1)}× velocity — ${vel}`;
     } else {
       targetEl.querySelector('.hero-ind-value').textContent = '—';
@@ -568,7 +591,7 @@ function renderMarketRegime() {
       }
       mr.style.display = 'grid';
     })
-    .catch((e) => { console.error("Market prices fetch failed:", e); if (mr) mr.style.display = 'none'; });
+    .catch(() => { if (mr) mr.style.display = 'none'; });
 }
 // v22.31: Render lead insight + sector summary from flows.json
 function renderFlowInsight(flowsData) {
@@ -1477,7 +1500,6 @@ function wireCardDelegation() {
           timelineEl.dataset.loaded = 'true';
         }
       } catch (err) {
-        console.error("Timeline fetch failed:", err);
         timelineEl.innerHTML = '<div class="timeline-empty">' + i18n.t('could_not_load','Could not load timeline.') + '</div>';
         timelineEl.dataset.loaded = 'true';
       }
@@ -1610,7 +1632,7 @@ function getCumulative(key, fallback) {
   try {
     const v = localStorage.getItem('gazzetta_' + key);
     return v ? JSON.parse(v) : fallback;
-  } catch(e) { console.warn('localStorage corrupt for', key, e); return fallback; }
+  } catch(e) { return fallback; }
 }
 
 function setCumulative(key, val) {
@@ -1685,7 +1707,7 @@ function getTrackRecord() {
   try {
     const v = localStorage.getItem(TRACK_RECORD_KEY);
     return v ? JSON.parse(v) : [];
-  } catch(e) { console.warn('localStorage track record corrupt:', e); return []; }
+  } catch(e) { return []; }
 }
 
 function saveTrackRecord(records) {
@@ -1857,8 +1879,7 @@ function renderTrackRecord(targetId) {
           <div class="tr-methodology"><a href="capital.html">Full methodology →</a></div>`;
       }
     })
-    .catch((e) => {
-      console.error("Track record fetch failed:", e);
+    .catch(() => {
       // Fallback: localStorage only
       renderTrackRecordLocal(el, stats);
     });
@@ -2269,7 +2290,7 @@ async function populateTeasers() {
       const el = document.getElementById('storiesTeaserContent');
       const countEl = document.getElementById('teaserStoryCount');
       if (el) {
-        const items = [storiesData.lead, ...storiesData.stories].filter(Boolean).slice(0, 8);
+        const items = [storiesData.lead, ...storiesData.stories].filter(Boolean).slice(0, 20);
         el.innerHTML = items.map(s => {
           const cf = s.capital_flow || {};
           const amtHtml = cf.amount_b ? `<span class="teaser-amount">$${cf.amount_b}B</span>` : '';
@@ -2291,7 +2312,7 @@ async function populateTeasers() {
             const cls = fresh > 0.8 ? 'freshness-recent' : fresh > 0.4 ? 'freshness-today' : 'freshness-stale';
             freshHtml = ` <span class="freshness-ago ${cls}">${pct}%</span>`;
           }
-          return `<a href="./story.html?id=${s.story_id || s.id || ''}" class="teaser-item">${amtHtml}${headline}${linkedHtml}${freshHtml}</a>`;
+          return `<a href="./story.html?id=${s.story_id || s.id || ''}" class="teaser-item">${amtHtml} ${headline}${linkedHtml}${freshHtml}</a>`;
         }).join('');
         if (countEl) countEl.textContent = items.length + ' stories';
         // Story freshness timestamp
@@ -2411,8 +2432,7 @@ async function populateTeasers() {
             el.innerHTML = items.join('');
             if (subEl) subEl.textContent = `${flowsData.flows.length} flows · ${contradictions.length} contradictions`;
           }
-        }).catch((e) => {
-          console.error("Signal triangulation fetch failed:", e);
+        }).catch(() => {
           el.innerHTML = '<div class="teaser-item">Signal triangulation loading — stories × flows × trades.</div>';
           if (subEl) subEl.textContent = 'Awaiting data';
         });

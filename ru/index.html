@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="utf-8"/>
+  <base href="/">
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>La Gazzetta di Kyiv — Capital Flow Intelligence</title>
   <meta name="description" content="Track capital flows, trade contradictions, and follow the money through 5 intelligence products."/>
@@ -30,7 +31,7 @@
     @media (max-width: 600px) { .meta-chips { gap: 4px; } .meta-chip { font-size: 9px; padding: 2px 6px; } .story-hook-line { font-size: 12px; -webkit-line-clamp: 1; } }
   </style>
 
-  <link rel="stylesheet" href="./styles.e95f97a8.css"/>
+  <link rel="stylesheet" href="../styles.css"/>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='2' fill='%23111827'/><text x='16' y='24' text-anchor='middle' font-size='22' font-weight='bold' font-family='Georgia,serif' fill='%23D4AF37'>G</text></svg>"/>
 
   <link rel="canonical" href="https://www.lagazzettadikyiv.com/"/>
@@ -146,14 +147,14 @@
     <span class="masthead-tagline" data-i18n="masthead_tagline">Capital moves markets. We track where it's going.</span>
     <nav class="product-nav">
       <span class="nav-group-label" data-i18n="nav_intel">INTEL</span>
-      <a href="./stories.html" class="nav-link"><span data-i18n="nav_stories">Stories</span></a>
-      <a href="./flows.html" class="nav-link"><span data-i18n="nav_flows">Flows</span></a>
-      <a href="./event_horizon.html" class="nav-link"><span data-i18n="nav_horizon">Horizon</span></a>
-      <a href="./flow-nodes.html" class="nav-link"><span data-i18n="nav_flow_nodes">Flow Nodes</span></a>
+      <a href="../stories.html" class="nav-link"><span data-i18n="nav_stories">Stories</span></a>
+      <a href="../flows.html" class="nav-link"><span data-i18n="nav_flows">Flows</span></a>
+      <a href="../event_horizon.html" class="nav-link"><span data-i18n="nav_horizon">Horizon</span></a>
+      <a href="../flow-nodes.html" class="nav-link"><span data-i18n="nav_flow_nodes">Flow Nodes</span></a>
       <span class="nav-group-label" data-i18n="nav_alpha">ALPHA</span>
-      <a href="./signal.html" class="nav-link"><span data-i18n="nav_signal">Signal</span></a>
-      <a href="./trades.html" class="nav-link"><span data-i18n="nav_trades">Trades</span></a>
-      <a href="./track.html" class="nav-link"><span data-i18n="nav_track">Track</span></a>
+      <a href="../signal.html" class="nav-link"><span data-i18n="nav_signal">Signal</span></a>
+      <a href="../trades.html" class="nav-link"><span data-i18n="nav_trades">Trades</span></a>
+      <a href="../track.html" class="nav-link"><span data-i18n="nav_track">Track</span></a>
     </nav>
     <time class="masthead-meta" id="mastheadMeta" datetime="2026-06-06T15:00:00.000Z">—</time>
     <span class="lang-switcher">
@@ -174,15 +175,15 @@
     </p>
     <!-- v2.0: Hero hook indicators -->
     <div class="hero-indicators" id="heroIndicators">
-      <a href="./signal.html" class="hero-ind" id="heroContradictions" title="Active narrative-to-data divergences">
+      <a href="../signal.html" class="hero-ind" id="heroContradictions" title="Active narrative-to-data divergences">
         <span class="hero-ind-value">—</span>
         <span class="hero-ind-label" data-i18n="hero_contradictions">Contradictions</span>
       </a>
-      <a href="./flow-nodes.html" class="hero-ind" id="heroTopVelocity" title="Highest-momentum capital flow category">
+      <a href="../flow-nodes.html" class="hero-ind" id="heroTopVelocity" title="Highest-momentum capital flow category">
         <span class="hero-ind-value">—</span>
         <span class="hero-ind-label" data-i18n="hero_top_velocity">Top Velocity</span>
       </a>
-      <a href="./flows.html" class="hero-ind" id="heroFreshness" title="Last system data refresh">
+      <a href="../flows.html" class="hero-ind" id="heroFreshness" title="Last system data refresh">
         <span class="hero-ind-value">—</span>
         <span class="hero-ind-label" data-i18n="hero_freshness">Freshness</span>
       </a>
@@ -193,26 +194,6 @@
 <main class="hints-lobby">
 
   <aside class="col-alpha" id="colAlpha">
-    <div class="side-section">
-      <div class="side-section-label" data-i18n="side_trade_hooks">TRADE HOOKS</div>
-      <div class="side-hooks" id="sideHooks">
-<div class="side-hook-item" data-action="navigate" data-href="./flows.html">
-          <span class="side-hook-symbol">CRYPTO</span>
-          <span class="side-hook-dir bearish">↓ OUT</span>
-          <span class="side-hook-conv">50%</span>
-        </div>
-<div class="side-hook-item" data-action="navigate" data-href="./flows.html">
-          <span class="side-hook-symbol">CRYPTO</span>
-          <span class="side-hook-dir bullish">↑ INF</span>
-          <span class="side-hook-conv">75%</span>
-        </div>
-<div class="side-hook-item" data-action="navigate" data-href="./flows.html">
-          <span class="side-hook-symbol">TECH</span>
-          <span class="side-hook-dir bullish">↑ INF</span>
-          <span class="side-hook-conv">50%</span>
-        </div>
-      </div>
-    </div>
     <div class="side-section alpha-gated" id="signalGate">
       <div class="side-section-label" data-i18n="side_signal_gate">FULL SIGNAL</div>
       <div class="gate-overlay">
@@ -228,7 +209,7 @@
     </div>
     <div class="side-section">
       <div class="side-section-label" data-i18n="side_top_velocity">TOP VELOCITY</div>
-      <a href="./flow-nodes.html" class="side-velocity" id="sideVelocity">
+      <a href="../flow-nodes.html" class="side-velocity" id="sideVelocity">
         <span class="side-vel-value">2.4×</span>
         <span class="side-vel-desc">$4.8B outflow crypto</span>
       </a>
@@ -263,7 +244,7 @@
     <div class="container-desc" data-i18n="container_stories_desc">Narrative intelligence decoded — who benefits, who loses, what the money already priced in.</div>
     <div class="container-body" id="storiesTeaserBody">
       <div id="storiesTeaserContent" class="teaser-list"></div>
-      <a href="./stories.html" class="teaser-full-link" data-i18n="all_stories">All stories →</a>
+      <a href="../stories.html" class="teaser-full-link" data-i18n="all_stories">All stories →</a>
     </div>
   </section>
 
@@ -277,7 +258,7 @@
     <div class="container-desc" data-i18n="container_flows_desc">Where the smart money is going — directional conviction, velocity, projected movement.</div>
     <div class="container-body" id="flowsTeaserBody">
       <div id="flowsTeaserContent" class="teaser-list"></div>
-      <a href="./flows.html" class="teaser-full-link" data-i18n="full_flow_dashboard">Full flow dashboard →</a>
+      <a href="../flows.html" class="teaser-full-link" data-i18n="full_flow_dashboard">Full flow dashboard →</a>
     </div>
   </section>
 
@@ -291,7 +272,7 @@
     <div class="container-desc" data-i18n="container_anchors_desc_prefix">Positions derived from flows and narrative intelligence — entry zones, stop levels, conviction.</div>
     <div class="container-body" id="tradesTeaserBody">
       <div id="tradesTeaserContent" class="teaser-list"></div>
-      <a href="./trades.html" class="teaser-full-link" data-i18n="all_trade_ideas">All trade ideas →</a>
+      <a href="../trades.html" class="teaser-full-link" data-i18n="all_trade_ideas">All trade ideas →</a>
     </div>
   </section>
 
@@ -313,7 +294,7 @@
     <div class="container-desc" data-i18n="container_signal_desc">Triangulation — stories × flows × trades. Divergence is the edge.</div>
     <div class="container-body" id="signalTeaserBody">
       <div id="signalTeaserContent" class="teaser-list"></div>
-      <a href="./signal.html" class="teaser-full-link" data-i18n="full_signal_dashboard">Full signal dashboard →</a>
+      <a href="../signal.html" class="teaser-full-link" data-i18n="full_signal_dashboard">Full signal dashboard →</a>
     </div>
   </section>
 
@@ -327,7 +308,7 @@
     <div class="container-desc" data-i18n="container_track_desc">Verifiable bets — every prediction, every outcome, no cherry-picking.</div>
     <div class="container-body" id="trackTeaserBody">
       <div id="trackTeaserContent" class="teaser-list"></div>
-      <a href="./track.html" class="teaser-full-link" data-i18n="full_track_record">Full track record →</a>
+      <a href="../track.html" class="teaser-full-link" data-i18n="full_track_record">Full track record →</a>
     </div>
   </section>
 
@@ -338,17 +319,17 @@
     </div>
     <div class="container-body">
       <div class="services-grid">
-        <a href="./stories.html" class="svc-card" id="svcCSuite">
+        <a href="../stories.html" class="svc-card" id="svcCSuite">
           <span class="svc-persona" data-i18n="svc_csuite">C-SUITE</span>
           <span class="svc-title" data-i18n="svc_macro_horizon">Macro Horizon</span>
           <span class="svc-desc">Structural policy shifts, supply-chain bottlenecks, regulatory implications. Board-ready context for capital allocators.</span>
         </a>
-        <a href="./flow-nodes.html" class="svc-card" id="svcQuant">
+        <a href="../flow-nodes.html" class="svc-card" id="svcQuant">
           <span class="svc-persona" data-i18n="svc_quant">QUANTITATIVE</span>
           <span class="svc-title" data-i18n="svc_flow_telemetry">Flow Telemetry</span>
           <span class="svc-desc">Capital velocity differentials, correlation coefficients, heat scores. Low-latency raw data. Zero narrative fluff.</span>
         </a>
-        <a href="./trades.html" class="svc-card" id="svcTrader">
+        <a href="../trades.html" class="svc-card" id="svcTrader">
           <span class="svc-persona" data-i18n="svc_execution">EXECUTION</span>
           <span class="svc-title" data-i18n="svc_action_triggers">Action Triggers</span>
           <span class="svc-desc">Directional bias, entry/stop levels, conviction ratings with ATR-derived stops. Ultra-concise, trade-ready.</span>
@@ -360,12 +341,6 @@
   </div>
   <aside class="col-context" id="colContext">
     <div class="side-section">
-      <div class="side-section-label" data-i18n="side_freshness">FRESHNESS</div>
-      <div class="side-freshness" id="sideFreshness">
-        <div class="fresh-item"><span class="fresh-dot stories-dot"></span><span>Stories</span><span class="fresh-age" id="freshStories">—</span></div>
-        <div class="fresh-item"><span class="fresh-dot flows-dot"></span><span>Flows</span><span class="fresh-age" id="freshFlows">—</span></div>
-      </div>
-      <div class="side-section">
       <div class="side-section-label" data-i18n="side_live_tickers">LIVE TICKERS</div>
       <div class="side-freshness">
 <div class="fresh-item"><span class="fresh-dot" style="background:#059669"></span><span>CL=F</span><span class="fresh-age" style="color:#059669">↑ +2.1%</span></div>
@@ -387,12 +362,6 @@
 <div class="fresh-item"><span class="fresh-dot" style="background:#059669"></span><span>equities</span><span class="fresh-age">$3.5B</span></div>
 
       </div>
-      <div class="side-freshness" id="sideDashboard">
-        <div class="fresh-item"><span class="fresh-dot stories-dot"></span><span>Stories</span><span class="fresh-age" id="dbStories">—</span></div>
-        <div class="fresh-item"><span class="fresh-dot flows-dot"></span><span>Flows</span><span class="fresh-age" id="dbFlows">—</span></div>
-        <div class="fresh-item"><span class="fresh-dot trades-dot"></span><span>Trades</span><span class="fresh-age" id="dbTrades">—</span></div>
-        <div class="fresh-item"><span class="fresh-dot signal-dot"></span><span>Signal</span><span class="fresh-age" id="dbSignal">—</span></div>
-      
     <div class="side-section">
       <div class="side-section-label" style="margin-top:10px;">LIVE CORRELATIONS</div>
       <div class="side-freshness" id="correlationMatrix">
@@ -410,16 +379,16 @@
     <div class="side-section">
       <div class="side-section-label" data-i18n="side_navigate">NAVIGATE</div>
       <nav class="side-breadcrumbs">
-        <a href="./event_horizon.html" class="side-bc-link">→ Horizon <span class="side-bc-desc">Geopolitical chokepoints</span></a>
-        <a href="./flow-nodes.html" class="side-bc-link">→ Flow Nodes <span class="side-bc-desc">Capital network graph</span></a>
-        <a href="./stories.html" class="side-bc-link">→ All Stories <span class="side-bc-desc">Full intel feed</span></a>
-        <a href="./trades.html" class="side-bc-link">→ All Trades <span class="side-bc-desc">Position dashboard</span></a>
+        <a href="../event_horizon.html" class="side-bc-link">→ Horizon <span class="side-bc-desc">Geopolitical chokepoints</span></a>
+        <a href="../flow-nodes.html" class="side-bc-link">→ Flow Nodes <span class="side-bc-desc">Capital network graph</span></a>
+        <a href="../stories.html" class="side-bc-link">→ All Stories <span class="side-bc-desc">Full intel feed</span></a>
+        <a href="../trades.html" class="side-bc-link">→ All Trades <span class="side-bc-desc">Position dashboard</span></a>
       </nav>
     </div>
     <div class="side-section">
       <div class="side-section-label" data-i18n="side_gazzetta">GAZZETTA</div>
       <nav class="side-meta-links">
-        <a href="./about.html">About</a>
+        <a href="../about.html">About</a>
         <a href="./capital.html">Methodology</a>
         <a href="./data.html">Data Sources</a>
         <a href="./privacy.html">Privacy</a>
@@ -430,7 +399,7 @@
 
 </main>
 <footer class="footer">
-  <a href="./about.html" data-i18n="nav_about">About</a>
+  <a href="../about.html" data-i18n="nav_about">About</a>
   <span>·</span>
   <a href="https://t.me/GazzettaDiKyiv">Telegram</a>
   <span>·</span>
@@ -439,8 +408,8 @@
   <span data-i18n="footer_kyiv">Kyiv · Since 2025</span>
 </footer>
 
-<script src="./i18n.7dcc40be.js"></script>
-<script src="./app.280e9b5e.js"></script>
+<script src="../i18n.js"></script>
+<script src="../app.js"></script>
 
 
 

@@ -55,6 +55,11 @@ document.addEventListener('click', function(e) {
     case 'lang-ru':
       if (window.i18n && i18n.switchLang) i18n.switchLang('ru');
       break;
+    case 'navigate':
+      if (btn.hasAttribute('data-href')) {
+        window.location.href = btn.getAttribute('data-href');
+      }
+      break;
   }
 });
 
@@ -71,18 +76,27 @@ function byId(id) {
 // AbortController for stale fetch cancellation
 let _fetchAC = null;
 
-async function getJSON(path, fallback) {
+async function getJSON(path, fallback, retries = 2) {
   if (_fetchAC) { _fetchAC.abort(); }
   _fetchAC = new AbortController();
-  try {
-    const r = await fetch(`${path}?t=${Date.now()}`, { cache: 'no-store', signal: _fetchAC.signal });
-    if (!r.ok) throw new Error(String(r.status));
-    return await r.json();
-  } catch (e) {
-    console.error('Gazzetta fetch error:', e);
-    if (e.name === 'AbortError') { console.debug('Fetch aborted:', path); return fallback; }
-    console.warn('Fetch:', path, e); return fallback;
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const r = await fetch(`${path}?t=${Date.now()}`, { cache: 'no-store', signal: _fetchAC.signal });
+      if (!r.ok) throw new Error(String(r.status));
+      return await r.json();
+    } catch (e) {
+      if (e.name === 'AbortError') { console.debug('Fetch aborted:', path); return fallback; }
+      if (attempt < retries) {
+        const delay = Math.min(1000 * Math.pow(2, attempt), 8000);
+        console.warn(`Gazzetta fetch retry ${attempt + 1}/${retries} for ${path} in ${delay}ms:`, e.message);
+        await new Promise(r => setTimeout(r, delay));
+      } else {
+        console.error('Gazzetta fetch failed after retries:', path, e);
+        return fallback;
+      }
+    }
   }
+  return fallback;
 }
 
 // ── Captured story set (accumulation — never remove old cards) ──
@@ -150,6 +164,13 @@ const SECTOR_LABELS = {
 const ASSET_BADGE_LABELS = {
   fx: 'FX', equities: 'EQUITIES', commodities: 'COMMODITIES',
   crypto: 'CRYPTO', fixed_income: 'SOVEREIGN', defense: 'DEFENSE', tech: 'TECH',
+};
+
+const SECTOR_DISPLAY_LABELS = {
+  crypto: 'Crypto', commodities: 'Commodities', tech: 'Tech',
+  defense: 'Defense', equities: 'Equities', fx: 'FX',
+  fixed_income: 'Fixed Income', energy: 'Energy', real_estate: 'Real Estate',
+  geopolitical: 'Geopolitical', macro: 'Macro'
 };
 
 // ═══════════════════════════════════════════════════════════════
@@ -316,7 +337,7 @@ function anchorRowHTML(a) {
       <div class="asset-trade">
         <span class="${pillClass}">${i18n.t(a.bias.toLowerCase(), a.bias)}</span>
         <span class="asset-zone">${a.entry} → ${a.target}</span>
-        <span class="asset-stop" title="Volatility-adjusted: ${a.stop_atr_mult}×${atrPct}% ATR from entry">Stop ${a.stop || '—'} · ${a.stop_atr_mult}×ATR</span>
+        <span class="asset-stop" title="${a.stop ? 'Volatility-adjusted: ' + a.stop_atr_mult + '×' + atrPct + '% ATR from entry' : 'No stop computed — monitoring only'}">${a.stop ? 'Stop ' + a.stop + ' · ' + a.stop_atr_mult + '×ATR' : 'Monitoring'}</span>
         <span class="${badgeClass}">${i18n.t("conviction_"+a.conviction, a.conviction)}</span>
       </div>
     </div>`;
@@ -413,12 +434,28 @@ async function fetchFlows() {
 // ── v2.0: Hero indicator updates ──
 function updateHeroIndicators(flowsData) {
   if (!flowsData || !flowsData.flows) return;
-  // Contradictions: flows with confidence < 70%
-  const contradictions = flowsData.flows.filter(f => f.confidence_pct && f.confidence_pct < 70).length;
-  const contraEl = document.getElementById('heroContradictions');
-  if (contraEl) {
-    contraEl.querySelector('.hero-ind-value').textContent = contradictions;
-    contraEl.querySelector('.hero-ind-value').style.color = contradictions >= 2 ? '#DC2626' : 'var(--ink)';
+  const flows = flowsData.flows;
+  // Divergence: count flows where narrative direction opposes price movement
+  const priceMap = window._lastTickerMap || {};
+  let diverged = 0;
+  flows.forEach(f => {
+    const ac = (f.asset_class || '').toLowerCase();
+    const price = priceMap[ac] || {};
+    const { gap } = computeDivergence(f.direction, (f.confidence_pct || 50) / 100, price.change_pct || 0);
+    if (gap > 0.25) diverged++;
+  });
+  const divEl = document.getElementById('heroContradictions');
+  if (divEl) {
+    const valEl = divEl.querySelector('.hero-ind-value');
+    const labelEl = divEl.querySelector('.hero-ind-label');
+    if (valEl) {
+      valEl.textContent = diverged;
+      valEl.style.color = diverged >= 2 ? '#DC2626' : diverged >= 1 ? '#D97706' : '#059669';
+    }
+    if (labelEl) {
+      labelEl.textContent = diverged === 0 ? 'ALIGNED' : diverged === 1 ? 'DIVERGENCE' : 'DIVERGENCES';
+    }
+    divEl.title = diverged === 0 ? 'All flows aligned — no narrative-price contradictions' : `${diverged} narrative-price contradiction${diverged !== 1 ? 's' : ''}`;
   }
   // Top velocity: highest pace_multiplier across flows
   let topVel = 0, topCat = '';
@@ -447,8 +484,10 @@ function updateHeroIndicators(flowsData) {
       const amt = top.amount_b >= 1 ? `$${top.amount_b.toFixed(1)}B` : `$${(top.amount_b*1000).toFixed(0)}M`;
       const vel = (top.pace_multiplier || 1) >= 2 ? 'FAST' : (top.pace_multiplier || 1) >= 1.5 ? 'STEADY' : 'SLOW';
       const dir = (top.net_direction || top.direction) === 'outflow' ? 'out' : 'in';
-      targetEl.querySelector('.hero-ind-value').textContent = `${amt} ${dir}`;
+      const arrow = dir === 'out' ? '↓' : '↑';
+      targetEl.querySelector('.hero-ind-value').textContent = `${amt} ${arrow}`;
       targetEl.querySelector('.hero-ind-value').style.color = dir === 'out' ? 'var(--red)' : 'var(--green)';
+      targetEl.querySelector('.hero-ind-label').textContent = dir === 'out' ? 'LAST OUTFLOW' : 'LAST INFLOW';
       targetEl.title = `${(top.asset_class || '').toUpperCase()}: ${amt} ${dir} at ${(top.pace_multiplier||1).toFixed(1)}× velocity — ${vel}`;
     } else {
       targetEl.querySelector('.hero-ind-value').textContent = '—';
@@ -533,24 +572,25 @@ function renderMarketRegime() {
     .then(r => r.json())
     .then(data => {
       if (!data || !data.indicators) return;
-      data.indicators.forEach(ind => {
-        const name = ind.indicator;
+      Object.entries(data.indicators).forEach(([key, ind]) => {
+        const name = key;
         let valueEl, subEl;
-        if (name === 'Money Flow') {
+        if (name === 'money_flow') {
           valueEl = byId('regimeMFValue'); subEl = byId('regimeMFSub');
-        } else if (name === 'Top Heavy') {
+        } else if (name === 'top_heavy') {
           valueEl = byId('regimeTHValue'); subEl = byId('regimeTHSub');
-        } else if (name === 'Bond Fear') {
+        } else if (name === 'bond_fear') {
           valueEl = byId('regimeBFValue'); subEl = byId('regimeBFSub');
         }
         if (!valueEl) return;
-        const direction = ind.direction || ind.level || '—';
+        const direction = ind.signal || ind.direction || ind.level || '—';
         const strength = ind.strength || ind.score || ind.concentration_pct || 0;
+        const strengthLabel = name === 'top_heavy' ? strength + '%' : name === 'bond_fear' ? strength + '/100' : strength + '%';
         const color = direction === 'BULLISH' || direction === 'LOW' ? 'var(--green)' :
                       direction === 'BEARISH' || direction === 'EXTREME' || direction === 'HIGH' ? 'var(--red)' :
                       'var(--gold)';
-        valueEl.innerHTML = `<span style="color:${color};">${direction}</span> <span style="font-size:11px;color:var(--ink-muted);font-weight:400;">${strength}</span>`;
-        if (subEl) subEl.textContent = ind.description || ind.components ? ind.description : '';
+        valueEl.innerHTML = `<span style="color:${color};">${direction}</span> <span style="font-size:11px;color:var(--ink-muted);font-weight:400;">${strengthLabel}</span>`;
+        if (subEl) subEl.textContent = ind.description || (ind.components || '');
       });
       // v22.35: add time badge to market regime
       const tsEl = byId('regimeTimestamp');
@@ -590,7 +630,7 @@ function renderFlowInsight(flowsData) {
       const arrow = data.direction === 'inflow' ? '↑' : '⇅';
       const color = data.direction === 'inflow' ? 'var(--green)' : 'var(--ink-muted)';
       return `<div class="sector-stat-box">
-        <div class="sector-stat-label">${sector}</div>
+        <div class="sector-stat-label">${SECTOR_DISPLAY_LABELS[sector] || sector}</div>
         <div class="sector-stat-value" style="color:${color};">$${data.total_b.toFixed(1)}B ${arrow}</div>
         <div class="sector-stat-sub">${data.count} flows · ${data.avg_pace}x pace · ${data.avg_confidence}% conf</div>
       </div>`;
@@ -644,7 +684,7 @@ function renderCapitalFlows() {
         <span class="flow-asset">${f.asset_class || 'equities'}</span>
         ${playPill}
         <span class="flow-pdr-mini ${pdrClass}" title="PDR ${pdr.toFixed(1)}x — ${pdrLabel} flow dominance">PDR ${pdr.toFixed(1)}x</span>
-        <span class="flow-heat ${heatClass}" title="Flow heat: ${heatScore}/100 (${heatScore>=80?'extreme':heatScore>=60?'high':heatScore>=40?'moderate':'low'})">${heatScore}</span>
+        <span class="flow-heat ${heatClass}" title="Flow heat: ${heatScore}/100 (${heatScore>=80?'extreme':heatScore>=60?'high':heatScore>=40?'moderate':'low'})">Signal ${heatScore}</span>
         ${catalystBadge}
         <span class="flow-expand-hint">&#9660;</span>
       </div>
@@ -1029,10 +1069,10 @@ function renderDivergenceMeter() {
     
     const flowDir = matchingFlows.length ? (matchingFlows.filter(f => f.direction === 'inflow').length >= matchingFlows.filter(f => f.direction === 'outflow').length ? '↑' : '↓') : '—';
     const storyBias = matchingStories.filter(s => {
-      const cf = s.capital_flow || {};
+      const cf = safeCF(s.capital_flow);
       return cf.direction === 'inflow';
     }).length >= matchingStories.filter(s => {
-      const cf = s.capital_flow || {};
+      const cf = safeCF(s.capital_flow);
       return cf.direction === 'outflow';
     }).length ? '↑' : '↓';
     
@@ -1146,6 +1186,23 @@ function renderTriangulation() {
 // CAPITAL FLOW HTML HELPER (embedded per story card)
 // ═══════════════════════════════════════════════════════════════
 
+// v25.4: Safe capital_flow normalizer — ensures no null/undefined leaks into DOM
+function safeCF(raw) {
+  if (!raw || typeof raw !== 'object') return { claim: '', direction: 'inflow', amount_b: 0, asset_class: '', projected: '', confidence: '65%', positioning: '' };
+  const proj = raw.projected;
+  return {
+    claim: raw.claim || (raw.direction || 'inflow') + ' ' + (raw.asset_class || ''),
+    direction: raw.direction || 'inflow',
+    amount_b: raw.amount_b || 0,
+    asset_class: raw.asset_class || '',
+    projected: (typeof proj === 'string' && proj.startsWith('{')) ? 'Capital flow tracked' : (proj || 'Capital flow tracked'),
+    confidence: raw.confidence || '65%',
+    positioning: raw.positioning || '',
+    anchor_symbol: raw.anchor_symbol || '',
+    pace_multiplier: raw.pace_multiplier || 1
+  };
+}
+
 function capitalFlowHTML(cf) {
   if (!cf) return '';
   return `
@@ -1169,7 +1226,7 @@ function statusDotClass(status) {
 
 // ── Severity determination ──
 function determineSeverity(story) {
-  const cf = story.capital_flow;
+  const cf = safeCF(story.capital_flow);
   // CRITICAL: capital_flow with large amount (>$3B) or pace >2x
   // v22.19: Read amount_b and pace_multiplier directly (pipeline writes these, not amount/denomination/pace strings)
   if (cf) {
@@ -1192,7 +1249,7 @@ function calcContradictionScore(story) {
   // Measures actual narrative-vs-reality tension + flow divergence + confidence grounding
   let score = 30; // baseline — a story by definition has some contradiction
 
-  const cf = story.capital_flow;
+  const cf = safeCF(story.capital_flow);
   const theySay = (story.they_say || '').toLowerCase();
   const reality = (story.reality || '').toLowerCase();
 
@@ -1247,7 +1304,7 @@ function livingCardHTML(story, isLead) {
   const status = story.status || 'stable';
 
   // Capital flow — from story data or fallback to matching flow in CAPITAL_FLOWS_DATA
-  let cf = story.capital_flow;
+  let cf = safeCF(story.capital_flow);
   if (!cf) {
     const matchedFlow = (CAPITAL_FLOWS_DATA || []).find(f => f.story_id === story.story_id);
     if (matchedFlow) {
@@ -1323,7 +1380,7 @@ function livingCardHTML(story, isLead) {
     <article class="card${isLead ? ' lead' : ''}${sectorClass ? ' ' + sectorClass : ''}"
              data-story-id="${story.story_id}"
              data-status="${status}"
-             data-update-count="${story.update_count}"
+             data-update-count="${story.update_count || 0}"
              data-last-updated="${story.last_updated || ''}"
              data-pillar="${story.paradigm_pillar || ''}">
       <div class="card-collapsed">
@@ -2258,9 +2315,9 @@ async function populateTeasers() {
       const el = document.getElementById('storiesTeaserContent');
       const countEl = document.getElementById('teaserStoryCount');
       if (el) {
-        const items = [storiesData.lead, ...storiesData.stories].filter(Boolean).slice(0, 8);
+        const items = [storiesData.lead, ...storiesData.stories].filter(Boolean).slice(0, 20);
         el.innerHTML = items.map(s => {
-          const cf = s.capital_flow || {};
+          const cf = safeCF(s.capital_flow);
           const amtHtml = cf.amount_b ? `<span class="teaser-amount">$${cf.amount_b}B</span>` : '';
           const headline = (s.headline || '').slice(0, 80);
           // v2.0: Show linked flows/positions if present
@@ -2276,11 +2333,12 @@ async function populateTeasers() {
           const fresh = td.current_freshness;
           let freshHtml = '';
           if (fresh !== undefined) {
-            const pct = Math.round(fresh * 100);
             const cls = fresh > 0.8 ? 'freshness-recent' : fresh > 0.4 ? 'freshness-today' : 'freshness-stale';
-            freshHtml = ` <span class="freshness-ago ${cls}">${pct}%</span>`;
+            // Use time-ago label (not percentage) — users read % as confidence
+            const timeLabel = s.generated_at ? formatTimeAgo(s.generated_at) : (fresh > 0.8 ? 'recent' : fresh > 0.4 ? 'today' : 'stale');
+            freshHtml = ` <span class="freshness-ago ${cls}">${timeLabel}</span>`;
           }
-          return `<a href="./story.html?id=${s.story_id || s.id || ''}" class="teaser-item">${amtHtml}${headline}${linkedHtml}${freshHtml}</a>`;
+          return `<a href="./story.html?id=${s.story_id || s.id || ''}" class="teaser-item">${amtHtml} ${headline}${linkedHtml}${freshHtml}</a>`;
         }).join('');
         if (countEl) countEl.textContent = items.length + ' stories';
         // Story freshness timestamp

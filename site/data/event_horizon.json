@@ -1,0 +1,530 @@
+{
+  "_meta": {
+    "generated": "2026-06-07T00:00:00Z",
+    "source": "gazzetta-ai-analysis",
+    "chokepoint_count": 6,
+    "event_count": 8,
+    "barometer_score": 62,
+    "barometer_label": "Elevated"
+  },
+  "barometer": {
+    "score": 62,
+    "label": "Elevated",
+    "components": {
+      "active_sanctions": 18,
+      "executive_orders_30d": 4,
+      "diplomatic_tension_score": 71,
+      "energy_volatility_7d": 38,
+      "cds_spread_bps": 185
+    }
+  },
+  "chokepoints": [
+    {
+      "id": "ru_oil_price_cap",
+      "name": "Russian Oil Price Cap Enforcement",
+      "category": "energy",
+      "status": "escalating",
+      "target_asset": "Brent Crude, Urals",
+      "price_impact_pct": 1.8,
+      "alert_level": "active",
+      "updated": "2026-06-06T22:00:00Z",
+      "description": "US Treasury ramping enforcement of $60/bbl price cap, targeting shipping insurance providers and trading entities."
+    },
+    {
+      "id": "taiwan_semi_export",
+      "name": "Taiwan Semiconductor Export Controls",
+      "category": "technology",
+      "status": "active",
+      "target_asset": "NVDA, SMH, TSMC ADR",
+      "price_impact_pct": -2.4,
+      "alert_level": "caution",
+      "updated": "2026-06-06T18:00:00Z",
+      "description": "BIS expanding Entity List designations for Chinese AI chip companies; new FDPR rules on advanced fab equipment."
+    },
+    {
+      "id": "iran_oil_embargo",
+      "name": "Iran Oil Embargo Enforcement",
+      "category": "sanctions",
+      "status": "new",
+      "target_asset": "Brent, WTI, Energy equities",
+      "price_impact_pct": 3.2,
+      "alert_level": "active",
+      "updated": "2026-06-06T20:00:00Z",
+      "description": "New OFAC designations targeting Iranian oil smuggling networks; secondary sanctions on Chinese buyers."
+    },
+    {
+      "id": "eu_lng_sanctions",
+      "name": "EU 16th Sanctions Package \u2014 LNG",
+      "category": "energy",
+      "status": "escalating",
+      "target_asset": "TTF, European gas storage",
+      "price_impact_pct": 4.2,
+      "alert_level": "caution",
+      "updated": "2026-06-06T16:00:00Z",
+      "description": "European Commission proposes LNG import restrictions on Russian cargoes; TTF +4.2% in first 30 minutes."
+    },
+    {
+      "id": "china_rare_earth",
+      "name": "China Rare Earth Export Controls",
+      "category": "supply-chain",
+      "status": "active",
+      "target_asset": "REMX, Lynas, MP Materials",
+      "price_impact_pct": 5.1,
+      "alert_level": "watch",
+      "updated": "2026-06-05T14:00:00Z",
+      "description": "China's Ministry of Commerce expanding rare earth export licensing; gallium and germanium restrictions tightened."
+    },
+    {
+      "id": "russia_swift_tier2",
+      "name": "Russia SWIFT Tier-2 Banks",
+      "category": "financial",
+      "status": "new",
+      "target_asset": "RUB, Russian Eurobonds, EM FX",
+      "price_impact_pct": -0.8,
+      "alert_level": "monitor",
+      "updated": "2026-06-06T12:00:00Z",
+      "description": "EU extending SWIFT ban to 3 additional Russian financial institutions handling energy payments."
+    }
+  ],
+  "transmission_matrix": [
+    {
+      "event_id": "ru_oil_price_cap",
+      "assets": [
+        {
+          "ticker": "BZ=F",
+          "name": "Brent Crude",
+          "direction": "up",
+          "intensity": 3
+        },
+        {
+          "ticker": "USO",
+          "name": "Oil ETF",
+          "direction": "up",
+          "intensity": 2
+        },
+        {
+          "ticker": "RUB=X",
+          "name": "USD/RUB",
+          "direction": "down",
+          "intensity": 2
+        },
+        {
+          "ticker": "GC=F",
+          "name": "Gold",
+          "direction": "up",
+          "intensity": 1
+        }
+      ]
+    },
+    {
+      "event_id": "taiwan_semi_export",
+      "assets": [
+        {
+          "ticker": "NVDA",
+          "name": "NVIDIA",
+          "direction": "down",
+          "intensity": 2
+        },
+        {
+          "ticker": "SMH",
+          "name": "Semiconductor ETF",
+          "direction": "down",
+          "intensity": 2
+        },
+        {
+          "ticker": "^N225",
+          "name": "Nikkei 225",
+          "direction": "down",
+          "intensity": 1
+        },
+        {
+          "ticker": "BTC-USD",
+          "name": "Bitcoin",
+          "direction": "up",
+          "intensity": 1
+        }
+      ]
+    },
+    {
+      "event_id": "iran_oil_embargo",
+      "assets": [
+        {
+          "ticker": "BZ=F",
+          "name": "Brent Crude",
+          "direction": "up",
+          "intensity": 3
+        },
+        {
+          "ticker": "CL=F",
+          "name": "WTI Crude",
+          "direction": "up",
+          "intensity": 2
+        },
+        {
+          "ticker": "XLE",
+          "name": "Energy Sector",
+          "direction": "up",
+          "intensity": 2
+        },
+        {
+          "ticker": "GC=F",
+          "name": "Gold",
+          "direction": "up",
+          "intensity": 1
+        }
+      ]
+    },
+    {
+      "event_id": "eu_lng_sanctions",
+      "assets": [
+        {
+          "ticker": "BZ=F",
+          "name": "Brent Crude",
+          "direction": "up",
+          "intensity": 2
+        },
+        {
+          "ticker": "TTF=F",
+          "name": "TTF Gas",
+          "direction": "up",
+          "intensity": 3
+        },
+        {
+          "ticker": "EURUSD=X",
+          "name": "EUR/USD",
+          "direction": "down",
+          "intensity": 1
+        },
+        {
+          "ticker": "DX-Y.NYB",
+          "name": "Dollar Index",
+          "direction": "up",
+          "intensity": 1
+        }
+      ]
+    },
+    {
+      "event_id": "russia_swift_tier2",
+      "assets": [
+        {
+          "ticker": "RUB=X",
+          "name": "USD/RUB",
+          "direction": "down",
+          "intensity": 1
+        },
+        {
+          "ticker": "BZ=F",
+          "name": "Brent Crude",
+          "direction": "up",
+          "intensity": 1
+        },
+        {
+          "ticker": "EURUSD=X",
+          "name": "EUR/USD",
+          "direction": "down",
+          "intensity": 1
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "evt_001",
+      "timestamp": "2026-06-06T22:30:00Z",
+      "relative": "1h ago",
+      "flag": "\ud83c\uddfa\ud83c\uddf8",
+      "description": "US Treasury sanctions 3 Russian oil trading entities for price cap violations under OFAC directive",
+      "source": "https://home.treasury.gov/policy-issues/financial-sanctions",
+      "impacts": [
+        {
+          "asset": "Brent Crude",
+          "change": "+1.8%",
+          "timespan": "15m"
+        },
+        {
+          "asset": "RUB",
+          "change": "-2.3%",
+          "timespan": "30m"
+        },
+        {
+          "asset": "Gold",
+          "change": "+0.4%",
+          "timespan": "60m"
+        }
+      ]
+    },
+    {
+      "id": "evt_002",
+      "timestamp": "2026-06-06T20:00:00Z",
+      "relative": "4h ago",
+      "flag": "\ud83c\uddfa\ud83c\uddf8",
+      "description": "OFAC designates 7 entities and 12 vessels linked to Iranian oil smuggling networks",
+      "source": "https://ofac.treasury.gov",
+      "impacts": [
+        {
+          "asset": "Brent Crude",
+          "change": "+3.2%",
+          "timespan": "30m"
+        },
+        {
+          "asset": "WTI Crude",
+          "change": "+2.8%",
+          "timespan": "30m"
+        },
+        {
+          "asset": "Energy Sector (XLE)",
+          "change": "+1.5%",
+          "timespan": "60m"
+        }
+      ]
+    },
+    {
+      "id": "evt_003",
+      "timestamp": "2026-06-06T16:00:00Z",
+      "relative": "8h ago",
+      "flag": "\ud83c\uddea\ud83c\uddfa",
+      "description": "European Commission publishes 16th sanctions package targeting Russian LNG imports and 3 SWIFT-connected banks",
+      "source": "https://ec.europa.eu/commission/presscorner",
+      "impacts": [
+        {
+          "asset": "TTF Gas",
+          "change": "+4.2%",
+          "timespan": "20m"
+        },
+        {
+          "asset": "European Utilities",
+          "change": "-1.8%",
+          "timespan": "45m"
+        },
+        {
+          "asset": "EUR/USD",
+          "change": "-0.3%",
+          "timespan": "30m"
+        }
+      ]
+    },
+    {
+      "id": "evt_004",
+      "timestamp": "2026-06-06T12:00:00Z",
+      "relative": "12h ago",
+      "flag": "\ud83c\uddf0\ud83c\uddf7",
+      "description": "BIS adds 5 Chinese AI chip companies to Entity List; expands FDPR foreign-direct product rule scope",
+      "source": "https://www.bis.gov/entity-list",
+      "impacts": [
+        {
+          "asset": "NVDA",
+          "change": "-2.4%",
+          "timespan": "25m"
+        },
+        {
+          "asset": "Semiconductor ETF (SMH)",
+          "change": "-1.8%",
+          "timespan": "30m"
+        },
+        {
+          "asset": "Hang Seng Tech",
+          "change": "-1.2%",
+          "timespan": "60m"
+        }
+      ]
+    },
+    {
+      "id": "evt_005",
+      "timestamp": "2026-06-06T08:00:00Z",
+      "relative": "16h ago",
+      "flag": "\ud83c\udde8\ud83c\uddf3",
+      "description": "China Ministry of Commerce announces expanded rare earth export licensing requirements effective July 1",
+      "source": "https://english.mofcom.gov.cn",
+      "impacts": [
+        {
+          "asset": "Rare Earth ETF (REMX)",
+          "change": "+5.1%",
+          "timespan": "40m"
+        },
+        {
+          "asset": "MP Materials",
+          "change": "+4.3%",
+          "timespan": "60m"
+        }
+      ]
+    },
+    {
+      "id": "evt_006",
+      "timestamp": "2026-06-05T22:00:00Z",
+      "relative": "1d ago",
+      "flag": "\ud83c\udde8\ud83c\udde6",
+      "description": "Canada announces additional sanctions on Russian diamond and gold trading entities",
+      "source": "https://www.international.gc.ca/sanctions",
+      "impacts": [
+        {
+          "asset": "Gold",
+          "change": "+0.6%",
+          "timespan": "20m"
+        },
+        {
+          "asset": "Russian Gold ETFs",
+          "change": "-0.9%",
+          "timespan": "45m"
+        }
+      ]
+    },
+    {
+      "id": "evt_007",
+      "timestamp": "2026-06-05T14:00:00Z",
+      "relative": "1d ago",
+      "flag": "\ud83c\uddf0\ud83c\uddf7",
+      "description": "South Korea announces semiconductor export controls aligned with US CHIPS Act requirements",
+      "source": "https://www.motie.go.kr",
+      "impacts": [
+        {
+          "asset": "Samsung Electronics",
+          "change": "-1.1%",
+          "timespan": "30m"
+        },
+        {
+          "asset": "SK Hynix",
+          "change": "-1.6%",
+          "timespan": "30m"
+        }
+      ]
+    },
+    {
+      "id": "evt_008",
+      "timestamp": "2026-06-05T06:00:00Z",
+      "relative": "1d ago",
+      "flag": "\ud83c\udde8\ud83c\uddff",
+      "description": "UK Treasury expands Russia sanctions to cover shadow fleet insurance providers",
+      "source": "https://www.gov.uk/government/collections/russia-sanctions",
+      "impacts": [
+        {
+          "asset": "Brent Crude",
+          "change": "+1.2%",
+          "timespan": "20m"
+        },
+        {
+          "asset": "Oil Tanker Rates",
+          "change": "+3.5%",
+          "timespan": "2h"
+        }
+      ]
+    }
+  ],
+  "alerts": [
+    {
+      "id": "alert_001",
+      "timestamp": "2026-06-06T22:30:00Z",
+      "relative": "1h ago",
+      "severity": "critical",
+      "headline": "US Treasury sanctions 3 Russian oil entities for price cap violations",
+      "affected_assets": [
+        "BZ=F",
+        "RUB=X",
+        "GLD"
+      ]
+    },
+    {
+      "id": "alert_002",
+      "timestamp": "2026-06-06T20:00:00Z",
+      "relative": "4h ago",
+      "severity": "warning",
+      "headline": "OFAC targets Iranian oil smuggling network \u2014 7 entities, 12 vessels designated",
+      "affected_assets": [
+        "BZ=F",
+        "CL=F",
+        "XLE"
+      ]
+    },
+    {
+      "id": "alert_003",
+      "timestamp": "2026-06-06T16:00:00Z",
+      "relative": "8h ago",
+      "severity": "warning",
+      "headline": "EU 16th sanctions package \u2014 Russian LNG import restrictions proposed",
+      "affected_assets": [
+        "TTF=F",
+        "EURUSD=X"
+      ]
+    },
+    {
+      "id": "alert_004",
+      "timestamp": "2026-06-06T12:00:00Z",
+      "relative": "12h ago",
+      "severity": "critical",
+      "headline": "BIS adds 5 Chinese AI chip companies to Entity List",
+      "affected_assets": [
+        "NVDA",
+        "SMH",
+        "^N225"
+      ]
+    },
+    {
+      "id": "alert_005",
+      "timestamp": "2026-06-06T08:00:00Z",
+      "relative": "16h ago",
+      "severity": "warning",
+      "headline": "China expands rare earth export licensing",
+      "affected_assets": [
+        "REMX",
+        "MP"
+      ]
+    },
+    {
+      "id": "alert_006",
+      "timestamp": "2026-06-06T12:00:00Z",
+      "relative": "12h ago",
+      "severity": "info",
+      "headline": "EU extends SWIFT ban to 3 Russian energy payment banks",
+      "affected_assets": [
+        "RUB=X",
+        "BZ=F"
+      ]
+    },
+    {
+      "id": "alert_007",
+      "timestamp": "2026-06-05T22:00:00Z",
+      "relative": "1d ago",
+      "severity": "info",
+      "headline": "Canada sanctions Russian diamond and gold entities",
+      "affected_assets": [
+        "GC=F"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario_001",
+      "trigger": "US designates Russian LNG exports fully under CAATSA",
+      "expected_moves": "TTF +15-25%, European gas storage futures +10-15%, European utilities -5-8%",
+      "trade_suggestion": "LONG TTF futures, SHORT European utilities (STOXX Utilities Index)",
+      "conviction": "HIGH"
+    },
+    {
+      "id": "scenario_002",
+      "trigger": "China retaliates with rare earth export ban on US/Japan",
+      "expected_moves": "REMX +20-35%, MP Materials +30-50%, Lynas +15-25%, Japanese tech equities -5-10%",
+      "trade_suggestion": "LONG MP Materials, LONG REMX, SHORT Japanese semiconductor equipment",
+      "conviction": "HIGH"
+    },
+    {
+      "id": "scenario_003",
+      "trigger": "Iran closes Strait of Hormuz in retaliation for oil embargo",
+      "expected_moves": "Brent +30-50% (intraday), WTI +25-40%, Global equities -8-15%, Gold +5-10%",
+      "trade_suggestion": "LONG Brent calls (deep OTM), LONG Gold, SHORT SPX via VIX calls",
+      "conviction": "MED"
+    },
+    {
+      "id": "scenario_004",
+      "trigger": "EU fully decouples from Russian energy (gas + oil + LNG) by Q4 2026",
+      "expected_moves": "TTF +10-20% (transitory), European renewables +15-25%, EUA carbon permits +20-30%",
+      "trade_suggestion": "LONG iShares Global Clean Energy ETF, LONG EUA carbon futures",
+      "conviction": "MED"
+    },
+    {
+      "id": "scenario_005",
+      "trigger": "US-China trade war escalates: 60% tariffs on all Chinese imports",
+      "expected_moves": "DXY +3-5%, CNH -5-8%, S&P 500 -8-12%, Gold +5-8%, EM equities -10-15%",
+      "trade_suggestion": "LONG DXY, LONG Gold, SHORT EEM (EM equities ETF)",
+      "conviction": "HIGH"
+    }
+  ]
+}
