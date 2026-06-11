@@ -93,7 +93,7 @@ def draft_to_story(draft_row):
 
     direction = suggested_flows.get("direction", "neutral")
     asset_class = suggested_flows.get("asset_class", "equities")
-    amount_b = suggested_flows.get("amount_b", 5.0)
+    amount_b = suggested_flows.get("amount_b")  # None = no real amount extracted
     confidence_pct = suggested_flows.get("confidence_pct", 50)
     projected = suggested_flows.get("projected", raw_content or "")[:200]
     pace = suggested_flows.get("pace_multiplier", 1.0)
@@ -166,7 +166,7 @@ def draft_to_flow(draft_row, story_id):
 
     direction = suggested_flows.get("direction", "neutral")
     asset_class = suggested_flows.get("asset_class", "equities")
-    amount_b = suggested_flows.get("amount_b", 5.0)
+    amount_b = suggested_flows.get("amount_b")  # None = no real amount extracted
     confidence_pct = suggested_flows.get("confidence_pct", 50)
     pace = suggested_flows.get("pace_multiplier", 1.0)
     projected = suggested_flows.get("projected", "")[:200]
@@ -175,10 +175,11 @@ def draft_to_flow(draft_row, story_id):
     now = datetime.now(timezone.utc).isoformat()
     flow_id = f"flow_{story_id}"
 
+    amt_str = f"${amount_b}B" if amount_b is not None else "—"
     flow = {
         "id": flow_id,
         "story_id": story_id,
-        "headline": f"${amount_b}B {direction} {asset_class}",
+        "headline": f"{amt_str} {direction} {asset_class}",
         "amount_b": amount_b,
         "projected": projected,
         "pace_multiplier": pace,

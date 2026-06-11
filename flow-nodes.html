@@ -4,12 +4,40 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Capital Flow Nodes — La Gazzetta di Kyiv</title>
-  <meta name="description" content="Node-based capital flow decomposition showing sources, destinations, and structural adjacencies across 6 node types: Governmental, Institutional, Corporate, Retail, Crypto, and Cross-border."/>
+  <meta name="description" content="Node-based capital flow decomposition — sources, destinations, and structural adjacencies. Quantitative flow telemetry with velocity differentials and correlation coefficients."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css?v=25.0"/>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='2' fill='%23111827'/><text x='16' y='24' text-anchor='middle' font-size='22' font-weight='bold' font-family='Georgia,serif' fill='%23D4AF37'>G</text></svg>"/>
+
+  <link rel="canonical" href="https://www.lagazzettadikyiv.com/flow-nodes.html"/>
+  <link rel="alternate" hreflang="en" href="https://www.lagazzettadikyiv.com/flow-nodes.html"/>
+  <link rel="alternate" hreflang="ru" href="https://www.lagazzettadikyiv.com/ru/flow-nodes/"/>
+  <link rel="alternate" hreflang="x-default" href="https://www.lagazzettadikyiv.com/flow-nodes.html"/>
+  <meta property="og:title" content="Capital Flow Nodes — La Gazzetta di Kyiv"/>
+  <meta property="og:description" content="Node-based capital flow decomposition — sources, destinations, and structural adjacencies. Quantitative flow telemetry with velocity differentials and correlation coefficients."/>
+  <meta property="og:url" content="https://www.lagazzettadikyiv.com/flow-nodes.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="La Gazzetta di Kyiv"/>
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Capital Flow Nodes — La Gazzetta di Kyiv"/>
+  <meta name="twitter:description" content="Node-based capital flow decomposition — sources, destinations, and structural adjacencies. Quantitative flow telemetry with velocity differentials and correlation coefficients."/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Capital Flow Nodes — La Gazzetta di Kyiv",
+    "description": "Node-based capital flow decomposition — sources, destinations, and structural adjacencies. Quantitative flow telemetry with velocity differentials and correlation coefficients.",
+    "url": "https://www.lagazzettadikyiv.com/flow-nodes.html",
+    "isPartOf": {
+      "@type": "Organization",
+      "name": "La Gazzetta di Kyiv",
+      "url": "https://www.lagazzettadikyiv.com/"
+    }
+  }
+  </script>
+
   <style>
     /* ═══════════════════════════════════════════════
        CAPITAL FLOW NODES — Dual-Theme Command Center
@@ -149,6 +177,7 @@
     }
     .cn-theme-btn:hover { color: var(--cn-text); border-color: var(--cn-dim); }
     .cn-kb-hint {
+      display: none;
       font-size: 9px;
       color: var(--cn-dim);
       background: var(--cn-card);
@@ -447,745 +476,929 @@
   </style>
 </head>
 <body class="cn-body">
-  <!-- PRODUCT NAV -->
-  <nav class="cn-nav">
-    <a href="./">← Dashboard</a>
-    <a href="./stories.html">Stories</a>
-    <a href="./flows.html">Flows</a>
-    <a href="./trades.html">Trades</a>
-    <a href="./signal.html">Signal</a>
-    <a href="./track.html">Track</a>
-    <a href="./event-horizon.html">Horizon</a>
-    <a href="./flow-nodes.html" class="active">Flow Nodes</a>
-    <span class="cn-nav-spacer"></span>
-    <span class="cn-kb-hint">Keys: 1-6 filter · Esc close · ←↑↓→ navigate</span>
-  </nav>
-  <!-- Mobile filter bar (hidden on desktop, visible ≤768px) -->
-  <div class="cn-mobile-filters" style="display:none;gap:6px;padding:6px 10px;border-bottom:1px solid var(--cn-divider);overflow-x:auto;background:var(--cn-card);">
-    <button class="cn-mf-btn" data-mf="gov" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-divider);background:var(--cn-bg);color:var(--cn-muted);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">Gov</button>
-    <button class="cn-mf-btn" data-mf="institutional" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-divider);background:var(--cn-bg);color:var(--cn-muted);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">Inst</button>
-    <button class="cn-mf-btn" data-mf="corporate" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-divider);background:var(--cn-bg);color:var(--cn-muted);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">Corp</button>
-    <button class="cn-mf-btn" data-mf="retail" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-divider);background:var(--cn-bg);color:var(--cn-muted);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">Retail</button>
-    <button class="cn-mf-btn" data-mf="crypto" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-divider);background:var(--cn-bg);color:var(--cn-amber);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">Crypto</button>
-    <button class="cn-mf-btn" data-mf="cross_border" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-divider);background:var(--cn-bg);color:var(--cn-muted);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">X-Border</button>
-    <button class="cn-mf-reset" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-gold);background:var(--cn-bg);color:var(--cn-gold);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">All</button>
-  </div>
 
-  <!-- MASTHEAD -->
-  <header class="masthead">
+<!-- ─────── PRODUCT NAV ─────── -->
+<nav class="cn-nav">
+  <a href="./">← Dashboard</a>
+  <a href="./stories.html">Stories</a>
+  <a href="./flows.html">Flows</a>
+  <a href="./trades.html">Trades</a>
+  <a href="./signal.html">Signal</a>
+  <a href="./track.html">Track</a>
+  <a href="./event_horizon.html">Horizon</a>
+  <a href="./flow-nodes.html" class="active">Flow Nodes</a>
+  <span class="cn-nav-spacer"></span>
+  <span class="cn-kb-hint">Keys: 1-6 filter · Esc close · ←↑↓→ navigate</span>
+</nav>
+
+<!-- Mobile filter bar -->
+<div class="cn-mobile-filters" style="display:none;gap:6px;padding:6px 10px;border-bottom:1px solid var(--cn-divider);overflow-x:auto;background:var(--cn-card);">
+  <button class="cn-mf-btn" data-mf="gov" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-divider);background:var(--cn-bg);color:var(--cn-muted);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">Gov</button>
+  <button class="cn-mf-btn" data-mf="institutional" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-divider);background:var(--cn-bg);color:var(--cn-muted);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">Inst</button>
+  <button class="cn-mf-btn" data-mf="corporate" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-divider);background:var(--cn-bg);color:var(--cn-muted);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">Corp</button>
+  <button class="cn-mf-btn" data-mf="retail" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-divider);background:var(--cn-bg);color:var(--cn-muted);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">Retail</button>
+  <button class="cn-mf-btn" data-mf="crypto" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-divider);background:var(--cn-bg);color:var(--cn-amber);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">Crypto</button>
+  <button class="cn-mf-btn" data-mf="cross_border" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-divider);background:var(--cn-bg);color:var(--cn-muted);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">X-Border</button>
+  <button class="cn-mf-reset" style="font-size:10px;padding:5px 10px;border:1px solid var(--cn-gold);background:var(--cn-bg);color:var(--cn-gold);cursor:pointer;white-space:nowrap;min-height:36px;border-radius:0;">All</button>
+</div>
+
+<!-- ─────── MASTHEAD ─────── -->
+<header class="masthead">
   <div class="masthead-left">
-    <a href="./" class="masthead-name-link" style="text-decoration:none;display:contents;">
+    <a href="./" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:8px;">
+      <span class="masthead-bulava" title="Crossed bulavas" aria-hidden="true">
+        <svg viewBox="0 0 14 38" fill="none"><line x1="7" y1="18" x2="7" y2="35" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="3" y="21" width="8" height="2" rx="1" fill="currentColor" opacity="0.5"/><rect x="3.5" y="27" width="7" height="1.5" rx="0.75" fill="currentColor" opacity="0.4"/><rect x="2" y="34" width="10" height="3" rx="1.5" fill="currentColor" opacity="0.4"/><line x1="7" y1="14" x2="7" y2="18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="2" y="13" width="10" height="2" rx="1" fill="currentColor" opacity="0.5"/><circle cx="7" cy="8" r="5.5" stroke="currentColor" stroke-width="1.6"/><circle cx="7" cy="8" r="2.5" fill="currentColor" opacity="0.25"/><line x1="3" y1="8" x2="11" y2="8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><line x1="7" y1="2.5" x2="7" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="7" cy="1.5" r="1.5" fill="currentColor"/></svg>
+        <svg viewBox="0 0 14 38" fill="none"><line x1="7" y1="18" x2="7" y2="35" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="3" y="21" width="8" height="2" rx="1" fill="currentColor" opacity="0.5"/><rect x="3.5" y="27" width="7" height="1.5" rx="0.75" fill="currentColor" opacity="0.4"/><rect x="2" y="34" width="10" height="3" rx="1.5" fill="currentColor" opacity="0.4"/><line x1="7" y1="14" x2="7" y2="18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="2" y="13" width="10" height="2" rx="1" fill="currentColor" opacity="0.5"/><circle cx="7" cy="8" r="5.5" stroke="currentColor" stroke-width="1.6"/><circle cx="7" cy="8" r="2.5" fill="currentColor" opacity="0.25"/><line x1="3" y1="8" x2="11" y2="8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><line x1="7" y1="2.5" x2="7" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="7" cy="1.5" r="1.5" fill="currentColor"/></svg>
+      </span>
       <span class="masthead-name">La Gazzetta di Kyiv</span>
     </a>
   </div>
   <div class="masthead-right">
-    <span class="masthead-tagline">Capital moves markets. We track where it's going.</span>
-    <nav class="product-nav">
-      <span class="nav-group-label">INTEL</span>
-      <a href="./stories.html" class="nav-link">Stories</a>
-      <a href="./flows.html" class="nav-link">Flows</a>
-      <a href="./event_horizon.html" class="nav-link">Horizon</a>
-      <a href="./flow-nodes.html" class="nav-link">Nodes</a>
-      <span class="nav-group-label">ALPHA</span>
-      <a href="./signal.html" class="nav-link">Signal</a>
-      <a href="./trades.html" class="nav-link">Trades</a>
-      <a href="./track.html" class="nav-link">Track</a>
+    <nav class="product-nav" style="display:flex;gap:14px;align-items:center;">
+      <a href="./stories.html" data-i18n="nav_stories">Stories</a>
+      <a href="./flows.html" data-i18n="nav_flows">Flows</a>
+      <a href="./event_horizon.html" data-i18n="nav_horizon">Horizon</a>
+      <a href="./flow-nodes.html" data-i18n="nav_flow_nodes">Flow Nodes</a>
+      <a href="./trades.html" data-i18n="nav_trades">Trades</a>
+      <a href="./signal.html" data-i18n="nav_signal">Signal</a>
+      <a href="./track.html" data-i18n="nav_track">Track</a>
     </nav>
+    <span class="lang-switcher">
+      <button class="lang-switch active" data-lang="en" onclick="i18n.switchLang('en')" aria-label="English">EN</button>
+      <button class="lang-switch" data-lang="ru" onclick="i18n.switchLang('ru')" aria-label="Russian">RU</button>
+    </span>
   </div>
 </header>
 
-  <!-- THESIS -->
-  <div class="cn-thesis">
-    <h1>Node-Based Capital Flow Decomposition</h1>
-    <p>Capital does not move randomly. It flows through structural conduits — governmental policy levers, institutional intermediation, corporate treasuries, retail participation, crypto markets, and cross-border channels. Click any node to decompose its inflows and outflows with linked stories and trades. Edge width scales with flow amount; green = inflow, red = outflow. Dashed = low confidence (&lt;60%). <a href="./capital.html" style="color:var(--cn-gold);">Methodology →</a></p>
-  </div>
+<!-- ─────── THESIS ─────── -->
+<div class="cn-thesis">
+  <h1>Flow Nodes</h1>
+  <p>Capital velocity differentials, correlation coefficients, heat scores. Low-latency raw data from the flow telemetry pipeline. Zero narrative fluff. <a href="./capital.html" style="color:var(--cn-gold);">Methodology →</a></p>
+</div>
 
-  <!-- FLEX LAYOUT -->
-  <div class="cn-flex">
-    <div id="cn-graph-container">
-      <svg id="cn-graph" viewBox="0 0 1300 780" preserveAspectRatio="xMidYMid meet">
-        <defs>
-          <marker id="arrow-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-            <path d="M0,0 L8,3 L0,6 Z" fill="var(--cn-green)"/>
-          </marker>
-          <marker id="arrow-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-            <path d="M0,0 L8,3 L0,6 Z" fill="var(--cn-red)"/>
-          </marker>
-        </defs>
-        <g id="cn-edges-layer"></g>
-        <g id="cn-nodes-layer"></g>
-      </svg>
-    </div>
-    <aside id="cn-info-panel">
-      <div id="cn-panel-no-selection">Click a node to see its capital flow decomposition — sources, destinations, linked stories, and trades.</div>
-      <div id="cn-panel-content" class="cn-panel-inner" style="display:none;">
-        <div class="cn-panel-header">
-          <span class="cn-panel-name" id="pn-name"></span>
-          <span class="cn-panel-type" id="pn-type-badge"></span>
-          <button class="cn-panel-close" id="pn-close" title="Close (Esc)">&times;</button>
-        </div>
-        <div class="cn-panel-subtype" id="pn-subtype"></div>
-        <div class="cn-panel-desc" id="pn-desc"></div>
-        <!-- Sparkline -->
-        <div class="cn-sparkline-container" id="pn-sparkline-container" style="display:none;">
-          <div class="cn-sparkline-label">Net flow trend (weekly snapshots · modeled from flow data)</div>
-          <svg id="pn-sparkline" width="300" height="40"></svg>
-        </div>
-        <div class="cn-panel-metric">
-          <span class="cn-panel-metric-label">Total Assets Tracked</span>
-          <span><span class="cn-panel-metric-value" id="pn-assets">$—B</span><span class="cn-panel-delta" id="pn-assets-delta"></span></span>
-        </div>
-        <div class="cn-panel-metric">
-          <span class="cn-panel-metric-label">Inflow Velocity</span>
-          <span class="cn-panel-metric-value" id="pn-inflow-vel">—</span>
-        </div>
-        <div class="cn-panel-metric">
-          <span class="cn-panel-metric-label">Outflow Velocity</span>
-          <span class="cn-panel-metric-value" id="pn-outflow-vel">—</span>
-        </div>
-        <div class="cn-panel-metric">
-          <span class="cn-panel-metric-label">Net Flow (Δ 7d)</span>
-          <span><span class="cn-panel-metric-value" id="pn-net-flow">$—B</span><span class="cn-panel-delta" id="pn-net-delta"></span></span>
-        </div>
-        <div class="cn-panel-metric">
-          <span class="cn-panel-metric-label">Data Confidence</span>
-          <span class="cn-panel-metric-value" id="pn-confidence">—%</span>
-        </div>
-        <div class="cn-panel-section-title">Inflows (Sources)</div>
-        <div id="pn-sources"></div>
-        <div class="cn-panel-section-title">Outflows (Destinations)</div>
-        <div id="pn-destinations"></div>
-        <div class="cn-panel-section-title">Linked Stories</div>
-        <div id="pn-stories"></div>
-        <div class="cn-panel-section-title">Data Sources</div>
-        <div id="pn-datasources"></div>
+<!-- ─────── FLEX LAYOUT ─────── -->
+<div class="cn-flex">
+  <div id="cn-graph-container">
+    <svg id="cn-graph" viewBox="0 0 1300 780" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <marker id="arrow-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <path d="M0,0 L8,3 L0,6 Z" fill="var(--cn-green)"/>
+        </marker>
+        <marker id="arrow-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <path d="M0,0 L8,3 L0,6 Z" fill="var(--cn-red)"/>
+        </marker>
+      </defs>
+      <g id="cn-edges-layer"></g>
+      <g id="cn-nodes-layer"></g>
+    </svg>
+  </div>
+  <aside id="cn-info-panel">
+    <div id="cn-panel-no-selection">Click a node to see its capital flow decomposition — sources, destinations, linked stories, and trades.</div>
+    <div id="cn-panel-content" class="cn-panel-inner" style="display:none;">
+      <div class="cn-panel-header">
+        <span class="cn-panel-name" id="pn-name"></span>
+        <span class="cn-panel-type" id="pn-type-badge"></span>
+        <button class="cn-panel-close" id="pn-close" title="Close (Esc)">&times;</button>
       </div>
-    </aside>
+      <div class="cn-panel-subtype" id="pn-subtype"></div>
+      <div class="cn-panel-desc" id="pn-desc"></div>
+      <div class="cn-panel-metric">
+        <span class="cn-panel-metric-label">Total Assets Tracked</span>
+        <span><span class="cn-panel-metric-value" id="pn-assets">$—B</span><span class="cn-panel-delta" id="pn-assets-delta"></span></span>
+      </div>
+      <div class="cn-panel-metric">
+        <span class="cn-panel-metric-label">Inflow Velocity</span>
+        <span class="cn-panel-metric-value" id="pn-inflow-vel">—</span>
+      </div>
+      <div class="cn-panel-metric">
+        <span class="cn-panel-metric-label">Outflow Velocity</span>
+        <span class="cn-panel-metric-value" id="pn-outflow-vel">—</span>
+      </div>
+      <div class="cn-panel-metric">
+        <span class="cn-panel-metric-label">Net Flow (Δ 7d)</span>
+        <span><span class="cn-panel-metric-value" id="pn-net-flow">$—B</span><span class="cn-panel-delta" id="pn-net-delta"></span></span>
+      </div>
+      <div class="cn-panel-metric">
+        <span class="cn-panel-metric-label">Data Confidence</span>
+        <span class="cn-panel-metric-value" id="pn-confidence">—%</span>
+      </div>
+      <div class="cn-panel-section-title">Inflows (Sources)</div>
+      <div id="pn-sources"></div>
+      <div class="cn-panel-section-title">Outflows (Destinations)</div>
+      <div id="pn-destinations"></div>
+      <div class="cn-panel-section-title">Linked Stories</div>
+      <div id="pn-stories"></div>
+      <div class="cn-panel-section-title">Data Sources</div>
+      <div id="pn-datasources"></div>
+    </div>
+  </aside>
+</div>
+
+<!-- ─────── LEGEND ─────── -->
+<footer class="cn-legend" id="cn-legend">
+  <div class="cn-legend-item" data-type="gov"><span class="cn-legend-shape gov"></span>Gov<span class="key-hint">1</span></div>
+  <div class="cn-legend-item" data-type="institutional"><span class="cn-legend-shape inst"></span>Institutional<span class="key-hint">2</span></div>
+  <div class="cn-legend-item" data-type="corporate"><span class="cn-legend-shape corp"></span>Corporate<span class="key-hint">3</span></div>
+  <div class="cn-legend-item" data-type="retail"><span class="cn-legend-shape retail"></span>Retail<span class="key-hint">4</span></div>
+  <div class="cn-legend-item" data-type="crypto"><span class="cn-legend-shape crypto"></span>Crypto<span class="key-hint">5</span></div>
+  <div class="cn-legend-item" data-type="cross_border"><span class="cn-legend-shape xborder"></span>Cross-Border<span class="key-hint">6</span></div>
+  <div class="cn-legend-item" style="cursor:default"><span style="display:inline-block;width:12px;height:2px;background:var(--cn-green);vertical-align:middle;"></span>Inflow</div>
+  <div class="cn-legend-item" style="cursor:default"><span style="display:inline-block;width:12px;height:2px;background:var(--cn-red);vertical-align:middle;"></span>Outflow</div>
+  <div class="cn-legend-item" style="cursor:default"><span style="display:inline-block;width:12px;height:2px;background:var(--cn-dim);border-bottom:2px dashed var(--cn-dim);vertical-align:middle;"></span>Low Conf</div>
+</footer>
+
+<!-- ─────── FOOTER ─────── -->
+<footer style="border-top:1px solid var(--divider);padding:32px 0 24px;margin-top:48px;">
+  <div style="max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:0 20px;">
+    <div>
+      <div style="font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:12px;">NAVIGATE</div>
+      <nav style="display:flex;flex-direction:column;gap:6px;">
+        <a href="./event_horizon.html" style="font-family:var(--body);font-size:13px;color:var(--ink);text-decoration:none;">→ Horizon <span style="font-size:10px;color:var(--ink-muted);">Geopolitical chokepoints</span></a>
+        <a href="./flow-nodes.html" style="font-family:var(--body);font-size:13px;color:var(--ink);text-decoration:none;">→ Flow Nodes <span style="font-size:10px;color:var(--ink-muted);">Capital network graph</span></a>
+        <a href="./stories.html" style="font-family:var(--body);font-size:13px;color:var(--ink);text-decoration:none;">→ All Stories <span style="font-size:10px;color:var(--ink-muted);">Full intel feed</span></a>
+        <a href="./trades.html" style="font-family:var(--body);font-size:13px;color:var(--ink);text-decoration:none;">→ All Trades <span style="font-size:10px;color:var(--ink-muted);">Position dashboard</span></a>
+      </nav>
+    </div>
+    <div>
+      <div style="font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:12px;">GAZZETTA</div>
+      <nav style="display:flex;flex-direction:column;gap:6px;">
+        <a href="./about.html" style="font-family:var(--body);font-size:13px;color:var(--ink);text-decoration:none;">About</a>
+        <a href="./capital.html" style="font-family:var(--body);font-size:13px;color:var(--ink);text-decoration:none;">Methodology</a>
+        <a href="./data.html" style="font-family:var(--body);font-size:13px;color:var(--ink);text-decoration:none;">Data Sources</a>
+        <a href="./privacy.html" style="font-family:var(--body);font-size:13px;color:var(--ink);text-decoration:none;">Privacy</a>
+        <a href="./terms.html" style="font-family:var(--body);font-size:13px;color:var(--ink);text-decoration:none;">Terms</a>
+      </nav>
+    </div>
   </div>
+  <div style="text-align:center;padding-top:16px;font-size:10px;color:var(--ink-muted);">Kyiv · Since 2025</div>
+</footer>
 
-  <!-- LEGEND -->
-  <footer class="cn-legend" id="cn-legend">
-    <div class="cn-legend-item" data-type="gov"><span class="cn-legend-shape gov"></span>Gov<span class="key-hint">1</span></div>
-    <div class="cn-legend-item" data-type="institutional"><span class="cn-legend-shape inst"></span>Institutional<span class="key-hint">2</span></div>
-    <div class="cn-legend-item" data-type="corporate"><span class="cn-legend-shape corp"></span>Corporate<span class="key-hint">3</span></div>
-    <div class="cn-legend-item" data-type="retail"><span class="cn-legend-shape retail"></span>Retail<span class="key-hint">4</span></div>
-    <div class="cn-legend-item" data-type="crypto"><span class="cn-legend-shape crypto"></span>Crypto<span class="key-hint">5</span></div>
-    <div class="cn-legend-item" data-type="cross_border"><span class="cn-legend-shape xborder"></span>Cross-Border<span class="key-hint">6</span></div>
-    <div class="cn-legend-item" style="cursor:default"><span style="display:inline-block;width:12px;height:2px;background:var(--cn-green);vertical-align:middle;"></span>Inflow</div>
-    <div class="cn-legend-item" style="cursor:default"><span style="display:inline-block;width:12px;height:2px;background:var(--cn-red);vertical-align:middle;"></span>Outflow</div>
-    <div class="cn-legend-item" style="cursor:default"><span style="display:inline-block;width:12px;height:2px;background:var(--cn-dim);border-bottom:2px dashed var(--cn-dim);vertical-align:middle;"></span>Low Conf</div>
-  </footer>
+<script src="./i18n.js?v=25.0"></script>
+<script src="./app.js?v=25.0"></script>
 
-  <script>
-  (function(){
-    'use strict';
+<!-- Hidden containers for boot() compatibility -->
+<div style="display:none">
+  <div id="heroConfidence"></div>
+  <div id="heroFlowTotal"></div>
+  <div id="heroStoryCount"></div>
+  <div id="heroAssetCount"></div>
+  <div id="heroBetTotal"></div>
+  <div id="anchorGrid"></div>
+  <div id="trackRecord"></div>
+  <div id="signalGrid"></div>
+  <div id="flowsList"></div>
+  <div id="mastheadMeta"></div>
+  <div id="heroLayerCount"></div>
+  <div id="anchorCount"></div>
+</div>
 
-    const DATA_URL = './data/flow_nodes.json';
-    const $ = (s) => document.querySelector(s);
-    const $$ = (s) => document.querySelectorAll(s);
+<script>
+(function(){
+  'use strict';
 
-    const graphContainer = $('#cn-graph-container');
-    const svg = $('#cn-graph');
-    const edgesLayer = $('#cn-edges-layer');
-    const nodesLayer = $('#cn-nodes-layer');
-    const infoPanel = $('#cn-info-panel');
-    const panelNoSel = $('#cn-panel-no-selection');
-    const panelContent = $('#cn-panel-content');
-    const legendItems = $$('.cn-legend-item[data-type]');
+  const DATA_URL = './data/flows.json';
+  const $ = (s) => document.querySelector(s);
+  const $$ = (s) => document.querySelectorAll(s);
 
-    let data = null;
-    let nodeMap = {};
-    let activeNodeId = null;
-    let edgeMap = {}; // source→target→edges
-    let themeLight = false;
+  const graphContainer = $('#cn-graph-container');
+  const svg = $('#cn-graph');
+  const edgesLayer = $('#cn-edges-layer');
+  const nodesLayer = $('#cn-nodes-layer');
+  const infoPanel = $('#cn-info-panel');
+  const panelNoSel = $('#cn-panel-no-selection');
+  const panelContent = $('#cn-panel-content');
+  const legendItems = $$('.cn-legend-item[data-type]');
 
-    /* ── UTILITY ── */
-    function fmtB(n) {
-      if (n === undefined || n === null) return '—';
-      if (Math.abs(n) >= 1000) return '$' + (n/1000).toFixed(1) + 'T';
-      return '$' + Math.abs(n).toFixed(1) + 'B';
-    }
-    function fmtDelta(n) {
-      if (!n || n === 0) return '';
-      const sign = n > 0 ? '+' : '';
-      const abs = Math.abs(n);
-      const val = abs >= 1000 ? (abs/1000).toFixed(1)+'T' : abs.toFixed(1)+'B';
-      return sign + '$' + val;
-    }
-    function typeColor(type) {
-      const map = {'gov':'var(--cn-gold)','institutional':'var(--cn-blue)','crypto':'var(--cn-amber)','corporate':'var(--cn-green)','retail':'var(--cn-violet)','cross_border':'var(--cn-red)'};
-      return map[type] || 'var(--cn-dim)';
-    }
-    function typeLabel(type) {
-      const map = {'gov':'Governmental','institutional':'Institutional','crypto':'Crypto','corporate':'Corporate','retail':'Retail','cross_border':'Cross-Border'};
-      return map[type] || type;
-    }
-    function subtypeLabel(s) {
-      if (!s || s === 'NONE') return '';
-      return s.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-    }
+  let data = null;
+  let nodeMap = {};
+  let activeNodeId = null;
+  let edgeMap = {};
 
-    /* ── NODE SHAPE PATHS ── */
-    function getNodeShape(type, w, h) {
-      const hw=w/2, hh=h/2;
-      switch(type) {
-        case 'gov': return `M${-hw},${-hh} L${hw},${-hh} L${hw},${hh} L${-hw},${hh} Z`;
-        case 'institutional': return `M0,${-hh} L${hw},0 L0,${hh} L${-hw},0 Z`;
-        case 'crypto': return `M0,${-hh} L${hw*.866},${-hh*.5} L${hw*.866},${hh*.5} L0,${hh} L${-hw*.866},${hh*.5} L${-hw*.866},${-hh*.5} Z`;
-        case 'corporate': const r=6; return `M${-hw+r},${-hh} L${hw-r},${-hh} Q${hw},${-hh} ${hw},${-hh+r} L${hw},${hh-r} Q${hw},${hh} ${hw-r},${hh} L${-hw+r},${hh} Q${-hw},${hh} ${-hw},${hh-r} L${-hw},${-hh+r} Q${-hw},${-hh} ${-hw+r},${-hh} Z`;
-        case 'retail': return `M0,${-hh} A${hw},${hh} 0 1,1 0,${hh} A${hw},${hh} 0 1,1 0,${-hh} Z`;
-        case 'cross_border': return `M${-hw*.7},${-hh} L${hw*.7},${-hh} L${hw},0 L${hw*.7},${hh} L${-hw*.7},${hh} L${-hw},0 Z`;
-        default: return `M${-hw},${-hh} L${hw},${-hh} L${hw},${hh} L${-hw},${hh} Z`;
+  /* ── UTILITY ── */
+  function fmtB(n) {
+    if (n === undefined || n === null) return '—';
+    if (Math.abs(n) >= 1000) return '$' + (n/1000).toFixed(1) + 'T';
+    return '$' + Math.abs(n).toFixed(1) + 'B';
+  }
+  function fmtDelta(n) {
+    if (!n || n === 0) return '';
+    const sign = n > 0 ? '+' : '';
+    const abs = Math.abs(n);
+    const val = abs >= 1000 ? (abs/1000).toFixed(1)+'T' : abs.toFixed(1)+'B';
+    return sign + '$' + val;
+  }
+  function typeColor(type) {
+    const map = {'gov':'var(--cn-gold)','institutional':'var(--cn-blue)','crypto':'var(--cn-amber)','corporate':'var(--cn-green)','retail':'var(--cn-violet)','cross_border':'var(--cn-red)'};
+    return map[type] || 'var(--cn-dim)';
+  }
+  function typeLabel(type) {
+    const map = {'gov':'Governmental','institutional':'Institutional','crypto':'Crypto','corporate':'Corporate','retail':'Retail','cross_border':'Cross-Border'};
+    return map[type] || type;
+  }
+  function subtypeLabel(s) {
+    if (!s || s === 'NONE') return '';
+    return s.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  }
+  function capitalize(s) {
+    return s.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  }
+
+  /* ── MAP flow_source → node type ── */
+  function sourceToNodeType(src) {
+    const map = {
+      'institutional': 'institutional',
+      'banking': 'institutional',
+      'funds': 'institutional',
+      'reuters_business': 'institutional',
+      'corporate': 'corporate',
+      'retail': 'retail',
+      'government': 'gov',
+      'federal_reserve': 'gov',
+      'ecb_press': 'gov',
+      'the_cradle': 'gov',
+      'osint': 'gov',
+      'foreign': 'cross_border',
+      'geopolitical_futures': 'cross_border',
+      'undetermined': 'cross_border'
+    };
+    return map[src] || 'cross_border';
+  }
+
+  /* ── MAP asset_class → node type ── */
+  function assetToNodeType(ac) {
+    const map = {
+      'crypto': 'crypto',
+      'equities': 'institutional',
+      'fixed_income': 'institutional',
+      'commodities': 'gov',
+      'defense': 'gov',
+      'tech': 'corporate',
+      'fx': 'cross_border'
+    };
+    return map[ac] || 'cross_border';
+  }
+
+  /* ── TRANSFORM flows.json → { nodes, edges, summary } ── */
+  function transformFlowsData(flowsData) {
+    const nodeMap = {};
+    const edges = [];
+    const generatedAt = flowsData.generated_at || null;
+    const sectorSummary = flowsData.sector_summary || {};
+
+    // Helper to get or create a node
+    function getNode(id, type, label, subtype) {
+      if (!nodeMap[id]) {
+        nodeMap[id] = {
+          id: id,
+          type: type,
+          label: label,
+          subtype: subtype || '',
+          description: '',
+          metrics: {
+            total_inflow_b: 0,
+            total_outflow_b: 0,
+            net_flow_b: 0,
+            confidence_pct: 0,
+            pace_avg: 0,
+            delta_week_b: 0,
+            delta_month_b: 0
+          },
+          flow_count: 0,
+          history: [],
+          data_sources: []
+        };
       }
+      return nodeMap[id];
     }
 
-    /* ── LAYOUT ── */
-    function computeLayout(nodes, edges) {
-      const typeOrder = ['gov','institutional','corporate','retail','crypto','cross_border'];
-      const columnWidth = 170;
-      const marginX = 70;
-      const marginY = 100;
-      const nodeW = 120;
-      const nodeH = 70;
+    // Process each flow record
+    (flowsData.flows || []).forEach(function(flow) {
+      var amount = flow.amount_b || 0;
+      var assetClass = flow.asset_class || 'unknown';
+      var direction = flow.direction || 'inflow';
+      var confidence = flow.confidence_pct || 50;
+      var pace = flow.pace_multiplier || 1.0;
+      var heatScore = flow.heat_score || 0;
+      var storyId = flow.story_id || '';
+      var headline = flow.headline || '';
+      var dataSource = flow.source || '';
+      var flowSources = flow.flow_sources || ['undetermined'];
 
-      const byType = {};
-      typeOrder.forEach(t => byType[t] = []);
-      nodes.forEach(n => {
-        const t = n.type;
-        if (byType[t]) byType[t].push(n);
-        else byType[t] = [n];
-      });
-      Object.keys(byType).forEach(t => {
-        byType[t].sort((a,b) => ((b.metrics.total_assets_b||b.metrics.net_flow_b)||0) - ((a.metrics.total_assets_b||a.metrics.net_flow_b)||0));
-      });
+      // Dest node based on asset class
+      var destType = assetToNodeType(assetClass);
+      var destId = 'dest-' + assetClass;
+      var destLabel = capitalize(assetClass);
+      var destNode = getNode(destId, destType, destLabel, assetClass);
 
-      let maxCount = 0;
-      Object.values(byType).forEach(arr => { if(arr.length>maxCount) maxCount=arr.length; });
-      const svgW = Math.max(typeOrder.length * columnWidth + marginX*2, 1200);
-      const svgH = 740;
-      const rowHeight = Math.min((svgH-marginY*2)/Math.max(maxCount,1), 80);
-      const positions = {};
+      flowSources.forEach(function(src) {
+        var srcType = sourceToNodeType(src);
+        var srcId = 'src-' + src;
+        var srcLabel = capitalize(src);
+        var srcNode = getNode(srcId, srcType, srcLabel, src);
 
-      typeOrder.forEach((t, ci) => {
-        const arr = byType[t] || [];
-        const cx = marginX + ci*columnWidth + columnWidth/2;
-        const colStart = (svgH - arr.length*rowHeight)/2;
-        arr.forEach((node, ri) => {
-          positions[node.id] = {x:cx, y:colStart + ri*rowHeight + rowHeight/2, w:nodeW, h:nodeH, type:t};
-        });
-      });
-      return {positions, svgW, svgH};
-    }
-
-    /* ── EDGE LABEL MIDPOINT ── */
-    function edgeMidpoint(sx,sy,ex,ey,cpOffsetX) {
-      // Cubic bezier midpoint at t=0.5
-      const p1x = sx + cpOffsetX, p1y = sy;
-      const p2x = ex - cpOffsetX, p2y = ey;
-      const mx = 0.125*sx + 0.375*p1x + 0.375*p2x + 0.125*ex;
-      const my = 0.125*sy + 0.375*p1y + 0.375*p2y + 0.125*ey;
-      const angle = Math.atan2(ey-sy, ex-sx) * 180 / Math.PI;
-      return {mx, my, angle};
-    }
-
-    /* ── RENDER ── */
-    function render(data) {
-      const {nodes, edges, summary} = data;
-      const meta = summary || {};
-      const {positions, svgW, svgH} = computeLayout(nodes, edges);
-      svg.setAttribute('viewBox', `0 0 ${svgW} ${svgH+30}`);
-
-      edgesLayer.innerHTML = '';
-      nodesLayer.innerHTML = '';
-      nodeMap = {};
-      edgeMap = {};
-
-      nodes.forEach(n => {
-        nodeMap[n.id] = {...n, pos: positions[n.id]};
-        if (!edgeMap[n.id]) edgeMap[n.id] = {in:[], out:[]};
-      });
-
-      // Build edge index
-      edges.forEach(e => {
-        if (!edgeMap[e.source]) edgeMap[e.source] = {in:[], out:[]};
-        if (!edgeMap[e.target]) edgeMap[e.target] = {in:[], out:[]};
-        edgeMap[e.target].in.push(e);  // flows INTO target
-        edgeMap[e.source].out.push(e); // flows OUT of source
-      });
-
-      // Edge overlap tracking
-      const edgeCounts = {};
-      edges.forEach(e => {
-        const key = e.source < e.target ? `${e.source}->${e.target}` : `${e.target}->${e.source}`;
-        edgeCounts[key] = (edgeCounts[key]||0) + 1;
-      });
-      const edgeIdx = {};
-      edges.forEach(e => {
-        const key = e.source < e.target ? `${e.source}->${e.target}` : `${e.target}->${e.source}`;
-        edgeIdx[key] = (edgeIdx[key]||0) + 1;
-      });
-
-      edges.forEach((e, i) => {
-        const src = nodeMap[e.source];
-        const dst = nodeMap[e.target];
-        if (!src || !dst) return;
-
-        const sp = src.pos, dp = dst.pos;
-        const dx = dp.x - sp.x, dy = dp.y - sp.y;
-        const cpOffsetX = Math.abs(dx)*0.4;
-        const key = e.source < e.target ? `${e.source}->${e.target}` : `${e.target}->${e.source}`;
-        const totalParallel = edgeCounts[key]||1;
-        const idx = (edgeIdx[key]||1) - 1;
-        const vOffset = (idx - (totalParallel-1)/2)*12;
-
-        const sx = sp.x + sp.w/2;
-        const sy = sp.y + vOffset;
-        const ex = dp.x - dp.w/2;
-        const ey = dp.y + vOffset;
-        const pathD = `M${sx},${sy} C${sx+cpOffsetX},${sy} ${ex-cpOffsetX},${ey} ${ex},${ey}`;
-
-        const isOutflow = e.direction === 'outflow';
-        const isLowConf = (e.confidence_pct||50) < 60;
-        const lineWidth = Math.max(1, Math.min(8, (e.amount_b||0)/45));
-        const cls = `cn-edge ${isOutflow?'outflow':'inflow'} ${isLowConf?'low-conf':''}`;
-        const edgeId = `edge-${i}`;
-
-        // Path
-        const path = document.createElementNS('http://www.w3.org/2000/svg','path');
-        path.setAttribute('d', pathD);
-        path.setAttribute('class', cls);
-        path.setAttribute('stroke-width', lineWidth);
-        path.setAttribute('opacity', 0.55);
-        path.setAttribute('id', edgeId);
-        path.setAttribute('data-source', e.source);
-        path.setAttribute('data-target', e.target);
-        path.setAttribute('data-amount', e.amount_b);
-        path.setAttribute('data-direction', e.direction);
-        edgesLayer.appendChild(path);
-
-        // Arrowhead
-        const arrow = document.createElementNS('http://www.w3.org/2000/svg','polygon');
-        const arrowSize = Math.max(4, Math.min(10, lineWidth*2));
-        const angle = Math.atan2(ey-sy, ex-sx);
-        const a1x = ex - arrowSize*Math.cos(angle-0.4);
-        const a1y = ey - arrowSize*Math.sin(angle-0.4);
-        const a2x = ex - arrowSize*Math.cos(angle+0.4);
-        const a2y = ey - arrowSize*Math.sin(angle+0.4);
-        arrow.setAttribute('points', `${ex},${ey} ${a1x},${a1y} ${a2x},${a2y}`);
-        arrow.setAttribute('class', `cn-edge-arrow ${isOutflow?'outflow':'inflow'} ${isLowConf?'low-conf':''}`);
-        arrow.setAttribute('opacity', 0.55);
-        arrow.setAttribute('data-edge-id', edgeId);
-        edgesLayer.appendChild(arrow);
-
-        // Edge label
-        const {mx, my, angle: labelAngle} = edgeMidpoint(sx,sy,ex,ey,cpOffsetX);
-        const labelAmount = fmtB(e.amount_b);
-        const direction = isOutflow ? '↓' : '↑';
-        const labelText = `${labelAmount} ${direction}`;
-        const label = document.createElementNS('http://www.w3.org/2000/svg','text');
-        label.setAttribute('x', mx);
-        label.setAttribute('y', my);
-        label.setAttribute('class', `cn-edge-label ${isOutflow?'outflow':'inflow'}`);
-        label.setAttribute('transform', `rotate(${labelAngle},${mx},${my})`);
-        label.setAttribute('data-edge-id', edgeId);
-        label.textContent = labelText;
-        edgesLayer.appendChild(label);
-      });
-
-      // Render nodes
-      nodes.forEach(node => {
-        const p = positions[node.id];
-        if (!p) return;
-        const g = document.createElementNS('http://www.w3.org/2000/svg','g');
-        g.setAttribute('class','cn-node-group');
-        g.setAttribute('data-node-id', node.id);
-        g.setAttribute('data-type', node.type);
-        g.setAttribute('transform', `translate(${p.x},${p.y})`);
-
-        const nodeSize = node.metrics.total_assets_b || node.metrics.net_flow_b || Math.abs(node.metrics.total_inflow_b||0);
-        const scaledW = Math.max(80, Math.min(170, nodeSize/28));
-        const scaledH = Math.max(48, Math.min(85, scaledW*0.55));
-        p.w = scaledW; p.h = scaledH;
-
-        const shape = document.createElementNS('http://www.w3.org/2000/svg','path');
-        shape.setAttribute('d', getNodeShape(node.type, scaledW, scaledH));
-        shape.setAttribute('class','cn-node-shape');
-        shape.setAttribute('fill','var(--cn-card)');
-        shape.setAttribute('stroke', typeColor(node.type));
-        shape.setAttribute('stroke-width','1.5');
-        g.appendChild(shape);
-
-        const lbl = document.createElementNS('http://www.w3.org/2000/svg','text');
-        lbl.setAttribute('class','cn-node-label');
-        lbl.setAttribute('y',-4);
-        lbl.textContent = node.label;
-        g.appendChild(lbl);
-
-        const amt = document.createElementNS('http://www.w3.org/2000/svg','text');
-        amt.setAttribute('class','cn-node-amount');
-        amt.setAttribute('y',10);
-        amt.textContent = fmtB(node.metrics.total_assets_b || node.metrics.net_flow_b || 0);
-        g.appendChild(amt);
-
-        const sub = document.createElementNS('http://www.w3.org/2000/svg','text');
-        sub.setAttribute('class','cn-node-sub');
-        sub.setAttribute('y',22);
-        sub.textContent = subtypeLabel(node.subtype) || typeLabel(node.type);
-        g.appendChild(sub);
-
-        g.addEventListener('mouseenter', () => showNodeInfo(node.id));
-        g.addEventListener('mouseleave', () => { if(activeNodeId !== node.id) hideEdgeHighlight(); });
-        g.addEventListener('click', () => showNodeInfo(node.id));
-        nodesLayer.appendChild(g);
-      });
-
-      // Header stats
-      const luEl = document.getElementById('cn-last-updated');
-      if (luEl) { luEl.textContent = data.generated_at ? new Date(data.generated_at).toLocaleString() : '—'; luEl.setAttribute('datetime', data.generated_at || ''); }
-      const ttEl = document.getElementById('cn-total-tracked');
-      if (ttEl) ttEl.textContent = fmtB(meta.total_flow_b||0) + ' tracked';
-      const ncEl = document.getElementById('cn-node-count');
-      if (ncEl) ncEl.textContent = (meta.total_nodes||nodes.length) + ' nodes';
-      const ecEl = document.getElementById('cn-edge-count');
-      if (ecEl) ecEl.textContent = (meta.total_edges||edges.length) + ' edges';
-    }
-
-    /* ── MINI SPARKLINE ── */
-    function renderSparkline(history) {
-      const container = document.getElementById('pn-sparkline-container');
-      const svgEl = document.getElementById('pn-sparkline');
-      if (!history || history.length < 2) { container.style.display = 'none'; return; }
-      container.style.display = 'block';
-
-      const vals = history.map(h => h.value);
-      const min = Math.min(...vals), max = Math.max(...vals);
-      const range = max - min || 1;
-      const w = 300, h = 40, pad = 4;
-      const points = vals.map((v,i) => {
-        const x = pad + (i/(vals.length-1))*(w-2*pad);
-        const y = h - pad - ((v-min)/range)*(h-2*pad);
-        return `${x},${y}`;
-      }).join(' ');
-
-      const lastVal = vals[vals.length-1];
-      const firstVal = vals[0];
-      const trend = lastVal >= firstVal ? 'var(--cn-green)' : 'var(--cn-red)';
-
-      svgEl.innerHTML = `
-        <polyline points="${points}" fill="none" stroke="${trend}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="${pad + (vals.length-1)/(vals.length-1)*(w-2*pad)}" cy="${h-pad-((lastVal-min)/range)*(h-2*pad)}" r="2.5" fill="${trend}"/>
-      `;
-    }
-
-    /* ── INFO PANEL ── */
-    function showNodeInfo(nodeId) {
-      const node = nodeMap[nodeId];
-      if (!node) return;
-
-      activeNodeId = nodeId;
-
-      // Highlight
-      $$('.cn-node-group').forEach(el => el.classList.remove('active'));
-      const activeEl = document.querySelector(`.cn-node-group[data-node-id="${nodeId}"]`);
-      if (activeEl) activeEl.classList.add('active');
-
-      // Highlight connected edges and their labels
-      const connectedEdgeIds = new Set();
-      (data.edges||[]).forEach((e,i) => {
-        if (e.source === nodeId || e.target === nodeId) connectedEdgeIds.add(`edge-${i}`);
-      });
-      document.querySelectorAll('.cn-edge,.cn-edge-arrow,.cn-edge-label').forEach(el => {
-        const eid = el.getAttribute('data-edge-id') || el.id;
-        if (connectedEdgeIds.has(eid)) el.setAttribute('opacity','1.0');
-        else el.setAttribute('opacity','0.10');
-      });
-
-      // Panel
-      panelNoSel.style.display = 'none';
-      panelContent.style.display = 'block';
-      infoPanel.classList.add('cn-panel-open');
-
-      document.getElementById('pn-name').textContent = node.label;
-      document.getElementById('pn-name').style.color = typeColor(node.type);
-      document.getElementById('pn-type-badge').textContent = typeLabel(node.type);
-      document.getElementById('pn-type-badge').style.color = typeColor(node.type);
-      document.getElementById('pn-subtype').textContent = subtypeLabel(node.subtype);
-      document.getElementById('pn-desc').textContent = node.description || '';
-
-      const totalAssets = node.metrics.total_assets_b || node.metrics.net_flow_b || 0;
-      document.getElementById('pn-assets').textContent = fmtB(Math.abs(totalAssets));
-      document.getElementById('pn-inflow-vel').textContent = (node.metrics.inflow_velocity||'—').toUpperCase();
-      document.getElementById('pn-outflow-vel').textContent = (node.metrics.outflow_velocity||'—').toUpperCase();
-
-      // Net flow with delta
-      const netFlow = (node.metrics.net_flow_b || (node.metrics.total_inflow_b||0) - (node.metrics.total_outflow_b||0));
-      document.getElementById('pn-net-flow').textContent = fmtB(netFlow);
-      const deltaWeek = node.metrics.delta_week_b;
-      const deltaEl = document.getElementById('pn-net-delta');
-      if (deltaWeek) {
-        deltaEl.textContent = (deltaWeek>0?'↑':'↓') + ' ' + fmtB(deltaWeek) + ' vs 7d';
-        deltaEl.className = 'cn-panel-delta ' + (deltaWeek>0?'up':'down');
-      } else { deltaEl.textContent = ''; }
-      // Assets delta
-      const assetsDeltaEl = document.getElementById('pn-assets-delta');
-      const assetsDelta = node.metrics.delta_month_b;
-      if (assetsDelta) {
-        assetsDeltaEl.textContent = (assetsDelta>0?'↑':'↓') + ' ' + fmtB(assetsDelta) + ' vs 30d';
-        assetsDeltaEl.className = 'cn-panel-delta ' + (assetsDelta>0?'up':'down');
-      } else { assetsDeltaEl.textContent = ''; }
-
-      document.getElementById('pn-confidence').textContent = (node.metrics.confidence_pct||'—') + '%';
-
-      // Sparkline from history
-      renderSparkline(node.history || data.history?.[nodeId]);
-
-      // SOURCES — derived from edges where this node is TARGET (money flows IN)
-      const srcEl = document.getElementById('pn-sources');
-      srcEl.innerHTML = '';
-      const inflows = (edgeMap[nodeId]?.in || []).filter(e => e.direction === 'inflow' || e.target === nodeId);
-      // Also include outflow edges where source→this node (money being pulled from elsewhere)
-      const allInflows = [...new Set([...inflows])];
-      if (allInflows.length > 0) {
-        const grouped = {};
-        allInflows.forEach(e => {
-          const srcNode = nodeMap[e.source];
-          const key = srcNode ? srcNode.label : e.source;
-          if (!grouped[key]) grouped[key] = {amount:0, count:0, edges:[]};
-          grouped[key].amount += e.amount_b||0;
-          grouped[key].count++;
-          grouped[key].edges.push(e);
-        });
-        Object.entries(grouped).forEach(([name, g]) => {
-          const div = document.createElement('div');
-          div.className = 'cn-panel-flow-item';
-          const srcType = nodeMap[g.edges[0]?.source]?.type || '';
-          div.innerHTML = `<span class="cn-panel-flow-type">← ${name}</span><span class="cn-panel-flow-amount green">${fmtB(g.amount)}</span>`;
-          srcEl.appendChild(div);
-          if (g.edges[0]?.asset_class) {
-            const ac = document.createElement('div');
-            ac.className = 'cn-panel-ds';
-            ac.textContent = g.edges.map(e=>e.asset_class).filter(Boolean).join(', ');
-            srcEl.appendChild(ac);
-          }
-        });
-      } else {
-        srcEl.innerHTML = '<div style="color:var(--cn-dim);font-size:10px;">No source data tracked</div>';
-      }
-
-      // DESTINATIONS — derived from edges where this node is SOURCE (money flows OUT)
-      const dstEl = document.getElementById('pn-destinations');
-      dstEl.innerHTML = '';
-      const outflows = (edgeMap[nodeId]?.out || []).filter(e => e.direction === 'outflow' || e.source === nodeId);
-      if (outflows.length > 0) {
-        const grouped = {};
-        outflows.forEach(e => {
-          const dstNode = nodeMap[e.target];
-          const key = dstNode ? dstNode.label : e.target;
-          if (!grouped[key]) grouped[key] = {amount:0, count:0, edges:[]};
-          grouped[key].amount += e.amount_b||0;
-          grouped[key].count++;
-          grouped[key].edges.push(e);
-        });
-        Object.entries(grouped).forEach(([name, g]) => {
-          const div = document.createElement('div');
-          div.className = 'cn-panel-flow-item';
-          div.innerHTML = `<span class="cn-panel-flow-type">→ ${name}</span><span class="cn-panel-flow-amount red">${fmtB(g.amount)}</span>`;
-          dstEl.appendChild(div);
-          if (g.edges[0]?.asset_class) {
-            const ac = document.createElement('div');
-            ac.className = 'cn-panel-ds';
-            ac.textContent = g.edges.map(e=>e.asset_class).filter(Boolean).join(', ');
-            dstEl.appendChild(ac);
-          }
-        });
-      } else {
-        dstEl.innerHTML = '<div style="color:var(--cn-dim);font-size:10px;">No destination data tracked</div>';
-      }
-
-      // LINKED STORIES — from edge story_ids
-      const storiesEl = document.getElementById('pn-stories');
-      storiesEl.innerHTML = '';
-      const allEdges = [...(edgeMap[nodeId]?.in||[]), ...(edgeMap[nodeId]?.out||[])];
-      const seenStories = new Set();
-      allEdges.forEach(e => {
-        if (e.story_id && !seenStories.has(e.story_id)) {
-          seenStories.add(e.story_id);
-          const div = document.createElement('div');
-          div.style.cssText = 'padding:3px 0;font-size:10px;';
-          const headline = e.headline || 'Linked story';
-          div.innerHTML = `<a class="cn-panel-link" href="./story.html?id=${e.story_id}" target="_blank">${headline.substring(0,70)}${headline.length>70?'…':''}</a>`;
-          storiesEl.appendChild(div);
-        }
-      });
-      if (seenStories.size === 0) {
-        storiesEl.innerHTML = '<div style="color:var(--cn-dim);font-size:10px;">No stories linked</div>';
-      }
-
-      // DATA SOURCES
-      const dsEl = document.getElementById('pn-datasources');
-      dsEl.innerHTML = '';
-      const sources = [...new Set(allEdges.map(e => e.data_source).filter(Boolean))];
-      if (sources.length > 0) {
-        sources.forEach(ds => {
-          const div = document.createElement('div');
-          div.className = 'cn-panel-ds';
-          div.textContent = '📄 ' + ds;
-          dsEl.appendChild(div);
-        });
-      } else if (node.data_sources) {
-        node.data_sources.forEach(ds => {
-          const div = document.createElement('div');
-          div.className = 'cn-panel-ds';
-          div.textContent = '📄 ' + ds;
-          dsEl.appendChild(div);
-        });
-      } else {
-        dsEl.innerHTML = '<div style="color:var(--cn-dim);font-size:10px;">No data sources recorded</div>';
-      }
-    }
-
-    function hideEdgeHighlight() {
-      document.querySelectorAll('.cn-edge,.cn-edge-arrow,.cn-edge-label').forEach(el => {
-        el.setAttribute('opacity', 0.55);
-      });
-    }
-
-    /* ── CLOSE PANEL ── */
-    function closePanel() {
-      infoPanel.classList.remove('cn-panel-open');
-      panelContent.style.display = 'none';
-      panelNoSel.style.display = 'block';
-      $$('.cn-node-group').forEach(el => el.classList.remove('active'));
-      hideEdgeHighlight();
-      activeNodeId = null;
-    }
-    document.getElementById('pn-close').addEventListener('click', closePanel);
-
-    /* ── LEGEND FILTER ── */
-    let activeFilter = null;
-    legendItems.forEach((item, idx) => {
-      item.addEventListener('click', () => {
-        const type = item.getAttribute('data-type');
-        if (activeFilter === type) {
-          activeFilter = null;
-          item.classList.remove('active');
-          $$('.cn-node-group').forEach(el => el.style.opacity = '1');
-          hideEdgeHighlight();
+        // Aggregate metrics on source node
+        if (direction === 'inflow') {
+          srcNode.metrics.total_inflow_b += amount;
+          srcNode.metrics.net_flow_b += amount;
         } else {
-          legendItems.forEach(li => li.classList.remove('active'));
-          item.classList.add('active');
-          activeFilter = type;
-          $$('.cn-node-group').forEach(el => {
-            el.style.opacity = el.getAttribute('data-type') === type ? '1' : '0.15';
-          });
-          document.querySelectorAll('.cn-edge,.cn-edge-arrow,.cn-edge-label').forEach(el => {
-            const src = el.getAttribute('data-source');
-            const tgt = el.getAttribute('data-target');
-            if (!src) return;
-            const srcNode = nodeMap[src];
-            const tgtNode = nodeMap[tgt];
-            if ((srcNode&&srcNode.type===type) || (tgtNode&&tgtNode.type===type)) {
-              el.setAttribute('opacity', '0.8');
-            } else {
-              el.setAttribute('opacity', '0.06');
-            }
-          });
+          srcNode.metrics.total_outflow_b += amount;
+          srcNode.metrics.net_flow_b -= amount;
         }
+        srcNode.metrics.confidence_pct = Math.max(srcNode.metrics.confidence_pct, confidence);
+        srcNode.metrics.pace_avg = (srcNode.metrics.pace_avg * srcNode.flow_count + pace) / (srcNode.flow_count + 1);
+        srcNode.flow_count++;
+        if (dataSource && srcNode.data_sources.indexOf(dataSource) === -1) {
+          srcNode.data_sources.push(dataSource);
+        }
+
+        // Aggregate metrics on dest node
+        if (direction === 'inflow') {
+          destNode.metrics.total_inflow_b += amount;
+          destNode.metrics.net_flow_b += amount;
+        } else {
+          destNode.metrics.total_outflow_b += amount;
+          destNode.metrics.net_flow_b -= amount;
+        }
+        destNode.metrics.confidence_pct = Math.max(destNode.metrics.confidence_pct, confidence);
+        destNode.metrics.pace_avg = (destNode.metrics.pace_avg * destNode.flow_count + pace) / (destNode.flow_count + 1);
+        destNode.flow_count++;
+        if (dataSource && destNode.data_sources.indexOf(dataSource) === -1) {
+          destNode.data_sources.push(dataSource);
+        }
+
+        // Create edge from source to dest
+        edges.push({
+          source: srcId,
+          target: destId,
+          direction: direction,
+          amount_b: amount,
+          confidence_pct: confidence,
+          pace_multiplier: pace,
+          heat_score: heatScore,
+          story_id: storyId,
+          headline: headline,
+          asset_class: assetClass,
+          data_source: dataSource
+        });
       });
     });
 
-    /* ── KEYBOARD SHORTCUTS ── */
-    const TYPE_KEYS = {'1':'gov','2':'institutional','3':'corporate','4':'retail','5':'crypto','6':'cross_border'};
-    document.addEventListener('keydown', e => {
-      // Don't intercept when typing in inputs
-      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-
-      // 1-6: Filter by type
-      if (TYPE_KEYS[e.key]) {
-        const type = TYPE_KEYS[e.key];
-        const item = document.querySelector(`.cn-legend-item[data-type="${type}"]`);
-        if (item) item.click();
-        return;
-      }
-
-      // Escape: Close panel
-      if (e.key === 'Escape') { closePanel(); return; }
-
-      // Arrow keys: Navigate nodes
-      if (activeNodeId && ['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.key)) {
-        e.preventDefault();
-        const nodeIds = Object.keys(nodeMap);
-        const idx = nodeIds.indexOf(activeNodeId);
-        const types = Object.values(nodeMap).map(n => n.type);
-        let nextIdx = idx;
-        if (e.key === 'ArrowDown' || e.key === 'ArrowRight') nextIdx = (idx + 1) % nodeIds.length;
-        if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') nextIdx = (idx - 1 + nodeIds.length) % nodeIds.length;
-        if (nextIdx !== idx && nodeIds[nextIdx]) {
-          showNodeInfo(nodeIds[nextIdx]);
-          // Scroll panel to top
-          infoPanel.scrollTop = 0;
+    // Calculate total_assets_b per node (higher of inflow/outflow)
+    Object.keys(nodeMap).forEach(function(id) {
+      var n = nodeMap[id];
+      n.metrics.total_assets_b = Math.max(n.metrics.total_inflow_b, n.metrics.total_outflow_b);
+      // Add sector_summary context to destination nodes
+      if (id.indexOf('dest-') === 0) {
+        var ac = n.subtype;
+        if (sectorSummary[ac]) {
+          n.description = sectorSummary[ac].count + ' flows · ' + sectorSummary[ac].direction + ' dominant · avg pace ' + sectorSummary[ac].avg_pace.toFixed(1) + 'x';
+        } else {
+          n.description = n.flow_count + ' flows tracked from ' + ac + ' sector';
         }
-        return;
-      }
-
-      // 0: Reset filter
-      if (e.key === '0') {
-        if (activeFilter) {
-          const activeItem = document.querySelector('.cn-legend-item.active');
-          if (activeItem) activeItem.click();
-        }
+      } else {
+        n.description = n.flow_count + ' flows tracked as ' + n.label.toLowerCase() + ' source';
       }
     });
 
-    /* ── THEME TOGGLE ── */
-    const themeBtn = document.getElementById('cn-theme-toggle');
-    if (themeBtn) themeBtn.addEventListener('click', () => {
-      themeLight = !themeLight;
-      document.body.classList.toggle('cn-dark', themeLight);
-      themeBtn.textContent = themeLight ? '☀' : '☽';
+    // Build summary
+    var totalFlow = 0;
+    edges.forEach(function(e) { totalFlow += Math.abs(e.amount_b || 0); });
+    var sentMeter = flowsData.sentiment_meter || {};
+
+    var summary = {
+      total_flow_b: totalFlow,
+      total_nodes: Object.keys(nodeMap).length,
+      total_edges: edges.length,
+      net_flow_b: sentMeter.net_flow_b || 0,
+      aggregate_confidence: flowsData.aggregate_confidence || 0,
+      aggregate_direction: flowsData.aggregate_direction || 'neutral'
+    };
+
+    return {
+      nodes: Object.values(nodeMap),
+      edges: edges,
+      summary: summary,
+      generated_at: generatedAt
+    };
+  }
+
+  /* ── NODE SHAPE PATHS ── */
+  function getNodeShape(type, w, h) {
+    const hw=w/2, hh=h/2;
+    switch(type) {
+      case 'gov': return `M${-hw},${-hh} L${hw},${-hh} L${hw},${hh} L${-hw},${hh} Z`;
+      case 'institutional': return `M0,${-hh} L${hw},0 L0,${hh} L${-hw},0 Z`;
+      case 'crypto': return `M0,${-hh} L${hw*.866},${-hh*.5} L${hw*.866},${hh*.5} L0,${hh} L${-hw*.866},${hh*.5} L${-hw*.866},${-hh*.5} Z`;
+      case 'corporate': const r=6; return `M${-hw+r},${-hh} L${hw-r},${-hh} Q${hw},${-hh} ${hw},${-hh+r} L${hw},${hh-r} Q${hw},${hh} ${hw-r},${hh} L${-hw+r},${hh} Q${-hw},${hh} ${-hw},${hh-r} L${-hw},${-hh+r} Q${-hw},${-hh} ${-hw+r},${-hh} Z`;
+      case 'retail': return `M0,${-hh} A${hw},${hh} 0 1,1 0,${hh} A${hw},${hh} 0 1,1 0,${-hh} Z`;
+      case 'cross_border': return `M${-hw*.7},${-hh} L${hw*.7},${-hh} L${hw},0 L${hw*.7},${hh} L${-hw*.7},${hh} L${-hw},0 Z`;
+      default: return `M${-hw},${-hh} L${hw},${-hh} L${hw},${hh} L${-hw},${hh} Z`;
+    }
+  }
+
+  /* ── LAYOUT ── */
+  function computeLayout(nodes, edges) {
+    const typeOrder = ['gov','institutional','corporate','retail','crypto','cross_border'];
+    const columnWidth = 170;
+    const marginX = 70;
+    const marginY = 100;
+    const nodeW = 120;
+    const nodeH = 70;
+
+    const byType = {};
+    typeOrder.forEach(t => byType[t] = []);
+    nodes.forEach(n => {
+      const t = n.type;
+      if (byType[t]) byType[t].push(n);
+      else byType[t] = [n];
+    });
+    Object.keys(byType).forEach(t => {
+      byType[t].sort((a,b) => ((b.metrics.total_assets_b||b.metrics.net_flow_b)||0) - ((a.metrics.total_assets_b||a.metrics.net_flow_b)||0));
     });
 
-    /* ── INIT ── */
-    function init() {
-      fetch(DATA_URL)
-        .then(r => { if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
-        .then(d => {
-          data = d;
-          render(d);
-        })
-        .catch(err => {
-          console.error('Flow nodes fetch failed:', err);
-          document.getElementById('cn-graph-container').innerHTML =
-            '<div style="padding:40px;text-align:center;color:var(--cn-red);">' +
-            '<p style="font-size:16px;font-weight:700;">⚠ Failed to load capital flow data</p>' +
-            '<p style="font-size:12px;color:var(--cn-dim);margin-top:6px;">' + err.message + '</p>' +
-            '<p style="font-size:11px;color:var(--cn-dim);margin-top:4px;">Ensure ./data/flow_nodes.json is accessible.</p></div>';
-        });
+    let maxCount = 0;
+    Object.values(byType).forEach(arr => { if(arr.length>maxCount) maxCount=arr.length; });
+    const svgW = Math.max(typeOrder.length * columnWidth + marginX*2, 1200);
+    const svgH = 740;
+    const rowHeight = Math.min((svgH-marginY*2)/Math.max(maxCount,1), 80);
+    const positions = {};
+
+    typeOrder.forEach((t, ci) => {
+      const arr = byType[t] || [];
+      const cx = marginX + ci*columnWidth + columnWidth/2;
+      const colStart = (svgH - arr.length*rowHeight)/2;
+      arr.forEach((node, ri) => {
+        positions[node.id] = {x:cx, y:colStart + ri*rowHeight + rowHeight/2, w:nodeW, h:nodeH, type:t};
+      });
+    });
+    return {positions, svgW, svgH};
+  }
+
+  /* ── EDGE LABEL MIDPOINT ── */
+  function edgeMidpoint(sx,sy,ex,ey,cpOffsetX) {
+    const p1x = sx + cpOffsetX, p1y = sy;
+    const p2x = ex - cpOffsetX, p2y = ey;
+    const mx = 0.125*sx + 0.375*p1x + 0.375*p2x + 0.125*ex;
+    const my = 0.125*sy + 0.375*p1y + 0.375*p2y + 0.125*ey;
+    const angle = Math.atan2(ey-sy, ex-sx) * 180 / Math.PI;
+    return {mx, my, angle};
+  }
+
+  /* ── RENDER ── */
+  function render(data) {
+    const {nodes, edges, summary} = data;
+    const meta = summary || {};
+    const {positions, svgW, svgH} = computeLayout(nodes, edges);
+    svg.setAttribute('viewBox', `0 0 ${svgW} ${svgH+30}`);
+
+    edgesLayer.innerHTML = '';
+    nodesLayer.innerHTML = '';
+    nodeMap = {};
+    edgeMap = {};
+
+    nodes.forEach(n => {
+      nodeMap[n.id] = {...n, pos: positions[n.id]};
+      if (!edgeMap[n.id]) edgeMap[n.id] = {in:[], out:[]};
+    });
+
+    // Build edge index
+    edges.forEach(e => {
+      if (!edgeMap[e.source]) edgeMap[e.source] = {in:[], out:[]};
+      if (!edgeMap[e.target]) edgeMap[e.target] = {in:[], out:[]};
+      edgeMap[e.target].in.push(e);
+      edgeMap[e.source].out.push(e);
+    });
+
+    // Edge overlap tracking
+    const edgeCounts = {};
+    edges.forEach(e => {
+      const key = e.source < e.target ? `${e.source}->${e.target}` : `${e.target}->${e.source}`;
+      edgeCounts[key] = (edgeCounts[key]||0) + 1;
+    });
+    const edgeIdx = {};
+    edges.forEach(e => {
+      const key = e.source < e.target ? `${e.source}->${e.target}` : `${e.target}->${e.source}`;
+      edgeIdx[key] = (edgeIdx[key]||0) + 1;
+    });
+
+    edges.forEach((e, i) => {
+      const src = nodeMap[e.source];
+      const dst = nodeMap[e.target];
+      if (!src || !dst) return;
+
+      const sp = src.pos, dp = dst.pos;
+      const dx = dp.x - sp.x, dy = dp.y - sp.y;
+      const cpOffsetX = Math.abs(dx)*0.4;
+      const key = e.source < e.target ? `${e.source}->${e.target}` : `${e.target}->${e.source}`;
+      const totalParallel = edgeCounts[key]||1;
+      const idx = (edgeIdx[key]||1) - 1;
+      const vOffset = (idx - (totalParallel-1)/2)*12;
+
+      const sx = sp.x + sp.w/2;
+      const sy = sp.y + vOffset;
+      const ex = dp.x - dp.w/2;
+      const ey = dp.y + vOffset;
+      const pathD = `M${sx},${sy} C${sx+cpOffsetX},${sy} ${ex-cpOffsetX},${ey} ${ex},${ey}`;
+
+      const isOutflow = e.direction === 'outflow';
+      const isLowConf = (e.confidence_pct||50) < 60;
+      const lineWidth = Math.max(1, Math.min(8, (e.amount_b||0)/45));
+      const cls = `cn-edge ${isOutflow?'outflow':'inflow'} ${isLowConf?'low-conf':''}`;
+      const edgeId = `edge-${i}`;
+
+      // Path
+      const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+      path.setAttribute('d', pathD);
+      path.setAttribute('class', cls);
+      path.setAttribute('stroke-width', lineWidth);
+      path.setAttribute('opacity', 0.55);
+      path.setAttribute('id', edgeId);
+      path.setAttribute('data-source', e.source);
+      path.setAttribute('data-target', e.target);
+      path.setAttribute('data-amount', e.amount_b);
+      path.setAttribute('data-direction', e.direction);
+      edgesLayer.appendChild(path);
+
+      // Arrowhead
+      const arrow = document.createElementNS('http://www.w3.org/2000/svg','polygon');
+      const arrowSize = Math.max(4, Math.min(10, lineWidth*2));
+      const angle = Math.atan2(ey-sy, ex-sx);
+      const a1x = ex - arrowSize*Math.cos(angle-0.4);
+      const a1y = ey - arrowSize*Math.sin(angle-0.4);
+      const a2x = ex - arrowSize*Math.cos(angle+0.4);
+      const a2y = ey - arrowSize*Math.sin(angle+0.4);
+      arrow.setAttribute('points', `${ex},${ey} ${a1x},${a1y} ${a2x},${a2y}`);
+      arrow.setAttribute('class', `cn-edge-arrow ${isOutflow?'outflow':'inflow'} ${isLowConf?'low-conf':''}`);
+      arrow.setAttribute('opacity', 0.55);
+      arrow.setAttribute('data-edge-id', edgeId);
+      edgesLayer.appendChild(arrow);
+
+      // Edge label
+      const {mx, my, angle: labelAngle} = edgeMidpoint(sx,sy,ex,ey,cpOffsetX);
+      const labelAmount = fmtB(e.amount_b);
+      const direction = isOutflow ? '↓' : '↑';
+      const labelText = `${labelAmount} ${direction}`;
+      const label = document.createElementNS('http://www.w3.org/2000/svg','text');
+      label.setAttribute('x', mx);
+      label.setAttribute('y', my);
+      label.setAttribute('class', `cn-edge-label ${isOutflow?'outflow':'inflow'}`);
+      label.setAttribute('transform', `rotate(${labelAngle},${mx},${my})`);
+      label.setAttribute('data-edge-id', edgeId);
+      label.textContent = labelText;
+      edgesLayer.appendChild(label);
+    });
+
+    // Render nodes
+    nodes.forEach(node => {
+      const p = positions[node.id];
+      if (!p) return;
+      const g = document.createElementNS('http://www.w3.org/2000/svg','g');
+      g.setAttribute('class','cn-node-group');
+      g.setAttribute('data-node-id', node.id);
+      g.setAttribute('data-type', node.type);
+      g.setAttribute('transform', `translate(${p.x},${p.y})`);
+
+      const nodeSize = node.metrics.total_assets_b || node.metrics.net_flow_b || Math.abs(node.metrics.total_inflow_b||0);
+      const scaledW = Math.max(80, Math.min(170, nodeSize/28));
+      const scaledH = Math.max(48, Math.min(85, scaledW*0.55));
+      p.w = scaledW; p.h = scaledH;
+
+      const shape = document.createElementNS('http://www.w3.org/2000/svg','path');
+      shape.setAttribute('d', getNodeShape(node.type, scaledW, scaledH));
+      shape.setAttribute('class','cn-node-shape');
+      shape.setAttribute('fill','var(--cn-card)');
+      shape.setAttribute('stroke', typeColor(node.type));
+      shape.setAttribute('stroke-width','1.5');
+      g.appendChild(shape);
+
+      const lbl = document.createElementNS('http://www.w3.org/2000/svg','text');
+      lbl.setAttribute('class','cn-node-label');
+      lbl.setAttribute('y',-4);
+      lbl.textContent = node.label;
+      g.appendChild(lbl);
+
+      const amt = document.createElementNS('http://www.w3.org/2000/svg','text');
+      amt.setAttribute('class','cn-node-amount');
+      amt.setAttribute('y',10);
+      amt.textContent = fmtB(node.metrics.total_assets_b || node.metrics.net_flow_b || 0);
+      g.appendChild(amt);
+
+      const sub = document.createElementNS('http://www.w3.org/2000/svg','text');
+      sub.setAttribute('class','cn-node-sub');
+      sub.setAttribute('y',22);
+      sub.textContent = subtypeLabel(node.subtype) || typeLabel(node.type);
+      g.appendChild(sub);
+
+      g.addEventListener('mouseenter', () => showNodeInfo(node.id));
+      g.addEventListener('mouseleave', () => { if(activeNodeId !== node.id) hideEdgeHighlight(); });
+      g.addEventListener('click', () => showNodeInfo(node.id));
+      nodesLayer.appendChild(g);
+    });
+
+    // Header stats
+    const luEl = document.getElementById('cn-last-updated');
+    if (luEl) { luEl.textContent = data.generated_at ? new Date(data.generated_at).toLocaleString() : '—'; luEl.setAttribute('datetime', data.generated_at || ''); }
+    const ttEl = document.getElementById('cn-total-tracked');
+    if (ttEl) ttEl.textContent = fmtB(meta.total_flow_b||0) + ' tracked';
+    const ncEl = document.getElementById('cn-node-count');
+    if (ncEl) ncEl.textContent = (meta.total_nodes||nodes.length) + ' nodes';
+    const ecEl = document.getElementById('cn-edge-count');
+    if (ecEl) ecEl.textContent = (meta.total_edges||edges.length) + ' edges';
+  }
+
+  /* ── INFO PANEL ── */
+  function showNodeInfo(nodeId) {
+    const node = nodeMap[nodeId];
+    if (!node) return;
+
+    activeNodeId = nodeId;
+
+    // Highlight
+    $$('.cn-node-group').forEach(el => el.classList.remove('active'));
+    const activeEl = document.querySelector(`.cn-node-group[data-node-id="${nodeId}"]`);
+    if (activeEl) activeEl.classList.add('active');
+
+    // Highlight connected edges and their labels
+    const connectedEdgeIds = new Set();
+    (data.edges||[]).forEach((e,i) => {
+      if (e.source === nodeId || e.target === nodeId) connectedEdgeIds.add(`edge-${i}`);
+    });
+    document.querySelectorAll('.cn-edge,.cn-edge-arrow,.cn-edge-label').forEach(el => {
+      const eid = el.getAttribute('data-edge-id') || el.id;
+      if (connectedEdgeIds.has(eid)) el.setAttribute('opacity','1.0');
+      else el.setAttribute('opacity','0.10');
+    });
+
+    // Panel
+    panelNoSel.style.display = 'none';
+    panelContent.style.display = 'block';
+    infoPanel.classList.add('cn-panel-open');
+
+    document.getElementById('pn-name').textContent = node.label;
+    document.getElementById('pn-name').style.color = typeColor(node.type);
+    document.getElementById('pn-type-badge').textContent = typeLabel(node.type);
+    document.getElementById('pn-type-badge').style.color = typeColor(node.type);
+    document.getElementById('pn-subtype').textContent = subtypeLabel(node.subtype);
+    document.getElementById('pn-desc').textContent = node.description || '';
+
+    const totalAssets = node.metrics.total_assets_b || node.metrics.net_flow_b || 0;
+    document.getElementById('pn-assets').textContent = fmtB(Math.abs(totalAssets));
+    document.getElementById('pn-inflow-vel').textContent = (node.metrics.pace_avg||'—').toFixed(1) + 'x';
+    document.getElementById('pn-outflow-vel').textContent = (node.metrics.pace_avg||'—').toFixed(1) + 'x';
+
+    const netFlow = (node.metrics.net_flow_b || (node.metrics.total_inflow_b||0) - (node.metrics.total_outflow_b||0));
+    document.getElementById('pn-net-flow').textContent = fmtB(netFlow);
+    const deltaWeek = node.metrics.delta_week_b;
+    const deltaEl = document.getElementById('pn-net-delta');
+    if (deltaWeek) {
+      deltaEl.textContent = (deltaWeek>0?'↑':'↓') + ' ' + fmtB(deltaWeek) + ' vs 7d';
+      deltaEl.className = 'cn-panel-delta ' + (deltaWeek>0?'up':'down');
+    } else { deltaEl.textContent = ''; }
+    const assetsDeltaEl = document.getElementById('pn-assets-delta');
+    const assetsDelta = node.metrics.delta_month_b;
+    if (assetsDelta) {
+      assetsDeltaEl.textContent = (assetsDelta>0?'↑':'↓') + ' ' + fmtB(assetsDelta) + ' vs 30d';
+      assetsDeltaEl.className = 'cn-panel-delta ' + (assetsDelta>0?'up':'down');
+    } else { assetsDeltaEl.textContent = ''; }
+
+    document.getElementById('pn-confidence').textContent = (node.metrics.confidence_pct||'—') + '%';
+
+    // SOURCES
+    const srcEl = document.getElementById('pn-sources');
+    srcEl.innerHTML = '';
+    const inflows = (edgeMap[nodeId]?.in || []).filter(e => e.direction === 'inflow' || e.target === nodeId);
+    const allInflows = [...new Set([...inflows])];
+    if (allInflows.length > 0) {
+      const grouped = {};
+      allInflows.forEach(e => {
+        const srcNode = nodeMap[e.source];
+        const key = srcNode ? srcNode.label : e.source;
+        if (!grouped[key]) grouped[key] = {amount:0, count:0, edges:[]};
+        grouped[key].amount += e.amount_b||0;
+        grouped[key].count++;
+        grouped[key].edges.push(e);
+      });
+      Object.entries(grouped).forEach(([name, g]) => {
+        const div = document.createElement('div');
+        div.className = 'cn-panel-flow-item';
+        div.innerHTML = `<span class="cn-panel-flow-type">← ${name}</span><span class="cn-panel-flow-amount green">${fmtB(g.amount)}</span>`;
+        srcEl.appendChild(div);
+        if (g.edges[0]?.asset_class) {
+          const ac = document.createElement('div');
+          ac.className = 'cn-panel-ds';
+          ac.textContent = g.edges.map(e=>e.asset_class).filter(Boolean).join(', ');
+          srcEl.appendChild(ac);
+        }
+      });
+    } else {
+      srcEl.innerHTML = '<div style="color:var(--cn-dim);font-size:10px;">No source data tracked</div>';
     }
 
-    /* ── MOBILE FILTER BUTTONS ── */
-    document.querySelectorAll('.cn-mf-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const type = btn.getAttribute('data-mf');
-        const legendItem = document.querySelector(`.cn-legend-item[data-type="${type}"]`);
-        if (legendItem) legendItem.click();
-        // Highlight active mobile button
-        document.querySelectorAll('.cn-mf-btn').forEach(b => b.style.borderColor = 'var(--cn-divider)');
-        btn.style.borderColor = typeColor(type);
+    // DESTINATIONS
+    const dstEl = document.getElementById('pn-destinations');
+    dstEl.innerHTML = '';
+    const outflows = (edgeMap[nodeId]?.out || []).filter(e => e.direction === 'outflow' || e.source === nodeId);
+    if (outflows.length > 0) {
+      const grouped = {};
+      outflows.forEach(e => {
+        const dstNode = nodeMap[e.target];
+        const key = dstNode ? dstNode.label : e.target;
+        if (!grouped[key]) grouped[key] = {amount:0, count:0, edges:[]};
+        grouped[key].amount += e.amount_b||0;
+        grouped[key].count++;
+        grouped[key].edges.push(e);
       });
+      Object.entries(grouped).forEach(([name, g]) => {
+        const div = document.createElement('div');
+        div.className = 'cn-panel-flow-item';
+        div.innerHTML = `<span class="cn-panel-flow-type">→ ${name}</span><span class="cn-panel-flow-amount red">${fmtB(g.amount)}</span>`;
+        dstEl.appendChild(div);
+        if (g.edges[0]?.asset_class) {
+          const ac = document.createElement('div');
+          ac.className = 'cn-panel-ds';
+          ac.textContent = g.edges.map(e=>e.asset_class).filter(Boolean).join(', ');
+          dstEl.appendChild(ac);
+        }
+      });
+    } else {
+      dstEl.innerHTML = '<div style="color:var(--cn-dim);font-size:10px;">No destination data tracked</div>';
+    }
+
+    // LINKED STORIES
+    const storiesEl = document.getElementById('pn-stories');
+    storiesEl.innerHTML = '';
+    const allEdges = [...(edgeMap[nodeId]?.in||[]), ...(edgeMap[nodeId]?.out||[])];
+    const seenStories = new Set();
+    allEdges.forEach(e => {
+      if (e.story_id && !seenStories.has(e.story_id)) {
+        seenStories.add(e.story_id);
+        const div = document.createElement('div');
+        div.style.cssText = 'padding:3px 0;font-size:10px;';
+        const hl = e.headline || 'Linked story';
+        div.innerHTML = `<a class="cn-panel-link" href="./story.html?id=${e.story_id}" target="_blank">${hl.substring(0,70)}${hl.length>70?'…':''}</a>`;
+        storiesEl.appendChild(div);
+      }
     });
-    document.querySelector('.cn-mf-reset').addEventListener('click', () => {
+    if (seenStories.size === 0) {
+      storiesEl.innerHTML = '<div style="color:var(--cn-dim);font-size:10px;">No stories linked</div>';
+    }
+
+    // DATA SOURCES
+    const dsEl = document.getElementById('pn-datasources');
+    dsEl.innerHTML = '';
+    const sources = [...new Set(allEdges.map(e => e.data_source).filter(Boolean))];
+    if (sources.length > 0) {
+      sources.forEach(ds => {
+        const div = document.createElement('div');
+        div.className = 'cn-panel-ds';
+        div.textContent = '📄 ' + ds;
+        dsEl.appendChild(div);
+      });
+    } else if (node.data_sources) {
+      node.data_sources.forEach(ds => {
+        const div = document.createElement('div');
+        div.className = 'cn-panel-ds';
+        div.textContent = '📄 ' + ds;
+        dsEl.appendChild(div);
+      });
+    } else {
+      dsEl.innerHTML = '<div style="color:var(--cn-dim);font-size:10px;">No data sources recorded</div>';
+    }
+  }
+
+  function hideEdgeHighlight() {
+    document.querySelectorAll('.cn-edge,.cn-edge-arrow,.cn-edge-label').forEach(el => {
+      el.setAttribute('opacity', 0.55);
+    });
+  }
+
+  /* ── CLOSE PANEL ── */
+  function closePanel() {
+    infoPanel.classList.remove('cn-panel-open');
+    panelContent.style.display = 'none';
+    panelNoSel.style.display = 'block';
+    $$('.cn-node-group').forEach(el => el.classList.remove('active'));
+    hideEdgeHighlight();
+    activeNodeId = null;
+  }
+  document.getElementById('pn-close').addEventListener('click', closePanel);
+
+  /* ── LEGEND FILTER ── */
+  let activeFilter = null;
+  legendItems.forEach((item, idx) => {
+    item.addEventListener('click', () => {
+      const type = item.getAttribute('data-type');
+      if (activeFilter === type) {
+        activeFilter = null;
+        item.classList.remove('active');
+        $$('.cn-node-group').forEach(el => el.style.opacity = '1');
+        hideEdgeHighlight();
+      } else {
+        legendItems.forEach(li => li.classList.remove('active'));
+        item.classList.add('active');
+        activeFilter = type;
+        $$('.cn-node-group').forEach(el => {
+          el.style.opacity = el.getAttribute('data-type') === type ? '1' : '0.15';
+        });
+        document.querySelectorAll('.cn-edge,.cn-edge-arrow,.cn-edge-label').forEach(el => {
+          const src = el.getAttribute('data-source');
+          const tgt = el.getAttribute('data-target');
+          if (!src) return;
+          const srcNode = nodeMap[src];
+          const tgtNode = nodeMap[tgt];
+          if ((srcNode&&srcNode.type===type) || (tgtNode&&tgtNode.type===type)) {
+            el.setAttribute('opacity', '0.8');
+          } else {
+            el.setAttribute('opacity', '0.06');
+          }
+        });
+      }
+    });
+  });
+
+  /* ── KEYBOARD SHORTCUTS ── */
+  const TYPE_KEYS = {'1':'gov','2':'institutional','3':'corporate','4':'retail','5':'crypto','6':'cross_border'};
+  document.addEventListener('keydown', e => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (TYPE_KEYS[e.key]) {
+      const type = TYPE_KEYS[e.key];
+      const item = document.querySelector(`.cn-legend-item[data-type="${type}"]`);
+      if (item) item.click();
+      return;
+    }
+    if (e.key === 'Escape') { closePanel(); return; }
+    if (activeNodeId && ['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.key)) {
+      e.preventDefault();
+      const nodeIds = Object.keys(nodeMap);
+      const idx = nodeIds.indexOf(activeNodeId);
+      let nextIdx = idx;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') nextIdx = (idx + 1) % nodeIds.length;
+      if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') nextIdx = (idx - 1 + nodeIds.length) % nodeIds.length;
+      if (nextIdx !== idx && nodeIds[nextIdx]) {
+        showNodeInfo(nodeIds[nextIdx]);
+        infoPanel.scrollTop = 0;
+      }
+      return;
+    }
+    if (e.key === '0') {
       if (activeFilter) {
         const activeItem = document.querySelector('.cn-legend-item.active');
         if (activeItem) activeItem.click();
       }
-      document.querySelectorAll('.cn-mf-btn').forEach(b => b.style.borderColor = 'var(--cn-divider)');
-    });
+    }
+  });
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', init);
-    } else { init(); }
-  })();
-  </script>
+  /* ── THEME TOGGLE ── */
+  let themeLight = false;
+  const themeBtn = document.getElementById('cn-theme-toggle');
+  if (themeBtn) themeBtn.addEventListener('click', () => {
+    themeLight = !themeLight;
+    document.body.classList.toggle('cn-dark', themeLight);
+    themeBtn.textContent = themeLight ? '☀' : '☽';
+  });
+
+  /* ── INIT ── */
+  function init() {
+    fetch(DATA_URL)
+      .then(r => { if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+      .then(rawData => {
+        // Transform flows.json data into nodes+edges format
+        data = transformFlowsData(rawData);
+        render(data);
+      })
+      .catch(err => {
+        console.error('Flow nodes fetch failed:', err);
+        document.getElementById('cn-graph-container').innerHTML =
+          '<div style="padding:40px;text-align:center;color:var(--cn-red);">' +
+          '<p style="font-size:16px;font-weight:700;">⚠ Failed to load capital flow data</p>' +
+          '<p style="font-size:12px;color:var(--cn-dim);margin-top:6px;">' + err.message + '</p>' +
+          '<p style="font-size:11px;color:var(--cn-dim);margin-top:4px;">Ensure ./data/flows.json is accessible.</p></div>';
+      });
+  }
+
+  /* ── MOBILE FILTER BUTTONS ── */
+  document.querySelectorAll('.cn-mf-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const type = btn.getAttribute('data-mf');
+      const legendItem = document.querySelector(`.cn-legend-item[data-type="${type}"]`);
+      if (legendItem) legendItem.click();
+      document.querySelectorAll('.cn-mf-btn').forEach(b => b.style.borderColor = 'var(--cn-divider)');
+      btn.style.borderColor = typeColor(type);
+    });
+  });
+  document.querySelector('.cn-mf-reset').addEventListener('click', () => {
+    if (activeFilter) {
+      const activeItem = document.querySelector('.cn-legend-item.active');
+      if (activeItem) activeItem.click();
+    }
+    document.querySelectorAll('.cn-mf-btn').forEach(b => b.style.borderColor = 'var(--cn-divider)');
+  });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else { init(); }
+})();
+</script>
+
 </body>
 </html>
