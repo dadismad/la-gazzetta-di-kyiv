@@ -413,7 +413,7 @@ body {
 .col-intel .layer-header {
   font-family: var(--display);
   font-weight: 600;
-  font-size: var(--φ-sm);
+  font-size: 10px;
 }
 .nav-group-label { font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; color: var(--gold); text-transform: uppercase; margin-right: 4px; }
 .product-page { max-width: 1000px; margin: 0 auto; padding: 16px 20px 40px; }
