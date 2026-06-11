@@ -41,6 +41,9 @@ def parse_amount(text):
     """Parse amount like '$37.2B', '€2-5B', '$3-5B' from text.
     Returns (amount_b, denomination) — amount in billions.
     """
+    # Coerce to string — callers may pass float/int from JSON/DB (e.g. 4.8)
+    if not isinstance(text, str):
+        text = str(text) if text else ""
     if not text:
         return (0, "unknown")
 
@@ -191,8 +194,12 @@ def extract_from_capital_flow_dict(cf, story, story_id):
     direction = normalize_direction(direction_raw)
 
     # Amount: parse amount string first (overrides hardcoded 5.0 default)
-    amt_str = cf.get("amount", "")
-    parsed_b, _ = parse_amount(amt_str) if amt_str else (0, "")
+    amt_raw = cf.get("amount", "")
+    # PITFALL: amount can be a float (e.g. 13.5) from DB/capital_flows, not always a string
+    if isinstance(amt_raw, (int, float)):
+        parsed_b = float(amt_raw)
+    else:
+        parsed_b, _ = parse_amount(str(amt_raw)) if amt_raw else (0, "")
     amount_b = cf.get("amount_b", 0)
     # If parsed value is real and differs from hardcoded, use parsed
     if parsed_b > 0 and (amount_b == 0 or amount_b == 5.0):

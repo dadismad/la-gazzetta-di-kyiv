@@ -54,7 +54,7 @@ def main():
         cf = s.get("capital_flow", {})
         ac = cf.get("asset_class", "equities")
         direction = cf.get("direction", "inflow")
-        amount = cf.get("amount_b", 1.0)
+        amount = cf.get("amount_b") or 0  # None → 0 guard
         pace = cf.get("pace_multiplier", 1.0)
         cs = s.get("contradiction_score", 50)
 

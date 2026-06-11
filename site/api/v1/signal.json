@@ -1,0 +1,172 @@
+{
+  "generated_at": "2026-06-11T17:36:02.584141+00:00",
+  "total_signals": 231,
+  "aggregate_score": 67,
+  "signals": [
+    {
+      "story_id": "n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired",
+      "headline": "All the Ways Europe Is Ditching American Technology - WIRED",
+      "score": 80,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 35,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "defense",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai",
+      "headline": "Stock Market Today: Nasdaq, Dow Open Higher; SpaceX, OpenAI IPOs in Focus — Live Updates - WSJ",
+      "score": 80,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 35,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "defense",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela",
+      "headline": "Bitcoin's brutal sell-off sparks a flurry of trading in related stocks, including one big bullish be",
+      "score": 75,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 30,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "crypto",
+      "direction": "outflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__new_fed_chief_may_soon_be_forced_to_defy_trump_and_raise_int",
+      "headline": "New Fed chief may soon be forced to defy Trump and raise interest rates - The Washington Post",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "fixed_income",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__people_living_near_xai_s_dirty_data_centers_are_pissed_about",
+      "headline": "People Living Near xAI’s Dirty Data Centers Are Pissed About the SpaceX IPO - WIRED",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "commodities",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__exclusive__openai_considers_drastic_price_cuts_anticipatin",
+      "headline": "Exclusive | OpenAI Considers Drastic Price Cuts, Anticipating War for Users With Anthropic - WSJ",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "defense",
+      "direction": "outflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__blackrock_orders_5_billion_in_spacex_shares_ahead_of_blockb",
+      "headline": "BlackRock Orders $5 Billion In SpaceX Shares Ahead Of Blockbuster IPO, Report Says (Live Updates) - ",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "tech",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__anthropic_backpedals_on_fable_safety_measure_-_the_verge",
+      "headline": "Anthropic backpedals on Fable safety measure - The Verge",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "tech",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__anthropic_announces_claude_corps_to_teach_nonprofits_to_us",
+      "headline": "Anthropic announces ‘Claude Corps’ to teach nonprofits to use AI more effectively - AP News",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "defense",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__google_director_resigns_citing_its_military_deals__managem",
+      "headline": "Google director resigns, citing its military deals: 'Management has lost its moral compass' - Busine",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "defense",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__meet_the_fortune_crypto_innovators_2026_-_fortune",
+      "headline": "Meet the Fortune Crypto Innovators (2026) - Fortune",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "crypto",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__prometheus_the_industrial_ai_startup_from_jeff_bezos_is_no",
+      "headline": "Prometheus, the industrial AI startup from Jeff Bezos, is now worth $41 billion - Axios",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "crypto",
+      "direction": "outflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__justice_department_opens_sweeping_debanking_probe_into_jpm",
+      "headline": "Justice Department opens sweeping 'debanking' probe into JPMorgan, Bank of America and more - New Yo",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "equities",
+      "direction": "inflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__stock_market_today_russell_2000_leads_upside_ahead_of_space",
+      "headline": "Stock Market Today: Russell 2000 Leads Upside Ahead Of SpaceX IPO; AI Stocks Rally (Live Coverage) -",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "tech",
+      "direction": "outflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__what_happens_if_ai_causes_25_unemployment_anthropic_has_a",
+      "headline": "What Happens If AI Causes 25% Unemployment? Anthropic Has a Concept of a Plan - Gizmodo",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "defense",
+      "direction": "inflow"
+    }
+  ]
+}

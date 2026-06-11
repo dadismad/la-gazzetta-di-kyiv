@@ -1,0 +1,13 @@
+{
+  "regime": "risk-on",
+  "confidence": 0.67,
+  "vix_proxy": 18.5,
+  "dxy_trend": "weakening",
+  "sectors": {
+    "tech": "leading",
+    "energy": "neutral",
+    "defense": "outperforming"
+  },
+  "generated_at": "2026-06-11T17:36:23.338702Z",
+  "note": "Stub \u2014 external market data APIs unavailable. Core pipeline running."
+}

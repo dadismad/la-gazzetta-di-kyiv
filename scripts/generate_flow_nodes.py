@@ -45,6 +45,9 @@ def safe_str(s):
 
 def parse_amount(text):
     """Parse '$37.2B', '$3-5B' → (amount_b, denomination)."""
+    # Coerce to string — callers may pass float/int from JSON/DB
+    if not isinstance(text, str):
+        text = str(text) if text else ""
     if not text: return (0, "unknown")
     m = re.search(r'[\$€]\s*([\d.]+)\s*(?:-|–|to)\s*[\$€]?\s*([\d.]+)\s*([BM])', text)
     if m:
