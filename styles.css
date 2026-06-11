@@ -151,22 +151,19 @@ body {
 }
 .nav-dropdown { position: relative; }
 .nav-dropdown-trigger {
-  background: #FFFFFF;
-  border: 1px solid #D4AF37;
-  color: #0F172A;
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
   font-family: var(--sans);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.12em;
-  padding: 8px 14px;
+  padding: 10px 16px;
   cursor: pointer;
-  border-radius: 4px;
   transition: all 0.15s;
 }
 .nav-dropdown-trigger:hover {
-  background: #D4AF37;
-  color: #0F172A;
-  border-color: #D4AF37;
+  color: #D4AF37;
 }
 .nav-dd-arrow { font-size: 8px; margin-left: 3px; }
 .nav-dropdown.open .nav-dd-arrow { transform: rotate(180deg); display: inline-block; }
