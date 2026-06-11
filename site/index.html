@@ -132,11 +132,13 @@
     <div class="hero-indicators" id="heroIndicators">
       <a href="./signal.html" class="hero-ind" id="heroContradictions" title="Active narrative-to-data divergences">
         <span class="hero-ind-value">—</span>
-        <span class="hero-ind-label" data-i18n="hero_contradictions">Contradictions</span>
+        <span class="hero-ind-label" data-i18n="hero_contradictions">Divergences</span>
+        <span class="hero-ind-context" id="heroContradictionsCtx">Instances where news narrative and capital flows disagree — the edge</span>
       </a>
-      <a href="./signal.html" class="hero-ind" id="heroFreshness" title="Data refresh cadence">
+      <a href="./flows.html" class="hero-ind" id="heroInflow" title="Latest detected institutional inflow">
         <span class="hero-ind-value">—</span>
-        <span class="hero-ind-label" data-i18n="hero_freshness">Freshness</span>
+        <span class="hero-ind-label">Last Inflow</span>
+        <span class="hero-ind-context" id="heroInflowCtx">Largest single inflow detected in the current cycle</span>
       </a>
     </div>
   </div>
@@ -147,16 +149,13 @@
   <!-- v25.0: Sidebar — trade hooks DELETED, freshness MOVED to signal, only live data remains -->
   <aside class="col-alpha" id="colAlpha">
     <div class="side-section alpha-gated" id="signalGate">
-      <div class="side-section-label" data-i18n="side_signal_gate">FULL SIGNAL</div>
-      <div class="gate-overlay">
-        <span class="gate-hint">Entry zones & stop levels are gated</span>
-        <a href="https://t.me/GazzettaDiKyiv" class="gate-cta" target="_blank" rel="noopener">🔓 Unlock Full Signal →</a>
-      </div>
+      <div class="side-section-label">SAMPLE SIGNALS</div>
       <div class="gated-content">
-        <div class="side-hooks">
+        <div class="side-hooks" id="sideHooks">
           <div class="side-hook-item"><span class="side-hook-symbol">SPX</span><span class="side-hook-dir bullish">↑ LONG</span><span class="side-hook-conv">Entry $5,750</span></div>
           <div class="side-hook-item"><span class="side-hook-symbol">BTC</span><span class="side-hook-dir bullish">↑ LONG</span><span class="side-hook-conv">Stop $63.8K</span></div>
         </div>
+        <a href="https://t.me/GazzettaDiKyiv" class="gate-cta" target="_blank" rel="noopener" style="display:block;text-align:center;margin-top:8px">🔓 Full Signal on Telegram →</a>
       </div>
     </div>
     <div class="side-section">
@@ -167,15 +166,12 @@
       </div>
     </div>
     <div class="side-section">
-      <div class="side-section-label" data-i18n="side_live_tickers">LIVE TICKERS</div>
-      <div class="side-freshness" id="liveTickers"></div>
+      <div class="side-section-label">MARKET SNAPSHOT</div>
+      <div class="side-freshness" id="liveTickers">Loading…</div>
     </div>
-    <div class="side-section-label" style="margin-top:10px;" data-i18n="side_flow_sectors">FLOW SECTORS</div>
-    <div class="side-freshness" id="flowSectors"></div>
     <div class="side-section" style="margin-top:10px;">
-      <div class="side-section-label">LIVE CORRELATIONS</div>
-      <div class="side-freshness" id="correlationMatrix"></div>
-      <div style="font-size:8px;opacity:0.4;margin-top:4px;">Directional proxy from 24h Δ · full rolling corr requires 30+ data points</div>
+      <div class="side-section-label">FLOW BY SECTOR</div>
+      <div class="side-freshness" id="flowSectors">Loading…</div>
     </div>
   </aside>
 

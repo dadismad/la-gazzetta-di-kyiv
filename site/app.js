@@ -395,6 +395,7 @@ async function fetchFlows() {
   const data = await getJSON(getFlowsPath(), null);
   if (!data || !data.flows) return false;
   CAPITAL_FLOWS_DATA = data.flows;
+  totalFlowsTracked = data.total_flows_tracked || data.flows.length;
   GLOSSARY = data.glossary || {};
   if (data.generated_at) { window._flowsGeneratedAt = data.generated_at; if (!window._storiesGeneratedAt) window._storiesGeneratedAt = data.generated_at; }  // v22.37: also set stories timestamp for signal freshness fallback
   renderCapitalFlows();
@@ -1620,6 +1621,86 @@ function wireThreadNavigation(timelineEl, timelineData, storyId) {
   });
 }
 
+
+// ═══════════════════════════════════════════════════════════════
+// SIDEBAR POPULATION (v26.5 — focus group fix)
+// ═══════════════════════════════════════════════════════════════
+function populateSidebar() {
+  // --- MARKET SNAPSHOT (tickers from anchor assets) ---
+  const tickerEl = document.getElementById('liveTickers');
+  if (tickerEl && ANCHOR_ASSETS.length) {
+    const tickers = ANCHOR_ASSETS.slice(0, 8).map(a => {
+      const dir = a.dir === 'up' ? '↑' : a.dir === 'down' ? '↓' : '·';
+      const cls = a.dir === 'up' ? 'tkr-up' : a.dir === 'down' ? 'tkr-down' : 'tkr-flat';
+      return `<div class="tkr-row"><span class="tkr-sym">${a.symbol}</span><span class="tkr-price">${a.price}</span><span class="${cls}">${dir} ${a.change}</span></div>`;
+    }).join('');
+    tickerEl.innerHTML = tickers;
+  }
+
+  // --- FLOW BY SECTOR (aggregate from CAPITAL_FLOWS_DATA) ---
+  const sectorEl = document.getElementById('flowSectors');
+  if (sectorEl && CAPITAL_FLOWS_DATA.length) {
+    const sectors = {};
+    CAPITAL_FLOWS_DATA.forEach(f => {
+      const ac = (f.asset_class || 'other').toLowerCase();
+      sectors[ac] = (sectors[ac] || 0) + (f.amount_b || 0);
+    });
+    const sorted = Object.entries(sectors)
+      .filter(([_,v]) => v > 0)
+      .sort((a,b) => b[1] - a[1])
+      .slice(0, 6);
+    const maxVal = sorted[0]?.[1] || 1;
+    sectorEl.innerHTML = sorted.map(([name, val]) => {
+      const pct = Math.round((val / maxVal) * 100);
+      const label = name === 'fixed_income' ? 'Fixed Income' : name.charAt(0).toUpperCase() + name.slice(1);
+      return `<div class="sector-row">
+        <span class="sector-name">${label}</span>
+        <span class="sector-bar"><span class="sector-fill" style="width:${pct}%"></span></span>
+        <span class="sector-val">$${val.toFixed(1)}B</span>
+      </div>`;
+    }).join('');
+  }
+
+  // --- HERO CONTEXT (explain the numbers) ---
+  const ctxEl = document.getElementById('heroContradictionsCtx');
+  if (ctxEl && CAPITAL_FLOWS_DATA.length) {
+    const total = CAPITAL_FLOWS_DATA.length;
+    ctxEl.textContent = `${total} tracked flows — where stories and money disagree, opportunity lives`;
+  }
+  const inflowCtx = document.getElementById('heroInflowCtx');
+  if (inflowCtx && CAPITAL_FLOWS_DATA.length) {
+    const inflow = CAPITAL_FLOWS_DATA.filter(f => f.direction === 'inflow');
+    const maxInflow = inflow.reduce((max, f) => (f.amount_b || 0) > (max.amount_b || 0) ? f : max, inflow[0]);
+    if (maxInflow) {
+      inflowCtx.textContent = `Largest: $${(maxInflow.amount_b || 0).toFixed(1)}B ${maxInflow.asset_class || ''} · ${totalFlowsTracked || CAPITAL_FLOWS_DATA.length} flows tracked this cycle`;
+    }
+  }
+
+  // --- HERO INDICATOR VALUES ---
+  const contradictionsEl = document.getElementById('heroContradictions');
+  if (contradictionsEl) {
+    const val = contradictionsEl.querySelector('.hero-ind-value');
+    if (val && val.textContent === '—') {
+      val.textContent = CAPITAL_FLOWS_DATA.length || '—';
+    }
+  }
+  // Set inflow dollar value
+  const inflowEl = document.getElementById('heroInflow');
+  if (inflowEl) {
+    const val = inflowEl.querySelector('.hero-ind-value');
+    if (val && val.textContent === '—' && CAPITAL_FLOWS_DATA.length) {
+      const inflow = CAPITAL_FLOWS_DATA.filter(f => f.direction === 'inflow');
+      const maxFlow = inflow.reduce((max, f) => (f.amount_b || 0) > (max.amount_b || 0) ? f : max, inflow[0]);
+      if (maxFlow && maxFlow.amount_b) {
+        val.textContent = '$' + maxFlow.amount_b.toFixed(1) + 'B ↑';
+      }
+    }
+  }
+}
+
+// Total flows tracker (set by fetchFlows)
+let totalFlowsTracked = 0;
+
 // ═══════════════════════════════════════════════════════════════
 // STORY ACCUMULATION — appendStoryCard adds new cards at the top
 // ═══════════════════════════════════════════════════════════════
@@ -2303,6 +2384,9 @@ async function boot() {
   refreshFlowStoryLinks();
   // Re-apply i18n to dynamically inserted DOM (v22.18)
   if (window.i18n && window.i18n.applyTranslations) window.i18n.applyTranslations();
+
+  // v26.5: Populate sidebar panels + hero context
+  populateSidebar();
 
   // v22.42: Homepage teasers are populated by populateTeasers() called via setTimeout below
 
