@@ -129,10 +129,16 @@ else
 fi
 echo ""
 
-# ═══ Stage 2.6: ru_sync_gate ──
-echo "── Stage 2.6: ru_sync_gate ──"
+# ═══ Stage 3: hash — SHA256-hash CSS/JS, rewrite HTML references ═══
+echo "── Stage 3: build_hashed_assets ──"
+$PYTHON "$PROJECT/scripts/build_hashed_assets.py"
+echo "  ✓ CSS/JS hashed, HTML references rewritten"
+echo ""
+
+# ═══ Stage 3.1: ru_sync_gate — AFTER hash so RU gets correct script references ═══
+echo "── Stage 3.1: ru_sync_gate ──"
 RU_MISSING=0
-for f in about.html capital.html data.html methodology.html sources.html terms.html robots.txt sitemap.xml; do
+for f in about.html capital.html data.html index.html methodology.html sources.html terms.html robots.txt sitemap.xml; do
   if [ ! -f "$PROJECT/site/ru/$f" ]; then
     cp "$PROJECT/site/$f" "$PROJECT/site/ru/$f" 2>/dev/null || true
     RU_MISSING=$((RU_MISSING + 1))
@@ -170,12 +176,6 @@ if [ "$NEED_TRANSLATION" = true ]; then
   echo "  ✓ RU stories re-translated: $RU_COUNT_NEW stories"
 fi
 echo "  ✓ RU sync gate passed: $RU_COUNT stories, $RU_MISSING files copied"
-
-# ═══ Stage 3: hash assets ──
-echo "── Stage 3: hash assets ──"
-$PYTHON "$PROJECT/scripts/build_hashed_assets.py"
-echo "  ✓ CSS/JS hashed, HTML references rewritten"
-echo ""
 
 # ═══ Stage 4: GCS deploy ──
 echo "── Stage 4: GCS deploy ──"

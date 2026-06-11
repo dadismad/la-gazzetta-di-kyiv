@@ -10,8 +10,10 @@
   let currentLang = 'en';
   let translations = {};
 
-  // Detect language: localStorage > browser > default en
+  // Detect language: path > localStorage > browser > default en
   function detectLang() {
+    // Path-based detection: /ru/ or /ru prefix = Russian
+    if (window.location.pathname.match(/^\/ru(?:\/|$)/i)) return 'ru';
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored && SUPPORTED.includes(stored)) return stored;
     const browser = (navigator.language || '').split('-')[0];
