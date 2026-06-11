@@ -1489,7 +1489,7 @@ tant; }
   color: var(--ink);
 }
 
-.intel-header { border-left: 2px solid #0F172A;
+.intel-header { border-left: 3px solid #3B82F6;
   margin-bottom: 28px;
 }
 .intel-meta {
@@ -1947,9 +1947,9 @@ display: -webkit-flex;
   font-family: var(--sans); font-size: 11px; font-weight: 800;
   letter-spacing: 0.14em; text-transform: uppercase; padding: 2px 8px;
 }
-.intel-header .layer-label { background: var(--ink); color: #FFFFFF; }
+.intel-header .layer-label { background: #1E293B; color: #E2E8F0; }
 .alpha-header .layer-desc { color: #B8860B; }
-.alpha-header .layer-label { background: #B8860B; color: #FFFFFF; }
+.alpha-header .layer-label { background: #D4AF37; color: #0F172A; }
 .layer-desc {
   font-family: var(--serif); font-size: 13px; font-style: italic;
   color: var(--ink-muted); letter-spacing: 0.01em;
@@ -2009,11 +2009,11 @@ display: -webkit-flex;
 .asset-badge.tech          { color: #0891B2; border-color: #0891B2; background: rgba(8,145,178,0.06); }
 
 /* ═══ v23.1: Intel vs Alpha global accent distinction ═══ */
-.intel-accent { color: var(--ink); border-left-color: var(--ink); }
-.alpha-accent { color: var(--gold); border-left-color: var(--gold); }
-.layer-header.intel-header .layer-label { background: #0F172A; color: #FFF; }
-.layer-header.alpha-header .layer-desc { color: #B8860B; }
-.alpha-header .layer-label { background: #B8860B; color: #FFF; font-family: 'JetBrains Mono', 'Roboto Mono', 'Courier New', monospace !important; }
+.intel-accent { color: #1E293B; border-left-color: #3B82F6; }
+.alpha-accent { color: #D4AF37; border-left-color: #D4AF37; }
+.layer-header.intel-header .layer-label { background: #1E293B; color: #E2E8F0; }
+.layer-header.alpha-header .layer-desc { color: #D4AF37; }
+.alpha-header .layer-label { background: #D4AF37; color: #0F172A; font-family: 'JetBrains Mono', 'Roboto Mono', 'Courier New', monospace !important; }
 
 /* v23.7: Alpha layer gold accent boost */
 .alpha-header { border-left-width: 3px !important; }
@@ -2073,3 +2073,214 @@ display: -webkit-flex;
   to { transform: rotate(360deg); }
 }
 #storiesLoading.hidden { display: none; }
+
+/* ═══════════════════════════════════════════════ */
+/* v25.15: PRODUCT PAGES — Lean, Neat, Unified    */
+/* ═══════════════════════════════════════════════ */
+
+/* Product page main container */
+.product-main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+/* Page hero/header — matching homepage hero */
+.product-hero {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--divider);
+}
+.product-hero h1 {
+  font-family: var(--display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+.product-hero .product-desc {
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--ink-muted);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* Product cards — matching homepage container style */
+.product-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-left: 3px solid #3B82F6; /* INTEL default */
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 12px;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+.product-card:hover {
+  box-shadow: 0 2px 12px rgba(212,175,55,0.12);
+  border-color: #D4AF37;
+}
+.product-card.alpha-card {
+  border-left-color: #D4AF37; /* ALPHA gold */
+}
+
+/* Card header */
+.product-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+.product-card-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+.product-card-label.intel-label {
+  background: #1E293B;
+  color: #E2E8F0;
+}
+.product-card-label.alpha-label {
+  background: #D4AF37;
+  color: #0F172A;
+}
+
+/* Card title */
+.product-card-title {
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.product-card-title a {
+  color: inherit;
+  text-decoration: none;
+}
+.product-card-title a:hover {
+  color: var(--gold);
+}
+
+/* Card meta row */
+.product-card-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-family: var(--sans);
+  font-size: 10px;
+  color: var(--ink-muted);
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+.product-card-meta span {
+  white-space: nowrap;
+}
+
+/* Card body */
+.product-card-body {
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--ink-light);
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+/* Amount badge */
+.amount-badge {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  background: #F1F5F9;
+  color: #1E293B;
+}
+.amount-badge.gold { background: #FFFDF5; color: #B8860B; border: 1px solid #FDE68A; }
+
+/* Direction indicators */
+.dir-in { color: #16A34A; }
+.dir-out { color: #DC2626; }
+
+/* Conviction badge */
+.conviction-badge {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 1px 6px;
+  border-radius: 2px;
+}
+.conviction-badge.high { background: #DCFCE7; color: #166534; }
+.conviction-badge.med { background: #FEF9C3; color: #854D0E; }
+.conviction-badge.low { background: #FEE2E2; color: #991B1B; }
+
+/* Sector summary grid */
+.sector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 8px;
+  margin: 16px 0;
+}
+.sector-chip {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 4px;
+  padding: 10px 12px;
+  transition: border-color 0.15s;
+}
+.sector-chip:hover { border-color: #D4AF37; }
+.sector-chip-name {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  margin-bottom: 4px;
+}
+.sector-chip-amount {
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.sector-chip-meta {
+  font-family: var(--sans);
+  font-size: 9px;
+  color: var(--ink-light);
+}
+
+/* Data freshness indicator */
+.product-freshness {
+  font-family: var(--sans);
+  font-size: 10px;
+  color: var(--ink-muted);
+  text-align: right;
+  margin-bottom: 16px;
+  opacity: 0.6;
+}
+
+/* Footer note */
+.product-note {
+  font-family: var(--serif);
+  font-size: 11px;
+  color: var(--ink-muted);
+  font-style: italic;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--divider);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .product-main { padding: 16px 12px 32px; }
+  .product-hero h1 { font-size: 20px; }
+  .product-card-title { font-size: 14px; }
+  .sector-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
