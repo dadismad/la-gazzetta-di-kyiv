@@ -2545,9 +2545,7 @@ display: -webkit-flex;
   box-shadow: 0 2px 8px rgba(212,175,55,0.12);
 }
 
-/* Original anchor-card (keep for backward compat) */
-  /* legacy anchor-card — merged above */
-}
+/* Original anchor-card (keep for backward compat) — legacy merged above */
 
 /* Signal card styling */
 .product-page .signal-card {

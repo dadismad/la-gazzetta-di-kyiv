@@ -210,7 +210,6 @@
     document.title = (allStories[currentIdx].headline || 'Story') + ' — La Gazzetta di Kyiv';
   }
 
-  async 
 // ═══════════════ v23.8: Gazzetta Namespace ═══════════════
 window.Gazzetta = window.Gazzetta || {};
 Gazzetta.Story = {};
