@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-06-10T15:13:28.107415+00:00",
+  "generated_at": "2026-06-11T15:45:42.971765+00:00",
   "story_count": 15,
   "model": "deepseek-chat",
   "narratives": [
     {
-      "title": "Geopolitical Escalation Spiral",
+      "title": "Geopolitical Escalation Risk-Off",
       "strength": "DOMINANT",
       "direction": "Risk-Off",
-      "summary": "Capital is fleeing risk assets as the US-Iran conflict escalates with active kinetic exchanges, a US Apache shootdown, and Iran's retaliation, while Israel prepares for two-front operations and Ukraine deepens strikes into Russia. The EIA's extended Hormuz blockade timeline through 2026 confirms structural oil supply disruption, driving defensive positioning.",
-      "key_stories": 8,
-      "trade_implication": "Long crude oil and defense equities; short equity indices (S&P 500) and high-yield credit; increase cash and gold allocations."
+      "summary": "Capital is fleeing risk assets as multi-front conflicts (Iran, Israel, Ukraine) escalate beyond controlled tit-for-tat, with credible threats to energy chokepoints like Hormuz. The market consensus underestimates the persistence and structural nature of these disruptions, driving flows into safe havens and commodities.",
+      "key_stories": 9,
+      "trade_implication": "Long WTI crude oil and short S&P 500 futures; overweight gold and short-dated US Treasuries."
     },
     {
-      "title": "Hormuz Blockade Structural Oil Shock",
+      "title": "Energy Supply Disruption Premium",
       "strength": "STRONG",
       "direction": "Neutral-to-Bullish",
-      "summary": "The EIA's projection of a Hormuz blockade persisting through Q3 2026 and full recovery only in 2027, combined with Kuwait seeking pipeline bypasses and WTI forecast raised to $88.32, indicates a prolonged supply disruption. Capital is rotating into energy commodities and related infrastructure plays despite diplomatic noise.",
-      "key_stories": 4,
-      "trade_implication": "Long WTI and Brent futures, energy sector ETFs, and tanker equities; short consumer discretionary and airlines."
+      "summary": "Capital is pricing in a sustained oil supply shock from the Hormuz blockade and SPR releases, which are actually bullish signals of government concern. The EIA's extended blockade timeline through Q3 2026 and Kuwait's pipeline bypass discussions confirm structural tightness, not transient noise.",
+      "key_stories": 5,
+      "trade_implication": "Long WTI and Brent futures; long energy sector equities and short consumer discretionary."
     },
     {
-      "title": "Institutional Crypto Adoption Divergence",
+      "title": "Crypto as Macro Risk Proxy",
       "strength": "MODERATE",
-      "direction": "Neutral",
-      "summary": "While BTC sells off with risk assets due to macro risk-off, institutional flows show divergence: MicroStrategy buys the dip, Ethena partners with Janus Henderson for tokenized CLOs, and retail dip-buying persists. This suggests capital is selectively rotating into crypto infrastructure and yield-bearing protocols, not broad risk-on.",
-      "key_stories": 3,
-      "trade_implication": "Long Bitcoin via spot ETFs on dips; long Ethena (ENA) and select DeFi tokens; short altcoins with weak fundamentals."
+      "direction": "Risk-Off",
+      "summary": "Bitcoin's crash mirrors broad risk-off moves, not crypto-specific weakness, as institutional de-risking dominates. Whales and MicroStrategy buying the dip suggest underlying accumulation, but capital flows are currently driven by macro fear rather than fundamental conviction.",
+      "key_stories": 2,
+      "trade_implication": "Short BTC futures or long put spreads; wait for geopolitical de-escalation before re-entering long positions."
     }
   ]
 }
