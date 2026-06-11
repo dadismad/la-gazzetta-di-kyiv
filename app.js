@@ -2452,7 +2452,18 @@ async function populateTeasers() {
             const timeLabel = s.generated_at ? formatTimeAgo(s.generated_at) : (fresh > 0.8 ? 'recent' : fresh > 0.4 ? 'today' : 'stale');
             freshHtml = ` <span class="freshness-ago ${cls}">${timeLabel}</span>`;
           }
-          return `<a href="./story.html?id=${s.story_id || s.id || ''}" class="teaser-item">${amtHtml} ${headline}${linkedHtml}${freshHtml}</a>`;
+          // Category chip from sector/pillar
+          const catLabel = (s.sector || s.pillar || '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+          const catHtml = catLabel ? `<span class="teaser-chip">${catLabel}</span>` : '';
+          // 1-line summary from thesis (first 100 chars)
+          const summary = (s.thesis || s.they_say || '').replace(/OSINT draft #\d+:?\s*/i, '').slice(0, 100);
+          const summaryHtml = summary ? `<span class="teaser-summary">${summary}${summary.length >= 100 ? '…' : ''}</span>` : '';
+          return `<a href="./story.html?id=${s.story_id || s.id || ''}" class="teaser-item">
+            ${catHtml}
+            <span class="teaser-headline">${amtHtml} ${headline}</span>
+            ${summaryHtml}
+            <span class="teaser-meta">${linkedHtml}${freshHtml}</span>
+          </a>`;
         }).join('');
         if (countEl) countEl.textContent = items.length + ' stories';
         // Story freshness timestamp
