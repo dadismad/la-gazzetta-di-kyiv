@@ -1,25 +1,53 @@
 {
-  "generated_at": "2026-06-11T20:11:44.379577+00:00",
+  "generated_at": "2026-06-10T14:46:21.411246+00:00",
   "prices": {
-    "BTC": {
-      "price": 63487,
-      "change_pct": 2.820484393243676,
-      "source": "CoinGecko"
+    "crypto": {
+      "ticker": "BTC-USD",
+      "price": 61875.98,
+      "change_pct": 0.38,
+      "direction": "up"
     },
-    "ETH": {
-      "price": 1678.1,
-      "change_pct": 3.260397576961338,
-      "source": "CoinGecko"
+    "equities": {
+      "ticker": "SPY",
+      "price": 735.35,
+      "change_pct": -0.23,
+      "direction": "down"
     },
-    "SOL": {
-      "price": 66.85,
-      "change_pct": 5.513323591475651,
-      "source": "CoinGecko"
+    "commodities": {
+      "ticker": "CL=F",
+      "price": 90.07,
+      "change_pct": 2.12,
+      "direction": "up"
     },
-    "XAU": {
-      "price": 4193.37,
-      "change_pct": 3.1765254820579423,
-      "source": "CoinGecko"
+    "fixed_income": {
+      "ticker": "TLT",
+      "price": 85.26,
+      "change_pct": 0.16,
+      "direction": "up"
+    },
+    "fx": {
+      "ticker": "UUP",
+      "price": 27.99,
+      "change_pct": -0.07,
+      "direction": "down"
+    },
+    "defense": {
+      "ticker": "ITA",
+      "price": 228.29,
+      "change_pct": -0.94,
+      "direction": "down"
+    },
+    "tech": {
+      "ticker": "QQQ",
+      "price": 706.76,
+      "change_pct": -0.15,
+      "direction": "down"
+    },
+    "gold": {
+      "ticker": "GC=F",
+      "price": 4180.5,
+      "change_pct": -1.87,
+      "direction": "down"
     }
   },
   "asymmetry_scores": {
@@ -378,7 +406,7 @@
       "asymmetry_tier": "MODERATE",
       "diagnostic_trace": "ABS((0.82 - -0.05) * 50) = 43"
     },
-    "n21_osint__ecb_press__christine_lagarde_boris_vuj\u010di\u0107_monetary_policy_statement": {
+    "n21_osint__ecb_press__christine_lagarde_boris_vujčić_monetary_policy_statement": {
       "asymmetry_score": 43,
       "asymmetry_tier": "MODERATE",
       "diagnostic_trace": "ABS((0.82 - -0.05) * 50) = 43"
@@ -1253,6 +1281,5 @@
       "asymmetry_tier": "LOW ASYMMETRY",
       "diagnostic_trace": "ABS((0.65 - -0.05) * 50) = 35"
     }
-  },
-  "total": 4
+  }
 }

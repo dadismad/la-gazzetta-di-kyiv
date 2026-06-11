@@ -535,6 +535,16 @@ def main():
 
     data_only = "--data-only" in sys.argv
 
+    # ── File locking: prevent concurrent pipeline runs ──
+    import fcntl
+    lock_path = DB_PATH.with_suffix('.lock')
+    lock_fd = open(str(lock_path), 'w')
+    try:
+        fcntl.flock(lock_fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        print("WARNING: Another pipeline instance is running (lock held). Exiting.")
+        sys.exit(0)
+
     conn = sqlite3.connect(str(DB_PATH))
     conn.row_factory = sqlite3.Row
 

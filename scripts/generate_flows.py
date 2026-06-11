@@ -14,7 +14,7 @@ from collections import Counter
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_SOURCE = PROJECT_ROOT / "data" / "stories.json"
-OUTPUT = PROJECT_ROOT / "site" / "data" / "flows.json"
+OUTPUT = PROJECT_ROOT / "data" / "flows_generated.json"
 
 EET = timezone(timedelta(hours=3))
 
