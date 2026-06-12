@@ -9,7 +9,7 @@
 #   CFTC and ICI are fetched via public endpoints where available
 
 set -e
-PROJECT="/Users/alexstocchi/projects/gazzetta-di-kyiv"
+PROJECT="/Users/alexstocchi/lagazzettadikyiv"
 cd "$PROJECT"
 
 echo "[market-data-pipeline] $(date -u +%Y-%m-%dT%H:%M:%SZ) START"
@@ -180,8 +180,8 @@ try:
 except Exception:
     print('  Using last known yield curve spread')
 
-os.makedirs('site/data', exist_ok=True)
-json.dump(regime, open('site/data/market_regime.json', 'w'), indent=2)
+os.makedirs('public/data', exist_ok=True)
+json.dump(regime, open('public/data/market_regime.json', 'w'), indent=2)
 print(f'  Saved market_regime.json')
 "
 
@@ -192,7 +192,7 @@ python3 scripts/enrich_market_data.py 2>&1 || echo "  Enrich: skipped (enrich_ma
 # ── 7. Deploy to GCS ───────────────────────────────────────────────
 echo "[market-data-pipeline] Deploying to GCS..."
 if command -v gsutil &>/dev/null; then
-    gsutil -h "Cache-Control:private, no-store" cp site/data/market_regime.json gs://www.lagazzettadikyiv.com/data/market_regime.json 2>&1
+    gsutil -h "Cache-Control:private, no-store" cp public/data/market_regime.json gs://www.lagazzettadikyiv.com/data/market_regime.json 2>&1
     echo "  Deployed market_regime.json to GCS"
 else
     echo "  gsutil not available — skipping GCS deploy"

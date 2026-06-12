@@ -2,7 +2,7 @@
 """
 Generate api/v1/trades.json — Anchor trade positions from stories + flows.
 Derives 14 tradable assets with entry/target/stop/conviction.
-Output: site/api/v1/trades.json
+Output: public/api/v1/trades.json
 """
 
 import json, sys

@@ -5,7 +5,7 @@ fetch_polymarket.py — Fetch relevant Polymarket prediction market odds.
 Uses Gamma API /events endpoint with tag filtering for Gazzetta's coverage.
 Markets: geopolitical, macro, crypto/commodity events.
 
-Output: site/data/polymarket_odds.json
+Output: public/data/polymarket_odds.json
 """
 
 import json

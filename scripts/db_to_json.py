@@ -5,10 +5,10 @@ Queries gazzetta.db, reconstructs nested JSON structures, resolves
 relational story_flow_links back into impacted_flows arrays, and outputs
 data/stories.json and data/flows.json.
 
-Also outputs site/data/ copies for deployment.
+Also outputs public/data/ copies for deployment.
 
 Usage:
-  python3 scripts/db_to_json.py               # write data/ + site/data/
+  python3 scripts/db_to_json.py               # write data/ + public/data/
   python3 scripts/db_to_json.py --data-only    # write data/ only
 """
 
@@ -501,7 +501,7 @@ def compile_flows(conn):
                 }
         with open(market_path, "w") as f:
             json.dump(mp_data, f, indent=2, ensure_ascii=False)
-        # Also sync to site/data/
+        # Also sync to public/data/
         site_mp = SITE_DATA / "market_prices.json"
         site_mp.parent.mkdir(parents=True, exist_ok=True)
         with open(site_mp, "w") as f:
@@ -562,7 +562,7 @@ def main():
         if ru_flows.exists():
             shutil.copy(str(ru_flows), str(RU_DIR / "flows.json"))
 
-        # 3) Copy to site/data/ for deployment
+        # 3) Copy to public/data/ for deployment
         if not data_only:
             os.makedirs(str(SITE_DATA / "en"), exist_ok=True)
             os.makedirs(str(SITE_DATA / "ru"), exist_ok=True)
@@ -573,9 +573,9 @@ def main():
                 dst = SITE_DATA / fname
                 if src.exists():
                     dst.write_text(src.read_text())
-                    print(f"  ✓ site/data/{fname} synced")
+                    print(f"  ✓ public/data/{fname} synced")
 
-            # Also sync to site/data/en/ and site/data/ru/
+            # Also sync to public/data/en/ and public/data/ru/
             en_dst = SITE_DATA / "en" / fname
             ru_dst = SITE_DATA / "ru" / fname
             if (EN_DIR / fname).exists():
@@ -583,15 +583,15 @@ def main():
             if (RU_DIR / fname).exists():
                 ru_dst.write_text((RU_DIR / fname).read_text())
 
-            # Also sync RU files to site/data/
+            # Also sync RU files to public/data/
             for fname in ["stories_ru.json", "flows_ru.json"]:
                 src = DATA / fname
                 dst = SITE_DATA / fname
                 if src.exists():
                     dst.write_text(src.read_text())
-                    print(f"  ✓ site/data/{fname} synced")
+                    print(f"  ✓ public/data/{fname} synced")
 
-            # Also sync to site/data/en/ and site/data/ru/
+            # Also sync to public/data/en/ and public/data/ru/
             en_dst = SITE_DATA / "en" / fname
             ru_dst = SITE_DATA / "ru" / fname
             if (EN_DIR / fname).exists():

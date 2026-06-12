@@ -2,7 +2,7 @@
 """
 Generate api/v1/signal.json — Triangulation signals from stories + flows + trades.
 Cross-references stories, flows, and anchor positions to compute 0-100 signal scores.
-Output: site/api/v1/signal.json
+Output: public/api/v1/signal.json
 """
 
 import json, sys

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 fetch_live_prices.py — Fetch live asset prices from CoinGecko + Alpha Vantage
-Output: site/data/market_prices.json — writes to 'prices' key, preserves existing keys.
+Output: public/data/market_prices.json — writes to 'prices' key, preserves existing keys.
 """
 
 import json, os, sys, time, urllib.request

@@ -2,7 +2,7 @@
 """Import regenerated flows.json into gazzetta.db, replacing old flows."""
 import json, sqlite3, sys
 
-new_flows = json.load(open('site/data/flows.json'))
+new_flows = json.load(open('public/data/flows.json'))
 print(f'New flows: {len(new_flows["flows"])} entries')
 
 conn = sqlite3.connect('gazzetta.db')

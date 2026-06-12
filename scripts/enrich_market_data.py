@@ -6,7 +6,7 @@ Enriches stories.json with commodity prices, FX rates, VIX, yield curve data
 from local market data files. Used by gazzetta-continuous-capital-flows cron.
 
 Reads: data/stories.json + data/market_regime.json + data/alpha_vantage.json
-Writes: site/data/stories.json (enriched)
+Writes: public/data/stories.json (enriched)
 """
 
 import json

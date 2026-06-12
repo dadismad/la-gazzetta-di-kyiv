@@ -9,7 +9,7 @@ import sqlite3, json, hashlib, os
 from datetime import datetime, timezone, timedelta
 
 DB = "gazzetta.db"
-OUT = "site/data/track_record.json"
+OUT = 'public/data/track_record.json"
 CUTOFF_DAYS = 7
 
 

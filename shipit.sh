@@ -2,14 +2,14 @@
 # shipit.sh — Gazzetta di Kyiv deploy pipeline v3.1 (Nuclear Clean + Atomic Sync)
 #
 # Stages:
-#   0. nuclear_clean — rm -rf site/ (fresh start, no ghost files)
+#   0. nuclear_clean — rm -rf public/ (fresh start, no ghost files)
 #   1. db_to_json   — Compile gazzetta.db → data/stories.json + data/flows.json
 #   1.02 enrich_mp  — Multi-persona blocks (C-Suite/Quant/Degen)
 #   1.05 live_prices— CoinGecko price feed
 #   1.1  rel_links  — Auto-interlinking engine
 #   1.2  narratives — 3 Core Market Narratives
 #   1.5  enrich     — Editorial enrichment + signal/trades API
-#   2.   build_site — Sync data/ → site/data/
+#   2.   build_site — Sync data/ → public/data/
 #   2.5  TEST GATE  — test_platform.py (MUST PASS — abort on failure)
 #   2.6  ru_sync    — RU sync gate
 #   3.   hash       — SHA256-hash CSS/JS
@@ -49,20 +49,20 @@ echo ""
 # ═══ Stage 0: Nuclear Clean — delete generated dirs before every build ═══
 echo "── Stage 0: nuclear_clean ──"
 # Only delete generated directories — preserve HTML/CSS/JS sources in repo
-for dir in "$PROJECT/site/data" "$PROJECT/site/api" "$PROJECT/site/ru" "$PROJECT/site/media"; do
+for dir in "$PROJECT/public/data" "$PROJECT/public/api"; do
     if [ -d "$dir" ]; then
         rm -rf "$dir"
         echo "  ✓ $(basename "$dir")/ deleted"
     fi
 done
 # Also remove generated files
-rm -f "$PROJECT/site/build-manifest.json" "$PROJECT/site/deploy_report.txt" \
-      "$PROJECT/site/styles."*.css "$PROJECT/site/app."*.js "$PROJECT/site/story-app."*.js \
-      "$PROJECT/site/sector."*.js "$PROJECT/site/i18n."*.js "$PROJECT/site/styles-modern."*.css 2>/dev/null || true
+rm -f "$PROJECT/public/build-manifest.json" "$PROJECT/public/deploy_report.txt" \
+      "$PROJECT/public/styles."*.css "$PROJECT/public/app."*.js "$PROJECT/public/story-app."*.js \
+      "$PROJECT/public/sector."*.js "$PROJECT/public/i18n."*.js "$PROJECT/public/styles-modern."*.css 2>/dev/null || true
 echo "  ✓ Hashed assets cleaned"
 # Recreate essential dirs
-mkdir -p "$PROJECT/site/data/en" "$PROJECT/site/data/ru" "$PROJECT/site/ru" "$PROJECT/site/api/v1/home"
-echo "  ✓ Essential directories recreated"
+mkdir -p "$PROJECT/public/api/v1/home"
+echo "  ✓ Essential directories recreated (data/en/ removed — EN-only, no RU mirror needed)"
 echo ""
 
 # ═══ Stage 1: db_to_json ──
@@ -106,7 +106,7 @@ echo ""
 # ═══ Stage 2: build_site ──
 echo "── Stage 2: build_site ──"
 $PYTHON "$PROJECT/scripts/build_site.py"
-echo "  ✓ site/data/ synced, API endpoints generated"
+echo "  ✓ public/data/ synced, API endpoints generated"
 echo ""
 
 # ═══ Stage 2.2: generate_broadcasts ──
@@ -150,7 +150,7 @@ fi
 
 if [ "$DRY_RUN" != true ]; then
     # Rsync with delete (-d) to remove stale files
-    $GSUTIL -m rsync -r -d "$PROJECT/site/" "$BUCKET/"
+    $GSUTIL -m rsync -r -d "$PROJECT/public/" "$BUCKET/"
     # Immutable cache on hashed assets
     $GSUTIL -m setmeta -h "Cache-Control:public, max-age=31536000, immutable" \
         "$BUCKET/styles.*.css" "$BUCKET/app.*.js" "$BUCKET/story-app.*.js" \
@@ -185,7 +185,7 @@ NEWEST_LEAD=$(curl -s -H 'Cache-Control: no-cache' "$SITE_URL/data/stories.json"
 echo "  Public lead headline: $NEWEST_LEAD"
 
 # Compare with local
-LOCAL_LEAD=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories.json')); print(d.get('lead',{}).get('headline','MISSING')[:80])" 2>/dev/null || echo "FAILED")
+LOCAL_LEAD=$(python3 -c "import json; d=json.load(open('$PROJECT/public/data/stories.json')); print(d.get('lead',{}).get('headline','MISSING')[:80])" 2>/dev/null || echo "FAILED")
 if [ "$NEWEST_LEAD" != "$LOCAL_LEAD" ] && [ "$NEWEST_LEAD" != "FAILED" ]; then
     echo ""
     echo "  ⚠ OPERATIONAL CRISIS: Public headline ≠ local headline"
@@ -205,7 +205,7 @@ echo "── Stage 6: deploy report ──"
 TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 COMMIT=$(git rev-parse --short HEAD 2>/dev/null || echo "unknown")
 STORY_COUNT=$($PYTHON -c "import json; d=json.load(open('data/stories.json')); print(len(d.get('stories',[])))" 2>/dev/null || echo "?")
-cat > "$PROJECT/site/deploy_report.txt" <<EOF
+cat > "$PROJECT/public/deploy_report.txt" <<EOF
 Deploy: $TIMESTAMP
 Commit: $COMMIT
 Stories: $STORY_COUNT

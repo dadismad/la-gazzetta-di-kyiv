@@ -4,8 +4,7 @@
 # Deploy picks up automatically every 15m
 set -euo pipefail
 
-PROJECT="/Users/alexstocchi/projects/gazzetta-di-kyiv"
-cd "$PROJECT"
+cd /Users/alexstocchi/lagazzettadikyiv
 
 echo "=== PIPELINE CHAIN $(date '+%Y-%m-%d %H:%M:%S') ==="
 

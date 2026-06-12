@@ -3,7 +3,7 @@
 
 Reads data/stories.json (source of truth), extracts capital flow data from
 capital_flow dicts, capital_flow_implication strings, and portfolio_implication
-strings. Outputs site/data/flows.json for the website.
+strings. Outputs public/data/flows.json for the website.
 
 Called by cron job gazzetta-continuous-capital-flows every 60 minutes.
 """

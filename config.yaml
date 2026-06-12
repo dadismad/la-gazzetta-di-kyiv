@@ -84,7 +84,7 @@ static_files:
 # GCS deployment
 gcs:
   bucket: "gs://www.lagazzettadikyiv.com"
-  gcloud_dir: "/Users/alexstocchi/lagazzettadikyiv/google-cloud-sdk"
+  gcloud_dir: "/Users/alexstocchi/lagazzettadikyiv/devvit/google-cloud-sdk"
   cloudsdk_config: "/Users/alexstocchi/.config/gcloud"
 
 # Cache policy
@@ -95,7 +95,7 @@ cache:
 
 # Feature flags
 features:
-  translate_russian: true
+  translate_russian: false
   generate_sitemap: true
   run_validation: true
   decay_stories: false  # disabled until scoring logic is reviewed

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""build_site.py — Sync data artifacts to site/data/ and generate API endpoints.
+"""build_site.py — Sync data artifacts to public/data/ and generate API endpoints.
 
 Called by: gazzetta-reddit-ingestion-hourly (every 60m)
-Side effects: writes to site/data/*.json, site/api/v1/home/*.json
+Side effects: writes to public/data/*.json, public/api/v1/home/*.json
 """
 
 import json

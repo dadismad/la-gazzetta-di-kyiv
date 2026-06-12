@@ -223,7 +223,7 @@ def main():
     with open(LIVING_STORIES_PATH, "w") as f:
         json.dump(living, f, indent=2, ensure_ascii=False)
 
-    # Also copy to site/data for deploy
+    # Also copy to public/data for deploy
     site_living_path = os.path.join(PROJECT, "site", "data", "living_stories.json")
     os.makedirs(os.path.dirname(site_living_path), exist_ok=True)
     with open(site_living_path, "w") as f:

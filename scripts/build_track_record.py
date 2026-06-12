@@ -10,9 +10,10 @@ import sqlite3, json, hashlib, os, sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
-DB = "gazzetta.db"
-MARKET_DATA = "data/market_prices.json"
-OUT = "site/data/track_record.json"
+PROJECT = Path(__file__).resolve().parent.parent
+DB = str(PROJECT / "gazzetta.db")
+MARKET_DATA = str(PROJECT / "data" / "market_prices.json")
+OUT = str(PROJECT / "site" / "data" / "track_record.json")
 CUTOFF_HOURS = 48
 
 # Asset class → ticker mapping for market data lookup

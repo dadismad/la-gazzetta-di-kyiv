@@ -4,7 +4,7 @@ Generate flow_nodes.json from editorial pipeline stories.
 
 Reads data/stories.json (source of truth), extracts capital_flow dicts,
 maps each flow to source→target node types based on asset class and direction.
-Outputs site/data/flow_nodes.json — consumed by flow-nodes.html visualization.
+Outputs public/data/flow_nodes.json — consumed by flow-nodes.html visualization.
 """
 import json, re, os
 from datetime import datetime, timezone, timedelta
@@ -167,7 +167,7 @@ def generate():
                 nodes[nid] = {
                     "id": nid,
                     "type": ntype,
-                    "label": f"{NTYPES[ntype]['label']} → {asset_class}",
+                    "label": f"{NODE_TYPES[ntype]['label']} → {asset_class}",
                     "total_inflow_b": 0,
                     "total_outflow_b": 0,
                     "flow_count": 0,
