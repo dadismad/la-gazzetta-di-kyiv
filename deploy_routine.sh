@@ -16,7 +16,7 @@ PROJECT="$SCRIPT_DIR"
 BUCKET="gs://www.lagazzettadikyiv.com"
 GCLOUD_DIR="${GCLOUD_DIR:-$HOME/lagazzettadikyiv/devvit/google-cloud-sdk}"
 GSUTIL="$GCLOUD_DIR/bin/gsutil"
-PYTHON="$PROJECT/.venv/bin/python"
+PYTHON="python3"
 
 DRY_RUN=false
 for arg in "$@"; do
@@ -26,13 +26,12 @@ for arg in "$@"; do
 done
 
 # ---- Concurrency Lockfile (Mitigation 2) ----
-LOCKFILE="/tmp/gazzetta_deploy.lock"
-exec {LOCK_FD}>"$LOCKFILE" || { echo "[$(date -u +"%Y-%m-%dT%H:%M:%SZ")] ABORT: cannot create lockfile $LOCKFILE"; exit 1; }
-if ! flock -n "$LOCK_FD"; then
-    echo "[$(date -u +"%Y-%m-%dT%H:%M:%SZ")] ABORT: another deploy_routine.sh instance is running (lockfile $LOCKFILE held)"
+LOCKDIR="/tmp/gazzetta_deploy.lock"
+if ! mkdir "$LOCKDIR" 2>/dev/null; then
+    echo "[$(date -u +"%Y-%m-%dT%H:%M:%SZ")] ABORT: another deploy_routine.sh instance is running (lockdir $LOCKDIR exists)"
     exit 1
 fi
-# Lock will be released automatically when script exits (fd closed)
+trap 'rmdir "$LOCKDIR" 2>/dev/null' EXIT
 
 TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 ERRORS=0
