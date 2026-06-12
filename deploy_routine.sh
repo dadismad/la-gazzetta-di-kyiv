@@ -97,8 +97,10 @@ find "$PROJECT/public" -maxdepth 1 -name 'styles.*.css' ! -name 'styles.css' -de
 find "$PROJECT/public" -maxdepth 1 -name 'app.*.js' ! -name 'app.js' -delete 2>/dev/null || true
 find "$PROJECT/public" -maxdepth 1 -name 'i18n.*.js' ! -name 'i18n.js' -delete 2>/dev/null || true
 
-# ---- Stage 4: GCS Deploy ----
-if [ "$DRY_RUN" = true ]; then
+# ---- Stage 4: GCS Deploy (skip if running in Cloud Run — entrypoint handles it) ----
+if [ "${CLOUD_RUN:-}" = "1" ]; then
+    log "CLOUD_RUN detected — skipping GCS deploy (handled by cloud_entrypoint.py)"
+elif [ "$DRY_RUN" = true ]; then
     log "DRY RUN — skipping GCS deploy"
 else
     log "Stage 4: GCS deploy"

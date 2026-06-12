@@ -1,0 +1,14 @@
+# Docker build context exclusions
+.git
+.backup
+logs
+*.db-shm
+*.db-wal
+__pycache__
+*.pyc
+.venv
+devvit
+node_modules
+distribution
+secure
+.DS_Store
