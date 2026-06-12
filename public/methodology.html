@@ -1,25 +1,25 @@
-     1|<!DOCTYPE html>
-     2|<html lang="en">
-     3|<head>
-     4|  <meta charset="utf-8"/>
-     5|  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-     6|  <title>Methodology — La Gazzetta di Kyiv</title>
-     7|  <meta name="description" content="How La Gazzetta di Kyiv computes Asymmetry Scores, Conviction Probabilities, and Capital Flow intelligence — 183-assertion verification pipeline."/>
-     8|  <link rel="canonical" href="https://www.lagazzettadikyiv.com/methodology.html"/>
-     9|  <link rel="stylesheet" href="./styles.css"/>
-    10|  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
-    11|  <style>
-    12|    .methodology-page { max-width: 800px; margin: 40px auto; padding: 0 20px; font-family: var(--body); color: var(--ink); line-height: 1.8; }
-    13|    .methodology-page h1 { font-family: var(--display); font-size: 32px; color: var(--ink); margin-bottom: 8px; }
-    14|    .methodology-page h2 { font-family: var(--display); font-size: 22px; margin: 32px 0 12px; color: var(--ink); border-bottom: 1px solid var(--divider); padding-bottom: 4px; }
-    15|    .methodology-page h3 { font-family: var(--sans); font-size: 14px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; margin: 20px 0 8px; }
-    16|    .methodology-page p, .methodology-page li { font-size: 15px; margin: 6px 0; }
-    17|    .formula-box { background: #F8FAFC; border: 1px solid var(--divider); padding: 16px; margin: 12px 0; font-family: var(--mono); font-size: 13px; }
-    18|    .verification-badge { display: inline-block; background: #059669; color: white; font-family: var(--mono); font-size: 10px; font-weight: 700; padding: 2px 8px; margin: 0 4px; }
-    19|    .back-link { display: inline-block; margin-bottom: 24px; color: var(--blue); font-family: var(--sans); font-size: 13px; }
-    20|  </style>
-    21|</head>
-    22|<body style="background:#FFFFFF;">
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+       <meta charset="utf-8"/>
+       <meta name="viewport" content="width=device-width,initial-scale=1"/>
+       <title>Methodology — La Gazzetta di Kyiv</title>
+       <meta name="description" content="How La Gazzetta di Kyiv computes Asymmetry Scores, Conviction Probabilities, and Capital Flow intelligence — 183-assertion verification pipeline."/>
+       <link rel="canonical" href="https://www.lagazzettadikyiv.com/methodology.html"/>
+       <link rel="stylesheet" href="./styles.css"/>
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+      <style>
+        .methodology-page { max-width: 800px; margin: 40px auto; padding: 0 20px; font-family: var(--body); color: var(--ink); line-height: 1.8; }
+        .methodology-page h1 { font-family: var(--display); font-size: 32px; color: var(--ink); margin-bottom: 8px; }
+        .methodology-page h2 { font-family: var(--display); font-size: 22px; margin: 32px 0 12px; color: var(--ink); border-bottom: 1px solid var(--divider); padding-bottom: 4px; }
+        .methodology-page h3 { font-family: var(--sans); font-size: 14px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.06em; margin: 20px 0 8px; }
+        .methodology-page p, .methodology-page li { font-size: 15px; margin: 6px 0; }
+        .formula-box { background: #F8FAFC; border: 1px solid var(--divider); padding: 16px; margin: 12px 0; font-family: var(--mono); font-size: 13px; }
+        .verification-badge { display: inline-block; background: #059669; color: white; font-family: var(--mono); font-size: 10px; font-weight: 700; padding: 2px 8px; margin: 0 4px; }
+        .back-link { display: inline-block; margin-bottom: 24px; color: var(--blue); font-family: var(--sans); font-size: 13px; }
+      </style>
+    </head>
+    <body style="background:#FFFFFF;">
 <!-- COMPONENT:HEADER:START -->
 <!-- ═══════════════════════════════════════════════ -->
 <!-- MASTHEAD v26.5 — Shared component template       -->
@@ -95,92 +95,92 @@
   </div>
 </header>
 <!-- COMPONENT:HEADER:END -->
-    41|
-    42|<div class="methodology-page">
-    43|  <a href="./" class="back-link">← Dashboard</a>
-    44|  <h1>Methodology &amp; Verification</h1>
-    45|  <p>Every number on La Gazzetta di Kyiv is computed, not guessed. This page documents the mathematical framework, data pipelines, and the <strong>183-assertion test suite</strong> that gates every deploy.</p>
-    46|
-    47|  <h2>1. Asymmetry Score — Price-Narrative Delta</h2>
-    48|  <h3>Formula</h3>
-    49|  <div class="formula-box">
-    50|    Score = |Sentiment − PriceDelta| × 50<br>
-    51|    <br>
-    52|    Where:<br>
-    53|    &nbsp;&nbsp;Sentiment ∈ [−1, 1] = narrative direction × confidence / 100<br>
-    54|    &nbsp;&nbsp;PriceDelta ∈ [−1, 1] = tanh(24h_price_change_pct / 5)<br>
-    55|    &nbsp;&nbsp;Tiers: ≥80 MAX · ≥65 HIGH · ≥40 MODERATE · &lt;40 LOW<br>
-    56|  </div>
-    57|  <p>The Asymmetry Score measures the gap between what the narrative says and what the price is doing. A score of 76 means the narrative is strongly contradicted by price action — this is where alpha lives.</p>
-    58|
-    59|  <h2>2. Conviction Probability</h2>
-    60|  <h3>Formula</h3>
-    61|  <div class="formula-box">
-    62|    Probability = contradiction_base + source_bonus + freshness_bonus + confidence_bonus<br>
-    63|    <br>
-    64|    contradiction_base = 50 + min((contradiction_score − 45) × 0.8, 35)<br>
-    65|    source_bonus = min((sources − 1) × 5, 15) &nbsp;&nbsp;— +5% per corroborating source, max +15%<br>
-    66|    freshness_bonus = 10 for BREAKING, 5 for 1-24h horizon, 0 otherwise<br>
-    67|    confidence_bonus = 10 for HIGH, 5 for MEDIUM, 0 for LOW<br>
-    68|    <br>
-    69|    Clamped to [50%, 95%]. ALPHA tier ≥ 85%.
-    70|  </div>
-    71|
-    72|  <h2>3. Story-Level Scaling (SLS)</h2>
-    73|  <h3>Formula</h3>
-    74|  <div class="formula-box">
-    75|    Story Amount = Category Total × tier_fraction × pillar_bonus × (1 + jitter_pct/100)<br>
-    76|    <br>
-    77|    tier_fractions: BREAKING=0.35 · DEVELOPING=0.20 · ACTIVE=0.12 · SETTLING=0.05<br>
-    78|    pillar_bonus: geoeconomic/sovereign=1.15, else 1.0<br>
-    79|    jitter: deterministic ±5% from headline hash
-    80|  </div>
-    81|  <p>Each story receives a unique capital flow amount — no two stories on the homepage show the same number. The total category flow ($88B for commodities) distributes across individual stories based on tier priority and pillar significance.</p>
-    82|
-    83|  <h2>4. ATR-Based Stop Calculation</h2>
-    84|  <div class="formula-box">
-    85|    Stop = Entry ± (Entry × ATR% × Stop_Multiplier)<br>
-    86|    <br>
-    87|    ATR%: asset-specific 14-day Average True Range as % of price<br>
-    88|    Stop Mult: BUY=Entry×(1−ATR%×mult) · SELL=Entry×(1+ATR%×mult)<br>
-    89|    <br>
-    90|    Examples: SPX ATR=1.2%×2.0→Stop=−2.4% · NVDA ATR=3.5%×2.0→Stop=−7.0%
-    91|  </div>
-    92|
-    93|  <h2>5. Pipeline Integrity — 183 Assertions</h2>
-    94|  <p><span class="verification-badge">✓ 183 PASSING</span> Every deploy runs through <code>test_platform.py</code> which verifies:</p>
-    95|  <ul>
-    96|    <li><strong>Anti-lying:</strong> No $0.0, undefined, or $5.0B default fallbacks in HTML</li>
-    97|    <li><strong>Data integrity:</strong> stories.json ↔ flows.json bidirectional consistency</li>
-    98|    <li><strong>Schema validation:</strong> All required fields present on every story</li>
-    99|    <li><strong>Translation sync:</strong> EN↔RU story count parity (±5 tolerance)</li>
-   100|    <li><strong>Flow normalization:</strong> Direction strings normalized, no orphan flows</li>
-   101|    <li><strong>Cache integrity:</strong> Cache-Control: max-age=0 on all .json and .html</li>
-   102|    <li><strong>Container non-emptiness:</strong> All 7 product containers must render content</li>
-   103|  </ul>
-   104|
-   105|  <h2>6. Data Sources</h2>
-   106|  <ul>
-   107|    <li><strong>yfinance:</strong> Live price data (BTC-USD, SPY, WTI, GOLD, QQQ, TLT, UUP, ITA)</li>
-   108|    <li><strong>Telegram Intel:</strong> Curated geopolitical and macro intelligence feeds</li>
-   109|    <li><strong>CFTC COT:</strong> Commitment of Traders reports (weekly)</li>
-   110|    <li><strong>ICI Fund Flows:</strong> Mutual fund and ETF flow data (weekly)</li>
-   111|    <li><strong>EPFR Global:</strong> Institutional capital flow tracking (delayed)</li>
-   112|    <li><strong>OSINT:</strong> Reuters, AP, Bloomberg wire feeds (filtered for signal)</li>
-   113|  </ul>
-   114|
-   115|  <h2>7. Cloud Infrastructure</h2>
-   116|  <p>Gazzetta di Kyiv runs 24/7 on a Google Cloud e2-micro VM (Always Free tier). Four systemd timers orchestrate the pipeline:</p>
-   117|  <ul>
-   118|    <li><strong>gazzetta-intel.timer</strong> — Source monitoring (30m)</li>
-   119|    <li><strong>gazzetta-pipeline.timer</strong> — DB→JSON compilation + asymmetry computation (60m)</li>
-   120|    <li><strong>gazzetta-marketdata.timer</strong> — yfinance price fetch (6h)</li>
-   121|    <li><strong>gazzetta-shipit.timer</strong> — GCS deploy (60m)</li>
-   122|  </ul>
-   123|  <p>Static assets served from Google Cloud Storage with Cloud CDN. Monthly infrastructure cost: $0.00.</p>
-   124|
-   125|  <p style="margin-top:40px;font-style:italic;color:var(--ink-muted);">Last updated: 2026-06-10. Methodology version: v23.18.</p>
-   126|</div>
-   127|</body>
-   128|</html>
-   129|
+    
+    <div class="methodology-page">
+      <a href="./" class="back-link">← Dashboard</a>
+      <h1>Methodology &amp; Verification</h1>
+      <p>Every number on La Gazzetta di Kyiv is computed, not guessed. This page documents the mathematical framework, data pipelines, and the <strong>183-assertion test suite</strong> that gates every deploy.</p>
+    
+      <h2>1. Asymmetry Score — Price-Narrative Delta</h2>
+      <h3>Formula</h3>
+      <div class="formula-box">
+        Score = |Sentiment − PriceDelta| × 50<br>
+        <br>
+        Where:<br>
+        &nbsp;&nbsp;Sentiment ∈ [−1, 1] = narrative direction × confidence / 100<br>
+        &nbsp;&nbsp;PriceDelta ∈ [−1, 1] = tanh(24h_price_change_pct / 5)<br>
+        &nbsp;&nbsp;Tiers: ≥80 MAX · ≥65 HIGH · ≥40 MODERATE · &lt;40 LOW<br>
+      </div>
+      <p>The Asymmetry Score measures the gap between what the narrative says and what the price is doing. A score of 76 means the narrative is strongly contradicted by price action — this is where alpha lives.</p>
+    
+      <h2>2. Conviction Probability</h2>
+      <h3>Formula</h3>
+      <div class="formula-box">
+        Probability = contradiction_base + source_bonus + freshness_bonus + confidence_bonus<br>
+        <br>
+        contradiction_base = 50 + min((contradiction_score − 45) × 0.8, 35)<br>
+        source_bonus = min((sources − 1) × 5, 15) &nbsp;&nbsp;— +5% per corroborating source, max +15%<br>
+        freshness_bonus = 10 for BREAKING, 5 for 1-24h horizon, 0 otherwise<br>
+        confidence_bonus = 10 for HIGH, 5 for MEDIUM, 0 for LOW<br>
+        <br>
+        Clamped to [50%, 95%]. ALPHA tier ≥ 85%.
+      </div>
+    
+      <h2>3. Story-Level Scaling (SLS)</h2>
+      <h3>Formula</h3>
+      <div class="formula-box">
+        Story Amount = Category Total × tier_fraction × pillar_bonus × (1 + jitter_pct/100)<br>
+        <br>
+        tier_fractions: BREAKING=0.35 · DEVELOPING=0.20 · ACTIVE=0.12 · SETTLING=0.05<br>
+        pillar_bonus: geoeconomic/sovereign=1.15, else 1.0<br>
+        jitter: deterministic ±5% from headline hash
+      </div>
+      <p>Each story receives a unique capital flow amount — no two stories on the homepage show the same number. The total category flow ($88B for commodities) distributes across individual stories based on tier priority and pillar significance.</p>
+    
+      <h2>4. ATR-Based Stop Calculation</h2>
+      <div class="formula-box">
+        Stop = Entry ± (Entry × ATR% × Stop_Multiplier)<br>
+        <br>
+        ATR%: asset-specific 14-day Average True Range as % of price<br>
+        Stop Mult: BUY=Entry×(1−ATR%×mult) · SELL=Entry×(1+ATR%×mult)<br>
+        <br>
+        Examples: SPX ATR=1.2%×2.0→Stop=−2.4% · NVDA ATR=3.5%×2.0→Stop=−7.0%
+      </div>
+    
+      <h2>5. Pipeline Integrity — 183 Assertions</h2>
+      <p><span class="verification-badge">✓ 183 PASSING</span> Every deploy runs through <code>test_platform.py</code> which verifies:</p>
+      <ul>
+        <li><strong>Anti-lying:</strong> No $0.0, undefined, or $5.0B default fallbacks in HTML</li>
+        <li><strong>Data integrity:</strong> stories.json ↔ flows.json bidirectional consistency</li>
+        <li><strong>Schema validation:</strong> All required fields present on every story</li>
+        <li><strong>Translation sync:</strong> EN↔RU story count parity (±5 tolerance)</li>
+       <li><strong>Flow normalization:</strong> Direction strings normalized, no orphan flows</li>
+       <li><strong>Cache integrity:</strong> Cache-Control: max-age=0 on all .json and .html</li>
+       <li><strong>Container non-emptiness:</strong> All 7 product containers must render content</li>
+     </ul>
+   
+     <h2>6. Data Sources</h2>
+     <ul>
+       <li><strong>yfinance:</strong> Live price data (BTC-USD, SPY, WTI, GOLD, QQQ, TLT, UUP, ITA)</li>
+       <li><strong>Telegram Intel:</strong> Curated geopolitical and macro intelligence feeds</li>
+       <li><strong>CFTC COT:</strong> Commitment of Traders reports (weekly)</li>
+       <li><strong>ICI Fund Flows:</strong> Mutual fund and ETF flow data (weekly)</li>
+       <li><strong>EPFR Global:</strong> Institutional capital flow tracking (delayed)</li>
+       <li><strong>OSINT:</strong> Reuters, AP, Bloomberg wire feeds (filtered for signal)</li>
+     </ul>
+   
+     <h2>7. Cloud Infrastructure</h2>
+     <p>Gazzetta di Kyiv runs 24/7 on a Google Cloud e2-micro VM (Always Free tier). Four systemd timers orchestrate the pipeline:</p>
+     <ul>
+       <li><strong>gazzetta-intel.timer</strong> — Source monitoring (30m)</li>
+       <li><strong>gazzetta-pipeline.timer</strong> — DB→JSON compilation + asymmetry computation (60m)</li>
+       <li><strong>gazzetta-marketdata.timer</strong> — yfinance price fetch (6h)</li>
+       <li><strong>gazzetta-shipit.timer</strong> — GCS deploy (60m)</li>
+     </ul>
+     <p>Static assets served from Google Cloud Storage with Cloud CDN. Monthly infrastructure cost: $0.00.</p>
+   
+     <p style="margin-top:40px;font-style:italic;color:var(--ink-muted);">Last updated: 2026-06-10. Methodology version: v23.18.</p>
+   </div>
+   </body>
+   </html>
+   

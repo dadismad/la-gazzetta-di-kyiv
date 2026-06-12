@@ -1,28 +1,28 @@
-     1|<!DOCTYPE html>
-     2|<html lang="en">
-     3|<head>
-     4|  <meta charset="utf-8"/>
-     5|  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-     6|  <title>Sources — La Gazzetta di Kyiv</title>
-     7|  <meta name="description" content="Data sources, feeds, and intelligence pipelines powering La Gazzetta di Kyiv — from yfinance to Telegram OSINT to CFTC COT reports."/>
-     8|  <link rel="canonical" href="https://www.lagazzettadikyiv.com/sources.html"/>
-     9|  <link rel="stylesheet" href="./styles.css"/>
-    10|  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
-    11|  <style>
-    12|    .sources-page { max-width: 800px; margin: 40px auto; padding: 0 20px; font-family: var(--body); color: var(--ink); line-height: 1.8; }
-    13|    .sources-page h1 { font-family: var(--display); font-size: 32px; margin-bottom: 8px; }
-    14|    .sources-page h2 { font-family: var(--display); font-size: 22px; margin: 28px 0 10px; border-bottom: 1px solid var(--divider); padding-bottom: 4px; }
-    15|    .sources-page table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
-    16|    .sources-page th { font-family: var(--sans); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-muted); text-align: left; padding: 8px 6px; border-bottom: 2px solid var(--divider); }
-    17|    .sources-page td { padding: 8px 6px; border-bottom: 1px solid var(--divider); }
-    18|    .source-tag { display: inline-block; font-family: var(--mono); font-size: 10px; font-weight: 700; padding: 1px 6px; }
-    19|    .source-tag.live { background: rgba(5,150,105,0.08); color: #059669; border: 1px solid #059669; }
-    20|    .source-tag.calc { background: rgba(184,134,11,0.08); color: #B8860B; border: 1px solid #B8860B; }
-    21|    .source-tag.delayed { background: rgba(107,114,128,0.08); color: #6B7280; border: 1px solid #9CA3AF; }
-    22|    .back-link { display: inline-block; margin-bottom: 24px; color: var(--blue); font-family: var(--sans); font-size: 13px; }
-    23|  </style>
-    24|</head>
-    25|<body style="background:#FFFFFF;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Sources — La Gazzetta di Kyiv</title>
+  <meta name="description" content="Data sources, feeds, and intelligence pipelines powering La Gazzetta di Kyiv — from yfinance to Telegram OSINT to CFTC COT reports."/>
+  <link rel="canonical" href="https://www.lagazzettadikyiv.com/sources.html"/>
+  <link rel="stylesheet" href="./styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .sources-page { max-width: 800px; margin: 40px auto; padding: 0 20px; font-family: var(--body); color: var(--ink); line-height: 1.8; }
+    .sources-page h1 { font-family: var(--display); font-size: 32px; margin-bottom: 8px; }
+    .sources-page h2 { font-family: var(--display); font-size: 22px; margin: 28px 0 10px; border-bottom: 1px solid var(--divider); padding-bottom: 4px; }
+    .sources-page table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+    .sources-page th { font-family: var(--sans); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-muted); text-align: left; padding: 8px 6px; border-bottom: 2px solid var(--divider); }
+    .sources-page td { padding: 8px 6px; border-bottom: 1px solid var(--divider); }
+    .source-tag { display: inline-block; font-family: var(--mono); font-size: 10px; font-weight: 700; padding: 1px 6px; }
+    .source-tag.live { background: rgba(5,150,105,0.08); color: #059669; border: 1px solid #059669; }
+    .source-tag.calc { background: rgba(184,134,11,0.08); color: #B8860B; border: 1px solid #B8860B; }
+    .source-tag.delayed { background: rgba(107,114,128,0.08); color: #6B7280; border: 1px solid #9CA3AF; }
+    .back-link { display: inline-block; margin-bottom: 24px; color: var(--blue); font-family: var(--sans); font-size: 13px; }
+  </style>
+</head>
+<body style="background:#FFFFFF;">
 <!-- COMPONENT:HEADER:START -->
 <!-- ═══════════════════════════════════════════════ -->
 <!-- MASTHEAD v26.5 — Shared component template       -->
@@ -98,56 +98,55 @@
   </div>
 </header>
 <!-- COMPONENT:HEADER:END -->
-    44|
-    45|<div class="sources-page">
-    46|  <a href="./" class="back-link">← Dashboard</a>
-    47|  <h1>Sources &amp; Intelligence Pipeline</h1>
-    48|  <p>Every claim on La Gazzetta di Kyiv is traceable to its origin. Source labels — <span class="source-tag live">[LIVE-DATA]</span> <span class="source-tag calc">[CALC-EST]</span> — are injected at the pipeline level and cannot be lost on regeneration.</p>
-    49|
-    50|  <h2>Live Market Data</h2>
-    51|  <table>
-    52|    <tr><th>Source</th><th>Ticker</th><th>Frequency</th><th>Label</th></tr>
-    53|    <tr><td>yfinance</td><td>BTC-USD</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
-    54|    <tr><td>yfinance</td><td>SPY</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
-    55|    <tr><td>yfinance</td><td>CL=F (WTI)</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
-    56|    <tr><td>yfinance</td><td>GC=F (Gold)</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
-    57|    <tr><td>yfinance</td><td>QQQ</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
-    58|    <tr><td>yfinance</td><td>TLT</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
-    59|    <tr><td>yfinance</td><td>UUP (DXY proxy)</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
-    60|    <tr><td>yfinance</td><td>ITA (Italy ETF)</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
-    61|  </table>
-    62|
-    63|  <h2>Intelligence Feeds</h2>
-    64|  <table>
-    65|    <tr><th>Source</th><th>Type</th><th>Frequency</th><th>Label</th></tr>
-    66|    <tr><td>Telegram OSINT</td><td>Geopolitical &amp; Macro</td><td>30m</td><td><span class="source-tag live">LIVE-DATA</span></td></tr>
-    67|    <tr><td>Reddit r/economics</td><td>Economic Sentiment</td><td>60m</td><td><span class="source-tag calc">CALC-EST</span></td></tr>
-    68|    <tr><td>Reddit r/investing</td><td>Retail Sentiment</td><td>60m</td><td><span class="source-tag calc">CALC-EST</span></td></tr>
-    69|    <tr><td>Reuters Business RSS</td><td>Corporate/Macro</td><td>120m</td><td><span class="source-tag calc">CALC-EST</span></td></tr>
-    70|  </table>
-    71|
-    72|  <h2>Institutional Data</h2>
-    73|  <table>
-    74|    <tr><th>Source</th><th>Data Type</th><th>Frequency</th><th>Label</th></tr>
-    75|    <tr><td>CFTC COT</td><td>Futures positioning</td><td>Weekly</td><td><span class="source-tag delayed">DELAYED</span></td></tr>
-    76|    <tr><td>ICI Fund Flows</td><td>Mutual fund/ETF flows</td><td>Weekly</td><td><span class="source-tag delayed">DELAYED</span></td></tr>
-    77|    <tr><td>FRED</td><td>Economic indicators</td><td>Daily</td><td><span class="source-tag live">LIVE</span></td></tr>
-    78|    <tr><td>EPFR Global</td><td>Institutional flows</td><td>Weekly</td><td><span class="source-tag delayed">DELAYED</span></td></tr>
-    79|    <tr><td>Morningstar Direct</td><td>Fund analytics</td><td>Monthly</td><td><span class="source-tag delayed">DELAYED</span></td></tr>
-    80|  </table>
-    81|
-    82|  <h2>Computational Models</h2>
-    83|  <table>
-    84|    <tr><th>Model</th><th>Inputs</th><th>Output</th></tr>
-    85|    <tr><td>Asymmetry Score</td><td>Narrative sentiment + 24h price delta</td><td>0-100 score with diagnostic trace</td></tr>
-    86|    <tr><td>Conviction Probability</td><td>Contradiction score + sources + freshness + confidence tier</td><td>50-95% probability</td></tr>
-    87|    <tr><td>Story-Level Scaling</td><td>Category total + tier fraction + pillar bonus + jitter</td><td>Per-story capital flow amount</td></tr>
-    88|    <tr><td>ATR Stop Calculator</td><td>Entry price + ATR% + volatility multiplier</td><td>Volatility-adjusted stop level</td></tr>
-    89|    <tr><td>Pace Multiplier</td><td>Horizon + urgency keywords + contradiction × asset velocity</td><td>0.5-5.0× flow velocity</td></tr>
-    90|  </table>
-    91|
-    92|  <p style="margin-top:40px;font-style:italic;color:var(--ink-muted);">Source labels are permanently injected by db_to_json.py and cannot drift. Last updated: 2026-06-10.</p>
-    93|</div>
-    94|</body>
-    95|</html>
-    96|
+
+<div class="sources-page">
+  <a href="./" class="back-link">← Dashboard</a>
+  <h1>Sources &amp; Intelligence Pipeline</h1>
+  <p>Every claim on La Gazzetta di Kyiv is traceable to its origin. Source labels — <span class="source-tag live">[LIVE-DATA]</span> <span class="source-tag calc">[CALC-EST]</span> — are injected at the pipeline level and cannot be lost on regeneration.</p>
+
+  <h2>Live Market Data</h2>
+  <table>
+    <tr><th>Source</th><th>Ticker</th><th>Frequency</th><th>Label</th></tr>
+    <tr><td>yfinance</td><td>BTC-USD</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
+    <tr><td>yfinance</td><td>SPY</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
+    <tr><td>yfinance</td><td>CL=F (WTI)</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
+    <tr><td>yfinance</td><td>GC=F (Gold)</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
+    <tr><td>yfinance</td><td>QQQ</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
+    <tr><td>yfinance</td><td>TLT</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
+    <tr><td>yfinance</td><td>UUP (DXY proxy)</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
+    <tr><td>yfinance</td><td>ITA (Italy ETF)</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
+  </table>
+
+  <h2>Intelligence Feeds</h2>
+  <table>
+    <tr><th>Source</th><th>Type</th><th>Frequency</th><th>Label</th></tr>
+    <tr><td>Telegram OSINT</td><td>Geopolitical &amp; Macro</td><td>30m</td><td><span class="source-tag live">LIVE-DATA</span></td></tr>
+    <tr><td>Reddit r/economics</td><td>Economic Sentiment</td><td>60m</td><td><span class="source-tag calc">CALC-EST</span></td></tr>
+    <tr><td>Reddit r/investing</td><td>Retail Sentiment</td><td>60m</td><td><span class="source-tag calc">CALC-EST</span></td></tr>
+    <tr><td>Reuters Business RSS</td><td>Corporate/Macro</td><td>120m</td><td><span class="source-tag calc">CALC-EST</span></td></tr>
+  </table>
+
+  <h2>Institutional Data</h2>
+  <table>
+    <tr><th>Source</th><th>Data Type</th><th>Frequency</th><th>Label</th></tr>
+    <tr><td>CFTC COT</td><td>Futures positioning</td><td>Weekly</td><td><span class="source-tag delayed">DELAYED</span></td></tr>
+    <tr><td>ICI Fund Flows</td><td>Mutual fund/ETF flows</td><td>Weekly</td><td><span class="source-tag delayed">DELAYED</span></td></tr>
+    <tr><td>FRED</td><td>Economic indicators</td><td>Daily</td><td><span class="source-tag live">LIVE</span></td></tr>
+    <tr><td>EPFR Global</td><td>Institutional flows</td><td>Weekly</td><td><span class="source-tag delayed">DELAYED</span></td></tr>
+    <tr><td>Morningstar Direct</td><td>Fund analytics</td><td>Monthly</td><td><span class="source-tag delayed">DELAYED</span></td></tr>
+  </table>
+
+  <h2>Computational Models</h2>
+  <table>
+    <tr><th>Model</th><th>Inputs</th><th>Output</th></tr>
+    <tr><td>Asymmetry Score</td><td>Narrative sentiment + 24h price delta</td><td>0-100 score with diagnostic trace</td></tr>
+    <tr><td>Conviction Probability</td><td>Contradiction score + sources + freshness + confidence tier</td><td>50-95% probability</td></tr>
+    <tr><td>Story-Level Scaling</td><td>Category total + tier fraction + pillar bonus + jitter</td><td>Per-story capital flow amount</td></tr>
+    <tr><td>ATR Stop Calculator</td><td>Entry price + ATR% + volatility multiplier</td><td>Volatility-adjusted stop level</td></tr>
+    <tr><td>Pace Multiplier</td><td>Horizon + urgency keywords + contradiction × asset velocity</td><td>0.5-5.0× flow velocity</td></tr>
+  </table>
+
+  <p style="margin-top:40px;font-style:italic;color:var(--ink-muted);">Source labels are permanently injected by db_to_json.py and cannot drift. Last updated: 2026-06-10.</p>
+</div>
+</body>
+</html>

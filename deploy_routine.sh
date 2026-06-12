@@ -25,6 +25,15 @@ for arg in "$@"; do
     esac
 done
 
+# ---- Concurrency Lockfile (Mitigation 2) ----
+LOCKFILE="/tmp/gazzetta_deploy.lock"
+exec {LOCK_FD}>"$LOCKFILE" || { echo "[$(date -u +"%Y-%m-%dT%H:%M:%SZ")] ABORT: cannot create lockfile $LOCKFILE"; exit 1; }
+if ! flock -n "$LOCK_FD"; then
+    echo "[$(date -u +"%Y-%m-%dT%H:%M:%SZ")] ABORT: another deploy_routine.sh instance is running (lockfile $LOCKFILE held)"
+    exit 1
+fi
+# Lock will be released automatically when script exits (fd closed)
+
 TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 ERRORS=0
 
@@ -122,4 +131,14 @@ if [ "$HTTP_CODE" != "200" ]; then
 fi
 
 log "deploy_routine.sh complete — HTTP $HTTP_CODE — warnings: $ERRORS"
+
+# ---- Log Rotation (Mitigation 3) ----
+LOG_FILE="$PROJECT/logs/deploy_routine.log"
+if [ -f "$LOG_FILE" ]; then
+    LOG_LINES=$(wc -l < "$LOG_FILE" 2>/dev/null || echo 0)
+    if [ "$LOG_LINES" -gt 10000 ]; then
+        tail -n 10000 "$LOG_FILE" > "$LOG_FILE.tmp" && mv "$LOG_FILE.tmp" "$LOG_FILE"
+    fi
+fi
+
 exit 0

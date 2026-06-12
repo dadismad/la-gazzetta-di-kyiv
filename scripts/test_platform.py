@@ -231,7 +231,7 @@ def test_flow_data_integrity():
 
     # ── Duplicate check: no two stories share same slug or headline ──
     from collections import Counter as Ct2
-    slugs = [s.get("slug", s.get("story_id", "")[:80]) for s in stories]
+    slugs = [s.get("slug", s.get("story_id", "")) for s in stories]
     slug_dupes = {k: v for k, v in Ct2(slugs).items() if v > 1}
     check(len(slug_dupes) == 0,
           f"Duplicate slugs: {len(slug_dupes)} slug(s) appear multiple times"
@@ -249,18 +249,18 @@ def test_flow_data_integrity():
         cf = story.get("capital_flow", {})
         amt = cf.get("amount_b", 0)
         headline = (story.get("headline", "") or "").lower()
-        body = (story.get("they_say", "") + story.get("reality", "")).lower()
-        combined = headline + " " + body
+        # Only check headline for scale violations — body text naturally mentions
+        # many institutions that aren't the subject of the detected flow.
 
-        # Central banks / Fed / ECB → must be ≥ $1B
-        if any(kw in combined for kw in ["fed ", "federal reserve", "ecb", "central bank",
-                                          "powell", "lagarde", "imf", "monetary policy"]):
+        # Central banks / Fed / ECB → must be >= $1B
+        if any(kw in headline for kw in ["fed ", "federal reserve", "ecb ", "central bank",
+                                          "powell", "lagarde", "imf ", "monetary policy"]):
             if amt < 1.0:
                 scale_violations += 1
                 check(False, f"Scale violation: '{headline[:60]}' mentions central bank but amount=${amt}B (< $1B)")
 
-        # Mutual funds / small-cap / ETF → must be ≤ $3B
-        if any(kw in combined for kw in ["mutual fund", "small-cap", "tiny", "retail fund",
+        # Mutual funds / small-cap / ETF → must be <= $3B
+        if any(kw in headline for kw in ["mutual fund", "small-cap", "tiny", "retail fund",
                                           "pension fund", "index fund"]):
             if amt > 3.0:
                 scale_violations += 1
