@@ -2623,3 +2623,215 @@ article.card:active,
   transform: scale(0.97);
   transition: transform 0.1s;
 }/* v27.1 — cache bust */
+
+/* ═══════════════════════════════════════════════════════════════
+   v28.0 — CONTRADICTION-FIRST STORY CARDS
+   Design system: 4px spacing scale, typographic hierarchy
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Story Card Container ── */
+.story-card {
+  display: block;
+  padding: 16px;
+  border-bottom: 1px solid #E5E7EB;
+  background: #FFFFFF;
+  transition: background 0.12s;
+  cursor: default;
+}
+.story-card:hover {
+  background: #F9FAFB;
+}
+.story-card.lead {
+  border-left: 3px solid #D4AF37;
+  padding-left: 20px;
+}
+
+/* ── Story Meta Row (tier badge + freshness) ── */
+.story-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.story-meta .tier-badge {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+.story-meta .tier-badge.contradicted {
+  background: rgba(220, 38, 38, 0.08);
+  color: #DC2626;
+  border: 1px solid rgba(220, 38, 38, 0.2);
+}
+.story-meta .tier-badge.divergent {
+  background: rgba(212, 175, 55, 0.1);
+  color: #B8860B;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+.story-meta .tier-badge.developing {
+  background: rgba(37, 99, 235, 0.06);
+  color: #2563EB;
+  border: 1px solid rgba(37, 99, 235, 0.15);
+}
+.story-meta .tier-badge.aligned {
+  background: rgba(107, 114, 128, 0.06);
+  color: #6B7280;
+  border: 1px solid rgba(107, 114, 128, 0.15);
+}
+
+/* ── LINE 1: Headline ── */
+.story-headline {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.4;
+  margin: 0 0 4px 0;
+}
+.story-headline a {
+  color: #111827;
+  text-decoration: none;
+}
+.story-headline a:hover {
+  color: #8B0000;
+}
+
+/* ── LINE 2: Contradiction ── */
+.story-contradiction {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #6B7280;
+  margin: 0 0 8px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.story-contradiction .con-narrative,
+.story-contradiction .con-reality {
+  font-style: italic;
+}
+.story-contradiction .con-score {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #9CA3AF;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* ── LINE 3: Flow Indicator ── */
+.story-flow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+.story-flow .flow-amount {
+  font-weight: 700;
+  font-size: 13px;
+}
+.story-flow .flow-sector {
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 10px;
+  padding: 1px 6px;
+  border: 1px solid #E5E7EB;
+  border-radius: 3px;
+}
+.story-flow .flow-direction {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 10px;
+}
+.story-flow .flow-velocity {
+  color: #9CA3AF;
+  font-size: 10px;
+}
+
+/* ── LINE 4: Action Links ── */
+.story-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.story-actions .action-report {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #8B0000;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.story-actions .action-report:hover {
+  color: #D4AF37;
+}
+.story-actions .action-signal {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #D4AF37;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.story-actions .action-signal:hover {
+  color: #B8860B;
+}
+
+/* ── Expanded Detail Panel ── */
+.story-expanded {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #E5E7EB;
+}
+.card.expanded .story-expanded {
+  display: block !important;
+}
+.story-detail {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #374151;
+  margin-bottom: 12px;
+}
+.story-detail .con-label {
+  display: block;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9CA3AF;
+  margin-bottom: 4px;
+}
+.story-detail .con-they,
+.story-detail .con-real {
+  margin-bottom: 8px;
+}
+
+/* ── Breaking Badge ── */
+.breaking-badge {
+  display: inline-block;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #DC2626;
+  background: rgba(220, 38, 38, 0.08);
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid rgba(220, 38, 38, 0.2);
+}

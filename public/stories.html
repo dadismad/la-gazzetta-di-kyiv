@@ -89,8 +89,27 @@
     </span>
   </div>
   <div class="masthead-right">
-    <a href="./stories.html" class="masthead-nav-link" data-i18n="nav_intel">INTEL</a>
-    <a href="./signal.html" class="masthead-nav-link" data-i18n="nav_alpha">ALPHA</a>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+        <a href="./stories.html" class="masthead-nav-link" style="color:inherit;display:inline;padding:0;font-size:inherit" data-i18n="nav_intel">INTEL</a>
+        <span class="nav-dd-arrow">&#9662;</span>
+      </button>
+      <div class="nav-dropdown-panel">
+        <a href="./stories.html" class="nav-dd-link" data-i18n="nav_stories">Stories</a>
+        <a href="./flows.html" class="nav-dd-link" data-i18n="nav_flows">Capital Flows</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+        <a href="./signal.html" class="masthead-nav-link" style="color:inherit;display:inline;padding:0;font-size:inherit" data-i18n="nav_alpha">ALPHA</a>
+        <span class="nav-dd-arrow">&#9662;</span>
+      </button>
+      <div class="nav-dropdown-panel">
+        <a href="./signal.html" class="nav-dd-link" data-i18n="nav_signal">The Signal</a>
+        <a href="./trades.html" class="nav-dd-link" data-i18n="nav_trades">Trade Ideas</a>
+        <a href="./track.html" class="nav-dd-link" data-i18n="nav_track">Track Record</a>
+      </div>
+    </div>
     <a href="./about.html" class="masthead-nav-link" data-i18n="nav_menu">MENU</a>
   </div>
 </header>
