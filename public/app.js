@@ -2224,6 +2224,9 @@ async function boot() {
   // Wire collapsible containers first (if any)
   wireCollapsibleContainers();
 
+  // Sprint 2: Init hamburger nav drawer
+  initNavDrawer();
+
   // Wire card click delegation (one listener on newsCol for all cards)
   wireCardDelegation();
 
@@ -2638,6 +2641,57 @@ function scheduleTriangulation() {
     }
   }
   tryRender();
+}
+
+// Sprint 2: Navigation drawer — hamburger toggle for mobile
+function initNavDrawer() {
+  var hamburger = document.getElementById('hamburgerBtn');
+  var drawer = document.getElementById('navDrawer');
+  var backdrop = document.getElementById('navDrawerBackdrop');
+  var closeBtn = document.getElementById('navDrawerClose');
+  
+  if (!hamburger || !drawer || !backdrop) return;
+  
+  function openDrawer() {
+    hamburger.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    drawer.classList.add('open');
+    backdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeDrawer() {
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    drawer.classList.remove('open');
+    backdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  
+  hamburger.addEventListener('click', function() {
+    if (drawer.classList.contains('open')) {
+      closeDrawer();
+    } else {
+      openDrawer();
+    }
+  });
+  
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  backdrop.addEventListener('click', closeDrawer);
+  
+  // Close drawer when a nav link is clicked (mobile navigation complete)
+  drawer.querySelectorAll('.nav-drawer-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      setTimeout(closeDrawer, 150); // small delay so user sees the tap
+    });
+  });
+  
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && drawer.classList.contains('open')) {
+      closeDrawer();
+    }
+  });
 }
 
 boot();
