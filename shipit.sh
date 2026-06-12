@@ -94,12 +94,12 @@ $PYTHON "$PROJECT/ops/analyze_narratives_v2.py" || echo "  ⚠ Narratives skippe
 echo ""
 
 echo "── Stage 1.5: enrich ──"
-$PYTHON "$PROJECT/scripts/enrich_editorial_stories.py" || true
-$PYTHON "$PROJECT/scripts/ensure_generated_at.py" || true
+$PYTHON "$PROJECT/scripts/enrich_editorial_stories.py" || echo "  ⚠ enrich_editorial_stories FAILED — continuing"
+$PYTHON "$PROJECT/scripts/ensure_generated_at.py" || echo "  ⚠ ensure_generated_at FAILED — continuing"
 echo "  ✓ Stories enriched with capital_flow + generated_at"
-$PYTHON "$PROJECT/scripts/generate_signal_api.py" || true
-$PYTHON "$PROJECT/scripts/generate_trades_api.py" || true
-$PYTHON "$PROJECT/scripts/build_track_record.py" || true
+$PYTHON "$PROJECT/scripts/generate_signal_api.py" || echo "  ⚠ generate_signal_api FAILED — continuing"
+$PYTHON "$PROJECT/scripts/generate_trades_api.py" || echo "  ⚠ generate_trades_api FAILED — continuing"
+$PYTHON "$PROJECT/scripts/build_track_record.py" || echo "  ⚠ build_track_record FAILED — continuing"
 echo "  ✓ Signal + Trades + Track Record API endpoints generated"
 echo ""
 
@@ -111,7 +111,7 @@ echo ""
 
 # ═══ Stage 2.2: generate_broadcasts ──
 echo "── Stage 2.2: generate_broadcasts ──"
-$PYTHON "$PROJECT/scripts/generate_broadcasts.py" || true
+$PYTHON "$PROJECT/scripts/generate_broadcasts.py" || echo "  ⚠ generate_broadcasts FAILED — continuing"
 echo "  ✓ Distribution broadcasts generated"
 echo ""
 

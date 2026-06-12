@@ -1,13 +1,11 @@
-US STRIKES destroy Iran water facility in Hormozgan — 20,000 without water. Second consecutive day of attacks. Status: new strikes launched today, June 11.
+TRUMP CANCELS evening strikes on Iran — Dow +700, oil tumbles from $98 to $90. Status: strikes off, no new US military action as of June 12.
 
-The US is now the world's top oil exporter. Hormuz disruption has crippled Iranian competition. European and Asian buyers are locked into US crude — structural market capture, not temporary.
+Obvious read: peace rally, oil fade, equities rip. Hidden consequence: Trump's strike-on, strike-off posture destroys deterrence credibility. Iran-UAE face-to-face talks signal Iran negotiates from strength.
 
-• Long WTI: dips to $90, target $96-98, stop $87. Strikes ongoing = oil underpriced.
-• Long defense (LMT, GD): multi-front combat confirmed across US-Iran-Israel axis.
-• Short QQQ: Dow -950 on chip rout + war premium. Rallies are exits until ceasefire.
+• Long US energy (XLE): $90 oil is the buy zone. Structural market share capture.
+• Short QQQ rallies: war premium + chip compression hasn't resolved.
+• Long defense (LMT, GD): multi-front combat is permanent baseline.
 
-¹ US strikes destroyed key water facility in Hormozgan, cutting access to ~20,000 people (The Cradle, June 11)
+¹ Iran-UAE held face-to-face high-level meeting — stark reversal from UAE's role in US-Israeli coalition against Iran (The Cradle, June 11)
 
-Continuity: https://www.lagazzettadikyiv.com/ | Next trigger: Iran retaliation — if Hezbollah activates or Gulf shipping is hit, oil gaps to $100+. CPI Thursday.
-
-Full briefing: https://www.lagazzettadikyiv.com/
+Continuity: https://www.lagazzettadikyiv.com/ | Next trigger: SpaceX SPCX IPO debut today — below $1.8T signals growth regime shift.

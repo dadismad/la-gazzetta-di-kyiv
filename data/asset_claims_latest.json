@@ -1,53 +1,65 @@
 {
-  "generated_at": "2026-06-10T14:00:00Z",
+  "generated_at": "2026-06-12T09:30:00Z",
   "claims": [
     {
-      "ticker": "NVDA",
+      "ticker": "CL",
       "direction": "up",
-      "price_target": "+15-20% on AI capex cycle expansion",
-      "strategy": "Core long — every new frontier model launch expands the AI compute demand layer",
-      "win_rate": "70% (AI capex cycle has multi-year visibility)",
-      "horizon": "3-6 months",
+      "price_target": "$94-96",
+      "strategy": "Geopolitical fade play — buy the oil dip on cancelled strikes, sell into Iran test",
+      "win_rate": "55% (geopolitical flash, 2h exit discipline)",
+      "horizon": "24-72h",
+      "narrative_driven_pct": 65,
+      "crowd_belief": "Peace rally is real. Oil at $90 is the new normal with strike risk removed.",
+      "contradiction": "Trump's strike-on, strike-off posture invites Iran to test resolve. Hormuz still disrupted. SPR release historically precedes escalation, not de-escalation. The crowd fading oil is repeating the 2022 playbook on the wrong side.",
+      "story_id": "trump_cancels_strikes_second_order"
+    },
+    {
+      "ticker": "QQQ",
+      "direction": "down",
+      "price_target": "-2-4% from current",
+      "strategy": "Short rallies — war premium + chip compression unchanged by headline peace",
+      "win_rate": "60% (until ceasefire catalyst)",
+      "horizon": "24-72h",
       "narrative_driven_pct": 55,
-      "crowd_belief": "Consensus prices NVDA for AI data center growth but underprices the pace of frontier model releases driving incremental demand",
-      "contradiction": "Each new frontier model (Claude Fable, GPT-5) requires exponentially more compute — but market prices NVDA as if the current demand base is the ceiling",
-      "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t"
+      "crowd_belief": "Dow +700 confirms risk-on regime. Tech dip was a buying opportunity.",
+      "contradiction": "Dow +700 masks Oracle tumbling on data center costs, chip rout from valuation compression, and a war premium that hasn't resolved — the US is still bombing Iran (just not tonight). Rallies are exits.",
+      "story_id": "trump_cancels_strikes_second_order"
     },
     {
-      "ticker": "SMH",
+      "ticker": "XLE",
       "direction": "up",
-      "price_target": "+10% on semiconductor cycle AI demand layer",
-      "strategy": "Core long — AI chip demand expands semiconductor cycle duration",
-      "win_rate": "60% (AI extends semi cycle by 2-3 quarters)",
-      "horizon": "3-6 months",
-      "narrative_driven_pct": 45,
-      "crowd_belief": "Semiconductor cycle viewed as peaking. AI demand layer is structural and additive to traditional cycle.",
-      "contradiction": "Traditional semi cycle would be peaking, but AI demand layer adds 2-3 quarters of expansion that consensus hasn't repriced",
-      "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t"
-    },
-    {
-      "ticker": "FET",
-      "direction": "up",
-      "price_target": "+25-35% on AI-crypto narrative coupling",
-      "strategy": "Event-driven — AI acceleration narrative flows through to AI-crypto tokens",
-      "win_rate": "55% (narrative-driven, high beta to AI newsflow)",
+      "price_target": "+4-6% on US oil dominance",
+      "strategy": "Long US energy complex — structural market share capture",
+      "win_rate": "70% (structural thesis, not headline-driven)",
       "horizon": "1-3 months",
-      "narrative_driven_pct": 75,
-      "crowd_belief": "AI-crypto tokens seen as disconnected from frontier AI model releases",
-      "contradiction": "Anthropic and OpenAI model releases increase demand for decentralized AI compute — FET/TAO benefit from same narrative tailwind as NVDA but at 10x beta",
-      "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t"
+      "narrative_driven_pct": 60,
+      "crowd_belief": "Oil is cyclical. Hormuz reopens, prices normalize, US loses export advantage.",
+      "contradiction": "European and Asian buyers signed long-term US crude contracts. The US didn't win a quarter — it captured customers who will take years to unwind. $90 oil post-cancellation is the structural entry point.",
+      "story_id": "us_becomes_top_oil_exporter_hormuz_blockade"
     },
     {
-      "ticker": "TAO",
+      "ticker": "SPCX",
+      "direction": "down",
+      "price_target": "Below $1.8T valuation on day one",
+      "strategy": "Short IPO pop — 91% loss margin at 96x revenue is untenable",
+      "win_rate": "65% (IPO valuation gap mean reversion)",
+      "horizon": "1-5 sessions",
+      "narrative_driven_pct": 50,
+      "crowd_belief": "SpaceX is the most anticipated IPO in history. Oversubscribed. Growth investors pile in.",
+      "contradiction": "SpaceX lost $4.28B on $4.69B revenue — a 91% loss margin. At $1.8T, that's 96x revenue. Barron's calls it 'hopes and dreams.' If SPCX debuts below $1.8T, it signals a regime shift in growth valuations — cascading through VC portfolios.",
+      "story_id": "spacex_ipo_1_8t_valuation_91_loss_margin"
+    },
+    {
+      "ticker": "LMT",
       "direction": "up",
-      "price_target": "+30-40% on decentralized AI compute narrative",
-      "strategy": "Event-driven — Bittensor network benefits from AI compute decentralization thesis",
-      "win_rate": "50% (high beta, narrative-driven token)",
+      "price_target": "+5-8% on multi-front combat",
+      "strategy": "Long defense — permanent baseline, not tactical cycle",
+      "win_rate": "65% (structural)",
       "horizon": "1-3 months",
-      "narrative_driven_pct": 80,
-      "crowd_belief": "TAO is uncorrelated with frontier AI model releases",
-      "contradiction": "Claude Fable and GPT-5 drive demand for decentralized inference compute — TAO's Bittensor network is the primary venue for that, underpriced by consensus",
-      "story_id": "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t"
+      "narrative_driven_pct": 70,
+      "crowd_belief": "Defense stocks already priced Iran escalation. Cancellation means risk premium fades.",
+      "contradiction": "Three-front combat (US-Iran, Israel-Iran, Israel-Hezbollah) is structural, not tactical. US NATO cuts + simultaneous Middle East engagement = defense industrial base must expand regardless of overnight headlines. LMT/GD budgets are structurally higher.",
+      "story_id": "trump_cancels_strikes_second_order"
     }
   ]
 }

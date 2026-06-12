@@ -1,11 +1,13 @@
 {
-  "cycle_number": 24,
-  "last_lead_topic": "us_iran_strikes_water_infrastructure_oil_market_restructuring",
-  "last_frame": "contradiction",
-  "last_human_detail_ids": ["HD-029"],
-  "last_telegram_opening": "US STRIKES destroy water infrastructure in Iran's Hormozgan — 20,000 without water.",
-  "last_reddit_opening": "Regime: Contradiction — the US bombs Iran while becoming the world's top oil exporter",
+  "cycle_number": 25,
+  "last_lead_topic": "trump_cancels_strikes_second_order",
+  "last_frame": "second-order",
+  "last_human_detail_ids": ["HD-030"],
+  "last_telegram_opening": "TRUMP CANCELS evening strikes on Iran — Dow +700, oil tumbles from $98 to $90. Status: strikes off, no new US military action as of June 12.",
+  "last_reddit_opening": "Regime: Second-order — the peace rally IS the trap. Trump cancels strikes, Dow +700, oil crashes from $98 to $90. The real story is what happens next.",
   "topic_history": [
+    "trump_cancels_strikes_second_order",
+    "us_iran_strikes_water_infrastructure_oil_market_restructuring",
     "iran_hormuz_toll_beirut_strikes_convergence",
     "iran_strikes_kuwait_7_ballistic_missiles",
     "china_taiwan_maritime_enforcement",
@@ -13,8 +15,6 @@
     "iran_shoots_down_us_apache_hormuz_trump_must_respond",
     "spacex_ipo_oversubscribed_1_8t_valuation_91_loss_margin",
     "wti_below_90_despite_apache_shootdown_hormuz_blockade",
-    "israel_lebanon_all_out_war_tyre_evacuation_ben_gvir",
-    "ukraine_assassinates_russian_missile_supply_chief_moscow",
-    "us_iran_strikes_water_infrastructure_oil_market_restructuring"
+    "israel_lebanon_all_out_war_tyre_evacuation_ben_gvir"
   ]
 }

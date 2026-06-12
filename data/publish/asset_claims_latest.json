@@ -1,65 +1,65 @@
 {
-  "generated_at": "2026-06-11T16:00:00Z",
+  "generated_at": "2026-06-12T09:30:00Z",
   "claims": [
     {
       "ticker": "CL",
       "direction": "up",
-      "price_target": "$96-98",
-      "strategy": "Geopolitical flash — buy crude on strike escalation",
-      "win_rate": "55% (if disciplined on stop)",
+      "price_target": "$94-96",
+      "strategy": "Geopolitical fade play — buy the oil dip on cancelled strikes, sell into Iran test",
+      "win_rate": "55% (geopolitical flash, 2h exit discipline)",
       "horizon": "24-72h",
-      "narrative_driven_pct": 70,
-      "crowd_belief": "Markets fade oil from $98 to $90 on Iran 'end of current attacks' statement. Consensus treats SPR release as bearish supply injection.",
-      "contradiction": "SPR releases historically precede further escalation, not de-escalation. US now top oil exporter — structural supply disruption is widening, not closing. Crowd fading oil is the wrong side of the 2022 playbook.",
-      "story_id": "us_iran_strikes_water_infrastructure_oil_market_restructuring"
+      "narrative_driven_pct": 65,
+      "crowd_belief": "Peace rally is real. Oil at $90 is the new normal with strike risk removed.",
+      "contradiction": "Trump's strike-on, strike-off posture invites Iran to test resolve. Hormuz still disrupted. SPR release historically precedes escalation, not de-escalation. The crowd fading oil is repeating the 2022 playbook on the wrong side.",
+      "story_id": "trump_cancels_strikes_second_order"
     },
     {
       "ticker": "QQQ",
       "direction": "down",
-      "price_target": "-3-5% from current levels",
-      "strategy": "War premium + chip valuation compression — short rallies",
+      "price_target": "-2-4% from current",
+      "strategy": "Short rallies — war premium + chip compression unchanged by headline peace",
       "win_rate": "60% (until ceasefire catalyst)",
       "horizon": "24-72h",
-      "narrative_driven_pct": 60,
-      "crowd_belief": "Tech dip is a buying opportunity. AI thesis intact. Iran is a headline.",
-      "contradiction": "Dow -950 points on chip rout + war premium is not a dip-buying setup. Oracle tumbled on data center costs — AI capex cycle faces its first stress test. Until ceasefire materializes, rallies are exits not entries.",
-      "story_id": "dow_drops_950_chip_rout_iran_war_premium"
-    },
-    {
-      "ticker": "LMT",
-      "direction": "up",
-      "price_target": "+5-8% on multi-front combat confirmation",
-      "strategy": "Defense sector long — multi-front conflict locks budget increases",
-      "win_rate": "65%",
-      "horizon": "1-3 months",
-      "narrative_driven_pct": 75,
-      "crowd_belief": "Defense stocks already priced the Iran escalation. Limited upside from here.",
-      "contradiction": "Three-front combat (US-Iran, Israel-Iran, Israel-Hezbollah) is NOT priced. US NATO cuts + simultaneous Middle East engagement = defense industrial base must expand. LMT/GD budgets structurally higher, not cyclically.",
-      "story_id": "us_iran_strikes_water_infrastructure_oil_market_restructuring"
-    },
-    {
-      "ticker": "GD",
-      "direction": "up",
-      "price_target": "+5-8% on multi-front combat confirmation",
-      "strategy": "Defense sector long — naval and ground systems demand accelerates",
-      "win_rate": "65%",
-      "horizon": "1-3 months",
-      "narrative_driven_pct": 75,
-      "crowd_belief": "GD already benefited from Ukraine cycle. Iran is incremental, not transformational.",
-      "contradiction": "US naval operations in Hormuz + ground force posture in Iraq require sustained procurement. GD's shipbuilding and combat systems divisions see multi-year demand acceleration, not a one-quarter bump.",
-      "story_id": "us_iran_strikes_water_infrastructure_oil_market_restructuring"
+      "narrative_driven_pct": 55,
+      "crowd_belief": "Dow +700 confirms risk-on regime. Tech dip was a buying opportunity.",
+      "contradiction": "Dow +700 masks Oracle tumbling on data center costs, chip rout from valuation compression, and a war premium that hasn't resolved — the US is still bombing Iran (just not tonight). Rallies are exits.",
+      "story_id": "trump_cancels_strikes_second_order"
     },
     {
       "ticker": "XLE",
       "direction": "up",
-      "price_target": "+4-6% on US oil exporter dominance",
+      "price_target": "+4-6% on US oil dominance",
       "strategy": "Long US energy complex — structural market share capture",
-      "win_rate": "70%",
-      "horizon": "3-6 months",
-      "narrative_driven_pct": 65,
-      "crowd_belief": "Oil sector is cyclical. Hormuz reopens, prices normalize, US loses export advantage.",
-      "contradiction": "European and Asian buyers signing long-term US crude contracts is permanent market restructuring. The US didn't just win a quarter — it captured customers who will take years to unwind. This is a structural rerating of US energy, not a cyclical trade.",
+      "win_rate": "70% (structural thesis, not headline-driven)",
+      "horizon": "1-3 months",
+      "narrative_driven_pct": 60,
+      "crowd_belief": "Oil is cyclical. Hormuz reopens, prices normalize, US loses export advantage.",
+      "contradiction": "European and Asian buyers signed long-term US crude contracts. The US didn't win a quarter — it captured customers who will take years to unwind. $90 oil post-cancellation is the structural entry point.",
       "story_id": "us_becomes_top_oil_exporter_hormuz_blockade"
+    },
+    {
+      "ticker": "SPCX",
+      "direction": "down",
+      "price_target": "Below $1.8T valuation on day one",
+      "strategy": "Short IPO pop — 91% loss margin at 96x revenue is untenable",
+      "win_rate": "65% (IPO valuation gap mean reversion)",
+      "horizon": "1-5 sessions",
+      "narrative_driven_pct": 50,
+      "crowd_belief": "SpaceX is the most anticipated IPO in history. Oversubscribed. Growth investors pile in.",
+      "contradiction": "SpaceX lost $4.28B on $4.69B revenue — a 91% loss margin. At $1.8T, that's 96x revenue. Barron's calls it 'hopes and dreams.' If SPCX debuts below $1.8T, it signals a regime shift in growth valuations — cascading through VC portfolios.",
+      "story_id": "spacex_ipo_1_8t_valuation_91_loss_margin"
+    },
+    {
+      "ticker": "LMT",
+      "direction": "up",
+      "price_target": "+5-8% on multi-front combat",
+      "strategy": "Long defense — permanent baseline, not tactical cycle",
+      "win_rate": "65% (structural)",
+      "horizon": "1-3 months",
+      "narrative_driven_pct": 70,
+      "crowd_belief": "Defense stocks already priced Iran escalation. Cancellation means risk premium fades.",
+      "contradiction": "Three-front combat (US-Iran, Israel-Iran, Israel-Hezbollah) is structural, not tactical. US NATO cuts + simultaneous Middle East engagement = defense industrial base must expand regardless of overnight headlines. LMT/GD budgets are structurally higher.",
+      "story_id": "trump_cancels_strikes_second_order"
     }
   ]
 }

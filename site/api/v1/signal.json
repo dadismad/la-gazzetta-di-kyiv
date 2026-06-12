@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T20:25:47.237400+00:00",
+  "generated_at": "2026-06-12T09:32:33.659495+00:00",
   "total_signals": 245,
   "aggregate_score": 67,
   "signals": [
@@ -114,17 +114,6 @@
       "direction": "outflow"
     },
     {
-      "story_id": "n21_osint__reuters_business__blackrock_orders_5_billion_in_spacex_shares_ahead_of_blockb",
-      "headline": "BlackRock Orders $5 Billion In SpaceX Shares Ahead Of Blockbuster IPO, Report Says (Live Updates) - ",
-      "score": 74,
-      "tier": "HIGH CONVICTION",
-      "flow_alignment": 29,
-      "contradiction": 30,
-      "event_strength": 15,
-      "asset_class": "tech",
-      "direction": "inflow"
-    },
-    {
       "story_id": "n21_osint__reuters_business__anthropic_backpedals_on_fable_safety_measure_-_the_verge",
       "headline": "Anthropic backpedals on Fable safety measure - The Verge",
       "score": 74,
@@ -167,6 +156,17 @@
       "event_strength": 15,
       "asset_class": "crypto",
       "direction": "inflow"
+    },
+    {
+      "story_id": "n21_osint__reuters_business__prometheus_the_industrial_ai_startup_from_jeff_bezos_is_no",
+      "headline": "Prometheus, the industrial AI startup from Jeff Bezos, is now worth $41 billion - Axios",
+      "score": 74,
+      "tier": "HIGH CONVICTION",
+      "flow_alignment": 29,
+      "contradiction": 30,
+      "event_strength": 15,
+      "asset_class": "crypto",
+      "direction": "outflow"
     }
   ]
 }

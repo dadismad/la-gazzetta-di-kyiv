@@ -486,7 +486,7 @@ function updateHeroIndicators(flowsData) {
       .sort((a, b) => (b.pace_multiplier || 1) - (a.pace_multiplier || 1));
     if (bigFlows.length > 0) {
       const top = bigFlows[0];
-      const amt = top.amount_b >= 1 ? `$${top.amount_b.toFixed(1)}B` : `$${(top.amount_b*1000).toFixed(0)}M`;
+      const amt = top.amount_b >= 1 ? `$${top.amount_b.toFixed(1)}B` : `$${top.amount_b.toFixed(2)}B`;
       const vel = (top.pace_multiplier || 1) >= 2 ? 'FAST' : (top.pace_multiplier || 1) >= 1.5 ? 'STEADY' : 'SLOW';
       const dir = (top.net_direction || top.direction) === 'outflow' ? 'out' : 'in';
       const arrow = dir === 'out' ? '↓' : '↑';
@@ -886,7 +886,7 @@ function updateTradeHooks(flowsData) {
                     : 'NEUTRAL';
     
     const flowAmt = flow.amount_b || 0;
-    const amtStr = flowAmt >= 1 ? `$${flowAmt.toFixed(1)}B` : `$${(flowAmt * 1000).toFixed(0)}M`;
+    const amtStr = flowAmt >= 1 ? `$${flowAmt.toFixed(1)}B` : `$${flowAmt.toFixed(2)}B`;
     
     symEl.textContent = symbol;
     labelEl.innerHTML = `<span style="color:${color};font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.03em">${skewLabel}</span>`;
@@ -1330,7 +1330,7 @@ function livingCardHTML(story, isLead) {
   let cfHint = '';
   if (cf && cf.amount_b) {
   const hintDir = (cf.direction === 'outflow') ? '↓' : '↑';
-  const hintAmt = cf.amount_b >= 1 ? `$${cf.amount_b.toFixed(1)}B` : `$${(cf.amount_b * 1000).toFixed(0)}M`;
+  const hintAmt = cf.amount_b >= 1 ? `$${cf.amount_b.toFixed(1)}B` : `$${cf.amount_b.toFixed(2)}B`;
   const hintColor = cf.direction === 'outflow' ? 'var(--red)' : 'var(--green)';
   const sectorHint = cf.asset_class ? ` ${cf.asset_class}` : '';
   // Find linked trade position from ANCHOR_ASSETS
@@ -2301,6 +2301,36 @@ async function boot() {
       });
     }
   } catch(e) { /* prices optional, trade hooks fall back gracefully */ }
+
+  // v26.8: Merge live prices into ANCHOR_ASSETS for sidebar tickers
+  if (window._lastTickerMap && Object.keys(window._lastTickerMap).length) {
+    // Symbol mapping: ANCHOR_ASSETS symbol → { key, scale }
+    // SPY ≈ SPX/10, TLT ≈ 10Y×8.5 — scale corrects ETF proxy to index level
+    const SYMBOL_MAP = {
+      'SPX':  { key: 'spy',     scale: 10 },    // SPY ETF → S&P 500 index
+      'BRENT':{ key: 'cl=f',    scale: 1  },    // Crude Oil Futures
+      'GOLD': { key: 'gold',    scale: 1  },    // Gold via XAUUSD
+      'BTC':  { key: 'btc-usd', scale: 1  },    // Bitcoin USD
+    };
+    ANCHOR_ASSETS.forEach(a => {
+      const mapping = SYMBOL_MAP[a.symbol];
+      if (!mapping) return;
+      const live = window._lastTickerMap[mapping.key];
+      if (live && live.price) {
+        const scaledPrice = live.price * mapping.scale;
+        a.price = scaledPrice >= 1000 ? Math.round(scaledPrice).toLocaleString('en-US')
+                : scaledPrice >= 1 ? scaledPrice.toFixed(2)
+                : scaledPrice.toFixed(4);
+        if (live.change_pct != null) {
+          a.change = (live.change_pct >= 0 ? '+' : '') + live.change_pct.toFixed(1) + '%';
+        }
+        if (live.direction) {
+          a.dir = live.direction === 'down' ? 'down' : live.direction === 'up' ? 'up' : a.dir;
+        }
+        a.stop = computeATRStop(a.entry, a.atr_pct, a.stop_atr_mult, a.bias);
+      }
+    });
+  }
 
   // Start flows polling (5 min cadence)
   setInterval(fetchFlows, FLOWS_POLL_INTERVAL);

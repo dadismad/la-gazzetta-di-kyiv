@@ -62,14 +62,6 @@ def compile_stories(conn):
             "full_json": fj,
         }
 
-    # ═══ v23.22: WAI — Compute sector totals from flow_by_id ═══
-    sector_totals = {}
-    for fid, fdata in flow_by_id.items():
-        cat = fdata.get("category", "")
-        if cat:
-            sector_totals[cat] = sector_totals.get(cat, 0) + float(fdata.get("amount_b", 0))
-    # Fallback: use individual flow if sector missing
-
     stories = []
     seen_ids = set()  # v23.22: deduplication guard
     for sid, full_json_str in rows:
@@ -99,15 +91,10 @@ def compile_stories(conn):
                 # v23.23: None explicitly means "no real amount" — skip scaling
                 has_explicit_null = ("amount_b" in cf and cf["amount_b"] is None)
                 is_default_amount = (cf.get("amount_b") == 5.0 and not cf.get("_amount_derived"))
-                if has_explicit_null:
-                    pass  # Leave as None — don't fabricate
-                elif not cf.get("amount_b") or is_default_amount:
+                if has_explicit_null or not cf.get("amount_b") or is_default_amount:
                     tier = story.get("tier", "ACTIVE")
                     pillar = story.get("pillar", "")
-                    cat = primary_flow.get("category", "")
-                    flow_total = sector_totals.get(cat, float(primary_flow["amount_b"]))
-                    if flow_total <= 0:
-                        flow_total = float(primary_flow["amount_b"])
+                    flow_total = float(primary_flow["amount_b"])
                     # --- Story-Level Scaling fractions ---
                     # PSV: Proportional Story Volume — tier maps to category fraction
                     tier_fractions = {

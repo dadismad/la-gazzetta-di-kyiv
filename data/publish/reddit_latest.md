@@ -1,35 +1,36 @@
-**Regime:** Contradiction — the US bombs Iran while becoming the world's top oil exporter from the disruption it created. Markets price "precision strikes." Water infrastructure is destroyed.
+**Regime:** Second-order — the peace rally IS the trap. Trump cancels strikes, Dow +700, oil crashes from $98 to $90. The real story is what happens next.
 
-*June 11, 2026 — The Cradle, Reuters, CNBC, NYT.*
+*June 12, 2026 — CNBC, The Cradle, Reuters.*
 
 **DOMINANT NARRATIVE**
 
-Day two of US strikes. A Hormozgan water facility was destroyed, cutting off 20,000. Hormuz disruption made the US the world's top oil exporter — European and Asian buyers locked into US supply. Dow dropped 950 points. Oil hit $98 before Iran claimed attacks were over, then new strikes began. The US wants oil dominance; Iran wants Hormuz leverage; markets want a ceasefire not coming.
+Trump calls off evening strikes. Markets celebrate. Consensus says threat de-escalated, risk premium dissipates. Iran-UAE meeting confirms a diplomatic off-ramp.
 
 **EXPLICIT CONTRADICTION**
 
-Consensus says *US strikes are limited precision ops*. Evidence: civilian water infrastructure destroyed, US now world's largest oil exporter because Iranian crude is physically blocked, strikes continue with no off-ramp. This is structural market capture through military action.
+Consensus says *Trump's cancellation de-escalates the conflict*. Reality: Trump's strike-on, strike-off posture destroyed US deterrence credibility. Iran and UAE — a former US-Israeli coalition partner — are now negotiating directly. The US remains the world's top oil exporter because Hormuz is still disrupted. None of the structural conditions changed. Only the headline.
 
 **Trade Setup**
 
-1. **Long WTI** at $90 dips. Hormuz disruption + 40M SPR release confirms prolonged conflict. Stop $87, target $96-98.
-2. **Short QQQ** — Dow -950 on chip rout + war premium. Rallies are exits until ceasefire.
+1. **Long XLE** at $90 oil. Structural US energy dominance hasn't reversed.
+2. **Short QQQ** on rallies — chip valuation compression + war premium unresolved.
+3. **Long LMT/GD** — multi-front combat is permanent, not tactical.
 
 **24-72H PATH**
 
-- **Base (55%):** Strikes continue, oil $88-94, equities drift lower.
-- **Bull (25%):** Iran hits Gulf shipping. Oil $100-105, SPX -3-5%.
-- **Bear (20%):** Ceasefire. Oil $82-85, equities +2-3%.
+- **Base (50%):** Oil $88-94, markets digest no structural change.
+- **Bull (25%):** Iran tests Trump's resolve. Oil to $100 intraday.
+- **Bear (25%):** Real ceasefire. Oil to $82. Equities +3-5%.
 
-Invalidation: Iran accepts ceasefire or US ends strike operations.
+Invalidation: Binding ceasefire with verifiable terms, or Hormuz reopening.
 
 **VERIFIED**
 
-¹ US strikes destroyed a Hormozgan water facility, cutting access to ~20,000 people (The Cradle, June 11)
+¹ Iran-UAE held face-to-face meeting — stark reversal from UAE's coalition role against Iran (The Cradle, June 11)
 
 **DISCUSSION**
 
-What falsifies this thesis? Does Iran retaliate or accept degradation? Do strikes continue past 48h? Do European buyers sign long-term US crude contracts?
+Does Trump's cancellation strengthen or weaken US negotiating position? If Iran tests the no-strike window, does Trump re-escalate or accept degradation?
 
 Homepage: https://www.lagazzettadikyiv.com/
 
