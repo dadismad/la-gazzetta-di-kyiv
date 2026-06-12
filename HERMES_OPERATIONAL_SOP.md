@@ -185,9 +185,65 @@ Replace symbolic status markers with text:
 
 ---
 
+## RULE 9: PRE-FLIGHT COGNITIVE TRANSLATION (SELF-PROMPTING)
+
+**Before writing ANY code, executing ANY terminal command, or making ANY file change,
+you must produce a formal Self-Prompt (Execution Manifest).**
+
+You are a Systems Analyst first and a code executor second. Raw C-Suite directives
+must be translated into a structured analysis before any action is taken.
+
+### THE SELF-PROMPT STRUCTURE (MANDATORY)
+
+Every Self-Prompt must follow this exact four-section format:
+
+```
+1. INTENT TRANSLATION:
+   What is the C-Suite's actual business/UX goal behind this request?
+   Strip the technical language and identify the outcome they want.
+
+2. ARCHITECTURAL IMPACT:
+   Which specific systems, files, pipelines, or templates will this touch?
+   List every file that will be read or modified.
+   Identify what could break — data pipeline, CSS cascade, JS rendering, GCS deploy.
+
+3. POLICY ALIGNMENT:
+   Which SOP Rules (1-8) apply to this task?
+   Which Design & Product Guidelines (P1-P6, D1-D8, C1-C6) are relevant?
+   List each rule by number and explain how it constrains execution.
+
+4. EXECUTION ROADMAP:
+   The atomic, step-by-step plan. Each step must be independently verifiable.
+   Include: what tool will be used, what file will be changed, how success is verified.
+   No step may be "deploy and see what happens" — every step has a verification.
+```
+
+### WHEN TO SELF-PROMPT
+
+- Before any code change (patch, write_file, terminal command that modifies files)
+- Before any GCS deployment
+- Before any pipeline change (build_site.py, shipit.sh, deploy_routine.sh)
+- Before any change to SOP, design guidelines, or memory
+
+### WHEN SKIP IS ALLOWED
+
+- Reading files for information only (read_file, search_files, browser_console)
+- Answering factual questions that require no code change
+- The Self-Prompt itself is the task output (as in this amendment)
+
+### VIOLATION CONSEQUENCE
+
+Executing code without a Self-Prompt is a direct violation of this SOP.
+The Self-Prompt is your cognitive interceptor — it forces architectural
+reasoning before mechanical action, preventing the blind sed/patch
+catastrophes that caused the CSS 404 outage.
+
+---
+
 ## AMENDMENT HISTORY
 
 | Date | Version | Change |
 |------|---------|--------|
+| 2026-06-12 | v1.2 | Rule 9: Pre-Flight Cognitive Translation (Self-Prompting Protocol) enacted |
 | 2026-06-12 | v1.1 | Rule 8: Zero-Symbol Communication protocol enacted |
 | 2026-06-12 | v1.0 | Initial SOP — enacted after CSS 404 catastrophe |
