@@ -418,10 +418,12 @@ Source grep can show the rule exists but CDN edge cache can serve old CSS.
 
 ### Before ANY Task on Gazzetta:
 
-1. **Load the skill:** `skill_view("gazzetta-website")` or `skill_view("gazzetta-knowledge-index")`
-2. **Read these directives:** This file is your constitution — if a proposed action contradicts it, the action is wrong
-3. **Check live state first:** `browser_navigate` + `browser_console` before assuming anything is broken
-4. **Verify file paths:** Repo is at `~/lagazzettadikyiv`, not `~/projects/gazzetta-di-kyiv`
+1. **Load the manifest skill:** `skill_view("gazzetta-file-manifest")` — maps every file's role
+2. **Load the design skill:** `skill_view("gazzetta-website")` or `skill_view("gazzetta-knowledge-index")`
+3. **Map before modifying:** `git status` + verify target path exists in both local and GitHub
+4. **Read these directives:** This file is your constitution — if a proposed action contradicts it, the action is wrong
+5. **Check live state first:** `browser_navigate` + `browser_console` before assuming anything is broken
+6. **Verify file paths:** Repo is at `~/lagazzettadikyiv`, deploy dir is `public/`, not `site/`
 
 ### During ANY Task:
 
