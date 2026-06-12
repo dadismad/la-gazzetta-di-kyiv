@@ -1,157 +1,232 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Methodology — La Gazzetta di Kyiv</title>
-<link rel="stylesheet" href="./styles.css"/>
-<style>
-  .methodology { max-width:780px; margin:0 auto; padding:20px 12px 60px; }
-  .methodology h2 { font-family:'DM Serif Display',Georgia,serif; font-size:22px; font-weight:400; color:var(--ink); margin:36px 0 12px; border-bottom:1px solid #E5E7EB; padding-bottom:6px; }
-  .methodology h3 { font-family:Inter,sans-serif; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--gold); margin:20px 0 8px; }
-  .methodology p, .methodology li { font-family:'Source Serif 4',Georgia,serif; font-size:13px; line-height:1.65; color:var(--ink-light); margin:0 0 10px; }
-  .methodology ul { margin:8px 0 16px 20px; }
-  .methodology code { font-family:'SF Mono',monospace; font-size:11px; background:#F5F5F5; padding:1px 4px; }
-  .methodology .formula { background:#F9FAFB; border-left:3px solid var(--gold); padding:10px 14px; margin:12px 0; font-family:'SF Mono',monospace; font-size:11px; }
-  .methodology .disclaimer { background:#FFF8E1; border:1px solid #F0D060; padding:12px 14px; margin:24px 0 0; font-size:11px; }
-</style>
-
-  <link rel="canonical" href="https://www.lagazzettadikyiv.com/capital.html"/>
-  <link rel="alternate" hreflang="en" href="https://www.lagazzettadikyiv.com/capital.html"/>
-  <link rel="alternate" hreflang="x-default" href="https://www.lagazzettadikyiv.com/capital.html"/>
-  <meta property="og:title" content="Methodology — La Gazzetta di Kyiv"/>
-  <meta property="og:description" content="Capital flow data sources, confidence model, ATR stop derivation, and triangulation methodology."/>
-  <meta property="og:url" content="https://www.lagazzettadikyiv.com/capital.html"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:site_name" content="La Gazzetta di Kyiv"/>
-  <meta name="twitter:card" content="summary"/>
-  <meta name="twitter:title" content="Methodology — La Gazzetta di Kyiv"/>
-  <meta name="twitter:description" content="Capital flow data sources, confidence model, ATR stop derivation, and triangulation methodology."/>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "La Gazzetta di Kyiv",
-    "url": "https://www.lagazzettadikyiv.com/",
-    "description": "Contradiction-first narrative intelligence. Capital flow analysis, trade ideas, and verifiable predictions.",
-    "sameAs": [
-      "https://t.me/GazzettaDiKyiv",
-      "https://www.reddit.com/r/LaGazzettadiKyiv/"
-    ]
-  }
-  </script>
-
-</head>
-<body class="news-body">
-<header class="topbar"><div class="brand">Gazzetta di Kyiv</div><div class="top-tools"><a class="cta-btn" href="./index.html">Back to Home</a></div></header>
-
-<div class="methodology">
-
-<h2>Capital Flow Methodology</h2>
-
-<p>Gazzetta di Kyiv tracks institutional capital flows across asset classes, sectors, and geographies. Every story, bet, and signal on this site is derived from verifiable flow data — not sentiment, not narrative, not "what if." The thesis is simple: <strong>capital moves first, stories follow, prices confirm.</strong></p>
-
-<h3>1. Data Sources</h3>
-
-<p>Flow data is aggregated from:</p>
-<ul>
-  <li><strong>EPFR Global</strong> — Weekly fund flows across equity, bond, and sector ETFs (institutional-grade, $50T+ tracked AUM)</li>
-  <li><strong>Morningstar Direct</strong> — Mutual fund and ETF flow data with style-box segmentation</li>
-  <li><strong>Internal aggregation</strong> — Cross-referenced with public filings (13F), options flow (OI skew), and derivatives positioning (COT reports)</li>
-</ul>
-
-<p>Flow velocity is measured against a 4-week rolling average. "Normal pace" = within 0.8-1.5× the 4w average. Values above 2× are flagged as anomalous — these are where the signal is strongest.</p>
-
-<h3>2. Projection Confidence Model</h3>
-
-<p>The confidence percentage displayed on each flow claim is <strong>computed, not hardcoded</strong>. The model uses four inputs:</p>
-
-<div class="formula">
-confidence = min(50 + flow_score + pace_score + positioning_score + contradiction_score, 95)
-</div>
-
-<table style="width:100%;font-size:12px;border-collapse:collapse;margin:12px 0">
-<tr style="background:#F9FAFB">
-  <th style="text-align:left;padding:6px;font-family:Inter,sans-serif;font-size:10px;color:var(--ink-muted)">Input</th>
-  <th style="text-align:left;padding:6px;font-family:Inter,sans-serif;font-size:10px;color:var(--ink-muted)">Range</th>
-  <th style="text-align:left;padding:6px;font-family:Inter,sans-serif;font-size:10px;color:var(--ink-muted)">Logic</th>
-</tr>
-<tr><td style="padding:4px 6px;border-bottom:1px solid #E5E7EB">Flow magnitude ($B)</td><td style="padding:4px 6px;border-bottom:1px solid #E5E7EB">+3 to +15 pts</td><td style="padding:4px 6px;border-bottom:1px solid #E5E7EB">$5B+ = +15, $3-5B = +12, $1-3B = +8</td></tr>
-<tr><td style="padding:4px 6px;border-bottom:1px solid #E5E7EB">Pace multiplier</td><td style="padding:4px 6px;border-bottom:1px solid #E5E7EB">+3 to +12 pts</td><td style="padding:4px 6px;border-bottom:1px solid #E5E7EB">3×+ = +12, 2-3× = +10, 1.5-2× = +7</td></tr>
-<tr><td style="padding:4px 6px;border-bottom:1px solid #E5E7EB">Institutional positioning</td><td style="padding:4px 6px;border-bottom:1px solid #E5E7EB">+2 to +10 pts</td><td style="padding:4px 6px;border-bottom:1px solid #E5E7EB">Accumulating = +10, Distributing = +8, Hedging = +5</td></tr>
-<tr><td style="padding:4px 6px">Contradiction score</td><td style="padding:4px 6px">+2 to +8 pts</td><td style="padding:4px 6px">Score ≥70 = +8, 50-69 = +5</td></tr>
-</table>
-
-<p>Confidence is capped at 95%. A claim with perfect inputs still can't be 100% — capital flows lag, reclassifications happen, and data revisions are real. The floor is 50% — a flow claim without external corroboration has at least coin-flip odds of containing signal.</p>
-
-<p>The hero stat "Model confidence" is the arithmetic mean of all active flow-item confidences, rounded to the nearest integer.</p>
-
-<h3>3. Contradiction Score (0-100)</h3>
-
-<p>Every story receives a Contradiction Score measuring the tension between <em>what consensus says</em> and <em>what flows reveal</em>:</p>
-
-<div class="formula">
-contradiction = 30 + narrative_tension (0-30) + flow_divergence (0-25) + extremum_quality (0-15)
-</div>
-
-<ul>
-  <li><strong>Narrative tension (0-30):</strong> Contrast markers in "They Say vs Reality" text. Each marker (but, however, not, yet, despite, etc.) adds 5 pts. Substantive pushback (reality >50 chars, >70% of they-say length) adds bonus.</li>
-  <li><strong>Flow divergence (0-25):</strong> Bullish consensus + outflow = +20 pts. Bearish consensus + inflow = +20 pts. Flow magnitude $5B+ adds +10.</li>
-  <li><strong>Extremum quality (0-15):</strong> Winner/Loser pair = +5, Idiot/Genius pair = +5, both present = +5.</li>
-</ul>
-
-<h3>4. ATR-Based Stop Levels</h3>
-
-<p>All 14 anchor assets use volatility-adjusted stops derived from approximate 14-day Average True Range (ATR):</p>
-
-<div class="formula">
-stop(BUY) = entry_price − (entry_price × ATR% × multiplier)<br>
-stop(SELL) = entry_price + (entry_price × ATR% × multiplier)
-</div>
-
-<p>Multipliers range from 2.0× (high-volatility assets like crypto, NVDA) to 3.0× (low-volatility like DXY). This ensures low-vol trades aren't stopped out by noise and high-vol trades have stops wide enough to breathe. The ATR percentage and multiplier are displayed on hover for each asset stop level.</p>
-
-<h3>5. Triangulation Score (0-100)</h3>
-
-<p>The Signal (Container 3) cross-references three layers:</p>
-
-<div class="formula">
-triangulation = flow_alignment (0-50) + bet_conviction (0-30) + event_strength (0-20)
-</div>
-
-<ul>
-  <li><strong>Flow alignment (max 50):</strong> Amount tier + velocity tier + positioning boost. $5B+ = +20, 3× pace = +15, accumulating = +10. Capital is the prime mover.</li>
-  <li><strong>Bet conviction (max 30):</strong> Directional bias (BUY/SELL vs WATCH) = +15, HIGH conviction = +10, MED = +5.</li>
-  <li><strong>Event strength (max 20):</strong> High story confidence = +10, contradiction present = +5, extremum present = +5.</li>
-  <li><strong>Alignment bonus:</strong> Inflow+BUY or Outflow+SELL = +5. Divergence (Inflow+SELL or Outflow+BUY) = flagged as divergent signal.</li>
-</ul>
-
-<h3>6. Track Record</h3>
-
-<p>Every ANCHOR_ASSETS prediction is timestamped daily to localStorage. Settled predictions are scored when the bet hits target or stop. The track record displays:</p>
-
-<ul>
-  <li><strong>Win Rate:</strong> % of settled bets that realized positive P&L</li>
-  <li><strong>Total P&L:</strong> Sum of all realized returns (%)</li>
-  <li><strong>Expectancy:</strong> (Win Rate × Avg Win) + ((1 − Win Rate) × Avg Loss)</li>
-  <li><strong>Avg Win / Avg Loss:</strong> Mean return of winning and losing bets</li>
-</ul>
-
-<p>All stats are computed client-side from localStorage. No cherry-picking is possible — the record is cumulative and auditable by inspecting browser storage.</p>
-
-<h3>7. Limitations</h3>
-
-<ul>
-  <li><strong>Flow data lag:</strong> EPFR/Morningstar data is weekly with a 3-5 day reporting delay. Timestamps reflect week ending Friday.</li>
-  <li><strong>Static site constraint:</strong> Asset prices update with site rebuilds. Real-time pricing would require an API layer (planned for premium tier).</li>
-  <li><strong>Survivorship:</strong> Track record only includes bets settled locally. It does not account for early exits, position adjustments, or sizing decisions.</li>
-  <li><strong>No backtesting:</strong> The confidence model and triangulation scoring have not been backtested against historical outcomes. They represent a structured framework, not a validated quantitative model.</li>
-</ul>
-
-<div class="disclaimer">
-  <strong>Disclaimer:</strong> Gazzetta di Kyiv is an editorial intelligence product, not investment advice. Capital flow data is descriptive, not predictive. Past flows do not guarantee future performance. All bets, conviction levels, and stop levels represent editorial analysis through a gambler's framework — they are not recommendations to buy or sell any security. Consult a qualified financial advisor before making investment decisions.
-</div>
-
-</div>
-</body>
-</html>
+     <!doctype html>
+     <html lang="en">
+     <head>
+     <meta charset="utf-8"/>
+     <meta name="viewport" content="width=device-width,initial-scale=1"/>
+     <title>Methodology — La Gazzetta di Kyiv</title>
+     <link rel="stylesheet" href="./styles.css"/>
+     <style>
+       .methodology { max-width:780px; margin:0 auto; padding:20px 12px 60px; }
+      .methodology h2 { font-family:'DM Serif Display',Georgia,serif; font-size:22px; font-weight:400; color:var(--ink); margin:36px 0 12px; border-bottom:1px solid #E5E7EB; padding-bottom:6px; }
+      .methodology h3 { font-family:Inter,sans-serif; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--gold); margin:20px 0 8px; }
+      .methodology p, .methodology li { font-family:'Source Serif 4',Georgia,serif; font-size:13px; line-height:1.65; color:var(--ink-light); margin:0 0 10px; }
+      .methodology ul { margin:8px 0 16px 20px; }
+      .methodology code { font-family:'SF Mono',monospace; font-size:11px; background:#F5F5F5; padding:1px 4px; }
+      .methodology .formula { background:#F9FAFB; border-left:3px solid var(--gold); padding:10px 14px; margin:12px 0; font-family:'SF Mono',monospace; font-size:11px; }
+      .methodology .disclaimer { background:#FFF8E1; border:1px solid #F0D060; padding:12px 14px; margin:24px 0 0; font-size:11px; }
+    </style>
+    
+      <link rel="canonical" href="https://www.lagazzettadikyiv.com/capital.html"/>
+      <link rel="alternate" hreflang="en" href="https://www.lagazzettadikyiv.com/capital.html"/>
+      <link rel="alternate" hreflang="x-default" href="https://www.lagazzettadikyiv.com/capital.html"/>
+      <meta property="og:title" content="Methodology — La Gazzetta di Kyiv"/>
+      <meta property="og:description" content="Capital flow data sources, confidence model, ATR stop derivation, and triangulation methodology."/>
+      <meta property="og:url" content="https://www.lagazzettadikyiv.com/capital.html"/>
+      <meta property="og:type" content="website"/>
+      <meta property="og:site_name" content="La Gazzetta di Kyiv"/>
+      <meta name="twitter:card" content="summary"/>
+      <meta name="twitter:title" content="Methodology — La Gazzetta di Kyiv"/>
+      <meta name="twitter:description" content="Capital flow data sources, confidence model, ATR stop derivation, and triangulation methodology."/>
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "La Gazzetta di Kyiv",
+        "url": "https://www.lagazzettadikyiv.com/",
+        "description": "Contradiction-first narrative intelligence. Capital flow analysis, trade ideas, and verifiable predictions.",
+        "sameAs": [
+          "https://t.me/GazzettaDiKyiv",
+          "https://www.reddit.com/r/LaGazzettadiKyiv/"
+        ]
+      }
+      </script>
+    
+    </head>
+    <body class="news-body">
+<!-- COMPONENT:HEADER:START -->
+<!-- ═══════════════════════════════════════════════ -->
+<!-- MASTHEAD v26.5 — Shared component template       -->
+<!-- Injected by build_site.py into all public/*.html -->
+<!-- ═══════════════════════════════════════════════ -->
+<header class="masthead">
+  <div class="masthead-left">
+    <span class="masthead-caduceus" title="Caduceus — commerce, flow, intelligence" aria-hidden="true">
+      <svg width="20" height="40" viewBox="0 0 20 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="10" y1="8" x2="10" y2="36" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="10" cy="36" r="2.5" fill="currentColor" opacity="0.35"/>
+        <path d="M10 8 Q4 2 2 6 Q4 10 10 10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        <path d="M10 8 Q16 2 18 6 Q16 10 10 10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        <path d="M3 14 Q6 12 10 16 Q14 20 10 24 Q6 28 10 32 Q14 36 17 34" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M17 14 Q14 12 10 16 Q6 20 10 24 Q14 28 10 32 Q6 36 3 34" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <circle cx="3" cy="14" r="1.3" fill="currentColor" opacity="0.5"/>
+        <circle cx="17" cy="14" r="1.3" fill="currentColor" opacity="0.5"/>
+      </svg>
+    </span>
+    <span class="masthead-name">La Gazzetta di Kyiv</span>
+    <span class="masthead-bulava" title="Crossed bulavas — Hetman's maces" aria-hidden="true">
+      <svg width="14" height="38" viewBox="0 0 14 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="7" y1="18" x2="7" y2="35" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <rect x="3" y="21" width="8" height="2" rx="1" fill="currentColor" opacity="0.5"/>
+        <rect x="3.5" y="27" width="7" height="1.5" rx="0.75" fill="currentColor" opacity="0.4"/>
+        <rect x="2" y="34" width="10" height="3" rx="1.5" fill="currentColor" opacity="0.4"/>
+        <line x1="7" y1="14" x2="7" y2="18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <rect x="2" y="13" width="10" height="2" rx="1" fill="currentColor" opacity="0.5"/>
+        <circle cx="7" cy="8" r="5.5" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="7" cy="8" r="2.5" fill="currentColor" opacity="0.25"/>
+        <line x1="3" y1="8" x2="11" y2="8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="7" y1="2.5" x2="7" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="7" cy="1.5" r="1.5" fill="currentColor"/>
+      </svg>
+      <svg width="14" height="38" viewBox="0 0 14 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="7" y1="18" x2="7" y2="35" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <rect x="3" y="21" width="8" height="2" rx="1" fill="currentColor" opacity="0.5"/>
+        <rect x="3.5" y="27" width="7" height="1.5" rx="0.75" fill="currentColor" opacity="0.4"/>
+        <rect x="2" y="34" width="10" height="3" rx="1.5" fill="currentColor" opacity="0.4"/>
+        <line x1="7" y1="14" x2="7" y2="18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <rect x="2" y="13" width="10" height="2" rx="1" fill="currentColor" opacity="0.5"/>
+        <circle cx="7" cy="8" r="5.5" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="7" cy="8" r="2.5" fill="currentColor" opacity="0.25"/>
+        <line x1="3" y1="8" x2="11" y2="8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="7" y1="2.5" x2="7" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="7" cy="1.5" r="1.5" fill="currentColor"/>
+      </svg>
+    </span>
+  </div>
+  <div class="masthead-right">
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+        <a href="./stories.html" class="masthead-nav-link" style="color:inherit;display:inline;padding:0;font-size:inherit" data-i18n="nav_intel">INTEL</a>
+        <span class="nav-dd-arrow">&#9662;</span>
+      </button>
+      <div class="nav-dropdown-panel">
+        <a href="./stories.html" class="nav-dd-link" data-i18n="nav_stories">Stories</a>
+        <a href="./flows.html" class="nav-dd-link" data-i18n="nav_flows">Capital Flows</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+        <a href="./signal.html" class="masthead-nav-link" style="color:inherit;display:inline;padding:0;font-size:inherit" data-i18n="nav_alpha">ALPHA</a>
+        <span class="nav-dd-arrow">&#9662;</span>
+      </button>
+      <div class="nav-dropdown-panel">
+        <a href="./signal.html" class="nav-dd-link" data-i18n="nav_signal">The Signal</a>
+        <a href="./trades.html" class="nav-dd-link" data-i18n="nav_trades">Trade Ideas</a>
+        <a href="./track.html" class="nav-dd-link" data-i18n="nav_track">Track Record</a>
+      </div>
+    </div>
+    <a href="./about.html" class="masthead-nav-link" data-i18n="nav_menu">MENU</a>
+  </div>
+</header>
+<!-- COMPONENT:HEADER:END -->
+    
+    <div class="methodology">
+    
+    <h2>Capital Flow Methodology</h2>
+    
+    <p>Gazzetta di Kyiv tracks institutional capital flows across asset classes, sectors, and geographies. Every story, bet, and signal on this site is derived from verifiable flow data — not sentiment, not narrative, not "what if." The thesis is simple: <strong>capital moves first, stories follow, prices confirm.</strong></p>
+    
+    <h3>1. Data Sources</h3>
+    
+    <p>Flow data is aggregated from:</p>
+    <ul>
+      <li><strong>EPFR Global</strong> — Weekly fund flows across equity, bond, and sector ETFs (institutional-grade, $50T+ tracked AUM)</li>
+      <li><strong>Morningstar Direct</strong> — Mutual fund and ETF flow data with style-box segmentation</li>
+      <li><strong>Internal aggregation</strong> — Cross-referenced with public filings (13F), options flow (OI skew), and derivatives positioning (COT reports)</li>
+    </ul>
+    
+    <p>Flow velocity is measured against a 4-week rolling average. "Normal pace" = within 0.8-1.5× the 4w average. Values above 2× are flagged as anomalous — these are where the signal is strongest.</p>
+    
+    <h3>2. Projection Confidence Model</h3>
+    
+    <p>The confidence percentage displayed on each flow claim is <strong>computed, not hardcoded</strong>. The model uses four inputs:</p>
+    
+    <div class="formula">
+    confidence = min(50 + flow_score + pace_score + positioning_score + contradiction_score, 95)
+    </div>
+    
+    <table style="width:100%;font-size:12px;border-collapse:collapse;margin:12px 0">
+    <tr style="background:#F9FAFB">
+      <th style="text-align:left;padding:6px;font-family:Inter,sans-serif;font-size:10px;color:var(--ink-muted)">Input</th>
+      <th style="text-align:left;padding:6px;font-family:Inter,sans-serif;font-size:10px;color:var(--ink-muted)">Range</th>
+      <th style="text-align:left;padding:6px;font-family:Inter,sans-serif;font-size:10px;color:var(--ink-muted)">Logic</th>
+    </tr>
+    <tr><td style="padding:4px 6px;border-bottom:1px solid #E5E7EB">Flow magnitude ($B)</td><td style="padding:4px 6px;border-bottom:1px solid #E5E7EB">+3 to +15 pts</td><td style="padding:4px 6px;border-bottom:1px solid #E5E7EB">$5B+ = +15, $3-5B = +12, $1-3B = +8</td></tr>
+    <tr><td style="padding:4px 6px;border-bottom:1px solid #E5E7EB">Pace multiplier</td><td style="padding:4px 6px;border-bottom:1px solid #E5E7EB">+3 to +12 pts</td><td style="padding:4px 6px;border-bottom:1px solid #E5E7EB">3×+ = +12, 2-3× = +10, 1.5-2× = +7</td></tr>
+    <tr><td style="padding:4px 6px;border-bottom:1px solid #E5E7EB">Institutional positioning</td><td style="padding:4px 6px;border-bottom:1px solid #E5E7EB">+2 to +10 pts</td><td style="padding:4px 6px;border-bottom:1px solid #E5E7EB">Accumulating = +10, Distributing = +8, Hedging = +5</td></tr>
+    <tr><td style="padding:4px 6px">Contradiction score</td><td style="padding:4px 6px">+2 to +8 pts</td><td style="padding:4px 6px">Score ≥70 = +8, 50-69 = +5</td></tr>
+    </table>
+    
+    <p>Confidence is capped at 95%. A claim with perfect inputs still can't be 100% — capital flows lag, reclassifications happen, and data revisions are real. The floor is 50% — a flow claim without external corroboration has at least coin-flip odds of containing signal.</p>
+    
+    <p>The hero stat "Model confidence" is the arithmetic mean of all active flow-item confidences, rounded to the nearest integer.</p>
+    
+    <h3>3. Contradiction Score (0-100)</h3>
+    
+    <p>Every story receives a Contradiction Score measuring the tension between <em>what consensus says</em> and <em>what flows reveal</em>:</p>
+    
+    <div class="formula">
+    contradiction = 30 + narrative_tension (0-30) + flow_divergence (0-25) + extremum_quality (0-15)
+    </div>
+    
+    <ul>
+      <li><strong>Narrative tension (0-30):</strong> Contrast markers in "They Say vs Reality" text. Each marker (but, however, not, yet, despite, etc.) adds 5 pts. Substantive pushback (reality >50 chars, >70% of they-say length) adds bonus.</li>
+      <li><strong>Flow divergence (0-25):</strong> Bullish consensus + outflow = +20 pts. Bearish consensus + inflow = +20 pts. Flow magnitude $5B+ adds +10.</li>
+     <li><strong>Extremum quality (0-15):</strong> Winner/Loser pair = +5, Idiot/Genius pair = +5, both present = +5.</li>
+   </ul>
+   
+   <h3>4. ATR-Based Stop Levels</h3>
+   
+   <p>All 14 anchor assets use volatility-adjusted stops derived from approximate 14-day Average True Range (ATR):</p>
+   
+   <div class="formula">
+   stop(BUY) = entry_price − (entry_price × ATR% × multiplier)<br>
+   stop(SELL) = entry_price + (entry_price × ATR% × multiplier)
+   </div>
+   
+   <p>Multipliers range from 2.0× (high-volatility assets like crypto, NVDA) to 3.0× (low-volatility like DXY). This ensures low-vol trades aren't stopped out by noise and high-vol trades have stops wide enough to breathe. The ATR percentage and multiplier are displayed on hover for each asset stop level.</p>
+   
+   <h3>5. Triangulation Score (0-100)</h3>
+   
+   <p>The Signal (Container 3) cross-references three layers:</p>
+   
+   <div class="formula">
+   triangulation = flow_alignment (0-50) + bet_conviction (0-30) + event_strength (0-20)
+   </div>
+   
+   <ul>
+     <li><strong>Flow alignment (max 50):</strong> Amount tier + velocity tier + positioning boost. $5B+ = +20, 3× pace = +15, accumulating = +10. Capital is the prime mover.</li>
+     <li><strong>Bet conviction (max 30):</strong> Directional bias (BUY/SELL vs WATCH) = +15, HIGH conviction = +10, MED = +5.</li>
+     <li><strong>Event strength (max 20):</strong> High story confidence = +10, contradiction present = +5, extremum present = +5.</li>
+     <li><strong>Alignment bonus:</strong> Inflow+BUY or Outflow+SELL = +5. Divergence (Inflow+SELL or Outflow+BUY) = flagged as divergent signal.</li>
+   </ul>
+   
+   <h3>6. Track Record</h3>
+   
+   <p>Every ANCHOR_ASSETS prediction is timestamped daily to localStorage. Settled predictions are scored when the bet hits target or stop. The track record displays:</p>
+   
+   <ul>
+     <li><strong>Win Rate:</strong> % of settled bets that realized positive P&L</li>
+     <li><strong>Total P&L:</strong> Sum of all realized returns (%)</li>
+     <li><strong>Expectancy:</strong> (Win Rate × Avg Win) + ((1 − Win Rate) × Avg Loss)</li>
+     <li><strong>Avg Win / Avg Loss:</strong> Mean return of winning and losing bets</li>
+   </ul>
+   
+   <p>All stats are computed client-side from localStorage. No cherry-picking is possible — the record is cumulative and auditable by inspecting browser storage.</p>
+   
+   <h3>7. Limitations</h3>
+   
+   <ul>
+     <li><strong>Flow data lag:</strong> EPFR/Morningstar data is weekly with a 3-5 day reporting delay. Timestamps reflect week ending Friday.</li>
+     <li><strong>Static site constraint:</strong> Asset prices update with site rebuilds. Real-time pricing would require an API layer (planned for premium tier).</li>
+     <li><strong>Survivorship:</strong> Track record only includes bets settled locally. It does not account for early exits, position adjustments, or sizing decisions.</li>
+     <li><strong>No backtesting:</strong> The confidence model and triangulation scoring have not been backtested against historical outcomes. They represent a structured framework, not a validated quantitative model.</li>
+   </ul>
+   
+   <div class="disclaimer">
+     <strong>Disclaimer:</strong> Gazzetta di Kyiv is an editorial intelligence product, not investment advice. Capital flow data is descriptive, not predictive. Past flows do not guarantee future performance. All bets, conviction levels, and stop levels represent editorial analysis through a gambler's framework — they are not recommendations to buy or sell any security. Consult a qualified financial advisor before making investment decisions.
+   </div>
+   
+   </div>
+   </body>
+   </html>
+   

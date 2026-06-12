@@ -1301,8 +1301,11 @@ function livingCardHTML(story, isLead) {
   const reality = story.reality || '';
   const photoUrl = story.image_url || pickPhoto(sector, 0);
   const status = story.status || 'stable';
+  const cs = calcContradictionScore(story);
+  const tier = cs >= 66 ? 'contradicted' : cs >= 51 ? 'divergent' : cs >= 31 ? 'developing' : 'aligned';
+  const tierLabel = cs >= 66 ? i18n.t('tension_max','MAX TENSION') : cs >= 51 ? i18n.t('tension_high','HIGH TENSION') : cs >= 31 ? i18n.t('tension_building','BUILDING') : i18n.t('tension_consensus','CONSENSUS');
 
-  // Capital flow — from story data or fallback to matching flow in CAPITAL_FLOWS_DATA
+  // Capital flow
   let cf = safeCF(story.capital_flow);
   if (!cf) {
     const matchedFlow = (CAPITAL_FLOWS_DATA || []).find(f => f.story_id === story.story_id);
@@ -1314,135 +1317,88 @@ function livingCardHTML(story, isLead) {
         projected: matchedFlow.projected || '',
         confidence: matchedFlow.confidence_pct ? matchedFlow.confidence_pct + '%' : '70%',
         asset_class: matchedFlow.asset_class || '',
-        positioning: matchedFlow.positioning || ''
+        positioning: matchedFlow.positioning || '',
+        pace_multiplier: matchedFlow.pace_multiplier || 1.0
       };
     }
   }
-  const cfClaim = cf ? `<div class="cf-claim">${cf.claim} — projected ${cf.projected} change at ${cf.confidence} confidence</div>` : '';
 
-  // Capital flow connector chip — flow amount + trade position (v22.29)
-  let cfHint = '';
+  // LINE 2: Contradiction line
+  let contradictionHTML = '';
+  if (theySay || reality) {
+    const conExcerpt = function(s, max) { return s && s.length > max ? s.substring(0, max).trim() + '...' : s || ''; };
+    const theyExcerpt = conExcerpt(theySay, 100);
+    const realExcerpt = conExcerpt(reality, 100);
+    contradictionHTML = '<p class="story-contradiction">' +
+      (theyExcerpt ? '<span class="con-narrative">Narrative: ' + theyExcerpt + '</span>' : '') +
+      (realExcerpt ? '<span class="con-reality">Reality: ' + realExcerpt + '</span>' : '') +
+      '<span class="con-score">Gap: ' + cs + '/100</span>' +
+      '</p>';
+  }
+
+  // LINE 3: Flow indicator
+  let flowHTML = '';
   if (cf && cf.amount_b) {
-  const hintDir = (cf.direction === 'outflow') ? '↓' : '↑';
-  const hintAmt = cf.amount_b >= 1 ? `$${cf.amount_b.toFixed(1)}B` : `$${cf.amount_b.toFixed(2)}B`;
-  const hintColor = cf.direction === 'outflow' ? 'var(--red)' : 'var(--green)';
-  const sectorHint = cf.asset_class ? ` ${cf.asset_class}` : '';
-  // Find linked trade position from ANCHOR_ASSETS
-  let tradeHint = '';
-  const anchorSym = cf.anchor_symbol || matchAnchor(story.headline || '');
-  if (anchorSym) {
-    const anchorAsset = ANCHOR_ASSETS.find(a => a.symbol === anchorSym);
-    if (anchorAsset) {
-      const tradeColor = anchorAsset.bias === 'BUY' || anchorAsset.bias === 'LONG' ? 'var(--green)' : anchorAsset.bias === 'SELL' || anchorAsset.bias === 'SHORT' ? 'var(--red)' : 'var(--ink-muted)';
-      const biasLabel = anchorAsset.bias === 'LONG' ? 'BUY' : anchorAsset.bias === 'SHORT' ? 'SELL' : anchorAsset.bias;
-      tradeHint = `<span style="color:${tradeColor};margin-left:4px;">→ ${anchorAsset.symbol} ${biasLabel} ${anchorAsset.conviction}</span>`;
-    }
+    const flowDir = cf.direction === 'outflow' ? 'OUTFLOW' : 'INFLOW';
+    const flowColor = cf.direction === 'outflow' ? 'var(--red)' : 'var(--green)';
+    const flowAmt = cf.amount_b >= 1
+      ? '$' + cf.amount_b.toFixed(1) + 'B'
+      : '$' + (cf.amount_b * 1000).toFixed(0) + 'M';
+    const flowSector = cf.asset_class ? cf.asset_class.toUpperCase() : '';
+    const flowVelocity = cf.pace_multiplier
+      ? (cf.pace_multiplier >= 1 ? cf.pace_multiplier.toFixed(1) + 'x' : (cf.pace_multiplier * 100).toFixed(0) + '%') + ' avg'
+      : '';
+    flowHTML = '<div class="story-flow">' +
+      '<span class="flow-amount" style="color:' + flowColor + '">' + flowAmt + '</span>' +
+      (flowSector ? '<span class="flow-sector">' + flowSector + '</span>' : '') +
+      '<span class="flow-direction" style="color:' + flowColor + '">' + flowDir + '</span>' +
+      (flowVelocity ? '<span class="flow-velocity">' + flowVelocity + '</span>' : '') +
+      '</div>';
   }
-  cfHint = `<a href="./flows.html" class="cf-hint" style="color:${hintColor};text-decoration:none;" title="View in Capital Flows — ${cf.direction === 'outflow' ? 'out of' : 'into'} ${cf.asset_class || 'this sector'}">${hintAmt} ${hintDir}${sectorHint}${tradeHint}</a>`;
-  }
 
-  // Sector border-left class
-  const sectorClass = sector === 'geopolitics' ? 'geopolitics' : sector === 'tech' ? 'tech' : sector === 'macro' ? 'macro' : sector === 'markets' ? 'markets' : '';
-
-  // Status dot + update badge
-  const dotClass = statusDotClass(status);
-  const updateBadge = story.update_count > 0
-    ? `<span class="story-update-badge">+${story.update_count} ` + i18n.t('updates','updates') + `</span>`
-    : '';
-  const updatedAgo = story.last_updated
-    ? `<span class="updated-ago">${formatTimeAgo(story.last_updated)}</span>`
-    : '';
-
-  // Freshness indicator — time-ago from generated_at, color-coded by recency
+  // Freshness + tier badge (compact)
   const freshnessAgo = story.generated_at
-    ? `<time class="freshness-ago ${freshnessClass(story.generated_at)}" datetime="${story.generated_at}" title="${new Date(story.generated_at).toLocaleString()}">${formatTimeAgo(story.generated_at)}</time>`
+    ? '<time class="freshness-ago ' + freshnessClass(story.generated_at) + '" datetime="' + story.generated_at + '">' + formatTimeAgo(story.generated_at) + '</time>'
     : '';
   const breakingBadge = story.freshness === 'breaking'
     ? '<span class="breaking-badge">BREAKING</span>'
     : '';
 
-  // Extremum line
-  const extremumHTML = story.extremum ? extremumLineHTML(story.extremum) : '';
+  // LINE 4: Action links
+  const actionHTML = '<div class="story-actions">' +
+    '<a href="./story.html?id=' + story.story_id + '" class="action-report">Full intelligence report</a>' +
+    (cf && cf.amount_b ? '<a href="./signal.html" class="action-signal">View signal</a>' : '') +
+    '</div>';
 
-  // Severity
-  const severity = determineSeverity(story);
-
-  // Contradiction tier badge — 4 tiers for visual differentiation
-  const cs = calcContradictionScore(story);
-  const tier = cs >= 66 ? 'contradicted' : cs >= 51 ? 'divergent' : cs >= 31 ? 'developing' : 'aligned';
-  const tierLabel = cs >= 66 ? i18n.t('tension_max','MAX TENSION') : cs >= 51 ? i18n.t('tension_high','HIGH TENSION') : cs >= 31 ? i18n.t('tension_building','BUILDING') : i18n.t('tension_consensus','CONSENSUS');
-  const tierTitle = cs >= 66 ? 'Narrative inverts reality — strongest trade signal. Contradiction score: ' + cs + '/100'
-    : cs >= 51 ? 'Material gap between narrative and reality — opportunity. Contradiction score: ' + cs + '/100'
-    : cs >= 31 ? 'Early tension forming — watch for widening. Contradiction score: ' + cs + '/100'
-    : 'Narrative and reality align — lower edge. Contradiction score: ' + cs + '/100';
-
-  return `
-    <article class="card${isLead ? ' lead' : ''}${sectorClass ? ' ' + sectorClass : ''}"
-             data-story-id="${story.story_id}"
-             data-status="${status}"
-             data-update-count="${story.update_count || 0}"
-             data-last-updated="${story.last_updated || ''}"
-             data-pillar="${story.paradigm_pillar || ''}">
-      <div class="card-collapsed">
-      <div class="card-head">
-        ${cfClaim}
-        <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:2px">
-          ${cf && cf.asset_class ? `<span class="asset-badge ${cf.asset_class}">${ASSET_BADGE_LABELS[cf.asset_class] || cf.asset_class.toUpperCase()}</span>` : ''}
-          ${sector ? `<span class="category-tag ${sector}">${SECTOR_LABELS[sector] ? SECTOR_LABELS[sector]() : sector}</span>` : ''}
-          <span class="severity ${severity}">${severity === 'critical' ? i18n.t('severity_critical','CRITICAL') : severity === 'high' ? i18n.t('severity_high','HIGH') : i18n.t('severity_elevated','ELEVATED')}</span>
-          ${breakingBadge}
-          ${freshnessAgo}
-          ${updateBadge}
-          ${updatedAgo}
-        </div>
-        <div style="display:flex;align-items:flex-start;gap:6px">
-          <h3 style="flex:1"><a href="./story.html?id=${story.story_id}" style="color:inherit;text-decoration:none">${story.headline}</a></h3>
-          ${cfHint}
-          <span class="tier-badge ${tier}" title="${tierTitle}">${tierLabel} <span class="tier-score">${cs}/100</span></span>
-        </div>
-      </div>
-      </div><!-- /card-collapsed -->
-      <div class="card-expanded-body">
-        ${reality ? `<p class="summary">${reality}</p>` : ''}
-        ${theySay || reality ? `
-        <div class="detail">
-          ${theySay ? `<div class="con-they"><span class="con-label">${i18n.t('they_say','They say')}</span>${theySay}</div>` : ''}
-          ${reality ? `<div class="con-real"><span class="con-label">${i18n.t('reality','Reality')}</span>${reality}</div>` : ''}
-        </div>` : ''}
-        ${capitalFlowHTML(cf)}
-        ${story.portfolio_implication ? `
-        <div class="the-play">
-          <span class="pi-label">${i18n.t('the_play_label','THE PLAY')}</span>
-          <span class="pi-text">${story.portfolio_implication}</span>
-        </div>` : ''}
-        ${extremumHTML}
-        <a href="./story.html?id=${story.story_id}" class="intel-report-link" data-i18n="story_full_report">Full intelligence report →</a>
-        <div class="share-row">
-          <button class="share-btn copy-link" title="${i18n.t('share_copy','Copy link')}" data-action="copy-link">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-          </button>
-          <button class="share-btn share-x" title="${i18n.t('share_x','Share on X')}" data-action="share-x">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7.5 7.5L4 19"/><path d="M20 4l-7.5 7.5L20 19"/></svg>
-          </button>
-          <button class="share-btn share-facebook" title="${i18n.t('share_facebook','Share on Facebook')}" data-action="share-facebook">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-          </button>
-          <button class="share-btn share-telegram" title="${i18n.t('share_telegram','Share on Telegram')}" data-action="share-telegram">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          </button>
-          <button class="share-btn share-reddit" title="${i18n.t('share_reddit','Share on Reddit')}" data-action="share-reddit">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8s-4-1-8 2"/><path d="M8 16s4 1 8-2"/><circle cx="9" cy="9" r="0.5" fill="currentColor"/><circle cx="15" cy="9" r="0.5" fill="currentColor"/></svg>
-          </button>
-        </div>
-        <div class="card-photo">
-          <img src="${photoUrl}" alt="${sector}" loading="lazy" onerror="this.parentElement.style.display='none'">
-        </div>
-      </div>
-      <div class="story-evolution-timeline" style="display:none">
-        <div class="timeline-loading">${i18n.t('loading_timeline','Loading evolution timeline...')}</div>
-      </div>
-      ${story.status === 'resolved' ? `<div class="resolved-banner"><span class="resolved-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>${i18n.t('resolved','Resolved')}</span></div>` : ''}
-    </article>`;
+  return '\n    <article class="card story-card' + (isLead ? ' lead' : '') + '"' +
+    '\n             data-story-id="' + story.story_id + '"' +
+    '\n             data-status="' + status + '"' +
+    '\n             data-tier="' + tier + '">' +
+    '\n      <div class="story-meta">' +
+    '\n        ' + breakingBadge +
+    '\n        <span class="tier-badge ' + tier + '">' + tierLabel + ' ' + cs + '/100</span>' +
+    '\n        ' + freshnessAgo +
+    '\n      </div>' +
+    '\n      <h3 class="story-headline"><a href="./story.html?id=' + story.story_id + '">' + (story.headline || '') + '</a></h3>' +
+    '\n      ' + contradictionHTML +
+    '\n      ' + flowHTML +
+    '\n      ' + actionHTML +
+    '\n      <div class="story-expanded" style="display:none">' +
+    '\n        <div class="story-detail">' +
+    (theySay ? '\n          <div class="con-they"><span class="con-label">' + i18n.t('they_say','They say') + '</span>' + theySay + '</div>' : '') +
+    (reality ? '\n          <div class="con-real"><span class="con-label">' + i18n.t('reality','Reality') + '</span>' + reality + '</div>' : '') +
+    '\n        </div>' +
+    '\n        ' + capitalFlowHTML(cf) +
+    (story.portfolio_implication ? '\n        <div class="the-play"><span class="pi-label">' + i18n.t('the_play_label','THE PLAY') + '</span><span class="pi-text">' + story.portfolio_implication + '</span></div>' : '') +
+    (story.extremum ? '\n        ' + extremumLineHTML(story.extremum) : '') +
+    '\n        <div class="card-photo"><img src="' + photoUrl + '" alt="' + sector + '" loading="lazy" onerror="this.parentElement.style.display=\'none\'"></div>' +
+    '\n        <div class="share-row">' +
+    '\n          <button class="share-btn copy-link" title="' + i18n.t('share_copy','Copy link') + '" data-action="copy-link"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>' +
+    '\n          <button class="share-btn share-x" title="' + i18n.t('share_x','Share on X') + '" data-action="share-x"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7.5 7.5L4 19"/><path d="M20 4l-7.5 7.5L20 19"/></svg></button>' +
+    '\n          <button class="share-btn share-telegram" title="' + i18n.t('share_telegram','Share on Telegram') + '" data-action="share-telegram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>' +
+    '\n        </div>' +
+    '\n      </div>' +
+    '\n    </article>';
 }
 
 // ── Extremum Line HTML ──
