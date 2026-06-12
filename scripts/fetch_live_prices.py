@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 PROJECT = Path(__file__).resolve().parent.parent
-OUT_PATH = PROJECT / "site" / "data" / "market_prices.json"
+OUT_PATH = PROJECT / "public" / "data" / "market_prices.json"
 
 COINGECKO_IDS = {"BTC":"bitcoin","ETH":"ethereum","SOL":"solana","XAU":"tether-gold"}
 

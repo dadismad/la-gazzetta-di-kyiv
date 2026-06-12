@@ -33,7 +33,7 @@ except ImportError:
 
 
 PROJECT = Path(__file__).resolve().parent.parent
-SITE = PROJECT / "site"
+SITE = PROJECT / "public"
 DATA = PROJECT / "data"
 
 # Product pages to validate

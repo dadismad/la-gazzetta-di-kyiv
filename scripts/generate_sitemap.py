@@ -50,7 +50,7 @@ def main():
     
     sitemap += "</urlset>\n"
     
-    out = PROJECT / "site" / "sitemap.xml"
+    out = PROJECT / "public" / "sitemap.xml"
     out.write_text(sitemap)
     print(f"sitemap.xml: {len(PRODUCTS)} pages + {len(seen)} stories -> {out}")
 

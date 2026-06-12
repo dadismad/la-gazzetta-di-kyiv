@@ -13,7 +13,7 @@ from pathlib import Path
 PROJECT = Path(__file__).resolve().parent.parent
 DB = str(PROJECT / "gazzetta.db")
 MARKET_DATA = str(PROJECT / "data" / "market_prices.json")
-OUT = str(PROJECT / "site" / "data" / "track_record.json")
+OUT = str(PROJECT / "public" / "data" / "track_record.json")
 CUTOFF_HOURS = 48
 
 # Asset class → ticker mapping for market data lookup

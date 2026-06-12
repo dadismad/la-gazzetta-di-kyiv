@@ -11,7 +11,7 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
-SITE_DIR = PROJECT_ROOT / "site"
+SITE_DIR = PROJECT_ROOT / "public"
 OUT_DIR = SITE_DIR / "api" / "v1"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 

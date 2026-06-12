@@ -14,7 +14,7 @@ from collections import Counter
 
 PROJECT = Path(__file__).resolve().parent.parent
 DB = PROJECT / "gazzetta.db"
-STORIES = PROJECT / "site" / "data" / "stories.json"
+STORIES = PROJECT / "public" / "data" / "stories.json"
 
 print("═══════════════════════════════════════════")
 print("  DIAGNOSTIC: $5B Flow Default Bug")

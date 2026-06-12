@@ -138,7 +138,7 @@ def main():
         json.dump(data, f, indent=2, ensure_ascii=False)
     
     # Sync to public/data/
-    site_path = os.path.join(PROJECT, "site", "data", "stories.json")
+    site_path = os.path.join(PROJECT, "public", "data", "stories.json")
     os.makedirs(os.path.dirname(site_path), exist_ok=True)
     with open(site_path, "w") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)

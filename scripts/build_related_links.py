@@ -16,8 +16,8 @@ from collections import defaultdict
 from pathlib import Path
 
 PROJECT = Path(__file__).resolve().parent.parent
-STORIES_PATH = PROJECT / "site" / "data" / "stories.json"
-FLOWS_PATH = PROJECT / "site" / "data" / "flows.json"
+STORIES_PATH = PROJECT / "public" / "data" / "stories.json"
+FLOWS_PATH = PROJECT / "public" / "data" / "flows.json"
 
 
 def load_json(path):

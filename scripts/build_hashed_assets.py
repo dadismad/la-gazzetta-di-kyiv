@@ -12,7 +12,7 @@ No manual version bumps across 20+ HTML files. No stale cache edge cases.
 import hashlib, os, sys, re, json, shutil
 from pathlib import Path
 
-SITE_DIR = Path(__file__).resolve().parent.parent / "site"
+SITE_DIR = Path(__file__).resolve().parent.parent / "public"
 ASSETS = ["styles.css", "styles-modern.css", "app.js", "i18n.js", "sector.js", "story-app.js"]
 DRY_RUN = "--dry-run" in sys.argv
 

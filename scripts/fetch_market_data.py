@@ -169,7 +169,7 @@ def main():
         json.dump(output, f, indent=2)
     
     # Also sync to public/data/
-    site_data = PROJECT / "site" / "data"
+    site_data = PROJECT / "public" / "data"
     os.makedirs(str(site_data), exist_ok=True)
     with open(site_data / "market_prices.json", "w") as f:
         json.dump(output, f, indent=2)

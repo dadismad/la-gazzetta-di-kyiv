@@ -14,7 +14,7 @@ from pathlib import Path
 from glob import glob
 
 PROJECT_ROOT = Path(os.environ.get("GAZZETTA_ROOT", os.path.expanduser("~/projects/gazzetta-di-kyiv")))
-SITE_DIR = PROJECT_ROOT / "site"
+SITE_DIR = PROJECT_ROOT / "public"
 
 def extract_html_keys(html_path):
     """Extract all data-i18n keys from HTML files."""

@@ -12,7 +12,7 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_SOURCE = PROJECT_ROOT / "data" / "stories.json"
-OUTPUT = PROJECT_ROOT / "site" / "data" / "flow_nodes.json"
+OUTPUT = PROJECT_ROOT / "public" / "data" / "flow_nodes.json"
 
 EET = timezone(timedelta(hours=3))
 

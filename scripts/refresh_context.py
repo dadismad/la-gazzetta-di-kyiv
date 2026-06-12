@@ -158,7 +158,7 @@ else:
 
 # Check if local ETag is stale
 if not drift and live_etag and live_etag != "missing":
-    build_manifest = os.path.join(PROJECT, "site", "build-manifest.json")
+    build_manifest = os.path.join(PROJECT, "public", "build-manifest.json")
     if os.path.exists(build_manifest):
         with open(build_manifest) as f:
             manifest = json.load(f)
@@ -182,7 +182,7 @@ else:
     print(f"    {ok('working tree clean')}")
 
 # 4.5b: Structural integrity of compiled HTML
-site_dir = os.path.join(PROJECT, "site")
+site_dir = os.path.join(PROJECT, "public")
 critical_elements = {
     "index.html": [
         ("hero section", r'<section[^>]*class="[^"]*hero[^"]*"'),

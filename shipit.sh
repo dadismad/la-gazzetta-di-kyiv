@@ -62,6 +62,9 @@ rm -f "$PROJECT/public/build-manifest.json" "$PROJECT/public/deploy_report.txt" 
 echo "  ✓ Hashed assets cleaned"
 # Recreate essential dirs
 mkdir -p "$PROJECT/public/api/v1/home"
+# Preserve locale files (static source, not pipeline output)
+mkdir -p "$PROJECT/public/data/locales"
+cp "$PROJECT/templates/locales/"*.json "$PROJECT/public/data/locales/" 2>/dev/null || true
 echo "  ✓ Essential directories recreated (data/en/ removed — EN-only, no RU mirror needed)"
 echo ""
 

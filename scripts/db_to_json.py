@@ -24,7 +24,7 @@ from pathlib import Path
 PROJECT = Path(__file__).resolve().parent.parent
 DB_PATH = PROJECT / "gazzetta.db"
 DATA = PROJECT / "data"
-SITE_DATA = PROJECT / "site" / "data"
+SITE_DATA = PROJECT / "public" / "data"
 
 
 def compile_stories(conn):
