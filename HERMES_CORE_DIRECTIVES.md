@@ -287,9 +287,39 @@ The `gazzetta-product-factory` cron runs hourly via `gazzetta_pipeline_unified.s
 
 ## §5 — FILE MANAGEMENT RULES
 
-### §5.1 — Edit the Repo, Not GCS
+### §5.1 — Directory Structure (Restructured June 2026)
 
-**Never upload files directly to GCS with gsutil cp.** The cron deploy runs hourly and will overwrite any manual GCS changes. Always edit files in `~/lagazzettadikyiv/site/` and deploy via `shipit.sh` or wait for the next cron cycle.
+```
+~/lagazzettadikyiv/
+├── public/          ← ALL deployable files (HTML, CSS, JS, data/, api/)
+│   ├── *.html      ← 21 HTML pages (index, stories, flows, trades, etc.)
+│   ├── *.js        ← JavaScript (app.js, story-app.js, sector.js, i18n.js)
+│   ├── *.css       ← Stylesheets (styles.css, styles-modern.css)
+│   ├── data/       ← Pipeline-generated JSON (stories.json, flows.json, etc.)
+│   └── api/        ← API endpoints (signal.json, trades.json)
+├── data/            ← Pipeline working data + source intel feeds
+│   ├── stories.json ← DB-compiled authoritative story data
+│   ├── flows.json   ← DB-compiled authoritative flow data
+│   └── telegram_intel/ ← Raw intel feeds
+├── scripts/         ← Python pipeline + deployment logic
+│   ├── db_to_json.py
+│   ├── shipit.sh (symlink at root)
+│   └── ...
+├── docs/            ← Documentation
+├── ops/             ← Operations scripts
+├── gazzetta.db      ← SQLite source of truth (NOT committed)
+└── HERMES_CORE_DIRECTIVES.md
+```
+
+**Strict rule:**
+- **Content changes** → modify `data/` JSON or `gazzetta.db` (NOT `public/data/`)
+- **UI changes** → modify `public/` HTML/CSS/JS
+- **Pipeline** → `scripts/` Python files
+- **Never mix** — don't edit content in `public/`, don't deploy from `data/`
+
+### §5.2 — Edit the Repo, Not GCS
+
+**Never upload files directly to GCS with gsutil cp.** The cron deploy runs hourly and will overwrite any manual GCS changes. Always edit files in `~/lagazzettadikyiv/public/` and deploy via `shipit.sh` or wait for the next cron cycle.
 
 ### §5.2 — Nuclear Clean Safety
 
