@@ -3,7 +3,7 @@
 
 Reads data/stories.json (source of truth), extracts capital flow data from
 capital_flow dicts, capital_flow_implication strings, and portfolio_implication
-strings. Outputs site/data/flows.json for the website.
+strings. Outputs public/data/flows.json for the website.
 
 Called by cron job gazzetta-continuous-capital-flows every 60 minutes.
 """
@@ -14,7 +14,7 @@ from collections import Counter
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_SOURCE = PROJECT_ROOT / "data" / "stories.json"
-OUTPUT = PROJECT_ROOT / "site" / "data" / "flows.json"
+OUTPUT = PROJECT_ROOT / "data" / "flows_generated.json"
 
 EET = timezone(timedelta(hours=3))
 
@@ -41,6 +41,9 @@ def parse_amount(text):
     """Parse amount like '$37.2B', '€2-5B', '$3-5B' from text.
     Returns (amount_b, denomination) — amount in billions.
     """
+    # Coerce to string — callers may pass float/int from JSON/DB (e.g. 4.8)
+    if not isinstance(text, str):
+        text = str(text) if text else ""
     if not text:
         return (0, "unknown")
 
@@ -191,8 +194,12 @@ def extract_from_capital_flow_dict(cf, story, story_id):
     direction = normalize_direction(direction_raw)
 
     # Amount: parse amount string first (overrides hardcoded 5.0 default)
-    amt_str = cf.get("amount", "")
-    parsed_b, _ = parse_amount(amt_str) if amt_str else (0, "")
+    amt_raw = cf.get("amount", "")
+    # PITFALL: amount can be a float (e.g. 13.5) from DB/capital_flows, not always a string
+    if isinstance(amt_raw, (int, float)):
+        parsed_b = float(amt_raw)
+    else:
+        parsed_b, _ = parse_amount(str(amt_raw)) if amt_raw else (0, "")
     amount_b = cf.get("amount_b", 0)
     # If parsed value is real and differs from hardcoded, use parsed
     if parsed_b > 0 and (amount_b == 0 or amount_b == 5.0):
@@ -624,13 +631,8 @@ def main():
 
     print(f"✅ Generated {len(flows)} flows → {OUTPUT}")
     print(f"   Aggregate confidence: {agg_conf}% ({agg_direction})")
-    print(f"   {inflows} inflows · {outflows} outflows")
-    print(f"   Next update: {(now_eet + timedelta(hours=1)).strftime('%Y-%m-%d %H:%M')} EET")
-
-    # Also write to data/flows.json for reference
-    DATA_FLOWS = PROJECT_ROOT / "data" / "flows.json"
-    DATA_FLOWS.parent.mkdir(parents=True, exist_ok=True)
-    DATA_FLOWS.write_text(json.dumps(output, indent=2))
+    OUTPUT.write_text(json.dumps(output, indent=2))
+    print(f"✅ Generated {len(flows)} flows → {OUTPUT}")
 
 
 if __name__ == "__main__":

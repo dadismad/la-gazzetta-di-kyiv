@@ -4,7 +4,7 @@ Generate flow_nodes.json from editorial pipeline stories.
 
 Reads data/stories.json (source of truth), extracts capital_flow dicts,
 maps each flow to source→target node types based on asset class and direction.
-Outputs site/data/flow_nodes.json — consumed by flow-nodes.html visualization.
+Outputs public/data/flow_nodes.json — consumed by flow-nodes.html visualization.
 """
 import json, re, os
 from datetime import datetime, timezone, timedelta
@@ -12,7 +12,7 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_SOURCE = PROJECT_ROOT / "data" / "stories.json"
-OUTPUT = PROJECT_ROOT / "site" / "data" / "flow_nodes.json"
+OUTPUT = PROJECT_ROOT / "public" / "data" / "flow_nodes.json"
 
 EET = timezone(timedelta(hours=3))
 
@@ -45,6 +45,9 @@ def safe_str(s):
 
 def parse_amount(text):
     """Parse '$37.2B', '$3-5B' → (amount_b, denomination)."""
+    # Coerce to string — callers may pass float/int from JSON/DB
+    if not isinstance(text, str):
+        text = str(text) if text else ""
     if not text: return (0, "unknown")
     m = re.search(r'[\$€]\s*([\d.]+)\s*(?:-|–|to)\s*[\$€]?\s*([\d.]+)\s*([BM])', text)
     if m:
@@ -74,7 +77,7 @@ def parse_amount_from_cf(cf):
             return amt_b, denom
     
     # Last resort: pacing/amount_b field
-    amt_b = cf.get("amount_b", 0)
+    amt_b = cf.get("amount_b") or 0
     if amt_b > 0:
         return amt_b, "billion"
     
@@ -164,7 +167,7 @@ def generate():
                 nodes[nid] = {
                     "id": nid,
                     "type": ntype,
-                    "label": f"{NTYPES[ntype]['label']} → {asset_class}",
+                    "label": f"{NODE_TYPES[ntype]['label']} → {asset_class}",
                     "total_inflow_b": 0,
                     "total_outflow_b": 0,
                     "flow_count": 0,

@@ -2,7 +2,7 @@
 """
 Generate api/v1/signal.json — Triangulation signals from stories + flows + trades.
 Cross-references stories, flows, and anchor positions to compute 0-100 signal scores.
-Output: site/api/v1/signal.json
+Output: public/api/v1/signal.json
 """
 
 import json, sys
@@ -11,7 +11,7 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
-SITE_DIR = PROJECT_ROOT / "site"
+SITE_DIR = PROJECT_ROOT / "public"
 OUT_DIR = SITE_DIR / "api" / "v1"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -54,7 +54,7 @@ def main():
         cf = s.get("capital_flow", {})
         ac = cf.get("asset_class", "equities")
         direction = cf.get("direction", "inflow")
-        amount = cf.get("amount_b", 1.0)
+        amount = cf.get("amount_b") or 0  # None → 0 guard
         pace = cf.get("pace_multiplier", 1.0)
         cs = s.get("contradiction_score", 50)
 

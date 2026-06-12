@@ -168,13 +168,13 @@ def main():
     with open(out_path, "w") as f:
         json.dump(output, f, indent=2)
     
-    # Also sync to site/data/
-    site_data = PROJECT / "site" / "data"
+    # Also sync to public/data/
+    site_data = PROJECT / "public" / "data"
     os.makedirs(str(site_data), exist_ok=True)
     with open(site_data / "market_prices.json", "w") as f:
         json.dump(output, f, indent=2)
     
-    print(f"\n✓ Written to {out_path} and site/data/market_prices.json")
+    print(f"\n✓ Written to {out_path} and public/data/market_prices.json")
 
 if __name__ == "__main__":
     main()

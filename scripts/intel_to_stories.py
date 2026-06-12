@@ -327,6 +327,10 @@ def intel_story_to_gazzetta(intel_story, pillar):
 
     # Confidence tier
     conf = intel_story.get("confidence", 75)
+    # v26.3: Confidence floor — if amount_b is tiny (<0.1B), confidence should reflect
+    # that this is trace-level flow, not a conviction signal. Cap at 50 unless explicitly set.
+    if amount_b < 0.1 and conf >= 50 and intel_story.get("confidence") is None:
+        conf = max(conf, 40)  # Don't fabricate high confidence on micro-flows
     if conf >= 80:
         confidence_level = "high"
     elif conf >= 60:
@@ -355,18 +359,26 @@ def intel_story_to_gazzetta(intel_story, pillar):
 
     tier = "DEVELOPING" if contradiction_score >= 55 else "ALIGNED"
 
-    # Asset class detection
+    # Asset class detection — more keywords, better ordering
     asset_class = "equities"
-    text_lower = (bet_text + " " + event_text).lower()
-    if any(w in text_lower for w in ["oil", "crude", "brent", "wti", "energy"]):
-        asset_class = "commodities"
-    elif any(w in text_lower for w in ["btc", "bitcoin", "crypto", "eth"]):
+    text_lower = (bet_text + " " + event_text + " " + headline).lower()
+    # Check tech/business keywords FIRST (before defense, to avoid "war for users" → defense)
+    if any(w in text_lower for w in ["ai", "tech", "software", "openai", "anthropic", "nvidia", "chip", "semiconductor", "data center", "cloud", "startup", "ipo", "valuation"]):
+        asset_class = "tech"
+    elif any(w in text_lower for w in ["btc", "bitcoin", "crypto", "eth", "ethereum", "blockchain", "defi", "stablecoin"]):
         asset_class = "crypto"
-    elif any(w in text_lower for w in ["gold", "silver", "metal"]):
+    elif any(w in text_lower for w in ["oil", "crude", "brent", "wti", "energy", "opec", "gasoline"]):
         asset_class = "commodities"
-    elif any(w in text_lower for w in ["bond", "treasury", "yield", "tlt"]):
+    elif any(w in text_lower for w in ["gold", "silver", "metal", "copper", "lithium"]):
+        asset_class = "commodities"
+    elif any(w in text_lower for w in ["bond", "treasury", "yield", "tlt", "fed", "federal reserve", "ecb", "interest rate", "inflation"]):
         asset_class = "fixed_income"
-    elif any(w in text_lower for w in ["defense", "missile", "military"]):
+    elif any(w in text_lower for w in ["dollar", "fx", "forex", "currency", "dxy", "euro", "yen"]):
+        asset_class = "fx"
+    elif any(w in text_lower for w in ["pharma", "drug", "fda", "health", "medicare", "medicaid", "biotech", "clinical"]):
+        asset_class = "fixed_income"  # healthcare → fixed_income for now
+    # Defense LAST — only if no other category matched
+    elif any(w in text_lower for w in ["missile", "military", "pentagon", "hezbollah", "houthi", "iran strike", "israel strike"]):
         asset_class = "defense"
 
     horizon = intel_story.get("horizon", "24-72h")
@@ -402,6 +414,23 @@ def intel_story_to_gazzetta(intel_story, pillar):
     entity_tags = extract_entities(all_text)
 
     # Build base story
+    they_say_raw = intel_story.get("consensus_narrative", "")
+    reality_raw = intel_story.get("contradiction", "")
+    
+    # v26.3: Prevent They Say/Reality copy-paste — the #1 editorial trust killer.
+    # If they're >70% identical, derive a differentiated reality from available data.
+    if they_say_raw and reality_raw:
+        # Simple word-overlap similarity check
+        ts_words = set(they_say_raw.lower().split())
+        re_words = set(reality_raw.lower().split())
+        if ts_words and re_words:
+            overlap = len(ts_words & re_words) / max(len(ts_words), len(re_words))
+            if overlap > 0.7:
+                # Use bet text or benefit as reality instead of duplicate
+                reality_raw = bet_text[:300] if bet_text else benefit_text[:300]
+                if not reality_raw or reality_raw == they_say_raw:
+                    reality_raw = f"Capital flow data shows ${amount_b}B {direction} in {asset_class} — narrative may be mispricing the actual money flow."
+    
     base_story = {
         "story_id": story_id,
         "headline": headline[:200],
@@ -409,8 +438,8 @@ def intel_story_to_gazzetta(intel_story, pillar):
         "pillar": pillar,
         "paradigm_pillar": pillar,
         "paradigm_implications": [benefit_text[:200]] if benefit_text else [],
-        "they_say": intel_story.get("consensus_narrative", ""),
-        "reality": intel_story.get("contradiction", ""),
+        "they_say": they_say_raw,
+        "reality": reality_raw,
         "thesis": bet_text[:300],
         "actors": intel_story.get("actors", []),
         "horizon": horizon,

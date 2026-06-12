@@ -386,19 +386,9 @@ def context_amount(asset_class, direction, headline=""):
             return round(amount, 1)
     
     # ── Asset class fallback (no entity matched) ──
-    base_ranges = {
-        "crypto":       (0.1, 2.0),      # crypto: smaller individual moves
-        "equities":     (0.01, 0.5),     # equities: mid-range
-        "commodities":  (2.0, 12.0),     # commodities: larger moves
-        "tech":         (1.0, 15.0),     # tech: broad range
-        "defense":      (1.0, 10.0),     # defense: mid-to-large
-        "fixed_income": (5.0, 50.0),     # bonds: large flows
-        "fx":           (5.0, 50.0),     # forex: large flows
-    }
-    
-    lo, hi = base_ranges.get(asset_class, (0.01, 0.05))  # default: $10M-$50M
-    amount = lo + (h % int((hi - lo) * 10)) / 10.0
-    return round(amount, 1)
+    # Return None — do NOT fabricate amounts for stories without real data.
+    # Fabricated amounts undermine credibility. Better to show no amount than a fake one.
+    return None
 
 
 def generate_multi_persona(headline, raw_text, entities, asset_class, direction):
@@ -449,6 +439,13 @@ def generate_suggested_flows(headline, raw_text, asset_class, direction):
     amount_b = extract_amount(raw_text)
     if amount_b is None:
         amount_b = context_amount(asset_class, direction, headline)
+    # Format claim — use '—' when no amount extracted
+    if amount_b is None:
+        amt_label = "—"
+        claim = f"{direction} {asset_class}"
+    else:
+        amt_label = f"${amount_b}B"
+        claim = f"${amount_b}B {direction} {asset_class}"
     return {
         "direction": direction,
         "amount_b": amount_b,
@@ -457,7 +454,7 @@ def generate_suggested_flows(headline, raw_text, asset_class, direction):
         "pace_multiplier": 1.0,
         "confidence_pct": 50,
         "confidence_level": "low",
-        "claim": f"${amount_b}B {direction} {asset_class}",
+        "claim": claim,
         "confidence": "50%",
     }
 

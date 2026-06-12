@@ -5,10 +5,10 @@ Queries gazzetta.db, reconstructs nested JSON structures, resolves
 relational story_flow_links back into impacted_flows arrays, and outputs
 data/stories.json and data/flows.json.
 
-Also outputs site/data/ copies for deployment.
+Also outputs public/data/ copies for deployment.
 
 Usage:
-  python3 scripts/db_to_json.py               # write data/ + site/data/
+  python3 scripts/db_to_json.py               # write data/ + public/data/
   python3 scripts/db_to_json.py --data-only    # write data/ only
 """
 
@@ -24,7 +24,7 @@ from pathlib import Path
 PROJECT = Path(__file__).resolve().parent.parent
 DB_PATH = PROJECT / "gazzetta.db"
 DATA = PROJECT / "data"
-SITE_DATA = PROJECT / "site" / "data"
+SITE_DATA = PROJECT / "public" / "data"
 
 
 def compile_stories(conn):
@@ -62,14 +62,6 @@ def compile_stories(conn):
             "full_json": fj,
         }
 
-    # ═══ v23.22: WAI — Compute sector totals from flow_by_id ═══
-    sector_totals = {}
-    for fid, fdata in flow_by_id.items():
-        cat = fdata.get("category", "")
-        if cat:
-            sector_totals[cat] = sector_totals.get(cat, 0) + float(fdata.get("amount_b", 0))
-    # Fallback: use individual flow if sector missing
-
     stories = []
     seen_ids = set()  # v23.22: deduplication guard
     for sid, full_json_str in rows:
@@ -96,14 +88,13 @@ def compile_stories(conn):
                 cf = story.get("capital_flow", {})
                 # Only use flow values when story doesn't have its own
                 # Exception: override the known $5.0B default (intel_to_stories.py default)
+                # v23.23: None explicitly means "no real amount" — skip scaling
+                has_explicit_null = ("amount_b" in cf and cf["amount_b"] is None)
                 is_default_amount = (cf.get("amount_b") == 5.0 and not cf.get("_amount_derived"))
-                if not cf.get("amount_b") or is_default_amount:
+                if has_explicit_null or not cf.get("amount_b") or is_default_amount:
                     tier = story.get("tier", "ACTIVE")
                     pillar = story.get("pillar", "")
-                    cat = primary_flow.get("category", "")
-                    flow_total = sector_totals.get(cat, float(primary_flow["amount_b"]))
-                    if flow_total <= 0:
-                        flow_total = float(primary_flow["amount_b"])
+                    flow_total = float(primary_flow["amount_b"])
                     # --- Story-Level Scaling fractions ---
                     # PSV: Proportional Story Volume — tier maps to category fraction
                     tier_fractions = {
@@ -134,13 +125,39 @@ def compile_stories(conn):
                 if not cf.get("pace_multiplier"):
                     cf["pace_multiplier"] = primary_flow["velocity"]
                 if not cf.get("direction") or cf.get("direction") == "neutral":
-                    cf["direction"] = primary_flow["direction"]
+                    # Normalize neutral → inflow (capital-first bias), or inherit from primary_flow
+                    pd = primary_flow.get("direction", "")
+                    cf["direction"] = pd if pd and pd != "neutral" else "inflow"
                 if not cf.get("asset_class"):
                     cf["asset_class"] = primary_flow["category"]
-                cf["confidence_pct"] = cf.get("confidence_pct", 50)
-                cf["confidence_level"] = cf.get("confidence_level", "medium")
-                cf["claim"] = f"${cf.get('amount_b', 0)}B {cf.get('direction', primary_flow['direction'])} {cf.get('asset_class', '')}"
-                if cf.get("amount_b", 0) > 0:
+                # Compute confidence dynamically when stuck at flat defaults
+                existing_conf = cf.get("confidence_pct", 50)
+                if existing_conf in (50, 65, 75) or not cf.get("confidence_trace"):
+                    try:
+                        from generate_flows import compute_confidence
+                        amt = cf.get('amount_b') or 0
+                        pace = cf.get('pace_multiplier', 1.0) or 1.0
+                        direction = cf.get('direction', 'inflow')
+                        positioning = "accumulating" if direction == 'inflow' else "distributing" if direction == 'outflow' else "hedging"
+                        cs = story.get('contradiction_score', 0) or 0
+                        contr_bonus = min(15, max(0, (cs - 40) // 4))
+                        source = story.get('source', '')
+                        new_conf, level, trace = compute_confidence(amt, pace, positioning, contr_bonus, source)
+                        cf["confidence_pct"] = new_conf
+                        cf["confidence_level"] = level
+                        cf["confidence_trace"] = trace
+                    except Exception:
+                        cf["confidence_pct"] = existing_conf or 50
+                        if not cf.get("confidence_level"):
+                            cf["confidence_level"] = "medium"
+                if not cf.get("confidence_level"):
+                    cf["confidence_level"] = "medium"
+                amt = cf.get('amount_b')
+                if amt is not None:
+                    cf["claim"] = f"${amt}B {cf.get('direction', primary_flow['direction'])} {cf.get('asset_class', '')}"
+                else:
+                    cf["claim"] = f"{cf.get('direction', primary_flow['direction'])} {cf.get('asset_class', '')}"
+                if amt is not None and amt > 0:
                     cf["confidence"] = f"{cf.get('confidence_pct', 50)}%"
                 story["capital_flow"] = cf
 
@@ -173,7 +190,8 @@ def compile_stories(conn):
             cf = story.get("capital_flow", {})
             ac = cf.get("asset_class", "macro")
             direction = cf.get("direction", "neutral")
-            amount = cf.get("amount_b", 0)
+            amount = cf.get("amount_b")
+            amt_display = f"${amount}B" if amount is not None else "—"
             headline = (story.get("headline") or "")[:80]
             play = story.get("portfolio_implication") or story.get("actionable_trade") or "Monitor for directional break."
 
@@ -184,7 +202,7 @@ def compile_stories(conn):
                 "tier": tier,
                 "bias": bias,
                 "asset_class": ac,
-                "capital_at_stake": f"${amount}B",
+                "capital_at_stake": amt_display,
                 "rationale": play if isinstance(play, str) else str(play)[:200],
                 "horizon": story.get("horizon", "24-72h"),
                 "action": f"Position for {ac} {bias.lower()} exposure. {play if isinstance(play, str) else ''}"[:250],
@@ -194,6 +212,13 @@ def compile_stories(conn):
         # Ensure story_id is set
         story["story_id"] = sid
         stories.append(story)
+
+    # ── v24.3: Normalize any remaining "neutral" directions ──
+    for s in stories:
+        cf = s.get("capital_flow", {})
+        if isinstance(cf, dict) and cf.get("direction", "") == "neutral":
+            cf["direction"] = "inflow"
+            s["capital_flow"] = cf
 
     # Detect lead story (highest contradiction, most recent)
     lead = stories[0] if stories else None
@@ -223,11 +248,24 @@ def compile_flows(conn):
         ORDER BY amount_b DESC, velocity DESC
     """).fetchall()
 
+    def _normalize_direction(text):
+        """Normalize direction to 'inflow' or 'outflow'. Treats 'neutral' as inflow (capital-first bias)."""
+        if not text:
+            return "inflow"
+        r = str(text).lower()
+        if any(kw in r for kw in ['inflow', 'into', 'buy', 'long', 'accumulat', 'overweight', 'add']):
+            return "inflow"
+        if any(kw in r for kw in ['outflow', 'out of', 'sell', 'short', 'distribut', 'underweight', 'trim', 'reduce', 'exit']):
+            return "outflow"
+        # 'neutral' and all other values → inflow (capital-first bias)
+        return "inflow"
+
     flows = []
     for fid, full_json_str in rows:
         if full_json_str:
             flow = json.loads(full_json_str)
             flow["id"] = fid
+            flow["direction"] = _normalize_direction(flow.get("direction", ""))
             flows.append(flow)
 
     # Compute aggregate stats
@@ -274,7 +312,7 @@ def compile_flows(conn):
                 "avg_pace": 0, "avg_confidence": 0, "direction": "neutral", "count": 0
             }
         ss = sector_summary[cat]
-        ss["total_b"] += f.get("amount_b", 0)
+        ss["total_b"] += f.get("amount_b") or 0
         if f.get("direction") == "inflow":
             ss["inflows"] += 1
         else:
@@ -332,7 +370,7 @@ def compile_flows(conn):
         direction = cf.get("direction", "neutral")
         confidence = cf.get("confidence_pct", 50)
         
-        if not ac or not direction or direction == "neutral":
+        if not ac or not direction:
             continue
         
         # Narrative sentiment: -1 to 1
@@ -409,7 +447,7 @@ def compile_flows(conn):
                 "trade_trigger": trigger,
                 "rationale": (play if isinstance(play, str) else str(play))[:200],
                 "horizon": story.get("horizon", "24-72h"),
-                "capital_at_stake": f"${cf.get('amount_b', 0)}B",
+                "capital_at_stake": f"${cf.get('amount_b', 0)}B" if cf.get('amount_b') is not None else "—",
                 "gated": True,
             }
             high_asymmetry_count += 1
@@ -463,7 +501,7 @@ def compile_flows(conn):
                 }
         with open(market_path, "w") as f:
             json.dump(mp_data, f, indent=2, ensure_ascii=False)
-        # Also sync to site/data/
+        # Also sync to public/data/
         site_mp = SITE_DATA / "market_prices.json"
         site_mp.parent.mkdir(parents=True, exist_ok=True)
         with open(site_mp, "w") as f:
@@ -483,6 +521,16 @@ def main():
         sys.exit(1)
 
     data_only = "--data-only" in sys.argv
+
+    # ── File locking: prevent concurrent pipeline runs ──
+    import fcntl
+    lock_path = DB_PATH.with_suffix('.lock')
+    lock_fd = open(str(lock_path), 'w')
+    try:
+        fcntl.flock(lock_fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        print("WARNING: Another pipeline instance is running (lock held). Exiting.")
+        sys.exit(0)
 
     conn = sqlite3.connect(str(DB_PATH))
     conn.row_factory = sqlite3.Row
@@ -514,7 +562,7 @@ def main():
         if ru_flows.exists():
             shutil.copy(str(ru_flows), str(RU_DIR / "flows.json"))
 
-        # 3) Copy to site/data/ for deployment
+        # 3) Copy to public/data/ for deployment
         if not data_only:
             os.makedirs(str(SITE_DATA / "en"), exist_ok=True)
             os.makedirs(str(SITE_DATA / "ru"), exist_ok=True)
@@ -525,9 +573,9 @@ def main():
                 dst = SITE_DATA / fname
                 if src.exists():
                     dst.write_text(src.read_text())
-                    print(f"  ✓ site/data/{fname} synced")
+                    print(f"  ✓ public/data/{fname} synced")
 
-            # Also sync to site/data/en/ and site/data/ru/
+            # Also sync to public/data/en/ and public/data/ru/
             en_dst = SITE_DATA / "en" / fname
             ru_dst = SITE_DATA / "ru" / fname
             if (EN_DIR / fname).exists():
@@ -535,15 +583,15 @@ def main():
             if (RU_DIR / fname).exists():
                 ru_dst.write_text((RU_DIR / fname).read_text())
 
-            # Also sync RU files to site/data/
+            # Also sync RU files to public/data/
             for fname in ["stories_ru.json", "flows_ru.json"]:
                 src = DATA / fname
                 dst = SITE_DATA / fname
                 if src.exists():
                     dst.write_text(src.read_text())
-                    print(f"  ✓ site/data/{fname} synced")
+                    print(f"  ✓ public/data/{fname} synced")
 
-            # Also sync to site/data/en/ and site/data/ru/
+            # Also sync to public/data/en/ and public/data/ru/
             en_dst = SITE_DATA / "en" / fname
             ru_dst = SITE_DATA / "ru" / fname
             if (EN_DIR / fname).exists():

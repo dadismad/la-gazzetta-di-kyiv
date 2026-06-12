@@ -16,8 +16,8 @@ from collections import defaultdict
 from pathlib import Path
 
 PROJECT = Path(__file__).resolve().parent.parent
-STORIES_PATH = PROJECT / "site" / "data" / "stories.json"
-FLOWS_PATH = PROJECT / "site" / "data" / "flows.json"
+STORIES_PATH = PROJECT / "public" / "data" / "stories.json"
+FLOWS_PATH = PROJECT / "public" / "data" / "flows.json"
 
 
 def load_json(path):
@@ -32,9 +32,11 @@ def story_keywords(story):
     """Extract keyword set from a story for matching."""
     kw = set()
     
-    # Entity tags
-    for tag in (story.get("entity_tags") or []):
-        kw.add(tag.lower())
+    # Entity tags (dict of lists: assets, geographies, actors, instruments)
+    entity_tags = story.get("entity_tags") or {}
+    for tag_list in entity_tags.values():
+        for tag in (tag_list or []):
+            kw.add(tag.lower())
     
     # Sector
     sector = story.get("sector", "").lower()

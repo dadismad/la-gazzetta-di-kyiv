@@ -2,14 +2,14 @@
 # shipit.sh — Gazzetta di Kyiv deploy pipeline v3.1 (Nuclear Clean + Atomic Sync)
 #
 # Stages:
-#   0. nuclear_clean — rm -rf site/ (fresh start, no ghost files)
+#   0. nuclear_clean — rm -rf public/ (fresh start, no ghost files)
 #   1. db_to_json   — Compile gazzetta.db → data/stories.json + data/flows.json
 #   1.02 enrich_mp  — Multi-persona blocks (C-Suite/Quant/Degen)
 #   1.05 live_prices— CoinGecko price feed
 #   1.1  rel_links  — Auto-interlinking engine
 #   1.2  narratives — 3 Core Market Narratives
 #   1.5  enrich     — Editorial enrichment + signal/trades API
-#   2.   build_site — Sync data/ → site/data/
+#   2.   build_site — Sync data/ → public/data/
 #   2.5  TEST GATE  — test_platform.py (MUST PASS — abort on failure)
 #   2.6  ru_sync    — RU sync gate
 #   3.   hash       — SHA256-hash CSS/JS
@@ -25,7 +25,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT="$SCRIPT_DIR"
 
 BUCKET="gs://www.lagazzettadikyiv.com"
-GCLOUD_DIR="${GCLOUD_DIR:-$HOME/lagazzettadikyiv/google-cloud-sdk}"
+GCLOUD_DIR="${GCLOUD_DIR:-$HOME/lagazzettadikyiv/devvit/google-cloud-sdk}"
 GCLOUD="$GCLOUD_DIR/bin/gcloud"
 GSUTIL="$GCLOUD_DIR/bin/gsutil"
 PYTHON="$PROJECT/.venv/bin/python"
@@ -49,20 +49,23 @@ echo ""
 # ═══ Stage 0: Nuclear Clean — delete generated dirs before every build ═══
 echo "── Stage 0: nuclear_clean ──"
 # Only delete generated directories — preserve HTML/CSS/JS sources in repo
-for dir in "$PROJECT/site/data" "$PROJECT/site/api" "$PROJECT/site/ru" "$PROJECT/site/media"; do
+for dir in "$PROJECT/public/data" "$PROJECT/public/api"; do
     if [ -d "$dir" ]; then
         rm -rf "$dir"
         echo "  ✓ $(basename "$dir")/ deleted"
     fi
 done
 # Also remove generated files
-rm -f "$PROJECT/site/build-manifest.json" "$PROJECT/site/deploy_report.txt" \
-      "$PROJECT/site/styles."*.css "$PROJECT/site/app."*.js "$PROJECT/site/story-app."*.js \
-      "$PROJECT/site/sector."*.js "$PROJECT/site/i18n."*.js "$PROJECT/site/styles-modern."*.css 2>/dev/null || true
+rm -f "$PROJECT/public/build-manifest.json" "$PROJECT/public/deploy_report.txt" \
+      "$PROJECT/public/styles."*.css "$PROJECT/public/app."*.js "$PROJECT/public/story-app."*.js \
+      "$PROJECT/public/sector."*.js "$PROJECT/public/i18n."*.js "$PROJECT/public/styles-modern."*.css 2>/dev/null || true
 echo "  ✓ Hashed assets cleaned"
 # Recreate essential dirs
-mkdir -p "$PROJECT/site/data/en" "$PROJECT/site/data/ru" "$PROJECT/site/ru" "$PROJECT/site/api/v1/home"
-echo "  ✓ Essential directories recreated"
+mkdir -p "$PROJECT/public/api/v1/home"
+# Preserve locale files (static source, not pipeline output)
+mkdir -p "$PROJECT/public/data/locales"
+cp "$PROJECT/templates/locales/"*.json "$PROJECT/public/data/locales/" 2>/dev/null || true
+echo "  ✓ Essential directories recreated (data/en/ removed — EN-only, no RU mirror needed)"
 echo ""
 
 # ═══ Stage 1: db_to_json ──
@@ -94,24 +97,24 @@ $PYTHON "$PROJECT/ops/analyze_narratives_v2.py" || echo "  ⚠ Narratives skippe
 echo ""
 
 echo "── Stage 1.5: enrich ──"
-$PYTHON "$PROJECT/scripts/enrich_editorial_stories.py" || true
-$PYTHON "$PROJECT/scripts/ensure_generated_at.py" || true
+$PYTHON "$PROJECT/scripts/enrich_editorial_stories.py" || echo "  ⚠ enrich_editorial_stories FAILED — continuing"
+$PYTHON "$PROJECT/scripts/ensure_generated_at.py" || echo "  ⚠ ensure_generated_at FAILED — continuing"
 echo "  ✓ Stories enriched with capital_flow + generated_at"
-$PYTHON "$PROJECT/scripts/generate_signal_api.py" || true
-$PYTHON "$PROJECT/scripts/generate_trades_api.py" || true
-$PYTHON "$PROJECT/scripts/build_track_record.py" || true
+$PYTHON "$PROJECT/scripts/generate_signal_api.py" || echo "  ⚠ generate_signal_api FAILED — continuing"
+$PYTHON "$PROJECT/scripts/generate_trades_api.py" || echo "  ⚠ generate_trades_api FAILED — continuing"
+$PYTHON "$PROJECT/scripts/build_track_record.py" || echo "  ⚠ build_track_record FAILED — continuing"
 echo "  ✓ Signal + Trades + Track Record API endpoints generated"
 echo ""
 
 # ═══ Stage 2: build_site ──
 echo "── Stage 2: build_site ──"
 $PYTHON "$PROJECT/scripts/build_site.py"
-echo "  ✓ site/data/ synced, API endpoints generated"
+echo "  ✓ public/data/ synced, API endpoints generated"
 echo ""
 
 # ═══ Stage 2.2: generate_broadcasts ──
 echo "── Stage 2.2: generate_broadcasts ──"
-$PYTHON "$PROJECT/scripts/generate_broadcasts.py" || true
+$PYTHON "$PROJECT/scripts/generate_broadcasts.py" || echo "  ⚠ generate_broadcasts FAILED — continuing"
 echo "  ✓ Distribution broadcasts generated"
 echo ""
 
@@ -134,48 +137,9 @@ echo "── Stage 3: build_hashed_assets ──"
 $PYTHON "$PROJECT/scripts/build_hashed_assets.py"
 echo "  ✓ CSS/JS hashed, HTML references rewritten"
 echo ""
-
-# ═══ Stage 3.1: ru_sync_gate — AFTER hash so RU gets correct script references ═══
+# ═══ Stage 3.1: ru_sync_gate — REMOVED (Russian version deleted June 2026) ═══
 echo "── Stage 3.1: ru_sync_gate ──"
-RU_MISSING=0
-for f in about.html capital.html data.html index.html methodology.html sources.html terms.html robots.txt sitemap.xml; do
-  if [ ! -f "$PROJECT/site/ru/$f" ]; then
-    cp "$PROJECT/site/$f" "$PROJECT/site/ru/$f" 2>/dev/null || true
-    RU_MISSING=$((RU_MISSING + 1))
-  fi
-done
-EN_COUNT=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories.json')); print(len([d.get('lead')]+d.get('stories',[])))" 2>/dev/null || echo 0)
-RU_COUNT=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories_ru.json')); print(len([d.get('lead')]+d.get('stories',[])))" 2>/dev/null || echo 0)
-
-# Check if RU translation is stale by timestamp (v3.1: prevents count-equal-but-content-stale bug)
-NEED_TRANSLATION=false
-if [ "$RU_COUNT" -lt "$EN_COUNT" ]; then
-  NEED_TRANSLATION=true
-  echo "  ⚠ RU stories ($RU_COUNT) < EN stories ($EN_COUNT)"
-else
-  # Compare timestamps: if RU is >1hr older than EN, force re-translate
-  EN_TS=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories.json')); print(d.get('generated_at','2000-01-01T00:00:00')[:19])" 2>/dev/null || echo "2000-01-01T00:00:00")
-  RU_TS=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories_ru.json')); print(d.get('generated_at','2000-01-01T00:00:00')[:19])" 2>/dev/null || echo "2000-01-01T00:00:00")
-  EN_EPOCH=$(date -j -f "%Y-%m-%dT%H:%M:%S" "$EN_TS" "+%s" 2>/dev/null || echo 0)
-  RU_EPOCH=$(date -j -f "%Y-%m-%dT%H:%M:%S" "$RU_TS" "+%s" 2>/dev/null || echo 0)
-  AGE_GAP=$(( EN_EPOCH - RU_EPOCH ))
-  if [ "$AGE_GAP" -gt 3600 ]; then
-    NEED_TRANSLATION=true
-    echo "  ⚠ RU stories stale by ${AGE_GAP}s ($RU_TS vs $EN_TS) — re-translating"
-  fi
-fi
-
-if [ "$NEED_TRANSLATION" = true ]; then
-  echo "  Running translate_content.py..."
-  $PYTHON "$PROJECT/scripts/translate_content.py" 2>/dev/null || echo "  ⚠ Translation failed"
-  RU_COUNT_NEW=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories_ru.json')); print(len([d.get('lead')]+d.get('stories',[])))" 2>/dev/null || echo 0)
-  if [ "$RU_COUNT_NEW" -lt "$EN_COUNT" ]; then
-    echo "  ✗ CRITICAL: RU sync failed ($RU_COUNT_NEW < $EN_COUNT). Aborting deploy."
-    exit 1
-  fi
-  echo "  ✓ RU stories re-translated: $RU_COUNT_NEW stories"
-fi
-echo "  ✓ RU sync gate passed: $RU_COUNT stories, $RU_MISSING files copied"
+echo "  ✓ SKIPPED — Russian version removed. English only."
 
 # ═══ Stage 4: GCS deploy ──
 echo "── Stage 4: GCS deploy ──"
@@ -189,17 +153,17 @@ fi
 
 if [ "$DRY_RUN" != true ]; then
     # Rsync with delete (-d) to remove stale files
-    $GSUTIL -m rsync -r -d "$PROJECT/site/" "$BUCKET/"
+    $GSUTIL -m rsync -r -d "$PROJECT/public/" "$BUCKET/"
     # Immutable cache on hashed assets
     $GSUTIL -m setmeta -h "Cache-Control:public, max-age=31536000, immutable" \
         "$BUCKET/styles.*.css" "$BUCKET/app.*.js" "$BUCKET/story-app.*.js" \
         "$BUCKET/sector.*.js" 2>/dev/null || true
     # Zero cache on ALL HTML
     $GSUTIL -m setmeta -h "Cache-Control:public, max-age=0, must-revalidate" \
-        "$BUCKET/*.html" "$BUCKET/ru/*.html" 2>/dev/null || true
+        "$BUCKET/*.html" 2>/dev/null || true
     # No-store on ALL JSON
     $GSUTIL -m setmeta -h "Cache-Control:private, no-store" \
-        "$BUCKET/data/*.json" "$BUCKET/data/en/*.json" "$BUCKET/data/ru/*.json" \
+        "$BUCKET/data/*.json" \
         "$BUCKET/api/**/*.json" 2>/dev/null || true
     echo "  ✓ GCS rsync + cache headers set"
 fi
@@ -224,7 +188,7 @@ NEWEST_LEAD=$(curl -s -H 'Cache-Control: no-cache' "$SITE_URL/data/stories.json"
 echo "  Public lead headline: $NEWEST_LEAD"
 
 # Compare with local
-LOCAL_LEAD=$(python3 -c "import json; d=json.load(open('$PROJECT/site/data/stories.json')); print(d.get('lead',{}).get('headline','MISSING')[:80])" 2>/dev/null || echo "FAILED")
+LOCAL_LEAD=$(python3 -c "import json; d=json.load(open('$PROJECT/public/data/stories.json')); print(d.get('lead',{}).get('headline','MISSING')[:80])" 2>/dev/null || echo "FAILED")
 if [ "$NEWEST_LEAD" != "$LOCAL_LEAD" ] && [ "$NEWEST_LEAD" != "FAILED" ]; then
     echo ""
     echo "  ⚠ OPERATIONAL CRISIS: Public headline ≠ local headline"
@@ -244,7 +208,7 @@ echo "── Stage 6: deploy report ──"
 TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 COMMIT=$(git rev-parse --short HEAD 2>/dev/null || echo "unknown")
 STORY_COUNT=$($PYTHON -c "import json; d=json.load(open('data/stories.json')); print(len(d.get('stories',[])))" 2>/dev/null || echo "?")
-cat > "$PROJECT/site/deploy_report.txt" <<EOF
+cat > "$PROJECT/public/deploy_report.txt" <<EOF
 Deploy: $TIMESTAMP
 Commit: $COMMIT
 Stories: $STORY_COUNT

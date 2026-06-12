@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 fetch_live_prices.py — Fetch live asset prices from CoinGecko + Alpha Vantage
-Output: site/data/market_prices.json — writes to 'prices' key, preserves existing keys.
+Output: public/data/market_prices.json — writes to 'prices' key, preserves existing keys.
 """
 
 import json, os, sys, time, urllib.request
@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 PROJECT = Path(__file__).resolve().parent.parent
-OUT_PATH = PROJECT / "site" / "data" / "market_prices.json"
+OUT_PATH = PROJECT / "public" / "data" / "market_prices.json"
 
 COINGECKO_IDS = {"BTC":"bitcoin","ETH":"ethereum","SOL":"solana","XAU":"tether-gold"}
 

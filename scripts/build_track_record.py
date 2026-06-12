@@ -10,9 +10,10 @@ import sqlite3, json, hashlib, os, sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
-DB = "gazzetta.db"
-MARKET_DATA = "data/market_prices.json"
-OUT = "site/data/track_record.json"
+PROJECT = Path(__file__).resolve().parent.parent
+DB = str(PROJECT / "gazzetta.db")
+MARKET_DATA = str(PROJECT / "data" / "market_prices.json")
+OUT = str(PROJECT / "public" / "data" / "track_record.json")
 CUTOFF_HOURS = 48
 
 # Asset class → ticker mapping for market data lookup
@@ -146,7 +147,7 @@ def compile():
     total_realized = len(correct_trades)
     win_rate = round(len(correct_trades) / max(len(settled), 1) * 100)
     avg_correct_pnl = round(sum(t["realized_pnl_pct"] for t in correct_trades) / max(len(correct_trades), 1), 2)
-    avg_incorrect_pnl = round(abs(sum(t["realized_pnl_pct"] for t in incorrect_trades)) / max(len(incorrect_trades), 1), 2)
+    avg_incorrect_pnl = round(sum(t["realized_pnl_pct"] for t in incorrect_trades) / max(len(incorrect_trades), 1), 2)
     success_velocity = round(win_rate / 100 * avg_correct_pnl, 1)
 
     record = {
@@ -177,7 +178,7 @@ def compile():
     print(f"  Total Realized Alpha: {total_realized}")
     print(f"  Win Rate:             {win_rate}%")
     print(f"  Avg Correct PnL:      +{avg_correct_pnl}%")
-    print(f"  Avg Incorrect PnL:    −{avg_incorrect_pnl}%")
+    print(f"  Avg Incorrect PnL:    {avg_incorrect_pnl}%")
     print(f"  Success Velocity:     {success_velocity}")
     print(f"  → {OUT}")
 

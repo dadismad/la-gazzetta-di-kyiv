@@ -5,7 +5,7 @@ fetch_polymarket.py — Fetch relevant Polymarket prediction market odds.
 Uses Gamma API /events endpoint with tag filtering for Gazzetta's coverage.
 Markets: geopolitical, macro, crypto/commodity events.
 
-Output: site/data/polymarket_odds.json
+Output: public/data/polymarket_odds.json
 """
 
 import json
@@ -112,7 +112,7 @@ def main():
         
         output["markets"].append(entry)
     
-    out_path = PROJECT / "site" / "data" / "polymarket_odds.json"
+    out_path = PROJECT / "public" / "data" / "polymarket_odds.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, "w") as f:
         json.dump(output, f, indent=2)
