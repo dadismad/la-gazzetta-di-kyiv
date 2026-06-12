@@ -2349,6 +2349,9 @@ async function boot() {
       // Reverse iterate: afterbegin prepends, so reverse order = newest (lead) appears at top
       const rev = [...all].reverse();
       rev.forEach((s, i) => appendStoryCard(s, i === rev.length - 1));
+      console.log(`[Gazzetta] renderNewsCol(living): ${rev.length} stories rendered from living_stories`);
+    } else {
+      console.warn('[Gazzetta] renderNewsCol(living): #newsCol not in DOM — teaser-only page');
     }
 
     // Triangulation AFTER cards are in DOM — with mutation observer fallback
@@ -2391,14 +2394,29 @@ async function boot() {
   renderDivergenceMeter();
 
   const el2 = byId('newsCol');
-  if (el2) {
-    // Reverse iterate: afterbegin prepends, so reverse order = newest (lead) appears at top
-    const rev2 = [...all].reverse();
-    rev2.forEach((s, i) => appendStoryCard(s, i === rev2.length - 1));
-    // v25.7: Hide loading skeleton after first cards render
-    const skel = document.getElementById('storiesLoading');
-    if (skel) skel.classList.add('hidden');
+  if (!el2) {
+    console.warn('[Gazzetta] renderNewsCol: #newsCol not found in DOM — skipping card render. Page may be a teaser-only page (index.html).');
+    return;
   }
+
+  // Verify CSS is not hiding the container
+  const cs = getComputedStyle(el2);
+  if (cs.display === 'none') {
+    console.error('[Gazzetta] renderNewsCol: #newsCol has display:none — CSS is hiding the story container. Check styles.css for accidental display:none rules.');
+  }
+  if (cs.height === '0px') {
+    console.error('[Gazzetta] renderNewsCol: #newsCol has height:0 — container collapsed. Check for overflow:hidden or max-height:0.');
+  }
+
+  // Reverse iterate: afterbegin prepends, so reverse order = newest (lead) appears at top
+  const rev2 = [...all].reverse();
+  rev2.forEach((s, i) => appendStoryCard(s, i === rev2.length - 1));
+
+  console.log(`[Gazzetta] renderNewsCol: ${rev2.length} stories rendered successfully into #newsCol`);
+
+  // v25.7: Hide loading skeleton after first cards render
+  const skel = document.getElementById('storiesLoading');
+  if (skel) skel.classList.add('hidden');
 
   // Triangulation AFTER cards are in DOM — with retry
   scheduleTriangulation();

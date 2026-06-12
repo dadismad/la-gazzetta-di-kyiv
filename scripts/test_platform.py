@@ -370,7 +370,7 @@ def test_json_consistency():
             check(False, f"data/{fname} not found")
             continue
         if not site_path.exists():
-            check(False, f'public/data/{fname} not found")
+            check(False, f"public/data/{fname} not found")
             continue
 
         with open(data_path) as f:
