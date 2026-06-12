@@ -156,8 +156,38 @@ After deployment:
 
 ---
 
+## RULE 8: ZERO-SYMBOL COMMUNICATION
+
+**No emojis, unicode icons, or ASCII art in any response, log, or report.**
+
+This is a C-Suite management environment. All communication must be dry, analytical,
+and strictly alphanumeric. Visual fluff degrades readability and professionalism.
+
+### FORBIDDEN:
+- Emojis (any Unicode emoji character)
+- Decorative unicode symbols used as bullets or status markers (checkmarks, X marks, warning signs, arrows used as decoration)
+- ASCII art or box-drawing characters outside of code comments
+- Fancy quote characters (use straight ASCII quotes in prose)
+
+### ALLOWED:
+- Plain alphanumeric text
+- Standard markdown: headers (#), lists (-, 1.), code blocks (```), bold (**), italic (*)
+- Technical symbols inside code blocks only (e.g., arrow operators in JS: =>)
+- Pipe characters in markdown tables (standard formatting)
+- Standard punctuation: periods, commas, colons, semicolons, hyphens, parentheses
+
+### STATUS INDICATORS:
+Replace symbolic status markers with text:
+- Instead of checkmark symbol: PASS, OK, or CONFIRMED
+- Instead of X-mark symbol: FAIL, NO, or DENIED
+- Instead of warning symbol: NOTE, WARNING, or CAUTION
+- Instead of arrow symbol: -> (ASCII arrow in code blocks only)
+
+---
+
 ## AMENDMENT HISTORY
 
 | Date | Version | Change |
 |------|---------|--------|
+| 2026-06-12 | v1.1 | Rule 8: Zero-Symbol Communication protocol enacted |
 | 2026-06-12 | v1.0 | Initial SOP — enacted after CSS 404 catastrophe |
