@@ -1383,6 +1383,11 @@ function livingCardHTML(story, isLead) {
     '\n      ' + contradictionHTML +
     '\n      ' + flowHTML +
     '\n      ' + actionHTML +
+    '\n      <div class="share-row">' +
+    '\n        <button class="share-btn copy-link" title="' + i18n.t('share_copy','Copy link') + '" data-action="copy-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>' +
+    '\n        <button class="share-btn share-x" title="' + i18n.t('share_x','Share on X') + '" data-action="share-x"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7.5 7.5L4 19"/><path d="M20 4l-7.5 7.5L20 19"/></svg></button>' +
+    '\n        <button class="share-btn share-telegram" title="' + i18n.t('share_telegram','Share on Telegram') + '" data-action="share-telegram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>' +
+    '\n      </div>' +
     '\n      <div class="story-expanded" style="display:none">' +
     '\n        <div class="story-detail">' +
     (theySay ? '\n          <div class="con-they"><span class="con-label">' + i18n.t('they_say','They say') + '</span>' + theySay + '</div>' : '') +
@@ -1392,12 +1397,7 @@ function livingCardHTML(story, isLead) {
     (story.portfolio_implication ? '\n        <div class="the-play"><span class="pi-label">' + i18n.t('the_play_label','THE PLAY') + '</span><span class="pi-text">' + story.portfolio_implication + '</span></div>' : '') +
     (story.extremum ? '\n        ' + extremumLineHTML(story.extremum) : '') +
     '\n        <div class="card-photo"><img src="' + photoUrl + '" alt="' + sector + '" loading="lazy" onerror="this.parentElement.style.display=\'none\'"></div>' +
-    '\n        <div class="share-row">' +
-    '\n          <button class="share-btn copy-link" title="' + i18n.t('share_copy','Copy link') + '" data-action="copy-link"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>' +
-    '\n          <button class="share-btn share-x" title="' + i18n.t('share_x','Share on X') + '" data-action="share-x"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7.5 7.5L4 19"/><path d="M20 4l-7.5 7.5L20 19"/></svg></button>' +
-    '\n          <button class="share-btn share-telegram" title="' + i18n.t('share_telegram','Share on Telegram') + '" data-action="share-telegram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>' +
-    '\n        </div>' +
-    '\n      </div>' +
+    '\n      </div>'
     '\n    </article>';
 }
 
