@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-06-12T13:58:26.162875+00:00",
+  "generated_at": "2026-06-12T14:19:27.306794+00:00",
   "story_count": 15,
   "model": "deepseek-chat",
   "narratives": [
     {
-      "title": "Geopolitical Escalation Risk-Off",
+      "title": "Geopolitical Escalation Spiral",
       "strength": "DOMINANT",
       "direction": "Risk-Off",
-      "summary": "Capital is fleeing risk assets as multi-front conflicts (Iran, Israel, Ukraine) escalate beyond controlled tit-for-tat, with actual kinetic exchanges, Hormuz blockade persistence, and asymmetric threats. The market consensus underestimates the structural disruption to supply chains and energy flows.",
+      "summary": "Capital is fleeing risk assets as a multi-front conflict involving Iran, Israel, Ukraine, and the US intensifies, with kinetic exchanges, blockade threats, and diplomatic off-ramps failing to materialize. The market is underpricing the duration and structural impact of these conflicts, as evidenced by the EIA's extended Hormuz blockade timeline and the breakdown of equity support levels.",
       "key_stories": 9,
-      "trade_implication": "Short SPY, long WTI crude oil futures, and long VIX; hedge with gold and short duration Treasuries."
+      "trade_implication": "Long WTI crude oil futures and short S&P 500 index futures to capture the asymmetric risk premium from supply disruption and equity de-risking."
     },
     {
-      "title": "Energy Supply Disruption Premium",
+      "title": "Energy Supply Chain Disruption",
       "strength": "STRONG",
       "direction": "Neutral-to-Bullish",
-      "summary": "Capital is rotating into energy assets as the Hormuz blockade structurally bites, EIA forecasts rise, and SPR releases signal bullish supply pre-positioning rather than bearish intervention. Markets misread government actions as bearish, but actual flows indicate sustained oil price support.",
+      "summary": "Capital is rotating into energy commodities as the Strait of Hormuz blockade persists through Q3 2026, with Kuwait seeking pipeline bypasses and the US releasing SPR barrels, which is actually a bullish signal of supply tightness. The market misreads these moves as bearish, but the structural damage to global oil logistics is driving a sustained premium.",
       "key_stories": 5,
-      "trade_implication": "Long WTI and Brent futures, long energy sector ETFs (XLE), and short refined product spreads."
+      "trade_implication": "Buy Brent crude oil calendar spreads for 2025-2026 delivery to profit from the prolonged supply deficit."
     },
     {
-      "title": "Crypto as Macro Risk Proxy",
+      "title": "Risk-Off Rotation into Crypto",
       "strength": "MODERATE",
-      "direction": "Risk-Off",
-      "summary": "Bitcoin's crash mirrors broad risk-off flows, not crypto-specific fundamentals, as institutional de-risking dominates. However, whale accumulation and dip-buying suggest a potential floor, making it a lagging indicator of macro sentiment rather than a leading one.",
+      "direction": "Neutral",
+      "summary": "Despite a BTC crash, capital is flowing into crypto as a macro hedge, with MicroStrategy buying the dip and whales holding, indicating that the selloff is macro-driven rather than crypto-specific. This divergence suggests institutional accumulation during risk-off episodes, positioning crypto as a store of value amid geopolitical uncertainty.",
       "key_stories": 2,
-      "trade_implication": "Short BTC futures for tactical downside, but prepare to cover if geopolitical tensions de-escalate; monitor MSTR accumulation as a signal."
+      "trade_implication": "Accumulate Bitcoin spot ETFs on dips, targeting a 20% allocation of a diversified macro portfolio as a non-correlated hedge."
     }
   ]
 }

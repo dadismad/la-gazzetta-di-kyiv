@@ -25,7 +25,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT="$SCRIPT_DIR"
 
 BUCKET="gs://www.lagazzettadikyiv.com"
-GCLOUD_DIR="${GCLOUD_DIR:-$HOME/lagazzettadikyiv/google-cloud-sdk}"
+GCLOUD_DIR="${GCLOUD_DIR:-$HOME/lagazzettadikyiv/devvit/google-cloud-sdk}"
 GCLOUD="$GCLOUD_DIR/bin/gcloud"
 GSUTIL="$GCLOUD_DIR/bin/gsutil"
 PYTHON="$PROJECT/.venv/bin/python"

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """build_site.py — Static site generator for Gazzetta di Kyiv.
 
 Three responsibilities:
