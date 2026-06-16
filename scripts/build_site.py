@@ -121,6 +121,51 @@ def inject_components():
     return injected
 
 
+def cache_bust_assets():
+    """Append Unix timestamp (?t=N) to all script and style imports in every HTML file.
+
+    This guarantees CDN cache bypass on every build — when you push a design change,
+    users see it instantly instead of waiting for CDN TTL to expire.
+
+    Modifies files in-place in public/.
+    """
+    import time
+    ts = str(int(time.time()))
+    modified = 0
+
+    html_files = [f for f in os.listdir(PUBLIC) if f.endswith(".html")]
+
+    for fname in html_files:
+        fpath = os.path.join(PUBLIC, fname)
+        with open(fpath) as f:
+            html = f.read()
+
+        original = html
+
+        # Append ?t=TS to <link rel="stylesheet" href="...">
+        html = re.sub(
+            r'(<link\s+[^>]*href=")([^"]+\.css)(")',
+            rf'\1\2?t={ts}\3',
+            html
+        )
+
+        # Append ?t=TS to <script src="...">
+        html = re.sub(
+            r'(<script\s+[^>]*src=")([^"]+\.js)(")',
+            rf'\1\2?t={ts}\3',
+            html
+        )
+
+        if html != original:
+            with open(fpath, "w") as f:
+                f.write(html)
+            modified += 1
+
+    if modified > 0:
+        print(f"  ✓ Cache bust (?t={ts}) applied to {modified} HTML files")
+    return modified
+
+
 def sync_data():
     """Sync data/ → public/data/ with smart merge for stories.json."""
     os.makedirs(SITE_DATA, exist_ok=True)
@@ -196,7 +241,10 @@ def main():
     # 2. Inject shared components
     injected = inject_components()
 
-    # 3. Generate APIs
+    # 3. Cache-bust all asset references (CDN bypass)
+    busted = cache_bust_assets()
+
+    # 4. Generate APIs
     setups_count, contradictions_count = generate_apis()
     print(f"  ✓ API endpoints: {setups_count} setups, {contradictions_count} contradictions")
 
@@ -206,6 +254,7 @@ def main():
         "synced_at": now,
         "synced_files": synced,
         "components_injected": injected,
+        "cache_busted": busted,
         "setups": setups_count,
         "contradictions": contradictions_count,
         "website_stories": os.path.exists(os.path.join(SITE_DATA, "website_stories_latest.json")),
