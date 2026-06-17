@@ -61,9 +61,9 @@ def build():
                 new_attr = f'{attr}="./{info["hashed_name"]}"'
                 content = pattern_unhashed.sub(new_attr, content)
                 
-                # Match already-hashed: ./name.HHHHHHHH.ext (any 8-char hex hash)
+                # Match already-hashed: ./name.HHHHHHHH.ext or ./name.HHHHHHHH.ext?t=... (any 8-char hex hash)
                 pattern_hashed = re.compile(
-                    rf'{attr}=["\']\.\/{re.escape(name)}\.[0-9a-f]{{8}}\.{ext.lstrip(".")}["\']',
+                    rf'{attr}=["\']\.\/{re.escape(name)}\.[0-9a-f]{{8}}\.{ext.lstrip(".")}(\?[^"\']*)?["\']',
                     re.IGNORECASE
                 )
                 content = pattern_hashed.sub(new_attr, content)

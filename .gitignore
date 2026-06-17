@@ -50,8 +50,15 @@ env/
 *.swp
 *~
 
-# SQLite database
+# SQLite database + temp files
 gazzetta.db
+gazzetta.db-shm
+gazzetta.db-wal
+gazzetta.lock
+gazzetta_v1_backup.db
+
+# Logs
+logs/
 
 # Cron output
 ~/.hermes/cron/output/

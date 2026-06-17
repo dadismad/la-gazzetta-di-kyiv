@@ -15,12 +15,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Install Python deps
 RUN pip install --no-cache-dir google-cloud-storage google-cloud-secret-manager beautifulsoup4
 
-# Copy pipeline scripts
+# Copy pipeline scripts (v2.0 — 6-container architecture, force rebuild 2026-06-16)
 COPY scripts/ /app/scripts/
 COPY ops/ /app/ops/
 COPY templates/ /app/templates/
 COPY data/ /app/data/
+
+# DB fetched from GCS at runtime — no local copy
+# (prevents stale baked-in DB from masking GCS version)
+
+# Copy public/ for static assets (CSS, JS, images), then purge stale HTML/JSON
 COPY public/ /app/public/
+RUN find /app/public/data -name "*.json" -delete 2>/dev/null || true
+
 COPY deploy_routine.sh /app/
 
 # Copy config (path references are relative to project root)

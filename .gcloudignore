@@ -3,6 +3,7 @@
 .backup
 logs/
 *.db
+!gazzetta.db
 *.db-shm
 *.db-wal
 .venv/

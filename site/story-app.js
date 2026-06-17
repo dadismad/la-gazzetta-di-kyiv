@@ -131,7 +131,7 @@
         <div class="intel-extremum-content">${typeof extremum === 'object' ? (extremum.type + ': ' + (extremum.description || '').slice(0, 200)) : extremum}</div>
       </section>
 
-      ${renderMultiPersona(story)}
+      ${renderMultiPersona(story, t)}
 
       <div class="intel-share">
         <button onclick="copyStoryLink()" class="share-btn" title="${t('share_copy', 'Copy link')}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
@@ -142,7 +142,7 @@
     </article>`;
   }
 
-  function renderMultiPersona(story) {
+  function renderMultiPersona(story, t) {
     var mp = story.multi_persona;
     if (!mp || !Object.keys(mp).length) return '';
     var h = '<section class="intel-multi-persona">';
@@ -268,10 +268,18 @@ async function init() {
   };
 
   // Start
+  async function startInit() {
+    try {
+      await init();
+    } catch(e) {
+      console.error('[story-app] init failed:', e);
+      document.getElementById('storyContent').innerHTML = '<p class="story-error">Failed to load intelligence report. <a href="./">Return to Dashboard</a></p>';
+    }
+  }
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', startInit);
   } else {
-    init();
+    startInit();
   }
 })();
 

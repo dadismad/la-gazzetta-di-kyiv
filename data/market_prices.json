@@ -51,6 +51,591 @@
     }
   },
   "asymmetry_scores": {
+    "543": {
+      "asymmetry_score": 23,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.03) * 50) = 23"
+    },
+    "542": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "541": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "540": {
+      "asymmetry_score": 27,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
+    },
+    "539": {
+      "asymmetry_score": 27,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
+    },
+    "538": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "537": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "536": {
+      "asymmetry_score": 27,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
+    },
+    "535": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "534": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "533": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "532": {
+      "asymmetry_score": 5,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
+    },
+    "531": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "530": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "529": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "528": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "527": {
+      "asymmetry_score": 21,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.08) * 50) = 21"
+    },
+    "526": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "525": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "524": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "523": {
+      "asymmetry_score": 5,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
+    },
+    "522": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "521": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "520": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "519": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "518": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "517": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "516": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "515": {
+      "asymmetry_score": 21,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.08) * 50) = 21"
+    },
+    "514": {
+      "asymmetry_score": 27,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
+    },
+    "513": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "512": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "511": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "510": {
+      "asymmetry_score": 45,
+      "asymmetry_tier": "MODERATE",
+      "diagnostic_trace": "ABS((-0.50 - 0.40) * 50) = 45"
+    },
+    "509": {
+      "asymmetry_score": 27,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
+    },
+    "508": {
+      "asymmetry_score": 23,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.03) * 50) = 23"
+    },
+    "507": {
+      "asymmetry_score": 27,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
+    },
+    "506": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "505": {
+      "asymmetry_score": 23,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.03) * 50) = 23"
+    },
+    "504": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "503": {
+      "asymmetry_score": 27,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
+    },
+    "502": {
+      "asymmetry_score": 45,
+      "asymmetry_tier": "MODERATE",
+      "diagnostic_trace": "ABS((-0.50 - 0.40) * 50) = 45"
+    },
+    "501": {
+      "asymmetry_score": 21,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.08) * 50) = 21"
+    },
+    "500": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "499": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "498": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "497": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "496": {
+      "asymmetry_score": 5,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
+    },
+    "495": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "494": {
+      "asymmetry_score": 24,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((-0.50 - -0.03) * 50) = 24"
+    },
+    "493": {
+      "asymmetry_score": 5,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
+    },
+    "492": {
+      "asymmetry_score": 27,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
+    },
+    "491": {
+      "asymmetry_score": 27,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
+    },
+    "490": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "489": {
+      "asymmetry_score": 45,
+      "asymmetry_tier": "MODERATE",
+      "diagnostic_trace": "ABS((-0.50 - 0.40) * 50) = 45"
+    },
+    "488": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "487": {
+      "asymmetry_score": 27,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
+    },
+    "486": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "485": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "484": {
+      "asymmetry_score": 27,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
+    },
+    "483": {
+      "asymmetry_score": 24,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((-0.50 - -0.01) * 50) = 24"
+    },
+    "482": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "481": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "480": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "479": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "478": {
+      "asymmetry_score": 27,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
+    },
+    "477": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "476": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "475": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "474": {
+      "asymmetry_score": 5,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
+    },
+    "473": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "472": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "471": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "470": {
+      "asymmetry_score": 27,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
+    },
+    "469": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "468": {
+      "asymmetry_score": 24,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((-0.50 - -0.03) * 50) = 24"
+    },
+    "467": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "466": {
+      "asymmetry_score": 21,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.08) * 50) = 21"
+    },
+    "465": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.01) * 50) = 26"
+    },
+    "464": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "463": {
+      "asymmetry_score": 5,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
+    },
+    "462": {
+      "asymmetry_score": 21,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.08) * 50) = 21"
+    },
+    "461": {
+      "asymmetry_score": 5,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
+    },
+    "460": {
+      "asymmetry_score": 5,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
+    },
+    "459": {
+      "asymmetry_score": 27,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
+    },
+    "458": {
+      "asymmetry_score": 27,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
+    },
+    "457": {
+      "asymmetry_score": 16,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((-0.50 - -0.19) * 50) = 16"
+    },
+    "456": {
+      "asymmetry_score": 5,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
+    },
+    "455": {
+      "asymmetry_score": 5,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
+    },
+    "454": {
+      "asymmetry_score": 21,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.08) * 50) = 21"
+    },
+    "453": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "452": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.01) * 50) = 26"
+    },
+    "451": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "450": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "449": {
+      "asymmetry_score": 29,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((-0.50 - 0.08) * 50) = 29"
+    },
+    "448": {
+      "asymmetry_score": 21,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.08) * 50) = 21"
+    },
+    "447": {
+      "asymmetry_score": 5,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
+    },
+    "446": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "445": {
+      "asymmetry_score": 24,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((-0.50 - -0.01) * 50) = 24"
+    },
+    "444": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.01) * 50) = 26"
+    },
+    "443": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "441": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.01) * 50) = 26"
+    },
+    "440": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "439": {
+      "asymmetry_score": 24,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((-0.50 - -0.03) * 50) = 24"
+    },
+    "438": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "437": {
+      "asymmetry_score": 29,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((-0.50 - 0.08) * 50) = 29"
+    },
+    "436": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "435": {
+      "asymmetry_score": 27,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
+    },
+    "434": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "433": {
+      "asymmetry_score": 27,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
+    },
+    "432": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "431": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "430": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "429": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "428": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.01) * 50) = 26"
+    },
+    "427": {
+      "asymmetry_score": 5,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
+    },
+    "426": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
     "n21_osint__reuters_business__medicare_advantage_plans_denied_prior_authorization_requests": {
       "asymmetry_score": 31,
       "asymmetry_tier": "LOW ASYMMETRY",
@@ -1190,6 +1775,71 @@
       "asymmetry_score": 16,
       "asymmetry_tier": "LOW ASYMMETRY",
       "diagnostic_trace": "ABS((0.73 - 0.40) * 50) = 16"
+    },
+    "425": {
+      "asymmetry_score": 34,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
+    },
+    "424": {
+      "asymmetry_score": 24,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((-0.50 - -0.03) * 50) = 24"
+    },
+    "423": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "422": {
+      "asymmetry_score": 24,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((-0.50 - -0.01) * 50) = 24"
+    },
+    "421": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "420": {
+      "asymmetry_score": 5,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
+    },
+    "419": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "418": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "417": {
+      "asymmetry_score": 24,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((-0.50 - -0.03) * 50) = 24"
+    },
+    "416": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "415": {
+      "asymmetry_score": 26,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
+    },
+    "414": {
+      "asymmetry_score": 29,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((-0.50 - 0.08) * 50) = 29"
+    },
+    "413": {
+      "asymmetry_score": 23,
+      "asymmetry_tier": "LOW ASYMMETRY",
+      "diagnostic_trace": "ABS((-0.50 - -0.05) * 50) = 23"
     },
     "n21_multi_pillar__ukraine_assassinates_russian_colonel_missile_supply_chief": {
       "asymmetry_score": 19,

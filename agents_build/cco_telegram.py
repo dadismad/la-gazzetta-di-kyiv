@@ -3,14 +3,12 @@
 cco_telegram.py — Chief Content Officer: Telegram Distribution
 
 Formats curated stories for Telegram channel posts and sends via Bot API.
-Voice register: Psychological hook → Data → Urgent CTA bridge.
+Voice register: Contradiction-first, institutional, notification-optimized.
 
-PART 2 OVERHAUL (June 2026):
-  - Freshness filter: story.published_at must be within 12 hours. Never post stale.
-  - 3-line linguistic hook engine: Hook → Data → Bridge
-  - Line 1: Provocative curiosity gap exposing consensus contradiction
-  - Line 2: Scannable headline with exact color-coded capital flow impact
-  - Line 3: Urgent CTA bridge linking to lagazzettadikyiv.com
+STRUCTURE (v3.0 — June 2026):
+  HOOK  — notification-preview line, data-driven suspense, 50-80 chars
+  STORY — consensus vs reality block + capital flow impact + contradiction score
+  LINK  — direct anchor URL to full report on lagazzettadikyiv.com
 
 Idempotency: checked before sending via posted_stories.jsonl.
 
@@ -62,75 +60,99 @@ def is_fresh(story: dict) -> tuple[bool, str]:
 
 
 def format_story(story: dict) -> str:
-    """Format a story for Telegram — psychological hook engine (v2.0).
+    """Format a story for Telegram — contradiction-first structure (v3.0).
 
-    Three-line template:
-      Line 1: The Hook — provocative curiosity gap
-      Line 2: The Data — scannable headline + capital flow impact
-      Line 3: The Bridge — urgent CTA to lagazzettadikyiv.com
+    Three-line structure (industry-standard Telegram publishing):
+      Hook     — notification-preview line, creates genuine curiosity
+      Story    — the contradiction (consensus vs reality) and implications
+      Link     — direct URL to full report on lagazzettadikyiv.com
+
+    Principles:
+      - Hook must captivate from notification preview alone
+      - Story focuses on the contradiction, not just reporting the news
+      - Link is direct to the story anchor, not just the homepage
     """
     import html as html_mod
 
     headline = (story.get("headline", "") or "Untitled").strip()
+    # Decode HTML entities in headline
+    headline = html_mod.unescape(headline)
+
     they_say = (story.get("they_say", "") or "").strip()
     reality = (story.get("reality", "") or story.get("summary", "") or "").strip()
-    source = (story.get("source", "") or "").strip()
     contradiction = story.get("contradiction_score", 0)
     cf = story.get("capital_flow", {}) or {}
+    story_id = story.get("story_id", "")
+    tier = story.get("tier", "flow")
 
     direction = (cf.get("direction", "") or "").strip()
     amount_b = cf.get("amount_b", 0) or 0
     asset = (cf.get("asset_class", "") or "").upper().strip()
     pace = cf.get("pace_multiplier", 1) or 1
 
-    # ── Line 1: The Hook (provocative curiosity gap) ──
+    # ── Build story page link ──
+    if story_id:
+        story_link = f"https://www.lagazzettadikyiv.com/stories.html#story-{story_id}"
+    else:
+        story_link = "https://www.lagazzettadikyiv.com"
+
+    # ── LINE 1: THE HOOK (notification-preview, stand-alone, contradiction-focused) ──
     hook = _generate_hook(headline, they_say, reality, direction, amount_b, asset, contradiction)
 
-    # ── Line 2: The Data (scannable headline + capital flow impact) ──
-    # Build color-coded flow badge
-    flow_badge = ""
+    # ── LINE 2: THE STORY (contradiction + implications) ──
+    story_lines = []
+
+    # Contradiction block: "They say" vs "Reality"
+    if they_say and reality:
+        short_they = they_say[:200].strip()
+        short_reality = reality[:200].strip()
+        if not short_they.endswith(('.', '!', '?')):
+            short_they += '...'
+        if not short_reality.endswith(('.', '!', '?')):
+            short_reality += '...'
+        story_lines.append(f'<b>Consensus:</b> {html_mod.escape(short_they)}')
+        story_lines.append(f'<b>Reality:</b> {html_mod.escape(short_reality)}')
+    elif they_say and contradiction >= 50:
+        # No explicit reality field but high contradiction score
+        story_lines.append(f'{html_mod.escape(they_say[:300])}')
+    else:
+        # News story — summarize headline as narrative
+        story_lines.append(f'{html_mod.escape(headline[:300])}')
+
+    # Capital flow impact (the "so what" for institutional readers)
+    flow_parts = []
     if direction and amount_b >= 0.1:
-        dl = direction.lower()
-        if any(w in dl for w in ["inflow", "accumulat", "long", "buy", "rotate into"]):
-            tag = "INFLOW"
-            emoji_tag = "+"
-        elif any(w in dl for w in ["outflow", "distribut", "sell", "short", "rotate out"]):
-            tag = "OUTFLOW"
-            emoji_tag = "-"
-        else:
-            tag = direction.upper()[:20]
-            emoji_tag = ""
-        asset_str = f" {asset}" if asset and asset != "NONE" else ""
-        velocity_str = f" at {pace:.1f}x velocity" if pace and pace > 1.1 else ""
-        flow_badge = f"<b>{emoji_tag}{tag}: ${amount_b:.1f}B{asset_str}{velocity_str}</b>"
+        flow_parts.append(f'{direction}: ${amount_b:.1f}B')
+    if asset and asset != "NONE":
+        flow_parts.append(asset)
+    if pace and pace >= 1.2:
+        flow_parts.append(f'{pace:.1f}x velocity')
 
-    # Build contradiction/confidence line
-    scores = []
-    if contradiction and contradiction > 0:
-        scores.append(f"Contradiction {int(contradiction)}/100")
-    if source:
-        scores.append(f"Source: {html_mod.escape(source[:80])}")
+    if flow_parts:
+        story_lines.append('')
+        story_lines.append(f'<b>Capital flow impact:</b> {" in ".join(flow_parts)}')
 
-    data_line = f"<b>{html_mod.escape(headline)}</b>"
-    if flow_badge:
-        data_line += f"\n{flow_badge}"
-    if scores:
-        data_line += f"\n<i>{' · '.join(scores)}</i>"
+    # Contradiction metadata
+    if contradiction >= 50:
+        story_lines.append(f'<i>Contradiction score: {int(contradiction)}/100 — significant divergence from consensus</i>')
+    elif contradiction >= 30:
+        story_lines.append(f'<i>Contradiction score: {int(contradiction)}/100</i>')
 
-    # ── Line 3: The Bridge (urgent CTA) ──
-    bridge = (
-        '<a href="https://www.lagazzettadikyiv.com">'
-        'Full entry levels, target zones, and positioning implications are live now. '
-        'See the full play at lagazzettadikyiv.com</a>'
+    story_block = '\n'.join(story_lines)
+
+    # ── LINE 3: THE LINK ──
+    link_line = (
+        f'<a href="{story_link}">'
+        f'Read the full report: lagazzettadikyiv.com</a>'
     )
 
     # ── Assemble ──
     lines = [
         f"<b>{html_mod.escape(hook)}</b>",
         "",
-        data_line,
+        story_block,
         "",
-        bridge,
+        link_line,
     ]
 
     text = "\n".join(lines)
@@ -145,85 +167,59 @@ def format_story(story: dict) -> str:
 def _generate_hook(headline: str, they_say: str, reality: str,
                    direction: str, amount_b: float, asset: str,
                    contradiction_score: int) -> str:
-    """Generate a psychological hook that creates genuine curiosity.
-    Priority order: capital flows > contradiction tension > event keywords > fallback."""
+    """Generate a notification-optimized hook (50-80 chars, standalone, contradiction-focused).
+
+    Rules:
+      - Must captivate from notification preview alone (no message open required)
+      - Contradiction between consensus and capital flow reality
+      - No emojis, no clickbait — data-driven suspense only
+      - Max 80 characters; 60-70 ideal for Telegram mobile notifications
+    """
     headline_lower = headline.lower()
 
-    # Pattern 1: Capital flow with real numbers — strongest hook
+    # Pattern 1: High contradiction story — frame the divergence
+    if they_say and reality and contradiction_score >= 70:
+        return "The consensus and the capital flows are telling opposite stories."
+
+    # Pattern 2: Capital flow with specific numbers — most compelling
     if direction and amount_b >= 0.1 and asset and asset != "NONE":
-        direction_word = _direction_word(direction)
-        if amount_b >= 50:
-            return (
-                f"While markets expect a rate pause, ${amount_b:.0f}B just quietly "
-                f"consolidated {direction_word} {asset}. Here is the play."
-            )
+        direction_word = "into" if "inflow" in direction.lower() else "out of"
+        if amount_b >= 100:
+            return f"${amount_b:.0f}B moving {direction_word} {asset}. The reason is not consensus."
         elif amount_b >= 10:
-            return (
-                f"A massive ${amount_b:.0f}B capital block is moving "
-                f"{direction_word} {asset}. The reason isn't what you think."
-            )
+            return f"${amount_b:.0f}B repositioning {direction_word} {asset}. Capital is voting."
         else:
-            return (
-                f"${amount_b:.1f}B shift in {asset} — "
-                f"the data behind the move changes the calculus."
-            )
+            return f"${amount_b:.1f}B shift in {asset}. Data contradicts the narrative."
 
-    # Pattern 2: Strong contradiction — frame the tension gap
-    if they_say and reality and len(they_say) > 10:
-        short_ts = they_say[:100].rstrip(".,;: ")
-        if contradiction_score >= 75:
-            return (
-                f'The consensus: "{short_ts}..." '
-                f'The data says otherwise, and the divergence is widening.'
-            )
-        else:
-            return (
-                f'The narrative: "{short_ts}..." '
-                f'The evidence points elsewhere — and capital is already moving.'
-            )
+    # Pattern 3: Strong contradiction without specific flow amounts
+    if they_say and reality:
+        return "Markets are pricing one thing. Capital flows show another."
 
-    # Pattern 3: High-contradiction story — emphasize the divergence
-    if contradiction_score >= 70:
-        return (
-            "The market narrative and the capital flows are telling "
-            "different stories. One of them is about to break."
-        )
+    # Pattern 4: High-contradiction story with headline substance
+    if contradiction_score >= 75:
+        return "The data refuses to confirm what the market believes."
 
-    # Pattern 4: Event-driven hooks based on headline content
-    if any(w in headline_lower for w in ["crash", "plunge", "collapse", "crisis"]):
-        return "The move everyone's talking about — and the one they're missing."
-    if any(w in headline_lower for w in ["surge", "rally", "boom", "breakout"]):
-        return "Behind the rally: a capital flow signal that changes the calculus."
+    # Pattern 5: Sector/event-driven hooks
     if any(w in headline_lower for w in ["rate", "fed", "ecb", "central bank", "inflation"]):
-        return (
-            "What the central bank signal means for where capital goes next. "
-            "The flows are already moving."
-        )
-    if any(w in headline_lower for w in ["war", "conflict", "strike", "sanction", "defense"]):
-        return "Geopolitics is moving money. Here is where the capital is flowing right now."
+        return "The rate decision was expected. The capital reaction was not."
+    if any(w in headline_lower for w in ["war", "conflict", "sanction", "defense"]):
+        return "Geopolitics is moving capital. Track where it flows."
     if any(w in headline_lower for w in ["china", "beijing", "xi", "yuan"]):
-        return "The China angle the Western press is not covering — and where the flows point."
+        return "What Beijing is doing vs what Western capital is assuming."
     if any(w in headline_lower for w in ["ai", "openai", "nvidia", "chip", "semiconductor"]):
-        return "AI is moving capital at record velocity. Track where the smart money is flowing."
-    if any(w in headline_lower for w in ["crypto", "bitcoin", "ethereum", "defi", "stablecoin"]):
-        return "Crypto flows do not lie. Here is what they are signaling right now."
+        return "AI capital flows are diverging from AI headlines."
+    if any(w in headline_lower for w in ["crypto", "bitcoin", "ethereum", "defi"]):
+        return "Crypto prices move. Capital flows reveal why."
     if any(w in headline_lower for w in ["energy", "oil", "gas", "power", "nuclear"]):
-        return "Energy markets are repricing. The capital flow tells you where before it hits."
+        return "Energy repricing is underway. Here is where capital is moving."
+    if any(w in headline_lower for w in ["crash", "plunge", "collapse", "crisis"]):
+        return "Behind the selloff: the capital flow signal most are missing."
+    if any(w in headline_lower for w in ["surge", "rally", "boom", "breakout"]):
+        return "This rally has a capital flow dimension no one is discussing."
 
-    # Pattern 5: Fallback — use headline essence
-    short_headline = headline[:100].rstrip(". ")
-    return f"{short_headline} — the capital flow dimension that changes the trade."
-
-
-def _direction_word(direction: str) -> str:
-    """Map flow direction to natural language preposition."""
-    dl = direction.lower()
-    if any(w in dl for w in ["inflow", "accumulat", "long", "buy", "rotate into"]):
-        return "into"
-    if any(w in dl for w in ["outflow", "distribut", "sell", "short", "rotate out"]):
-        return "out of"
-    return "in"
-
+    # Pattern 6: Generic — use headline essence, contradiction-first framing
+    short = f"{headline[:80]} — the flows tell a different story."
+    return short
 
 def send_post(text: str, dry_run: bool = False) -> bool:
     """Send a message to the Telegram channel.

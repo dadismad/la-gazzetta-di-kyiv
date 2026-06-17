@@ -4,12 +4,12 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Terms of Use — La Gazzetta di Kyiv</title>
-     <link rel="stylesheet" href="./styles.6d32f5c7.css">
+     <link rel="stylesheet" href="./styles.ab6de8dd.css">
      </head>
      <body>
 <!-- COMPONENT:HEADER:START -->
 <!-- ═══════════════════════════════════════════════ -->
-<!-- MASTHEAD v26.5 — Shared component template       -->
+<!-- MASTHEAD v2.0 — 6-container navigation            -->
 <!-- Injected by build_site.py into all public/*.html -->
 <!-- ═══════════════════════════════════════════════ -->
 <header class="masthead">
@@ -26,8 +26,10 @@
         <circle cx="17" cy="14" r="1.3" fill="currentColor" opacity="0.5"/>
       </svg>
     </span>
-    <span class="masthead-name">La Gazzetta di Kyiv</span>
-    <span class="masthead-bulava" title="Crossed bulavas — Hetman's maces" aria-hidden="true">
+    <a href="/" class="masthead-home-link" aria-label="La Gazzetta di Kyiv — Home">
+      <span class="masthead-name">La Gazzetta di Kyiv</span>
+    </a>
+    <span class="masthead-bulava" title="Crossed bulavas" aria-hidden="true">
       <svg width="14" height="38" viewBox="0 0 14 38" fill="none" xmlns="http://www.w3.org/2000/svg">
         <line x1="7" y1="18" x2="7" y2="35" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
         <rect x="3" y="21" width="8" height="2" rx="1" fill="currentColor" opacity="0.5"/>
@@ -57,70 +59,20 @@
     </span>
   </div>
   <div class="masthead-right">
-    <div class="nav-dropdown">
-      <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-        <a href="./stories.html" class="masthead-nav-link" style="color:inherit;display:inline;padding:0;font-size:inherit" data-i18n="nav_intel">INTEL</a>
-        <span class="nav-dd-arrow">&#9662;</span>
-      </button>
-      <div class="nav-dropdown-panel">
-        <a href="./stories.html" class="nav-dd-link" data-i18n="nav_stories">Stories</a>
-        <a href="./flows.html" class="nav-dd-link" data-i18n="nav_flows">Capital Flows</a>
-      </div>
-    </div>
-    <div class="nav-dropdown">
-      <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-        <a href="./signal.html" class="masthead-nav-link" style="color:inherit;display:inline;padding:0;font-size:inherit" data-i18n="nav_alpha">ALPHA</a>
-        <span class="nav-dd-arrow">&#9662;</span>
-      </button>
-      <div class="nav-dropdown-panel">
-        <a href="./signal.html" class="nav-dd-link" data-i18n="nav_signal">The Signal</a>
-        <a href="./trades.html" class="nav-dd-link" data-i18n="nav_trades">Trade Ideas</a>
-        <a href="./track.html" class="nav-dd-link" data-i18n="nav_track">Track Record</a>
-      </div>
-    </div>
-    <a href="./about.html" class="masthead-nav-link" data-i18n="nav_menu">MENU</a>
+    <a href="./index.html" class="masthead-nav-link">Home</a>
+    <a href="./archive.html" class="masthead-nav-link">Archive</a>
+    <a href="./about.html" class="masthead-nav-link">About</a>
   </div>
-  <!-- ── Hamburger toggle (mobile only) ── -->
-  <button class="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false" id="hamburgerBtn">
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-  </button>
 </header>
-<!-- ── Navigation drawer (mobile slide-out) ── -->
-<div class="nav-drawer-backdrop" id="navDrawerBackdrop"></div>
-<nav class="nav-drawer" id="navDrawer">
-  <div class="nav-drawer-header">
-    <span class="nav-drawer-title">Navigation</span>
-    <button class="nav-drawer-close" aria-label="Close navigation" id="navDrawerClose">&times;</button>
-  </div>
-  <div class="nav-drawer-body">
-    <div class="nav-drawer-section">
-      <span class="nav-drawer-section-title">INTEL</span>
-      <a href="./stories.html" class="nav-drawer-link" data-i18n="nav_stories">Stories</a>
-      <a href="./flows.html" class="nav-drawer-link" data-i18n="nav_flows">Capital Flows</a>
-      <a href="./index.html" class="nav-drawer-link" data-i18n="nav_home">Home</a>
-    </div>
-    <div class="nav-drawer-section">
-      <span class="nav-drawer-section-title">ALPHA</span>
-      <a href="./signal.html" class="nav-drawer-link" data-i18n="nav_signal">The Signal</a>
-      <a href="./trades.html" class="nav-drawer-link" data-i18n="nav_trades">Trade Ideas</a>
-      <a href="./track.html" class="nav-drawer-link" data-i18n="nav_track">Track Record</a>
-    </div>
-    <div class="nav-drawer-section">
-      <span class="nav-drawer-section-title">RESEARCH</span>
-      <a href="./event_horizon.html" class="nav-drawer-link">Event Horizon</a>
-      <a href="./flow-nodes.html" class="nav-drawer-link">Flow Nodes</a>
-      <a href="./geopolitics.html" class="nav-drawer-link">Geopolitics</a>
-      <a href="./markets.html" class="nav-drawer-link">Markets</a>
-    </div>
-    <div class="nav-drawer-section">
-      <span class="nav-drawer-section-title">INFO</span>
-      <a href="./about.html" class="nav-drawer-link" data-i18n="nav_about">About</a>
-      <a href="./capital.html" class="nav-drawer-link">Methodology</a>
-      <a href="./contacts.html" class="nav-drawer-link">Contact</a>
-    </div>
-  </div>
+<!-- ── Domain Navigation ── -->
+<nav class="container-nav" aria-label="Intelligence domains">
+  <a href="./index.html#monetary_order" class="container-pill">Monetary</a>
+  <a href="./index.html#energy_resources" class="container-pill">Energy</a>
+  <a href="./index.html#technology_ai" class="container-pill">Technology</a>
+  <a href="./index.html#information_narrative" class="container-pill">Information</a>
+  <a href="./index.html#biosecurity_health" class="container-pill">Biosecurity</a>
+  <a href="./index.html#flashpoints" class="container-pill">Flashpoints</a>
+  <a href="./archive.html" class="container-pill">Archive</a>
 </nav>
 <!-- COMPONENT:HEADER:END -->
     
@@ -176,8 +128,8 @@
   <span data-i18n="footer_kyiv">Kyiv · Since 2025</span>
 </footer>
 
-<script src="./i18n.js"></script>
-<script src="./app.6eeb8b46.js"></script>
+<script src="./i18n.e879a05a.js"></script>
+<!-- app.js loaded by build_site.py -->
 <!-- COMPONENT:FOOTER:END -->
     </body>
     </html>

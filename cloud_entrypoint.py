@@ -127,7 +127,6 @@ def main():
     # 4. Upload DB + public/ to GCS
     if exit_code == 0:
         try:
-            upload_db()
             sync_public()
         except Exception as e:
             print(f"[{now()}] WARNING: GCS upload failed: {e}")

@@ -51,51 +51,36 @@ mkdir -p "$PROJECT/public/data/locales"
 mkdir -p "$PROJECT/public/api/v1/home"
 cp "$PROJECT/templates/locales/"*.json "$PROJECT/public/data/locales/" 2>/dev/null || true
 
-# ---- Stage 1: Data Ingestion ----
+# ── Stage 1: db_to_json ──
 log "Stage 1: db_to_json"
 if [ -f "$PROJECT/gazzetta.db" ]; then
-    $PYTHON "$PROJECT/scripts/db_to_json.py" || warn "db_to_json.py failed"
+    $PYTHON "$PROJECT/scripts/db_to_json.py" || abort "db_to_json.py FAILED"
 else
-    warn "No gazzetta.db found — using existing JSON"
+    abort "No gazzetta.db found"
 fi
 
-log "Stage 1.05: fetch_live_prices"
-$PYTHON "$PROJECT/scripts/fetch_live_prices.py" || warn "Live prices skipped"
-
-log "Stage 1.1: build_related_links"
-$PYTHON "$PROJECT/scripts/build_related_links.py" || warn "Related links skipped"
-
-log "Stage 1.2: analyze_narratives"
-$PYTHON "$PROJECT/ops/analyze_narratives_v2.py" || warn "Narratives skipped"
-
-log "Stage 1.5: enrich + signal + trades + track"
-$PYTHON "$PROJECT/scripts/enrich_editorial_stories.py" || warn "enrich_editorial_stories failed"
-$PYTHON "$PROJECT/scripts/ensure_generated_at.py" || warn "ensure_generated_at failed"
-$PYTHON "$PROJECT/scripts/generate_signal_api.py" || warn "generate_signal_api failed"
-$PYTHON "$PROJECT/scripts/generate_trades_api.py" || warn "generate_trades_api failed"
-$PYTHON "$PROJECT/scripts/build_track_record.py" || warn "build_track_record failed"
-
-# ---- Stage 2: build_site ----
+# ── Stage 2: build_site ──
 log "Stage 2: build_site"
 $PYTHON "$PROJECT/scripts/build_site.py" || abort "build_site.py FAILED"
 
-# ---- Stage 2.2: generate_broadcasts ----
-log "Stage 2.2: generate_broadcasts"
-$PYTHON "$PROJECT/scripts/generate_broadcasts.py" || warn "Broadcasts skipped"
+# ---- Clean up stale hashed assets from PREVIOUS runs ----
+# Must run BEFORE build_hashed_assets so it doesn't nuke the new hashes
+find "$PROJECT/public" -maxdepth 1 \( -name 'styles.*.css' ! -name 'styles.css' \) -delete 2>/dev/null || true
+find "$PROJECT/public" -maxdepth 1 \( -name '*.????????.js' ! -name 'app.js' ! -name 'i18n.js' ! -name 'sector.js' ! -name 'story-app.js' \) -delete 2>/dev/null || true
+find "$PROJECT/public" -maxdepth 1 -name 'app.*.js' ! -name 'app.js' -delete 2>/dev/null || true
+find "$PROJECT/public" -maxdepth 1 -name 'i18n.*.js' ! -name 'i18n.js' -delete 2>/dev/null || true
 
-# ---- Stage 2.5: TEST GATE (BLOCKING) ----
+# ---- Stage 2.1: build_hashed_assets ----
+log "Stage 2.1: build_hashed_assets"
+$PYTHON "$PROJECT/scripts/build_hashed_assets.py" || warn "build_hashed_assets.py skipped"
+
+# ── Stage 2.5: TEST GATE (BLOCKING) ──
 log "Stage 2.5: test_platform"
 if $PYTHON "$PROJECT/scripts/test_platform.py"; then
     log "All tests passed"
 else
     abort "test_platform.py FAILED — deploy blocked"
 fi
-
-# ---- Clean up stale hashed assets ----
-# Remove old hashed CSS/JS files that accumulate from previous runs
-find "$PROJECT/public" -maxdepth 1 -name 'styles.*.css' ! -name 'styles.css' -delete 2>/dev/null || true
-find "$PROJECT/public" -maxdepth 1 -name 'app.*.js' ! -name 'app.js' -delete 2>/dev/null || true
-find "$PROJECT/public" -maxdepth 1 -name 'i18n.*.js' ! -name 'i18n.js' -delete 2>/dev/null || true
 
 # ---- Stage 4: GCS Deploy (skip if running in Cloud Run — entrypoint handles it) ----
 if [ "${CLOUD_RUN:-}" = "1" ]; then
