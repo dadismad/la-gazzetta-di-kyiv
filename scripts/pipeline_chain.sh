@@ -4,7 +4,9 @@
 # Deploy picks up automatically every 15m
 set -euo pipefail
 
-cd /Users/alexstocchi/lagazzettadikyiv
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT="$(dirname "$SCRIPT_DIR")"
+cd "$PROJECT"
 
 echo "=== PIPELINE CHAIN $(date '+%Y-%m-%d %H:%M:%S') ==="
 

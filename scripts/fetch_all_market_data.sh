@@ -9,7 +9,8 @@
 #   CFTC and ICI are fetched via public endpoints where available
 
 set -e
-PROJECT="/Users/alexstocchi/lagazzettadikyiv"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT="$(dirname "$SCRIPT_DIR")"
 cd "$PROJECT"
 
 echo "[market-data-pipeline] $(date -u +%Y-%m-%dT%H:%M:%SZ) START"
