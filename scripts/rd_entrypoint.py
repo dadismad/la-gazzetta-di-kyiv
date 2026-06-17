@@ -1,0 +1,231 @@
+#!/usr/bin/env python3
+"""
+rd_entrypoint.py — Gazzetta R&D Agent (Weekly Sweep)
+Cloud Run entrypoint for gazzetta-rd-sweep-weekly.
+Phase 1: GitHub Issues only (no PR creation).
+Phase 2: Draft PR creation (unlocked after C-Suite review loop proven).
+"""
+
+import os
+import sys
+import json
+import subprocess
+import datetime
+from pathlib import Path
+
+# ── GCP imports ──
+from google.cloud import secretmanager_v1, storage
+
+
+def fetch_secret(secret_name: str) -> str:
+    """Fetch secret from GCP Secret Manager."""
+    client = secretmanager_v1.SecretManagerServiceClient()
+    project = os.environ.get("GCP_PROJECT", "lagazzettadikyiv")
+    name = f"projects/{project}/secrets/{secret_name}/versions/latest"
+    resp = client.access_secret_version(request={"name": name})
+    return resp.payload.data.decode("utf-8")
+
+
+def run_research_track(track_name: str, research_prompt: str) -> dict:
+    """Execute one research track. Returns structured findings."""
+    # ── Web search phase ──
+    # Use httpx to query search engines or curated competitor sites
+    import httpx
+    
+    findings = {
+        "track": track_name,
+        "timestamp": datetime.datetime.utcnow().isoformat(),
+        "sources": [],
+        "recommendations": [],
+        "code_changes_proposed": False,
+    }
+    
+    # Track-specific research URLs
+    research_urls = {
+        "navigation-ui": [
+            "https://www.bloomberg.com",
+            "https://www.ft.com", 
+            "https://www.reuters.com",
+        ],
+        "capital-flow-apis": [
+            "https://www.epfr.com",
+            "https://www.morningstar.com",
+            "https://api.coingecko.com/api/v3/ping",
+        ],
+        "distribution-roi": [
+            "https://www.reddit.com/r/LaGazzettadiKyiv/about.json",
+        ],
+    }
+    
+    urls = research_urls.get(track_name, [])
+    client = httpx.Client(timeout=30, follow_redirects=True)
+    
+    for url in urls:
+        try:
+            resp = client.get(url, headers={"User-Agent": "Gazzetta-RD-Agent/1.0"})
+            findings["sources"].append({
+                "url": url,
+                "status": resp.status_code,
+                "content_length": len(resp.text),
+                "title": extract_title(resp.text),
+            })
+        except Exception as e:
+            findings["sources"].append({"url": url, "error": str(e)})
+    
+    # ── Analysis phase ──
+    # Use the LLM (via subprocess call to analyze with DeepSeek) 
+    # to produce structured recommendations from the scraped content
+    analysis_prompt = f"""Analyze the following research data for Gazzetta di Kyiv's {track_name} track:
+
+Research prompt: {research_prompt}
+
+Sources analyzed: {json.dumps(findings['sources'], indent=2)}
+
+Produce:
+1. Key findings (3-5 bullet points)
+2. Concrete recommendations (specific CSS, Python, or config changes)
+3. Competitor patterns observed
+4. Risk assessment (Low/Medium/High for each recommendation)
+
+Output as JSON with keys: key_findings, recommendations, competitor_patterns, risk_assessment
+"""
+    
+    # Store research results in GCS for later retrieval
+    upload_research_output(findings, track_name)
+    
+    findings["analysis_prompt"] = analysis_prompt
+    return findings
+
+
+def extract_title(html: str) -> str:
+    """Extract <title> from HTML."""
+    import re
+    match = re.search(r"<title>(.*?)</title>", html, re.IGNORECASE | re.DOTALL)
+    return match.group(1).strip()[:200] if match else "Unknown"
+
+
+def upload_research_output(findings: dict, track_name: str):
+    """Upload research findings to GCS."""
+    client = storage.Client()
+    bucket = client.bucket("www.lagazzettadikyiv.com")
+    
+    date_str = datetime.datetime.utcnow().strftime("%Y-%m-%d")
+    path = f"rd_research/{track_name}/{date_str}.json"
+    
+    blob = bucket.blob(path)
+    blob.upload_from_string(json.dumps(findings, indent=2), content_type="application/json")
+    print(f"  → Research uploaded: gs://www.lagazzettadikyiv.com/{path}")
+
+
+def create_github_issue(track_name: str, findings: dict, gh_pat: str):
+    """Phase 1: Create a GitHub Issue (not PR) for human review."""
+    import httpx
+    
+    repo = os.environ.get("GITHUB_REPO", "lagazzettadikyiv")
+    owner = os.environ.get("GITHUB_OWNER", "gazzetta-di-kyiv")
+    
+    # Build issue body from findings
+    body = f"""## R&D Sweep: {track_name}
+**Date:** {datetime.datetime.utcnow().strftime('%Y-%m-%d')}
+**Agent Cycle:** Weekly (Mon 06:00 UTC)
+
+### Hypothesis
+Research Track {track_name} — automated intelligence sweep for Gazzetta di Kyiv improvements.
+
+### Key Findings
+{json.dumps(findings.get('sources', []), indent=2)}
+
+### Recommendations
+_(Pending LLM analysis — see GCS rd_research/{track_name}/ for full output)_
+
+### ⚠️ AWAITING C-SUITE REVIEW
+- Review findings and comment with approval/rejection
+- Request PR creation by commenting `/rd-pr {track_name}`
+- Issues without C-Suite activity within 14 days auto-close
+
+---
+🤖 Generated by gazzetta-rd-sweep-weekly
+"""
+    
+    title = f"[R&D] {track_name.replace('-', ' ').title()} — Weekly Sweep {datetime.datetime.utcnow().strftime('%Y-%m-%d')}"
+    
+    resp = httpx.post(
+        f"https://api.github.com/repos/{owner}/{repo}/issues",
+        headers={
+            "Authorization": f"Bearer {gh_pat}",
+            "Accept": "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+        },
+        json={"title": title, "body": body, "labels": ["rd-sweep", "auto-generated"]},
+        timeout=30,
+    )
+    
+    if resp.status_code == 201:
+        issue_url = resp.json().get("html_url", "unknown")
+        print(f"  → GitHub Issue created: {issue_url}")
+        return {"status": "created", "url": issue_url}
+    else:
+        print(f"  ✗ GitHub Issue failed: {resp.status_code} {resp.text[:200]}")
+        return {"status": "failed", "code": resp.status_code, "error": resp.text[:200]}
+
+
+def main():
+    print("=" * 60)
+    print("GAZZETTA R&D AGENT — Weekly Sweep")
+    print(f"Timestamp: {datetime.datetime.utcnow().isoformat()}")
+    print("=" * 60)
+    
+    # ── Phase determination ──
+    phase = os.environ.get("RD_PHASE", "1")  # 1 = Issues only, 2 = PR creation
+    
+    # ── Research tracks ──
+    tracks = {
+        "navigation-ui": "Analyze how Bloomberg, FT, and Reuters handle multi-category navigation. Compare with Gazzetta's current INTEL/ALPHA dropdowns. Identify 3 specific UX improvements.",
+        "capital-flow-apis": "Identify additional capital flow data sources (EPFR, Morningstar, Lipper). Compare API availability, cost, and data granularity. Recommend 1-2 integrations.",
+        "distribution-roi": "Compare Reddit vs X.com vs Telegram engagement metrics for financial newsletters. Analyze cost-per-acquisition and audience quality. Recommend optimal distribution mix.",
+    }
+    
+    results = {}
+    
+    for track_name, prompt in tracks.items():
+        print(f"\n── Track: {track_name} ──")
+        try:
+            findings = run_research_track(track_name, prompt)
+            results[track_name] = findings
+            
+            # Phase 1: Create GitHub Issue (requires gh_pat with issues:write scope)
+            if phase == "1":
+                try:
+                    gh_pat = fetch_secret("github-pat-rd-agent")
+                    issue = create_github_issue(track_name, findings, gh_pat)
+                    findings["github_issue"] = issue
+                except Exception as e:
+                    print(f"  ✗ GitHub Issue creation failed: {e}")
+                    print(f"  → Research saved to GCS only (no token or token scope limited)")
+                    findings["github_issue"] = {"status": "skipped", "reason": str(e)}
+            
+            # Phase 2: Create Draft PR (requires gh_pat with Contents:write + Pull requests:write)
+            elif phase == "2":
+                print("  → Phase 2 PR creation not yet implemented (pending C-Suite unlock)")
+                findings["github_pr"] = {"status": "deferred", "phase": "2"}
+                
+        except Exception as e:
+            print(f"  ✗ Track failed: {e}")
+            results[track_name] = {"error": str(e)}
+    
+    # ── Summary ──
+    print(f"\n{'=' * 60}")
+    print(f"SWEEP COMPLETE — {len(results)} tracks processed")
+    
+    success = sum(1 for r in results.values() if "error" not in r)
+    print(f"  Success: {success}/{len(results)}")
+    print(f"  Phase: {phase} ({'Issues only' if phase == '1' else 'PR creation'})")
+    
+    # Upload sweep summary to GCS
+    upload_research_output(results, "sweep_summary")
+    
+    return 0 if success == len(results) else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

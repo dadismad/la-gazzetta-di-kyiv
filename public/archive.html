@@ -1,28 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Sources — La Gazzetta di Kyiv</title>
-  <meta name="description" content="Data sources, feeds, and intelligence pipelines powering La Gazzetta di Kyiv — from yfinance to Telegram OSINT to CFTC COT reports."/>
-  <link rel="canonical" href="https://www.lagazzettadikyiv.com/sources.html"/>
+  <title>Archive — La Gazzetta di Kyiv</title>
+  <meta name="description" content="Complete archive of 377 geopolitical intelligence stories since 2025."/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.ab6de8dd.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    .sources-page { max-width: 800px; margin: 40px auto; padding: 0 20px; font-family: var(--body); color: var(--ink); line-height: 1.8; }
-    .sources-page h1 { font-family: var(--display); font-size: 32px; margin-bottom: 8px; }
-    .sources-page h2 { font-family: var(--display); font-size: 22px; margin: 28px 0 10px; border-bottom: 1px solid var(--divider); padding-bottom: 4px; }
-    .sources-page table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
-    .sources-page th { font-family: var(--sans); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-muted); text-align: left; padding: 8px 6px; border-bottom: 2px solid var(--divider); }
-    .sources-page td { padding: 8px 6px; border-bottom: 1px solid var(--divider); }
-    .source-tag { display: inline-block; font-family: var(--mono); font-size: 10px; font-weight: 700; padding: 1px 6px; }
-    .source-tag.live { background: rgba(5,150,105,0.08); color: #059669; border: 1px solid #059669; }
-    .source-tag.calc { background: rgba(184,134,11,0.08); color: #B8860B; border: 1px solid #B8860B; }
-    .source-tag.delayed { background: rgba(107,114,128,0.08); color: #6B7280; border: 1px solid #9CA3AF; }
-    .back-link { display: inline-block; margin-bottom: 24px; color: var(--blue); font-family: var(--sans); font-size: 13px; }
-  </style>
 </head>
-<body style="background:#FFFFFF;">
+<body>
+
 <!-- COMPONENT:HEADER:START -->
 <!-- ═══════════════════════════════════════════════ -->
 <!-- MASTHEAD v2.0 — 6-container navigation            -->
@@ -92,55 +79,26 @@
 </nav>
 <!-- COMPONENT:HEADER:END -->
 
-<div class="sources-page">
-  <a href="./" class="back-link">← Dashboard</a>
-  <h1>Sources &amp; Intelligence Pipeline</h1>
-  <p>Every claim on La Gazzetta di Kyiv is traceable to its origin. Source labels — <span class="source-tag live">[LIVE-DATA]</span> <span class="source-tag calc">[CALC-EST]</span> — are injected at the pipeline level and cannot be lost on regeneration.</p>
+<main class="dashboard">
+  <section class="dashboard-intro">
+    <p class="dashboard-tagline">Complete archive. 377 stories since 2025.</p>
+  </section>
 
-  <h2>Live Market Data</h2>
-  <table>
-    <tr><th>Source</th><th>Ticker</th><th>Frequency</th><th>Label</th></tr>
-    <tr><td>yfinance</td><td>BTC-USD</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
-    <tr><td>yfinance</td><td>SPY</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
-    <tr><td>yfinance</td><td>CL=F (WTI)</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
-    <tr><td>yfinance</td><td>GC=F (Gold)</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
-    <tr><td>yfinance</td><td>QQQ</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
-    <tr><td>yfinance</td><td>TLT</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
-    <tr><td>yfinance</td><td>UUP (DXY proxy)</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
-    <tr><td>yfinance</td><td>ITA (Italy ETF)</td><td>6h</td><td><span class="source-tag live">LIVE</span></td></tr>
-  </table>
+  <div id="archive-controls" style="padding:12px 24px;display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid #E5E7EB;margin:0 24px;">
+    <button class="container-pill active" data-filter="all">ALL</button>
+    <button class="container-pill" data-filter="monetary_order">MONETARY</button>
+    <button class="container-pill" data-filter="energy_resources">ENERGY</button>
+    <button class="container-pill" data-filter="technology_ai">TECHNOLOGY</button>
+    <button class="container-pill" data-filter="information_narrative">INFORMATION</button>
+    <button class="container-pill" data-filter="biosecurity_health">BIOSECURITY</button>
+    <button class="container-pill" data-filter="flashpoints">FLASHPOINTS</button>
+    <input type="text" id="archiveSearch" placeholder="Search headlines..." 
+           style="font-family:Inter,sans-serif;font-size:11px;padding:5px 12px;border:1px solid #E5E7EB;margin-left:auto;min-width:180px;">
+  </div>
 
-  <h2>Intelligence Feeds</h2>
-  <table>
-    <tr><th>Source</th><th>Type</th><th>Frequency</th><th>Label</th></tr>
-    <tr><td>Telegram OSINT</td><td>Geopolitical &amp; Macro</td><td>30m</td><td><span class="source-tag live">LIVE-DATA</span></td></tr>
-    <tr><td>Reddit r/economics</td><td>Economic Sentiment</td><td>60m</td><td><span class="source-tag calc">CALC-EST</span></td></tr>
-    <tr><td>Reddit r/investing</td><td>Retail Sentiment</td><td>60m</td><td><span class="source-tag calc">CALC-EST</span></td></tr>
-    <tr><td>Reuters Business RSS</td><td>Corporate/Macro</td><td>120m</td><td><span class="source-tag calc">CALC-EST</span></td></tr>
-  </table>
+  <div id="archiveResults" style="padding:0 24px;"></div>
+</main>
 
-  <h2>Institutional Data</h2>
-  <table>
-    <tr><th>Source</th><th>Data Type</th><th>Frequency</th><th>Label</th></tr>
-    <tr><td>CFTC COT</td><td>Futures positioning</td><td>Weekly</td><td><span class="source-tag delayed">DELAYED</span></td></tr>
-    <tr><td>ICI Fund Flows</td><td>Mutual fund/ETF flows</td><td>Weekly</td><td><span class="source-tag delayed">DELAYED</span></td></tr>
-    <tr><td>FRED</td><td>Economic indicators</td><td>Daily</td><td><span class="source-tag live">LIVE</span></td></tr>
-    <tr><td>EPFR Global</td><td>Institutional flows</td><td>Weekly</td><td><span class="source-tag delayed">DELAYED</span></td></tr>
-    <tr><td>Morningstar Direct</td><td>Fund analytics</td><td>Monthly</td><td><span class="source-tag delayed">DELAYED</span></td></tr>
-  </table>
-
-  <h2>Computational Models</h2>
-  <table>
-    <tr><th>Model</th><th>Inputs</th><th>Output</th></tr>
-    <tr><td>Asymmetry Score</td><td>Narrative sentiment + 24h price delta</td><td>0-100 score with diagnostic trace</td></tr>
-    <tr><td>Conviction Probability</td><td>Contradiction score + sources + freshness + confidence tier</td><td>50-95% probability</td></tr>
-    <tr><td>Story-Level Scaling</td><td>Category total + tier fraction + pillar bonus + jitter</td><td>Per-story capital flow amount</td></tr>
-    <tr><td>ATR Stop Calculator</td><td>Entry price + ATR% + volatility multiplier</td><td>Volatility-adjusted stop level</td></tr>
-    <tr><td>Pace Multiplier</td><td>Horizon + urgency keywords + contradiction × asset velocity</td><td>0.5-5.0× flow velocity</td></tr>
-  </table>
-
-  <p style="margin-top:40px;font-style:italic;color:var(--ink-muted);">Source labels are permanently injected by db_to_json.py and cannot drift. Last updated: 2026-06-10.</p>
-</div>
 <!-- COMPONENT:FOOTER:START -->
 <!-- ═══════════════════════════════════════════════ -->
 <!-- FOOTER v26.5 — Shared component template         -->
@@ -159,5 +117,74 @@
 <script src="./i18n.e879a05a.js"></script>
 <!-- app.js loaded by build_site.py -->
 <!-- COMPONENT:FOOTER:END -->
+
+<script>
+(async function() {
+  const resp = await fetch('./data/stories.json?t=' + Date.now(), {cache:'no-store'});
+  const data = await resp.json();
+  const allStories = data.all_stories || [];
+  let filter = 'all';
+  let search = '';
+
+  // Read container from URL query param (e.g., ?container=monetary_order)
+  const urlParams = new URLSearchParams(window.location.search);
+  const containerParam = urlParams.get('container');
+  if (containerParam) {
+    filter = containerParam;
+    // Activate the matching pill button
+    const btn = document.querySelector('#archive-controls .container-pill[data-filter="' + containerParam + '"]');
+    if (btn) btn.classList.add('active');
+  }
+
+  function render() {
+    const results = document.getElementById('archiveResults');
+    let stories = allStories;
+
+    if (filter !== 'all') {
+      stories = stories.filter(s => s.container === filter);
+    }
+    if (search) {
+      const q = search.toLowerCase();
+      stories = stories.filter(s => (s.headline||'').toLowerCase().includes(q));
+    }
+
+    if (stories.length === 0) {
+      results.innerHTML = '<div class="container-empty"><p>No stories match.</p></div>';
+      return;
+    }
+
+    results.innerHTML = '<div style="padding:12px 0;font-size:10px;color:#6B7280;text-transform:uppercase;letter-spacing:0.05em;">' +
+      stories.length + ' stories</div>' +
+      stories.map(s => {
+        const date = s.generated_at ? new Date(s.generated_at).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}).toUpperCase() : '';
+        const source = s.source_name || '';
+        const container = s.container ? s.container.replace(/_/g,' ') : '';
+        return '<article class="story-card">' +
+          '<div class="story-card-header">' +
+            '<span class="story-meta">' + date + ' · ' + source + ' · ' + container + '</span>' +
+          '</div>' +
+          '<h3 class="story-headline">' + (s.headline||'Untitled') + '</h3>' +
+          (s.thesis ? '<p class="story-thesis">' + s.thesis + '</p>' : '') +
+          '</article>';
+      }).join('');
+  }
+
+  document.getElementById('archiveSearch').addEventListener('input', function(e) {
+    search = e.target.value;
+    render();
+  });
+
+  document.querySelectorAll('#archive-controls .container-pill').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#archive-controls .container-pill').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      filter = this.getAttribute('data-filter');
+      render();
+    });
+  });
+
+  render();
+})();
+</script>
 </body>
 </html>

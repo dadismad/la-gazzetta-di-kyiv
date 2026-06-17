@@ -1,0 +1,19 @@
+# Exclude large/generated files from Cloud Build upload
+.git
+.backup
+logs/
+*.db
+!gazzetta.db
+*.db-shm
+*.db-wal
+.venv/
+venv/
+devvit/
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+secure/
+distribution/
+*.tar.gz
+*.tgz

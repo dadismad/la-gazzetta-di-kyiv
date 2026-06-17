@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css"/>
+  <link rel="stylesheet" href="./styles.ab6de8dd.css"/>
 
   <link rel="canonical" href="https://www.lagazzettadikyiv.com/about.html"/>
   <link rel="alternate" hreflang="en" href="https://www.lagazzettadikyiv.com/about.html"/>
@@ -39,7 +39,7 @@
 
 <!-- COMPONENT:HEADER:START -->
 <!-- ═══════════════════════════════════════════════ -->
-<!-- MASTHEAD v26.5 — Shared component template       -->
+<!-- MASTHEAD v2.0 — 6-container navigation            -->
 <!-- Injected by build_site.py into all public/*.html -->
 <!-- ═══════════════════════════════════════════════ -->
 <header class="masthead">
@@ -56,8 +56,10 @@
         <circle cx="17" cy="14" r="1.3" fill="currentColor" opacity="0.5"/>
       </svg>
     </span>
-    <span class="masthead-name">La Gazzetta di Kyiv</span>
-    <span class="masthead-bulava" title="Crossed bulavas — Hetman's maces" aria-hidden="true">
+    <a href="/" class="masthead-home-link" aria-label="La Gazzetta di Kyiv — Home">
+      <span class="masthead-name">La Gazzetta di Kyiv</span>
+    </a>
+    <span class="masthead-bulava" title="Crossed bulavas" aria-hidden="true">
       <svg width="14" height="38" viewBox="0 0 14 38" fill="none" xmlns="http://www.w3.org/2000/svg">
         <line x1="7" y1="18" x2="7" y2="35" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
         <rect x="3" y="21" width="8" height="2" rx="1" fill="currentColor" opacity="0.5"/>
@@ -87,30 +89,21 @@
     </span>
   </div>
   <div class="masthead-right">
-    <div class="nav-dropdown">
-      <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-        <a href="./stories.html" class="masthead-nav-link" style="color:inherit;display:inline;padding:0;font-size:inherit" data-i18n="nav_intel">INTEL</a>
-        <span class="nav-dd-arrow">&#9662;</span>
-      </button>
-      <div class="nav-dropdown-panel">
-        <a href="./stories.html" class="nav-dd-link" data-i18n="nav_stories">Stories</a>
-        <a href="./flows.html" class="nav-dd-link" data-i18n="nav_flows">Capital Flows</a>
-      </div>
-    </div>
-    <div class="nav-dropdown">
-      <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-        <a href="./signal.html" class="masthead-nav-link" style="color:inherit;display:inline;padding:0;font-size:inherit" data-i18n="nav_alpha">ALPHA</a>
-        <span class="nav-dd-arrow">&#9662;</span>
-      </button>
-      <div class="nav-dropdown-panel">
-        <a href="./signal.html" class="nav-dd-link" data-i18n="nav_signal">The Signal</a>
-        <a href="./trades.html" class="nav-dd-link" data-i18n="nav_trades">Trade Ideas</a>
-        <a href="./track.html" class="nav-dd-link" data-i18n="nav_track">Track Record</a>
-      </div>
-    </div>
-    <a href="./about.html" class="masthead-nav-link" data-i18n="nav_menu">MENU</a>
+    <a href="./index.html" class="masthead-nav-link">Home</a>
+    <a href="./archive.html" class="masthead-nav-link">Archive</a>
+    <a href="./about.html" class="masthead-nav-link">About</a>
   </div>
 </header>
+<!-- ── Domain Navigation ── -->
+<nav class="container-nav" aria-label="Intelligence domains">
+  <a href="./index.html#monetary_order" class="container-pill">Monetary</a>
+  <a href="./index.html#energy_resources" class="container-pill">Energy</a>
+  <a href="./index.html#technology_ai" class="container-pill">Technology</a>
+  <a href="./index.html#information_narrative" class="container-pill">Information</a>
+  <a href="./index.html#biosecurity_health" class="container-pill">Biosecurity</a>
+  <a href="./index.html#flashpoints" class="container-pill">Flashpoints</a>
+  <a href="./archive.html" class="container-pill">Archive</a>
+</nav>
 <!-- COMPONENT:HEADER:END -->
 
 <main style="max-width:720px;margin:0 auto;padding:32px 16px 64px;font-family:'Source Serif 4',Georgia,serif;color:var(--ink);line-height:1.7;">
@@ -139,7 +132,7 @@
   <h2 style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);margin:32px 0 12px;">Data & Methodology</h2>
 
   <p style="font-size:14px;margin:0 0 12px;">
-    Our capital flow data is sourced from EPFR Global, Morningstar Direct, and internal aggregation. Velocity is measured against 4-week rolling averages. Confidence scores use a transparent 4-factor model (flow magnitude + pace + positioning + contradiction). Full methodology: <a href="./capital.html" style="color:var(--gold);">capital.html</a>.
+    Our capital flow data is sourced from EPFR Global, Morningstar Direct, and internal aggregation. Velocity is measured against 4-week rolling averages. Confidence scores use a transparent 4-factor model (flow magnitude + pace + positioning + contradiction). Full methodology: <a href="./capital.html" style="color:var(--gold);">Capital Flow Methodology</a>.
   </p>
 
   <p style="font-size:14px;margin:0 0 12px;">
@@ -177,8 +170,8 @@
   <span data-i18n="footer_kyiv">Kyiv · Since 2025</span>
 </footer>
 
-<script src="./i18n.js"></script>
-<script src="./app.js"></script>
+<script src="./i18n.e879a05a.js"></script>
+<!-- app.js loaded by build_site.py -->
 <!-- COMPONENT:FOOTER:END -->
 
 </body>
