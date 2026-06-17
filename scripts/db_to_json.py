@@ -138,7 +138,7 @@ def compile_containers(conn):
     for tag, story_ids_str in tag_rows:
         tags_index[tag] = [s.strip() for s in story_ids_str.split(",") if s.strip()]
     
-    # ── Write output ──
+    # ── Atomic write output ──
     generated_at = datetime.now(timezone.utc).isoformat()
     doc = {
         "generated_at": generated_at,
@@ -151,8 +151,26 @@ def compile_containers(conn):
     }
     
     out_path = DATA / "stories.json"
-    with open(out_path, "w") as f:
+    tmp_path = DATA / "stories.tmp.json"
+    
+    # Write to temp file
+    with open(tmp_path, "w") as f:
         json.dump(doc, f, indent=2, ensure_ascii=False)
+    
+    # Validate: re-read and verify structure
+    with open(tmp_path, "r") as f:
+        validated = json.load(f)
+    
+    required_keys = ["generated_at", "containers", "all_stories", "total_stories"]
+    for key in required_keys:
+        if key not in validated:
+            raise ValueError(f"VALIDATION FAILED: missing key '{key}' in stories.tmp.json")
+    
+    if not isinstance(validated.get("all_stories"), list):
+        raise ValueError("VALIDATION FAILED: all_stories is not a list")
+    
+    # Atomic rename (same filesystem = instant, no partial read possible)
+    os.replace(tmp_path, out_path)
     
     for cname, cdata in containers.items():
         print(f"  {cname:30s} {cdata['count']:4d} stories")
@@ -178,6 +196,8 @@ def main():
         sys.exit(0)
     
     conn = sqlite3.connect(str(DB_PATH))
+    conn.execute("PRAGMA journal_mode=WAL")
+    conn.execute("PRAGMA busy_timeout=5000")
     conn.row_factory = sqlite3.Row
     
     try:

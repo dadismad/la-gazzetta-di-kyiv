@@ -19,6 +19,8 @@ except ImportError:
     print("ERROR: yfinance not installed. Run: pip install yfinance")
     sys.exit(1)
 
+from circuit_breaker import api_call_with_retry
+
 PROJECT = Path(__file__).resolve().parent.parent
 DATA = PROJECT / "data"
 
@@ -35,27 +37,30 @@ TICKER_MAP = {
 }
 
 def fetch_24h_change(ticker_symbol):
-    """Fetch 24h price change percentage for a ticker."""
-    try:
+    """Fetch 24h price change percentage for a ticker (with circuit breaker)."""
+    def _fetch():
         ticker = yf.Ticker(ticker_symbol)
-        hist = ticker.history(period="1d")
-        if len(hist) < 2:
-            # Try 5d as fallback
-            hist = ticker.history(period="5d")
-        if len(hist) >= 2:
-            close = hist["Close"]
-            prev = close.iloc[-2]
-            current = close.iloc[-1]
-            change_pct = ((current - prev) / prev) * 100
-            return {
-                "ticker": ticker_symbol,
-                "price": round(float(current), 2),
-                "change_pct": round(float(change_pct), 2),
-                "direction": "up" if change_pct > 0 else "down",
-            }
-    except Exception as e:
-        pass
-    return {"ticker": ticker_symbol, "price": None, "change_pct": 0, "direction": "neutral", "error": str(e)[:80]}
+        hist = ticker.history(period="5d")  # 5d for reliability
+        if hist.empty or len(hist) < 2:
+            raise ValueError(f"No price data for {ticker_symbol}")
+        return hist
+    
+    result, ok = api_call_with_retry(_fetch, name=f"yfinance:{ticker_symbol}")
+    if not ok:
+        return {"ticker": ticker_symbol, "price": None, "change_pct": 0,
+                "direction": "neutral", "error": "circuit breaker: exhausted retries"}
+    
+    hist = result
+    close = hist["Close"]
+    prev = close.iloc[-2]
+    current = close.iloc[-1]
+    change_pct = ((current - prev) / prev) * 100
+    return {
+        "ticker": ticker_symbol,
+        "price": round(float(current), 2),
+        "change_pct": round(float(change_pct), 2),
+        "direction": "up" if change_pct > 0 else "down",
+    }
 
 def compute_asymmetry_score(narrative_direction, price_direction, narrative_confidence, price_change_pct):
     """

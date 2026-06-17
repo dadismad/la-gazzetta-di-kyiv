@@ -27,6 +27,7 @@ import sqlite3
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
+from circuit_breaker import api_call_with_retry
 
 try:
     import feedparser
@@ -515,27 +516,28 @@ def insert_draft(conn, source, raw_content, headline, multi_persona, flows, crea
 # ═══════════════════════════════════════════════════════
 
 def fetch_feed(feed_cfg):
-    """Fetch one RSS feed, return list of parsed entries."""
+    """Fetch one RSS feed with circuit breaker, return list of parsed entries."""
     url = feed_cfg["url"]
     ctx = ssl.create_default_context()
     ctx.check_hostname = False
     ctx.verify_mode = ssl.CERT_NONE
 
-    req = urllib.request.Request(url, headers={
-        "User-Agent": "Mozilla/5.0 (compatible; GazzettaBot/1.0; +https://lagazzettadikyiv.com)"
-    })
-
-    try:
+    def _fetch():
+        req = urllib.request.Request(url, headers={
+            "User-Agent": "Mozilla/5.0 (compatible; GazzettaBot/1.0; +https://lagazzettadikyiv.com)"
+        })
         resp = urllib.request.urlopen(req, timeout=20, context=ctx)
         raw = resp.read()
         parsed = feedparser.parse(raw)
         if parsed.bozo and not parsed.entries:
-            print(f"  {feed_cfg['name']}: parse error — {parsed.bozo_exception}")
-            return []
+            raise ValueError(f"Parse error: {parsed.bozo_exception}")
         return parsed.entries
-    except Exception as e:
-        print(f"  {feed_cfg['name']}: fetch error — {e}")
+    
+    result, ok = api_call_with_retry(_fetch, name=f"feed:{feed_cfg['name']}")
+    if not ok:
+        print(f"  {feed_cfg['name']}: circuit breaker exhausted — skipping feed")
         return []
+    return result
 
 
 def process_entries(conn, feed_cfg, entries, dry_run):
