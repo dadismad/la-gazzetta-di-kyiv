@@ -136,6 +136,32 @@ def compute_decay(story):
         story["time_decay"] = 0.0
 
 
+# ── Narrative context for coalescence ────────────────────────────
+def build_narrative_context() -> str:
+    """Load flows.json and build a compact narrative state summary."""
+    flows_path = STORIES_PATH.parent / "flows.json"
+    if not flows_path.exists():
+        return ""
+    try:
+        with open(flows_path) as f:
+            flows = json.load(f)
+    except Exception:
+        return ""
+    nf = flows.get("narrative_flows", {})
+    if not nf:
+        return ""
+    lines = ["CURRENT PLATFORM STATE (narrative saturation):"]
+    for nid, data in sorted(nf.items()):
+        sc = data.get("story_count", 0) or 0
+        ag = data.get("avg_contradiction_gap", 0) or 0
+        tc = data.get("total_capital_b", 0) or 0
+        dd = data.get("dominant_direction", "neutral") or "neutral"
+        lines.append(
+            f"  {nid}: {sc} stories, avg GAP {ag:.0f}, capital ${tc:.1f}B, direction {dd}"
+        )
+    return "\n".join(lines)
+
+
 # ── DB helpers ──────────────────────────────────────────────────────
 def get_db():
     conn = sqlite3.connect(DB_PATH, timeout=10)
@@ -355,6 +381,13 @@ TRADE THESIS RULES (FORWARD DECLARATION — CRITICAL):
 - alpha_trigger: This is the most important field. ONE sentence. Must answer: "What EXACTLY is the market pricing wrong?" Be specific, falsifiable, and cite a number. Example: "The market is pricing the Iran ceasefire at 70% probability (oil -3%) while capital flows into defense ETFs at 1.8x normal pace suggest the smart money gives it 30% — a 40-point probability gap that will close violently." NOT: "Markets may be mispricing geopolitical risk."
 - FORBIDDEN: The phrase 'current levels' is BANNED. Using it will cause the story to be rejected. Always cite an exact price from the market data.
 
+NARRATIVE COALESCENCE RULES:
+- If CURRENT PLATFORM STATE is provided above the news article, use it to weight your analysis.
+- Narrative saturation: A GAP score on a narrative with many existing stories is LESS significant than the same GAP on a narrative with few stories. Narratives with 30+ stories are saturated — modest GAP scores there should be scored lower.
+- Narrative clustering: If this headline maps to a narrative where 3+ stories already exist with similar theses, note "narrative intensification" rather than treating as novel.
+- Redundancy: If the CURRENT PLATFORM STATE shows an existing trade direction (e.g., "direction short") for this narrative, do NOT generate an identical trade thesis. Either differentiate (different entry, different ticker) or set direction to NEUTRAL with explanation.
+- Contrarian gaps: If the CURRENT PLATFORM STATE shows a clear directional consensus for this narrative, and this headline genuinely contradicts that consensus, flag as "contrarian signal" and INCREASE the GAP score by 10-15 points.
+
 GENERAL RULES:
 - contradiction_gap: The score MUST reflect the MAGNITUDE of the price move, not just direction. A 0.4% ETF dip is a 10-20 point gap at most, not an 85. Reserve extreme scores for extreme moves.
 - Never invent ticker data. Only reference the market data provided in the prompt.
@@ -368,7 +401,9 @@ GENERAL RULES:
 
 def build_user_prompt(title, text, market_context, source_domain=""):
     source_line = f"SOURCE: {source_domain}" if source_domain else ""
-    return f"""NEWS ARTICLE
+    narrative_ctx = build_narrative_context()
+    ctx_block = f"\n{narrative_ctx}\n" if narrative_ctx else ""
+    return f"""{ctx_block}NEWS ARTICLE
 Title: {title}
 {source_line}
 

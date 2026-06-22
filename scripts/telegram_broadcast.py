@@ -33,6 +33,9 @@ TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "-1003990434181")
 
 MAX_POSTS = 2
+THROTTLE_HOURS = 4          # Suppress same narrative for 4h
+THROTTLE_GAP_JUMP = 15      # ...unless GAP increases by 15+
+THROTTLE_PATH = PUBLIC_DATA / "telegram_throttle.json"
 FRESHNESS_HOURS = 48
 
 
@@ -291,6 +294,31 @@ def gap_to_tag(gap: int) -> str:
     return "#GAP_MONITOR"
 
 
+
+def load_throttle_state() -> dict:
+    """Load narrative throttle state {narrative_id: (iso_ts, gap)}."""
+    try:
+        if THROTTLE_PATH.exists():
+            with open(THROTTLE_PATH) as f:
+                return json.load(f)
+    except Exception:
+        pass
+    return {}
+
+def save_throttle_state(narrative_id: str, gap: int):
+    """Update throttle state for a narrative after posting."""
+    state = load_throttle_state()
+    state[narrative_id] = [datetime.now(timezone.utc).isoformat(), gap]
+    # Prune entries older than 24h
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
+    state = {k: v for k, v in state.items() 
+             if datetime.fromisoformat(v[0]) > cutoff}
+    try:
+        with open(THROTTLE_PATH, "w") as f:
+            json.dump(state, f)
+    except Exception:
+        pass
+
 def main():
     import argparse
     ap = argparse.ArgumentParser(description="Telegram broadcast -- governor pipeline step")
@@ -314,7 +342,10 @@ def main():
         print(f"[{now()}] WARNING: Flow ledger unavailable — GapFire will show N/A")
 
     posted_ids = load_posted_ids()
-    recent_stories = [s for s in stories if is_recent(s)]
+    # Phase 8c: BREAKING only (GAP > 50) + must carry trade thesis
+    recent_stories = [s for s in stories if is_recent(s) 
+                      and (s.get("contradiction_gap", 0) or 0) > 50
+                      and s.get("trade_thesis")]
 
     print(f"[{now()}] Stories: {len(stories)} total, {len(recent_stories)} recent, "
           f"{len(posted_ids)} already posted")
@@ -328,6 +359,16 @@ def main():
         if sid in posted_ids:
             continue
 
+        # Phase 8c: Narrative throttle — 4h cooldown unless GAP jumps +15
+        narrative_id = story.get("narrative_id", story.get("container", ""))
+        gap = int(story.get("contradiction_gap", 0) or 0)
+        throttle = load_throttle_state()
+        if narrative_id in throttle:
+            last_ts, last_gap = throttle[narrative_id]
+            hours_ago = (datetime.now(timezone.utc) - datetime.fromisoformat(last_ts)).total_seconds() / 3600
+            if hours_ago < THROTTLE_HOURS and gap <= last_gap + THROTTLE_GAP_JUMP:
+                continue  # Suppress — same narrative, no material GAP increase
+
         text = format_story_for_telegram(story, flow_ledger)
 
         if args.dry_run:
@@ -340,6 +381,7 @@ def main():
 
         if send_telegram(text):
             save_posted_id(sid)
+            save_throttle_state(narrative_id, gap)
             posted_count += 1
             # Rate limit: 1 post per 3 seconds
             import time

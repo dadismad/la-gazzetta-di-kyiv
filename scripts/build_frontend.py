@@ -295,6 +295,7 @@ _TEMPLATE = r"""<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script>
@@ -309,7 +310,7 @@ tailwind.config = {
         "on-surface-variant": "#444748","inverse-surface": "#2F312F",
         "inverse-on-surface": "#F2F1EE","outline": "#747878",
         "outline-variant": "#C4C7C7","gold": "#D4AF37","gold-dim": "#B8860B","gold-accessible": "#B45309",
-        "crimson": "#8B0000","roman-purple": "#66023C","navy": "#1A1F2E",
+        "crimson": "#7F1D1D","roman-purple": "#66023C","emerald": "#10B981","navy": "#1A1F2E",
         "primary": "#000000","on-primary": "#FFFFFF","secondary": "#735C00",
         "on-secondary": "#FFFFFF","secondary-fixed-dim": "#E9C349",
         "error": "#BA1A1A","error-container": "#FFDAD6","on-error-container": "#93000A",
@@ -325,12 +326,12 @@ tailwind.config = {
       },
       fontSize: {
         "display-xl":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"700"}],
-        "headline-lg":["30px",{lineHeight:"36px",fontWeight:"700"}],
-        "headline-lg-mobile":["26px",{lineHeight:"32px",fontWeight:"700"}],
-        "headline-md":["22px",{lineHeight:"28px",fontWeight:"600"}],
-        "body-md":["16px",{lineHeight:"24px",fontWeight:"400"}],
-        "metadata-sm":["13px",{lineHeight:"18px",fontWeight:"500",letterSpacing:"0.04em"}],
-        "label-xs":["12px",{lineHeight:"16px",fontWeight:"600",letterSpacing:"0.02em"}],
+        "headline-lg":["16px",{lineHeight:"22px",fontWeight:"700"}],
+        "headline-lg-mobile":["18px",{lineHeight:"24px",fontWeight:"700"}],
+        "headline-md":["14px",{lineHeight:"20px",fontWeight:"600"}],
+        "body-md":["13px",{lineHeight:"20px",fontWeight:"400"}],
+        "metadata-sm":["11px",{lineHeight:"16px",fontWeight:"500",letterSpacing:"0.04em"}],
+        "label-xs":["10px",{lineHeight:"14px",fontWeight:"600",letterSpacing:"0.02em"}],
       },
     }
   }
@@ -436,16 +437,19 @@ tailwind.config = {
   .decay-fill{position:absolute;left:0;top:0;height:100%;transition:width 0.6s ease}
   .decay-fresh{background:#D4AF37}
   .decay-active{background:#B45309}
-  .decay-critical{background:#8B0000;animation:decayPulse 2s ease-in-out infinite}
+  .decay-critical{background:#7F1D1D;animation:decayPulse 4s ease-in-out infinite}
   @keyframes decayPulse{0%,100%{opacity:1}50%{opacity:0.5}}
   .decay-label{font-size:10px;color:#747878;text-transform:uppercase;letter-spacing:0.03em;margin-top:2px}
   .decay-label-critical{color:#8B0000;font-weight:700}
   /* C3: GAP PHYSICS — border thickness + color scale */
-  article[data-tier="BREAKING"]{border-left-width:4px;border-left-color:#8B0000}
+  article[data-tier="BREAKING"]{border-left-width:4px;border-left-color:#7F1D1D}
   article[data-tier="ACTIVE"]{border-left-width:2px;border-left-color:#D4AF37}
   article[data-tier="SETTLING"]{border-left-width:1px;border-left-color:#444748;opacity:0.7}
-  @keyframes gapPulse{0%,100%{border-left-color:#8B0000}50%{border-left-color:#D4AF37}}
-  article[data-gap-high="true"]{animation:gapPulse 3s ease-in-out infinite}
+  @keyframes gapPulse{0%,100%{border-left-color:#7F1D1D}50%{border-left-color:#D4AF37}}
+  article[data-gap-high="true"]{animation:gapPulse 6s ease-in-out infinite}
+  /* Monospace for data density */
+  .font-mono-data{font-family:'JetBrains Mono',SFMono-Regular,monospace;font-size:11px;letter-spacing:-0.02em}
+  .gap-score,.capital-num,.ticker-mono,.price-mono{font-family:'JetBrains Mono',SFMono-Regular,monospace}
 </style>
 </head>
 <body class="bg-surface font-body-md text-on-surface antialiased" style="background:#0A0A0F!important;color:#E6E4E0!important">
@@ -908,39 +912,54 @@ setTimeout(renderRadar, 100);
       var sourceTier = (s.feed_source && tier1Sources.indexOf(s.feed_source.toUpperCase()) >= 0) ? 'TIER 1' : 'TIER 2';
       var sourceTierBadge = s.feed_source ? '<span class="text-xs px-1 ml-1 border border-gold/30 text-gold-dim">' + sourceTier + '</span>' : '';
       var isHighGap = gap >= 70;
-      return '<article data-story-id="' + (s.story_id || '') + '" data-source-feed="' + (s.feed_source || '') + '" data-tier="' + (tierOverride || tier || '') + '" data-gap-high="' + (isHighGap ? 'true' : 'false') + '" class="py-stack-space-md border-b border-gold/20">' +
-        '<div class="pl-stack-space-md">' + decayHtml +
-        '<div class="flex justify-between items-start mb-2 flex-wrap gap-2">' +
+      // Trade setup line for collapsed state
+      var tt = s.trade_thesis || {};
+      var hasTrade = tt.direction && tt.direction !== 'NEUTRAL';
+      var tradeLine = hasTrade
+        ? '<span class="ticker-mono">' + (tt.direction||'').toUpperCase() + ' ' + (tt.primary_ticker||tt.ticker||'') + '</span>' +
+          ' <span class="price-mono">@ ' + (tt.limit_entry_price||tt.entry_zone||'') + '</span>' +
+          ' <span class="text-on-surface-variant">/ SL</span> <span class="price-mono">' + (tt.stop_loss||'N/A') + '</span>' +
+          ' <span class="text-on-surface-variant">/ TP</span> <span class="price-mono">' + (tt.take_profit||'N/A') + '</span>' +
+          (tt.portfolio_allocation_pct ? ' <span class="text-emerald">[' + tt.portfolio_allocation_pct + ']</span>' : '')
+        : '<span class="text-on-surface-variant">No active thesis</span>';
+      // Source line — compressed institutional density
+      var sourceLine = (s.feed_source
+        ? '<span class="text-gold-dim">' + sourceTier + '</span> via <span class="text-on-surface-variant">' + (s.feed_source||'').toUpperCase() + '</span>'
+        : '<span class="text-on-surface-variant">NO SOURCE</span>')
+        + ' <span class="text-on-surface-variant">·</span> <span class="text-gold-accessible">' + timeAgo + '</span>'
+        + ' <span class="text-on-surface-variant">·</span> <span class="gap-score text-crimson">GAP ' + gap.toFixed(0) + '</span>';
+
+      return '<article data-story-id="' + (s.story_id || '') + '" data-source-feed="' + (s.feed_source || '') + '" data-tier="' + (tierOverride || tier || '') + '" data-gap-high="' + (isHighGap ? 'true' : 'false') + '" class="py-2 border-b border-[#1E293B]">' +
+        '<div class="pl-3">' + decayHtml +
+        // LINE 1: Source + time + GAP
+        '<div class="font-label-xs text-label-xs mb-1">' + sourceLine + '</div>' +
+        // LINE 2: Headline
+        '<h3 class="font-headline-md text-headline-md text-on-surface leading-tight mb-1">'+(s.headline||'Untitled')+'</h3>' +
+        // LINE 3: Trade setup + action buttons
+        '<div class="flex items-center justify-between flex-wrap gap-2">' +
+          '<div class="font-label-xs text-label-xs">' + tradeLine + '</div>' +
           '<div class="flex items-center gap-2">' +
-            '<span class="font-metadata-sm text-metadata-sm text-on-surface-variant uppercase">'+(s._container_title||'')+'</span>' +
-            '<span class="font-label-xs text-label-xs text-gold-accessible">'+timeAgo+'</span>' +
-            (s.feed_source ? '<span class="font-label-xs text-label-xs text-on-surface-variant">via '+(s.feed_source||'')+'</span>' + sourceTierBadge : '') +
+            '<button class="text-xs text-on-surface-variant hover:text-gold-accessible" onclick="event.stopPropagation();var h=' + (s.headline||'Untitled').replace(/'/g,"\\'") + ';var g=' + gap.toFixed(0) + ';var c=' + capStr + ';var u=window.location.origin+window.location.pathname+\'?story=' + (s.story_id||'') + ';var tt=' + JSON.stringify(s.trade_thesis||{}) + ';var t=tt.direction?tt.direction.toUpperCase()+\' \'+(tt.primary_ticker||tt.ticker||\'\')+\' @ \'+(tt.limit_entry_price||tt.entry_zone||\'\')+\' / SL \'+(tt.stop_loss||\'\')+\' / TP \'+(tt.take_profit||\'\'):\'No active thesis\';var txt=h+\'\\n\\nCAPITAL: \'+c+\' | GAP: \'+g+\'/100\\nTRADE: \'+t+\'\\n\\n\'+u;if(navigator.share){navigator.share({title:h,text:txt,url:u}).catch(function(){})}else{navigator.clipboard.writeText(txt).then(function(){var b=this;b.innerHTML=\'<span class=material-symbols-outlined style=font-size:14px>check</span> Copied\';setTimeout(function(){b.innerHTML=\'<span class=material-symbols-outlined style=font-size:14px>share</span>\'},2000)}.bind(this))}" title="Share"><span class="material-symbols-outlined" style="font-size:14px">share</span></button>' +
+            '<button class="text-xs text-on-surface-variant hover:text-gold-accessible card-expand-btn" onclick="event.stopPropagation();var d=this.closest(\'article\').querySelector(\'.card-drawer\');if(d){d.open=!d.open;this.querySelector(\'.expand-icon\').style.transform=d.open?\'rotate(180deg)\' : \'\'}" title="Expand"><span class="material-symbols-outlined expand-icon" style="font-size:16px">unfold_more</span></button>' +
           '</div>' +
-          '<span class="px-2 py-0.5 border border-outline-variant font-label-xs text-label-xs uppercase '+tagClass+'">'+label+' · '+gap.toFixed(0)+'/100</span>' +
         '</div>' +
-        '<h3 class="font-headline-md text-headline-md text-on-surface leading-tight mb-2">'+(s.headline||'Untitled')+'</h3>' +
-        '<button class="inline-flex items-center gap-1 text-xs text-on-surface-variant hover:text-gold-accessible mb-2" onclick="event.stopPropagation();var h=' + (s.headline||'Untitled').replace(/'/g,"\\'") + ';var g=' + gap.toFixed(0) + ';var c=' + capStr + ';var u=window.location.origin+window.location.pathname+\'?story=' + (s.story_id||'') + ';var tt=' + JSON.stringify(s.trade_thesis||{}) + ';var t=tt.direction?tt.direction.toUpperCase()+\' \'+(tt.primary_ticker||tt.ticker||\'\')+\' @ \'+(tt.limit_entry_price||tt.entry_zone||\'\')+\' / SL \'+(tt.stop_loss||\'\')+\' / TP \'+(tt.take_profit||\'\'):\'No active thesis\';var txt=h+\'\\n\\nCAPITAL: \'+c+\' | GAP: \'+g+\'/100\\nTRADE: \'+t+\'\\n\\n\'+u;if(navigator.share){navigator.share({title:h,text:txt,url:u}).catch(function(){})}else{navigator.clipboard.writeText(txt).then(function(){this.innerHTML=\'<span class=material-symbols-outlined style=font-size:14px>check</span> Copied\';var b=this;setTimeout(function(){b.innerHTML=\'<span class=material-symbols-outlined style=font-size:14px>share</span> Share setup\'},2000)}.bind(this))}"><span class="material-symbols-outlined" style="font-size:14px">share</span> Share setup</button>' +
-        '<div class="mt-stack-space-sm flex items-center gap-3">' +
-          '<span class="font-metadata-sm text-metadata-sm text-on-surface-variant uppercase">Capital</span>' +
-          '<div class="flex-grow h-[3px] bg-surface-variant relative"><div class="absolute left-0 top-0 h-full bg-gold" style="width:'+gapPct+'%;"></div></div>' +
-          '<span class="font-metadata-sm text-metadata-sm text-on-surface">'+capStr+'</span>' +
-        '</div>' +
-        '<div class="mt-2 flex gap-2 flex-wrap">' +
-          (tier?'<span class="text-xs text-crimson uppercase tracking-wider border border-error/30 px-1.5 py-0.5">'+tier+'</span>':'') +
-          '<span class="text-xs text-on-surface-variant uppercase tracking-wider">Gap: '+gap.toFixed(0)+'</span>' +
-        '</div>' +
-        '<details class="mt-2">' +
-          '<summary class="font-metadata-sm text-metadata-sm text-gold-accessible uppercase tracking-wider flex items-center gap-1">' +
-            '<span class="material-symbols-outlined expand-icon" style="font-size:18px;">expand_more</span> Read Dispatch' +
-          '</summary>' +
-          '<div class="details-content mt-stack-space-sm grid grid-cols-1 md:grid-cols-2 gap-stack-space-sm">' +
-            '<div class="bg-surface-container-high p-stack-space-sm border-l border-outline-variant">' +
+        // DRAWER: Full dispatch (hidden by default)
+        '<details class="card-drawer mt-2">' +
+          '<summary class="hidden"></summary>' +
+          '<div class="details-content mt-2 grid grid-cols-1 md:grid-cols-2 gap-2">' +
+            '<div class="bg-surface-container-high p-2 border-l border-outline-variant">' +
               '<h4 class="font-metadata-sm text-metadata-sm text-on-surface-variant uppercase mb-1">Media Consensus</h4>' +
               '<p class="font-body-md text-body-md text-on-surface-variant">'+(s.they_say||'No data.')+'</p>' +
             '</div>' +
-            '<div class="bg-gold/5 p-stack-space-sm border-l border-gold">' +
+            '<div class="bg-gold/5 p-2 border-l border-gold">' +
               '<h4 class="font-metadata-sm text-metadata-sm text-gold-dim uppercase mb-1">Market Reality</h4>' +
               '<p class="font-body-md text-body-md text-on-surface">'+(s.reality||'No data.')+'</p>' +
+            '</div>' +
+            // Extra detail: capital volume + narrative context
+            '<div class="col-span-full flex items-center gap-3 text-xs text-on-surface-variant mt-1">' +
+              '<span>Capital: <span class="capital-num text-on-surface">' + capStr + '</span></span>' +
+              (tier ? '<span>· Tier: <span class="text-crimson">' + tier + '</span></span>' : '') +
+              '<span>· Narrative: <span class="text-on-surface">' + (s._container_title||'') + '</span></span>' +
             '</div>' +
           '</div>' +
         '</details>' +
@@ -948,7 +967,7 @@ setTimeout(renderRadar, 100);
     }
 
     var allCardsHtml = '';
-    allCardsHtml += breakingStories.length ? '<div class="zone-header breaking-zone mb-3"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#141418;border-left:4px solid #8B0000"><span class="material-symbols-outlined" style="color:#8B0000;font-size:20px">warning</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#8B0000">BREAKING ZONE — HIGH DIVERGENCE (' + breakingStories.length + ' SIGNALS)</span></div></div>' + breakingStories.map(function(s){ return buildCard(s,'BREAKING',true); }).join('') : '';
+    allCardsHtml += breakingStories.length ? '<div class="zone-header breaking-zone mb-3"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#141418;border-left:4px solid #8B0000"><span class="material-symbols-outlined" style="color:#7F1D1D;font-size:20px">warning</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#7F1D1D">BREAKING ZONE — HIGH DIVERGENCE (' + breakingStories.length + ' SIGNALS)</span></div></div>' + breakingStories.map(function(s){ return buildCard(s,'BREAKING',true); }).join('') : '';
     allCardsHtml += activeStories.length ? '<div class="zone-header active-zone mb-3 mt-4"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#141418;border-left:4px solid #D4AF37"><span class="material-symbols-outlined" style="color:#D4AF37;font-size:20px">trending_up</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#D4AF37">ACTIVE SIGNALS (' + activeStories.length + ' STORIES)</span></div></div>' + activeStories.map(function(s){ return buildCard(s,'ACTIVE',false); }).join('') : '';
     allCardsHtml += settlingStories.length ? '<div class="zone-header settling-zone mb-3 mt-4"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#141418;border-left:4px solid #444748"><span class="material-symbols-outlined" style="color:#444748;font-size:20px">check_circle</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#747878">SETTLING NOISE (' + settlingStories.length + ' STORIES)</span></div></div>' + settlingStories.map(function(s){ return buildCard(s,'SETTLING',false); }).join('') : '<div class="zone-header settling-zone mb-3 mt-4"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#141418;border-left:4px solid #444748"><span class="material-symbols-outlined" style="color:#444748;font-size:20px">check_circle</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#747878">SETTLING NOISE (0 STORIES) · No settling signals at this time</span></div></div>';
     cardsEl.innerHTML = allCardsHtml;
