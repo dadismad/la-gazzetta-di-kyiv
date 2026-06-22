@@ -1,31 +1,80 @@
 {
-  "generated_at": "2026-06-12T14:19:27.306794+00:00",
-  "story_count": 15,
-  "model": "deepseek-chat",
-  "narratives": [
-    {
-      "title": "Geopolitical Escalation Spiral",
-      "strength": "DOMINANT",
-      "direction": "Risk-Off",
-      "summary": "Capital is fleeing risk assets as a multi-front conflict involving Iran, Israel, Ukraine, and the US intensifies, with kinetic exchanges, blockade threats, and diplomatic off-ramps failing to materialize. The market is underpricing the duration and structural impact of these conflicts, as evidenced by the EIA's extended Hormuz blockade timeline and the breakdown of equity support levels.",
-      "key_stories": 9,
-      "trade_implication": "Long WTI crude oil futures and short S&P 500 index futures to capture the asymmetric risk premium from supply disruption and equity de-risking."
+  "metadata": {
+    "version": "1.0",
+    "updated": "2026-06-21T20:45:00Z"
+  },
+  "narratives": {
+    "dollar_decline": {
+      "display_name": "Dollar Decline",
+      "description": "Structural shifts in global currency hegemony and the weaponization of trade settlements.",
+      "tickers": ["DX=F", "GC=F", "UUP"],
+      "invalidation_threshold": "DXY > 106 for 2 quarters"
     },
-    {
-      "title": "Energy Supply Chain Disruption",
-      "strength": "STRONG",
-      "direction": "Neutral-to-Bullish",
-      "summary": "Capital is rotating into energy commodities as the Strait of Hormuz blockade persists through Q3 2026, with Kuwait seeking pipeline bypasses and the US releasing SPR barrels, which is actually a bullish signal of supply tightness. The market misreads these moves as bearish, but the structural damage to global oil logistics is driving a sustained premium.",
-      "key_stories": 5,
-      "trade_implication": "Buy Brent crude oil calendar spreads for 2025-2026 delivery to profit from the prolonged supply deficit."
+    "energy_sovereignty": {
+      "display_name": "Energy Sovereignty",
+      "description": "Geopolitical strategy surrounding natural resources and the independence of national energy grids.",
+      "tickers": ["CL=F", "NG=F", "XLE"],
+      "invalidation_threshold": "Brent < $65"
     },
-    {
-      "title": "Risk-Off Rotation into Crypto",
-      "strength": "MODERATE",
-      "direction": "Neutral",
-      "summary": "Despite a BTC crash, capital is flowing into crypto as a macro hedge, with MicroStrategy buying the dip and whales holding, indicating that the selloff is macro-driven rather than crypto-specific. This divergence suggests institutional accumulation during risk-off episodes, positioning crypto as a store of value amid geopolitical uncertainty.",
-      "key_stories": 2,
-      "trade_implication": "Accumulate Bitcoin spot ETFs on dips, targeting a 20% allocation of a diversified macro portfolio as a non-correlated hedge."
+    "deglobalization": {
+      "display_name": "Deglobalization",
+      "description": "The retreat from integrated global markets toward regionalized supply chains and protectionist policy.",
+      "tickers": ["XLI", "ITA", "PPA"],
+      "invalidation_threshold": "XLI +8% MoM"
+    },
+    "china_ascent": {
+      "display_name": "China Ascent",
+      "description": "Strategic evaluation of China's economic and industrial trajectory against Western incumbents.",
+      "tickers": ["FXI", "KWEB", "MCHI"],
+      "invalidation_threshold": "FXI -15% quarterly"
+    },
+    "space_economy": {
+      "display_name": "Space Economy",
+      "description": "Commercialization of low-earth orbit and the strategic militarization of the space domain.",
+      "tickers": ["ROKT", "RKLB", "SPCE"],
+      "invalidation_threshold": "ROKT -25%"
+    },
+    "gene_editing": {
+      "display_name": "Gene Editing",
+      "description": "The maturation of CRISPR technologies and the reshaping of the bio-pharmaceutical industry.",
+      "tickers": ["ARKG", "XBI", "IBB"],
+      "invalidation_threshold": "ARKG -30%"
+    },
+    "tech_convergence": {
+      "display_name": "Tech Convergence",
+      "description": "The fusion of AI, cloud infrastructure, and legacy software into unified enterprise intelligence stacks.",
+      "tickers": ["QQQ", "SMH", "MSFT"],
+      "invalidation_threshold": "QQQ -20%"
+    },
+    "wealthy_sports": {
+      "display_name": "Wealthy Sports",
+      "description": "The financialization of elite sports franchises as private equity, hedge funds, and sovereign wealth vehicles.",
+      "tickers": ["BATRK", "MANU", "MSGS"],
+      "invalidation_threshold": "BATRK -30%"
+    },
+    "ai_chips": {
+      "display_name": "AI Chips",
+      "description": "The escalating race for compute dominance and the silicon supply chain as a cornerstone of national security.",
+      "tickers": ["NVDA", "AMD", "TSM", "SMH"],
+      "invalidation_threshold": "SMH -25%"
+    },
+    "crypto_reserve": {
+      "display_name": "Crypto Reserve",
+      "description": "The integration of digital assets into institutional balance sheets and their role as non-sovereign macro hedges.",
+      "tickers": ["BTC-USD", "ETH-USD", "COIN"],
+      "invalidation_threshold": "BTC < $50K"
+    },
+    "rate_cycle": {
+      "display_name": "Rate Cycle",
+      "description": "Central bank policy pivots, yield curve dynamics, and the interplay between liquidity and inflationary risk.",
+      "tickers": ["TLT", "^TNX", "^IRX"],
+      "invalidation_threshold": "Fed funds rate < 3.5%"
+    },
+    "commodity_supercycle": {
+      "display_name": "Commodity Supercycle",
+      "description": "Structural imbalances in raw material supply, fueled by energy transitions and long-term under-investment.",
+      "tickers": ["DBC", "GLD", "GDX"],
+      "invalidation_threshold": "DBC -20%"
     }
-  ]
+  }
 }

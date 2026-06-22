@@ -1,0 +1,53 @@
+# ──────────────────────────────────────────────────────
+# Gazzetta Governor — Contradiction Synthesis Service
+# ──────────────────────────────────────────────────────
+# Managed by systemd on gazzetta-prod VM.
+# Timer: gazzetta-governor.timer (every 10 min)
+#
+# Install:
+#   sudo cp ops/gazzetta-governor.service /etc/systemd/system/
+#   sudo cp ops/gazzetta-governor.timer /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now gazzetta-governor.timer
+#
+# Logs:
+#   journalctl -u gazzetta-governor -f -n 50
+# ──────────────────────────────────────────────────────
+
+[Unit]
+Description=Gazzetta di Kyiv — Contradiction Synthesizer
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=gazzetta
+Group=gazzetta
+WorkingDirectory=/opt/gazzetta-di-kyiv
+
+# Environment file (DEEPSEEK_API_KEY, TELEGRAM_BOT_TOKEN, ALPHAVANTAGE_API_KEY)
+EnvironmentFile=/opt/gazzetta-di-kyiv/.env
+
+# Pipeline scripts — sequential, each inherits traffic_cop lock
+ExecStart=/usr/bin/python3 scripts/ingestion_triage.py
+ExecStart=/usr/bin/python3 scripts/market_reality.py --all
+ExecStart=/usr/bin/python3 scripts/contradiction_synthesizer.py
+
+# Security hardening
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/opt/gazzetta-di-kyiv/data /opt/gazzetta-di-kyiv/public/data
+ReadOnlyPaths=/opt/gazzetta-di-kyiv
+
+# Resource limits
+MemoryMax=512M
+CPUQuota=200%
+
+# Fail fast — systemd will retry per timer
+TimeoutStartSec=300
+Restart=no
+
+[Install]
+WantedBy=multi-user.target

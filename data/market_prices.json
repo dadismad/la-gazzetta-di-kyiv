@@ -1,1935 +1,291 @@
 {
-  "generated_at": "2026-06-11T20:55:02.515079+00:00",
+  "generated_at": "2026-06-18T14:58:09.522480+00:00",
+  "total": 33,
+  "success": 31,
+  "failed": 2,
+  "failed_tickers": [
+    "DXY",
+    "VIX"
+  ],
   "prices": {
-    "crypto": {
-      "ticker": "BTC-USD",
-      "price": 61875.98,
-      "change_pct": 0.38,
-      "direction": "up"
+    "URA": {
+      "ticker": "URA",
+      "price": 48.19,
+      "previous_close": 47.1,
+      "change_pct": 2.31,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:37.527425+00:00",
+      "narrative": "energy_sovereignty"
     },
-    "equities": {
-      "ticker": "SPY",
-      "price": 735.35,
-      "change_pct": -0.23,
-      "direction": "down"
+    "NLR": {
+      "ticker": "NLR",
+      "price": 127.69,
+      "previous_close": 124.65,
+      "change_pct": 2.44,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:38.560723+00:00",
+      "narrative": "energy_sovereignty"
     },
-    "commodities": {
-      "ticker": "CL=F",
-      "price": 90.07,
-      "change_pct": 2.12,
-      "direction": "up"
+    "REMX": {
+      "ticker": "REMX",
+      "price": 95.98,
+      "previous_close": 96.04,
+      "change_pct": -0.06,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:39.523893+00:00",
+      "narrative": "energy_sovereignty"
     },
-    "fixed_income": {
-      "ticker": "TLT",
-      "price": 85.26,
-      "change_pct": 0.16,
-      "direction": "up"
+    "URNM": {
+      "ticker": "URNM",
+      "price": 58.06,
+      "previous_close": 57.08,
+      "change_pct": 1.72,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:40.640141+00:00",
+      "narrative": "energy_sovereignty"
     },
-    "fx": {
+    "GLD": {
+      "ticker": "GLD",
+      "price": 389.91,
+      "previous_close": 388.6,
+      "change_pct": 0.34,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:41.592088+00:00",
+      "narrative": "dollar_decline"
+    },
+    "UUP": {
       "ticker": "UUP",
-      "price": 27.99,
-      "change_pct": -0.07,
-      "direction": "down"
+      "price": 28.23,
+      "previous_close": 28.18,
+      "change_pct": 0.18,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:42.481142+00:00",
+      "narrative": "dollar_decline"
     },
-    "defense": {
+    "SLV": {
+      "ticker": "SLV",
+      "price": 60.01,
+      "previous_close": 60.61,
+      "change_pct": -1.0,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:43.415965+00:00",
+      "narrative": "dollar_decline"
+    },
+    "IAU": {
+      "ticker": "IAU",
+      "price": 79.9,
+      "previous_close": 79.64,
+      "change_pct": 0.33,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:44.395334+00:00",
+      "narrative": "dollar_decline"
+    },
+    "XLI": {
+      "ticker": "XLI",
+      "price": 182.18,
+      "previous_close": 179.6,
+      "change_pct": 1.44,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:45.464048+00:00",
+      "narrative": "deglobalization"
+    },
+    "ITA": {
       "ticker": "ITA",
-      "price": 228.29,
-      "change_pct": -0.94,
-      "direction": "down"
+      "price": 240.4,
+      "previous_close": 242.79,
+      "change_pct": -0.98,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:46.321651+00:00",
+      "narrative": "deglobalization"
     },
-    "tech": {
+    "PPA": {
+      "ticker": "PPA",
+      "price": 175.8,
+      "previous_close": 177.73,
+      "change_pct": -1.09,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:47.293841+00:00",
+      "narrative": "deglobalization"
+    },
+    "XME": {
+      "ticker": "XME",
+      "price": 117.7,
+      "previous_close": 118.39,
+      "change_pct": -0.58,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:48.280581+00:00",
+      "narrative": "deglobalization"
+    },
+    "FXI": {
+      "ticker": "FXI",
+      "price": 33.35,
+      "previous_close": 33.65,
+      "change_pct": -0.91,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:49.254792+00:00",
+      "narrative": "china_ascent"
+    },
+    "KWEB": {
+      "ticker": "KWEB",
+      "price": 25.32,
+      "previous_close": 25.38,
+      "change_pct": -0.24,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:50.190124+00:00",
+      "narrative": "china_ascent"
+    },
+    "MCHI": {
+      "ticker": "MCHI",
+      "price": 52.83,
+      "previous_close": 53.0,
+      "change_pct": -0.31,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:51.146775+00:00",
+      "narrative": "china_ascent"
+    },
+    "ASHR": {
+      "ticker": "ASHR",
+      "price": 36.39,
+      "previous_close": 35.92,
+      "change_pct": 1.31,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:52.138896+00:00",
+      "narrative": "china_ascent"
+    },
+    "ROKT": {
+      "ticker": "ROKT",
+      "price": 116.91,
+      "previous_close": 117.79,
+      "change_pct": -0.75,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:53.098038+00:00",
+      "narrative": "space_economy"
+    },
+    "UFO": {
+      "ticker": "UFO",
+      "price": 49.84,
+      "previous_close": 51.06,
+      "change_pct": -2.39,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:54.045454+00:00",
+      "narrative": "space_economy"
+    },
+    "ARKX": {
+      "ticker": "ARKX",
+      "price": 34.31,
+      "previous_close": 34.51,
+      "change_pct": -0.58,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:54.950447+00:00",
+      "narrative": "space_economy"
+    },
+    "ARKG": {
+      "ticker": "ARKG",
+      "price": 36.26,
+      "previous_close": 35.04,
+      "change_pct": 3.47,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:55.891426+00:00",
+      "narrative": "gene_editing"
+    },
+    "XBI": {
+      "ticker": "XBI",
+      "price": 139.5,
+      "previous_close": 139.39,
+      "change_pct": 0.08,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:56.859791+00:00",
+      "narrative": "gene_editing"
+    },
+    "IBB": {
+      "ticker": "IBB",
+      "price": 172.26,
+      "previous_close": 173.44,
+      "change_pct": -0.68,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:57.840162+00:00",
+      "narrative": "gene_editing"
+    },
+    "QQQ": {
       "ticker": "QQQ",
-      "price": 706.76,
-      "change_pct": -0.15,
-      "direction": "down"
-    },
-    "gold": {
-      "ticker": "XAUUSD=X",
-      "price": 2410.0,
-      "change_pct": -1.87,
-      "direction": "down"
-    }
-  },
-  "asymmetry_scores": {
-    "543": {
-      "asymmetry_score": 23,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.03) * 50) = 23"
-    },
-    "542": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "541": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "540": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "539": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "538": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "537": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "536": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "535": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "534": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "533": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "532": {
-      "asymmetry_score": 5,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
-    },
-    "531": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "530": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "529": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "528": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "527": {
-      "asymmetry_score": 21,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.08) * 50) = 21"
-    },
-    "526": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "525": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "524": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "523": {
-      "asymmetry_score": 5,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
-    },
-    "522": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "521": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "520": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "519": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "518": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "517": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "516": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "515": {
-      "asymmetry_score": 21,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.08) * 50) = 21"
-    },
-    "514": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "513": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "512": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "511": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "510": {
-      "asymmetry_score": 45,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((-0.50 - 0.40) * 50) = 45"
-    },
-    "509": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "508": {
-      "asymmetry_score": 23,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.03) * 50) = 23"
-    },
-    "507": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "506": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "505": {
-      "asymmetry_score": 23,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.03) * 50) = 23"
-    },
-    "504": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "503": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "502": {
-      "asymmetry_score": 45,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((-0.50 - 0.40) * 50) = 45"
-    },
-    "501": {
-      "asymmetry_score": 21,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.08) * 50) = 21"
-    },
-    "500": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "499": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "498": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "497": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "496": {
-      "asymmetry_score": 5,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
-    },
-    "495": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "494": {
-      "asymmetry_score": 24,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.50 - -0.03) * 50) = 24"
-    },
-    "493": {
-      "asymmetry_score": 5,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
-    },
-    "492": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "491": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "490": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "489": {
-      "asymmetry_score": 45,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((-0.50 - 0.40) * 50) = 45"
-    },
-    "488": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "487": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "486": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "485": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "484": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "483": {
-      "asymmetry_score": 24,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.50 - -0.01) * 50) = 24"
-    },
-    "482": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "481": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "480": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "479": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "478": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "477": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "476": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "475": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "474": {
-      "asymmetry_score": 5,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
-    },
-    "473": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "472": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "471": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "470": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "469": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "468": {
-      "asymmetry_score": 24,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.50 - -0.03) * 50) = 24"
-    },
-    "467": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "466": {
-      "asymmetry_score": 21,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.08) * 50) = 21"
-    },
-    "465": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.01) * 50) = 26"
-    },
-    "464": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "463": {
-      "asymmetry_score": 5,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
-    },
-    "462": {
-      "asymmetry_score": 21,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.08) * 50) = 21"
-    },
-    "461": {
-      "asymmetry_score": 5,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
-    },
-    "460": {
-      "asymmetry_score": 5,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
-    },
-    "459": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "458": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "457": {
-      "asymmetry_score": 16,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.50 - -0.19) * 50) = 16"
-    },
-    "456": {
-      "asymmetry_score": 5,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
-    },
-    "455": {
-      "asymmetry_score": 5,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
-    },
-    "454": {
-      "asymmetry_score": 21,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.08) * 50) = 21"
-    },
-    "453": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "452": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.01) * 50) = 26"
-    },
-    "451": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "450": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "449": {
-      "asymmetry_score": 29,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.50 - 0.08) * 50) = 29"
-    },
-    "448": {
-      "asymmetry_score": 21,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.08) * 50) = 21"
-    },
-    "447": {
-      "asymmetry_score": 5,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
-    },
-    "446": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "445": {
-      "asymmetry_score": 24,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.50 - -0.01) * 50) = 24"
-    },
-    "444": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.01) * 50) = 26"
-    },
-    "443": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "441": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.01) * 50) = 26"
-    },
-    "440": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "439": {
-      "asymmetry_score": 24,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.50 - -0.03) * 50) = 24"
-    },
-    "438": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "437": {
-      "asymmetry_score": 29,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.50 - 0.08) * 50) = 29"
-    },
-    "436": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "435": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "434": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "433": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "432": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "431": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "430": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "429": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "428": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.01) * 50) = 26"
-    },
-    "427": {
-      "asymmetry_score": 5,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
-    },
-    "426": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "n21_osint__reuters_business__medicare_advantage_plans_denied_prior_authorization_requests": {
-      "asymmetry_score": 31,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.03) * 50) = 31"
-    },
-    "n21_osint__reuters_business__barrett_says_scotus_liberals_rely_on_fictional_premise_in": {
-      "asymmetry_score": 31,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.03) * 50) = 31"
-    },
-    "n21_osint__reuters_business__19_things_to_know_about_gwynne_shotwell_spacex_s_president": {
-      "asymmetry_score": 41,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.77 - -0.05) * 50) = 41"
-    },
-    "n21_osint__reuters_business__china_is_quietly_keeping_world_oil_prices_lower_-_newser": {
-      "asymmetry_score": 9,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - 0.40) * 50) = 9"
-    },
-    "n21_osint__reuters_business__prometheus_jeff_bezos_ai_startup_is_now_worth_41_billion": {
-      "asymmetry_score": 42,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((-0.77 - 0.08) * 50) = 42"
-    },
-    "n21_osint__reuters_business__musk_to_pitch_terafab_semiconductor_factory_to_asml_ahead_of": {
-      "asymmetry_score": 37,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - -0.03) * 50) = 37"
-    },
-    "n21_osint__reuters_business__social_security_announces_important_deadline_again_-_al_com": {
-      "asymmetry_score": 31,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.03) * 50) = 31"
-    },
-    "n21_osint__reuters_business__the_rise_of_the_botsitters_-_business_insider": {
-      "asymmetry_score": 31,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.03) * 50) = 31"
-    },
-    "n21_osint__reuters_business__here_are_biopharma_s_10_highest-paid_scientists_and_doctors": {
-      "asymmetry_score": 31,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.03) * 50) = 31"
-    },
-    "n21_osint__reuters_business__coffeemakers_recalled_due_to_risk_of_serious_injury_from_bur": {
-      "asymmetry_score": 39,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.19) * 50) = 39"
-    },
-    "n21_osint__reuters_business__big_tech_is_preventing_new_stock-market_highs_as_investors_c": {
-      "asymmetry_score": 31,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.03) * 50) = 31"
-    },
-    "n21_osint__reuters_business__dow_jumps_700_points_oil_tumbles_as_trump_cancels_evening_s": {
-      "asymmetry_score": 9,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - 0.40) * 50) = 9"
-    },
-    "n21_osint__the_cradle__iran_uae_hold__039_face-to-face_039_high-level_meeting_a": {
-      "asymmetry_score": 39,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.19) * 50) = 39"
-    },
-    "n21_osint__the_cradle__france_germany_propose__039_stripping_039_top_eu_diploma": {
-      "asymmetry_score": 30,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.01) * 50) = 30"
-    },
-    "n21_osint__reuters_business__why_these_3_analysts_say_oracle_s_post-earnings_stock_slump": {
-      "asymmetry_score": 37,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - -0.03) * 50) = 37"
-    },
-    "n21_osint__reuters_business__new_fed_chief_may_soon_be_forced_to_defy_trump_and_raise_int": {
-      "asymmetry_score": 39,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.82 - 0.03) * 50) = 39"
-    },
-    "n21_osint__reuters_business__solar_generates_more_energy_in_us_than_coal_for_first_time": {
-      "asymmetry_score": 13,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.67 - 0.40) * 50) = 13"
-    },
-    "n21_osint__reuters_business__cisa_tells_govt_agencies_to_patch_critical_exploited_flaws_i": {
-      "asymmetry_score": 31,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.03) * 50) = 31"
-    },
-    "n21_osint__reuters_business__people_living_near_xai_s_dirty_data_centers_are_pissed_about": {
-      "asymmetry_score": 16,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - 0.40) * 50) = 16"
-    },
-    "n21_osint__reuters_business__world_bank_cuts_global_growth_outlook_to_2_5__warns_of_drop": {
-      "asymmetry_score": 18,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.54 - -0.19) * 50) = 18"
-    },
-    "n21_osint__reuters_business__stocks_rebound_fueled_by_chip_stocks_but_gains_limited_on": {
-      "asymmetry_score": 31,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.03) * 50) = 31"
-    },
-    "n21_osint__reuters_business__oil_prices_steady_as_investors_weigh_us-iran_war_escalation": {
-      "asymmetry_score": 9,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - 0.40) * 50) = 9"
-    },
-    "n21_osint__reuters_business__exclusive__openai_considers_drastic_price_cuts_anticipatin": {
-      "asymmetry_score": 24,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.67 - -0.19) * 50) = 24"
-    },
-    "n21_osint__reuters_business__rivian_s_most_important_product_launches_and_the_stock_falls": {
-      "asymmetry_score": 25,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.54 - -0.05) * 50) = 25"
-    },
-    "n21_osint__reuters_business__blackrock_orders_5_billion_in_spacex_shares_ahead_of_blockb": {
-      "asymmetry_score": 31,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.03) * 50) = 31"
-    },
-    "n21_osint__the_cradle__trump_threatens_to_strike_iran__039_very_hard_039__seize": {
-      "asymmetry_score": 39,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.19) * 50) = 39"
-    },
-    "n21_osint__the_cradle__kuwait_s_great_reversal": {
-      "asymmetry_score": 31,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.03) * 50) = 31"
-    },
-    "n21_osint__the_cradle__white_house_seeks_to_deport_quincy_institute_co-founder_trit": {
-      "asymmetry_score": 39,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.19) * 50) = 39"
-    },
-    "n21_osint__reuters_business__us_wholesale_inflation_rose_sharply_last_month_as_iran_oil_s": {
-      "asymmetry_score": 11,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - 0.40) * 50) = 11"
-    },
-    "n21_osint__reuters_business__anthropic_backpedals_on_fable_safety_measure_-_the_verge": {
-      "asymmetry_score": 37,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - -0.03) * 50) = 37"
-    },
-    "n21_osint__reuters_business__stock_market_today_major_indexes_bounce_back_from_sell-off": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.62 - -0.19) * 50) = 40"
-    },
-    "n21_osint__reuters_business__anthropic_announces_claude_corps_to_teach_nonprofits_to_us": {
-      "asymmetry_score": 45,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.72 - -0.19) * 50) = 45"
-    },
-    "n21_osint__reuters_business__google_director_resigns_citing_its_military_deals__managem": {
-      "asymmetry_score": 45,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.72 - -0.19) * 50) = 45"
-    },
-    "n21_osint__reuters_business__meet_the_fortune_crypto_innovators_2026_-_fortune": {
-      "asymmetry_score": 32,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - 0.08) * 50) = 32"
-    },
-    "n21_osint__reuters_business__gold_sinks_to_6-month_low_as_speculative_investors_exit_-_fi": {
-      "asymmetry_score": 49,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((-0.57 - 0.40) * 50) = 49"
-    },
-    "n21_osint__reuters_business__stock_market_today_dow_s_p_500_and_nasdaq_rise_after_lates": {
-      "asymmetry_score": 13,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.67 - 0.40) * 50) = 13"
-    },
-    "n21_osint__reuters_business__prometheus_the_industrial_ai_startup_from_jeff_bezos_is_no": {
-      "asymmetry_score": 42,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((-0.77 - 0.08) * 50) = 42"
-    },
-    "n21_osint__reuters_business__private_medicare_plans_often_deny_access_to_rehab_care_anal": {
-      "asymmetry_score": 32,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - -0.03) * 50) = 32"
-    },
-    "n21_osint__reuters_business__amazon_says_its_data_centers_use_2_5_billion_gallons_of_wate": {
-      "asymmetry_score": 36,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.67 - -0.05) * 50) = 36"
-    },
-    "n21_osint__reuters_business__justice_department_opens_sweeping_debanking_probe_into_jpm": {
-      "asymmetry_score": 38,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - -0.05) * 50) = 38"
-    },
-    "n21_osint__reuters_business__stock_market_today_russell_2000_leads_upside_ahead_of_space": {
-      "asymmetry_score": 35,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.72 - -0.03) * 50) = 35"
-    },
-    "n21_osint__reuters_business__stock_market_today_indexes_surge_as_ai_stocks_rebound_oil": {
-      "asymmetry_score": 11,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - 0.40) * 50) = 11"
-    },
-    "n21_osint__reuters_business__what_happens_if_ai_causes_25_unemployment_anthropic_has_a": {
-      "asymmetry_score": 48,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.77 - -0.19) * 50) = 48"
-    },
-    "n21_osint__reuters_business__some_us_employers_to_drop_coverage_of_glp-1_obesity_drugs_in": {
-      "asymmetry_score": 32,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.57 - 0.08) * 50) = 32"
-    },
-    "n21_osint__reuters_business__oracle_shares_tumble_amid_pricey_data-center_build-out_-_wsj": {
-      "asymmetry_score": 37,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.77 - -0.03) * 50) = 37"
-    },
-    "n21_osint__reuters_business__solar_generates_more_energy_in_us_than_coal_for_first_time_-": {
-      "asymmetry_score": 16,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - 0.40) * 50) = 16"
-    },
-    "n21_osint__reuters_business__beyond_spacex_here_s_where_family_offices_see_buying_opport": {
-      "asymmetry_score": 38,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - -0.05) * 50) = 38"
-    },
-    "n21_osint__reuters_business__bezos_bats_down_ai_job_loss_fears_while_launching_new_ventur": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((-0.72 - 0.08) * 50) = 40"
-    },
-    "n21_osint__reuters_business__dana_incorporated_announces_agreement_to_combine_with_eaton": {
-      "asymmetry_score": 32,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - -0.03) * 50) = 32"
-    },
-    "n21_osint__reuters_business__oil_prices_fluctuate_as_u_s_launches_new_attack_on_iran_-_t": {
-      "asymmetry_score": 11,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - 0.40) * 50) = 11"
-    },
-    "n21_osint__reuters_business__paramount-warner_bros_deal_cleared_in_australia_new_zealan": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.62 - -0.19) * 50) = 40"
-    },
-    "n21_osint__reuters_business__spacex_hopes_and_dreams_are_propping_up_markets_but_stock": {
-      "asymmetry_score": 35,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.67 - -0.03) * 50) = 35"
-    },
-    "n21_osint__reuters_business__stock_market_today_nasdaq_drops_2__dow_falls_950_points_as": {
-      "asymmetry_score": 19,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.57 - -0.19) * 50) = 19"
-    },
-    "n21_osint__federal_reserve__federal_reserve_board_announces_final_rule_that_establishes": {
-      "asymmetry_score": 42,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.82 - -0.03) * 50) = 42"
-    },
-    "n21_osint__the_cradle__us_becomes_world_s_top_oil_exporter_as_war_on_iran_cripples": {
-      "asymmetry_score": 11,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - 0.40) * 50) = 11"
-    },
-    "n21_osint__the_cradle__us__039_precision_strikes_039_cut_water_access_to_20_000": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.62 - -0.19) * 50) = 40"
-    },
-    "n21_osint__reuters_business__spacex_ipo_draws_more_than_70_billion_in_retail_orders_-_bl": {
-      "asymmetry_score": 42,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.82 - -0.03) * 50) = 42"
-    },
-    "n21_osint__reuters_business__spacex_soon-to-be_millionaires_are_set_to_spend_big_on_luxur": {
-      "asymmetry_score": 35,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.67 - -0.03) * 50) = 35"
-    },
-    "n21_osint__reuters_business__what_will_happen_to_gold_prices_if_inflation_stays_elevated": {
-      "asymmetry_score": 11,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - 0.40) * 50) = 11"
-    },
-    "n21_osint__reuters_business__spacex_ipo_tomorrow_could_elon_musk_become_world_s_first_tr": {
-      "asymmetry_score": 37,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.77 - -0.03) * 50) = 37"
-    },
-    "n21_osint__reuters_business__wholesale_prices_rose_1_1_in_may_more_than_expected_on_su": {
-      "asymmetry_score": 11,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - 0.40) * 50) = 11"
-    },
-    "n21_osint__reuters_business__medicare_advantage_plans_often_deny_seniors_access_to_specia": {
-      "asymmetry_score": 33,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - -0.05) * 50) = 33"
-    },
-    "n21_osint__reuters_business__oil_prices_fluctuate_as_trump_issues_new_threat_to_strike_ir": {
-      "asymmetry_score": 11,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - 0.40) * 50) = 11"
-    },
-    "n21_osint__reuters_business__trump_s_new_fed_chief_may_soon_have_to_raise_interest_rates": {
-      "asymmetry_score": 39,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.82 - 0.03) * 50) = 39"
-    },
-    "n21_osint__reuters_business__key_trump_economic_win_disappears_wage_gains_wiped_out_-_ax": {
-      "asymmetry_score": 11,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - 0.40) * 50) = 11"
-    },
-    "n21_osint__reuters_business__iran_threatens_elon_musk_s_companies_in_middle_east_iranian": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.62 - -0.19) * 50) = 40"
-    },
-    "n21_osint__reuters_business__stocks_sink_amid_escalating_tensions_with_iran_chips_stocks": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.57 - -0.03) * 50) = 27"
-    },
-    "n21_osint__geopolitical_futures__daily_memo_putin_on_monetary_policy_global_refugee_numbers": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((-0.77 - 0.03) * 50) = 40"
-    },
-    "n21_osint__the_cradle__new_delhi_condemns_us_killing_of_three_indian_nationals_duri": {
-      "asymmetry_score": 33,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - -0.05) * 50) = 33"
-    },
-    "n21_osint__the_cradle__israeli_lawmakers_advance_bill_equating_torah_study_with_arm": {
-      "asymmetry_score": 19,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.57 - -0.19) * 50) = 19"
-    },
-    "n21_osint__federal_reserve__federal_reserve_board_announces_approval_of_related_applicat": {
-      "asymmetry_score": 43,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.82 - -0.05) * 50) = 43"
-    },
-    "n21_osint__ecb_press__christine_lagarde_boris_vujčić_monetary_policy_statement": {
-      "asymmetry_score": 43,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.82 - -0.05) * 50) = 43"
-    },
-    "n21_osint__ecb_press__monetary_policy_decisions": {
-      "asymmetry_score": 43,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.82 - -0.05) * 50) = 43"
-    },
-    "n21_osint__reuters_business__ecb_hikes_interest_rates_for_first_time_since_2023_as_iran_w": {
-      "asymmetry_score": 21,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.82 - 0.40) * 50) = 21"
-    },
-    "n21_osint__reuters_business__trump_gifts_dems_ready-made_midterm_ads_-_axios": {
-      "asymmetry_score": 33,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - -0.05) * 50) = 33"
-    },
-    "n21_osint__reuters_business__stock_market_today_dow_futures_gain_oracle_earnings_in_foc": {
-      "asymmetry_score": 18,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.77 - 0.40) * 50) = 18"
-    },
-    "n21_osint__reuters_business__how_family_offices_are_investing_in_the_final_frontier_beyon": {
-      "asymmetry_score": 33,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - -0.05) * 50) = 33"
-    },
-    "n21_osint__reuters_business__private_medicare_plans_often_deny_access_to_special_care_an": {
-      "asymmetry_score": 11,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - 0.40) * 50) = 11"
-    },
-    "n21_osint__reuters_business__exclusive_gm_may_ditch_lfp_batteries_for_future_evs_-_reute": {
-      "asymmetry_score": 49,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((-0.57 - 0.40) * 50) = 49"
-    },
-    "n21_osint__reuters_business__markets_brace_for_an_inflation_surprise_-_the_new_york_times": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.62 - -0.19) * 50) = 40"
-    },
-    "n21_osint__the_cradle__jordan_claims_interception_of__039_20_ballistic_missiles_0": {
-      "asymmetry_score": 48,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.77 - -0.19) * 50) = 48"
-    },
-    "n21_osint__federal_reserve__agencies_issue_host_state_loan-to-deposit_ratios": {
-      "asymmetry_score": 32,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.05) * 50) = 32"
-    },
-    "n21_osint__federal_reserve__federal_reserve_issues_fomc_statement": {
-      "asymmetry_score": 43,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.82 - -0.05) * 50) = 43"
-    },
-    "n21_osint__geopolitical_futures__daily_memo_russia_and_ukraine_lebanon_and_pakistan": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.62 - -0.19) * 50) = 40"
-    },
-    "n21_osint__geopolitical_futures__russia_s_chechnya_problem": {
-      "asymmetry_score": 37,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - -0.03) * 50) = 37"
-    },
-    "n21_osint__reuters_business__spacex_ipo_is_a_referendum_on_musk_say_market_watchers_-": {
-      "asymmetry_score": 37,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - -0.03) * 50) = 37"
-    },
-    "n21_osint__reuters_business__trump_s_inflation_flippancy_gifts_dems_ready-made_midterm_ad": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.62 - -0.19) * 50) = 40"
-    },
-    "n21_osint__reuters_business__winning_powerball_numbers_for_the_238_million_jackpot_on_ju": {
-      "asymmetry_score": 32,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.05) * 50) = 32"
-    },
-    "n21_osint__reuters_business__cathie_wood_s_latest_big_bet_on_elon_musk_is_about_to_pay_of": {
-      "asymmetry_score": 37,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - -0.03) * 50) = 37"
-    },
-    "n21_osint__reuters_business__oil_falls_as_traders_digest_escalation_in_us-iran_strikes_-": {
-      "asymmetry_score": 11,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - 0.40) * 50) = 11"
-    },
-    "n21_osint__reuters_business__3_big_dates_for_student_loans_are_in_just_weeks_as_reforms_t": {
-      "asymmetry_score": 32,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - -0.03) * 50) = 32"
-    },
-    "n21_osint__reuters_business__supermicro_stock_tumbles_on_financing_deals_to_fund_ai_order": {
-      "asymmetry_score": 32,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.67 - -0.03) * 50) = 32"
-    },
-    "n21_osint__geopolitical_futures__europe_drifts_closer_to_stagnation": {
-      "asymmetry_score": 39,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.77 - -0.01) * 50) = 39"
-    },
-    "n21_osint__reuters_business__short_seller_jim_chanos_doubts_spacex_valuation_says_ipo_fu": {
-      "asymmetry_score": 41,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.77 - -0.05) * 50) = 41"
-    },
-    "n21_osint__reuters_business__hugo_boss_pops_8_after_top_shareholder_frasers_launches_2": {
-      "asymmetry_score": 36,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.67 - -0.05) * 50) = 36"
-    },
-    "n21_osint__reuters_business__asia_stocks_recoup_early_losses_as_tech_rout_cools_us-iran": {
-      "asymmetry_score": 11,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - 0.40) * 50) = 11"
-    },
-    "n21_osint__reuters_business__openai_considers_drastic_price_cuts_anticipating_war_for_us": {
-      "asymmetry_score": 43,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.67 - -0.19) * 50) = 43"
-    },
-    "n21_osint__reuters_business__oil_prices_rise_as_u_s_launches_new_attack_on_iran_-_the_ne": {
-      "asymmetry_score": 11,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - 0.40) * 50) = 11"
-    },
-    "n21_osint__reuters_business__nvidia_just_announced_a_potential_windfall_for_shareholders": {
-      "asymmetry_score": 37,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.77 - -0.03) * 50) = 37"
-    },
-    "n21_osint__reuters_business__stock_market_today_dow_futures_gain_what_to_watch__live_u": {
-      "asymmetry_score": 11,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - 0.40) * 50) = 11"
-    },
-    "n21_osint__reuters_business__spacex_will_destroy_other_stocks_these_could_be_the_biggest": {
-      "asymmetry_score": 45,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.72 - -0.19) * 50) = 45"
-    },
-    "n21_osint__reuters_business__anthropic_ceo_says_ai_growth_is_exponential_anthropic_resea": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.77 - -0.03) * 50) = 40"
-    },
-    "n21_osint__the_cradle__iran_announces_complete_closure_of_hormuz_after_latest_us": {
-      "asymmetry_score": 32,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - -0.03) * 50) = 32"
-    },
-    "n21_osint__geopolitical_futures__daily_memo_germany_and_france_scrap_fighter_jet_plan": {
-      "asymmetry_score": 37,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - -0.03) * 50) = 37"
-    },
-    "n21_osint__geopolitical_futures__lebanon_on_the_brink": {
-      "asymmetry_score": 45,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.72 - -0.19) * 50) = 45"
-    },
-    "n21_osint__reuters_business__sitting_out_the_spacex_ipo_why_that_s_hard_to_do_-_bloomber": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.72 - -0.05) * 50) = 34"
-    },
-    "n21_osint__reuters_business__stock_market_today_dow_nasdaq_open_lower_inflation_rises": {
-      "asymmetry_score": 24,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.67 - -0.19) * 50) = 24"
-    },
-    "n21_osint__reuters_business__paramount_s_first_amendment_case_for_why_it_deserves_warner": {
-      "asymmetry_score": 43,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.67 - -0.19) * 50) = 43"
-    },
-    "n21_osint__reuters_business__claude_fable_is_too_scared_to_teach_you_about_the_powerhouse": {
-      "asymmetry_score": 35,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.67 - -0.03) * 50) = 35"
-    },
-    "n21_osint__reuters_business__honda_recalls_more_than_880_000_vehicles_for_suspension_issu": {
-      "asymmetry_score": 35,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.72 - -0.03) * 50) = 35"
-    },
-    "n21_osint__reuters_business__oracle_stock_gets_shocking_wall_street_verdict_before_earnin": {
-      "asymmetry_score": 32,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - -0.03) * 50) = 32"
-    },
-    "n21_osint__reuters_business__musk_stock_fans_say_the_more_the_better_in_spacex_ipo_fre": {
-      "asymmetry_score": 43,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.82 - -0.05) * 50) = 43"
-    },
-    "n21_osint__reuters_business__short_seller_chanos_is_bearish_on_spacex_valuation_fueled_by": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.72 - -0.05) * 50) = 34"
-    },
-    "n21_osint__reuters_business__morning_bid_tech_and_war_jitters_sap_confidence_-_reuters": {
-      "asymmetry_score": 49,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((-0.57 - 0.40) * 50) = 49"
-    },
-    "n21_osint__geopolitical_futures__war_diplomacy_and_managing_iran": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.62 - -0.19) * 50) = 40"
-    },
-    "n21_osint__reuters_business__visa_plugs_its_payment_network_into_chatgpt_letting_ai_agen": {
-      "asymmetry_score": 37,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - -0.03) * 50) = 37"
-    },
-    "n21_osint__reuters_business__sunscreens_in_the_u_s_might_finally_be_getting_better_-_the": {
-      "asymmetry_score": 32,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.05) * 50) = 32"
-    },
-    "n21_osint__reuters_business__trump_administration_proposes_new_rules_on_prediction_market": {
-      "asymmetry_score": 32,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.05) * 50) = 32"
-    },
-    "n21_osint__reuters_business__byd_threatens_to_sue_trump_administration_over_pentagon_mili": {
-      "asymmetry_score": 45,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.72 - -0.19) * 50) = 45"
-    },
-    "n21_osint__reuters_business__exclusive__jeanine_pirro_s_prosecutors_probe_big_banks_for": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - 0.08) * 50) = 27"
-    },
-    "n21_osint__reuters_business__exclusive__novelis_top_aluminum_supplier_to_ford_to_resta": {
-      "asymmetry_score": 32,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.05) * 50) = 32"
-    },
-    "n21_osint__reuters_business__oracle_reports_earnings_amid_a_rapid_cloud_transformation_-": {
-      "asymmetry_score": 37,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.77 - -0.03) * 50) = 37"
-    },
-    "n21_osint__reuters_business__south_korea_s_amazon_hit_with_record_fine_over_data_breach": {
-      "asymmetry_score": 32,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.05) * 50) = 32"
-    },
-    "n21_osint__reuters_business__fda_approves_long-used_sunscreen_already_sold_in_israel_and": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.67 - -0.01) * 50) = 34"
-    },
-    "n21_osint__reuters_business__oil_edges_up_as_traders_digest_escalation_in_us-iran_strikes": {
-      "asymmetry_score": 11,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - 0.40) * 50) = 11"
-    },
-    "n21_osint__reuters_business__life_on_the_edge_of_musk_s_starbase_brings_fortunes_and_frac": {
-      "asymmetry_score": 33,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - -0.05) * 50) = 33"
-    },
-    "n21_osint__reuters_business__trumps_make_bank_off_crypto_as_investors_lose_their_shirts_-": {
-      "asymmetry_score": 35,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.62 - 0.08) * 50) = 35"
-    },
-    "n21_osint__reuters_business__ai-pilled_firms_spend_7_500_per_employee_each_month_on_ai": {
-      "asymmetry_score": 32,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.67 - -0.03) * 50) = 32"
-    },
-    "n21_osint__reuters_business__opm_awards_major_hr_it_modernization_contract_to_oracle_-_fe": {
-      "asymmetry_score": 39,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.19) * 50) = 39"
-    },
-    "n21_osint__reuters_business__bond_traders_keep_bets_on_a_fed_hike_this_year_after_cpi_rep": {
-      "asymmetry_score": 39,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.82 - 0.03) * 50) = 39"
-    },
-    "n21_osint__reuters_business__the_federal_reserve_must_soon_give_donald_trump_bad_news_-_t": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((-0.77 - 0.03) * 50) = 40"
-    },
-    "n21_osint__reuters_business__pimco_warns_a_wave_of_defaults_is_coming_for_low-quality_bor": {
-      "asymmetry_score": 45,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.72 - -0.19) * 50) = 45"
-    },
-    "n21_osint__geopolitical_futures__d-day_and_the_cycles_of_american_reinvention": {
-      "asymmetry_score": 35,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.72 - -0.03) * 50) = 35"
-    },
-    "n21_osint__reuters_business__cnbc_daily_open_trump_expresses_love_for_inflation_print": {
-      "asymmetry_score": 45,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.72 - -0.19) * 50) = 45"
-    },
-    "n21_osint__reuters_business__shares_retreat_as_techs_extend_losses_us_strikes_on_iran_li": {
-      "asymmetry_score": 56,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((-0.72 - 0.40) * 50) = 56"
-    },
-    "n21_osint__reuters_business__spacex_ipo_whips_musk_fans_into_frenzy__the_more_the_bette": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.57 - -0.03) * 50) = 27"
-    },
-    "n21_osint__reuters_business__nomination_sent_to_the_senate_-_the_white_house__gov": {
-      "asymmetry_score": 32,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.05) * 50) = 32"
-    },
-    "n21_osint__reuters_business__spacex_ipo_to_mint_4_000_millionaires_cooks_included_-_the": {
-      "asymmetry_score": 31,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.03) * 50) = 31"
-    },
-    "n21_osint__reuters_business__dow_jones_futures_rise_oil_pops_oracle_dives_spacex_ipo_o": {
-      "asymmetry_score": 16,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - 0.40) * 50) = 16"
-    },
-    "n21_osint__reuters_business__anthropic_s_dario_amodei_has_just_one_direct_report_-_techcr": {
-      "asymmetry_score": 37,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - -0.03) * 50) = 37"
-    },
-    "n21_osint__reuters_business__cracker_barrel_s_logo_drama_is_in_the_past_the_stock_soars": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.77 - -0.03) * 50) = 40"
-    },
-    "n21_osint__reuters_business__anthropic_walks_back_policy_that_could_have_sabotaged_ai_r": {
-      "asymmetry_score": 37,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - -0.03) * 50) = 37"
-    },
-    "n21_osint__reuters_business__brit_workers_waste_nearly_six_hours_a_week_botsitting_-_th": {
-      "asymmetry_score": 45,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.72 - -0.19) * 50) = 45"
-    },
-    "n21_osint__reuters_business__parabilis_now_the_largest_vc-backed_biotech_ipo_-_yahoo_fina": {
-      "asymmetry_score": 32,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - -0.03) * 50) = 32"
-    },
-    "n21_osint__reuters_business__oracle_announces_record_q4_and_fy_2026_results_driven_by_clo": {
-      "asymmetry_score": 37,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.77 - -0.03) * 50) = 37"
-    },
-    "n21_osint__reuters_business__oil_rises_more_than_1_as_escalation_in_us-iran_strikes_unne": {
-      "asymmetry_score": 13,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.67 - 0.40) * 50) = 13"
-    },
-    "n21_osint__reuters_business__wing_drone_delivery_might_not_be_a_novelty_anymore_-_techcru": {
-      "asymmetry_score": 35,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.67 - -0.03) * 50) = 35"
-    },
-    "n21_osint__reuters_business__everyone_wants_a_piece_of_tesla_s_battery_business_-_techcru": {
-      "asymmetry_score": 13,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.67 - 0.40) * 50) = 13"
-    },
-    "n21_osint__reuters_business__rivian_made_you_wait_50_days_for_service_rj_scaringe_says_t": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.77 - -0.03) * 50) = 40"
-    },
-    "n21_osint__reuters_business__trump_muses_about_government_taking_a_piece_of_a_i_companie": {
-      "asymmetry_score": 37,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - -0.03) * 50) = 37"
-    },
-    "n21_osint__reuters_business__anthropic_s_amodei_suggests_universal_basic_income_could_off": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - 0.08) * 50) = 26"
-    },
-    "n21_osint__reuters_business__another_sell-off_for_ai_stocks_knocks_wall_street_back_to_wh": {
-      "asymmetry_score": 35,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.72 - -0.03) * 50) = 35"
-    },
-    "n21_osint__reuters_business__half_of_americans_fear_ai_could_put_someone_in_their_househo": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.77 - -0.03) * 50) = 40"
-    },
-    "n21_osint__reuters_business__china_taps_commercial_oil_stocks_to_help_weather_gulf_shock": {
-      "asymmetry_score": 13,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.67 - 0.40) * 50) = 13"
-    },
-    "n21_osint__reuters_business__remote_work_comes_with_a_little-known_downside_-_newser": {
-      "asymmetry_score": 32,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.05) * 50) = 32"
-    },
-    "n21_osint__reuters_business__america_s_emergency_oil_reserve_is_about_to_hit_its_lowest_l": {
-      "asymmetry_score": 51,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((-0.62 - 0.40) * 50) = 51"
-    },
-    "n21_osint__reuters_business__exclusive__government_sells_trump_s_former_washington_d_c": {
-      "asymmetry_score": 25,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.54 - -0.05) * 50) = 25"
-    },
-    "n21_osint__reuters_business__gold_price_slump_hits_new_low_as_haven_seekers_look_elsewher": {
-      "asymmetry_score": 13,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.67 - 0.40) * 50) = 13"
-    },
-    "n21_osint__reuters_business__sea-tac_airport_s_big_new_concourse_opens_tomorrow_take_an": {
-      "asymmetry_score": 35,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.67 - -0.03) * 50) = 35"
-    },
-    "n21_osint__reuters_business__policy_on_the_ai_exponential_-_anthropic": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.77 - -0.03) * 50) = 40"
-    },
-    "n21_osint__reuters_business__analysts_expected_oil_to_surge_above_200_but_china_has_quie": {
-      "asymmetry_score": 21,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.82 - 0.40) * 50) = 21"
-    },
-    "n21_osint__reuters_business__starbucks_brings_soccer_fans_together_with_limited-edition_c": {
-      "asymmetry_score": 37,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.67 - 0.08) * 50) = 37"
-    },
-    "n21_osint__reuters_business__prices_are_soaring_on_these_everyday_grocery_items_driving": {
-      "asymmetry_score": 45,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.72 - -0.19) * 50) = 45"
-    },
-    "n21_osint__reuters_business__stock_futures_rise_as_u_s_completes_strikes_against_iran_l": {
-      "asymmetry_score": 24,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.67 - -0.19) * 50) = 24"
-    },
-    "n21_osint__reuters_business__could_your_next_walmart_order_arrive_by_drone_7_major_citie": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.77 - -0.03) * 50) = 40"
-    },
-    "n21_osint__reuters_business__spacex_leaves_some_banks_peeved_at_junior_roles_in_ipo_lineu": {
-      "asymmetry_score": 31,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.59 - -0.03) * 50) = 31"
-    },
-    "n21_osint__reuters_business__amazon_s_early_prime_day_deals_expand_with_new_sales_on_desk": {
-      "asymmetry_score": 37,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - -0.03) * 50) = 37"
-    },
-    "n21_osint__reuters_business__elite_litigation_powerhouse_susman_godfrey_goes_above_market": {
-      "asymmetry_score": 45,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.72 - -0.19) * 50) = 45"
-    },
-    "n21_osint__reuters_business__economists_weigh_in_on_the_future_of_work_and_ai_-_wsj": {
-      "asymmetry_score": 42,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.82 - -0.01) * 50) = 42"
-    },
-    "n21_osint__reuters_business__openai_mulls_slashing_prices_as_it_competes_with_anthropic_f": {
-      "asymmetry_score": 35,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.77 - 0.08) * 50) = 35"
-    },
-    "n21_osint__reuters_business__health_insurance_for_many_oregonians_could_get_a_lot_more_ex": {
-      "asymmetry_score": 32,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.62 - -0.03) * 50) = 32"
-    },
-    "n21_osint__reuters_business__seattle_passes_moratorium_on_new_data_centers_amid_national": {
-      "asymmetry_score": 35,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.67 - -0.03) * 50) = 35"
-    },
-    "n21_osint__reuters_business__the_best_tech_gifts_for_father_s_day_2026_-_gizmodo": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.77 - -0.03) * 50) = 40"
-    },
-    "n21_osint__reuters_business__energy_department_releases_finalized_fusion_science_and_tech": {
-      "asymmetry_score": 16,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - 0.40) * 50) = 16"
-    },
-    "n21_osint__reuters_business__elizabeth_warren_asks_the_sec_to_delay_the_spacex_ipo_-_busi": {
-      "asymmetry_score": 35,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.77 - 0.08) * 50) = 35"
-    },
-    "n21_osint__reuters_business__ellison_s_net_worth_down_nearly_50_billion_in_a_week_-_forb": {
-      "asymmetry_score": 42,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.82 - -0.03) * 50) = 42"
-    },
-    "n21_osint__reuters_business__trump_s_iran_war_fuels_skyrocketing_airfare_data_shows_30": {
-      "asymmetry_score": 45,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.72 - -0.19) * 50) = 45"
-    },
-    "n21_osint__reuters_business__cpi_just_spelled_bad_news_for_social_security_cola_-_even_th": {
-      "asymmetry_score": 35,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.67 - -0.03) * 50) = 35"
-    },
-    "n21_osint__reuters_business__amazon_opens_full-scale_less-than-truckload_shipping_to_all": {
-      "asymmetry_score": 41,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.77 - -0.05) * 50) = 41"
-    },
-    "n21_osint__reuters_business__exclusive__kalshi_plans_workplace_disclosure_rule_to_combat": {
-      "asymmetry_score": 37,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - -0.03) * 50) = 37"
-    },
-    "n21_osint__reuters_business__anthropic_ceo_says_government_should_block_dangerous_ai_-_ax": {
-      "asymmetry_score": 37,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - -0.03) * 50) = 37"
-    },
-    "n21_osint__reuters_business__169m_fishers_district_expansion_includes_jd_finish_line_hq": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.77 - -0.03) * 50) = 40"
-    },
-    "n21_osint__reuters_business__guthrie_doubles_down_on_data_center_energy_legislation_-_liv": {
-      "asymmetry_score": 16,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - 0.40) * 50) = 16"
-    },
-    "n21_osint__reuters_business__review__preview_revenge_of_the_selloff_-_barron_s": {
-      "asymmetry_score": 32,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.67 - -0.03) * 50) = 32"
-    },
-    "n21_osint__reuters_business__cyera_a_cybersecurity_start-up_for_the_a_i_era_raises_60": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.77 - -0.03) * 50) = 40"
-    },
-    "n21_osint__reuters_business__trump_has_locked_in_high_gas_prices_for_summer__and_maybe_l": {
-      "asymmetry_score": 54,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((-0.67 - 0.40) * 50) = 54"
-    },
-    "n21_osint__reuters_business__chase_unveils_massive_sapphire_preferred_overhaul_enhanced": {
-      "asymmetry_score": 45,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.72 - -0.19) * 50) = 45"
-    },
-    "n21_osint__the_cradle__israeli_occupation_troops_abduct_two_lebanese_municipal_work": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.77 - -0.03) * 50) = 40"
-    },
-    "n21_osint__the_cradle__iaea_passes_anti-iran_resolution_demands_tehran_reveal_loca": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "n21_osint__the_cradle__christian_village_in_occupied_west_bank_goes_up_in_flames_af": {
-      "asymmetry_score": 21,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.08) * 50) = 21"
-    },
-    "n21_osint__the_cradle__russia_discusses_reformatting_military_presence_in_syria_a": {
-      "asymmetry_score": 5,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
-    },
-    "n21_osint__the_cradle__uk_court_grants_allianz_permission_to_sue_pro-palestine_acti": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "n21_osint__the_cradle__most_israelis_oppose_netanyahu_039_s_re-election_as_trump_s": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "n21_osint__the_cradle__nuking_iran_why_israel_and_the_us_gain_nothing_from_crossin": {
-      "asymmetry_score": 21,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.08) * 50) = 21"
-    },
-    "n21_osint__the_cradle__tehran_launches_regional_counterattack_on_washington_039_s": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "n21_osint__the_cradle__pakistan_says_israel_derailed_us_iran_peace_deal_described_a": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.77 - -0.03) * 50) = 40"
-    },
-    "n21_osint__the_cradle__iran_to_pursue__039_war_and_diplomacy_039_simultaneously": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "n21_osint__the_cradle__israel_used_jordanian_airspace_to_bomb_iran_report": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "n21_osint__the_cradle__lebanese_army_chief_meets_top_pakistani_officials_amid_us-ba": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "n21_osint__the_cradle__the_energy_shock_that_could_accelerate_a_multipolar_world": {
-      "asymmetry_score": 5,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
-    },
-    "n21_osint__the_cradle__irgc_declares_new_regional_security_belt_extending_from_horm": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "n21_osint__the_cradle__imprison_their_women_and_children__supremacist_israeli_min": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "n21_osint__the_cradle__wave_of_mass_displacement_hits_lebanon_039_s_tyre_as_israel": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "n21_osint__the_cradle__over_one_third_of_labour_mps_call_on_london_to_ban_trade_wit": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "n21_osint__the_cradle__us_seeking__039_precise_info_039_on_iran_039_s_enriched": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "n21_osint__the_cradle__eu_sanctions_iranian_officials_irgc_unit_over_hormuz_restri": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "n21_osint__the_cradle__iran_vows_response_to_israeli_violations_in_south_lebanon_w": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "n21_osint__reuters_business__strategy_resumes_bitcoin_buying_spree_quelling_market_panic": {
-      "asymmetry_score": 21,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.08) * 50) = 21"
-    },
-    "n21_osint__reuters_business__this_tiny_mutual_fund_outperforms_by_backing_the_world_s_bes": {
-      "asymmetry_score": 27,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.05) * 50) = 27"
-    },
-    "n21_osint__reuters_business__all_the_ways_europe_is_ditching_american_technology_-_wired": {
-      "asymmetry_score": 55,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.92 - -0.19) * 50) = 55"
-    },
-    "n21_osint__reuters_business__bitcoin_s_brutal_sell-off_sparks_a_flurry_of_trading_in_rela": {
-      "asymmetry_score": 29,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.50 - 0.08) * 50) = 29"
-    },
-    "n21_osint__reuters_business__stock_market_today_nasdaq_dow_open_higher_spacex_openai": {
-      "asymmetry_score": 53,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.87 - -0.19) * 50) = 53"
-    },
-    "n21_multi_pillar__breaking_iran_shoots_down_us_apache_helicopter_over_strait": {
-      "asymmetry_score": 18,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.76 - 0.40) * 50) = 18"
-    },
-    "n21_multi_pillar__critical_contradiction_wti_drops_below_90_-2__despite_is": {
-      "asymmetry_score": 59,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((-0.77 - 0.40) * 50) = 59"
-    },
-    "n21_china_ascendancy__us_existing_home_sales_crush_estimates__3_2_mom_vs_1_1": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.75 - 0.08) * 50) = 34"
-    },
-    "n21_multi_pillar__us_doe_releases_40m_barrels_from_strategic_petroleum_reserve": {
-      "asymmetry_score": 58,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((-0.75 - 0.40) * 50) = 58"
-    },
-    "n21_multi_pillar__israeli_minister_ben-gvir_urges_cabinet_to_abduct_lebanese_w": {
-      "asymmetry_score": 16,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.72 - 0.40) * 50) = 16"
-    },
-    "n21_multi_pillar__opec_meeting_today_june_7__188k_bpd_hike_expected_as_149": {
-      "asymmetry_score": 17,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.75 - 0.40) * 50) = 17"
-    },
-    "n21_multi_pillar__us_adp_nonfarm_29k_vs_35_7k_prior__labor_market_cracking": {
-      "asymmetry_score": 14,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.69 - 0.40) * 50) = 14"
-    },
-    "n21_multi_pillar__us-israel_strike_package_on_iran__assets_airborne_strike_w": {
-      "asymmetry_score": 41,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((-0.75 - 0.08) * 50) = 41"
-    },
-    "n21_multi_pillar__kuwait_discussing_hormuz_bypass_via_saudi_uae_pipelines__ei": {
-      "asymmetry_score": 14,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.69 - 0.40) * 50) = 14"
-    },
-    "n21_multi_pillar__idf_declares_readiness_to_immediately_resume_iran_operations": {
-      "asymmetry_score": 14,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.69 - 0.40) * 50) = 14"
-    },
-    "n21_multi_pillar__iran_parliament__war_won_t_be_limited_to_the_region__asym": {
-      "asymmetry_score": 41,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((-0.75 - 0.08) * 50) = 41"
-    },
-    "n21_multi_pillar__ukraine_fp-5_flamingo_missiles_strike_cheboksary__second_st": {
-      "asymmetry_score": 14,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.69 - 0.40) * 50) = 14"
-    },
-    "n21_multi_pillar__eia_drops_bombshell_hormuz_timeline__blockade_persists_thro": {
-      "asymmetry_score": 14,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.69 - 0.40) * 50) = 14"
-    },
-    "n21_multi_pillar__s_p_nasdaq_break_below_friday_s_low__live_breakdown_during": {
-      "asymmetry_score": 40,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((0.75 - -0.05) * 50) = 40"
-    },
-    "n21_blockchain_agentic__ethena_ena_partners_with_janus_henderson__300b_aum_for": {
-      "asymmetry_score": 38,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.83 - 0.08) * 50) = 38"
-    },
-    "n21_multi_pillar__iran_begins_charging_ships_1_5-2m_per_transit_through_strai": {
-      "asymmetry_score": 16,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.73 - 0.40) * 50) = 16"
-    },
-    "425": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.19) * 50) = 34"
-    },
-    "424": {
-      "asymmetry_score": 24,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.50 - -0.03) * 50) = 24"
-    },
-    "423": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "422": {
-      "asymmetry_score": 24,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.50 - -0.01) * 50) = 24"
-    },
-    "421": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "420": {
-      "asymmetry_score": 5,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - 0.40) * 50) = 5"
-    },
-    "419": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "418": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "417": {
-      "asymmetry_score": 24,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.50 - -0.03) * 50) = 24"
-    },
-    "416": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "415": {
-      "asymmetry_score": 26,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.50 - -0.03) * 50) = 26"
-    },
-    "414": {
-      "asymmetry_score": 29,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.50 - 0.08) * 50) = 29"
-    },
-    "413": {
-      "asymmetry_score": 23,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.50 - -0.05) * 50) = 23"
-    },
-    "n21_multi_pillar__ukraine_assassinates_russian_colonel_missile_supply_chief": {
-      "asymmetry_score": 19,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.78 - 0.40) * 50) = 19"
-    },
-    "n21_multi_pillar__israel_cabinet_any_lebanon_rocket__automatic_beirut_strike": {
-      "asymmetry_score": 14,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.69 - 0.40) * 50) = 14"
-    },
-    "n21_multi_pillar__idf_declares_readiness_to_immediately_resume_operations_agai": {
-      "asymmetry_score": 14,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.69 - 0.40) * 50) = 14"
-    },
-    "n21_blockchain_agentic__blackrock_transferring_btc_to_exchanges_for_client_sales__o": {
-      "asymmetry_score": 38,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.83 - 0.08) * 50) = 38"
-    },
-    "n21_china_ascendancy__breaking_eu_proposes_biggest_sanctions_package_in_2_years": {
-      "asymmetry_score": 16,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.73 - 0.40) * 50) = 16"
-    },
-    "n21_multi_pillar__israel_strikes_beirut_suburbs__explosion_in_beirut_idf_att": {
-      "asymmetry_score": 14,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.69 - 0.40) * 50) = 14"
-    },
-    "n21_multi_pillar__israel_launches_full_ground_operations_in_lebanon__hezbolla": {
-      "asymmetry_score": 14,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.69 - 0.40) * 50) = 14"
-    },
-    "n21_abundance_tech__btc_crash__worst_week_since_ftx_collapse_microstrategy_bou": {
-      "asymmetry_score": 38,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.83 - 0.08) * 50) = 38"
-    },
-    "n21_multi_pillar__us-iran_active_kinetic_exchange__20_us_targets_struck_in_ir": {
-      "asymmetry_score": 14,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.69 - 0.40) * 50) = 14"
-    },
-    "n21_multi_pillar__us_stock_selling_resumed__friday_low_break_confirmed_and_no": {
-      "asymmetry_score": 28,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((-0.75 - -0.19) * 50) = 28"
-    },
-    "n21_china_ascendancy__anthropic_releasing_claude_fable__neutered_mythos_later_t": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.75 - 0.08) * 50) = 34"
-    },
-    "n21_multi_pillar__israel_s_nabatieh_offensive__earthquake_that_topples_hezbo": {
-      "asymmetry_score": 58,
-      "asymmetry_tier": "MODERATE",
-      "diagnostic_trace": "ABS((-0.75 - 0.40) * 50) = 58"
-    },
-    "n21_blockchain_agentic__htx_justin_sun_delists_trump_s_wlfi_and_usd1__forced_conv": {
-      "asymmetry_score": 34,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.75 - 0.08) * 50) = 34"
-    },
-    "n21_multi_pillar__opec_meets_today__188k_bpd_increase_approved_from_july_bu": {
-      "asymmetry_score": 14,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.69 - 0.40) * 50) = 14"
-    },
-    "n21_multi_pillar__israel_orders_full_evacuation_of_tyre__cabinet_authorizes_a": {
-      "asymmetry_score": 14,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.69 - 0.40) * 50) = 14"
-    },
-    "n21_china_ascendancy__opec_meeting_today__expected_to_approve_188k_bpd_productio": {
-      "asymmetry_score": 14,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.69 - 0.40) * 50) = 14"
-    },
-    "n21_multi_pillar__iran_launches_drones_toward_strait_of_hormuz__us_shoots_dow": {
-      "asymmetry_score": 14,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.69 - 0.40) * 50) = 14"
-    },
-    "n21_multi_pillar__iran_strikes_kuwait_with_7_ballistic_missiles": {
-      "asymmetry_score": 35,
-      "asymmetry_tier": "LOW ASYMMETRY",
-      "diagnostic_trace": "ABS((0.65 - -0.05) * 50) = 35"
+      "price": 737.94,
+      "previous_close": 722.51,
+      "change_pct": 2.14,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:58.699521+00:00",
+      "narrative": "tech_convergence"
+    },
+    "SMH": {
+      "ticker": "SMH",
+      "price": 657.08,
+      "previous_close": 623.97,
+      "change_pct": 5.31,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:57:59.643778+00:00",
+      "narrative": "tech_convergence"
+    },
+    "SOXX": {
+      "ticker": "SOXX",
+      "price": 636.96,
+      "previous_close": 599.73,
+      "change_pct": 6.21,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:58:00.658513+00:00",
+      "narrative": "tech_convergence"
+    },
+    "ARKK": {
+      "ticker": "ARKK",
+      "price": 79.7,
+      "previous_close": 78.49,
+      "change_pct": 1.54,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:58:01.611611+00:00",
+      "narrative": "tech_convergence"
+    },
+    "BATRK": {
+      "ticker": "BATRK",
+      "price": 50.74,
+      "previous_close": 51.1,
+      "change_pct": -0.7,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:58:02.586029+00:00",
+      "narrative": "wealthy_sports"
+    },
+    "MSGS": {
+      "ticker": "MSGS",
+      "price": 360.65,
+      "previous_close": 361.78,
+      "change_pct": -0.31,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:58:03.536922+00:00",
+      "narrative": "wealthy_sports"
+    },
+    "MANU": {
+      "ticker": "MANU",
+      "price": 22.11,
+      "previous_close": 21.81,
+      "change_pct": 1.38,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:58:04.582124+00:00",
+      "narrative": "wealthy_sports"
+    },
+    "SPY": {
+      "ticker": "SPY",
+      "price": 746.85,
+      "previous_close": 740.96,
+      "change_pct": 0.79,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:58:05.476407+00:00",
+      "narrative": "benchmark"
+    },
+    "TLT": {
+      "ticker": "TLT",
+      "price": 87.03,
+      "previous_close": 86.33,
+      "change_pct": 0.81,
+      "source": "yfinance",
+      "fetched_at": "2026-06-18T14:58:07.903374+00:00",
+      "narrative": "benchmark"
     }
   }
 }
