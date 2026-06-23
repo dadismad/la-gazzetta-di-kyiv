@@ -517,6 +517,40 @@ def main():
             import time
             time.sleep(3)
 
+    # SIGNAL PULSE: if no Tier 1 alert fired, send heartbeat with top 3 narratives
+    if posted_count == 0 and not args.dry_run:
+        _pulse_stories = [s for s in stories if (s.get("contradiction_gap", 0) or 0) >= 20][:3]
+        if _pulse_stories:
+            _lines = []
+            for s in _pulse_stories:
+                _nid = s.get("narrative_id", s.get("container", ""))
+                _gap = int(s.get("contradiction_gap", 0) or 0)
+                _dir = (s.get("trade_thesis", {}) or {}).get("direction", "NEUTRAL")
+                _arrow = "▲" if _dir == "LONG" else ("▼" if _dir == "SHORT" else "—")
+                _cap = (s.get("capital_volume_usd", 0) or 0) / 1e9
+                _cap_str = f"${_cap:.1f}B" if abs(_cap) >= 1 else f"${_cap*1000:.0f}M"
+                _title = s.get("_container_title", _nid)
+                _lines.append(f"{_title:45s} GAP {_gap:>3} {_arrow}  | {_cap_str}")
+            _pulse_text = "\U0001f4e1 THE FLOW — " + datetime.now(timezone.utc).strftime("%H:%M") + " Kyiv\n\n" + "\n".join(_lines) + "\n\nlagazzettadikyiv.com?utm_source=telegram&utm_medium=pulse"
+            # Throttle: only send pulse once per 2 hours
+            import time as _time
+            _pulse_path = PUBLIC_DATA / "pulse_sent.json"
+            _send_pulse = True
+            if _pulse_path.exists():
+                try:
+                    with open(_pulse_path) as _f:
+                        _last = json.load(_f).get("sent_at", "")
+                    _age = (datetime.now(timezone.utc) - datetime.fromisoformat(_last)).total_seconds()
+                    if _age < 7200:
+                        _send_pulse = False
+                except Exception:
+                    pass
+            if _send_pulse and send_telegram(_pulse_text):
+                with open(_pulse_path, "w") as _f:
+                    json.dump({"sent_at": datetime.now(timezone.utc).isoformat()}, _f)
+                print(f"[{now()}] Signal Pulse sent")
+                posted_count += 1
+
     print(f"[{now()}] Broadcast complete: {posted_count} posted")
 
 

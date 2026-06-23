@@ -407,7 +407,10 @@ tailwind.config = {
     footer{font-size:11px;padding:16px 12px}
     footer .flex{flex-direction:column;gap:4px}
     /* PHASE A4 — Mobile touch-target compliance */
-    .filter-pill{min-height:44px;min-width:44px;padding:8px 14px;font-size:14px;display:inline-flex;align-items:center}
+    .filter-pill{min-height:44px;min-width:44px;padding:8px 14px;font-size:14px;display:inline-flex;align-items:center;border-radius:20px;background:transparent;border:1px solid #D1D5DB;color:#6B7280;cursor:pointer;transition:all 0.15s ease;font-family:Inter,sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:0.03em}
+    .filter-pill:hover{background:#F3F4F6;border-color:#9CA3AF;color:#1A1C1A}
+    .filter-pill.active{background:#8B0000;border-color:#8B0000;color:#FFFFFF}
+    .filter-pill.active[data-filter*="ACTIVE"]{background:#D4AF37;border-color:#D4AF37;color:#1A1C1A}
     .filter-pill .material-symbols-outlined{font-size:18px;margin-right:4px}
     /* Collapse sprawling source filter into scrollable row with larger pills on mobile */
     #filter-bar{overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;padding-bottom:4px}
@@ -457,6 +460,10 @@ tailwind.config = {
   @keyframes decayPulse{0%,100%{opacity:1}50%{opacity:0.5}}
   .decay-label{font-size:10px;color:#747878;text-transform:uppercase;letter-spacing:0.03em;margin-top:2px}
   .decay-label-critical{color:#8B0000;font-weight:700}
+  /* Shiller layer: Media Says / Capital Says — visible card surface */
+  .shiller-surface{background:linear-gradient(90deg, rgba(139,0,0,0.02) 0%, rgba(212,175,55,0.03) 100%);padding:4px 6px;border-radius:2px;margin-top:1px}
+  .shiller-surface div{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  @media (max-width:640px){.shiller-surface{grid-template-columns:1fr;gap:2px}}
   /* C3: GAP PHYSICS — border thickness + color scale */
   article[data-tier="BREAKING"]{border-left-width:4px;border-left-color:#7F1D1D}
   /* Contradiction Alert cards (GAP >= 80) */
@@ -527,10 +534,10 @@ tailwind.config = {
   <nav class="border-b border-gold/20 overflow-x-auto hide-scrollbar bg-surface">
     <div class="flex px-margin-horizontal gap-0 w-max max-w-4xl mx-auto" id="tab-nav">
       <button class="tab-btn active px-4 py-3 font-metadata-sm text-metadata-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface min-h-tap-target-min" data-tab="stream">
-        <span class="material-symbols-outlined align-middle mr-1 text-sm" aria-hidden="true">newspaper</span><span class="nav-label">Stream</span>
+        <span class="material-symbols-outlined align-middle mr-1 text-sm" aria-hidden="true">newspaper</span><span class="nav-label">The Flow</span>
       </button>
       <button class="tab-btn px-4 py-3 font-metadata-sm text-metadata-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface min-h-tap-target-min" data-tab="alpha">
-        <span class="material-symbols-outlined align-middle mr-1 text-sm" aria-hidden="true">alpha</span><span class="nav-label">Alpha</span>
+        <span class="material-symbols-outlined align-middle mr-1 text-sm" aria-hidden="true">alpha</span><span class="nav-label">Tactical Bets</span>
       </button>
       <button class="tab-btn px-4 py-3 font-metadata-sm text-metadata-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface min-h-tap-target-min" data-tab="capital">
         <span class="material-symbols-outlined align-middle mr-1 text-sm" aria-hidden="true">account_balance</span><span class="nav-label">Capital Flows</span>
@@ -565,7 +572,7 @@ tailwind.config = {
   <main class="tab-content active flex-1 max-w-4xl mx-auto w-full px-margin-horizontal py-stack-space-lg" id="view-stream">
     <div class="flex justify-between items-end mb-stack-space-md pb-stack-space-sm border-b-2 border-gold">
       <div>
-        <h2 class="font-headline-lg text-headline-lg text-on-surface">The Stream</h2>
+        <h2 class="font-headline-lg text-headline-lg text-on-surface">The Flow</h2>
         <p class="font-metadata-sm text-metadata-sm text-on-surface-variant uppercase tracking-wider">__STORY_COUNT__ stories · __REGIME_STR__</p>
       </div>
       <span class="hidden md:inline border border-outline px-3 py-1 font-label-xs text-label-xs uppercase">Live · __REGIME_STR__</span>
@@ -616,7 +623,7 @@ tailwind.config = {
   <main class="tab-content flex-1 max-w-4xl mx-auto w-full px-margin-horizontal py-stack-space-lg" id="view-alpha">
     <div class="flex justify-between items-end mb-stack-space-md pb-stack-space-sm border-b-2 border-gold">
       <div>
-        <h2 class="font-headline-lg text-headline-lg text-on-surface">Alpha Board</h2>
+        <h2 class="font-headline-lg text-headline-lg text-on-surface">Tactical Bets</h2>
         <p class="font-metadata-sm text-metadata-sm text-on-surface-variant uppercase tracking-wider">Catalyst-Flow-Trade · Multi-Vector Intelligence</p>
       </div>
       <span class="hidden md:inline border border-outline px-3 py-1 font-label-xs text-label-xs uppercase">Live · __REGIME_STR__</span>
@@ -767,11 +774,11 @@ tailwind.config = {
   <nav class="md:hidden flex justify-around items-center bg-surface border-t border-gold px-margin-horizontal pb-2 pt-1 fixed bottom-0 left-0 w-full z-30">
     <button onclick="switchTab('stream')" class="flex flex-col items-center text-on-surface pt-1 w-tap-target-min">
       <span class="material-symbols-outlined text-gold" style="font-variation-settings:'FILL'1';">newspaper</span>
-      <span class="font-label-xs text-label-xs uppercase">Stream</span>
+      <span class="font-label-xs text-label-xs uppercase">Flow</span>
     </button>
     <button onclick="switchTab('alpha')" class="flex flex-col items-center text-on-surface-variant pt-1 w-tap-target-min">
       <span class="material-symbols-outlined">alpha</span>
-      <span class="font-label-xs text-label-xs uppercase">Alpha</span>
+      <span class="font-label-xs text-label-xs uppercase">Bets</span>
     </button>
     <button onclick="switchTab('capital')" class="flex flex-col items-center text-on-surface-variant pt-1 w-tap-target-min">
       <span class="material-symbols-outlined">account_balance</span>
@@ -831,6 +838,18 @@ function renderRadar(){
   if (crypto.ETH) html += card('ETH', crypto.ETH);
   if (d.equities) html += card('Global Equities', d.equities);
   grid.innerHTML = html;
+  // Auto-collapse Tactical Radar when all signals are EQUILIBRIUM
+  var allEquilibrium = (!d.crypto || !d.crypto.BTC || d.crypto.BTC.condition === 'EQUILIBRIUM') &&
+                       (!d.crypto || !d.crypto.ETH || d.crypto.ETH.condition === 'EQUILIBRIUM') &&
+                       (!d.equities || d.equities.condition === 'EQUILIBRIUM');
+  var details = document.getElementById('tactical-radar');
+  if (details && allEquilibrium) {
+    details.open = false;
+    // Add a compact status line when collapsed
+    var summary = details.querySelector('summary');
+    if (summary) summary.innerHTML = '<span class="material-symbols-outlined" style="font-size:16px">check_circle</span> Tactical Horizon: All Markets Equilibrium' +
+      ' <span class="text-on-surface-variant text-xs">(no signal — click to expand)</span>';
+  }
   // Re-wire glossary tooltips for new elements
   if (window._wireGlossary) window._wireGlossary();
 }
@@ -983,6 +1002,13 @@ setTimeout(renderRadar, 100);
         '<div class="font-label-xs text-label-xs mb-1">' + sourceLine + '</div>' +
         // LINE 2: Headline
         '<h3 class="font-headline-md text-headline-md text-on-surface leading-tight mb-1">'+(s.headline||'Untitled')+'</h3>' +
+        // SHILLER LAYER: Media Says / Capital Says — always visible for TIER 1 & 2
+        (gap >= 50
+          ? '<div class="shiller-surface mb-1 grid grid-cols-2 gap-1 text-xs leading-snug">' +
+            '<div class="text-on-surface-variant truncate"><span class="uppercase tracking-wider text-[10px]">Media</span> ' + ((s.they_say||'').substring(0,120)) + '</div>' +
+            '<div class="text-on-surface truncate"><span class="uppercase tracking-wider text-[10px] text-gold-dim">Capital</span> ' + ((s.reality||'').substring(0,120)) + '</div>' +
+            '</div>'
+          : '') +
         // LINE 3: Trade setup + action buttons
         '<div class="flex items-center justify-between flex-wrap gap-2">' +
           '<div class="font-label-xs text-label-xs">' + tradeLine + '</div>' +
