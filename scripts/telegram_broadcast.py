@@ -56,9 +56,13 @@ def load_posted_ids() -> set:
                 continue
             try:
                 entry = json.loads(line)
-                if entry.get("status") == "confirmed":
+                if isinstance(entry, dict) and entry.get("status") == "confirmed":
                     ids.add(entry.get("story_id", ""))
-                # Legacy: plain story_id lines (pre-intent-lock) — treat as confirmed
+                elif isinstance(entry, dict) and entry.get("status") == "pending":
+                    continue  # Skip pending intents
+                elif isinstance(entry, (int, str)):
+                    # Legacy: plain story_id lines (pre-intent-lock) — treat as confirmed
+                    ids.add(str(entry))
             except json.JSONDecodeError:
                 ids.add(line)
     return ids
@@ -78,7 +82,7 @@ def load_pending_intents() -> dict:
                 continue
             try:
                 entry = json.loads(line)
-                if entry.get("status") == "pending":
+                if isinstance(entry, dict) and entry.get("status") == "pending":
                     pending[entry["story_id"]] = entry.get("sent_at", "")
             except json.JSONDecodeError:
                 pass

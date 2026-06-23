@@ -52,6 +52,7 @@ TELEGRAM_TOKEN = _secret("gazzetta-telegram-token")
 CFTC_API_KEY = os.environ.get("CFTC_API_KEY", "")
 FRED_API_KEY = os.environ.get("FRED_API_KEY", "")
 TELEGRAM_ADMIN_CHAT = os.environ.get("TELEGRAM_ADMIN_CHAT_ID", "") or os.environ.get(_TCH, "") or "-1003990434181"
+TELEGRAM_BROADCAST_CHAT = os.environ.get("TELEGRAM_BROADCAST_CHAT_ID", "") or os.environ.get(_TCH, "") or "-1003990434181"
 
 # ═══════════════════════════════════════════════════════════════════
 #  CEO SYSTEM PROMPT — Editorial Craft + Execution Powers
@@ -538,7 +539,7 @@ def run_cmd(name, cmd, timeout, critical):
     t0 = time.time()
     try:
         r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout,
-                          cwd=str(PROJECT), env={**os.environ, "PYTHONUNBUFFERED":"1", "DEEPSEEK_API_KEY": DEEPSEEK_KEY or "", "CFTC_API_KEY": CFTC_API_KEY or "", "FRED_API_KEY": FRED_API_KEY or "", "TELEGRAM_BOT_TOKEN": TELEGRAM_TOKEN or "", "TELEGRAM_CHAT_ID": TELEGRAM_CHAT or ""})
+                          cwd=str(PROJECT), env={**os.environ, "PYTHONUNBUFFERED":"1", "DEEPSEEK_API_KEY": DEEPSEEK_KEY or "", "CFTC_API_KEY": CFTC_API_KEY or "", "FRED_API_KEY": FRED_API_KEY or "", "TELEGRAM_BOT_TOKEN": TELEGRAM_TOKEN or "", "TELEGRAM_BROADCAST_CHAT_ID": TELEGRAM_BROADCAST_CHAT or ""})
         ok = r.returncode == 0
         t = time.time()-t0
         out = {"name":name, "ok":ok, "code":r.returncode, "stdout":r.stdout[-1500:],
