@@ -30,7 +30,7 @@ SCRIPTS_DIR = PROJECT / "scripts"
 POSTED_LOG = PUBLIC_DATA / "posted_stories.jsonl"
 
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
-TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "-1003990434181")
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_BROADCAST_CHAT_ID", os.environ.get("TELEGRAM_CHAT_ID", "-1003990434181"))
 
 MAX_POSTS = 2
 THROTTLE_HOURS = 4          # Suppress same narrative for 4h

@@ -51,7 +51,7 @@ DEEPSEEK_KEY = _secret("gazzetta-deepseek-key")
 TELEGRAM_TOKEN = _secret("gazzetta-telegram-token")
 CFTC_API_KEY = os.environ.get("CFTC_API_KEY", "")
 FRED_API_KEY = os.environ.get("FRED_API_KEY", "")
-TELEGRAM_CHAT = os.environ.get(_TCH, "") or "-1003990434181"
+TELEGRAM_ADMIN_CHAT = os.environ.get("TELEGRAM_ADMIN_CHAT_ID", "") or os.environ.get(_TCH, "") or "-1003990434181"
 
 # ═══════════════════════════════════════════════════════════════════
 #  CEO SYSTEM PROMPT — Editorial Craft + Execution Powers
@@ -497,12 +497,13 @@ def notify_hermes(directive, context=None, priority="medium"):
 #  TELEGRAM
 # ═══════════════════════════════════════════════════════════════════
 
-def tg_send(text):
-    if not TELEGRAM_TOKEN or not TELEGRAM_CHAT:
+def tg_send(text, chat_id=None):
+    target = chat_id or TELEGRAM_ADMIN_CHAT
+    if not TELEGRAM_TOKEN or not target:
         return False
     try:
         u = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-        b = json.dumps({"chat_id": TELEGRAM_CHAT, "text": text[:4000], "parse_mode": "Markdown", "disable_web_page_preview": True}).encode()
+        b = json.dumps({"chat_id": target, "text": text[:4000], "parse_mode": "Markdown", "disable_web_page_preview": True}).encode()
         r = urllib.request.Request(u, data=b, headers={"Content-Type": "application/json"})
         return json.loads(urllib.request.urlopen(r, timeout=10).read().decode()).get("ok", False)
     except:
