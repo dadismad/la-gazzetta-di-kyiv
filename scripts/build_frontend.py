@@ -40,10 +40,10 @@ def load_json(path):
         return json.load(f)
 
 def fmt_b(n):
-    if n >= 1: return f"{n:.1f}B"
+    if n >= 1: return f"${n:.1f}B"
     m = n * 1000
-    if m >= 1: return f"{m:.0f}M"
-    return f"{m:.1f}M"
+    if m >= 1: return f"${m:.0f}M"
+    return f"${m:.1f}M"
 
 def fmt_time_ago(ts_str):
     if not ts_str: return ""
@@ -274,6 +274,14 @@ def build():
         f.write(html)
 
     print(f"[build_frontend] wrote {out} ({len(html)} bytes)")
+
+    # Generate dossier pages
+    try:
+        from build_dossiers import build_dossiers
+        build_dossiers(all_stories, flows_raw, narrative_config)
+    except ImportError:
+        print("[build_frontend] build_dossiers not available, skipping dossier pages.")
+
     return True
 
 
@@ -339,8 +347,16 @@ tailwind.config = {
 </script>
 <style>
   *,*::before,*::after{border-radius:0!important;box-shadow:none!important}
-  body{background:#FAF9F6;color:#1A1C1A;min-height:100dvh}
-  h2.text-gold{color:#8C7123!important}
+  body{background:#FFFFFF!important;color:#1A1C1A!important;min-height:100dvh}
+  /* ── PHASE 8 GLOBAL TYPOGRAPHY OVERRIDES (desktop-first) ── */
+  .font-body-md{font-size:13px!important;line-height:1.5}
+  h3.font-headline-md,h3,.font-headline-md{font-size:14px!important;line-height:1.35!important;font-weight:600}
+  .font-label-xs,.text-label-xs{font-size:11px!important}
+  /* Emerald allocation token */
+  .allocation-pct{color:#10B981!important;font-family:'JetBrains Mono',monospace}
+  /* Data font enforcement */
+  .gap-score,.price-target,.mono-data{font-family:'JetBrains Mono',monospace}
+  h2.text-gold{color:#B8860B!important}
   .hide-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
   .hide-scrollbar::-webkit-scrollbar{display:none}
   .gold-strikethrough{position:relative;display:inline-block}
@@ -396,6 +412,8 @@ tailwind.config = {
     /* Collapse sprawling source filter into scrollable row with larger pills on mobile */
     #filter-bar{overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;padding-bottom:4px}
     #origin-pills{display:flex;flex-wrap:nowrap;gap:4px}
+    /* Phase 8: Sticky radar extended to 768px */
+    #tactical-radar{position:sticky;top:56px;z-index:25;background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #E5E7EB;padding:10px 12px;margin-bottom:8px}
   }
   @media (max-width:480px){
     /* Tightest phones — collapse source filter pills into a compact scrollable strip
@@ -406,8 +424,6 @@ tailwind.config = {
     /* RADAR font-size bump for readability */
     .radar-card{font-size:13px}
     .radar-card .text-xs{font-size:12px!important}
-    /* Sticky radar — institutional ticker on mobile */
-    #tactical-radar{position:sticky;top:56px;z-index:25;background:rgba(10,10,15,0.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.05);padding:10px 12px;margin-bottom:8px}
   }
   @media (max-width:390px){
     #tab-nav{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch}
@@ -429,11 +445,11 @@ tailwind.config = {
   .badge-alert{background:#8B0000;color:#FAF9F6;padding:2px 8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.03em}
   .badge-warn{background:#78350f;color:#FEF3C7;padding:2px 8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.03em}
   .badge-safe{background:#15803d;color:#DCFCE7;padding:2px 8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.03em}
-  .glass-panel{background:rgba(10,10,15,0.75);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-  .glass-panel-dark{background:rgba(0,0,0,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+  .glass-panel{background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+  .glass-panel-dark{background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 
   /* C4: DECAY CLOCK */
-  .decay-meter{width:100%;height:3px;background:#1E1E24;margin-top:4px;position:relative;overflow:hidden}
+  .decay-meter{width:100%;height:3px;background:#E5E7EB;margin-top:4px;position:relative;overflow:hidden}
   .decay-fill{position:absolute;left:0;top:0;height:100%;transition:width 0.6s ease}
   .decay-fresh{background:#D4AF37}
   .decay-active{background:#B45309}
@@ -443,6 +459,12 @@ tailwind.config = {
   .decay-label-critical{color:#8B0000;font-weight:700}
   /* C3: GAP PHYSICS — border thickness + color scale */
   article[data-tier="BREAKING"]{border-left-width:4px;border-left-color:#7F1D1D}
+  /* Contradiction Alert cards (GAP >= 80) */
+  article.contradiction-alert{border-left-width:6px;border-left-color:#8B0000;background:rgba(139,0,0,0.03);padding-left:12px}
+  .contradiction-alert-badge{display:inline-block;background:#8B0000;color:#FFFFFF;font-size:11px;font-weight:600;letter-spacing:1px;padding:2px 8px;border-radius:3px;text-transform:uppercase}
+  @keyframes alert-pulse{0%,100%{border-left-color:#8B0000}50%{border-left-color:#4A0000}}
+  article.contradiction-alert{animation:alert-pulse 6s ease-in-out infinite}
+  article.contradiction-alert .gap-score{font-size:32px!important;font-weight:700}
   article[data-tier="ACTIVE"]{border-left-width:2px;border-left-color:#D4AF37}
   article[data-tier="SETTLING"]{border-left-width:1px;border-left-color:#444748;opacity:0.7}
   @keyframes gapPulse{0%,100%{border-left-color:#7F1D1D}50%{border-left-color:#D4AF37}}
@@ -452,10 +474,10 @@ tailwind.config = {
   .gap-score,.capital-num,.ticker-mono,.price-mono{font-family:'JetBrains Mono',SFMono-Regular,monospace}
 </style>
 </head>
-<body class="bg-surface font-body-md text-on-surface antialiased" style="background:#0A0A0F!important;color:#E6E4E0!important">
+<body class="bg-surface font-body-md text-on-surface antialiased">
 
 <!-- ═══ DESKTOP SIDEBAR ═══ -->
-<aside class="hidden md:flex md:flex-col fixed left-0 top-0 h-full w-72 text-on-primary z-40 overflow-y-auto glass-panel-dark" id="desktop-sidebar">
+<aside class="hidden md:flex md:flex-col fixed left-0 top-0 h-full w-72 text-on-surface z-40 overflow-y-auto glass-panel-dark" id="desktop-sidebar">
   <div class="p-stack-space-md border-b border-gold">
     <h2 class="font-headline-md text-headline-md text-gold mb-1">Domain Intelligence</h2>
     <p class="font-label-xs text-label-xs text-outline-variant uppercase tracking-wider">__REGIME_STR__</p>
@@ -477,19 +499,24 @@ tailwind.config = {
       </button>
       <div class="hidden md:flex w-tap-target-min h-tap-target-min items-center justify-center"></div>
       <div class="flex items-center gap-2">
-        <span class="material-symbols-outlined text-gold hidden sm:inline" style="font-variation-settings:'FILL'1';">pest_control</span>
+        <span class="material-symbols-outlined text-gold hidden sm:inline" style="font-variation-settings:'FILL'1';" aria-hidden="true">pest_control</span>
         <h1 class="font-headline-lg-mobile text-[16px] leading-[20px] sm:text-[20px] sm:leading-[26px] md:text-headline-lg-mobile uppercase tracking-widest text-roman-purple gold-strikethrough gold-outline">La Gazzetta di Kyiv</h1>
-        <span class="material-symbols-outlined text-gold hidden sm:inline" style="font-variation-settings:'FILL'1';">gavel</span>
+        <span class="material-symbols-outlined text-gold hidden sm:inline" style="font-variation-settings:'FILL'1';" aria-hidden="true">gavel</span>
       </div>
       <div class="w-tap-target-min h-tap-target-min flex items-center justify-center"></div>
     </div>
   </header>
 
+  <!-- TAGLINE -->
+  <p class="font-body-md text-body-md text-[#747878] text-center mt-1 max-w-xl mx-auto px-4">
+    Institutional Narrative Intelligence — monitoring the variance between media consensus and capital flows.
+  </p>
+
   <!-- MOBILE MENU -->
   <div class="hidden md:hidden bg-navy fixed inset-0 z-50 flex flex-col p-stack-space-lg" id="mobile-menu">
     <div class="flex justify-between items-center mb-stack-space-lg">
       <h2 class="font-headline-md text-headline-md text-gold">Navigation</h2>
-      <button class="text-on-primary w-tap-target-min h-tap-target-min flex items-center justify-center" onclick="document.getElementById('mobile-menu').classList.add('hidden')">
+      <button class="text-on-surface w-tap-target-min h-tap-target-min flex items-center justify-center" onclick="document.getElementById('mobile-menu').classList.add('hidden')">
         <span class="material-symbols-outlined">close</span>
       </button>
     </div>
@@ -500,19 +527,19 @@ tailwind.config = {
   <nav class="border-b border-gold/20 overflow-x-auto hide-scrollbar bg-surface">
     <div class="flex px-margin-horizontal gap-0 w-max max-w-4xl mx-auto" id="tab-nav">
       <button class="tab-btn active px-4 py-3 font-metadata-sm text-metadata-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface min-h-tap-target-min" data-tab="stream">
-        <span class="material-symbols-outlined align-middle mr-1 text-sm">newspaper</span> Stream
+        <span class="material-symbols-outlined align-middle mr-1 text-sm" aria-hidden="true">newspaper</span><span class="nav-label">Stream</span>
       </button>
       <button class="tab-btn px-4 py-3 font-metadata-sm text-metadata-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface min-h-tap-target-min" data-tab="alpha">
-        <span class="material-symbols-outlined align-middle mr-1 text-sm">alpha</span> Alpha
+        <span class="material-symbols-outlined align-middle mr-1 text-sm" aria-hidden="true">alpha</span><span class="nav-label">Alpha</span>
       </button>
       <button class="tab-btn px-4 py-3 font-metadata-sm text-metadata-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface min-h-tap-target-min" data-tab="capital">
-        <span class="material-symbols-outlined align-middle mr-1 text-sm">account_balance</span> Capital Flows
+        <span class="material-symbols-outlined align-middle mr-1 text-sm" aria-hidden="true">account_balance</span><span class="nav-label">Capital Flows</span>
       </button>
       <button class="tab-btn px-4 py-3 font-metadata-sm text-metadata-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface min-h-tap-target-min" data-tab="contradictions">
-        <span class="material-symbols-outlined align-middle mr-1 text-sm">analytics</span> Contradictions
+        <span class="material-symbols-outlined align-middle mr-1 text-sm" aria-hidden="true">analytics</span><span class="nav-label">Contradictions</span>
       </button>
       <button class="tab-btn px-4 py-3 font-metadata-sm text-metadata-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface min-h-tap-target-min" data-tab="about">
-        <span class="material-symbols-outlined align-middle mr-1 text-sm">psychology</span> About
+        <span class="material-symbols-outlined align-middle mr-1 text-sm" aria-hidden="true">psychology</span><span class="nav-label">About</span>
       </button>
     </div>
   </nav>
@@ -521,7 +548,7 @@ tailwind.config = {
   <div class="bg-gold/5 border-b border-gold/30 px-margin-horizontal py-2 flex items-center justify-between flex-wrap gap-2" id="cta-banner">
     <span class="font-metadata-sm text-metadata-sm text-on-surface">Join the Intelligence Network</span>
     <a class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-on-primary font-label-xs text-label-xs uppercase tracking-wider hover:bg-primary/90 transition-colors min-h-tap-target-min" href="https://t.me/GazzettaDiKyiv" target="_blank" rel="noopener">
-      <span class="material-symbols-outlined text-sm">send</span> Telegram
+      <span class="material-symbols-outlined text-sm" aria-hidden="true">send</span> Telegram
     </a>
     <button class="text-on-surface-variant hover:text-on-surface ml-2 min-h-tap-target-min min-w-tap-target-min flex items-center justify-center" onclick="this.parentElement.remove();sessionStorage.setItem('cta-dismissed','1')" aria-label="Dismiss">
       <span class="material-symbols-outlined">close</span>
@@ -566,14 +593,14 @@ tailwind.config = {
     <!-- C6: THE CROSSHAIR (desktop) -->
     <div class="hidden md:block mb-4" id="crosshair-container">
       <div class="flex items-center gap-2 px-margin-horizontal mb-2">
-        <span class="material-symbols-outlined text-gold" style="font-size:18px">scatter_plot</span>
+        <span class="material-symbols-outlined text-gold" style="font-size:18px" aria-hidden="true">scatter_plot</span>
         <span class="font-metadata-sm text-metadata-sm text-gold uppercase tracking-wider">NARRATIVE CROSSHAIR</span>
         <span class="text-xs text-on-surface-variant">Geopolitical Tension x Capital Flow</span>
       </div>
-      <div class="relative mx-margin-horizontal" id="crosshair-plot" style="height:280px;background:#0D0D14;border:1px solid #1E1E24">
+      <div class="relative mx-margin-horizontal" id="crosshair-plot" style="height:280px;background:#FFFFFF;border:1px solid #E5E7EB">
         <div class="absolute inset-0 flex items-center justify-center" style="pointer-events:none">
-          <div style="position:absolute;left:0;right:0;top:50%;border-top:1px dashed #1E1E24"></div>
-          <div style="position:absolute;top:0;bottom:0;left:50%;border-left:1px dashed #1E1E24"></div>
+          <div style="position:absolute;left:0;right:0;top:50%;border-top:1px dashed #E5E7EB"></div>
+          <div style="position:absolute;top:0;bottom:0;left:50%;border-left:1px dashed #E5E7EB"></div>
         </div>
         <div id="crosshair-dots" style="position:absolute;inset:0"></div>
         <div style="position:absolute;bottom:6px;left:12px;font-size:10px;color:#444748">GAP Score (narrative intensity) -></div>
@@ -847,11 +874,11 @@ setTimeout(renderRadar, 100);
   var sidebarVuln = document.getElementById('sidebar-vuln');
   if (sidebarNav && NARRATIVES.length) {
     sidebarNav.innerHTML = NARRATIVES.map(function(n, i) {
-      var active = i === 0 ? ' text-gold-accessible border-b-2 border-gold-accessible' : ' text-on-primary/70 hover:text-gold-accessible';
+      var active = i === 0 ? ' text-gold-accessible border-b-2 border-gold-accessible' : ' text-on-surface-variant hover:text-gold-accessible';
       return '<a href="#" class="flex items-center gap-3 px-3 py-2 font-metadata-sm text-metadata-sm uppercase tracking-wider' + active + '" data-ticker="' + n.ticker + '" data-narrative="' + n.id + '">' +
         '<span class="text-lg font-headline-md">' + n.ticker + '</span>' +
         '<span>' + n.title + '</span>' +
-        '<span class="ml-auto text-gold-accessible text-xs">' + (n.capital_b >= 1 ? n.capital_b.toFixed(1)+'B' : (n.capital_b*1000).toFixed(0)+'M') + '</span>' +
+        '<span class="ml-auto text-gold-accessible text-xs">' + (n.capital_b >= 1 ? n.capital_b.toFixed(1)+'B' : n.capital_b > 0 ? (n.capital_b*1000).toFixed(0)+'M' : 'N/A') + '</span>' +
         '</a>';
     }).join('');
     var sorted = NARRATIVES.slice().sort(function(a,b){return b.gap - a.gap;}).slice(0,4);
@@ -912,15 +939,30 @@ setTimeout(renderRadar, 100);
       var sourceTier = (s.feed_source && tier1Sources.indexOf(s.feed_source.toUpperCase()) >= 0) ? 'TIER 1' : 'TIER 2';
       var sourceTierBadge = s.feed_source ? '<span class="text-xs px-1 ml-1 border border-gold/30 text-gold-dim">' + sourceTier + '</span>' : '';
       var isHighGap = gap >= 70;
+      // Contradiction Alert: GAP ≥ 80
+      var isAlert = s.alert === true;
+      var alertClass = isAlert ? ' contradiction-alert' : '';
+      var alertBadge = isAlert ? '<span class="contradiction-alert-badge">CONTRADICTION ALERT</span>' : '';
       // Trade setup line for collapsed state
       var tt = s.trade_thesis || {};
       var hasTrade = tt.direction && tt.direction !== 'NEUTRAL';
+      // Paywall: truncate trade setup for free-tier users
+      var userTier = (function(){ try { return localStorage.getItem('gazzetta_tier') || 'free'; } catch(e) { return 'free'; } })();
+      var isPaidUser = userTier === 'pro' || userTier === 'institutional';
       var tradeLine = hasTrade
-        ? '<span class="ticker-mono">' + (tt.direction||'').toUpperCase() + ' ' + (tt.primary_ticker||tt.ticker||'') + '</span>' +
-          ' <span class="price-mono">@ ' + (tt.limit_entry_price||tt.entry_zone||'') + '</span>' +
-          ' <span class="text-on-surface-variant">/ SL</span> <span class="price-mono">' + (tt.stop_loss||'N/A') + '</span>' +
-          ' <span class="text-on-surface-variant">/ TP</span> <span class="price-mono">' + (tt.take_profit||'N/A') + '</span>' +
-          (tt.portfolio_allocation_pct ? ' <span class="text-emerald">[' + tt.portfolio_allocation_pct + ']</span>' : '')
+        ? (isPaidUser
+            ? '<span class="ticker-mono">' + (tt.direction||'').toUpperCase() + ' ' + (tt.primary_ticker||tt.ticker||'') + '</span>' +
+              ' <span class="price-mono">@ ' + (tt.limit_entry_price||tt.entry_zone||'') + '</span>' +
+              ' <span class="text-on-surface-variant">| Stop:</span> <span class="price-mono">' + (tt.stop_loss||'N/A') + '</span>' +
+              ' <span class="text-on-surface-variant">| Target:</span> <span class="price-mono">' + (tt.take_profit||'N/A') + '</span>' +
+              (tt.portfolio_allocation_pct ? ' <span class="text-emerald">[' + tt.portfolio_allocation_pct + ']</span>' : '')
+            : (isHighGap
+                ? '<span class="ticker-mono">' + (tt.direction||'').toUpperCase() + ' ' + (tt.primary_ticker||tt.ticker||'') + '</span>' +
+                  ' <span class="text-crimson font-bold">GAP ' + gap.toFixed(0) + ' — </span>' +
+                  '<a href="/upgrade" class="text-gold underline">Upgrade to Pro to unlock trade setup</a>'
+                : '<span class="ticker-mono">' + (tt.direction||'').toUpperCase() + ' ' + (tt.primary_ticker||tt.ticker||'') + '</span>' +
+                  ' <span class="text-on-surface-variant">(premium)</span>')
+          )
         : '<span class="text-on-surface-variant">No active thesis</span>';
       // Source line — compressed institutional density
       var sourceLine = (s.feed_source
@@ -929,8 +971,14 @@ setTimeout(renderRadar, 100);
         + ' <span class="text-on-surface-variant">·</span> <span class="text-gold-accessible">' + timeAgo + '</span>'
         + ' <span class="text-on-surface-variant">·</span> <span class="gap-score text-crimson">GAP ' + gap.toFixed(0) + '</span>';
 
-      return '<article data-story-id="' + (s.story_id || '') + '" data-source-feed="' + (s.feed_source || '') + '" data-tier="' + (tierOverride || tier || '') + '" data-gap-high="' + (isHighGap ? 'true' : 'false') + '" class="py-2 border-b border-[#1E293B]">' +
+      // Build safe data attributes for share
+      var safeHeadline = (s.headline||'Untitled').replace(/"/g, '&quot;');
+      var safeDirection = tt.direction || '';
+      var safeTicker = tt.primary_ticker || tt.ticker || '';
+      var safeEntry = tt.limit_entry_price || tt.entry_zone || '';
+      return '<article data-story-id="' + (s.story_id || '') + '" data-source-feed="' + (s.feed_source || '') + '" data-tier="' + (tierOverride || tier || '') + '" data-gap-high="' + (isHighGap ? 'true' : 'false') + '" data-alert="' + (isAlert ? 'true' : 'false') + '" data-headline="' + safeHeadline + '" data-capital="' + capStr + '" data-gap="' + gap.toFixed(0) + '" data-direction="' + safeDirection + '" data-ticker="' + safeTicker + '" data-entry="' + safeEntry + '" class="py-2 border-b border-[#1E293B]' + alertClass + '">' +
         '<div class="pl-3">' + decayHtml +
+        (isAlert ? '<div class="mb-1">' + alertBadge + '</div>' : '') +
         // LINE 1: Source + time + GAP
         '<div class="font-label-xs text-label-xs mb-1">' + sourceLine + '</div>' +
         // LINE 2: Headline
@@ -939,7 +987,7 @@ setTimeout(renderRadar, 100);
         '<div class="flex items-center justify-between flex-wrap gap-2">' +
           '<div class="font-label-xs text-label-xs">' + tradeLine + '</div>' +
           '<div class="flex items-center gap-2">' +
-            '<button class="text-xs text-on-surface-variant hover:text-gold-accessible" onclick="event.stopPropagation();var h=' + (s.headline||'Untitled').replace(/'/g,"\\'") + ';var g=' + gap.toFixed(0) + ';var c=' + capStr + ';var u=window.location.origin+window.location.pathname+\'?story=' + (s.story_id||'') + ';var tt=' + JSON.stringify(s.trade_thesis||{}) + ';var t=tt.direction?tt.direction.toUpperCase()+\' \'+(tt.primary_ticker||tt.ticker||\'\')+\' @ \'+(tt.limit_entry_price||tt.entry_zone||\'\')+\' / SL \'+(tt.stop_loss||\'\')+\' / TP \'+(tt.take_profit||\'\'):\'No active thesis\';var txt=h+\'\\n\\nCAPITAL: \'+c+\' | GAP: \'+g+\'/100\\nTRADE: \'+t+\'\\n\\n\'+u;if(navigator.share){navigator.share({title:h,text:txt,url:u}).catch(function(){})}else{navigator.clipboard.writeText(txt).then(function(){var b=this;b.innerHTML=\'<span class=material-symbols-outlined style=font-size:14px>check</span> Copied\';setTimeout(function(){b.innerHTML=\'<span class=material-symbols-outlined style=font-size:14px>share</span>\'},2000)}.bind(this))}" title="Share"><span class="material-symbols-outlined" style="font-size:14px">share</span></button>' +
+            '<button type="button" onclick="shareStory(this)" class="text-[#747878] hover:text-on-surface p-1" aria-label="Share intelligence setup"><span class="material-symbols-outlined text-[16px]" aria-hidden="true">share</span></button>' +
             '<button class="text-xs text-on-surface-variant hover:text-gold-accessible card-expand-btn" onclick="event.stopPropagation();var d=this.closest(\'article\').querySelector(\'.card-drawer\');if(d){d.open=!d.open;this.querySelector(\'.expand-icon\').style.transform=d.open?\'rotate(180deg)\' : \'\'}" title="Expand"><span class="material-symbols-outlined expand-icon" style="font-size:16px">unfold_more</span></button>' +
           '</div>' +
         '</div>' +
@@ -967,9 +1015,9 @@ setTimeout(renderRadar, 100);
     }
 
     var allCardsHtml = '';
-    allCardsHtml += breakingStories.length ? '<div class="zone-header breaking-zone mb-3"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#141418;border-left:4px solid #8B0000"><span class="material-symbols-outlined" style="color:#7F1D1D;font-size:20px">warning</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#7F1D1D">BREAKING ZONE — HIGH DIVERGENCE (' + breakingStories.length + ' SIGNALS)</span></div></div>' + breakingStories.map(function(s){ return buildCard(s,'BREAKING',true); }).join('') : '';
-    allCardsHtml += activeStories.length ? '<div class="zone-header active-zone mb-3 mt-4"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#141418;border-left:4px solid #D4AF37"><span class="material-symbols-outlined" style="color:#D4AF37;font-size:20px">trending_up</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#D4AF37">ACTIVE SIGNALS (' + activeStories.length + ' STORIES)</span></div></div>' + activeStories.map(function(s){ return buildCard(s,'ACTIVE',false); }).join('') : '';
-    allCardsHtml += settlingStories.length ? '<div class="zone-header settling-zone mb-3 mt-4"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#141418;border-left:4px solid #444748"><span class="material-symbols-outlined" style="color:#444748;font-size:20px">check_circle</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#747878">SETTLING NOISE (' + settlingStories.length + ' STORIES)</span></div></div>' + settlingStories.map(function(s){ return buildCard(s,'SETTLING',false); }).join('') : '<div class="zone-header settling-zone mb-3 mt-4"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#141418;border-left:4px solid #444748"><span class="material-symbols-outlined" style="color:#444748;font-size:20px">check_circle</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#747878">SETTLING NOISE (0 STORIES) · No settling signals at this time</span></div></div>';
+    allCardsHtml += breakingStories.length ? '<div class="zone-header breaking-zone mb-3"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#F9FAFB;border-left:4px solid #8B0000"><span class="material-symbols-outlined" style="color:#7F1D1D;font-size:20px">warning</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#7F1D1D">BREAKING ZONE — HIGH DIVERGENCE (' + breakingStories.length + ' SIGNALS)</span></div></div>' + breakingStories.map(function(s){ return buildCard(s,'BREAKING',true); }).join('') : '';
+    allCardsHtml += activeStories.length ? '<div class="zone-header active-zone mb-3 mt-4"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#F9FAFB;border-left:4px solid #D4AF37"><span class="material-symbols-outlined" style="color:#D4AF37;font-size:20px">trending_up</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#D4AF37">ACTIVE SIGNALS (' + activeStories.length + ' STORIES)</span></div></div>' + activeStories.map(function(s){ return buildCard(s,'ACTIVE',false); }).join('') : '';
+    allCardsHtml += settlingStories.length ? '<div class="zone-header settling-zone mb-3 mt-4"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#F9FAFB;border-left:4px solid #444748"><span class="material-symbols-outlined" style="color:#444748;font-size:20px">check_circle</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#747878">SETTLING NOISE (' + settlingStories.length + ' STORIES)</span></div></div>' + settlingStories.map(function(s){ return buildCard(s,'SETTLING',false); }).join('') : '<div class="zone-header settling-zone mb-3 mt-4"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#F9FAFB;border-left:4px solid #444748"><span class="material-symbols-outlined" style="color:#444748;font-size:20px">check_circle</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#747878">SETTLING NOISE (0 STORIES) · No settling signals at this time</span></div></div>';
     cardsEl.innerHTML = allCardsHtml;
 
     injectSourceAttribution();
@@ -985,8 +1033,8 @@ setTimeout(renderRadar, 100);
       var sourceData = card.getAttribute('data-source-feed');
       if (!sourceData || sourceData.trim() === '') continue;
       var footer = document.createElement('div');
-      footer.className = 'source-attribution-footer mt-4 pt-2 border-t border-gray-100 flex items-center justify-between text-xs text-gray-400 font-mono tracking-tight';
-      footer.innerHTML = '<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[12px] text-gray-300">database</span><span>FEED_SOURCE: ' + sourceData.toUpperCase().trim() + '</span></div><div class="text-[10px] bg-gray-50 px-1.5 py-0.5 rounded border border-gray-200 font-sans">VERIFIED_DISPATCH</div>';
+      footer.className = 'source-attribution-footer mt-4 pt-2 border-t border-[#1E293B] flex items-center justify-between text-xs text-[#747878] font-mono tracking-tight';
+      footer.innerHTML = '<div class="flex items-center justify-between w-full p-2 bg-[#F9FAFB] rounded-b"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-[#747878]" aria-hidden="true">database</span><span class="font-mono text-on-surface-variant">' + sourceData.charAt(0).toUpperCase() + sourceData.slice(1).trim() + '</span></div><div class="flex items-center gap-2"><span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-emerald-500/10 text-emerald-700 border border-emerald-500/40" title="Algorithmically verified via core pipeline">Verified</span></div></div>';
       card.appendChild(footer);
     }
   }
@@ -1051,7 +1099,7 @@ setTimeout(renderRadar, 100);
     ranked.sort(function(a,b){ return b.avgGap - a.avgGap; });
     var top5 = ranked.slice(0, 5);
 
-    board.innerHTML = '<div class="px-margin-horizontal mb-3"><div class="flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-gold" style="font-size:18px">leaderboard</span><span class="font-metadata-sm text-metadata-sm text-gold uppercase tracking-wider">GAP LEADERBOARD</span><span class="text-xs text-crimson uppercase">LIVE</span></div>' +
+    board.innerHTML = '<div class="px-margin-horizontal mb-3"><div class="flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-gold" style="font-size:18px" aria-hidden="true">leaderboard</span><span class="font-metadata-sm text-metadata-sm text-gold uppercase tracking-wider">GAP LEADERBOARD</span><span class="cursor-help text-[12px] text-[#747878] hover:text-on-surface font-sans" title="GAP Score (0-100): Quantifies the absolute mathematical contradiction between corporate media consensus and active structural capital flows. Higher means extreme divergence.">ⓘ</span><span class="text-xs text-crimson uppercase">LIVE</span></div>' +
       '<div class="flex gap-2 overflow-x-auto hide-scrollbar">' +
         top5.map(function(n, i){
           var barColor = n.avgGap >= 60 ? '#8B0000' : n.avgGap >= 30 ? '#D4AF37' : '#444748';
@@ -1060,7 +1108,7 @@ setTimeout(renderRadar, 100);
           var capStr = capB >= 1 ? capB.toFixed(1)+'B' : (capB*1000).toFixed(0)+'M';
           return '<div class="flex-shrink-0 min-w-[140px] bg-surface-container-high p-3" style="border-left:2px solid ' + barColor + '">' +
             '<div class="flex justify-between items-start mb-1">' +
-              '<span class="font-metadata-sm text-metadata-sm text-on-surface-variant uppercase">' + (n.title||'').substring(0,14) + '</span>' +
+              '<span class="font-metadata-sm text-metadata-sm text-on-surface-variant uppercase">' + (n.title||'').length > 18 ? (n.title||'').substring(0,18) + '...' : (n.title||'') + '</span>' +
               '<span class="text-xs text-on-surface-variant">#' + (i+1) + '</span>' +
             '</div>' +
             '<div class="font-headline-md text-headline-md" style="color:' + barColor + '">' + n.avgGap.toFixed(0) + '</div>' +
@@ -1488,6 +1536,31 @@ setTimeout(renderRadar, 100);
   window.switchTab = function(name){
     origSwitchTab(name);
     setTimeout(wireGlossary, 300);
+  };
+
+  // ── SHARE HANDLER (reads from article dataset) ──
+  window.shareStory = function(btn) {
+    var article = btn.closest('article');
+    if (!article) return;
+    var d = article.dataset;
+    var setup = d.direction && d.direction !== 'NEUTRAL'
+      ? d.direction.toUpperCase() + ' ' + (d.ticker||'') + ' @ ' + (d.entry||'N/A')
+      : 'No active thesis';
+    var payload = d.headline + '\\n\\nCAPITAL: $' + (d.capital||'0') + ' | GAP: ' + (d.gap||'0') + '/100\\nTRADE: ' + setup + '\\n\\n' + window.location.origin + window.location.pathname + '?story=' + (article.getAttribute('data-story-id')||'');
+    if (navigator.share) {
+      navigator.share({
+        title: 'La Gazzetta di Kyiv Wire',
+        text: payload,
+        url: window.location.href
+      }).catch(function(){});
+    } else {
+      navigator.clipboard.writeText(payload);
+      var icon = btn.querySelector('.material-symbols-outlined');
+      if (icon) { icon.textContent = 'check'; }
+      setTimeout(function(){
+        if (icon) { icon.textContent = 'share'; }
+      }, 2000);
+    }
   };
 })();
 </script>

@@ -140,8 +140,8 @@ def send_telegram(text: str) -> bool:
 
 
 def format_story_for_telegram(story: dict, flow_ledger: dict = None) -> str:
-    """Phase B2 — 6-block GapFire Dispatch with real capital numbers from flows.json.
-    Falls back to story-level fields if flow_ledger unavailable."""
+    """Dynamic-layout GapFire Dispatch. Adapts format based on conviction and data profile.
+    HIGH/ELEVATED → THE PLAY execution card. SPECULATIVE → lighter signal format. HOLD → skip."""
 
     if flow_ledger is None:
         flow_ledger = {}
@@ -155,20 +155,29 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None) -> str:
     source_name = story.get("feed_source", story.get("source_name", ""))
     tier = story.get("tier", "")
 
-    # ── Pre-resolve ticker (needed before trade_thesis check) ──
-    ticker_map = {
-        "dollar_decline": "DXY", "energy_sovereignty": "CL=F", "deglobalization": "XLI",
-        "china_ascent": "FXI", "space_economy": "ROKT", "gene_editing": "ARKG",
-        "tech_convergence": "QQQ", "wealthy_sports": "BATRK", "crypto_reserve": "BTC-USD",
-        "rate_cycle": "TLT", "ai_chips": "NVDA", "commodity_supercycle": "DBC",
+    # ── Tickermap: narrative → best single-name defaults (FALLBACK ONLY) ──
+    _ticker_defaults = {
+        "dollar_decline": "EURUSD=X", "energy_sovereignty": "XOM",
+        "deglobalization": "CAT", "china_ascent": "BABA",
+        "space_economy": "RKLB", "gene_editing": "CRSP",
+        "tech_convergence": "AAPL", "wealthy_sports": "BATRK",
+        "crypto_reserve": "BTC-USD", "rate_cycle": "TLT",
+        "ai_chips": "NVDA", "commodity_supercycle": "XOM",
     }
-    ticker = ticker_map.get(narrative_id, narrative_id.upper()[:6])
 
-    # ── Phase B1 integration: story-level trade_thesis takes priority ──
+    # ── Resolve ticker: trade_thesis > affected_tickers > narrative default ──
     tt = story.get("trade_thesis")
     has_trade_thesis = bool(tt and tt.get("alpha_trigger"))
+    affected = story.get("affected_tickers") or []
 
-    # ── Phase B2: pull REAL capital numbers from flow ledger ──
+    if has_trade_thesis and tt.get("primary_ticker"):
+        narrative_ticker = tt["primary_ticker"]
+    elif affected:
+        narrative_ticker = affected[0]
+    else:
+        narrative_ticker = _ticker_defaults.get(narrative_id, narrative_id.upper()[:6])
+
+    # ── Flow ledger ──
     flow_entry = flow_ledger.get(narrative_id, {})
     capital_total_b = flow_entry.get("total_capital_b", 0) or 0
     dominant_dir = flow_entry.get("dominant_direction", "")
@@ -181,43 +190,55 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None) -> str:
     elif capital_total_b > 0:
         cap_str = f"${capital_total_b*1000:.0f}M"
     else:
-        cap_str = "N/A — data pending"
+        cap_str = ""
 
+    # ── Extract trade thesis fields ──
     if has_trade_thesis:
-        # Story-level trade thesis overrides flow-ledger defaults
         direction = tt.get("direction", "NEUTRAL")
-        ticker_override = tt.get("primary_ticker", ticker)
-        entry = tt.get("limit_entry_price", tt.get("entry_zone", "current levels"))
+        entry = tt.get("limit_entry_price", tt.get("entry_zone", ""))
         stop = tt.get("stop_loss", "")
         target = tt.get("take_profit", "")
-        invalidation = tt.get("invalidation", "")
+        invalidation = tt.get("invalidation", stop)
         conviction = tt.get("conviction", "SPECULATIVE")
         horizon = int(tt.get("horizon_days", 14))
         alpha = tt.get("alpha_trigger", "")
-        source_tag = "Source: DeepSeek trade thesis"
-        flow_str = f"Story-level thesis ({direction} {ticker_override})"
-        # Use the trade thesis ticker
-        narrative_ticker = ticker_override
     else:
-        # Flow-ledger defaults for legacy stories
+        # Legacy: derive from flow ledger
         if dominant_dir == "inflow":
             direction = "LONG"
-            flow_str = f"Net inflow {cap_str}"
         elif dominant_dir == "outflow":
             direction = "SHORT"
-            flow_str = f"Net outflow {cap_str}"
         else:
             direction = "NEUTRAL"
-            flow_str = f"Neutral flow — {cap_str} tracked, no dominant direction"
         entry = ""
+        stop = ""
+        target = ""
         invalidation = ""
         horizon = 14
         alpha = ""
-        conviction = "MODERATE" if gap >= 40 else "SPECULATIVE"
-        source_tag = f"Source: flows.json aggregate ({story_count} stories, avg GAP {avg_gap:.0f})"
-        narrative_ticker = ticker
+        conviction = "SPECULATIVE"
 
-    # ── Narrative + ticker mapping ──
+    # ── Compute R-multiple ──
+    r_multiple = ""
+    if entry and stop and target:
+        try:
+            e = float(str(entry).replace("$","").replace(",",""))
+            s = float(str(stop).replace("$","").replace(",",""))
+            t = float(str(target).replace("$","").replace(",",""))
+            risk = abs(e - s)
+            reward = abs(t - e)
+            if risk > 0:
+                r = round(reward / risk, 1)
+                r_multiple = f" | {r}R"
+        except (ValueError, TypeError):
+            pass
+
+    # ── Conviction emoji ──
+    conviction_emoji = {"HIGH": "\U0001f525", "ELEVATED": "\U0001f4c8",
+                        "SPECULATIVE": "\U0001f9ea", "HOLD": "\u26a0\ufe0f"}
+    c_emoji = conviction_emoji.get(conviction, "")
+
+    # ── Narrative label ──
     narrative_labels = {
         "dollar_decline": "DOLLAR DECLINE", "energy_sovereignty": "ENERGY SOVEREIGNTY",
         "deglobalization": "DEGLOBALIZATION", "china_ascent": "CHINA ASCENT",
@@ -229,60 +250,97 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None) -> str:
     narrative_label = narrative_labels.get(narrative_id, narrative_id.upper().replace("_", " "))
 
     link = "https://www.lagazzettadikyiv.com"
-    they_say_short = they_say[:120] if they_say else "Media narrative pending"
-    reality_short = reality[:120] if reality else "Capital reality pending"
 
-    lines = []
-    lines.append("\u2501" * 46)
-    lines.append(f"\u26a1 GAP {gap} | {narrative_label}")
-    lines.append("\u2501" * 46)
-    lines.append("")
-    lines.append(headline)
-    lines.append("")
-    lines.append(f"\U0001f4b0 CAPITAL FLOW: {cap_str} tracked across {story_count} stories in {narrative_label} ({narrative_ticker})")
-    lines.append(f"   \u25a0 {flow_str} | Avg narrative GAP: {avg_gap:.0f}/100 | Conviction: {conviction}")
-    lines.append(f"   \u25a0 {source_tag}")
-    lines.append("")
-    lines.append("\u26a1 CONTRADICTION:")
-    lines.append(f"   Media says: {they_say_short}")
-    lines.append(f"   Capital says: {reality_short}")
-    lines.append("")
-    lines.append(f"\U0001f4ca TWO VIEWS:")
-    if has_trade_thesis and alpha:
-        lines.append(f"   Alpha trigger: {alpha}")
-        lines.append(f"   Entry: {entry} | Invalidation: {invalidation}")
-    elif direction == "LONG":
-        lines.append(f"   Bull case: {narrative_ticker} capital inflows of {cap_str} signal institutional conviction "
-                     f"despite media narrative. Momentum favors continuation to the upside.")
-        lines.append(f"   Bear case: If media narrative proves correct and triggers reversal, "
-                     f"{narrative_ticker} faces repricing risk as GAP {gap} closes. Tight stops required.")
-    elif direction == "SHORT":
-        lines.append(f"   Bear case: {cap_str} in outflows confirm institutional exit despite bullish media. "
-                     f"Downside pressure likely to persist.")
-        lines.append(f"   Bull case: If media narrative prevails and inflows resume, "
-                     f"short positions face squeeze risk. Monitor {narrative_ticker} for reversal signals.")
-    else:
-        lines.append(f"   Bull case: If capital flows break decisively above {cap_str}, "
-                     f"{narrative_ticker} enters momentum phase — follow the money.")
-        lines.append(f"   Bear case: If GAP {gap} holds and narrative intensifies, "
-                     f"expect volatility spike. Straddle/strangle opportunity.")
-    lines.append("")
-    lines.append(f"\U0001f3af THE BET:")
-    if has_trade_thesis:
-        lines.append(f"   {direction} {narrative_ticker} | Conviction: {conviction} | Horizon: {horizon} days")
+    # ═══════════════════════════════════════════════════════════════
+    # DYNAMIC LAYOUT: HIGH/ELEVATED → THE PLAY card
+    # ═══════════════════════════════════════════════════════════════
+    if conviction in ("HIGH", "ELEVATED") and has_trade_thesis:
+        lines = []
+        # Curiosity gap hook as opener
+        if gap >= 70:
+            lines.append(f"\U0001f525 EVERYONE'S WRONG ABOUT {narrative_label}")
+        else:
+            lines.append(f"\U0001f4c8 CONTRARIAN SIGNAL: {narrative_label}")
+
+        lines.append("")
+        lines.append(headline)
+        lines.append("")
+
+        # One-line contradiction punch
+        if they_say and reality:
+            lines.append(f"The retail consensus is trading the narrative, but the capital ledger shows a massive divergence. GAP: {gap}/100.")
+        lines.append("")
+
+        # Alpha trigger
+        if alpha:
+            lines.append(f"{alpha}")
+            lines.append("")
+
+        # THE PLAY execution card
+        lines.append(f"\U0001f680 THE PLAY: {direction} {narrative_ticker}{r_multiple}")
         if entry:
-            lines.append(f"   Entry: {entry}")
-        if invalidation:
-            lines.append(f"   Stop: {invalidation}")
-    else:
-        lines.append(f"   {direction} {narrative_ticker} | Conviction: {conviction}")
-        lines.append(f"   Horizon: 14 days | {source_tag}")
-    lines.append("")
-    lines.append(f"{gap_to_tag(gap)} #{narrative_id.replace('_','').upper()} #{narrative_ticker}")
-    lines.append("")
-    lines.append(f"Full data: {link}")
+            lines.append(f"\u2022 Limit Entry: {entry}")
+        if stop:
+            lines.append(f"\u2022 Stop Loss: {stop}")
+        if target:
+            lines.append(f"\u2022 Target: {target}")
+        if horizon:
+            lines.append(f"\u2022 Strategy Window: {horizon} days | Conviction: {conviction} {c_emoji}")
+        lines.append("")
 
-    return "\n".join(lines)
+        # Why this edge exists
+        if alpha:
+            lines.append(f"Why this edge exists: {alpha}")
+            lines.append("")
+
+        # Tags
+        lines.append(f"{gap_to_tag(gap)} #{narrative_id.replace('_','').upper()} #{narrative_ticker}")
+        lines.append("")
+        lines.append(f"Full brief: {link}")
+
+        return "\n".join(lines)
+
+    # ═══════════════════════════════════════════════════════════════
+    # SPECULATIVE: lighter signal format — no fake bull/bear cases
+    # ═══════════════════════════════════════════════════════════════
+    if conviction == "SPECULATIVE" and has_trade_thesis:
+        lines = []
+        lines.append(f"\U0001f9ea SIGNAL: {narrative_label} | GAP {gap}/100")
+        lines.append("")
+        lines.append(headline)
+        lines.append("")
+
+        if they_say and reality:
+            they_say_short = they_say[:120]
+            reality_short = reality[:120]
+            lines.append(f"Media says: {they_say_short}")
+            lines.append(f"Capital says: {reality_short}")
+            lines.append("")
+
+        if alpha:
+            lines.append(f"Alpha thesis: {alpha}")
+            lines.append("")
+
+        if direction != "NEUTRAL":
+            lines.append(f"\U0001f3af {direction} {narrative_ticker}{r_multiple} | Conviction: {conviction}")
+            if entry:
+                lines.append(f"Entry: {entry}")
+            if invalidation:
+                lines.append(f"Stop: {invalidation}")
+            if target:
+                lines.append(f"Target: {target}")
+            lines.append("")
+
+        lines.append(f"{gap_to_tag(gap)} #{narrative_id.replace('_','').upper()} #{narrative_ticker}")
+        lines.append("")
+        lines.append(f"Full brief: {link}")
+
+        return "\n".join(lines)
+
+    # ═══════════════════════════════════════════════════════════════
+    # HOLD / no thesis: skip broadcast — return empty
+    # ═══════════════════════════════════════════════════════════════
+    return ""
 
 
 def gap_to_tag(gap: int) -> str:
@@ -370,6 +428,8 @@ def main():
                 continue  # Suppress — same narrative, no material GAP increase
 
         text = format_story_for_telegram(story, flow_ledger)
+        if not text:
+            continue  # HOLD conviction or no actionable setup — skip broadcast
 
         if args.dry_run:
             print(f"\n{'='*60}")

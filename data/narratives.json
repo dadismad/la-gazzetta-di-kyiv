@@ -1,78 +1,91 @@
 {
   "metadata": {
-    "version": "1.0",
-    "updated": "2026-06-21T20:45:00Z"
+    "version": "2.0",
+    "updated": "2026-06-23T19:45:00Z",
+    "note": "Narrative display names shifted from mechanism to destination framing. Internal IDs unchanged for backward compatibility."
   },
   "narratives": {
     "dollar_decline": {
-      "display_name": "Dollar Decline",
-      "description": "Structural shifts in global currency hegemony and the weaponization of trade settlements.",
+      "display_name": "Sovereign Liquidity Migration",
+      "tag": "Sovereign Liquidity",
+      "description": "Tracks the structural flight of global capital away from legacy reserve currencies toward hard assets, bilateral settlement frameworks, and alternative reserve architectures.",
       "tickers": ["DX=F", "GC=F", "UUP"],
       "invalidation_threshold": "DXY > 106 for 2 quarters"
     },
     "energy_sovereignty": {
       "display_name": "Energy Sovereignty",
+      "tag": "Energy Sovereignty",
       "description": "Geopolitical strategy surrounding natural resources and the independence of national energy grids.",
       "tickers": ["CL=F", "NG=F", "XLE"],
       "invalidation_threshold": "Brent < $65"
     },
     "deglobalization": {
-      "display_name": "Deglobalization",
-      "description": "The retreat from integrated global markets toward regionalized supply chains and protectionist policy.",
+      "display_name": "Industrial Reshoring & Defense Hegemony",
+      "tag": "Industrial Reshoring",
+      "description": "The physical reconstruction of domestic manufacturing capacity, automation infrastructure, and defense industrial bases as global supply chains fracture.",
       "tickers": ["XLI", "ITA", "PPA"],
       "invalidation_threshold": "XLI +8% MoM"
     },
     "china_ascent": {
-      "display_name": "China Ascent",
-      "description": "Strategic evaluation of China's economic and industrial trajectory against Western incumbents.",
+      "display_name": "Eurasia Capital Architecture",
+      "tag": "Eurasia Capital",
+      "description": "Strategic evaluation of China's economic and industrial trajectory against Western incumbents, and the emerging pan-Eurasian financial infrastructure.",
       "tickers": ["FXI", "KWEB", "MCHI"],
       "invalidation_threshold": "FXI -15% quarterly"
     },
     "space_economy": {
-      "display_name": "Space Economy",
-      "description": "Commercialization of low-earth orbit and the strategic militarization of the space domain.",
+      "display_name": "Orbital Industrialization & Defense",
+      "tag": "Orbital Industrialization",
+      "description": "Commercialization of low-earth orbit, strategic militarization of the space domain, and the emergence of space as a theater of industrial competition.",
       "tickers": ["ROKT", "RKLB", "SPCE"],
       "invalidation_threshold": "ROKT -25%"
     },
     "gene_editing": {
-      "display_name": "Gene Editing",
-      "description": "The maturation of CRISPR technologies and the reshaping of the bio-pharmaceutical industry.",
+      "display_name": "Longevity & Bioreality",
+      "tag": "Longevity & Bioreality",
+      "description": "The maturation of CRISPR technologies, systemic medical reshoring, and the multi-trillion-dollar restructuring of human lifespans and healthcare infrastructure.",
       "tickers": ["ARKG", "XBI", "IBB"],
       "invalidation_threshold": "ARKG -30%"
     },
     "tech_convergence": {
-      "display_name": "Tech Convergence",
-      "description": "The fusion of AI, cloud infrastructure, and legacy software into unified enterprise intelligence stacks.",
+      "display_name": "Enterprise Intelligence Consolidation",
+      "tag": "Enterprise Intelligence",
+      "description": "The fusion of AI, cloud infrastructure, and legacy software into unified enterprise intelligence stacks that concentrate market power.",
       "tickers": ["QQQ", "SMH", "MSFT"],
       "invalidation_threshold": "QQQ -20%"
     },
     "wealthy_sports": {
-      "display_name": "Wealthy Sports",
-      "description": "The financialization of elite sports franchises as private equity, hedge funds, and sovereign wealth vehicles.",
+      "display_name": "Trophy Asset Financialization",
+      "tag": "Trophy Assets",
+      "description": "The financialization of elite sports franchises, media rights, and cultural assets as private equity, hedge funds, and sovereign wealth vehicles.",
       "tickers": ["BATRK", "MANU", "MSGS"],
       "invalidation_threshold": "BATRK -30%"
     },
     "ai_chips": {
-      "display_name": "AI Chips",
-      "description": "The escalating race for compute dominance and the silicon supply chain as a cornerstone of national security.",
+      "display_name": "Compute Hegemony & Intelligence Infrastructure",
+      "tag": "Compute Hegemony",
+      "description": "The escalating race for compute dominance and the silicon supply chain as a cornerstone of national security and intelligence capability.",
       "tickers": ["NVDA", "AMD", "TSM", "SMH"],
       "invalidation_threshold": "SMH -25%"
     },
     "crypto_reserve": {
-      "display_name": "Crypto Reserve",
-      "description": "The integration of digital assets into institutional balance sheets and their role as non-sovereign macro hedges.",
+      "display_name": "Decentralized Capital Architecture",
+      "tag": "Decentralized Capital",
+      "description": "The integration of digital assets into institutional balance sheets, sovereign treasury reserves, and the emergence of non-sovereign liquidity rails.",
       "tickers": ["BTC-USD", "ETH-USD", "COIN"],
       "invalidation_threshold": "BTC < $50K"
     },
     "rate_cycle": {
-      "display_name": "Rate Cycle",
-      "description": "Central bank policy pivots, yield curve dynamics, and the interplay between liquidity and inflationary risk.",
+      "display_name": "Liquidity Regime Transition",
+      "tag": "Liquidity Regime",
+      "description": "Central bank policy pivots, yield curve dynamics, and the interplay between liquidity conditions and inflationary risk across sovereign debt markets.",
       "tickers": ["TLT", "^TNX", "^IRX"],
       "invalidation_threshold": "Fed funds rate < 3.5%"
     },
     "commodity_supercycle": {
-      "display_name": "Commodity Supercycle",
-      "description": "Structural imbalances in raw material supply, fueled by energy transitions and long-term under-investment.",
+      "display_name": "Physical Resource Revaluation",
+      "tag": "Resource Revaluation",
+      "description": "Structural imbalances in raw material supply, fueled by energy transitions, long-term under-investment, and the physical repricing of scarce resources.",
       "tickers": ["DBC", "GLD", "GDX"],
       "invalidation_threshold": "DBC -20%"
     }

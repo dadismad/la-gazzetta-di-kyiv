@@ -40,14 +40,18 @@ AV_TIMEOUT = 10
 
 # Narrative -> ticker mapping (8 narratives)
 NARRATIVE_TICKERS = {
-    "energy_sovereignty": ["URA", "NLR", "REMX", "URNM"],
-    "dollar_decline":     ["GLD", "UUP", "SLV", "IAU"],
-    "deglobalization":    ["XLI", "ITA", "PPA", "XME"],
-    "china_ascent":       ["FXI", "KWEB", "MCHI", "ASHR"],
-    "space_economy":      ["ROKT", "UFO", "ARKX"],
-    "gene_editing":       ["ARKG", "XBI", "IBB"],
-    "tech_convergence":   ["QQQ", "SMH", "SOXX", "ARKK"],
+    "energy_sovereignty": ["XOM", "CVX", "CCJ", "URNM"],
+    "dollar_decline":     ["EURUSD=X", "GLD", "SLV"],
+    "deglobalization":    ["CAT", "GE", "XLI"],
+    "china_ascent":       ["BABA", "PDD", "FXI"],
+    "space_economy":      ["RKLB", "ARKX"],
+    "gene_editing":       ["CRSP", "ARKG", "XBI"],
+    "tech_convergence":   ["AAPL", "MSFT", "QQQ"],
     "wealthy_sports":     ["BATRK", "MSGS", "MANU"],
+    "ai_chips":           ["NVDA", "AMD", "SMH"],
+    "crypto_reserve":     ["BTC-USD", "MSTR", "COIN"],
+    "rate_cycle":         ["TLT", "IEF", "SHY"],
+    "commodity_supercycle": ["XOM", "CAT", "DBC"],
 }
 
 BENCHMARKS = ["SPY", "QQQ", "DX-Y.NYB", "TLT", "^VIX"]

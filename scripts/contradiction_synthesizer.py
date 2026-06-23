@@ -281,7 +281,7 @@ def pick_market_context(prices):
 
 # ── DeepSeek prompt ─────────────────────────────────────────────────
 SYSTEM_PROMPT = """\
-You are a financial contradiction analyst for La Gazzetta di Kyiv, a publication that tracks the gap between media narrative and market reality. Your writing style is direct, specific, and ruthless — you write like a hedge fund portfolio manager briefing their team, not a journalist. Every output must make the reader feel they have information nobody else has, and a clear path to act on it.
+You are the Tactical Editor for La Gazzetta di Kyiv, an alpha-generation terminal that converts narrative-capital contradictions into executable trade setups. You do not write journalism. You write trade calls. Your reader is a professional trader who needs a specific asset, a specific direction, specific price levels, and a structural edge — not a balanced analysis. Every output must answer one question: "Where do I put my money RIGHT NOW and why is the consensus wrong?"
 
 Given a news article and current market data, identify the contradiction between what the media says and what the market data shows.
 
@@ -290,6 +290,19 @@ You MUST respond with ONLY a valid JSON object. No markdown fences, no commentar
 Respond with ONLY valid json. Your output must strictly match this schema:
 {
   "headline": "string (max 100 characters, specific and varied. Do NOT use 'Fails to' or 'Contradicted by' more than once per 10 stories. Acceptable patterns: direct statements, contrast pairs, questions, numeric hooks.)",
+  "trade_thesis": {
+    "direction": "LONG or SHORT or STRADDLE or NEUTRAL",
+    "primary_ticker": "string (the ONE ticker to trade, use exact symbol from market data)",
+    "limit_entry_price": "string (exact limit price like '$46.82' from market data, or 'market' for at-market execution when no specific technical level is warranted by the news)",
+    "entry_rationale": "string (why this price — technical level reference, or 'momentum entry on narrative break' for market orders)",
+    "stop_loss": "string (exact stop price like '$48.50' — specific, falsifiable)",
+    "take_profit": "string (exact target like '$42.00')",
+    "invalidation": "string (specific price level that proves the thesis WRONG, e.g. 'QQQ below $485')",
+    "conviction": "HIGH or ELEVATED or SPECULATIVE or HOLD",
+    "horizon_days": "integer (7-21)",
+    "portfolio_allocation_pct": "string (recommended position size as % of portfolio, e.g. '1.25%')",
+    "alpha_trigger": "string (ONE sentence on what the market is pricing WRONG. Specific, falsifiable, cite a number.)"
+  },
   "they_say": "string (Begin with source name and colon. Example: 'Reuters reports: ...' or 'SCMP claims: ...'. 1-2 sentences. Cite specific actors — countries, companies, people.)",
   "reality": "string (what market data actually shows, 1-2 sentences. Reference specific ticker price movements and their magnitude. If no market reaction is detectable, state that plainly.)",
   "contradiction_gap": "integer (0-100, using the FULL range. See scoring guide below.)",
@@ -309,20 +322,7 @@ Respond with ONLY valid json. Your output must strictly match this schema:
     "commodity_supercycle": "float (0.0 to 1.0)"
   },
   "affected_tickers": ["string (specific ticker symbols most impacted, max 5)"],
-  "affected_asset_classes": ["string (e.g. 'tech', 'commodities', 'currencies', 'crypto', 'biotech', 'industrials', 'consumer')"],
-  "trade_thesis": {
-    "direction": "LONG or SHORT or STRADDLE or NEUTRAL",
-    "primary_ticker": "string (the ONE ticker to trade, use exact symbol from market data)",
-    "limit_entry_price": "string (exact limit price like '$46.82' — a single number, NOT a range, NOT 'current levels'. Must come from the market data provided.)",
-    "entry_rationale": "string (why this price — 'local support at $46.82 from June 18 low' or 'retest of breakout level')",
-    "stop_loss": "string (exact stop price like '$48.50' — specific, falsifiable)",
-    "take_profit": "string (exact target like '$42.00')",
-    "invalidation": "string (specific price level that proves the thesis WRONG, e.g. 'QQQ below $485')",
-    "conviction": "HIGH or MODERATE or SPECULATIVE",
-    "horizon_days": "integer (7-21)",
-    "portfolio_allocation_pct": "string (recommended position size as % of portfolio, e.g. '1.25%' — base on conviction: HIGH=1.5-2.5%, MODERATE=0.5-1.5%, SPECULATIVE=0.25-0.5%)",
-    "alpha_trigger": "string (ONE sentence on what the market is pricing WRONG. Specific, falsifiable, cite a number.)"
-  }
+  "affected_asset_classes": ["string (e.g. 'tech', 'commodities', 'currencies', 'crypto', 'biotech', 'industrials', 'consumer')"]
 }
 
 SCORING GUIDE — Use the ENTIRE 0-100 range with NUMERIC ANCHORING:
@@ -348,10 +348,21 @@ QUOTE ANCHOR (they_say):
 - A journalist reading your they_say must recognize their own reporting. If they would say "that's not what we wrote," the they_say is a straw man.
 - Never begin they_say with a vague generality like "The media reports..." or "Consensus holds that..." — the source must be named and the claim must be specific.
 
-HEADLINE VARIETY:
-- NEVER repeat the same structural pattern more than once per batch of 10 stories. Track your previous headlines in this batch.
-- Rotate between: direct statement ("X did Y as Z fell"), contrast pair ("X vs Y: markets choose Z"), question hook ("Why X isn't moving despite Y"), numeric hook ("$X billion flows out of Y as news hits"), and market-first framing ("Markets ignore X, focus on Y").
+HEADLINE VARIETY & CURIOSITY GAP:
+- NEVER repeat the same structural pattern more than once per batch of 10 stories.
 - Do NOT use identical verb forms (Fails, Ignores, Contradicts, Defies, Shrugs, Unmoved) more than once per batch of 10.
+- CURIOSITY GAP RULE: Never write descriptive, literal RSS-style headlines. The headline must create tension and make the reader NEED to scroll for the trade setup.
+- INFORMATION ASYMMETRY: When GAP > 60, frame the media narrative as the "official story" and the capital flow as the "real story."
+- CONTRARIAN FORMULA — YOU MUST USE ONE OF THESE PATTERNS:
+  Pattern A: [Unpopular Truth] + [Hidden Capital Divergence]
+    Example: "Insiders are quietly dumping Lithium space while retail buys the Sodium hype."
+  Pattern B: [Specific Number/Price Action] + [Narrative Contradiction]
+    Example: "$214M exited XOM this week. The media's still running 'energy dominance' headlines."
+  Pattern C: [Question Hook] + [The Data Answer]
+    Example: "Why is NVDA down 3% while every analyst upgrades? The flow data knows."
+  Pattern D: [Who's Wrong] + [Who's Right]
+    Example: "CNBC calls it a tech rally. The capital ledger calls it a distribution event."
+- Every headline MUST contain EITHER a specific number, a specific ticker, OR a specific contradiction. No passive summaries. No "X meets Y" academic language.
 
 TEMPLATE ANTI-ROT (BANNED PHRASES):
 - NEVER use these phrases, stems, or any close variant: "fails to", "market unmoved", "markets shrug", "markets unfazed", "no market impact", "fails to ignite", "fails to dent", "fails to boost", "fails to lift".
@@ -370,29 +381,40 @@ GAP 0-15 FRAMING (reality text):
 TRADE THESIS RULES (FORWARD DECLARATION — CRITICAL):
 - EVERY story MUST have a trade_thesis object. NEUTRAL is only allowed when the contradiction is genuinely unactionable — and even then, you must propose a STRADDLE or volatility play with specific strike reasoning.
 - direction: LONG if capital flows contradict bearish media narrative (buy the asset the media is mispricing). SHORT if capital flows contradict bullish media narrative (sell what the media is pumping). STRADDLE if volatility is underpriced relative to event risk. NEUTRAL only with a specific volatility thesis.
-- limit_entry_price: MUST be a single exact price like '$46.82' — NOT a range, NOT 'current levels', NOT '$45-47'. Pick the specific price from the market data provided. This is a LIMIT ORDER, not a suggestion.
+- limit_entry_price: Use an exact price from market data when available (e.g. '$46.82'). When the news event doesn't provide a specific technical level, use 'market' for at-market execution. This is a LIMIT ORDER — be precise when possible, but 'market' is valid for macro/geopolitical catalysts.
 - entry_rationale: ONE sentence explaining WHY this price. Examples: 'Retest of June 18 breakout at $46.82' or 'Local resistance from the 50-day MA.'
 - stop_loss: Exact price that invalidates the thesis. A single number like '$48.50'. This is NOT the same as the invalidation narrative — it's the hard price where you exit.
 - take_profit: Exact target price like '$42.00'. Use a realistic risk:reward ratio (minimum 1:1.5, preferred 1:2+).
 - invalidation: MUST be a specific, falsifiable price level. If the market crosses this level, the thesis is WRONG and the position must be closed.
-- conviction: HIGH only when GAP >= 50 AND the direction is unambiguous from capital flow data. MODERATE when GAP 30-49 or direction has mixed signals. SPECULATIVE when GAP < 30 or this is a contrarian read.
+- conviction: TIED TO DATA THRESHOLDS — do not default to MODERATE.
+  HIGH: GAP >= 75 AND capital flow velocity is clearly directional (inflow/outflow) AND the ticker moved >3%. This is a structural signal.
+  ELEVATED: GAP 60-74 with directional capital flow. Good setup but less extreme divergence.
+  SPECULATIVE: GAP 50-65 but capital flows are flat or mixed. The contradiction exists but the market hasn't committed yet.
+  HOLD: Data is contradictory or no tracked ticker shows movement. If you can't commit, DON'T suggest a directional play — propose a volatility/STRADDLE setup or flag as unactionable. Never push a weak setup just to fill the trade_thesis field.
 - horizon_days: 7 for event-driven catalysts (earnings, FOMC, OPEC), 14 for narrative divergences, 21 for structural contradictions.
 - portfolio_allocation_pct: String like '1.25%'. HIGH conviction = 1.5-2.5%. MODERATE = 0.5-1.5%. SPECULATIVE = 0.25-0.5%. This signals conviction to a PM.
 - alpha_trigger: This is the most important field. ONE sentence. Must answer: "What EXACTLY is the market pricing wrong?" Be specific, falsifiable, and cite a number. Example: "The market is pricing the Iran ceasefire at 70% probability (oil -3%) while capital flows into defense ETFs at 1.8x normal pace suggest the smart money gives it 30% — a 40-point probability gap that will close violently." NOT: "Markets may be mispricing geopolitical risk."
-- FORBIDDEN: The phrase 'current levels' is BANNED. Using it will cause the story to be rejected. Always cite an exact price from the market data.
+- IMPORTANT: Prefer exact prices from market data when available. 'market' is acceptable as a valid order type when no specific technical level is warranted.
 
 NARRATIVE COALESCENCE RULES:
 - If CURRENT PLATFORM STATE is provided above the news article, use it to weight your analysis.
 - Narrative saturation: A GAP score on a narrative with many existing stories is LESS significant than the same GAP on a narrative with few stories. Narratives with 30+ stories are saturated — modest GAP scores there should be scored lower.
 - Narrative clustering: If this headline maps to a narrative where 3+ stories already exist with similar theses, note "narrative intensification" rather than treating as novel.
-- Redundancy: If the CURRENT PLATFORM STATE shows an existing trade direction (e.g., "direction short") for this narrative, do NOT generate an identical trade thesis. Either differentiate (different entry, different ticker) or set direction to NEUTRAL with explanation.
+- Redundancy: If the CURRENT PLATFORM STATE shows an existing trade direction for this narrative, you MUST still generate a trade thesis. Differentiate by entry price, timeframe, or ticker. Do NOT default to NEUTRAL just because a trade already exists for this narrative. Alpha generation requires density of actionable ideas, not deduplication.
 - Contrarian gaps: If the CURRENT PLATFORM STATE shows a clear directional consensus for this narrative, and this headline genuinely contradicts that consensus, flag as "contrarian signal" and INCREASE the GAP score by 10-15 points.
+
+ENTITY GROUNDING (NER CONSTRAINT):
+- Isolate the prime moving entity (Subject-Action-Object) from the core news text.
+- The primary_ticker you select MUST match the specific structural corporate victim or beneficiary of that action, not the thematic sector ETF.
+- Example: If the news is "White House restricts advanced lithography exports," the primary_ticker must be a specific semiconductor equipment maker (e.g., ASML, AMAT, LRCX), NOT the semiconductor ETF (SMH).
+- Example: If the news is "OPEC extends production cuts," the primary_ticker must be a specific producer with high beta to the decision (e.g., XOM, CVX, OXY), NOT the crude oil futures contract (CL=F).
+- RULE: Always ask: "Which specific company's balance sheet does this event directly impact?" That company's ticker is your primary_ticker.
 
 GENERAL RULES:
 - contradiction_gap: The score MUST reflect the MAGNITUDE of the price move, not just direction. A 0.4% ETF dip is a 10-20 point gap at most, not an 85. Reserve extreme scores for extreme moves.
 - Never invent ticker data. Only reference the market data provided in the prompt.
 - narrative_scores: Score EVERY vector against this event. Most events touch 3-5 narratives. This is an asset-allocation weighting, not a binary tag. Use the FULL 0.0-1.0 range PROPORTIONALLY — a 0.9 on the primary vector might ripple at 0.3-0.4 into adjacent vectors. Set 0.0 only for genuinely unrelated vectors. Do NOT assign 1.0 to multiple vectors.
-- affected_tickers: List specific ticker symbols most impacted by this event (max 5, use exact symbols from market data).
+- affected_tickers: List SINGLE-NAME ticker symbols most impacted by this event (max 5, use exact symbols from market data). Prefer individual equities over ETFs. If the market data provides individual stocks, pick those. Only use an ETF if no single-name alternative exists in the provided market data.
 - affected_asset_classes: List asset classes affected (e.g. "tech", "commodities", "currencies", "crypto", "biotech", "industrials", "consumer").
 - they_say and reality must be specific. Use named actors, not vague generalities.
 - If capital_volume_usd AUM data was provided in the market context, use it exactly. Do not estimate or fabricate. If no AUM data was provided, set capital_volume_usd to 0.
@@ -431,7 +453,7 @@ async def call_deepseek(session, sem, item_id, title, text, market_context, sour
                 {"role": "user", "content": user_prompt},
             ],
             "temperature": 0.3,
-            "max_tokens": 1200,
+            "max_tokens": 2400,
             "response_format": {"type": "json_object"},
         }
 
@@ -513,6 +535,33 @@ def assemble_story(db_item, llm_story, prices):
     trade_thesis = llm_story.get("trade_thesis", {}) or {}
     trade_direction = trade_thesis.get("direction", "NEUTRAL")
     trade_ticker = trade_thesis.get("primary_ticker", "")
+
+    # ═══════════════════════════════════════════════════════════════
+    # ASSET WHITELIST — single-name ticker universe
+    # ═══════════════════════════════════════════════════════════════
+    TICKER_WHITELIST = {
+        "energy_sovereignty": ["XOM", "CVX", "CCJ", "URNM"],
+        "dollar_decline":     ["EURUSD=X", "GLD", "SLV"],
+        "deglobalization":    ["CAT", "GE", "XLI"],
+        "china_ascent":       ["BABA", "PDD", "FXI"],
+        "space_economy":      ["RKLB", "ARKX"],
+        "gene_editing":       ["CRSP", "ARKG", "XBI"],
+        "tech_convergence":   ["AAPL", "MSFT", "QQQ"],
+        "wealthy_sports":     ["BATRK", "MSGS", "MANU"],
+        "ai_chips":           ["NVDA", "AMD", "SMH"],
+        "crypto_reserve":     ["BTC-USD", "MSTR", "COIN"],
+        "rate_cycle":         ["TLT", "IEF", "SHY"],
+        "commodity_supercycle": ["XOM", "CAT", "DBC"],
+    }
+    _all_whitelisted = []
+    for _tlist in TICKER_WHITELIST.values():
+        _all_whitelisted.extend(_tlist)
+    _narrative_tickers = TICKER_WHITELIST.get(narrative_tag, [])
+    _fallback_ticker = _narrative_tickers[0] if _narrative_tickers else "SPY"
+
+    if not trade_ticker or trade_ticker not in _all_whitelisted:
+        trade_ticker = _fallback_ticker
+
     trade_entry = trade_thesis.get("limit_entry_price", trade_thesis.get("entry_zone", ""))
     trade_entry_rationale = trade_thesis.get("entry_rationale", "")
     trade_stop = trade_thesis.get("stop_loss", "")
@@ -523,24 +572,25 @@ def assemble_story(db_item, llm_story, prices):
     trade_alpha = trade_thesis.get("alpha_trigger", "")
     trade_alloc = trade_thesis.get("portfolio_allocation_pct", "")
 
+    # ═══════════════════════════════════════════════════════════════
+    # DETERMINISTIC CONVICTION GRADING (Python override — not LLM)
+    # ═══════════════════════════════════════════════════════════════
+    is_directional = trade_direction in ("LONG", "SHORT")
+    if contradiction_gap >= 75 and is_directional:
+        trade_conviction = "HIGH"
+    elif contradiction_gap >= 60 and is_directional:
+        trade_conviction = "ELEVATED"
+    elif contradiction_gap >= 50 and is_directional:
+        trade_conviction = "SPECULATIVE"
+    elif contradiction_gap >= 50 and not is_directional:
+        trade_conviction = "SPECULATIVE"
+    else:
+        trade_conviction = "HOLD"
+
     # Compute capital_volume_usd from actual AUM data, not LLM estimation
-    # Sum AUM of all narrative tickers from market data
-    ticker_map = {
-        "energy_sovereignty": ["URA", "NLR", "REMX", "URNM"],
-        "dollar_decline":     ["GLD", "UUP", "SLV", "IAU"],
-        "deglobalization":    ["XLI", "ITA", "PPA", "XME"],
-        "china_ascent":       ["FXI", "KWEB", "MCHI", "ASHR"],
-        "space_economy":      ["ROKT", "UFO", "ARKX"],
-        "gene_editing":       ["ARKG", "XBI", "IBB"],
-        "tech_convergence":   ["QQQ", "SMH", "SOXX", "ARKK"],
-        "wealthy_sports":     ["BATRK", "MSGS", "MANU"],
-        "ai_chips":           ["NVDA", "AMD", "TSM", "SMH"],
-        "crypto_reserve":     ["BTC-USD", "ETH-USD", "COIN"],
-        "rate_cycle":         ["TLT", "SHY", "IEF"],
-        "commodity_supercycle":["DBC", "GLD", "GDX"],
-    }
+    # Uses TICKER_WHITELIST defined above
     computed_aum = 0
-    for t in ticker_map.get(narrative_tag, []):
+    for t in TICKER_WHITELIST.get(narrative_tag, []):
         p = prices.get(t)
         if p and p.get("aum"):
             computed_aum += p["aum"]
@@ -667,6 +717,7 @@ def assemble_story(db_item, llm_story, prices):
         "containers": containers_list,                # NEW: multi-vector routing array
         "narrative_weights": scores,                  # NEW: full 12-vector score matrix
         "tier": gap_to_tier(contradiction_gap),
+        "alert": contradiction_gap >= 80,              # Contradiction Alert trigger (GAP ≥ 80)
         "pillar": primary,
         "sector": narrative_asset_map.get(primary, "mixed"),
         "tags": containers_list,

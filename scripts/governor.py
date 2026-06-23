@@ -49,6 +49,8 @@ def _secret(name):
 
 DEEPSEEK_KEY = _secret("gazzetta-deepseek-key")
 TELEGRAM_TOKEN = _secret("gazzetta-telegram-token")
+CFTC_API_KEY = os.environ.get("CFTC_API_KEY", "")
+FRED_API_KEY = os.environ.get("FRED_API_KEY", "")
 TELEGRAM_CHAT = os.environ.get(_TCH, "") or "-1003990434181"
 
 # ═══════════════════════════════════════════════════════════════════
@@ -408,6 +410,57 @@ def check_mailbox():
     return True
 
 # ═══════════════════════════════════════════════════════════════════
+#  INCIDENT TELEMETRY — Machine-generated pipeline failure logging
+# ═══════════════════════════════════════════════════════════════════
+
+INCIDENTS_FILE = "/opt/gazzetta-di-kyiv/mailbox/incidents.json"
+
+def push_incident(step_name, stderr, exit_code=1):
+    """
+    Appends a structured pipeline failure to incidents.json.
+    Categorizes critical architectural failures vs data degradation warnings.
+    """
+    critical_steps = ["ingestion", "synthesis", "classify", "calc_capital", "build_frontend"]
+    severity = "CRITICAL" if step_name in critical_steps else "WARNING"
+
+    incident = {
+        "ticket_id": f"INC-{datetime.now(timezone.utc).strftime('%Y%m%d-%H%M%S')}",
+        "type": "pipeline_failure",
+        "severity": severity,
+        "step": step_name,
+        "context": {
+            "exit_code": exit_code,
+            "error_summary": (stderr or "Unknown runtime error")[:500].strip(),
+            "detected_at": datetime.now(timezone.utc).isoformat()
+        },
+        "remediation_attempts": 0,
+        "status": "unresolved"
+    }
+
+    try:
+        os.makedirs(os.path.dirname(INCIDENTS_FILE), exist_ok=True)
+
+        if os.path.exists(INCIDENTS_FILE) and os.path.getsize(INCIDENTS_FILE) > 0:
+            with open(INCIDENTS_FILE, "r+") as f:
+                try:
+                    data = json.load(f)
+                    if not isinstance(data, list):
+                        data = []
+                except json.JSONDecodeError:
+                    data = []
+
+                data.append(incident)
+                f.seek(0)
+                json.dump(data, f, indent=2)
+                f.truncate()
+        else:
+            with open(INCIDENTS_FILE, "w") as f:
+                json.dump([incident], f, indent=2)
+
+    except Exception as telemetry_err:
+        print(f"[Telemetry Error] Could not write incident ticket for {step_name}: {telemetry_err}")
+
+# ═══════════════════════════════════════════════════════════════════
 #  CLOUD FUNCTION BRIDGE — CEO → Hermes notifications
 # ═══════════════════════════════════════════════════════════════════
 
@@ -462,6 +515,8 @@ def tg_send(text):
 STEPS = [
     ("ingestion",     [str(VENV), str(SCRIPTS/"ingestion_triage.py")],                    120, True),
     ("market_data",   [str(VENV), str(SCRIPTS/"market_reality.py"), "--all"],               90, True),
+    ("cftc_data",     [str(VENV), str(SCRIPTS/"fetch_cftc.py")],                           60, False),
+    ("fred_data",     [str(VENV), str(SCRIPTS/"fetch_fred.py")],                          120, False),
     ("derivatives",   [str(VENV), str(SCRIPTS/"fetch_derivatives.py")],                     30, False),
     ("synthesis",     [str(VENV), str(SCRIPTS/"contradiction_synthesizer.py")],            180, True),
     ("classify",      [str(VENV), str(SCRIPTS/"classify_stories.py")],                      30, False),
@@ -470,7 +525,7 @@ STEPS = [
     ("build_frontend",    [str(VENV), str(SCRIPTS/"build_frontend.py")],                            60, True),
     ("test_platform", [str(VENV), str(SCRIPTS/"test_platform.py")],                         30, False),
     ("telegram_post", [str(VENV), str(SCRIPTS/"telegram_broadcast.py")],                   60, False),
-    ("deploy",        ["sudo", "bash", "-c", "gsutil -h 'Cache-Control:no-cache,no-store,must-revalidate,max-age=0' cp " + str(PUBLIC) + "/index.html gs://www.lagazzettadikyiv.com/index.html && gsutil -m rsync -r -x index.html -d " + str(PUBLIC) + "/ gs://www.lagazzettadikyiv.com/; /usr/bin/gcloud compute url-maps invalidate-cdn-cache gazzetta-url-map --path='/*' --async 2>/dev/null; true"], 120, False),
+    ("deploy", [str(VENV), str(SCRIPTS/"deploy_to_gcs.py")], 120, False),
 ]
 
 def run_cmd(name, cmd, timeout, critical):
@@ -478,7 +533,7 @@ def run_cmd(name, cmd, timeout, critical):
     t0 = time.time()
     try:
         r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout,
-                          cwd=str(PROJECT), env={**os.environ, "PYTHONUNBUFFERED":"1", "DEEPSEEK_API_KEY": DEEPSEEK_KEY or "", "TELEGRAM_BOT_TOKEN": TELEGRAM_TOKEN or "", "TELEGRAM_CHAT_ID": TELEGRAM_CHAT or ""})
+                          cwd=str(PROJECT), env={**os.environ, "PYTHONUNBUFFERED":"1", "DEEPSEEK_API_KEY": DEEPSEEK_KEY or "", "CFTC_API_KEY": CFTC_API_KEY or "", "FRED_API_KEY": FRED_API_KEY or "", "TELEGRAM_BOT_TOKEN": TELEGRAM_TOKEN or "", "TELEGRAM_CHAT_ID": TELEGRAM_CHAT or ""})
         ok = r.returncode == 0
         t = time.time()-t0
         out = {"name":name, "ok":ok, "code":r.returncode, "stdout":r.stdout[-1500:],
@@ -506,6 +561,13 @@ def cycle():
         r = run_cmd(name, cmd, timeout, critical)
         results.append(r)
         if not r["ok"]:
+            # Machine telemetry — fire-and-forget incident logging
+            push_incident(
+                step_name=name,
+                stderr=r.get("stderr", ""),
+                exit_code=r.get("code", 1)
+            )
+            
             if name == "synthesis" and r["code"] == 1 and "No unprocessed" in r.get("stdout",""):
                 print("[governor] No new items — continuing")
                 continue
