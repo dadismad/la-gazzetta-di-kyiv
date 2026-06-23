@@ -514,6 +514,10 @@ def tg_send(text, chat_id=None):
 # ═══════════════════════════════════════════════════════════════════
 
 STEPS = [
+    # ── Sovereign Vault: background data collectors ──
+    ("youtube",      [str(VENV), str(SCRIPTS/"fetch_youtube.py"), "--hours", "72"],     60, False),
+    ("arxiv",        [str(VENV), str(SCRIPTS/"fetch_arxiv.py"), "--hours", "168"],      90, False),
+    # ── Core pipeline ──
     ("ingestion",     [str(VENV), str(SCRIPTS/"ingestion_triage.py")],                    120, True),
     ("market_data",   [str(VENV), str(SCRIPTS/"market_reality.py"), "--all"],               90, True),
     ("cftc_data",     [str(VENV), str(SCRIPTS/"fetch_cftc.py")],                           60, False),
