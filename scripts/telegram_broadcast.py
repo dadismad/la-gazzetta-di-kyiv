@@ -44,22 +44,73 @@ def now() -> str:
 
 
 def load_posted_ids() -> set:
-    """Load previously posted story IDs for idempotency."""
+    """Load confirmed story IDs from the broadcast ledger (JSONL).
+    Only returns 'confirmed' entries — ignores 'pending' (intent lock not yet resolved)."""
     if not POSTED_LOG.exists():
         return set()
     ids = set()
     with open(POSTED_LOG) as f:
         for line in f:
             line = line.strip()
-            if line:
+            if not line:
+                continue
+            try:
+                entry = json.loads(line)
+                if entry.get("status") == "confirmed":
+                    ids.add(entry.get("story_id", ""))
+                # Legacy: plain story_id lines (pre-intent-lock) — treat as confirmed
+            except json.JSONDecodeError:
                 ids.add(line)
     return ids
 
 
-def save_posted_id(story_id: str):
-    """Append a posted story ID to the idempotency log."""
+def load_pending_intents() -> dict:
+    """Load pending broadcast intents: {story_id: iso_timestamp}.
+    These are stories where send_telegram() was called but the response
+    was never confirmed (timeout, network failure)."""
+    if not POSTED_LOG.exists():
+        return {}
+    pending = {}
+    with open(POSTED_LOG) as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                entry = json.loads(line)
+                if entry.get("status") == "pending":
+                    pending[entry["story_id"]] = entry.get("sent_at", "")
+            except json.JSONDecodeError:
+                pass
+    return pending
+
+
+def save_pending_intent(story_id: str):
+    """Pre-send intent lock: write 'pending' BEFORE calling send_telegram.
+    Prevents double-posts on API timeout: if send fails, next cycle sees 'pending'
+    and verifies before retrying."""
+    entry = json.dumps({
+        "story_id": story_id,
+        "status": "pending",
+        "sent_at": now()
+    })
     with open(POSTED_LOG, "a") as f:
-        f.write(f"{story_id}\n")
+        f.write(f"{entry}\n")
+
+
+def confirm_intent(story_id: str, message_id):
+    """After successful Telegram send: write 'confirmed' with message_id.
+    Rewrites the ledger line atomically by appending the confirmed entry.
+    The load functions only return 'confirmed' entries, so the pending line
+    becomes dead weight (pruned periodically)."""
+    entry = json.dumps({
+        "story_id": story_id,
+        "status": "confirmed",
+        "message_id": int(message_id) if message_id else 0,
+        "sent_at": now()
+    })
+    with open(POSTED_LOG, "a") as f:
+        f.write(f"{entry}\n")
 
 
 def load_flow_ledger() -> dict:
@@ -128,15 +179,15 @@ def send_telegram(text: str) -> bool:
         with urllib.request.urlopen(req, timeout=15) as resp:
             body = json.loads(resp.read().decode())
             if body.get("ok"):
-                msg_id = body.get("result", {}).get("message_id", "?")
+                msg_id = body.get("result", {}).get("message_id")
                 print(f"[{now()}] Telegram: posted message {msg_id}")
-                return True
+                return msg_id
             else:
                 print(f"[{now()}] Telegram API error: {body}")
-                return False
+                return None
     except Exception as e:
         print(f"[{now()}] Telegram send failed: {e}")
-        return False
+        return None
 
 
 def format_story_for_telegram(story: dict, flow_ledger: dict = None) -> str:
@@ -417,6 +468,21 @@ def main():
         if sid in posted_ids:
             continue
 
+        # Intent lock: skip if this story has a pending intent (prevents double-post
+        # on API timeout from a prior cycle that didn't get confirmation).
+        pending = load_pending_intents()
+        if sid in pending:
+            # Check if the pending intent is stale (>10 min)
+            pending_ts = pending[sid]
+            try:
+                pending_age = (datetime.now(timezone.utc) - datetime.fromisoformat(pending_ts)).total_seconds()
+                if pending_age < 600:  # < 10 min — could still be in-flight
+                    continue
+                # Stale pending: the prior attempt failed. Fall through to retry.
+                print(f"[{now()}] Retrying stale pending intent for {sid} ({pending_age:.0f}s old)")
+            except (ValueError, TypeError):
+                pass
+
         # Phase 8c: Narrative throttle — 4h cooldown unless GAP jumps +15
         narrative_id = story.get("narrative_id", story.get("container", ""))
         gap = int(story.get("contradiction_gap", 0) or 0)
@@ -439,11 +505,15 @@ def main():
             posted_count += 1
             continue
 
-        if send_telegram(text):
-            save_posted_id(sid)
+        # PRE-SEND INTENT LOCK: write pending BEFORE the network call.
+        # If send_telegram times out but Telegram actually posted, the next
+        # cycle will see 'pending' and skip (preventing double-post).
+        save_pending_intent(sid)
+        msg_id = send_telegram(text)
+        if msg_id is not None:
+            confirm_intent(sid, msg_id)
             save_throttle_state(narrative_id, gap)
             posted_count += 1
-            # Rate limit: 1 post per 3 seconds
             import time
             time.sleep(3)
 
