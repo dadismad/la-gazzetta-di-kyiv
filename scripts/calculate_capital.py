@@ -58,7 +58,7 @@ CONTRACT_NOTIONALS = {
 # Narrative → primary data source mapping
 NARRATIVE_DATA_SOURCE = {
     "dollar_decline":      "cftc",  # Gold/Silver/Platinum positioning
-    "energy_sovereignty":  "cftc",  # Crude/NatGas product positioning
+    "critical_resource_control":  "cftc",  # Crude/NatGas product positioning
     "commodity_supercycle":"cftc",  # Copper/Grains/Softs positioning
     "deglobalization":     "cftc",  # Industrial metals → defense supply chain
     "rate_cycle":          "fred",  # Yield curve, Fed Funds, inflation
@@ -133,7 +133,7 @@ def compute_fred_capital(narrative_id, fred_data):
         "dollar_decline": ["DTWEXBGS", "DEXUSEU", "DEXJPUS"],
         "deglobalization": ["BOPGSTB", "GPDI", "INDPRO"],
         "commodity_supercycle": ["PPIACO", "CPIAUCSL", "DCOILWTICO"],
-        "energy_sovereignty": ["DCOILWTICO", "DHHNGSP", "PPIACO"],
+        "critical_resource_control": ["DCOILWTICO", "DHHNGSP", "PPIACO"],
     }
 
     keys = narrative_series.get(narrative_id, [])

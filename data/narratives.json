@@ -12,9 +12,9 @@
       "tickers": ["DX=F", "GC=F", "UUP"],
       "invalidation_threshold": "DXY > 106 for 2 quarters"
     },
-    "energy_sovereignty": {
-      "display_name": "Energy Sovereignty",
-      "tag": "Energy Sovereignty",
+    "critical_resource_control": {
+      "display_name": "Critical Resource Control",
+      "tag": "Critical Resource Control",
       "description": "Geopolitical strategy surrounding natural resources and the independence of national energy grids.",
       "tickers": ["CL=F", "NG=F", "XLE"],
       "invalidation_threshold": "Brent < $65"

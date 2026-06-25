@@ -45,13 +45,13 @@ COMMODITY_MAP = [
     {"cftc_name": "SILVER",        "ticker": "SI",  "narrative": "dollar_decline",  "label": "Silver"},
     {"cftc_name": "PLATINUM",      "ticker": "PL",  "narrative": "dollar_decline",  "label": "Platinum"},
 
-    # --- energy_sovereignty: crude + natural gas positioning ---
-    {"cftc_name": "CRUDE OIL",            "ticker": "CL",  "narrative": "energy_sovereignty",  "label": "WTI Crude Oil"},
-    {"cftc_name": "NATURAL GAS",          "ticker": "NG",  "narrative": "energy_sovereignty",  "label": "Henry Hub Natural Gas"},
-    {"cftc_name": "GASOLINE",             "ticker": "RB",  "narrative": "energy_sovereignty",  "label": "RBOB Gasoline"},
-    {"cftc_name": "DIESEL/HEATING OIL",   "ticker": "HO",  "narrative": "energy_sovereignty",  "label": "Heating Oil / Diesel"},
-    {"cftc_name": "JET FUEL",             "ticker": "JF",  "narrative": "energy_sovereignty",  "label": "Jet Fuel"},
-    {"cftc_name": "JET FUEL/HEATING OIL", "ticker": "JH",  "narrative": "energy_sovereignty",  "label": "Jet/Heating Oil Spread"},
+    # --- critical_resource_control: crude + natural gas positioning ---
+    {"cftc_name": "CRUDE OIL",            "ticker": "CL",  "narrative": "critical_resource_control",  "label": "WTI Crude Oil"},
+    {"cftc_name": "NATURAL GAS",          "ticker": "NG",  "narrative": "critical_resource_control",  "label": "Henry Hub Natural Gas"},
+    {"cftc_name": "GASOLINE",             "ticker": "RB",  "narrative": "critical_resource_control",  "label": "RBOB Gasoline"},
+    {"cftc_name": "DIESEL/HEATING OIL",   "ticker": "HO",  "narrative": "critical_resource_control",  "label": "Heating Oil / Diesel"},
+    {"cftc_name": "JET FUEL",             "ticker": "JF",  "narrative": "critical_resource_control",  "label": "Jet Fuel"},
+    {"cftc_name": "JET FUEL/HEATING OIL", "ticker": "JH",  "narrative": "critical_resource_control",  "label": "Jet/Heating Oil Spread"},
 
     # --- commodity_supercycle: grains, metals, softs ---
     {"cftc_name": "COPPER",       "ticker": "HG",  "narrative": "commodity_supercycle",  "label": "Copper"},
@@ -68,7 +68,7 @@ COMMODITY_MAP = [
 
 # All narratives we populate
 NARRATIVES = [
-    "dollar_decline", "energy_sovereignty", "commodity_supercycle",
+    "dollar_decline", "critical_resource_control", "commodity_supercycle",
     "deglobalization", "china_ascent", "space_economy",
     "gene_editing", "tech_convergence", "wealthy_sports",
     "ai_chips", "crypto_reserve", "rate_cycle",

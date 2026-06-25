@@ -51,7 +51,7 @@ DEEPSEEK_KEY = _secret("gazzetta-deepseek-key")
 TELEGRAM_TOKEN = _secret("gazzetta-telegram-token")
 CFTC_API_KEY = os.environ.get("CFTC_API_KEY", "")
 FRED_API_KEY = os.environ.get("FRED_API_KEY", "")
-TELEGRAM_ADMIN_CHAT = os.environ.get("TELEGRAM_ADMIN_CHAT_ID", "") or os.environ.get(_TCH, "") or "-1003990434181"
+TELEGRAM_ADMIN_CHAT = os.environ.get("TELEGRAM_ADMIN_CHAT_ID", "") or "-1004455619334"
 TELEGRAM_BROADCAST_CHAT = os.environ.get("TELEGRAM_BROADCAST_CHAT_ID", "") or os.environ.get(_TCH, "") or "-1003990434181"
 
 # ═══════════════════════════════════════════════════════════════════
@@ -264,7 +264,9 @@ def ask_deepseek(prompt, system=None, max_tokens=800, temp=0.7):
         "model": "deepseek-chat",
         "messages": messages,
         "max_tokens": max_tokens,
-        "temperature": temp
+        "temperature": temp,
+        "thinking": {"type": "enabled"},
+        "reasoning_effort": "high",
     }).encode()
     req = urllib.request.Request(
         "https://api.deepseek.com/chat/completions",
@@ -518,6 +520,7 @@ STEPS = [
     # ── Sovereign Vault: background data collectors ──
     ("youtube",      [str(VENV), str(SCRIPTS/"fetch_youtube.py"), "--hours", "72"],     60, False),
     ("arxiv",        [str(VENV), str(SCRIPTS/"fetch_arxiv.py"), "--hours", "168"],      90, False),
+    ("patents",      [str(VENV), str(SCRIPTS/"fetch_patents.py")],                      120, False),
     # ── Core pipeline ──
     ("ingestion",     [str(VENV), str(SCRIPTS/"ingestion_triage.py")],                    120, True),
     ("market_data",   [str(VENV), str(SCRIPTS/"market_reality.py"), "--all"],               90, True),

@@ -34,7 +34,7 @@ CROSS_ASSET = {
 
 TICKER_MAP = {
     "dollar_decline": "DXY",
-    "energy_sovereignty": "Brent",
+    "critical_resource_control": "Brent",
     "deglobalization": "XLI",
     "china_ascent": "FXI",
     "space_economy": "ROKT",

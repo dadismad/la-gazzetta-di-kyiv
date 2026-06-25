@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    @page { size: A4; margin: 15mm 15mm; background-color: #f4f6f8; }
+    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #1a202c; margin: 0; padding: 0; line-height: 1.6; background-color: #f4f6f8; }
+    *, *::before, *::after { box-sizing: border-box; }
+    .header { background-color: #0f172a; color: white; padding: 30px; margin: -15mm -15mm 20px -15mm; text-align: center; border-bottom: 4px solid #3b82f6; }
+    h1 { margin: 0 0 5px 0; font-size: 22pt; text-transform: uppercase; letter-spacing: 1.5px; }
+    .subtitle { font-size: 11pt; color: #94a3b8; margin: 0; }
+    h2 { border-left: 4px solid #3b82f6; padding-left: 12px; font-size: 15pt; margin-top: 35px; color: #1e293b; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 25px; background-color: white; font-size: 10.5pt; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    th { background-color: #e2e8f0; color: #0f172a; font-weight: bold; text-align: left; padding: 12px; border-bottom: 2px solid #cbd5e0; }
+    td { padding: 12px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+    .status-box { background: white; padding: 20px; border-radius: 6px; border-left: 4px solid #10b981; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .status-box.red { border-left-color: #ef4444; }
+    ul { padding-left: 20px; margin-top: 5px; }
+    li { margin-bottom: 8px; }
+</style>
+</head>
+<body>
+    <div class="header">
+        <h1>Gazzetta di Kyiv</h1>
+        <p class="subtitle">Sprint 32 Execution & System State Dossier — Updated June 24, 2026</p>
+    </div>
+
+    <div class="status-box">
+        <h3>Fixes Applied (08:10 UTC)</h3>
+        <ul>
+            <li><strong>P0-1 Timezone:</strong> <code>ZoneInfo("Europe/Kyiv")</code> on Signal Pulse. Line 539.</li>
+            <li><strong>P0-2 Templates:</strong> 5-format deterministic matrix. THE PLAY / STRUCTURAL SHIFT / CAPITAL VS MEDIA / MACRO BRIEFING / SIGNAL PULSE.</li>
+            <li><strong>P0-3 Tier Hardener:</strong> Post-merge validator in <code>merge_stories()</code> recomputes tier from stored GAP for every story. Guarantees GAP>50 → BREAKING.</li>
+        </ul>
+    </div>
+
+    <h2>Format Selection Matrix</h2>
+    <table>
+        <thead><tr><th>Format</th><th>Trigger</th><th>Character</th></tr></thead>
+        <tbody>
+            <tr><td><strong>THE PLAY</strong></td><td>Equity + HIGH/ELEVATED</td><td>Single-name, entry/stop/target, execution card</td></tr>
+            <tr><td><strong>STRUCTURAL SHIFT</strong></td><td>Commodity/Crypto + HIGH/ELEVATED</td><td>Supply/demand, CFTC positioning, flow data</td></tr>
+            <tr><td><strong>CAPITAL VS MEDIA</strong></td><td>Any + ELEVATED/SPECULATIVE</td><td>"They say" vs "Capital says" contradiction duel</td></tr>
+            <tr><td><strong>MACRO BRIEFING</strong></td><td>Bundle 2-3 SETTLING</td><td>Narrative arc, "The Flow" header</td></tr>
+            <tr><td><strong>SIGNAL PULSE</strong></td><td>No Tier 1 alert</td><td>Top 3 GAP summaries, Kyiv time corrected</td></tr>
+        </tbody>
+    </table>
+
+    <h2>System State</h2>
+    <ul>
+        <li><strong>Pipeline:</strong> 14/15 Steps OK (583 stories). FRED failing (no API key).</li>
+        <li><strong>Telegram:</strong> Bifurcated (Admin vs Audience). 5 format variants active.</li>
+        <li><strong>Collectors:</strong> YouTube (13ch), arXiv (7q), SerpAPI Patents (60q/wk).</li>
+        <li><strong>Pending:</strong> Docling PDF collector, BIS/IMF/Fed collectors, FRED API key.</li>
+    </ul>
+</body>
+</html>

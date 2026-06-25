@@ -39,7 +39,7 @@ DB_PATH = os.environ.get("GAZZETTA_DB_PATH", str(PROJECT / "gazzetta.db"))
 
 RSS_FEEDS = [
     {"url": "https://www.ecb.europa.eu/rss/press.html",      "narrative": "dollar_decline"},
-    {"url": "https://www.world-nuclear-news.org/feed",       "narrative": "energy_sovereignty"},
+    {"url": "https://www.world-nuclear-news.org/feed",       "narrative": "critical_resource_control"},
     {"url": "https://www.scmp.com/rss/91/feed",              "narrative": "china_ascent"},
     {"url": "https://www.technologyreview.com/feed/",        "narrative": "tech_convergence"},
     {"url": "https://spacenews.com/feed/",                   "narrative": "space_economy"},
@@ -49,6 +49,7 @@ RSS_FEEDS = [
     {"url": "https://www.coindesk.com/arc/outboundfeeds/rss/","narrative": "crypto_reserve"},
     {"url": "https://www.al-monitor.com/feed",               "narrative": "china_ascent"},
     {"url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10001147", "narrative": "tech_convergence"},
+    {"url": "https://tg.i-c-a.su/rss/infinityhedge",  "narrative": None},
 ]
 
 CREATE_TABLE_SQL = """

@@ -21,7 +21,7 @@ PUBLIC = PROJECT / "public"
 PUBLIC_DATA = PUBLIC / "data"
 
 ICON_FALLBACK_MAP = {
-    "dollar_decline": "trending_down", "energy_sovereignty": "bolt",
+    "dollar_decline": "trending_down", "critical_resource_control": "bolt",
     "deglobalization": "public", "china_ascent": "language",
     "space_economy": "rocket_launch", "gene_editing": "biotech",
     "tech_convergence": "memory", "wealthy_sports": "sports_soccer",
@@ -30,7 +30,7 @@ ICON_FALLBACK_MAP = {
 }
 
 LEGACY_ORDER = [
-    "dollar_decline", "energy_sovereignty", "deglobalization",
+    "dollar_decline", "critical_resource_control", "deglobalization",
     "china_ascent", "space_economy", "gene_editing",
     "tech_convergence", "wealthy_sports"
 ]
@@ -63,6 +63,33 @@ def narrative_phase(gap, count):
     if gap >= 40: return "CONSENSUS SATURATION", "Narrative widely accepted, friction building"
     return "MATURE/STABLE", "Narrative and reality aligned"
 
+
+def calculate_narrative_status(top_gap, story_count):
+    """Dynamic status label based on top story gap + story velocity proxy."""
+    if top_gap >= 70 and story_count > 3:
+        return "BREAKING ACCELERATION"
+    elif top_gap >= 50:
+        return "ACTIVE CONTRADICTION"
+    return "SETTLING REGIME"
+
+
+# Canonical ticker safe-list per narrative — gates LLM output
+CANONICAL_TICKERS = {
+    "dollar_decline":        ["GLD", "UUP", "SLV", "IAU", "DXY", "EURUSD=X"],
+    "critical_resource_control": ["CL=F", "XOM", "CVX", "CCJ", "URNM", "URA", "NLR", "REMX"],
+    "deglobalization":       ["XLI", "ITA", "PPA", "XME"],
+    "china_ascent":          ["FXI", "KWEB", "MCHI", "ASHR"],
+    "space_economy":         ["ROKT", "UFO", "ARKX"],
+    "gene_editing":          ["ARKG", "XBI", "IBB"],
+    "tech_convergence":      ["QQQ", "SMH", "SOXX", "ARKK"],
+    "wealthy_sports":        ["BATRK", "MSGS", "MANU"],
+    "ai_chips":              ["NVDA", "AMD", "TSM", "SMH"],
+    "crypto_reserve":        ["BTC-USD", "ETH-USD", "COIN"],
+    "rate_cycle":            ["TLT", "SHY", "IEF"],
+    "commodity_supercycle":  ["DBC", "GLD", "GDX"],
+}
+
+
 def build_cft_block(narrative_id, stories, narrative_config):
     """Extract the top catalyst story and build a CFT summary block."""
     # Multi-vector routing: check the containers list first, fallback to narrative_id
@@ -80,8 +107,22 @@ def build_cft_block(narrative_id, stories, narrative_config):
         return None
 
     capital = catalyst.get("capital_volume_usd", 0) or 0
-    tickers = catalyst.get("affected_tickers") or []
     assets = catalyst.get("affected_asset_classes") or []
+
+    # ── Ticker gate: filter LLM output through canonical safe-list ──
+    llm_tickers = catalyst.get("affected_tickers") or []
+    narrative_safe_list = CANONICAL_TICKERS.get(narrative_id, [])
+    # Intersect LLM output with safe-list
+    filtered_tickers = [t for t in llm_tickers if t in narrative_safe_list]
+    # Fallback to top 4 canonical tickers if intersection is empty (or LLM returned None)
+    final_tickers = filtered_tickers if filtered_tickers else narrative_safe_list[:4]
+
+    # ── Content fallbacks: they_say → catalyst, reality → flow ──
+    card_catalyst = catalyst.get("they_say") or "Awaiting narrative acceleration event."
+    card_flow = catalyst.get("reality") or "Capital baseline established. Monitoring movements."
+
+    # ── Dynamic status label ──
+    status_label = calculate_narrative_status(gap, len(mine))
 
     # Domino ripples from narrative_weights
     weights = catalyst.get("narrative_weights", {})
@@ -106,13 +147,15 @@ def build_cft_block(narrative_id, stories, narrative_config):
         capital_fmt = f"${capital:,}"
 
     return {
-        "catalyst_headline": catalyst.get("headline", ""),
+        "catalyst_text": card_catalyst,
         "catalyst_gap": gap,
+        "flow_text": card_flow,
         "capital_usd": capital,
         "capital_fmt": capital_fmt,
-        "affected_tickers": tickers,
+        "affected_tickers": final_tickers,
         "affected_asset_classes": assets,
         "domino": domino,
+        "status": status_label,
     }
 
 def load_narratives_config():
@@ -1190,7 +1233,7 @@ setTimeout(renderRadar, 100);
         '<div class=\"flex justify-between items-start mb-3\">' +
           '<div>' +
             '<h3 class=\"font-headline-md text-headline-md text-on-surface\">' + n.title + '</h3>' +
-            '<span class=\"font-metadata-sm text-metadata-sm text-on-surface-variant uppercase\">' + n.count + ' stories · ' + n.phase + '</span>' +
+            '<span class=\"font-metadata-sm text-metadata-sm text-on-surface-variant uppercase\">' + n.count + ' stories · ' + (c.status || n.phase) + '</span>' +
           '</div>' +
           '<span class=\"px-2 py-0.5 border font-label-xs text-label-xs uppercase ' + (gap >= 65 ? 'border-crimson text-crimson' : 'border-gold text-gold-accessible') + '\">GAP ' + gap + '</span>' +
         '</div>' +
@@ -1203,13 +1246,13 @@ setTimeout(renderRadar, 100);
           // CATALYST
           '<div>' +
             '<span class=\"font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider\">Catalyst</span>' +
-            '<p class=\"font-body-md text-body-md text-on-surface mt-1 leading-snug\">' + (c.catalyst_headline || '—') + '</p>' +
+            '<p class=\"font-body-md text-body-md text-on-surface mt-1 leading-snug\">' + (c.catalyst_text || 'Awaiting narrative acceleration event.') + '</p>' +
           '</div>' +
           // FLOW
           '<div>' +
             '<span class=\"font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider\">Flow</span>' +
-            '<p class=\"font-headline-md text-headline-md text-gold-dim mt-1\">' + (c.capital_fmt || '$0') + '</p>' +
-            '<p class=\"font-label-xs text-label-xs text-on-surface-variant mt-0.5\">at stake</p>' +
+            '<p class=\"font-body-md text-body-md text-on-surface mt-1 leading-snug\">' + (c.flow_text || 'Capital baseline established. Monitoring movements.') + '</p>' +
+            (c.capital_usd > 0 ? '<p class=\"font-headline-md text-headline-md text-gold-dim mt-0.5\">' + c.capital_fmt + ' at stake</p>' : '') +
           '</div>' +
           // TRADE
           '<div>' +
@@ -1475,7 +1518,7 @@ setTimeout(renderRadar, 100);
     CL:'Crude oil futures — WTI benchmark price',
     // Narrative labels
     dollar_decline:'Dollar Decline — USD reserve status erosion, BRICS payment rails, gold repatriation',
-    energy_sovereignty:'Energy Sovereignty — fusion, renewables, rare earths, grid independence, nuclear',
+    critical_resource_control:'Critical Resource Control — crude, natural gas, nuclear, rare earths, grid control, critical minerals',
     deglobalization:'Deglobalization — supply chain splits, sanctions, trade blocs, reshoring',
     china_ascent:'China Ascent — tech independence, Belt & Road, parallel financial systems',
     space_economy:'Space Economy — orbital infrastructure, space mining, satellite networks',

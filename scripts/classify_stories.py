@@ -25,7 +25,7 @@ SEED_KEYWORDS = {
     "gene_editing": ["biopharma", "biotech", "crispr", "fda approval", "gene therapy", "clinical trial", "pharma", "drug"],
     "china_ascent": ["china etf", "chinese market", "hong kong", "shanghai", "beijing", "xi jinping", "chinese economy", "china stock"],
     "dollar_decline": ["dollar index", "usd weakness", "fed reserve", "currency war", "dedollarization", "brics currency", "gold sinks", "gold rally", "gold hits"],
-    "energy_sovereignty": ["nuclear", "uranium", "energy independence", "power grid", "renewable energy", "iran", "opec", "hormuz", "persian gulf", "gulf shock", "oil export", "gas price", "solar", "coal", "russia ukraine", "samara refinery", "eia", "oil tanker", "crude export"],
+    "critical_resource_control": ["nuclear", "uranium", "energy independence", "power grid", "renewable energy", "iran", "opec", "hormuz", "persian gulf", "gulf shock", "oil export", "gas price", "solar", "coal", "russia ukraine", "samara refinery", "eia", "oil tanker", "crude export"],
     "deglobalization": ["supply chain", "tariff", "trade war", "protectionist", "reshoring", "nearshoring", "merger", "acquisition"],
     "tech_convergence": ["artificial intelligence", "cloud computing", "enterprise software", "ai model", "machine learning", "openai", "anthropic", "data center", "aws", "google", "rivian", "amazon"],
     "wealthy_sports": ["sports franchise", "premier league", "nba team", "sovereign fund", "private equity sports", "frasers", "soccer club"],
@@ -87,7 +87,7 @@ def classify_story(story: dict, matchers: dict, keywords: dict) -> str:
     # 3. Fallback: use container/pillar only if it's a canonical narrative_id
     legacy = story.get("pillar") or story.get("container")
     CANONICAL = {
-        "dollar_decline", "energy_sovereignty", "deglobalization",
+        "dollar_decline", "critical_resource_control", "deglobalization",
         "china_ascent", "space_economy", "gene_editing",
         "tech_convergence", "wealthy_sports", "ai_chips",
         "crypto_reserve", "rate_cycle", "commodity_supercycle",

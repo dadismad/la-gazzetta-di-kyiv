@@ -40,7 +40,7 @@ AV_TIMEOUT = 10
 
 # Narrative -> ticker mapping (8 narratives)
 NARRATIVE_TICKERS = {
-    "energy_sovereignty": ["XOM", "CVX", "CCJ", "URNM"],
+    "critical_resource_control": ["XOM", "CVX", "CCJ", "URNM"],
     "dollar_decline":     ["EURUSD=X", "GLD", "SLV"],
     "deglobalization":    ["CAT", "GE", "XLI"],
     "china_ascent":       ["BABA", "PDD", "FXI"],

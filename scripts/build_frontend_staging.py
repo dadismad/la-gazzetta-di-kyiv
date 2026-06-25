@@ -21,20 +21,20 @@ PUBLIC = PROJECT / "public"
 PUBLIC_DATA = PUBLIC / "data"
 
 TICKER_MAP = {
-    "dollar_decline": "DXY", "energy_sovereignty": "Brent",
+    "dollar_decline": "DXY", "critical_resource_control": "Brent",
     "deglobalization": "XLI", "china_ascent": "FXI",
     "space_economy": "ROKT", "gene_editing": "ARKG",
     "tech_convergence": "QQQ", "wealthy_sports": "BATRK"
 }
 
 PILL_ORDER = [
-    "dollar_decline", "energy_sovereignty", "deglobalization",
+    "dollar_decline", "critical_resource_control", "deglobalization",
     "china_ascent", "space_economy", "gene_editing",
     "tech_convergence", "wealthy_sports"
 ]
 
 ICON_MAP = {
-    "dollar_decline": "trending_down", "energy_sovereignty": "bolt",
+    "dollar_decline": "trending_down", "critical_resource_control": "bolt",
     "deglobalization": "public", "china_ascent": "language",
     "space_economy": "rocket_launch", "gene_editing": "biotech",
     "tech_convergence": "memory", "wealthy_sports": "sports_soccer"
@@ -72,7 +72,7 @@ def invalidation_threshold(nid, ticker):
     """Return price-level invalidation triggers per narrative."""
     thresholds = {
         "dollar_decline": ("DXY > 106", "USD strengthening reverses thesis"),
-        "energy_sovereignty": ("Brent < $65", "Energy independence narrative breaks"),
+        "critical_resource_control": ("Brent < $65", "Energy independence narrative breaks"),
         "deglobalization": ("XLI +8% MoM", "Industrial re-globalization invalidates"),
         "china_ascent": ("FXI -15% quarterly", "Capital flight contradicts ascent"),
         "space_economy": ("ROKT -25%", "Space investment thesis invalidated"),

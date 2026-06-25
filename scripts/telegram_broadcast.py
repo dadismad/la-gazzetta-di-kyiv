@@ -21,6 +21,7 @@ import sys
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone, timedelta
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 
@@ -194,25 +195,61 @@ def send_telegram(text: str) -> bool:
         return None
 
 
+def words_truncate(text: str, max_words: int) -> str:
+    """Truncate to first N words. Always ends at word boundary for natural reading."""
+    text = (text or "").strip()
+    words = text.split()
+    if len(words) <= max_words:
+        return text
+    return " ".join(words[:max_words]) + "…"
+
+
+def smart_truncate(text: str, max_chars: int) -> str:
+    """Truncate at sentence boundary, falling back to word boundary. Appends … if cut."""
+    text = (text or "").strip()
+    if len(text) <= max_chars:
+        return text
+    # Try sentence boundary: .!? followed by space or quote+space or end
+    truncated = text[:max_chars]
+    for end_char in (". ", "! ", "? ", '." ', '!" ', '?" ', ".' ", "!' ", "?' "):
+        idx = truncated.rfind(end_char)
+        if idx > max_chars * 0.4:  # at least 40% of limit — don't cut on first word
+            return truncated[:idx + 1] + "…"
+    # Fallback: word boundary
+    last_space = truncated.rfind(" ")
+    if last_space > max_chars * 0.4:
+        return truncated[:last_space] + "…"
+    # Last resort: hard cut with ellipsis
+    return truncated.rstrip() + "…"
+
+
 def format_story_for_telegram(story: dict, flow_ledger: dict = None) -> str:
-    """Dynamic-layout GapFire Dispatch. Adapts format based on conviction and data profile.
-    HIGH/ELEVATED → THE PLAY execution card. SPECULATIVE → lighter signal format. HOLD → skip."""
+    """5-format deterministic dispatch. Format selected by asset_class x conviction tier.
+    THE PLAY (equity + HIGH/ELEVATED) | STRUCTURAL SHIFT (commodity/crypto + HIGH/ELEVATED)
+    CAPITAL VS MEDIA (any + ELEVATED/SPECULATIVE) | HOLD -> skip."""
 
     if flow_ledger is None:
         flow_ledger = {}
 
-    headline = (story.get("headline", "") or "Untitled")[:100]
-    they_say = (story.get("they_say", "") or "")[:150]
-    reality = (story.get("reality", "") or "")[:150]
+    headline = words_truncate(story.get("headline", "") or "Untitled", 15)
+    they_say = story.get("they_say", "") or ""
+    reality = story.get("reality", "") or ""
     gap = int(story.get("contradiction_gap", 0) or 0)
-    story_id = story.get("story_id", "")
     narrative_id = story.get("narrative_id", story.get("container", "unclassified"))
-    source_name = story.get("feed_source", story.get("source_name", ""))
-    tier = story.get("tier", "")
 
-    # ── Tickermap: narrative → best single-name defaults (FALLBACK ONLY) ──
+    # ── Asset class routing ──
+    ASSET_CLASS = {
+        "critical_resource_control": "commodity", "commodity_supercycle": "commodity",
+        "ai_chips": "equity", "tech_convergence": "equity", "space_economy": "equity",
+        "gene_editing": "equity", "wealthy_sports": "equity",
+        "deglobalization": "macro", "dollar_decline": "macro", "rate_cycle": "macro",
+        "china_ascent": "macro", "crypto_reserve": "crypto",
+    }
+    asset_class = ASSET_CLASS.get(narrative_id, "macro")
+
+    # ── Ticker resolution ──
     _ticker_defaults = {
-        "dollar_decline": "EURUSD=X", "energy_sovereignty": "XOM",
+        "dollar_decline": "EURUSD=X", "critical_resource_control": "XOM",
         "deglobalization": "CAT", "china_ascent": "BABA",
         "space_economy": "RKLB", "gene_editing": "CRSP",
         "tech_convergence": "AAPL", "wealthy_sports": "BATRK",
@@ -220,7 +257,6 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None) -> str:
         "ai_chips": "NVDA", "commodity_supercycle": "XOM",
     }
 
-    # ── Resolve ticker: trade_thesis > affected_tickers > narrative default ──
     tt = story.get("trade_thesis")
     has_trade_thesis = bool(tt and tt.get("alpha_trigger"))
     affected = story.get("affected_tickers") or []
@@ -235,11 +271,6 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None) -> str:
     # ── Flow ledger ──
     flow_entry = flow_ledger.get(narrative_id, {})
     capital_total_b = flow_entry.get("total_capital_b", 0) or 0
-    dominant_dir = flow_entry.get("dominant_direction", "")
-    avg_gap = flow_entry.get("avg_contradiction_gap", 0) or 0
-    story_count = flow_entry.get("story_count", 0) or 0
-
-    # ── Capital formatting ──
     if capital_total_b >= 1:
         cap_str = f"${capital_total_b:.1f}B"
     elif capital_total_b > 0:
@@ -247,7 +278,7 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None) -> str:
     else:
         cap_str = ""
 
-    # ── Extract trade thesis fields ──
+    # ── Trade thesis fields ──
     if has_trade_thesis:
         direction = tt.get("direction", "NEUTRAL")
         entry = tt.get("limit_entry_price", tt.get("entry_zone", ""))
@@ -258,44 +289,27 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None) -> str:
         horizon = int(tt.get("horizon_days", 14))
         alpha = tt.get("alpha_trigger", "")
     else:
-        # Legacy: derive from flow ledger
-        if dominant_dir == "inflow":
-            direction = "LONG"
-        elif dominant_dir == "outflow":
-            direction = "SHORT"
-        else:
-            direction = "NEUTRAL"
-        entry = ""
-        stop = ""
-        target = ""
-        invalidation = ""
-        horizon = 14
-        alpha = ""
-        conviction = "SPECULATIVE"
+        direction = "NEUTRAL"; entry = ""; stop = ""; target = ""
+        invalidation = ""; horizon = 14; alpha = ""; conviction = "SPECULATIVE"
 
-    # ── Compute R-multiple ──
+    # ── R-multiple ──
     r_multiple = ""
     if entry and stop and target:
         try:
             e = float(str(entry).replace("$","").replace(",",""))
             s = float(str(stop).replace("$","").replace(",",""))
             t = float(str(target).replace("$","").replace(",",""))
-            risk = abs(e - s)
-            reward = abs(t - e)
-            if risk > 0:
-                r = round(reward / risk, 1)
-                r_multiple = f" | {r}R"
-        except (ValueError, TypeError):
-            pass
+            risk = abs(e - s); reward = abs(t - e)
+            if risk > 0: r_multiple = f" | {round(reward/risk,1)}R"
+        except (ValueError, TypeError): pass
 
-    # ── Conviction emoji ──
-    conviction_emoji = {"HIGH": "\U0001f525", "ELEVATED": "\U0001f4c8",
-                        "SPECULATIVE": "\U0001f9ea", "HOLD": "\u26a0\ufe0f"}
+    # ── Labels ──
+    conviction_emoji = {"HIGH": "🔥", "ELEVATED": "📈",
+                        "SPECULATIVE": "🧪", "HOLD": "⚠️"}
     c_emoji = conviction_emoji.get(conviction, "")
 
-    # ── Narrative label ──
     narrative_labels = {
-        "dollar_decline": "DOLLAR DECLINE", "energy_sovereignty": "ENERGY SOVEREIGNTY",
+        "dollar_decline": "DOLLAR DECLINE", "critical_resource_control": "CRITICAL RESOURCE CONTROL",
         "deglobalization": "DEGLOBALIZATION", "china_ascent": "CHINA ASCENT",
         "space_economy": "SPACE ECONOMY", "gene_editing": "GENE EDITING",
         "tech_convergence": "TECH CONVERGENCE", "wealthy_sports": "WEALTHY SPORTS",
@@ -303,99 +317,147 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None) -> str:
         "ai_chips": "AI CHIPS", "commodity_supercycle": "COMMODITY SUPERCYCLE",
     }
     narrative_label = narrative_labels.get(narrative_id, narrative_id.upper().replace("_", " "))
-
     link = "https://www.lagazzettadikyiv.com"
 
-    # ═══════════════════════════════════════════════════════════════
-    # DYNAMIC LAYOUT: HIGH/ELEVATED → THE PLAY card
-    # ═══════════════════════════════════════════════════════════════
-    if conviction in ("HIGH", "ELEVATED") and has_trade_thesis:
+    # ── Format selection ──
+    if not has_trade_thesis:
+        return ""
+
+    if conviction in ("HIGH", "ELEVATED") and asset_class == "equity":
+        fmt = "THE_PLAY"
+    elif conviction in ("HIGH", "ELEVATED") and asset_class in ("commodity", "crypto"):
+        fmt = "STRUCTURAL_SHIFT"
+    elif conviction in ("HIGH", "ELEVATED") and they_say and reality and len(they_say) < 300 and len(reality) < 300:
+        # CONTRADICTION HOOK: clean quotable they_say vs reality → Scene/Tension/Insight/Resolution
+        fmt = "CONTRADICTION_HOOK"
+    elif conviction in ("ELEVATED", "SPECULATIVE"):
+        fmt = "CAPITAL_VS_MEDIA"
+    else:
+        return ""
+
+    # ══════════════════════════════════════════════════════════
+    # FORMAT: THE PLAY — equity single-name execution card
+    # ══════════════════════════════════════════════════════════
+    if fmt == "THE_PLAY":
         lines = []
-        # Curiosity gap hook as opener
-        if gap >= 70:
-            lines.append(f"\U0001f525 EVERYONE'S WRONG ABOUT {narrative_label}")
+        if gap >= 75:
+            lines.append(f"🔥 THE PLAY: {direction} {narrative_ticker}{r_multiple}")
         else:
-            lines.append(f"\U0001f4c8 CONTRARIAN SIGNAL: {narrative_label}")
-
+            lines.append(f"📈 THE PLAY: {direction} {narrative_ticker}{r_multiple}")
         lines.append("")
         lines.append(headline)
         lines.append("")
-
-        # One-line contradiction punch
-        if they_say and reality:
-            lines.append(f"The retail consensus is trading the narrative, but the capital ledger shows a massive divergence. GAP: {gap}/100.")
-        lines.append("")
-
-        # Alpha trigger
         if alpha:
-            lines.append(f"{alpha}")
+            lines.append(f"💡 {alpha}")
             lines.append("")
-
-        # THE PLAY execution card
-        lines.append(f"\U0001f680 THE PLAY: {direction} {narrative_ticker}{r_multiple}")
-        if entry:
-            lines.append(f"\u2022 Limit Entry: {entry}")
-        if stop:
-            lines.append(f"\u2022 Stop Loss: {stop}")
-        if target:
-            lines.append(f"\u2022 Target: {target}")
-        if horizon:
-            lines.append(f"\u2022 Strategy Window: {horizon} days | Conviction: {conviction} {c_emoji}")
+        lines.append(f"🎯 {narrative_label} | Conviction: {conviction} {c_emoji}")
+        if entry: lines.append(f"• Entry: {entry}")
+        if stop: lines.append(f"• Stop: {stop}")
+        if target: lines.append(f"• Target: {target}")
+        if invalidation: lines.append(f"• Invalidation: {invalidation}")
+        lines.append(f"• Horizon: {horizon}d")
         lines.append("")
-
-        # Why this edge exists
-        if alpha:
-            lines.append(f"Why this edge exists: {alpha}")
-            lines.append("")
-
-        # Tags
         lines.append(f"{gap_to_tag(gap)} #{narrative_id.replace('_','').upper()} #{narrative_ticker}")
         lines.append("")
         lines.append(f"Full brief: {link}")
-
         return "\n".join(lines)
 
-    # ═══════════════════════════════════════════════════════════════
-    # SPECULATIVE: lighter signal format — no fake bull/bear cases
-    # ═══════════════════════════════════════════════════════════════
-    if conviction == "SPECULATIVE" and has_trade_thesis:
+    # ══════════════════════════════════════════════════════════
+    # FORMAT: STRUCTURAL SHIFT — commodity/crypto dislocation
+    # ══════════════════════════════════════════════════════════
+    if fmt == "STRUCTURAL_SHIFT":
         lines = []
-        lines.append(f"\U0001f9ea SIGNAL: {narrative_label} | GAP {gap}/100")
+        direction_word = {"LONG": "BID", "SHORT": "PRESSURE", "NEUTRAL": "FLUX"}
+        dw = direction_word.get(direction, "FLUX")
+        lines.append(f"📊 STRUCTURAL {dw}: {narrative_label}")
         lines.append("")
         lines.append(headline)
         lines.append("")
-
         if they_say and reality:
-            they_say_short = they_say[:120]
-            reality_short = reality[:120]
-            lines.append(f"Media says: {they_say_short}")
-            lines.append(f"Capital says: {reality_short}")
+            lines.append(f"📰 Consensus: {words_truncate(they_say, 18)}")
+            lines.append(f"📈 Flow data: {words_truncate(reality, 18)}")
             lines.append("")
-
+        if cap_str:
+            lines.append(f"💴 Capital at stake: {cap_str} | GAP: {gap}/100")
+            lines.append("")
         if alpha:
-            lines.append(f"Alpha thesis: {alpha}")
+            lines.append(f"💡 {alpha}")
             lines.append("")
-
         if direction != "NEUTRAL":
-            lines.append(f"\U0001f3af {direction} {narrative_ticker}{r_multiple} | Conviction: {conviction}")
-            if entry:
-                lines.append(f"Entry: {entry}")
-            if invalidation:
-                lines.append(f"Stop: {invalidation}")
-            if target:
-                lines.append(f"Target: {target}")
+            lines.append(f"🎯 {direction} {narrative_ticker}{r_multiple} | {conviction} {c_emoji}")
+            if entry: lines.append(f"• Entry zone: {entry}")
+            if stop: lines.append(f"• Stop: {stop}")
+            if target: lines.append(f"• Target: {target}")
             lines.append("")
-
         lines.append(f"{gap_to_tag(gap)} #{narrative_id.replace('_','').upper()} #{narrative_ticker}")
         lines.append("")
         lines.append(f"Full brief: {link}")
-
         return "\n".join(lines)
 
-    # ═══════════════════════════════════════════════════════════════
-    # HOLD / no thesis: skip broadcast — return empty
-    # ═══════════════════════════════════════════════════════════════
+    # ══════════════════════════════════════════════════════════
+    # FORMAT: CONTRADICTION HOOK — Scene→Tension→Insight→Resolution
+    # Trigger: HIGH/ELEVATED with clean quotable they_say vs reality
+    # ══════════════════════════════════════════════════════════
+    if fmt == "CONTRADICTION_HOOK":
+        lines = []
+        # SCENE (35%) — the consensus narrative
+        lines.append(f"🗞️ THE SCENE: {words_truncate(they_say, 22)}")
+        lines.append("")
+        # TENSION (35%) — the capital-ledger contradiction
+        lines.append(f"⚡ THE TENSION: Yet, the capital ledger shows {words_truncate(reality, 22)}")
+        lines.append("")
+        # INSIGHT (15%) — what the gap means
+        if gap >= 75:
+            lines.append(f"🧠 THE INSIGHT: The market isn't pricing the narrative—it's pricing the opposite. GAP {gap}/100.")
+        else:
+            lines.append(f"🧠 THE INSIGHT: The consensus narrative and institutional positioning are diverging fast. GAP {gap}/100.")
+        lines.append("")
+        # RESOLUTION (15%) — the action
+        if direction != "NEUTRAL":
+            lines.append(f"🎯 THE RESOLUTION: {direction} {narrative_ticker}{r_multiple}")
+            if entry: lines.append(f"• Entry: {entry}")
+            if stop: lines.append(f"• Stop: {stop}")
+            if target: lines.append(f"• Target: {target}")
+        else:
+            lines.append(f"🎯 THE RESOLUTION: Watch {narrative_ticker} for the break. {conviction} conviction {c_emoji}")
+        lines.append("")
+        lines.append(f"{gap_to_tag(gap)} #{narrative_id.replace('_','').upper()}")
+        lines.append("")
+        lines.append(f"Full brief: {link}")
+        return "\\n".join(lines)
+
+    # ══════════════════════════════════════════════════════════
+    # FORMAT: CAPITAL VS MEDIA — contradiction duel
+    # ══════════════════════════════════════════════════════════
+    if fmt == "CAPITAL_VS_MEDIA":
+        lines = []
+        lines.append(f"🧪 CAPITAL vs MEDIA: {narrative_label} | GAP {gap}/100")
+        lines.append("")
+        lines.append(headline)
+        lines.append("")
+        if they_say and reality:
+            lines.append(f"📺 Media says: {words_truncate(they_say, 18)}")
+            lines.append(f"💰 Capital says: {words_truncate(reality, 18)}")
+            lines.append("")
+        if cap_str:
+            lines.append(f"📊 Flow: {cap_str} | Conviction: {conviction} {c_emoji}")
+            lines.append("")
+        if alpha:
+            lines.append(f"💡 Alpha thesis: {alpha}")
+            lines.append("")
+        if direction != "NEUTRAL":
+            lines.append(f"🎯 {direction} {narrative_ticker}{r_multiple}")
+            if entry: lines.append(f"• Entry: {entry}")
+            if stop: lines.append(f"• Stop: {stop}")
+            if target: lines.append(f"• Target: {target}")
+            lines.append("")
+        lines.append(f"{gap_to_tag(gap)} #{narrative_id.replace('_','').upper()}")
+        lines.append("")
+        lines.append(f"Full brief: {link}")
+        return "\n".join(lines)
+
     return ""
+
 
 
 def gap_to_tag(gap: int) -> str:
@@ -521,6 +583,64 @@ def main():
             import time
             time.sleep(3)
 
+    # ── MACRO BRIEFING: bundle 3+ SETTLING/ACTIVE stories by narrative ──
+    # Fires at 09:00, 14:00, 19:00 Kyiv time. Groups unposted stories
+    # by narrative_id and posts thematic roll-ups when ≥3 coalesce.
+    if not args.dry_run:
+        _kyiv_hour = datetime.now(ZoneInfo("Europe/Kyiv")).hour
+        if _kyiv_hour in (9, 14, 19):
+            _briefing_path = PUBLIC_DATA / "briefing_sent.json"
+            _last_briefing = ""
+            if _briefing_path.exists():
+                try:
+                    with open(_briefing_path) as _f:
+                        _last_briefing = json.load(_f).get("sent_at", "")
+                except: pass
+            _today = datetime.now(ZoneInfo("Europe/Kyiv")).strftime("%Y-%m-%d")
+            _window_key = f"{_today}-{_kyiv_hour}"
+            # Skip if already sent for this window
+            if _last_briefing != _window_key:
+                # Gather unposted ACTIVE+SETTLING (GAP 20-50) stories
+                _bundle_stories = [s for s in stories 
+                                   if is_recent(s)
+                                   and 20 <= ((s.get("contradiction_gap", 0) or 0)) <= 50
+                                   and str(s.get("story_id", "")) not in posted_ids]
+                # Group by narrative_id
+                _by_narrative = {}
+                for s in _bundle_stories:
+                    _nid = s.get("narrative_id", s.get("container", ""))
+                    if _nid not in _by_narrative:
+                        _by_narrative[_nid] = []
+                    _by_narrative[_nid].append(s)
+                # Post briefing for the narrative with the MOST qualifying stories only (max 1 per cycle, max 3 headlines)
+                _best_nid = None
+                _best_group = []
+                for _nid, _group in _by_narrative.items():
+                    if len(_group) >= 3 and len(_group) > len(_best_group):
+                        _best_nid = _nid
+                        _best_group = _group
+                if _best_nid and _best_group:
+                    _nl = {"dollar_decline": "DOLLAR DECLINE", "critical_resource_control": "CRITICAL RESOURCE CONTROL", "deglobalization": "DEGLOBALIZATION", "china_ascent": "CHINA ASCENT", "space_economy": "SPACE ECONOMY", "gene_editing": "GENE EDITING", "tech_convergence": "TECH CONVERGENCE", "wealthy_sports": "WEALTHY SPORTS", "crypto_reserve": "CRYPTO RESERVE", "rate_cycle": "RATE CYCLE", "ai_chips": "AI CHIPS", "commodity_supercycle": "COMMODITY SUPERCYCLE"}.get(_best_nid, _best_nid.upper().replace("_", " "))
+                    _lines = [f"🌐 MACRO BRIEFING: {_nl}"]
+                    _lines.append("")
+                    _lines.append(f"{len(_best_group)} signals coalescing into a structural trend:")
+                    _lines.append("")
+                    for _s in sorted(_best_group, key=lambda x: (x.get("contradiction_gap", 0) or 0), reverse=True)[:3]:
+                        _h = words_truncate(_s.get("headline", "") or "", 14)
+                        _g = int(_s.get("contradiction_gap", 0) or 0)
+                        _lines.append(f"• [{_g}] {_h}")
+                    _lines.append("")
+                    _lines.append(f"Full analysis: https://www.lagazzettadikyiv.com")
+                    _brief_text = "\\n".join(_lines)
+                    if send_telegram(_brief_text):
+                        posted_count += 1
+                        print(f"[{now()}] MACRO BRIEFING: {_nl} ({len(_best_group)} stories)")
+                        import time as _t2
+                        _t2.sleep(2)
+                # Mark window as sent
+                with open(_briefing_path, "w") as _f:
+                    json.dump({"sent_at": _window_key}, _f)
+
     # SIGNAL PULSE: if no Tier 1 alert fired, send heartbeat with top 3 narratives
     if posted_count == 0 and not args.dry_run:
         _pulse_stories = [s for s in stories if (s.get("contradiction_gap", 0) or 0) >= 20][:3]
@@ -535,7 +655,7 @@ def main():
                 _cap_str = f"${_cap:.1f}B" if abs(_cap) >= 1 else f"${_cap*1000:.0f}M"
                 _title = s.get("_container_title", _nid)
                 _lines.append(f"{_title:45s} GAP {_gap:>3} {_arrow}  | {_cap_str}")
-            _pulse_text = "\U0001f4e1 THE FLOW — " + datetime.now(timezone.utc).strftime("%H:%M") + " Kyiv\n\n" + "\n".join(_lines) + "\n\nlagazzettadikyiv.com?utm_source=telegram&utm_medium=pulse"
+            _pulse_text = "\U0001f4e1 THE FLOW — " + datetime.now(ZoneInfo("Europe/Kyiv")).strftime("%H:%M") + " Kyiv\n\n" + "\n".join(_lines) + "\n\nlagazzettadikyiv.com?utm_source=telegram&utm_medium=pulse"
             # Throttle: only send pulse once per 2 hours
             import time as _time
             _pulse_path = PUBLIC_DATA / "pulse_sent.json"

@@ -24,7 +24,7 @@ PASS = 0
 FAIL = 0
 
 VALID_CONTAINERS = {
-    "dollar_decline", "energy_sovereignty", "deglobalization",
+    "dollar_decline", "critical_resource_control", "deglobalization",
     "china_ascent", "space_economy", "gene_editing",
     "tech_convergence", "wealthy_sports",
     "ai_chips", "crypto_reserve", "rate_cycle", "commodity_supercycle",

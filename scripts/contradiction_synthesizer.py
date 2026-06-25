@@ -97,7 +97,7 @@ NARRATIVE_TO_CONTAINER = {
     "space_economy":       "space_economy",
     "gene_editing":        "gene_editing",
     "tech_convergence":    "tech_convergence",
-    "energy_sovereignty":  "energy_sovereignty",
+    "critical_resource_control":  "critical_resource_control",
     "wealthy_sports":      "wealthy_sports",
     "ai_chips":            "ai_chips",
     "crypto_reserve":      "crypto_reserve",
@@ -229,7 +229,7 @@ def pick_market_context(prices):
     """Build a compact market-data string covering ALL 12 macro vectors."""
     ticker_map = {
         "dollar_decline":        ["GLD", "UUP", "SLV", "IAU"],
-        "energy_sovereignty":    ["URA", "NLR", "REMX", "URNM"],
+        "critical_resource_control":    ["URA", "NLR", "REMX", "URNM"],
         "deglobalization":       ["XLI", "ITA", "PPA", "XME"],
         "china_ascent":          ["FXI", "KWEB", "MCHI", "ASHR"],
         "space_economy":         ["ROKT", "UFO", "ARKX"],
@@ -242,7 +242,7 @@ def pick_market_context(prices):
         "commodity_supercycle":  ["DBC", "GLD", "GDX"],
     }
     canonical_order = [
-        "dollar_decline", "energy_sovereignty", "deglobalization", "china_ascent",
+        "dollar_decline", "critical_resource_control", "deglobalization", "china_ascent",
         "space_economy", "gene_editing", "tech_convergence", "wealthy_sports",
         "ai_chips", "crypto_reserve", "rate_cycle", "commodity_supercycle",
     ]
@@ -309,7 +309,7 @@ Respond with ONLY valid json. Your output must strictly match this schema:
   "capital_volume_usd": "integer (Use the AUM value from the market data if provided. If not provided, omit this field.)",
   "narrative_scores": {
     "dollar_decline": "float (0.0 to 1.0)",
-    "energy_sovereignty": "float (0.0 to 1.0)",
+    "critical_resource_control": "float (0.0 to 1.0)",
     "deglobalization": "float (0.0 to 1.0)",
     "china_ascent": "float (0.0 to 1.0)",
     "space_economy": "float (0.0 to 1.0)",
@@ -454,6 +454,8 @@ async def call_deepseek(session, sem, item_id, title, text, market_context, sour
             ],
             "temperature": 0.3,
             "max_tokens": 2400,
+            "thinking": {"type": "enabled"},
+            "reasoning_effort": "max",
             "response_format": {"type": "json_object"},
         }
 
@@ -540,7 +542,7 @@ def assemble_story(db_item, llm_story, prices):
     # ASSET WHITELIST — single-name ticker universe
     # ═══════════════════════════════════════════════════════════════
     TICKER_WHITELIST = {
-        "energy_sovereignty": ["XOM", "CVX", "CCJ", "URNM"],
+        "critical_resource_control": ["XOM", "CVX", "CCJ", "URNM"],
         "dollar_decline":     ["EURUSD=X", "GLD", "SLV"],
         "deglobalization":    ["CAT", "GE", "XLI"],
         "china_ascent":       ["BABA", "PDD", "FXI"],
@@ -610,7 +612,7 @@ def assemble_story(db_item, llm_story, prices):
 
     # Derive asset_class from narrative
     narrative_asset_map = {
-        "energy_sovereignty": "commodities",
+        "critical_resource_control": "commodities",
         "dollar_decline": "currencies",
         "deglobalization": "industrials",
         "china_ascent": "tech",
@@ -759,7 +761,7 @@ def load_existing_stories():
             "space_economy":       {"title": "Space Economy",           "subtitle": "Orbital infrastructure, space mining, satellite internet, GPS alternatives", "count": 0, "stories": []},
             "gene_editing":        {"title": "Gene Editing & Longevity","subtitle": "CRISPR therapies, biotech industrialization, healthspan extension", "count": 0, "stories": []},
             "tech_convergence":    {"title": "Emerging Tech Convergence","subtitle": "AI + quantum + biotech + materials intersections", "count": 0, "stories": []},
-            "energy_sovereignty":  {"title": "Energy Sovereignty",      "subtitle": "Fusion, renewables, rare earths, critical minerals, grid independence", "count": 0, "stories": []},
+            "critical_resource_control":  {"title": "Critical Resource Control",      "subtitle": "Crude, natural gas, nuclear, rare earths, grid control, critical minerals", "count": 0, "stories": []},
             "wealthy_sports":      {"title": "Wealthy Sports",          "subtitle": "Sovereign wealth in teams, sports as soft power, capital concentration", "count": 0, "stories": []},
         },
         "all_stories": [],
@@ -815,7 +817,7 @@ def merge_stories(existing, new_stories):
     # Ensure all 12 narratives exist
     for cname in [
         "dollar_decline", "deglobalization", "china_ascent", "space_economy",
-        "gene_editing", "tech_convergence", "energy_sovereignty", "wealthy_sports",
+        "gene_editing", "tech_convergence", "critical_resource_control", "wealthy_sports",
         "ai_chips", "crypto_reserve", "rate_cycle", "commodity_supercycle",
     ]:
         if cname not in containers:
@@ -842,6 +844,22 @@ def merge_stories(existing, new_stories):
     # Apply decay computation to all stories (new + legacy)
     for s in all_stories:
         compute_decay(s)
+
+    # ── TIER HARDENER: recompute tier from contradiction_gap for every story ──
+    # This is a post-merge safety net. Whatever happened during assembly,
+    # tier is now guaranteed to match the stored gap.
+    for s in all_stories:
+        gap_val = s.get("contradiction_gap", 0) or 0
+        try:
+            gap_val = float(gap_val)
+        except (ValueError, TypeError):
+            gap_val = 0
+        if gap_val > 50:
+            s["tier"] = "BREAKING"
+        elif gap_val >= 20:
+            s["tier"] = "ACTIVE"
+        else:
+            s["tier"] = "SETTLING"
 
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -957,6 +975,17 @@ async def run(max_items=None, dry_run=False):
 
         if not new_stories:
             print("No new stories generated.")
+            # Still run tier hardener on existing data (defense-in-depth)
+            existing = load_existing_stories()
+            for s in existing.get("all_stories", []):
+                gap_val = s.get("contradiction_gap", 0) or 0
+                try: gap_val = float(gap_val)
+                except: gap_val = 0
+                if gap_val > 50: s["tier"] = "BREAKING"
+                elif gap_val >= 20: s["tier"] = "ACTIVE"
+                else: s["tier"] = "SETTLING"
+            existing["generated_at"] = datetime.now(timezone.utc).isoformat()
+            atomic_write_stories(existing)
             return
 
         # 6. Merge with existing stories.json

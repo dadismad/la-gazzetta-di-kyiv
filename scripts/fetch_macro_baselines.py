@@ -34,7 +34,7 @@ NARRATIVE_SEGMENTS = {
     "space_economy":         "global_equities_usd",
     "china_ascent":         "global_equities_usd",
     "deglobalization":       "global_equities_usd",
-    "energy_sovereignty":    "global_equities_usd",
+    "critical_resource_control":    "global_equities_usd",
     "gene_editing":          "global_equities_usd",
     "wealthy_sports":        "global_equities_usd",
     "commodity_supercycle":  "global_equities_usd",

@@ -29,6 +29,19 @@ DATA_DIR.mkdir(parents=True, exist_ok=True)
 OUTPUT_FILE = DATA_DIR / "fred_series.json"
 
 FRED_API_KEY = os.environ.get("FRED_API_KEY", "")
+if not FRED_API_KEY:
+    # Fallback: GCP Secret Manager
+    try:
+        import subprocess as _sp
+        _r = _sp.run(
+            ["gcloud", "secrets", "versions", "access", "latest",
+             "--secret=gazzetta-fred-key"],
+            capture_output=True, text=True, timeout=10
+        )
+        if _r.returncode == 0 and _r.stdout.strip():
+            FRED_API_KEY = _r.stdout.strip()
+    except Exception:
+        pass
 FRED_BASE = "https://api.stlouisfed.org/fred"
 REQUEST_TIMEOUT = 15
 MAX_RETRIES = 3
@@ -70,9 +83,9 @@ SERIES = [
     {"id": "GDP",      "label": "Gross Domestic Product",       "narrative": "deglobalization", "unit": "B USD"},
     {"id": "GDPC1",    "label": "Real GDP",                     "narrative": "deglobalization", "unit": "B USD"},
 
-    # --- Energy (energy_sovereignty) ---
-    {"id": "DCOILWTICO", "label": "WTI Crude Oil Spot",         "narrative": "energy_sovereignty", "unit": "USD"},
-    {"id": "DHHNGSP",    "label": "Henry Hub Natural Gas Spot", "narrative": "energy_sovereignty", "unit": "USD"},
+    # --- Energy (critical_resource_control) ---
+    {"id": "DCOILWTICO", "label": "WTI Crude Oil Spot",         "narrative": "critical_resource_control", "unit": "USD"},
+    {"id": "DHHNGSP",    "label": "Henry Hub Natural Gas Spot", "narrative": "critical_resource_control", "unit": "USD"},
 
     # --- Financial Conditions (all narratives) ---
     {"id": "VIXCLS",   "label": "VIX Close",                    "narrative": "rate_cycle",   "unit": "idx"},
