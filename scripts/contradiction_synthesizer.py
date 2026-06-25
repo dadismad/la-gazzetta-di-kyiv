@@ -46,6 +46,8 @@ def extract_domain(url: str) -> str:
 
         mapping = {
             "ecb.europa.eu": "ECB",
+            "t.me": "InfinityHedge",
+            "tg.i-c-a.su": "InfinityHedge",
             "oilprice.com": "OilPrice.com",
             "statnews.com": "STAT News",
             "sportico.com": "Sportico",
@@ -306,7 +308,7 @@ Respond with ONLY valid json. Your output must strictly match this schema:
   "they_say": "string (Begin with source name and colon. Example: 'Reuters reports: ...' or 'SCMP claims: ...'. 1-2 sentences. Cite specific actors — countries, companies, people.)",
   "reality": "string (what market data actually shows, 1-2 sentences. Reference specific ticker price movements and their magnitude. If no market reaction is detectable, state that plainly.)",
   "contradiction_gap": "integer (0-100, using the FULL range. See scoring guide below.)",
-  "capital_volume_usd": "integer (Use the AUM value from the market data if provided. If not provided, omit this field.)",
+  "capital_volume_usd": "integer. Estimated capital exposure at stake. Hierarchy: 1) CFTC net position change x contract notional -> HIGH. 2) Ticker price move x ETF AUM / market cap proxy -> MEDIUM. 3) Article-described capital rotation -> LOW. 4) 0 only if no basis -> NONE. Max 500B. Do NOT default to 0.",
   "narrative_scores": {
     "dollar_decline": "float (0.0 to 1.0)",
     "critical_resource_control": "float (0.0 to 1.0)",
@@ -417,7 +419,7 @@ GENERAL RULES:
 - affected_tickers: List SINGLE-NAME ticker symbols most impacted by this event (max 5, use exact symbols from market data). Prefer individual equities over ETFs. If the market data provides individual stocks, pick those. Only use an ETF if no single-name alternative exists in the provided market data.
 - affected_asset_classes: List asset classes affected (e.g. "tech", "commodities", "currencies", "crypto", "biotech", "industrials", "consumer").
 - they_say and reality must be specific. Use named actors, not vague generalities.
-- If capital_volume_usd AUM data was provided in the market context, use it exactly. Do not estimate or fabricate. If no AUM data was provided, set capital_volume_usd to 0.
+- capital_volume_usd: Follow the estimation hierarchy above. Estimate from available positioning, price, or narrative evidence. Do NOT default to 0 unless no quantifiable basis exists. Never fabricate.
 - TONE: Write like a PM at a macro hedge fund briefing their team. No hedging language ("may," "could," "potentially"). No passive voice. State your thesis directly and back it with the specific data point that supports it. If you're wrong, the invalidation trigger will catch it — that's what it's for."""
 
 
@@ -527,6 +529,13 @@ def assemble_story(db_item, llm_story, prices):
 
     # Extract LLM-suggested affected tickers/asset classes
     llm_tickers = llm_story.get("affected_tickers", [])
+    # Fix #6: Normalize tickers — strip $/#, uppercase, validate
+    _clean_tickers = []
+    for _t in (llm_tickers or []):
+        _tc = str(_t).strip().upper().replace('$','').replace('#','')
+        if _tc and len(_tc) >= 2 and _tc not in ('T','TEST','UNKNOWN','NULL','N/A'):
+            _clean_tickers.append(_tc)
+    llm_tickers = _clean_tickers
     llm_asset_classes = llm_story.get("affected_asset_classes", [])
 
     container = primary  # backward compat for legacy scripts
@@ -589,17 +598,17 @@ def assemble_story(db_item, llm_story, prices):
     else:
         trade_conviction = "HOLD"
 
-    # Compute capital_volume_usd from actual AUM data, not LLM estimation
-    # Uses TICKER_WHITELIST defined above
-    computed_aum = 0
-    for t in TICKER_WHITELIST.get(narrative_tag, []):
-        p = prices.get(t)
-        if p and p.get("aum"):
-            computed_aum += p["aum"]
-    # CRITICAL: NEVER use LLM-estimated capital volume. The LLM hallucinates $100M.
-    # If no real AUM data exists in market_prices.json, capital_volume_usd MUST be 0.
-    # calculate_capital.py will compute the real value from CFTC/FRED/CoinGecko data.
-    capital_volume_usd = int(computed_aum) if computed_aum > 0 else 0
+    # Trust Layer v1: accept LLM capital volume estimate with sanity cap
+    # Estimation hierarchy: CFTC notional > price proxy > narrative inference > 0
+    # See docs/INTELLIGENCE_DEFINITIONS.md for full semantics
+    try:
+        llm_volume = int(llm_story.get("capital_volume_usd", 0) or 0)
+    except (ValueError, TypeError):
+        llm_volume = 0
+    capital_volume_usd = min(max(0, llm_volume), 500_000_000_000)
+    # Telemetry for future audit
+    if capital_volume_usd >= 500_000_000_000:
+        print(f"  [CAPFLOW] CAPPED at 500B for story {item_id}")
 
     # Estimate capital flow direction from gap + reality text
     reality = llm_story.get("reality", "")
@@ -681,6 +690,18 @@ def assemble_story(db_item, llm_story, prices):
         "narrative_implied_flow_usd": 0,              # Pass 1 safe default
         "actual_flow_usd": 0,                         # Pass 1 safe default
         "data_fidelity": "TIER_3",                    # "unverified" until Phase 1
+        "capital_flow_confidence": (
+            "HIGH" if capital_volume_usd > 0 and reality and any(w in reality.lower() for w in ["cftc","cot","positioning","contract","open interest"])
+            else "MEDIUM" if capital_volume_usd > 0 and reality and any(w in reality.lower() for w in ["price","ticker","volume","etf","aum"])
+            else "LOW" if capital_volume_usd > 0
+            else "NONE"
+        ),
+        "estimation_method": (
+            "cftc_notional" if capital_volume_usd > 0 and reality and any(w in reality.lower() for w in ["cftc","cot","positioning","contract"])
+            else "price_proxy" if capital_volume_usd > 0 and reality and any(w in reality.lower() for w in ["price","ticker","volume","etf","aum"])
+            else "llm_inference" if capital_volume_usd > 0
+            else "none"
+        ),
         "materiality_pass": True,                     # don't gate existing items
         "confidence_pct": 65,                         # KEPT for backward compat
 

@@ -626,6 +626,29 @@ def main():
         if msg_id is not None:
             confirm_intent(sid, msg_id)
             save_throttle_state(narrative_id, gap)
+            # Fix #3: Append HIGH/ELEVATED conviction to Recommendation Ledger
+            _thesis = story.get("trade_thesis", {}) or {}
+            if _thesis.get("conviction") in ("HIGH", "ELEVATED"):
+                try:
+                    import uuid as _uuid
+                    _entry = {
+                        "ledger_id": str(_uuid.uuid4()),
+                        "published_at": datetime.now(ZoneInfo("Europe/Kyiv")).isoformat(),
+                        "story_id": str(sid),
+                        "narrative_id": narrative_id,
+                        "ticker": _thesis.get("primary_ticker", ""),
+                        "direction": _thesis.get("direction", "NEUTRAL"),
+                        "conviction": _thesis.get("conviction", "SPECULATIVE"),
+                        "entry_price": _thesis.get("limit_entry_price", ""),
+                        "stop_loss": _thesis.get("stop_loss", ""),
+                        "take_profit": _thesis.get("take_profit", ""),
+                        "status": "OPEN"
+                    }
+                    _lp = Path(__file__).resolve().parent.parent / "data" / "recommendation_ledger.jsonl"
+                    with open(_lp, "a") as _lf:
+                        _lf.write(json.dumps(_entry) + "\n")
+                except Exception:
+                    pass
             posted_count += 1
             import time
             time.sleep(3)
