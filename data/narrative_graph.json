@@ -91,5 +91,57 @@
       {"ticker": "BEAM", "type": "equity", "purity_weight": 0.9, "weight_source": "editorial_v1"},
       {"ticker": "TWST", "type": "equity", "purity_weight": 0.8, "weight_source": "editorial_v1"}
     ]
+  },
+  "china_ascent": {
+    "display_name": "Eurasia Capital Architecture",
+    "narrative_cap_usd": 0,
+    "narrative_liquidity_usd": 0,
+    "as_of": "",
+    "assets": [
+      {"ticker": "FXI", "type": "etf", "purity_weight": 1.0, "weight_source": "editorial_v1"},
+      {"ticker": "MCHI", "type": "etf", "purity_weight": 0.9, "weight_source": "editorial_v1"},
+      {"ticker": "KWEB", "type": "etf", "purity_weight": 0.9, "weight_source": "editorial_v1"},
+      {"ticker": "ASHR", "type": "etf", "purity_weight": 0.8, "weight_source": "editorial_v1"},
+      {"ticker": "BABA", "type": "equity", "purity_weight": 0.8, "weight_source": "editorial_v1"}
+    ]
+  },
+  "space_economy": {
+    "display_name": "Orbital Industrialization & Defense",
+    "narrative_cap_usd": 0,
+    "narrative_liquidity_usd": 0,
+    "as_of": "",
+    "assets": [
+      {"ticker": "ARKX", "type": "etf", "purity_weight": 1.0, "weight_source": "editorial_v1"},
+      {"ticker": "UFO", "type": "etf", "purity_weight": 0.9, "weight_source": "editorial_v1"},
+      {"ticker": "ROKT", "type": "etf", "purity_weight": 0.9, "weight_source": "editorial_v1"},
+      {"ticker": "RKLB", "type": "equity", "purity_weight": 0.8, "weight_source": "editorial_v1"},
+      {"ticker": "LUNR", "type": "equity", "purity_weight": 0.8, "weight_source": "editorial_v1"}
+    ]
+  },
+  "tech_convergence": {
+    "display_name": "Enterprise Intelligence Consolidation",
+    "narrative_cap_usd": 0,
+    "narrative_liquidity_usd": 0,
+    "as_of": "",
+    "assets": [
+      {"ticker": "IGV", "type": "etf", "purity_weight": 1.0, "weight_source": "editorial_v1"},
+      {"ticker": "BOTZ", "type": "etf", "purity_weight": 0.9, "weight_source": "editorial_v1"},
+      {"ticker": "QQQM", "type": "etf", "purity_weight": 0.9, "weight_source": "editorial_v1"},
+      {"ticker": "XLK", "type": "etf", "purity_weight": 0.9, "weight_source": "editorial_v1"},
+      {"ticker": "MSFT", "type": "equity", "purity_weight": 0.8, "weight_source": "editorial_v1"}
+    ]
+  },
+  "wealthy_sports": {
+    "display_name": "Trophy Asset Financialization",
+    "narrative_cap_usd": 0,
+    "narrative_liquidity_usd": 0,
+    "as_of": "",
+    "assets": [
+      {"ticker": "BATRK", "type": "equity", "purity_weight": 1.0, "weight_source": "editorial_v1"},
+      {"ticker": "MSGS", "type": "equity", "purity_weight": 1.0, "weight_source": "editorial_v1"},
+      {"ticker": "MANU", "type": "equity", "purity_weight": 0.8, "weight_source": "editorial_v1"},
+      {"ticker": "DKNG", "type": "equity", "purity_weight": 0.7, "weight_source": "editorial_v1"},
+      {"ticker": "BETZ", "type": "etf", "purity_weight": 0.9, "weight_source": "editorial_v1"}
+    ]
   }
 }
