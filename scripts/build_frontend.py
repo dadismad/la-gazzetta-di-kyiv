@@ -67,11 +67,12 @@ def fmt_time_ago(ts_str):
         return ""
 
 def narrative_phase(gap, count):
-    """Heuristic narrative lifecycle phase."""
+    """Heuristic narrative lifecycle phase using top_gap for accuracy."""
     if count < 3: return "EMERGENT", "New signal — limited data"
-    if gap >= 70: return "VIRAL EXPANSION", "Wide gap between narrative and reality"
-    if gap >= 40: return "CONSENSUS SATURATION", "Narrative widely accepted, friction building"
-    return "MATURE/STABLE", "Narrative and reality aligned"
+    if gap >= 80: return "CRITICAL SHIFT", "Extreme divergence — media narrative disconnected from capital reality"
+    if gap >= 70: return "ACTIVE DIVERGENCE", "Significant gap — institutional capital actively contradicting consensus"
+    if gap >= 50: return "BUILDING TENSION", "Growing friction between media framing and capital positioning"
+    return "MATURE/STABLE", "Narrative and capital flows broadly aligned"
 
 
 def calculate_narrative_status(top_gap, story_count):
@@ -1173,10 +1174,13 @@ setTimeout(renderRadar, 100);
     var board = document.getElementById('gap-leaderboard');
     if (!board) return;
 
-    // Build NARRATIVES lookup for NMC-augmented capital
+    // Build NARRATIVES lookups for NMC capital + narrative phase
     var narrCapLookup = {};
+    var narrPhaseLookup = {};
     for (var ni = 0; ni < NARRATIVES.length; ni++) {
-      narrCapLookup[NARRATIVES[ni].id] = NARRATIVES[ni].capital_b || 0;
+      var nd = NARRATIVES[ni];
+      narrCapLookup[nd.id] = nd.capital_b || 0;
+      narrPhaseLookup[nd.id] = nd.phase || '';
     }
 
     // Aggregate top narratives by GAP from stories
@@ -1207,12 +1211,21 @@ setTimeout(renderRadar, 100);
           var arrow = n.avgGap >= 50 ? String.fromCharCode(8599) : String.fromCharCode(8594);
           var capB = n.totalCap / 1e9;
           var capStr = capB >= 1 ? capB.toFixed(1)+'B' : (capB*1000).toFixed(0)+'M';
+          // Phase badge — narrative lifecycle label
+          var phaseLabel = narrPhaseLookup[n.id] || '';
+          var phaseBadge = phaseLabel ? '<span class="text-[9px] uppercase tracking-wider" style="color:' + barColor + '">' + phaseLabel + '</span>' : '';
           return '<div class="flex-shrink-0 min-w-[140px] bg-surface-container-high p-3" style="border-left:2px solid ' + barColor + '">' +
             '<div class="flex justify-between items-start mb-1">' +
               '<span class="font-metadata-sm text-metadata-sm text-on-surface-variant uppercase">' + (n.title||'').length > 18 ? (n.title||'').substring(0,18) + '...' : (n.title||'') + '</span>' +
               '<span class="text-xs text-on-surface-variant">#' + (i+1) + '</span>' +
             '</div>' +
             '<div class="font-headline-md text-headline-md" style="color:' + barColor + '">' + n.avgGap.toFixed(0) + '</div>' +
+            // Phase 1: GAP divergence bar — visual spread indicator
+            '<div style="width:100%;height:4px;background:#E3E2E0;margin-top:4px;margin-bottom:2px">' +
+              '<div style="width:' + Math.min(n.avgGap, 100).toFixed(0) + '%;height:100%;background:' + barColor + '"></div>' +
+            '</div>' +
+            // Phase badge
+            '<div class="mb-1">' + phaseBadge + '</div>' +
             '<div class="flex items-center justify-between mt-1">' +
               '<span class="text-xs text-gold-accessible">' + n.ticker + ' ' + arrow + '</span>' +
               '<span class="text-xs text-on-surface-variant">' + capStr + '</span>' +
