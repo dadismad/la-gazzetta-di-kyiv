@@ -13,7 +13,7 @@ Design: Stitch DESIGN.md (mobile) + Banani desktop sidebar
 
 import json, sys, os
 from pathlib import Path
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 PROJECT = Path(os.environ.get("GAZZETTA_HOME", "/opt/gazzetta-di-kyiv"))
 DATA = PROJECT / "data"
@@ -38,6 +38,16 @@ LEGACY_ORDER = [
 def load_json(path):
     with open(path) as f:
         return json.load(f)
+
+
+# ── NMC Data: load the .5T Narrative Market Capitalization cache ──
+NMC_PATH = DATA / "narrative_cap.json"
+NMC_DATA = {}
+if NMC_PATH.exists():
+    try:
+        NMC_DATA = load_json(NMC_PATH)
+    except Exception:
+        pass
 
 def fmt_b(n):
     if n >= 1: return f"${n:.1f}B"
@@ -111,18 +121,26 @@ def build_cft_block(narrative_id, stories, narrative_config):
 
     # ── Ticker gate: filter LLM output through canonical safe-list ──
     llm_tickers = catalyst.get("affected_tickers") or []
-    narrative_safe_list = CANONICAL_TICKERS.get(narrative_id, [])
-    # Intersect LLM output with safe-list
-    filtered_tickers = [t for t in llm_tickers if t in narrative_safe_list]
-    # Fallback to top 4 canonical tickers if intersection is empty (or LLM returned None)
-    final_tickers = filtered_tickers if filtered_tickers else narrative_safe_list[:4]
+    if narrative_id in CANONICAL_TICKERS:
+        narrative_safe_list = CANONICAL_TICKERS[narrative_id]
+        filtered_tickers = [t for t in llm_tickers if t in narrative_safe_list]
+        final_tickers = filtered_tickers if filtered_tickers else narrative_safe_list[:4]
+    else:
+        # Fail-open: trust the LLM for unmapped narratives
+        final_tickers = llm_tickers[:4]
 
     # ── Content fallbacks: they_say → catalyst, reality → flow ──
     card_catalyst = catalyst.get("they_say") or "Awaiting narrative acceleration event."
     card_flow = catalyst.get("reality") or "Capital baseline established. Monitoring movements."
 
-    # ── Dynamic status label ──
-    status_label = calculate_narrative_status(gap, len(mine))
+    # ── Dynamic status label (24h velocity) ──
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
+    recent_count = sum(
+        1 for s in mine
+        if s.get("generated_at") and datetime.fromisoformat(s["generated_at"]) > cutoff
+    )
+    # TODO: sync 24h velocity logic to narrative_phase() at line 220
+    status_label = calculate_narrative_status(gap, recent_count)
 
     # Domino ripples from narrative_weights
     weights = catalyst.get("narrative_weights", {})
@@ -201,6 +219,8 @@ def build():
             s["_container_id"] = nid
             s["_container_title"] = narrative_config[nid].get("display_name", nid)
 
+    # Defence-in-depth: filter out anomalous source "T" artefacts (pre-synthesizer-fix stories)
+    all_stories = [s for s in all_stories if (s.get("source_name") or "").strip().upper() != "T"]
     all_stories.sort(key=lambda s: s.get("generated_at", ""), reverse=True)
 
     # Compute narrative summaries from narratives.json taxonomy
@@ -211,13 +231,19 @@ def build():
         caps = [s.get("capital_volume_usd", 0) or 0 for s in cstories]
         gaps = [s.get("contradiction_gap", 0) or 0 for s in cstories]
         total_cap = sum(caps) / 1e9
+        # Override with NMC data when available (prioritises live market cap)
+        nmc_entry = NMC_DATA.get(cid, {})
+        nmc_usd = nmc_entry.get("narrative_cap_usd", 0)
+        if nmc_usd and nmc_usd > 0:
+            total_cap = nmc_usd / 1e9
         avg_gap = sum(gaps) / len(gaps) if gaps else 0
+        top_gap = max(gaps) if gaps else 0
         directions = {"inflow": 0, "outflow": 0, "neutral": 0}
         for s in cstories:
             cf = s.get("capital_flow") or {}
             d = (cf.get("direction") or "neutral").lower()
             directions[d] = directions.get(d, 0) + 1
-        phase, phase_desc = narrative_phase(avg_gap, len(cstories))
+        phase, phase_desc = narrative_phase(top_gap, len(cstories))
         cfg = narrative_config.get(cid, {})
         ticker = (cfg.get("tickers", [""]) or [""])[0]
         threshold_val = cfg.get("invalidation_threshold", "N/A")
@@ -1147,6 +1173,12 @@ setTimeout(renderRadar, 100);
     var board = document.getElementById('gap-leaderboard');
     if (!board) return;
 
+    // Build NARRATIVES lookup for NMC-augmented capital
+    var narrCapLookup = {};
+    for (var ni = 0; ni < NARRATIVES.length; ni++) {
+      narrCapLookup[NARRATIVES[ni].id] = NARRATIVES[ni].capital_b || 0;
+    }
+
     // Aggregate top narratives by GAP from stories
     var narrMap = {};
     for (var i = 0; i < STORIES.length; i++) {
@@ -1155,14 +1187,14 @@ setTimeout(renderRadar, 100);
       if (!nid) continue;
       if (!narrMap[nid]) narrMap[nid] = { id: nid, title: s._container_title || nid, ticker: (s.affected_tickers||[])[0]||nid, gaps: [], caps: [] };
       narrMap[nid].gaps.push(s.contradiction_gap || 0);
-      narrMap[nid].caps.push(s.capital_volume_usd || 0);
+      // Caps now come from NARRATIVES (NMC-augmented), not story-level capital_volume_usd
     }
     var ranked = [];
     for (var k in narrMap) {
       var m = narrMap[k];
       m.gaps.sort(function(a,b){ return b-a; });
       m.avgGap = m.gaps.length ? m.gaps[0] : 0;
-      m.totalCap = m.caps.reduce(function(a,b){ return a+b; }, 0);
+      m.totalCap = (narrCapLookup[m.id] || 0) * 1e9;  // NMC-augmented (stored in billions, convert to raw USD for formatting)
       ranked.push(m);
     }
     ranked.sort(function(a,b){ return b.avgGap - a.avgGap; });
