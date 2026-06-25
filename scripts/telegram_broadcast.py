@@ -20,7 +20,8 @@ import os
 import sys
 import urllib.request
 import urllib.error
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 from zoneinfo import ZoneInfo
 from pathlib import Path
 
@@ -33,15 +34,23 @@ POSTED_LOG = PUBLIC_DATA / "posted_stories.jsonl"
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_BROADCAST_CHAT_ID", os.environ.get("TELEGRAM_CHAT_ID", "-1003990434181"))
 
-MAX_POSTS = 2
+MAX_POSTS = 3
 THROTTLE_HOURS = 4          # Suppress same narrative for 4h
 THROTTLE_GAP_JUMP = 15      # ...unless GAP increases by 15+
 THROTTLE_PATH = PUBLIC_DATA / "telegram_throttle.json"
+
+# Format rotation: prevents identical formats in a single cycle
+FALLBACK_FORMAT = {
+    "THE_PLAY": "CAPITAL_VS_MEDIA",
+    "STRUCTURAL_SHIFT": "CONTRADICTION_HOOK",
+    "CONTRADICTION_HOOK": "CAPITAL_VS_MEDIA",
+    "CAPITAL_VS_MEDIA": "CONTRADICTION_HOOK"
+}
 FRESHNESS_HOURS = 48
 
 
 def now() -> str:
-    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    return datetime.now(ZoneInfo("Europe/Kyiv")).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def load_posted_ids() -> set:
@@ -161,7 +170,7 @@ def is_recent(story: dict) -> bool:
         generated = datetime.fromisoformat(ts_clean)
     except (ValueError, TypeError):
         return False
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=FRESHNESS_HOURS)
+    cutoff = datetime.now(ZoneInfo("Europe/Kyiv")) - timedelta(hours=FRESHNESS_HOURS)
     return generated >= cutoff
 
 
@@ -223,7 +232,7 @@ def smart_truncate(text: str, max_chars: int) -> str:
     return truncated.rstrip() + "…"
 
 
-def format_story_for_telegram(story: dict, flow_ledger: dict = None) -> str:
+def format_story_for_telegram(story: dict, flow_ledger: dict = None, used_formats: set = None) -> str:
     """5-format deterministic dispatch. Format selected by asset_class x conviction tier.
     THE PLAY (equity + HIGH/ELEVATED) | STRUCTURAL SHIFT (commodity/crypto + HIGH/ELEVATED)
     CAPITAL VS MEDIA (any + ELEVATED/SPECULATIVE) | HOLD -> skip."""
@@ -309,12 +318,12 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None) -> str:
     c_emoji = conviction_emoji.get(conviction, "")
 
     narrative_labels = {
-        "dollar_decline": "DOLLAR DECLINE", "critical_resource_control": "CRITICAL RESOURCE CONTROL",
-        "deglobalization": "DEGLOBALIZATION", "china_ascent": "CHINA ASCENT",
-        "space_economy": "SPACE ECONOMY", "gene_editing": "GENE EDITING",
-        "tech_convergence": "TECH CONVERGENCE", "wealthy_sports": "WEALTHY SPORTS",
-        "crypto_reserve": "CRYPTO RESERVE", "rate_cycle": "RATE CYCLE",
-        "ai_chips": "AI CHIPS", "commodity_supercycle": "COMMODITY SUPERCYCLE",
+        "dollar_decline": "Sovereign Liquidity Migration", "critical_resource_control": "Energy Sovereignty",
+        "deglobalization": "Industrial Reshoring", "china_ascent": "Eurasia Capital Architecture",
+        "space_economy": "Orbital Industrialization", "gene_editing": "Longevity & Bioreality",
+        "tech_convergence": "Enterprise Intelligence", "wealthy_sports": "Trophy Asset Financialization",
+        "crypto_reserve": "Decentralized Capital", "rate_cycle": "Liquidity Regime Transition",
+        "ai_chips": "Compute Hegemony", "commodity_supercycle": "Physical Resource Revaluation",
     }
     narrative_label = narrative_labels.get(narrative_id, narrative_id.upper().replace("_", " "))
     link = "https://www.lagazzettadikyiv.com"
@@ -335,27 +344,39 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None) -> str:
     else:
         return ""
 
+    # ── Format rotation: if primary format already used, fall back ──
+    if used_formats is not None:
+        if fmt in used_formats and fmt in FALLBACK_FORMAT:
+            fmt = FALLBACK_FORMAT[fmt]
+        used_formats.add(fmt)
+
     # ══════════════════════════════════════════════════════════
     # FORMAT: THE PLAY — equity single-name execution card
     # ══════════════════════════════════════════════════════════
     if fmt == "THE_PLAY":
         lines = []
+        _nmc = _nmc_str(narrative_id)
         if gap >= 75:
-            lines.append(f"🔥 THE PLAY: {direction} {narrative_ticker}{r_multiple}")
+            lines.append(f"🔥 THE PLAY: {direction} {narrative_ticker}{r_multiple}" + (f" | {_nmc} in play" if _nmc else ""))
         else:
-            lines.append(f"📈 THE PLAY: {direction} {narrative_ticker}{r_multiple}")
+            lines.append(f"📈 THE PLAY: {direction} {narrative_ticker}{r_multiple}" + (f" | {_nmc} in play" if _nmc else ""))
         lines.append("")
         lines.append(headline)
         lines.append("")
-        if alpha:
-            lines.append(f"💡 {alpha}")
+        if they_say and reality:
+            lines.append(f"📰 MEDIA: {words_truncate(they_say, 20)}")
+            lines.append(f"💰 CAPITAL: {words_truncate(reality, 20)}")
             lines.append("")
-        lines.append(f"🎯 {narrative_label} | Conviction: {conviction} {c_emoji}")
-        if entry: lines.append(f"• Entry: {entry}")
+        if alpha:
+            lines.append(f"💡 THESIS: {alpha}")
+            lines.append("")
+        lines.append(f"🎯 {direction} {narrative_ticker} @ {entry}" if entry else f"🎯 {direction} {narrative_ticker}")
         if stop: lines.append(f"• Stop: {stop}")
         if target: lines.append(f"• Target: {target}")
         if invalidation: lines.append(f"• Invalidation: {invalidation}")
-        lines.append(f"• Horizon: {horizon}d")
+        lines.append(f"⏱ {horizon}d | Conviction: {conviction} {c_emoji} | {narrative_label}")
+        src = story.get("source_name", story.get("feed_source", ""))
+        if src: lines.append(f"📦 Source: {src}")
         lines.append("")
         lines.append(f"{gap_to_tag(gap)} #{narrative_id.replace('_','').upper()} #{narrative_ticker}")
         lines.append("")
@@ -367,9 +388,10 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None) -> str:
     # ══════════════════════════════════════════════════════════
     if fmt == "STRUCTURAL_SHIFT":
         lines = []
+        _nmc = _nmc_str(narrative_id)
         direction_word = {"LONG": "BID", "SHORT": "PRESSURE", "NEUTRAL": "FLUX"}
         dw = direction_word.get(direction, "FLUX")
-        lines.append(f"📊 STRUCTURAL {dw}: {narrative_label}")
+        lines.append(f"📊 STRUCTURAL {dw}: {narrative_label}" + (f" | {_nmc} in play" if _nmc else ""))
         lines.append("")
         lines.append(headline)
         lines.append("")
@@ -431,7 +453,8 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None) -> str:
     # ══════════════════════════════════════════════════════════
     if fmt == "CAPITAL_VS_MEDIA":
         lines = []
-        lines.append(f"🧪 CAPITAL vs MEDIA: {narrative_label} | GAP {gap}/100")
+        _nmc = _nmc_str(narrative_id)
+        lines.append(f"🧪 CAPITAL vs MEDIA: {narrative_label} | GAP {gap}/100" + (f" | {_nmc} in play" if _nmc else ""))
         lines.append("")
         lines.append(headline)
         lines.append("")
@@ -460,6 +483,29 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None) -> str:
 
 
 
+# ── NMC data loader ──────────────────────────────────────────────
+def _load_nmc_cache():
+    """Load narrative_cap.json for Capital-in-Play context. Returns {} on failure."""
+    try:
+        p = Path(__file__).resolve().parent.parent / "data" / "narrative_cap.json"
+        if p.exists():
+            with open(p) as f:
+                return json.load(f)
+    except Exception:
+        pass
+    return {}
+
+NMC_CACHE = _load_nmc_cache()
+
+def _nmc_str(narrative_id: str) -> str:
+    """Return a formatted NMC string like '$5.56T' or empty string."""
+    cap = (NMC_CACHE.get(narrative_id, {}) or {}).get("narrative_cap_usd", 0) or 0
+    if cap >= 1_000_000_000_000:
+        return f"${cap / 1e12:.2f}T"
+    elif cap >= 1_000_000_000:
+        return f"${cap / 1e9:.1f}B"
+    return ""
+
 def gap_to_tag(gap: int) -> str:
     """Map GAP score to a canonical hashtag."""
     if gap >= 70:
@@ -483,9 +529,9 @@ def load_throttle_state() -> dict:
 def save_throttle_state(narrative_id: str, gap: int):
     """Update throttle state for a narrative after posting."""
     state = load_throttle_state()
-    state[narrative_id] = [datetime.now(timezone.utc).isoformat(), gap]
+    state[narrative_id] = [datetime.now(ZoneInfo("Europe/Kyiv")).isoformat(), gap]
     # Prune entries older than 24h
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
+    cutoff = datetime.now(ZoneInfo("Europe/Kyiv")) - timedelta(hours=24)
     state = {k: v for k, v in state.items() 
              if datetime.fromisoformat(v[0]) > cutoff}
     try:
@@ -526,6 +572,7 @@ def main():
           f"{len(posted_ids)} already posted")
 
     posted_count = 0
+    used_formats = set()
     for story in recent_stories:
         if posted_count >= args.max_posts:
             break
@@ -541,7 +588,7 @@ def main():
             # Check if the pending intent is stale (>10 min)
             pending_ts = pending[sid]
             try:
-                pending_age = (datetime.now(timezone.utc) - datetime.fromisoformat(pending_ts)).total_seconds()
+                pending_age = (datetime.now(ZoneInfo("Europe/Kyiv")) - datetime.fromisoformat(pending_ts)).total_seconds()
                 if pending_age < 600:  # < 10 min — could still be in-flight
                     continue
                 # Stale pending: the prior attempt failed. Fall through to retry.
@@ -555,11 +602,11 @@ def main():
         throttle = load_throttle_state()
         if narrative_id in throttle:
             last_ts, last_gap = throttle[narrative_id]
-            hours_ago = (datetime.now(timezone.utc) - datetime.fromisoformat(last_ts)).total_seconds() / 3600
+            hours_ago = (datetime.now(ZoneInfo("Europe/Kyiv")) - datetime.fromisoformat(last_ts)).total_seconds() / 3600
             if hours_ago < THROTTLE_HOURS and gap <= last_gap + THROTTLE_GAP_JUMP:
                 continue  # Suppress — same narrative, no material GAP increase
 
-        text = format_story_for_telegram(story, flow_ledger)
+        text = format_story_for_telegram(story, flow_ledger, used_formats)
         if not text:
             continue  # HOLD conviction or no actionable setup — skip broadcast
 
@@ -620,7 +667,7 @@ def main():
                         _best_nid = _nid
                         _best_group = _group
                 if _best_nid and _best_group:
-                    _nl = {"dollar_decline": "DOLLAR DECLINE", "critical_resource_control": "CRITICAL RESOURCE CONTROL", "deglobalization": "DEGLOBALIZATION", "china_ascent": "CHINA ASCENT", "space_economy": "SPACE ECONOMY", "gene_editing": "GENE EDITING", "tech_convergence": "TECH CONVERGENCE", "wealthy_sports": "WEALTHY SPORTS", "crypto_reserve": "CRYPTO RESERVE", "rate_cycle": "RATE CYCLE", "ai_chips": "AI CHIPS", "commodity_supercycle": "COMMODITY SUPERCYCLE"}.get(_best_nid, _best_nid.upper().replace("_", " "))
+                    _nl = {"dollar_decline": "Sovereign Liquidity Migration", "critical_resource_control": "Energy Sovereignty", "deglobalization": "Industrial Reshoring", "china_ascent": "Eurasia Capital Architecture", "space_economy": "Orbital Industrialization", "gene_editing": "Longevity & Bioreality", "tech_convergence": "Enterprise Intelligence", "wealthy_sports": "Trophy Assets", "crypto_reserve": "Decentralized Capital", "rate_cycle": "Liquidity Regime", "ai_chips": "Compute Hegemony", "commodity_supercycle": "Physical Resource Revaluation"}.get(_best_nid, _best_nid.upper().replace("_", " "))
                     _lines = [f"🌐 MACRO BRIEFING: {_nl}"]
                     _lines.append("")
                     _lines.append(f"{len(_best_group)} signals coalescing into a structural trend:")
@@ -651,10 +698,17 @@ def main():
                 _gap = int(s.get("contradiction_gap", 0) or 0)
                 _dir = (s.get("trade_thesis", {}) or {}).get("direction", "NEUTRAL")
                 _arrow = "▲" if _dir == "LONG" else ("▼" if _dir == "SHORT" else "—")
-                _cap = (s.get("capital_volume_usd", 0) or 0) / 1e9
-                _cap_str = f"${_cap:.1f}B" if abs(_cap) >= 1 else f"${_cap*1000:.0f}M"
+                _nmc_str = _nmc_str_val = ""
+                _nmc_data = NMC_CACHE.get(_nid, {}) or {}
+                _nmc_cap = _nmc_data.get("narrative_cap_usd", 0) or 0
+                if _nmc_cap >= 1_000_000_000_000:
+                    _nmc_str = f"${_nmc_cap/1e12:.2f}T in play"
+                elif _nmc_cap >= 1_000_000_000:
+                    _nmc_str = f"${_nmc_cap/1e9:.1f}B in play"
+                else:
+                    _nmc_str = ""
                 _title = s.get("_container_title", _nid)
-                _lines.append(f"{_title:45s} GAP {_gap:>3} {_arrow}  | {_cap_str}")
+                _lines.append(f"{_title:45s} GAP {_gap:>3} {_arrow}  | {_nmc_str}")
             _pulse_text = "\U0001f4e1 THE FLOW — " + datetime.now(ZoneInfo("Europe/Kyiv")).strftime("%H:%M") + " Kyiv\n\n" + "\n".join(_lines) + "\n\nlagazzettadikyiv.com?utm_source=telegram&utm_medium=pulse"
             # Throttle: only send pulse once per 2 hours
             import time as _time
@@ -664,14 +718,14 @@ def main():
                 try:
                     with open(_pulse_path) as _f:
                         _last = json.load(_f).get("sent_at", "")
-                    _age = (datetime.now(timezone.utc) - datetime.fromisoformat(_last)).total_seconds()
+                    _age = (datetime.now(ZoneInfo("Europe/Kyiv")) - datetime.fromisoformat(_last)).total_seconds()
                     if _age < 7200:
                         _send_pulse = False
                 except Exception:
                     pass
             if _send_pulse and send_telegram(_pulse_text):
                 with open(_pulse_path, "w") as _f:
-                    json.dump({"sent_at": datetime.now(timezone.utc).isoformat()}, _f)
+                    json.dump({"sent_at": datetime.now(ZoneInfo("Europe/Kyiv")).isoformat()}, _f)
                 print(f"[{now()}] Signal Pulse sent")
                 posted_count += 1
 
