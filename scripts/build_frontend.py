@@ -549,6 +549,24 @@ tailwind.config = {
   /* Monospace for data density */
   .font-mono-data{font-family:'JetBrains Mono',SFMono-Regular,monospace;font-size:11px;letter-spacing:-0.02em}
   .gap-score,.capital-num,.ticker-mono,.price-mono{font-family:'JetBrains Mono',SFMono-Regular,monospace}
+
+  /* ── PHASE 2: BENTO GRID for story cards ── */
+  #story-cards{display:grid;grid-template-columns:1fr;gap:0;align-items:start}
+  /* BREAKING ZONE header + all BREAKING cards span full width */
+  #story-cards .zone-header.breaking-zone, #story-cards article[data-tier="BREAKING"]{grid-column:1/-1}
+  @media(min-width:768px){
+    #story-cards{grid-template-columns:repeat(2,1fr)}
+    #story-cards article{border-left:1px solid #E5E7EB;border-bottom:1px solid #E5E7EB}
+  }
+  @media(min-width:1024px){
+    #story-cards{grid-template-columns:repeat(3,1fr)}
+  }
+  /* CONTRADICTION ALERT cards span 2 columns on desktop for emphasis */
+  @media(min-width:768px){
+    #story-cards article.contradiction-alert{grid-column:span 2}
+  }
+  /* Maintain existing expand/collapse — cards grow vertically, not horizontally */
+  #story-cards article[open] .details-content{grid-column:1/-1}
 </style>
 </head>
 <body class="bg-surface font-body-md text-on-surface antialiased">
