@@ -65,5 +65,31 @@
       {"ticker": "IBIT", "type": "etf", "purity_weight": 1.0, "weight_source": "editorial_v1"},
       {"ticker": "MSTR", "type": "equity", "purity_weight": 0.9, "weight_source": "editorial_v1"}
     ]
+  },
+  "rate_cycle": {
+    "display_name": "Liquidity Regime Transition",
+    "narrative_cap_usd": 0,
+    "narrative_liquidity_usd": 0,
+    "as_of": "",
+    "assets": [
+      {"ticker": "TLT", "type": "etf", "purity_weight": 1.0, "weight_source": "editorial_v1"},
+      {"ticker": "IEF", "type": "etf", "purity_weight": 0.9, "weight_source": "editorial_v1"},
+      {"ticker": "SHY", "type": "etf", "purity_weight": 0.7, "weight_source": "editorial_v1"},
+      {"ticker": "KRE", "type": "etf", "purity_weight": 0.8, "weight_source": "editorial_v1"}
+    ]
+  },
+  "gene_editing": {
+    "display_name": "Longevity & Bioreality",
+    "narrative_cap_usd": 0,
+    "narrative_liquidity_usd": 0,
+    "as_of": "",
+    "assets": [
+      {"ticker": "ARKG", "type": "etf", "purity_weight": 1.0, "weight_source": "editorial_v1"},
+      {"ticker": "XBI", "type": "etf", "purity_weight": 0.9, "weight_source": "editorial_v1"},
+      {"ticker": "IBB", "type": "etf", "purity_weight": 0.9, "weight_source": "editorial_v1"},
+      {"ticker": "CRSP", "type": "equity", "purity_weight": 1.0, "weight_source": "editorial_v1"},
+      {"ticker": "BEAM", "type": "equity", "purity_weight": 0.9, "weight_source": "editorial_v1"},
+      {"ticker": "TWST", "type": "equity", "purity_weight": 0.8, "weight_source": "editorial_v1"}
+    ]
   }
 }
