@@ -105,7 +105,7 @@ def assess_crypto(symbol: str, oi_usd: float, prev_oi_usd: float, oi_contracts: 
     return {
         "condition": "Equilibrium",
         "code": "steady",
-        "projection": "Futures market positioning remains stable. No structural derivative imbalances detected. Open interest is flat — no coiled-spring tension. Spot market trend expected to continue unhindered."
+        "projection": f"OI stable at ${oi_usd/1e9:.1f}B ({oi_contracts:,.0f} contracts). 24h Δ: {oi_change*100:+.1f}%. No structural derivative imbalances — spot trend expected to continue."
     }
 
 

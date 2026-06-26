@@ -131,8 +131,8 @@ def build_cft_block(narrative_id, stories, narrative_config):
         final_tickers = llm_tickers[:4]
 
     # ── Content fallbacks: they_say → catalyst, reality → flow ──
-    card_catalyst = catalyst.get("they_say") or "Awaiting narrative acceleration event."
-    card_flow = catalyst.get("reality") or "Capital baseline established. Monitoring movements."
+    card_catalyst = (catalyst.get("they_say") or "").strip() or "Awaiting narrative acceleration event."
+    card_flow = (catalyst.get("reality") or "").strip() or "Capital baseline established. Monitoring movements."
 
     # ── Dynamic status label (24h velocity) ──
     cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
@@ -262,7 +262,7 @@ def build():
         cfg = narrative_config.get(cid, {})
         ticker = (cfg.get("tickers", [""]) or [""])[0]
         threshold_val = cfg.get("invalidation_threshold", "N/A")
-        threshold_desc = cfg.get("status", "No threshold defined")
+        threshold_desc = cfg.get("status", "")
         narratives.append({
             "id": cid,
             "title": cfg.get("display_name", cid.replace("_", " ").title()),
@@ -1449,7 +1449,7 @@ setTimeout(renderRadar, 100);
           '<div><span class="font-label-xs text-label-xs text-on-surface-variant uppercase">'+c.container+'</span>' +
           '<span class="font-label-xs text-label-xs text-on-surface-variant ml-2">'+c.time_ago+'</span>' +
           '<span class="material-symbols-outlined expand-icon text-on-surface-variant align-middle ml-1" style="font-size:18px;">expand_more</span></div>' +
-          '<span class="font-metadata-sm text-metadata-sm '+tierInfo.text+'">Gap: '+c.gap.toFixed(0)+' | '+c.capital_b.toFixed(1)+'B</span>' +
+          '<span class="font-metadata-sm text-metadata-sm '+tierInfo.text+'">Gap: '+c.gap.toFixed(0)+' | '+(c.capital_b > 0 ? c.capital_b.toFixed(1)+'B' : 'N/A')+'</span>' +
         '</div>' +
         '<p class="font-body-md text-body-md text-on-surface mt-1">'+c.headline+'</p>' +
         '<div class="flex items-center gap-2 mt-2"><span class="text-xs uppercase tracking-wider '+tierInfo.text+'">'+tierInfo.label+'</span>' +
