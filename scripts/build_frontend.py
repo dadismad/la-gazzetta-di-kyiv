@@ -375,14 +375,14 @@ _TEMPLATE = r"""<!DOCTYPE html>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>La Gazzetta di Kyiv — Geopolitical Intelligence</title>
-<meta name="description" content="Institutional-grade narrative intelligence. Tracking the gap between media consensus and capital flows."/>
+<meta name="description" content="Institutional-grade narrative intelligence. Tracking the Contrarian Edge (Δ) between media consensus and capital flows."/>
 <meta property="og:title" content="La Gazzetta di Kyiv — Geopolitical Intelligence"/>
-<meta property="og:description" content="Institutional-grade narrative intelligence. Tracking the gap between what the media says and what capital actually does."/>
+<meta property="og:description" content="Institutional-grade narrative intelligence. Tracking the Contrarian Edge (Δ) between what the media says and what capital actually does."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://www.lagazzettadikyiv.com/"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="La Gazzetta di Kyiv — Geopolitical Intelligence"/>
-<meta name="twitter:description" content="Institutional-grade narrative intelligence. Tracking the gap between what the media says and what capital actually does."/>
+<meta name="twitter:description" content="Institutional-grade narrative intelligence. Tracking the Contrarian Edge (Δ) between what the media says and what capital actually does."/>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%238B0000'/><text x='50' y='65' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='bold' fill='%23D4AF37'>G</text></svg>"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -548,9 +548,9 @@ tailwind.config = {
   .shiller-surface{background:linear-gradient(90deg, rgba(139,0,0,0.02) 0%, rgba(212,175,55,0.03) 100%);padding:4px 6px;border-radius:2px;margin-top:1px}
   .shiller-surface div{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   @media (max-width:640px){.shiller-surface{grid-template-columns:1fr;gap:2px}}
-  /* C3: GAP PHYSICS — border thickness + color scale */
+  /* C3: Δ EDGE PHYSICS — border thickness + color scale */
   article[data-tier="BREAKING"]{border-left-width:4px;border-left-color:#7F1D1D}
-  /* Contradiction Alert cards (GAP >= 80) */
+  /* Contradiction Alert cards (Δ EDGE >= 80) */
   article.contradiction-alert{border-left-width:6px;border-left-color:#8B0000;background:rgba(139,0,0,0.03);padding-left:12px}
   .contradiction-alert-badge{display:inline-block;background:#8B0000;color:#FFFFFF;font-size:11px;font-weight:600;letter-spacing:1px;padding:2px 8px;border-radius:3px;text-transform:uppercase}
   @keyframes alert-pulse{0%,100%{border-left-color:#8B0000}50%{border-left-color:#4A0000}}
@@ -558,8 +558,8 @@ tailwind.config = {
   article.contradiction-alert .gap-score{font-size:32px!important;font-weight:700}
   article[data-tier="ACTIVE"]{border-left-width:2px;border-left-color:#D4AF37}
   article[data-tier="SETTLING"]{border-left-width:1px;border-left-color:#444748;opacity:0.7}
-  @keyframes gapPulse{0%,100%{border-left-color:#7F1D1D}50%{border-left-color:#D4AF37}}
-  article[data-gap-high="true"]{animation:gapPulse 6s ease-in-out infinite}
+  @keyframes edgePulse{0%,100%{border-left-color:#7F1D1D}50%{border-left-color:#D4AF37}}
+  article[data-gap-high="true"]{animation:edgePulse 6s ease-in-out infinite}
   /* Monospace for data density */
   .font-mono-data{font-family:'JetBrains Mono',SFMono-Regular,monospace;font-size:11px;letter-spacing:-0.02em}
   .gap-score,.capital-num,.ticker-mono,.price-mono{font-family:'JetBrains Mono',SFMono-Regular,monospace}
@@ -712,12 +712,12 @@ tailwind.config = {
           <div style="position:absolute;top:0;bottom:0;left:50%;border-left:1px dashed #E5E7EB"></div>
         </div>
         <div id="crosshair-dots" style="position:absolute;inset:0"></div>
-        <div style="position:absolute;bottom:6px;left:12px;font-size:10px;color:#444748">GAP Score (narrative intensity) -></div>
+        <div style="position:absolute;bottom:6px;left:12px;font-size:10px;color:#444748">Δ Edge (Contrarian Edge) →</div>
         <div style="position:absolute;top:50%;left:-20px;transform:translateY(-50%) rotate(-90deg);font-size:10px;color:#444748">Capital Flow</div>
       </div>
     </div>
-    <!-- C2: GAP LEADERBOARD -->
-    <div class="flex flex-col gap-0" id="gap-leaderboard"></div>
+    <!-- C2: Δ EDGE LEADERBOARD -->
+    <div class="flex flex-col gap-0" id="edge-leaderboard"></div>
     <div class="flex flex-col gap-0" id="story-cards"></div>
   </main>
 
@@ -757,7 +757,7 @@ tailwind.config = {
             <th class="py-2 pr-4 text-right">Total</th>
             <th class="py-2 pr-4 text-right">Stories</th>
             <th class="py-2 pr-4 text-center">Disc.</th>
-            <th class="py-2 text-right">Gap</th>
+            <th class="py-2 text-right">Δ Edge</th>
           </tr>
         </thead>
         <tbody id="capital-body"></tbody>
@@ -792,7 +792,7 @@ tailwind.config = {
           <option value="all">All Narratives</option>
         </select>
         <select id="matrix-sort" class="border border-outline bg-surface px-2 py-1 font-label-xs text-label-xs uppercase">
-          <option value="gap">Highest Gap</option>
+          <option value="gap">Highest Δ Edge</option>
           <option value="capital">Largest Capital</option>
           <option value="recent">Most Recent</option>
         </select>
@@ -811,12 +811,12 @@ tailwind.config = {
       <!-- A1 Methodology Panel -->
       <div class="p-stack-space-md bg-gold/5 border-l-2 border-gold">
         <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Methodology & Divergence Scoring</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant">This platform measures the structural gap between financial media reporting and actual institutional capital migration. Dispatches are analyzed and scored based on the magnitude of divergence between qualitative consensus narratives and quantitative asset-class flow volumes; large contradiction gaps receive priority visibility on the ledger.</p>
+        <p class="font-body-md text-body-md text-on-surface-variant">This platform measures the Contrarian Edge (Δ) — the structural divergence between financial media reporting and actual institutional capital migration. Dispatches are analyzed and scored based on the magnitude of divergence between qualitative consensus narratives and quantitative asset-class flow volumes; high-Δ Edge signals receive priority visibility on the ledger.</p>
       </div>
       <!-- A2 Who We Are -->
       <div class="p-stack-space-md bg-surface-container border-l-2 border-gold">
         <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Who We Are</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant">La Gazzetta di Kyiv is an autonomous geopolitical intelligence terminal built and operated by Alexander Stocchi. We track the structural gap between what financial media reports and what institutional capital actually does. Every dispatch is algorithmically generated through sovereign auditing of verified sources, then scored against live market data. The terminal operates continuously from a dedicated compute instance, updating every ten minutes with no human intervention in the analytical pipeline.</p>
+        <p class="font-body-md text-body-md text-on-surface-variant">La Gazzetta di Kyiv is an autonomous geopolitical intelligence terminal built and operated by Alexander Stocchi. We track the Contrarian Edge (Δ) — the divergence between what financial media reports and what institutional capital actually does. Every dispatch is algorithmically generated through sovereign auditing of verified sources, then scored against live market data. The terminal operates continuously from a dedicated compute instance, updating every ten minutes with no human intervention in the analytical pipeline.</p>
         <p class="font-body-md text-body-md text-on-surface-variant mt-2">Contact: <a class="text-gold-accessible hover:text-gold" href="https://t.me/GazzettaDiKyiv">@GazzettaDiKyiv on Telegram</a></p>
       </div>
       <details class="mb-stack-space-md" open>
@@ -838,7 +838,7 @@ tailwind.config = {
               <tr class="border-b border-outline font-label-xs text-label-xs uppercase text-on-surface-variant">
                 <th class="py-2 pr-4">Narrative</th>
                 <th class="py-2 pr-4">Ticker</th>
-                <th class="py-2 pr-4 text-right">Gap</th>
+                <th class="py-2 pr-4 text-right">Δ Edge</th>
                 <th class="py-2 pr-4">Phase</th>
                 <th class="py-2">Invalidation Threshold</th>
               </tr>
@@ -1060,7 +1060,7 @@ setTimeout(renderRadar, 100);
       var sourceTier = (s.feed_source && tier1Sources.indexOf(s.feed_source.toUpperCase()) >= 0) ? 'TIER 1' : 'TIER 2';
       var sourceTierBadge = s.feed_source ? '<span class="text-xs px-1 ml-1 border border-gold/30 text-gold-dim">' + sourceTier + '</span>' : '';
       var isHighGap = gap >= 70;
-      // Contradiction Alert: GAP ≥ 80
+      // Contradiction Alert: Δ EDGE ≥ 80
       var isAlert = s.alert === true;
       var alertClass = isAlert ? ' contradiction-alert' : '';
       var alertBadge = isAlert ? '<span class="contradiction-alert-badge">CONTRADICTION ALERT</span>' : '';
@@ -1079,7 +1079,7 @@ setTimeout(renderRadar, 100);
               (tt.portfolio_allocation_pct ? ' <span class="text-emerald">[' + tt.portfolio_allocation_pct + ']</span>' : '')
             : (isHighGap
                 ? '<span class="ticker-mono">' + (tt.direction||'').toUpperCase() + ' ' + (tt.primary_ticker||tt.ticker||'') + '</span>' +
-                  ' <span class="text-crimson font-bold">GAP ' + gap.toFixed(0) + ' — </span>' +
+                  ' <span class="text-crimson font-bold">Δ EDGE ' + gap.toFixed(0) + ' — </span>' +
                   '<a href="/upgrade" class="text-gold underline">Upgrade to Pro to unlock trade setup</a>'
                 : '<span class="ticker-mono">' + (tt.direction||'').toUpperCase() + ' ' + (tt.primary_ticker||tt.ticker||'') + '</span>' +
                   ' <span class="text-on-surface-variant">(premium)</span>')
@@ -1090,7 +1090,7 @@ setTimeout(renderRadar, 100);
         ? '<span class="text-gold-dim">' + sourceTier + '</span> via <span class="text-on-surface-variant">' + (s.feed_source||'').toUpperCase() + '</span>'
         : '<span class="text-on-surface-variant">NO SOURCE</span>')
         + ' <span class="text-on-surface-variant">·</span> <span class="text-gold-accessible">' + timeAgo + '</span>'
-        + ' <span class="text-on-surface-variant">·</span> <span class="gap-score text-crimson">GAP ' + gap.toFixed(0) + '</span>';
+        + ' <span class="text-on-surface-variant">·</span> <span class="gap-score text-crimson">Δ EDGE ' + gap.toFixed(0) + '</span>';
 
       // Build safe data attributes for share
       var safeHeadline = (s.headline||'Untitled').replace(/"/g, '&quot;');
@@ -1100,7 +1100,7 @@ setTimeout(renderRadar, 100);
       return '<article data-story-id="' + (s.story_id || '') + '" data-source-feed="' + (s.feed_source || '') + '" data-tier="' + (tierOverride || tier || '') + '" data-gap-high="' + (isHighGap ? 'true' : 'false') + '" data-alert="' + (isAlert ? 'true' : 'false') + '" data-headline="' + safeHeadline + '" data-capital="' + capStr + '" data-gap="' + gap.toFixed(0) + '" data-direction="' + safeDirection + '" data-ticker="' + safeTicker + '" data-entry="' + safeEntry + '" class="py-2 border-b border-[#1E293B]' + alertClass + '">' +
         '<div class="pl-3">' + decayHtml +
         (isAlert ? '<div class="mb-1">' + alertBadge + '</div>' : '') +
-        // LINE 1: Source + time + GAP
+        // LINE 1: Source + time + Δ EDGE
         '<div class="font-label-xs text-label-xs mb-1">' + sourceLine + '</div>' +
         // LINE 2: Headline
         '<h3 class="font-headline-md text-headline-md text-on-surface leading-tight mb-1">'+(s.headline||'Untitled')+'</h3>' +
@@ -1197,13 +1197,13 @@ setTimeout(renderRadar, 100);
       var bottom = (n.capital / Math.max(maxCap, 1)) * 100;
       var size = Math.max(8, Math.min(24, (n.capital / 1e9) * 8));
       var color = n.gap >= 50 ? '#8B0000' : n.gap >= 30 ? '#D4AF37' : '#444748';
-      return '<div title="' + n.title + ' | GAP ' + n.gap.toFixed(0) + ' | $' + (n.capital/1e9).toFixed(1) + 'B" style="position:absolute;left:' + left.toFixed(1) + '%;bottom:' + bottom.toFixed(1) + '%;width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:' + color + ';transform:translate(-50%,50%);cursor:pointer;opacity:0.85;transition:opacity 0.2s" onmouseenter="this.style.opacity=1" onmouseleave="this.style.opacity=0.85"></div>';
+      return '<div title="' + n.title + ' | Δ EDGE ' + n.gap.toFixed(0) + ' | $' + (n.capital/1e9).toFixed(1) + 'B" style="position:absolute;left:' + left.toFixed(1) + '%;bottom:' + bottom.toFixed(1) + '%;width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:' + color + ';transform:translate(-50%,50%);cursor:pointer;opacity:0.85;transition:opacity 0.2s" onmouseenter="this.style.opacity=1" onmouseleave="this.style.opacity=0.85"></div>';
     }).join('');
   }
 
   // ── C2: LEADERBOARD RENDER ──
   function renderLeaderboard() {
-    var board = document.getElementById('gap-leaderboard');
+    var board = document.getElementById('edge-leaderboard');
     if (!board) return;
 
     // Build NARRATIVES lookups for NMC capital + narrative phase
@@ -1215,7 +1215,7 @@ setTimeout(renderRadar, 100);
       narrPhaseLookup[nd.id] = nd.phase || '';
     }
 
-    // Aggregate top narratives by GAP from stories
+    // Aggregate top narratives by EDGE from stories
     var narrMap = {};
     for (var i = 0; i < STORIES.length; i++) {
       var s = STORIES[i];
@@ -1236,7 +1236,7 @@ setTimeout(renderRadar, 100);
     ranked.sort(function(a,b){ return b.avgGap - a.avgGap; });
     var top5 = ranked.slice(0, 5);
 
-    board.innerHTML = '<div class="px-margin-horizontal mb-3"><div class="flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-gold" style="font-size:18px" aria-hidden="true">leaderboard</span><span class="font-metadata-sm text-metadata-sm text-gold uppercase tracking-wider">GAP LEADERBOARD</span><span class="cursor-help text-[12px] text-[#747878] hover:text-on-surface font-sans" title="GAP Score (0-100): Quantifies the absolute mathematical contradiction between corporate media consensus and active structural capital flows. Higher means extreme divergence.">ⓘ</span><span class="text-xs text-crimson uppercase">LIVE</span></div>' +
+    board.innerHTML = '<div class="px-margin-horizontal mb-3"><div class="flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-gold" style="font-size:18px" aria-hidden="true">leaderboard</span><span class="font-metadata-sm text-metadata-sm text-gold uppercase tracking-wider">Δ EDGE LEADERBOARD</span><span class="cursor-help text-[12px] text-[#747878] hover:text-on-surface font-sans" title="Δ Edge (0-100): The Contrarian Edge — quantifies the absolute mathematical divergence between corporate media consensus and active structural capital flows. Higher means extreme divergence with greater alpha potential.">ⓘ</span><span class="text-xs text-crimson uppercase">LIVE</span></div>' +
       '<div class="flex gap-2 overflow-x-auto hide-scrollbar">' +
         top5.map(function(n, i){
           var barColor = n.avgGap >= 60 ? '#8B0000' : n.avgGap >= 30 ? '#D4AF37' : '#444748';
@@ -1251,8 +1251,8 @@ setTimeout(renderRadar, 100);
               '<span class="font-metadata-sm text-metadata-sm text-on-surface-variant uppercase">' + (n.title||'').length > 18 ? (n.title||'').substring(0,18) + '...' : (n.title||'') + '</span>' +
               '<span class="text-xs text-on-surface-variant">#' + (i+1) + '</span>' +
             '</div>' +
-            '<div class="font-headline-md text-headline-md" style="color:' + barColor + '">' + n.avgGap.toFixed(0) + '</div>' +
-            // Phase 1: GAP divergence bar — visual spread indicator
+            '<div class="font-headline-md text-headline-md" style="color:' + barColor + '">Δ ' + n.avgGap.toFixed(0) + '</div>' +
+            // Phase 1: Δ EDGE divergence bar — visual spread indicator
             '<div style="width:100%;height:4px;background:#E3E2E0;margin-top:4px;margin-bottom:2px">' +
               '<div style="width:' + Math.min(n.avgGap, 100).toFixed(0) + '%;height:100%;background:' + barColor + '"></div>' +
             '</div>' +
@@ -1312,7 +1312,7 @@ setTimeout(renderRadar, 100);
             '<h3 class=\"font-headline-md text-headline-md text-on-surface\">' + n.title + '</h3>' +
             '<span class=\"font-metadata-sm text-metadata-sm text-on-surface-variant uppercase\">' + n.count + ' stories · ' + (c.status || n.phase) + '</span>' +
           '</div>' +
-          '<span class=\"px-2 py-0.5 border font-label-xs text-label-xs uppercase ' + (gap >= 65 ? 'border-crimson text-crimson' : 'border-gold text-gold-accessible') + '\">GAP ' + gap + '</span>' +
+          '<span class=\"px-2 py-0.5 border font-label-xs text-label-xs uppercase ' + (gap >= 65 ? 'border-crimson text-crimson' : 'border-gold text-gold-accessible') + '\">Δ EDGE ' + gap + '</span>' +
         '</div>' +
 
         // Gap meter bar
@@ -1449,11 +1449,11 @@ setTimeout(renderRadar, 100);
           '<div><span class="font-label-xs text-label-xs text-on-surface-variant uppercase">'+c.container+'</span>' +
           '<span class="font-label-xs text-label-xs text-on-surface-variant ml-2">'+c.time_ago+'</span>' +
           '<span class="material-symbols-outlined expand-icon text-on-surface-variant align-middle ml-1" style="font-size:18px;">expand_more</span></div>' +
-          '<span class="font-metadata-sm text-metadata-sm '+tierInfo.text+'">Gap: '+c.gap.toFixed(0)+' | '+(c.capital_b > 0 ? c.capital_b.toFixed(1)+'B' : 'N/A')+'</span>' +
+          '<span class="font-metadata-sm text-metadata-sm '+tierInfo.text+'">Δ Edge: '+c.gap.toFixed(0)+' | '+(c.capital_b > 0 ? c.capital_b.toFixed(1)+'B' : 'N/A')+'</span>' +
         '</div>' +
         '<p class="font-body-md text-body-md text-on-surface mt-1">'+c.headline+'</p>' +
         '<div class="flex items-center gap-2 mt-2"><span class="text-xs uppercase tracking-wider '+tierInfo.text+'">'+tierInfo.label+'</span>' +
-        '<span class="text-xs uppercase px-1 py-0.5 '+tierInfo.badge+'">GAP: '+c.gap.toFixed(0)+'</span>' +
+        '<span class="text-xs uppercase px-1 py-0.5 '+tierInfo.badge+'">Δ EDGE: '+c.gap.toFixed(0)+'</span>' +
         '</div></summary>' +
         '<div class="details-content mt-2 pl-stack-space-sm grid grid-cols-1 md:grid-cols-2 gap-stack-space-sm">' +
           '<div class="bg-surface-container-high p-stack-space-sm border-l border-outline-variant">' +
@@ -1607,7 +1607,7 @@ setTimeout(renderRadar, 100);
     rate_cycle:'Rate Cycle — Fed policy trajectory, yield curve dynamics, duration risk',
     commodity_supercycle:'Commodity Supercycle — critical minerals, energy transition metals, food security',
     // Scoring terms
-    GAP:'Contradiction Gap — measures the divergence between media narrative and market price action (0-100 scale)',
+    EDGE:'Contrarian Edge (Δ) — measures the divergence between media narrative and market price action (0-100 scale). Higher = greater alpha potential.',
     DIVERGENT:'Divergent — media narrative and market data are in significant conflict',
     CONVERGENT:'Convergent — media narrative and market data are aligned',
     BREAKING:'Breaking tier — extreme contradiction gap, highest signal priority',
