@@ -1692,7 +1692,7 @@ setTimeout(renderRadar, 100);
     var setup = d.direction && d.direction !== 'NEUTRAL'
       ? d.direction.toUpperCase() + ' ' + (d.ticker||'') + ' @ ' + (d.entry||'N/A')
       : 'No active thesis';
-    var payload = d.headline + '\\n\\nCAPITAL: $' + (d.capital||'0') + ' | GAP: ' + (d.gap||'0') + '/100\\nTRADE: ' + setup + '\\n\\n' + window.location.origin + window.location.pathname + '?story=' + (article.getAttribute('data-story-id')||'');
+    var payload = d.headline + '\\n\\nCAPITAL: $' + (d.capital||'0') + ' | Δ EDGE: ' + (d.gap||'0') + '/100\\nTRADE: ' + setup + '\\n\\n' + window.location.origin + window.location.pathname + '?story=' + (article.getAttribute('data-story-id')||'');
     if (navigator.share) {
       navigator.share({
         title: 'La Gazzetta di Kyiv Wire',

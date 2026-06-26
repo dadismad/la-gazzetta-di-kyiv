@@ -36,15 +36,13 @@ TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_BROADCAST_CHAT_ID", os.environ.get("
 
 MAX_POSTS = 3
 THROTTLE_HOURS = 4          # Suppress same narrative for 4h
-THROTTLE_GAP_JUMP = 15      # ...unless GAP increases by 15+
+THROTTLE_GAP_JUMP = 15      # ...unless Δ Edge increases by 15+
 THROTTLE_PATH = PUBLIC_DATA / "telegram_throttle.json"
 
 # Format rotation: prevents identical formats in a single cycle
 FALLBACK_FORMAT = {
-    "THE_PLAY": "CAPITAL_VS_MEDIA",
-    "STRUCTURAL_SHIFT": "CONTRADICTION_HOOK",
-    "CONTRADICTION_HOOK": "CAPITAL_VS_MEDIA",
-    "CAPITAL_VS_MEDIA": "CONTRADICTION_HOOK"
+    "SETUP": "FLOW",
+    "FLOW": "SETUP"
 }
 FRESHNESS_HOURS = 48
 
@@ -233,9 +231,7 @@ def smart_truncate(text: str, max_chars: int) -> str:
 
 
 def format_story_for_telegram(story: dict, flow_ledger: dict = None, used_formats: set = None) -> str:
-    """5-format deterministic dispatch. Format selected by asset_class x conviction tier.
-    THE PLAY (equity + HIGH/ELEVATED) | STRUCTURAL SHIFT (commodity/crypto + HIGH/ELEVATED)
-    CAPITAL VS MEDIA (any + ELEVATED/SPECULATIVE) | HOLD -> skip."""
+    """Telegram 2.0 three-format dispatch: THE SETUP (high-conviction trades), THE FLOW (structural capital shifts), THE PULSE (rapid-response radar)."""
 
     if flow_ledger is None:
         flow_ledger = {}
@@ -328,155 +324,110 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None, used_format
     narrative_label = narrative_labels.get(narrative_id, narrative_id.upper().replace("_", " "))
     link = "https://www.lagazzettadikyiv.com"
 
-    # ── Format selection ──
+    # ═══ TELEGRAM 2.0: THREE-FORMAT ROUTING ═══
+    # THE SETUP: High-conviction trade ideas (direction + entry/stop/target)
+    # THE FLOW: Massive structural capital allocations, macro shifts
+    # THE PULSE: Rapid-response radar (handled separately in main)
     if not has_trade_thesis:
         return ""
 
-    if conviction in ("HIGH", "ELEVATED") and asset_class == "equity":
-        fmt = "THE_PLAY"
-    elif conviction in ("HIGH", "ELEVATED") and asset_class in ("commodity", "crypto"):
-        fmt = "STRUCTURAL_SHIFT"
-    elif conviction in ("HIGH", "ELEVATED") and they_say and reality and len(they_say) < 300 and len(reality) < 300:
-        # CONTRADICTION HOOK: clean quotable they_say vs reality → Scene/Tension/Insight/Resolution
-        fmt = "CONTRADICTION_HOOK"
-    elif conviction in ("ELEVATED", "SPECULATIVE"):
-        fmt = "CAPITAL_VS_MEDIA"
+    has_setup = (direction != "NEUTRAL" and conviction in ("HIGH", "ELEVATED") 
+                 and (entry or target))
+    is_macro_narrative = asset_class in ("commodity", "crypto", "macro")
+    
+    if has_setup:
+        fmt = "SETUP"
+    elif gap >= 50 or is_macro_narrative or (they_say and reality):
+        fmt = "FLOW"
     else:
-        return ""
+        return ""  # Below threshold — let PULSE handle in main()
 
-    # ── Format rotation: if primary format already used, fall back ──
+    # ── Format rotation: avoid identical formats in a single cycle ──
     if used_formats is not None:
-        if fmt in used_formats and fmt in FALLBACK_FORMAT:
-            fmt = FALLBACK_FORMAT[fmt]
+        if fmt in used_formats:
+            # Fallback: SETUP → FLOW, FLOW → SETUP if available
+            if fmt == "SETUP" and "FLOW" not in used_formats:
+                fmt = "FLOW"
+            elif fmt == "FLOW" and "SETUP" not in used_formats:
+                fmt = "SETUP"
         used_formats.add(fmt)
 
     # ══════════════════════════════════════════════════════════
-    # FORMAT: THE PLAY — equity single-name execution card
+    # FORMAT: THE SETUP — high-conviction trade execution card
     # ══════════════════════════════════════════════════════════
-    if fmt == "THE_PLAY":
+    if fmt == "SETUP":
         lines = []
         _nmc = _nmc_str(narrative_id)
-        if gap >= 75:
-            lines.append(f"🔥 THE PLAY: {direction} {narrative_ticker}{r_multiple}" + (f" | {_nmc} in play" if _nmc else ""))
-        else:
-            lines.append(f"📈 THE PLAY: {direction} {narrative_ticker}{r_multiple}" + (f" | {_nmc} in play" if _nmc else ""))
+        # Header: conviction-gated emoji + direction + ticker + R:R + Edge
+        fire_emoji = "🔥" if gap >= 75 else ("📈" if gap >= 50 else "📊")
+        lines.append(f"{fire_emoji} THE SETUP: {direction} {narrative_ticker}{r_multiple} | Δ EDGE {gap}/100" + (f" | {_nmc} in play" if _nmc else ""))
         lines.append("")
         lines.append(headline)
         lines.append("")
-        if they_say and reality:
-            lines.append(f"📰 MEDIA: {words_truncate(they_say, 20)}")
-            lines.append(f"💰 CAPITAL: {words_truncate(reality, 20)}")
-            lines.append("")
+        # Alpha trigger — the core thesis sentence
         if alpha:
-            lines.append(f"💡 THESIS: {alpha}")
+            lines.append(f"💡 ALPHA TRIGGER: {alpha}")
             lines.append("")
+        # They Say / Capital Says (compressed, high-density)
+        if they_say and reality:
+            lines.append(f"📰 Media: {words_truncate(they_say, 18)}")
+            lines.append(f"💰 Capital: {words_truncate(reality, 18)}")
+            lines.append("")
+        # Trade parameters — the actionable section
+        lines.append("=== TRADE PARAMETERS ===")
         lines.append(f"🎯 {direction} {narrative_ticker} @ {entry}" if entry else f"🎯 {direction} {narrative_ticker}")
-        if stop: lines.append(f"• Stop: {stop}")
-        if target: lines.append(f"• Target: {target}")
-        if invalidation: lines.append(f"• Invalidation: {invalidation}")
-        lines.append(f"⏱ {horizon}d | Conviction: {conviction} {c_emoji} | {narrative_label}")
-        src = story.get("source_name", story.get("feed_source", ""))
-        if src: lines.append(f"📦 Source: {src}")
+        if stop: lines.append(f"🛑 Stop: {stop}")
+        if target: lines.append(f"✅ Target: {target}")
+        if invalidation and invalidation != stop: lines.append(f"⚠️ Invalidation: {invalidation}")
+        lines.append(f"⏱ Horizon: {horizon}d | Conviction: {conviction} {c_emoji}")
         lines.append("")
-        lines.append(f"{gap_to_tag(gap)} #{narrative_id.replace('_','').upper()} #{narrative_ticker}")
+        # Narrative context
+        lines.append(f"📊 Narrative: {narrative_label}" + (f" | Capital at stake: {cap_str}" if cap_str else ""))
         lines.append("")
-        lines.append(f"Full brief: {link}")
-        return "\n".join(lines)
-
-    # ══════════════════════════════════════════════════════════
-    # FORMAT: STRUCTURAL SHIFT — commodity/crypto dislocation
-    # ══════════════════════════════════════════════════════════
-    if fmt == "STRUCTURAL_SHIFT":
-        lines = []
-        _nmc = _nmc_str(narrative_id)
-        direction_word = {"LONG": "BID", "SHORT": "PRESSURE", "NEUTRAL": "FLUX"}
-        dw = direction_word.get(direction, "FLUX")
-        lines.append(f"📊 STRUCTURAL {dw}: {narrative_label}" + (f" | {_nmc} in play" if _nmc else ""))
-        lines.append("")
-        lines.append(headline)
-        lines.append("")
-        if they_say and reality:
-            lines.append(f"📰 Consensus: {words_truncate(they_say, 18)}")
-            lines.append(f"📈 Flow data: {words_truncate(reality, 18)}")
-            lines.append("")
-        if cap_str:
-            lines.append(f"💴 Capital at stake: {cap_str} | GAP: {gap}/100")
-            lines.append("")
-        if alpha:
-            lines.append(f"💡 {alpha}")
-            lines.append("")
-        if direction != "NEUTRAL":
-            lines.append(f"🎯 {direction} {narrative_ticker}{r_multiple} | {conviction} {c_emoji}")
-            if entry: lines.append(f"• Entry zone: {entry}")
-            if stop: lines.append(f"• Stop: {stop}")
-            if target: lines.append(f"• Target: {target}")
-            lines.append("")
-        lines.append(f"{gap_to_tag(gap)} #{narrative_id.replace('_','').upper()} #{narrative_ticker}")
+        lines.append(f"{edge_tag(gap)} #{narrative_id.replace('_','').upper()} #{narrative_ticker}")
         lines.append("")
         lines.append(f"Full brief: {link}")
         return "\n".join(lines)
 
     # ══════════════════════════════════════════════════════════
-    # FORMAT: CONTRADICTION HOOK — Scene→Tension→Insight→Resolution
-    # Trigger: HIGH/ELEVATED with clean quotable they_say vs reality
+    # FORMAT: THE FLOW — structural capital migration intelligence
     # ══════════════════════════════════════════════════════════
-    if fmt == "CONTRADICTION_HOOK":
-        lines = []
-        # SCENE (35%) — the consensus narrative
-        lines.append(f"🗞️ THE SCENE: {words_truncate(they_say, 22)}")
-        lines.append("")
-        # TENSION (35%) — the capital-ledger contradiction
-        lines.append(f"⚡ THE TENSION: Yet, the capital ledger shows {words_truncate(reality, 22)}")
-        lines.append("")
-        # INSIGHT (15%) — what the gap means
-        if gap >= 75:
-            lines.append(f"🧠 THE INSIGHT: The market isn't pricing the narrative—it's pricing the opposite. GAP {gap}/100.")
-        else:
-            lines.append(f"🧠 THE INSIGHT: The consensus narrative and institutional positioning are diverging fast. GAP {gap}/100.")
-        lines.append("")
-        # RESOLUTION (15%) — the action
-        if direction != "NEUTRAL":
-            lines.append(f"🎯 THE RESOLUTION: {direction} {narrative_ticker}{r_multiple}")
-            if entry: lines.append(f"• Entry: {entry}")
-            if stop: lines.append(f"• Stop: {stop}")
-            if target: lines.append(f"• Target: {target}")
-        else:
-            lines.append(f"🎯 THE RESOLUTION: Watch {narrative_ticker} for the break. {conviction} conviction {c_emoji}")
-        lines.append("")
-        lines.append(f"{gap_to_tag(gap)} #{narrative_id.replace('_','').upper()}")
-        lines.append("")
-        lines.append(f"Full brief: {link}")
-        return "\\n".join(lines)
-
-    # ══════════════════════════════════════════════════════════
-    # FORMAT: CAPITAL VS MEDIA — contradiction duel
-    # ══════════════════════════════════════════════════════════
-    if fmt == "CAPITAL_VS_MEDIA":
+    if fmt == "FLOW":
         lines = []
         _nmc = _nmc_str(narrative_id)
-        lines.append(f"🧪 CAPITAL vs MEDIA: {narrative_label} | GAP {gap}/100" + (f" | {_nmc} in play" if _nmc else ""))
+        direction_word = {"LONG": "ACCUMULATION", "SHORT": "DISTRIBUTION", "NEUTRAL": "ROTATION"}
+        dw = direction_word.get(direction, "ROTATION")
+        # Header: capital movement direction + narrative + Edge score
+        lines.append(f"💹 THE FLOW: {dw} detected in {narrative_label} | Δ EDGE {gap}/100" + (f" | {_nmc} in play" if _nmc else ""))
         lines.append("")
         lines.append(headline)
         lines.append("")
+        # Media vs Capital — the contradiction core
         if they_say and reality:
-            lines.append(f"📺 Media says: {words_truncate(they_say, 18)}")
-            lines.append(f"💰 Capital says: {words_truncate(reality, 18)}")
+            lines.append("=== MEDIA vs CAPITAL ===")
+            lines.append(f"📺 Media Consensus: {words_truncate(they_say, 22)}")
+            lines.append(f"💰 Capital Ledger:   {words_truncate(reality, 22)}")
             lines.append("")
+        # Capital metrics
         if cap_str:
-            lines.append(f"📊 Flow: {cap_str} | Conviction: {conviction} {c_emoji}")
+            lines.append(f"💴 Aggregate capital at stake: {cap_str}")
+            if alpha:
+                lines.append(f"💡 Signal: {alpha}")
             lines.append("")
-        if alpha:
-            lines.append(f"💡 Alpha thesis: {alpha}")
+        elif alpha:
+            lines.append(f"💡 Signal: {alpha}")
             lines.append("")
+        # Positioning data
+        lines.append(f"📊 Narrative: {narrative_label}" + (f" | {conviction} conviction {c_emoji}" if conviction != "SPECULATIVE" else ""))
         if direction != "NEUTRAL":
-            lines.append(f"🎯 {direction} {narrative_ticker}{r_multiple}")
-            if entry: lines.append(f"• Entry: {entry}")
-            if stop: lines.append(f"• Stop: {stop}")
-            if target: lines.append(f"• Target: {target}")
-            lines.append("")
-        lines.append(f"{gap_to_tag(gap)} #{narrative_id.replace('_','').upper()}")
+            lines.append(f"🎯 Institutional bias: {direction} {narrative_ticker}{r_multiple}")
+            if entry: lines.append(f"   Entry zone: {entry}")
+            if stop: lines.append(f"   Risk level: Stop @ {stop}")
+            if target: lines.append(f"   Objective: Target @ {target}")
         lines.append("")
-        lines.append(f"Full brief: {link}")
+        lines.append(f"{edge_tag(gap)} #{narrative_id.replace('_','').upper()}" + (f" #{narrative_ticker}" if narrative_ticker else ""))
+        lines.append("")
+        lines.append(f"Full intelligence: {link}")
         return "\n".join(lines)
 
     return ""
@@ -506,13 +457,13 @@ def _nmc_str(narrative_id: str) -> str:
         return f"${cap / 1e9:.1f}B"
     return ""
 
-def gap_to_tag(gap: int) -> str:
-    """Map GAP score to a canonical hashtag."""
+def edge_tag(gap: int) -> str:
+    """Map Contrarian Edge (Δ) score to a canonical hashtag."""
     if gap >= 70:
-        return "#GAP_ALERT"
+        return "#EDGE_ALERT"
     elif gap >= 40:
-        return "#GAP_ACTIVE"
-    return "#GAP_MONITOR"
+        return "#EDGE_ACTIVE"
+    return "#EDGE_MONITOR"
 
 
 
@@ -560,7 +511,7 @@ def main():
         print(f"[{now()}] Flow ledger loaded: {len(flow_ledger)} narratives, "
               f"{narratives_with_capital} with real capital")
     else:
-        print(f"[{now()}] WARNING: Flow ledger unavailable — GapFire will show N/A")
+        print(f"[{now()}] WARNING: Flow ledger unavailable — Edge broadcast may show N/A")
 
     posted_ids = load_posted_ids()
     # Phase 8c: BREAKING only (GAP > 50) + must carry trade thesis
@@ -604,7 +555,7 @@ def main():
             last_ts, last_gap = throttle[narrative_id]
             hours_ago = (datetime.now(ZoneInfo("Europe/Kyiv")) - datetime.fromisoformat(last_ts)).total_seconds() / 3600
             if hours_ago < THROTTLE_HOURS and gap <= last_gap + THROTTLE_GAP_JUMP:
-                continue  # Suppress — same narrative, no material GAP increase
+                continue  # Suppress — same narrative, no material Edge increase
 
         text = format_story_for_telegram(story, flow_ledger, used_formats)
         if not text:
@@ -731,8 +682,8 @@ def main():
                 else:
                     _nmc_str = ""
                 _title = s.get("_container_title", _nid)
-                _lines.append(f"{_title:45s} GAP {_gap:>3} {_arrow}  | {_nmc_str}")
-            _pulse_text = "\U0001f4e1 THE FLOW — " + datetime.now(ZoneInfo("Europe/Kyiv")).strftime("%H:%M") + " Kyiv\n\n" + "\n".join(_lines) + "\n\nlagazzettadikyiv.com?utm_source=telegram&utm_medium=pulse"
+                _lines.append(f"{_title:45s} Δ EDGE {_gap:>3} {_arrow}  | {_nmc_str}")
+            _pulse_text = "\U0001f4e1 THE PULSE — " + datetime.now(ZoneInfo("Europe/Kyiv")).strftime("%H:%M") + " Kyiv\n\n" + "\n".join(_lines) + "\n\nlagazzettadikyiv.com?utm_source=telegram&utm_medium=pulse"
             # Throttle: only send pulse once per 2 hours
             import time as _time
             _pulse_path = PUBLIC_DATA / "pulse_sent.json"
