@@ -61,6 +61,18 @@ def extract_domain(url: str) -> str:
             "kyivindependent.com": "Kyiv Independent",
             "al-monitor.com": "Al-Monitor",
             "youtube.com": "YouTube",
+            "bloomberg.com": "Bloomberg",
+            "ft.com": "Financial Times",
+            "coindesk.com": "CoinDesk",
+            "cnbc.com": "CNBC",
+            "wsj.com": "Wall Street Journal",
+            "bbc.com": "BBC",
+            "bbc.co.uk": "BBC",
+            "barrons.com": "Barron's",
+            "marketwatch.com": "MarketWatch",
+            "investopedia.com": "Investopedia",
+            "finance.yahoo.com": "Yahoo Finance",
+            "finance.google.com": "Google Finance",
         }
         if domain in mapping:
             return mapping[domain]
@@ -745,7 +757,7 @@ def assemble_story(db_item, llm_story, prices):
         "sector": narrative_asset_map.get(primary, "mixed"),
         "tags": containers_list,
         "entity_tags": [],                            # Pass 1 safe default
-        "source_name": source_type.upper(),
+        "source_name": extract_domain(source_url) or source_type.title(),
         "source_url": source_url,
         "feed_source": extract_domain(source_url),
         "generated_at": now_ts,
