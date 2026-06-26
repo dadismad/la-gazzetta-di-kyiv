@@ -142,6 +142,9 @@ def execute_command(cmd_line):
             r2 = run_cmd("build_frontend", [str(VENV), str(SCRIPTS/"build_frontend.py")], 60, True)
             if not r2["ok"]:
                 return f"Rebuild failed at build_site: {r2['stderr'][:200]}"
+            r2b = run_cmd("deploy", ["bash", str(SCRIPTS/"shipit.sh")], 120, False)
+            if not r2b["ok"]:
+                return f"Rebuild failed at deploy: {r2b['stderr'][:200]}"
             r3 = run_cmd("test_platform", [str(VENV), str(SCRIPTS/"test_platform.py")], 30, False)
             return f"Site rebuilt. Tests: {r3['stdout'].strip()[-100:]}"
         
@@ -534,7 +537,7 @@ STEPS = [
     ("build_frontend",    [str(VENV), str(SCRIPTS/"build_frontend.py")],                            60, True),
     ("test_platform", [str(VENV), str(SCRIPTS/"test_platform.py")],                         30, False),
     ("telegram_post", [str(VENV), str(SCRIPTS/"telegram_broadcast.py")],                   60, False),
-    ("deploy", [str(VENV), str(SCRIPTS/"deploy_to_gcs.py")], 120, False),
+    ("deploy", ["bash", str(SCRIPTS/"shipit.sh")], 120, False),
 ]
 
 def run_cmd(name, cmd, timeout, critical):

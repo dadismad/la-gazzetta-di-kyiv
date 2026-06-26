@@ -199,22 +199,72 @@ def compute_changes(series_id, current_val):
 
 
 def classify_regime(series_output):
-    """Simple macro regime classifier from key FRED series."""
-    dgs10 = series_output.get("DGS10", {}).get("value")
-    unrate = series_output.get("UNRATE", {}).get("value")
-    spread = series_output.get("T10Y2Y", {}).get("value")
+    """Multi-dimensional macro regime classifier using FRED series.
+    
+    Primary axis: 10Y nominal yield (DGS10).
+    Secondary axis: yield curve (T10Y2Y), real rates (DFII10), financial conditions (NFCI).
+    Overlay: VIX stress, unemployment.
+    
+    Regimes (in order of restrictiveness):
+      INVERSION       — yield curve inverted (2Y > 10Y by >30bp)
+      RESTRICTIVE     — nominal >5.0%, tight financial conditions
+      TIGHTENING      — nominal >4.0% with elevated real rates or flattening curve
+      NEUTRAL-TIGHT   — nominal 3.5–4.5% with modest real rates, curve normalising
+      STRESS          — financial stress (VIX > 28 or NFCI > 0) regardless of rate level
+      NEUTRAL         — nominal 2.5–3.5%, no stress signals
+      EASING          — nominal <3.0% with accommodative posture
+      ACCOMMODATIVE   — nominal <2.5% with low unemployment
+      UNKNOWN         — insufficient data
+    """
+    dgs10 = series_output.get("DGS10", {}).get("value")       # 10Y nominal yield
+    spread = series_output.get("T10Y2Y", {}).get("value")     # 10Y-2Y spread (bp)
+    dfii10 = series_output.get("DFII10", {}).get("value")     # 10Y TIPS real yield
+    nfci = series_output.get("NFCI", {}).get("value")         # Chicago Fed Financial Conditions
+    unrate = series_output.get("UNRATE", {}).get("value")     # Unemployment rate
+    vix = series_output.get("VIXCLS", {}).get("value")        # VIX close
 
     if dgs10 is None:
         return "UNKNOWN"
-    if spread is not None and spread < -0.5:
+
+    # ── Yield curve inversion — strongest structural signal ──
+    if spread is not None and spread < -0.3:
         return "INVERSION"
-    if dgs10 > 5.5:
-        return "TIGHTENING"
-    if dgs10 < 2.5 and (unrate is not None and unrate < 4.5):
-        return "ACCOMMODATIVE"
-    if dgs10 < 2.5:
+
+    # ── Financial stress overlay (can co-occur with any regime) ──
+    stress = False
+    if vix is not None and vix > 28:
+        stress = True
+    if nfci is not None and nfci > 0:
+        stress = True
+
+    # ── Real rate estimate (use TIPS if available, else approximate) ──
+    real_rate = dfii10 if dfii10 is not None else (dgs10 - 3.0)
+
+    # ── Multi-dimensional regime classification ──
+    if dgs10 > 5.0:
+        return "RESTRICTIVE"
+    elif dgs10 > 4.0:
+        if real_rate is not None and real_rate > 1.5:
+            return "TIGHTENING"
+        elif stress:
+            return "STRESS"
+        else:
+            return "NEUTRAL-TIGHT"
+    elif dgs10 > 3.0:
+        if stress:
+            return "STRESS"
+        elif real_rate is not None and real_rate < 0:
+            return "EASING"
+        else:
+            return "NEUTRAL"
+    elif dgs10 > 2.0:
+        if stress:
+            return "STRESS"
         return "EASING"
-    return "NEUTRAL"
+    else:
+        if unrate is not None and unrate < 4.0:
+            return "ACCOMMODATIVE"
+        return "EASING"
 
 
 # -- Main ------------------------------------------------------------

@@ -1,5 +1,5 @@
 # CTO State Persistence Protocol — La Gazzetta di Kyiv
-# Updated: 2026-06-27 01:20 Kyiv (Phase C Complete)
+# Updated: 2026-06-27 03:40 Kyiv (Pipeline Hardening Complete)
 # Read this at the START of every session.
 
 ## Architecture State
@@ -9,7 +9,7 @@
 - **Project root**: /opt/gazzetta-di-kyiv/
 - **User**: gazzetta (all pipeline processes)
 - **Python venv**: /opt/gazzetta-di-kyiv/venv/bin/python
-- **Deploy**: gsutil rsync/cp → gs://www.lagazzettadikyiv.com/ → CDN (5-15min cache)
+- **Deploy**: shipit.sh → gsutil cp (html: no-cache, json: no-store, static: 1d) → GCS → CDN
 - **Scheduler**: systemd timer gazzetta-governor.timer (10-min cycle)
 - **SSH alias**: gazzetta-prod
 - **Local repo**: ~/lagazzettadikyiv/
@@ -22,14 +22,16 @@ youtube → arxiv → ingestion → market_data → cftc_data → fred_data → 
 → synthesis → classify → calc_capital → gen_flows → build_frontend → test_platform
 → pulse → telegram_post → deploy
 
-### Active Scripts (25)
+### Active Scripts (26)
 build_frontend.py (1720L), contradiction_synthesizer.py (1069L), governor.py,
-calculate_capital.py, classify_stories.py, db_to_json.py, deploy_to_gcs.py,
+calculate_capital.py, classify_stories.py, db_to_json.py,
 fetch_arxiv.py, fetch_cftc.py, fetch_derivatives.py, fetch_fred.py,
 fetch_narrative_cap.py, fetch_patents.py, fetch_youtube.py, generate_flows.py,
 health_check.py, ingestion_triage.py, market_reality.py, narrative_pulse.py,
-purge_cache.py, telegram_broadcast.py, telegram_stats.py, test_platform.py,
+purge_cache.py, shipit.sh, telegram_broadcast.py, telegram_stats.py, test_platform.py,
 traffic_cop.py, build_dossiers.py
+
+> deploy_to_gcs.py retained as fallback but NO LONGER USED — governor delegates to shipit.sh
 
 ### Key Data Files
 - stories.json: public/data/stories.json (600 stories, 6.8MB)
@@ -49,28 +51,45 @@ traffic_cop.py, build_dossiers.py
 - Leaderboard: "Δ EDGE LEADERBOARD" with "Δ 94", "Δ 81" etc.
 - Story cards: "Δ EDGE 63" instead of "GAP 63"
 - Capital Flows, About, Contradictions tabs: all Δ Edge
-- Meta tags updated
-- Backend field names (contradiction_gap, gap field in JSON) preserved — no DB migration
+- Meta tags updated (Contrarian Edge (Δ) between media consensus and capital flows)
+- Backend field names preserved — zero database migration risk
 
 ### C2: Telegram 2.0 Three-Format System
 - Refactored telegram_broadcast.py format_story_for_telegram()
-- **THE SETUP**: High-conviction trades (direction + entry/stop/target + alpha trigger)
-  - Header: 🔥/📈 THE SETUP: DIRECTION TICKER R:R | Δ EDGE score | NMC
-  - Alpha trigger sentence, Media vs Capital, === TRADE PARAMETERS ===
-  - Stop, Target, Invalidation, Horizon, Conviction, Narrative context
-- **THE FLOW**: Structural capital migration (macro/commodity/crypto shifts)
-  - Header: 💹 THE FLOW: ACCUMULATION/DISTRIBUTION/ROTATION
-  - === MEDIA vs CAPITAL ===, capital metrics, institutional bias
-- **THE PULSE**: Rapid-response radar (unchanged from main() heartbeat)
-- Box-drawing chars replaced with ASCII === separators
-- FALLBACK_FORMAT simplified to SETUP↔FLOW rotation
-- All hashtags: #EDGE_ALERT, #EDGE_ACTIVE, #EDGE_MONITOR
+- THE SETUP: 🔥/📈 header, alpha trigger, === TRADE PARAMETERS === (stop, target, invalidation)
+- THE FLOW: 💹 header, === MEDIA vs CAPITAL ===, institutional bias
+- THE PULSE: rapid-response heartbeat (unchanged in main())
+- FALLBACK_FORMAT: SETUP↔FLOW rotation
+- Hashtags: #EDGE_ALERT, #EDGE_ACTIVE, #EDGE_MONITOR
 
 ### Verified
 - 146/146 tests passing
 - Live CDN: lagazzettadikyiv.com renders Δ Edge throughout
 - Sample THE SETUP dispatch: clean, actionable, professional
 - All 5 P2/P3 bug fixes (from earlier) still active
+
+## Pipeline Hardening — Completed (Jun 27)
+
+### shipit.sh — Unified Deploy Wrapper
+- 4-stage bash script: Build → Deploy HTML (no-cache) → Deploy JSON (no-store) → Static assets (1d cache)
+- Cache-Control headers injected at upload time via `gsutil -h`
+- Error handling: failures logged to /opt/gazzetta-di-kyiv/deploy_report.txt
+- Replaces deploy_to_gcs.py in governor STEPS array
+- Verified live headers:
+  - index.html: `Cache-Control: public, max-age=0, must-revalidate` ✓
+  - data/stories.json: `Cache-Control: private, no-store` ✓
+  - data/flows.json: `Cache-Control: private, no-store` ✓
+
+### Governor Update
+- Deploy step now calls `bash scripts/shipit.sh` instead of `python deploy_to_gcs.py`
+- rebuild_site EXEC command now includes shipit.sh deploy after build_frontend
+
+### FRED Regime Classifier Fix
+- Root cause: binary thresholds (5.5%/2.5%) couldn't capture 4.40% rate environment
+- New multi-dimensional classifier: 7 regimes (INVERSION, RESTRICTIVE, TIGHTENING, NEUTRAL-TIGHT, STRESS, NEUTRAL, EASING, ACCOMMODATIVE)
+- Uses: DGS10 (nominal) + DFII10 (real rate) + T10Y2Y (spread) + VIX + NFCI + UNRATE
+- Current regime: **TIGHTENING** (10Y: 4.40%, real yield: 2.19%, curve un-inverted at +0.31bp)
+- Was previously: NEUTRAL (stuck — the binary thresholds couldn't classify 4.40%)
 
 ## Remaining Known Issues
 
@@ -102,13 +121,12 @@ traffic_cop.py, build_dossiers.py
 ## Deployment Pattern (do NOT deviate)
 1. Edit locally in ~/lagazzettadikyiv/
 2. scp to gazzetta-prod:/tmp/
-3. sudo mv to /opt/gazzetta-di-kyiv/scripts/
+3. sudo mv to /opt/gazzetta-di-kyiv/scripts/ + chmod +x for .sh files
 4. sudo find /opt/gazzetta-di-kyiv/scripts/__pycache__ -delete
-5. Run modified script via sudo -u gazzetta /opt/gazzetta-di-kyiv/venv/bin/python
-6. Verify output
+5. Test: sudo bash scripts/shipit.sh (build + deploy with proper headers)
+6. Verify Cache-Control: curl -sI https://storage.googleapis.com/www.lagazzettadikyiv.com/index.html | grep cache
 7. git add + commit + push IMMEDIATELY
-8. For full deploy: run build_frontend.py then gsutil cp/rsync to GCS
-9. Verify via raw storage.googleapis.com URL first; CDN caches 5-15min
+8. Never rely on governor's auto-deploy — shipit.sh is the single source of truth for deploys
 
 ## Critical Pitfalls (do NOT repeat)
 - GCS index.html may NOT update via rsync — use direct `gsutil cp` if needed
