@@ -30,6 +30,28 @@ PRICES_FILE = DATA_DIR / "market_prices.json"
 MATERIALITY_THRESHOLD_USD = 50_000_000   # $50M minimum to pass gate
 GAP_MATERIALITY_FLOOR = 20               # stories below this GAP are never material
 FIDELITY_MULTIPLIERS = {"TIER_1": 1.0, "TIER_2": 0.8, "TIER_3": 0.5}
+MAX_CAPITAL_PER_STORY = 10_000_000_000   # $10B hard cap — single story can't exceed this
+
+# FRED series normalization ranges: (min_plausible, max_plausible)
+# Maps raw FRED values into [0,1] before averaging so exchange rates (7),
+# trade balances (100K), and indices (103) aren't naively averaged.
+FRED_NORM_RANGES = {
+    "DGS10":       (0, 10),       # 10Y yield: 0-10%
+    "T10Y2Y":      (-3, 3),       # 10Y-2Y spread: -3 to +3%
+    "DFEDTARU":    (0, 10),       # Fed Funds upper limit: 0-10%
+    "UNRATE":      (2, 15),       # Unemployment: 2-15%
+    "DEXCHUS":     (5, 9),        # CNY/USD: 5-9
+    "BOPGSTB":     (-150000, 50000),  # Trade balance ($M): -150B to +50B
+    "INDPRO":      (80, 120),     # Industrial production index: 80-120
+    "DTWEXBGS":    (80, 160),     # Trade-weighted USD: 80-160
+    "DEXUSEU":     (0.8, 1.4),    # EUR/USD: 0.80-1.40
+    "DEXJPUS":     (0.004, 0.010),# JPY/USD: 0.004-0.010 (100-250 JPY per USD)
+    "PPIACO":      (80, 200),     # PPI all commodities: 80-200
+    "CPIAUCSL":    (200, 350),    # CPI-U: 200-350
+    "DCOILWTICO":  (0, 150),      # WTI crude: $0-150
+    "DHHNGSP":     (0, 15),       # Henry Hub natural gas: $0-15
+    "GPDI":        (1000, 5000),  # Gross Private Domestic Investment ($B): 1T-5T
+}
 
 # Approximate contract notional values (June 2026) for dollar-value conversion
 # CFTC data gives us contract counts; multiply by these to get USD exposure
@@ -140,31 +162,41 @@ def compute_fred_capital(narrative_id, fred_data):
     if not keys:
         return 0, "TIER_3"
 
-    # Sum absolute values of key series, scaled to approximate capital scale
-    total_value = 0
+    # Sum normalized values (0-1 range) of key series to produce a unitless
+    # tension score, then scale to capital-dollar space.
+    # This prevents unit mismatches: exchange rates (~7), trade balances (~100K),
+    # and indices (~103) are each normalized to their plausible range before averaging.
+    norm_total = 0.0
     count = 0
     for key in keys:
         s = series.get(key, {})
         val = s.get("value")
-        if val is not None:
-            total_value += abs(val)
-            count += 1
+        if val is None:
+            continue
+        norm_range = FRED_NORM_RANGES.get(key)
+        if norm_range:
+            lo, hi = norm_range
+            span = hi - lo
+            if span > 0:
+                clamped = max(lo, min(hi, val))
+                norm_total += (clamped - lo) / span
+                count += 1
 
     if count == 0:
         return 0, "TIER_3"
 
-    avg = total_value / count
+    norm_avg = norm_total / count
 
-    # FRED series are rates/indices — need scaling to capital-dollar space
-    # Base: $10B × average series value normalized to plausible ranges
+    # FRED series are normalized to [0,1] — scaling to capital-dollar space
+    # Base: $10B × normalized average
     if narrative_id == "rate_cycle":
-        capital = avg * 2_000_000_000     # yield % → $2B per point
+        capital = norm_avg * 10_000_000_000     # yield curve tension → up to $10B
     elif narrative_id == "china_ascent":
-        capital = avg * 500_000_000        # exchange rate/balance → $500M
+        capital = norm_avg * 5_000_000_000       # CNY/trade tension → up to $5B
     elif narrative_id == "dollar_decline":
-        capital = avg * 1_000_000_000      # dollar index → $1B
+        capital = norm_avg * 8_000_000_000       # dollar index tension → up to $8B
     else:
-        capital = avg * 250_000_000        # generic macro → $250M
+        capital = norm_avg * 3_000_000_000       # generic macro → up to $3B
 
     # Regime modifier
     regime_mod = {
@@ -271,25 +303,43 @@ def main():
     material_count = 0
     narrative_accum = {}  # {nid: {"capital_bases": [], "fidelity": tier}}
 
+    # Pre-compute story counts per narrative for per-story division.
+    # The asset_base (total CFTC positioning, ETF AUM, etc.) represents the
+    # ENTIRE narrative's structural capital, not one story's. Dividing by
+    # story_count keeps the sum bounded to actual market reality.
+    story_counts = {}
+    for story in all_stories:
+        nid = story.get("narrative_id", "")
+        if nid and nid != "unassigned":
+            story_counts[nid] = story_counts.get(nid, 0) + 1
+
     for story in all_stories:
         nid = story.get("narrative_id", "")
         gap = int(story.get("contradiction_gap", 0))
 
         # 1. Get asset base from best available source
         asset_base, fidelity = get_asset_base(nid, cftc, fred, prices)
+
+        # 2. Per-story division: asset_base ÷ story_count
+        n_stories = story_counts.get(nid, 1)
+        per_story_base = asset_base / max(n_stories, 1)
+
         multiplier = FIDELITY_MULTIPLIERS.get(fidelity, 0.5)
 
-        # 2. Capital at stake = asset_base × (gap/100) × fidelity
-        capital_usd = asset_base * (gap / 100.0) * multiplier
+        # 3. Capital at stake = per_story_base × (gap/100) × fidelity
+        capital_usd = per_story_base * (gap / 100.0) * multiplier
 
-        # 3. Materiality gate
+        # 4. Hard cap — single story cannot exceed $10B regardless of math
+        capital_usd = min(capital_usd, MAX_CAPITAL_PER_STORY)
+
+        # 5. Materiality gate
         is_material = (
             capital_usd >= MATERIALITY_THRESHOLD_USD and gap >= GAP_MATERIALITY_FLOOR
         )
 
-        # 4. Update story fields
+        # 6. Update story fields
         story["capital_at_stake_usd"] = int(capital_usd)
-        story["capital_base_usd"] = int(asset_base)
+        story["capital_base_usd"] = int(per_story_base)
         story["data_fidelity"] = fidelity
         story["materiality_pass"] = is_material
         story["tier"] = compute_tier(gap, is_material)

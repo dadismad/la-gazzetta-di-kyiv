@@ -222,6 +222,20 @@ def build():
 
     # Defence-in-depth: filter out anomalous source "T" artefacts (pre-synthesizer-fix stories)
     all_stories = [s for s in all_stories if (s.get("source_name") or "").strip().upper() != "T"]
+
+    # Bridge: capital_at_stake_usd → capital_volume_usd
+    # calculate_capital.py writes capital_at_stake_usd (computed from CFTC/FRED/prices).
+    # contradiction_synthesizer.py writes capital_volume_usd (LLM inference, mostly 0).
+    # All downstream Python and JS code reads capital_volume_usd. Normalize here once
+    # so the 8 reference locations don't need individual patches.
+    for s in all_stories:
+        computed = s.get("capital_at_stake_usd", 0) or 0
+        existing = s.get("capital_volume_usd", 0) or 0
+        # Always prefer the computed value (real data, hard-capped) over LLM inference
+        if computed > 0:
+            s["capital_volume_usd"] = computed
+        elif existing == 0:
+            s["capital_volume_usd"] = 0
     all_stories.sort(key=lambda s: s.get("generated_at", ""), reverse=True)
 
     # Compute narrative summaries from narratives.json taxonomy
