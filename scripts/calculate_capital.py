@@ -218,10 +218,11 @@ def compute_prices_capital(narrative_id, prices_data):
     This is the pre-existing method; CFTC/FRED override when available.
     """
     narrative_tickers = {
-        "tech_convergence": ["QQQ", "SMH", "SOXX", "ARKK"],
-        "space_economy": ["ROKT", "UFO", "ARKX"],
+        "tech_convergence": ["CLOU", "WCLD", "ARTY", "BOTZ"],
+        "space_economy": ["ARKX", "UFO", "ROKT", "MARS"],
         "gene_editing": ["ARKG", "XBI", "IBB"],
-        "wealthy_sports": ["BATRK", "MSGS", "MANU"],
+        "wealthy_sports": ["STAD", "DKNG"],
+        "china_ascent": ["FXI", "MCHI", "ASHR", "KWEB"],
         "ai_chips": ["SMH", "SOXX", "QQQ"],
         "crypto_reserve": [],  # handled separately
     }
