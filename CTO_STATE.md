@@ -2,15 +2,13 @@
 # Updated: 2026-06-27 ~15:00 Kyiv (SOLIANIN MASTER SPRINT — GATE 0 BASELINE)
 # Read this at the START of every session.
 
-## SOLIANIN TERMINAL MASTER SPRINT — COMPLETED ✅
-- Sprint completed: 2026-06-27 ~15:00 Kyiv
-- All 5 modules deployed and verified live
-- GLM 5.2: primary synthesis (fallback: DeepSeek HA)
-- Dark terminal v34.0: #0A0A0F body, CSS variables, mobile hinting
-- NMC: Representational Proxy Portfolios (12 canonical pools)
-- Telegram: DESK WIRE format live
-- 4 VC docs: EDITORIAL_DOCTRINE, NMC_METHODOLOGY_PITCH, INFRASTRUCTURE_AUDIT, DESIGN_ROADMAP
-- Lefevre Filter: removed from public UI, retained in agent context
+## Bilingual Architecture — COMPLETED ✅
+- translate_ru.py: GLM 5.2 batch translation with ID-tracked ledger
+- build_frontend.py --lang ru: Russian HTML output to ru/index.html
+- governor.py: translate_ru + build_ru steps (non-blocking)
+- test_platform.py: 4 RU assertions, 161/161 PERFECT BOARD
+- Russian trading-desk nomenclature: лонг, шорт, стоп-лосс, тейк-профит, дивергенция, альфа-триггер
+- 5 stories translated and quality-verified live
 
 ## Architecture State
 
