@@ -1,6 +1,15 @@
 # CTO State Persistence Protocol — La Gazzetta di Kyiv
-# Updated: 2026-06-27 03:40 Kyiv (Pipeline Hardening Complete)
+# Updated: 2026-06-27 ~15:00 Kyiv (SOLIANIN MASTER SPRINT — GATE 0 BASELINE)
 # Read this at the START of every session.
+
+## SOLIANIN TERMINAL MASTER SPRINT — In Progress
+- Sprint initiated: 2026-06-27 ~15:00 Kyiv
+- GLM 5.2: primary synthesis engine (fallback: DeepSeek)
+- Voice protocol: 8-point Solianin style spec
+- UI target: Dark terminal (#0A0A0F), mobile hinting, horizontal nav
+- NMC reframe: "Representational Proxy Portfolios" label
+- Telegram: High-Conviction Desk Wire format
+- Verification gates between modules — test_platform.py (146 tests)
 
 ## Architecture State
 

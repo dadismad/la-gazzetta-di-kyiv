@@ -93,9 +93,22 @@ STORIES_PATH = PUBLIC_DATA / "stories.json"
 TMP_PATH = PUBLIC_DATA / "stories.tmp.json"
 PRICES_PATH = DATA_DIR / "market_prices.json"
 
+# ── LLM Provider Configuration ─────────────────────────────────────
+# PRIMARY:  GLM 5.2 (Zhipu AI) — Solianin voice synthesis
+# FALLBACK: DeepSeek — High Availability contingency
+GLM_KEY = os.environ.get("GLM_API_KEY", "3d76e17112094679a3236820eb5a3502.zX9w5hVuUqKu3pbL")
+GLM_URL = "https://open.bigmodel.cn/api/paas/v4/chat/completions"
+GLM_MODEL = os.environ.get("GLM_MODEL", "glm-5.2")
+
 DEEPSEEK_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 DEEPSEEK_MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat")
+
+# Provider order: primary first, fall through on failure
+PROVIDERS = [
+    {"name": "glm5.2",  "key": GLM_KEY,  "url": GLM_URL,  "model": GLM_MODEL,  "supports_thinking": False},
+    {"name": "deepseek","key": DEEPSEEK_KEY,"url": DEEPSEEK_URL,"model": DEEPSEEK_MODEL,"supports_thinking": True},
+]
 
 # Concurrency
 MAX_CONCURRENT = 5          # parallel API calls
@@ -451,71 +464,95 @@ MARKET DATA (current prices, organized by macro vector)
 Analyze the contradiction between the narrative in this article and the market data above. The SOURCE field tells you which publication to cite in they_say. Score EVERY macro vector (0.0-1.0) based on how much this event impacts that thesis. Most events affect 3-5 vectors. Return ONLY the JSON object."""
 
 
-# ── DeepSeek API call ───────────────────────────────────────────────
-async def call_deepseek(session, sem, item_id, title, text, market_context, source_domain=""):
-    """Send one item to DeepSeek. Returns (item_id, story_dict) or (item_id, None)."""
+# ── LLM API call (provider-routed with HA fallback) ──────────────────
+async def call_llm(session, sem, item_id, title, text, market_context, source_domain=""):
+    """Send one item to the LLM provider chain. Falls back on failure.
+    Returns (item_id, story_dict, status)."""
     async with sem:
-        # Jitter to avoid rate limits
         await asyncio.sleep(random.uniform(*REQUEST_JITTER))
-
         user_prompt = build_user_prompt(title, text, market_context, source_domain)
 
-        payload = {
-            "model": DEEPSEEK_MODEL,
-            "messages": [
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": user_prompt},
-            ],
-            "temperature": 0.3,
-            "max_tokens": 2400,
-            "thinking": {"type": "enabled"},
-            "reasoning_effort": "max",
-            "response_format": {"type": "json_object"},
-        }
+        last_error = None
+        for provider in PROVIDERS:
+            if not provider["key"]:
+                print(f"  [{item_id}] ⚠ {provider['name']} key not configured — skipping")
+                continue
 
-        headers = {
-            "Authorization": f"Bearer {DEEPSEEK_KEY}",
-            "Content-Type": "application/json",
-        }
+            result = await _call_provider(session, provider, user_prompt, item_id)
+            if result is not None:
+                story, status = result
+                if provider["name"] != PROVIDERS[0]["name"]:
+                    print(f"  [{item_id}] ⚠ FALLBACK to {provider['name']} succeeded")
+                return (item_id, story, status)
+            last_error = f"{provider['name']}_failed"
 
-        try:
-            async with session.post(
-                DEEPSEEK_URL, json=payload, headers=headers,
-                timeout=aiohttp.ClientTimeout(total=API_TIMEOUT),
-            ) as resp:
-                if resp.status == 429:
-                    print(f"  [{item_id}] RATE LIMITED — will retry next run")
-                    return (item_id, None, "rate_limited")
-                if resp.status != 200:
-                    body = await resp.text()
-                    print(f"  [{item_id}] HTTP {resp.status}: {body[:200]}")
-                    return (item_id, None, f"http_{resp.status}")
+        print(f"  [{item_id}] ❌ All providers exhausted")
+        return (item_id, None, last_error or "all_providers_failed")
 
-                data = await resp.json()
-                content = data.get("choices", [{}])[0].get("message", {}).get("content", "")
-                if not content:
-                    print(f"  [{item_id}] Empty response content")
-                    return (item_id, None, "empty_response")
 
-                # Parse JSON response — strip any stray markdown fences
-                content = content.strip()
-                if content.startswith("```"):
-                    content = re.sub(r"^```(?:json)?\s*", "", content)
-                    content = re.sub(r"\s*```$", "", content)
+async def _call_provider(session, provider, user_prompt, item_id):
+    """Call a single LLM provider. Returns (story_dict, status) or None on failure."""
+    payload = {
+        "model": provider["model"],
+        "messages": [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": user_prompt},
+        ],
+        "temperature": 0.3,
+        "max_tokens": 2400,
+    }
 
-                story = json.loads(content)
-                return (item_id, story, "ok")
+    # DeepSeek-specific: thinking + response_format
+    if provider["supports_thinking"]:
+        payload["thinking"] = {"type": "enabled"}
+        payload["reasoning_effort"] = "max"
+        payload["response_format"] = {"type": "json_object"}
 
-        except asyncio.TimeoutError:
-            print(f"  [{item_id}] TIMEOUT")
-            return (item_id, None, "timeout")
-        except json.JSONDecodeError as e:
-            print(f"  [{item_id}] JSON parse error: {e}")
-            print(f"       raw: {content[:200]}")
-            return (item_id, None, "json_error")
-        except Exception as e:
-            print(f"  [{item_id}] ERROR: {type(e).__name__}: {e}")
-            return (item_id, None, str(type(e).__name__))
+    headers = {
+        "Authorization": f"Bearer {provider['key']}",
+        "Content-Type": "application/json",
+    }
+
+    content = None
+    try:
+        async with session.post(
+            provider["url"], json=payload, headers=headers,
+            timeout=aiohttp.ClientTimeout(total=API_TIMEOUT),
+        ) as resp:
+            if resp.status == 429:
+                print(f"  [{item_id}] {provider['name']} RATE LIMITED")
+                return None
+            if resp.status != 200:
+                body = await resp.text()
+                print(f"  [{item_id}] {provider['name']} HTTP {resp.status}: {body[:200]}")
+                return None
+
+            data = await resp.json()
+            content = data.get("choices", [{}])[0].get("message", {}).get("content", "")
+            if not content:
+                print(f"  [{item_id}] {provider['name']} empty response")
+                return None
+
+            # Parse JSON — strip stray markdown fences
+            content = content.strip()
+            if content.startswith("```"):
+                content = re.sub(r"^```(?:json)?\s*", "", content)
+                content = re.sub(r"\s*```$", "", content)
+
+            story = json.loads(content)
+            return (story, "ok")
+
+    except asyncio.TimeoutError:
+        print(f"  [{item_id}] {provider['name']} TIMEOUT")
+        return None
+    except json.JSONDecodeError as e:
+        raw_preview = content[:200] if content else 'N/A'
+        print(f"  [{item_id}] {provider['name']} JSON error: {e}")
+        print(f"       raw: {raw_preview}")
+        return None
+    except Exception as e:
+        print(f"  [{item_id}] {provider['name']} ERROR: {type(e).__name__}: {e}")
+        return None
 
 
 # ── story assembly ──────────────────────────────────────────────────
@@ -971,7 +1008,7 @@ async def run(max_items=None, dry_run=False):
                 text = item[4] or ""
 
                 tasks.append(
-                    call_deepseek(session, sem, item_id, title, text, market_context, source_domain)
+                    call_llm(session, sem, item_id, title, text, market_context, source_domain)
                 )
 
             results = await asyncio.gather(*tasks)
@@ -1058,9 +1095,14 @@ def main():
                     help="Fetch + analyze but don't write stories.json")
     args = ap.parse_args()
 
-    if not DEEPSEEK_KEY:
-        print("ERROR: DEEPSEEK_API_KEY not set.", file=sys.stderr)
+    # Require at least one configured provider
+    if not GLM_KEY and not DEEPSEEK_KEY:
+        print("ERROR: Neither GLM_API_KEY nor DEEPSEEK_API_KEY is set.", file=sys.stderr)
         sys.exit(1)
+    if not GLM_KEY:
+        print("WARNING: GLM_API_KEY not set — falling back to DeepSeek only.", file=sys.stderr)
+    if not DEEPSEEK_KEY:
+        print("WARNING: DEEPSEEK_API_KEY not set — no fallback available.", file=sys.stderr)
 
     asyncio.run(run(max_items=args.max_items, dry_run=args.dry_run))
 

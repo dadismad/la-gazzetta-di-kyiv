@@ -293,9 +293,11 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None, used_format
         conviction = tt.get("conviction", "SPECULATIVE")
         horizon = int(tt.get("horizon_days", 14))
         alpha = tt.get("alpha_trigger", "")
+        entry_rationale = tt.get("entry_rationale", "")
     else:
         direction = "NEUTRAL"; entry = ""; stop = ""; target = ""
         invalidation = ""; horizon = 14; alpha = ""; conviction = "SPECULATIVE"
+        entry_rationale = ""
 
     # ── R-multiple ──
     r_multiple = ""
@@ -327,15 +329,19 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None, used_format
     # ═══ TELEGRAM 2.0: THREE-FORMAT ROUTING ═══
     # THE SETUP: High-conviction trade ideas (direction + entry/stop/target)
     # THE FLOW: Massive structural capital allocations, macro shifts
+    # THE DESK WIRE: High-conviction probability-weighted trade call with full levels
     # THE PULSE: Rapid-response radar (handled separately in main)
     if not has_trade_thesis:
         return ""
 
     has_setup = (direction != "NEUTRAL" and conviction in ("HIGH", "ELEVATED") 
                  and (entry or target))
+    is_high_conviction = conviction in ("HIGH", "ELEVATED") and direction != "NEUTRAL" and entry
     is_macro_narrative = asset_class in ("commodity", "crypto", "macro")
     
-    if has_setup:
+    if is_high_conviction and gap >= 60:
+        fmt = "DESK_WIRE"
+    elif has_setup:
         fmt = "SETUP"
     elif gap >= 50 or is_macro_narrative or (they_say and reality):
         fmt = "FLOW"
@@ -351,6 +357,44 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None, used_format
             elif fmt == "FLOW" and "SETUP" not in used_formats:
                 fmt = "SETUP"
         used_formats.add(fmt)
+
+    # ══════════════════════════════════════════════════════════
+    # FORMAT: HIGH-CONVICTION DESK WIRE — probability-weighted trade call
+    # ══════════════════════════════════════════════════════════
+    if fmt == "DESK_WIRE":
+        lines = []
+        # Probability header
+        prob_pct = min(95, gap + 10) if gap >= 60 else gap
+        lines.append(f"🔴 HIGH-CONVICTION DESK WIRE — {direction} {narrative_ticker}")
+        lines.append(f"[{prob_pct}% PROB] Δ EDGE {gap}/100 | {conviction} CONVICTION")
+        lines.append("")
+        lines.append(headline)
+        lines.append("")
+        # Alpha trigger — the precise mispricing
+        if alpha:
+            lines.append(f"💡 ALPHA TRIGGER: {alpha}")
+            lines.append("")
+        # Trade execution card
+        lines.append("╔══════════════════════════════╗")
+        lines.append(f"║  {direction} {narrative_ticker} @ {entry}")
+        lines.append("╠══════════════════════════════╣")
+        if stop: lines.append(f"║  🛑 STOP:  {stop}")
+        if target: lines.append(f"║  ✅ TARGET: {target}")
+        if invalidation and invalidation != stop: lines.append(f"║  ⚠️ INVALIDATION: {invalidation}")
+        lines.append(f"║  ⏱ HORIZON: {horizon}d")
+        if entry_rationale: lines.append(f"║  📐 RATIONALE: {words_truncate(entry_rationale, 15)}")
+        lines.append("╚══════════════════════════════╝")
+        lines.append("")
+        # Media vs Reality
+        if they_say and reality:
+            lines.append(f"📰 {words_truncate(they_say, 20)}")
+            lines.append(f"💰 {words_truncate(reality, 20)}")
+            lines.append("")
+        lines.append(f"📊 {narrative_label}" + (f" | {cap_str}" if cap_str else ""))
+        lines.append(f"{edge_tag(gap)} #{narrative_id.replace('_','').upper()} #{narrative_ticker}")
+        lines.append("")
+        lines.append(f"🔗 Full brief: {link}")
+        return "\n".join(lines)
 
     # ══════════════════════════════════════════════════════════
     # FORMAT: THE SETUP — high-conviction trade execution card
@@ -683,7 +727,7 @@ def main():
                     _nmc_str = ""
                 _title = s.get("_container_title", _nid)
                 _lines.append(f"{_title:45s} Δ EDGE {_gap:>3} {_arrow}  | {_nmc_str}")
-            _pulse_text = "\U0001f4e1 THE PULSE — " + datetime.now(ZoneInfo("Europe/Kyiv")).strftime("%H:%M") + " Kyiv\n\n" + "\n".join(_lines) + "\n\nlagazzettadikyiv.com?utm_source=telegram&utm_medium=pulse"
+            _pulse_text = "\U0001f4e1 THE PULSE — " + datetime.now(ZoneInfo("Europe/Kyiv")).strftime("%H:%M") + " Kyiv\n\n" + "\n".join(_lines) + "\n\n@LaGazzettadiKyiv | lagazzettadikyiv.com?utm_source=telegram&utm_medium=pulse"
             # Throttle: only send pulse once per 2 hours
             import time as _time
             _pulse_path = PUBLIC_DATA / "pulse_sent.json"

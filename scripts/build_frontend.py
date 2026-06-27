@@ -430,8 +430,27 @@ tailwind.config = {
 }
 </script>
 <style>
+  /* ── DARK TERMINAL THEME (v34.0) ── */
+  :root {
+    --bg-primary:    #0A0A0F;
+    --bg-secondary:  #12121A;
+    --bg-tertiary:   #1A1A24;
+    --text-primary:  #E6E4E0;
+    --text-secondary:#9B97B0;
+    --text-muted:    #5C5870;
+    --gold:          #D4AF37;
+    --gold-dim:      #8B7332;
+    --crimson:       #8B0000;
+    --green:         #27AE60;
+    --red:           #E74C3C;
+    --blue:          #5DADE2;
+    --edge-extreme:  #FF6B35;
+    --edge-high:     #D4AF37;
+    --edge-medium:   #9B97B0;
+    --edge-low:      #5C5870;
+  }
   *,*::before,*::after{border-radius:0!important;box-shadow:none!important}
-  body{background:#FFFFFF!important;color:#1A1C1A!important;min-height:100dvh}
+  body{background:var(--bg-primary)!important;color:var(--text-primary)!important;min-height:100dvh}
   /* ── PHASE 8 GLOBAL TYPOGRAPHY OVERRIDES (desktop-first) ── */
   .font-body-md{font-size:13px!important;line-height:1.5}
   h3.font-headline-md,h3,.font-headline-md{font-size:14px!important;line-height:1.35!important;font-weight:600}
@@ -472,6 +491,26 @@ tailwind.config = {
   .glossary-target:hover{color:#B45309}
 
   /* MOBILE BREAKPOINTS */
+  /* ── HORIZONTAL NAV (scroll-snap, app-like swipe) ── */
+  .top-nav{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:0;border-bottom:1px solid var(--gold-dim)}
+  .top-nav::-webkit-scrollbar{display:none}
+  .top-nav a{scroll-snap-align:start;flex:0 0 auto;padding:12px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-secondary);border-bottom:2px solid transparent;white-space:nowrap;text-decoration:none}
+  .top-nav a.active{color:var(--gold);border-bottom-color:var(--gold)}
+  /* ── MOBILE PROGRESSIVE DISCLOSURE (<details> hinting) ── */
+  .story-card-hint summary{list-style:none;cursor:pointer}
+  .story-card-hint summary::-webkit-details-marker{display:none}
+  .story-card-hint summary::marker{display:none;content:''}
+  .card-hook{display:flex;align-items:center;gap:8px;padding:12px;background:var(--bg-secondary);border-left:3px solid var(--gold);min-height:48px}
+  .card-hook .edge-badge{padding:2px 8px;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;border-radius:2px}
+  .edge-badge.edge-80{background:var(--edge-extreme);color:#0A0A0F}
+  .edge-badge.edge-60{background:var(--edge-high);color:#0A0A0F}
+  .edge-badge.edge-40{background:var(--edge-medium);color:#0A0A0F}
+  .edge-badge.edge-0{background:var(--edge-low);color:var(--text-primary)}
+  .card-hook .one-liner{flex:1;font-size:13px;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .card-hook .price-move{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600}
+  .card-hook .price-move.positive{color:var(--green)}
+  .card-hook .price-move.negative{color:var(--red)}
+  .card-expanded{padding:16px;background:var(--bg-tertiary);border-left:3px solid var(--gold);font-size:13px;line-height:1.6}
   @media (max-width:768px){
     #desktop-sidebar{display:none!important}
     .md\\:ml-72{margin-left:0!important}
@@ -816,17 +855,9 @@ tailwind.config = {
       <!-- A2 Who We Are -->
       <div class="p-stack-space-md bg-surface-container border-l-2 border-gold">
         <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Who We Are</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant">La Gazzetta di Kyiv is an autonomous geopolitical intelligence terminal built and operated by Alexander Stocchi. We track the Contrarian Edge (Δ) — the divergence between what financial media reports and what institutional capital actually does. Every dispatch is algorithmically generated through sovereign auditing of verified sources, then scored against live market data. The terminal operates continuously from a dedicated compute instance, updating every ten minutes with no human intervention in the analytical pipeline.</p>
-        <p class="font-body-md text-body-md text-on-surface-variant mt-2">Contact: <a class="text-gold-accessible hover:text-gold" href="https://t.me/GazzettaDiKyiv">@GazzettaDiKyiv on Telegram</a></p>
+        <p class="font-body-md text-body-md text-on-surface-variant">La Gazzetta di Kyiv is a narrative-capital intelligence terminal founded by <strong>Alexander Solianin</strong> (CEO & Chief Editor) and <strong>Alessio Stocchi</strong> (CTO). We track the Contrarian Edge (Δ) — the structural divergence between what financial media reports and what institutional capital actually does. Our mission: supply every underdog with vivid investment and trading opportunities to exploit, and get out from the debt and currency depreciation vicious cycle.</p>
+        <p class="font-body-md text-body-md text-on-surface-variant mt-2">Contact: <a class="text-gold-accessible hover:text-gold" href="https://t.me/LaGazzettadiKyiv">@LaGazzettadiKyiv on Telegram</a></p>
       </div>
-      <details class="mb-stack-space-md" open>
-        <summary class="p-stack-space-md bg-surface-container border-l-2 border-gold font-headline-md text-headline-md text-on-surface">
-          <span class="material-symbols-outlined expand-icon text-gold">expand_more</span> The Lefevre Filter
-        </summary>
-        <div class="details-content px-stack-space-md pb-stack-space-md bg-surface-container border-l-2 border-gold">
-          <p class="font-body-md text-body-md text-on-surface-variant">Market price action is verification, not subject. For every story, ask: "If this news is true, why isn't the price moving?" Silence in the tape when the narrative screams is the loudest signal.</p>
-        </div>
-      </details>
       <details open>
         <summary class="font-headline-md text-headline-md text-on-surface mb-stack-space-sm flex items-center gap-1">
           <span class="material-symbols-outlined expand-icon text-gold">expand_more</span> Narrative Lifecycle Phases
@@ -1617,7 +1648,6 @@ setTimeout(renderRadar, 100);
     CAPITAL:'Capital Flow — estimated institutional money movement tied to this narrative',
     'Domain Intelligence':'Sidebar showing real-time capital allocation per narrative — measured in billions USD',
     'Vulnerability Map':'Risk heat map — each narrative scored by divergence magnitude and capital concentration',
-    'Lefevre Filter':'Editorial heuristic: if this news is true, why is the price not moving? Market silence during narrative noise is the loudest signal.',
     'Reflexivity Alert':'When positioning becomes fundamental driver. Narratives enter self-reinforcing loops — invalidation thresholds mark where the thesis breaks.',
     'Invalidation Threshold':'The exact price or economic level where a narrative thesis is proven wrong by market action.',
     'Consensus Saturation':'Narrative phase where media and market fully agree — the story is priced in, no edge remains.',

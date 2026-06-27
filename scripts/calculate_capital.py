@@ -77,21 +77,92 @@ CONTRACT_NOTIONALS = {
     "JH": 42000 * 0.15,      # Jet/Heat spread
 }
 
-# Narrative → primary data source mapping
-NARRATIVE_DATA_SOURCE = {
-    "dollar_decline":      "cftc",  # Gold/Silver/Platinum positioning
-    "critical_resource_control":  "cftc",  # Crude/NatGas product positioning
-    "commodity_supercycle":"cftc",  # Copper/Grains/Softs positioning
-    "deglobalization":     "cftc",  # Industrial metals → defense supply chain
-    "rate_cycle":          "fred",  # Yield curve, Fed Funds, inflation
-    "china_ascent":        "fred",  # CNY exchange rate, trade balance proxy
-    "tech_convergence":    "prices",# ETF AUM (no CFTC futures for tech)
-    "space_economy":       "prices",# ETF AUM
-    "gene_editing":        "prices",# ETF AUM
-    "wealthy_sports":      "prices",# ETF AUM
-    "ai_chips":            "prices",# ETF AUM
-    "crypto_reserve":      "prices",# ETF AUM + CoinGecko
+# ── Representational Proxy Portfolios (RPP) ─────────────────────────
+# Each narrative tracks a CANONICAL set of highly liquid, causally-linked
+# proxy instruments — NOT "total market cap." These are High-Beta Proxy Assets
+# selected for narrative sensitivity, institutional accessibility, and daily
+# liquidity. See docs/NMC_METHODOLOGY_PITCH.md for VC defense.
+#
+# Label: "Capital tracked via High-Beta Proxy Assets"
+#
+# Narrative → Canonical Proxy Portfolio + primary data source
+NARRATIVE_PROXY_PORTFOLIO = {
+    "dollar_decline": {
+        "source": "cftc",
+        "label": "Precious Metals + Currency Futures",
+        "proxies": ["GC=F", "SI=F", "GLD", "SLV", "UUP", "DX=F", "EURUSD=X", "JPYUSD=X"],
+        "rationale": "Gold/silver as anti-dollar hedges; DXY and EURUSD as direct currency vectors"
+    },
+    "critical_resource_control": {
+        "source": "cftc",
+        "label": "Energy Futures + Uranium",
+        "proxies": ["CL=F", "NG=F", "XLE", "URA", "NLR"],
+        "rationale": "Crude + natural gas futures; uranium as energy sovereignty play"
+    },
+    "commodity_supercycle": {
+        "source": "cftc",
+        "label": "Industrial Metals + Grains",
+        "proxies": ["HG=F", "DBC", "COPX", "XME", "WEAT", "CORN"],
+        "rationale": "Copper, broad commodities, industrial metals, agricultural futures"
+    },
+    "deglobalization": {
+        "source": "cftc",
+        "label": "Defense + Industrial Metals",
+        "proxies": ["XLI", "ITA", "PPA", "XME", "FDX", "CAT"],
+        "rationale": "Defense primes + industrial metals as deglobalization beneficiaries"
+    },
+    "rate_cycle": {
+        "source": "fred",
+        "label": "Treasury ETFs + Bond Futures",
+        "proxies": ["TLT", "SHY", "IEF", "ZN=F", "ZB=F"],
+        "rationale": "Duration/dollar sensitivity to rate cycle shifts"
+    },
+    "china_ascent": {
+        "source": "fred",
+        "label": "China Equity ETFs + Currency",
+        "proxies": ["FXI", "KWEB", "MCHI", "BABA", "CNY=X"],
+        "rationale": "China equity + tech exposure; CNY as policy transmission channel"
+    },
+    "tech_convergence": {
+        "source": "prices",
+        "label": "Cloud + Enterprise Tech",
+        "proxies": ["MSFT", "AMZN", "GOOGL", "QQQ", "CLOU", "WCLD"],
+        "rationale": "Cloud infrastructure + enterprise software as tech consolidation vectors"
+    },
+    "space_economy": {
+        "source": "prices",
+        "label": "Space + Defense Primes",
+        "proxies": ["ARKX", "UFO", "ROKT", "LMT", "NOC"],
+        "rationale": "Space ETFs + defense primes with space divisions"
+    },
+    "gene_editing": {
+        "source": "prices",
+        "label": "Biotech + Gene Editing",
+        "proxies": ["ARKG", "XBI", "IBB", "CRSP", "NTLA"],
+        "rationale": "Biotech ETFs + gene-editing pure-plays with clinical catalysts"
+    },
+    "wealthy_sports": {
+        "source": "prices",
+        "label": "Sports Betting + Franchise Ownership",
+        "proxies": ["DKNG", "MANU", "BATRK", "DIS"],
+        "rationale": "Sports betting operators + publicly traded franchise owners"
+    },
+    "ai_chips": {
+        "source": "prices",
+        "label": "Semiconductor + AI Infrastructure",
+        "proxies": ["NVDA", "SMH", "AMD", "ASML", "TSM"],
+        "rationale": "Chipmakers with direct AI infrastructure exposure"
+    },
+    "crypto_reserve": {
+        "source": "prices",
+        "label": "Crypto + Institutional On-Ramps",
+        "proxies": ["BTC-USD", "COIN", "MSTR", "ETH-USD"],
+        "rationale": "Bitcoin + Ethereum; institutional exchange and treasury exposure"
+    },
 }
+
+# Backward-compatible alias
+NARRATIVE_DATA_SOURCE = {nid: cfg["source"] for nid, cfg in NARRATIVE_PROXY_PORTFOLIO.items()}
 
 
 # -- helpers ---------------------------------------------------------
