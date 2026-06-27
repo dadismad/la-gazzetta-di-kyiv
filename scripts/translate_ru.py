@@ -178,6 +178,70 @@ def build_translation_payload(stories):
     return fields_map, "\n".join(prompt_parts)
 
 
+def json_parse_robust(raw_text: str, debug_label: str = "") -> dict | None:
+    """Parse JSON with multiple recovery strategies for GLM 5.2 malformed output."""
+    text = raw_text.strip()
+
+    # Strategy 0: Direct parse
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        pass
+
+    # Strategy 1: Strip markdown fences
+    if text.startswith("```"):
+        text = re.sub(r"^```(?:json)?\s*", "", text)
+        text = re.sub(r"\s*```$", "", text)
+        try:
+            return json.loads(text)
+        except json.JSONDecodeError:
+            pass
+
+    # Strategy 2: Fix trailing commas before } or ]
+    text2 = re.sub(r",\s*([}\]])", r"\1", text)
+    try:
+        return json.loads(text2)
+    except json.JSONDecodeError:
+        pass
+
+    # Strategy 3: Fix unescaped quotes inside string values
+    # Pattern: "key": "value with "unescaped" quotes"
+    # Replace inner quotes with escaped quotes in string values
+    try:
+        text3 = re.sub(
+            r'(?<=: ")(.*?)(?="\s*[,}])',
+            lambda m: m.group(1).replace('"', '\\"'),
+            text2
+        )
+        return json.loads(text3)
+    except (json.JSONDecodeError, Exception):
+        pass
+
+    # Strategy 4: Try to extract first complete JSON object via brace matching
+    try:
+        start = text2.find("{")
+        if start >= 0:
+            depth = 0
+            end = start
+            for i, ch in enumerate(text2[start:], start):
+                if ch == "{":
+                    depth += 1
+                elif ch == "}":
+                    depth -= 1
+                    if depth == 0:
+                        end = i + 1
+                        break
+            if end > start:
+                return json.loads(text2[start:end])
+    except json.JSONDecodeError:
+        pass
+
+    # Log failure for debugging
+    snippet = raw_text[:300] + ("..." if len(raw_text) > 300 else "")
+    print(f"  [translate_ru] JSON parse failed after 4 strategies{debug_label}: {snippet}")
+    return None
+
+
 def call_translation_api(provider_name, api_key, api_url, model, user_prompt, timeout):
     """Call an LLM for batch translation. Returns parsed dict or None on failure."""
     payload = {
@@ -201,20 +265,21 @@ def call_translation_api(provider_name, api_key, api_url, model, user_prompt, ti
 
     try:
         resp = urllib.request.urlopen(req, timeout=timeout, context=SSL_CTX)
-        data = json.loads(resp.read())
+        raw_body = resp.read().decode("utf-8")
+        data = json.loads(raw_body)
         content = data.get("choices", [{}])[0].get("message", {}).get("content", "")
 
         if not content:
             print(f"  [translate_ru] {provider_name} empty response")
             return None
 
-        # Strip markdown fences
-        content = content.strip()
-        if content.startswith("```"):
-            content = re.sub(r"^```(?:json)?\s*", "", content)
-            content = re.sub(r"\s*```$", "", content)
+        result = json_parse_robust(content, f" ({provider_name})")
+        if result and isinstance(result, dict) and len(result) > 0:
+            return result
 
-        return json.loads(content)
+        # If result is empty dict or None, log raw content for debugging
+        print(f"  [translate_ru] {provider_name} returned unparseable content (first 200 chars): {content[:200]}")
+        return None
 
     except urllib.error.HTTPError as e:
         body = e.read().decode()[:200]
