@@ -191,8 +191,12 @@ def load_narratives_config():
     return narratives, ordered
 
 def build():
-    print("[build_frontend] loading data...")
-    stories_raw = load_json(DATA / "stories.json")
+    import sys
+    lang = "ru" if "--lang" in sys.argv and "ru" in sys.argv else "en"
+    stories_src = PUBLIC_DATA / "stories_ru.json" if lang == "ru" else DATA / "stories.json"
+
+    print(f"[build_frontend] loading data... (lang={lang})")
+    stories_raw = load_json(stories_src)
 
     # Try flows.json for cross-asset data
     flows_raw = {}
@@ -353,7 +357,9 @@ def build():
     html = html.replace("__SYNC_STATUS__", sync_status)
 
     PUBLIC.mkdir(parents=True, exist_ok=True)
-    out = PUBLIC / "index.html"
+    out_dir = PUBLIC / "ru" if lang == "ru" else PUBLIC
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out = out_dir / "index.html"
     with open(out, "w") as f:
         f.write(html)
 
