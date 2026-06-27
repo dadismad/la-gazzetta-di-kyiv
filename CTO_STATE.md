@@ -1,5 +1,22 @@
 # CTO State Persistence Protocol — La Gazzetta di Kyiv
-# Updated: 2026-06-27 ~15:00 Kyiv (SOLIANIN MASTER SPRINT — GATE 0 BASELINE)
+# Updated: 2026-06-27 ~17:15 Kyiv (PHASE 11 — CFTC FINANCIAL FUTURES COMPLETE ✅)
+
+## Phase 11: CFTC Financial Futures Integration — COMPLETED ✅
+- New: fetch_cftc_financial.py — downloads TIFF ZIP (fut_fin_xls_2026.zip), extracts CSV,
+  filters 8 financial contracts, outputs cftc_financial_positions.json
+- 48-hour cache: protects VM bandwidth, prevents CFTC IP blocks (data is weekly)
+- Updated calculate_capital.py: dual-source CFTC ingestion (physical + financial),
+  correct notional multipliers (6E=$135K, ZN=$100K, ES=$280K, NQ=$430K),
+  $10T narrative-level circuit breaker
+- Governor step: cftc_financial after cftc_data (90s timeout, non-critical)
+- Live capital: rate_cycle $165B, tech_convergence $70.5B, dollar_decline $0.7B
+- All 13 narratives now have live capital values — ZERO N/A gaps
+- TIFF contract codes (verified live, 2026-06-27):
+  099741/Euro FX, 097741/Japanese Yen, 096742/British Pound,
+  042601/2Y Note, 043602/10Y Note, 020601/30Y Bond,
+  13874A/S&P E-mini, 209742/Nasdaq Mini
+- NOTE: CFTC blocks VM IP for TIFF download — ship cached ZIP+XLS to VM
+  (or set up proxy/VPN for VM outbound)
 # Read this at the START of every session.
 
 ## Bilingual Architecture — COMPLETED ✅
@@ -25,10 +42,10 @@
 - **gsutil**: /opt/gazzetta-di-kyiv/devvit/google-cloud-sdk/bin/gsutil
 - **DB**: /opt/gazzetta-di-kyiv/data/gazzetta.db (must use `sudo -u gazzetta sqlite3`)
 
-### Pipeline (16 steps)
-youtube → arxiv → ingestion → market_data → cftc_data → fred_data → derivatives
+### Pipeline (17 steps)
+youtube → arxiv → ingestion → market_data → cftc_data → cftc_financial → fred_data → derivatives
 → synthesis → classify → calc_capital → gen_flows → build_frontend → test_platform
-→ pulse → telegram_post → deploy
+→ telegram_post → deploy
 
 ### Active Scripts (26)
 build_frontend.py (1720L), contradiction_synthesizer.py (1069L), governor.py,
