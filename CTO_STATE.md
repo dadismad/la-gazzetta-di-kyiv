@@ -2,14 +2,15 @@
 # Updated: 2026-06-27 ~15:00 Kyiv (SOLIANIN MASTER SPRINT — GATE 0 BASELINE)
 # Read this at the START of every session.
 
-## SOLIANIN TERMINAL MASTER SPRINT — In Progress
-- Sprint initiated: 2026-06-27 ~15:00 Kyiv
-- GLM 5.2: primary synthesis engine (fallback: DeepSeek)
-- Voice protocol: 8-point Solianin style spec
-- UI target: Dark terminal (#0A0A0F), mobile hinting, horizontal nav
-- NMC reframe: "Representational Proxy Portfolios" label
-- Telegram: High-Conviction Desk Wire format
-- Verification gates between modules — test_platform.py (146 tests)
+## SOLIANIN TERMINAL MASTER SPRINT — COMPLETED ✅
+- Sprint completed: 2026-06-27 ~15:00 Kyiv
+- All 5 modules deployed and verified live
+- GLM 5.2: primary synthesis (fallback: DeepSeek HA)
+- Dark terminal v34.0: #0A0A0F body, CSS variables, mobile hinting
+- NMC: Representational Proxy Portfolios (12 canonical pools)
+- Telegram: DESK WIRE format live
+- 4 VC docs: EDITORIAL_DOCTRINE, NMC_METHODOLOGY_PITCH, INFRASTRUCTURE_AUDIT, DESIGN_ROADMAP
+- Lefevre Filter: removed from public UI, retained in agent context
 
 ## Architecture State
 
