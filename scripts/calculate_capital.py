@@ -24,6 +24,7 @@ PUBLIC_DATA = PROJECT / "public" / "data"
 DATA_DIR = PROJECT / "data"
 STORIES_FILE = PUBLIC_DATA / "stories.json"
 CFTC_FILE = DATA_DIR / "cftc_positions.json"
+CFTC_FINANCIAL_FILE = DATA_DIR / "cftc_financial_positions.json"
 FRED_FILE = DATA_DIR / "fred_series.json"
 PRICES_FILE = DATA_DIR / "market_prices.json"
 
@@ -31,6 +32,7 @@ MATERIALITY_THRESHOLD_USD = 50_000_000   # $50M minimum to pass gate
 GAP_MATERIALITY_FLOOR = 20               # stories below this GAP are never material
 FIDELITY_MULTIPLIERS = {"TIER_1": 1.0, "TIER_2": 0.8, "TIER_3": 0.5}
 MAX_CAPITAL_PER_STORY = 10_000_000_000   # $10B hard cap — single story can't exceed this
+MAX_NARRATIVE_CAPITAL = 10_000_000_000_000  # $10T circuit breaker — narrative aggregate cap
 
 # FRED series normalization ranges: (min_plausible, max_plausible)
 # Maps raw FRED values into [0,1] before averaging so exchange rates (7),
@@ -75,6 +77,21 @@ CONTRACT_NOTIONALS = {
     "ST": 20 * 700,          # Steel: 20 short tons × ~$700 = $14K
     "JF": 42000 * 2.20,      # Jet Fuel (proxy RBOB sizing)
     "JH": 42000 * 0.15,      # Jet/Heat spread
+}
+
+# Financial futures notional values (TIFF report, June 2026)
+# Currencies: contract size × approximate FX rate
+# Treasuries: face value at par
+# Equities: $multiplier × approximate index level
+FINANCIAL_CONTRACT_NOTIONALS = {
+    "6E": 125000 * 1.08,      # Euro FX: 125K€ × ~$1.08/€ = $135K
+    "6J": 12500000 / 147,     # Japanese Yen: 12.5M¥ ÷ ~147¥/$ = $85K
+    "6B": 62500 * 1.26,       # British Pound: 62.5K£ × ~$1.26/£ = $78.75K
+    "ZT": 200_000,            # 2Y Note: $200K face value
+    "ZN": 100_000,            # 10Y Note: $100K face value
+    "ZB": 100_000,            # 30Y Bond: $100K face value
+    "ES": 50 * 5600,          # S&P E-mini: $50 × ~5600 = $280K
+    "NQ": 20 * 21500,         # Nasdaq Mini: $20 × ~21500 = $430K
 }
 
 # ── Representational Proxy Portfolios (RPP) ─────────────────────────
@@ -211,6 +228,28 @@ def compute_cftc_capital(narrative_id, cftc_data):
     return total_usd, fidelity
 
 
+def compute_cftc_financial_capital(narrative_id, cftc_fin):
+    """
+    Convert TIFF financial futures speculative positioning to dollar-value capital.
+    Uses Lev_Money_net (leveraged money = hedge funds/CTAs) as primary signal.
+    """
+    positions = cftc_fin.get("positions_by_narrative", {}).get(narrative_id)
+    if not positions:
+        return 0, "TIER_3"
+
+    total_usd = 0
+    for ticker in positions.get("contracts", []):
+        contract = cftc_fin.get("positions_by_contract", {}).get(ticker, {})
+        if contract.get("status") != "ok":
+            continue
+        mm_net = abs(contract.get("managed_money_net", 0) or 0)
+        notional = FINANCIAL_CONTRACT_NOTIONALS.get(ticker, 100_000)
+        total_usd += mm_net * notional
+
+    fidelity = "TIER_1" if total_usd > 0 else "TIER_3"
+    return total_usd, fidelity
+
+
 def compute_fred_capital(narrative_id, fred_data):
     """
     Derive capital-flow proxy from FRED macro series.
@@ -320,26 +359,35 @@ def compute_prices_capital(narrative_id, prices_data):
     return capital, fidelity
 
 
-def get_asset_base(narrative_id, cftc, fred, prices):
-    """Return (capital_at_stake_base_usd, fidelity_tier) for a narrative."""
+def get_asset_base(narrative_id, cftc, cftc_fin, fred, prices):
+    """Return (capital_at_stake_base_usd, fidelity_tier) for a narrative.
+    Data source priority: CFTC > CFTC Financial > FRED > Prices."""
     source = NARRATIVE_DATA_SOURCE.get(narrative_id, "prices")
 
-    # Tier 1: CFTC — highest fidelity
+    # Tier 1a: Physical CFTC — highest fidelity for commodity narratives
     if source == "cftc":
         capital, fidelity = compute_cftc_capital(narrative_id, cftc)
         if capital > 0:
             return capital, fidelity
-        # Fall through to prices if CFTC has no data for this narrative
+        # Fall through to financial CFTC for dollar_decline (precious metals + currencies)
+
+    # Tier 1b: Financial CFTC — for dollar_decline, rate_cycle, tech_convergence
+    capital_fin, fidelity_fin = compute_cftc_financial_capital(narrative_id, cftc_fin)
+    if capital_fin > 0:
+        # Merge with physical CFTC if both exist (e.g., dollar_decline has gold + euro fx)
+        capital_phys, _ = compute_cftc_capital(narrative_id, cftc)
+        total = capital_phys + capital_fin
+        return total, "TIER_1"
+
+    # Tier 1c: Physical CFTC as secondary source for non-cftc narratives
+    if source != "cftc":
+        capital, fidelity = compute_cftc_capital(narrative_id, cftc)
+        if capital > 0:
+            return capital, fidelity
 
     # Tier 2: FRED — macro overlay
     if source == "fred":
         capital, fidelity = compute_fred_capital(narrative_id, fred)
-        if capital > 0:
-            return capital, fidelity
-
-    # Try CFTC as secondary if FRED is primary
-    if source == "fred":
-        capital, fidelity = compute_cftc_capital(narrative_id, cftc)
         if capital > 0:
             return capital, fidelity
 
@@ -363,6 +411,7 @@ def main():
 
     stories_data = load_json(STORIES_FILE)
     cftc = load_json(CFTC_FILE)
+    cftc_fin = load_json(CFTC_FINANCIAL_FILE)
     fred = load_json(FRED_FILE)
     prices = load_json(PRICES_FILE)
 
@@ -390,7 +439,7 @@ def main():
         gap = int(story.get("contradiction_gap", 0))
 
         # 1. Get asset base from best available source
-        asset_base, fidelity = get_asset_base(nid, cftc, fred, prices)
+        asset_base, fidelity = get_asset_base(nid, cftc, cftc_fin, fred, prices)
 
         # 2. Per-story division: asset_base ÷ story_count
         n_stories = story_counts.get(nid, 1)
@@ -438,6 +487,12 @@ def main():
         median_base = statistics.median(bases) if bases else 0
         total_cap = median_base * mult
 
+        # Circuit breaker: cap narrative aggregate at $10T
+        if total_cap > MAX_NARRATIVE_CAPITAL:
+            print(f"  [calc_capital] ⚠ CIRCUIT BREAKER: {nid} capital ${total_cap:,.0f} "
+                  f"exceeds ${MAX_NARRATIVE_CAPITAL:,.0f} cap — clamping to $10T")
+            total_cap = MAX_NARRATIVE_CAPITAL
+
         narrative_alpha[nid] = {
             "total_capital_usd": int(total_cap),
             "story_count": len(bases),
@@ -457,12 +512,14 @@ def main():
     fix_ownership(str(STORIES_FILE))
 
     cftc_ok = cftc.get("status") == "ok"
+    cftc_fin_ok = cftc_fin.get("status") == "ok"
     fred_ok = fred.get("status") == "ok"
     print(
         f"[+] {processed} stories processed. {material_count} passed materiality gate."
     )
     print(
         f"[+] Data sources: CFTC={'OK' if cftc_ok else 'DEGRADED'}, "
+        f"CFTC_Fin={'OK' if cftc_fin_ok else 'DEGRADED'}, "
         f"FRED={'OK' if fred_ok else 'DEGRADED'}, "
         f"Prices={'OK' if prices else 'DEGRADED'}"
     )

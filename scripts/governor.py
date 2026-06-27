@@ -528,6 +528,7 @@ STEPS = [
     ("ingestion",     [str(VENV), str(SCRIPTS/"ingestion_triage.py")],                    120, True),
     ("market_data",   [str(VENV), str(SCRIPTS/"market_reality.py"), "--all"],               90, True),
     ("cftc_data",     [str(VENV), str(SCRIPTS/"fetch_cftc.py")],                           60, False),
+    ("cftc_financial",[str(VENV), str(SCRIPTS/"fetch_cftc_financial.py")],                  90, False),
     ("fred_data",     [str(VENV), str(SCRIPTS/"fetch_fred.py")],                          120, False),
     ("derivatives",   [str(VENV), str(SCRIPTS/"fetch_derivatives.py")],                     30, False),
     ("synthesis",     [str(VENV), str(SCRIPTS/"contradiction_synthesizer.py")],            180, True),
