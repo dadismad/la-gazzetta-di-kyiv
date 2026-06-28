@@ -397,7 +397,7 @@ Respond with ONLY valid json. Your output must strictly match this schema:
   "trade_thesis": {
     "direction": "LONG or SHORT or STRADDLE or NEUTRAL",
     "primary_ticker": "string (the ONE ticker to trade, use exact symbol from market data)",
-    "limit_entry_price": "string (exact limit price like '$46.82' from market data, or 'market' for at-market execution when no specific technical level is warranted by the news)",
+    "limit_entry_price": "string (CRITICAL: this MUST be the CURRENT MARKET PRICE at the time of writing, e.g. '$46.82'. This is the price the trade enters at NOW — NOT a future target or stop-loss level. Use 'market' if no specific price is available. NEVER put take-profit or stop-loss values here.)",
     "entry_rationale": "string (why this price — technical level reference, or 'momentum entry on narrative break' for market orders)",
     "stop_loss": "string (exact stop price like '$48.50' — specific, falsifiable)",
     "take_profit": "string (exact target like '$42.00')",
@@ -485,7 +485,7 @@ GAP 0-15 FRAMING (reality text):
 TRADE THESIS RULES (FORWARD DECLARATION — CRITICAL):
 - EVERY story MUST have a trade_thesis object. NEUTRAL is only allowed when the contradiction is genuinely unactionable — and even then, you must propose a STRADDLE or volatility play with specific strike reasoning.
 - direction: LONG if capital flows contradict bearish media narrative (buy the asset the media is mispricing). SHORT if capital flows contradict bullish media narrative (sell what the media is pumping). STRADDLE if volatility is underpriced relative to event risk. NEUTRAL only with a specific volatility thesis.
-- limit_entry_price: Use an exact price from market data when available (e.g. '$46.82'). When the news event doesn't provide a specific technical level, use 'market' for at-market execution. This is a LIMIT ORDER — be precise when possible, but 'market' is valid for macro/geopolitical catalysts.
+- limit_entry_price: CRITICAL — MUST EQUAL THE TICKER'S CURRENT MARKET PRICE. Copy it exactly from the market data provided below. If the market data shows '$46.82', write '$46.82'. This is where the trade enters RIGHT NOW. Do NOT write a future limit order or a target price. If no ticker data is available, use 'market'. UNDER NO CIRCUMSTANCES put stop-loss or take-profit values in this field.
 - entry_rationale: ONE sentence explaining WHY this price. Examples: 'Retest of June 18 breakout at $46.82' or 'Local resistance from the 50-day MA.'
 - stop_loss: Exact price that invalidates the thesis. A single number like '$48.50'. This is NOT the same as the invalidation narrative — it's the hard price where you exit.
 - take_profit: Exact target price like '$42.00'. Use a realistic risk:reward ratio (minimum 1:1.5, preferred 1:2+).

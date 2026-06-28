@@ -192,8 +192,8 @@ def load_narratives_config():
 
 def build():
     import sys
-    lang = "ru" if "--lang" in sys.argv and "ru" in sys.argv else "en"
-    stories_src = PUBLIC_DATA / "stories_ru.json" if lang == "ru" else DATA / "stories.json"
+    lang = "en"
+    stories_src = DATA / "stories.json"
 
     print(f"[build_frontend] loading data... (lang={lang})")
     stories_raw = load_json(stories_src)
@@ -357,9 +357,7 @@ def build():
     html = html.replace("__SYNC_STATUS__", sync_status)
 
     PUBLIC.mkdir(parents=True, exist_ok=True)
-    out_dir = PUBLIC / "ru" if lang == "ru" else PUBLIC
-    out_dir.mkdir(parents=True, exist_ok=True)
-    out = out_dir / "index.html"
+    out = PUBLIC / "index.html"
     with open(out, "w") as f:
         f.write(html)
 
@@ -404,8 +402,8 @@ tailwind.config = {
       colors: {
         "surface": "#FAF9F6","surface-dim": "#DBDAD7","surface-bright": "#FAF9F6",
         "surface-container": "#EFEEEB","surface-container-high": "#E9E8E5",
-        "surface-container-highest": "#E3E2E0","on-surface": "#1A1C1A",
-        "on-surface-variant": "#444748","inverse-surface": "#2F312F",
+        "surface-container-highest": "#E3E2E0","on-surface": "#E6E4E0",
+        "on-surface-variant": "#9B97B0","inverse-surface": "#2F312F",
         "inverse-on-surface": "#F2F1EE","outline": "#747878",
         "outline-variant": "#C4C7C7","gold": "#D4AF37","gold-dim": "#B8860B","gold-accessible": "#B45309",
         "crimson": "#7F1D1D","roman-purple": "#66023C","emerald": "#10B981","navy": "#1A1F2E",

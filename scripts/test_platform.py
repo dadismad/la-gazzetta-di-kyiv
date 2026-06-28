@@ -141,31 +141,6 @@ def main():
     print("── test_platform.py v2.1 ──")
     test_stories_json()
     
-    # ── RU translation assertions ──
-    print("\n── TEST: Russian localization ──")
-    ru_path = PUBLIC_DATA / "stories_ru.json"
-    ru_exists = ru_path.exists()
-    check(ru_exists or True, f"stories_ru.json {'exists' if ru_exists else 'not yet generated (first cycle pending)'}")
-    if ru_exists:
-        try:
-            with open(ru_path) as f:
-                ru_data = json.load(f)
-            check(isinstance(ru_data, dict), "stories_ru.json is valid JSON")
-            ru_stories = ru_data.get("all_stories", [])
-            en_count = len(json.load(open(DATA / "stories.json")).get("all_stories", []))
-            check(len(ru_stories) == en_count, f"RU story count matches EN ({len(ru_stories)} vs {en_count})")
-            check(ru_data.get("language") == "ru", "Language marker set to 'ru'")
-            # Check no English leakage in headline field
-            if ru_stories:
-                en_only_words = 0
-                for s in ru_stories[:10]:
-                    h = s.get("headline", "")
-                    if re.search(r'\b(the|and|will|that|this|with|from)\b', h, re.IGNORECASE):
-                        en_only_words += 1
-                check(en_only_words <= 2, f"Minimal EN leakage in RU headlines ({en_only_words}/10)")
-        except Exception as e:
-            check(False, f"RU assertions error: {e}")
-    
     print(f"\n{'─'*50}")
     print(f"  PASS: {PASS}  FAIL: {FAIL}")
     
