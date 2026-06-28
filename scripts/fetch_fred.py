@@ -91,6 +91,10 @@ SERIES = [
     {"id": "VIXCLS",   "label": "VIX Close",                    "narrative": "rate_cycle",   "unit": "idx"},
     {"id": "NFCI",     "label": "Chicago Fed Financial Cond.",   "narrative": "rate_cycle",   "unit": "idx"},
     {"id": "TEDRATE",  "label": "TED Spread",                   "narrative": "rate_cycle",   "unit": "bp"},
+
+    # --- Credit Spreads (rate_cycle) ---
+    {"id": "BAA10Y",   "label": "Baa Corp Spread vs 10Y Trsy",  "narrative": "rate_cycle",   "unit": "%"},
+    {"id": "AAA10Y",   "label": "Aaa Corp Spread vs 10Y Trsy",  "narrative": "rate_cycle",   "unit": "%"},
 ]
 
 

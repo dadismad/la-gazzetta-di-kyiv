@@ -394,6 +394,7 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None, used_format
         lines.append(f"{edge_tag(gap)} #{narrative_id.replace('_','').upper()} #{narrative_ticker}")
         lines.append("")
         lines.append(f"🔗 Full brief: {link}")
+        lines.append(trust_anchor())
         return "\n".join(lines)
 
     # ══════════════════════════════════════════════════════════
@@ -431,6 +432,7 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None, used_format
         lines.append(f"{edge_tag(gap)} #{narrative_id.replace('_','').upper()} #{narrative_ticker}")
         lines.append("")
         lines.append(f"Full brief: {link}")
+        lines.append(trust_anchor())
         return "\n".join(lines)
 
     # ══════════════════════════════════════════════════════════
@@ -472,6 +474,7 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None, used_format
         lines.append(f"{edge_tag(gap)} #{narrative_id.replace('_','').upper()}" + (f" #{narrative_ticker}" if narrative_ticker else ""))
         lines.append("")
         lines.append(f"Full intelligence: {link}")
+        lines.append(trust_anchor())
         return "\n".join(lines)
 
     return ""
@@ -501,8 +504,43 @@ def _nmc_str(narrative_id: str) -> str:
         return f"${cap / 1e9:.1f}B"
     return ""
 
+TRACK_RECORD_PATH = PROJECT / "public" / "data" / "track_record.json"
+
+def load_track_record_stats() -> dict:
+    """Load live track record summary for broadcast trust anchor."""
+    try:
+        if TRACK_RECORD_PATH.exists():
+            with open(TRACK_RECORD_PATH) as f:
+                tr = json.load(f)
+            s = tr.get("summary", {})
+            return {
+                "win_rate": s.get("win_rate_pct", 0),
+                "profit_factor": s.get("profit_factor", 0),
+                "total_pnl": s.get("total_realized_pnl_pct", 0),
+                "closed": s.get("closed", 0),
+            }
+    except Exception:
+        pass
+    return {}
+
+
+def trust_anchor() -> str:
+    """Return a compact trust-anchor footer with live system performance."""
+    stats = load_track_record_stats()
+    wr = stats.get("win_rate", 0)
+    pf = stats.get("profit_factor", 0)
+    pnl = stats.get("total_pnl", 0)
+    closed = stats.get("closed", 0)
+    if closed >= 5:
+        return (f"\\n⚡ Gazzetta Alpha Engine: {wr}% Win Rate | "
+                f"{pf} Profit Factor" +
+                (f" | {pnl:+.1f}% PnL" if pnl else "") +
+                f" | {closed} settled trades\\n"
+                f"@LaGazzettadiKyiv | lagazzettadikyiv.com")
+    return "\n@LaGazzettadiKyiv | lagazzettadikyiv.com"
+
+
 def edge_tag(gap: int) -> str:
-    """Map Contrarian Edge (Δ) score to a canonical hashtag."""
     if gap >= 70:
         return "#EDGE_ALERT"
     elif gap >= 40:
@@ -696,6 +734,7 @@ def main():
                         _lines.append(f"• [{_g}] {_h}")
                     _lines.append("")
                     _lines.append(f"Full analysis: https://www.lagazzettadikyiv.com")
+                    _lines.append(trust_anchor())
                     _brief_text = "\\n".join(_lines)
                     if send_telegram(_brief_text):
                         posted_count += 1
@@ -727,7 +766,7 @@ def main():
                     _nmc_str = ""
                 _title = s.get("_container_title", _nid)
                 _lines.append(f"{_title:45s} Δ EDGE {_gap:>3} {_arrow}  | {_nmc_str}")
-            _pulse_text = "\U0001f4e1 THE PULSE — " + datetime.now(ZoneInfo("Europe/Kyiv")).strftime("%H:%M") + " Kyiv\n\n" + "\n".join(_lines) + "\n\n@LaGazzettadiKyiv | lagazzettadikyiv.com?utm_source=telegram&utm_medium=pulse"
+            _pulse_text = "\U0001f4e1 THE PULSE — " + datetime.now(ZoneInfo("Europe/Kyiv")).strftime("%H:%M") + " Kyiv\n\n" + "\n".join(_lines) + "\n" + trust_anchor()
             # Throttle: only send pulse once per 2 hours
             import time as _time
             _pulse_path = PUBLIC_DATA / "pulse_sent.json"
