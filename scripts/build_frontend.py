@@ -1225,38 +1225,206 @@ setTimeout(renderRadar, 100);
     }
   }
 
-  // ── C6: CROSSHAIR RENDER ──
+  // ── C6: CROSSHAIR SVG SCATTER PLOT ──
   function renderCrosshair() {
+    var svgPlot = document.getElementById('crosshair-svg');
     var plot = document.getElementById('crosshair-plot');
+    var gridEl = document.getElementById('crosshair-grid');
     var dotsEl = document.getElementById('crosshair-dots');
-    if (!plot || !dotsEl) return;
+    var tooltip = document.getElementById('crosshair-tooltip');
+    if (!svgPlot || !dotsEl || !gridEl) return;
 
-    // Aggregate narratives from FLOWS data (or stories)
-    var narratives = [];
-    var seen = {};
+    // ── Aggregate stories by narrative_id ──
+    var narrMap = {};
     for (var i = 0; i < STORIES.length; i++) {
       var s = STORIES[i];
       var nid = s.container || s._container_id || '';
-      if (!nid || seen[nid]) continue;
-      seen[nid] = true;
-      var gap = s.contradiction_gap || 0;
-      var cap = s.capital_volume_usd || 0;
-      if (gap > 0 || cap > 0) {
-        narratives.push({ id: nid, title: s._container_title || nid, gap: gap, capital: cap });
+      if (!nid) continue;
+      if (!narrMap[nid]) {
+        narrMap[nid] = {
+          id: nid,
+          title: s._container_title || nid,
+          gaps: [],
+          caps: [],
+          stories: 0
+        };
+      }
+      narrMap[nid].gaps.push(s.contradiction_gap || 0);
+      narrMap[nid].caps.push(s.capital_volume_usd || 0);
+      narrMap[nid].stories++;
+    }
+    var narrativeList = [];
+    for (var key in narrMap) {
+      var m = narrMap[key];
+      var totalGap = 0;
+      for (var gi = 0; gi < m.gaps.length; gi++) totalGap += m.gaps[gi];
+      var totalCap = 0;
+      for (var ci = 0; ci < m.caps.length; ci++) totalCap += m.caps[ci];
+      narrativeList.push({
+        id: m.id,
+        title: m.title,
+        avgGap: m.gaps.length ? totalGap / m.gaps.length : 0,
+        totalCap: totalCap,
+        storyCount: m.stories
+      });
+    }
+    // Also include narratives from NARRATIVES array for NMC capital data
+    var nmcLookup = {};
+    for (var ni = 0; ni < NARRATIVES.length; ni++) {
+      var nd = NARRATIVES[ni];
+      nmcLookup[nd.id] = (nd.capital_b || 0) * 1e9;
+    }
+    // Merge NMC capital into narrative list (prefer NMC data over story-sum)
+    for (var ni2 = 0; ni2 < narrativeList.length; ni2++) {
+      var nid2 = narrativeList[ni2].id;
+      if (nmcLookup[nid2] && nmcLookup[nid2] > narrativeList[ni2].totalCap) {
+        narrativeList[ni2].totalCap = nmcLookup[nid2];
       }
     }
-    if (narratives.length < 2) return;
 
-    var maxGap = Math.max.apply(null, narratives.map(function(n){ return n.gap; })) || 100;
-    var maxCap = Math.max.apply(null, narratives.map(function(n){ return n.capital; })) || 1e9;
+    // Filter out zero-gap narratives for meaningful plot
+    narrativeList = narrativeList.filter(function(n){ return n.avgGap > 0 && n.totalCap > 0; });
+    if (narrativeList.length < 2) {
+      dotsEl.innerHTML = '<text x="250" y="150" text-anchor="middle" fill="#5C5870" font-size="11" font-family="JetBrains Mono,monospace">Insufficient data for crosshair plot</text>';
+      return;
+    }
 
-    dotsEl.innerHTML = narratives.map(function(n){
-      var left = (n.gap / Math.max(maxGap, 1)) * 100;
-      var bottom = (n.capital / Math.max(maxCap, 1)) * 100;
-      var size = Math.max(8, Math.min(24, (n.capital / 1e9) * 8));
-      var color = n.gap >= 50 ? '#8B0000' : n.gap >= 30 ? '#D4AF37' : '#444748';
-      return '<div title="' + n.title + ' | Δ EDGE ' + n.gap.toFixed(0) + ' | $' + (n.capital/1e9).toFixed(1) + 'B" style="position:absolute;left:' + left.toFixed(1) + '%;bottom:' + bottom.toFixed(1) + '%;width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:' + color + ';transform:translate(-50%,50%);cursor:pointer;opacity:0.85;transition:opacity 0.2s" onmouseenter="this.style.opacity=1" onmouseleave="this.style.opacity=0.85"></div>';
-    }).join('');
+    // ── Layout constants (viewBox: 0 0 500 300) ──
+    var MARGIN = { top: 20, right: 20, bottom: 40, left: 50 };
+    var PLOT_W = 500 - MARGIN.left - MARGIN.right;  // 430
+    var PLOT_H = 300 - MARGIN.top - MARGIN.bottom;   // 240
+    var X0 = MARGIN.left;
+    var Y0 = MARGIN.top;
+
+    // ── Scales ──
+    var maxGap = 100;  // fixed 0-100 scale
+    // Log scale for capital: compute log10 range
+    var minCap = 1e6;   // $1M minimum floor
+    var maxCap = 0;
+    for (var k = 0; k < narrativeList.length; k++) {
+      if (narrativeList[k].totalCap > maxCap) maxCap = narrativeList[k].totalCap;
+    }
+    if (maxCap < minCap) maxCap = minCap * 10;
+    var logMin = Math.log10(minCap);
+    var logMax = Math.log10(maxCap);
+    var logRange = logMax - logMin;
+    if (logRange < 0.01) logRange = 0.01;
+
+    function xPos(gap) {
+      return X0 + (gap / maxGap) * PLOT_W;
+    }
+    function yPos(cap) {
+      var logVal = Math.log10(Math.max(cap, minCap));
+      var norm = (logVal - logMin) / logRange;
+      // Flip Y so higher capital = higher on chart
+      return Y0 + PLOT_H - norm * PLOT_H;
+    }
+
+    // ── Grid lines (5 horizontal + 5 vertical) ──
+    var gridHtml = '';
+    // X-axis grid lines + labels
+    for (var gx = 0; gx <= 100; gx += 20) {
+      var x = xPos(gx);
+      gridHtml += '<line class="grid-line" x1="' + x.toFixed(1) + '" y1="' + Y0 + '" x2="' + x.toFixed(1) + '" y2="' + (Y0 + PLOT_H) + '"/>';
+      gridHtml += '<text class="axis-label" x="' + x.toFixed(1) + '" y="' + (Y0 + PLOT_H + 14) + '">' + gx + '</text>';
+    }
+    // Y-axis grid lines + labels (log ticks)
+    var logTicks = [];
+    for (var lt = 6; lt <= 12; lt++) {  // 10^6 to 10^12
+      logTicks.push(Math.pow(10, lt));
+    }
+    for (var ti = 0; ti < logTicks.length; ti++) {
+      var y = yPos(logTicks[ti]);
+      if (y < Y0 || y > Y0 + PLOT_H) continue;
+      gridHtml += '<line class="grid-line" x1="' + X0 + '" y1="' + y.toFixed(1) + '" x2="' + (X0 + PLOT_W) + '" y2="' + y.toFixed(1) + '"/>';
+      var label = '';
+      if (logTicks[ti] >= 1e9) label = (logTicks[ti] / 1e9).toFixed(0) + 'B';
+      else if (logTicks[ti] >= 1e6) label = (logTicks[ti] / 1e6).toFixed(0) + 'M';
+      else label = '$' + logTicks[ti].toExponential(0);
+      gridHtml += '<text class="tick-label" x="' + (X0 - 4) + '" y="' + (y.toFixed(1) + 3) + '">' + label + '</text>';
+    }
+    gridEl.innerHTML = gridHtml;
+
+    // ── Dot radius mapping ──
+    var maxStories = 1;
+    for (var k2 = 0; k2 < narrativeList.length; k2++) {
+      if (narrativeList[k2].storyCount > maxStories) maxStories = narrativeList[k2].storyCount;
+    }
+
+    // ── Tooltip handlers ──
+    function showTooltip(e, n) {
+      if (!tooltip || !plot) return;
+      var gapStr = n.avgGap.toFixed(1);
+      var capStr = '';
+      if (n.totalCap >= 1e9) capStr = '$' + (n.totalCap / 1e9).toFixed(2) + 'B';
+      else if (n.totalCap >= 1e6) capStr = '$' + (n.totalCap / 1e6).toFixed(1) + 'M';
+      else capStr = '$' + n.totalCap.toFixed(0);
+      tooltip.innerHTML = '<div style="color:#D4AF37;font-weight:600">' + n.title + '</div>' +
+        '<div>Δ EDGE <span style="color:#8B0000;font-weight:600">' + gapStr + '</span></div>' +
+        '<div>Capital: ' + capStr + '</div>' +
+        '<div style="color:#5C5870">' + n.storyCount + ' stories</div>';
+      tooltip.style.display = 'block';
+      var rect = plot.getBoundingClientRect();
+      var tx = e.clientX - rect.left + 12;
+      var ty = e.clientY - rect.top - 10;
+      if (tx + 200 > rect.width) tx = e.clientX - rect.left - 200;
+      if (ty < 0) ty = 10;
+      tooltip.style.left = tx + 'px';
+      tooltip.style.top = ty + 'px';
+    }
+    function hideTooltip() {
+      if (tooltip) tooltip.style.display = 'none';
+    }
+    document.addEventListener('mousemove', function(e) {
+      if (tooltip && tooltip.style.display === 'block') {
+        var rect = plot.getBoundingClientRect();
+        var tx = e.clientX - rect.left + 12;
+        var ty = e.clientY - rect.top - 10;
+        if (tx + 200 > rect.width) tx = e.clientX - rect.left - 200;
+        if (ty < 0) ty = 10;
+        tooltip.style.left = tx + 'px';
+        tooltip.style.top = ty + 'px';
+      }
+    });
+
+    // ── Render dots ──
+    var dotsHtml = '';
+    for (var di = 0; di < narrativeList.length; di++) {
+      var n = narrativeList[di];
+      var cx = xPos(n.avgGap);
+      var cy = yPos(n.totalCap);
+      // Color by tier
+      var color = n.avgGap >= 50 ? '#8B0000' : n.avgGap >= 20 ? '#D4AF37' : '#444748';
+      // Radius: 4-12 scaled by story count
+      var radius = Math.max(4, Math.min(12, 4 + (n.storyCount / Math.max(maxStories, 1)) * 8));
+      // Opacity: higher gap = more opaque
+      var opacity = Math.max(0.5, Math.min(1.0, n.avgGap / 100 + 0.3));
+      dotsHtml += '<circle cx="' + cx.toFixed(1) + '" cy="' + cy.toFixed(1) + '" r="' + radius.toFixed(1) + '" ' +
+        'fill="' + color + '" opacity="' + opacity.toFixed(2) + '" ' +
+        'data-nid="' + n.id.replace(/"/g, '&quot;') + '" ' +
+        'data-title="' + n.title.replace(/"/g, '&quot;') + '" ' +
+        'data-gap="' + n.avgGap.toFixed(1) + '" ' +
+        'data-cap="' + n.totalCap + '" ' +
+        'data-stories="' + n.storyCount + '"/>';
+    }
+    dotsEl.innerHTML = dotsHtml;
+
+    // ── Wire tooltip events on circles ──
+    var circles = dotsEl.querySelectorAll('circle');
+    for (var ci2 = 0; ci2 < circles.length; ci2++) {
+      (function(el) {
+        el.addEventListener('mouseenter', function(e) {
+          var n = {
+            title: el.getAttribute('data-title'),
+            avgGap: parseFloat(el.getAttribute('data-gap')),
+            totalCap: parseFloat(el.getAttribute('data-cap')),
+            storyCount: parseInt(el.getAttribute('data-stories'))
+          };
+          showTooltip(e, n);
+        });
+        el.addEventListener('mouseleave', hideTooltip);
+      })(circles[ci2]);
+    }
   }
 
   // ── C2: LEADERBOARD RENDER ──
