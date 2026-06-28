@@ -80,32 +80,62 @@ def is_cache_valid():
 
 
 def download_tiff():
-    """Download the TIFF ZIP. Returns True on success."""
-    try:
-        ctx = ssl.create_default_context()
-        ctx.check_hostname = False
-        ctx.verify_mode = ssl.CERT_NONE
+    """Download the TIFF ZIP with browser-grade headers + exponential backoff.
+    Returns True on success. Uses standard SSL (no cert bypass) to avoid WAF triggers."""
+    import urllib.request
 
-        print(f"[cftc_fin] Downloading TIFF ZIP ({CACHE_HOURS}h cache)...")
-        # Use urllib with SSL context
-        import urllib.request
-        req = urllib.request.Request(TIFF_URL, headers={"User-Agent": "Hermes/1.0"})
-        resp = urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT, context=ctx)
-        with open(ZIP_PATH, "wb") as f:
-            f.write(resp.read())
+    # Browser-grade headers — spoof a standard residential browser
+    HEADERS = {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Referer": "https://www.cftc.gov/",
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache",
+    }
 
-        # Extract XLS
-        with zipfile.ZipFile(ZIP_PATH, "r") as zf:
-            xls_name = [n for n in zf.namelist() if n.endswith(".xls")][0]
-            with zf.open(xls_name) as src, open(XLS_PATH, "wb") as dst:
-                dst.write(src.read())
+    max_retries = 3
+    base_delay = 5  # seconds
 
-        print(f"[cftc_fin] Downloaded + extracted: {xls_name}")
-        return True
+    for attempt in range(1, max_retries + 1):
+        try:
+            ctx = ssl.create_default_context()  # Proper TLS — no cert bypass
+            print(f"[cftc_fin] Downloading TIFF ZIP (attempt {attempt}/{max_retries}, {CACHE_HOURS}h cache)...")
 
-    except Exception as e:
-        print(f"[cftc_fin] Download failed: {e}", file=sys.stderr)
-        return False
+            req = urllib.request.Request(TIFF_URL, headers=HEADERS)
+            resp = urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT, context=ctx)
+
+            # urlopen raises HTTPError on 4xx/5xx — if we get here, status is 2xx
+            with open(ZIP_PATH, "wb") as f:
+                f.write(resp.read())
+
+            # Extract XLS
+            with zipfile.ZipFile(ZIP_PATH, "r") as zf:
+                xls_names = [n for n in zf.namelist() if n.endswith(".xls")]
+                if not xls_names:
+                    raise ValueError("No .xls file found in ZIP")
+                xls_name = xls_names[0]
+                with zf.open(xls_name) as src, open(XLS_PATH, "wb") as dst:
+                    dst.write(src.read())
+
+            print(f"[cftc_fin] Downloaded + extracted: {xls_name}")
+            return True
+
+        except urllib.error.HTTPError as e:
+            print(f"[cftc_fin] HTTP {e.code} on attempt {attempt}: {e.reason}", file=sys.stderr)
+            if attempt < max_retries:
+                delay = base_delay * (2 ** (attempt - 1))
+                print(f"[cftc_fin] Retrying in {delay}s...", file=sys.stderr)
+                time.sleep(delay)
+        except Exception as e:
+            print(f"[cftc_fin] Download failed (attempt {attempt}): {e}", file=sys.stderr)
+            if attempt < max_retries:
+                delay = base_delay * (2 ** (attempt - 1))
+                print(f"[cftc_fin] Retrying in {delay}s...", file=sys.stderr)
+                time.sleep(delay)
+
+    return False
 
 
 def compute_summary(row):

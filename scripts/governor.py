@@ -535,6 +535,7 @@ STEPS = [
     ("translate_ru",  [str(VENV), str(SCRIPTS/"translate_ru.py")],                         90, False),
     ("classify",      [str(VENV), str(SCRIPTS/"classify_stories.py")],                      30, False),
     ("calc_capital",  [str(VENV), str(SCRIPTS/"calculate_capital.py")],                     60, True),
+    ("settle_trades", [str(VENV), str(SCRIPTS/"settle_trades.py")],                         90, False),
     ("gen_flows",     [str(VENV), str(SCRIPTS/"generate_flows.py")],                       30, False),
     ("build_frontend",    [str(VENV), str(SCRIPTS/"build_frontend.py")],                            60, True),
     ("build_ru",      [str(VENV), str(SCRIPTS/"build_frontend.py"), "--lang", "ru"],        60, False),

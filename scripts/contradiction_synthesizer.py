@@ -83,6 +83,83 @@ def extract_domain(url: str) -> str:
         return ""
 
 
+# ── JSON sanitizer — multi-pass LLM output repair ───────────────────
+
+def sanitize_llm_json(raw: str) -> str:
+    """Multi-pass sanitizer for LLM-generated JSON that fixes common artifacts:
+    markdown fences, truncated brackets, trailing commas, single quotes, etc.
+    Returns cleaned JSON string or empty string on irrecoverable input."""
+    if not raw or not isinstance(raw, str):
+        return ""
+
+    s = raw.strip()
+
+    # Pass 1: Strip ALL markdown code fences (triple-backtick blocks,
+    # single-backtick wrappers, anywhere in the string)
+    s = re.sub(r'```(?:json|javascript|python)?\s*', '', s, flags=re.IGNORECASE)
+    s = re.sub(r'\s*```', '', s)
+    s = re.sub(r'^`\s*', '', s)       # leading single backtick
+    s = re.sub(r'\s*`$', '', s)       # trailing single backtick
+    s = s.strip()
+
+    if not s:
+        return ""
+
+    # Pass 2: Extract first complete JSON object via bracket matching.
+    # Handles LLMs that output "Here is the JSON:\n{...}\nAdditional text"
+    if not s.startswith('{') and not s.startswith('['):
+        brace_idx = s.find('{')
+        bracket_idx = s.find('[')
+        if brace_idx >= 0 and (bracket_idx < 0 or brace_idx < bracket_idx):
+            s = s[brace_idx:]
+        elif bracket_idx >= 0:
+            s = s[bracket_idx:]
+        else:
+            return ""  # No JSON structure found
+
+    # Pass 3: Try to find the matching closing bracket for truncated JSON.
+    # Scan from end backwards, find the last valid JSON terminator
+    s = s.rstrip()
+    if s.endswith(','):
+        s = s[:-1]  # Strip trailing comma
+
+    # Balance braces/brackets — if LLM truncated, close what we can
+    open_braces = s.count('{') - s.count('}')
+    open_brackets = s.count('[') - s.count(']')
+    if open_braces > 0:
+        s += '}' * open_braces
+    if open_brackets > 0:
+        s += ']' * open_brackets
+
+    # Pass 4: Fix common LLM artifacts before parse attempt
+    # Trailing comma before } or ] (e.g., {"a": 1,}) 
+    s = re.sub(r',\s*([}\]])', r'\1', s)
+    # Missing comma between adjacent string values
+    s = re.sub(r'"\s+"', '", "', s)
+    # Single quotes -> double quotes (only outside already-quoted strings)
+    in_string = False
+    escaped = False
+    chars = list(s)
+    for i, ch in enumerate(chars):
+        if escaped:
+            escaped = False
+            continue
+        if ch == '\\':
+            escaped = True
+            continue
+        if ch == '"':
+            in_string = not in_string
+        elif ch == "'" and not in_string:
+            chars[i] = '"'
+    s = ''.join(chars)
+
+    # Pass 5: Remove Unicode replacement characters / BOM
+    s = s.replace('\ufffd', '')
+    s = s.replace('\ufeff', '')
+
+    return s.strip()
+
+
 # ── config ──────────────────────────────────────────────────────────
 PROJECT = Path(__file__).resolve().parent.parent
 DB_PATH = os.environ.get("GAZZETTA_DB_PATH", str(PROJECT / "gazzetta.db"))
@@ -533,11 +610,11 @@ async def _call_provider(session, provider, user_prompt, item_id):
                 print(f"  [{item_id}] {provider['name']} empty response")
                 return None
 
-            # Parse JSON — strip stray markdown fences
-            content = content.strip()
-            if content.startswith("```"):
-                content = re.sub(r"^```(?:json)?\s*", "", content)
-                content = re.sub(r"\s*```$", "", content)
+            # Parse JSON — multi-pass sanitizer for LLM output artifacts
+            content = sanitize_llm_json(content)
+            if not content:
+                print(f"  [{item_id}] {provider['name']} sanitizer returned empty — dropping")
+                return None
 
             story = json.loads(content)
             return (story, "ok")
@@ -546,9 +623,9 @@ async def _call_provider(session, provider, user_prompt, item_id):
         print(f"  [{item_id}] {provider['name']} TIMEOUT")
         return None
     except json.JSONDecodeError as e:
-        raw_preview = content[:200] if content else 'N/A'
-        print(f"  [{item_id}] {provider['name']} JSON error: {e}")
-        print(f"       raw: {raw_preview}")
+        raw_preview = (content[:200] if content else 'N/A')
+        print(f"  [{item_id}] {provider['name']} JSON error after sanitization: {e}")
+        print(f"       raw preview: {raw_preview}")
         return None
     except Exception as e:
         print(f"  [{item_id}] {provider['name']} ERROR: {type(e).__name__}: {e}")
