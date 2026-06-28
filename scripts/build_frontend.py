@@ -613,7 +613,10 @@ tailwind.config = {
   #story-cards .zone-header.breaking-zone, #story-cards article[data-tier="BREAKING"]{grid-column:1/-1}
   @media(min-width:768px){
     #story-cards{grid-template-columns:repeat(2,1fr)}
-    #story-cards article{border-left:1px solid #E5E7EB;border-bottom:1px solid #E5E7EB}
+    #story-cards article{border-bottom:1px solid #1E293B}
+    #story-cards article[data-tier="BREAKING"]{border-left-width:4px;border-left-color:#7F1D1D}
+    #story-cards article[data-tier="ACTIVE"]{border-left-width:2px;border-left-color:#D4AF37}
+    #story-cards article[data-tier="SETTLING"]{border-left-width:1px;border-left-color:#444748}
   }
   @media(min-width:1024px){
     #story-cards{grid-template-columns:repeat(3,1fr)}
@@ -624,6 +627,16 @@ tailwind.config = {
   }
   /* Maintain existing expand/collapse — cards grow vertically, not horizontally */
   #story-cards article[open] .details-content{grid-column:1/-1}
+
+  /* ── C6: CROSSHAIR SVG SCATTER PLOT ── */
+  #crosshair-svg text{fill:#9B97B0;font-size:9px}
+  #crosshair-svg line.grid-line{stroke:#1A1A24;stroke-width:0.5}
+  #crosshair-svg line.reference-line{stroke:#2A2A34;stroke-width:1;stroke-dasharray:4,3}
+  #crosshair-svg .axis-label{fill:#747878;font-size:8px;text-anchor:middle;text-transform:uppercase;letter-spacing:0.08em}
+  #crosshair-svg .axis-title{fill:#5C5870;font-size:8px;text-anchor:middle;text-transform:uppercase;letter-spacing:0.1em}
+  #crosshair-svg circle{cursor:pointer;transition:opacity 0.15s}
+  #crosshair-svg circle:hover{opacity:1;stroke:#D4AF37;stroke-width:1.5}
+  #crosshair-svg .tick-label{fill:#5C5870;font-size:7px;text-anchor:end}
 </style>
 </head>
 <body class="bg-surface font-body-md text-on-surface antialiased">
@@ -742,21 +755,31 @@ tailwind.config = {
       </summary>
       <div class="radar-grid text-xs mt-3" id="radar-grid"></div>
     </details>
-    <!-- C6: THE CROSSHAIR (desktop) -->
+    <!-- C6: THE CROSSHAIR (desktop) — SVG Scatter Plot -->
     <div class="hidden md:block mb-4" id="crosshair-container">
       <div class="flex items-center gap-2 px-margin-horizontal mb-2">
         <span class="material-symbols-outlined text-gold" style="font-size:18px" aria-hidden="true">scatter_plot</span>
         <span class="font-metadata-sm text-metadata-sm text-gold uppercase tracking-wider">NARRATIVE CROSSHAIR</span>
-        <span class="text-xs text-on-surface-variant">Geopolitical Tension x Capital Flow</span>
+        <span class="text-xs text-on-surface-variant">Narrative Intensity × Capital Flow Volume</span>
       </div>
-      <div class="relative mx-margin-horizontal" id="crosshair-plot" style="height:280px;background:#FFFFFF;border:1px solid #E5E7EB">
-        <div class="absolute inset-0 flex items-center justify-center" style="pointer-events:none">
-          <div style="position:absolute;left:0;right:0;top:50%;border-top:1px dashed #E5E7EB"></div>
-          <div style="position:absolute;top:0;bottom:0;left:50%;border-left:1px dashed #E5E7EB"></div>
-        </div>
-        <div id="crosshair-dots" style="position:absolute;inset:0"></div>
-        <div style="position:absolute;bottom:6px;left:12px;font-size:10px;color:#444748">Δ Edge (Contrarian Edge) →</div>
-        <div style="position:absolute;top:50%;left:-20px;transform:translateY(-50%) rotate(-90deg);font-size:10px;color:#444748">Capital Flow</div>
+      <div class="relative mx-margin-horizontal" id="crosshair-plot" style="height:320px;background:#0A0A0F;border:1px solid #1A1A24;overflow:hidden">
+        <svg id="crosshair-svg" width="100%" height="100%" viewBox="0 0 500 300" preserveAspectRatio="xMidYMid meet" style="display:block;font-family:'JetBrains Mono',monospace">
+          <defs>
+            <linearGradient id="bg-grad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0A0A0F"/>
+              <stop offset="100%" stop-color="#12121A"/>
+            </linearGradient>
+          </defs>
+          <rect width="500" height="300" fill="url(#bg-grad)"/>
+          <g id="crosshair-grid"></g>
+          <line class="reference-line" x1="50" y1="260" x2="480" y2="20" id="crosshair-diagonal"/>
+          <g id="crosshair-dots"></g>
+          <!-- X-axis title -->
+          <text class="axis-title" x="265" y="290">Narrative Intensity (Δ Edge) →</text>
+          <!-- Y-axis title -->
+          <text class="axis-title" x="14" y="150" transform="rotate(-90,14,150)">Capital Flow Volume →</text>
+        </svg>
+        <div id="crosshair-tooltip" style="position:absolute;display:none;background:#12121A;border:1px solid #D4AF37;padding:6px 10px;font-family:'JetBrains Mono',monospace;font-size:10px;color:#E6E4E0;pointer-events:none;z-index:10;white-space:nowrap;line-height:1.4"></div>
       </div>
     </div>
     <!-- C2: Δ EDGE LEADERBOARD -->
