@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT = os.environ.get("TELEGRAM_CHAT_ID", "") or "-1003990434181"
-DATA_URL = "https://www.lagazzettadikyiv.com/data/stories-v4.json"
+DATA_URL = "https://www.lagazzettadikyiv.com/data/stories.json"
 STALE_THRESHOLD_MINUTES = 60
 
 
