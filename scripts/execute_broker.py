@@ -28,6 +28,17 @@ from pathlib import Path
 # ── configuration ──────────────────────────────────────────────────
 GAZZETTA_HOME = os.environ.get("GAZZETTA_HOME", "/opt/gazzetta-di-kyiv")
 PROJECT = Path(GAZZETTA_HOME)
+
+# Load .env file if present (for cron runs where env isn't inherited)
+_ENV_PATH = PROJECT / ".env"
+if _ENV_PATH.exists():
+    with open(_ENV_PATH) as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                key, _, val = line.partition("=")
+                os.environ.setdefault(key.strip(), val.strip().strip('"').strip("'"))
+
 STORIES_PATH = PROJECT / "public" / "data" / "stories.json"
 EXECUTED_PATH = PROJECT / "data" / "executed_trades.json"
 
