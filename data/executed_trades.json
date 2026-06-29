@@ -89,6 +89,21 @@
       "broker": "DRY_RUN",
       "order_id": "DRY-10647",
       "status": "SIMULATED"
+    },
+    {
+      "story_id": 10725,
+      "headline": "SpaceX $20B bond debut vs space ETFs: -3% signals capital rotation",
+      "ticker": "UFO",
+      "direction": "SHORT",
+      "conviction": "HIGH",
+      "thesis_entry_price": 48.67,
+      "live_price_at_execution": 48.3,
+      "stop_loss": 50.27,
+      "take_profit": 46.0,
+      "executed_at": "2026-06-29T14:31:08.864168+00:00",
+      "broker": "DRY_RUN",
+      "order_id": "DRY-10725",
+      "status": "SIMULATED"
     }
   ]
 }

@@ -10,7 +10,7 @@ Broker support: IBKR Client Portal Gateway (primary)
 Dry-run mode: validates everything, simulates orders, writes audit trail.
 
 Env vars:
-  EODHD_API_KEY       — EODHD token for live price verification
+  FINNHUB_API_KEY    — Finnhub token for free real-time quotes (60 calls/min)
   EXECUTE_DRY_RUN=0   — set to 0 for live broker orders (IB Gateway required)
   IBKR_GATEWAY_URL    — default http://localhost:5000
   GAZZETTA_HOME       — project root (default /opt/gazzetta-di-kyiv)
@@ -31,8 +31,8 @@ PROJECT = Path(GAZZETTA_HOME)
 STORIES_PATH = PROJECT / "public" / "data" / "stories.json"
 EXECUTED_PATH = PROJECT / "data" / "executed_trades.json"
 
-EODHD_TOKEN = os.environ.get("EODHD_API_KEY", "")
-EODHD_REALTIME_URL = "https://eodhd.com/api/real-time/{ticker}?api_token={token}&fmt=json"
+FINNHUB_TOKEN = os.environ.get("FINNHUB_API_KEY", "")
+FINNHUB_QUOTE_URL = "https://finnhub.io/api/v1/quote?symbol={ticker}&token={token}"
 
 MAX_SLIPPAGE_PCT = 2.0          # max allowed deviation thesis vs. live price
 DRY_RUN = os.environ.get("EXECUTE_DRY_RUN", "1") == "1"
@@ -72,21 +72,17 @@ def strip_dollar(val):
 
 
 def fetch_live_price(ticker: str) -> float | None:
-    """Fetch current close price. Tries EODHD first, falls back to yfinance."""
-    # ── Primary: EODHD (institutional-grade live data) ──
-    if EODHD_TOKEN:
-        if "." not in ticker:
-            symbol = f"{ticker}.US"
-        else:
-            symbol = ticker
-        url = EODHD_REALTIME_URL.format(ticker=symbol, token=EODHD_TOKEN)
+    """Fetch current price. Tries Finnhub first, falls back to yfinance."""
+    # ── Primary: Finnhub (free real-time quotes, 60 calls/min) ──
+    if FINNHUB_TOKEN:
+        url = FINNHUB_QUOTE_URL.format(ticker=ticker, token=FINNHUB_TOKEN)
         try:
             req = urllib.request.Request(url, headers={"User-Agent": "Gazzetta/1.0"})
             with urllib.request.urlopen(req, timeout=10) as resp:
                 data = json.loads(resp.read().decode())
-            close = data.get("close")
-            if close and float(close) > 0:
-                return float(close)
+            current = data.get("c")  # Finnhub uses 'c' for current price
+            if current and float(current) > 0:
+                return float(current)
         except Exception:
             pass  # fall through to yfinance
 
