@@ -1,25 +1,30 @@
 #!/usr/bin/env python3
 """
-execute_broker.py — Autonomous Execution Engine v0.1
+execute_broker.py — Autonomous Execution Engine v0.2
 =====================================================
-Filters BREAKING ZONE + MAXIMAL/ELEVATED trades from stories.json,
-verifies entry prices against live EODHD market data (slippage protection),
+Filters HIGH+ conviction LONG/SHORT trades from stories.json,
+verifies entry prices against live market data (slippage protection),
 and submits bracket orders to the broker.
+
+Price sources (priority order):
+  1. EODHD (free tier: 20+500 calls/day, real-time quotes)
+  2. Finnhub (free tier: 60 calls/min, real-time)
+  3. yfinance (free, unlimited, delayed)
 
 Broker support: IBKR Client Portal Gateway (primary)
 Dry-run mode: validates everything, simulates orders, writes audit trail.
 
 Env vars:
-  FINNHUB_API_KEY    — Finnhub token for free real-time quotes (60 calls/min)
-  EXECUTE_DRY_RUN=0   — set to 0 for live broker orders (IB Gateway required)
+  EODHD_API_KEY       — EODHD token (solianin@lagazzettadikyiv.com, free tier)
+  FINNHUB_API_KEY     — Finnhub token (fallback, 60 calls/min)
+  EXECUTE_DRY_RUN=0   — set to 0 for live broker orders
   IBKR_GATEWAY_URL    — default http://localhost:5000
-  GAZZETTA_HOME       — project root (default /opt/gazzetta-di-kyiv)
+  GAZZETTA_HOME       — project root
 """
 
 import json
 import os
 import sys
-import time
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone
@@ -29,7 +34,7 @@ from pathlib import Path
 GAZZETTA_HOME = os.environ.get("GAZZETTA_HOME", "/opt/gazzetta-di-kyiv")
 PROJECT = Path(GAZZETTA_HOME)
 
-# Load .env file if present (for cron runs where env isn't inherited)
+# Load .env file for cron compatibility
 _ENV_PATH = PROJECT / ".env"
 if _ENV_PATH.exists():
     with open(_ENV_PATH) as f:
@@ -42,10 +47,15 @@ if _ENV_PATH.exists():
 STORIES_PATH = PROJECT / "public" / "data" / "stories.json"
 EXECUTED_PATH = PROJECT / "data" / "executed_trades.json"
 
+# API tokens
+EODHD_TOKEN = os.environ.get("EODHD_API_KEY", "")
 FINNHUB_TOKEN = os.environ.get("FINNHUB_API_KEY", "")
-FINNHUB_QUOTE_URL = "https://finnhub.io/api/v1/quote?symbol={ticker}&token={token}"
 
-MAX_SLIPPAGE_PCT = 2.0          # max allowed deviation thesis vs. live price
+# API endpoints (format strings: {ticker}, {token})
+EODHD_REALTIME = "https://eodhd.com/api/real-time/{ticker}?api_token={token}&fmt=json"
+FINNHUB_QUOTE = "https://finnhub.io/api/v1/quote?symbol={ticker}&token={token}"
+
+MAX_SLIPPAGE_PCT = 2.0
 DRY_RUN = os.environ.get("EXECUTE_DRY_RUN", "1") == "1"
 IBKR_GATEWAY = os.environ.get("IBKR_GATEWAY_URL", "http://localhost:5000")
 
@@ -66,7 +76,6 @@ def save_json(path: Path, data: dict) -> None:
 
 
 def strip_dollar(val):
-    """Strip '$' and ',' from a value, return float or None."""
     if val is None:
         return None
     if isinstance(val, (int, float)):
@@ -82,22 +91,50 @@ def strip_dollar(val):
     return None
 
 
-def fetch_live_price(ticker: str) -> float | None:
-    """Fetch current price. Tries Finnhub first, falls back to yfinance."""
-    # ── Primary: Finnhub (free real-time quotes, 60 calls/min) ──
-    if FINNHUB_TOKEN:
-        url = FINNHUB_QUOTE_URL.format(ticker=ticker, token=FINNHUB_TOKEN)
-        try:
-            req = urllib.request.Request(url, headers={"User-Agent": "Gazzetta/1.0"})
-            with urllib.request.urlopen(req, timeout=10) as resp:
-                data = json.loads(resp.read().decode())
-            current = data.get("c")  # Finnhub uses 'c' for current price
-            if current and float(current) > 0:
-                return float(current)
-        except Exception:
-            pass  # fall through to yfinance
+def _http_get_json(url: str) -> dict | None:
+    """Fetch JSON from URL. Returns dict or None on failure."""
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "Gazzetta/1.0"})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            return json.loads(resp.read().decode())
+    except Exception:
+        return None
 
-    # ── Fallback: yfinance (free, broader ticker coverage) ──
+
+def fetch_live_price(ticker: str) -> float | None:
+    """
+    Fetch current price. Priority: EODHD → Finnhub → yfinance.
+    Returns float or None if all sources fail.
+    """
+    # ── 1. EODHD real-time (free tier, 20+500 calls/day) ──
+    if EODHD_TOKEN:
+        url = EODHD_REALTIME.format(ticker=ticker, token=EODHD_TOKEN)
+        data = _http_get_json(url)
+        if data:
+            close = data.get("close")
+            if close is not None and close != "NA":
+                try:
+                    val = float(close)
+                    if val > 0:
+                        return val
+                except (ValueError, TypeError):
+                    pass
+
+    # ── 2. Finnhub real-time (free tier, 60 calls/min) ──
+    if FINNHUB_TOKEN:
+        url = FINNHUB_QUOTE.format(ticker=ticker, token=FINNHUB_TOKEN)
+        data = _http_get_json(url)
+        if data:
+            current = data.get("c")
+            if current is not None and current != "NA":
+                try:
+                    val = float(current)
+                    if val > 0:
+                        return val
+                except (ValueError, TypeError):
+                    pass
+
+    # ── 3. yfinance (free, unlimited, delayed) ──
     try:
         import yfinance as yf
         tk = yf.Ticker(ticker)
@@ -106,14 +143,13 @@ def fetch_live_price(ticker: str) -> float | None:
             val = float(hist["Close"].iloc[-1])
             if val > 0:
                 return val
-    except Exception as e:
-        print(f"  [execute] yfinance fallback failed for {ticker}: {e}", file=sys.stderr)
+    except Exception:
+        pass
 
     return None
 
 
 def check_idempotency(story_id: str, executed: dict) -> bool:
-    """True if story_id was already executed."""
     for ex in executed.get("executed_trades", []):
         if ex.get("story_id") == story_id:
             return True
@@ -121,11 +157,6 @@ def check_idempotency(story_id: str, executed: dict) -> bool:
 
 
 def validate_entry(thesis_entry: float | None, live_price: float | None) -> tuple[bool, float | None]:
-    """
-    Slippage gate. Returns (ok: bool, deviation_pct: float|None).
-    ok=False if thesis entry deviates > MAX_SLIPPAGE_PCT from live price.
-    Market orders (thesis_entry=None) pass automatically.
-    """
     if thesis_entry is None:
         return True, 0.0
     if live_price is None or live_price <= 0:
@@ -137,75 +168,46 @@ def validate_entry(thesis_entry: float | None, live_price: float | None) -> tupl
 
 
 def submit_bracket_order_ibkr(trade: dict) -> dict | None:
-    """
-    Submit bracket order to IBKR Client Portal Gateway.
-    POST /v1/api/order with bracket parameters.
-    Returns order confirmation dict or None on failure.
-    """
     if DRY_RUN:
         return {"order_id": f"DRY-{trade['story_id']}", "status": "SIMULATED"}
 
     direction = trade["direction"]
     ticker = trade["ticker"]
     entry = trade["entry_price"] or trade["live_price_at_execution"]
-    stop = trade["stop_loss"]
-    target = trade["take_profit"]
-    quantity = 100  # default lot size — can be parameterized later
+    quantity = 100
 
-    if direction == "SHORT":
-        side = "SELL"
-        stop_side = "BUY"
-        target_side = "BUY"
-    else:
-        side = "BUY"
-        stop_side = "SELL"
-        target_side = "SELL"
+    side = "SELL" if direction == "SHORT" else "BUY"
 
-    # IBKR bracket order payload (parent + two children)
-    payload = {
-        "orders": [
-            {
-                "conid": None,       # IBKR contract ID — would need lookup
-                "symbol": ticker,
-                "secType": "STK",
-                "exchange": "SMART",
-                "currency": "USD",
-                "orderType": "LMT",
-                "price": entry,
-                "side": side,
-                "quantity": quantity,
-                "tif": "DAY",
-                "outsideRTH": False,
-                "isSingleGroup": True,
-            }
-        ]
-    }
+    payload = {"orders": [{
+        "symbol": ticker, "secType": "STK", "exchange": "SMART",
+        "currency": "USD", "orderType": "LMT", "price": entry,
+        "side": side, "quantity": quantity, "tif": "DAY",
+        "outsideRTH": False, "isSingleGroup": True,
+    }]}
 
     try:
         url = f"{IBKR_GATEWAY}/v1/api/order"
         req = urllib.request.Request(
-            url,
-            data=json.dumps(payload).encode(),
-            headers={"Content-Type": "application/json"},
-            method="POST",
-        )
+            url, data=json.dumps(payload).encode(),
+            headers={"Content-Type": "application/json"}, method="POST")
         with urllib.request.urlopen(req, timeout=15) as resp:
             result = json.loads(resp.read().decode())
-        return {"order_id": result.get("order_id", "UNKNOWN"), "status": "SUBMITTED",
-                "response": result}
+        return {"order_id": result.get("order_id", "UNKNOWN"),
+                "status": "SUBMITTED", "response": result}
     except Exception as e:
-        print(f"  [execute] IBKR order failed for {ticker}: {e}", file=sys.stderr)
+        print(f"  [execute] IBKR order failed: {e}", file=sys.stderr)
         return None
 
 
 # ── main ────────────────────────────────────────────────────────────
 
 def main() -> int:
-    print("[execute] Autonomous Execution Engine v0.1")
-    print(f"[execute] Mode: {'DRY RUN (no broker orders)' if DRY_RUN else 'LIVE (IBKR Gateway)'}")
-    print(f"[execute] Slippage gate: {MAX_SLIPPAGE_PCT}% max deviation")
+    print("[execute] Autonomous Execution Engine v0.2")
+    print(f"[execute] Price sources: EODHD{' ✓' if EODHD_TOKEN else ' ✗'} | "
+          f"Finnhub{' ✓' if FINNHUB_TOKEN else ' ✗'} | yfinance (fallback)")
+    print(f"[execute] Mode: {'DRY RUN' if DRY_RUN else 'LIVE (IBKR)'}")
+    print(f"[execute] Slippage gate: {MAX_SLIPPAGE_PCT}% max")
 
-    # 1. Load stories
     if not STORIES_PATH.exists():
         print(f"[execute] FATAL: {STORIES_PATH} not found", file=sys.stderr)
         return 1
@@ -214,32 +216,21 @@ def main() -> int:
     all_stories = stories_data.get("all_stories", [])
     print(f"[execute] Loaded {len(all_stories)} stories")
 
-    # 2. Filter candidates: BREAKING ZONE + MAXIMAL/ELEVATED + valid trade thesis
+    # Filter candidates
     candidates = []
     for s in all_stories:
         tt = s.get("trade_thesis")
         if not tt or not isinstance(tt, dict):
             continue
-
         direction = str(tt.get("direction", "")).upper().strip()
         if direction not in ("LONG", "SHORT"):
             continue
-
         conviction = str(tt.get("conviction", "")).upper().strip()
-        # Conviction: HIGH, MAXIMAL, or ELEVATED (schema varies by LLM version)
         if conviction not in ("HIGH", "MAXIMAL", "ELEVATED"):
             continue
-
-        # Accept any LONG/SHORT trade with HIGH+ conviction
-        # (BREAKING tier and high GAP score are implicit in the conviction assignment)
-
         ticker = str(tt.get("primary_ticker", "")).strip().upper()
         if not ticker or ticker == "NONE":
             continue
-
-        entry_price = strip_dollar(tt.get("limit_entry_price"))
-        stop_loss = strip_dollar(tt.get("stop_loss"))
-        take_profit = strip_dollar(tt.get("take_profit"))
 
         candidates.append({
             "story_id": s.get("story_id", s.get("id", "")),
@@ -247,73 +238,60 @@ def main() -> int:
             "ticker": ticker,
             "direction": direction,
             "conviction": conviction,
-            "entry_price": entry_price,
-            "stop_loss": stop_loss,
-            "take_profit": take_profit,
+            "entry_price": strip_dollar(tt.get("limit_entry_price")),
+            "stop_loss": strip_dollar(tt.get("stop_loss")),
+            "take_profit": strip_dollar(tt.get("take_profit")),
             "tier": s.get("tier", ""),
             "gap_score": s.get("gap_score", 0),
         })
 
-    print(f"[execute] {len(candidates)} candidate trades (HIGH+ conviction, LONG/SHORT)")
-
+    print(f"[execute] {len(candidates)} candidates (HIGH+ conviction, LONG/SHORT)")
     if not candidates:
         print("[execute] No candidates. Exiting.")
         return 0
 
-    # 3. Load executed trades for idempotency
     executed = load_json(EXECUTED_PATH)
     if "executed_trades" not in executed:
         executed["executed_trades"] = []
 
-    # 4. Process each candidate
     executed_count = 0
     skipped_idem = 0
     rejected_slip = 0
     rejected_nodata = 0
 
     for trade in candidates:
-        story_id = trade["story_id"]
+        sid = trade["story_id"]
         ticker = trade["ticker"]
 
-        # ── Idempotency gate ──
-        if check_idempotency(story_id, executed):
-            print(f"  ⏭  {story_id} — already executed, skipping")
+        if check_idempotency(sid, executed):
+            print(f"  \u23ed  {sid} \u2014 already executed")
             skipped_idem += 1
             continue
 
-        # ── Live price verification (EODHD) ──
         live_price = fetch_live_price(ticker)
         if live_price is None:
-            print(f"  ⚠  {story_id} ({ticker}) — no live price data, skipping")
+            print(f"  \u26a0  {sid} ({ticker}) \u2014 no price data")
             rejected_nodata += 1
             continue
 
-        # ── Slippage protection gate ──
         thesis_entry = trade["entry_price"]
         ok, dev = validate_entry(thesis_entry, live_price)
-
         if not ok:
             thesis_str = f"${thesis_entry:,.2f}" if thesis_entry else "market"
-            print(f"  ✗  {story_id} ({ticker}) — SLIPPAGE REJECTED: "
-                  f"thesis {thesis_str} vs live ${live_price:,.2f} "
-                  f"({dev:.1f}% dev, max {MAX_SLIPPAGE_PCT}%)")
+            print(f"  \u2717  {sid} ({ticker}) \u2014 SLIPPAGE: "
+                  f"{thesis_str} vs ${live_price:,.2f} ({dev:.1f}%, max {MAX_SLIPPAGE_PCT}%)")
             rejected_slip += 1
             continue
 
         if thesis_entry:
-            print(f"  ✓  {story_id} ({ticker}) — PRICE VALID: "
-                  f"thesis ${thesis_entry:,.2f} vs live ${live_price:,.2f} "
-                  f"({dev:.1f}% deviation)")
+            print(f"  \u2713  {sid} ({ticker}) \u2014 VALID: "
+                  f"thesis ${thesis_entry:,.2f} vs live ${live_price:,.2f} ({dev:.1f}%)")
         else:
-            print(f"  ✓  {story_id} ({ticker}) — MARKET ORDER "
-                  f"(live: ${live_price:,.2f}, no thesis entry to validate)")
+            print(f"  \u2713  {sid} ({ticker}) \u2014 MARKET @ ${live_price:,.2f}")
 
-        # ── Build order record ──
         order_record = {
-            "story_id": story_id,
-            "headline": trade["headline"],
-            "ticker": ticker,
-            "direction": trade["direction"],
+            "story_id": sid, "headline": trade["headline"],
+            "ticker": ticker, "direction": trade["direction"],
             "conviction": trade["conviction"],
             "thesis_entry_price": thesis_entry,
             "live_price_at_execution": live_price,
@@ -325,34 +303,28 @@ def main() -> int:
             "status": "SIMULATED" if DRY_RUN else "PENDING",
         }
 
-        # ── Submit bracket order (IBKR or simulated) ──
         broker_result = submit_bracket_order_ibkr(trade)
         if broker_result:
             order_record["order_id"] = broker_result.get("order_id")
             order_record["status"] = broker_result.get("status", order_record["status"])
-            if not DRY_RUN:
-                order_record["broker_response"] = broker_result.get("response", {})
 
         executed["executed_trades"].append(order_record)
         executed_count += 1
 
-    # 5. Persist executed trades
     if executed_count > 0:
         save_json(EXECUTED_PATH, executed)
-        print(f"\n[execute] Saved {executed_count} execution records → {EXECUTED_PATH}")
+        print(f"\n[execute] Saved {executed_count} records \u2192 {EXECUTED_PATH}")
 
-    # 6. Report
     print(f"\n{'='*55}")
     print(f"  AUTONOMOUS EXECUTION REPORT")
     print(f"  {'='*55}")
     print(f"  Candidates:               {len(candidates)}")
-    print(f"  Executed (new orders):    {executed_count}")
+    print(f"  Executed (new):           {executed_count}")
     print(f"  Skipped (idempotent):     {skipped_idem}")
-    print(f"  Rejected — slippage:      {rejected_slip}")
-    print(f"  Rejected — no price data: {rejected_nodata}")
-    print(f"  Slippage gate:            {MAX_SLIPPAGE_PCT}% max")
+    print(f"  Rejected \u2014 slippage:      {rejected_slip}")
+    print(f"  Rejected \u2014 no data:       {rejected_nodata}")
+    print(f"  Slippage gate:            {MAX_SLIPPAGE_PCT}%")
     print(f"  Mode:                     {'DRY RUN' if DRY_RUN else 'LIVE'}")
-    print(f"  Output:                   {EXECUTED_PATH}")
 
     return 0
 
