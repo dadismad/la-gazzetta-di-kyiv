@@ -434,24 +434,27 @@ tailwind.config = {
 }
 </script>
 <style>
-  /* ── DARK TERMINAL THEME (v34.0) ── */
+  /* ── IMPERIAL LEDGER THEME (v35.0) ──
+     Warm archival paper · Roman purple · Structural gold
+     Design: FT meets imperial intelligence brief */
   :root {
-    --bg-primary:    #0A0A0F;
-    --bg-secondary:  #12121A;
-    --bg-tertiary:   #1A1A24;
-    --text-primary:  #E6E4E0;
-    --text-secondary:#9B97B0;
-    --text-muted:    #5C5870;
-    --gold:          #D4AF37;
-    --gold-dim:      #8B7332;
-    --crimson:       #8B0000;
-    --green:         #27AE60;
-    --red:           #E74C3C;
-    --blue:          #5DADE2;
-    --edge-extreme:  #FF6B35;
+    --bg-primary:    #FAF9F6;   /* Warm archival paper */
+    --bg-secondary:  #EFEEEB;   /* Surface container */
+    --bg-tertiary:   #E9E8E5;   /* Surface container high */
+    --text-primary:  #1A1C1A;   /* Deep charcoal ink */
+    --text-secondary:#747878;   /* Slate */
+    --text-muted:    #9CA3AF;   /* Muted grey */
+    --gold:          #D4AF37;   /* Structural gold — separators, wealth signals */
+    --gold-dim:      #B8860B;   /* Dark goldenrod — borders, hover */
+    --crimson:       #8B0000;   /* Editorial crimson — alerts, negative */
+    --roman-purple:  #66023C;   /* Imperial authority — masthead, BREAKING ZONE */
+    --green:         #047857;   /* Dark emerald — buy signals */
+    --red:           #8B0000;   /* Alias crimson */
+    --blue:          #2563EB;   /* Links, interactive */
+    --edge-extreme:  #FF6B35;   /* Extreme GAP — keeps urgency on paper */
     --edge-high:     #D4AF37;
-    --edge-medium:   #9B97B0;
-    --edge-low:      #5C5870;
+    --edge-medium:   #B45309;
+    --edge-low:      #9CA3AF;
   }
   *,*::before,*::after{border-radius:0!important;box-shadow:none!important}
   body{background:var(--bg-primary)!important;color:var(--text-primary)!important;min-height:100dvh}
@@ -506,9 +509,9 @@ tailwind.config = {
   .story-card-hint summary::marker{display:none;content:''}
   .card-hook{display:flex;align-items:center;gap:8px;padding:12px;background:var(--bg-secondary);border-left:3px solid var(--gold);min-height:48px}
   .card-hook .edge-badge{padding:2px 8px;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;border-radius:2px}
-  .edge-badge.edge-80{background:var(--edge-extreme);color:#0A0A0F}
-  .edge-badge.edge-60{background:var(--edge-high);color:#0A0A0F}
-  .edge-badge.edge-40{background:var(--edge-medium);color:#0A0A0F}
+  .edge-badge.edge-80{background:var(--edge-extreme);color:#1A1C1A}
+  .edge-badge.edge-60{background:var(--edge-high);color:#1A1C1A}
+  .edge-badge.edge-40{background:var(--edge-medium);color:#1A1C1A}
   .edge-badge.edge-0{background:var(--edge-low);color:var(--text-primary)}
   .card-hook .one-liner{flex:1;font-size:13px;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .card-hook .price-move{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600}
@@ -600,7 +603,7 @@ tailwind.config = {
   article.contradiction-alert{animation:alert-pulse 6s ease-in-out infinite}
   article.contradiction-alert .gap-score{font-size:32px!important;font-weight:700}
   article[data-tier="ACTIVE"]{border-left-width:2px;border-left-color:#D4AF37}
-  article[data-tier="SETTLING"]{border-left-width:1px;border-left-color:#444748;opacity:0.7}
+  article[data-tier="SETTLING"]{border-left-width:1px;border-left-color:#9CA3AF;opacity:0.7}
   @keyframes edgePulse{0%,100%{border-left-color:#7F1D1D}50%{border-left-color:#D4AF37}}
   article[data-gap-high="true"]{animation:edgePulse 6s ease-in-out infinite}
   /* Monospace for data density */
@@ -613,10 +616,10 @@ tailwind.config = {
   #story-cards .zone-header.breaking-zone, #story-cards article[data-tier="BREAKING"]{grid-column:1/-1}
   @media(min-width:768px){
     #story-cards{grid-template-columns:repeat(2,1fr)}
-    #story-cards article{border-bottom:1px solid #1E293B}
+    #story-cards article{border-bottom:1px solid #E3E2E0}
     #story-cards article[data-tier="BREAKING"]{border-left-width:4px;border-left-color:#7F1D1D}
     #story-cards article[data-tier="ACTIVE"]{border-left-width:2px;border-left-color:#D4AF37}
-    #story-cards article[data-tier="SETTLING"]{border-left-width:1px;border-left-color:#444748}
+    #story-cards article[data-tier="SETTLING"]{border-left-width:1px;border-left-color:#9CA3AF}
   }
   @media(min-width:1024px){
     #story-cards{grid-template-columns:repeat(3,1fr)}
@@ -629,14 +632,14 @@ tailwind.config = {
   #story-cards article[open] .details-content{grid-column:1/-1}
 
   /* ── C6: CROSSHAIR SVG SCATTER PLOT ── */
-  #crosshair-svg text{fill:#9B97B0;font-size:9px}
-  #crosshair-svg line.grid-line{stroke:#1A1A24;stroke-width:0.5}
-  #crosshair-svg line.reference-line{stroke:#2A2A34;stroke-width:1;stroke-dasharray:4,3}
+  #crosshair-svg text{fill:#747878;font-size:9px}
+  #crosshair-svg line.grid-line{stroke:#E3E2E0;stroke-width:0.5}
+  #crosshair-svg line.reference-line{stroke:#DBDAD7;stroke-width:1;stroke-dasharray:4,3}
   #crosshair-svg .axis-label{fill:#747878;font-size:8px;text-anchor:middle;text-transform:uppercase;letter-spacing:0.08em}
-  #crosshair-svg .axis-title{fill:#5C5870;font-size:8px;text-anchor:middle;text-transform:uppercase;letter-spacing:0.1em}
+  #crosshair-svg .axis-title{fill:#9CA3AF;font-size:8px;text-anchor:middle;text-transform:uppercase;letter-spacing:0.1em}
   #crosshair-svg circle{cursor:pointer;transition:opacity 0.15s}
   #crosshair-svg circle:hover{opacity:1;stroke:#D4AF37;stroke-width:1.5}
-  #crosshair-svg .tick-label{fill:#5C5870;font-size:7px;text-anchor:end}
+  #crosshair-svg .tick-label{fill:#9CA3AF;font-size:7px;text-anchor:end}
 </style>
 </head>
 <body class="bg-surface font-body-md text-on-surface antialiased">
@@ -678,7 +681,7 @@ tailwind.config = {
   </p>
 
   <!-- MOBILE MENU -->
-  <div class="hidden md:hidden bg-navy fixed inset-0 z-50 flex flex-col p-stack-space-lg" id="mobile-menu">
+  <div class="hidden md:hidden bg-surface fixed inset-0 z-50 flex flex-col p-stack-space-lg" id="mobile-menu">
     <div class="flex justify-between items-center mb-stack-space-lg">
       <h2 class="font-headline-md text-headline-md text-gold">Navigation</h2>
       <button class="text-on-surface w-tap-target-min h-tap-target-min flex items-center justify-center" onclick="document.getElementById('mobile-menu').classList.add('hidden')">
@@ -762,12 +765,12 @@ tailwind.config = {
         <span class="font-metadata-sm text-metadata-sm text-gold uppercase tracking-wider">NARRATIVE CROSSHAIR</span>
         <span class="text-xs text-on-surface-variant">Narrative Intensity × Capital Flow Volume</span>
       </div>
-      <div class="relative mx-margin-horizontal" id="crosshair-plot" style="height:320px;background:#0A0A0F;border:1px solid #1A1A24;overflow:hidden">
+      <div class="relative mx-margin-horizontal" id="crosshair-plot" style="height:320px;background:#FAF9F6;border:1px solid #E3E2E0;overflow:hidden">
         <svg id="crosshair-svg" width="100%" height="100%" viewBox="0 0 500 300" preserveAspectRatio="xMidYMid meet" style="display:block;font-family:'JetBrains Mono',monospace">
           <defs>
             <linearGradient id="bg-grad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#0A0A0F"/>
-              <stop offset="100%" stop-color="#12121A"/>
+              <stop offset="0%" stop-color="#FAF9F6"/>
+              <stop offset="100%" stop-color="#EFEEEB"/>
             </linearGradient>
           </defs>
           <rect width="500" height="300" fill="url(#bg-grad)"/>
@@ -779,7 +782,7 @@ tailwind.config = {
           <!-- Y-axis title -->
           <text class="axis-title" x="14" y="150" transform="rotate(-90,14,150)">Capital Flow Volume →</text>
         </svg>
-        <div id="crosshair-tooltip" style="position:absolute;display:none;background:#12121A;border:1px solid #D4AF37;padding:6px 10px;font-family:'JetBrains Mono',monospace;font-size:10px;color:#E6E4E0;pointer-events:none;z-index:10;white-space:nowrap;line-height:1.4"></div>
+        <div id="crosshair-tooltip" style="position:absolute;display:none;background:#1A1C1A;border:1px solid #D4AF37;padding:6px 10px;font-family:'JetBrains Mono',monospace;font-size:10px;color:#FAF9F6;pointer-events:none;z-index:10;white-space:nowrap;line-height:1.4"></div>
       </div>
     </div>
     <!-- C2: Δ EDGE LEADERBOARD -->
@@ -1155,7 +1158,7 @@ setTimeout(renderRadar, 100);
       var safeDirection = tt.direction || '';
       var safeTicker = tt.primary_ticker || tt.ticker || '';
       var safeEntry = tt.limit_entry_price || tt.entry_zone || '';
-      return '<article data-story-id="' + (s.story_id || '') + '" data-source-feed="' + (s.feed_source || '') + '" data-tier="' + (tierOverride || tier || '') + '" data-gap-high="' + (isHighGap ? 'true' : 'false') + '" data-alert="' + (isAlert ? 'true' : 'false') + '" data-headline="' + safeHeadline + '" data-capital="' + capStr + '" data-gap="' + gap.toFixed(0) + '" data-direction="' + safeDirection + '" data-ticker="' + safeTicker + '" data-entry="' + safeEntry + '" class="py-2 border-b border-[#1E293B]' + alertClass + '">' +
+      return '<article data-story-id="' + (s.story_id || '') + '" data-source-feed="' + (s.feed_source || '') + '" data-tier="' + (tierOverride || tier || '') + '" data-gap-high="' + (isHighGap ? 'true' : 'false') + '" data-alert="' + (isAlert ? 'true' : 'false') + '" data-headline="' + safeHeadline + '" data-capital="' + capStr + '" data-gap="' + gap.toFixed(0) + '" data-direction="' + safeDirection + '" data-ticker="' + safeTicker + '" data-entry="' + safeEntry + '" class="py-2 border-b border-[#E3E2E0]' + alertClass + '">' +
         '<div class="pl-3">' + decayHtml +
         (isAlert ? '<div class="mb-1">' + alertBadge + '</div>' : '') +
         // LINE 1: Source + time + Δ EDGE
@@ -1201,9 +1204,9 @@ setTimeout(renderRadar, 100);
     }
 
     var allCardsHtml = '';
-    allCardsHtml += breakingStories.length ? '<div class="zone-header breaking-zone mb-3"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#F9FAFB;border-left:4px solid #8B0000"><span class="material-symbols-outlined" style="color:#7F1D1D;font-size:20px">warning</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#7F1D1D">BREAKING ZONE — HIGH DIVERGENCE (' + breakingStories.length + ' SIGNALS)</span></div></div>' + breakingStories.map(function(s){ return buildCard(s,'BREAKING',true); }).join('') : '';
+    allCardsHtml += breakingStories.length ? '<div class="zone-header breaking-zone mb-3"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#F9FAFB;border-left:4px solid #66023C"><span class="material-symbols-outlined" style="color:#66023C;font-size:20px">warning</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#66023C">BREAKING ZONE — HIGH DIVERGENCE (' + breakingStories.length + ' SIGNALS)</span></div></div>' + breakingStories.map(function(s){ return buildCard(s,'BREAKING',true); }).join('') : '';
     allCardsHtml += activeStories.length ? '<div class="zone-header active-zone mb-3 mt-4"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#F9FAFB;border-left:4px solid #D4AF37"><span class="material-symbols-outlined" style="color:#D4AF37;font-size:20px">trending_up</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#D4AF37">ACTIVE SIGNALS (' + activeStories.length + ' STORIES)</span></div></div>' + activeStories.map(function(s){ return buildCard(s,'ACTIVE',false); }).join('') : '';
-    allCardsHtml += settlingStories.length ? '<div class="zone-header settling-zone mb-3 mt-4"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#F9FAFB;border-left:4px solid #444748"><span class="material-symbols-outlined" style="color:#444748;font-size:20px">check_circle</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#747878">SETTLING NOISE (' + settlingStories.length + ' STORIES)</span></div></div>' + settlingStories.map(function(s){ return buildCard(s,'SETTLING',false); }).join('') : '<div class="zone-header settling-zone mb-3 mt-4"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#F9FAFB;border-left:4px solid #444748"><span class="material-symbols-outlined" style="color:#444748;font-size:20px">check_circle</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#747878">SETTLING NOISE (0 STORIES) · No settling signals at this time</span></div></div>';
+    allCardsHtml += settlingStories.length ? '<div class="zone-header settling-zone mb-3 mt-4"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#F9FAFB;border-left:4px solid #9CA3AF"><span class="material-symbols-outlined" style="color:#9CA3AF;font-size:20px">check_circle</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#747878">SETTLING NOISE (' + settlingStories.length + ' STORIES)</span></div></div>' + settlingStories.map(function(s){ return buildCard(s,'SETTLING',false); }).join('') : '<div class="zone-header settling-zone mb-3 mt-4"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#F9FAFB;border-left:4px solid #9CA3AF"><span class="material-symbols-outlined" style="color:#9CA3AF;font-size:20px">check_circle</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#747878">SETTLING NOISE (0 STORIES) · No settling signals at this time</span></div></div>';
     cardsEl.innerHTML = allCardsHtml;
 
     injectSourceAttribution();
@@ -1219,7 +1222,7 @@ setTimeout(renderRadar, 100);
       var sourceData = card.getAttribute('data-source-feed');
       if (!sourceData || sourceData.trim() === '') continue;
       var footer = document.createElement('div');
-      footer.className = 'source-attribution-footer mt-4 pt-2 border-t border-[#1E293B] flex items-center justify-between text-xs text-[#747878] font-mono tracking-tight';
+      footer.className = 'source-attribution-footer mt-4 pt-2 border-t border-[#E3E2E0] flex items-center justify-between text-xs text-[#747878] font-mono tracking-tight';
       footer.innerHTML = '<div class="flex items-center justify-between w-full p-2 bg-[#F9FAFB] rounded-b"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-[#747878]" aria-hidden="true">database</span><span class="font-mono text-on-surface-variant">' + sourceData.charAt(0).toUpperCase() + sourceData.slice(1).trim() + '</span></div><div class="flex items-center gap-2"><span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-emerald-500/10 text-emerald-700 border border-emerald-500/40" title="Algorithmically verified via core pipeline">Verified</span></div></div>';
       card.appendChild(footer);
     }
@@ -1285,7 +1288,7 @@ setTimeout(renderRadar, 100);
     // Filter out zero-gap narratives for meaningful plot
     narrativeList = narrativeList.filter(function(n){ return n.avgGap > 0 && n.totalCap > 0; });
     if (narrativeList.length < 2) {
-      dotsEl.innerHTML = '<text x="250" y="150" text-anchor="middle" fill="#5C5870" font-size="11" font-family="JetBrains Mono,monospace">Insufficient data for crosshair plot</text>';
+      dotsEl.innerHTML = '<text x="250" y="150" text-anchor="middle" fill="#747878" font-size="11" font-family="JetBrains Mono,monospace">Insufficient data for crosshair plot</text>';
       return;
     }
 
@@ -1362,7 +1365,7 @@ setTimeout(renderRadar, 100);
       tooltip.innerHTML = '<div style="color:#D4AF37;font-weight:600">' + n.title + '</div>' +
         '<div>Δ EDGE <span style="color:#8B0000;font-weight:600">' + gapStr + '</span></div>' +
         '<div>Capital: ' + capStr + '</div>' +
-        '<div style="color:#5C5870">' + n.storyCount + ' stories</div>';
+        '<div style="color:#747878">' + n.storyCount + ' stories</div>';
       tooltip.style.display = 'block';
       var rect = plot.getBoundingClientRect();
       var tx = e.clientX - rect.left + 12;
