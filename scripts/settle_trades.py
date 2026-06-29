@@ -329,14 +329,31 @@ def main():
             )
 
         result = settle_trade(trade, current_price, historical_price)
+
+        # ── SANITY GATE: reject hallucinated trade data ──
+        pnl = result.get("pnl_pct", 0)
+        entry_px = result.get("entry_price")
+        curr_px = result.get("current_price")
+
+        if pnl > 100 or pnl < -100:
+            result["status"] = "REJECTED_DATA"
+            result["note"] = f"PnL {pnl:+.2f}% exceeds ±100% sanity bound — probable hallucinated entry price"
+        elif (entry_px and curr_px and entry_px > 0 and curr_px > 0
+              and abs(entry_px - curr_px) / curr_px > 0.15):
+            result["status"] = "REJECTED_DATA"
+            result["note"] = (f"Entry ${entry_px:,.2f} deviates {abs(entry_px - curr_px)/curr_px*100:.1f}% "
+                              f"from market ${curr_px:,.2f} (max 15%) — probable hallucinated limit")
+        # ── END SANITY GATE ──
+
         settled.append(result)
 
-    # 5. Compute aggregate stats
+    # 5. Compute aggregate stats (REJECTED_DATA excluded from all aggregates)
     closed = [t for t in settled if t["status"] in ("WIN", "LOSS")]
     wins = [t for t in closed if t["status"] == "WIN"]
     losses = [t for t in closed if t["status"] == "LOSS"]
     active = [t for t in settled if t["status"] in ("WINNING", "LOSING", "FLAT", "OPEN")]
     pending = [t for t in settled if t["status"] == "PENDING_DATA"]
+    rejected = [t for t in settled if t["status"] == "REJECTED_DATA"]
 
     total = len(settled)
     win_count = len(wins)
@@ -359,13 +376,14 @@ def main():
     # 6. Build output record
     record = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "generated_by": "settle_trades.py v1.0",
+        "generated_by": "settle_trades.py v1.1",
         "cutoff_days": CUTOFF_DAYS,
         "summary": {
             "total_trades": total,
             "closed": closed_count,
             "active": len(active),
             "pending_data": len(pending),
+            "rejected_data": len(rejected),
             "wins": win_count,
             "losses": loss_count,
             "win_rate_pct": win_rate,
@@ -392,6 +410,7 @@ def main():
     print(f"  Closed (settled):  {closed_count} (W: {win_count} / L: {loss_count})")
     print(f"  Active:            {len(active)}")
     print(f"  Pending data:      {len(pending)}")
+    print(f"  Rejected (sanity): {len(rejected)}")
     print(f"  Win Rate:          {win_rate}%")
     print(f"  High-Conv Win Rt:  {high_conv_win_rate}%")
     print(f"  Avg Win PnL:       +{avg_win_pnl}%")
