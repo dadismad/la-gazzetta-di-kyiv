@@ -1,63 +1,80 @@
 /* ═══════════════════════════════════════════════
-   GAZZETTA DI KYIV v27.0 — Clean single-column · Gold masthead · Stories first
-   Background: #FFFFFF | Masthead: white + gold border
-   Name: #8B0000 dark red | Nav: #8B0000 dark red
+   GAZZETTA DI KYIV v30.1 — Diplomatic Ledger
+   Mobile-first capital-flow intelligence · Warm archival paper · Gold rules
+   Design: Minimalism + Editorial Authority · "Calm urgency"
    ═══════════════════════════════════════════════ */
 
 :root {
-  --bg:        #FFFFFF;   /* Pure white everywhere */
-  --white:     #FFFFFF;
-  --card-bg:   #FFFFFF;
+  /* ── Paper surface (Diplomatic Ledger) ── */
+  --bg:         #FAF9F6;   /* Warm archival paper — premium, reduces eye strain */
+  --white:      #FAF9F6;
+  --card-bg:    #FAF9F6;
+  --surface-dim: #DBDAD7;
+  --surface-bright: #FAF9F6;
 
-  --blue:      #2563EB;   /* Sharp blue — links, interactive */
-  --green:     #047857;   /* Darker emerald — better contrast, buy signals */
-  --red:       #DC2626;   /* Casino red — sell signals, outflows */
-  --gold:      #D4AF37;   /* Metallic gold — better contrast, premium feel */
-  --gold-dark: #B8860B;   /* Dark goldenrod — borders, hover states */
-  --gold-light: rgba(212,175,55,0.12);
+  /* ── Accent metals ── */
+  --gold:       #D4AF37;   /* Structural gold — separators, data points, wealth signals */
+  --gold-dark:  #B8860B;   /* Dark goldenrod — borders, hover states */
+  --gold-accessible: #B45309;  /* WCAG AA compliant (>4.5:1 on white) — interactive text */
+  --gold-light: rgba(212,175,55,0.10);
+  --crimson:    #8B0000;   /* Editorial crimson — urgent alerts, negative fiscal trends */
+  --red:        #8B0000;   /* (aliased — replaces casino red) */
+  --green:      #047857;   /* Dark emerald — buy signals, positive */
+  --green-alt:  #059669;
+  --blue:       #2563EB;   /* Links, interactive */
 
-  --ink:       #111827;   /* Near-black — all body text */
-  --ink-light: #6B7280;   /* Grey — secondary text */
-  --ink-muted: #9CA3AF;   /* Muted grey */
+  /* ── Ink (text hierarchy) ── */
+  --ink:        #1A1C1A;   /* Deep charcoal — maximum contrast without harshness */
+  --ink-light:  #747878;   /* Slate — secondary text */
+  --ink-muted:  #9CA3AF;   /* Muted grey */
 
-  --divider:   #E5E7EB;   /* Light divider */
-  --card-border: #E5E7EB;
+  /* ── Structural ── */
+  --divider:    #D4AF37;   /* Gold 1px rules — primary structural elements */
+  --card-border:#D4AF37;
+  --gray-50:    #F4F3F1;
+  --gray-100:   #EFEEEB;
+  --gray-200:   #E9E8E5;
+  --gray-400:   #9CA3AF;
+  --gray-500:   #747878;
+  --dark-bg:    #1A1F2E;   /* Dark navy — overlays, menus, modal depth */
+  --intel-bg:   #1A1F2E;
+  --intel-text: #F2F1EE;
+  --btn-hover:  #2F312F;
 
+  /* ── Typography (Diplomatic Ledger scale) ── */
   --display: 'Playfair Display', Georgia, serif;
-  --body:    'Source Serif 4', Georgia, serif;
+  --body:    'Inter', -apple-system, sans-serif;
   --sans:    'Inter', -apple-system, sans-serif;
 
+  /* ── Spacing (8px baseline) ── */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --margin-h: 16px;
+
+  /* ── Shape ── */
+  --radius:     0px;      /* Sharp — no rounded corners. Ink on paper. */
+
+  /* ── Golden ratio (legacy) ── */
   --φ: 1.618;
   --φ-sm: calc(1rem / var(--φ));
   --φ-md: 1.618rem;
   --φ-lg: calc(1rem * var(--φ) * var(--φ));
   --φ-xl: calc(1rem * var(--φ) * var(--φ) * var(--φ));
-
-  --green:      #047857;   /* Dark emerald — buy signals, positive */
-  --green-alt:  #059669;   /* Alternative green — indicators */
-  --red:        #DC2626;   /* Casino red — sell signals, negative */
-  --gray-50:    #F9FAFB;   /* Lightest gray — card bg */
-  --gray-100:   #F3F4F6;   /* Light gray — hover bg, dividers */
-  --gray-200:   #E5E7EB;   /* Light border — dividers, card borders */
-  --gray-400:   #9CA3AF;   /* Muted gray — tertiary text */
-  --gray-500:   #6B7280;   /* Medium gray — secondary text */
-  --dark-bg:    #1A1F2E;   /* Dark navy — dropdown panels */
-  --intel-bg:   #0F172A;   /* Dark navy — INTEL badge bg */
-  --intel-text: #E2E8F0;   /* Light gray — INTEL badge text */
-  --btn-hover:  #374151;   /* Dark gray — button hover */
-
-  --radius:     4px;      /* Standard border radius */}
+}
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  background: #FFFFFF;
+  background: var(--bg);
   color: var(--ink);
   font-family: var(--body);
   font-size: 16px;
-  line-height: 1.45;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
+  padding: 0 var(--margin-h);
 }
 
 /* ── Masthead ── */
@@ -67,8 +84,8 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 10px 16px;
-  background: #FFFFFF;
-  border-bottom: 2px solid var(--gold);
+  background: var(--bg);
+  border-bottom: 1px solid var(--gold);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -119,44 +136,34 @@ body {
   text-decoration: none;
   color: inherit;
 }
-.masthead-bulava {
-  position: relative;
-  display: -webkit-inline-flex;
-  display: inline-flex;
-  width: 28px;
-  height: 40px;
-  color: var(--gold);
-  vertical-align: middle;
-  flex-shrink: 0;
-}
-.masthead-bulava svg {
-  position: absolute;
-  width: 20px;
-  height: 40px;
-  top: 0;
-  left: 4px;
-  transform-origin: 50% 62%;
-  display: block;
-}
-.masthead-bulava svg:first-child {
-  transform: rotate(-32deg);
-}
-.masthead-bulava svg:last-child {
-  transform: scaleX(-1) rotate(-32deg);
-}
-.masthead-caduceus {
+.masthead-bulavas {
   display: -webkit-inline-flex;
   display: inline-flex;
   align-items: center;
   width: 28px;
+  height: 38px;
+  color: var(--gold);
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+.masthead-bulavas svg {
+  display: block;
+  width: 28px;
+  height: 38px;
+}
+.masthead-machiavelli {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  align-items: center;
+  width: 20px;
   height: 40px;
   color: var(--gold);
   vertical-align: middle;
   flex-shrink: 0;
 }
-.masthead-caduceus svg {
+.masthead-machiavelli svg {
   display: block;
-  width: 28px;
+  width: 20px;
   height: 40px;
 }
 /* v26.1: master-nav hidden — nav links now in masthead */
@@ -189,8 +196,7 @@ body {
   border: 1px solid rgba(212,175,55,0.2);
   min-width: 180px;
   z-index: 200;
-  border-radius: 4px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  border-radius: 0px;
 }
 .nav-dropdown.open .nav-dropdown-panel { display: block; }
 .nav-dd-link {
@@ -312,6 +318,90 @@ body {
   -webkit-appearance: none;
   appearance: none;
 }
+
+/* ── Domain Navigation ── */
+.container-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 16px 14px;
+  border-bottom: 1px solid var(--gold);
+  background: var(--bg);
+}
+.container-pill {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 5px 12px;
+  border: 1px solid var(--gold);
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.container-pill:hover,
+.container-pill:focus-visible {
+  background: var(--gold);
+  color: #FFFFFF;
+  outline: none;
+}
+
+/* ── Trader Feed ── */
+.trader-feed {
+  padding: 0;
+  background: var(--bg);
+}
+.feed-empty {
+  font-family: var(--body);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--ink-muted);
+  text-align: center;
+  padding: 60px 16px;
+  border-bottom: 1px solid var(--gold);
+}
+
+/* ── Dashboard ── */
+.dashboard {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ── Capital Bar ── */
+.capital-bar {
+  height: 3px;
+  background: var(--gray-200);
+  border-radius: 0;
+  margin-top: 12px;
+  position: relative;
+}
+.capital-bar-fill {
+  height: 100%;
+  background: var(--gold);
+  transition: width 0.3s;
+}
+.capital-bar-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  color: var(--ink-muted);
+  position: absolute;
+  right: 0;
+  top: -18px;
+}
+
+/* ── Footer ── */
+.footer {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-muted);
+  text-align: center;
+  padding: 16px 8px 20px;
+  border-top: 1px solid var(--gold);
+}
+
 .lang-switch:hover {
   color: var(--gold);
   border-color: var(--gold);
@@ -1075,7 +1165,7 @@ tant; }
   .masthead-right { width: auto; justify-content: center; gap: 6px; }
   .masthead-tagline { display: none; }
   .masthead-name { font-size: 1.8em; }
-  .masthead-bulava svg, .masthead-caduceus svg { width: 12px; height: 22px; }
+  .masthead-machiavelli svg, .masthead-bulavas svg { width: 12px; height: 22px; }
   .product-nav { margin: 4px 0 ; gap: 8px ; }
   .product-nav a { font-size: 12px ; }
   .lang-switch { min-width: 44px; min-height: 44px; font-size: 13px; padding: 10px 14px; }
@@ -3050,4 +3140,575 @@ article.card:active,
   .nav-hamburger {
     display: flex;
   }
+}
+
+/* ═══════════════════════════════════════════════
+   v3.0 DEGEN DASHBOARD — Heat-Bubble Navigation
+   ═══════════════════════════════════════════════ */
+
+/* ── Bubble section ── */
+.heat-section {
+  padding: 24px 16px 16px;
+  border-bottom: 1px solid var(--gold);
+  background: var(--bg);
+}
+.heat-bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* ── Individual bubble ── */
+.heat-bubble {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+  position: relative;
+  flex-shrink: 0;
+  padding: 0;
+  /* size set inline by JS */
+}
+.heat-bubble:hover {
+  transform: scale(1.08);
+}
+.heat-bubble.active {
+  box-shadow: 0 0 0 3px var(--ink), 0 0 16px rgba(212,175,55,0.5);
+}
+
+/* Color tiers */
+.heat-bubble.neutral {
+  background: #F8F8F8;
+  color: var(--ink-muted);
+  border: 1px solid var(--divider);
+}
+.heat-bubble.warm {
+  background: #FFF8E7;
+  color: #92400E;
+  border: 1px solid #FCD34D;
+}
+.heat-bubble.hot {
+  background: var(--gold);
+  color: #FFFFFF;
+  border: 1px solid var(--gold-dark);
+  box-shadow: 0 2px 12px rgba(212,175,55,0.35);
+}
+.heat-bubble.critical {
+  background: #8B0000;
+  color: #FFFFFF;
+  border: 1px solid #600000;
+  animation: pulse-critical 2s infinite;
+  box-shadow: 0 2px 16px rgba(139,0,0,0.4);
+}
+@keyframes pulse-critical {
+  0%, 100% { box-shadow: 0 0 12px rgba(212,175,55,0.3), 0 0 0 0 rgba(139,0,0,0.4); }
+  50%      { box-shadow: 0 0 24px rgba(212,175,55,0.6), 0 0 8px rgba(139,0,0,0.6); }
+}
+
+/* Bubble children */
+.heat-bubble-ticker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+.heat-bubble-label {
+  font-size: 8px;
+  font-weight: 500;
+  opacity: 0.8;
+  line-height: 1.2;
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.heat-bubble-cap {
+  font-size: 7px;
+  font-weight: 600;
+  opacity: 0.65;
+  margin-top: 1px;
+}
+
+/* Small bubble hides label */
+.heat-bubble[style*="width: 4"],
+.heat-bubble[style*="width: 5"] .heat-bubble-label {
+  font-size: 0;
+}
+/* Reset bubble sizes overlap label on small bubbles */
+
+/* "Show All" reset */
+.heat-bubble-reset {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  background: none;
+  border: 1px solid var(--divider);
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.heat-bubble-reset:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+/* ═══════════════════════════════════════════════
+   v3.0 TRADER FEED — Contradiction Cards
+   ═══════════════════════════════════════════════ */
+
+.trader-feed {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 12px 16px 40px;
+}
+
+.feed-empty {
+  text-align: center;
+  color: var(--ink-muted);
+  font-family: var(--body);
+  font-style: italic;
+  padding: 40px 20px;
+}
+
+/* ── Card ── */
+.trader-card {
+  background: var(--bg);
+  border-left: 2px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+  border-radius: 0px;
+  padding: 14px 16px 20px;
+  margin-bottom: 0;
+  position: relative;
+  transition: border-color 0.2s;
+  box-shadow: none;
+}
+.trader-card:hover {
+  border-left-color: var(--gold-dark);
+}
+
+.trader-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.trader-badge {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  background: var(--gray-100);
+  padding: 2px 8px;
+}
+
+.trader-time {
+  font-family: var(--sans);
+  font-size: 10px;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.trader-headline {
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+  margin: 0 0 10px 0;
+}
+
+/* Consensus / Reality rows */
+.trader-row {
+  margin-bottom: 8px;
+  padding: 8px 10px;
+  border-radius: 2px;
+}
+.trader-label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+  color: var(--ink-muted);
+}
+.trader-consensus {
+  background: #F8F8F8;
+  border-left: 2px solid var(--divider);
+}
+.trader-consensus .trader-label { color: #777; }
+.trader-reality {
+  background: #FFF8E7;
+  border-left: 2px solid var(--gold);
+}
+.trader-reality .trader-label { color: #92400E; }
+.trader-row p {
+  margin: 0;
+  font-family: var(--body);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-light);
+}
+
+/* Contradiction Edge badge */
+.trader-edge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  margin-bottom: 8px;
+  background: var(--gray-100);
+}
+.trader-edge-label {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+}
+.trader-edge-score {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 2px 10px;
+}
+.trader-edge-score.neutral { color: var(--ink-muted); background: #EEE; }
+.trader-edge-score.warm     { color: #92400E; background: #FEF3C7; }
+.trader-edge-score.hot      { color: #FFFFFF; background: var(--gold); }
+.trader-edge-score.critical {
+  color: #FFFFFF;
+  background: #8B0000;
+  animation: pulse-critical 2s infinite;
+}
+
+/* Capital bar */
+.capital-bar {
+  position: relative;
+  height: 6px;
+  background: var(--gray-100);
+  margin-top: 10px;
+}
+.capital-bar-fill {
+  height: 100%;
+  background: var(--gold);
+  min-width: 2px;
+  transition: width 0.4s;
+}
+.capital-bar-label {
+  position: absolute;
+  right: 0;
+  top: -16px;
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Mobile (≤600px) ── */
+@media (max-width: 600px) {
+  .heat-section { padding: 12px 8px; }
+  .heat-bubbles { gap: 12px; }
+  .trader-feed { padding: 8px 10px 32px; }
+  .trader-card { padding: 10px 12px; }
+  .trader-headline { font-size: 14px; }
+  .trader-row p { font-size: 12px; }
+}
+
+/* ═══════════════════════════════════════════════
+   v3.1 — Emoji Symmetry (.header-symbol)
+   ═══════════════════════════════════════════════ */
+.header-symbol {
+  font-size: inherit;
+  vertical-align: middle;
+  display: inline;
+  line-height: inherit;
+}
+
+/* ═══════════════════════════════════════════════
+   v3.1 — Degen Edge Badges
+   ═══════════════════════════════════════════════ */
+.degen-badge {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  margin-right: 6px;
+  text-transform: uppercase;
+}
+.degen-desc {
+  font-family: var(--sans);
+  font-size: 10px;
+  color: var(--ink-muted);
+  font-style: italic;
+}
+.degen-divergent {
+  background: rgba(139,0,0,0.12);
+  color: #8B0000;
+  animation: pulse-degen 1.8s infinite;
+}
+.degen-convergent {
+  background: rgba(212,175,55,0.12);
+  color: #8B6914;
+}
+.degen-neutral {
+  background: rgba(100,116,139,0.1);
+  color: #64748B;
+}
+@keyframes pulse-degen {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(212,175,55,0.4); }
+  50%      { opacity: 0.85; box-shadow: 0 0 8px 2px rgba(212,175,55,0.5); }
+}
+
+/* ═══════════════════════════════════════════════
+   v4.0 ROMAN PURPLE OVERLAY — Imperial Deep-Dive
+   ═══════════════════════════════════════════════ */
+
+.imperial-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.imperial-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Dark backdrop */
+.imperial-overlay-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, #3c1252 0%, #1e0826 100%);
+  z-index: 0;
+}
+
+/* Close button */
+.imperial-close {
+  position: fixed;
+  top: 20px; right: 20px;
+  z-index: 510;
+  padding: 12px 22px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #D4AF37;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(212,175,55,0.3);
+  cursor: pointer;
+  transition: all 0.25s;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.imperial-close:hover {
+  background: rgba(212,175,55,0.15);
+  border-color: #D4AF37;
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+/* Narrative Sun — centered gold title with aggregate stats */
+.imperial-sun {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 80px 20px 30px;
+  max-width: 800px;
+  width: 100%;
+}
+.imperial-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #D4AF37;
+  margin: 0 0 16px 0;
+  text-shadow: 0 0 40px rgba(212,175,55,0.3), 0 2px 8px rgba(0,0,0,0.5);
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+.imperial-agg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.imperial-capital {
+  font-family: 'Inter', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 30px rgba(212,175,55,0.25);
+}
+.imperial-stats {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(212,175,55,0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* Card grid */
+.imperial-cards {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  width: 100%;
+  padding: 20px 16px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Individual overlay card — Alabaster White with gold accents */
+.overlay-card {
+  background: #FAF9F6;
+  border-left: 3px solid #D4AF37;
+  padding: 18px 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: cardSlideUp 0.45s ease forwards;
+}
+.overlay-card:nth-child(odd)  { animation-delay: 0.05s; }
+.overlay-card:nth-child(even) { animation-delay: 0.12s; }
+
+@keyframes cardSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.overlay-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.overlay-card-ticker {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #8B6914;
+  background: rgba(212,175,55,0.1);
+  padding: 2px 10px;
+}
+.overlay-card-time {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.overlay-card-headline {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.35;
+  margin: 0 0 14px 0;
+}
+
+.overlay-row {
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #444;
+}
+.overlay-row.consensus {
+  background: #F2F0EB;
+  border-left: 2px solid #D5D0C8;
+}
+.overlay-row.reality {
+  background: #FDF8ED;
+  border-left: 2px solid #D4AF37;
+}
+.overlay-row-label {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: #888;
+}
+.overlay-row.reality .overlay-row-label { color: #8B6914; }
+.overlay-row p { margin: 0; }
+
+/* Overlay edge badge inside cards */
+.overlay-edge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  font-family: 'Inter', sans-serif;
+}
+.overlay-edge.degen-divergent { background: rgba(139,0,0,0.06); }
+.overlay-edge.degen-convergent { background: rgba(212,175,55,0.06); }
+.overlay-edge-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.overlay-edge.degen-divergent .overlay-edge-label { color: #8B0000; }
+.overlay-edge.degen-convergent .overlay-edge-label { color: #8B6914; }
+.overlay-edge-score {
+  font-size: 11px;
+  font-weight: 700;
+  color: #666;
+}
+.overlay-edge-desc {
+  font-size: 10px;
+  color: #888;
+  font-style: italic;
+  margin-left: auto;
+}
+
+/* Mobile overlay */
+@media (max-width: 600px) {
+  .imperial-title { font-size: 22px; }
+  .imperial-capital { font-size: 34px; }
+  .imperial-sun { padding: 60px 16px 20px; }
+  .imperial-close { top: 10px; right: 10px; padding: 10px 16px; font-size: 11px; }
+  .overlay-card { padding: 14px 14px; }
+  .overlay-card-headline { font-size: 15px; }
+  .overlay-row { font-size: 13px; padding: 8px 10px; }
 }

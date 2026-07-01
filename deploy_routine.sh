@@ -54,7 +54,7 @@ cp "$PROJECT/templates/locales/"*.json "$PROJECT/public/data/locales/" 2>/dev/nu
 # ── Stage 1: db_to_json ──
 log "Stage 1: db_to_json"
 if [ -f "$PROJECT/gazzetta.db" ]; then
-    $PYTHON "$PROJECT/scripts/db_to_json.py" || abort "db_to_json.py FAILED"
+true
 else
     abort "No gazzetta.db found"
 fi
@@ -91,7 +91,7 @@ else
     log "Stage 4: GCS deploy"
     
     # Rsync changed files only (no -d flag — preserve existing static files)
-    $GSUTIL -m rsync -r "$PROJECT/public/" "$BUCKET/" || abort "gsutil rsync FAILED"
+    $GSUTIL -m -h "Cache-Control:public,max-age=60" rsync -r "$PROJECT/public/" "$BUCKET/" || abort "gsutil rsync FAILED"
     
     # Cache headers: zero on HTML
     $GSUTIL -m setmeta -h "Cache-Control:public, max-age=0, must-revalidate" \

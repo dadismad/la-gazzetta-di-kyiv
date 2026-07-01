@@ -1,0 +1,22 @@
+# ──────────────────────────────────────────────────────
+# Gazzetta Governor Timer — 10-minute pipeline heartbeat
+# ──────────────────────────────────────────────────────
+# Triggers gazzetta-governor.service every 10 minutes.
+# Persistent: catches up on missed runs after VM restart.
+#
+# Status:  systemctl status gazzetta-governor.timer
+# Logs:    journalctl -u gazzetta-governor -f -n 50
+# ──────────────────────────────────────────────────────
+
+[Unit]
+Description=Gazzetta Governor 10-Minute Pipeline Timer
+Requires=gazzetta-governor.service
+
+[Timer]
+OnCalendar=*:0/10
+Persistent=true
+AccuracySec=5s
+RandomizedDelaySec=10
+
+[Install]
+WantedBy=timers.target

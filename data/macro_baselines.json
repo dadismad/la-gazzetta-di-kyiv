@@ -1,0 +1,23 @@
+{
+  "updated": "2026-06-21T19:59:19.255264+00:00",
+  "baselines": {
+    "global_equities_usd": 100000000000000,
+    "us_m2_usd": 22800000000000,
+    "total_crypto_mcap_usd": 2287683582143
+  },
+  "narrative_segments": {
+    "dollar_decline": "us_m2_usd",
+    "rate_cycle": "us_m2_usd",
+    "crypto_reserve": "total_crypto_mcap_usd",
+    "tech_convergence": "global_equities_usd",
+    "ai_chips": "global_equities_usd",
+    "space_economy": "global_equities_usd",
+    "china_ascent": "global_equities_usd",
+    "deglobalization": "global_equities_usd",
+    "critical_resource_control": "global_equities_usd",
+    "gene_editing": "global_equities_usd",
+    "wealthy_sports": "global_equities_usd",
+    "commodity_supercycle": "global_equities_usd"
+  },
+  "saturation_threshold": 0.15
+}
