@@ -20,45 +20,65 @@ DATA = PROJECT / "data"
 SITE_DATA = PROJECT / "public" / "data"
 
 CONTAINER_META = {
-    "dollar_decline": {
-        "title": "Dollar Decline",
+    "usd_debasement_reserve_diversification": {
+        "title": "Sovereign Reserves & De-Dollarization",
         "subtitle": "USD reserve status erosion, BRICS payment rails, gold repatriation",
         "sort_order": 0,
     },
-    "energy_sovereignty": {
-        "title": "Energy Sovereignty",
-        "subtitle": "Fusion, renewables, rare earths, critical minerals, grid independence",
+    "critical_resource_control_infrastructure": {
+        "title": "Energy Security & Infrastructure",
+        "subtitle": "Crude, natural gas, nuclear, rare earths, grid control, critical minerals",
         "sort_order": 1,
     },
-    "deglobalization": {
-        "title": "Deglobalization",
+    "supply_chain_resilience_reshoring_defense": {
+        "title": "Reshoring & Defense Logistics",
         "subtitle": "Supply chain fragmentation, trade bloc realignment, sanctions rewiring",
         "sort_order": 2,
     },
-    "china_ascent": {
-        "title": "China's Ascent",
+    "china_geoeconomic_expansion": {
+        "title": "Eurasian Trade & Chinese Markets",
         "subtitle": "Parallel tech stack, yuan internationalization, BRI, semiconductor independence",
         "sort_order": 3,
     },
-    "space_economy": {
-        "title": "Space Economy",
+    "space_economy_commercialization": {
+        "title": "Space Economy & Aerospace",
         "subtitle": "Orbital infrastructure, space mining, satellite internet, GPS alternatives",
         "sort_order": 4,
     },
-    "gene_editing": {
-        "title": "Gene Editing & Longevity",
+    "gene_editing_biotech_longevity": {
+        "title": "Biotech & Longevity Science",
         "subtitle": "CRISPR therapies, biotech industrialization, healthspan extension",
         "sort_order": 5,
     },
-    "tech_convergence": {
-        "title": "Emerging Tech Convergence",
+    "tech_convergence_platforms_ai_autonomy": {
+        "title": "Enterprise Tech & Artificial Intelligence",
         "subtitle": "AI + quantum + biotech + materials intersections",
         "sort_order": 6,
     },
-    "wealthy_sports": {
-        "title": "Wealthy Sports",
+    "prestige_asset_acquisition_strategic_investment": {
+        "title": "Trophy Assets & Sovereign Investment",
         "subtitle": "Sovereign wealth in teams, sports as soft power, capital concentration",
         "sort_order": 7,
+    },
+    "ai_compute_semiconductor_hegemony": {
+        "title": "Semiconductors & Compute Hegemony",
+        "subtitle": "Advanced chip manufacturing, foundry limits, export control regimes",
+        "sort_order": 8,
+    },
+    "digital_assets_reserves_onchain_finance": {
+        "title": "Digital Assets & Decentralized Capital",
+        "subtitle": "Stablecoin settlement, tokenized reserves, sovereign crypto allocations",
+        "sort_order": 9,
+    },
+    "monetary_policy_regime_shift_rate_cycle": {
+        "title": "Monetary Policy & Rates",
+        "subtitle": "Central bank pivots, yield curve spreads, rate cycle dynamics",
+        "sort_order": 10,
+    },
+    "commodity_supercycle_supply_rebalancing": {
+        "title": "Commodities & Physical Supply",
+        "subtitle": "Transition metals, underinvestment, physical supply squeezes",
+        "sort_order": 11,
     },
 }
 

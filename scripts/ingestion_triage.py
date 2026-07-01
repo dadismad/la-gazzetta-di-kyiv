@@ -38,17 +38,17 @@ PROJECT = Path(__file__).resolve().parent.parent
 DB_PATH = os.environ.get("GAZZETTA_DB_PATH", str(PROJECT / "gazzetta.db"))
 
 RSS_FEEDS = [
-    {"url": "https://www.ecb.europa.eu/rss/press.html",      "narrative": "dollar_decline"},
-    {"url": "https://www.world-nuclear-news.org/feed",       "narrative": "critical_resource_control"},
-    {"url": "https://www.scmp.com/rss/91/feed",              "narrative": "china_ascent"},
-    {"url": "https://www.technologyreview.com/feed/",        "narrative": "tech_convergence"},
-    {"url": "https://spacenews.com/feed/",                   "narrative": "space_economy"},
-    {"url": "https://www.fiercebiotech.com/feed",            "narrative": "gene_editing"},
-    {"url": "https://feeds.bloomberg.com/markets/news.rss",  "narrative": "deglobalization"},
-    {"url": "https://www.ft.com/markets?format=rss",         "narrative": "dollar_decline"},
-    {"url": "https://www.coindesk.com/arc/outboundfeeds/rss/","narrative": "crypto_reserve"},
-    {"url": "https://www.al-monitor.com/feed",               "narrative": "china_ascent"},
-    {"url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10001147", "narrative": "tech_convergence"},
+    {"url": "https://www.ecb.europa.eu/rss/press.html",      "narrative": "usd_debasement_reserve_diversification"},
+    {"url": "https://www.world-nuclear-news.org/feed",       "narrative": "critical_resource_control_infrastructure"},
+    {"url": "https://www.scmp.com/rss/91/feed",              "narrative": "china_geoeconomic_expansion"},
+    {"url": "https://www.technologyreview.com/feed/",        "narrative": "tech_convergence_platforms_ai_autonomy"},
+    {"url": "https://spacenews.com/feed/",                   "narrative": "space_economy_commercialization"},
+    {"url": "https://www.fiercebiotech.com/feed",            "narrative": "gene_editing_biotech_longevity"},
+    {"url": "https://feeds.bloomberg.com/markets/news.rss",  "narrative": "supply_chain_resilience_reshoring_defense"},
+    {"url": "https://www.ft.com/markets?format=rss",         "narrative": "usd_debasement_reserve_diversification"},
+    {"url": "https://www.coindesk.com/arc/outboundfeeds/rss/","narrative": "digital_assets_reserves_onchain_finance"},
+    {"url": "https://www.al-monitor.com/feed",               "narrative": "china_geoeconomic_expansion"},
+    {"url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10001147", "narrative": "tech_convergence_platforms_ai_autonomy"},
     {"url": "https://tg.i-c-a.su/rss/infinityhedge",  "narrative": None},
 ]
 

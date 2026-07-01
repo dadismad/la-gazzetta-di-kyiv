@@ -1,6 +1,6 @@
 # Energy Sovereignty
 
-**Narrative ID**: `energy_sovereignty`
+**Narrative ID**: `critical_resource_control_infrastructure`
 **Tickers**: CL=F, NG=F, XLE
 **Invalidation Threshold**: Brent < $65
 

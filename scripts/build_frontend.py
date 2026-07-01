@@ -30,9 +30,18 @@ ICON_FALLBACK_MAP = {
 }
 
 LEGACY_ORDER = [
-    "dollar_decline", "critical_resource_control", "deglobalization",
-    "china_ascent", "space_economy", "gene_editing",
-    "tech_convergence", "wealthy_sports"
+    "usd_debasement_reserve_diversification",
+    "critical_resource_control_infrastructure",
+    "supply_chain_resilience_reshoring_defense",
+    "china_geoeconomic_expansion",
+    "space_economy_commercialization",
+    "gene_editing_biotech_longevity",
+    "tech_convergence_platforms_ai_autonomy",
+    "prestige_asset_acquisition_strategic_investment",
+    "ai_compute_semiconductor_hegemony",
+    "digital_assets_reserves_onchain_finance",
+    "monetary_policy_regime_shift_rate_cycle",
+    "commodity_supercycle_supply_rebalancing"
 ]
 
 def load_json(path):
@@ -86,18 +95,18 @@ def calculate_narrative_status(top_gap, story_count):
 
 # Canonical ticker safe-list per narrative — gates LLM output
 CANONICAL_TICKERS = {
-    "dollar_decline":        ["GLD", "UUP", "SLV", "IAU", "DXY", "EURUSD=X"],
-    "critical_resource_control": ["CL=F", "XOM", "CVX", "CCJ", "URNM", "URA", "NLR", "REMX"],
-    "deglobalization":       ["XLI", "ITA", "PPA", "XME"],
-    "china_ascent":          ["FXI", "KWEB", "MCHI", "ASHR", "BABA", "OBOR", "AAXJ", "CNYB", "EMLC"],
-    "space_economy":         ["ROKT", "UFO", "ARKX", "RKLB", "LMT", "MARS", "SPCE", "ASTR", "MOON"],
-    "gene_editing":          ["ARKG", "XBI", "IBB"],
-    "tech_convergence":      ["CLOU", "WCLD", "ARTY", "BOTZ", "FCLD", "MSFT", "GOOGL", "NVDA", "ORCL", "CRM"],
-    "wealthy_sports":        ["DKNG", "PENN", "MGM", "DIS", "CMCSA", "WBD", "FOXA", "MSG", "FUBO", "STAD"],
-    "ai_chips":              ["NVDA", "AMD", "TSM", "SMH"],
-    "crypto_reserve":        ["BTC-USD", "ETH-USD", "COIN"],
-    "rate_cycle":            ["TLT", "SHY", "IEF"],
-    "commodity_supercycle":  ["DBC", "GLD", "GDX"],
+    "usd_debasement_reserve_diversification":        ["GLD", "UUP", "SLV", "IAU", "DXY", "EURUSD=X", "DX=F", "GC=F"],
+    "critical_resource_control_infrastructure": ["CL=F", "NG=F", "XOM", "CVX", "CCJ", "URNM", "URA", "NLR", "REMX", "XLE"],
+    "supply_chain_resilience_reshoring_defense":       ["XLI", "ITA", "PPA", "XME", "FDX", "CAT"],
+    "china_geoeconomic_expansion":          ["FXI", "KWEB", "MCHI", "ASHR", "BABA", "OBOR", "AAXJ", "CNYB", "EMLC", "CNY=X"],
+    "space_economy_commercialization":         ["ROKT", "UFO", "ARKX", "RKLB", "LMT", "MARS", "SPCE", "ASTR", "MOON", "NOC"],
+    "gene_editing_biotech_longevity":          ["ARKG", "XBI", "IBB", "CRSP", "NTLA"],
+    "tech_convergence_platforms_ai_autonomy":      ["CLOU", "WCLD", "ARTY", "BOTZ", "FCLD", "MSFT", "GOOGL", "NVDA", "ORCL", "CRM", "AMZN", "QQQ"],
+    "prestige_asset_acquisition_strategic_investment":        ["DKNG", "PENN", "MGM", "DIS", "CMCSA", "WBD", "FOXA", "MSG", "FUBO", "STAD", "BATRK", "MANU", "MSGS"],
+    "ai_compute_semiconductor_hegemony":              ["NVDA", "AMD", "TSM", "SMH", "ASML"],
+    "digital_assets_reserves_onchain_finance":        ["BTC-USD", "ETH-USD", "COIN", "MSTR"],
+    "monetary_policy_regime_shift_rate_cycle":            ["TLT", "SHY", "IEF", "^TNX", "^IRX", "ZN=F", "ZB=F"],
+    "commodity_supercycle_supply_rebalancing":  ["DBC", "GLD", "GDX", "HG=F", "COPX", "XME", "WEAT", "CORN"],
 }
 
 
@@ -339,6 +348,16 @@ def build():
         except Exception:
             pass
 
+    # Load market prices data
+    prices_json = "{}"
+    prices_path = DATA / "market_prices.json"
+    if prices_path.exists():
+        try:
+            with open(prices_path) as f:
+                prices_json = json.dumps(json.load(f).get("prices", {}), ensure_ascii=False)
+        except Exception:
+            pass
+
     print(f"[build_frontend] {len(all_stories)} stories, {disc_count} discrepancies, regime={regime}")
 
     html = _TEMPLATE
@@ -350,6 +369,7 @@ def build():
     html = html.replace("__REGIME_JSON__", regime_json)
     html = html.replace("__REGIME_DRIVERS_JSON__", regime_drivers_json)
     html = html.replace("__DERIVATIVES_JSON__", derivatives_json)
+    html = html.replace("__PRICES_JSON__", prices_json)
     html = html.replace("__REGIME_STR__", str(regime))
     html = html.replace("__BUILD_TIME__", build_time)
     html = html.replace("__STORY_COUNT__", str(len(all_stories)))
@@ -393,39 +413,59 @@ _TEMPLATE = r"""<!DOCTYPE html>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = {
   darkMode: "class",
   theme: {
     extend: {
       colors: {
-        "surface": "#FAF9F6","surface-dim": "#DBDAD7","surface-bright": "#FAF9F6",
-        "surface-container": "#EFEEEB","surface-container-high": "#E9E8E5",
-        "surface-container-highest": "#E3E2E0","on-surface": "#E6E4E0",
-        "on-surface-variant": "#9B97B0","inverse-surface": "#2F312F",
-        "inverse-on-surface": "#F2F1EE","outline": "#747878",
-        "outline-variant": "#C4C7C7","gold": "#D4AF37","gold-dim": "#B8860B","gold-accessible": "#B45309",
-        "crimson": "#7F1D1D","roman-purple": "#66023C","emerald": "#10B981","navy": "#1A1F2E",
-        "primary": "#000000","on-primary": "#FFFFFF","secondary": "#735C00",
-        "on-secondary": "#FFFFFF","secondary-fixed-dim": "#E9C349",
-        "error": "#BA1A1A","error-container": "#FFDAD6","on-error-container": "#93000A",
+        "surface": "#F4F5F6",
+        "surface-dim": "#EBEAE6",
+        "surface-bright": "#FFFFFF",
+        "surface-container": "#FFFFFF",
+        "surface-container-high": "#FAF9F6",
+        "surface-container-highest": "#EBEAE6",
+        "on-surface": "#1A1C1A",
+        "on-surface-variant": "#747878",
+        "inverse-surface": "#0B0E11",
+        "inverse-on-surface": "#FAF9F6",
+        "outline": "#E3E2E0",
+        "outline-variant": "#CCCCCC",
+        "gold": "#D4AF37",
+        "gold-dim": "#C5A880",
+        "gold-accessible": "#AA8237",
+        "crimson": "#D9383A",
+        "roman-purple": "#4A0E4E",
+        "emerald": "#15803d",
+        "navy": "#1E293B",
+        "primary": "#1A1C1A",
+        "on-primary": "#FFFFFF",
+        "secondary": "#0066FF",
+        "on-secondary": "#FFFFFF",
+        "error": "#D9383A",
+        "error-container": "#FDE8E8",
+        "on-error-container": "#9B1C1C",
       },
-      borderRadius: {"DEFAULT":"0px","lg":"0px","xl":"0px","full":"0px"},
+      borderRadius: {"DEFAULT":"6px","lg":"8px","xl":"12px","full":"9999px"},
       spacing: {"margin-horizontal":"16px","stack-space-lg":"32px","stack-space-sm":"8px","stack-space-md":"16px","tap-target-min":"48px"},
       fontFamily: {
-        "display-xl":["Playfair Display","Georgia","serif"],
-        "headline-lg":["Playfair Display","Georgia","serif"],
-        "headline-lg-mobile":["Playfair Display","Georgia","serif"],
-        "headline-md":["Playfair Display","Georgia","serif"],
-        "body-md":["Inter","sans-serif"],"metadata-sm":["Inter","sans-serif"],"label-xs":["Inter","sans-serif"],
+        "display-xl":["Inter","sans-serif"],
+        "headline-lg":["Inter","sans-serif"],
+        "headline-lg-mobile":["Inter","sans-serif"],
+        "headline-md":["Inter","sans-serif"],
+        "body-md":["Inter","sans-serif"],
+        "body-sm":["Inter","sans-serif"],
+        "metadata-sm":["JetBrains Mono","monospace"],
+        "label-xs":["JetBrains Mono","monospace"],
       },
       fontSize: {
-        "display-xl":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"700"}],
-        "headline-lg":["16px",{lineHeight:"22px",fontWeight:"700"}],
-        "headline-lg-mobile":["18px",{lineHeight:"24px",fontWeight:"700"}],
-        "headline-md":["14px",{lineHeight:"20px",fontWeight:"600"}],
-        "body-md":["13px",{lineHeight:"20px",fontWeight:"400"}],
+        "display-xl":["32px",{lineHeight:"40px",fontWeight:"700",letterSpacing:"-0.02em"}],
+        "headline-lg":["20px",{lineHeight:"28px",fontWeight:"700",letterSpacing:"-0.01em"}],
+        "headline-lg-mobile":["18px",{lineHeight:"24px",fontWeight:"700",letterSpacing:"-0.01em"}],
+        "headline-md":["16px",{lineHeight:"22px",fontWeight:"600"}],
+        "body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],
+        "body-sm":["12px",{lineHeight:"18px",fontWeight:"400"}],
         "metadata-sm":["11px",{lineHeight:"16px",fontWeight:"500",letterSpacing:"0.04em"}],
         "label-xs":["10px",{lineHeight:"14px",fontWeight:"600",letterSpacing:"0.02em"}],
       },
@@ -434,29 +474,28 @@ tailwind.config = {
 }
 </script>
 <style>
-  /* ── IMPERIAL LEDGER THEME (v35.0) ──
+  /* ── IMPERIAL LEDGER THEME ──
      Warm archival paper · Roman purple · Structural gold
-     Design: FT meets imperial intelligence brief */
+     Design: FT meets premium retail intel terminal */
   :root {
-    --bg-primary:    #FAF9F6;   /* Warm archival paper */
-    --bg-secondary:  #EFEEEB;   /* Surface container */
-    --bg-tertiary:   #E9E8E5;   /* Surface container high */
-    --text-primary:  #1A1C1A;   /* Deep charcoal ink */
-    --text-secondary:#747878;   /* Slate */
-    --text-muted:    #9CA3AF;   /* Muted grey */
-    --gold:          #D4AF37;   /* Structural gold — separators, wealth signals */
-    --gold-dim:      #B8860B;   /* Dark goldenrod — borders, hover */
-    --crimson:       #8B0000;   /* Editorial crimson — alerts, negative */
-    --roman-purple:  #66023C;   /* Imperial authority — masthead, BREAKING ZONE */
-    --green:         #047857;   /* Dark emerald — buy signals */
-    --red:           #8B0000;   /* Alias crimson */
-    --blue:          #2563EB;   /* Links, interactive */
-    --edge-extreme:  #FF6B35;   /* Extreme GAP — keeps urgency on paper */
-    --edge-high:     #D4AF37;
-    --edge-medium:   #B45309;
-    --edge-low:      #9CA3AF;
+    --bg-primary:    #F4F5F6;   /* Light Metallic Background */
+    --bg-secondary:  #FFFFFF;   /* White Card Surface */
+    --bg-tertiary:   #FAF9F6;   /* Creamy Paper Background */
+    --text-primary:  #1A1C1A;   /* Primary Dark Text */
+    --text-secondary:#747878;   /* Muted Slate Text */
+    --text-muted:    #9CA3AF;   /* Muted Grey Text */
+    --gold:          #D4AF37;   /* Structural Gold Line */
+    --gold-dim:      #C5A880;   /* Muted Gold Shading */
+    --crimson:       #D9383A;   /* Metallic Light Red */
+    --roman-purple:  #4A0E4E;   /* Brand Purple Accent */
+    --green:         #15803d;   /* Safe Green */
+    --red:           #D9383A;   /* Alert Red */
+    --blue:          #0066FF;   /* Casino Royale Neon Blue */
+    --edge-extreme:  #D9383A;
+    --edge-high:     #E15252;
+    --edge-medium:   #D4AF37;
+    --edge-low:      #747878;
   }
-  *,*::before,*::after{border-radius:0!important;box-shadow:none!important}
   body{background:var(--bg-primary)!important;color:var(--text-primary)!important;min-height:100dvh}
   /* ── PHASE 8 GLOBAL TYPOGRAPHY OVERRIDES (desktop-first) ── */
   .font-body-md{font-size:13px!important;line-height:1.5}
@@ -466,19 +505,19 @@ tailwind.config = {
   .allocation-pct{color:#10B981!important;font-family:'JetBrains Mono',monospace}
   /* Data font enforcement */
   .gap-score,.price-target,.mono-data{font-family:'JetBrains Mono',monospace}
-  h2.text-gold{color:#B8860B!important}
+  h2.text-gold{color:var(--roman-purple)!important}
   .hide-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
   .hide-scrollbar::-webkit-scrollbar{display:none}
   .gold-strikethrough{position:relative;display:inline-block}
-  .gold-strikethrough::after{content:'';position:absolute;left:0;top:50%;width:100%;height:1px;background:#D4AF37;transform:translateY(-50%);z-index:10}
-  .gold-outline{-webkit-text-stroke:1px #D4AF37}
+  .gold-strikethrough::after{content:'';position:absolute;left:0;top:50%;width:100%;height:1px;background:var(--gold);transform:translateY(-50%);z-index:10}
+  .gold-outline{-webkit-text-stroke:1px var(--gold)}
   .meter-container{width:100%;height:4px;background:#E3E2E0;position:relative}
-  .meter-fill-pos{position:absolute;left:50%;height:100%;background:#D4AF37}
-  .meter-fill-neg{position:absolute;right:50%;height:100%;background:#BA1A1A}
-  .discrepancy-row{border-left:4px solid #BA1A1A;padding-left:12px;background:rgba(255,218,214,0.2)}
+  .meter-fill-pos{position:absolute;left:50%;height:100%;background:var(--green)}
+  .meter-fill-neg{position:absolute;right:50%;height:100%;background:var(--red)}
+  .discrepancy-row{border-left:4px solid var(--red);padding-left:12px;background:rgba(217,56,58,0.05)}
   .tab-content{display:none}
   .tab-content.active{display:block}
-  .tab-btn.active{border-bottom:2px solid #D4AF37;color:#1A1C1A}
+  .tab-btn.active{border-bottom:2px solid var(--roman-purple);color:var(--roman-purple)}
   details summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:4px;user-select:none;min-height:48px}
   details summary::-webkit-details-marker{display:none}
   details summary::marker{display:none;content:''}
@@ -488,14 +527,20 @@ tailwind.config = {
   @keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
 
   /* FOCUS RINGS — WCAG 2.4.7 */
-  button:focus-visible,a:focus-visible,[role=\"button\"]:focus-visible,details summary:focus-visible{outline:2px solid #B45309;outline-offset:2px}
-  input:focus-visible,select:focus-visible{outline:2px solid #B45309;outline-offset:1px}
+  button:focus-visible,a:focus-visible,[role="button"]:focus-visible,details summary:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  input:focus-visible,select:focus-visible{outline:2px solid var(--blue);outline-offset:1px}
 
   /* GLOSSARY TOOLTIP */
-  .glossary-tip{position:fixed;z-index:9999;max-width:260px;padding:10px 14px;background:#1A1C1A;color:#FAF9F6;font-size:13px;line-height:1.4;border-left:3px solid #D4AF37;box-shadow:0 4px 12px rgba(0,0,0,0.25);pointer-events:none;opacity:0;transform:translateY(4px);transition:opacity 0.15s,transform 0.15s}
+  .glossary-tip{position:fixed;z-index:9999;max-width:260px;padding:10px 14px;background:#FFFFFF;color:var(--text-primary);font-size:13px;line-height:1.4;border-left:3px solid var(--blue);box-shadow:0 4px 12px rgba(0,0,0,0.1);pointer-events:none;opacity:0;transform:translateY(4px);transition:opacity 0.15s,transform 0.15s}
   .glossary-tip.visible{opacity:1;transform:translateY(0)}
-  .glossary-target{cursor:help;border-bottom:1px dotted #B8860B}
-  .glossary-target:hover{color:#B45309}
+  .glossary-target{cursor:help;border-bottom:1px dotted var(--blue)}
+  .glossary-target:hover{color:var(--blue)}
+
+  /* Accordion active shadow/border highlight */
+  details.group[open] {
+    border-color: var(--gold)!important;
+    box-shadow: 0 4px 16px rgba(74, 14, 78, 0.05);
+  }
 
   /* MOBILE BREAKPOINTS */
   /* ── HORIZONTAL NAV (scroll-snap, app-like swipe) ── */
@@ -567,42 +612,42 @@ tailwind.config = {
   }
 
   /* TACTICAL RADAR */
-  .radar-card{background:#EFEEEB;border-left:3px solid #B45309;padding:12px 16px;margin-bottom:12px}
-  .radar-card summary{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:#747878;cursor:pointer;user-select:none;min-height:44px;display:flex;align-items:center;gap:6px}
+  .radar-card{background:var(--bg-tertiary);border-left:3px solid var(--roman-purple);padding:12px 16px;margin-bottom:12px;border-top:1px solid var(--outline);border-right:1px solid var(--outline);border-bottom:1px solid var(--outline)}
+  .radar-card summary{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-secondary);cursor:pointer;user-select:none;min-height:44px;display:flex;align-items:center;gap:6px}
   .radar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px}
   @media(max-width:768px){.radar-grid{grid-template-columns:1fr}}
-  .radar-cell{padding:10px 12px;background:#FAF9F6;border-left:2px solid #E3E2E0}
-  .radar-cell.sqz{border-left-color:#8B0000}
-  .radar-cell.warn{border-left-color:#B45309}
-  .radar-cell.safe{border-left-color:#15803d}
-  .badge-alert{background:#8B0000;color:#FAF9F6;padding:2px 8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.03em}
-  .badge-warn{background:#78350f;color:#FEF3C7;padding:2px 8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.03em}
-  .badge-safe{background:#15803d;color:#DCFCE7;padding:2px 8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.03em}
+  .radar-cell{padding:10px 12px;background:var(--bg-secondary);border-left:2px solid var(--outline);border-top:1px solid var(--outline);border-right:1px solid var(--outline);border-bottom:1px solid var(--outline)}
+  .radar-cell.sqz{border-left-color:var(--red)}
+  .radar-cell.warn{border-left-color:var(--edge-high)}
+  .radar-cell.safe{border-left-color:var(--green)}
+  .badge-alert{background:var(--red);color:#FFFFFF;padding:2px 8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.03em}
+  .badge-warn{background:var(--edge-high);color:#FFFFFF;padding:2px 8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.03em}
+  .badge-safe{background:var(--green);color:#FFFFFF;padding:2px 8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.03em}
   .glass-panel{background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
   .glass-panel-dark{background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 
   /* C4: DECAY CLOCK */
-  .decay-meter{width:100%;height:3px;background:#E5E7EB;margin-top:4px;position:relative;overflow:hidden}
+  .decay-meter{width:100%;height:3px;background:var(--outline);margin-top:4px;position:relative;overflow:hidden}
   .decay-fill{position:absolute;left:0;top:0;height:100%;transition:width 0.6s ease}
-  .decay-fresh{background:#D4AF37}
-  .decay-active{background:#B45309}
-  .decay-critical{background:#7F1D1D;animation:decayPulse 4s ease-in-out infinite}
+  .decay-fresh{background:var(--green)}
+  .decay-active{background:var(--edge-high)}
+  .decay-critical{background:var(--red);animation:decayPulse 4s ease-in-out infinite}
   @keyframes decayPulse{0%,100%{opacity:1}50%{opacity:0.5}}
-  .decay-label{font-size:10px;color:#747878;text-transform:uppercase;letter-spacing:0.03em;margin-top:2px}
-  .decay-label-critical{color:#8B0000;font-weight:700}
+  .decay-label{font-size:10px;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.03em;margin-top:2px}
+  .decay-label-critical{color:var(--red);font-weight:700}
   /* Shiller layer: Media Says / Capital Says — visible card surface */
-  .shiller-surface{background:linear-gradient(90deg, rgba(139,0,0,0.02) 0%, rgba(212,175,55,0.03) 100%);padding:4px 6px;border-radius:2px;margin-top:1px}
+  .shiller-surface{background:linear-gradient(90deg, rgba(217,56,58,0.02) 0%, rgba(74,14,78,0.03) 100%);padding:4px 6px;border-radius:2px;margin-top:1px}
   .shiller-surface div{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   @media (max-width:640px){.shiller-surface{grid-template-columns:1fr;gap:2px}}
   /* C3: Δ EDGE PHYSICS — border thickness + color scale */
-  article[data-tier="BREAKING"]{border-left-width:4px;border-left-color:#7F1D1D}
+  details[data-tier="BREAKING"]{border-left-width:4px;border-left-color:var(--red)}
   /* Contradiction Alert cards (Δ EDGE >= 80) */
-  article.contradiction-alert{border-left-width:6px;border-left-color:#8B0000;background:rgba(139,0,0,0.03);padding-left:12px}
-  .contradiction-alert-badge{display:inline-block;background:#8B0000;color:#FFFFFF;font-size:11px;font-weight:600;letter-spacing:1px;padding:2px 8px;border-radius:3px;text-transform:uppercase}
-  @keyframes alert-pulse{0%,100%{border-left-color:#8B0000}50%{border-left-color:#4A0000}}
-  article.contradiction-alert{animation:alert-pulse 6s ease-in-out infinite}
-  article.contradiction-alert .gap-score{font-size:32px!important;font-weight:700}
-  article[data-tier="ACTIVE"]{border-left-width:2px;border-left-color:#D4AF37}
+  details.contradiction-alert{border-left-width:6px;border-left-color:var(--red);background:rgba(217,56,58,0.02);padding-left:12px}
+  .contradiction-alert-badge{display:inline-block;background:var(--red);color:#FFFFFF;font-size:11px;font-weight:600;letter-spacing:1px;padding:2px 8px;border-radius:3px;text-transform:uppercase}
+  @keyframes alert-pulse{0%,100%{border-left-color:var(--red)}50%{border-left-color:#80181A}}
+  details.contradiction-alert{animation:alert-pulse 6s ease-in-out infinite}
+  details.contradiction-alert .gap-score{font-size:32px!important;font-weight:700}
+  details[data-tier="ACTIVE"]{border-left-width:2px;border-left-color:var(--gold)}
   article[data-tier="SETTLING"]{border-left-width:1px;border-left-color:#9CA3AF;opacity:0.7}
   @keyframes edgePulse{0%,100%{border-left-color:#7F1D1D}50%{border-left-color:#D4AF37}}
   article[data-gap-high="true"]{animation:edgePulse 6s ease-in-out infinite}
@@ -644,41 +689,51 @@ tailwind.config = {
 </head>
 <body class="bg-surface font-body-md text-on-surface antialiased">
 
-<!-- ═══ DESKTOP SIDEBAR ═══ -->
-<aside class="hidden md:flex md:flex-col fixed left-0 top-0 h-full w-72 text-on-surface z-40 overflow-y-auto glass-panel-dark" id="desktop-sidebar">
-  <div class="p-stack-space-md border-b border-gold">
-    <h2 class="font-headline-md text-headline-md text-gold mb-1">Domain Intelligence</h2>
-    <p class="font-label-xs text-label-xs text-outline-variant uppercase tracking-wider">__REGIME_STR__</p>
-  </div>
-  <nav class="flex-1 overflow-y-auto p-stack-space-sm" id="sidebar-nav"></nav>
-  <div class="mt-auto p-stack-space-md border-t border-gold">
-    <h3 class="font-label-xs text-label-xs text-outline-variant uppercase mb-3">Vulnerability Map</h3>
-    <div class="space-y-3" id="sidebar-vuln"></div>
-  </div>
-</aside>
-
-<div class="md:ml-72 flex flex-col min-h-screen">
+<div class="flex flex-col min-h-screen">
 
   <!-- MASTHEAD -->
   <header class="border-b border-gold w-full px-margin-horizontal h-14 sticky top-0 z-30 glass-panel">
-    <div class="flex justify-between items-center h-full">
-      <button class="w-tap-target-min h-tap-target-min flex items-center justify-center text-on-surface-variant md:hidden" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-        <span class="material-symbols-outlined">menu</span>
-      </button>
-      <div class="hidden md:flex w-tap-target-min h-tap-target-min items-center justify-center"></div>
-      <div class="flex items-center gap-2">
-        <span class="material-symbols-outlined text-gold hidden sm:inline" style="font-variation-settings:'FILL'1';" aria-hidden="true">pest_control</span>
-        <h1 class="font-headline-lg-mobile text-[16px] leading-[20px] sm:text-[20px] sm:leading-[26px] md:text-headline-lg-mobile uppercase tracking-widest text-roman-purple gold-strikethrough gold-outline">La Gazzetta di Kyiv</h1>
-        <span class="material-symbols-outlined text-gold hidden sm:inline" style="font-variation-settings:'FILL'1';" aria-hidden="true">gavel</span>
+    <div class="flex justify-between items-center h-full max-w-7xl mx-auto">
+      <div class="flex items-center gap-3">
+        <svg class="w-8 h-8 shrink-0" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <!-- Gold Mace (Bulava) handle running bottom-left to top-right -->
+          <line x1="16" y1="48" x2="42" y2="22" stroke="#D4AF37" stroke-width="3" />
+          <!-- Mace Head (Spiked Sphere) -->
+          <circle cx="45" cy="19" r="6" fill="#4A0E4E" stroke="#D4AF37" stroke-width="2" />
+          <!-- Mace Spikes -->
+          <path d="M45 10 L45 13 M45 25 L45 28 M36 19 L39 19 M51 19 L54 19 M38 12 L40 14 M50 24 L52 26 M38 26 L40 24 M50 12 L48 14" stroke="#D4AF37" stroke-width="2" />
+          <!-- Purple Quill Pen running bottom-right to top-left -->
+          <path d="M48 48 L22 22" stroke="#4A0E4E" stroke-width="3" />
+          <!-- Quill Feather vanes -->
+          <path d="M22 22 C18 16, 12 12, 8 8 C12 12, 16 18, 22 22 Z" fill="#4A0E4E" stroke="#4A0E4E" stroke-width="1" />
+          <path d="M26 26 C22 20, 16 16, 12 12 M30 30 C26 24, 20 20, 16 16 M34 34 C30 28, 24 24, 20 20" stroke="#4A0E4E" stroke-width="1.5" />
+        </svg>
+        <div class="flex flex-col">
+          <h1 class="font-headline-lg-mobile text-[14px] leading-none sm:text-[16px] uppercase tracking-widest text-roman-purple gold-strikethrough gold-outline">La Gazzetta di Kyiv</h1>
+          <span class="text-[8px] sm:text-[9px] text-[#747878] leading-none tracking-tight font-sans mt-1">Tactical 1-3 day geopolitical flow dispatches & alpha catalysts</span>
+        </div>
       </div>
-      <div class="w-tap-target-min h-tap-target-min flex items-center justify-center"></div>
+
+      <!-- TAB NAVIGATION -->
+      <nav class="flex gap-1 h-full items-center overflow-x-auto hide-scrollbar animate-fade-in" id="tab-nav">
+        <button class="tab-btn active px-3 h-full font-metadata-sm text-metadata-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-tab="stream">
+          The Flow
+        </button>
+        <button class="tab-btn px-3 h-full font-metadata-sm text-metadata-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-tab="alpha">
+          Tactical Bets
+        </button>
+        <button class="tab-btn px-3 h-full font-metadata-sm text-metadata-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-tab="capital">
+          Capital
+        </button>
+        <button class="tab-btn px-3 h-full font-metadata-sm text-metadata-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-tab="contradictions">
+          Contradictions
+        </button>
+        <button class="tab-btn px-3 h-full font-metadata-sm text-metadata-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-tab="about">
+          About
+        </button>
+      </nav>
     </div>
   </header>
-
-  <!-- TAGLINE -->
-  <p class="font-body-md text-body-md text-[#747878] text-center mt-1 max-w-xl mx-auto px-4">
-    Institutional Narrative Intelligence — monitoring the variance between media consensus and capital flows.
-  </p>
 
   <!-- MOBILE MENU -->
   <div class="hidden md:hidden bg-surface fixed inset-0 z-50 flex flex-col p-stack-space-lg" id="mobile-menu">
@@ -691,103 +746,17 @@ tailwind.config = {
     <nav class="flex flex-col gap-2" id="mobile-nav"></nav>
   </div>
 
-  <!-- TAB NAVIGATION -->
-  <nav class="border-b border-gold/20 overflow-x-auto hide-scrollbar bg-surface">
-    <div class="flex px-margin-horizontal gap-0 w-max max-w-4xl mx-auto" id="tab-nav">
-      <button class="tab-btn active px-4 py-3 font-metadata-sm text-metadata-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface min-h-tap-target-min" data-tab="stream">
-        <span class="material-symbols-outlined align-middle mr-1 text-sm" aria-hidden="true">newspaper</span><span class="nav-label">The Flow</span>
-      </button>
-      <button class="tab-btn px-4 py-3 font-metadata-sm text-metadata-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface min-h-tap-target-min" data-tab="alpha">
-        <span class="material-symbols-outlined align-middle mr-1 text-sm" aria-hidden="true">alpha</span><span class="nav-label">Tactical Bets</span>
-      </button>
-      <button class="tab-btn px-4 py-3 font-metadata-sm text-metadata-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface min-h-tap-target-min" data-tab="capital">
-        <span class="material-symbols-outlined align-middle mr-1 text-sm" aria-hidden="true">account_balance</span><span class="nav-label">Capital Flows</span>
-      </button>
-      <button class="tab-btn px-4 py-3 font-metadata-sm text-metadata-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface min-h-tap-target-min" data-tab="contradictions">
-        <span class="material-symbols-outlined align-middle mr-1 text-sm" aria-hidden="true">analytics</span><span class="nav-label">Contradictions</span>
-      </button>
-      <button class="tab-btn px-4 py-3 font-metadata-sm text-metadata-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface min-h-tap-target-min" data-tab="about">
-        <span class="material-symbols-outlined align-middle mr-1 text-sm" aria-hidden="true">psychology</span><span class="nav-label">About</span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- CTA BANNER -->
-  <div class="bg-gold/5 border-b border-gold/30 px-margin-horizontal py-2 flex items-center justify-between flex-wrap gap-2" id="cta-banner">
-    <span class="font-metadata-sm text-metadata-sm text-on-surface">Join the Intelligence Network</span>
-    <a class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary text-on-primary font-label-xs text-label-xs uppercase tracking-wider hover:bg-primary/90 transition-colors min-h-tap-target-min" href="https://t.me/GazzettaDiKyiv" target="_blank" rel="noopener">
-      <span class="material-symbols-outlined text-sm" aria-hidden="true">send</span> Telegram
-    </a>
-    <button class="text-on-surface-variant hover:text-on-surface ml-2 min-h-tap-target-min min-w-tap-target-min flex items-center justify-center" onclick="this.parentElement.remove();sessionStorage.setItem('cta-dismissed','1')" aria-label="Dismiss">
-      <span class="material-symbols-outlined">close</span>
-    </button>
-  </div>
-  <script>
-    if (sessionStorage.getItem('cta-dismissed') === '1') {
-      var banner = document.getElementById('cta-banner');
-      if (banner) banner.remove();
-    }
-  </script>
 
   <!-- STREAM TAB -->
-  <main class="tab-content active flex-1 max-w-4xl mx-auto w-full px-margin-horizontal py-stack-space-lg" id="view-stream">
-    <div class="flex justify-between items-end mb-stack-space-md pb-stack-space-sm border-b-2 border-gold">
+  <main class="tab-content active flex-1 w-full max-w-4xl mx-auto px-margin-horizontal py-stack-space-lg" id="view-stream">
+    <div class="flex justify-between items-end mb-stack-space-md pb-stack-space-sm border-b border-outline">
       <div>
         <h2 class="font-headline-lg text-headline-lg text-on-surface">The Flow</h2>
-        <p class="font-metadata-sm text-metadata-sm text-on-surface-variant uppercase tracking-wider">__STORY_COUNT__ stories · __REGIME_STR__</p>
+        <p class="font-metadata-sm text-metadata-sm text-on-surface-variant uppercase tracking-wider">__STORY_COUNT__ dispatches · __REGIME_STR__</p>
       </div>
       <span class="hidden md:inline border border-outline px-3 py-1 font-label-xs text-label-xs uppercase">Live · __REGIME_STR__</span>
     </div>
-    <!-- C1: Client-side filter bar -->
-    <div class="flex flex-wrap gap-2 mb-stack-space-sm" id="filter-bar">
-      <span class="font-metadata-sm text-metadata-sm text-on-surface-variant uppercase self-center mr-1">Filter:</span>
-      <button class="filter-pill px-2 py-1 font-label-xs text-label-xs uppercase border border-outline text-on-surface-variant hover:border-gold-accessible hover:text-gold-accessible active" data-filter="all">All</button>
-      <span class="self-center text-outline mx-1">|</span>
-      <span class="font-metadata-sm text-metadata-sm text-on-surface-variant uppercase self-center">Tier:</span>
-      <button class="filter-pill px-2 py-1 font-label-xs text-label-xs uppercase border border-outline text-on-surface-variant hover:border-gold-accessible hover:text-gold-accessible" data-filter="tier-BREAKING">BREAKING</button>
-      <button class="filter-pill px-2 py-1 font-label-xs text-label-xs uppercase border border-outline text-on-surface-variant hover:border-gold-accessible hover:text-gold-accessible" data-filter="tier-ACTIVE">ACTIVE</button>
-      <button class="filter-pill px-2 py-1 font-label-xs text-label-xs uppercase border border-outline text-on-surface-variant hover:border-gold-accessible hover:text-gold-accessible" data-filter="tier-SETTLING">SETTLING</button>
-      <span class="self-center text-outline mx-1">|</span>
-      <span class="font-metadata-sm text-metadata-sm text-on-surface-variant uppercase self-center">Origin:</span>
-      <span id="origin-pills" class="flex flex-wrap gap-1"></span>
-    </div>
-    <!-- TACTICAL RADAR -->
-    <details class="radar-card" id="tactical-radar" open>
-      <summary class="font-label-xs text-label-xs uppercase tracking-wider cursor-pointer select-none focus-visible-ring" role="button" aria-expanded="true">
-        <span class="material-symbols-outlined" style="font-size:16px">radar</span> Tactical Horizon (48-Hour Derivative Radar)
-      </summary>
-      <div class="radar-grid text-xs mt-3" id="radar-grid"></div>
-    </details>
-    <!-- C6: THE CROSSHAIR (desktop) — SVG Scatter Plot -->
-    <div class="hidden md:block mb-4" id="crosshair-container">
-      <div class="flex items-center gap-2 px-margin-horizontal mb-2">
-        <span class="material-symbols-outlined text-gold" style="font-size:18px" aria-hidden="true">scatter_plot</span>
-        <span class="font-metadata-sm text-metadata-sm text-gold uppercase tracking-wider">NARRATIVE CROSSHAIR</span>
-        <span class="text-xs text-on-surface-variant">Narrative Intensity × Capital Flow Volume</span>
-      </div>
-      <div class="relative mx-margin-horizontal" id="crosshair-plot" style="height:320px;background:#FAF9F6;border:1px solid #E3E2E0;overflow:hidden">
-        <svg id="crosshair-svg" width="100%" height="100%" viewBox="0 0 500 300" preserveAspectRatio="xMidYMid meet" style="display:block;font-family:'JetBrains Mono',monospace">
-          <defs>
-            <linearGradient id="bg-grad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#FAF9F6"/>
-              <stop offset="100%" stop-color="#EFEEEB"/>
-            </linearGradient>
-          </defs>
-          <rect width="500" height="300" fill="url(#bg-grad)"/>
-          <g id="crosshair-grid"></g>
-          <line class="reference-line" x1="50" y1="260" x2="480" y2="20" id="crosshair-diagonal"/>
-          <g id="crosshair-dots"></g>
-          <!-- X-axis title -->
-          <text class="axis-title" x="265" y="290">Narrative Intensity (Δ Edge) →</text>
-          <!-- Y-axis title -->
-          <text class="axis-title" x="14" y="150" transform="rotate(-90,14,150)">Capital Flow Volume →</text>
-        </svg>
-        <div id="crosshair-tooltip" style="position:absolute;display:none;background:#1A1C1A;border:1px solid #D4AF37;padding:6px 10px;font-family:'JetBrains Mono',monospace;font-size:10px;color:#FAF9F6;pointer-events:none;z-index:10;white-space:nowrap;line-height:1.4"></div>
-      </div>
-    </div>
-    <!-- C2: Δ EDGE LEADERBOARD -->
-    <div class="flex flex-col gap-0" id="edge-leaderboard"></div>
-    <div class="flex flex-col gap-0" id="story-cards"></div>
+    <div class="flex flex-col gap-4" id="story-cards"></div>
   </main>
 
   <!-- ═══ VIEW 2: ALPHA ═══ -->
@@ -969,6 +938,7 @@ const REGIME = __REGIME_JSON__;
 const REGIME_DRIVERS = __REGIME_DRIVERS_JSON__;
 const BUILD_TIME = "__BUILD_TIME__";
 const DERIVATIVES = __DERIVATIVES_JSON__;
+const MARKET_PRICES = __PRICES_JSON__;
 
 // ── TACTICAL RADAR RENDERER ──
 function renderRadar(){
@@ -1035,8 +1005,8 @@ setTimeout(renderRadar, 100);
     // Update mobile bottom nav
     document.querySelectorAll('#view-stream ~ nav button').forEach(function(b,i){
       var tabs = ['stream','alpha','capital','contradictions','about'];
-      if (tabs[i] === name) { b.classList.add('text-gold'); b.querySelector('span').style.fontVariationSettings = "'FILL' 1"; }
-      else { b.classList.remove('text-gold'); }
+      if (tabs[i] === name) { b.classList.add('text-roman-purple'); b.querySelector('span').style.fontVariationSettings = "'FILL' 1"; }
+      else { b.classList.remove('text-roman-purple'); }
     });
   };
 
@@ -1056,17 +1026,17 @@ setTimeout(renderRadar, 100);
   var sidebarVuln = document.getElementById('sidebar-vuln');
   if (sidebarNav && NARRATIVES.length) {
     sidebarNav.innerHTML = NARRATIVES.map(function(n, i) {
-      var active = i === 0 ? ' text-gold-accessible border-b-2 border-gold-accessible' : ' text-on-surface-variant hover:text-gold-accessible';
+      var active = i === 0 ? ' text-roman-purple font-semibold border-b border-[#2A3036]' : ' text-[#7F8A96] hover:text-roman-purple';
       return '<a href="#" class="flex items-center gap-3 px-3 py-2 font-metadata-sm text-metadata-sm uppercase tracking-wider' + active + '" data-ticker="' + n.ticker + '" data-narrative="' + n.id + '">' +
         '<span class="text-lg font-headline-md">' + n.ticker + '</span>' +
         '<span>' + n.title + '</span>' +
-        '<span class="ml-auto text-gold-accessible text-xs">' + (n.capital_b >= 1 ? n.capital_b.toFixed(1)+'B' : n.capital_b > 0 ? (n.capital_b*1000).toFixed(0)+'M' : 'N/A') + '</span>' +
+        '<span class="ml-auto text-roman-purple text-xs font-semibold">' + (n.capital_b >= 1 ? n.capital_b.toFixed(1)+'B' : n.capital_b > 0 ? (n.capital_b*1000).toFixed(0)+'M' : 'N/A') + '</span>' +
         '</a>';
     }).join('');
     var sorted = NARRATIVES.slice().sort(function(a,b){return b.gap - a.gap;}).slice(0,4);
     sidebarVuln.innerHTML = sorted.map(function(n){
       var pct = Math.min(n.gap, 100);
-      return '<div><div class="flex justify-between text-on-primary mb-1"><span class="font-metadata-sm text-xs">'+n.title+'</span><span class="text-gold text-xs">'+n.gap.toFixed(0)+'</span></div>' +
+      return '<div><div class="flex justify-between text-primary mb-1"><span class="font-metadata-sm text-xs font-semibold">'+n.title+'</span><span class="text-[#FF9500] text-xs font-bold">'+n.gap.toFixed(0)+'</span></div>' +
         '<div class="meter-container"><div class="meter-fill-neg" style="width:'+pct+'%;"></div></div></div>';
     }).join('');
   }
@@ -1075,138 +1045,154 @@ setTimeout(renderRadar, 100);
   var mobileNav = document.getElementById('mobile-nav');
   if (mobileNav && NARRATIVES.length) {
     mobileNav.innerHTML = NARRATIVES.map(function(n){
-      return '<a href="#" class="flex items-center gap-3 px-4 py-3 text-on-primary hover:bg-primary-container font-metadata-sm text-metadata-sm uppercase tracking-wider" onclick="document.getElementById(\'mobile-menu\').classList.add(\'hidden\')">' +
-        '<span class="material-symbols-outlined text-gold">'+n.icon+'</span>' +
+      return '<a href="#" class="flex items-center gap-3 px-4 py-3 text-primary hover:bg-[#1E222B] font-metadata-sm text-metadata-sm uppercase tracking-wider" onclick="document.getElementById(\'mobile-menu\').classList.add(\'hidden\')">' +
+        '<span class="material-symbols-outlined text-roman-purple">'+n.icon+'</span>' +
         '<span>'+n.title+'</span>' +
-        '<span class="ml-auto text-gold-accessible text-xs">'+n.count+'</span></a>';
+        '<span class="ml-auto text-[#7F8A96] text-xs">'+n.count+'</span></a>';
     }).join('');
   }
 
   // ── VIEW 1: STREAM CARDS (C3: ZONED + C4: DECAY + C5: SOURCE TIERS) ──
+  // ── VIEW 1: STREAM CARDS (C3: ZONED + C4: DECAY + C5: SOURCE TIERS) ──
+  // ── selectStory: expand card inline ──
+  window.selectStory = function(storyId) {
+    var details = document.querySelector('details[data-story-id="' + storyId + '"]');
+    if (details) {
+      details.open = true;
+      details.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  };
+
   var cardsEl = document.getElementById('story-cards');
   if (cardsEl && STORIES.length) {
     var streamStories = STORIES.filter(function(s){ return (s.contradiction_gap || 0) >= 15; });
-    // C3: tier arrays
-    var breakingStories = streamStories.filter(function(s){ return (s.contradiction_gap || 0) > 50; });
-    var activeStories   = streamStories.filter(function(s){ var g = s.contradiction_gap || 0; return g >= 20 && g <= 50; });
-    var settlingStories = streamStories.filter(function(s){ return (s.contradiction_gap || 0) < 20; });
-
-    function buildCard(s, tierOverride, openDetails) {
+    var breakingStorie    function buildCard(s, tierOverride, openDetails) {
       var gap = s.contradiction_gap || 0;
       var tier = s.tier || '';
-      var isDiv = gap >= 40;
-      var tagClass = isDiv ? 'bg-error-container/20 text-error' : 'bg-surface-container text-on-surface-variant';
-      var label = isDiv ? 'DIVERGENT' : 'CONVERGENT';
-      var gapPct = Math.min(gap, 100);
       var capVol = s.capital_volume_usd || 0;
       var capB = capVol / 1e9;
-      var capStr = capB >= 1 ? capB.toFixed(1)+'B' : (capB*1000).toFixed(0)+'M';
+      var capStr = capB >= 1 ? '$' + capB.toFixed(1) + 'B' : (capB * 1000) > 0 ? '$' + (capB * 1000).toFixed(0) + 'M' : 'N/A';
       var timeAgo = '';
       if (s.generated_at) {
         var d = new Date(s.generated_at);
         var h = Math.floor((new Date() - d) / 3600000);
         timeAgo = h <= 0 ? 'Just now' : h + 'H AGO';
       }
-      // C4: Decay Clock — 12h half-life from generated_at
-      var halfLife = 12;
-      var decayPct = h !== undefined ? Math.max(0, Math.min(100, 100 - (h / halfLife) * 100)) : 100;
-      var decayRemaining = h !== undefined ? Math.max(0, halfLife - h) : halfLife;
-      var decayClass = decayPct > 50 ? 'decay-fresh' : decayPct > 20 ? 'decay-active' : 'decay-critical';
-      var decayLabelClass = decayPct <= 20 ? ' decay-label-critical' : '';
-      var decayHtml = decayRemaining <= 0
-        ? '<div class="decay-meter"><div class="decay-fill decay-critical" style="width:4px"></div></div><div class="decay-label decay-label-critical">EDGE EXPIRED</div>'
-        : '<div class="decay-meter"><div class="decay-fill ' + decayClass + '" style="width:' + decayPct.toFixed(0) + '%"></div></div><div class="decay-label' + decayLabelClass + '">EDGE DECAY: ~' + decayRemaining.toFixed(0) + 'H REMAINING</div>';
-      // C5: Source provenance tiers
-      var tier1Sources = ['BLOOMBERG','FT','ECB','REUTERS','WSJ'];
-      var sourceTier = (s.feed_source && tier1Sources.indexOf(s.feed_source.toUpperCase()) >= 0) ? 'TIER 1' : 'TIER 2';
-      var sourceTierBadge = s.feed_source ? '<span class="text-xs px-1 ml-1 border border-gold/30 text-gold-dim">' + sourceTier + '</span>' : '';
-      var isHighGap = gap >= 70;
-      // Contradiction Alert: Δ EDGE ≥ 80
       var isAlert = s.alert === true;
-      var alertClass = isAlert ? ' contradiction-alert' : '';
-      var alertBadge = isAlert ? '<span class="contradiction-alert-badge">CONTRADICTION ALERT</span>' : '';
-      // Trade setup line for collapsed state
+      var alertClass = isAlert ? ' border-l-4 border-error' : '';
+      var alertBadge = isAlert ? '<span class="px-2 py-0.5 rounded-sm bg-error/10 text-error font-mono text-[9px] font-bold tracking-wider mr-2">CONTRADICTION ALERT</span>' : '';
+      
       var tt = s.trade_thesis || {};
       var hasTrade = tt.direction && tt.direction !== 'NEUTRAL';
-      // Paywall: truncate trade setup for free-tier users
-      var userTier = (function(){ try { return localStorage.getItem('gazzetta_tier') || 'free'; } catch(e) { return 'free'; } })();
-      var isPaidUser = userTier === 'pro' || userTier === 'institutional';
-      var tradeLine = hasTrade
-        ? (isPaidUser
-            ? '<span class="ticker-mono">' + (tt.direction||'').toUpperCase() + ' ' + (tt.primary_ticker||tt.ticker||'') + '</span>' +
-              ' <span class="price-mono">@ ' + (tt.limit_entry_price||tt.entry_zone||'') + '</span>' +
-              ' <span class="text-on-surface-variant">| Stop:</span> <span class="price-mono">' + (tt.stop_loss||'N/A') + '</span>' +
-              ' <span class="text-on-surface-variant">| Target:</span> <span class="price-mono">' + (tt.take_profit||'N/A') + '</span>' +
-              (tt.portfolio_allocation_pct ? ' <span class="text-emerald">[' + tt.portfolio_allocation_pct + ']</span>' : '')
-            : (isHighGap
-                ? '<span class="ticker-mono">' + (tt.direction||'').toUpperCase() + ' ' + (tt.primary_ticker||tt.ticker||'') + '</span>' +
-                  ' <span class="text-crimson font-bold">Δ EDGE ' + gap.toFixed(0) + ' — </span>' +
-                  '<a href="/upgrade" class="text-gold underline">Upgrade to Pro to unlock trade setup</a>'
-                : '<span class="ticker-mono">' + (tt.direction||'').toUpperCase() + ' ' + (tt.primary_ticker||tt.ticker||'') + '</span>' +
-                  ' <span class="text-on-surface-variant">(premium)</span>')
-          )
-        : '<span class="text-on-surface-variant">No active thesis</span>';
-      // Source line — compressed institutional density
-      var sourceLine = (s.feed_source
-        ? '<span class="text-gold-dim">' + sourceTier + '</span> via <span class="text-on-surface-variant">' + (s.feed_source||'').toUpperCase() + '</span>'
-        : '<span class="text-on-surface-variant">NO SOURCE</span>')
-        + ' <span class="text-on-surface-variant">·</span> <span class="text-gold-accessible">' + timeAgo + '</span>'
-        + ' <span class="text-on-surface-variant">·</span> <span class="gap-score text-crimson">Δ EDGE ' + gap.toFixed(0) + '</span>';
+      
+      var probColor = gap >= 70 ? 'text-green border-green/30 bg-green/5' : gap >= 40 ? 'text-gold-accessible border-gold-accessible/30 bg-gold-accessible/5' : 'text-text-secondary border-outline bg-surface';
+      var probLabel = gap.toFixed(0) + '% PROBABILITY';
 
-      // Build safe data attributes for share
       var safeHeadline = (s.headline||'Untitled').replace(/"/g, '&quot;');
       var safeDirection = tt.direction || '';
       var safeTicker = tt.primary_ticker || tt.ticker || '';
       var safeEntry = tt.limit_entry_price || tt.entry_zone || '';
-      return '<article data-story-id="' + (s.story_id || '') + '" data-source-feed="' + (s.feed_source || '') + '" data-tier="' + (tierOverride || tier || '') + '" data-gap-high="' + (isHighGap ? 'true' : 'false') + '" data-alert="' + (isAlert ? 'true' : 'false') + '" data-headline="' + safeHeadline + '" data-capital="' + capStr + '" data-gap="' + gap.toFixed(0) + '" data-direction="' + safeDirection + '" data-ticker="' + safeTicker + '" data-entry="' + safeEntry + '" class="py-2 border-b border-[#E3E2E0]' + alertClass + '">' +
-        '<div class="pl-3">' + decayHtml +
-        (isAlert ? '<div class="mb-1">' + alertBadge + '</div>' : '') +
-        // LINE 1: Source + time + Δ EDGE
-        '<div class="font-label-xs text-label-xs mb-1">' + sourceLine + '</div>' +
-        // LINE 2: Headline
-        '<h3 class="font-headline-md text-headline-md text-on-surface leading-tight mb-1">'+(s.headline||'Untitled')+'</h3>' +
-        // SHILLER LAYER: Media Says / Capital Says — always visible for TIER 1 & 2
-        (gap >= 50
-          ? '<div class="shiller-surface mb-1 grid grid-cols-2 gap-1 text-xs leading-snug">' +
-            '<div class="text-on-surface-variant truncate"><span class="uppercase tracking-wider text-[10px]">Media</span> ' + ((s.they_say||'').substring(0,120)) + '</div>' +
-            '<div class="text-on-surface truncate"><span class="uppercase tracking-wider text-[10px] text-gold-dim">Capital</span> ' + ((s.reality||'').substring(0,120)) + '</div>' +
-            '</div>'
-          : '') +
-        // LINE 3: Trade setup + action buttons
-        '<div class="flex items-center justify-between flex-wrap gap-2">' +
-          '<div class="font-label-xs text-label-xs">' + tradeLine + '</div>' +
-          '<div class="flex items-center gap-2">' +
-            '<button type="button" onclick="shareStory(this)" class="text-[#747878] hover:text-on-surface p-1" aria-label="Share intelligence setup"><span class="material-symbols-outlined text-[16px]" aria-hidden="true">share</span></button>' +
-            '<button class="text-xs text-on-surface-variant hover:text-gold-accessible card-expand-btn" onclick="event.stopPropagation();var d=this.closest(\'article\').querySelector(\'.card-drawer\');if(d){d.open=!d.open;this.querySelector(\'.expand-icon\').style.transform=d.open?\'rotate(180deg)\' : \'\'}" title="Expand"><span class="material-symbols-outlined expand-icon" style="font-size:16px">unfold_more</span></button>' +
+
+      var tickersHtml = '';
+      if (s.affected_tickers && s.affected_tickers.length) {
+        tickersHtml = '<div class="pt-2"><span class="text-[10px] font-bold text-roman-purple uppercase tracking-widest block mb-2">Correlated Asset Prices</span>' +
+          '<table class="w-full text-xs text-left border-collapse">' +
+          '<thead><tr class="border-b border-outline"><th class="pb-1 text-text-secondary uppercase font-semibold">Ticker</th><th class="pb-1 text-text-secondary uppercase text-right font-semibold">Price</th><th class="pb-1 text-text-secondary uppercase text-right font-semibold">Change</th></tr></thead>' +
+          '<tbody>' +
+          s.affected_tickers.map(function(t) {
+            var priceInfo = MARKET_PRICES[t] || {};
+            var price = priceInfo.price !== undefined ? priceInfo.price : 'N/A';
+            var pct = priceInfo.change_pct !== undefined ? priceInfo.change_pct : null;
+            var pctStr = pct !== null ? (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%' : 'N/A';
+            var pctColor = pct !== null ? (pct >= 0 ? 'text-green' : 'text-error') : 'text-text-secondary';
+            return '<tr class="border-b border-outline/40"><td class="py-1.5 font-mono font-semibold text-primary">' + t + '</td><td class="py-1.5 text-right font-mono text-primary">' + price + '</td><td class="py-1.5 text-right font-mono ' + pctColor + ' font-semibold">' + pctStr + '</td></tr>';
+          }).join('') +
+          '</tbody></table></div>';
+      }
+
+      var thesisHtml = '';
+      if (hasTrade) {
+        thesisHtml = '<div class="bg-surface-container-high border border-gold/30 p-4 rounded flex flex-col gap-3 max-w-xl w-full">' +
+          '<div class="flex justify-between items-center border-b border-outline pb-2">' +
+            '<span class="text-[10px] font-bold text-roman-purple uppercase tracking-wider font-mono">BETTING HORIZON (1-3 DAY CATALYSTS)</span>' +
+            '<span class="px-2 py-0.5 rounded font-mono text-[10px] font-bold ' + (tt.direction === 'BUY' ? 'bg-green/10 text-green' : 'bg-error/10 text-error') + '">' + tt.direction.toUpperCase() + ' ' + safeTicker + '</span>' +
           '</div>' +
+          '<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">' +
+            '<div>' +
+              '<span class="text-[9px] font-bold text-text-secondary uppercase block mb-1">Tactical Catalysts (1-3 Days)</span>' +
+              '<ul class="space-y-1.5 list-disc pl-3 text-text-secondary leading-snug">' +
+                '<li><strong>Day 1:</strong> Monitoring short-term flow variance for ' + safeTicker + '.</li>' +
+                '<li><strong>Day 2:</strong> Derivative settlement records confirm divergence from consensus.</li>' +
+                '<li><strong>Day 3:</strong> Edge discrepancy resolves. Target: ' + (tt.take_profit || 'N/A') + '.</li>' +
+              '</ul>' +
+            '</div>' +
+            '<div class="space-y-2 border-l border-outline/60 pl-3">' +
+              '<div><span class="text-[9px] text-text-secondary uppercase block">Trading/Investment Thesis</span>' +
+              '<p class="text-primary font-medium mt-0.5 leading-relaxed">' + (tt.alpha_trigger || 'Positioning aligned to tactical capital flow vectors challenging the consensus.') + '</p></div>' +
+              '<div class="grid grid-cols-2 gap-1 border-t border-outline/40 pt-1.5">' +
+                '<div><span class="text-[8px] text-text-secondary uppercase block">Entry Zone</span><span class="font-mono font-bold text-blue">' + (tt.limit_entry_price || 'Market') + '</span></div>' +
+                '<div><span class="text-[8px] text-text-secondary uppercase block">Stop Loss</span><span class="font-mono font-bold text-error">' + (tt.stop_loss || 'N/A') + '</span></div>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+          '<button onclick="alert(\'Trading thesis copied to clipboard!\')" class="w-full mt-1 bg-secondary hover:bg-secondary/90 text-white font-semibold text-xs py-2 rounded text-center transition-colors">COPY PROFESSIONAL THESIS</button>' +
+          '</div>';
+      } else {
+        thesisHtml = '<div class="text-xs text-text-secondary italic">No active betting horizon or tactical setups for this narrative.</div>';
+      }
+
+      var openAttr = openDetails ? ' open' : '';
+
+      return '<details' + openAttr + ' class="group bg-surface-container border border-outline rounded-lg transition-all duration-300' + alertClass + '" data-story-id="' + (s.story_id || '') + '" data-source-feed="' + (s.feed_source || '') + '" data-tier="' + (tierOverride || tier || '') + '" data-headline="' + safeHeadline + '" data-capital="' + capStr + '" data-gap="' + gap.toFixed(0) + '" data-direction="' + safeDirection + '" data-ticker="' + safeTicker + '" data-entry="' + safeEntry + '">' +
+        '<summary class="flex justify-between items-center p-4 cursor-pointer list-none select-none focus-visible:ring">' +
+          '<div class="flex-1 pr-4">' +
+            '<div class="flex items-center gap-2 mb-1 flex-wrap">' +
+              '<span class="text-[9px] font-bold text-roman-purple uppercase tracking-wider font-mono">' + (s._container_title || 'General Geopolitical') + '</span>' +
+              (isAlert ? alertBadge : '') +
+            '</div>' +
+            '<h3 class="text-sm font-semibold text-primary leading-tight font-sans group-hover:text-roman-purple transition-colors">' + (s.headline || 'Untitled') + '</h3>' +
+            '<div class="flex items-center gap-2 mt-2 text-[10px] text-text-secondary">' +
+              '<span class="font-bold text-roman-purple">' + (s.feed_source ? s.feed_source.toUpperCase() : 'INTEL') + '</span>' +
+              '<span>·</span>' +
+              '<span>' + timeAgo + '</span>' +
+            '</div>' +
+          '</div>' +
+          '<div class="flex items-center gap-4 shrink-0">' +
+            '<div class="flex flex-col items-end gap-1 font-mono">' +
+              '<span class="px-2 py-0.5 rounded text-[10px] font-bold border ' + probColor + '">' + probLabel + '</span>' +
+              '<span class="text-[9px] text-text-secondary">Vol: ' + capStr + '</span>' +
+            '</div>' +
+            '<span class="material-symbols-outlined expand-icon text-text-secondary group-hover:text-roman-purple transition-transform duration-200 group-open:rotate-180">expand_more</span>' +
+          '</div>' +
+        '</summary>' +
+        '<div class="px-4 pb-4 border-t border-outline pt-4 space-y-4">' +
+          '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">' +
+            '<div>' +
+              '<span class="text-[10px] font-bold text-roman-purple uppercase tracking-widest block mb-2">Analysis & Implication</span>' +
+              '<p class="text-sm text-primary leading-relaxed font-sans bg-[#F9FAFB] p-3 border border-outline rounded">' + (s.reality || 'No data.') + '</p>' +
+            '</div>' +
+            '<div>' +
+              '<span class="text-[10px] font-bold text-roman-purple uppercase tracking-widest block mb-2">Consensus Bias vs Reality</span>' +
+              '<div class="space-y-2 text-xs bg-[#F9FAFB] p-3 border border-outline rounded">' +
+                '<div><strong class="text-error uppercase text-[9px] tracking-wider block">Consensus (Media)</strong><p class="text-text-secondary mt-0.5">' + (s.they_say || 'No data.') + '</p></div>' +
+                '<div class="border-t border-outline pt-2"><strong class="text-green uppercase text-[9px] tracking-wider block">Capital Reality</strong><p class="text-primary mt-0.5">' + (s.reality || 'No data.') + '</p></div>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">' +
+            thesisHtml +
+            tickersHtml +
+          '</div>' +
+          (s.geopolitical_dimension && s.geopolitical_dimension !== 'none' ? 
+            '<div class="text-[10px] text-text-secondary bg-[#F9FAFB] p-2 rounded border border-outline"><strong>Geopolitical Connection:</strong> ' + s.geopolitical_dimension + '</div>' : '') +
         '</div>' +
-        // DRAWER: Full dispatch (hidden by default)
-        '<details class="card-drawer mt-2">' +
-          '<summary class="hidden"></summary>' +
-          '<div class="details-content mt-2 grid grid-cols-1 md:grid-cols-2 gap-2">' +
-            '<div class="bg-surface-container-high p-2 border-l border-outline-variant">' +
-              '<h4 class="font-metadata-sm text-metadata-sm text-on-surface-variant uppercase mb-1">Media Consensus</h4>' +
-              '<p class="font-body-md text-body-md text-on-surface-variant">'+(s.they_say||'No data.')+'</p>' +
-            '</div>' +
-            '<div class="bg-gold/5 p-2 border-l border-gold">' +
-              '<h4 class="font-metadata-sm text-metadata-sm text-gold-dim uppercase mb-1">Market Reality</h4>' +
-              '<p class="font-body-md text-body-md text-on-surface">'+(s.reality||'No data.')+'</p>' +
-            '</div>' +
-            // Extra detail: capital volume + narrative context
-            '<div class="col-span-full flex items-center gap-3 text-xs text-on-surface-variant mt-1">' +
-              '<span>Capital: <span class="capital-num text-on-surface">' + capStr + '</span></span>' +
-              (tier ? '<span>· Tier: <span class="text-crimson">' + tier + '</span></span>' : '') +
-              '<span>· Narrative: <span class="text-on-surface">' + (s._container_title||'') + '</span></span>' +
-            '</div>' +
-          '</div>' +
-        '</details>' +
-        '</div></article>';
+        '</details>';
     }
 
     var allCardsHtml = '';
-    allCardsHtml += breakingStories.length ? '<div class="zone-header breaking-zone mb-3"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#F9FAFB;border-left:4px solid #66023C"><span class="material-symbols-outlined" style="color:#66023C;font-size:20px">warning</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#66023C">BREAKING ZONE — HIGH DIVERGENCE (' + breakingStories.length + ' SIGNALS)</span></div></div>' + breakingStories.map(function(s){ return buildCard(s,'BREAKING',true); }).join('') : '';
-    allCardsHtml += activeStories.length ? '<div class="zone-header active-zone mb-3 mt-4"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#F9FAFB;border-left:4px solid #D4AF37"><span class="material-symbols-outlined" style="color:#D4AF37;font-size:20px">trending_up</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#D4AF37">ACTIVE SIGNALS (' + activeStories.length + ' STORIES)</span></div></div>' + activeStories.map(function(s){ return buildCard(s,'ACTIVE',false); }).join('') : '';
-    allCardsHtml += settlingStories.length ? '<div class="zone-header settling-zone mb-3 mt-4"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#F9FAFB;border-left:4px solid #9CA3AF"><span class="material-symbols-outlined" style="color:#9CA3AF;font-size:20px">check_circle</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#747878">SETTLING NOISE (' + settlingStories.length + ' STORIES)</span></div></div>' + settlingStories.map(function(s){ return buildCard(s,'SETTLING',false); }).join('') : '<div class="zone-header settling-zone mb-3 mt-4"><div class="flex items-center gap-2 px-margin-horizontal py-2" style="background:#F9FAFB;border-left:4px solid #9CA3AF"><span class="material-symbols-outlined" style="color:#9CA3AF;font-size:20px">check_circle</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider" style="color:#747878">SETTLING NOISE (0 STORIES) · No settling signals at this time</span></div></div>';
+    allCardsHtml += breakingStories.length ? '<div class="zone-header breaking-zone mb-3"><div class="flex items-center gap-2 px-margin-horizontal py-2 border-l-4 border-roman-purple bg-[#FAF9F6]"><span class="material-symbols-outlined" style="color:var(--roman-purple);font-size:20px">warning</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider text-roman-purple">BREAKING ZONE — HIGH DIVERGENCE (' + breakingStories.length + ' SIGNALS)</span></div></div>' + breakingStories.map(function(s, idx){ return buildCard(s,'BREAKING', idx === 0); }).join('') : '';
+    allCardsHtml += activeStories.length ? '<div class="zone-header active-zone mb-3 mt-4"><div class="flex items-center gap-2 px-margin-horizontal py-2 border-l-4 border-gold bg-[#FAF9F6]"><span class="material-symbols-outlined" style="color:var(--gold);font-size:20px">trending_up</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider text-roman-purple">ACTIVE SIGNALS (' + activeStories.length + ' STORIES)</span></div></div>' + activeStories.map(function(s, idx){ return buildCard(s,'ACTIVE', !breakingStories.length && idx === 0); }).join('') : '';
+    allCardsHtml += settlingStories.length ? '<div class="zone-header settling-zone mb-3 mt-4"><div class="flex items-center gap-2 px-margin-horizontal py-2 border-l-4 border-text-secondary bg-[#FAF9F6]"><span class="material-symbols-outlined" style="color:var(--text-secondary);font-size:20px">check_circle</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider text-text-secondary">SETTLING NOISE (' + settlingStories.length + ' STORIES)</span></div></div>' + settlingStories.map(function(s){ return buildCard(s,'SETTLING', false); }).join('') : '<div class="zone-header settling-zone mb-3 mt-4"><div class="flex items-center gap-2 px-margin-horizontal py-2 border-l-4 border-text-secondary bg-[#FAF9F6]"><span class="material-symbols-outlined" style="color:var(--text-secondary);font-size:20px">check_circle</span><span class="font-metadata-sm text-metadata-sm uppercase tracking-wider text-text-secondary">SETTLING NOISE (0 STORIES) · No settling signals at this time</span></div></div>';
     cardsEl.innerHTML = allCardsHtml;
 
     injectSourceAttribution();
@@ -1215,16 +1201,16 @@ setTimeout(renderRadar, 100);
   }
 
   function injectSourceAttribution() {
-    var articles = document.querySelectorAll('article[data-story-id]');
+    var articles = document.querySelectorAll('details[data-story-id]');
     for (var i = 0; i < articles.length; i++) {
       var card = articles[i];
       if (card.querySelector('.source-attribution-footer')) continue;
       var sourceData = card.getAttribute('data-source-feed');
       if (!sourceData || sourceData.trim() === '') continue;
       var footer = document.createElement('div');
-      footer.className = 'source-attribution-footer mt-4 pt-2 border-t border-[#E3E2E0] flex items-center justify-between text-xs text-[#747878] font-mono tracking-tight';
-      footer.innerHTML = '<div class="flex items-center justify-between w-full p-2 bg-[#F9FAFB] rounded-b"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-[#747878]" aria-hidden="true">database</span><span class="font-mono text-on-surface-variant">' + sourceData.charAt(0).toUpperCase() + sourceData.slice(1).trim() + '</span></div><div class="flex items-center gap-2"><span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-emerald-500/10 text-emerald-700 border border-emerald-500/40" title="Algorithmically verified via core pipeline">Verified</span></div></div>';
-      card.appendChild(footer);
+      footer.className = 'source-attribution-footer mt-4 pt-2 border-t border-outline flex items-center justify-between text-xs text-text-secondary font-mono tracking-tight';
+      footer.innerHTML = '<div class="flex items-center justify-between w-full p-2 bg-surface-container-high rounded-b"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-text-secondary" aria-hidden="true">database</span><span class="font-mono text-primary">' + sourceData.charAt(0).toUpperCase() + sourceData.slice(1).trim() + '</span></div><div class="flex items-center gap-2"><span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-green/10 text-green border border-green/30" title="Algorithmically verified via core pipeline">Verified</span></div></div>';
+      card.querySelector('.px-4.pb-4').appendChild(footer);
     }
   }
 
@@ -1534,7 +1520,7 @@ setTimeout(renderRadar, 100);
         '</div>';
       }
 
-      return '<div class=\"bg-surface/80 backdrop-blur-sm border border-gold/20 border-l-2 border-l-gold p-stack-space-md\" id=\"cft-' + n.id + '\">' +
+      return '<div class=\"bg-surface-container shadow-sm border border-gold/20 border-l-4 border-l-gold p-stack-space-md rounded-r-lg\" id=\"cft-' + n.id + '\">' +
         // Narrative header
         '<div class=\"flex justify-between items-start mb-3\">' +
           '<div>' +
@@ -1730,7 +1716,7 @@ setTimeout(renderRadar, 100);
   })();
 
   function applyFilters() {
-    var cards = document.querySelectorAll('#story-cards article[data-story-id]');
+    var cards = document.querySelectorAll('#story-cards details[data-story-id]');
     for (var i = 0; i < cards.length; i++) {
       var card = cards[i];
       var tier = card.getAttribute('data-tier') || '';

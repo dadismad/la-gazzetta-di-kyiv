@@ -1,4 +1,4 @@
-# Gazzetta di Kyiv — Central Configuration
+# La Gazzetta di Kyiv — Central Configuration
 # All paths relative to this file's directory (project root).
 # Scripts load this via PyYAML and resolve paths with Path(__file__).parent.parent.
 # Shell scripts source this file or resolve paths via SCRIPT_DIR.
@@ -6,7 +6,7 @@
 site:
   name: "La Gazzetta di Kyiv"
   url: "https://www.lagazzettadikyiv.com"
-  tagline: "Six domains of geopolitical power. Tracked, analyzed, contradicted."
+  tagline: "12 domains of geopolitical power. Tracked, analyzed, contradicted."
 
 paths:
   db: "gazzetta.db"
@@ -47,35 +47,51 @@ features:
 
 # Narrative definitions (editorial config)
 narratives:
-  dollar_decline:
-    label: "Dollar Decline"
-    description: "USD reserve status erosion, BRICS payment rails, gold repatriation"
-    keywords: ["dedollarization", "BRICS", "yuan", "gold reserves", "SWIFT alternative", "CBDC"]
-  deglobalization:
-    label: "Deglobalization"
-    description: "Supply chain fragmentation, trade bloc realignment, sanctions rewiring"
-    keywords: ["supply chain", "reshoring", "trade war", "sanctions", "bloc"]
-  china_ascent:
-    label: "China's Ascent"
-    description: "Parallel tech stack, yuan internationalization, BRI, semiconductor independence"
-    keywords: ["China", "BRI", "semiconductor", "Huawei", "SMIC", "yuan trade"]
-  space_economy:
-    label: "Space Economy"
-    description: "Orbital infrastructure, space mining, satellite internet, GPS alternatives"
-    keywords: ["SpaceX", "satellite", "orbit", "NASA", "CNSA", "asteroid mining"]
-  gene_editing:
-    label: "Gene Editing & Longevity"
-    description: "CRISPR therapies, biotech industrialization, healthspan extension"
-    keywords: ["CRISPR", "gene therapy", "longevity", "biotech", "FDA approval"]
-  tech_convergence:
-    label: "Emerging Tech Convergence"
-    description: "AI + quantum + biotech + materials intersections"
-    keywords: ["AI", "quantum", "fusion", "materials", "convergence"]
-  energy_sovereignty:
-    label: "Energy Sovereignty"
-    description: "Fusion, renewables, rare earths, critical minerals, grid independence"
-    keywords: ["fusion", "renewable", "rare earth", "grid", "critical minerals"]
-  wealthy_sports:
-    label: "Wealthy Sports"
-    description: "Sovereign wealth in teams, sports as soft power, capital concentration"
-    keywords: ["sovereign fund", "sports team", "ownership", "soft power"]
+  usd_debasement_reserve_diversification:
+    label: "USD Debasement & Reserve Diversification"
+    description: "Long-term decline in the dollar’s purchasing power and global reserve dominance, driving reserve reallocation and alternative settlement systems."
+    keywords: ["USD debasement", "reserve diversification", "de-dollarization", "currency substitution", "dedollarization", "BRICS", "yuan", "gold reserves", "SWIFT alternative", "CBDC"]
+  critical_resource_control_infrastructure:
+    label: "Critical Resource Control & Energy Infrastructure"
+    description: "Efforts to secure control over energy, critical minerals and logistics via domestic buildouts, strategic partnerships, and infrastructure investments."
+    keywords: ["energy security", "critical minerals control", "strategic stockpiles", "grid resilience", "fusion", "renewable", "rare earth", "grid", "critical minerals", "uranium", "lng", "nuclear"]
+  supply_chain_resilience_reshoring_defense:
+    label: "Reshoring, Defense Logistics & Supply-Chain Resilience"
+    description: "Intentional relocalization and hardening of supply chains for critical and defense-related goods to reduce exposure to risky suppliers."
+    keywords: ["reshoring", "nearshoring", "defense logistics modernization", "supply-chain resilience", "supply chain", "tariff", "trade war", "protectionist", "defense logistics"]
+  china_geoeconomic_expansion:
+    label: "China Geoeconomic Expansion & Market Integration"
+    description: "Rapid, state-coordinated expansion of China’s economic, financial, and trade reach across Eurasia and new markets—including use of economic leverage and infrastructure to lock in advantages."
+    keywords: ["Belt and Road expansion", "RMB internationalization", "China-led trade corridors", "economic coercion", "dual circulation export leverage", "China", "BRI", "semiconductor", "Huawei", "SMIC", "yuan trade"]
+  space_economy_commercialization:
+    label: "Space Economy Commercialization & Infrastructure"
+    description: "Commercial scaling of launch, LEO infrastructure, satellite services and downstream applications that unlock new markets and payload economies."
+    keywords: ["space commercialization", "LEO infrastructure", "satcom constellations", "space logistics", "SpaceX", "satellite", "orbit", "NASA", "CNSA", "asteroid mining"]
+  gene_editing_biotech_longevity:
+    label: "Gene Editing, Biotech & Longevity Science"
+    description: "Breakthroughs in genome editing, advanced biologics, and longevity interventions moving from trials to commercial-scale therapies and markets."
+    keywords: ["CRISPR therapy", "in vivo editing", "cell therapy commercialization", "longevity therapeutics", "CRISPR", "gene therapy", "longevity", "biotech", "FDA approval"]
+  tech_convergence_platforms_ai_autonomy:
+    label: "Tech Convergence: Enterprise Platforms & Autonomous AI"
+    description: "Fusion of AI, cloud, edge, and enterprise platforms enabling autonomous workflows, massive productivity gains, and new platform monopolies."
+    keywords: ["AI-native platforms", "autonomous workflows", "enterprise AI adoption", "platform consolidation", "AI", "quantum", "fusion", "materials", "convergence", "cloud"]
+  prestige_asset_acquisition_strategic_investment:
+    label: "Prestige Asset Acquisition & Strategic Cross-Border Investment"
+    description: "High-profile acquisitions of sports teams, cultural assets, strategic infrastructure and prestige properties by state-affiliated funds and ultra-high-net-worth capital for influence, diversification and access."
+    keywords: ["prestige asset acquisition", "state-affiliated investment", "trophy asset purchases", "strategic capital deployment", "sovereign fund", "sports team", "ownership", "soft power"]
+  ai_compute_semiconductor_hegemony:
+    label: "AI Hardware, Compute Concentration & Semiconductor Leadership"
+    description: "Consolidation of advanced semiconductor manufacturing, AI accelerators and hyperscaler compute capacity that defines competitive AI performance and leverage."
+    keywords: ["AI accelerators", "compute hegemony", "advanced foundry capacity", "chip supply concentration", "nvidia", "tsmc", "semiconductor", "chip", "gpu", "h100", "b200", "amd", "intel"]
+  digital_assets_reserves_onchain_finance:
+    label: "Digital Assets as Reserve & On-Chain Financial Infrastructure"
+    description: "Evolution of tokenized and crypto-native instruments toward institutional reserve, settlement, and collateral functions within regulated and hybrid frameworks."
+    keywords: ["stablecoin settlement", "tokenized reserves", "on-chain settlement", "institutional crypto adoption", "bitcoin", "ethereum", "btc", "eth", "stablecoin", "defi", "crypto", "coinbase"]
+  monetary_policy_regime_shift_rate_cycle:
+    label: "Monetary Policy Regime Shifts & Rate Cycle Dynamics"
+    description: "Changes in central bank frameworks and rate cycles that reshape liquidity, risk premia, and asset allocation regimes."
+    keywords: ["policy pivot", "tightening cycle", "real rate regime", "monetary regime shift", "fed", "fomc", "rate cut", "rate hike", "powell", "treasury yield", "bond yield", "interest rate", "central bank", "inflation"]
+  commodity_supercycle_supply_rebalancing:
+    label: "Commodity Re-acceleration & Physical Supply Rebalancing"
+    description: "Sustained commodity upcycles driven by structural demand (energy transition, electrification), underinvestment in supply, and logistics constraints."
+    keywords: ["commodity supercycle", "supply squeeze", "transition metals boom", "rebalancing to physical", "crude oil", "copper", "corn futures", "soybean", "wheat futures", "gold price", "silver price", "oil price", "oil market", "commodity price"]

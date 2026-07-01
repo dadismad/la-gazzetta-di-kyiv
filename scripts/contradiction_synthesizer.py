@@ -195,18 +195,18 @@ BATCH_SIZE = 10             # process N items per run
 
 # narrative_tag → container (1:1 — each narrative is its own container)
 NARRATIVE_TO_CONTAINER = {
-    "dollar_decline":      "dollar_decline",
-    "deglobalization":     "deglobalization",
-    "china_ascent":        "china_ascent",
-    "space_economy":       "space_economy",
-    "gene_editing":        "gene_editing",
-    "tech_convergence":    "tech_convergence",
-    "critical_resource_control":  "critical_resource_control",
-    "wealthy_sports":      "wealthy_sports",
-    "ai_chips":            "ai_chips",
-    "crypto_reserve":      "crypto_reserve",
-    "rate_cycle":          "rate_cycle",
-    "commodity_supercycle":"commodity_supercycle",
+    "usd_debasement_reserve_diversification":      "usd_debasement_reserve_diversification",
+    "supply_chain_resilience_reshoring_defense":   "supply_chain_resilience_reshoring_defense",
+    "china_geoeconomic_expansion":                 "china_geoeconomic_expansion",
+    "space_economy_commercialization":             "space_economy_commercialization",
+    "gene_editing_biotech_longevity":              "gene_editing_biotech_longevity",
+    "tech_convergence_platforms_ai_autonomy":      "tech_convergence_platforms_ai_autonomy",
+    "critical_resource_control_infrastructure":    "critical_resource_control_infrastructure",
+    "prestige_asset_acquisition_strategic_investment": "prestige_asset_acquisition_strategic_investment",
+    "ai_compute_semiconductor_hegemony":           "ai_compute_semiconductor_hegemony",
+    "digital_assets_reserves_onchain_finance":     "digital_assets_reserves_onchain_finance",
+    "monetary_policy_regime_shift_rate_cycle":     "monetary_policy_regime_shift_rate_cycle",
+    "commodity_supercycle_supply_rebalancing":     "commodity_supercycle_supply_rebalancing",
 }
 
 # contradiction_gap -> tier (aligned with frontend zone thresholds: BREAKING>50, ACTIVE>=20, SETTLING<20)
@@ -897,19 +897,23 @@ def load_existing_stories():
                 return json.load(f)
         except (json.JSONDecodeError, OSError) as e:
             print(f"  WARNING: stories.json corrupt ({e}). Starting fresh.")
-    # Fresh skeleton — 8 narratives
+    # Fresh skeleton — 12 narratives
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "generated_by": "contradiction_synthesizer.py v1.0",
         "containers": {
-            "dollar_decline":      {"title": "Dollar Decline",           "subtitle": "USD reserve status erosion, BRICS payment rails, gold repatriation", "count": 0, "stories": []},
-            "deglobalization":     {"title": "Deglobalization",         "subtitle": "Supply chain fragmentation, trade bloc realignment, sanctions rewiring", "count": 0, "stories": []},
-            "china_ascent":        {"title": "China's Ascent",          "subtitle": "Parallel tech stack, yuan internationalization, BRI, semiconductor independence", "count": 0, "stories": []},
-            "space_economy":       {"title": "Space Economy",           "subtitle": "Orbital infrastructure, space mining, satellite internet, GPS alternatives", "count": 0, "stories": []},
-            "gene_editing":        {"title": "Gene Editing & Longevity","subtitle": "CRISPR therapies, biotech industrialization, healthspan extension", "count": 0, "stories": []},
-            "tech_convergence":    {"title": "Emerging Tech Convergence","subtitle": "AI + quantum + biotech + materials intersections", "count": 0, "stories": []},
-            "critical_resource_control":  {"title": "Critical Resource Control",      "subtitle": "Crude, natural gas, nuclear, rare earths, grid control, critical minerals", "count": 0, "stories": []},
-            "wealthy_sports":      {"title": "Wealthy Sports",          "subtitle": "Sovereign wealth in teams, sports as soft power, capital concentration", "count": 0, "stories": []},
+            "usd_debasement_reserve_diversification": {"title": "Sovereign Reserves & De-Dollarization", "subtitle": "USD reserve status erosion, BRICS payment rails, gold repatriation", "count": 0, "stories": []},
+            "critical_resource_control_infrastructure": {"title": "Energy Security & Infrastructure", "subtitle": "Crude, natural gas, nuclear, rare earths, grid control, critical minerals", "count": 0, "stories": []},
+            "supply_chain_resilience_reshoring_defense": {"title": "Reshoring & Defense Logistics", "subtitle": "Supply chain fragmentation, trade bloc realignment, sanctions rewiring", "count": 0, "stories": []},
+            "china_geoeconomic_expansion": {"title": "Eurasian Trade & Chinese Markets", "subtitle": "Parallel tech stack, yuan internationalization, BRI, semiconductor independence", "count": 0, "stories": []},
+            "space_economy_commercialization": {"title": "Space Economy & Aerospace", "subtitle": "Orbital infrastructure, space mining, satellite internet, GPS alternatives", "count": 0, "stories": []},
+            "gene_editing_biotech_longevity": {"title": "Biotech & Longevity Science", "subtitle": "CRISPR therapies, biotech industrialization, healthspan extension", "count": 0, "stories": []},
+            "tech_convergence_platforms_ai_autonomy": {"title": "Enterprise Tech & Artificial Intelligence", "subtitle": "AI + quantum + biotech + materials intersections", "count": 0, "stories": []},
+            "prestige_asset_acquisition_strategic_investment": {"title": "Trophy Assets & Sovereign Investment", "subtitle": "Sovereign wealth in teams, sports as soft power, capital concentration", "count": 0, "stories": []},
+            "ai_compute_semiconductor_hegemony": {"title": "Semiconductors & Compute Hegemony", "subtitle": "Advanced chip manufacturing, foundry limits, export control regimes", "count": 0, "stories": []},
+            "digital_assets_reserves_onchain_finance": {"title": "Digital Assets & Decentralized Capital", "subtitle": "Stablecoin settlement, tokenized reserves, sovereign crypto allocations", "count": 0, "stories": []},
+            "monetary_policy_regime_shift_rate_cycle": {"title": "Monetary Policy & Rates", "subtitle": "Central bank pivots, yield curve spreads, rate cycle dynamics", "count": 0, "stories": []},
+            "commodity_supercycle_supply_rebalancing": {"title": "Commodities & Physical Supply", "subtitle": "Transition metals, underinvestment, physical supply squeezes", "count": 0, "stories": []}
         },
         "all_stories": [],
         "tags_index": {},
@@ -941,12 +945,12 @@ def merge_stories(existing, new_stories):
             deduped.append(s)
     all_stories = deduped
 
-    # ── Quality gate: cap at 50 stories per narrative ──
-    MAX_PER_NARRATIVE = 50
+    # ── Quality gate: cap at 500 stories per narrative to avoid data loss ──
+    MAX_PER_NARRATIVE = 500
     capped = []
     container_counts = {}
     for s in all_stories:
-        story_containers = s.get("containers") or [s.get("container", "tech_convergence")]
+        story_containers = s.get("containers") or [s.get("container", "tech_convergence_platforms_ai_autonomy")]
         # Cap per primary container only (avoids multi-count inflating caps)
         c = s.get("container", story_containers[0])
         n = container_counts.get(c, 0)
@@ -963,16 +967,19 @@ def merge_stories(existing, new_stories):
     }
     # Ensure all 12 narratives exist
     for cname in [
-        "dollar_decline", "deglobalization", "china_ascent", "space_economy",
-        "gene_editing", "tech_convergence", "critical_resource_control", "wealthy_sports",
-        "ai_chips", "crypto_reserve", "rate_cycle", "commodity_supercycle",
+        "usd_debasement_reserve_diversification", "supply_chain_resilience_reshoring_defense",
+        "china_geoeconomic_expansion", "space_economy_commercialization",
+        "gene_editing_biotech_longevity", "tech_convergence_platforms_ai_autonomy",
+        "critical_resource_control_infrastructure", "prestige_asset_acquisition_strategic_investment",
+        "ai_compute_semiconductor_hegemony", "digital_assets_reserves_onchain_finance",
+        "monetary_policy_regime_shift_rate_cycle", "commodity_supercycle_supply_rebalancing",
     ]:
         if cname not in containers:
             containers[cname] = {"title": cname.replace("_", " ").title(),
                                  "subtitle": "", "count": 0, "stories": []}
 
     for s in all_stories:
-        story_containers = s.get("containers") or [s.get("container", "tech_convergence")]
+        story_containers = s.get("containers") or [s.get("container", "tech_convergence_platforms_ai_autonomy")]
         for c in story_containers:
             if c in containers:
                 containers[c]["stories"].append(s)

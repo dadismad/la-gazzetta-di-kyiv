@@ -1,6 +1,6 @@
 # Decentralized Capital Architecture
 
-**Narrative ID**: `crypto_reserve`
+**Narrative ID**: `digital_assets_reserves_onchain_finance`
 **Tickers**: BTC-USD, ETH-USD, COIN
 **Invalidation Threshold**: BTC < $50K
 

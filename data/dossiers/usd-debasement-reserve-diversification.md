@@ -1,6 +1,6 @@
 # Sovereign Liquidity Migration
 
-**Narrative ID**: `dollar_decline`
+**Narrative ID**: `usd_debasement_reserve_diversification`
 **Tickers**: DX=F, GC=F, UUP
 **Invalidation Threshold**: DXY > 106 for 2 consecutive quarters
 

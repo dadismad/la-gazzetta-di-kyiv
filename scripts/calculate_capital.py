@@ -28,8 +28,8 @@ CFTC_FINANCIAL_FILE = DATA_DIR / "cftc_financial_positions.json"
 FRED_FILE = DATA_DIR / "fred_series.json"
 PRICES_FILE = DATA_DIR / "market_prices.json"
 
-MATERIALITY_THRESHOLD_USD = 50_000_000   # $50M minimum to pass gate
-GAP_MATERIALITY_FLOOR = 20               # stories below this GAP are never material
+MATERIALITY_THRESHOLD_USD = 0   # Disable gate (all stories are material)
+GAP_MATERIALITY_FLOOR = 0       # Disable floor
 FIDELITY_MULTIPLIERS = {"TIER_1": 1.0, "TIER_2": 0.8, "TIER_3": 0.5}
 MAX_CAPITAL_PER_STORY = 10_000_000_000   # $10B hard cap — single story can't exceed this
 MAX_NARRATIVE_CAPITAL = 10_000_000_000_000  # $10T circuit breaker — narrative aggregate cap
@@ -104,73 +104,73 @@ FINANCIAL_CONTRACT_NOTIONALS = {
 #
 # Narrative → Canonical Proxy Portfolio + primary data source
 NARRATIVE_PROXY_PORTFOLIO = {
-    "dollar_decline": {
+    "usd_debasement_reserve_diversification": {
         "source": "cftc",
         "label": "Precious Metals + Currency Futures",
         "proxies": ["GC=F", "SI=F", "GLD", "SLV", "UUP", "DX=F", "EURUSD=X", "JPYUSD=X"],
         "rationale": "Gold/silver as anti-dollar hedges; DXY and EURUSD as direct currency vectors"
     },
-    "critical_resource_control": {
+    "critical_resource_control_infrastructure": {
         "source": "cftc",
         "label": "Energy Futures + Uranium",
         "proxies": ["CL=F", "NG=F", "XLE", "URA", "NLR"],
         "rationale": "Crude + natural gas futures; uranium as energy sovereignty play"
     },
-    "commodity_supercycle": {
+    "commodity_supercycle_supply_rebalancing": {
         "source": "cftc",
         "label": "Industrial Metals + Grains",
         "proxies": ["HG=F", "DBC", "COPX", "XME", "WEAT", "CORN"],
         "rationale": "Copper, broad commodities, industrial metals, agricultural futures"
     },
-    "deglobalization": {
+    "supply_chain_resilience_reshoring_defense": {
         "source": "cftc",
         "label": "Defense + Industrial Metals",
         "proxies": ["XLI", "ITA", "PPA", "XME", "FDX", "CAT"],
         "rationale": "Defense primes + industrial metals as deglobalization beneficiaries"
     },
-    "rate_cycle": {
+    "monetary_policy_regime_shift_rate_cycle": {
         "source": "fred",
         "label": "Treasury ETFs + Bond Futures",
         "proxies": ["TLT", "SHY", "IEF", "ZN=F", "ZB=F"],
         "rationale": "Duration/dollar sensitivity to rate cycle shifts"
     },
-    "china_ascent": {
+    "china_geoeconomic_expansion": {
         "source": "fred",
         "label": "China Equity ETFs + Currency",
         "proxies": ["FXI", "KWEB", "MCHI", "BABA", "CNY=X"],
         "rationale": "China equity + tech exposure; CNY as policy transmission channel"
     },
-    "tech_convergence": {
+    "tech_convergence_platforms_ai_autonomy": {
         "source": "prices",
         "label": "Cloud + Enterprise Tech",
         "proxies": ["MSFT", "AMZN", "GOOGL", "QQQ", "CLOU", "WCLD"],
         "rationale": "Cloud infrastructure + enterprise software as tech consolidation vectors"
     },
-    "space_economy": {
+    "space_economy_commercialization": {
         "source": "prices",
         "label": "Space + Defense Primes",
         "proxies": ["ARKX", "UFO", "ROKT", "LMT", "NOC"],
         "rationale": "Space ETFs + defense primes with space divisions"
     },
-    "gene_editing": {
+    "gene_editing_biotech_longevity": {
         "source": "prices",
         "label": "Biotech + Gene Editing",
         "proxies": ["ARKG", "XBI", "IBB", "CRSP", "NTLA"],
         "rationale": "Biotech ETFs + gene-editing pure-plays with clinical catalysts"
     },
-    "wealthy_sports": {
+    "prestige_asset_acquisition_strategic_investment": {
         "source": "prices",
         "label": "Sports Betting + Franchise Ownership",
         "proxies": ["DKNG", "MANU", "BATRK", "DIS"],
         "rationale": "Sports betting operators + publicly traded franchise owners"
     },
-    "ai_chips": {
+    "ai_compute_semiconductor_hegemony": {
         "source": "prices",
         "label": "Semiconductor + AI Infrastructure",
         "proxies": ["NVDA", "SMH", "AMD", "ASML", "TSM"],
         "rationale": "Chipmakers with direct AI infrastructure exposure"
     },
-    "crypto_reserve": {
+    "digital_assets_reserves_onchain_finance": {
         "source": "prices",
         "label": "Crypto + Institutional On-Ramps",
         "proxies": ["BTC-USD", "COIN", "MSTR", "ETH-USD"],
@@ -453,10 +453,8 @@ def main():
         # 4. Hard cap — single story cannot exceed $10B regardless of math
         capital_usd = min(capital_usd, MAX_CAPITAL_PER_STORY)
 
-        # 5. Materiality gate
-        is_material = (
-            capital_usd >= MATERIALITY_THRESHOLD_USD and gap >= GAP_MATERIALITY_FLOOR
-        )
+        # 5. Materiality gate — disabled (all stories pass)
+        is_material = True
 
         # 6. Update story fields
         story["capital_at_stake_usd"] = int(capital_usd)

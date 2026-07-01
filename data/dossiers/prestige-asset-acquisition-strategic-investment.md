@@ -1,6 +1,6 @@
 # Trophy Asset Financialization
 
-**Narrative ID**: `wealthy_sports`
+**Narrative ID**: `prestige_asset_acquisition_strategic_investment`
 **Tickers**: BATRK, MANU, MSGS
 **Invalidation Threshold**: BATRK -30%
 

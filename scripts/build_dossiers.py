@@ -108,26 +108,26 @@ def build_dossiers(stories, flows, narrative_config):
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <style>
   * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-  body {{ background: #FAFAF9; color: #1A1C1A; font-family: Inter, -apple-system, sans-serif; max-width: 880px; margin: 0 auto; padding: 24px; line-height: 1.7; }}
-  h1 {{ font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 4px; font-weight: 700; }}
-  h2 {{ font-family: 'Playfair Display', serif; font-size: 22px; margin: 32px 0 8px; color: #8B0000; font-weight: 600; }}
-  h3 {{ font-family: Inter, sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #747878; margin: 28px 0 8px; }}
-  p {{ margin-bottom: 12px; font-size: 16px; }}
+  body {{ background: #FAF9F6; color: #4A0E4E; font-family: Inter, -apple-system, sans-serif; max-width: 880px; margin: 0 auto; padding: 24px; line-height: 1.7; }}
+  h1 {{ font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 4px; font-weight: 700; color: #4A0E4E; }}
+  h2 {{ font-family: 'Playfair Display', serif; font-size: 22px; margin: 32px 0 8px; color: #4A0E4E; font-weight: 600; border-bottom: 2px solid #D4AF37; padding-bottom: 4px; }}
+  h3 {{ font-family: Inter, sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #D4AF37; margin: 28px 0 8px; }}
+  p {{ margin-bottom: 12px; font-size: 16px; color: #1A1C1A; }}
   .mono {{ font-family: 'JetBrains Mono', monospace; }}
   .data-row {{ display: flex; gap: 24px; margin: 20px 0; flex-wrap: wrap; }}
-  .data-card {{ background: white; border: 1px solid #E5E5E5; padding: 16px 20px; border-radius: 6px; min-width: 160px; flex: 1; }}
-  .data-card .label {{ font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #747878; margin-bottom: 4px; }}
+  .data-card {{ background: white; border: 1px solid #D4AF37; padding: 16px 20px; border-radius: 6px; min-width: 160px; flex: 1; }}
+  .data-card .label {{ font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #4A0E4E; margin-bottom: 4px; }}
   .data-card .value {{ font-family: 'JetBrains Mono', monospace; font-size: 28px; font-weight: 700; }}
-  .ticker-pill {{ display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 13px; background: #F0F0F0; padding: 3px 10px; border-radius: 4px; margin: 3px; }}
-  .story-link {{ display: block; padding: 10px 0; border-bottom: 1px solid #E5E5E5; text-decoration: none; color: inherit; font-size: 14px; }}
-  .story-link:hover {{ background: #F9F9F9; }}
+  .ticker-pill {{ display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 13px; background: #F4EEF4; border: 1px solid #D4AF37; color: #4A0E4E; padding: 3px 10px; border-radius: 4px; margin: 3px; }}
+  .story-link {{ display: block; padding: 10px 0; border-bottom: 1px solid #F4EEF4; text-decoration: none; color: #1A1C1A; font-size: 14px; }}
+  .story-link:hover {{ background: #F4EEF4; }}
   .gap {{ font-family: 'JetBrains Mono', monospace; font-weight: 700; }}
-  .back-link {{ color: #8B0000; text-decoration: none; font-size: 14px; }}
-  .pro-cta {{ background: #F9F9F9; border: 1px dashed #D4AF37; padding: 20px; text-align: center; margin: 32px 0; border-radius: 6px; }}
-  .pro-cta a {{ color: #8B0000; font-weight: 600; }}
-  .tagline {{ color: #747878; font-size: 14px; margin-top: 0; }}
-  hr {{ border: none; border-top: 1px solid #E5E5E5; margin: 32px 0; }}
-  strong {{ color: #1A1C1A; }}
+  .back-link {{ color: #4A0E4E; text-decoration: none; font-size: 14px; font-weight: 600; }}
+  .pro-cta {{ background: #F4EEF4; border: 1px dashed #D4AF37; padding: 20px; text-align: center; margin: 32px 0; border-radius: 6px; color: #4A0E4E; }}
+  .pro-cta a {{ color: #4A0E4E; font-weight: 700; text-decoration: underline; }}
+  .tagline {{ color: #D4AF37; font-size: 14px; margin-top: 0; font-weight: 500; }}
+  hr {{ border: none; border-top: 1px solid #D4AF37; margin: 32px 0; }}
+  strong {{ color: #4A0E4E; }}
   table {{ width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }}
   th {{ text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #747878; padding: 8px 4px; border-bottom: 2px solid #E5E5E5; }}
   td {{ padding: 8px 4px; border-bottom: 1px solid #E5E5E5; font-family: 'JetBrains Mono', monospace; font-size: 13px; }}

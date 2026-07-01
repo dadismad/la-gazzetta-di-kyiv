@@ -244,22 +244,22 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None, used_format
 
     # ── Asset class routing ──
     ASSET_CLASS = {
-        "critical_resource_control": "commodity", "commodity_supercycle": "commodity",
-        "ai_chips": "equity", "tech_convergence": "equity", "space_economy": "equity",
-        "gene_editing": "equity", "wealthy_sports": "equity",
-        "deglobalization": "macro", "dollar_decline": "macro", "rate_cycle": "macro",
-        "china_ascent": "macro", "crypto_reserve": "crypto",
+        "critical_resource_control_infrastructure": "commodity", "commodity_supercycle_supply_rebalancing": "commodity",
+        "ai_compute_semiconductor_hegemony": "equity", "tech_convergence_platforms_ai_autonomy": "equity", "space_economy_commercialization": "equity",
+        "gene_editing_biotech_longevity": "equity", "prestige_asset_acquisition_strategic_investment": "equity",
+        "supply_chain_resilience_reshoring_defense": "macro", "usd_debasement_reserve_diversification": "macro", "monetary_policy_regime_shift_rate_cycle": "macro",
+        "china_geoeconomic_expansion": "macro", "digital_assets_reserves_onchain_finance": "crypto",
     }
     asset_class = ASSET_CLASS.get(narrative_id, "macro")
 
     # ── Ticker resolution ──
     _ticker_defaults = {
-        "dollar_decline": "EURUSD=X", "critical_resource_control": "XOM",
-        "deglobalization": "CAT", "china_ascent": "BABA",
-        "space_economy": "RKLB", "gene_editing": "CRSP",
-        "tech_convergence": "AAPL", "wealthy_sports": "BATRK",
-        "crypto_reserve": "BTC-USD", "rate_cycle": "TLT",
-        "ai_chips": "NVDA", "commodity_supercycle": "XOM",
+        "usd_debasement_reserve_diversification": "EURUSD=X", "critical_resource_control_infrastructure": "XOM",
+        "supply_chain_resilience_reshoring_defense": "CAT", "china_geoeconomic_expansion": "BABA",
+        "space_economy_commercialization": "RKLB", "gene_editing_biotech_longevity": "CRSP",
+        "tech_convergence_platforms_ai_autonomy": "AAPL", "prestige_asset_acquisition_strategic_investment": "BATRK",
+        "digital_assets_reserves_onchain_finance": "BTC-USD", "monetary_policy_regime_shift_rate_cycle": "TLT",
+        "ai_compute_semiconductor_hegemony": "NVDA", "commodity_supercycle_supply_rebalancing": "XOM",
     }
 
     tt = story.get("trade_thesis")
@@ -316,12 +316,12 @@ def format_story_for_telegram(story: dict, flow_ledger: dict = None, used_format
     c_emoji = conviction_emoji.get(conviction, "")
 
     narrative_labels = {
-        "dollar_decline": "Sovereign Liquidity Migration", "critical_resource_control": "Energy Sovereignty",
-        "deglobalization": "Industrial Reshoring", "china_ascent": "Eurasia Capital Architecture",
-        "space_economy": "Orbital Industrialization", "gene_editing": "Longevity & Bioreality",
-        "tech_convergence": "Enterprise Intelligence", "wealthy_sports": "Trophy Asset Financialization",
-        "crypto_reserve": "Decentralized Capital", "rate_cycle": "Liquidity Regime Transition",
-        "ai_chips": "Compute Hegemony", "commodity_supercycle": "Physical Resource Revaluation",
+        "usd_debasement_reserve_diversification": "Sovereign Liquidity", "critical_resource_control_infrastructure": "Critical Resource Control",
+        "supply_chain_resilience_reshoring_defense": "Industrial Reshoring", "china_geoeconomic_expansion": "Eurasia Capital",
+        "space_economy_commercialization": "Orbital Industrialization", "gene_editing_biotech_longevity": "Longevity & Bioreality",
+        "tech_convergence_platforms_ai_autonomy": "Enterprise Intelligence", "prestige_asset_acquisition_strategic_investment": "Trophy Assets",
+        "digital_assets_reserves_onchain_finance": "Decentralized Capital", "monetary_policy_regime_shift_rate_cycle": "Liquidity Regime",
+        "ai_compute_semiconductor_hegemony": "Compute Hegemony", "commodity_supercycle_supply_rebalancing": "Resource Revaluation",
     }
     narrative_label = narrative_labels.get(narrative_id, narrative_id.upper().replace("_", " "))
     link = "https://www.lagazzettadikyiv.com"
@@ -723,7 +723,20 @@ def main():
                         _best_nid = _nid
                         _best_group = _group
                 if _best_nid and _best_group:
-                    _nl = {"dollar_decline": "Sovereign Liquidity Migration", "critical_resource_control": "Energy Sovereignty", "deglobalization": "Industrial Reshoring", "china_ascent": "Eurasia Capital Architecture", "space_economy": "Orbital Industrialization", "gene_editing": "Longevity & Bioreality", "tech_convergence": "Enterprise Intelligence", "wealthy_sports": "Trophy Assets", "crypto_reserve": "Decentralized Capital", "rate_cycle": "Liquidity Regime", "ai_chips": "Compute Hegemony", "commodity_supercycle": "Physical Resource Revaluation"}.get(_best_nid, _best_nid.upper().replace("_", " "))
+                    _nl = {
+                        "usd_debasement_reserve_diversification": "Sovereign Liquidity",
+                        "critical_resource_control_infrastructure": "Critical Resource Control",
+                        "supply_chain_resilience_reshoring_defense": "Industrial Reshoring",
+                        "china_geoeconomic_expansion": "Eurasia Capital",
+                        "space_economy_commercialization": "Orbital Industrialization",
+                        "gene_editing_biotech_longevity": "Longevity & Bioreality",
+                        "tech_convergence_platforms_ai_autonomy": "Enterprise Intelligence",
+                        "prestige_asset_acquisition_strategic_investment": "Trophy Assets",
+                        "digital_assets_reserves_onchain_finance": "Decentralized Capital",
+                        "monetary_policy_regime_shift_rate_cycle": "Liquidity Regime",
+                        "ai_compute_semiconductor_hegemony": "Compute Hegemony",
+                        "commodity_supercycle_supply_rebalancing": "Resource Revaluation"
+                    }.get(_best_nid, _best_nid.upper().replace("_", " "))
                     _lines = [f"🌐 MACRO BRIEFING: {_nl}"]
                     _lines.append("")
                     _lines.append(f"{len(_best_group)} signals coalescing into a structural trend:")

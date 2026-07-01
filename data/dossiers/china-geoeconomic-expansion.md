@@ -1,6 +1,6 @@
 # Eurasia Capital Architecture
 
-**Narrative ID**: `china_ascent`
+**Narrative ID**: `china_geoeconomic_expansion`
 **Tickers**: FXI, KWEB, MCHI
 **Invalidation Threshold**: FXI -15% quarterly
 

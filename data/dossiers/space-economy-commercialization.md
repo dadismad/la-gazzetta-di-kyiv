@@ -1,6 +1,6 @@
 # Orbital Industrialization & Defense
 
-**Narrative ID**: `space_economy`
+**Narrative ID**: `space_economy_commercialization`
 **Tickers**: ROKT, RKLB, SPCE
 **Invalidation Threshold**: ROKT -25%
 

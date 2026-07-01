@@ -1,6 +1,6 @@
 # Physical Resource Revaluation
 
-**Narrative ID**: `commodity_supercycle`
+**Narrative ID**: `commodity_supercycle_supply_rebalancing`
 **Tickers**: DBC, GLD, GDX
 **Invalidation Threshold**: DBC -20%
 

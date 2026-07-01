@@ -1,6 +1,6 @@
 # Compute Hegemony & Intelligence Infrastructure
 
-**Narrative ID**: `ai_chips`
+**Narrative ID**: `ai_compute_semiconductor_hegemony`
 **Tickers**: NVDA, AMD, TSM, SMH
 **Invalidation Threshold**: SMH -25%
 

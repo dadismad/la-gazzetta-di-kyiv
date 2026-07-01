@@ -1,6 +1,6 @@
 # Enterprise Intelligence Consolidation
 
-**Narrative ID**: `tech_convergence`
+**Narrative ID**: `tech_convergence_platforms_ai_autonomy`
 **Tickers**: QQQ, SMH, MSFT
 **Invalidation Threshold**: QQQ -20%
 

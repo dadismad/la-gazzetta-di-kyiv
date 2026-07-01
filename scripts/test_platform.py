@@ -25,10 +25,12 @@ PASS = 0
 FAIL = 0
 
 VALID_CONTAINERS = {
-    "dollar_decline", "critical_resource_control", "energy_sovereignty",
-    "deglobalization", "china_ascent", "space_economy", "gene_editing",
-    "tech_convergence", "wealthy_sports",
-    "ai_chips", "crypto_reserve", "rate_cycle", "commodity_supercycle",
+    "usd_debasement_reserve_diversification", "critical_resource_control_infrastructure",
+    "supply_chain_resilience_reshoring_defense", "china_geoeconomic_expansion",
+    "space_economy_commercialization", "gene_editing_biotech_longevity",
+    "tech_convergence_platforms_ai_autonomy", "prestige_asset_acquisition_strategic_investment",
+    "ai_compute_semiconductor_hegemony", "digital_assets_reserves_onchain_finance",
+    "monetary_policy_regime_shift_rate_cycle", "commodity_supercycle_supply_rebalancing",
 }
 
 

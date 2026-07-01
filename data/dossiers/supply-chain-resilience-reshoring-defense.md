@@ -1,6 +1,6 @@
 # Industrial Reshoring & Defense Hegemony
 
-**Narrative ID**: `deglobalization`
+**Narrative ID**: `supply_chain_resilience_reshoring_defense`
 **Tickers**: XLI, ITA, PPA
 **Invalidation Threshold**: XLI +8% MoM (indicates overheating, not structural thesis invalidation)
 

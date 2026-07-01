@@ -1,6 +1,6 @@
 # Longevity & Bioreality
 
-**Narrative ID**: `gene_editing`
+**Narrative ID**: `gene_editing_biotech_longevity`
 **Tickers**: ARKG, XBI, IBB
 **Invalidation Threshold**: ARKG -30%
 

@@ -1,6 +1,6 @@
 # Liquidity Regime Transition
 
-**Narrative ID**: `rate_cycle`
+**Narrative ID**: `monetary_policy_regime_shift_rate_cycle`
 **Tickers**: TLT, ^TNX, ^IRX
 **Invalidation Threshold**: Fed funds rate < 3.5%
 
