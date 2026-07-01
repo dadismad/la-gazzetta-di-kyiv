@@ -693,29 +693,29 @@ tailwind.config = {
 
   <!-- MASTHEAD -->
   <header class="border-b border-gold w-full px-margin-horizontal h-14 sticky top-0 z-30 glass-panel">
-    <div class="flex justify-between items-center h-full max-w-7xl mx-auto">
-      <div class="flex items-center gap-3">
-        <svg class="w-8 h-8 shrink-0" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <!-- Gold Mace (Bulava) handle running bottom-left to top-right -->
-          <line x1="16" y1="48" x2="42" y2="22" stroke="#D4AF37" stroke-width="3" />
-          <!-- Mace Head (Spiked Sphere) -->
-          <circle cx="45" cy="19" r="6" fill="#4A0E4E" stroke="#D4AF37" stroke-width="2" />
-          <!-- Mace Spikes -->
-          <path d="M45 10 L45 13 M45 25 L45 28 M36 19 L39 19 M51 19 L54 19 M38 12 L40 14 M50 24 L52 26 M38 26 L40 24 M50 12 L48 14" stroke="#D4AF37" stroke-width="2" />
-          <!-- Purple Quill Pen running bottom-right to top-left -->
-          <path d="M48 48 L22 22" stroke="#4A0E4E" stroke-width="3" />
-          <!-- Quill Feather vanes -->
-          <path d="M22 22 C18 16, 12 12, 8 8 C12 12, 16 18, 22 22 Z" fill="#4A0E4E" stroke="#4A0E4E" stroke-width="1" />
-          <path d="M26 26 C22 20, 16 16, 12 12 M30 30 C26 24, 20 20, 16 16 M34 34 C30 28, 24 24, 20 20" stroke="#4A0E4E" stroke-width="1.5" />
+    <div class="flex justify-between items-center h-full max-w-7xl mx-auto w-full">
+      
+      <!-- Left side: Bulava -->
+      <div class="flex items-center gap-2.5">
+        <svg class="masthead-bulava shrink-0" width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg" title="Hetman Bohdan Khmelnytsky — The Bulava" aria-label="Bulava">
+          <!-- Bulava Staff/Handle -->
+          <path d="M10 24V8" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+          <!-- Pommel/Orb head -->
+          <circle cx="10" cy="7" r="4" fill="#4A0E4E" stroke="#D4AF37" stroke-width="1.5"/>
+          <!-- Small top spike -->
+          <path d="M10 3V1" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="6" cy="7" r="0.75" fill="#D4AF37"/>
+          <circle cx="14" cy="7" r="0.75" fill="#D4AF37"/>
+          <circle cx="10" cy="11" r="0.75" fill="#D4AF37"/>
         </svg>
         <div class="flex flex-col">
-          <h1 class="font-headline-lg-mobile text-[14px] leading-none sm:text-[16px] uppercase tracking-widest text-roman-purple gold-strikethrough gold-outline">La Gazzetta di Kyiv</h1>
-          <span class="text-[8px] sm:text-[9px] text-[#747878] leading-none tracking-tight font-sans mt-1">Tactical 1-3 day geopolitical flow dispatches & alpha catalysts</span>
+          <h1 class="font-headline-lg text-[13px] leading-none sm:text-[16px] uppercase tracking-widest text-roman-purple font-bold">La Gazzetta di Kyiv</h1>
+          <span class="text-[8px] sm:text-[9px] text-[#747878] leading-none tracking-tight font-sans mt-0.5">The stories that move markets</span>
         </div>
       </div>
 
-      <!-- TAB NAVIGATION -->
-      <nav class="flex gap-1 h-full items-center overflow-x-auto hide-scrollbar animate-fade-in" id="tab-nav">
+      <!-- Center: Tab navigation links -->
+      <nav class="flex gap-1 h-full items-center overflow-x-auto hide-scrollbar" id="tab-nav">
         <button class="tab-btn active px-3 h-full font-metadata-sm text-metadata-sm uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-tab="stream">
           The Flow
         </button>
@@ -732,6 +732,13 @@ tailwind.config = {
           About
         </button>
       </nav>
+
+      <!-- Right side: Fleur-de-lis + Live EET Time -->
+      <div class="flex items-center gap-2 font-mono text-[9px] sm:text-xs text-on-surface-variant">
+        <span id="live-time" class="hidden sm:inline font-semibold">19:11 EET</span>
+        <span class="text-gold text-base sm:text-lg select-none" title="Machiavelli — representing Power & Strategy" aria-label="Fleur-de-lis">⚜</span>
+      </div>
+
     </div>
   </header>
 
@@ -1922,6 +1929,23 @@ setTimeout(renderRadar, 100);
       }, 2000);
     }
   };
+})();
+
+(function updateClock() {
+  var el = document.getElementById('live-time');
+  if (!el) return;
+  function refresh() {
+    var d = new Date();
+    var timeStr = d.toLocaleTimeString('en-US', {
+      timeZone: 'Europe/Kyiv',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    });
+    el.textContent = timeStr + ' EET';
+  }
+  refresh();
+  setInterval(refresh, 30000);
 })();
 </script>
 
